@@ -26,6 +26,7 @@ import { Badge } from './Badge';
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
+import { Skeleton, useSkeleton } from '../Skeleton';
 
 // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
@@ -188,7 +189,7 @@ const Button = forwardRef(
       reverse: reverseProp,
       secondary,
       selected,
-      size,
+      size: sizeProp,
       tip,
       type = 'button',
       // can't alphabetize a11yTitle before tip is defined
@@ -207,6 +208,8 @@ const Button = forwardRef(
         'Button should not have children if icon or label is provided',
       );
     }
+
+    const skeleton = useSkeleton();
 
     const sendAnalytics = useAnalytics();
 
@@ -239,6 +242,10 @@ const Button = forwardRef(
       return undefined; // pre-default, no kind
     }, [kindArg, kindObj, primary, secondary, theme]);
 
+    // for backwards compatibility, no-kind button theme did not
+    // default to size "medium" on buttons with no size prop
+    const size = sizeProp || (kind && 'medium') || undefined;
+
     // When we have a kind and are not plain, themePaths stores the relative
     // paths within the theme for the current kind and state of the button.
     // These paths are used with getIconColor() above and kindStyle() within
@@ -270,6 +277,19 @@ const Button = forwardRef(
       }
       return result;
     }, [active, disabled, kind, kindObj, plain, selected]);
+
+    if (skeleton) {
+      return (
+        <Skeleton
+          ref={ref}
+          height={theme.text[size || 'medium']?.height || size}
+          a11yTitle={a11yTitle}
+          {...rest}
+          {...theme.button.size?.[size || 'medium']}
+          {...theme.button.skeleton}
+        />
+      );
+    }
 
     // only used when theme does not have button.default
     const isDarkBackground = () => {
@@ -331,6 +351,12 @@ const Button = forwardRef(
         });
     }
 
+    if (icon && !icon.props.size && theme.button?.icon?.size?.[size]) {
+      buttonIcon = cloneElement(buttonIcon, {
+        size: theme.button.icon.size[size],
+      });
+    }
+
     const reverse = reverseProp ?? theme.button[kind]?.reverse;
     const domTag = !as && href ? 'a' : as;
     const first = reverse ? label : buttonIcon;
@@ -340,7 +366,7 @@ const Button = forwardRef(
     if (first && second) {
       contents = (
         <Box
-          direction="row"
+          direction={theme.button?.[kind]?.direction || 'row'}
           align="center"
           justify={justify || (align === 'center' ? 'center' : 'between')}
           gap={gap || theme.button.gap}

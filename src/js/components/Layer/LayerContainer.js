@@ -30,8 +30,6 @@ const HiddenAnchor = styled.a`
   position: absolute;
 `;
 
-const defaultPortalContext = [];
-
 const LayerContainer = forwardRef(
   (
     {
@@ -60,7 +58,7 @@ const LayerContainer = forwardRef(
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
-    const portalContext = useContext(PortalContext) || defaultPortalContext;
+    const portalContext = useContext(PortalContext);
     const portalId = useMemo(() => portalContext.length, [portalContext]);
     const nextPortalContext = useMemo(
       () => [...portalContext, portalId],
@@ -124,7 +122,10 @@ const LayerContainer = forwardRef(
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
         let node =
-          containerTarget === document.body ? event.target : event?.path[0];
+          containerTarget === document.body
+            ? event.target
+            : event?.composedPath()[0];
+
         while (clickedPortalId === null && node !== document && node !== null) {
           // check if user click occurred within the layer
           const attr = node.getAttribute('data-g-portal-id');
@@ -307,7 +308,7 @@ const LayerContainer = forwardRef(
           // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
           restrictScroll={
-            !layerTarget || hitResponsiveBreakpoint ? true : undefined
+            !layerTarget && hitResponsiveBreakpoint ? true : undefined
           }
           trapFocus
         >

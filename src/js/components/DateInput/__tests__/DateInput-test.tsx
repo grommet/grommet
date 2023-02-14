@@ -106,6 +106,32 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('format with date bounds', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          calendarProps={{
+            bounds: ['2022-11-10', '2022-11-20'],
+          }}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '09/09/2022');
+    expect(input).not.toHaveValue();
+
+    await user.clear(input);
+    await user.type(input, '11/15/2022');
+    expect(input).toHaveValue('11/15/2022');
+  });
+
   test('reverse calendar icon', () => {
     const { container } = render(
       <Grommet>
@@ -255,18 +281,13 @@ describe('DateInput', () => {
   });
 
   test('range format no value', () => {
-    const { container } = render(
+    render(
       <Grommet>
         <DateInput id="item" name="item" format="mm/dd/yyyy-mm/dd/yyyy" />
-        <DateInput
-          id="item"
-          name="item"
-          format="mm/dd/yyyy-mm/dd/yyyy"
-          inline
-        />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+
+    expect(screen.queryByRole('button', { name: /Calendar/ })).not.toBeNull();
   });
 
   test('range format inline', () => {
@@ -282,6 +303,32 @@ describe('DateInput', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('range format with date bounds', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          calendarProps={{
+            bounds: ['2022-11-10', '2022-11-20'],
+          }}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '09/09/2022-09/09/2022');
+    expect(input).not.toHaveValue();
+
+    await user.clear(input);
+    await user.type(input, '11/15/2022-11/15/2022');
+    expect(input).toHaveValue('11/15/2022-11/15/2022');
   });
 
   test('dates initialized with empty array', async () => {

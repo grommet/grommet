@@ -39,6 +39,7 @@ export const MinMaxSizesBox = () => (
         justify="center"
         background="brand"
         overflow="auto"
+        tabIndex={0}
       >
         {Array(20)
           .fill()
@@ -55,6 +56,7 @@ export const MinMaxSizesBox = () => (
         justify="center"
         background="brand"
         overflow="auto"
+        tabIndex={0}
       >
         {Array(20)
           .fill()

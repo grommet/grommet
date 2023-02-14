@@ -694,7 +694,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXRsIU {
+  .bvPzbt {
     padding: 6px;
   }
 }"
@@ -3074,7 +3074,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kXRsIU"
+      class="StyledBox-sc-13pk1d4-0 bvPzbt"
     >
       <span
         class="StyledText-sc-1sadyjn-0 jbJJSg"
@@ -3472,7 +3472,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .kXRsIU {
+  .bvPzbt {
     padding: 6px;
   }
 }"
@@ -4217,7 +4217,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXRsIU {
+  .bvPzbt {
     padding: 6px;
   }
 }"
@@ -5476,7 +5476,7 @@ exports[`Menu should group items 1`] = `
 
 exports[`Menu should group items 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kXRsIU {
+  .bvPzbt {
     padding: 6px;
   }
 }"
@@ -6308,7 +6308,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   class="c0 c1"
   data-g-portal-id="0"
   id="test-menu__drop"
-  style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
+  style="left: 0px; width: 0.1px; bottom: 768px; max-height: 0px;"
   tabindex="-1"
 >
   <div
@@ -6393,7 +6393,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXRsIU {
+  .bvPzbt {
     padding: 6px;
   }
 }"
@@ -6946,7 +6946,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXRsIU {
+  .bvPzbt {
     padding: 6px;
   }
 }"

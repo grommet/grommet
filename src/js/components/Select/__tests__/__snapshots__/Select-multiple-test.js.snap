@@ -737,6 +737,15 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -745,15 +754,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -1111,7 +1111,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange toggle with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1320,6 +1320,15 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1328,15 +1337,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -1649,7 +1649,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey reduce 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1858,6 +1858,15 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1866,15 +1875,6 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -2187,7 +2187,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 
 exports[`Select Controlled multiple onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2397,6 +2397,15 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2405,15 +2414,6 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -2727,7 +2727,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2736,14 +2736,14 @@ exports[`Select Controlled multiple onChange without labelKey 3`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 kgVndw StyledDrop-sc-16s5rx8-0 ioeNVB"
+  class="StyledBox-sc-13pk1d4-0 dtxSSZ StyledDrop-sc-16s5rx8-0 ioeNVB"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hUSFEE StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
+    class="StyledBox-sc-13pk1d4-0 dEaSmx StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
     id="test-select__select-drop"
   >
     <div
@@ -2762,7 +2762,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -2781,7 +2781,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -2791,7 +2791,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 SWGaz"
+        class="StyledBox-sc-13pk1d4-0 bjATWi"
       />
     </div>
   </div>
@@ -2800,7 +2800,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2809,14 +2809,14 @@ exports[`Select Controlled multiple onChange without labelKey 5`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 kgVndw StyledDrop-sc-16s5rx8-0 ioeNVB"
+  class="StyledBox-sc-13pk1d4-0 dtxSSZ StyledDrop-sc-16s5rx8-0 ioeNVB"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hUSFEE StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
+    class="StyledBox-sc-13pk1d4-0 dEaSmx StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
     id="test-select__select-drop"
   >
     <div
@@ -2835,7 +2835,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -2854,7 +2854,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -2864,7 +2864,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 SWGaz"
+        class="StyledBox-sc-13pk1d4-0 bjATWi"
       />
     </div>
   </div>
@@ -2873,7 +2873,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3083,6 +3083,15 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3091,15 +3100,6 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -3378,6 +3378,15 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3386,15 +3395,6 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -3707,7 +3707,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3716,14 +3716,14 @@ exports[`Select Controlled multiple onChange without valueKey 3`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 kgVndw StyledDrop-sc-16s5rx8-0 ioeNVB"
+  class="StyledBox-sc-13pk1d4-0 dtxSSZ StyledDrop-sc-16s5rx8-0 ioeNVB"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hUSFEE StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
+    class="StyledBox-sc-13pk1d4-0 dEaSmx StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
     id="test-select__select-drop"
   >
     <div
@@ -3742,7 +3742,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -3761,7 +3761,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -3771,7 +3771,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 SWGaz"
+        class="StyledBox-sc-13pk1d4-0 bjATWi"
       />
     </div>
   </div>
@@ -3780,7 +3780,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3789,14 +3789,14 @@ exports[`Select Controlled multiple onChange without valueKey 5`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 kgVndw StyledDrop-sc-16s5rx8-0 ioeNVB"
+  class="StyledBox-sc-13pk1d4-0 dtxSSZ StyledDrop-sc-16s5rx8-0 ioeNVB"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hUSFEE StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
+    class="StyledBox-sc-13pk1d4-0 dEaSmx StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
     id="test-select__select-drop"
   >
     <div
@@ -3815,7 +3815,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -3834,7 +3834,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -3844,7 +3844,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 SWGaz"
+        class="StyledBox-sc-13pk1d4-0 bjATWi"
       />
     </div>
   </div>
@@ -3853,7 +3853,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4063,6 +4063,15 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4071,15 +4080,6 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -4359,6 +4359,15 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4367,15 +4376,6 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -4689,7 +4689,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4698,14 +4698,14 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 3`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 kgVndw StyledDrop-sc-16s5rx8-0 ioeNVB"
+  class="StyledBox-sc-13pk1d4-0 dtxSSZ StyledDrop-sc-16s5rx8-0 ioeNVB"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hUSFEE StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
+    class="StyledBox-sc-13pk1d4-0 dEaSmx StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
     id="test-select__select-drop"
   >
     <div
@@ -4723,7 +4723,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -4741,7 +4741,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -4751,7 +4751,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 SWGaz"
+        class="StyledBox-sc-13pk1d4-0 bjATWi"
       />
     </div>
   </div>
@@ -4760,7 +4760,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 5`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4769,14 +4769,14 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 5`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 kgVndw StyledDrop-sc-16s5rx8-0 ioeNVB"
+  class="StyledBox-sc-13pk1d4-0 dtxSSZ StyledDrop-sc-16s5rx8-0 ioeNVB"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hUSFEE StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
+    class="StyledBox-sc-13pk1d4-0 dEaSmx StyledSelect__StyledContainer-sc-znp66n-0 clESuh"
     id="test-select__select-drop"
   >
     <div
@@ -4794,7 +4794,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -4812,7 +4812,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvLkDM"
+          class="StyledBox-sc-13pk1d4-0 dvWSTN"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -4822,7 +4822,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 SWGaz"
+        class="StyledBox-sc-13pk1d4-0 bjATWi"
       />
     </div>
   </div>
@@ -4831,7 +4831,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 7`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5041,6 +5041,15 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -5049,15 +5058,6 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -5412,17 +5412,17 @@ exports[`Select Controlled multiple values 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hMXKog"
+    class="StyledBox-sc-13pk1d4-0 kOZkFt"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hWKKwG"
+      class="StyledBox-sc-13pk1d4-0 iPozMX"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5433,7 +5433,7 @@ exports[`Select Controlled multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 kXoZXT"
+      class="StyledBox-sc-13pk1d4-0 cOTiXC"
       style="min-width: auto;"
     >
       <svg
@@ -5704,7 +5704,7 @@ exports[`Select Controlled multiple values 3`] = `
 
 exports[`Select Controlled multiple values 4`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5913,6 +5913,15 @@ exports[`Select Controlled multiple with empty results 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -5921,15 +5930,6 @@ exports[`Select Controlled multiple with empty results 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -6242,7 +6242,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
 
 exports[`Select Controlled multiple with empty results 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -6719,6 +6719,15 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -6727,15 +6736,6 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {

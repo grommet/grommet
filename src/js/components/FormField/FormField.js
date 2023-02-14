@@ -9,7 +9,12 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { containsFocus, shouldKeepFocus } from '../../utils/DOM';
+import {
+  containsFocus,
+  shouldKeepFocus,
+  withinDropPortal,
+  PortalContext,
+} from '../../utils';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -34,12 +39,16 @@ const grommetInputNames = [
   'FileInput',
   'RadioButtonGroup',
   'RangeInput',
+  'RangeSelector',
+  'StarRating',
+  'ThumbsRating',
 ];
 const grommetInputPadNames = [
   'CheckBox',
   'CheckBoxGroup',
   'RadioButtonGroup',
   'RangeInput',
+  'RangeSelector',
 ];
 
 const isGrommetInput = (comp) =>
@@ -67,6 +76,17 @@ const RequiredText = styled(Text)`
   color: inherit;
   font-weight: inherit;
   line-height: inherit;
+`;
+
+const ScreenReaderOnly = styled(Text)`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 `;
 
 const Message = ({ error, info, message, type, ...rest }) => {
@@ -191,12 +211,15 @@ const FormField = forwardRef(
       required,
       validate,
     });
+    const formKind = formContext.kind;
     const [focus, setFocus] = useState();
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
     const debounce = useDebounce();
+
+    const portalContext = useContext(PortalContext);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -334,7 +357,10 @@ const FormField = forwardRef(
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
 
-    const labelStyle = { ...formFieldTheme.label };
+    let labelStyle;
+    if (formKind) {
+      labelStyle = { ...formFieldTheme[formKind].label };
+    } else labelStyle = { ...formFieldTheme.label };
 
     if (disabled) {
       labelStyle.color =
@@ -450,10 +476,17 @@ const FormField = forwardRef(
 
     let { requiredIndicator } = theme.formField.label;
     if (requiredIndicator === true)
-      // a11yTitle necessary so screenreader announces as "required"
-      // as opposed to "star"
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
-      requiredIndicator = <RequiredText a11yTitle="required">*</RequiredText>;
+      // this approach allows the required indicator to be hidden visually,
+      // but present for assistive tech.
+      // using aria-hidden so screen does not read out "star" and
+      // just reads out "required"
+      requiredIndicator = (
+        <>
+          <RequiredText aria-hidden="true">*</RequiredText>
+          <ScreenReaderOnly>required</ScreenReaderOnly>
+        </>
+      );
 
     let showRequiredIndicator = required && requiredIndicator;
     if (typeof required === 'object' && required.indicator === false)
@@ -463,17 +496,34 @@ const FormField = forwardRef(
       <FormFieldBox
         ref={formFieldRef}
         className={className}
+        flex={false}
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
         onFocus={(event) => {
-          setFocus(containsFocus(formFieldRef.current) && shouldKeepFocus());
+          const root = formFieldRef.current?.getRootNode();
+          if (root) {
+            setFocus(
+              containsFocus(formFieldRef.current) && shouldKeepFocus(root),
+            );
+          }
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
           setFocus(false);
-          if (contextOnBlur) contextOnBlur(event);
+
+          // if input has a drop and focus is within drop
+          // prevent onBlur validation from running until
+          // focus is no longer within the drop or input
+          if (
+            contextOnBlur &&
+            !formFieldRef.current.contains(event.relatedTarget) &&
+            !withinDropPortal(event.relatedTarget, portalContext)
+          ) {
+            contextOnBlur(event);
+          }
+
           if (onBlur) onBlur(event);
         }}
         onChange={

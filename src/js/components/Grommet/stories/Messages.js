@@ -24,8 +24,13 @@ export const Messages = () => (
       <Heading level={2}>Custom messages</Heading>
       <Box width="medium">
         <Form validate="blur">
-          <FormField name="name" label="Name" required />
-          <FileInput />
+          <FormField
+            name="name"
+            label="Name"
+            aria-label="form field"
+            required
+          />
+          <FileInput aria-label="file input" />
         </Form>
       </Box>
     </Grommet>
@@ -37,8 +42,13 @@ export const Messages = () => (
       <Heading level={2}>Message function</Heading>
       <Box width="medium">
         <Form validate="blur">
-          <FormField name="name" label="Name" required />
-          <FileInput />
+          <FormField
+            name="name"
+            label="Name"
+            aria-label="form field"
+            required
+          />
+          <FileInput aria-label="file input" />
         </Form>
       </Box>
     </Grommet>

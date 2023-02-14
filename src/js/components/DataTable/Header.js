@@ -375,7 +375,11 @@ const Header = forwardRef(
               // will be wrapped with an additional Box, preventing this Box
               // from automatically filling the vertical space.
               content = (
-                <Box flex="grow" fill={onResize || search ? 'vertical' : false}>
+                <Box
+                  flex="grow"
+                  fill={onResize || search ? 'vertical' : false}
+                  justify={(!align && 'center') || align}
+                >
                   {content}
                 </Box>
               );

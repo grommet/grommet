@@ -654,7 +654,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 exports[`Select Clear option renders - bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -917,7 +917,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1172,7 +1172,7 @@ exports[`Select Clear option renders custom label 1`] = `
 
 exports[`Select Clear option renders custom label 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1563,7 +1563,7 @@ exports[`Select Clear option renders- top 1`] = `
 
 exports[`Select Clear option renders- top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1772,6 +1772,15 @@ exports[`Select Search timeout 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1780,15 +1789,6 @@ exports[`Select Search timeout 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -2167,6 +2167,15 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2175,15 +2184,6 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -2911,17 +2911,17 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hMXKog"
+    class="StyledBox-sc-13pk1d4-0 kOZkFt"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hWKKwG"
+      class="StyledBox-sc-13pk1d4-0 iPozMX"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2932,7 +2932,7 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 kXoZXT"
+      class="StyledBox-sc-13pk1d4-0 cOTiXC"
       style="min-width: auto;"
     >
       <svg
@@ -3157,7 +3157,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3392,6 +3392,15 @@ exports[`Select dark 1`] = `
   width: 100%;
 }
 
+.c8 {
+  cursor: pointer;
+}
+
+.c3 {
+  border: 1px solid rgba(255,255,255,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3400,15 +3409,6 @@ exports[`Select dark 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c8 {
-  cursor: pointer;
-}
-
-.c3 {
-  border: 1px solid rgba(255,255,255,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -3676,6 +3676,15 @@ exports[`Select default value 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3684,15 +3693,6 @@ exports[`Select default value 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -4140,7 +4140,7 @@ exports[`Select default value clear 1`] = `
 
 exports[`Select default value clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4349,6 +4349,15 @@ exports[`Select default value object options 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4357,15 +4366,6 @@ exports[`Select default value object options 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -4711,17 +4711,17 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hMXKog"
+    class="StyledBox-sc-13pk1d4-0 kOZkFt"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hWKKwG"
+      class="StyledBox-sc-13pk1d4-0 iPozMX"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 fLRsZH"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 fLRsZH"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4732,7 +4732,7 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 kXoZXT"
+      class="StyledBox-sc-13pk1d4-0 cOTiXC"
       style="min-width: auto;"
     >
       <svg
@@ -4954,6 +4954,15 @@ exports[`Select disabled key 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4962,15 +4971,6 @@ exports[`Select disabled key 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -5330,7 +5330,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5633,7 +5633,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5935,6 +5935,15 @@ exports[`Select keyboard navigation timeout 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -5943,15 +5952,6 @@ exports[`Select keyboard navigation timeout 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -6725,16 +6725,6 @@ exports[`Select modifies select control style on open 1`] = `
   width: 100%;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   cursor: pointer;
 }
@@ -6743,6 +6733,16 @@ exports[`Select modifies select control style on open 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   background: purple;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -7280,6 +7280,15 @@ exports[`Select onChange with valueKey object 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -7288,15 +7297,6 @@ exports[`Select onChange with valueKey object 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -7609,7 +7609,7 @@ exports[`Select onChange with valueKey object 2`] = `
 
 exports[`Select onChange with valueKey object 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -7819,6 +7819,15 @@ exports[`Select onChange with valueKey object 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -7827,15 +7836,6 @@ exports[`Select onChange with valueKey object 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -8114,6 +8114,15 @@ exports[`Select onChange with valueKey string 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -8122,15 +8131,6 @@ exports[`Select onChange with valueKey string 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -8442,7 +8442,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8652,6 +8652,15 @@ exports[`Select onChange with valueKey string 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -8660,15 +8669,6 @@ exports[`Select onChange with valueKey string 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -8898,6 +8898,15 @@ exports[`Select onChange with valueLabel 1`] = `
   border: 0;
 }
 
+.c5 {
+  display: none;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -8906,15 +8915,6 @@ exports[`Select onChange with valueLabel 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
-  display: none;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -9222,7 +9222,7 @@ exports[`Select onChange with valueLabel 2`] = `
 
 exports[`Select onChange with valueLabel 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9432,6 +9432,15 @@ exports[`Select onChange without labelKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -9440,15 +9449,6 @@ exports[`Select onChange without labelKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -9761,7 +9761,7 @@ exports[`Select onChange without labelKey 2`] = `
 
 exports[`Select onChange without labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9971,6 +9971,15 @@ exports[`Select onChange without labelKey 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -9979,15 +9988,6 @@ exports[`Select onChange without labelKey 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -10266,6 +10266,15 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -10274,15 +10283,6 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -10594,7 +10594,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 
 exports[`Select onChange without labelKey or valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -10804,6 +10804,15 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -10812,15 +10821,6 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -11099,6 +11099,15 @@ exports[`Select onChange without valueKey 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11107,15 +11116,6 @@ exports[`Select onChange without valueKey 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -11427,7 +11427,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -11637,6 +11637,15 @@ exports[`Select onChange without valueKey 4`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -11645,15 +11654,6 @@ exports[`Select onChange without valueKey 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -12573,17 +12573,17 @@ exports[`Select prop: onOpen 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hMXKog"
+    class="StyledBox-sc-13pk1d4-0 kOZkFt"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hWKKwG"
+      class="StyledBox-sc-13pk1d4-0 iPozMX"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -12594,7 +12594,7 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 kXoZXT"
+      class="StyledBox-sc-13pk1d4-0 cOTiXC"
       style="min-width: auto;"
     >
       <svg
@@ -12862,7 +12862,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12885,7 +12885,7 @@ exports[`Select prop: onOpen 5`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bvLkDM"
+      class="StyledBox-sc-13pk1d4-0 dvWSTN"
     >
       <span
         class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -12904,7 +12904,7 @@ exports[`Select prop: onOpen 5`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bvLkDM"
+      class="StyledBox-sc-13pk1d4-0 dvWSTN"
     >
       <span
         class="StyledText-sc-1sadyjn-0 dJnVGQ"
@@ -12914,7 +12914,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 SWGaz"
+    class="StyledBox-sc-13pk1d4-0 bjATWi"
   />
 </div>
 `;
@@ -13388,6 +13388,15 @@ exports[`Select renders custom up and down icons 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -13396,15 +13405,6 @@ exports[`Select renders custom up and down icons 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -13478,17 +13478,17 @@ exports[`Select renders custom up and down icons 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hWKKwG"
+        class="StyledBox-sc-13pk1d4-0 iPozMX"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -13498,7 +13498,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 kXoZXT"
+        class="StyledBox-sc-13pk1d4-0 cOTiXC"
         style="min-width: auto;"
       >
         .c0 {
@@ -14039,6 +14039,15 @@ exports[`Select renders styled select options backwards compatible with legacy
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14047,15 +14056,6 @@ exports[`Select renders styled select options backwards compatible with legacy
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -14324,6 +14324,15 @@ exports[`Select renders styled select options combining select.options.box &&
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14332,15 +14341,6 @@ exports[`Select renders styled select options combining select.options.box &&
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -14607,6 +14607,15 @@ exports[`Select renders styled select options using select.options.container 1`]
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -14615,15 +14624,6 @@ exports[`Select renders styled select options using select.options.container 1`]
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -15546,7 +15546,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -15556,7 +15556,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value=""
 />
@@ -15565,7 +15565,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value="o"
 />
@@ -16194,7 +16194,7 @@ exports[`Select search and select 2`] = `
 
 exports[`Select search and select 3`] = `
 "@media only screen and (max-width: 768px) {
-  .kXoZXT {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -16204,7 +16204,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value=""
 />
@@ -16213,7 +16213,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value="t"
 />
@@ -17971,6 +17971,15 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -17979,15 +17988,6 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -18064,17 +18064,17 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hWKKwG"
+        class="StyledBox-sc-13pk1d4-0 iPozMX"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -18085,7 +18085,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 kXoZXT"
+        class="StyledBox-sc-13pk1d4-0 cOTiXC"
         style="min-width: auto;"
       >
         <svg
@@ -18308,6 +18308,15 @@ exports[`Select selected 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -18316,15 +18325,6 @@ exports[`Select selected 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -18590,6 +18590,15 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -18598,15 +18607,6 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -18916,6 +18916,15 @@ exports[`Select should not have accessibility violations 1`] = `
   width: 100%;
 }
 
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -18924,15 +18933,6 @@ exports[`Select should not have accessibility violations 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c7 {
-  cursor: pointer;
-}
-
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {

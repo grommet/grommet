@@ -2,6 +2,7 @@ import React, {
   Children,
   forwardRef,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -13,14 +14,18 @@ import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
+import { SkeletonContext, useSkeleton } from '../Skeleton';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 
 const Box = forwardRef(
   (
     {
       a11yTitle,
-      background,
+      background: backgroundProp,
       border,
       children,
+      cssGap, // internal for now
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
@@ -37,11 +42,29 @@ const Box = forwardRef(
       width, // munged to avoid styled-components putting it in the DOM
       height, // munged to avoid styled-components putting it in the DOM
       tabIndex,
+      skeleton: skeletonProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    // boxOptions was created to preserve backwards compatibility but
+    // should not be supported in v3
+    const { box: boxOptions } = useContext(OptionsContext);
+
+    const skeleton = useSkeleton();
+
+    let background = backgroundProp;
+
+    const announce = useContext(AnnounceContext);
+
+    useEffect(() => {
+      if (skeletonProp?.message?.start) announce(skeletonProp.message.start);
+      else if (typeof skeletonProp?.message === 'string')
+        announce(skeletonProp.message);
+      return () =>
+        skeletonProp?.message?.end && announce(skeletonProp.message.end);
+    }, [announce, skeletonProp]);
 
     const focusable = useMemo(
       () => onClick && !(tabIndex < 0),
@@ -85,7 +108,14 @@ const Box = forwardRef(
     }
 
     let contents = children;
-    if (gap && gap !== 'none') {
+    if (
+      gap &&
+      gap !== 'none' &&
+      (!(boxOptions?.cssGap || cssGap) ||
+        // need this approach to show border between
+        border === 'between' ||
+        border?.side === 'between')
+    ) {
       const boxAs = !as && tag ? tag : as;
       contents = [];
       let firstIndex;
@@ -109,6 +139,46 @@ const Box = forwardRef(
         }
         contents.push(child);
       });
+    }
+
+    const nextSkeleton = useMemo(() => {
+      // Decide if we need to add a new SkeletonContext. We need one if:
+      //   1. skeleton info was set in a property OR
+      //   2. there already is a SkeletonContext but this box has a
+      //      background or border. This means the box probably is more
+      //      distinguishable from the area around it.
+      // We keep track of a depth so we know how to alternate backgrounds.
+      if (skeletonProp || ((background || border) && skeleton)) {
+        const depth = skeleton ? skeleton.depth + 1 : 0;
+        return {
+          ...skeleton,
+          depth,
+          ...(typeof skeletonProp === 'object' ? skeletonProp : {}),
+        };
+      }
+      return undefined;
+    }, [background, border, skeleton, skeletonProp]);
+
+    let skeletonProps = {};
+    if (nextSkeleton) {
+      const {
+        colors: skeletonThemeColors,
+        size: skeletonThemeSize,
+        ...skeletonThemeProps
+      } = theme.skeleton;
+      const skeletonColors = nextSkeleton.colors
+        ? nextSkeleton.colors[theme.dark ? 'dark' : 'light']
+        : skeletonThemeColors?.[theme.dark ? 'dark' : 'light'];
+      skeletonProps = { ...skeletonThemeProps };
+      background = skeletonColors[nextSkeleton.depth % skeletonColors.length];
+      if (skeletonProp?.animation) {
+        skeletonProps.animation = skeletonProp.animation;
+      }
+      contents = (
+        <SkeletonContext.Provider value={nextSkeleton}>
+          {contents}
+        </SkeletonContext.Provider>
+      );
     }
 
     // construct a new theme object in case we have a background that wants
@@ -143,6 +213,14 @@ const Box = forwardRef(
         elevationProp={elevation}
         fillProp={fill}
         focus={focus}
+        gap={
+          (boxOptions?.cssGap || cssGap) &&
+          gap &&
+          gap !== 'none' &&
+          border !== 'between' &&
+          border?.side !== 'between' &&
+          gap
+        }
         kindProp={kind}
         overflowProp={overflow}
         wrapProp={wrap}
@@ -152,6 +230,7 @@ const Box = forwardRef(
         tabIndex={adjustedTabIndex}
         {...clickProps}
         {...rest}
+        {...skeletonProps}
       >
         <ThemeContext.Provider value={nextTheme}>
           {contents}

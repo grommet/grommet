@@ -24,6 +24,9 @@ exports[`Form controlled controlled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -213,17 +216,17 @@ exports[`Form controlled controlled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value="v"
@@ -247,17 +250,17 @@ exports[`Form controlled controlled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value="v"
@@ -321,6 +324,9 @@ exports[`Form controlled controlled Array of Form Fields 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -617,20 +623,20 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[0].number"
               placeholder="number test input 1"
               value=""
@@ -639,17 +645,17 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[0].ext"
               placeholder="ext test input 1"
               value=""
@@ -659,20 +665,20 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[1].number"
               placeholder="number test input 2"
               value="123456789"
@@ -681,17 +687,17 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[1].ext"
               placeholder="ext test input 2"
               value=""
@@ -701,20 +707,20 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[2].number"
               placeholder="number test input 3"
               value=""
@@ -723,17 +729,17 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[2].ext"
               placeholder="ext test input 3"
               value="999"
@@ -758,20 +764,20 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[0].number"
               placeholder="number test input 1"
               value=""
@@ -780,17 +786,17 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[0].ext"
               placeholder="ext test input 1"
               value=""
@@ -800,20 +806,20 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[1].number"
               placeholder="number test input 2"
               value="123456789"
@@ -822,17 +828,17 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[1].ext"
               placeholder="ext test input 2"
               value=""
@@ -842,20 +848,20 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[2].number"
               placeholder="number test input 3"
               value=""
@@ -864,17 +870,17 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[2].ext"
               placeholder="ext test input 3"
               value="999"
@@ -939,6 +945,9 @@ exports[`Form controlled controlled Array of Form Fields onValidate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -1193,20 +1202,20 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kyOutD FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cXkhIG FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[0].number"
               placeholder="number test input 1"
               value=""
@@ -1242,17 +1251,17 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
         </span>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[0].ext"
               placeholder="ext test input 1"
               value=""
@@ -1262,20 +1271,20 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kyOutD FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cXkhIG FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[1].number"
               placeholder="number test input 2"
               value=""
@@ -1311,17 +1320,17 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
         </span>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[1].ext"
               placeholder="ext test input 2"
               value=""
@@ -1386,6 +1395,9 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -1640,20 +1652,20 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[0].number"
               placeholder="number test input 1"
               value=""
@@ -1662,17 +1674,17 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[0].ext"
               placeholder="ext test input 1"
               value=""
@@ -1682,20 +1694,20 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hMXKog"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kyOutD FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cXkhIG FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[1].number"
               placeholder="number test input 2"
               value="sadasd"
@@ -1731,17 +1743,17 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
         </span>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+        class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
           >
             <input
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+              class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
               name="phones[1].ext"
               placeholder="ext test input 2"
               value=""
@@ -1784,6 +1796,9 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -1988,7 +2003,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <label
         class="StyledText-sc-1sadyjn-0 kKrMsX"
@@ -1997,14 +2012,14 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             id="test"
             name="test"
             value="v"
@@ -2028,7 +2043,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <label
         class="StyledText-sc-1sadyjn-0 kKrMsX"
@@ -2037,14 +2052,14 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             id="test"
             name="test"
             value="v"
@@ -2086,6 +2101,9 @@ exports[`Form controlled controlled input 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2275,17 +2293,17 @@ exports[`Form controlled controlled input 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value="v"
@@ -2309,17 +2327,17 @@ exports[`Form controlled controlled input 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value="v"
@@ -2361,6 +2379,9 @@ exports[`Form controlled controlled input lazy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2550,17 +2571,17 @@ exports[`Form controlled controlled input lazy 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value="v"
@@ -2584,17 +2605,17 @@ exports[`Form controlled controlled input lazy 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value="v"
@@ -2636,6 +2657,9 @@ exports[`Form controlled controlled lazy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2825,17 +2849,17 @@ exports[`Form controlled controlled lazy 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value="v"
@@ -2859,17 +2883,17 @@ exports[`Form controlled controlled lazy 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value="v"
@@ -2911,6 +2935,9 @@ exports[`Form controlled controlled onChange touched 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -3118,6 +3145,9 @@ exports[`Form controlled controlled onValidate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -3307,17 +3337,17 @@ exports[`Form controlled controlled onValidate 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kyOutD FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cXkhIG FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value=""
@@ -3386,6 +3416,9 @@ exports[`Form controlled controlled onValidate custom error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -3575,17 +3608,17 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kyOutD FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cXkhIG FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value=""
@@ -3654,6 +3687,9 @@ exports[`Form controlled controlled onValidate custom info 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -3843,17 +3879,17 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value=""
@@ -3894,6 +3930,274 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
 </div>
 `;
 
+exports[`Form controlled custom theme 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c5:hover input:not([disabled]) + div,
+.c5:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c7 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c2 {
+  margin-bottom: 6px;
+  font-size: 22px;
+  line-height: 28px;
+  color: red;
+  font-weight: 400;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        custom theme label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+          role="radiogroup"
+        >
+          <label
+            class="c5"
+            for="like"
+          >
+            <div
+              class="c6 "
+            >
+              <input
+                class="c7"
+                id="like"
+                name="test"
+                tabindex="0"
+                type="radio"
+                value="like"
+              />
+              <svg
+                aria-label="Like"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 23h19c2 0 3-1 3-3V10h-7V4c0-2-1-3-3-3h-2s-.016 6-.016 7.326C10.984 9.652 10 11 8 11H1v12zm5 0V11"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </label>
+          <div
+            class="c9"
+          />
+          <label
+            class="c5"
+            for="dislike"
+          >
+            <div
+              class="c6 "
+            >
+              <input
+                class="c7"
+                id="dislike"
+                name="test"
+                tabindex="-1"
+                type="radio"
+                value="dislike"
+              />
+              <svg
+                aria-label="Dislike"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 1H4C2 1 1 2 1 4v10h7v6c0 2 1 3 3 3h2s.016-6 .016-7.326C13.016 14.348 14 13 16 13h7V1zm-5 0v12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`Form controlled dynamicly removed fields using blur validation
   don't keep validation errors 1`] = `
 .c0 {
@@ -3919,6 +4223,9 @@ exports[`Form controlled dynamicly removed fields using blur validation
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -4273,17 +4580,17 @@ exports[`Form controlled dynamicly removed fields using blur validation
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="name"
             placeholder="test name"
             value=""
@@ -4292,17 +4599,17 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dkAvei FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 zPnFT FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kDPESC"
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bLhmeR StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+            class="StyledBox-sc-13pk1d4-0 bGaxyQ StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 kLqSaO"
@@ -4310,7 +4617,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 iLToWO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+              class="StyledBox-sc-13pk1d4-0 keyMln StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
             >
               .c0 {
   box-sizing: border-box;
@@ -4379,6 +4686,9 @@ exports[`Form controlled dynamicly removed fields using blur validation
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c1 {
@@ -4513,17 +4823,17 @@ exports[`Form controlled dynamicly removed fields using blur validation
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jHsdrv FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="name"
             placeholder="test name"
             value=""
@@ -4532,17 +4842,17 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 YRIKN FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dkAvei FormField__FormFieldContentBox-sc-m9hood-1 dSTFCs"
+        class="StyledBox-sc-13pk1d4-0 zPnFT FormField__FormFieldContentBox-sc-m9hood-1 dSTFCs"
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hAWvdE"
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 bLhmeR StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
+            class="StyledBox-sc-13pk1d4-0 bGaxyQ StyledCheckBox-sc-1dbk5ju-6 dsgBHs"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 kLqSaO"
@@ -4550,7 +4860,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 ffvzbe StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
+              class="StyledBox-sc-13pk1d4-0 dXyapD StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWmhSy"
             />
           </div>
           <span>

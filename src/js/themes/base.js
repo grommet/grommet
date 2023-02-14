@@ -430,6 +430,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       gap: 'small',
+      // icon: {
+      //   size: {
+      //     small: undefined,
+      //     medium: undefined,
+      //     large: undefined,
+      //   },
+      // },
       size: {
         small: {
           border: {
@@ -439,6 +446,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
         medium: {
           border: {
@@ -448,6 +458,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth}px`, // 22px
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
         large: {
           border: {
@@ -457,6 +470,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 + borderWidth}px`, // 8px
             horizontal: `${baseSpacing + borderWidth * 4}px`, // 32px,
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
       },
       border: {
@@ -469,7 +485,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   icon: undefined,
@@ -482,11 +500,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // primary: {
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -497,11 +517,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // secondary: {
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -514,6 +536,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -558,6 +581,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         timing: 'ease-in-out',
         duration: 0.1,
         properties: ['color', 'background-color', 'border-color', 'box-shadow'],
+      },
+      skeleton: {
+        width: { min: '100px' },
       },
     },
     calendar: {
@@ -604,6 +630,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       header: {},
       body: {},
       footer: {},
+    },
+    cards: {
+      container: {
+        // any box props
+        gap: 'xsmall',
+        // extend: undefined,
+      },
     },
     carousel: {
       icons: {
@@ -934,6 +967,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       margin: { bottom: 'small' },
       // round: undefined,
+      survey: {
+        label: {
+          margin: { bottom: 'xsmall' },
+          size: 'medium',
+          weight: 400,
+        },
+      },
     },
     grommet: {
       // extend: undefined
@@ -1012,6 +1052,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
+      skeleton: {
+        width: { min: '150px', max: '200px' },
+      },
     },
     layer: {
       background: {
@@ -1029,6 +1072,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
+        // backdropFilter: undefined,
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '20',
@@ -1495,6 +1539,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
+    thumbsRating: {
+      // dislike: {
+      //   color: undefined,
+      // },
+      // like: {
+      //   color: undefined,
+      // },
+    },
     spinner: {
       container: {
         animation: 'rotateRight',
@@ -1638,6 +1690,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     selectMultiple: {
       maxInline: 5,
     },
+    skeleton: {
+      border: false,
+      colors: {
+        dark: ['background', 'background-front'],
+        light: ['background', 'background-back'],
+      },
+    },
     skipLinks: {
       position: 'top',
       container: {
@@ -1649,6 +1708,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { bottom: 'medium' },
         size: 'medium',
       },
+    },
+    starRating: {
+      // color: undefined,
     },
     tab: {
       active: {
@@ -1805,6 +1867,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       '4xl': { ...fontSizing(9) },
       '5xl': { ...fontSizing(13) },
       '6xl': { ...fontSizing(18) },
+      skeleton: {
+        width: { width: '100px', min: '100px' },
+        margin: { vertical: 'xsmall' },
+        colors: {
+          dark: ['border', 'border'],
+          light: ['background-front', 'background-back'],
+        },
+      },
     },
     textArea: {
       // extend: undefined,

@@ -25,6 +25,9 @@ exports[`FormField abut 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -91,6 +94,9 @@ exports[`FormField abut with margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -156,6 +162,9 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -423,6 +432,9 @@ exports[`FormField contentProps 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -591,6 +603,9 @@ exports[`FormField custom error and info icon and container 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -852,6 +867,9 @@ exports[`FormField custom formfield 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -922,6 +940,9 @@ exports[`FormField custom input margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -1072,6 +1093,9 @@ exports[`FormField custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -1212,6 +1236,9 @@ exports[`FormField default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -1344,6 +1371,9 @@ exports[`FormField disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -1484,6 +1514,9 @@ exports[`FormField disabled with custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -1629,6 +1662,9 @@ exports[`FormField empty margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -1695,6 +1731,9 @@ exports[`FormField error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -1776,6 +1815,9 @@ exports[`FormField help 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -1854,6 +1896,9 @@ exports[`FormField htmlFor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -1920,6 +1965,9 @@ exports[`FormField info 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2001,6 +2049,9 @@ exports[`FormField label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -2081,6 +2132,9 @@ exports[`FormField margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2147,6 +2201,9 @@ exports[`FormField pad 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2220,6 +2277,9 @@ exports[`FormField pad with border undefined 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -2361,6 +2421,9 @@ exports[`FormField required 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2496,6 +2559,9 @@ exports[`FormField should have no accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2562,6 +2628,9 @@ exports[`FormField should not render asterisk when required.indicator === false 
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -2703,9 +2772,12 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2734,7 +2806,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   line-height: 24px;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2752,33 +2824,33 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   border: none;
 }
 
-.c7::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-moz-placeholder {
+.c8::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c7:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c8::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c7::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c7:-moz-placeholder,
-.c7::-moz-placeholder {
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c7 {
   position: relative;
   width: 100%;
 }
@@ -2789,6 +2861,18 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   line-height: inherit;
 }
 
+.c5 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin-bottom: 6px;
@@ -2796,7 +2880,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -2813,21 +2897,26 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
       >
         label
         <span
-          aria-label="required"
+          aria-hidden="true"
           class="c3 c4"
         >
           *
         </span>
+        <span
+          class="c3 c5"
+        >
+          required
+        </span>
       </label>
       <div
-        class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
+        class="c6 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="c6"
+          class="c7"
         >
           <input
             autocomplete="off"
-            class="c7"
+            class="c8"
             value=""
           />
         </div>
@@ -2896,6 +2985,9 @@ exports[`FormField should render custom indicator when requiredIndicator is
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c4 {
