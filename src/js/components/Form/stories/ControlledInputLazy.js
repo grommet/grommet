@@ -53,15 +53,17 @@ export const ControlledInputLazy = () => {
             console.log('Submit', event.value, event.touched)
           }
         >
-          <FormField label="Name" name="name">
+          <FormField label="Name" htmlFor="name" name="name">
             <TextInput
+              id="name"
               name="name"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
           </FormField>
-          <FormField label="Email" name="email" required>
+          <FormField label="Email" htmlFor="email" name="email" required>
             <MaskedInput
+              id="email"
               name="email"
               mask={[
                 { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
@@ -90,23 +92,27 @@ export const ControlledInputLazy = () => {
               onChange={(event) => setAmpm(event.target.value)}
             />
           </FormField>
-          <FormField label="Size" name="size">
+          <FormField label="Size" htmlFor="size" name="size">
             <Select
+              id="size"
+              aria-label="size"
               name="size"
               options={['small', 'medium', 'large']}
               value={size}
               onChange={(event) => setSize(event.option)}
             />
           </FormField>
-          <FormField label="Comments" name="comments">
+          <FormField label="Comments" htmlFor="comments" name="comments">
             <TextArea
+              id="comments"
               name="comments"
               value={comments}
               onChange={(event) => setComments(event.target.value)}
             />
           </FormField>
-          <FormField label="Age" name="age" pad>
+          <FormField label="Age" htmlFor="age" name="age" pad>
             <RangeInput
+              id="age"
               name="age"
               min={15}
               max={75}

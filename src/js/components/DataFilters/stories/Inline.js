@@ -6,6 +6,7 @@ import {
   DataFilter,
   DataSearch,
   DataSort,
+  DataView,
   Notification,
 } from 'grommet';
 
@@ -20,8 +21,15 @@ export const Inline = () => (
       status="info"
       message="Data is in 'beta'. The API surface is subject to change."
     />
-    <Data data={DATA}>
+    <Data
+      data={DATA}
+      views={[
+        { name: 'latest', sort: { property: 'date', direction: 'desc' } },
+        { name: 'behind', properties: { percent: { min: 0, max: 30 } } },
+      ]}
+    >
       <DataFilters>
+        <DataView />
         <DataSearch />
         <DataFilter property="location" />
         <DataFilter property="percent" />

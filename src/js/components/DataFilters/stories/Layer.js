@@ -15,7 +15,10 @@ export const Layer = () => (
     />
     <Data data={DATA}>
       <DataFilters layer>
+        <DataFilter property="name" />
         <DataFilter property="location" />
+        <DataFilter property="percent" />
+        <DataFilter property="paid" />
       </DataFilters>
     </Data>
   </Box>
