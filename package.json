@@ -43,6 +43,7 @@
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
     "start": "webpack serve --config ./e2e/webpack.config.js --mode development",
     "test-e2e": "testcafe chrome:headless e2e/tests",
+    "test-e2e-ci": "testcafe chrome:headless e2e/tests -r xunit:/tmp/test-results/testcafe/results.xml",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
     "chromatic": "chromatic -t f1924d8a65df"
@@ -141,6 +142,7 @@
     "tarball-extract": "^0.0.6",
     "testcafe": "^2.2.0",
     "testcafe-react-selectors": "^5.0.2",
+    "testcafe-reporter-xunit": "^2.2.2",
     "ts-jest": "^29.0.4",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
