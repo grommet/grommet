@@ -44,6 +44,8 @@ var ValidateOnMount = function ValidateOnMount() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "First Name",
+      htmlFor: "firstName",
+      id: "firstName",
       name: "firstName",
       required: true,
       validate: [{
@@ -54,6 +56,8 @@ var ValidateOnMount = function ValidateOnMount() {
       }]
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Last Name",
+      htmlFor: "lastName",
+      id: "lastName",
       name: "lastName",
       required: true,
       validate: [{

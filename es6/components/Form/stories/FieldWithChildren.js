@@ -43,15 +43,19 @@ export var FieldWithChildren = function FieldWithChildren() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "Name",
+      htmlFor: "name",
       name: "name",
       required: true
     }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "name",
       name: "name"
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Email",
+      htmlFor: "email",
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      id: "email",
       name: "email",
       mask: [{
         regexp: /^[\w\-_.]+$/,
@@ -88,21 +92,28 @@ export var FieldWithChildren = function FieldWithChildren() {
       options: ['morning', 'evening']
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Size",
+      htmlFor: "size",
       name: "size"
     }, /*#__PURE__*/React.createElement(Select, {
+      id: "size",
+      "aria-label": "size",
       name: "size",
       multiple: true,
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Comments",
+      htmlFor: "comments",
       name: "comments"
     }, /*#__PURE__*/React.createElement(TextArea, {
+      id: "comments",
       name: "comments"
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Age",
+      htmlFor: "age",
       name: "age",
       pad: true
     }, /*#__PURE__*/React.createElement(RangeInput, {
+      id: "age",
       name: "age",
       min: 15,
       max: 75

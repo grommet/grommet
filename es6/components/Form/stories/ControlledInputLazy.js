@@ -59,8 +59,10 @@ export var ControlledInputLazy = function ControlledInputLazy() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "Name",
+      htmlFor: "name",
       name: "name"
     }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "name",
       name: "name",
       value: name,
       onChange: function onChange(event) {
@@ -68,9 +70,11 @@ export var ControlledInputLazy = function ControlledInputLazy() {
       }
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Email",
+      htmlFor: "email",
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      id: "email",
       name: "email",
       mask: [{
         regexp: /^[\w\-_.]+$/,
@@ -110,8 +114,11 @@ export var ControlledInputLazy = function ControlledInputLazy() {
       }
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Size",
+      htmlFor: "size",
       name: "size"
     }, /*#__PURE__*/React.createElement(Select, {
+      id: "size",
+      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large'],
       value: size,
@@ -120,8 +127,10 @@ export var ControlledInputLazy = function ControlledInputLazy() {
       }
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Comments",
+      htmlFor: "comments",
       name: "comments"
     }, /*#__PURE__*/React.createElement(TextArea, {
+      id: "comments",
       name: "comments",
       value: comments,
       onChange: function onChange(event) {
@@ -129,9 +138,11 @@ export var ControlledInputLazy = function ControlledInputLazy() {
       }
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Age",
+      htmlFor: "age",
       name: "age",
       pad: true
     }, /*#__PURE__*/React.createElement(RangeInput, {
+      id: "age",
       name: "age",
       min: 15,
       max: 75,

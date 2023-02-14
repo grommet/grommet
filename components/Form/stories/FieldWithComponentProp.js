@@ -29,6 +29,8 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Name",
+      htmlFor: "name",
+      id: "name",
       name: "name",
       required: true,
       validate: [{
@@ -45,11 +47,15 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
       }]
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Email",
+      htmlFor: "email",
+      id: "email",
       name: "email",
       type: "email",
       required: true
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Employee ID",
+      htmlFor: "employeeId",
+      id: "employeeId",
       name: "employeeId",
       required: true,
       validate: {
@@ -66,6 +72,9 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
       options: ['morning', 'evening']
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Size",
+      htmlFor: "size",
+      id: "size",
+      "aria-label": "size",
       name: "size",
       component: _grommet.Select,
       onChange: function onChange(event) {
@@ -74,10 +83,14 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
       options: ['small', 'medium', 'large', 'xlarge']
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Comments",
+      htmlFor: "comments",
+      id: "comments",
       name: "comments",
       component: _grommet.TextArea
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Age",
+      htmlFor: "age",
+      id: "age",
       name: "age",
       component: _grommet.RangeInput,
       pad: true,
@@ -85,10 +98,14 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
       max: 75
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "File",
+      htmlFor: "file",
+      id: "file",
       name: "file",
       component: _grommet.FileInput
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Custom",
+      htmlFor: "custom",
+      id: "custom",
       name: "custom",
       component: function component(props) {
         return /*#__PURE__*/_react["default"].createElement("input", props);

@@ -38,6 +38,8 @@ export var ValidateOnMount = function ValidateOnMount() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "First Name",
+      htmlFor: "firstName",
+      id: "firstName",
       name: "firstName",
       required: true,
       validate: [{
@@ -48,6 +50,8 @@ export var ValidateOnMount = function ValidateOnMount() {
       }]
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "Last Name",
+      htmlFor: "lastName",
+      id: "lastName",
       name: "lastName",
       required: true,
       validate: [{

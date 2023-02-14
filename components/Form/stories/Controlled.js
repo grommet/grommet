@@ -45,8 +45,10 @@ var Controlled = function Controlled() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Name",
+      htmlFor: "name",
       name: "name"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      id: "name",
       name: "name",
       suggestions: suggestions
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
@@ -83,20 +85,27 @@ var Controlled = function Controlled() {
       options: ['morning', 'evening']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Size",
+      htmlFor: "size",
       name: "size"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+      id: "size",
+      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Comments",
+      htmlFor: "comments",
       name: "comments"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
+      id: "comments",
       name: "comments"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Age",
+      htmlFor: "age",
       name: "age",
       pad: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
+      id: "age",
       name: "age",
       min: 15,
       max: 75

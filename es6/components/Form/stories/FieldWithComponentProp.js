@@ -24,6 +24,8 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "Name",
+      htmlFor: "name",
+      id: "name",
       name: "name",
       required: true,
       validate: [{
@@ -40,11 +42,15 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
       }]
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "Email",
+      htmlFor: "email",
+      id: "email",
       name: "email",
       type: "email",
       required: true
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "Employee ID",
+      htmlFor: "employeeId",
+      id: "employeeId",
       name: "employeeId",
       required: true,
       validate: {
@@ -61,6 +67,9 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
       options: ['morning', 'evening']
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "Size",
+      htmlFor: "size",
+      id: "size",
+      "aria-label": "size",
       name: "size",
       component: Select,
       onChange: function onChange(event) {
@@ -69,10 +78,14 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
       options: ['small', 'medium', 'large', 'xlarge']
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "Comments",
+      htmlFor: "comments",
+      id: "comments",
       name: "comments",
       component: TextArea
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "Age",
+      htmlFor: "age",
+      id: "age",
       name: "age",
       component: RangeInput,
       pad: true,
@@ -80,10 +93,14 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
       max: 75
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "File",
+      htmlFor: "file",
+      id: "file",
       name: "file",
       component: FileInput
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "Custom",
+      htmlFor: "custom",
+      id: "custom",
       name: "custom",
       component: function component(props) {
         return /*#__PURE__*/React.createElement("input", props);

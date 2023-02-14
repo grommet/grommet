@@ -35,6 +35,8 @@ var ValidateOnChange = function ValidateOnChange() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "First Name",
+      htmlFor: "firstName",
+      id: "firstName",
       name: "firstName",
       required: true,
       validate: [{
@@ -45,6 +47,8 @@ var ValidateOnChange = function ValidateOnChange() {
       }]
     }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Last Name",
+      htmlFor: "lastName",
+      id: "lastName",
       name: "lastName",
       required: true,
       validate: [{
@@ -69,7 +73,9 @@ var ValidateOnChange = function ValidateOnChange() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
       name: "select-size",
+      htmlFor: "select-size",
       id: "select-size",
+      "aria-label": "select-size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",

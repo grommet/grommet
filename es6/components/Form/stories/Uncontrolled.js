@@ -21,15 +21,19 @@ export var Uncontrolled = function Uncontrolled() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "Name",
+      htmlFor: "name",
       name: "name"
     }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "name",
       name: "name",
       suggestions: suggestions
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Email",
+      htmlFor: "email",
       name: "email",
       required: true
     }, /*#__PURE__*/React.createElement(MaskedInput, {
+      id: "email",
       name: "email",
       mask: [{
         regexp: /^[\w\-_.]+$/,
@@ -57,28 +61,37 @@ export var Uncontrolled = function Uncontrolled() {
       options: ['morning', 'evening']
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Size",
+      htmlFor: "size",
       name: "size"
     }, /*#__PURE__*/React.createElement(Select, {
+      id: "size",
+      "aria-label": "size",
       name: "size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Comments",
+      htmlFor: "comments",
       name: "comments"
     }, /*#__PURE__*/React.createElement(TextArea, {
+      id: "comments",
       name: "comments"
     })), /*#__PURE__*/React.createElement(FormField, {
       label: "Age",
+      htmlFor: "age",
       name: "age",
       pad: true
     }, /*#__PURE__*/React.createElement(RangeInput, {
+      id: "age",
       name: "age",
       min: 15,
       max: 75
     })), /*#__PURE__*/React.createElement(FormField, {
       required: true,
       label: "Image",
+      htmlFor: "image",
       name: "image"
     }, /*#__PURE__*/React.createElement(FileInput, {
+      id: "image",
       name: "image"
     })), /*#__PURE__*/React.createElement(Box, {
       direction: "row",

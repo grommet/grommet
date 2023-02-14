@@ -29,6 +29,8 @@ export var ValidateOnChange = function ValidateOnChange() {
       }
     }, /*#__PURE__*/React.createElement(FormField, {
       label: "First Name",
+      htmlFor: "firstName",
+      id: "firstName",
       name: "firstName",
       required: true,
       validate: [{
@@ -39,6 +41,8 @@ export var ValidateOnChange = function ValidateOnChange() {
       }]
     }), /*#__PURE__*/React.createElement(FormField, {
       label: "Last Name",
+      htmlFor: "lastName",
+      id: "lastName",
       name: "lastName",
       required: true,
       validate: [{
@@ -63,7 +67,9 @@ export var ValidateOnChange = function ValidateOnChange() {
       }
     }, /*#__PURE__*/React.createElement(Select, {
       name: "select-size",
+      htmlFor: "select-size",
       id: "select-size",
+      "aria-label": "select-size",
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/React.createElement(Box, {
       direction: "row",

@@ -48,15 +48,19 @@ var FieldWithChildren = function FieldWithChildren() {
       }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Name",
+      htmlFor: "name",
       name: "name",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+      id: "name",
       name: "name"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Email",
+      htmlFor: "email",
       name: "email",
       required: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+      id: "email",
       name: "email",
       mask: [{
         regexp: /^[\w\-_.]+$/,
@@ -93,21 +97,28 @@ var FieldWithChildren = function FieldWithChildren() {
       options: ['morning', 'evening']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Size",
+      htmlFor: "size",
       name: "size"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+      id: "size",
+      "aria-label": "size",
       name: "size",
       multiple: true,
       options: ['small', 'medium', 'large']
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Comments",
+      htmlFor: "comments",
       name: "comments"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
+      id: "comments",
       name: "comments"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
       label: "Age",
+      htmlFor: "age",
       name: "age",
       pad: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
+      id: "age",
       name: "age",
       min: 15,
       max: 75
