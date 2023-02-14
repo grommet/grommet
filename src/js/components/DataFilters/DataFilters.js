@@ -49,7 +49,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   );
 
   const clearControl = badge && (
-    <Box flex={false}>
+    <Box flex={false} margin={{ start: 'small' }}>
       <Button
         label={format({
           id: 'dataFilters.clear',
@@ -63,7 +63,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
     </Box>
   );
 
-  let filters;
+  let content = children;
   if (Children.count(children) === 0) {
     let filtersFor;
     if (!properties && data && data.length)
@@ -75,18 +75,17 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
     else if (typeof properties === 'object')
       filtersFor = Object.keys(properties);
     else filtersFor = [];
-    filters = filtersFor.map((property) => (
+    content = filtersFor.map((property) => (
       <DataFilter key={property} property={property} />
     ));
     if (view?.sort) {
-      filters.push(<DataSort key="_sort" />);
+      content.push(<DataSort key="_sort" />);
     }
   }
 
-  const content = (
+  content = (
     <DataForm
       pad={controlled ? 'medium' : undefined}
-      gap="small"
       onDone={() => setShowContent(false)}
       onTouched={
         controlled
@@ -100,7 +99,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
               }))
           : undefined
       }
-      {...(!controlled ? rest : {})}
+      {...(!controlled ? rest : { fill: 'vertical' })}
     >
       {!drop && (
         <Header>
@@ -121,14 +120,12 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
           )}
         </Header>
       )}
-      {filters}
-      {children}
+      {content}
     </DataForm>
   );
 
   if (!controlled) return content;
 
-  // drop
   let control;
   if (drop) {
     control = (
@@ -167,7 +164,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   }
 
   return (
-    <Box flex={false} direction="row" gap="small" {...rest}>
+    <Box flex={false} direction="row" {...rest}>
       {control}
       {clearControl}
       {layer && showContent && (

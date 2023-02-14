@@ -5,6 +5,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
 import { FormContext } from '../Form/FormContext';
+import { FormField } from '../FormField';
 import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -15,11 +16,14 @@ const dropProps = {
   align: { top: 'bottom', left: 'left' },
 };
 
-const Content = ({ id, ...rest }) => {
+export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
   const { id: dataId, messages, addToolbarKey } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
-  const skeleton = useSkeleton();
   const { format } = useContext(MessageContext);
+  const size = useContext(ResponsiveContext);
+  const skeleton = useSkeleton();
+  const [showContent, setShowContent] = useState();
+  const id = idProp || `${dataId}--search`;
 
   useEffect(() => {
     if (noForm) addToolbarKey('_search');
@@ -29,9 +33,9 @@ const Content = ({ id, ...rest }) => {
     <TextInput
       aria-label={format({
         id: 'dataSearch.label',
-        messages: messages?.DataSearch,
+        messages: messages?.dataSearch,
       })}
-      id={id || `${dataId}--search`}
+      id={id}
       name="_search"
       icon={<Search />}
       type="search"
@@ -40,32 +44,31 @@ const Content = ({ id, ...rest }) => {
   );
 
   if (noForm)
+    // likely in Toolbar
     content = (
       <DataForm footer={false} updateOn="change">
         {content}
       </DataForm>
     );
-
-  return content;
-};
-
-export const DataSearch = ({ drop, id, responsive, ...rest }) => {
-  const { id: dataId, messages } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
-  const { format } = useContext(MessageContext);
-  const size = useContext(ResponsiveContext);
-  const [showContent, setShowContent] = useState();
-
-  let content = <Content id={drop ? undefined : id} />;
-
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+  else
+    content = (
+      <FormField
+        htmlFor={id}
+        label={format({
+          id: 'dataSearch.label',
+          messages: messages?.dataSearch,
+        })}
+      >
+        {content}
+      </FormField>
+    );
 
   if (!drop && (!responsive || (size !== 'small' && size !== 'xsmall')))
     return content;
 
   const control = (
     <DropButton
-      id={id || `${dataId}--search-control`}
+      id={`${dataId}--search-control`}
       aria-label={format({
         id: 'dataSearch.open',
         messages: messages?.dataSort,

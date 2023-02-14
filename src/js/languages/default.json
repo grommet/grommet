@@ -25,7 +25,7 @@
     "submit": "Apply filters"
   },
   "dataSearch": {
-    "label": "Search data",
+    "label": "Search",
     "open": "Open search"
   },
   "dataSort": {
@@ -44,6 +44,9 @@
     "open": "Open column selector",
     "order": "Order columns",
     "select": "Select columns"
+  },
+  "dataView": {
+    "label": "View"
   },
   "fileInput": {
     "browse": "browse",
