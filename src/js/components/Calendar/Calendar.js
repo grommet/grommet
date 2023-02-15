@@ -590,8 +590,8 @@ const Calendar = forwardRef(
       return (
         <Box direction="row" justify="between" align="center">
           <Box flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
-            {theme.calendar.heading && theme.calendar[size].headingSize ? (
-              <Text weight="bold" size={theme.calendar[size].headingSize}>
+            {theme.calendar.heading && theme.calendar[size].titleSize ? (
+              <Text weight="bold" size={theme.calendar[size].titleSize}>
                 {reference.toLocaleDateString(locale, {
                   month: 'long',
                   year: 'numeric',
@@ -599,7 +599,7 @@ const Calendar = forwardRef(
               </Text>
             ) : (
               // theme.calendar.heading.level should be removed in v3 of grommet
-              // theme.calendar[size].headingSize should be used instead
+              // theme.calendar[size].titleSize should be used instead
               <Heading
                 level={
                   size === 'small'

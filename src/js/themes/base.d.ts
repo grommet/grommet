@@ -533,21 +533,21 @@ export interface ThemeType {
     };
     extend?: ExtendType;
     small?: {
-      headingSize?: string;
+      titleSize?: string;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
     };
     medium?: {
-      headingSize?: string;
+      titleSize?: string;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
     };
     large?: {
-      headingSize?: string;
+      titleSize?: string;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
