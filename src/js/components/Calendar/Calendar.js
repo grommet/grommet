@@ -14,6 +14,7 @@ import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { Header } from '../Header';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
@@ -587,19 +588,24 @@ const Calendar = forwardRef(
           ? theme.calendar.icons.small.next
           : theme.calendar.icons.next;
 
+      const monthAndYear = reference.toLocaleDateString(locale, {
+        month: 'long',
+        year: 'numeric',
+      });
+
       return (
         <Box direction="row" justify="between" align="center">
-          <Box flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
-            {theme.calendar.heading && theme.calendar[size].titleSize ? (
-              <Text weight="bold" size={theme.calendar[size].titleSize}>
-                {reference.toLocaleDateString(locale, {
-                  month: 'long',
-                  year: 'numeric',
-                })}
+          <Header flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
+            {theme.calendar[size]?.title ? (
+              <Text
+                weight={theme.calendar[size].title?.weight || 'normal'}
+                size={theme.calendar[size].title?.size || 'medium'}
+              >
+                {monthAndYear}
               </Text>
             ) : (
               // theme.calendar.heading.level should be removed in v3 of grommet
-              // theme.calendar[size].titleSize should be used instead
+              // theme.calendar[size].title should be used instead
               <Heading
                 level={
                   size === 'small'
@@ -614,13 +620,10 @@ const Calendar = forwardRef(
                 margin="none"
                 overflowWrap="normal"
               >
-                {reference.toLocaleDateString(locale, {
-                  month: 'long',
-                  year: 'numeric',
-                })}
+                {monthAndYear}
               </Heading>
             )}
-          </Box>
+          </Header>
           <Box flex={false} direction="row" align="center">
             <Button
               a11yTitle={format({

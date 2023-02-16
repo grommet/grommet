@@ -79,14 +79,22 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 24px;
   padding-right: 24px;
 }
@@ -115,7 +123,7 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
 .c5 {
   font-size: 34px;
   line-height: 40px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .c7 {
@@ -352,7 +360,7 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
         <div
           class="c3"
         >
-          <div
+          <header
             class="c4"
           >
             <span
@@ -360,7 +368,7 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
             >
               January 2020
             </span>
-          </div>
+          </header>
           <div
             class="c6"
           >
@@ -1316,14 +1324,22 @@ exports[`Calendar change months 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -1586,7 +1602,7 @@ exports[`Calendar change months 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -1594,7 +1610,7 @@ exports[`Calendar change months 1`] = `
           >
             December 2019
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -2409,15 +2425,15 @@ exports[`Calendar change months 2`] = `
       <div
         class="StyledBox-sc-13pk1d4-0 kOZkFt"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ebVTCF"
+        <header
+          class="StyledBox-sc-13pk1d4-0 oGcPZ"
         >
           <h3
             class="StyledHeading-sc-1rdh4aw-0 eGutsY"
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="StyledBox-sc-13pk1d4-0 dFwpuo"
         >
@@ -3754,14 +3770,22 @@ exports[`Calendar children 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3958,7 +3982,7 @@ exports[`Calendar children 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -3966,7 +3990,7 @@ exports[`Calendar children 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -4552,14 +4576,22 @@ exports[`Calendar date 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4842,7 +4874,7 @@ exports[`Calendar date 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -4850,7 +4882,7 @@ exports[`Calendar date 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -5730,14 +5762,22 @@ exports[`Calendar dates 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -6038,7 +6078,7 @@ exports[`Calendar dates 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -6046,7 +6086,7 @@ exports[`Calendar dates 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -6926,14 +6966,22 @@ exports[`Calendar daysOfWeek 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -7234,7 +7282,7 @@ exports[`Calendar daysOfWeek 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -7242,7 +7290,7 @@ exports[`Calendar daysOfWeek 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -8198,14 +8246,22 @@ exports[`Calendar disabled 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -8548,7 +8604,7 @@ exports[`Calendar disabled 1`] = `
         <div
           class="c3"
         >
-          <div
+          <header
             class="c4"
           >
             <h3
@@ -8556,7 +8612,7 @@ exports[`Calendar disabled 1`] = `
             >
               January 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c6"
           >
@@ -9440,14 +9496,22 @@ exports[`Calendar fill 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -9749,7 +9813,7 @@ exports[`Calendar fill 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -9757,7 +9821,7 @@ exports[`Calendar fill 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -10637,14 +10701,22 @@ exports[`Calendar first day sunday week monday 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -10927,7 +10999,7 @@ exports[`Calendar first day sunday week monday 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -10935,7 +11007,7 @@ exports[`Calendar first day sunday week monday 1`] = `
           >
             March 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -11815,14 +11887,22 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -12105,7 +12185,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -12113,7 +12193,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -12921,7 +13001,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -12929,7 +13009,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -14964,14 +15044,22 @@ exports[`Calendar reference 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -15234,7 +15322,7 @@ exports[`Calendar reference 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -15242,7 +15330,7 @@ exports[`Calendar reference 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -16122,14 +16210,22 @@ exports[`Calendar select date 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -16412,7 +16508,7 @@ exports[`Calendar select date 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -16420,7 +16516,7 @@ exports[`Calendar select date 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -17235,15 +17331,15 @@ exports[`Calendar select date 2`] = `
       <div
         class="StyledBox-sc-13pk1d4-0 kOZkFt"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ebVTCF"
+        <header
+          class="StyledBox-sc-13pk1d4-0 oGcPZ"
         >
           <h3
             class="StyledHeading-sc-1rdh4aw-0 eGutsY"
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="StyledBox-sc-13pk1d4-0 dFwpuo"
         >
@@ -18123,14 +18219,22 @@ exports[`Calendar select dates 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -18431,7 +18535,7 @@ exports[`Calendar select dates 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -18439,7 +18543,7 @@ exports[`Calendar select dates 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -19254,15 +19358,15 @@ exports[`Calendar select dates 2`] = `
       <div
         class="StyledBox-sc-13pk1d4-0 kOZkFt"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 ebVTCF"
+        <header
+          class="StyledBox-sc-13pk1d4-0 oGcPZ"
         >
           <h3
             class="StyledHeading-sc-1rdh4aw-0 eGutsY"
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="StyledBox-sc-13pk1d4-0 dFwpuo"
         >
@@ -20142,14 +20246,22 @@ exports[`Calendar showAdjacentDays 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -20432,7 +20544,7 @@ exports[`Calendar showAdjacentDays 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -20440,7 +20552,7 @@ exports[`Calendar showAdjacentDays 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -21248,7 +21360,7 @@ exports[`Calendar showAdjacentDays 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -21256,7 +21368,7 @@ exports[`Calendar showAdjacentDays 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -21953,7 +22065,7 @@ exports[`Calendar showAdjacentDays 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -21961,7 +22073,7 @@ exports[`Calendar showAdjacentDays 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -22804,14 +22916,22 @@ exports[`Calendar size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 6px;
   padding-right: 6px;
 }
@@ -22844,14 +22964,22 @@ exports[`Calendar size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -22863,14 +22991,22 @@ exports[`Calendar size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 24px;
   padding-right: 24px;
 }
@@ -23324,7 +23460,7 @@ exports[`Calendar size 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h4
@@ -23332,7 +23468,7 @@ exports[`Calendar size 1`] = `
           >
             January 2020
           </h4>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -24140,7 +24276,7 @@ exports[`Calendar size 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c18"
         >
           <h3
@@ -24148,7 +24284,7 @@ exports[`Calendar size 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -24956,7 +25092,7 @@ exports[`Calendar size 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c25"
         >
           <h3
@@ -24964,7 +25100,7 @@ exports[`Calendar size 1`] = `
           >
             January 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >

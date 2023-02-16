@@ -761,13 +761,19 @@ describe('Calendar Keyboard events', () => {
         theme={{
           calendar: {
             small: {
-              titleSize: 'medium',
+              title: {
+                size: 'medium',
+              },
             },
             medium: {
-              titleSize: 'large',
+              title: {
+                size: 'large',
+              },
             },
             large: {
-              titleSize: 'xxlarge',
+              title: {
+                size: 'xxlarge',
+              },
             },
           },
         }}
