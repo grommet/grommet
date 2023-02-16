@@ -8,8 +8,10 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { Header } from '../Header';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
+import { Text } from '../Text';
 import { CalendarPropTypes } from './propTypes';
 import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, sameDayOrAfter, sameDayOrBefore, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
@@ -495,26 +497,32 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     setActive(selectedDate);
   };
   var renderCalendarHeader = function renderCalendarHeader() {
+    var _theme$calendar$size;
     var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
     var NextIcon = size === 'small' ? theme.calendar.icons.small.next : theme.calendar.icons.next;
+    var monthAndYear = reference.toLocaleDateString(locale, {
+      month: 'long',
+      year: 'numeric'
+    });
     return /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       justify: "between",
       align: "center"
-    }, /*#__PURE__*/React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Header, {
       flex: true,
       pad: {
         horizontal: headingPadMap[size] || 'small'
       }
-    }, /*#__PURE__*/React.createElement(Heading, {
+    }, (_theme$calendar$size = theme.calendar[size]) != null && _theme$calendar$size.title ? /*#__PURE__*/React.createElement(Text, theme.calendar[size].title, monthAndYear) :
+    /*#__PURE__*/
+    // theme.calendar.heading.level should be removed in v3 of grommet
+    // theme.calendar[size].title should be used instead
+    React.createElement(Heading, {
       level: size === 'small' ? theme.calendar.heading && theme.calendar.heading.level || 4 : (theme.calendar.heading && theme.calendar.heading.level || 4) - 1,
       size: size,
       margin: "none",
       overflowWrap: "normal"
-    }, reference.toLocaleDateString(locale, {
-      month: 'long',
-      year: 'numeric'
-    }))), /*#__PURE__*/React.createElement(Box, {
+    }, monthAndYear)), /*#__PURE__*/React.createElement(Box, {
       flex: false,
       direction: "row",
       align: "center"

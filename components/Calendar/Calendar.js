@@ -9,8 +9,10 @@ var _MessageContext = require("../../contexts/MessageContext");
 var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
 var _Button = require("../Button");
+var _Header = require("../Header");
 var _Heading = require("../Heading");
 var _Keyboard = require("../Keyboard");
+var _Text = require("../Text");
 var _propTypes = require("./propTypes");
 var _StyledCalendar = require("./StyledCalendar");
 var _utils = require("./utils");
@@ -502,26 +504,32 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     setActive(selectedDate);
   };
   var renderCalendarHeader = function renderCalendarHeader() {
+    var _theme$calendar$size;
     var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
     var NextIcon = size === 'small' ? theme.calendar.icons.small.next : theme.calendar.icons.next;
+    var monthAndYear = reference.toLocaleDateString(locale, {
+      month: 'long',
+      year: 'numeric'
+    });
     return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       justify: "between",
       align: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_Header.Header, {
       flex: true,
       pad: {
         horizontal: headingPadMap[size] || 'small'
       }
-    }, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
+    }, (_theme$calendar$size = theme.calendar[size]) != null && _theme$calendar$size.title ? /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.calendar[size].title, monthAndYear) :
+    /*#__PURE__*/
+    // theme.calendar.heading.level should be removed in v3 of grommet
+    // theme.calendar[size].title should be used instead
+    _react["default"].createElement(_Heading.Heading, {
       level: size === 'small' ? theme.calendar.heading && theme.calendar.heading.level || 4 : (theme.calendar.heading && theme.calendar.heading.level || 4) - 1,
       size: size,
       margin: "none",
       overflowWrap: "normal"
-    }, reference.toLocaleDateString(locale, {
-      month: 'long',
-      year: 'numeric'
-    }))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, monthAndYear)), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       flex: false,
       direction: "row",
       align: "center"

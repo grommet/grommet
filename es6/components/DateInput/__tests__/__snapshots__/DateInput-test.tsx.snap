@@ -369,14 +369,22 @@ exports[`DateInput controlled format inline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -895,7 +903,7 @@ exports[`DateInput controlled format inline 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -903,7 +911,7 @@ exports[`DateInput controlled format inline 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -1761,15 +1769,15 @@ exports[`DateInput controlled format inline 2`] = `
         <div
           class="StyledBox-sc-13pk1d4-0 kOZkFt"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 ebVTCF"
+          <header
+            class="StyledBox-sc-13pk1d4-0 oGcPZ"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 eGutsY"
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="StyledBox-sc-13pk1d4-0 dFwpuo"
           >
@@ -2685,14 +2693,22 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3211,7 +3227,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -3219,7 +3235,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -4136,14 +4152,22 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4662,7 +4686,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -4670,7 +4694,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -6932,14 +6956,22 @@ exports[`DateInput format inline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -7389,7 +7421,7 @@ exports[`DateInput format inline 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -7397,7 +7429,7 @@ exports[`DateInput format inline 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -8965,14 +8997,22 @@ exports[`DateInput inline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -9246,7 +9286,7 @@ exports[`DateInput inline 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -9254,7 +9294,7 @@ exports[`DateInput inline 1`] = `
           >
             July 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -11515,14 +11555,22 @@ exports[`DateInput range format inline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -11990,7 +12038,7 @@ exports[`DateInput range format inline 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -11998,7 +12046,7 @@ exports[`DateInput range format inline 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -12889,14 +12937,22 @@ exports[`DateInput range inline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -13188,7 +13244,7 @@ exports[`DateInput range inline 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -13196,7 +13252,7 @@ exports[`DateInput range inline 1`] = `
           >
             July 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -14983,14 +15039,22 @@ exports[`DateInput select format 3`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -15389,7 +15453,7 @@ exports[`DateInput select format 3`] = `
       <div
         class="c4"
       >
-        <div
+        <header
           class="c5"
         >
           <h3
@@ -15397,7 +15461,7 @@ exports[`DateInput select format 3`] = `
           >
             July 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c7"
         >
@@ -16211,7 +16275,7 @@ exports[`DateInput select format 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .ebVTCF {
+  .oGcPZ {
     padding-left: 6px;
     padding-right: 6px;
   }
@@ -16336,14 +16400,22 @@ exports[`DateInput select format inline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -16793,7 +16865,7 @@ exports[`DateInput select format inline 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -16801,7 +16873,7 @@ exports[`DateInput select format inline 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -17653,15 +17725,15 @@ exports[`DateInput select format inline 2`] = `
         <div
           class="StyledBox-sc-13pk1d4-0 kOZkFt"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 ebVTCF"
+          <header
+            class="StyledBox-sc-13pk1d4-0 oGcPZ"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 eGutsY"
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="StyledBox-sc-13pk1d4-0 dFwpuo"
           >
@@ -18571,14 +18643,22 @@ exports[`DateInput select format inline 3`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -19028,7 +19108,7 @@ exports[`DateInput select format inline 3`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -19036,7 +19116,7 @@ exports[`DateInput select format inline 3`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -19947,14 +20027,22 @@ exports[`DateInput select format inline 4`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -20481,7 +20569,7 @@ exports[`DateInput select format inline 4`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -20489,7 +20577,7 @@ exports[`DateInput select format inline 4`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -21399,14 +21487,22 @@ exports[`DateInput select format inline range 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -21874,7 +21970,7 @@ exports[`DateInput select format inline range 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -21882,7 +21978,7 @@ exports[`DateInput select format inline range 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -22734,15 +22830,15 @@ exports[`DateInput select format inline range 2`] = `
         <div
           class="StyledBox-sc-13pk1d4-0 kOZkFt"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 ebVTCF"
+          <header
+            class="StyledBox-sc-13pk1d4-0 oGcPZ"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 eGutsY"
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="StyledBox-sc-13pk1d4-0 dFwpuo"
           >
@@ -23652,14 +23748,22 @@ exports[`DateInput select format inline range without timezone 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -24127,7 +24231,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -24135,7 +24239,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -25046,14 +25150,22 @@ exports[`DateInput select format inline range without timezone 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -25580,7 +25692,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -25588,7 +25700,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -26976,14 +27088,22 @@ exports[`DateInput select format no timezone 3`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -27382,7 +27502,7 @@ exports[`DateInput select format no timezone 3`] = `
       <div
         class="c4"
       >
-        <div
+        <header
           class="c5"
         >
           <h3
@@ -27390,7 +27510,7 @@ exports[`DateInput select format no timezone 3`] = `
           >
             July 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c7"
         >
@@ -28204,7 +28324,7 @@ exports[`DateInput select format no timezone 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .ebVTCF {
+  .oGcPZ {
     padding-left: 6px;
     padding-right: 6px;
   }
@@ -28311,14 +28431,22 @@ exports[`DateInput select inline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -28592,7 +28720,7 @@ exports[`DateInput select inline 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -28600,7 +28728,7 @@ exports[`DateInput select inline 1`] = `
           >
             July 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -29490,14 +29618,22 @@ exports[`DateInput select inline without timezone 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -29771,7 +29907,7 @@ exports[`DateInput select inline without timezone 1`] = `
       <div
         class="c3"
       >
-        <div
+        <header
           class="c4"
         >
           <h3
@@ -29779,7 +29915,7 @@ exports[`DateInput select inline without timezone 1`] = `
           >
             July 2020
           </h3>
-        </div>
+        </header>
         <div
           class="c6"
         >
@@ -30687,14 +30823,22 @@ exports[`DateInput type format inline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -31144,7 +31288,7 @@ exports[`DateInput type format inline 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -31152,7 +31296,7 @@ exports[`DateInput type format inline 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -32004,15 +32148,15 @@ exports[`DateInput type format inline 2`] = `
         <div
           class="StyledBox-sc-13pk1d4-0 kOZkFt"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 ebVTCF"
+          <header
+            class="StyledBox-sc-13pk1d4-0 oGcPZ"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 eGutsY"
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="StyledBox-sc-13pk1d4-0 dFwpuo"
           >
@@ -32921,14 +33065,22 @@ exports[`DateInput type format inline partial 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -33378,7 +33530,7 @@ exports[`DateInput type format inline partial 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -33386,7 +33538,7 @@ exports[`DateInput type format inline partial 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -34296,14 +34448,22 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -34753,7 +34913,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -34761,7 +34921,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -35671,14 +35831,22 @@ exports[`DateInput type format inline range 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -36146,7 +36314,7 @@ exports[`DateInput type format inline range 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -36154,7 +36322,7 @@ exports[`DateInput type format inline range 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -37006,15 +37174,15 @@ exports[`DateInput type format inline range 2`] = `
         <div
           class="StyledBox-sc-13pk1d4-0 kOZkFt"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 ebVTCF"
+          <header
+            class="StyledBox-sc-13pk1d4-0 oGcPZ"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 eGutsY"
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="StyledBox-sc-13pk1d4-0 dFwpuo"
           >
@@ -37923,14 +38091,22 @@ exports[`DateInput type format inline range partial 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -38398,7 +38574,7 @@ exports[`DateInput type format inline range partial 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -38406,7 +38582,7 @@ exports[`DateInput type format inline range partial 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -39258,15 +39434,15 @@ exports[`DateInput type format inline range partial 2`] = `
         <div
           class="StyledBox-sc-13pk1d4-0 kOZkFt"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 ebVTCF"
+          <header
+            class="StyledBox-sc-13pk1d4-0 oGcPZ"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 eGutsY"
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="StyledBox-sc-13pk1d4-0 dFwpuo"
           >
@@ -40118,15 +40294,15 @@ exports[`DateInput type format inline range partial 3`] = `
         <div
           class="StyledBox-sc-13pk1d4-0 kOZkFt"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 ebVTCF"
+          <header
+            class="StyledBox-sc-13pk1d4-0 oGcPZ"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 eGutsY"
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="StyledBox-sc-13pk1d4-0 dFwpuo"
           >
@@ -41036,14 +41212,22 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -41511,7 +41695,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -41519,7 +41703,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -42430,14 +42614,22 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -42887,7 +43079,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -42895,7 +43087,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -43806,14 +43998,22 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -44263,7 +44463,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -44271,7 +44471,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -45182,14 +45382,22 @@ exports[`DateInput type format inline range without timezone 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -45657,7 +45865,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -45665,7 +45873,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -46576,14 +46784,22 @@ exports[`DateInput type format inline range without timezone 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -47051,7 +47267,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -47059,7 +47275,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -47969,14 +48185,22 @@ exports[`DateInput type format inline short 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -48426,7 +48650,7 @@ exports[`DateInput type format inline short 1`] = `
         <div
           class="c8"
         >
-          <div
+          <header
             class="c9"
           >
             <h3
@@ -48434,7 +48658,7 @@ exports[`DateInput type format inline short 1`] = `
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="c11"
           >
@@ -49286,15 +49510,15 @@ exports[`DateInput type format inline short 2`] = `
         <div
           class="StyledBox-sc-13pk1d4-0 kOZkFt"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 ebVTCF"
+          <header
+            class="StyledBox-sc-13pk1d4-0 oGcPZ"
           >
             <h3
               class="StyledHeading-sc-1rdh4aw-0 eGutsY"
             >
               July 2020
             </h3>
-          </div>
+          </header>
           <div
             class="StyledBox-sc-13pk1d4-0 dFwpuo"
           >
@@ -50204,14 +50428,22 @@ exports[`DateInput type format inline short without timezone 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -50661,7 +50893,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -50669,7 +50901,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -51580,14 +51812,22 @@ exports[`DateInput type format inline short without timezone 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -52037,7 +52277,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -52045,7 +52285,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -52956,14 +53196,22 @@ exports[`DateInput type format inline without timezone 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -53413,7 +53661,7 @@ exports[`DateInput type format inline without timezone 1`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -53421,7 +53669,7 @@ exports[`DateInput type format inline without timezone 1`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >
@@ -54332,14 +54580,22 @@ exports[`DateInput type format inline without timezone 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -54789,7 +55045,7 @@ exports[`DateInput type format inline without timezone 2`] = `
           <div
             class="c8"
           >
-            <div
+            <header
               class="c9"
             >
               <h3
@@ -54797,7 +55053,7 @@ exports[`DateInput type format inline without timezone 2`] = `
               >
                 July 2020
               </h3>
-            </div>
+            </header>
             <div
               class="c11"
             >

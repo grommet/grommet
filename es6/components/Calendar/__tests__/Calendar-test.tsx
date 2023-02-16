@@ -754,4 +754,33 @@ describe('Calendar Keyboard events', () => {
     // Jan 16th is set to active
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
   });
+
+  test('heading text font size', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          calendar: {
+            small: {
+              title: {
+                size: 'medium',
+              },
+            },
+            medium: {
+              title: {
+                size: 'large',
+              },
+            },
+            large: {
+              title: {
+                size: 'xxlarge',
+              },
+            },
+          },
+        }}
+      >
+        <Calendar date={DATE} daysOfWeek size="large" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

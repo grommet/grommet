@@ -533,18 +533,21 @@ export interface ThemeType {
     };
     extend?: ExtendType;
     small?: {
+      title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
     };
     medium?: {
+      title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
     };
     large?: {
+      title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
