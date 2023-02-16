@@ -601,7 +601,8 @@ exports[`Drop background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #33333310;
+  background-color: #33333310;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -623,7 +624,8 @@ exports[`Drop background 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #33333310;
+  background-color: #33333310;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -1056,7 +1058,8 @@ exports[`Drop elevation 1`] = `
   position: fixed;
   z-index: 15;
   outline: none;
-  background: #33333310;
+  background-color: #33333310;
+  color: #444444;
   margin: 6px;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3515,7 +3518,8 @@ exports[`Drop theme elevation renders 1`] = `
   position: fixed;
   z-index: 15;
   outline: none;
-  background: #33333310;
+  background-color: #33333310;
+  color: #444444;
   margin: 6px;
   opacity: 0;
   -webkit-transform-origin: top left;

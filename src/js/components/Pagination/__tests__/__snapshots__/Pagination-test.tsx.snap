@@ -1596,7 +1596,8 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   border-width: 2px;
   border-color: skyblue;
   padding: 2px 20px;
-  background: #33333310;
+  background-color: #33333310;
+  color: #000000;
   background-color: rgba(202,156,234,1);
   color: #444444;
   border-color: transparent;
