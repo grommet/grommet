@@ -31,14 +31,14 @@ const Content = ({ options: optionsArg }) => {
     {
       label: format({
         id: 'dataSort.ascending',
-        messages: messages?.DataSort,
+        messages: messages?.dataSort,
       }),
       value: 'asc',
     },
     {
       label: format({
         id: 'dataSort.descending',
-        messages: messages?.DataSort,
+        messages: messages?.dataSort,
       }),
       value: 'desc',
     },
@@ -53,7 +53,7 @@ const Content = ({ options: optionsArg }) => {
       htmlFor={sortPropertyId}
       label={format({
         id: 'dataSort.by',
-        messages: messages?.DataSort,
+        messages: messages?.dataSort,
       })}
     >
       <Select id={sortPropertyId} name="_sort.property" options={options} />
@@ -63,7 +63,7 @@ const Content = ({ options: optionsArg }) => {
       htmlFor={sortDirectionId}
       label={format({
         id: 'dataSort.direction',
-        messages: messages?.DataSort,
+        messages: messages?.dataSort,
       })}
     >
       <RadioButtonGroup
