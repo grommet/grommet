@@ -128,8 +128,16 @@ var backgroundAndTextColors = function backgroundAndTextColors(backgroundArg, te
   } else {
     backgroundColor = normalizeBackgroundColor(background, theme);
     var _shade = darkContext(backgroundColor, theme);
+    var transparent;
+    if (backgroundColor && (0, _colors.canExtractRGBArray)(backgroundColor)) {
+      var colorArray = (0, _colors.getRGBArray)(backgroundColor);
+      // check if the alpha value is less than 0.5
+      if (colorArray[3] < 0.5) transparent = true;
+    }
     if (_shade) {
       textColor = (0, _colors.normalizeColor)(text[_shade] || text, theme, _shade === 'dark');
+    } else if (transparent && text) {
+      textColor = (0, _colors.normalizeColor)(text, theme);
     } else {
       // If we can't determine the shade, we assume this isn't a simple color.
       // It could be a gradient. backgroundStyle() will take care of that case.

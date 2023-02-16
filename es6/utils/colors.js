@@ -68,10 +68,10 @@ var rgbExp = /^rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?\)/;
 var rgbaExp = /^rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([.0-9]*)\s?\)/;
 // e.g. hsl(240, 60%, 50%)
 var hslExp = /^hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
-var canExtractRGBArray = function canExtractRGBArray(color) {
+export var canExtractRGBArray = function canExtractRGBArray(color) {
   return hexExp.test(color) || rgbExp.test(color) || rgbaExp.test(color) || hslExp.test(color);
 };
-var getRGBArray = function getRGBArray(color) {
+export var getRGBArray = function getRGBArray(color) {
   if (hexExp.test(color)) {
     var _parseHexToRGB = parseHexToRGB(color),
       red = _parseHexToRGB[0],

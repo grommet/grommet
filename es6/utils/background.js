@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { colorIsDark, getRGBA, normalizeColor } from './colors';
+import { colorIsDark, getRGBA, normalizeColor, canExtractRGBArray, getRGBArray } from './colors';
 
 // evalStyle() converts a styled-components item into a string
 var evalStyle = function evalStyle(arg, theme) {
@@ -123,8 +123,16 @@ export var backgroundAndTextColors = function backgroundAndTextColors(background
   } else {
     backgroundColor = normalizeBackgroundColor(background, theme);
     var _shade = darkContext(backgroundColor, theme);
+    var transparent;
+    if (backgroundColor && canExtractRGBArray(backgroundColor)) {
+      var colorArray = getRGBArray(backgroundColor);
+      // check if the alpha value is less than 0.5
+      if (colorArray[3] < 0.5) transparent = true;
+    }
     if (_shade) {
       textColor = normalizeColor(text[_shade] || text, theme, _shade === 'dark');
+    } else if (transparent && text) {
+      textColor = normalizeColor(text, theme);
     } else {
       // If we can't determine the shade, we assume this isn't a simple color.
       // It could be a gradient. backgroundStyle() will take care of that case.

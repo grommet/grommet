@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.normalizeColor = exports.getRGBA = exports.colorIsDark = void 0;
+exports.normalizeColor = exports.getRGBArray = exports.getRGBA = exports.colorIsDark = exports.canExtractRGBArray = void 0;
 // Returns the specific color that should be used according to the theme.
 // If 'dark' is supplied, it takes precedence over 'theme.dark'.
 // Can return undefined.
@@ -76,6 +76,7 @@ var hslExp = /^hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
 var canExtractRGBArray = function canExtractRGBArray(color) {
   return hexExp.test(color) || rgbExp.test(color) || rgbaExp.test(color) || hslExp.test(color);
 };
+exports.canExtractRGBArray = canExtractRGBArray;
 var getRGBArray = function getRGBArray(color) {
   if (hexExp.test(color)) {
     var _parseHexToRGB = parseHexToRGB(color),
@@ -109,6 +110,7 @@ var getRGBArray = function getRGBArray(color) {
   }
   return color;
 };
+exports.getRGBArray = getRGBArray;
 var colorIsDark = function colorIsDark(color) {
   if (color && canExtractRGBArray(color)) {
     var _getRGBArray = getRGBArray(color),
