@@ -597,12 +597,7 @@ const Calendar = forwardRef(
         <Box direction="row" justify="between" align="center">
           <Header flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
             {theme.calendar[size]?.title ? (
-              <Text
-                weight={theme.calendar[size].title?.weight || 'normal'}
-                size={theme.calendar[size].title?.size || 'medium'}
-              >
-                {monthAndYear}
-              </Text>
+              <Text {...theme.calendar[size].title}>{monthAndYear}</Text>
             ) : (
               // theme.calendar.heading.level should be removed in v3 of grommet
               // theme.calendar[size].title should be used instead

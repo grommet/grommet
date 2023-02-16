@@ -123,7 +123,6 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
 .c5 {
   font-size: 34px;
   line-height: 40px;
-  font-weight: normal;
 }
 
 .c7 {
