@@ -25,6 +25,9 @@ exports[`Form accessibility Box with TextInput in Form should
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -189,6 +192,9 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -393,6 +399,9 @@ exports[`Form accessibility FormField with an explicit TextInput child
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -555,6 +564,9 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -829,6 +841,9 @@ exports[`Form accessibility TextInput in Form should have
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -957,6 +972,9 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -1310,7 +1328,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
@@ -1320,7 +1338,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="name"
             placeholder="test name"
             value=""
@@ -1329,7 +1347,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 zPnFT FormField__FormFieldContentBox-sc-m9hood-1"
@@ -1391,6 +1409,9 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -1745,7 +1766,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
@@ -1755,7 +1776,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="name"
             placeholder="test name"
             value=""
@@ -1764,7 +1785,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 zPnFT FormField__FormFieldContentBox-sc-m9hood-1"
@@ -1851,6 +1872,9 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c1 {
@@ -1985,7 +2009,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
@@ -1995,7 +2019,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="name"
             placeholder="test name"
             value=""
@@ -2004,7 +2028,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 zPnFT FormField__FormFieldContentBox-sc-m9hood-1 dSTFCs"
@@ -2083,6 +2107,9 @@ exports[`Form uncontrolled errors 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2227,6 +2254,9 @@ exports[`Form uncontrolled infos 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -2515,6 +2545,9 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c3 {
@@ -3347,7 +3380,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <label
         class="StyledText-sc-1sadyjn-0 kKrMsX"
@@ -3377,7 +3410,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+                  class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
                   id="test-select__input"
                   name="test-select"
                   placeholder="test select"
@@ -3410,7 +3443,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <label
         class="StyledText-sc-1sadyjn-0 kKrMsX"
@@ -3446,7 +3479,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <label
         class="StyledText-sc-1sadyjn-0 kKrMsX"
@@ -3580,6 +3613,9 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -3769,7 +3805,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
@@ -3779,7 +3815,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value=""
@@ -3803,7 +3839,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
@@ -3813,7 +3849,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value=""
@@ -3855,6 +3891,9 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -4044,7 +4083,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cXkhIG FormField__FormFieldContentBox-sc-m9hood-1"
@@ -4054,7 +4093,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value=""
@@ -4123,6 +4162,9 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -4312,7 +4354,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cXkhIG FormField__FormFieldContentBox-sc-m9hood-1"
@@ -4322,7 +4364,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value=""
@@ -4391,6 +4433,9 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -4580,7 +4625,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 hftPdQ FormField__FormFieldBox-sc-m9hood-0 chvcoo"
+      class="StyledBox-sc-13pk1d4-0 hfctvB FormField__FormFieldBox-sc-m9hood-0 chvcoo"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 cqRjpC FormField__FormFieldContentBox-sc-m9hood-1"
@@ -4590,7 +4635,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ"
             name="test"
             placeholder="test input"
             value=""
@@ -4655,6 +4700,9 @@ exports[`Form uncontrolled update 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {
@@ -5020,6 +5068,9 @@ exports[`Form uncontrolled with field 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c2 {

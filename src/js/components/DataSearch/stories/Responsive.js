@@ -12,10 +12,10 @@ import {
 import { DataSearch } from '../DataSearch';
 import { columns, DATA } from '../../DataTable/stories/data';
 
-export const Simple = () => (
+export const Responsive = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid pad="large" columns={['large']} justifyContent="center">
+  <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
     <Notification
       status="info"
       message="Data is in 'beta'. The API surface is subject to change."
@@ -24,7 +24,7 @@ export const Simple = () => (
       Note: Results are filtered as you type, checking all fields.
     </Paragraph>
     <Data data={DATA} updateOn="change">
-      <DataSearch />
+      <DataSearch responsive />
       <DataSummary />
       <DataTable columns={columns} />
     </Data>
@@ -32,10 +32,10 @@ export const Simple = () => (
   // </Grommet>
 );
 
-Simple.args = {
+Responsive.args = {
   full: true,
 };
 
 export default {
-  title: 'Data/DataSearch/Simple',
+  title: 'Data/DataSearch/Responsive',
 };

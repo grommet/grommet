@@ -18,7 +18,40 @@ exports[`DataFilters clear 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -43,7 +76,7 @@ exports[`DataFilters clear 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -56,9 +89,12 @@ exports[`DataFilters clear 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -74,7 +110,7 @@ exports[`DataFilters clear 1`] = `
   padding: 12px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -88,7 +124,7 @@ exports[`DataFilters clear 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,7 +147,7 @@ exports[`DataFilters clear 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -137,7 +173,7 @@ exports[`DataFilters clear 1`] = `
   border-radius: 4px;
 }
 
-.c15 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -163,14 +199,30 @@ exports[`DataFilters clear 1`] = `
   border-radius: 4px;
 }
 
-.c4 {
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 12px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c17 {
@@ -180,10 +232,20 @@ exports[`DataFilters clear 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  height: 12px;
 }
 
-.c6 {
+.c21 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -192,7 +254,7 @@ exports[`DataFilters clear 1`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -220,51 +282,51 @@ exports[`DataFilters clear 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c16:hover {
+.c20:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c16:focus {
+.c20:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c20:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c18 {
+.c22 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -291,47 +353,47 @@ exports[`DataFilters clear 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c18:focus {
+.c22:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
+.c22:focus > circle,
+.c22:focus > ellipse,
+.c22:focus > line,
+.c22:focus > path,
+.c22:focus > polygon,
+.c22:focus > polyline,
+.c22:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c18:focus::-moz-focus-inner {
+.c22:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c18:focus:not(:focus-visible) {
+.c22:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c18:focus:not(:focus-visible) > circle,
-.c18:focus:not(:focus-visible) > ellipse,
-.c18:focus:not(:focus-visible) > line,
-.c18:focus:not(:focus-visible) > path,
-.c18:focus:not(:focus-visible) > polygon,
-.c18:focus:not(:focus-visible) > polyline,
-.c18:focus:not(:focus-visible) > rect {
+.c22:focus:not(:focus-visible) > circle,
+.c22:focus:not(:focus-visible) > ellipse,
+.c22:focus:not(:focus-visible) > line,
+.c22:focus:not(:focus-visible) > path,
+.c22:focus:not(:focus-visible) > polygon,
+.c22:focus:not(:focus-visible) > polyline,
+.c22:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c18:focus:not(:focus-visible)::-moz-focus-inner {
+.c22:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c14 {
+.c16 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -339,7 +401,7 @@ exports[`DataFilters clear 1`] = `
   height: 24px;
 }
 
-.c9 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -361,12 +423,12 @@ exports[`DataFilters clear 1`] = `
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c12 {
+.c14 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -375,22 +437,26 @@ exports[`DataFilters clear 1`] = `
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c14:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c11 {
+.c13 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c19 {
+.c23 {
   opacity: 0;
 }
 
-.c3 {
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -410,61 +476,67 @@ exports[`DataFilters clear 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c12 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c15 {
     border: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c18 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    height: 6px;
+  .c19 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c17 {
-    width: 12px;
+    height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c21 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c6 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -478,113 +550,113 @@ exports[`DataFilters clear 1`] = `
     class="c1"
     id="data"
   >
-    <form>
+    <form
+      class="c2"
+    >
       <div
-        class="c1"
+        class="c3"
       >
-        <header
-          class="c2"
-        >
-          <h2
-            class="c3"
-          >
-            Filters
-          </h2>
-        </header>
         <div
           class="c4"
-        />
-        <div
-          class="c5 "
         >
-          <label
-            class="c6"
-            for="data-name"
+          <header
+            class="c5"
           >
-            name
-          </label>
-          <div
-            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
-          >
-            <div
-              class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
-              id="data-name"
-              role="group"
+            <h2
+              class="c6"
             >
-              <label
-                class="c9"
-                label="a"
-              >
-                <div
-                  class="c10 c11"
-                >
-                  <input
-                    checked=""
-                    class="c12"
-                    type="checkbox"
-                  />
-                  <div
-                    class="c13 "
-                  >
-                    <svg
-                      class="c14"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M6,11.3 L10.3,16 L18,6.2"
-                        fill="none"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <span>
-                  a
-                </span>
-              </label>
+              Filters
+            </h2>
+          </header>
+          <div
+            class="c7 "
+          >
+            <label
+              class="c8"
+              for="data-name"
+            >
+              name
+            </label>
+            <div
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+            >
               <div
-                class="c4"
-              />
-              <label
-                class="c9"
-                label="b"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                id="data-name"
+                role="group"
               >
-                <div
-                  class="c10 c11"
+                <label
+                  class="c11"
+                  label="a"
                 >
-                  <input
-                    class="c12"
-                    type="checkbox"
-                  />
                   <div
-                    class="c15 "
-                  />
-                </div>
-                <span>
-                  b
-                </span>
-              </label>
+                    class="c12 c13"
+                  >
+                    <input
+                      checked=""
+                      class="c14"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c15 "
+                    >
+                      <svg
+                        class="c16"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6,11.3 L10.3,16 L18,6.2"
+                          fill="none"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <span>
+                    a
+                  </span>
+                </label>
+                <div
+                  class="c17"
+                />
+                <label
+                  class="c11"
+                  label="b"
+                >
+                  <div
+                    class="c12 c13"
+                  >
+                    <input
+                      class="c14"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c18 "
+                    />
+                  </div>
+                  <span>
+                    b
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="c4"
-        />
         <footer
-          class="c2"
+          class="c19"
         >
           <button
-            class="c16"
+            class="c20"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c17"
+            class="c21"
           />
           <button
             aria-hidden="true"
-            class="c18 c19"
+            class="c22 c23"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -802,7 +874,7 @@ exports[`DataFilters drop 2`] = `
 
 exports[`DataFilters drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hftPdQ {
+  .hfctvB {
     margin-bottom: 6px;
   }
 }
@@ -827,13 +899,18 @@ exports[`DataFilters drop 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
+  .gcEjSx {
+    margin-top: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .drdMXk {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iISQcM {
-    width: 12px;
+  .ilMzAg {
+    width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1207,7 +1284,7 @@ exports[`DataFilters layer 1`] = `
 `;
 
 exports[`DataFilters layer 2`] = `
-.c9 {
+.c11 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1218,30 +1295,30 @@ exports[`DataFilters layer 2`] = `
   stroke: #666666;
 }
 
-.c9 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1253,13 +1330,31 @@ exports[`DataFilters layer 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding: 24px;
+  height: 100%;
 }
 
-.c5 {
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  overflow: auto;
+}
+
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1284,7 +1379,7 @@ exports[`DataFilters layer 2`] = `
   justify-content: space-between;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1297,9 +1392,12 @@ exports[`DataFilters layer 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1315,7 +1413,7 @@ exports[`DataFilters layer 2`] = `
   padding: 12px;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1329,7 +1427,7 @@ exports[`DataFilters layer 2`] = `
   flex-direction: column;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1352,7 +1450,7 @@ exports[`DataFilters layer 2`] = `
   justify-content: center;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1378,7 +1476,36 @@ exports[`DataFilters layer 2`] = `
   border-radius: 4px;
 }
 
-.c7 {
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+}
+
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1388,7 +1515,7 @@ exports[`DataFilters layer 2`] = `
   width: 24px;
 }
 
-.c10 {
+.c21 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1398,7 +1525,17 @@ exports[`DataFilters layer 2`] = `
   height: 12px;
 }
 
-.c12 {
+.c24 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c13 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1407,7 +1544,7 @@ exports[`DataFilters layer 2`] = `
   line-height: 24px;
 }
 
-.c8 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1427,52 +1564,52 @@ exports[`DataFilters layer 2`] = `
   padding: 12px;
 }
 
-.c8:hover {
+.c10:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c8:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c20 {
+.c23 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1500,51 +1637,51 @@ exports[`DataFilters layer 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c20:hover {
+.c23:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c20:focus {
+.c23:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c23:focus > circle,
+.c23:focus > ellipse,
+.c23:focus > line,
+.c23:focus > path,
+.c23:focus > polygon,
+.c23:focus > polyline,
+.c23:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c23:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c20:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible) > circle,
-.c20:focus:not(:focus-visible) > ellipse,
-.c20:focus:not(:focus-visible) > line,
-.c20:focus:not(:focus-visible) > path,
-.c20:focus:not(:focus-visible) > polygon,
-.c20:focus:not(:focus-visible) > polyline,
-.c20:focus:not(:focus-visible) > rect {
+.c23:focus:not(:focus-visible) > circle,
+.c23:focus:not(:focus-visible) > ellipse,
+.c23:focus:not(:focus-visible) > line,
+.c23:focus:not(:focus-visible) > path,
+.c23:focus:not(:focus-visible) > polygon,
+.c23:focus:not(:focus-visible) > polyline,
+.c23:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible)::-moz-focus-inner {
+.c23:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c21 {
+.c25 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1571,47 +1708,47 @@ exports[`DataFilters layer 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c21:focus {
+.c25:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c21:focus > circle,
-.c21:focus > ellipse,
-.c21:focus > line,
-.c21:focus > path,
-.c21:focus > polygon,
-.c21:focus > polyline,
-.c21:focus > rect {
+.c25:focus > circle,
+.c25:focus > ellipse,
+.c25:focus > line,
+.c25:focus > path,
+.c25:focus > polygon,
+.c25:focus > polyline,
+.c25:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c21:focus::-moz-focus-inner {
+.c25:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c21:focus:not(:focus-visible) {
+.c25:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c21:focus:not(:focus-visible) > circle,
-.c21:focus:not(:focus-visible) > ellipse,
-.c21:focus:not(:focus-visible) > line,
-.c21:focus:not(:focus-visible) > path,
-.c21:focus:not(:focus-visible) > polygon,
-.c21:focus:not(:focus-visible) > polyline,
-.c21:focus:not(:focus-visible) > rect {
+.c25:focus:not(:focus-visible) > circle,
+.c25:focus:not(:focus-visible) > ellipse,
+.c25:focus:not(:focus-visible) > line,
+.c25:focus:not(:focus-visible) > path,
+.c25:focus:not(:focus-visible) > polygon,
+.c25:focus:not(:focus-visible) > polyline,
+.c25:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c21:focus:not(:focus-visible)::-moz-focus-inner {
+.c25:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1633,12 +1770,12 @@ exports[`DataFilters layer 2`] = `
   cursor: pointer;
 }
 
-.c15:hover input:not([disabled]) + div,
-.c15:hover input:not([disabled]) + span {
+.c16:hover input:not([disabled]) + div,
+.c16:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c18 {
+.c19 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1647,22 +1784,27 @@ exports[`DataFilters layer 2`] = `
   cursor: pointer;
 }
 
-.c18:checked + span > span {
+.c19:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c17 {
+.c18 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c22 {
+.c26 {
   opacity: 0;
 }
 
-.c6 {
+.c4 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.c8 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -1739,65 +1881,93 @@ exports[`DataFilters layer 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    padding: 12px;
+  .c6 {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c6 {
+    padding-top: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c14 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c14 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c17 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c19 {
+  .c20 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-
+  .c22 {
+    margin-top: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c22 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c22 {
+    padding-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
     width: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c21 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c24 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c8 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -1848,121 +2018,122 @@ exports[`DataFilters layer 2`] = `
       class="c3"
       tabindex="-1"
     />
-    <form>
+    <form
+      class="c4"
+      fill="vertical"
+    >
       <div
-        class="c4"
+        class="c5"
       >
-        <header
-          class="c5"
+        <div
+          class="c6"
         >
-          <h2
-            class="c6"
-          >
-            Filters
-          </h2>
-          <div
+          <header
             class="c7"
-          />
-          <button
-            class="c8"
-            type="button"
           >
-            <svg
-              aria-label="FormClose"
-              class="c9"
-              viewBox="0 0 24 24"
+            <h2
+              class="c8"
             >
-              <path
-                d="m7 7 10 10M7 17 17 7"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </header>
-        <div
-          class="c10"
-        />
-        <div
-          class="c11 "
-        >
-          <label
-            class="c12"
-            for="test-data-name"
-          >
-            name
-          </label>
-          <div
-            class="c13 FormField__FormFieldContentBox-sc-m9hood-1"
-          >
+              Filters
+            </h2>
             <div
-              class="c14 StyledCheckBoxGroup-sc-2nhc5d-0"
-              id="test-data-name"
-              role="group"
+              class="c9"
+            />
+            <button
+              class="c10"
+              type="button"
             >
-              <label
-                class="c15"
-                label="a"
+              <svg
+                aria-label="FormClose"
+                class="c11"
+                viewBox="0 0 24 24"
               >
-                <div
-                  class="c16 c17"
-                >
-                  <input
-                    class="c18"
-                    type="checkbox"
-                  />
-                  <div
-                    class="c19 "
-                  />
-                </div>
-                <span>
-                  a
-                </span>
-              </label>
+                <path
+                  d="m7 7 10 10M7 17 17 7"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </header>
+          <div
+            class="c12 "
+          >
+            <label
+              class="c13"
+              for="test-data-name"
+            >
+              name
+            </label>
+            <div
+              class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
+            >
               <div
-                class="c10"
-              />
-              <label
-                class="c15"
-                label="b"
+                class="c15 StyledCheckBoxGroup-sc-2nhc5d-0"
+                id="test-data-name"
+                role="group"
               >
-                <div
-                  class="c16 c17"
+                <label
+                  class="c16"
+                  label="a"
                 >
-                  <input
-                    class="c18"
-                    type="checkbox"
-                  />
                   <div
-                    class="c19 "
-                  />
-                </div>
-                <span>
-                  b
-                </span>
-              </label>
+                    class="c17 c18"
+                  >
+                    <input
+                      class="c19"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c20 "
+                    />
+                  </div>
+                  <span>
+                    a
+                  </span>
+                </label>
+                <div
+                  class="c21"
+                />
+                <label
+                  class="c16"
+                  label="b"
+                >
+                  <div
+                    class="c17 c18"
+                  >
+                    <input
+                      class="c19"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c20 "
+                    />
+                  </div>
+                  <span>
+                    b
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="c10"
-        />
         <footer
-          class="c5"
+          class="c22"
         >
           <button
-            class="c20"
+            class="c23"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c7"
+            class="c24"
           />
           <button
             aria-hidden="true"
-            class="c21 c22"
+            class="c25 c26"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -1978,7 +2149,7 @@ exports[`DataFilters layer 2`] = `
 
 exports[`DataFilters layer 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hftPdQ {
+  .hfctvB {
     margin-bottom: 6px;
   }
 }
@@ -2003,13 +2174,18 @@ exports[`DataFilters layer 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
+  .gcEjSx {
+    margin-top: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .drdMXk {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iISQcM {
-    width: 12px;
+  .ilMzAg {
+    width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2044,7 +2220,40 @@ exports[`DataFilters properties array 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2069,7 +2278,7 @@ exports[`DataFilters properties array 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2082,9 +2291,12 @@ exports[`DataFilters properties array 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2100,7 +2312,7 @@ exports[`DataFilters properties array 1`] = `
   padding: 12px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2114,7 +2326,7 @@ exports[`DataFilters properties array 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2137,7 +2349,7 @@ exports[`DataFilters properties array 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2163,7 +2375,33 @@ exports[`DataFilters properties array 1`] = `
   border-radius: 4px;
 }
 
-.c4 {
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c16 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2173,17 +2411,17 @@ exports[`DataFilters properties array 1`] = `
   height: 12px;
 }
 
-.c15 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c6 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2192,7 +2430,7 @@ exports[`DataFilters properties array 1`] = `
   line-height: 24px;
 }
 
-.c14 {
+.c18 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2220,51 +2458,51 @@ exports[`DataFilters properties array 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c14:hover {
+.c18:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c14:focus {
+.c18:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus::-moz-focus-inner {
+.c18:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) > circle,
-.c14:focus:not(:focus-visible) > ellipse,
-.c14:focus:not(:focus-visible) > line,
-.c14:focus:not(:focus-visible) > path,
-.c14:focus:not(:focus-visible) > polygon,
-.c14:focus:not(:focus-visible) > polyline,
-.c14:focus:not(:focus-visible) > rect {
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible)::-moz-focus-inner {
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2291,47 +2529,47 @@ exports[`DataFilters properties array 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c16:focus {
+.c20:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c20:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2353,12 +2591,12 @@ exports[`DataFilters properties array 1`] = `
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c12 {
+.c14 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -2367,22 +2605,26 @@ exports[`DataFilters properties array 1`] = `
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c14:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c11 {
+.c13 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c17 {
+.c21 {
   opacity: 0;
 }
 
-.c3 {
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -2402,55 +2644,61 @@ exports[`DataFilters properties array 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c12 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c15 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c17 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
-    width: 12px;
+  .c19 {
+    width: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c6 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -2464,101 +2712,101 @@ exports[`DataFilters properties array 1`] = `
     class="c1"
     id="data"
   >
-    <form>
+    <form
+      class="c2"
+    >
       <div
-        class="c1"
+        class="c3"
       >
-        <header
-          class="c2"
-        >
-          <h2
-            class="c3"
-          >
-            Filters
-          </h2>
-        </header>
         <div
           class="c4"
-        />
-        <div
-          class="c5 "
         >
-          <label
-            class="c6"
-            for="data-name"
+          <header
+            class="c5"
           >
-            name
-          </label>
-          <div
-            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
-          >
-            <div
-              class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
-              id="data-name"
-              role="group"
+            <h2
+              class="c6"
             >
-              <label
-                class="c9"
-                label="a"
-              >
-                <div
-                  class="c10 c11"
-                >
-                  <input
-                    class="c12"
-                    type="checkbox"
-                  />
-                  <div
-                    class="c13 "
-                  />
-                </div>
-                <span>
-                  a
-                </span>
-              </label>
+              Filters
+            </h2>
+          </header>
+          <div
+            class="c7 "
+          >
+            <label
+              class="c8"
+              for="data-name"
+            >
+              name
+            </label>
+            <div
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+            >
               <div
-                class="c4"
-              />
-              <label
-                class="c9"
-                label="b"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                id="data-name"
+                role="group"
               >
-                <div
-                  class="c10 c11"
+                <label
+                  class="c11"
+                  label="a"
                 >
-                  <input
-                    class="c12"
-                    type="checkbox"
-                  />
                   <div
-                    class="c13 "
-                  />
-                </div>
-                <span>
-                  b
-                </span>
-              </label>
+                    class="c12 c13"
+                  >
+                    <input
+                      class="c14"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c15 "
+                    />
+                  </div>
+                  <span>
+                    a
+                  </span>
+                </label>
+                <div
+                  class="c16"
+                />
+                <label
+                  class="c11"
+                  label="b"
+                >
+                  <div
+                    class="c12 c13"
+                  >
+                    <input
+                      class="c14"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c15 "
+                    />
+                  </div>
+                  <span>
+                    b
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="c4"
-        />
         <footer
-          class="c2"
+          class="c17"
         >
           <button
-            class="c14"
+            class="c18"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c15"
+            class="c19"
           />
           <button
             aria-hidden="true"
-            class="c16 c17"
+            class="c20 c21"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -2590,7 +2838,40 @@ exports[`DataFilters properties object 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2615,7 +2896,7 @@ exports[`DataFilters properties object 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2628,9 +2909,12 @@ exports[`DataFilters properties object 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2646,7 +2930,7 @@ exports[`DataFilters properties object 1`] = `
   padding: 12px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2660,7 +2944,7 @@ exports[`DataFilters properties object 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2683,7 +2967,7 @@ exports[`DataFilters properties object 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2709,7 +2993,33 @@ exports[`DataFilters properties object 1`] = `
   border-radius: 4px;
 }
 
-.c4 {
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c16 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2719,17 +3029,17 @@ exports[`DataFilters properties object 1`] = `
   height: 12px;
 }
 
-.c15 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c6 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2738,7 +3048,7 @@ exports[`DataFilters properties object 1`] = `
   line-height: 24px;
 }
 
-.c14 {
+.c18 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2766,51 +3076,51 @@ exports[`DataFilters properties object 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c14:hover {
+.c18:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c14:focus {
+.c18:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus::-moz-focus-inner {
+.c18:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) > circle,
-.c14:focus:not(:focus-visible) > ellipse,
-.c14:focus:not(:focus-visible) > line,
-.c14:focus:not(:focus-visible) > path,
-.c14:focus:not(:focus-visible) > polygon,
-.c14:focus:not(:focus-visible) > polyline,
-.c14:focus:not(:focus-visible) > rect {
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible)::-moz-focus-inner {
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2837,47 +3147,47 @@ exports[`DataFilters properties object 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c16:focus {
+.c20:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c20:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2899,12 +3209,12 @@ exports[`DataFilters properties object 1`] = `
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c12 {
+.c14 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -2913,22 +3223,26 @@ exports[`DataFilters properties object 1`] = `
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c14:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c11 {
+.c13 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c17 {
+.c21 {
   opacity: 0;
 }
 
-.c3 {
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -2948,55 +3262,61 @@ exports[`DataFilters properties object 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c12 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c15 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c17 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
-    width: 12px;
+  .c19 {
+    width: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c6 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -3010,101 +3330,101 @@ exports[`DataFilters properties object 1`] = `
     class="c1"
     id="data"
   >
-    <form>
+    <form
+      class="c2"
+    >
       <div
-        class="c1"
+        class="c3"
       >
-        <header
-          class="c2"
-        >
-          <h2
-            class="c3"
-          >
-            Filters
-          </h2>
-        </header>
         <div
           class="c4"
-        />
-        <div
-          class="c5 "
         >
-          <label
-            class="c6"
-            for="data-name"
+          <header
+            class="c5"
           >
-            name
-          </label>
-          <div
-            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
-          >
-            <div
-              class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
-              id="data-name"
-              role="group"
+            <h2
+              class="c6"
             >
-              <label
-                class="c9"
-                label="a"
-              >
-                <div
-                  class="c10 c11"
-                >
-                  <input
-                    class="c12"
-                    type="checkbox"
-                  />
-                  <div
-                    class="c13 "
-                  />
-                </div>
-                <span>
-                  a
-                </span>
-              </label>
+              Filters
+            </h2>
+          </header>
+          <div
+            class="c7 "
+          >
+            <label
+              class="c8"
+              for="data-name"
+            >
+              name
+            </label>
+            <div
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+            >
               <div
-                class="c4"
-              />
-              <label
-                class="c9"
-                label="b"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                id="data-name"
+                role="group"
               >
-                <div
-                  class="c10 c11"
+                <label
+                  class="c11"
+                  label="a"
                 >
-                  <input
-                    class="c12"
-                    type="checkbox"
-                  />
                   <div
-                    class="c13 "
-                  />
-                </div>
-                <span>
-                  b
-                </span>
-              </label>
+                    class="c12 c13"
+                  >
+                    <input
+                      class="c14"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c15 "
+                    />
+                  </div>
+                  <span>
+                    a
+                  </span>
+                </label>
+                <div
+                  class="c16"
+                />
+                <label
+                  class="c11"
+                  label="b"
+                >
+                  <div
+                    class="c12 c13"
+                  >
+                    <input
+                      class="c14"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c15 "
+                    />
+                  </div>
+                  <span>
+                    b
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="c4"
-        />
         <footer
-          class="c2"
+          class="c17"
         >
           <button
-            class="c14"
+            class="c18"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c15"
+            class="c19"
           />
           <button
             aria-hidden="true"
-            class="c16 c17"
+            class="c20 c21"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -3136,7 +3456,40 @@ exports[`DataFilters renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3161,7 +3514,7 @@ exports[`DataFilters renders 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3174,9 +3527,12 @@ exports[`DataFilters renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c7 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3192,7 +3548,7 @@ exports[`DataFilters renders 1`] = `
   padding: 12px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3206,7 +3562,7 @@ exports[`DataFilters renders 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3229,7 +3585,7 @@ exports[`DataFilters renders 1`] = `
   justify-content: center;
 }
 
-.c13 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3255,7 +3611,33 @@ exports[`DataFilters renders 1`] = `
   border-radius: 4px;
 }
 
-.c4 {
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c16 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3265,17 +3647,17 @@ exports[`DataFilters renders 1`] = `
   height: 12px;
 }
 
-.c15 {
+.c19 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 24px;
+  width: 12px;
 }
 
-.c6 {
+.c8 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -3284,7 +3666,7 @@ exports[`DataFilters renders 1`] = `
   line-height: 24px;
 }
 
-.c14 {
+.c18 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3312,51 +3694,51 @@ exports[`DataFilters renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c14:hover {
+.c18:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c14:focus {
+.c18:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus::-moz-focus-inner {
+.c18:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) > circle,
-.c14:focus:not(:focus-visible) > ellipse,
-.c14:focus:not(:focus-visible) > line,
-.c14:focus:not(:focus-visible) > path,
-.c14:focus:not(:focus-visible) > polygon,
-.c14:focus:not(:focus-visible) > polyline,
-.c14:focus:not(:focus-visible) > rect {
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible)::-moz-focus-inner {
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c20 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3383,47 +3765,47 @@ exports[`DataFilters renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c16:focus {
+.c20:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c20:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c9 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3445,12 +3827,12 @@ exports[`DataFilters renders 1`] = `
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c12 {
+.c14 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -3459,22 +3841,26 @@ exports[`DataFilters renders 1`] = `
   cursor: pointer;
 }
 
-.c12:checked + span > span {
+.c14:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c11 {
+.c13 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c17 {
+.c21 {
   opacity: 0;
 }
 
-.c3 {
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -3494,55 +3880,61 @@ exports[`DataFilters renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c12 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c15 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c17 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
-    width: 12px;
+  .c19 {
+    width: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c6 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -3556,101 +3948,101 @@ exports[`DataFilters renders 1`] = `
     class="c1"
     id="data"
   >
-    <form>
+    <form
+      class="c2"
+    >
       <div
-        class="c1"
+        class="c3"
       >
-        <header
-          class="c2"
-        >
-          <h2
-            class="c3"
-          >
-            Filters
-          </h2>
-        </header>
         <div
           class="c4"
-        />
-        <div
-          class="c5 "
         >
-          <label
-            class="c6"
-            for="data-name"
+          <header
+            class="c5"
           >
-            name
-          </label>
-          <div
-            class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
-          >
-            <div
-              class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
-              id="data-name"
-              role="group"
+            <h2
+              class="c6"
             >
-              <label
-                class="c9"
-                label="a"
-              >
-                <div
-                  class="c10 c11"
-                >
-                  <input
-                    class="c12"
-                    type="checkbox"
-                  />
-                  <div
-                    class="c13 "
-                  />
-                </div>
-                <span>
-                  a
-                </span>
-              </label>
+              Filters
+            </h2>
+          </header>
+          <div
+            class="c7 "
+          >
+            <label
+              class="c8"
+              for="data-name"
+            >
+              name
+            </label>
+            <div
+              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+            >
               <div
-                class="c4"
-              />
-              <label
-                class="c9"
-                label="b"
+                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                id="data-name"
+                role="group"
               >
-                <div
-                  class="c10 c11"
+                <label
+                  class="c11"
+                  label="a"
                 >
-                  <input
-                    class="c12"
-                    type="checkbox"
-                  />
                   <div
-                    class="c13 "
-                  />
-                </div>
-                <span>
-                  b
-                </span>
-              </label>
+                    class="c12 c13"
+                  >
+                    <input
+                      class="c14"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c15 "
+                    />
+                  </div>
+                  <span>
+                    a
+                  </span>
+                </label>
+                <div
+                  class="c16"
+                />
+                <label
+                  class="c11"
+                  label="b"
+                >
+                  <div
+                    class="c12 c13"
+                  >
+                    <input
+                      class="c14"
+                      type="checkbox"
+                    />
+                    <div
+                      class="c15 "
+                    />
+                  </div>
+                  <span>
+                    b
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="c4"
-        />
         <footer
-          class="c2"
+          class="c17"
         >
           <button
-            class="c14"
+            class="c18"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c15"
+            class="c19"
           />
           <button
             aria-hidden="true"
-            class="c16 c17"
+            class="c20 c21"
             disabled=""
             tabindex="-1"
             type="reset"

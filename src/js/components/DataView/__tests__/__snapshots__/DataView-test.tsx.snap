@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataView preset view 1`] = `
-.c10 {
+.c13 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`DataView preset view 1`] = `
   stroke: #7D4CDB;
 }
 
-.c10 g {
+.c13 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -52,7 +52,40 @@ exports[`DataView preset view 1`] = `
   flex: 0 0 auto;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -74,7 +107,7 @@ exports[`DataView preset view 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +126,7 @@ exports[`DataView preset view 1`] = `
   flex-basis: auto;
 }
 
-.c9 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -112,7 +145,7 @@ exports[`DataView preset view 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -130,47 +163,47 @@ exports[`DataView preset view 1`] = `
   text-align: inherit;
 }
 
-.c2:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c2:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) > circle,
-.c2:focus:not(:focus-visible) > ellipse,
-.c2:focus:not(:focus-visible) > line,
-.c2:focus:not(:focus-visible) > path,
-.c2:focus:not(:focus-visible) > polygon,
-.c2:focus:not(:focus-visible) > polyline,
-.c2:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c10 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -188,44 +221,48 @@ exports[`DataView preset view 1`] = `
   border: none;
 }
 
-.c7::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-moz-placeholder {
+.c10::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c7:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c10::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c7::-moz-focus-inner {
+.c10::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c7:-moz-placeholder,
-.c7::-moz-placeholder {
+.c10:-moz-placeholder,
+.c10::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c9 {
   position: relative;
   width: 100%;
 }
 
-.c8 {
+.c11 {
   cursor: pointer;
 }
 
-.c3 {
+.c6 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c2 {
+  max-width: 100%;
 }
 
 .c0 {
@@ -239,7 +276,7 @@ exports[`DataView preset view 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c12 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -252,59 +289,65 @@ exports[`DataView preset view 1`] = `
     class="c1"
     id="data"
   >
-    <form>
+    <form
+      class="c2"
+    >
       <div
-        class="c1"
+        class="c3"
       >
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select view ...; Selected: top"
-          class="c2 c3"
-          id="data-view"
-          type="button"
+        <div
+          class="c4"
         >
-          <div
-            class="c4"
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select view ...; Selected: top"
+            class="c5 c6"
+            id="data--view"
+            type="button"
           >
             <div
-              class="c5"
+              class="c7"
             >
               <div
-                class="c6"
+                class="c8"
               >
-                <input
-                  autocomplete="off"
-                  class="c7 c8"
-                  id="data-view__input"
-                  name="_view"
-                  placeholder="Select view ..."
-                  readonly=""
-                  tabindex="-1"
-                  type="text"
-                  value="top"
-                />
+                <div
+                  class="c9"
+                >
+                  <input
+                    autocomplete="off"
+                    class="c10 c11"
+                    id="data--view__input"
+                    name="_view"
+                    placeholder="Select view ..."
+                    readonly=""
+                    tabindex="-1"
+                    type="text"
+                    value="top"
+                  />
+                </div>
+              </div>
+              <div
+                class="c12"
+                style="min-width: auto;"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c13"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
               </div>
             </div>
-            <div
-              class="c9"
-              style="min-width: auto;"
-            >
-              <svg
-                aria-label="FormDown"
-                class="c10"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m18 9-6 6-6-6"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </div>
-        </button>
+          </button>
+        </div>
       </div>
     </form>
   </div>
@@ -312,7 +355,7 @@ exports[`DataView preset view 1`] = `
 `;
 
 exports[`DataView renders 1`] = `
-.c10 {
+.c13 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -323,25 +366,25 @@ exports[`DataView renders 1`] = `
   stroke: #7D4CDB;
 }
 
-.c10 g {
+.c13 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -363,7 +406,40 @@ exports[`DataView renders 1`] = `
   flex: 0 0 auto;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -385,7 +461,7 @@ exports[`DataView renders 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -404,7 +480,7 @@ exports[`DataView renders 1`] = `
   flex-basis: auto;
 }
 
-.c9 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -423,7 +499,7 @@ exports[`DataView renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -441,47 +517,47 @@ exports[`DataView renders 1`] = `
   text-align: inherit;
 }
 
-.c2:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c2:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) > circle,
-.c2:focus:not(:focus-visible) > ellipse,
-.c2:focus:not(:focus-visible) > line,
-.c2:focus:not(:focus-visible) > path,
-.c2:focus:not(:focus-visible) > polygon,
-.c2:focus:not(:focus-visible) > polyline,
-.c2:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c10 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -499,44 +575,48 @@ exports[`DataView renders 1`] = `
   border: none;
 }
 
-.c7::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-moz-placeholder {
+.c10::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c7:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c10::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c7::-moz-focus-inner {
+.c10::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c7:-moz-placeholder,
-.c7::-moz-placeholder {
+.c10:-moz-placeholder,
+.c10::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c9 {
   position: relative;
   width: 100%;
 }
 
-.c8 {
+.c11 {
   cursor: pointer;
 }
 
-.c3 {
+.c6 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+}
+
+.c2 {
+  max-width: 100%;
 }
 
 .c0 {
@@ -550,7 +630,7 @@ exports[`DataView renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c12 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -563,59 +643,65 @@ exports[`DataView renders 1`] = `
     class="c1"
     id="data"
   >
-    <form>
+    <form
+      class="c2"
+    >
       <div
-        class="c1"
+        class="c3"
       >
-        <button
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-label="Select view ..."
-          class="c2 c3"
-          id="data-view"
-          type="button"
+        <div
+          class="c4"
         >
-          <div
-            class="c4"
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Select view ..."
+            class="c5 c6"
+            id="data--view"
+            type="button"
           >
             <div
-              class="c5"
+              class="c7"
             >
               <div
-                class="c6"
+                class="c8"
               >
-                <input
-                  autocomplete="off"
-                  class="c7 c8"
-                  id="data-view__input"
-                  name="_view"
-                  placeholder="Select view ..."
-                  readonly=""
-                  tabindex="-1"
-                  type="text"
-                  value=""
-                />
+                <div
+                  class="c9"
+                >
+                  <input
+                    autocomplete="off"
+                    class="c10 c11"
+                    id="data--view__input"
+                    name="_view"
+                    placeholder="Select view ..."
+                    readonly=""
+                    tabindex="-1"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="c12"
+                style="min-width: auto;"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c13"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
               </div>
             </div>
-            <div
-              class="c9"
-              style="min-width: auto;"
-            >
-              <svg
-                aria-label="FormDown"
-                class="c10"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m18 9-6 6-6-6"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </div>
-          </div>
-        </button>
+          </button>
+        </div>
       </div>
     </form>
   </div>

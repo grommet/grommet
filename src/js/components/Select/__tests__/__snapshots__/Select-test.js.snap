@@ -2923,7 +2923,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4724,7 +4724,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 fLRsZH"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 fLRsZH"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -12586,7 +12586,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -13491,7 +13491,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -15559,7 +15559,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value=""
 />
@@ -15568,7 +15568,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value="o"
 />
@@ -16207,7 +16207,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value=""
 />
@@ -16216,7 +16216,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 leLkkb"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value="t"
 />
@@ -18077,7 +18077,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eWSUmi StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
             id="test-select__input"
             placeholder="test select"
             readonly=""

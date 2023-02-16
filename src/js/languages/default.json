@@ -25,13 +25,15 @@
     "submit": "Apply filters"
   },
   "dataSearch": {
-    "label": "Search data"
+    "label": "Search",
+    "open": "Open search"
   },
   "dataSort": {
     "ascending": "Ascending",
     "by": "Sort by",
     "descending": "Descending",
-    "direction": "Sort direction"
+    "direction": "Sort direction",
+    "open": "Open sort"
   },
   "dataSummary": {
     "filtered": "{filteredTotal} results of {total} items",
@@ -42,6 +44,9 @@
     "open": "Open column selector",
     "order": "Order columns",
     "select": "Select columns"
+  },
+  "dataView": {
+    "label": "View"
   },
   "fileInput": {
     "browse": "browse",

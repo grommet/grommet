@@ -4,13 +4,14 @@ import {
   Omit,
   PlaceHolderType,
   TextAlignType,
+  WidthType,
 } from '../../utils';
 import { DropType } from '../Drop';
 
 export interface TextInputProps
   extends Omit<
     JSX.IntrinsicElements['input'],
-    'onSelect' | 'size' | 'placeholder'
+    'onSelect' | 'size' | 'placeholder' | 'width'
   > {
   a11yTitle?: A11yTitleType;
   dropAlign?: {
@@ -50,6 +51,7 @@ export interface TextInputProps
   suggestions?: ({ label?: React.ReactNode; value?: any } | string)[];
   textAlign?: TextAlignType;
   value?: string | number;
+  width?: WidthType;
 }
 
 declare const TextInput: React.FC<TextInputProps>;
