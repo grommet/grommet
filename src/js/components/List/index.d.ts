@@ -43,7 +43,7 @@ export interface ListProps<ListItemType> {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
-  children?: React.ReactNode;
+  children?: (...args: any[]) => any;
   data?: ListItemType[];
   disabled?: string[];
   gridArea?: GridAreaType;
