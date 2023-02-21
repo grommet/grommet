@@ -504,11 +504,13 @@ export interface ThemeType {
         fontWeight?: number;
         textDecoration?: string;
       };
-      [x: string]: {
-        color?: ColorType;
-        fontWeight?: number;
-        textDecoration?: string;
-      };
+      [x: string]:
+        | {
+            color?: ColorType;
+            fontWeight?: number;
+            textDecoration?: string;
+          }
+        | undefined;
     };
   };
   avatar?: {
