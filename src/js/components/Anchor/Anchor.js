@@ -17,7 +17,7 @@ import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
-import { TextSizeContext } from '../Text/Text';
+import { TextContext } from '../Text/Text';
 
 const Anchor = forwardRef(
   (
@@ -42,7 +42,7 @@ const Anchor = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
-    const size = useContext(TextSizeContext);
+    const { size } = useContext(TextContext);
     const sendAnalytics = useAnalytics();
 
     const onClick = useCallback(

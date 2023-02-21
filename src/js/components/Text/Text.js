@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import React, { createContext, forwardRef, useMemo, useState } from 'react';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
@@ -9,7 +9,7 @@ import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
 
-export const TextSizeContext = React.createContext();
+export const TextContext = createContext({});
 
 const Text = forwardRef(
   (
@@ -32,6 +32,7 @@ const Text = forwardRef(
   ) => {
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
+    const textContextValue = useMemo(() => ({ size }), [size]);
 
     const skeleton = useSkeleton();
 
@@ -73,9 +74,9 @@ const Text = forwardRef(
         {...rest}
         ref={textRef}
       >
-        <TextSizeContext.Provider value={size}>
+        <TextContext.Provider value={textContextValue}>
           {children}
-        </TextSizeContext.Provider>
+        </TextContext.Provider>
       </StyledText>
     );
 

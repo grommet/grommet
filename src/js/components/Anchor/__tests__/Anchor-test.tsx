@@ -232,14 +232,17 @@ describe('Anchor', () => {
           large: {
             color: 'brand',
             textDecoration: 'none',
+            fontWeight: 500,
           },
           xlarge: {
             color: 'brand',
             textDecoration: 'none',
+            fontWeight: 500,
           },
           xxlarge: {
             color: 'brand',
             textDecoration: 'none',
+            fontWeight: 500,
           },
         },
       },

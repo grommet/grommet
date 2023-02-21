@@ -633,7 +633,7 @@ exports[`Anchor renders size specific theming 1`] = `
   font-size: 22px;
   line-height: 28px;
   color: #7D4CDB;
-  font-weight: 700;
+  font-weight: 500;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -649,7 +649,7 @@ exports[`Anchor renders size specific theming 1`] = `
   font-size: 26px;
   line-height: 32px;
   color: #7D4CDB;
-  font-weight: 700;
+  font-weight: 500;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -665,7 +665,7 @@ exports[`Anchor renders size specific theming 1`] = `
   font-size: 34px;
   line-height: 40px;
   color: #7D4CDB;
-  font-weight: 700;
+  font-weight: 500;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
