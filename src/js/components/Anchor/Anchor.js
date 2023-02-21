@@ -17,7 +17,7 @@ import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
-import { TextContext } from '../Text/Text';
+import { TextContext } from '../Text/TextContext';
 
 const Anchor = forwardRef(
   (

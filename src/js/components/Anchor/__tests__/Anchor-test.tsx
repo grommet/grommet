@@ -9,6 +9,7 @@ import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { Anchor } from '..';
 import { Box } from '../../Box';
+import { Paragraph } from '../../Paragraph';
 import { Text } from '../../Text';
 
 describe('Anchor', () => {
@@ -260,6 +261,9 @@ describe('Anchor', () => {
             </Box>
           ),
         )}
+        <Paragraph size="small">
+          Anchor should inherit <Anchor label="small" /> from Paragraph.
+        </Paragraph>
         <Anchor label="Default anchor with no size prop should receive medium" />
         <Anchor label="Anchor with icon" icon={<svg />} />
       </Grommet>,

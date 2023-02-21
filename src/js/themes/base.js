@@ -379,52 +379,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       // size: {
-      //   xsmall: {
-      //     color: undefined,
-      //     fontWeight: undefined,
-      //     textDecoration: undefined,
-      //   },
-      //   small: {
-      //     color: undefined,
-      //     fontWeight: undefined,
-      //     textDecoration: undefined,
-      //   },
       //   medium: {
-      //     color: undefined,
-      //     fontWeight: undefined,
-      //     textDecoration: undefined,
-      //   },
-      //   large: {
-      //     color: undefined,
-      //     fontWeight: undefined,
-      //     textDecoration: undefined,
-      //   },
-      //   xlarge: {
-      //    color: undefined,
-      //    fontWeight: undefined,
-      //    textDecoration: undefined,
-      //   },
-      //   xxlarge: {
-      //     color: undefined,
-      //     fontWeight: undefined,
-      //     textDecoration: undefined,
-      //   },
-      //   '3xl': {
-      //     color: undefined,
-      //     fontWeight: undefined,
-      //     textDecoration: undefined,
-      //   },
-      //   '4xl': {
-      //     color: undefined,
-      //     fontWeight: undefined,
-      //     textDecoration: undefined,
-      //   },
-      //   '5xl': {
-      //     color: undefined,
-      //     fontWeight: undefined,
-      //     textDecoration: undefined,
-      //   },
-      //   '6xl': {
       //     color: undefined,
       //     fontWeight: undefined,
       //     textDecoration: undefined,

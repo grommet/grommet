@@ -552,7 +552,7 @@ exports[`Anchor renders size specific theming 1`] = `
   flex-direction: column;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -570,7 +570,7 @@ exports[`Anchor renders size specific theming 1`] = `
   flex-direction: row;
 }
 
-.c17 {
+.c18 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -676,7 +676,7 @@ exports[`Anchor renders size specific theming 1`] = `
   text-decoration: underline;
 }
 
-.c14 {
+.c15 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -687,12 +687,12 @@ exports[`Anchor renders size specific theming 1`] = `
   cursor: pointer;
 }
 
-.c14:hover {
+.c15:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c15 {
+.c16 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -703,9 +703,15 @@ exports[`Anchor renders size specific theming 1`] = `
   cursor: pointer;
 }
 
-.c15:hover {
+.c16:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c14 {
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 336px;
 }
 
 .c3 {
@@ -861,23 +867,34 @@ exports[`Anchor renders size specific theming 1`] = `
          from text.
       </span>
     </div>
-    <a
+    <p
       class="c14"
+    >
+      Anchor should inherit 
+      <a
+        class="c4"
+      >
+        small
+      </a>
+       from Paragraph.
+    </p>
+    <a
+      class="c15"
     >
       Default anchor with no size prop should receive medium
     </a>
     <a
-      class="c15"
+      class="c16"
     >
       <span
-        class="c16"
+        class="c17"
         style="display: inline-flex;"
       >
         <svg
           color="#000000"
         />
         <span
-          class="c17"
+          class="c18"
         />
         Anchor with icon
       </span>

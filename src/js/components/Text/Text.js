@@ -1,4 +1,4 @@
-import React, { createContext, forwardRef, useMemo, useState } from 'react';
+import React, { forwardRef, useMemo, useState } from 'react';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
@@ -8,8 +8,7 @@ import { useForwardedRef } from '../../utils';
 import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
-
-export const TextContext = createContext({});
+import { TextContext } from './TextContext';
 
 const Text = forwardRef(
   (
