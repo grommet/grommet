@@ -498,6 +498,38 @@ export interface ThemeType {
       textDecoration?: string;
     };
     textDecoration?: string;
+    size?: {
+      xsmall?: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+      small?: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+      medium?: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+      large?: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+      xlarge?: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+      [x: string]: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+    };
   };
   avatar?: {
     size?: {

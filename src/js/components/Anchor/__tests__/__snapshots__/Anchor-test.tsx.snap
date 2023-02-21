@@ -526,6 +526,366 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
 </div>
 `;
 
+exports[`Anchor renders size specific theming 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c17 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c2:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c4:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c6:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: 22px;
+  line-height: 28px;
+  color: #7D4CDB;
+  font-weight: 700;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10 {
+  box-sizing: border-box;
+  font-size: 26px;
+  line-height: 32px;
+  color: #7D4CDB;
+  font-weight: 700;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c10:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c12 {
+  box-sizing: border-box;
+  font-size: 34px;
+  line-height: 40px;
+  color: #7D4CDB;
+  font-weight: 700;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c12:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c14 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c14:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c15 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c15:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c3 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.c5 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.c11 {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.c13 {
+  font-size: 34px;
+  line-height: 40px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <a
+        class="c2"
+      >
+        xsmall
+      </a>
+      <span
+        class="c3"
+      >
+        Anchor should inherit 
+        <a
+          class="c2"
+        >
+          xsmall
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c4"
+      >
+        small
+      </a>
+      <span
+        class="c5"
+      >
+        Anchor should inherit 
+        <a
+          class="c4"
+        >
+          small
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c6"
+      >
+        medium
+      </a>
+      <span
+        class="c7"
+      >
+        Anchor should inherit 
+        <a
+          class="c6"
+        >
+          medium
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c8"
+      >
+        large
+      </a>
+      <span
+        class="c9"
+      >
+        Anchor should inherit 
+        <a
+          class="c8"
+        >
+          large
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c10"
+      >
+        xlarge
+      </a>
+      <span
+        class="c11"
+      >
+        Anchor should inherit 
+        <a
+          class="c10"
+        >
+          xlarge
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c12"
+      >
+        xxlarge
+      </a>
+      <span
+        class="c13"
+      >
+        Anchor should inherit 
+        <a
+          class="c12"
+        >
+          xxlarge
+        </a>
+         from text.
+      </span>
+    </div>
+    <a
+      class="c14"
+    >
+      Default anchor with no size prop should receive medium
+    </a>
+    <a
+      class="c15"
+    >
+      <span
+        class="c16"
+        style="display: inline-flex;"
+      >
+        <svg
+          color="#000000"
+        />
+        <span
+          class="c17"
+        />
+        Anchor with icon
+      </span>
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Anchor renders tag 1`] = `
 .c0 {
   font-size: 18px;

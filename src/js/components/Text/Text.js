@@ -9,6 +9,8 @@ import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
 
+export const TextSizeContext = React.createContext();
+
 const Text = forwardRef(
   (
     {
@@ -71,7 +73,9 @@ const Text = forwardRef(
         {...rest}
         ref={textRef}
       >
-        {children}
+        <TextSizeContext.Provider value={size}>
+          {children}
+        </TextSizeContext.Provider>
       </StyledText>
     );
 

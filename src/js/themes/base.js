@@ -378,6 +378,58 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // fontWeight: undefined,
         // extend: undefined,
       },
+      // size: {
+      //   xsmall: {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   small: {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   medium: {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   large: {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   xlarge: {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   xxlarge: {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   '3xl': {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   '4xl': {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   '5xl': {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      //   '6xl': {
+      //     textDecoration: undefined,
+      //     fontWeight: undefined,
+      //     extend: undefined,
+      //   },
+      // },
       // extend: undefined,
     },
     avatar: {
