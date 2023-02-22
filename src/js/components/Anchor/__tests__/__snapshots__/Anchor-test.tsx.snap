@@ -899,6 +899,22 @@ exports[`Anchor renders size specific theming 1`] = `
         Anchor with icon
       </span>
     </a>
+    <a
+      class="c8"
+    >
+      <span
+        class="c17"
+        style="display: inline-flex;"
+      >
+        <svg
+          color="#7D4CDB"
+        />
+        <span
+          class="c18"
+        />
+        Large anchor with icon should receive large color on icon
+      </span>
+    </a>
   </div>
 </DocumentFragment>
 `;

@@ -266,6 +266,11 @@ describe('Anchor', () => {
         </Paragraph>
         <Anchor label="Default anchor with no size prop should receive medium" />
         <Anchor label="Anchor with icon" icon={<svg />} />
+        <Anchor
+          label="Large anchor with icon should receive large color on icon"
+          icon={<svg />}
+          size="large"
+        />
       </Grommet>,
     );
 
