@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "gap", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
+var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "gap", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse", "size"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { cloneElement, forwardRef, useCallback, useContext, useEffect, useState } from 'react';
@@ -9,6 +9,7 @@ import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
+import { TextContext } from '../Text/TextContext';
 var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
@@ -23,11 +24,14 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onClickProp = _ref.onClick,
     _onFocus = _ref.onFocus,
     reverse = _ref.reverse,
+    sizeProp = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var _useState = useState(),
     focus = _useState[0],
     setFocus = _useState[1];
+  var _useContext = useContext(TextContext),
+    size = _useContext.size;
   var sendAnalytics = useAnalytics();
   var onClick = useCallback(function (event) {
     sendAnalytics({
@@ -70,7 +74,8 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onBlur: function onBlur(event) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
-    }
+    },
+    size: sizeProp || size
   }), first && second ? /*#__PURE__*/React.createElement(Box, {
     as: "span",
     direction: "row",

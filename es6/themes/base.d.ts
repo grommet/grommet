@@ -498,6 +498,20 @@ export interface ThemeType {
       textDecoration?: string;
     };
     textDecoration?: string;
+    size?: {
+      medium?: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+      [x: string]:
+        | {
+            color?: ColorType;
+            fontWeight?: number;
+            textDecoration?: string;
+          }
+        | undefined;
+    };
   };
   avatar?: {
     size?: {

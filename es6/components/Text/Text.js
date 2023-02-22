@@ -1,7 +1,7 @@
 var _excluded = ["children", "color", "tag", "as", "tip", "a11yTitle", "truncate", "size", "skeleton"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useMemo, useState } from 'react';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
@@ -9,6 +9,7 @@ import { useForwardedRef } from '../../utils';
 import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
+import { TextContext } from './TextContext';
 var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
     color = _ref.color,
@@ -25,6 +26,11 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState = useState(false),
     textTruncated = _useState[0],
     setTextTruncated = _useState[1];
+  var textContextValue = useMemo(function () {
+    return {
+      size: size
+    };
+  }, [size]);
   var skeleton = useSkeleton();
   useLayoutEffect(function () {
     var updateTip = function updateTip() {
@@ -54,7 +60,9 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size: size
   }, rest, {
     ref: textRef
-  }), children);
+  }), /*#__PURE__*/React.createElement(TextContext.Provider, {
+    value: textContextValue
+  }, children));
   if (tipProp || textTruncated) {
     // place the text content in a tip if truncate === 'tip'
     // and the text has been truncated

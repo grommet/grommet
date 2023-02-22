@@ -22,11 +22,14 @@ var StyledAnchor = styled.a.withConfig({
 })(["box-sizing:border-box;", " color:", ";", " text-decoration:", ";cursor:pointer;", " ", " ", " ", " ", " ", ""], function (props) {
   return sizeStyle(props);
 }, function (props) {
-  return normalizeColor(props.colorProp || props.theme.anchor.color, props.theme);
+  var _props$theme$anchor, _props$theme$anchor$s, _props$theme$anchor$s2;
+  return normalizeColor(props.colorProp || ((_props$theme$anchor = props.theme.anchor) == null ? void 0 : (_props$theme$anchor$s = _props$theme$anchor.size) == null ? void 0 : (_props$theme$anchor$s2 = _props$theme$anchor$s[props.size]) == null ? void 0 : _props$theme$anchor$s2.color) || props.theme.anchor.color, props.theme);
 }, function (props) {
-  return props.weight ? "font-weight: " + props.weight + ";" : props.theme.anchor.fontWeight && "font-weight: " + props.theme.anchor.fontWeight + ";";
+  var _props$theme$anchor2, _props$theme$anchor2$, _props$theme$anchor2$2, _props$theme$anchor3, _props$theme$anchor3$, _props$theme$anchor3$2;
+  return props.weight ? "font-weight: " + props.weight + ";" : (((_props$theme$anchor2 = props.theme.anchor) == null ? void 0 : (_props$theme$anchor2$ = _props$theme$anchor2.size) == null ? void 0 : (_props$theme$anchor2$2 = _props$theme$anchor2$[props.size]) == null ? void 0 : _props$theme$anchor2$2.fontWeight) || props.theme.anchor.fontWeight) && "font-weight: " + (((_props$theme$anchor3 = props.theme.anchor) == null ? void 0 : (_props$theme$anchor3$ = _props$theme$anchor3.size) == null ? void 0 : (_props$theme$anchor3$2 = _props$theme$anchor3$[props.size]) == null ? void 0 : _props$theme$anchor3$2.fontWeight) || props.theme.anchor.fontWeight) + ";";
 }, function (props) {
-  return props.hasIcon ? 'none' : props.theme.anchor.textDecoration;
+  var _props$theme$anchor4, _props$theme$anchor4$, _props$theme$anchor4$2;
+  return props.hasIcon ? 'none' : ((_props$theme$anchor4 = props.theme.anchor) == null ? void 0 : (_props$theme$anchor4$ = _props$theme$anchor4.size) == null ? void 0 : (_props$theme$anchor4$2 = _props$theme$anchor4$[props.size]) == null ? void 0 : _props$theme$anchor4$2.textDecoration) || props.theme.anchor.textDecoration;
 }, genericStyles, function (props) {
   return !props.disabled && props.theme.anchor.hover && css(["&:hover{", " ", " ", "}"], props.theme.anchor.hover.textDecoration && "text-decoration: " + props.theme.anchor.hover.textDecoration + ";", props.theme.anchor.hover.fontWeight && "font-weight: " + props.theme.anchor.hover.fontWeight + ";", props.theme.anchor.hover.extend);
 }, function (props) {

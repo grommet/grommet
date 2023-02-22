@@ -406,6 +406,13 @@ var generate = function generate(baseSpacing, scale) {
         // fontWeight: undefined,
         // extend: undefined,
       }
+      // size: {
+      //   medium: {
+      //     color: undefined,
+      //     fontWeight: undefined,
+      //     textDecoration: undefined,
+      //   },
+      // },
       // extend: undefined,
     },
 

@@ -10,7 +10,8 @@ var _Box = require("../Box");
 var _StyledAnchor = require("./StyledAnchor");
 var _propTypes = require("./propTypes");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
-var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "gap", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse"];
+var _TextContext = require("../Text/TextContext");
+var _excluded = ["a11yTitle", "aria-label", "children", "color", "disabled", "gap", "href", "icon", "label", "onBlur", "onClick", "onFocus", "reverse", "size"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -29,11 +30,14 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onClickProp = _ref.onClick,
     _onFocus = _ref.onFocus,
     reverse = _ref.reverse,
+    sizeProp = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
   var _useState = (0, _react.useState)(),
     focus = _useState[0],
     setFocus = _useState[1];
+  var _useContext = (0, _react.useContext)(_TextContext.TextContext),
+    size = _useContext.size;
   var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
   var onClick = (0, _react.useCallback)(function (event) {
     sendAnalytics({
@@ -76,7 +80,8 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onBlur: function onBlur(event) {
       setFocus(false);
       if (_onBlur) _onBlur(event);
-    }
+    },
+    size: sizeProp || size
   }), first && second ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     as: "span",
     direction: "row",

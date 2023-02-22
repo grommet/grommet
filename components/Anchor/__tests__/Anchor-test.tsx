@@ -9,6 +9,8 @@ import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { Anchor } from '..';
 import { Box } from '../../Box';
+import { Paragraph } from '../../Paragraph';
+import { Text } from '../../Text';
 
 describe('Anchor', () => {
   test('should have no accessibility violations', async () => {
@@ -219,5 +221,54 @@ describe('Anchor', () => {
     expect(getByLabelText('test')).toBeTruthy();
     expect(getByLabelText('test-2')).toBeTruthy();
     expect(container).toMatchSnapshot();
+  });
+
+  test('renders size specific theming', () => {
+    const theme = {
+      anchor: {
+        color: 'text-strong',
+        textDecoration: 'underline',
+        fontWeight: 700,
+        size: {
+          large: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+          },
+          xlarge: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+          },
+          xxlarge: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        {['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].map(
+          (size) => (
+            <Box key={size}>
+              <Anchor size={size} label={size} />
+              <Text size={size}>
+                Anchor should inherit <Anchor label={size} /> from text.
+              </Text>
+            </Box>
+          ),
+        )}
+        <Paragraph size="small">
+          Anchor should inherit <Anchor label="small" /> from Paragraph.
+        </Paragraph>
+        <Anchor label="Default anchor with no size prop should receive medium" />
+        <Anchor label="Anchor with icon" icon={<svg />} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
