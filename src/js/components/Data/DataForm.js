@@ -79,7 +79,7 @@ const unflatten = (formValue) => {
       let parent = result;
       while (parts.length > 1) {
         const sub = parts.shift();
-        parent[sub] = {};
+        if (!parent[sub]) parent[sub] = {};
         parent = parent[sub];
       }
       parent[parts.shift()] = val;
