@@ -46,6 +46,44 @@ var viewFormKeyMap = {
   view: formViewNameKey
 };
 
+// flatten nested objects. For example: { a: { b: v } } -> { 'a.b': v }
+var flatten = function flatten(formValue, options) {
+  var result = JSON.parse(JSON.stringify(formValue));
+  Object.keys(result).forEach(function (k) {
+    var name = k;
+    // flatten one level at a time, ignore _range situations
+    while (typeof result[name] === 'object' && !Array.isArray(result[name]) && (options != null && options.full || !result[name][formRangeKey])) {
+      var subPath = Object.keys(result[name])[0];
+      var path = name + "." + subPath;
+      result[path] = result[name][subPath];
+      delete result[name];
+      name = path;
+    }
+  });
+  return result;
+};
+
+// unflatten nested objects. For example: { 'a.b': v } -> { a: { b: v } }
+var unflatten = function unflatten(formValue) {
+  var result = JSON.parse(JSON.stringify(formValue));
+  var specialKeys = Object.values(viewFormKeyMap);
+  Object.keys(result).filter(function (k) {
+    return !specialKeys.includes(k);
+  }).forEach(function (k) {
+    var parts = k.split('.');
+    var val = result[k];
+    delete result[k];
+    var parent = result;
+    while (parts.length > 1) {
+      var sub = parts.shift();
+      if (!parent[sub]) parent[sub] = {};
+      parent = parent[sub];
+    }
+    parent[parts.shift()] = val;
+  });
+  return result;
+};
+
 // converts from the external view format to the internal Form value format
 var viewToFormValue = function viewToFormValue(view) {
   var result = _extends({}, (view == null ? void 0 : view.properties) || {});
@@ -67,7 +105,7 @@ var viewToFormValue = function viewToFormValue(view) {
   if (view != null && view.sort) result[formSortKey] = view.sort;
   if (view != null && view.name) result[formViewNameKey] = view.name;
   if (view != null && view.columns) result[formColumnsKey] = view.columns;
-  return result;
+  return unflatten(result);
 };
 
 // converts from the internal Form value format to the external view format
@@ -85,7 +123,10 @@ var formValueToView = function formValueToView(value, views) {
     }
     delete valueCopy[viewFormKeyMap[key]];
   });
-  result.properties = _extends({}, result.properties || {}, valueCopy);
+
+  // flatten any nested objects
+  var flatValue = flatten(valueCopy);
+  result.properties = _extends({}, result.properties || {}, flatValue);
 
   // convert any ranges
   Object.keys(result.properties).forEach(function (key) {
@@ -120,7 +161,9 @@ var transformTouched = function transformTouched(touched, value) {
   Object.keys(touched).forEach(function (key) {
     // special case _range fields
     var parts = key.split('.');
-    if (parts[1] === formRangeKey) result[key] = value[parts[0]];else result[key] = value[key];
+    if (parts[1] === formRangeKey) result[key] = value[parts[0]];else result[key] = flatten(value, {
+      full: true
+    })[key];
   });
   return result;
 };
@@ -134,9 +177,11 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
       return v.name === nextValue[formViewNameKey];
     }));
   }
+  // something else changed
 
-  // something else changed, clear empty propeties
+  // clear empty properties
   var result = clearEmpty(nextValue);
+
   // if we have a view and something related to it changed, clear the view
   if (result[formViewNameKey]) {
     var view = views.find(function (v) {

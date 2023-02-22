@@ -8,9 +8,15 @@ import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
+var getValueAt = function getValueAt(valueObject, pathArg) {
+  if (valueObject === undefined) return undefined;
+  var path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
+  if (path.length === 1) return valueObject[path];
+  return getValueAt(valueObject[path.shift()], path);
+};
 var generateOptions = function generateOptions(data, property) {
   return Array.from(new Set(data.map(function (d) {
-    return d[property];
+    return getValueAt(d, property);
   }))).filter(function (v) {
     return v !== undefined && v !== '';
   }).sort();
@@ -33,7 +39,7 @@ var booleanOptions = [{
   value: false
 }];
 export var DataFilter = function DataFilter(_ref) {
-  var _properties$property4;
+  var _properties$property3;
   var children = _ref.children,
     optionsProp = _ref.options,
     property = _ref.property,
@@ -44,46 +50,31 @@ export var DataFilter = function DataFilter(_ref) {
     dataId = _useContext.id,
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData;
-  var options = useMemo(function () {
-    var _properties$property, _properties$property2;
-    if (children) return undefined; // caller driving
-    if (optionsProp) return optionsProp; // caller setting
-    // Data properties setting
-    if (properties != null && (_properties$property = properties[property]) != null && _properties$property.options) return properties[property].options;
-    // skip if we have a range
-    if (rangeProp || properties != null && (_properties$property2 = properties[property]) != null && _properties$property2.range) return undefined;
+  var _useMemo = useMemo(function () {
+      var _properties$property, _properties$property2;
+      if (children) return [undefined, undefined]; // caller driving
 
-    // generate options from all values for property
-    var uniqueValues = generateOptions(unfilteredData || data, property);
-    // if any values aren't numeric, treat as options
-    if (uniqueValues.some(function (v) {
-      return v && typeof v !== 'number';
-    })) return uniqueValues;
-    // if all values are numeric, let range take care of it
-    return undefined;
-  }, [children, data, optionsProp, properties, property, rangeProp, unfilteredData]);
-  var range = useMemo(function () {
-    var _properties$property3;
-    if (children) return undefined; // caller driving
-    var anyRange = rangeProp || (properties == null ? void 0 : (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.range);
-    if (anyRange) {
-      // caller setting or Data properties setting
-      var _min = anyRange.min,
-        _max = anyRange.max;
-      return [_min, _max];
-    }
-    // skip if we have options
-    if (options) return undefined;
+      var optionsIn = optionsProp || (properties == null ? void 0 : (_properties$property = properties[property]) == null ? void 0 : _properties$property.options);
+      var rangeIn = rangeProp || (properties == null ? void 0 : (_properties$property2 = properties[property]) == null ? void 0 : _properties$property2.range);
+      if (optionsIn) return [optionsIn, undefined];
+      if (rangeIn) return [undefined, [rangeIn.min, rangeIn.max]];
 
-    // generate range from all values for the property
-    var uniqueValues = generateOptions(unfilteredData || data, property).sort();
-    // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
-    var delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
-    var interval = Number.parseFloat((delta / 3).toPrecision(1));
-    var min = alignMin(uniqueValues[0], interval);
-    var max = alignMax(uniqueValues[uniqueValues.length - 1], interval);
-    return [min, max];
-  }, [children, data, options, properties, property, rangeProp, unfilteredData]);
+      // generate options from all values for property
+      var uniqueValues = generateOptions(unfilteredData || data, property);
+      // if any values aren't numeric, treat as options
+      if (uniqueValues.some(function (v) {
+        return v && typeof v !== 'number';
+      })) return [uniqueValues, undefined];
+      // all values are numeric, treat as range
+      // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
+      var delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
+      var interval = Number.parseFloat((delta / 3).toPrecision(1));
+      var min = alignMin(uniqueValues[0], interval);
+      var max = alignMax(uniqueValues[uniqueValues.length - 1], interval);
+      return [undefined, [min, max]];
+    }, [children, data, optionsProp, properties, property, rangeProp, unfilteredData]),
+    options = _useMemo[0],
+    range = _useMemo[1];
   var id = dataId + "-" + property;
   var content = children;
   if (!content) {
@@ -124,7 +115,7 @@ export var DataFilter = function DataFilter(_ref) {
   return /*#__PURE__*/React.createElement(FormField, _extends({
     htmlFor: id,
     name: property,
-    label: (properties == null ? void 0 : (_properties$property4 = properties[property]) == null ? void 0 : _properties$property4.label) || property
+    label: (properties == null ? void 0 : (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property
   }, rest), content);
 };
 DataFilter.propTypes = DataFilterPropTypes;
