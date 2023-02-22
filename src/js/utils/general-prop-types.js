@@ -203,6 +203,7 @@ export const skeletonColorsPropType = PropTypes.shape({
 
 export const skeletonPropType = PropTypes.oneOfType([
   PropTypes.bool,
+  PropTypes.object,
   PropTypes.shape({
     animation: animationPropType,
     colors: skeletonColorsPropType,
@@ -216,6 +217,8 @@ export const skeletonPropType = PropTypes.oneOfType([
     ]),
   }),
 ]);
+
+// { message: { start: 'Loading', end: 'Content Loaded' } }
 
 const dimSizeType = PropTypes.oneOf([
   'xxsmall',
