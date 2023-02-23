@@ -218,8 +218,6 @@ export const skeletonPropType = PropTypes.oneOfType([
   }),
 ]);
 
-// { message: { start: 'Loading', end: 'Content Loaded' } }
-
 const dimSizeType = PropTypes.oneOf([
   'xxsmall',
   'xsmall',
