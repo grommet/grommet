@@ -53,7 +53,7 @@ var Distribution = function Distribution(_ref2) {
     var subTotal = 0;
     var subIndex;
     values.some(function (v, index) {
-      subTotal += Object.prototype.hasOwnProperty.call(v, 'value') ? v.value : 0;
+      subTotal += Object.prototype.hasOwnProperty.call(v, 'value') && v.value || 0;
       if (subTotal >= total * 0.4) {
         subIndex = index + 1;
         return true;
