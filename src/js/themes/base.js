@@ -378,6 +378,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // fontWeight: undefined,
         // extend: undefined,
       },
+      // size: {
+      //   medium: {
+      //     color: undefined,
+      //     fontWeight: undefined,
+      //     textDecoration: undefined,
+      //   },
+      // },
       // extend: undefined,
     },
     avatar: {

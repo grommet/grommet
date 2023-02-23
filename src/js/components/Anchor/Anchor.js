@@ -17,6 +17,7 @@ import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
+import { TextContext } from '../Text/TextContext';
 
 const Anchor = forwardRef(
   (
@@ -34,13 +35,14 @@ const Anchor = forwardRef(
       onClick: onClickProp,
       onFocus,
       reverse,
+      size: sizeProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
-
+    const { size } = useContext(TextContext);
     const sendAnalytics = useAnalytics();
 
     const onClick = useCallback(
@@ -68,7 +70,12 @@ const Anchor = forwardRef(
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
       coloredIcon = cloneElement(icon, {
-        color: normalizeColor(color || theme.anchor.color, theme),
+        color: normalizeColor(
+          color ||
+            theme.anchor?.size?.[sizeProp || size]?.color ||
+            theme.anchor.color,
+          theme,
+        ),
       });
     }
 
@@ -96,6 +103,7 @@ const Anchor = forwardRef(
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
+        size={sizeProp || size}
       >
         {first && second ? (
           <Box
