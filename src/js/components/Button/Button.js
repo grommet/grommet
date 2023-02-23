@@ -245,7 +245,6 @@ const Button = forwardRef(
     // for backwards compatibility, no-kind button theme did not
     // default to size "medium" on buttons with no size prop
     const size = sizeProp || (kind && 'medium') || undefined;
-
     // When we have a kind and are not plain, themePaths stores the relative
     // paths within the theme for the current kind and state of the button.
     // These paths are used with getIconColor() above and kindStyle() within
@@ -349,12 +348,6 @@ const Button = forwardRef(
         buttonIcon = cloneElement(kindIcon, {
           color: iconColor,
         });
-    }
-
-    if (icon && !icon.props.size && theme.button?.icon?.size?.[size]) {
-      buttonIcon = cloneElement(buttonIcon, {
-        size: theme.button.icon.size[size],
-      });
     }
 
     const reverse = reverseProp ?? theme.button[kind]?.reverse;
