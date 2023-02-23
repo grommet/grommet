@@ -17,6 +17,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$tabs$header;
   var alignControls = _ref.alignControls,
     children = _ref.children,
     flex = _ref.flex,
@@ -268,6 +269,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/React.createElement(Box, _extends({
+    alignSelf: alignControls || ((_theme$tabs$header = theme.tabs.header) == null ? void 0 : _theme$tabs$header.alignSelf),
     role: "tablist",
     flex: false,
     direction: overflow ? 'row' : 'column'
@@ -292,7 +294,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     as: Box,
     direction: "row",
     justify: overflow ? 'start' : justify,
-    alignSelf: alignControls,
     flex: !!overflow,
     wrap: false,
     overflow: overflow ? 'hidden' : 'visible',

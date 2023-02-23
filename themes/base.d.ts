@@ -25,6 +25,7 @@ import {
   PropsOf,
   AlignContentType,
   SkeletonColorsType,
+  AlignSelfType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -1519,6 +1520,7 @@ export interface ThemeType {
     extend?: ExtendType;
     gap?: GapType;
     header?: {
+      alignSelf?: AlignSelfType;
       background?: BackgroundType;
       border?: {
         side?: string;

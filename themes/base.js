@@ -1966,6 +1966,7 @@ var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
       // gap: undefined,
       header: {
+        // alignSelf: undefined,
         // background: undefined,
         // border: {
         //   side: undefined,

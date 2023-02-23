@@ -23,6 +23,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _theme$tabs$header;
   var alignControls = _ref.alignControls,
     children = _ref.children,
     flex = _ref.flex,
@@ -274,6 +275,7 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+    alignSelf: alignControls || ((_theme$tabs$header = theme.tabs.header) == null ? void 0 : _theme$tabs$header.alignSelf),
     role: "tablist",
     flex: false,
     direction: overflow ? 'row' : 'column'
@@ -298,7 +300,6 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     as: _Box.Box,
     direction: "row",
     justify: overflow ? 'start' : justify,
-    alignSelf: alignControls,
     flex: !!overflow,
     wrap: false,
     overflow: overflow ? 'hidden' : 'visible',
