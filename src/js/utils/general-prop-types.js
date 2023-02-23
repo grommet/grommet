@@ -211,7 +211,7 @@ export const skeletonPropType = PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.shape({
         start: PropTypes.string,
-        end: PropTypes.end,
+        end: PropTypes.string,
       }),
     ]),
   }),
