@@ -101,7 +101,9 @@ const Box = forwardRef(
     }, [focusable, tabIndex]);
 
     if (
-      (border === 'between' || (border && border.side === 'between')) &&
+      (border === 'between' ||
+        (border && border.side === 'between') ||
+        (Array.isArray(border) && border.find((b) => b.side === 'between'))) &&
       !gap
     ) {
       console.warn('Box must have a gap to use border between');
@@ -224,6 +226,8 @@ const Box = forwardRef(
           gap !== 'none' &&
           border !== 'between' &&
           border?.side !== 'between' &&
+          (!Array.isArray(border) ||
+            !border.find((b) => b.side === 'between')) &&
           gap
         }
         kindProp={kind}
