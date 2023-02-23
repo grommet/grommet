@@ -56,8 +56,9 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [children, icon, label]);
   var coloredIcon = icon;
   if (icon && !icon.props.color) {
+    var _theme$anchor, _theme$anchor$size, _theme$anchor$size2;
     coloredIcon = /*#__PURE__*/(0, _react.cloneElement)(icon, {
-      color: (0, _utils.normalizeColor)(color || theme.anchor.color, theme)
+      color: (0, _utils.normalizeColor)(color || ((_theme$anchor = theme.anchor) == null ? void 0 : (_theme$anchor$size = _theme$anchor.size) == null ? void 0 : (_theme$anchor$size2 = _theme$anchor$size[sizeProp || size]) == null ? void 0 : _theme$anchor$size2.color) || theme.anchor.color, theme)
     });
   }
   var first = reverse ? label : coloredIcon;
