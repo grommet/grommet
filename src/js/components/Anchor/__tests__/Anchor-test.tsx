@@ -11,6 +11,7 @@ import { Anchor } from '..';
 import { Box } from '../../Box';
 import { Paragraph } from '../../Paragraph';
 import { Text } from '../../Text';
+import { LinkNext } from 'grommet-icons';
 
 describe('Anchor', () => {
   test('should have no accessibility violations', async () => {
@@ -265,7 +266,12 @@ describe('Anchor', () => {
           Anchor should inherit <Anchor label="small" /> from Paragraph.
         </Paragraph>
         <Anchor label="Default anchor with no size prop should receive medium" />
-        <Anchor label="Anchor with icon" icon={<svg />} />
+        <Anchor label="Anchor with icon" icon={<LinkNext />} />
+        <Anchor
+          label="Large anchor with icon should receive color on icon"
+          icon={<LinkNext />}
+          size="large"
+        />
       </Grommet>,
     );
 
