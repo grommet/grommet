@@ -96,7 +96,7 @@ var skeletonPropType = _propTypes["default"].oneOfType([_propTypes["default"].bo
   depth: _propTypes["default"].number,
   message: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
     start: _propTypes["default"].string,
-    end: _propTypes["default"].end
+    end: _propTypes["default"].string
   })])
 })]);
 exports.skeletonPropType = skeletonPropType;

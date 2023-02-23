@@ -47,6 +47,6 @@ Simple.args = {
   full: true
 };
 var _default = {
-  title: 'Layout/Toolbar/Simple'
+  title: 'Data/Toolbar/Simple'
 };
 exports["default"] = _default;

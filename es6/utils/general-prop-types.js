@@ -75,7 +75,7 @@ export var skeletonPropType = PropTypes.oneOfType([PropTypes.bool, PropTypes.sha
   depth: PropTypes.number,
   message: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
     start: PropTypes.string,
-    end: PropTypes.end
+    end: PropTypes.string
   })])
 })]);
 var dimSizeType = PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']);

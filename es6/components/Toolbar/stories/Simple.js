@@ -42,5 +42,5 @@ Simple.args = {
   full: true
 };
 export default {
-  title: 'Layout/Toolbar/Simple'
+  title: 'Data/Toolbar/Simple'
 };
