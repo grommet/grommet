@@ -70,7 +70,12 @@ const Anchor = forwardRef(
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
       coloredIcon = cloneElement(icon, {
-        color: normalizeColor(color || theme.anchor.color, theme),
+        color: normalizeColor(
+          color ||
+            theme.anchor?.size?.[sizeProp || size]?.color ||
+            theme.anchor.color,
+          theme,
+        ),
       });
     }
 
