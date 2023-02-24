@@ -137,7 +137,7 @@ var getPropertyColor = function getPropertyColor(property, paths, theme, kind, p
   return result;
 };
 var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _theme$button, _theme$button$icon, _theme$button$icon$si, _theme$button$kind;
+  var _theme$button$kind;
   var active = _ref.active,
     _ref$align = _ref.align,
     align = _ref$align === void 0 ? 'center' : _ref$align,
@@ -216,7 +216,6 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // for backwards compatibility, no-kind button theme did not
   // default to size "medium" on buttons with no size prop
   var size = sizeProp || kind && 'medium' || undefined;
-
   // When we have a kind and are not plain, themePaths stores the relative
   // paths within the theme for the current kind and state of the button.
   // These paths are used with getIconColor() above and kindStyle() within
@@ -300,20 +299,15 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       color: _iconColor
     });
   }
-  if (icon && !icon.props.size && (_theme$button = theme.button) != null && (_theme$button$icon = _theme$button.icon) != null && (_theme$button$icon$si = _theme$button$icon.size) != null && _theme$button$icon$si[size]) {
-    buttonIcon = /*#__PURE__*/(0, _react.cloneElement)(buttonIcon, {
-      size: theme.button.icon.size[size]
-    });
-  }
   var reverse = reverseProp != null ? reverseProp : (_theme$button$kind = theme.button[kind]) == null ? void 0 : _theme$button$kind.reverse;
   var domTag = !as && href ? 'a' : as;
   var first = reverse ? label : buttonIcon;
   var second = reverse ? buttonIcon : label;
   var contents;
   if (first && second) {
-    var _theme$button2, _theme$button2$kind;
+    var _theme$button, _theme$button$kind2;
     contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      direction: ((_theme$button2 = theme.button) == null ? void 0 : (_theme$button2$kind = _theme$button2[kind]) == null ? void 0 : _theme$button2$kind.direction) || 'row',
+      direction: ((_theme$button = theme.button) == null ? void 0 : (_theme$button$kind2 = _theme$button[kind]) == null ? void 0 : _theme$button$kind2.direction) || 'row',
       align: "center",
       justify: justify || (align === 'center' ? 'center' : 'between'),
       gap: gap || theme.button.gap,

@@ -178,13 +178,6 @@ interface ButtonType {
       };
     };
   };
-  icon?: {
-    size?: {
-      small?: string;
-      medium?: string;
-      large?: string;
-    };
-  };
   gap?: GapType;
   border?: {
     color?: ColorType;

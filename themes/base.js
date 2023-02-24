@@ -488,13 +488,6 @@ var generate = function generate(baseSpacing, scale) {
       },
 
       gap: 'small',
-      // icon: {
-      //   size: {
-      //     small: undefined,
-      //     medium: undefined,
-      //     large: undefined,
-      //   },
-      // },
       size: {
         small: {
           border: {
