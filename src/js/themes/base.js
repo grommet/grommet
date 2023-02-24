@@ -437,6 +437,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       gap: 'small',
+      // icon: {
+      //   size: {
+      //     small: undefined,
+      //     medium: undefined,
+      //     large: undefined,
+      //   },
+      // },
       size: {
         small: {
           border: {
