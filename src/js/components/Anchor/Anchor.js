@@ -79,6 +79,11 @@ const Anchor = forwardRef(
       });
     }
 
+    if (coloredIcon && theme.icon?.matchSize && !coloredIcon.props.size) {
+      coloredIcon = cloneElement(coloredIcon, {
+        size: sizeProp || size,
+      });
+    }
     const first = reverse ? label : coloredIcon;
     const second = reverse ? coloredIcon : label;
 

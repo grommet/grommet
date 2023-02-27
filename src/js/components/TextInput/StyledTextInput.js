@@ -23,11 +23,22 @@ const getPlainStyle = (plain) => {
 const StyledTextInput = styled.input`
   ${inputStyle}
   ${(props) => getPlainStyle(props.plain)}
-  ${(props) =>
-    props.icon &&
-    (props.reverse
-      ? `padding-right: ${props.theme.global.edgeSize.large};`
-      : `padding-left: ${props.theme.global.edgeSize.large};`)}
+  ${(props) => {
+    if (props.icon) {
+      const iconSize = props.theme.icon?.size?.[props?.size || 'medium'];
+      const pad = props.theme.icon.matchSize
+        ? `${
+            parseInt(iconSize?.replace('px', ''), 10) +
+            parseInt(props.theme.global.edgeSize.medium.replace('px', ''), 10)
+          }px`
+        : props.theme.global.edgeSize.large;
+
+      if (props.reverse) return `padding-right: ${pad};`;
+      return `padding-left: ${pad};`;
+    }
+
+    return '';
+  }}
   ${(props) =>
     props.disabled &&
     disabledStyle(

@@ -350,6 +350,12 @@ const Button = forwardRef(
         });
     }
 
+    if (buttonIcon && theme.icon?.matchSize && !buttonIcon.props.size) {
+      buttonIcon = cloneElement(buttonIcon, {
+        size,
+      });
+    }
+
     const reverse = reverseProp ?? theme.button[kind]?.reverse;
     const domTag = !as && href ? 'a' : as;
     const first = reverse ? label : buttonIcon;

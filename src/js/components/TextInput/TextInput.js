@@ -441,14 +441,21 @@ const TextInput = forwardRef(
     // otherwise we only listen to onDown on the input element itself,
     // primarily for tests.
 
+    let renderIcon = icon;
+    if (icon && theme.icon?.matchSize && !icon.props.size) {
+      renderIcon = React.cloneElement(icon, {
+        size: rest.size,
+      });
+    }
+
     return (
       <StyledTextInputContainer plain={plain}>
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
-        {icon && (
+        {renderIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
-            {icon}
+            {renderIcon}
           </StyledIcon>
         )}
         <Keyboard target={focus ? 'document' : undefined} {...keyboardProps}>
