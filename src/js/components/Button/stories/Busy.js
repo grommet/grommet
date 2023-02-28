@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button } from 'grommet';
 
-export const Test = () => {
+export const Busy = () => {
   const [busy, setBusy] = useState();
 
   return (
@@ -26,5 +26,5 @@ export const Test = () => {
 };
 
 export default {
-  title: 'Controls/Button/Test',
+  title: 'Controls/Button/Busy',
 };
