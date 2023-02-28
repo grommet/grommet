@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo, useContext } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -9,6 +9,7 @@ import {
   useDisabled,
   arrayIncludes,
 } from '../Select/utils';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const SelectionSummary = ({
   allOptions,
@@ -18,6 +19,7 @@ const SelectionSummary = ({
   isSelected,
   labelKey,
   limit,
+  messages,
   onChange,
   onMore,
   options,
@@ -27,6 +29,7 @@ const SelectionSummary = ({
   value,
   valueKey,
 }) => {
+  const { format } = useContext(MessageContext);
   const isDisabled = useDisabled(
     disabled,
     disabledKey,
@@ -68,13 +71,25 @@ const SelectionSummary = ({
     selectedInSearch().length === 0
   );
 
-  const summaryText =
-    value?.length === 0 ||
-    onMore ||
-    !value ||
-    (search !== '' && search !== undefined)
-      ? `${value?.length || 0} selected`
-      : `${value?.length || 0} selected of ${options.length}`;
+  const summaryText = useMemo(() => {
+    if (
+      value?.length === 0 ||
+      onMore ||
+      !value ||
+      (search !== '' && search !== undefined)
+    ) {
+      return format({
+        id: 'selectMultiple.selectedMultipleNonTotal',
+        messages,
+        values: { selectedCount: value?.length },
+      });
+    }
+    return format({
+      id: 'selectMultiple.selectedMultiple',
+      messages,
+      values: { selectedCount: value?.length, totalCount: options.length },
+    });
+  }, [value, onMore, search, format, messages, options.length]);
 
   const summaryButtonClick = (event) => {
     if (onChange) {
@@ -131,7 +146,17 @@ const SelectionSummary = ({
                 ? `Select all ${options.length} options`
                 : `${value?.length} options selected. Clear all?`
             }
-            label={showSelectAll ? 'Select All' : 'Clear All'}
+            label={
+              showSelectAll
+                ? format({
+                    id: 'selectMultiple.selectAll',
+                    messages,
+                  })
+                : format({
+                    id: 'selectMultiple.clearAll',
+                    messages,
+                  })
+            }
             onClick={(event) => summaryButtonClick(event)}
             onFocus={() => setActiveIndex(-1)}
             ref={clearRef}

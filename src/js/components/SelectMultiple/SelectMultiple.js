@@ -307,7 +307,8 @@ const SelectMultiple = forwardRef(
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-        if (messages) return format({ id: 'select.multiple', messages });
+        if (messages)
+          return format({ id: 'selectMultiple.multiple', messages });
         return `${optionIndexesInValue.length} selected`;
       }
       return undefined;
@@ -333,6 +334,7 @@ const SelectMultiple = forwardRef(
         id={id}
         labelKey={labelKey}
         limit={limit}
+        messages={messages}
         onChange={onSelectChange}
         onClose={onRequestClose}
         onKeyDown={onKeyDown}

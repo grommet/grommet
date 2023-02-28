@@ -78,6 +78,13 @@
     "multiple": "multiple",
     "selected": "; Selected: {currentSelectedValue}"
   },
+  "selectMultiple": {
+    "multiple": "multiple",
+    "clearAll": "Clear All",
+    "selectAll": "Select All",
+    "selectedMultipleNonTotal": "{selectedCount} selected",
+    "selectedMultiple": "{selectedCount} of {totalCount} selected"
+  },
   "skipLinks": {
     "skipTo": "Skip To:"
   },

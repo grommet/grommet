@@ -49,6 +49,7 @@ const SelectMultipleContainer = forwardRef(
       id,
       labelKey,
       limit,
+      messages,
       onChange,
       onClose,
       onKeyDown,
@@ -343,6 +344,7 @@ const SelectMultipleContainer = forwardRef(
         isSelected={isSelected}
         labelKey={labelKey}
         limit={limit}
+        messages={messages}
         onChange={onChange}
         onMore={onMore}
         options={options}
