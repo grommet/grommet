@@ -15,7 +15,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { sizeStyle, useForwardedRef } from '../../utils';
+import { sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
 
 import {
   StyledMaskedInput,
@@ -366,12 +366,8 @@ const MaskedInput = forwardRef(
     const renderPlaceholder = () =>
       mask.map((item) => item.placeholder || item.fixed).join('');
 
-    let renderIcon = icon;
-    if (icon && theme.icon?.matchSize && !icon.props.size) {
-      renderIcon = React.cloneElement(icon, {
-        size: rest.size,
-      });
-    }
+    const renderIcon = useSizedIcon(icon, rest.size, theme);
+
     return (
       <StyledMaskedInputContainer plain={plain}>
         {renderIcon && (

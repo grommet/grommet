@@ -23,6 +23,7 @@ import {
   isNodeBeforeScroll,
   sizeStyle,
   useForwardedRef,
+  useSizedIcon,
 } from '../../utils';
 
 import {
@@ -441,12 +442,7 @@ const TextInput = forwardRef(
     // otherwise we only listen to onDown on the input element itself,
     // primarily for tests.
 
-    let renderIcon = icon;
-    if (icon && theme.icon?.matchSize && !icon.props.size) {
-      renderIcon = React.cloneElement(icon, {
-        size: rest.size,
-      });
-    }
+    const renderIcon = useSizedIcon(icon, rest.size, theme);
 
     return (
       <StyledTextInputContainer plain={plain}>

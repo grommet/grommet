@@ -10,7 +10,7 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { findButtonParent, normalizeColor } from '../../utils';
+import { findButtonParent, normalizeColor, useSizedIcon } from '../../utils';
 
 import { Box } from '../Box';
 
@@ -79,11 +79,8 @@ const Anchor = forwardRef(
       });
     }
 
-    if (coloredIcon && theme.icon?.matchSize && !coloredIcon.props.size) {
-      coloredIcon = cloneElement(coloredIcon, {
-        size: sizeProp || size,
-      });
-    }
+    coloredIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
+
     const first = reverse ? label : coloredIcon;
     const second = reverse ? coloredIcon : label;
 
