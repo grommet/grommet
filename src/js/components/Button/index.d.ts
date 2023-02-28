@@ -38,6 +38,7 @@ export interface ButtonProps {
         hover: boolean;
         focus: boolean;
       }) => React.ReactNode);
+  busy?: 'loading' | 'success';
   gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;

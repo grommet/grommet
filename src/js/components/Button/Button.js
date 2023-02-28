@@ -27,6 +27,11 @@ import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { Skeleton, useSkeleton } from '../Skeleton';
+import {
+  EllipsisAnimation,
+  GrowCheckmark,
+  StyledBusyContents,
+} from './BusyAnimation';
 
 // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
@@ -168,6 +173,7 @@ const Button = forwardRef(
       align = 'center',
       'aria-label': ariaLabel,
       badge: badgeProp,
+      busy,
       color, // munged to avoid styled-components putting it in the DOM
       children,
       disabled,
@@ -397,6 +403,29 @@ const Button = forwardRef(
     const innerBadge = (!background && !border) || (!kind && icon && !label);
     if (badgeProp && innerBadge) {
       contents = <Badge content={badgeProp}>{contents}</Badge>;
+    }
+
+    if (busy) {
+      // match what the label will use
+      let animationColor;
+      if (kind) {
+        if (!plain) {
+          animationColor =
+            (hover && getIconColor(themePaths.hover, theme)) ||
+            getIconColor(themePaths.base, theme, color, kind);
+        }
+      } else if (primary) {
+        animationColor =
+          theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+      }
+
+      contents = (
+        <Box style={{ position: 'relative' }}>
+          {busy === 'loading' && <EllipsisAnimation color={animationColor} />}
+          {busy === 'success' && <GrowCheckmark color={animationColor} />}
+          <StyledBusyContents busy="loading">{contents}</StyledBusyContents>
+        </Box>
+      );
     }
 
     let styledButtonResult;

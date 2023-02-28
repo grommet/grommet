@@ -91,6 +91,7 @@ exports[`Components loads 1`] = `
       "alignSelf": [Function],
       "as": [Function],
       "badge": [Function],
+      "busy": [Function],
       "children": [Function],
       "color": [Function],
       "disabled": [Function],
