@@ -8,6 +8,13 @@ export interface SelectMultipleProps extends BasicSelectProps {
   value?: (string | number | object)[];
   showSelectedInline?: boolean;
   sortSelectedOnClose?: boolean;
+  messages?: {
+    clearAll?: string;
+    multiple?: string;
+    selectedMultipleNonTotal?: string;
+    selectedMultiple?: string;
+    selectAll?: string;
+  };
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides

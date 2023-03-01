@@ -14,6 +14,13 @@ if (process.env.NODE_ENV !== 'production') {
     ),
     help: PropTypes.node,
     limit: PropTypes.number,
+    messages: PropTypes.shape({
+      clearAll: PropTypes.string,
+      multiple: PropTypes.string,
+      selectedMultipleNonTotal: PropTypes.string,
+      selectedMultiple: PropTypes.string,
+      selectAll: PropTypes.string,
+    }),
     value: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.string,
