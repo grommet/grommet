@@ -656,30 +656,6 @@ describe('Button kind', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('button icon size from theme', () => {
-    const { asFragment } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {},
-            icon: {
-              size: {
-                small: '12px',
-                medium: '18px',
-                large: '28px',
-              },
-            },
-          },
-        }}
-      >
-        <Button icon={<Add />} size="small" />
-        <Button icon={<Add />} />
-        <Button icon={<Add />} size="large" />
-      </Grommet>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('icon only pad should apply when icon but no label', () => {
     const { asFragment } = render(
       <Grommet

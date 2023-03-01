@@ -437,13 +437,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       gap: 'small',
-      // icon: {
-      //   size: {
-      //     small: undefined,
-      //     medium: undefined,
-      //     large: undefined,
-      //   },
-      // },
       size: {
         small: {
           border: {
@@ -1778,6 +1771,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       // gap: undefined,
       header: {
+        // alignSelf: undefined,
         // background: undefined,
         // border: {
         //   side: undefined,
