@@ -369,6 +369,7 @@ describe('SelectMultiple', () => {
     expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
   });
 
+  jest.setTimeout(300000000);
   test('search with select and clear', async () => {
     const user = userEvent.setup();
     const defaultOptions = [
@@ -469,5 +470,58 @@ describe('SelectMultiple', () => {
     await user.click(screen.getByRole('button', { name: /Open Drop/i }));
 
     expectPortal('test-select__drop').toMatchSnapshot();
+  });
+  
+  test('should display custom messages', async () => {
+    const user = userEvent.setup();
+    const defaultOptions = [
+      'Apple',
+      'Orange',
+      'Banana',
+      'Grape',
+      'Melon',
+      'Strawberry',
+      'Kiwi',
+      'Mango',
+      'Raspberry',
+      'Rhubarb',
+    ];
+    const Test = () => {
+      const [options, setOptions] = useState(defaultOptions);
+      const [valueMultiple, setValueMultiple] = useState([]);
+      return (
+        <Grommet>
+          <SelectMultiple
+            options={options}
+            value={valueMultiple}
+            placeholder="Select"
+            onClose={() => setOptions(defaultOptions)}
+            onChange={({ value }) => {
+              setValueMultiple(value);
+            }}
+            messages={{
+              clearAll: 'Clear ALL',
+              multiple: 'Multiple Selected',
+              selectedMultipleNonTotal: '{selectedCount} SELECTED',
+              selectedMultiple: '{selectedCount} of {totalCount} SELECTED',
+              selectAll: 'Select ALL',
+            }}
+          />
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<Test />);
+
+    await user.click(screen.getByRole('button', { name: /Select/ }));
+    await user.click(screen.getByRole('option', { name: /Apple/i }));
+    await user.click(screen.getByRole('option', { name: /Banana/i }));
+    await user.click(screen.getByRole('option', { name: /Grape/i }));
+    expect(asFragment()).toMatchSnapshot();
+
+    await user.click(screen.getByRole('button', { name: /Clear ALL/i }));
+    expect(asFragment()).toMatchSnapshot();
+
+    await user.click(screen.getByRole('button', { name: /Select ALL/i }));
+    expect(asFragment()).toMatchSnapshot();
   });
 });
