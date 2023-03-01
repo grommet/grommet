@@ -8,7 +8,13 @@ export const Busy = () => {
     <Box align="center" pad="medium">
       <Button
         primary
-        busy={busy}
+        busy={{
+          state: busy,
+          messages: {
+            loading: 'Button Busy is in a loading state',
+            success: 'Button Busy action succeeded',
+          },
+        }}
         label="Button Busy"
         onClick={() => {
           if (busy) {

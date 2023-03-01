@@ -1,3 +1,4 @@
+import { string } from 'prop-types';
 import * as React from 'react';
 import {
   A11yTitleType,
@@ -38,7 +39,13 @@ export interface ButtonProps {
         hover: boolean;
         focus: boolean;
       }) => React.ReactNode);
-  busy?: 'loading' | 'success';
+  busy?: {
+    state?: 'loading' | 'success';
+    messages?: {
+      loading?: string;
+      success?: string;
+    };
+  };
   gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;

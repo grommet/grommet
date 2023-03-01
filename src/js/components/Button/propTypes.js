@@ -31,7 +31,13 @@ if (process.env.NODE_ENV !== 'production') {
         value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
       }),
     ]),
-    busy: PropTypes.oneOf(['loading', 'success']),
+    busy: PropTypes.shape({
+      state: PropTypes.oneOf(['loading', 'success']),
+      messages: PropTypes.shape({
+        loading: PropTypes.string,
+        success: PropTypes.string,
+      }),
+    }),
     color: colorPropType,
     disabled: PropTypes.bool,
     fill: PropTypes.oneOfType([

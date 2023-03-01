@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useState,
   useCallback,
+  useEffect,
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
@@ -19,6 +20,7 @@ import {
 import { defaultProps } from '../../default-props';
 import { ButtonPropTypes } from './propTypes';
 
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { Tip } from '../Tip';
 
@@ -208,6 +210,16 @@ const Button = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
+    const announce = useContext(AnnounceContext);
+
+    useEffect(() => {
+      if (busy) {
+        if (busy.state === 'loading')
+          announce(busy?.messages?.loading || 'button is in a loading state');
+        else if (busy.state === 'success')
+          announce(busy?.messages?.success || 'button action succeeded');
+      }
+    }, [announce, busy]);
 
     if ((icon || label) && children) {
       console.warn(
@@ -405,7 +417,7 @@ const Button = forwardRef(
       contents = <Badge content={badgeProp}>{contents}</Badge>;
     }
 
-    if (busy) {
+    if (busy?.state) {
       // match what the label will use
       let animationColor;
       if (kind) {
@@ -421,9 +433,11 @@ const Button = forwardRef(
 
       contents = (
         <Box style={{ position: 'relative' }}>
-          {busy === 'loading' && <EllipsisAnimation color={animationColor} />}
-          {busy === 'success' && <GrowCheckmark color={animationColor} />}
-          <StyledBusyContents busy="loading">{contents}</StyledBusyContents>
+          {busy.state === 'loading' && (
+            <EllipsisAnimation color={animationColor} />
+          )}
+          {busy.state === 'success' && <GrowCheckmark color={animationColor} />}
+          <StyledBusyContents busy={busy.state}>{contents}</StyledBusyContents>
         </Box>
       );
     }
