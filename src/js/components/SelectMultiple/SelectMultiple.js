@@ -316,9 +316,12 @@ const SelectMultiple = forwardRef(
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-        if (messages)
-          return format({ id: 'selectMultiple.multiple', messages });
-        return `${optionIndexesInValue.length} selected`;
+        return format({
+            id: 'selectMultipleNonTotal',
+            values: {
+              selectedCount: optionIndexesInValue.length,
+              totalCount: allOptions.length,
+            }});
       }
       return undefined;
     }, [
@@ -382,8 +385,12 @@ const SelectMultiple = forwardRef(
     const dropButtonProps = {
       ref: dropButtonRef,
       a11yTitle: `${ariaLabel || a11yTitle || placeholder || 'Open Drop'}. ${
-        value?.length || 0
-      } selected.`,
+      format({
+        id: 'selectMultipleNonTotal',
+        values: {
+          selectedCount: value?.length || 0,
+          totalCount: allOptions.length,
+        }})}`,
       'aria-expanded': Boolean(open),
       'aria-haspopup': 'listbox',
       id,
@@ -443,11 +450,19 @@ const SelectMultiple = forwardRef(
                           // eslint-disable-next-line no-nested-ternary
                           !value || value?.length === 0
                             ? placeholder || selectValue || displayLabelKey
-                            : onMore
-                            ? `${value?.length || '0'} selected`
-                            : `${value?.length || '0'} selected of ${
-                                allOptions.length
-                              }`
+                            : onMore //TODO Check this
+                            ? format({
+                              id: 'selectMultipleNonTotal',
+                              values: {
+                                selectedCount: value?.length || 0,
+                                totalCount: allOptions.length,
+                              }})
+                            : format({
+                              id: 'selectMultipleTotal',
+                              values: {
+                                selectedCount: value?.length || 0,
+                                totalCount: allOptions.length,
+                              }})
                         }
                         plain
                         readOnly
