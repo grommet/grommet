@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -71,25 +71,19 @@ const SelectionSummary = ({
     selectedInSearch().length === 0
   );
 
-  const summaryText = useMemo(() => {
-    if (
-      value?.length === 0 ||
-      onMore ||
-      !value ||
-      (search !== '' && search !== undefined)
-    ) {
-      return format({
-        id: 'selectMultiple.selectedMultipleNonTotal',
-        messages,
-        values: { selectedCount: value?.length },
-      });
-    }
-    return format({
-      id: 'selectMultiple.selectedMultiple',
-      messages,
-      values: { selectedCount: value?.length, totalCount: options.length },
-    });
-  }, [value, onMore, search, format, messages, options.length]);
+  const messageId =
+    value?.length === 0 ||
+    onMore ||
+    !value ||
+    (search !== '' && search !== undefined)
+      ? 'selectMultiple.selectedMultipleNonTotal'
+      : 'selectMultiple.selectedMultiple';
+
+  const summaryText = format({
+    id: messageId,
+    messages,
+    values: { selectedCount: value?.length, totalCount: options.length },
+  });
 
   const summaryButtonClick = (event) => {
     if (onChange) {
@@ -146,17 +140,12 @@ const SelectionSummary = ({
                 ? `Select all ${options.length} options`
                 : `${value?.length} options selected. Clear all?`
             }
-            label={
-              showSelectAll
-                ? format({
-                    id: 'selectMultiple.selectAll',
-                    messages,
-                  })
-                : format({
-                    id: 'selectMultiple.clearAll',
-                    messages,
-                  })
-            }
+            label={format({
+              id: showSelectAll
+                ? 'selectMultiple.selectAll'
+                : 'selectMultiple.clearAll',
+              messages,
+            })}
             onClick={(event) => summaryButtonClick(event)}
             onFocus={() => setActiveIndex(-1)}
             ref={clearRef}
