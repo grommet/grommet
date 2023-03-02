@@ -21,6 +21,7 @@ import { defaultProps } from '../../default-props';
 import { ButtonPropTypes } from './propTypes';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Tip } from '../Tip';
 
@@ -211,15 +212,26 @@ const Button = forwardRef(
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
     const announce = useContext(AnnounceContext);
+    const { format } = useContext(MessageContext);
 
     useEffect(() => {
       if (busy) {
         if (busy.state === 'loading')
-          announce(busy?.messages?.loading || 'button is in a loading state');
+          announce(
+            format({
+              id: 'button.busy.loading',
+              messages: busy.messages,
+            }),
+          );
         else if (busy.state === 'success')
-          announce(busy?.messages?.success || 'button action succeeded');
+          announce(
+            format({
+              id: 'button.busy.success',
+              messages: busy.messages,
+            }),
+          );
       }
-    }, [announce, busy]);
+    }, [announce, busy, format]);
 
     if ((icon || label) && children) {
       console.warn(
@@ -436,7 +448,9 @@ const Button = forwardRef(
           {busy.state === 'loading' && (
             <EllipsisAnimation color={animationColor} />
           )}
-          {busy.state === 'success' && <GrowCheckmark color={animationColor} />}
+          {busy.state === 'success' && (
+            <GrowCheckmark color={animationColor} aria-hidden={true} />
+          )}
           <StyledBusyContents busy={busy.state}>{contents}</StyledBusyContents>
         </Box>
       );

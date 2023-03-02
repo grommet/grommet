@@ -1,4 +1,10 @@
 {
+  "button": {
+    "busy": {
+      "loading": "button is in a loading state",
+      "success": "button action succeeded"
+    }
+  },
   "calendar": {
     "previousMove": "Moved to {date}",
     "previous": "Go to {date}",
