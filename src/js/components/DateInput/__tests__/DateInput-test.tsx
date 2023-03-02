@@ -1093,4 +1093,21 @@ describe('DateInput', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('matches icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DateInput size="small" format="mm/dd/yyyy" />
+        <DateInput format="mm/dd/yyyy" />
+        <DateInput size="large" format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

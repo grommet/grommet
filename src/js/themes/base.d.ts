@@ -1028,6 +1028,7 @@ export interface ThemeType {
   };
   icon?: {
     extend?: ExtendType;
+    matchSize?: boolean;
     size?: {
       small?: string;
       medium?: string;

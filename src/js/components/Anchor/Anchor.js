@@ -10,7 +10,7 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { findButtonParent, normalizeColor } from '../../utils';
+import { findButtonParent, normalizeColor, useSizedIcon } from '../../utils';
 
 import { Box } from '../Box';
 
@@ -79,8 +79,10 @@ const Anchor = forwardRef(
       });
     }
 
-    const first = reverse ? label : coloredIcon;
-    const second = reverse ? coloredIcon : label;
+    const anchorIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
+
+    const first = reverse ? label : anchorIcon;
+    const second = reverse ? anchorIcon : label;
 
     return (
       <StyledAnchor
