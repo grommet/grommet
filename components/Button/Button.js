@@ -250,14 +250,6 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
     return result;
   }, [active, disabled, kind, kindObj, plain, selected]);
-  if (skeleton) {
-    var _theme$text, _theme$button$size;
-    return /*#__PURE__*/_react["default"].createElement(_Skeleton.Skeleton, _extends({
-      ref: ref,
-      height: ((_theme$text = theme.text[size || 'medium']) == null ? void 0 : _theme$text.height) || size,
-      a11yTitle: a11yTitle
-    }, rest, (_theme$button$size = theme.button.size) == null ? void 0 : _theme$button$size[size || 'medium'], theme.button.skeleton));
-  }
 
   // only used when theme does not have button.default
   var isDarkBackground = function isDarkBackground() {
@@ -298,6 +290,15 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (_iconColor) buttonIcon = /*#__PURE__*/(0, _react.cloneElement)(kindIcon, {
       color: _iconColor
     });
+  }
+  buttonIcon = (0, _utils.useSizedIcon)(buttonIcon, size, theme);
+  if (skeleton) {
+    var _theme$text, _theme$button$size;
+    return /*#__PURE__*/_react["default"].createElement(_Skeleton.Skeleton, _extends({
+      ref: ref,
+      height: ((_theme$text = theme.text[size || 'medium']) == null ? void 0 : _theme$text.height) || size,
+      a11yTitle: a11yTitle
+    }, rest, (_theme$button$size = theme.button.size) == null ? void 0 : _theme$button$size[size || 'medium'], theme.button.skeleton));
   }
   var reverse = reverseProp != null ? reverseProp : (_theme$button$kind = theme.button[kind]) == null ? void 0 : _theme$button$kind.reverse;
   var domTag = !as && href ? 'a' : as;

@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { cloneElement, forwardRef, useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { findButtonParent, normalizeColor } from '../../utils';
+import { findButtonParent, normalizeColor, useSizedIcon } from '../../utils';
 import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
@@ -55,8 +55,9 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
       color: normalizeColor(color || ((_theme$anchor = theme.anchor) == null ? void 0 : (_theme$anchor$size = _theme$anchor.size) == null ? void 0 : (_theme$anchor$size2 = _theme$anchor$size[sizeProp || size]) == null ? void 0 : _theme$anchor$size2.color) || theme.anchor.color, theme)
     });
   }
-  var first = reverse ? label : coloredIcon;
-  var second = reverse ? coloredIcon : label;
+  var anchorIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
+  var first = reverse ? label : anchorIcon;
+  var second = reverse ? anchorIcon : label;
   return /*#__PURE__*/React.createElement(StyledAnchor, _extends({}, rest, {
     ref: ref,
     "aria-label": ariaLabel || a11yTitle,

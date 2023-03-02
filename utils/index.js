@@ -49,6 +49,12 @@ Object.keys(_graphics).forEach(function (key) {
   if (key in exports && exports[key] === _graphics[key]) return;
   exports[key] = _graphics[key];
 });
+var _icon = require("./icon");
+Object.keys(_icon).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _icon[key]) return;
+  exports[key] = _icon[key];
+});
 var _styles = require("./styles");
 Object.keys(_styles).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

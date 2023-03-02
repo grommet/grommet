@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { cloneElement, Children, forwardRef, useContext, useMemo, useState, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
-import { backgroundAndTextColors, colorIsDark, findButtonParent, normalizeBackground, normalizeColor } from '../../utils';
+import { backgroundAndTextColors, colorIsDark, findButtonParent, useSizedIcon, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { ButtonPropTypes } from './propTypes';
 import { Box } from '../Box';
@@ -245,14 +245,6 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
     return result;
   }, [active, disabled, kind, kindObj, plain, selected]);
-  if (skeleton) {
-    var _theme$text, _theme$button$size;
-    return /*#__PURE__*/React.createElement(Skeleton, _extends({
-      ref: ref,
-      height: ((_theme$text = theme.text[size || 'medium']) == null ? void 0 : _theme$text.height) || size,
-      a11yTitle: a11yTitle
-    }, rest, (_theme$button$size = theme.button.size) == null ? void 0 : _theme$button$size[size || 'medium'], theme.button.skeleton));
-  }
 
   // only used when theme does not have button.default
   var isDarkBackground = function isDarkBackground() {
@@ -293,6 +285,15 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (_iconColor) buttonIcon = /*#__PURE__*/cloneElement(kindIcon, {
       color: _iconColor
     });
+  }
+  buttonIcon = useSizedIcon(buttonIcon, size, theme);
+  if (skeleton) {
+    var _theme$text, _theme$button$size;
+    return /*#__PURE__*/React.createElement(Skeleton, _extends({
+      ref: ref,
+      height: ((_theme$text = theme.text[size || 'medium']) == null ? void 0 : _theme$text.height) || size,
+      a11yTitle: a11yTitle
+    }, rest, (_theme$button$size = theme.button.size) == null ? void 0 : _theme$button$size[size || 'medium'], theme.button.skeleton));
   }
   var reverse = reverseProp != null ? reverseProp : (_theme$button$kind = theme.button[kind]) == null ? void 0 : _theme$button$kind.reverse;
   var domTag = !as && href ? 'a' : as;

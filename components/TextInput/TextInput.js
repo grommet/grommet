@@ -351,12 +351,13 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // otherwise we only listen to onDown on the input element itself,
   // primarily for tests.
 
+  var textInputIcon = (0, _utils.useSizedIcon)(icon, rest.size, theme);
   return /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInputContainer, {
     plain: plain
-  }, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder), icon && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
+  }, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder), textInputIcon && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
     reverse: reverse,
     theme: theme
-  }, icon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, _extends({
+  }, textInputIcon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, _extends({
     target: focus ? 'document' : undefined
   }, keyboardProps), /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInput, _extends({
     "aria-label": a11yTitle,

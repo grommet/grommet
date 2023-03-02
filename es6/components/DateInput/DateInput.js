@@ -34,6 +34,7 @@ var getReference = function getReference(value) {
   return adjustedDate;
 };
 var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
+  var _theme$icon, _theme$dateInput$icon;
   var buttonProps = _ref.buttonProps,
     calendarProps = _ref.calendarProps,
     defaultValue = _ref.defaultValue,
@@ -58,7 +59,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     formatMessage = _useContext.format;
-  var iconSize = theme.dateInput.icon && theme.dateInput.icon.size || 'medium';
+  var iconSize = ((_theme$icon = theme.icon) == null ? void 0 : _theme$icon.matchSize) && rest.size || ((_theme$dateInput$icon = theme.dateInput.icon) == null ? void 0 : _theme$dateInput$icon.size) || 'medium';
   var _useContext2 = useContext(FormContext),
     useFormInput = _useContext2.useFormInput;
   var ref = useForwardedRef(refArg);

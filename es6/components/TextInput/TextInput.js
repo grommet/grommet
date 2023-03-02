@@ -11,7 +11,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
-import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle, useForwardedRef } from '../../utils';
+import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
 import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledSuggestions } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
@@ -345,12 +345,13 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // otherwise we only listen to onDown on the input element itself,
   // primarily for tests.
 
+  var textInputIcon = useSizedIcon(icon, rest.size, theme);
   return /*#__PURE__*/React.createElement(StyledTextInputContainer, {
     plain: plain
-  }, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, null, placeholder), icon && /*#__PURE__*/React.createElement(StyledIcon, {
+  }, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, null, placeholder), textInputIcon && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
-  }, icon), /*#__PURE__*/React.createElement(Keyboard, _extends({
+  }, textInputIcon), /*#__PURE__*/React.createElement(Keyboard, _extends({
     target: focus ? 'document' : undefined
   }, keyboardProps), /*#__PURE__*/React.createElement(StyledTextInput, _extends({
     "aria-label": a11yTitle,

@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { disabledStyle, getInputPadBySide, inputStyle, parseMetricToNum, plainInputStyle, textAlignStyle, widthStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { inputPadForIcon } from '../../utils/styles';
 var getPlainStyle = function getPlainStyle(plain) {
   if (plain === 'full') {
     return css(["", " padding:0;"], plainInputStyle);
@@ -13,7 +14,7 @@ var StyledTextInput = styled.input.withConfig({
 })(["", " ", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
   return getPlainStyle(props.plain);
 }, function (props) {
-  return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
+  return props.icon && inputPadForIcon;
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
 }, function (props) {

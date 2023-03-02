@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.sizeStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.heightStyle = exports.getInputPadBySide = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
+exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.sizeStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.heightStyle = exports.getInputPadBySide = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
 var _styledComponents = require("styled-components");
 var _background = require("./background");
 var _colors = require("./colors");
@@ -256,7 +256,18 @@ var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-fa
 }, controlBorderStyle, placeholderStyle, function (props) {
   return props.theme.global.input.extend;
 });
+
+// Apply padding on input to create space for icon.
+// When theme.icon.matchSize is true, the space for the
+// icon should equal the icon dimension + 12px (edgeSize.medium)
+// to ensure there is reasonable space between the icon and value or placeholder
 exports.inputStyle = inputStyle;
+var inputPadForIcon = (0, _styledComponents.css)(["", ""], function (props) {
+  var _props$theme, _props$theme$icon, _props$theme$icon2, _props$theme$icon2$si;
+  var pad = (_props$theme = props.theme) != null && (_props$theme$icon = _props$theme.icon) != null && _props$theme$icon.matchSize ? (0, _mixins.parseMetricToNum)((_props$theme$icon2 = props.theme.icon) == null ? void 0 : (_props$theme$icon2$si = _props$theme$icon2.size) == null ? void 0 : _props$theme$icon2$si[(props == null ? void 0 : props.size) || 'medium']) + (0, _mixins.parseMetricToNum)(props.theme.global.edgeSize.medium) + "px" : props.theme.global.edgeSize.large;
+  return props.reverse ? "padding-right: " + pad + ";" : "padding-left: " + pad + ";";
+});
+exports.inputPadForIcon = inputPadForIcon;
 var overflowStyle = function overflowStyle(overflowProp) {
   if (typeof overflowProp === 'string') {
     return (0, _styledComponents.css)(["overflow:", ";"], overflowProp);

@@ -688,4 +688,21 @@ describe('TextInput', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('matches icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <TextInput size="small" icon={<Search />} />
+        <TextInput size="medium" icon={<Search />} />
+        <TextInput size="large" icon={<Search />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

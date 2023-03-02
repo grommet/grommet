@@ -61,8 +61,9 @@ var Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       color: (0, _utils.normalizeColor)(color || ((_theme$anchor = theme.anchor) == null ? void 0 : (_theme$anchor$size = _theme$anchor.size) == null ? void 0 : (_theme$anchor$size2 = _theme$anchor$size[sizeProp || size]) == null ? void 0 : _theme$anchor$size2.color) || theme.anchor.color, theme)
     });
   }
-  var first = reverse ? label : coloredIcon;
-  var second = reverse ? coloredIcon : label;
+  var anchorIcon = (0, _utils.useSizedIcon)(coloredIcon, sizeProp || size, theme);
+  var first = reverse ? label : anchorIcon;
+  var second = reverse ? anchorIcon : label;
   return /*#__PURE__*/_react["default"].createElement(_StyledAnchor.StyledAnchor, _extends({}, rest, {
     ref: ref,
     "aria-label": ariaLabel || a11yTitle,

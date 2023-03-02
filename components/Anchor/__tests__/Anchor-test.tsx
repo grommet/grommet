@@ -277,4 +277,23 @@ describe('Anchor', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('matches icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Anchor size="xsmall" label="Label" icon={<LinkNext />} />
+        <Anchor size="small" label="Label" icon={<LinkNext />} />
+        <Anchor label="Label" icon={<LinkNext />} />
+        <Anchor size="large" label="Label" icon={<LinkNext />} />
+        <Anchor size="xlarge" label="Label" icon={<LinkNext />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

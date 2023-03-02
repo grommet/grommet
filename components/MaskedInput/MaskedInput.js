@@ -326,12 +326,13 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       return item.placeholder || item.fixed;
     }).join('');
   };
+  var maskedInputIcon = (0, _utils.useSizedIcon)(icon, rest.size, theme);
   return /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledMaskedInputContainer, {
     plain: plain
-  }, icon && /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledIcon, {
+  }, maskedInputIcon && /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledIcon, {
     reverse: reverse,
     theme: theme
-  }, icon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+  }, maskedInputIcon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEsc: onEsc,
     onTab: showDrop ? function () {
       return setShowDrop(false);

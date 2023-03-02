@@ -4,6 +4,7 @@ exports.__esModule = true;
 exports.StyledMaskedInputContainer = exports.StyledMaskedInput = exports.StyledIcon = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
+var _styles = require("../../utils/styles");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var StyledMaskedInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledMaskedInput",
@@ -11,7 +12,7 @@ var StyledMaskedInput = _styledComponents["default"].input.withConfig({
 })(["", " ", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
   return props.plain && _utils.plainInputStyle;
 }, function (props) {
-  return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
+  return props.icon && _styles.inputPadForIcon;
 }, function (props) {
   return props.disabled && (0, _utils.disabledStyle)(props.theme.maskedInput.disabled && props.theme.maskedInput.disabled.opacity);
 }, function (props) {

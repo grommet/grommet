@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { disabledStyle, getInputPadBySide, inputStyle, plainInputStyle, textAlignStyle } from '../../utils';
+import { inputPadForIcon } from '../../utils/styles';
 export var StyledMaskedInput = styled.input.withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"
 })(["", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
   return props.plain && plainInputStyle;
 }, function (props) {
-  return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
+  return props.icon && inputPadForIcon;
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.maskedInput.disabled && props.theme.maskedInput.disabled.opacity);
 }, function (props) {

@@ -356,6 +356,11 @@ var generate = function generate(baseSpacing, scale) {
         full: '100%'
       }
     },
+    // icon: {
+    //   extennd: undefined,
+    //   matchSize: undefined,
+    //   size: undefined,
+    // },
     accordion: {
       panel: {
         // border: {

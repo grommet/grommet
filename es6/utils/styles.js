@@ -245,6 +245,16 @@ export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;bor
 }, controlBorderStyle, placeholderStyle, function (props) {
   return props.theme.global.input.extend;
 });
+
+// Apply padding on input to create space for icon.
+// When theme.icon.matchSize is true, the space for the
+// icon should equal the icon dimension + 12px (edgeSize.medium)
+// to ensure there is reasonable space between the icon and value or placeholder
+export var inputPadForIcon = css(["", ""], function (props) {
+  var _props$theme, _props$theme$icon, _props$theme$icon2, _props$theme$icon2$si;
+  var pad = (_props$theme = props.theme) != null && (_props$theme$icon = _props$theme.icon) != null && _props$theme$icon.matchSize ? parseMetricToNum((_props$theme$icon2 = props.theme.icon) == null ? void 0 : (_props$theme$icon2$si = _props$theme$icon2.size) == null ? void 0 : _props$theme$icon2$si[(props == null ? void 0 : props.size) || 'medium']) + parseMetricToNum(props.theme.global.edgeSize.medium) + "px" : props.theme.global.edgeSize.large;
+  return props.reverse ? "padding-right: " + pad + ";" : "padding-left: " + pad + ";";
+});
 export var overflowStyle = function overflowStyle(overflowProp) {
   if (typeof overflowProp === 'string') {
     return css(["overflow:", ";"], overflowProp);

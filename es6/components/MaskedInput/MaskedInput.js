@@ -9,7 +9,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { sizeStyle, useForwardedRef } from '../../utils';
+import { sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
 import { StyledMaskedInput, StyledMaskedInputContainer, StyledIcon } from './StyledMaskedInput';
 import { MaskedInputPropTypes } from './propTypes';
 var parseValue = function parseValue(mask, value) {
@@ -320,12 +320,13 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return item.placeholder || item.fixed;
     }).join('');
   };
+  var maskedInputIcon = useSizedIcon(icon, rest.size, theme);
   return /*#__PURE__*/React.createElement(StyledMaskedInputContainer, {
     plain: plain
-  }, icon && /*#__PURE__*/React.createElement(StyledIcon, {
+  }, maskedInputIcon && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
-  }, icon), /*#__PURE__*/React.createElement(Keyboard, {
+  }, maskedInputIcon), /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: onEsc,
     onTab: showDrop ? function () {
       return setShowDrop(false);
