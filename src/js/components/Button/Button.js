@@ -449,7 +449,7 @@ const Button = forwardRef(
             <EllipsisAnimation color={animationColor} />
           )}
           {busy.state === 'success' && (
-            <GrowCheckmark color={animationColor} aria-hidden={true} />
+            <GrowCheckmark color={animationColor} aria-hidden />
           )}
           <StyledBusyContents busy={busy.state}>{contents}</StyledBusyContents>
         </Box>
