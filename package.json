@@ -140,7 +140,7 @@
     "simple-git": "^3.16.1",
     "styled-components": "5.3.6",
     "tarball-extract": "^0.0.6",
-    "testcafe": "^2.3.1",
+    "testcafe": "2.2.0",
     "testcafe-react-selectors": "^5.0.2",
     "testcafe-reporter-xunit": "^2.2.2",
     "ts-jest": "^29.0.5",
