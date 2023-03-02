@@ -79,10 +79,10 @@ const Anchor = forwardRef(
       });
     }
 
-    coloredIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
+    const anchorIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
 
-    const first = reverse ? label : coloredIcon;
-    const second = reverse ? coloredIcon : label;
+    const first = reverse ? label : anchorIcon;
+    const second = reverse ? anchorIcon : label;
 
     return (
       <StyledAnchor

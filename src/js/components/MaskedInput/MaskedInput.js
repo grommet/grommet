@@ -366,13 +366,13 @@ const MaskedInput = forwardRef(
     const renderPlaceholder = () =>
       mask.map((item) => item.placeholder || item.fixed).join('');
 
-    const renderIcon = useSizedIcon(icon, rest.size, theme);
+    const maskedInputIcon = useSizedIcon(icon, rest.size, theme);
 
     return (
       <StyledMaskedInputContainer plain={plain}>
-        {renderIcon && (
+        {maskedInputIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
-            {renderIcon}
+            {maskedInputIcon}
           </StyledIcon>
         )}
         <Keyboard
