@@ -851,7 +851,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButton-sc-323bzc-0 wfYUD"
+  class="StyledButton-sc-323bzc-0 eurrtV"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"
@@ -859,7 +859,7 @@ exports[`DataFilters drop 2`] = `
 >
   <svg
     aria-label="Filter"
-    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    class="StyledIcon-sc-ofa7kd-0 jxjidg"
     viewBox="0 0 24 24"
   >
     <path
@@ -874,52 +874,52 @@ exports[`DataFilters drop 2`] = `
 
 exports[`DataFilters drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hfctvB {
+  .bkspar {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .zPnFT {
+  .fpBxMF {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .zPnFT {
+  .fpBxMF {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bGaxyQ {
+  .eUgRdO {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dXyapD {
+  .jMHXSN {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .gsyDnL {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .drdMXk {
+  .fNTNlK {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .gViPnC {
     width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -2149,52 +2149,52 @@ exports[`DataFilters layer 2`] = `
 
 exports[`DataFilters layer 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hfctvB {
+  .bkspar {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .zPnFT {
+  .fpBxMF {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .zPnFT {
+  .fpBxMF {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bGaxyQ {
+  .eUgRdO {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dXyapD {
+  .jMHXSN {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .gsyDnL {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .drdMXk {
+  .fNTNlK {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .gViPnC {
     width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
