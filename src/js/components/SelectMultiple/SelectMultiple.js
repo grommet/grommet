@@ -264,6 +264,7 @@ const SelectMultiple = forwardRef(
             disabledKey={disabledKey}
             dropButtonRef={dropButtonRef}
             labelKey={labelKey}
+            messages={messages}
             onRequestOpen={onRequestOpen}
             onSelectChange={onSelectChange}
             theme={theme}
@@ -276,19 +277,20 @@ const SelectMultiple = forwardRef(
       }
       return result;
     }, [
-      valueKey,
-      value,
       valueLabel,
+      value,
       showSelectedInline,
-      onRequestOpen,
       allOptions,
-      children,
-      labelKey,
-      onSelectChange,
       disabled,
       disabledKey,
       dropButtonRef,
+      labelKey,
+      messages,
+      onRequestOpen,
+      onSelectChange,
       theme,
+      valueKey,
+      children,
     ]);
 
     const displayLabelKey = useMemo(
@@ -317,20 +319,22 @@ const SelectMultiple = forwardRef(
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
         return format({
-            id: 'selectMultipleNonTotal',
-            values: {
-              selectedCount: optionIndexesInValue.length,
-              totalCount: allOptions.length,
-            }});
+          id: 'selectMultiple.multiple',
+          messages,
+          values: {
+            selectedCount: optionIndexesInValue.length,
+            totalCount: allOptions.length,
+          },
+        });
       }
       return undefined;
     }, [
-      labelKey,
-      messages,
-      format,
+      selectValue,
       optionIndexesInValue,
       allOptions,
-      selectValue,
+      labelKey,
+      format,
+      messages,
     ]);
 
     const iconColor = getIconColor(theme);
@@ -384,13 +388,22 @@ const SelectMultiple = forwardRef(
 
     const dropButtonProps = {
       ref: dropButtonRef,
-      a11yTitle: `${ariaLabel || a11yTitle || placeholder || 'Open Drop'}. ${
-      format({
-        id: 'selectMultipleNonTotal',
+      a11yTitle: `${
+        ariaLabel ||
+        a11yTitle ||
+        placeholder ||
+        format({
+          id: 'selectMultiple.dropDown',
+          messages,
+        })
+      }.
+      ${format({
+        id: 'selectMultiple.selectedMultipleNonTotal',
         values: {
           selectedCount: value?.length || 0,
           totalCount: allOptions.length,
-        }})}`,
+        },
+      })}`,
       'aria-expanded': Boolean(open),
       'aria-haspopup': 'listbox',
       id,
@@ -450,19 +463,23 @@ const SelectMultiple = forwardRef(
                           // eslint-disable-next-line no-nested-ternary
                           !value || value?.length === 0
                             ? placeholder || selectValue || displayLabelKey
-                            : onMore //TODO Check this
+                            : onMore
                             ? format({
-                              id: 'selectMultipleNonTotal',
-                              values: {
-                                selectedCount: value?.length || 0,
-                                totalCount: allOptions.length,
-                              }})
+                                id: 'selectMultiple.selectedMultipleNonTotal',
+                                messages,
+                                values: {
+                                  selectedCount: value?.length || 0,
+                                  totalCount: allOptions.length,
+                                },
+                              })
                             : format({
-                              id: 'selectMultipleTotal',
-                              values: {
-                                selectedCount: value?.length || 0,
-                                totalCount: allOptions.length,
-                              }})
+                                id: 'selectMultiple.selectedMultipleTotal',
+                                messages,
+                                values: {
+                                  selectedCount: value?.length || 0,
+                                  totalCount: allOptions.length,
+                                },
+                              })
                         }
                         plain
                         readOnly

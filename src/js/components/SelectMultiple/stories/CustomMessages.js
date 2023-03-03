@@ -45,11 +45,11 @@ export const CustomMessages = () => {
           setValueMultiple(value);
         }}
         messages={{
-          clearAll: 'Clear ALL!',
           multiple: 'Multiple Selected',
+          clearAllTitle: 'Clear ALL!',
+          selectAllTitle: 'Select ALL!',
           selectedMultipleNonTotal: '{selectedCount} SELECTED',
           selectedMultiple: '{selectedCount} of {totalCount} SELECTED',
-          selectAll: 'Select ALL!',
         }}
       />
     </Box>

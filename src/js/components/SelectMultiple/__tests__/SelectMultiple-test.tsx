@@ -500,11 +500,11 @@ describe('SelectMultiple', () => {
               setValueMultiple(value);
             }}
             messages={{
-              clearAll: 'Clear ALL',
+              clearAllTitle: 'Clear ALL',
               multiple: 'Multiple Selected',
               selectedMultipleNonTotal: '{selectedCount} SELECTED',
               selectedMultiple: '{selectedCount} of {totalCount} SELECTED',
-              selectAll: 'Select ALL',
+              selectAllTitle: 'Select ALL',
             }}
           />
         </Grommet>

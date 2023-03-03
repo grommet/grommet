@@ -9,11 +9,20 @@ export interface SelectMultipleProps extends BasicSelectProps {
   showSelectedInline?: boolean;
   sortSelectedOnClose?: boolean;
   messages?: {
-    clearAll?: string;
     multiple?: string;
+    clearAllTitle?: string;
+    selectAllTitle?: string;
     selectedMultipleNonTotal?: string;
     selectedMultiple?: string;
+    onMore?: string;
+    //accessability
+    clearAll?: string;
     selectAll?: string;
+    dropDown?: string;
+    searchFilter?: string;
+    optionSelected?: string;
+    optionNotSelected?: string;
+    selectedOptions?: string;
   };
 }
 

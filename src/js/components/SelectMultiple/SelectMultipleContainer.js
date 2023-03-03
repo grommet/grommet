@@ -34,6 +34,7 @@ import {
   arrayIncludes,
 } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const SelectMultipleContainer = forwardRef(
   (
@@ -71,6 +72,7 @@ const SelectMultipleContainer = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
+    const { format } = useContext(MessageContext);
     const searchRef = useRef();
     const optionsRef = useRef();
     const [disabled, setDisabled] = useState(disabledProp);
@@ -393,7 +395,10 @@ const SelectMultipleContainer = forwardRef(
           as={Box}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
-          a11yTitle="Select dropdown"
+          a11yTitle={format({
+            id: 'selectMultiple.dropDown',
+            messages,
+          })}
         >
           {summaryContent}
           {onSearch && (
@@ -404,7 +409,10 @@ const SelectMultipleContainer = forwardRef(
                 }}
               >
                 <SelectTextInput
-                  a11yTitle="Search to filter options."
+                  a11yTitle={format({
+                    id: 'selectMultiple.searchFilter',
+                    messages,
+                  })}
                   focusIndicator={!customSearchInput}
                   size="small"
                   ref={searchRef}
@@ -539,11 +547,15 @@ const SelectMultipleContainer = forwardRef(
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
-                      a11yTitle={
-                        optionSelected
-                          ? `${optionLabel} selected`
-                          : `${optionLabel} not selected`
-                      }
+                      a11yTitle={format({
+                        id: optionSelected
+                          ? 'selectMultiple.optionSelected'
+                          : 'selectMultiple.optionNotSelected',
+                        messages,
+                        values: {
+                          optionLabel,
+                        },
+                      })}
                       // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       // merge optionRef and activeRef

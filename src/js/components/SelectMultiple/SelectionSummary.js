@@ -135,15 +135,20 @@ const SelectionSummary = ({
         0 &&
         (!onMore || (onMore && value?.length !== 0)) && (
           <Button
-            a11yTitle={
-              showSelectAll
-                ? `Select all ${options.length} options`
-                : `${value?.length} options selected. Clear all?`
-            }
-            label={format({
+            a11yTitle={format({
               id: showSelectAll
                 ? 'selectMultiple.selectAll'
                 : 'selectMultiple.clearAll',
+              messages,
+              values: {
+                selectedCount: value?.length,
+                totalCount: options.length,
+              },
+            })}
+            label={format({
+              id: showSelectAll
+                ? 'selectMultiple.selectAllTitle'
+                : 'selectMultiple.clearAllTitle',
               messages,
             })}
             onClick={(event) => summaryButtonClick(event)}
