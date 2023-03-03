@@ -1,9 +1,7 @@
 {
   "button": {
-    "busy": {
-      "loading": "button is in a loading state",
-      "success": "button action succeeded"
-    }
+    "busy": "button is in a busy state",
+    "success": "button action succeeded"
   },
   "calendar": {
     "previousMove": "Moved to {date}",

@@ -3,26 +3,23 @@ import { Box, Button } from 'grommet';
 
 export const Busy = () => {
   const [busy, setBusy] = useState();
+  const [success, setSuccess] = useState();
 
   return (
     <Box align="center" pad="medium">
       <Button
         primary
-        busy={{
-          state: busy,
-          messages: {
-            loading: 'Button Busy is in a loading state',
-            success: 'Button Busy action succeeded',
-          },
-        }}
+        busy={busy}
+        success={success}
         label="Button Busy"
         onClick={() => {
-          if (busy) {
-            setBusy(undefined);
+          if (success) {
+            setSuccess(false);
           } else {
-            setBusy('loading');
+            setBusy(true);
             setTimeout(() => {
-              setBusy('success');
+              setBusy(false);
+              setSuccess(true);
             }, 2000);
           }
         }}

@@ -188,6 +188,7 @@ const Button = forwardRef(
       justify,
       kind: kindArg,
       label,
+      messages,
       onBlur,
       onClick: onClickProp,
       onFocus,
@@ -199,6 +200,7 @@ const Button = forwardRef(
       secondary,
       selected,
       size: sizeProp,
+      success,
       tip,
       type = 'button',
       // can't alphabetize a11yTitle before tip is defined
@@ -214,24 +216,26 @@ const Button = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
 
+    if (busy && success) {
+      console.warn('Button can not have both busy and success set to true.');
+    }
+
     useEffect(() => {
-      if (busy) {
-        if (busy.state === 'loading')
-          announce(
-            format({
-              id: 'button.busy.loading',
-              messages: busy.messages,
-            }),
-          );
-        else if (busy.state === 'success')
-          announce(
-            format({
-              id: 'button.busy.success',
-              messages: busy.messages,
-            }),
-          );
-      }
-    }, [announce, busy, format]);
+      if (busy)
+        announce(
+          format({
+            id: 'button.busy',
+            messages,
+          }),
+        );
+      else if (success)
+        announce(
+          format({
+            id: 'button.success',
+            messages,
+          }),
+        );
+    }, [announce, busy, format, messages, success]);
 
     if ((icon || label) && children) {
       console.warn(
@@ -429,7 +433,7 @@ const Button = forwardRef(
       contents = <Badge content={badgeProp}>{contents}</Badge>;
     }
 
-    if (busy?.state) {
+    if (busy || success) {
       // match what the label will use
       let animationColor;
       if (kind) {
@@ -445,13 +449,11 @@ const Button = forwardRef(
 
       contents = (
         <Box style={{ position: 'relative' }}>
-          {busy.state === 'loading' && (
-            <EllipsisAnimation color={animationColor} />
-          )}
-          {busy.state === 'success' && (
-            <GrowCheckmark color={animationColor} aria-hidden />
-          )}
-          <StyledBusyContents busy={busy.state}>{contents}</StyledBusyContents>
+          {busy && <EllipsisAnimation color={animationColor} />}
+          {success && <GrowCheckmark color={animationColor} aria-hidden />}
+          <StyledBusyContents animating={busy || success}>
+            {contents}
+          </StyledBusyContents>
         </Box>
       );
     }

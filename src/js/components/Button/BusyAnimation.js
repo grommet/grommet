@@ -34,6 +34,8 @@ export const EllipsisAnimation = ({ color }) => (
     justify="center"
   >
     <Box alignSelf="center" direction="row" gap="small">
+      {/* A negative delay starts the animation sooner. The first dot
+      should begin animating before the second and so on. */}
       <Dot color={color} delay="-0.32s" />
       <Dot color={color} delay="-0.16s" />
       <Dot color={color} />
@@ -63,6 +65,5 @@ export const GrowCheckmark = styled(FormCheckmark)`
 `;
 
 export const StyledBusyContents = styled.div`
-  opacity: ${(props) =>
-    props.busy === 'loading' || props.busy === 'success' ? 0 : 1};}
+  opacity: ${(props) => (props.animating ? 0 : 1)};}
 `;
