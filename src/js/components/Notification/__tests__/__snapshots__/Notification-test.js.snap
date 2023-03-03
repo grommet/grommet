@@ -960,24 +960,24 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -1262,24 +1262,24 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -1564,24 +1564,24 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -1866,24 +1866,24 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -2168,24 +2168,24 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -2470,24 +2470,24 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -2772,24 +2772,24 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -3074,24 +3074,24 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -3376,24 +3376,24 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -3678,24 +3678,24 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -3980,24 +3980,24 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"

@@ -337,6 +337,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         full: '100%',
       },
     },
+    // icon: {
+    //   extennd: undefined,
+    //   matchSize: undefined,
+    //   size: undefined,
+    // },
     accordion: {
       panel: {
         // border: {

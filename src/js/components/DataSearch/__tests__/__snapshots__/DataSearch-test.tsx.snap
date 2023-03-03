@@ -155,7 +155,7 @@ exports[`DataSearch drop 1`] = `
 exports[`DataSearch drop 2`] = `
 <button
   aria-label="Open search"
-  class="StyledButton-sc-323bzc-0 emhJYD"
+  class="StyledButton-sc-323bzc-0 eHhrMZ"
   data-g-tabindex="none"
   id="test-data--search-control"
   tabindex="-1"
@@ -163,7 +163,7 @@ exports[`DataSearch drop 2`] = `
 >
   <svg
     aria-label="Search"
-    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    class="StyledIcon-sc-ofa7kd-0 jxjidg"
     viewBox="0 0 24 24"
   >
     <path
@@ -178,32 +178,32 @@ exports[`DataSearch drop 2`] = `
 
 exports[`DataSearch drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hfctvB {
+  .bkspar {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cqRjpC {
+  .iPSxqg {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .gsyDnL {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .gViPnC {
     width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
