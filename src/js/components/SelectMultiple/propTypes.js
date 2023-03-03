@@ -15,11 +15,19 @@ if (process.env.NODE_ENV !== 'production') {
     help: PropTypes.node,
     limit: PropTypes.number,
     messages: PropTypes.shape({
-      clearAll: PropTypes.string,
       multiple: PropTypes.string,
+      clearAllTitle: PropTypes.string,
+      selectAllTitle: PropTypes.string,
       selectedMultipleNonTotal: PropTypes.string,
       selectedMultiple: PropTypes.string,
+      onMore: PropTypes.string,
+      clearAll: PropTypes.string,
       selectAll: PropTypes.string,
+      dropDown: PropTypes.string,
+      searchFilter: PropTypes.string,
+      optionSelected: PropTypes.string,
+      optionNotSelected: PropTypes.string,
+      selectedOptions: PropTypes.string,
     }),
     value: PropTypes.arrayOf(
       PropTypes.oneOfType([
