@@ -580,33 +580,33 @@ exports[`Data controlled search 1`] = `
 
 exports[`Data controlled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hoPFxc"
+    class="StyledBox-sc-13pk1d4-0 bbYfqa"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cA-DryL"
+      class="StyledBox-sc-13pk1d4-0 fviEYt"
     >
       <form
-        class="DataForm__MaxForm-sc-v64e1r-1 dKlaJO"
+        class="DataForm__MaxForm-sc-v64e1r-1 dOfJGA"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMuiZr"
+          class="StyledBox-sc-13pk1d4-0 hkSMNx"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dePIJN"
+            class="StyledBox-sc-13pk1d4-0 jojpFX"
           >
             <div
-              class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+              class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 iUHIDl"
             >
               <div
-                class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cFBrkA"
+                class="StyledTextInput__StyledIcon-sc-1x30a0s-3 lpcEQu"
               >
                 <svg
                   aria-label="Search"
-                  class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+                  class="StyledIcon-sc-ofa7kd-0 jxjidg"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -620,7 +620,7 @@ exports[`Data controlled search 2`] = `
               <input
                 aria-label="Search"
                 autocomplete="off"
-                class="StyledTextInput-sc-1x30a0s-0 bMqJAS"
+                class="StyledTextInput-sc-1x30a0s-0 fXNXvw"
                 id="data--search"
                 name="_search"
                 type="search"
@@ -631,17 +631,17 @@ exports[`Data controlled search 2`] = `
         </div>
       </form>
       <div
-        class="StyledBox-sc-13pk1d4-0 lgzxvo"
+        class="StyledBox-sc-13pk1d4-0 hhcgBW"
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 wfYUD"
+          class="StyledButton-sc-323bzc-0 eurrtV"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+            class="StyledIcon-sc-ofa7kd-0 jxjidg"
             viewBox="0 0 24 24"
           >
             <path
@@ -655,44 +655,44 @@ exports[`Data controlled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 fKpAiz"
+      class="StyledText-sc-1sadyjn-0 zvseN"
     >
       4 results of undefined items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
+      class="StyledTable-sc-1m3u5g-6 leKVQn StyledDataTable-sc-xrlyjm-0 hzLAMd"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bDopMk"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 dJRXxk StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 gDGoUq StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 gpBpyX"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dCZrDR"
+              class="StyledBox-sc-13pk1d4-0 gWjqb"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 cNqjdy"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jRAiiQ"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bDopMk"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iZBlqM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 gpBpyX"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kAKeln"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 cFbisQ"
               >
                 aa
               </span>
@@ -700,17 +700,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bDopMk"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iZBlqM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 gpBpyX"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kAKeln"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 cFbisQ"
               >
                 bb
               </span>
@@ -718,17 +718,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bDopMk"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iZBlqM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 gpBpyX"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kAKeln"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 cFbisQ"
               >
                 cc
               </span>
@@ -736,17 +736,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bDopMk"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iZBlqM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 gpBpyX"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kAKeln"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 cFbisQ"
               >
                 dd
               </span>
@@ -5875,33 +5875,33 @@ exports[`Data uncontrolled search 1`] = `
 
 exports[`Data uncontrolled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hoPFxc"
+    class="StyledBox-sc-13pk1d4-0 bbYfqa"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cA-DryL"
+      class="StyledBox-sc-13pk1d4-0 fviEYt"
     >
       <form
-        class="DataForm__MaxForm-sc-v64e1r-1 dKlaJO"
+        class="DataForm__MaxForm-sc-v64e1r-1 dOfJGA"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMuiZr"
+          class="StyledBox-sc-13pk1d4-0 hkSMNx"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dePIJN"
+            class="StyledBox-sc-13pk1d4-0 jojpFX"
           >
             <div
-              class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+              class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 iUHIDl"
             >
               <div
-                class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cFBrkA"
+                class="StyledTextInput__StyledIcon-sc-1x30a0s-3 lpcEQu"
               >
                 <svg
                   aria-label="Search"
-                  class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+                  class="StyledIcon-sc-ofa7kd-0 jxjidg"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -5915,7 +5915,7 @@ exports[`Data uncontrolled search 2`] = `
               <input
                 aria-label="Search"
                 autocomplete="off"
-                class="StyledTextInput-sc-1x30a0s-0 bMqJAS"
+                class="StyledTextInput-sc-1x30a0s-0 fXNXvw"
                 id="data--search"
                 name="_search"
                 type="search"
@@ -5926,17 +5926,17 @@ exports[`Data uncontrolled search 2`] = `
         </div>
       </form>
       <div
-        class="StyledBox-sc-13pk1d4-0 lgzxvo"
+        class="StyledBox-sc-13pk1d4-0 hhcgBW"
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 wfYUD"
+          class="StyledButton-sc-323bzc-0 eurrtV"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+            class="StyledIcon-sc-ofa7kd-0 jxjidg"
             viewBox="0 0 24 24"
           >
             <path
@@ -5950,44 +5950,44 @@ exports[`Data uncontrolled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 fKpAiz"
+      class="StyledText-sc-1sadyjn-0 zvseN"
     >
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
+      class="StyledTable-sc-1m3u5g-6 leKVQn StyledDataTable-sc-xrlyjm-0 hzLAMd"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bDopMk"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 dJRXxk StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 gDGoUq StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 gpBpyX"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dCZrDR"
+              class="StyledBox-sc-13pk1d4-0 gWjqb"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 cNqjdy"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jRAiiQ"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 bDopMk"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iZBlqM StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 gpBpyX"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kAKeln"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 cFbisQ"
               >
                 aa
               </span>
