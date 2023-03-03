@@ -56,7 +56,7 @@ var NotificationAnchor = (0, _styledComponents["default"])(_Anchor.Anchor).withC
   componentId: "sc-1yq09yz-0"
 })(["white-space:nowrap;"]);
 var Notification = function Notification(_ref) {
-  var _theme$notification, _theme$notification2, _theme$notification2$, _theme$notification2$2, _theme$notification3, _theme$notification3$, _theme$notification4, _theme$notification4$, _theme$notification4$2;
+  var _theme$notification, _theme$notification2, _theme$notification2$, _theme$notification2$2, _theme$notification3, _theme$notification3$, _theme$notification4, _theme$notification4$, _theme$notification4$2, _theme$notification5, _theme$notification5$;
   var actionsProp = _ref.actions,
     messageProp = _ref.message,
     onClose = _ref.onClose,
@@ -139,6 +139,7 @@ var Notification = function Notification(_ref) {
       right: 'xsmall'
     }
   }, message), actions) : message;
+  var iconDimension = ((_theme$notification5 = theme.notification) == null ? void 0 : (_theme$notification5$ = _theme$notification5.message) == null ? void 0 : _theme$notification5$.size) || 'medium';
   var content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, theme.notification.container, global ? _extends({}, theme.notification.global.container) : {}, toast ? _extends({}, theme.notification.toast.container) : {}, {
     background: background
     // let internal box control pad
@@ -152,7 +153,8 @@ var Notification = function Notification(_ref) {
     pad: textPad,
     flex: true
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.notification.iconContainer, icon || /*#__PURE__*/_react["default"].createElement(StatusIcon, {
-    color: color
+    color: color,
+    height: iconDimension
   })), /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.notification.textContainer, /*#__PURE__*/_react["default"].createElement(TextWrapper, null, title && /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.notification.title, title), message && title && direction === 'row' && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, "\xA0"), message))), onClose &&
   /*#__PURE__*/
   // theme.notification.container and textContainer may both have pad,
@@ -161,7 +163,9 @@ var Notification = function Notification(_ref) {
     pad: closeButtonPad
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.notification.textContainer, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     icon: /*#__PURE__*/_react["default"].createElement(CloseIcon, {
-      color: closeIconColor
+      color: closeIconColor,
+      height: iconDimension,
+      width: iconDimension
     }),
     onClick: close,
     hoverIndicator: true,
