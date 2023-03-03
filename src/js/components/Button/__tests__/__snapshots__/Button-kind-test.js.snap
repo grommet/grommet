@@ -2060,10 +2060,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 bFVFYc"
+    class="StyledButtonKind-sc-1vhfpnt-0 hpbGQm"
     disabled=""
     type="button"
   >
@@ -2760,10 +2760,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 lnmCJv"
+    class="StyledButtonKind-sc-1vhfpnt-0 jPuIfB"
     type="button"
   >
     Button
@@ -2866,10 +2866,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 fbqWjg"
+    class="StyledButtonKind-sc-1vhfpnt-0 bkTbae"
     type="button"
   >
     Button
@@ -4336,18 +4336,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 bpdCsb"
+    class="StyledButtonKind-sc-1vhfpnt-0 RERdB"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 gXGEGx"
+      class="StyledBox-sc-13pk1d4-0 jLKoGz"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 wnZwe"
+        class="StyledIcon-sc-ofa7kd-0 cMCkxw"
         viewBox="0 0 24 24"
       >
         <path
@@ -4358,7 +4358,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jrZoMa"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrTQpQ"
       />
       label
     </div>
