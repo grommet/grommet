@@ -22135,7 +22135,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -22374,7 +22374,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -25378,7 +25378,7 @@ exports[`DataTable should paginate 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -25617,7 +25617,7 @@ exports[`DataTable should paginate 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -27719,7 +27719,7 @@ exports[`DataTable should pin and paginate 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -27958,7 +27958,7 @@ exports[`DataTable should pin and paginate 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -30069,7 +30069,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -30308,7 +30308,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -31364,7 +31364,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -31603,7 +31603,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -34941,7 +34941,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 eVDbKr StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+              class="StyledButtonKind-sc-1vhfpnt-0 ypLIx StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
               type="button"
             >
               <svg
@@ -34996,7 +34996,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 klETIr StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+              class="StyledButtonKind-sc-1vhfpnt-0 jLwgvt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
               disabled=""
               type="button"
             >
@@ -35253,7 +35253,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -35492,7 +35492,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -37594,7 +37594,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -37836,7 +37836,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   text-align: center;
   opacity: 0.3;
   cursor: default;
