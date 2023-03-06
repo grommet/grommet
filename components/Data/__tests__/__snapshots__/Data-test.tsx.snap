@@ -2825,7 +2825,7 @@ exports[`Data pagination 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -3356,7 +3356,7 @@ exports[`Data pagination step 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;

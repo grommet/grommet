@@ -13,7 +13,7 @@ var radiusStyle = function radiusStyle(props) {
 var fontStyle = function fontStyle(props) {
   var size = props.sizeProp || 'medium';
   var data = props.theme.text[size];
-  return css(["font-size:", ";line-height:", ";"], data.size, data.height);
+  return css(["font-size:", ";line-height:", ";"], data.size, props.hasIcon && !props.hasLabel ? 0 : data.height);
 };
 var padFromTheme = function padFromTheme(size, theme, themeObj, kind, iconOnly) {
   var _themeObj$size, _themeObj$size$size, _themeObj$size$size$i, _themeObj$size3, _themeObj$size3$size, _themeObj$size3$size$;
