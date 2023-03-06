@@ -448,6 +448,8 @@ const Button = forwardRef(
       }
 
       contents = (
+        // position relative is necessary to have the animation
+        // display over the button content
         <Box style={{ position: 'relative' }}>
           {busy && <EllipsisAnimation color={animationColor} />}
           {success && <GrowCheckmark color={animationColor} aria-hidden />}
