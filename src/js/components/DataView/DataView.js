@@ -46,7 +46,7 @@ export const DataView = ({ id: idProp, ...rest }) => {
         id={id}
         name="_view"
         showSelectedInline
-        placeholder={noForm ? 'Select view ...' : undefined}
+        placeholder={noForm ? 'Select view' : undefined}
         options={names}
         value={view?.name}
         {...rest}
