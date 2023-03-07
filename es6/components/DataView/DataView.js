@@ -44,7 +44,7 @@ export var DataView = function DataView(_ref) {
       id: id,
       name: "_view",
       showSelectedInline: true,
-      placeholder: noForm ? 'Select view ...' : undefined,
+      placeholder: noForm ? 'Select view' : undefined,
       options: names,
       value: view == null ? void 0 : view.name
     }, rest));
