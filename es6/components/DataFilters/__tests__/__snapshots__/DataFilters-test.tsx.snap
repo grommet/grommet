@@ -89,9 +89,6 @@ exports[`DataFilters clear 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -874,7 +871,7 @@ exports[`DataFilters drop 2`] = `
 
 exports[`DataFilters drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bkspar {
+  .jkVdVC {
     margin-bottom: 6px;
   }
 }
@@ -1392,9 +1389,6 @@ exports[`DataFilters layer 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c14 {
@@ -2149,7 +2143,7 @@ exports[`DataFilters layer 2`] = `
 
 exports[`DataFilters layer 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bkspar {
+  .jkVdVC {
     margin-bottom: 6px;
   }
 }
@@ -2291,9 +2285,6 @@ exports[`DataFilters properties array 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -2909,9 +2900,6 @@ exports[`DataFilters properties object 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -3527,9 +3515,6 @@ exports[`DataFilters renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -4145,9 +4130,6 @@ exports[`DataFilters sub objects 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {

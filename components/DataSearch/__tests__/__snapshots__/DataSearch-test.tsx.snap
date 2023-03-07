@@ -178,7 +178,7 @@ exports[`DataSearch drop 2`] = `
 
 exports[`DataSearch drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .bkspar {
+  .jkVdVC {
     margin-bottom: 6px;
   }
 }
@@ -334,9 +334,6 @@ exports[`DataSearch renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
