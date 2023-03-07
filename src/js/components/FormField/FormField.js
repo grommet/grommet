@@ -496,7 +496,6 @@ const FormField = forwardRef(
       <FormFieldBox
         ref={formFieldRef}
         className={className}
-        flex={false}
         background={outerBackground}
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
