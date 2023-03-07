@@ -25,39 +25,6 @@ exports[`DataFilter children 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -76,7 +43,7 @@ exports[`DataFilter children 1`] = `
   justify-content: space-between;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -91,7 +58,7 @@ exports[`DataFilter children 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -106,43 +73,7 @@ exports[`DataFilter children 1`] = `
   flex-direction: column;
 }
 
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c8 {
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -151,146 +82,7 @@ exports[`DataFilter children 1`] = `
   line-height: 24px;
 }
 
-.c13 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c13:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus > circle,
-.c13:focus > ellipse,
-.c13:focus > line,
-.c13:focus > path,
-.c13:focus > polygon,
-.c13:focus > polyline,
-.c13:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) > circle,
-.c13:focus:not(:focus-visible) > ellipse,
-.c13:focus:not(:focus-visible) > line,
-.c13:focus:not(:focus-visible) > path,
-.c13:focus:not(:focus-visible) > polygon,
-.c13:focus:not(:focus-visible) > polyline,
-.c13:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus > circle,
-.c15:focus > ellipse,
-.c15:focus > line,
-.c15:focus > path,
-.c15:focus > polygon,
-.c15:focus > polyline,
-.c15:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) > circle,
-.c15:focus:not(:focus-visible) > ellipse,
-.c15:focus:not(:focus-visible) > line,
-.c15:focus:not(:focus-visible) > path,
-.c15:focus:not(:focus-visible) > polygon,
-.c15:focus:not(:focus-visible) > polyline,
-.c15:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c11 {
+.c9 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -308,46 +100,42 @@ exports[`DataFilter children 1`] = `
   border: none;
 }
 
-.c11::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c11::-moz-placeholder {
+.c9::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c11:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c11::-webkit-search-decoration {
+.c9::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c11::-moz-focus-inner {
+.c9::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c11:-moz-placeholder,
-.c11::-moz-placeholder {
+.c9:-moz-placeholder,
+.c9::-moz-placeholder {
   opacity: 1;
 }
 
-.c10 {
+.c8 {
   position: relative;
   width: 100%;
-}
-
-.c16 {
-  opacity: 0;
 }
 
 .c2 {
   max-width: 100%;
 }
 
-.c6 {
+.c4 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -367,37 +155,25 @@ exports[`DataFilter children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c5 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    width: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -414,67 +190,37 @@ exports[`DataFilter children 1`] = `
     <form
       class="c2"
     >
-      <div
+      <header
         class="c3"
       >
-        <div
+        <h2
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
+          Filters
+        </h2>
+      </header>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-name"
+        >
+          name
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
           <div
-            class="c7 "
+            class="c8"
           >
-            <label
-              class="c8"
-              for="data-name"
-            >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10"
-              >
-                <input
-                  autocomplete="off"
-                  class="c11"
-                  value=""
-                />
-              </div>
-            </div>
+            <input
+              autocomplete="off"
+              class="c9"
+              value=""
+            />
           </div>
         </div>
-        <footer
-          class="c12"
-        >
-          <button
-            class="c13"
-            type="submit"
-          >
-            Apply filters
-          </button>
-          <div
-            class="c14"
-          />
-          <button
-            aria-hidden="true"
-            class="c15 c16"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
-        </footer>
       </div>
     </form>
   </div>
@@ -506,39 +252,6 @@ exports[`DataFilter options 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -557,7 +270,7 @@ exports[`DataFilter options 1`] = `
   justify-content: space-between;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -572,7 +285,7 @@ exports[`DataFilter options 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -588,7 +301,7 @@ exports[`DataFilter options 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -602,7 +315,7 @@ exports[`DataFilter options 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -625,7 +338,7 @@ exports[`DataFilter options 1`] = `
   justify-content: center;
 }
 
-.c15 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -651,33 +364,7 @@ exports[`DataFilter options 1`] = `
   border-radius: 4px;
 }
 
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c16 {
+.c14 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -687,17 +374,7 @@ exports[`DataFilter options 1`] = `
   height: 12px;
 }
 
-.c19 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c8 {
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -706,146 +383,7 @@ exports[`DataFilter options 1`] = `
   line-height: 24px;
 }
 
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) > circle,
-.c18:focus:not(:focus-visible) > ellipse,
-.c18:focus:not(:focus-visible) > line,
-.c18:focus:not(:focus-visible) > path,
-.c18:focus:not(:focus-visible) > polygon,
-.c18:focus:not(:focus-visible) > polyline,
-.c18:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c20 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c20:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c20:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c20:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c20:focus:not(:focus-visible) > circle,
-.c20:focus:not(:focus-visible) > ellipse,
-.c20:focus:not(:focus-visible) > line,
-.c20:focus:not(:focus-visible) > path,
-.c20:focus:not(:focus-visible) > polygon,
-.c20:focus:not(:focus-visible) > polyline,
-.c20:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c20:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c11 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -867,12 +405,12 @@ exports[`DataFilter options 1`] = `
   cursor: pointer;
 }
 
-.c11:hover input:not([disabled]) + div,
-.c11:hover input:not([disabled]) + span {
+.c9:hover input:not([disabled]) + div,
+.c9:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c14 {
+.c12 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -881,26 +419,22 @@ exports[`DataFilter options 1`] = `
   cursor: pointer;
 }
 
-.c14:checked + span > span {
+.c12:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c13 {
+.c11 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
-
-.c21 {
-  opacity: 0;
 }
 
 .c2 {
   max-width: 100%;
 }
 
-.c6 {
+.c4 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -920,61 +454,49 @@ exports[`DataFilter options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c5 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c10 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c13 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c16 {
+  .c14 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c19 {
-    width: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -991,249 +513,219 @@ exports[`DataFilter options 1`] = `
     <form
       class="c2"
     >
-      <div
+      <header
         class="c3"
       >
-        <div
+        <h2
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
+          Filters
+        </h2>
+      </header>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-name"
+        >
+          name
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
           <div
-            class="c7 "
+            class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+            id="data-name"
+            role="group"
           >
             <label
-              class="c8"
-              for="data-name"
-            >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9"
+              label="aa"
             >
               <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+                class="c10 c11"
               >
-                <label
-                  class="c11"
-                  label="aa"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    aa
-                  </span>
-                </label>
-                <div
-                  class="c16"
+                <input
+                  class="c12"
+                  type="checkbox"
                 />
-                <label
-                  class="c11"
-                  label="bb"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    bb
-                  </span>
-                </label>
                 <div
-                  class="c16"
+                  class="c13 "
                 />
-                <label
-                  class="c11"
-                  label="cc"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    cc
-                  </span>
-                </label>
               </div>
-            </div>
-          </div>
-          <div
-            class="c7 "
-          >
+              <span>
+                aa
+              </span>
+            </label>
+            <div
+              class="c14"
+            />
             <label
-              class="c8"
-              for="data-enabled"
-            >
-              Enabled
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9"
+              label="bb"
             >
               <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-enabled"
-                role="group"
+                class="c10 c11"
               >
-                <label
-                  class="c11"
-                  label="Enabled"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    Enabled
-                  </span>
-                </label>
-                <div
-                  class="c16"
+                <input
+                  class="c12"
+                  type="checkbox"
                 />
-                <label
-                  class="c11"
-                  label="Disabled"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    Disabled
-                  </span>
-                </label>
+                <div
+                  class="c13 "
+                />
               </div>
-            </div>
-          </div>
-          <div
-            class="c7 "
-          >
+              <span>
+                bb
+              </span>
+            </label>
+            <div
+              class="c14"
+            />
             <label
-              class="c8"
-              for="data-type.name"
-            >
-              Type
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9"
+              label="cc"
             >
               <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-type.name"
-                role="group"
+                class="c10 c11"
               >
-                <label
-                  class="c11"
-                  label="ZZ"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    ZZ
-                  </span>
-                </label>
-                <div
-                  class="c16"
+                <input
+                  class="c12"
+                  type="checkbox"
                 />
-                <label
-                  class="c11"
-                  label="YY"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    YY
-                  </span>
-                </label>
+                <div
+                  class="c13 "
+                />
               </div>
-            </div>
+              <span>
+                cc
+              </span>
+            </label>
           </div>
         </div>
-        <footer
-          class="c17"
+      </div>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-enabled"
         >
-          <button
-            class="c18"
-            type="submit"
-          >
-            Apply filters
-          </button>
+          Enabled
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
           <div
-            class="c19"
-          />
-          <button
-            aria-hidden="true"
-            class="c20 c21"
-            disabled=""
-            tabindex="-1"
-            type="reset"
+            class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+            id="data-enabled"
+            role="group"
           >
-            Undo changes
-          </button>
-        </footer>
+            <label
+              class="c9"
+              label="Enabled"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+              <span>
+                Enabled
+              </span>
+            </label>
+            <div
+              class="c14"
+            />
+            <label
+              class="c9"
+              label="Disabled"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+              <span>
+                Disabled
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-type.name"
+        >
+          Type
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
+          <div
+            class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+            id="data-type.name"
+            role="group"
+          >
+            <label
+              class="c9"
+              label="ZZ"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+              <span>
+                ZZ
+              </span>
+            </label>
+            <div
+              class="c14"
+            />
+            <label
+              class="c9"
+              label="YY"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+              <span>
+                YY
+              </span>
+            </label>
+          </div>
+        </div>
       </div>
     </form>
   </div>
@@ -1265,39 +757,6 @@ exports[`DataFilter range Data 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1316,7 +775,7 @@ exports[`DataFilter range Data 1`] = `
   justify-content: space-between;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1331,7 +790,7 @@ exports[`DataFilter range Data 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1345,6 +804,26 @@ exports[`DataFilter range Data 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
 }
 
 .c10 {
@@ -1365,30 +844,10 @@ exports[`DataFilter range Data 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
   cursor: pointer;
 }
 
-.c14 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1407,7 +866,7 @@ exports[`DataFilter range Data 1`] = `
   border-radius: 12px;
 }
 
-.c15 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1433,7 +892,7 @@ exports[`DataFilter range Data 1`] = `
   overflow: visible;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1458,7 +917,7 @@ exports[`DataFilter range Data 1`] = `
   justify-content: center;
 }
 
-.c17 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1477,7 +936,7 @@ exports[`DataFilter range Data 1`] = `
   border-radius: 100%;
 }
 
-.c18 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1498,43 +957,7 @@ exports[`DataFilter range Data 1`] = `
   border-radius: 12px;
 }
 
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c22 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c8 {
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1543,7 +966,7 @@ exports[`DataFilter range Data 1`] = `
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -1551,168 +974,25 @@ exports[`DataFilter range Data 1`] = `
   text-align: right;
 }
 
-.c19 {
+.c17 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c21 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c21:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c21:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus > circle,
-.c21:focus > ellipse,
-.c21:focus > line,
-.c21:focus > path,
-.c21:focus > polygon,
-.c21:focus > polyline,
-.c21:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c21:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible) > circle,
-.c21:focus:not(:focus-visible) > ellipse,
-.c21:focus:not(:focus-visible) > line,
-.c21:focus:not(:focus-visible) > path,
-.c21:focus:not(:focus-visible) > polygon,
-.c21:focus:not(:focus-visible) > polyline,
-.c21:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c23 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c23:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus > circle,
-.c23:focus > ellipse,
-.c23:focus > line,
-.c23:focus > path,
-.c23:focus > polygon,
-.c23:focus > polyline,
-.c23:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c23:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible) > circle,
-.c23:focus:not(:focus-visible) > ellipse,
-.c23:focus:not(:focus-visible) > line,
-.c23:focus:not(:focus-visible) > path,
-.c23:focus:not(:focus-visible) > polygon,
-.c23:focus:not(:focus-visible) > polyline,
-.c23:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c13 {
+.c11 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c24 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
 
-.c6 {
+.c4 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -1732,55 +1012,43 @@ exports[`DataFilter range Data 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c5 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c12 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c16 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c22 {
-    width: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -1797,130 +1065,100 @@ exports[`DataFilter range Data 1`] = `
     <form
       class="c2"
     >
-      <div
+      <header
         class="c3"
       >
-        <div
+        <h2
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
+          Filters
+        </h2>
+      </header>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-rating"
+        >
+          Rating
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
           <div
-            class="c7 "
+            class="c8"
+            id="data-rating"
           >
-            <label
-              class="c8"
-              for="data-rating"
+            <span
+              class="c9"
+              style="width: 0px;"
             >
-              Rating
-            </label>
+              0
+            </span>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c10 c11"
+              tabindex="-1"
             >
               <div
-                class="c10"
-                id="data-rating"
+                class="c12"
+                style="flex: 0 0 0px;"
+              />
+              <div
+                class="c13"
+                style="flex: 0 0 1px;"
               >
-                <span
-                  class="c11"
-                  style="width: 0px;"
-                >
-                  0
-                </span>
                 <div
-                  class="c12 c13"
-                  tabindex="-1"
+                  aria-label="Lower Bounds"
+                  aria-valuemax="5"
+                  aria-valuemin="0"
+                  aria-valuenow="0"
+                  class="c14"
+                  role="slider"
+                  style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                  tabindex="0"
                 >
                   <div
-                    class="c14"
-                    style="flex: 0 0 0px;"
-                  />
-                  <div
-                    class="c15"
-                    style="flex: 0 0 1px;"
-                  >
-                    <div
-                      aria-label="Lower Bounds"
-                      aria-valuemax="5"
-                      aria-valuemin="0"
-                      aria-valuenow="0"
-                      class="c16"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c18"
-                    style="flex: 6 0 0px; cursor: ew-resize;"
-                  />
-                  <div
-                    class="c15"
-                    style="flex: 0 0 1px;"
-                  >
-                    <div
-                      aria-label="Upper Bounds"
-                      aria-valuemax="5"
-                      aria-valuemin="0"
-                      aria-valuenow="5"
-                      class="c16"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c14"
-                    style="flex: 0 0 0px;"
+                    class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
                   />
                 </div>
-                <span
-                  class="c19"
-                  style="width: 0px;"
-                >
-                  5
-                </span>
               </div>
+              <div
+                class="c16"
+                style="flex: 6 0 0px; cursor: ew-resize;"
+              />
+              <div
+                class="c13"
+                style="flex: 0 0 1px;"
+              >
+                <div
+                  aria-label="Upper Bounds"
+                  aria-valuemax="5"
+                  aria-valuemin="0"
+                  aria-valuenow="5"
+                  class="c14"
+                  role="slider"
+                  style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                  tabindex="0"
+                >
+                  <div
+                    class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  />
+                </div>
+              </div>
+              <div
+                class="c12"
+                style="flex: 0 0 0px;"
+              />
             </div>
+            <span
+              class="c17"
+              style="width: 0px;"
+            >
+              5
+            </span>
           </div>
         </div>
-        <footer
-          class="c20"
-        >
-          <button
-            class="c21"
-            type="submit"
-          >
-            Apply filters
-          </button>
-          <div
-            class="c22"
-          />
-          <button
-            aria-hidden="true"
-            class="c23 c24"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
-        </footer>
       </div>
     </form>
   </div>
@@ -1952,39 +1190,6 @@ exports[`DataFilter range prop 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2003,7 +1208,7 @@ exports[`DataFilter range prop 1`] = `
   justify-content: space-between;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2018,7 +1223,7 @@ exports[`DataFilter range prop 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2032,6 +1237,26 @@ exports[`DataFilter range prop 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
 }
 
 .c10 {
@@ -2052,30 +1277,10 @@ exports[`DataFilter range prop 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
   cursor: pointer;
 }
 
-.c14 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2094,7 +1299,7 @@ exports[`DataFilter range prop 1`] = `
   border-radius: 12px;
 }
 
-.c15 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2120,7 +1325,7 @@ exports[`DataFilter range prop 1`] = `
   overflow: visible;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2145,7 +1350,7 @@ exports[`DataFilter range prop 1`] = `
   justify-content: center;
 }
 
-.c17 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2164,7 +1369,7 @@ exports[`DataFilter range prop 1`] = `
   border-radius: 100%;
 }
 
-.c18 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2185,43 +1390,7 @@ exports[`DataFilter range prop 1`] = `
   border-radius: 12px;
 }
 
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c22 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c8 {
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2230,7 +1399,7 @@ exports[`DataFilter range prop 1`] = `
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -2238,168 +1407,25 @@ exports[`DataFilter range prop 1`] = `
   text-align: right;
 }
 
-.c19 {
+.c17 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c21 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c21:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c21:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus > circle,
-.c21:focus > ellipse,
-.c21:focus > line,
-.c21:focus > path,
-.c21:focus > polygon,
-.c21:focus > polyline,
-.c21:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c21:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible) > circle,
-.c21:focus:not(:focus-visible) > ellipse,
-.c21:focus:not(:focus-visible) > line,
-.c21:focus:not(:focus-visible) > path,
-.c21:focus:not(:focus-visible) > polygon,
-.c21:focus:not(:focus-visible) > polyline,
-.c21:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c23 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c23:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus > circle,
-.c23:focus > ellipse,
-.c23:focus > line,
-.c23:focus > path,
-.c23:focus > polygon,
-.c23:focus > polyline,
-.c23:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c23:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible) > circle,
-.c23:focus:not(:focus-visible) > ellipse,
-.c23:focus:not(:focus-visible) > line,
-.c23:focus:not(:focus-visible) > path,
-.c23:focus:not(:focus-visible) > polygon,
-.c23:focus:not(:focus-visible) > polyline,
-.c23:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c13 {
+.c11 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c24 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
 
-.c6 {
+.c4 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -2419,55 +1445,43 @@ exports[`DataFilter range prop 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c5 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c12 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c16 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c22 {
-    width: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -2484,130 +1498,100 @@ exports[`DataFilter range prop 1`] = `
     <form
       class="c2"
     >
-      <div
+      <header
         class="c3"
       >
-        <div
+        <h2
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
+          Filters
+        </h2>
+      </header>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-rating"
+        >
+          rating
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
           <div
-            class="c7 "
+            class="c8"
+            id="data-rating"
           >
-            <label
-              class="c8"
-              for="data-rating"
+            <span
+              class="c9"
+              style="width: 0px;"
             >
-              rating
-            </label>
+              0
+            </span>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c10 c11"
+              tabindex="-1"
             >
               <div
-                class="c10"
-                id="data-rating"
+                class="c12"
+                style="flex: 0 0 0px;"
+              />
+              <div
+                class="c13"
+                style="flex: 0 0 1px;"
               >
-                <span
-                  class="c11"
-                  style="width: 0px;"
-                >
-                  0
-                </span>
                 <div
-                  class="c12 c13"
-                  tabindex="-1"
+                  aria-label="Lower Bounds"
+                  aria-valuemax="5"
+                  aria-valuemin="0"
+                  aria-valuenow="0"
+                  class="c14"
+                  role="slider"
+                  style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                  tabindex="0"
                 >
                   <div
-                    class="c14"
-                    style="flex: 0 0 0px;"
-                  />
-                  <div
-                    class="c15"
-                    style="flex: 0 0 1px;"
-                  >
-                    <div
-                      aria-label="Lower Bounds"
-                      aria-valuemax="5"
-                      aria-valuemin="0"
-                      aria-valuenow="0"
-                      class="c16"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c18"
-                    style="flex: 6 0 0px; cursor: ew-resize;"
-                  />
-                  <div
-                    class="c15"
-                    style="flex: 0 0 1px;"
-                  >
-                    <div
-                      aria-label="Upper Bounds"
-                      aria-valuemax="5"
-                      aria-valuemin="0"
-                      aria-valuenow="5"
-                      class="c16"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c14"
-                    style="flex: 0 0 0px;"
+                    class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
                   />
                 </div>
-                <span
-                  class="c19"
-                  style="width: 0px;"
-                >
-                  5
-                </span>
               </div>
+              <div
+                class="c16"
+                style="flex: 6 0 0px; cursor: ew-resize;"
+              />
+              <div
+                class="c13"
+                style="flex: 0 0 1px;"
+              >
+                <div
+                  aria-label="Upper Bounds"
+                  aria-valuemax="5"
+                  aria-valuemin="0"
+                  aria-valuenow="5"
+                  class="c14"
+                  role="slider"
+                  style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                  tabindex="0"
+                >
+                  <div
+                    class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  />
+                </div>
+              </div>
+              <div
+                class="c12"
+                style="flex: 0 0 0px;"
+              />
             </div>
+            <span
+              class="c17"
+              style="width: 0px;"
+            >
+              5
+            </span>
           </div>
         </div>
-        <footer
-          class="c20"
-        >
-          <button
-            class="c21"
-            type="submit"
-          >
-            Apply filters
-          </button>
-          <div
-            class="c22"
-          />
-          <button
-            aria-hidden="true"
-            class="c23 c24"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
-        </footer>
       </div>
     </form>
   </div>
@@ -2639,39 +1623,6 @@ exports[`DataFilter renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2690,7 +1641,7 @@ exports[`DataFilter renders 1`] = `
   justify-content: space-between;
 }
 
-.c7 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2705,7 +1656,7 @@ exports[`DataFilter renders 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2721,7 +1672,7 @@ exports[`DataFilter renders 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2735,7 +1686,7 @@ exports[`DataFilter renders 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2758,7 +1709,7 @@ exports[`DataFilter renders 1`] = `
   justify-content: center;
 }
 
-.c15 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2784,7 +1735,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 4px;
 }
 
-.c17 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2804,7 +1755,7 @@ exports[`DataFilter renders 1`] = `
   height: 100%;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2825,7 +1776,7 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c21 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2844,7 +1795,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 12px;
 }
 
-.c22 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2870,7 +1821,7 @@ exports[`DataFilter renders 1`] = `
   overflow: visible;
 }
 
-.c23 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2895,7 +1846,7 @@ exports[`DataFilter renders 1`] = `
   justify-content: center;
 }
 
-.c24 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2914,7 +1865,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 100%;
 }
 
-.c25 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2935,33 +1886,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 12px;
 }
 
-.c27 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c16 {
+.c14 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2971,17 +1896,7 @@ exports[`DataFilter renders 1`] = `
   height: 12px;
 }
 
-.c29 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c8 {
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2990,7 +1905,7 @@ exports[`DataFilter renders 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c16 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -2998,153 +1913,14 @@ exports[`DataFilter renders 1`] = `
   text-align: right;
 }
 
-.c26 {
+.c24 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c28 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c28:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c28:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c28:focus > circle,
-.c28:focus > ellipse,
-.c28:focus > line,
-.c28:focus > path,
-.c28:focus > polygon,
-.c28:focus > polyline,
-.c28:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c28:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c28:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c28:focus:not(:focus-visible) > circle,
-.c28:focus:not(:focus-visible) > ellipse,
-.c28:focus:not(:focus-visible) > line,
-.c28:focus:not(:focus-visible) > path,
-.c28:focus:not(:focus-visible) > polygon,
-.c28:focus:not(:focus-visible) > polyline,
-.c28:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c28:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c30 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c30:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c30:focus > circle,
-.c30:focus > ellipse,
-.c30:focus > line,
-.c30:focus > path,
-.c30:focus > polygon,
-.c30:focus > polyline,
-.c30:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c30:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c30:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c30:focus:not(:focus-visible) > circle,
-.c30:focus:not(:focus-visible) > ellipse,
-.c30:focus:not(:focus-visible) > line,
-.c30:focus:not(:focus-visible) > path,
-.c30:focus:not(:focus-visible) > polygon,
-.c30:focus:not(:focus-visible) > polyline,
-.c30:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c30:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c11 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3166,12 +1942,12 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c11:hover input:not([disabled]) + div,
-.c11:hover input:not([disabled]) + span {
+.c9:hover input:not([disabled]) + div,
+.c9:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c14 {
+.c12 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -3180,33 +1956,29 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c14:checked + span > span {
+.c12:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c13 {
+.c11 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c20 {
+.c18 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c31 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
 
-.c6 {
+.c4 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -3226,73 +1998,61 @@ exports[`DataFilter renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c5 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c10 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c13 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c19 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c25 {
+  .c23 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c27 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c16 {
+  .c14 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c29 {
-    width: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c4 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -3309,274 +2069,244 @@ exports[`DataFilter renders 1`] = `
     <form
       class="c2"
     >
-      <div
+      <header
         class="c3"
       >
-        <div
+        <h2
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
+          Filters
+        </h2>
+      </header>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-name"
+        >
+          name
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
           <div
-            class="c7 "
+            class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+            id="data-name"
+            role="group"
           >
             <label
-              class="c8"
-              for="data-name"
-            >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9"
+              label="aa"
             >
               <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+                class="c10 c11"
               >
-                <label
-                  class="c11"
-                  label="aa"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    aa
-                  </span>
-                </label>
-                <div
-                  class="c16"
+                <input
+                  class="c12"
+                  type="checkbox"
                 />
-                <label
-                  class="c11"
-                  label="bb"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    bb
-                  </span>
-                </label>
                 <div
-                  class="c16"
+                  class="c13 "
                 />
-                <label
-                  class="c11"
-                  label="cc"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    cc
-                  </span>
-                </label>
               </div>
-            </div>
-          </div>
-          <div
-            class="c7 "
-          >
+              <span>
+                aa
+              </span>
+            </label>
+            <div
+              class="c14"
+            />
             <label
-              class="c8"
-              for="data-enabled"
-            >
-              enabled
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c9"
+              label="bb"
             >
               <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-enabled"
-                role="group"
+                class="c10 c11"
               >
-                <label
-                  class="c11"
-                  label="true"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    true
-                  </span>
-                </label>
-                <div
-                  class="c16"
+                <input
+                  class="c12"
+                  type="checkbox"
                 />
-                <label
-                  class="c11"
-                  label="false"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    false
-                  </span>
-                </label>
+                <div
+                  class="c13 "
+                />
               </div>
-            </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data-rating"
-            >
-              rating
+              <span>
+                bb
+              </span>
             </label>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c14"
+            />
+            <label
+              class="c9"
+              label="cc"
             >
               <div
-                class="c17"
-                id="data-rating"
+                class="c10 c11"
               >
-                <span
-                  class="c18"
-                  style="width: 0px;"
-                >
-                  2.0999999999999996
-                </span>
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
                 <div
-                  class="c19 c20"
-                  tabindex="-1"
-                >
-                  <div
-                    class="c21"
-                    style="flex: 0 0 0px;"
-                  />
-                  <div
-                    class="c22"
-                    style="flex: 0 0 1px;"
-                  >
-                    <div
-                      aria-label="Lower Bounds"
-                      aria-valuemax="4.8999999999999995"
-                      aria-valuemin="2.0999999999999996"
-                      aria-valuenow="2.0999999999999996"
-                      class="c23"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c25"
-                    style="flex: 3.8 0 0px; cursor: ew-resize;"
-                  />
-                  <div
-                    class="c22"
-                    style="flex: 0 0 1px;"
-                  >
-                    <div
-                      aria-label="Upper Bounds"
-                      aria-valuemax="4.8999999999999995"
-                      aria-valuemin="2.0999999999999996"
-                      aria-valuenow="4.8999999999999995"
-                      class="c23"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c21"
-                    style="flex: 0 0 0px;"
-                  />
-                </div>
-                <span
-                  class="c26"
-                  style="width: 0px;"
-                >
-                  4.8999999999999995
-                </span>
+                  class="c13 "
+                />
               </div>
-            </div>
+              <span>
+                cc
+              </span>
+            </label>
           </div>
         </div>
-        <footer
-          class="c27"
+      </div>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-enabled"
         >
-          <button
-            class="c28"
-            type="submit"
-          >
-            Apply filters
-          </button>
+          enabled
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
           <div
-            class="c29"
-          />
-          <button
-            aria-hidden="true"
-            class="c30 c31"
-            disabled=""
-            tabindex="-1"
-            type="reset"
+            class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+            id="data-enabled"
+            role="group"
           >
-            Undo changes
-          </button>
-        </footer>
+            <label
+              class="c9"
+              label="true"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+              <span>
+                true
+              </span>
+            </label>
+            <div
+              class="c14"
+            />
+            <label
+              class="c9"
+              label="false"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+              <span>
+                false
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c5 "
+      >
+        <label
+          class="c6"
+          for="data-rating"
+        >
+          rating
+        </label>
+        <div
+          class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
+          <div
+            class="c15"
+            id="data-rating"
+          >
+            <span
+              class="c16"
+              style="width: 0px;"
+            >
+              2.0999999999999996
+            </span>
+            <div
+              class="c17 c18"
+              tabindex="-1"
+            >
+              <div
+                class="c19"
+                style="flex: 0 0 0px;"
+              />
+              <div
+                class="c20"
+                style="flex: 0 0 1px;"
+              >
+                <div
+                  aria-label="Lower Bounds"
+                  aria-valuemax="4.8999999999999995"
+                  aria-valuemin="2.0999999999999996"
+                  aria-valuenow="2.0999999999999996"
+                  class="c21"
+                  role="slider"
+                  style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                  tabindex="0"
+                >
+                  <div
+                    class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  />
+                </div>
+              </div>
+              <div
+                class="c23"
+                style="flex: 3.8 0 0px; cursor: ew-resize;"
+              />
+              <div
+                class="c20"
+                style="flex: 0 0 1px;"
+              >
+                <div
+                  aria-label="Upper Bounds"
+                  aria-valuemax="4.8999999999999995"
+                  aria-valuemin="2.0999999999999996"
+                  aria-valuenow="4.8999999999999995"
+                  class="c21"
+                  role="slider"
+                  style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                  tabindex="0"
+                >
+                  <div
+                    class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  />
+                </div>
+              </div>
+              <div
+                class="c19"
+                style="flex: 0 0 0px;"
+              />
+            </div>
+            <span
+              class="c24"
+              style="width: 0px;"
+            >
+              4.8999999999999995
+            </span>
+          </div>
+        </div>
       </div>
     </form>
   </div>
