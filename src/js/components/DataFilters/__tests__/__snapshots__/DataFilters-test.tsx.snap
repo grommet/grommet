@@ -556,85 +556,89 @@ exports[`DataFilters clear 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="a"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      checked=""
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    >
-                      <svg
-                        class="c16"
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6,11.3 L10.3,16 L18,6.2"
-                          fill="none"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c17"
-                />
-                <label
-                  class="c11"
-                  label="b"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="a"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c18 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        checked=""
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      >
+                        <svg
+                          class="c16"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M6,11.3 L10.3,16 L18,6.2"
+                            fill="none"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c17"
+                  />
+                  <label
+                    class="c11"
+                    label="b"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c18 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -1281,7 +1285,7 @@ exports[`DataFilters layer 1`] = `
 `;
 
 exports[`DataFilters layer 2`] = `
-.c11 {
+.c12 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1292,27 +1296,44 @@ exports[`DataFilters layer 2`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c12 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c5 {
@@ -1351,7 +1372,7 @@ exports[`DataFilters layer 2`] = `
   overflow: auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1376,7 +1397,7 @@ exports[`DataFilters layer 2`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1391,7 +1412,7 @@ exports[`DataFilters layer 2`] = `
   flex-direction: column;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1407,7 +1428,7 @@ exports[`DataFilters layer 2`] = `
   padding: 12px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1421,7 +1442,7 @@ exports[`DataFilters layer 2`] = `
   flex-direction: column;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1444,7 +1465,7 @@ exports[`DataFilters layer 2`] = `
   justify-content: center;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1470,7 +1491,7 @@ exports[`DataFilters layer 2`] = `
   border-radius: 4px;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1499,7 +1520,7 @@ exports[`DataFilters layer 2`] = `
   padding-bottom: 24px;
 }
 
-.c9 {
+.c10 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1509,7 +1530,7 @@ exports[`DataFilters layer 2`] = `
   width: 24px;
 }
 
-.c21 {
+.c22 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1519,7 +1540,7 @@ exports[`DataFilters layer 2`] = `
   height: 12px;
 }
 
-.c24 {
+.c25 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1529,7 +1550,7 @@ exports[`DataFilters layer 2`] = `
   width: 12px;
 }
 
-.c13 {
+.c14 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1538,7 +1559,7 @@ exports[`DataFilters layer 2`] = `
   line-height: 24px;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1558,52 +1579,52 @@ exports[`DataFilters layer 2`] = `
   padding: 12px;
 }
 
-.c10:hover {
+.c11:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c10:focus {
+.c11:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c23 {
+.c24 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1631,51 +1652,51 @@ exports[`DataFilters layer 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c23:hover {
+.c24:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c23:focus {
+.c24:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus > circle,
-.c23:focus > ellipse,
-.c23:focus > line,
-.c23:focus > path,
-.c23:focus > polygon,
-.c23:focus > polyline,
-.c23:focus > rect {
+.c24:focus > circle,
+.c24:focus > ellipse,
+.c24:focus > line,
+.c24:focus > path,
+.c24:focus > polygon,
+.c24:focus > polyline,
+.c24:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus::-moz-focus-inner {
+.c24:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c23:focus:not(:focus-visible) {
+.c24:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible) > circle,
-.c23:focus:not(:focus-visible) > ellipse,
-.c23:focus:not(:focus-visible) > line,
-.c23:focus:not(:focus-visible) > path,
-.c23:focus:not(:focus-visible) > polygon,
-.c23:focus:not(:focus-visible) > polyline,
-.c23:focus:not(:focus-visible) > rect {
+.c24:focus:not(:focus-visible) > circle,
+.c24:focus:not(:focus-visible) > ellipse,
+.c24:focus:not(:focus-visible) > line,
+.c24:focus:not(:focus-visible) > path,
+.c24:focus:not(:focus-visible) > polygon,
+.c24:focus:not(:focus-visible) > polyline,
+.c24:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible)::-moz-focus-inner {
+.c24:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c25 {
+.c26 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1702,47 +1723,47 @@ exports[`DataFilters layer 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c25:focus {
+.c26:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus > circle,
-.c25:focus > ellipse,
-.c25:focus > line,
-.c25:focus > path,
-.c25:focus > polygon,
-.c25:focus > polyline,
-.c25:focus > rect {
+.c26:focus > circle,
+.c26:focus > ellipse,
+.c26:focus > line,
+.c26:focus > path,
+.c26:focus > polygon,
+.c26:focus > polyline,
+.c26:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus::-moz-focus-inner {
+.c26:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c25:focus:not(:focus-visible) {
+.c26:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible) > circle,
-.c25:focus:not(:focus-visible) > ellipse,
-.c25:focus:not(:focus-visible) > line,
-.c25:focus:not(:focus-visible) > path,
-.c25:focus:not(:focus-visible) > polygon,
-.c25:focus:not(:focus-visible) > polyline,
-.c25:focus:not(:focus-visible) > rect {
+.c26:focus:not(:focus-visible) > circle,
+.c26:focus:not(:focus-visible) > ellipse,
+.c26:focus:not(:focus-visible) > line,
+.c26:focus:not(:focus-visible) > path,
+.c26:focus:not(:focus-visible) > polygon,
+.c26:focus:not(:focus-visible) > polyline,
+.c26:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible)::-moz-focus-inner {
+.c26:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1764,12 +1785,12 @@ exports[`DataFilters layer 2`] = `
   cursor: pointer;
 }
 
-.c16:hover input:not([disabled]) + div,
-.c16:hover input:not([disabled]) + span {
+.c17:hover input:not([disabled]) + div,
+.c17:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c19 {
+.c20 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1778,18 +1799,18 @@ exports[`DataFilters layer 2`] = `
   cursor: pointer;
 }
 
-.c19:checked + span > span {
+.c20:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c18 {
+.c19 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c26 {
+.c27 {
   opacity: 0;
 }
 
@@ -1798,7 +1819,7 @@ exports[`DataFilters layer 2`] = `
   max-height: 100%;
 }
 
-.c8 {
+.c9 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -1888,80 +1909,80 @@ exports[`DataFilters layer 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c13 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c21 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c23 {
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c23 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c23 {
     padding-bottom: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     width: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c22 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c24 {
+  .c25 {
     width: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -2022,112 +2043,116 @@ exports[`DataFilters layer 2`] = `
         <div
           class="c6"
         >
-          <header
+          <div
             class="c7"
           >
-            <h2
+            <header
               class="c8"
             >
-              Filters
-            </h2>
-            <div
-              class="c9"
-            />
-            <button
-              class="c10"
-              type="button"
-            >
-              <svg
-                aria-label="FormClose"
-                class="c11"
-                viewBox="0 0 24 24"
+              <h2
+                class="c9"
               >
-                <path
-                  d="m7 7 10 10M7 17 17 7"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </header>
-          <div
-            class="c12 "
-          >
-            <label
-              class="c13"
-              for="test-data-name"
-            >
-              name
-            </label>
-            <div
-              class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
+                Filters
+              </h2>
               <div
-                class="c15 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="test-data-name"
-                role="group"
+                class="c10"
+              />
+              <button
+                class="c11"
+                type="button"
               >
-                <label
-                  class="c16"
-                  label="a"
+                <svg
+                  aria-label="FormClose"
+                  class="c12"
+                  viewBox="0 0 24 24"
                 >
-                  <div
-                    class="c17 c18"
-                  >
-                    <input
-                      class="c19"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c20 "
-                    />
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                  <path
+                    d="m7 7 10 10M7 17 17 7"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </header>
+            <div
+              class="c13 "
+            >
+              <label
+                class="c14"
+                for="test-data-name"
+              >
+                name
+              </label>
+              <div
+                class="c15 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c21"
-                />
-                <label
-                  class="c16"
-                  label="b"
+                  class="c16 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="test-data-name"
+                  role="group"
                 >
-                  <div
-                    class="c17 c18"
+                  <label
+                    class="c17"
+                    label="a"
                   >
-                    <input
-                      class="c19"
-                      type="checkbox"
-                    />
                     <div
-                      class="c20 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c18 c19"
+                    >
+                      <input
+                        class="c20"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c21 "
+                      />
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c22"
+                  />
+                  <label
+                    class="c17"
+                    label="b"
+                  >
+                    <div
+                      class="c18 c19"
+                    >
+                      <input
+                        class="c20"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c21 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <footer
-          class="c22"
+          class="c23"
         >
           <button
-            class="c23"
+            class="c24"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c24"
+            class="c25"
           />
           <button
             aria-hidden="true"
-            class="c25 c26"
+            class="c26 c27"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -2712,73 +2737,77 @@ exports[`DataFilters properties array 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="a"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="b"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="a"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="b"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -3327,73 +3356,77 @@ exports[`DataFilters properties object 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="a"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="b"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="a"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="b"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -3942,73 +3975,77 @@ exports[`DataFilters renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="a"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="b"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="a"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="b"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -4859,171 +4896,175 @@ exports[`DataFilters sub objects 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-location.city"
+            <header
+              class="c5"
             >
-              City
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-location.city"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="Paris"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      checked=""
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    >
-                      <svg
-                        class="c16"
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6,11.3 L10.3,16 L18,6.2"
-                          fill="none"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <span>
-                    Paris
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-location.city"
+              >
+                City
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c17"
-                />
-                <label
-                  class="c11"
-                  label="Sydney"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-location.city"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="Paris"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c18 "
-                    />
-                  </div>
-                  <span>
-                    Sydney
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        checked=""
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      >
+                        <svg
+                          class="c16"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M6,11.3 L10.3,16 L18,6.2"
+                            fill="none"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <span>
+                      Paris
+                    </span>
+                  </label>
+                  <div
+                    class="c17"
+                  />
+                  <label
+                    class="c11"
+                    label="Sydney"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c18 "
+                      />
+                    </div>
+                    <span>
+                      Sydney
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data-location.lat"
-            >
-              Latitude
-            </label>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c7 "
             >
-              <div
-                class="c19"
-                id="data-location.lat"
+              <label
+                class="c8"
+                for="data-location.lat"
               >
-                <span
-                  class="c20"
-                  style="width: 0px;"
-                >
-                  10
-                </span>
+                Latitude
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c21 c22"
-                  tabindex="-1"
+                  class="c19"
+                  id="data-location.lat"
                 >
+                  <span
+                    class="c20"
+                    style="width: 0px;"
+                  >
+                    10
+                  </span>
                   <div
-                    class="c23"
-                    style="flex: 100 0 0px;"
-                  />
-                  <div
-                    class="c24"
-                    style="flex: 0 0 1px;"
+                    class="c21 c22"
+                    tabindex="-1"
                   >
                     <div
-                      aria-label="Lower Bounds"
-                      aria-valuemax="90"
-                      aria-valuemin="-90"
-                      aria-valuenow="10"
-                      class="c25"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c26 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c27"
-                    style="flex: 81 0 0px; cursor: ew-resize;"
-                  />
-                  <div
-                    class="c24"
-                    style="flex: 0 0 1px;"
-                  >
+                      class="c23"
+                      style="flex: 100 0 0px;"
+                    />
                     <div
-                      aria-label="Upper Bounds"
-                      aria-valuemax="90"
-                      aria-valuemin="-90"
-                      aria-valuenow="90"
-                      class="c25"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
+                      class="c24"
+                      style="flex: 0 0 1px;"
                     >
                       <div
-                        class="c26 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
+                        aria-label="Lower Bounds"
+                        aria-valuemax="90"
+                        aria-valuemin="-90"
+                        aria-valuenow="10"
+                        class="c25"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c26 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
                     </div>
+                    <div
+                      class="c27"
+                      style="flex: 81 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c24"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="90"
+                        aria-valuemin="-90"
+                        aria-valuenow="90"
+                        class="c25"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c26 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c23"
+                      style="flex: 0 0 0px;"
+                    />
                   </div>
-                  <div
-                    class="c23"
-                    style="flex: 0 0 0px;"
-                  />
+                  <span
+                    class="c28"
+                    style="width: 0px;"
+                  >
+                    90
+                  </span>
                 </div>
-                <span
-                  class="c28"
-                  style="width: 0px;"
-                >
-                  90
-                </span>
               </div>
             </div>
           </div>

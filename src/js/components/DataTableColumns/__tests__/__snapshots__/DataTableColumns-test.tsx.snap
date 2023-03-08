@@ -314,34 +314,38 @@ exports[`DataTableColumns remove column 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
+          <div
+            class="c1"
           >
-            <h2
-              class="c6"
+            <header
+              class="c5"
             >
-              Filters
-            </h2>
-          </header>
-          <button
-            aria-label="Open column selector"
-            class="c7"
-            id="test-data--columns-control"
-            type="button"
-          >
-            <svg
-              aria-label="Splits"
-              class="c8"
-              viewBox="0 0 24 24"
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <button
+              aria-label="Open column selector"
+              class="c7"
+              id="test-data--columns-control"
+              type="button"
             >
-              <path
-                d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
+              <svg
+                aria-label="Splits"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </form>
@@ -1090,34 +1094,38 @@ exports[`DataTableColumns renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
+          <div
+            class="c1"
           >
-            <h2
-              class="c6"
+            <header
+              class="c5"
             >
-              Filters
-            </h2>
-          </header>
-          <button
-            aria-label="Open column selector"
-            class="c7"
-            id="test-data--columns-control"
-            type="button"
-          >
-            <svg
-              aria-label="Splits"
-              class="c8"
-              viewBox="0 0 24 24"
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <button
+              aria-label="Open column selector"
+              class="c7"
+              id="test-data--columns-control"
+              type="button"
             >
-              <path
-                d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
+              <svg
+                aria-label="Splits"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <footer
           class="c9"
@@ -1567,34 +1575,38 @@ exports[`DataTableColumns search 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
+          <div
+            class="c1"
           >
-            <h2
-              class="c6"
+            <header
+              class="c5"
             >
-              Filters
-            </h2>
-          </header>
-          <button
-            aria-label="Open column selector"
-            class="c7"
-            id="test-data--columns-control"
-            type="button"
-          >
-            <svg
-              aria-label="Splits"
-              class="c8"
-              viewBox="0 0 24 24"
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <button
+              aria-label="Open column selector"
+              class="c7"
+              id="test-data--columns-control"
+              type="button"
             >
-              <path
-                d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
+              <svg
+                aria-label="Splits"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </form>

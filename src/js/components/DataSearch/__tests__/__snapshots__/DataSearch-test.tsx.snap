@@ -684,55 +684,59 @@ exports[`DataSearch renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data--search"
+            <header
+              class="c5"
             >
-              Search
-            </label>
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c7 "
             >
+              <label
+                class="c8"
+                for="data--search"
+              >
+                Search
+              </label>
               <div
-                class="c10"
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c11"
+                  class="c10"
                 >
-                  <svg
-                    aria-label="Search"
-                    class="c12"
-                    viewBox="0 0 24 24"
+                  <div
+                    class="c11"
                   >
-                    <path
-                      d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                      fill="none"
-                      stroke="#000"
-                      stroke-width="2"
-                    />
-                  </svg>
+                    <svg
+                      aria-label="Search"
+                      class="c12"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    aria-label="Search"
+                    autocomplete="off"
+                    class="c13"
+                    id="data--search"
+                    name="_search"
+                    type="search"
+                    value=""
+                  />
                 </div>
-                <input
-                  aria-label="Search"
-                  autocomplete="off"
-                  class="c13"
-                  id="data--search"
-                  name="_search"
-                  type="search"
-                  value=""
-                />
               </div>
             </div>
           </div>

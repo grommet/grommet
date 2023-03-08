@@ -955,143 +955,147 @@ exports[`DataSort renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data--sort-property"
+            <header
+              class="c5"
             >
-              Sort by
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <button
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-label="Open Drop"
-                class="c10 "
-                id="data--sort-property"
-                type="button"
+              <h2
+                class="c6"
               >
-                <div
-                  class="c11"
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data--sort-property"
+              >
+                Sort by
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Open Drop"
+                  class="c10 "
+                  id="data--sort-property"
+                  type="button"
                 >
                   <div
-                    class="c12"
+                    class="c11"
                   >
                     <div
-                      class="c13"
+                      class="c12"
                     >
-                      <input
-                        autocomplete="off"
-                        class="c14 c15"
-                        id="data--sort-property__input"
-                        name="_sort.property"
-                        readonly=""
-                        tabindex="-1"
-                        type="text"
-                        value=""
-                      />
+                      <div
+                        class="c13"
+                      >
+                        <input
+                          autocomplete="off"
+                          class="c14 c15"
+                          id="data--sort-property__input"
+                          name="_sort.property"
+                          readonly=""
+                          tabindex="-1"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c16"
+                      style="min-width: auto;"
+                    >
+                      <svg
+                        aria-label="FormDown"
+                        class="c17"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="m18 9-6 6-6-6"
+                          fill="none"
+                          stroke="#000"
+                          stroke-width="2"
+                        />
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="c16"
-                    style="min-width: auto;"
-                  >
-                    <svg
-                      aria-label="FormDown"
-                      class="c17"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m18 9-6 6-6-6"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </button>
+                </button>
+              </div>
             </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data--sort-direction"
-            >
-              Sort direction
-            </label>
             <div
-              class="c18 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c7 "
             >
-              <div
-                class="c19"
-                id="data--sort-direction"
-                role="radiogroup"
+              <label
+                class="c8"
+                for="data--sort-direction"
               >
-                <label
-                  class="c20"
-                >
-                  <div
-                    class="c21 "
-                  >
-                    <input
-                      class="c22"
-                      name="_sort.direction"
-                      tabindex="0"
-                      type="radio"
-                      value="asc"
-                    />
-                    <div
-                      class="c23 "
-                    />
-                  </div>
-                  <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
-                  >
-                    Ascending
-                  </span>
-                </label>
+                Sort direction
+              </label>
+              <div
+                class="c18 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c24"
-                />
-                <label
-                  class="c20"
+                  class="c19"
+                  id="data--sort-direction"
+                  role="radiogroup"
                 >
-                  <div
-                    class="c21 "
+                  <label
+                    class="c20"
                   >
-                    <input
-                      class="c22"
-                      name="_sort.direction"
-                      tabindex="-1"
-                      type="radio"
-                      value="desc"
-                    />
                     <div
-                      class="c23 "
-                    />
-                  </div>
-                  <span
-                    class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                      class="c21 "
+                    >
+                      <input
+                        class="c22"
+                        name="_sort.direction"
+                        tabindex="0"
+                        type="radio"
+                        value="asc"
+                      />
+                      <div
+                        class="c23 "
+                      />
+                    </div>
+                    <span
+                      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                    >
+                      Ascending
+                    </span>
+                  </label>
+                  <div
+                    class="c24"
+                  />
+                  <label
+                    class="c20"
                   >
-                    Descending
-                  </span>
-                </label>
+                    <div
+                      class="c21 "
+                    >
+                      <input
+                        class="c22"
+                        name="_sort.direction"
+                        tabindex="-1"
+                        type="radio"
+                        value="desc"
+                      />
+                      <div
+                        class="c23 "
+                      />
+                    </div>
+                    <span
+                      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                    >
+                      Descending
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
