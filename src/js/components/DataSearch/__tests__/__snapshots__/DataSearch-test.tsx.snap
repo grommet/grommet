@@ -155,7 +155,7 @@ exports[`DataSearch drop 1`] = `
 exports[`DataSearch drop 2`] = `
 <button
   aria-label="Open search"
-  class="StyledButton-sc-323bzc-0 emhJYD"
+  class="StyledButton-sc-323bzc-0 eHhrMZ"
   data-g-tabindex="none"
   id="test-data--search-control"
   tabindex="-1"
@@ -163,7 +163,7 @@ exports[`DataSearch drop 2`] = `
 >
   <svg
     aria-label="Search"
-    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    class="StyledIcon-sc-ofa7kd-0 jxjidg"
     viewBox="0 0 24 24"
   >
     <path
@@ -178,32 +178,32 @@ exports[`DataSearch drop 2`] = `
 
 exports[`DataSearch drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hfctvB {
+  .jkVdVC {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cqRjpC {
+  .iPSxqg {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .gsyDnL {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .gViPnC {
     width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -334,9 +334,6 @@ exports[`DataSearch renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -687,55 +684,59 @@ exports[`DataSearch renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data--search"
+            <header
+              class="c5"
             >
-              Search
-            </label>
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c7 "
             >
+              <label
+                class="c8"
+                for="data--search"
+              >
+                Search
+              </label>
               <div
-                class="c10"
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c11"
+                  class="c10"
                 >
-                  <svg
-                    aria-label="Search"
-                    class="c12"
-                    viewBox="0 0 24 24"
+                  <div
+                    class="c11"
                   >
-                    <path
-                      d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                      fill="none"
-                      stroke="#000"
-                      stroke-width="2"
-                    />
-                  </svg>
+                    <svg
+                      aria-label="Search"
+                      class="c12"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    aria-label="Search"
+                    autocomplete="off"
+                    class="c13"
+                    id="data--search"
+                    name="_search"
+                    type="search"
+                    value=""
+                  />
                 </div>
-                <input
-                  aria-label="Search"
-                  autocomplete="off"
-                  class="c13"
-                  id="data--search"
-                  name="_search"
-                  type="search"
-                  value=""
-                />
               </div>
             </div>
           </div>

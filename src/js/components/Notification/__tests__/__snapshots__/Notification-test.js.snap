@@ -172,6 +172,7 @@ exports[`Notification custom theme 1`] = `
           <svg
             aria-label="Status is critical"
             class="c4"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <path
@@ -389,6 +390,7 @@ exports[`Notification global 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c4"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -627,6 +629,7 @@ exports[`Notification multi actions 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c4"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -917,6 +920,7 @@ exports[`Notification position bottom 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -956,24 +960,24 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -1218,6 +1222,7 @@ exports[`Notification position bottom-left 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -1257,24 +1262,24 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -1519,6 +1524,7 @@ exports[`Notification position bottom-right 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -1558,24 +1564,24 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -1820,6 +1826,7 @@ exports[`Notification position center 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -1859,24 +1866,24 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -2121,6 +2128,7 @@ exports[`Notification position end 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -2160,24 +2168,24 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -2422,6 +2430,7 @@ exports[`Notification position left 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -2461,24 +2470,24 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -2723,6 +2732,7 @@ exports[`Notification position right 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -2762,24 +2772,24 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -3024,6 +3034,7 @@ exports[`Notification position start 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -3063,24 +3074,24 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -3325,6 +3336,7 @@ exports[`Notification position top 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -3364,24 +3376,24 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -3626,6 +3638,7 @@ exports[`Notification position top-left 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -3665,24 +3678,24 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -3927,6 +3940,7 @@ exports[`Notification position top-right 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c6"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -3966,24 +3980,24 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .fZqOKI {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .fsOQa-d {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bvRJcj {
     padding-right: 6px;
   }
 }"
@@ -4151,6 +4165,7 @@ exports[`Notification should have no accessibility violations 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c4"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -4589,6 +4604,7 @@ exports[`Notification should render custom template inside notification 1`] = `
           <svg
             aria-label="Status is unknown"
             class="c4"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <rect
@@ -4798,6 +4814,7 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
           <svg
             aria-label="Home"
             class="c4"
+            height="medium"
             viewBox="0 0 24 24"
           >
             <path
@@ -5123,6 +5140,7 @@ exports[`Notification status 1`] = `
           <svg
             aria-label="Status is okay"
             class="c4"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <circle
@@ -5171,6 +5189,7 @@ exports[`Notification status 1`] = `
           <svg
             aria-label="Status is warning"
             class="c11"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <path
@@ -5218,6 +5237,7 @@ exports[`Notification status 1`] = `
           <svg
             aria-label="Status is critical"
             class="c13"
+            height="medium"
             viewBox="0 0 12 12"
           >
             <path

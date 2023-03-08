@@ -1028,6 +1028,8 @@ export interface ThemeType {
   };
   icon?: {
     extend?: ExtendType;
+    disableScaleDown?: boolean;
+    matchSize?: boolean;
     size?: {
       small?: string;
       medium?: string;

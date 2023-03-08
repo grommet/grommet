@@ -4,7 +4,7 @@ import { A11yTitleType, PadType } from '../../utils';
 export interface CheckBoxProps {
   a11yTitle?: A11yTitleType;
   checked?: boolean;
-  children?: Function;
+  children?: React.ReactNode | Function;
   disabled?: boolean;
   fill?: boolean;
   id?: string;

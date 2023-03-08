@@ -750,4 +750,26 @@ describe('Button kind', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('match icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+      button: {
+        default: {},
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button size="xsmall" label="Label" icon={<Add />} />
+        <Button size="small" label="Label" icon={<Add />} />
+        <Button label="Label" icon={<Add />} />
+        <Button size="large" label="Label" icon={<Add />} />
+        <Button size="xlarge" label="Label" icon={<Add />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
