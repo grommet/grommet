@@ -490,7 +490,7 @@ exports[`DataTableColumns remove column 1`] = `
 exports[`DataTableColumns remove column 2`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 eHhrMZ"
+  class="StyledButton-sc-323bzc-0 jFLFmA"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -522,7 +522,7 @@ exports[`DataTableColumns remove column 3`] = `
     width: 6px;
   }
 }
-.eHhrMZ {
+.jFLFmA {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -541,38 +541,38 @@ exports[`DataTableColumns remove column 3`] = `
   line-height: 0;
   padding: 12px;
 }
-.eHhrMZ:focus {
+.jFLFmA:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus > circle,
-.eHhrMZ:focus > ellipse,
-.eHhrMZ:focus > line,
-.eHhrMZ:focus > path,
-.eHhrMZ:focus > polygon,
-.eHhrMZ:focus > polyline,
-.eHhrMZ:focus > rect {
+.jFLFmA:focus > circle,
+.jFLFmA:focus > ellipse,
+.jFLFmA:focus > line,
+.jFLFmA:focus > path,
+.jFLFmA:focus > polygon,
+.jFLFmA:focus > polyline,
+.jFLFmA:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus::-moz-focus-inner {
+.jFLFmA:focus::-moz-focus-inner {
   border: 0;
 }
-.eHhrMZ:focus:not(:focus-visible) {
+.jFLFmA:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible) > circle,
-.eHhrMZ:focus:not(:focus-visible) > ellipse,
-.eHhrMZ:focus:not(:focus-visible) > line,
-.eHhrMZ:focus:not(:focus-visible) > path,
-.eHhrMZ:focus:not(:focus-visible) > polygon,
-.eHhrMZ:focus:not(:focus-visible) > polyline,
-.eHhrMZ:focus:not(:focus-visible) > rect {
+.jFLFmA:focus:not(:focus-visible) > circle,
+.jFLFmA:focus:not(:focus-visible) > ellipse,
+.jFLFmA:focus:not(:focus-visible) > line,
+.jFLFmA:focus:not(:focus-visible) > path,
+.jFLFmA:focus:not(:focus-visible) > polygon,
+.jFLFmA:focus:not(:focus-visible) > polyline,
+.jFLFmA:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible)::-moz-focus-inner {
+.jFLFmA:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {
@@ -1723,7 +1723,7 @@ exports[`DataTableColumns search 1`] = `
 exports[`DataTableColumns search 2`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 eHhrMZ"
+  class="StyledButton-sc-323bzc-0 jFLFmA"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -1755,7 +1755,7 @@ exports[`DataTableColumns search 3`] = `
     width: 6px;
   }
 }
-.eHhrMZ {
+.jFLFmA {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1774,38 +1774,38 @@ exports[`DataTableColumns search 3`] = `
   line-height: 0;
   padding: 12px;
 }
-.eHhrMZ:focus {
+.jFLFmA:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus > circle,
-.eHhrMZ:focus > ellipse,
-.eHhrMZ:focus > line,
-.eHhrMZ:focus > path,
-.eHhrMZ:focus > polygon,
-.eHhrMZ:focus > polyline,
-.eHhrMZ:focus > rect {
+.jFLFmA:focus > circle,
+.jFLFmA:focus > ellipse,
+.jFLFmA:focus > line,
+.jFLFmA:focus > path,
+.jFLFmA:focus > polygon,
+.jFLFmA:focus > polyline,
+.jFLFmA:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus::-moz-focus-inner {
+.jFLFmA:focus::-moz-focus-inner {
   border: 0;
 }
-.eHhrMZ:focus:not(:focus-visible) {
+.jFLFmA:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible) > circle,
-.eHhrMZ:focus:not(:focus-visible) > ellipse,
-.eHhrMZ:focus:not(:focus-visible) > line,
-.eHhrMZ:focus:not(:focus-visible) > path,
-.eHhrMZ:focus:not(:focus-visible) > polygon,
-.eHhrMZ:focus:not(:focus-visible) > polyline,
-.eHhrMZ:focus:not(:focus-visible) > rect {
+.jFLFmA:focus:not(:focus-visible) > circle,
+.jFLFmA:focus:not(:focus-visible) > ellipse,
+.jFLFmA:focus:not(:focus-visible) > line,
+.jFLFmA:focus:not(:focus-visible) > path,
+.jFLFmA:focus:not(:focus-visible) > polygon,
+.jFLFmA:focus:not(:focus-visible) > polyline,
+.jFLFmA:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible)::-moz-focus-inner {
+.jFLFmA:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {
@@ -1825,7 +1825,7 @@ exports[`DataTableColumns search 3`] = `
 exports[`DataTableColumns search 4`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 eHhrMZ"
+  class="StyledButton-sc-323bzc-0 jFLFmA"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -1857,7 +1857,7 @@ exports[`DataTableColumns search 5`] = `
     width: 6px;
   }
 }
-.eHhrMZ {
+.jFLFmA {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1876,38 +1876,38 @@ exports[`DataTableColumns search 5`] = `
   line-height: 0;
   padding: 12px;
 }
-.eHhrMZ:focus {
+.jFLFmA:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus > circle,
-.eHhrMZ:focus > ellipse,
-.eHhrMZ:focus > line,
-.eHhrMZ:focus > path,
-.eHhrMZ:focus > polygon,
-.eHhrMZ:focus > polyline,
-.eHhrMZ:focus > rect {
+.jFLFmA:focus > circle,
+.jFLFmA:focus > ellipse,
+.jFLFmA:focus > line,
+.jFLFmA:focus > path,
+.jFLFmA:focus > polygon,
+.jFLFmA:focus > polyline,
+.jFLFmA:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus::-moz-focus-inner {
+.jFLFmA:focus::-moz-focus-inner {
   border: 0;
 }
-.eHhrMZ:focus:not(:focus-visible) {
+.jFLFmA:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible) > circle,
-.eHhrMZ:focus:not(:focus-visible) > ellipse,
-.eHhrMZ:focus:not(:focus-visible) > line,
-.eHhrMZ:focus:not(:focus-visible) > path,
-.eHhrMZ:focus:not(:focus-visible) > polygon,
-.eHhrMZ:focus:not(:focus-visible) > polyline,
-.eHhrMZ:focus:not(:focus-visible) > rect {
+.jFLFmA:focus:not(:focus-visible) > circle,
+.jFLFmA:focus:not(:focus-visible) > ellipse,
+.jFLFmA:focus:not(:focus-visible) > line,
+.jFLFmA:focus:not(:focus-visible) > path,
+.jFLFmA:focus:not(:focus-visible) > polygon,
+.jFLFmA:focus:not(:focus-visible) > polyline,
+.jFLFmA:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible)::-moz-focus-inner {
+.jFLFmA:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {

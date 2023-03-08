@@ -199,7 +199,13 @@ const StyledButton = styled.button`
   ${(props) => !props.plain && basicStyle(props)}
   ${(props) => props.primary && primaryStyle(props)}
 
-  ${(props) => !props.disabled && !props.selected && !props.focus && hoverStyle}
+  ${(props) =>
+    !props.disabled &&
+    !props.selected &&
+    !props.focus &&
+    !props.busy &&
+    !props.success &&
+    hoverStyle}
 
   ${(props) => !props.disabled && props.active && activeButtonStyle(props)}
   ${(props) =>
@@ -239,6 +245,12 @@ const StyledButton = styled.button`
     padding: ${props.theme.global.edgeSize.small};
   `}
   ${(props) => props.theme.button && props.theme.button.extend}
+
+  ${(props) =>
+    (props.busy || props.success) &&
+    `
+    cursor: default;
+  `}
 `;
 
 StyledButton.defaultProps = {};

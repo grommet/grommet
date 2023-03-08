@@ -2908,7 +2908,7 @@ exports[`Select complex options and children 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dvNunP StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
+  class="StyledButton-sc-323bzc-0 yqYEu StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
   id="test-select"
   type="button"
 >
@@ -4708,7 +4708,7 @@ exports[`Select disabled 2`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 hblQzR StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
+  class="StyledButton-sc-323bzc-0 klMKVs StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
   disabled=""
   id="test-select"
   type="button"
@@ -12571,7 +12571,7 @@ exports[`Select prop: onOpen 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dvNunP StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
+  class="StyledButton-sc-323bzc-0 yqYEu StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
   id="test-select"
   type="button"
 >
@@ -12882,7 +12882,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 kLIjuW StyledSelect__SelectOption-sc-znp66n-3 dpFwjp"
+    class="StyledButton-sc-323bzc-0 hRhQLn StyledSelect__SelectOption-sc-znp66n-3 dpFwjp"
     role="option"
     tabindex="-1"
     type="button"
@@ -12901,7 +12901,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 kLIjuW StyledSelect__SelectOption-sc-znp66n-3 dpFwjp"
+    class="StyledButton-sc-323bzc-0 hRhQLn StyledSelect__SelectOption-sc-znp66n-3 dpFwjp"
     role="option"
     tabindex="-1"
     type="button"
@@ -13477,7 +13477,7 @@ exports[`Select renders custom up and down icons 2`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="StyledButton-sc-323bzc-0 dvNunP StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
+    class="StyledButton-sc-323bzc-0 yqYEu StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
     type="button"
   >
     <div
@@ -18062,7 +18062,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="StyledButton-sc-323bzc-0 dvNunP StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
+    class="StyledButton-sc-323bzc-0 yqYEu StyledSelect__StyledSelectDropButton-sc-znp66n-5 GOtsS"
     id="test-select"
     type="button"
   >

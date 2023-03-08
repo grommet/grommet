@@ -13,15 +13,14 @@ export const Busy = () => {
         success={success}
         label="Button Busy"
         onClick={() => {
-          if (success) {
+          setBusy(true);
+          setTimeout(() => {
+            setBusy(false);
+            setSuccess(true);
+          }, 2000);
+          setTimeout(() => {
             setSuccess(false);
-          } else {
-            setBusy(true);
-            setTimeout(() => {
-              setBusy(false);
-              setSuccess(true);
-            }, 2000);
-          }
+          }, 4000);
         }}
       />
     </Box>

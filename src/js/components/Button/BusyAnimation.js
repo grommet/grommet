@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
+import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { Box } from '../Box';
 
 const bounceDelay = keyframes`
@@ -58,7 +58,7 @@ const grow = keyframes`
   100% { transform: scale(1); }  
 `;
 
-export const GrowCheckmark = styled(FormCheckmark)`
+export const GrowCheckmark = styled(Checkmark)`
   position: absolute;
   align-self: center;
   animation: ${grow} 0.9s ease-in-out;

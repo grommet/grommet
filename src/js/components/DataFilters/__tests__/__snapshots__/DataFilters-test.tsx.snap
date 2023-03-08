@@ -852,7 +852,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButton-sc-323bzc-0 eurrtV"
+  class="StyledButton-sc-323bzc-0 jnekFU"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"

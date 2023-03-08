@@ -7960,7 +7960,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 ypLIx StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 fDVpxY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             <svg
@@ -7985,7 +7985,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             1
@@ -8000,7 +8000,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 iLsCdf StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 grifpe StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             2
@@ -8014,7 +8014,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             3
@@ -8028,7 +8028,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             4
@@ -8042,7 +8042,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             5
@@ -8068,7 +8068,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             24
@@ -8082,7 +8082,7 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 ypLIx StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 fDVpxY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             <svg
@@ -9233,7 +9233,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 ypLIx StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 fDVpxY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             <svg
@@ -9258,7 +9258,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             1
@@ -9273,7 +9273,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 iLsCdf StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 grifpe StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             2
@@ -9287,7 +9287,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             3
@@ -9301,7 +9301,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             4
@@ -9315,7 +9315,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             5
@@ -9341,7 +9341,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 gFIoZt StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 cvDOZY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             24
@@ -9355,7 +9355,7 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 ypLIx StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 fDVpxY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
             type="button"
           >
             <svg

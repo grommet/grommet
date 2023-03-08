@@ -155,7 +155,7 @@ exports[`DataSearch drop 1`] = `
 exports[`DataSearch drop 2`] = `
 <button
   aria-label="Open search"
-  class="StyledButton-sc-323bzc-0 eHhrMZ"
+  class="StyledButton-sc-323bzc-0 jFLFmA"
   data-g-tabindex="none"
   id="test-data--search-control"
   tabindex="-1"

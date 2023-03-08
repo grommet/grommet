@@ -250,16 +250,18 @@ const Button = forwardRef(
 
     const onClick = useCallback(
       (event) => {
-        sendAnalytics({
-          type: 'buttonClick',
-          element: findButtonParent(event.target),
-          event,
-          href,
-          label: typeof label === 'string' ? label : undefined,
-        });
-        if (onClickProp) onClickProp(event);
+        if (!busy && !success) {
+          sendAnalytics({
+            type: 'buttonClick',
+            element: findButtonParent(event.target),
+            event,
+            href,
+            label: typeof label === 'string' ? label : undefined,
+          });
+          if (onClickProp) onClickProp(event);
+        }
       },
-      [onClickProp, sendAnalytics, href, label],
+      [busy, onClickProp, sendAnalytics, success, href, label],
     );
 
     // kindArg is object if we are referencing a theme object
@@ -455,7 +457,16 @@ const Button = forwardRef(
         // display over the button content
         <Box style={{ position: 'relative' }}>
           {busy && <EllipsisAnimation color={animationColor} />}
-          {success && <GrowCheckmark color={animationColor} aria-hidden />}
+          {success && (
+            <Box
+              style={{ position: 'absolute' }}
+              fill
+              alignContent="center"
+              justify="center"
+            >
+              <GrowCheckmark color={animationColor} aria-hidden />
+            </Box>
+          )}
           <StyledBusyContents animating={busy || success}>
             {contents}
           </StyledBusyContents>
@@ -473,6 +484,7 @@ const Button = forwardRef(
           active={active}
           align={align}
           aria-label={ariaLabel || a11yTitle}
+          busy={busy}
           badge={badgeProp}
           colorValue={color}
           disabled={disabled}
@@ -500,6 +512,7 @@ const Button = forwardRef(
           plain={plain || Children.count(children) > 0}
           primary={primary}
           sizeProp={size}
+          success={success}
           type={!href ? type : undefined}
         >
           {contents}
@@ -512,6 +525,7 @@ const Button = forwardRef(
           as={domTag}
           ref={ref}
           aria-label={ariaLabel || a11yTitle}
+          busy={busy}
           colorValue={color}
           active={active}
           selected={selected}
@@ -544,6 +558,7 @@ const Button = forwardRef(
           }
           primary={primary}
           sizeProp={size}
+          success={success}
           type={!href ? type : undefined}
         >
           {contents}
