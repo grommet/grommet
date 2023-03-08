@@ -266,43 +266,49 @@ var DataForm = function DataForm(_ref) {
   (0, _react.useEffect)(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);
+  var content = children;
+  if (footer !== false || pad) {
+    content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      fill: "vertical"
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      flex: true,
+      overflow: "auto",
+      pad: {
+        horizontal: pad,
+        top: pad
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      flex: false
+    }, content)), footer !== false && updateOn === 'submit' && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
+      flex: false,
+      margin: {
+        top: 'small'
+      },
+      pad: {
+        horizontal: pad,
+        bottom: pad
+      },
+      gap: "small"
+    }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+      label: format({
+        id: 'dataForm.submit',
+        messages: messages == null ? void 0 : messages.dataForm
+      }),
+      type: "submit",
+      primary: true
+    }), /*#__PURE__*/_react["default"].createElement(HideableButton, _extends({
+      label: format({
+        id: 'dataForm.reset',
+        messages: messages == null ? void 0 : messages.dataForm
+      }),
+      type: "reset",
+      onClick: onReset
+    }, !changed ? hideButtonProps : {}))));
+  }
   return /*#__PURE__*/_react["default"].createElement(MaxForm, _extends({}, rest, {
     value: formValue,
     onSubmit: updateOn === 'submit' ? onSubmit : undefined,
     onChange: onChange
-  }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    fill: "vertical"
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    flex: true,
-    overflow: "auto",
-    pad: {
-      horizontal: pad,
-      top: pad
-    }
-  }, children), footer !== false && updateOn === 'submit' && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
-    flex: false,
-    margin: {
-      top: 'small'
-    },
-    pad: {
-      horizontal: pad,
-      bottom: pad
-    },
-    gap: "small"
-  }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    label: format({
-      id: 'dataForm.submit',
-      messages: messages == null ? void 0 : messages.dataForm
-    }),
-    type: "submit",
-    primary: true
-  }), /*#__PURE__*/_react["default"].createElement(HideableButton, _extends({
-    label: format({
-      id: 'dataForm.reset',
-      messages: messages == null ? void 0 : messages.dataForm
-    }),
-    type: "reset",
-    onClick: onReset
-  }, !changed ? hideButtonProps : {})))));
+  }), content);
 };
 exports.DataForm = DataForm;
