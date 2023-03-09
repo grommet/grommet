@@ -2949,7 +2949,7 @@ exports[`SelectMultiple select all and clear 3`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 kwDoXo"
+        class="StyledIcon-sc-ofa7kd-0 kEyrVN"
         viewBox="0 0 24 24"
       >
         <path
@@ -4624,7 +4624,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-sc-ofa7kd-0 kwDoXo"
+              class="StyledIcon-sc-ofa7kd-0 kEyrVN"
               viewBox="0 0 24 24"
             >
               <path
