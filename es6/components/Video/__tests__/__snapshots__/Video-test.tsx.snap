@@ -1744,7 +1744,7 @@ exports[`Video Play and Pause event handlers 2`] = `
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 cMCkxw"
+              class="StyledIcon-sc-ofa7kd-0 fhGCWd"
               viewBox="0 0 24 24"
             >
               <path
@@ -6021,7 +6021,7 @@ exports[`Video mouse events handlers of controls 2`] = `
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 cMCkxw"
+            class="StyledIcon-sc-ofa7kd-0 fhGCWd"
             viewBox="0 0 24 24"
           >
             <path
@@ -6098,7 +6098,7 @@ exports[`Video mouse events handlers of controls 2`] = `
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 cMCkxw"
+              class="StyledIcon-sc-ofa7kd-0 fhGCWd"
               viewBox="0 0 24 24"
             >
               <path
@@ -6145,7 +6145,7 @@ exports[`Video mouse events handlers of controls 3`] = `
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 cMCkxw"
+            class="StyledIcon-sc-ofa7kd-0 fhGCWd"
             viewBox="0 0 24 24"
           >
             <path
@@ -6222,7 +6222,7 @@ exports[`Video mouse events handlers of controls 3`] = `
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 cMCkxw"
+              class="StyledIcon-sc-ofa7kd-0 fhGCWd"
               viewBox="0 0 24 24"
             >
               <path
@@ -8381,7 +8381,7 @@ exports[`Video scrubber 2`] = `
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 cMCkxw"
+            class="StyledIcon-sc-ofa7kd-0 fhGCWd"
             viewBox="0 0 24 24"
           >
             <path
@@ -8458,7 +8458,7 @@ exports[`Video scrubber 2`] = `
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 cMCkxw"
+              class="StyledIcon-sc-ofa7kd-0 fhGCWd"
               viewBox="0 0 24 24"
             >
               <path
