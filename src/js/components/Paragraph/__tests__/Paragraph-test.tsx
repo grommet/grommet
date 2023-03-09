@@ -69,3 +69,17 @@ test('Paragraph maxLines renders', () => {
 
   expect(container.firstChild).toMatchSnapshot();
 });
+
+test('Paragraph dangerouslySetInnerHTML renders', () => {
+  const { container } = render(
+    <Grommet>
+      <Paragraph
+        dangerouslySetInnerHTML={{
+          __html: 'This is a dangerouslySetInnerHTML!',
+        }}
+      />
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
