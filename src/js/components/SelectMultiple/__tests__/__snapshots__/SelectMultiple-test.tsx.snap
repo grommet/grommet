@@ -3773,14 +3773,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c15 {
     margin-right: 6px;
   }
@@ -4353,14 +4345,6 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c14 {
     padding: 6px;
   }
@@ -4568,14 +4552,6 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
 
 .c2 {
   cursor: pointer;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {
