@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { FormUp } from 'grommet-icons/icons/FormUp';
 import { setFocusWithoutScroll } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -26,6 +25,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$emptySearchMessa = _ref.emptySearchMessage,
     emptySearchMessage = _ref$emptySearchMessa === void 0 ? 'No matches found' : _ref$emptySearchMessa,
     help = _ref.help,
+    icon = _ref.icon,
     id = _ref.id,
     labelKey = _ref.labelKey,
     limit = _ref.limit,
@@ -262,17 +262,11 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     direction: "row",
     justify: "between",
     flex: false
-  }, summaryContent, /*#__PURE__*/React.createElement(Button, {
+  }, summaryContent, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Button, {
+    fill: "vertical",
     onClick: onClose,
     a11yTitle: "Close Select"
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    alignSelf: "start",
-    pad: {
-      right: 'small',
-      top: 'small'
-    }
-  }, /*#__PURE__*/React.createElement(FormUp, null))));
+  }, icon)));
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onSelectOption,
     onSpace: onSelectOption,

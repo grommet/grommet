@@ -4,7 +4,6 @@ exports.__esModule = true;
 exports.SelectMultipleContainer = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = require("styled-components");
-var _FormUp = require("grommet-icons/icons/FormUp");
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
@@ -32,6 +31,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     _ref$emptySearchMessa = _ref.emptySearchMessage,
     emptySearchMessage = _ref$emptySearchMessa === void 0 ? 'No matches found' : _ref$emptySearchMessa,
     help = _ref.help,
+    icon = _ref.icon,
     id = _ref.id,
     labelKey = _ref.labelKey,
     limit = _ref.limit,
@@ -268,17 +268,11 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     direction: "row",
     justify: "between",
     flex: false
-  }, summaryContent, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+  }, summaryContent, /*#__PURE__*/_react["default"].createElement(_Box.Box, null, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    fill: "vertical",
     onClick: onClose,
     a11yTitle: "Close Select"
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    fill: true,
-    alignSelf: "start",
-    pad: {
-      right: 'small',
-      top: 'small'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_FormUp.FormUp, null))));
+  }, icon)));
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: onSelectOption,
     onSpace: onSelectOption,

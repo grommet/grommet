@@ -276,6 +276,16 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return undefined;
   }, [labelKey, messages, format, optionIndexesInValue, allOptions, selectValue]);
   var iconColor = (0, _utils2.getIconColor)(theme);
+  var displaySelectIcon = SelectIcon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    alignSelf: "center",
+    margin: theme.select.icons.margin,
+    width: {
+      min: 'auto'
+    }
+  }, /*#__PURE__*/(0, _react.isValidElement)(SelectIcon) ? SelectIcon : /*#__PURE__*/_react["default"].createElement(SelectIcon, {
+    color: iconColor,
+    size: size
+  }));
   var dropContent = /*#__PURE__*/_react["default"].createElement(_SelectMultipleContainer.SelectMultipleContainer, {
     allOptions: allOptions,
     disabled: disabled,
@@ -283,6 +293,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     dropHeight: dropHeight,
     emptySearchMessage: emptySearchMessage,
     help: help,
+    icon: displaySelectIcon,
     id: id,
     labelKey: labelKey,
     limit: limit,
@@ -325,16 +336,6 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     dropContent: dropContent,
     theme: theme
   };
-  var displaySelectIcon = SelectIcon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    alignSelf: "center",
-    margin: theme.select.icons.margin,
-    width: {
-      min: 'auto'
-    }
-  }, /*#__PURE__*/(0, _react.isValidElement)(SelectIcon) ? SelectIcon : /*#__PURE__*/_react["default"].createElement(SelectIcon, {
-    color: iconColor,
-    size: size
-  }));
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onRequestOpen,
     onUp: onRequestOpen
