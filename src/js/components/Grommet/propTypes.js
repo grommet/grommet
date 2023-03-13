@@ -42,6 +42,22 @@ if (process.env.NODE_ENV !== 'production') {
         select: PropTypes.shape({
           multiple: PropTypes.string,
         }),
+        selectMultiple: PropTypes.shape({
+          multiple: PropTypes.string,
+          clearAllTitle: PropTypes.string,
+          selectAllTitle: PropTypes.string,
+          selectedMultipleNonTotal: PropTypes.string,
+          selectedMultiple: PropTypes.string,
+          onMore: PropTypes.string,
+          clearAll: PropTypes.string,
+          selectAll: PropTypes.string,
+          selectDropDown: PropTypes.string,
+          dropDown: PropTypes.string,
+          searchFilter: PropTypes.string,
+          optionSelected: PropTypes.string,
+          optionNotSelected: PropTypes.string,
+          selectedOptions: PropTypes.string,
+        }),
         skipLinks: PropTypes.shape({
           skipTo: PropTypes.string,
         }),

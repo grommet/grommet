@@ -23,6 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
       onMore: PropTypes.string,
       clearAll: PropTypes.string,
       selectAll: PropTypes.string,
+      selectDropDown: PropTypes.string,
       dropDown: PropTypes.string,
       searchFilter: PropTypes.string,
       optionSelected: PropTypes.string,
