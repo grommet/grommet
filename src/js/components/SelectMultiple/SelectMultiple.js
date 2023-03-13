@@ -463,17 +463,10 @@ const SelectMultiple = forwardRef(
                           // eslint-disable-next-line no-nested-ternary
                           !value || value?.length === 0
                             ? placeholder || selectValue || displayLabelKey
-                            : onMore
-                            ? format({
-                                id: 'selectMultiple.selectedMultipleNonTotal',
-                                messages,
-                                values: {
-                                  selectedCount: value?.length || 0,
-                                  totalCount: allOptions.length,
-                                },
-                              })
                             : format({
-                                id: 'selectMultiple.selectedMultipleTotal',
+                                id: onMore
+                                  ? 'selectMultiple.selectedMultipleNonTotal'
+                                  : 'selectMultiple.selectedMultipleTotal',
                                 messages,
                                 values: {
                                   selectedCount: value?.length || 0,

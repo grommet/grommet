@@ -369,7 +369,6 @@ describe('SelectMultiple', () => {
     expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
   });
 
-  jest.setTimeout(300000000);
   test('search with select and clear', async () => {
     const user = userEvent.setup();
     const defaultOptions = [

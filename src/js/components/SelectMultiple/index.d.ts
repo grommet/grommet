@@ -18,6 +18,7 @@ export interface SelectMultipleProps extends BasicSelectProps {
     //accessability
     clearAll?: string;
     selectAll?: string;
+    selectDropDown?: string;
     dropDown?: string;
     searchFilter?: string;
     optionSelected?: string;

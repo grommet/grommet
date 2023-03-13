@@ -396,7 +396,7 @@ const SelectMultipleContainer = forwardRef(
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
           a11yTitle={format({
-            id: 'selectMultiple.dropDown',
+            id: 'selectMultiple.selectDropDown',
             messages,
           })}
         >

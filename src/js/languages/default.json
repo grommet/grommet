@@ -100,6 +100,7 @@
     "onMore": "+ {showMoreCount} more",
     "clearAll": "{selectedCount} options selected. Clear all?",
     "selectAll": "Select all ${totalCount} options",
+    "selectDropDown": "Select dropdown",
     "dropDown": "Open Drop",
     "searchFilter": "Search to filter options",
     "optionSelected": "{optionLabel} selected",

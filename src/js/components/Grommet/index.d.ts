@@ -113,6 +113,23 @@ export interface GrommetProps {
         multiple?: string;
         selected?: string;
       };
+      selectMultiple?: {
+        multiple?: string;
+        clearAllTitle?: string;
+        selectAllTitle?: string;
+        selectedMultipleNonTotal?: string;
+        selectedMultiple?: string;
+        onMore?: string;
+        //accessability
+        clearAll?: string;
+        selectAll?: string;
+        selectDropDown?: string;
+        dropDown?: string;
+        searchFilter?: string;
+        optionSelected?: string;
+        optionNotSelected?: string;
+        selectedOptions?: string;
+      };
       skipLinks?: {
         skipTo?: string;
       };
