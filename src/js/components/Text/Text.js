@@ -51,7 +51,7 @@ const Text = forwardRef(
       updateTip();
       return () => {
         window.removeEventListener('resize', updateTip);
-        window.addEventListener('paginationupdate', updateTip);
+        window.removeEventListener('paginationupdate', updateTip);
       };
     }, [textRef, truncate]);
 
