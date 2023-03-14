@@ -244,6 +244,7 @@ const plainStyle = (props) => css`
       vertical-align: middle;
     }
   `}
+  ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
 const StyledButtonKind = styled.button.withConfig({
