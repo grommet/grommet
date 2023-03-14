@@ -160,7 +160,7 @@ var fillStyle = function fillStyle(fillContainer) {
   return undefined;
 };
 var plainStyle = function plainStyle(props) {
-  return css(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ");
+  return css(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", " ", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ", props.hasIcon && !props.hasLabel && "line-height: 0;");
 };
 var StyledButtonKind = styled.button.withConfig({
   // don't let kind attribute leak to DOM

@@ -166,7 +166,7 @@ var fillStyle = function fillStyle(fillContainer) {
   return undefined;
 };
 var plainStyle = function plainStyle(props) {
-  return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ");
+  return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", " ", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ", props.hasIcon && !props.hasLabel && "line-height: 0;");
 };
 var StyledButtonKind = _styledComponents["default"].button.withConfig({
   // don't let kind attribute leak to DOM
