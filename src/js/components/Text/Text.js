@@ -47,8 +47,12 @@ const Text = forwardRef(
         }
       };
       window.addEventListener('resize', updateTip);
+      window.addEventListener('paginationupdate', updateTip);
       updateTip();
-      return () => window.removeEventListener('resize', updateTip);
+      return () => {
+        window.removeEventListener('resize', updateTip);
+        window.addEventListener('paginationupdate', updateTip);
+      };
     }, [textRef, truncate]);
 
     if (skeleton) {
