@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-import { FormUp } from 'grommet-icons/icons/FormUp';
 
 import { setFocusWithoutScroll } from '../../utils';
 
@@ -46,6 +45,7 @@ const SelectMultipleContainer = forwardRef(
       dropHeight,
       emptySearchMessage = 'No matches found',
       help,
+      icon,
       id,
       labelKey,
       limit,
@@ -358,11 +358,11 @@ const SelectMultipleContainer = forwardRef(
       summaryContent = (
         <Box direction="row" justify="between" flex={false}>
           {summaryContent}
-          <Button onClick={onClose} a11yTitle="Close Select">
-            <Box fill alignSelf="start" pad={{ right: 'small', top: 'small' }}>
-              <FormUp />
-            </Box>
-          </Button>
+          <Box>
+            <Button fill="vertical" onClick={onClose} a11yTitle="Close Select">
+              {icon}
+            </Button>
+          </Box>
         </Box>
       );
 
