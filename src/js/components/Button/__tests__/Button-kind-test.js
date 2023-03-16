@@ -656,30 +656,6 @@ describe('Button kind', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('button icon size from theme', () => {
-    const { asFragment } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {},
-            icon: {
-              size: {
-                small: '12px',
-                medium: '18px',
-                large: '28px',
-              },
-            },
-          },
-        }}
-      >
-        <Button icon={<Add />} size="small" />
-        <Button icon={<Add />} />
-        <Button icon={<Add />} size="large" />
-      </Grommet>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('icon only pad should apply when icon but no label', () => {
     const { asFragment } = render(
       <Grommet
@@ -770,6 +746,28 @@ describe('Button kind', () => {
             active
           />
         </Box>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('match icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+      button: {
+        default: {},
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button size="xsmall" label="Label" icon={<Add />} />
+        <Button size="small" label="Label" icon={<Add />} />
+        <Button label="Label" icon={<Add />} />
+        <Button size="large" label="Label" icon={<Add />} />
+        <Button size="xlarge" label="Label" icon={<Add />} />
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();

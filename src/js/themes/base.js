@@ -337,6 +337,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         full: '100%',
       },
     },
+    // icon: {
+    //   extennd: undefined,
+    //   matchSize: undefined,
+    //   size: undefined,
+    // },
     accordion: {
       panel: {
         // border: {
@@ -378,6 +383,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // fontWeight: undefined,
         // extend: undefined,
       },
+      // size: {
+      //   medium: {
+      //     color: undefined,
+      //     fontWeight: undefined,
+      //     textDecoration: undefined,
+      //   },
+      // },
       // extend: undefined,
     },
     avatar: {
@@ -430,13 +442,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       gap: 'small',
-      // icon: {
-      //   size: {
-      //     small: undefined,
-      //     medium: undefined,
-      //     large: undefined,
-      //   },
-      // },
       size: {
         small: {
           border: {
@@ -1771,6 +1776,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       // gap: undefined,
       header: {
+        // alignSelf: undefined,
         // background: undefined,
         // border: {
         //   side: undefined,

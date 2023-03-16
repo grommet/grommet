@@ -89,9 +89,6 @@ exports[`DataFilters clear 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -559,85 +556,89 @@ exports[`DataFilters clear 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="a"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      checked=""
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    >
-                      <svg
-                        class="c16"
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6,11.3 L10.3,16 L18,6.2"
-                          fill="none"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c17"
-                />
-                <label
-                  class="c11"
-                  label="b"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="a"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c18 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        checked=""
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      >
+                        <svg
+                          class="c16"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M6,11.3 L10.3,16 L18,6.2"
+                            fill="none"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c17"
+                  />
+                  <label
+                    class="c11"
+                    label="b"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c18 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -851,7 +852,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButton-sc-323bzc-0 wfYUD"
+  class="StyledButton-sc-323bzc-0 eurrtV"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"
@@ -859,7 +860,7 @@ exports[`DataFilters drop 2`] = `
 >
   <svg
     aria-label="Filter"
-    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    class="StyledIcon-sc-ofa7kd-0 bXBQEl"
     viewBox="0 0 24 24"
   >
     <path
@@ -874,52 +875,52 @@ exports[`DataFilters drop 2`] = `
 
 exports[`DataFilters drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hfctvB {
+  .jkVdVC {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .zPnFT {
+  .fpBxMF {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .zPnFT {
+  .fpBxMF {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bGaxyQ {
+  .eUgRdO {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dXyapD {
+  .jMHXSN {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .gsyDnL {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .drdMXk {
+  .fNTNlK {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .gViPnC {
     width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -1284,7 +1285,7 @@ exports[`DataFilters layer 1`] = `
 `;
 
 exports[`DataFilters layer 2`] = `
-.c11 {
+.c12 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1295,27 +1296,44 @@ exports[`DataFilters layer 2`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c12 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c5 {
@@ -1354,7 +1372,7 @@ exports[`DataFilters layer 2`] = `
   overflow: auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1379,7 +1397,7 @@ exports[`DataFilters layer 2`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1392,12 +1410,9 @@ exports[`DataFilters layer 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1413,7 +1428,7 @@ exports[`DataFilters layer 2`] = `
   padding: 12px;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1427,7 +1442,7 @@ exports[`DataFilters layer 2`] = `
   flex-direction: column;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1450,7 +1465,7 @@ exports[`DataFilters layer 2`] = `
   justify-content: center;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1476,7 +1491,7 @@ exports[`DataFilters layer 2`] = `
   border-radius: 4px;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1505,7 +1520,7 @@ exports[`DataFilters layer 2`] = `
   padding-bottom: 24px;
 }
 
-.c9 {
+.c10 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1515,7 +1530,7 @@ exports[`DataFilters layer 2`] = `
   width: 24px;
 }
 
-.c21 {
+.c22 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1525,7 +1540,7 @@ exports[`DataFilters layer 2`] = `
   height: 12px;
 }
 
-.c24 {
+.c25 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1535,7 +1550,7 @@ exports[`DataFilters layer 2`] = `
   width: 12px;
 }
 
-.c13 {
+.c14 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1544,7 +1559,7 @@ exports[`DataFilters layer 2`] = `
   line-height: 24px;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1564,52 +1579,52 @@ exports[`DataFilters layer 2`] = `
   padding: 12px;
 }
 
-.c10:hover {
+.c11:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c10:focus {
+.c11:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c23 {
+.c24 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1637,51 +1652,51 @@ exports[`DataFilters layer 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c23:hover {
+.c24:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c23:focus {
+.c24:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus > circle,
-.c23:focus > ellipse,
-.c23:focus > line,
-.c23:focus > path,
-.c23:focus > polygon,
-.c23:focus > polyline,
-.c23:focus > rect {
+.c24:focus > circle,
+.c24:focus > ellipse,
+.c24:focus > line,
+.c24:focus > path,
+.c24:focus > polygon,
+.c24:focus > polyline,
+.c24:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus::-moz-focus-inner {
+.c24:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c23:focus:not(:focus-visible) {
+.c24:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible) > circle,
-.c23:focus:not(:focus-visible) > ellipse,
-.c23:focus:not(:focus-visible) > line,
-.c23:focus:not(:focus-visible) > path,
-.c23:focus:not(:focus-visible) > polygon,
-.c23:focus:not(:focus-visible) > polyline,
-.c23:focus:not(:focus-visible) > rect {
+.c24:focus:not(:focus-visible) > circle,
+.c24:focus:not(:focus-visible) > ellipse,
+.c24:focus:not(:focus-visible) > line,
+.c24:focus:not(:focus-visible) > path,
+.c24:focus:not(:focus-visible) > polygon,
+.c24:focus:not(:focus-visible) > polyline,
+.c24:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible)::-moz-focus-inner {
+.c24:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c25 {
+.c26 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1708,47 +1723,47 @@ exports[`DataFilters layer 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c25:focus {
+.c26:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus > circle,
-.c25:focus > ellipse,
-.c25:focus > line,
-.c25:focus > path,
-.c25:focus > polygon,
-.c25:focus > polyline,
-.c25:focus > rect {
+.c26:focus > circle,
+.c26:focus > ellipse,
+.c26:focus > line,
+.c26:focus > path,
+.c26:focus > polygon,
+.c26:focus > polyline,
+.c26:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus::-moz-focus-inner {
+.c26:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c25:focus:not(:focus-visible) {
+.c26:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible) > circle,
-.c25:focus:not(:focus-visible) > ellipse,
-.c25:focus:not(:focus-visible) > line,
-.c25:focus:not(:focus-visible) > path,
-.c25:focus:not(:focus-visible) > polygon,
-.c25:focus:not(:focus-visible) > polyline,
-.c25:focus:not(:focus-visible) > rect {
+.c26:focus:not(:focus-visible) > circle,
+.c26:focus:not(:focus-visible) > ellipse,
+.c26:focus:not(:focus-visible) > line,
+.c26:focus:not(:focus-visible) > path,
+.c26:focus:not(:focus-visible) > polygon,
+.c26:focus:not(:focus-visible) > polyline,
+.c26:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible)::-moz-focus-inner {
+.c26:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1770,12 +1785,12 @@ exports[`DataFilters layer 2`] = `
   cursor: pointer;
 }
 
-.c16:hover input:not([disabled]) + div,
-.c16:hover input:not([disabled]) + span {
+.c17:hover input:not([disabled]) + div,
+.c17:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c19 {
+.c20 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1784,18 +1799,18 @@ exports[`DataFilters layer 2`] = `
   cursor: pointer;
 }
 
-.c19:checked + span > span {
+.c20:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c18 {
+.c19 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c26 {
+.c27 {
   opacity: 0;
 }
 
@@ -1804,7 +1819,7 @@ exports[`DataFilters layer 2`] = `
   max-height: 100%;
 }
 
-.c8 {
+.c9 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -1894,80 +1909,80 @@ exports[`DataFilters layer 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c13 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c21 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c23 {
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c23 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c22 {
+  .c23 {
     padding-bottom: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     width: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c22 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c24 {
+  .c25 {
     width: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -2028,112 +2043,116 @@ exports[`DataFilters layer 2`] = `
         <div
           class="c6"
         >
-          <header
+          <div
             class="c7"
           >
-            <h2
+            <header
               class="c8"
             >
-              Filters
-            </h2>
-            <div
-              class="c9"
-            />
-            <button
-              class="c10"
-              type="button"
-            >
-              <svg
-                aria-label="FormClose"
-                class="c11"
-                viewBox="0 0 24 24"
+              <h2
+                class="c9"
               >
-                <path
-                  d="m7 7 10 10M7 17 17 7"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </header>
-          <div
-            class="c12 "
-          >
-            <label
-              class="c13"
-              for="test-data-name"
-            >
-              name
-            </label>
-            <div
-              class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
+                Filters
+              </h2>
               <div
-                class="c15 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="test-data-name"
-                role="group"
+                class="c10"
+              />
+              <button
+                class="c11"
+                type="button"
               >
-                <label
-                  class="c16"
-                  label="a"
+                <svg
+                  aria-label="FormClose"
+                  class="c12"
+                  viewBox="0 0 24 24"
                 >
-                  <div
-                    class="c17 c18"
-                  >
-                    <input
-                      class="c19"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c20 "
-                    />
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                  <path
+                    d="m7 7 10 10M7 17 17 7"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </header>
+            <div
+              class="c13 "
+            >
+              <label
+                class="c14"
+                for="test-data-name"
+              >
+                name
+              </label>
+              <div
+                class="c15 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c21"
-                />
-                <label
-                  class="c16"
-                  label="b"
+                  class="c16 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="test-data-name"
+                  role="group"
                 >
-                  <div
-                    class="c17 c18"
+                  <label
+                    class="c17"
+                    label="a"
                   >
-                    <input
-                      class="c19"
-                      type="checkbox"
-                    />
                     <div
-                      class="c20 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c18 c19"
+                    >
+                      <input
+                        class="c20"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c21 "
+                      />
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c22"
+                  />
+                  <label
+                    class="c17"
+                    label="b"
+                  >
+                    <div
+                      class="c18 c19"
+                    >
+                      <input
+                        class="c20"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c21 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <footer
-          class="c22"
+          class="c23"
         >
           <button
-            class="c23"
+            class="c24"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c24"
+            class="c25"
           />
           <button
             aria-hidden="true"
-            class="c25 c26"
+            class="c26 c27"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -2149,52 +2168,52 @@ exports[`DataFilters layer 2`] = `
 
 exports[`DataFilters layer 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hfctvB {
+  .jkVdVC {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .zPnFT {
+  .fpBxMF {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .zPnFT {
+  .fpBxMF {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bGaxyQ {
+  .eUgRdO {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dXyapD {
+  .jMHXSN {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .gsyDnL {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .drdMXk {
+  .fNTNlK {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .gViPnC {
     width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .bjyyAC {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -2291,9 +2310,6 @@ exports[`DataFilters properties array 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -2721,73 +2737,77 @@ exports[`DataFilters properties array 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="a"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="b"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="a"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="b"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -2909,9 +2929,6 @@ exports[`DataFilters properties object 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -3339,73 +3356,77 @@ exports[`DataFilters properties object 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="a"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="b"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="a"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="b"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -3527,9 +3548,6 @@ exports[`DataFilters renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -3957,73 +3975,77 @@ exports[`DataFilters renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="a"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    a
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="b"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="a"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    b
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      a
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="b"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      b
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -4052,6 +4074,1100 @@ exports[`DataFilters renders 1`] = `
         </footer>
       </div>
     </form>
+  </div>
+</div>
+`;
+
+exports[`DataFilters sub objects 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  background-color: rgba(125,76,219,0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c29 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c37 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c17 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c31 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c20 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c28 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c38 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c41 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c30 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c30:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c30:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c30:focus > circle,
+.c30:focus > ellipse,
+.c30:focus > line,
+.c30:focus > path,
+.c30:focus > polygon,
+.c30:focus > polyline,
+.c30:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c30:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c30:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c30:focus:not(:focus-visible) > circle,
+.c30:focus:not(:focus-visible) > ellipse,
+.c30:focus:not(:focus-visible) > line,
+.c30:focus:not(:focus-visible) > path,
+.c30:focus:not(:focus-visible) > polygon,
+.c30:focus:not(:focus-visible) > polyline,
+.c30:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c30:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c32 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c32:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c32:focus > circle,
+.c32:focus > ellipse,
+.c32:focus > line,
+.c32:focus > path,
+.c32:focus > polygon,
+.c32:focus > polyline,
+.c32:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c32:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c32:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c32:focus:not(:focus-visible) > circle,
+.c32:focus:not(:focus-visible) > ellipse,
+.c32:focus:not(:focus-visible) > line,
+.c32:focus:not(:focus-visible) > path,
+.c32:focus:not(:focus-visible) > polygon,
+.c32:focus:not(:focus-visible) > polyline,
+.c32:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c32:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c16 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c14 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c14:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c13 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c22 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c33 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c36 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c40 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c34 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c35 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c39:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c39:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c18 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c23 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c27 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c29 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c31 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c1"
+          >
+            <header
+              class="c5"
+            >
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-location.city"
+              >
+                City
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-location.city"
+                  role="group"
+                >
+                  <label
+                    class="c11"
+                    label="Paris"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        checked=""
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      >
+                        <svg
+                          class="c16"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M6,11.3 L10.3,16 L18,6.2"
+                            fill="none"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <span>
+                      Paris
+                    </span>
+                  </label>
+                  <div
+                    class="c17"
+                  />
+                  <label
+                    class="c11"
+                    label="Sydney"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c18 "
+                      />
+                    </div>
+                    <span>
+                      Sydney
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-location.lat"
+              >
+                Latitude
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c19"
+                  id="data-location.lat"
+                >
+                  <span
+                    class="c20"
+                    style="width: 0px;"
+                  >
+                    10
+                  </span>
+                  <div
+                    class="c21 c22"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="c23"
+                      style="flex: 100 0 0px;"
+                    />
+                    <div
+                      class="c24"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Lower Bounds"
+                        aria-valuemax="90"
+                        aria-valuemin="-90"
+                        aria-valuenow="10"
+                        class="c25"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c26 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c27"
+                      style="flex: 81 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c24"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="90"
+                        aria-valuemin="-90"
+                        aria-valuenow="90"
+                        class="c25"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c26 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c23"
+                      style="flex: 0 0 0px;"
+                    />
+                  </div>
+                  <span
+                    class="c28"
+                    style="width: 0px;"
+                  >
+                    90
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer
+          class="c29"
+        >
+          <button
+            class="c30"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c31"
+          />
+          <button
+            aria-hidden="true"
+            class="c32 c33"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+    <table
+      class="c34 c35"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c36 "
+            scope="col"
+          >
+            <div
+              class="c37"
+            >
+              <span
+                class="c38"
+              >
+                City
+              </span>
+            </div>
+          </th>
+          <th
+            class="c36 "
+            scope="col"
+          >
+            <div
+              class="c37"
+            >
+              <span
+                class="c38"
+              >
+                Latitude
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c39"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c40 "
+            scope="row"
+          >
+            <div
+              class="c10"
+            >
+              <span
+                class="c41"
+              >
+                Paris
+              </span>
+            </div>
+          </th>
+          <td
+            class="c40 "
+          >
+            <div
+              class="c10"
+            >
+              <span
+                class="c38"
+              >
+                48
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;

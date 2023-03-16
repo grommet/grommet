@@ -33,7 +33,9 @@ const fontStyle = (props) => {
   const data = props.theme.text[size];
   return css`
     font-size: ${data.size};
-    line-height: ${data.height};
+    // fix for safari, when button is icon-only, apply line-height 0
+    // to ensure no extra height is applied above svg
+    line-height: ${props.hasIcon && !props.hasLabel ? 0 : data.height};
   `;
 };
 
@@ -242,6 +244,7 @@ const plainStyle = (props) => css`
       vertical-align: middle;
     }
   `}
+  ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
 const StyledButtonKind = styled.button.withConfig({

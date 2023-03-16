@@ -25,6 +25,7 @@ import {
   PropsOf,
   AlignContentType,
   SkeletonColorsType,
+  AlignSelfType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -175,13 +176,6 @@ interface ButtonType {
       size?: {
         medium?: string;
       };
-    };
-  };
-  icon?: {
-    size?: {
-      small?: string;
-      medium?: string;
-      large?: string;
     };
   };
   gap?: GapType;
@@ -498,6 +492,20 @@ export interface ThemeType {
       textDecoration?: string;
     };
     textDecoration?: string;
+    size?: {
+      medium?: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+      [x: string]:
+        | {
+            color?: ColorType;
+            fontWeight?: number;
+            textDecoration?: string;
+          }
+        | undefined;
+    };
   };
   avatar?: {
     size?: {
@@ -1020,6 +1028,8 @@ export interface ThemeType {
   };
   icon?: {
     extend?: ExtendType;
+    disableScaleDown?: boolean;
+    matchSize?: boolean;
     size?: {
       small?: string;
       medium?: string;
@@ -1505,6 +1515,7 @@ export interface ThemeType {
     extend?: ExtendType;
     gap?: GapType;
     header?: {
+      alignSelf?: AlignSelfType;
       background?: BackgroundType;
       border?: {
         side?: string;
