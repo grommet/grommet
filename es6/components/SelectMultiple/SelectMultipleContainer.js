@@ -258,6 +258,17 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     value: value,
     valueKey: valueKey
   });
+  var helpContent;
+  if (help) {
+    if (typeof help === 'string') helpContent = /*#__PURE__*/React.createElement(Box, {
+      flex: false,
+      pad: "xsmall"
+    }, /*#__PURE__*/React.createElement(Text, {
+      size: "small"
+    }, help));else helpContent = /*#__PURE__*/React.createElement(Box, {
+      flex: false
+    }, help);
+  }
   if (showSelectedInline) summaryContent = /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
@@ -301,9 +312,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setActiveIndex(-1);
       onSearch(nextSearch);
     }
-  }))), /*#__PURE__*/React.createElement(Box, {
-    flex: false
-  }, help), /*#__PURE__*/React.createElement(OptionsContainer, {
+  }))), helpContent, /*#__PURE__*/React.createElement(OptionsContainer, {
     role: "listbox",
     tabIndex: "0",
     ref: optionsRef,

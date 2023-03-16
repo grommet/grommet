@@ -264,6 +264,17 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     value: value,
     valueKey: valueKey
   });
+  var helpContent;
+  if (help) {
+    if (typeof help === 'string') helpContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      flex: false,
+      pad: "xsmall"
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+      size: "small"
+    }, help));else helpContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      flex: false
+    }, help);
+  }
   if (showSelectedInline) summaryContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     direction: "row",
     justify: "between",
@@ -307,9 +318,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       setActiveIndex(-1);
       onSearch(nextSearch);
     }
-  }))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    flex: false
-  }, help), /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
+  }))), helpContent, /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
     role: "listbox",
     tabIndex: "0",
     ref: optionsRef,
