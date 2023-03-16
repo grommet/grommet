@@ -9,7 +9,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import {
   backgroundAndTextColors,
   colorIsDark,
@@ -218,7 +218,7 @@ const Button = forwardRef(
     const { format } = useContext(MessageContext);
 
     if (busy && success) {
-      console.warn('Button can not have both busy and success set to true.');
+      console.warn('Button cannot have both busy and success set to true.');
     }
 
     useEffect(() => {
@@ -250,18 +250,16 @@ const Button = forwardRef(
 
     const onClick = useCallback(
       (event) => {
-        if (!busy && !success) {
-          sendAnalytics({
-            type: 'buttonClick',
-            element: findButtonParent(event.target),
-            event,
-            href,
-            label: typeof label === 'string' ? label : undefined,
-          });
-          if (onClickProp) onClickProp(event);
-        }
+        sendAnalytics({
+          type: 'buttonClick',
+          element: findButtonParent(event.target),
+          event,
+          href,
+          label: typeof label === 'string' ? label : undefined,
+        });
+        if (onClickProp) onClickProp(event);
       },
-      [busy, onClickProp, sendAnalytics, success, href, label],
+      [onClickProp, sendAnalytics, href, label],
     );
 
     // kindArg is object if we are referencing a theme object
@@ -452,10 +450,14 @@ const Button = forwardRef(
           theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
       }
 
+      const RelativeBox = styled(Box)`
+        position: relative;
+      `;
+
       contents = (
         // position relative is necessary to have the animation
         // display over the button content
-        <Box style={{ position: 'relative' }}>
+        <RelativeBox flex={false}>
           {busy && <EllipsisAnimation color={animationColor} />}
           {success && (
             <Box
@@ -470,7 +472,7 @@ const Button = forwardRef(
           <StyledBusyContents animating={busy || success}>
             {contents}
           </StyledBusyContents>
-        </Box>
+        </RelativeBox>
       );
     }
 
@@ -498,7 +500,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={onClick}
+          onClick={!busy && !success && onClick}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
@@ -539,7 +541,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={onClick}
+          onClick={!busy && !success && onClick}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
