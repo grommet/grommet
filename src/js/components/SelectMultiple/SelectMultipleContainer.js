@@ -357,7 +357,7 @@ const SelectMultipleContainer = forwardRef(
     const helpContent =
       (help && (
         <Box flex={false} pad={typeof help === 'string' ? 'xsmall' : undefined}>
-          {help}X
+          {help}
         </Box>
       )) ||
       null;
