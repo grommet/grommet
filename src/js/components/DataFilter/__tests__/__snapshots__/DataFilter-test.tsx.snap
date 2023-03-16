@@ -89,9 +89,6 @@ exports[`DataFilter children 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -423,35 +420,39 @@ exports[`DataFilter children 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10"
+              <h2
+                class="c6"
               >
-                <input
-                  autocomplete="off"
-                  class="c11"
-                  value=""
-                />
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10"
+                >
+                  <input
+                    autocomplete="off"
+                    class="c11"
+                    value=""
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -573,9 +574,6 @@ exports[`DataFilter options 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -1003,217 +1001,221 @@ exports[`DataFilter options 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="aa"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    aa
-                  </span>
-                </label>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="bb"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="aa"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    bb
-                  </span>
-                </label>
-                <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="cc"
-                >
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      aa
+                    </span>
+                  </label>
                   <div
-                    class="c12 c13"
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="bb"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    cc
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      bb
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="cc"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      cc
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data-enabled"
-            >
-              Enabled
-            </label>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c7 "
             >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-enabled"
-                role="group"
+              <label
+                class="c8"
+                for="data-enabled"
               >
-                <label
-                  class="c11"
-                  label="Enabled"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    Enabled
-                  </span>
-                </label>
+                Enabled
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="Disabled"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-enabled"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="Enabled"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    Disabled
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      Enabled
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="Disabled"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      Disabled
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data-type.name"
-            >
-              Type
-            </label>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c7 "
             >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-type.name"
-                role="group"
+              <label
+                class="c8"
+                for="data-type.name"
               >
-                <label
-                  class="c11"
-                  label="ZZ"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    ZZ
-                  </span>
-                </label>
+                Type
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="YY"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-type.name"
+                  role="group"
                 >
-                  <div
-                    class="c12 c13"
+                  <label
+                    class="c11"
+                    label="ZZ"
                   >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
                     <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    YY
-                  </span>
-                </label>
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      ZZ
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="YY"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      YY
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -1335,9 +1337,6 @@ exports[`DataFilter range Data 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -1812,98 +1811,102 @@ exports[`DataFilter range Data 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-rating"
+            <header
+              class="c5"
             >
-              Rating
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10"
-                id="data-rating"
+              <h2
+                class="c6"
               >
-                <span
-                  class="c11"
-                  style="width: 0px;"
-                >
-                  0
-                </span>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-rating"
+              >
+                Rating
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c12 c13"
-                  tabindex="-1"
+                  class="c10"
+                  id="data-rating"
                 >
+                  <span
+                    class="c11"
+                    style="width: 0px;"
+                  >
+                    0
+                  </span>
                   <div
-                    class="c14"
-                    style="flex: 0 0 0px;"
-                  />
-                  <div
-                    class="c15"
-                    style="flex: 0 0 1px;"
+                    class="c12 c13"
+                    tabindex="-1"
                   >
                     <div
-                      aria-label="Lower Bounds"
-                      aria-valuemax="5"
-                      aria-valuemin="0"
-                      aria-valuenow="0"
-                      class="c16"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c18"
-                    style="flex: 6 0 0px; cursor: ew-resize;"
-                  />
-                  <div
-                    class="c15"
-                    style="flex: 0 0 1px;"
-                  >
+                      class="c14"
+                      style="flex: 0 0 0px;"
+                    />
                     <div
-                      aria-label="Upper Bounds"
-                      aria-valuemax="5"
-                      aria-valuemin="0"
-                      aria-valuenow="5"
-                      class="c16"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
+                      class="c15"
+                      style="flex: 0 0 1px;"
                     >
                       <div
-                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
+                        aria-label="Lower Bounds"
+                        aria-valuemax="5"
+                        aria-valuemin="0"
+                        aria-valuenow="0"
+                        class="c16"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
                     </div>
+                    <div
+                      class="c18"
+                      style="flex: 6 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c15"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="5"
+                        aria-valuemin="0"
+                        aria-valuenow="5"
+                        class="c16"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c14"
+                      style="flex: 0 0 0px;"
+                    />
                   </div>
-                  <div
-                    class="c14"
-                    style="flex: 0 0 0px;"
-                  />
+                  <span
+                    class="c19"
+                    style="width: 0px;"
+                  >
+                    5
+                  </span>
                 </div>
-                <span
-                  class="c19"
-                  style="width: 0px;"
-                >
-                  5
-                </span>
               </div>
             </div>
           </div>
@@ -2025,9 +2028,6 @@ exports[`DataFilter range prop 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -2502,98 +2502,102 @@ exports[`DataFilter range prop 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-rating"
+            <header
+              class="c5"
             >
-              rating
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10"
-                id="data-rating"
+              <h2
+                class="c6"
               >
-                <span
-                  class="c11"
-                  style="width: 0px;"
-                >
-                  0
-                </span>
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-rating"
+              >
+                rating
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
                 <div
-                  class="c12 c13"
-                  tabindex="-1"
+                  class="c10"
+                  id="data-rating"
                 >
+                  <span
+                    class="c11"
+                    style="width: 0px;"
+                  >
+                    0
+                  </span>
                   <div
-                    class="c14"
-                    style="flex: 0 0 0px;"
-                  />
-                  <div
-                    class="c15"
-                    style="flex: 0 0 1px;"
+                    class="c12 c13"
+                    tabindex="-1"
                   >
                     <div
-                      aria-label="Lower Bounds"
-                      aria-valuemax="5"
-                      aria-valuemin="0"
-                      aria-valuenow="0"
-                      class="c16"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
-                    >
-                      <div
-                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="c18"
-                    style="flex: 6 0 0px; cursor: ew-resize;"
-                  />
-                  <div
-                    class="c15"
-                    style="flex: 0 0 1px;"
-                  >
+                      class="c14"
+                      style="flex: 0 0 0px;"
+                    />
                     <div
-                      aria-label="Upper Bounds"
-                      aria-valuemax="5"
-                      aria-valuemin="0"
-                      aria-valuenow="5"
-                      class="c16"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
+                      class="c15"
+                      style="flex: 0 0 1px;"
                     >
                       <div
-                        class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
-                      />
+                        aria-label="Lower Bounds"
+                        aria-valuemax="5"
+                        aria-valuemin="0"
+                        aria-valuenow="0"
+                        class="c16"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
                     </div>
+                    <div
+                      class="c18"
+                      style="flex: 6 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c15"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="5"
+                        aria-valuemin="0"
+                        aria-valuenow="5"
+                        class="c16"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c14"
+                      style="flex: 0 0 0px;"
+                    />
                   </div>
-                  <div
-                    class="c14"
-                    style="flex: 0 0 0px;"
-                  />
+                  <span
+                    class="c19"
+                    style="width: 0px;"
+                  >
+                    5
+                  </span>
                 </div>
-                <span
-                  class="c19"
-                  style="width: 0px;"
-                >
-                  5
-                </span>
               </div>
             </div>
           </div>
@@ -2715,9 +2719,6 @@ exports[`DataFilter renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -3330,242 +3331,246 @@ exports[`DataFilter renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="aa"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    aa
-                  </span>
-                </label>
-                <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="bb"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    bb
-                  </span>
-                </label>
-                <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="cc"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    cc
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data-enabled"
-            >
-              enabled
-            </label>
+                Filters
+              </h2>
+            </header>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c7 "
             >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-enabled"
-                role="group"
+              <label
+                class="c8"
+                for="data-name"
               >
-                <label
-                  class="c11"
-                  label="true"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    true
-                  </span>
-                </label>
-                <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="false"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    false
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data-rating"
-            >
-              rating
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
+                name
+              </label>
               <div
-                class="c17"
-                id="data-rating"
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
               >
-                <span
-                  class="c18"
-                  style="width: 0px;"
-                >
-                  2.0999999999999996
-                </span>
                 <div
-                  class="c19 c20"
-                  tabindex="-1"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c21"
-                    style="flex: 0 0 0px;"
-                  />
-                  <div
-                    class="c22"
-                    style="flex: 0 0 1px;"
+                  <label
+                    class="c11"
+                    label="aa"
                   >
                     <div
-                      aria-label="Lower Bounds"
-                      aria-valuemax="4.8999999999999995"
-                      aria-valuemin="2.0999999999999996"
-                      aria-valuenow="2.0999999999999996"
-                      class="c23"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
+                      class="c12 c13"
                     >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
                       <div
-                        class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c15 "
                       />
                     </div>
-                  </div>
+                    <span>
+                      aa
+                    </span>
+                  </label>
                   <div
-                    class="c25"
-                    style="flex: 3.8 0 0px; cursor: ew-resize;"
+                    class="c16"
                   />
-                  <div
-                    class="c22"
-                    style="flex: 0 0 1px;"
+                  <label
+                    class="c11"
+                    label="bb"
                   >
                     <div
-                      aria-label="Upper Bounds"
-                      aria-valuemax="4.8999999999999995"
-                      aria-valuemin="2.0999999999999996"
-                      aria-valuenow="4.8999999999999995"
-                      class="c23"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
+                      class="c12 c13"
                     >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
                       <div
-                        class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c15 "
                       />
                     </div>
-                  </div>
+                    <span>
+                      bb
+                    </span>
+                  </label>
                   <div
-                    class="c21"
-                    style="flex: 0 0 0px;"
+                    class="c16"
                   />
+                  <label
+                    class="c11"
+                    label="cc"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      cc
+                    </span>
+                  </label>
                 </div>
-                <span
-                  class="c26"
-                  style="width: 0px;"
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-enabled"
+              >
+                enabled
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-enabled"
+                  role="group"
                 >
-                  4.8999999999999995
-                </span>
+                  <label
+                    class="c11"
+                    label="true"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      true
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="false"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      false
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-rating"
+              >
+                rating
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c17"
+                  id="data-rating"
+                >
+                  <span
+                    class="c18"
+                    style="width: 0px;"
+                  >
+                    2.0999999999999996
+                  </span>
+                  <div
+                    class="c19 c20"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="c21"
+                      style="flex: 0 0 0px;"
+                    />
+                    <div
+                      class="c22"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Lower Bounds"
+                        aria-valuemax="4.8999999999999995"
+                        aria-valuemin="2.0999999999999996"
+                        aria-valuenow="2.0999999999999996"
+                        class="c23"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c25"
+                      style="flex: 3.8 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c22"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="4.8999999999999995"
+                        aria-valuemin="2.0999999999999996"
+                        aria-valuenow="4.8999999999999995"
+                        class="c23"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c21"
+                      style="flex: 0 0 0px;"
+                    />
+                  </div>
+                  <span
+                    class="c26"
+                    style="width: 0px;"
+                  >
+                    4.8999999999999995
+                  </span>
+                </div>
               </div>
             </div>
           </div>

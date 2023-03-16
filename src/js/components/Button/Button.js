@@ -13,6 +13,7 @@ import {
   backgroundAndTextColors,
   colorIsDark,
   findButtonParent,
+  useSizedIcon,
   normalizeBackground,
   normalizeColor,
 } from '../../utils';
@@ -277,19 +278,6 @@ const Button = forwardRef(
       return result;
     }, [active, disabled, kind, kindObj, plain, selected]);
 
-    if (skeleton) {
-      return (
-        <Skeleton
-          ref={ref}
-          height={theme.text[size || 'medium']?.height || size}
-          a11yTitle={a11yTitle}
-          {...rest}
-          {...theme.button.size?.[size || 'medium']}
-          {...theme.button.skeleton}
-        />
-      );
-    }
-
     // only used when theme does not have button.default
     const isDarkBackground = () => {
       const backgroundColor = normalizeBackground(
@@ -348,6 +336,21 @@ const Button = forwardRef(
         buttonIcon = cloneElement(kindIcon, {
           color: iconColor,
         });
+    }
+
+    buttonIcon = useSizedIcon(buttonIcon, size, theme);
+
+    if (skeleton) {
+      return (
+        <Skeleton
+          ref={ref}
+          height={theme.text[size || 'medium']?.height || size}
+          a11yTitle={a11yTitle}
+          {...rest}
+          {...theme.button.size?.[size || 'medium']}
+          {...theme.button.skeleton}
+        />
+      );
     }
 
     const reverse = reverseProp ?? theme.button[kind]?.reverse;

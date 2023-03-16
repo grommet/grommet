@@ -272,16 +272,12 @@ export const DataForm = ({
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
-  return (
-    <MaxForm
-      {...rest}
-      value={formValue}
-      onSubmit={updateOn === 'submit' ? onSubmit : undefined}
-      onChange={onChange}
-    >
+  let content = children;
+  if (footer !== false || pad) {
+    content = (
       <Box fill="vertical">
         <Box flex overflow="auto" pad={{ horizontal: pad, top: pad }}>
-          {children}
+          <Box flex={false}>{content}</Box>
         </Box>
         {footer !== false && updateOn === 'submit' && (
           <Footer
@@ -310,6 +306,17 @@ export const DataForm = ({
           </Footer>
         )}
       </Box>
+    );
+  }
+
+  return (
+    <MaxForm
+      {...rest}
+      value={formValue}
+      onSubmit={updateOn === 'submit' ? onSubmit : undefined}
+      onChange={onChange}
+    >
+      {content}
     </MaxForm>
   );
 };

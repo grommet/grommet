@@ -330,6 +330,20 @@ const SelectMultiple = forwardRef(
 
     const iconColor = getIconColor(theme);
 
+    const displaySelectIcon = SelectIcon && (
+      <Box
+        alignSelf="center"
+        margin={theme.select.icons.margin}
+        width={{ min: 'auto' }}
+      >
+        {isValidElement(SelectIcon) ? (
+          SelectIcon
+        ) : (
+          <SelectIcon color={iconColor} size={size} />
+        )}
+      </Box>
+    );
+
     const dropContent = (
       <SelectMultipleContainer
         allOptions={allOptions}
@@ -338,6 +352,7 @@ const SelectMultiple = forwardRef(
         dropHeight={dropHeight}
         emptySearchMessage={emptySearchMessage}
         help={help}
+        icon={displaySelectIcon}
         id={id}
         labelKey={labelKey}
         limit={limit}
@@ -398,20 +413,6 @@ const SelectMultiple = forwardRef(
       dropContent,
       theme,
     };
-
-    const displaySelectIcon = SelectIcon && (
-      <Box
-        alignSelf="center"
-        margin={theme.select.icons.margin}
-        width={{ min: 'auto' }}
-      >
-        {isValidElement(SelectIcon) ? (
-          SelectIcon
-        ) : (
-          <SelectIcon color={iconColor} size={size} />
-        )}
-      </Box>
-    );
 
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>

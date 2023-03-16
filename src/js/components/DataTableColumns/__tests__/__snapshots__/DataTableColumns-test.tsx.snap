@@ -314,34 +314,38 @@ exports[`DataTableColumns remove column 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
+          <div
+            class="c1"
           >
-            <h2
-              class="c6"
+            <header
+              class="c5"
             >
-              Filters
-            </h2>
-          </header>
-          <button
-            aria-label="Open column selector"
-            class="c7"
-            id="test-data--columns-control"
-            type="button"
-          >
-            <svg
-              aria-label="Splits"
-              class="c8"
-              viewBox="0 0 24 24"
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <button
+              aria-label="Open column selector"
+              class="c7"
+              id="test-data--columns-control"
+              type="button"
             >
-              <path
-                d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
+              <svg
+                aria-label="Splits"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </form>
@@ -486,7 +490,7 @@ exports[`DataTableColumns remove column 1`] = `
 exports[`DataTableColumns remove column 2`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 emhJYD"
+  class="StyledButton-sc-323bzc-0 gPnbVE"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -494,7 +498,7 @@ exports[`DataTableColumns remove column 2`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
     viewBox="0 0 24 24"
   >
     <path
@@ -509,16 +513,16 @@ exports[`DataTableColumns remove column 2`] = `
 
 exports[`DataTableColumns remove column 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .EuOQj {
     width: 6px;
   }
 }
-.emhJYD {
+.gPnbVE {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -537,47 +541,47 @@ exports[`DataTableColumns remove column 3`] = `
   line-height: 0;
   padding: 12px;
 }
-.emhJYD:focus {
+.gPnbVE:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.emhJYD:focus > circle,
-.emhJYD:focus > ellipse,
-.emhJYD:focus > line,
-.emhJYD:focus > path,
-.emhJYD:focus > polygon,
-.emhJYD:focus > polyline,
-.emhJYD:focus > rect {
+.gPnbVE:focus > circle,
+.gPnbVE:focus > ellipse,
+.gPnbVE:focus > line,
+.gPnbVE:focus > path,
+.gPnbVE:focus > polygon,
+.gPnbVE:focus > polyline,
+.gPnbVE:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.emhJYD:focus::-moz-focus-inner {
+.gPnbVE:focus::-moz-focus-inner {
   border: 0;
 }
-.emhJYD:focus:not(:focus-visible) {
+.gPnbVE:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.emhJYD:focus:not(:focus-visible) > circle,
-.emhJYD:focus:not(:focus-visible) > ellipse,
-.emhJYD:focus:not(:focus-visible) > line,
-.emhJYD:focus:not(:focus-visible) > path,
-.emhJYD:focus:not(:focus-visible) > polygon,
-.emhJYD:focus:not(:focus-visible) > polyline,
-.emhJYD:focus:not(:focus-visible) > rect {
+.gPnbVE:focus:not(:focus-visible) > circle,
+.gPnbVE:focus:not(:focus-visible) > ellipse,
+.gPnbVE:focus:not(:focus-visible) > line,
+.gPnbVE:focus:not(:focus-visible) > path,
+.gPnbVE:focus:not(:focus-visible) > polygon,
+.gPnbVE:focus:not(:focus-visible) > polyline,
+.gPnbVE:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.emhJYD:focus:not(:focus-visible)::-moz-focus-inner {
+.gPnbVE:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .idXjQT {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .idXjQT {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -1090,34 +1094,38 @@ exports[`DataTableColumns renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
+          <div
+            class="c1"
           >
-            <h2
-              class="c6"
+            <header
+              class="c5"
             >
-              Filters
-            </h2>
-          </header>
-          <button
-            aria-label="Open column selector"
-            class="c7"
-            id="test-data--columns-control"
-            type="button"
-          >
-            <svg
-              aria-label="Splits"
-              class="c8"
-              viewBox="0 0 24 24"
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <button
+              aria-label="Open column selector"
+              class="c7"
+              id="test-data--columns-control"
+              type="button"
             >
-              <path
-                d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
+              <svg
+                aria-label="Splits"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <footer
           class="c9"
@@ -1567,34 +1575,38 @@ exports[`DataTableColumns search 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
+          <div
+            class="c1"
           >
-            <h2
-              class="c6"
+            <header
+              class="c5"
             >
-              Filters
-            </h2>
-          </header>
-          <button
-            aria-label="Open column selector"
-            class="c7"
-            id="test-data--columns-control"
-            type="button"
-          >
-            <svg
-              aria-label="Splits"
-              class="c8"
-              viewBox="0 0 24 24"
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <button
+              aria-label="Open column selector"
+              class="c7"
+              id="test-data--columns-control"
+              type="button"
             >
-              <path
-                d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
+              <svg
+                aria-label="Splits"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </form>
@@ -1711,7 +1723,7 @@ exports[`DataTableColumns search 1`] = `
 exports[`DataTableColumns search 2`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 emhJYD"
+  class="StyledButton-sc-323bzc-0 gPnbVE"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -1719,7 +1731,7 @@ exports[`DataTableColumns search 2`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
     viewBox="0 0 24 24"
   >
     <path
@@ -1734,16 +1746,16 @@ exports[`DataTableColumns search 2`] = `
 
 exports[`DataTableColumns search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .EuOQj {
     width: 6px;
   }
 }
-.emhJYD {
+.gPnbVE {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1762,47 +1774,47 @@ exports[`DataTableColumns search 3`] = `
   line-height: 0;
   padding: 12px;
 }
-.emhJYD:focus {
+.gPnbVE:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.emhJYD:focus > circle,
-.emhJYD:focus > ellipse,
-.emhJYD:focus > line,
-.emhJYD:focus > path,
-.emhJYD:focus > polygon,
-.emhJYD:focus > polyline,
-.emhJYD:focus > rect {
+.gPnbVE:focus > circle,
+.gPnbVE:focus > ellipse,
+.gPnbVE:focus > line,
+.gPnbVE:focus > path,
+.gPnbVE:focus > polygon,
+.gPnbVE:focus > polyline,
+.gPnbVE:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.emhJYD:focus::-moz-focus-inner {
+.gPnbVE:focus::-moz-focus-inner {
   border: 0;
 }
-.emhJYD:focus:not(:focus-visible) {
+.gPnbVE:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.emhJYD:focus:not(:focus-visible) > circle,
-.emhJYD:focus:not(:focus-visible) > ellipse,
-.emhJYD:focus:not(:focus-visible) > line,
-.emhJYD:focus:not(:focus-visible) > path,
-.emhJYD:focus:not(:focus-visible) > polygon,
-.emhJYD:focus:not(:focus-visible) > polyline,
-.emhJYD:focus:not(:focus-visible) > rect {
+.gPnbVE:focus:not(:focus-visible) > circle,
+.gPnbVE:focus:not(:focus-visible) > ellipse,
+.gPnbVE:focus:not(:focus-visible) > line,
+.gPnbVE:focus:not(:focus-visible) > path,
+.gPnbVE:focus:not(:focus-visible) > polygon,
+.gPnbVE:focus:not(:focus-visible) > polyline,
+.gPnbVE:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.emhJYD:focus:not(:focus-visible)::-moz-focus-inner {
+.gPnbVE:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .idXjQT {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .idXjQT {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -1813,7 +1825,7 @@ exports[`DataTableColumns search 3`] = `
 exports[`DataTableColumns search 4`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 emhJYD"
+  class="StyledButton-sc-323bzc-0 gPnbVE"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -1821,7 +1833,7 @@ exports[`DataTableColumns search 4`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
     viewBox="0 0 24 24"
   >
     <path
@@ -1836,16 +1848,16 @@ exports[`DataTableColumns search 4`] = `
 
 exports[`DataTableColumns search 5`] = `
 "@media only screen and (max-width: 768px) {
-  .gcEjSx {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ilMzAg {
+  .EuOQj {
     width: 6px;
   }
 }
-.emhJYD {
+.gPnbVE {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1864,47 +1876,47 @@ exports[`DataTableColumns search 5`] = `
   line-height: 0;
   padding: 12px;
 }
-.emhJYD:focus {
+.gPnbVE:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.emhJYD:focus > circle,
-.emhJYD:focus > ellipse,
-.emhJYD:focus > line,
-.emhJYD:focus > path,
-.emhJYD:focus > polygon,
-.emhJYD:focus > polyline,
-.emhJYD:focus > rect {
+.gPnbVE:focus > circle,
+.gPnbVE:focus > ellipse,
+.gPnbVE:focus > line,
+.gPnbVE:focus > path,
+.gPnbVE:focus > polygon,
+.gPnbVE:focus > polyline,
+.gPnbVE:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.emhJYD:focus::-moz-focus-inner {
+.gPnbVE:focus::-moz-focus-inner {
   border: 0;
 }
-.emhJYD:focus:not(:focus-visible) {
+.gPnbVE:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.emhJYD:focus:not(:focus-visible) > circle,
-.emhJYD:focus:not(:focus-visible) > ellipse,
-.emhJYD:focus:not(:focus-visible) > line,
-.emhJYD:focus:not(:focus-visible) > path,
-.emhJYD:focus:not(:focus-visible) > polygon,
-.emhJYD:focus:not(:focus-visible) > polyline,
-.emhJYD:focus:not(:focus-visible) > rect {
+.gPnbVE:focus:not(:focus-visible) > circle,
+.gPnbVE:focus:not(:focus-visible) > ellipse,
+.gPnbVE:focus:not(:focus-visible) > line,
+.gPnbVE:focus:not(:focus-visible) > path,
+.gPnbVE:focus:not(:focus-visible) > polygon,
+.gPnbVE:focus:not(:focus-visible) > polyline,
+.gPnbVE:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.emhJYD:focus:not(:focus-visible)::-moz-focus-inner {
+.gPnbVE:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .idXjQT {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .evXIdU {
+  .idXjQT {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
