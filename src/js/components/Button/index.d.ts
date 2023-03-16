@@ -10,6 +10,7 @@ import {
   HoverIndicatorType,
   MarginType,
   Omit,
+  PadType,
   PolymorphicType,
 } from '../../utils';
 
@@ -60,6 +61,7 @@ export interface ButtonProps {
   icon?: JSX.Element;
   kind?: string;
   label?: React.ReactNode;
+  pad?: PadType;
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;

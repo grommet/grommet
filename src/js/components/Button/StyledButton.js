@@ -4,6 +4,7 @@ import {
   activeStyle,
   backgroundStyle,
   disabledStyle,
+  edgeStyle,
   focusStyle,
   unfocusStyle,
   genericStyles,
@@ -207,6 +208,11 @@ const StyledButton = styled.button`
     props.theme.button &&
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
+
+    ${(props) =>
+    !props.plain &&
+    props.pad &&
+    edgeStyle('padding', props.pad, false, undefined, props.theme)}
 
   &:focus {
     ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
