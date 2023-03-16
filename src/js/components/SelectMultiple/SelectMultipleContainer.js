@@ -354,13 +354,16 @@ const SelectMultipleContainer = forwardRef(
       />
     );
 
-    const helpContent =
-      (help && (
-        <Box flex={false} pad={typeof help === 'string' ? 'xsmall' : undefined}>
-          {help}
-        </Box>
-      )) ||
-      null;
+    let helpContent;
+    if (help) {
+      if (typeof help === 'string')
+        helpContent = (
+          <Box flex={false} pad="xsmall">
+            <Text size="small">{help}</Text>
+          </Box>
+        );
+      else helpContent = <Box flex={false}>{help}</Box>;
+    }
 
     if (showSelectedInline)
       summaryContent = (
