@@ -372,8 +372,7 @@ const SelectMultiple = forwardRef(
           id: 'selectMultiple.dropDown',
           messages,
         })
-      }.
-      ${format({
+      }. ${format({
         id: 'selectMultiple.selectedMultipleNonTotal',
         values: {
           selectedCount: value?.length || 0,

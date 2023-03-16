@@ -252,8 +252,7 @@ exports[`SelectMultiple children 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="Open Drop.
-      0 selected"
+      aria-label="Open Drop. 0 selected"
       class="c2 c3"
       tabindex="0"
       type="button"
@@ -551,8 +550,7 @@ exports[`SelectMultiple defaultValue 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="Open Drop.
-      1 selected"
+      aria-label="Open Drop. 1 selected"
       class="c2 c3"
       tabindex="0"
       type="button"
@@ -853,8 +851,7 @@ exports[`SelectMultiple disabled 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="Open Drop.
-      0 selected"
+      aria-label="Open Drop. 0 selected"
       class="c2 c3"
       disabled=""
       tabindex="0"
@@ -1151,8 +1148,7 @@ exports[`SelectMultiple disabled option 1`] = `
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
-  aria-label="Open Drop.
-      2 selected"
+  aria-label="Open Drop. 2 selected"
   class="c0 c1"
   data-g-tabindex="0"
   id="test-select__drop"
@@ -1545,8 +1541,7 @@ exports[`SelectMultiple keyboard interactions 1`] = `
     <button
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-label="Open Drop.
-      2 selected"
+      aria-label="Open Drop. 2 selected"
       class="c2 c3"
       data-g-tabindex="0"
       tabindex="-1"
@@ -1844,8 +1839,7 @@ exports[`SelectMultiple limit 1`] = `
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
-  aria-label="Open Drop.
-      2 selected"
+  aria-label="Open Drop. 2 selected"
   class="c0 c1"
   data-g-tabindex="0"
   id="test-select__drop"
@@ -2210,8 +2204,7 @@ exports[`SelectMultiple null value 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-label="Open Drop.
-      0 selected"
+        aria-label="Open Drop. 0 selected"
         class="c2 c3"
         tabindex="0"
         type="button"
@@ -2510,8 +2503,7 @@ exports[`SelectMultiple placeholder 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="placeholder text.
-      0 selected"
+      aria-label="placeholder text. 0 selected"
       class="c2 c3"
       tabindex="0"
       type="button"
@@ -2808,8 +2800,7 @@ exports[`SelectMultiple select all and clear 1`] = `
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
-  aria-label="Open Drop.
-      4 selected"
+  aria-label="Open Drop. 4 selected"
   class="c0 c1"
   data-g-tabindex="0"
   id="test-select__drop"
@@ -2925,8 +2916,7 @@ exports[`SelectMultiple select all and clear 3`] = `
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
-  aria-label="Open Drop.
-      0 selected"
+  aria-label="Open Drop. 0 selected"
   class="StyledButton-sc-323bzc-0 hIPuDF StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   data-g-tabindex="0"
   id="test-select__drop"
@@ -3320,8 +3310,7 @@ exports[`SelectMultiple should display custom messages 1`] = `
       <button
         aria-expanded="true"
         aria-haspopup="listbox"
-        aria-label="Select.
-      3 selected"
+        aria-label="Select. 3 selected"
         class="c2 c3"
         data-g-tabindex="0"
         tabindex="-1"
@@ -3653,8 +3642,7 @@ exports[`SelectMultiple should display custom messages 2`] = `
       <button
         aria-expanded="true"
         aria-haspopup="listbox"
-        aria-label="Select.
-      0 selected"
+        aria-label="Select. 0 selected"
         class="c2 c3"
         data-g-tabindex="0"
         tabindex="-1"
@@ -3986,8 +3974,7 @@ exports[`SelectMultiple should display custom messages 3`] = `
       <button
         aria-expanded="true"
         aria-haspopup="listbox"
-        aria-label="Select.
-      10 selected"
+        aria-label="Select. 10 selected"
         class="c2 c3"
         data-g-tabindex="0"
         tabindex="-1"
@@ -4289,8 +4276,7 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-label="test.
-      0 selected"
+      aria-label="test. 0 selected"
       class="c2 c3"
       tabindex="0"
       type="button"
@@ -4830,8 +4816,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-label="Open Drop.
-      3 selected"
+        aria-label="Open Drop. 3 selected"
         class="c4"
         type="button"
       >
@@ -5400,8 +5385,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-label="Open Drop.
-      3 selected"
+        aria-label="Open Drop. 3 selected"
         class="c4"
         type="button"
       >
@@ -5520,8 +5504,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-label="Open Drop.
-      0 selected"
+        aria-label="Open Drop. 0 selected"
         class="StyledButton-sc-323bzc-0 fiEwea"
         type="button"
       >
@@ -6110,8 +6093,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-label="Open Drop.
-      1 selected"
+        aria-label="Open Drop. 1 selected"
         class="c4"
         type="button"
       >
@@ -6683,8 +6665,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
       <button
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-label="Open Drop.
-      1 selected"
+        aria-label="Open Drop. 1 selected"
         class="c4"
         type="button"
       >
