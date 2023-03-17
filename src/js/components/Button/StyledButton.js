@@ -209,11 +209,6 @@ const StyledButton = styled.button`
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
 
-    ${(props) =>
-    !props.plain &&
-    props.pad &&
-    edgeStyle('padding', props.pad, false, undefined, props.theme)}
-
   &:focus {
     ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
   }
@@ -244,6 +239,8 @@ const StyledButton = styled.button`
     `
     padding: ${props.theme.global.edgeSize.small};
   `}
+  ${(props) =>
+    props.pad && edgeStyle('padding', props.pad, false, undefined, props.theme)}
   ${(props) => props.theme.button && props.theme.button.extend}
 `;
 
