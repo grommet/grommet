@@ -132,7 +132,7 @@ var getPropertyColor = function getPropertyColor(property, paths, theme, kind, p
   return result;
 };
 var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$button$kind;
+  var _theme$button$kind, _theme$button2, _theme$button2$badge;
   var active = _ref.active,
     _ref$align = _ref.align,
     align = _ref$align === void 0 ? 'center' : _ref$align,
@@ -326,7 +326,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // (!kind && icon && !label) is necessary because for old button logic,
   // if button has icon but not label, it will be considered "plain",
   // so no border or background will be applied
-  var innerBadge = !background && !border || !kind && icon && !label;
+  var innerBadge = ((_theme$button2 = theme.button) == null ? void 0 : (_theme$button2$badge = _theme$button2.badge) == null ? void 0 : _theme$button2$badge.align) !== 'container' && (!background && !border || !kind && icon && !label);
   if (badgeProp && innerBadge) {
     contents = /*#__PURE__*/React.createElement(Badge, {
       content: badgeProp

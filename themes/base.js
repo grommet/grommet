@@ -475,6 +475,7 @@ var generate = function generate(baseSpacing, scale) {
 
     button: {
       badge: {
+        // align: undefined,,
         container: {
           background: 'brand'
           // pad: undefined,
