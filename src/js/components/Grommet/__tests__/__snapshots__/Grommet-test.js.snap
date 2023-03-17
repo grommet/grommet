@@ -123,7 +123,7 @@ exports[`Grommet cssVars 1`] = `
   --neutral-3: #00739D;
   --neutral-4: #A2423D;
   --status-critical: #FF4040;
-  --status-error: #FF4040;
+  --status-error: #B30000;
   --status-warning: #FFAA15;
   --status-ok: #00C781;
   --status-unknown: #CCCCCC;
