@@ -9,9 +9,11 @@ import { Heading } from '../Heading';
 import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
-var sizeStyle = function sizeStyle(size, feature, theme) {
-  var _ref, _theme$pageHeader$siz;
-  var style = _extends({}, theme.pageHeader[feature], (_ref = size && ((_theme$pageHeader$siz = theme.pageHeader.size[size]) == null ? void 0 : _theme$pageHeader$siz[feature])) != null ? _ref : theme.pageHeader[feature]);
+var sizeStyle = function sizeStyle(size, feature, theme, breakpoint) {
+  var _ref, _theme$pageHeader$siz, _theme$global$breakpo, _theme$global$breakpo2;
+  var style = _extends({}, theme.pageHeader[feature], (_ref = size && ((_theme$pageHeader$siz = theme.pageHeader.size[size]) == null ? void 0 : _theme$pageHeader$siz[feature])) != null ? _ref : theme.pageHeader[feature], (!size || size === 'medium') && feature === 'subtitle' && ((_theme$global$breakpo = theme.global.breakpoints[breakpoint]) == null ? void 0 : _theme$global$breakpo.value) <= ((_theme$global$breakpo2 = theme.global.breakpoints.small) == null ? void 0 : _theme$global$breakpo2.value) && {
+    size: 'medium'
+  });
   return style;
 };
 var PageHeader = /*#__PURE__*/forwardRef(function (_ref2, ref) {
@@ -53,7 +55,7 @@ var PageHeader = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     gridArea: "title"
   }, typeof title === 'string' ? /*#__PURE__*/React.createElement(Heading, sizeStyle(size, 'title', theme), title) : title), /*#__PURE__*/React.createElement(Box, {
     gridArea: "subtitle"
-  }, typeof subtitle === 'string' ? /*#__PURE__*/React.createElement(Paragraph, sizeStyle(size, 'subtitle', theme), subtitle) : subtitle), /*#__PURE__*/React.createElement(Box, _extends({
+  }, typeof subtitle === 'string' ? /*#__PURE__*/React.createElement(Paragraph, sizeStyle(size, 'subtitle', theme, breakpoint), subtitle) : subtitle), /*#__PURE__*/React.createElement(Box, _extends({
     gridArea: "actions"
   }, actionsProps), actions)));
 });

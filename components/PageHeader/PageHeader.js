@@ -15,9 +15,11 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-var sizeStyle = function sizeStyle(size, feature, theme) {
-  var _ref, _theme$pageHeader$siz;
-  var style = _extends({}, theme.pageHeader[feature], (_ref = size && ((_theme$pageHeader$siz = theme.pageHeader.size[size]) == null ? void 0 : _theme$pageHeader$siz[feature])) != null ? _ref : theme.pageHeader[feature]);
+var sizeStyle = function sizeStyle(size, feature, theme, breakpoint) {
+  var _ref, _theme$pageHeader$siz, _theme$global$breakpo, _theme$global$breakpo2;
+  var style = _extends({}, theme.pageHeader[feature], (_ref = size && ((_theme$pageHeader$siz = theme.pageHeader.size[size]) == null ? void 0 : _theme$pageHeader$siz[feature])) != null ? _ref : theme.pageHeader[feature], (!size || size === 'medium') && feature === 'subtitle' && ((_theme$global$breakpo = theme.global.breakpoints[breakpoint]) == null ? void 0 : _theme$global$breakpo.value) <= ((_theme$global$breakpo2 = theme.global.breakpoints.small) == null ? void 0 : _theme$global$breakpo2.value) && {
+    size: 'medium'
+  });
   return style;
 };
 var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
@@ -59,7 +61,7 @@ var PageHeader = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     gridArea: "title"
   }, typeof title === 'string' ? /*#__PURE__*/_react["default"].createElement(_Heading.Heading, sizeStyle(size, 'title', theme), title) : title), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     gridArea: "subtitle"
-  }, typeof subtitle === 'string' ? /*#__PURE__*/_react["default"].createElement(_Paragraph.Paragraph, sizeStyle(size, 'subtitle', theme), subtitle) : subtitle), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+  }, typeof subtitle === 'string' ? /*#__PURE__*/_react["default"].createElement(_Paragraph.Paragraph, sizeStyle(size, 'subtitle', theme, breakpoint), subtitle) : subtitle), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     gridArea: "actions"
   }, actionsProps), actions)));
 });
