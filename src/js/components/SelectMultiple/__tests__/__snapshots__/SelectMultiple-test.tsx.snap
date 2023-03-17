@@ -4495,7 +4495,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Open Drop. 0 selected."
-        class="StyledButton-sc-323bzc-0 cbSGtI"
+        class="StyledButton-sc-323bzc-0 cUzjnR"
         type="button"
       >
         <div
