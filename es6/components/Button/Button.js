@@ -1,4 +1,4 @@
-var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
+var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "pad", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { cloneElement, Children, forwardRef, useContext, useMemo, useState, useCallback } from 'react';
@@ -155,6 +155,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _onFocus = _ref.onFocus,
     onMouseOut = _ref.onMouseOut,
     onMouseOver = _ref.onMouseOver,
+    pad = _ref.pad,
     plain = _ref.plain,
     primary = _ref.primary,
     reverseProp = _ref.reverse,
@@ -363,6 +364,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       },
       onMouseOver: onMouseOverButton,
       onMouseOut: onMouseOutButton,
+      pad: pad,
       plain: plain || Children.count(children) > 0,
       primary: primary,
       sizeProp: size,
@@ -397,7 +399,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       },
       onMouseOver: onMouseOverButton,
       onMouseOut: onMouseOutButton,
-      pad: !plain,
+      pad: pad || !plain,
       plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
       primary: primary,
       sizeProp: size,

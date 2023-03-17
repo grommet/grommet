@@ -28,6 +28,7 @@ if (process.env.NODE_ENV !== 'production') {
     justify: _propTypes["default"].oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']),
     label: _propTypes["default"].node,
     onClick: _propTypes["default"].func,
+    pad: _generalPropTypes.padPropType,
     plain: _propTypes["default"].bool,
     primary: _propTypes["default"].bool,
     reverse: _propTypes["default"].bool,

@@ -177,7 +177,7 @@ var StyledButtonKind = _styledComponents["default"].button.withConfig({
 }).withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.disabled && props.active && _utils.activeStyle;
@@ -185,6 +185,8 @@ var StyledButtonKind = _styledComponents["default"].button.withConfig({
   return !props.plain && basicStyle(props);
 }, function (props) {
   return !props.plain && kindStyle(props);
+}, function (props) {
+  return !props.plain && props.pad && (0, _utils.edgeStyle)('padding', props.pad, false, undefined, props.theme);
 }, function (props) {
   return !props.plain && props.align && "\n    text-align: " + props.align + ";\n    ";
 }, function (props) {

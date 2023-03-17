@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { activeStyle, disabledStyle, focusStyle, unfocusStyle, genericStyles, kindPartStyles, parseMetricToNum } from '../../utils';
+import { activeStyle, disabledStyle, edgeStyle, focusStyle, unfocusStyle, genericStyles, kindPartStyles, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 var radiusStyle = function radiusStyle(props) {
   var size = props.sizeProp;
@@ -171,7 +171,7 @@ var StyledButtonKind = styled.button.withConfig({
 }).withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.disabled && props.active && activeStyle;
@@ -179,6 +179,8 @@ var StyledButtonKind = styled.button.withConfig({
   return !props.plain && basicStyle(props);
 }, function (props) {
   return !props.plain && kindStyle(props);
+}, function (props) {
+  return !props.plain && props.pad && edgeStyle('padding', props.pad, false, undefined, props.theme);
 }, function (props) {
   return !props.plain && props.align && "\n    text-align: " + props.align + ";\n    ";
 }, function (props) {

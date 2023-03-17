@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { activeStyle, backgroundStyle, disabledStyle, focusStyle, unfocusStyle, genericStyles, getHoverIndicatorStyle, normalizeColor } from '../../utils';
+import { activeStyle, backgroundStyle, disabledStyle, edgeStyle, focusStyle, unfocusStyle, genericStyles, getHoverIndicatorStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 var radiusStyle = function radiusStyle(props) {
   // border.radius shouldn't impact an only-icon rendering.
@@ -71,7 +71,7 @@ var disabledButtonStyle = function disabledButtonStyle(props) {
 var StyledButton = styled.button.withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
@@ -92,7 +92,9 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.hasIcon && !props.hasLabel && "\n    line-height: 0;\n  ";
 }, function (props) {
-  return props.pad && props.hasIcon && !props.hasLabel && "\n    padding: " + props.theme.global.edgeSize.small + ";\n  ";
+  return props.pad === true && props.hasIcon && !props.hasLabel && "\n    padding: " + props.theme.global.edgeSize.small + ";\n  ";
+}, function (props) {
+  return !props.plain && props.pad && edgeStyle('padding', props.pad, false, undefined, props.theme);
 }, function (props) {
   return props.theme.button && props.theme.button.extend;
 });
