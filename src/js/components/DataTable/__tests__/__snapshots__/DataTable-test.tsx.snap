@@ -2999,10 +2999,6 @@ exports[`DataTable custom theme 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c7:focus {
@@ -3429,7 +3425,7 @@ exports[`DataTable custom theme 2`] = `
               class="StyledBox-sc-13pk1d4-0 RnVsJ"
             >
               <button
-                class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 cJaTLw"
+                class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 cJaTLw"
                 type="button"
               >
                 <div
@@ -13408,10 +13404,6 @@ exports[`DataTable onSort 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -13682,7 +13674,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -13774,7 +13766,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -14028,10 +14020,6 @@ exports[`DataTable onSort external 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -14323,7 +14311,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -14399,7 +14387,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -39696,10 +39684,6 @@ exports[`DataTable sort 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -40176,10 +40160,6 @@ exports[`DataTable sort controlled 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c6:focus {
@@ -40663,10 +40643,6 @@ exports[`DataTable sort controlled 2`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c6:focus {
@@ -41080,10 +41056,6 @@ exports[`DataTable sort external 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -41490,10 +41462,6 @@ exports[`DataTable sort nested object 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -41900,10 +41868,6 @@ exports[`DataTable sort nested object with onSort 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -42266,10 +42230,6 @@ exports[`DataTable sort null data 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -42685,7 +42645,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -42777,7 +42737,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -42800,7 +42760,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -42823,7 +42783,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43089,7 +43049,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43112,7 +43072,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43135,7 +43095,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43227,7 +43187,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43493,7 +43453,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43516,7 +43476,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43539,7 +43499,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43562,7 +43522,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -43968,10 +43928,6 @@ exports[`DataTable sortable 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -44242,7 +44198,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div
@@ -44334,7 +44290,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 gWjqb"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cqHCuP Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
+              class="StyledButton-sc-323bzc-0 faLfhk Header__StyledHeaderCellButton-sc-1baku5q-0 eZvEQG"
               type="button"
             >
               <div

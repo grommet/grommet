@@ -3969,13 +3969,13 @@ exports[`Button should render pad 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  padding: 96px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding: 96px;
 }
 
 .c1:hover {
@@ -4039,16 +4039,16 @@ exports[`Button should render pad 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  padding-left: 18px;
-  padding-right: 18px;
-  padding-top: 6px;
-  padding-bottom: 6px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c5:hover {
