@@ -354,6 +354,17 @@ const SelectMultipleContainer = forwardRef(
       />
     );
 
+    let helpContent;
+    if (help) {
+      if (typeof help === 'string')
+        helpContent = (
+          <Box flex={false} pad="xsmall">
+            <Text size="small">{help}</Text>
+          </Box>
+        );
+      else helpContent = <Box flex={false}>{help}</Box>;
+    }
+
     if (showSelectedInline)
       summaryContent = (
         <Box direction="row" justify="between" flex={false}>
@@ -408,7 +419,7 @@ const SelectMultipleContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
-          <Box flex={false}>{help}</Box>
+          {helpContent}
           <OptionsContainer
             role="listbox"
             tabIndex="0"

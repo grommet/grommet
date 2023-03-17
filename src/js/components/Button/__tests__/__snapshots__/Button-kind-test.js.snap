@@ -4777,6 +4777,7 @@ exports[`Button kind plain with icon 1`] = `
   padding: 0;
   text-align: inherit;
   color: inherit;
+  line-height: 0;
 }
 
 .c1 > svg {
