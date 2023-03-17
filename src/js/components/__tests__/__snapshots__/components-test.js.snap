@@ -105,6 +105,7 @@ exports[`Components loads 1`] = `
       "label": [Function],
       "margin": [Function],
       "onClick": [Function],
+      "pad": [Function],
       "plain": [Function],
       "primary": [Function],
       "reverse": [Function],

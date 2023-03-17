@@ -185,6 +185,7 @@ const Button = forwardRef(
       onFocus,
       onMouseOut,
       onMouseOver,
+      pad,
       plain,
       primary,
       reverse: reverseProp,
@@ -438,6 +439,7 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
+          pad={pad}
           plain={plain || Children.count(children) > 0}
           primary={primary}
           sizeProp={size}
@@ -477,7 +479,7 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          pad={!plain}
+          pad={pad || !plain}
           plain={
             typeof plain !== 'undefined'
               ? plain
