@@ -32,11 +32,11 @@ export const Badge = ({ children, content }) => {
     // can change (because pad is responsive, etc.). we want to recalculate
     // width since badge offset is reliant on its dimensions.
     const onResize = () => {
-      if (containerRef && containerRef.current) {
+      if (containerRef?.current) {
         containerRef.current.style.minHeight = '';
         containerRef.current.style.minWidth = '';
 
-        if (contentRef && contentRef.current) {
+        if (contentRef?.current) {
           if (
             typeof content === 'number' ||
             (typeof content === 'object' && content.value)
@@ -86,7 +86,7 @@ export const Badge = ({ children, content }) => {
 
   // offset the badge so it overlaps content
   useLayoutEffect(() => {
-    if (stackRef && stackRef.current) {
+    if (stackRef?.current) {
       // when badge has content, offset should be 50%.
       // when badge is empty, offset by a smaller amount to keep the badge
       // closer to the content. this value was chosen as a reasonable default
