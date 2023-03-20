@@ -398,7 +398,9 @@ const Button = forwardRef(
     // (!kind && icon && !label) is necessary because for old button logic,
     // if button has icon but not label, it will be considered "plain",
     // so no border or background will be applied
-    const innerBadge = (!background && !border) || (!kind && icon && !label);
+    const innerBadge =
+      theme.button?.badge?.align !== 'container' &&
+      ((!background && !border) || (!kind && icon && !label));
     if (badgeProp && innerBadge) {
       contents = <Badge content={badgeProp}>{contents}</Badge>;
     }

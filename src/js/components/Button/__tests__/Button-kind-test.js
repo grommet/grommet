@@ -566,6 +566,27 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test(`badge should align to button container if specified in theme`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            badge: {
+              align: 'container',
+            },
+            default: {
+              border: undefined,
+            },
+          },
+        }}
+      >
+        <Button a11yTitle="Button, alert" label="Button" badge={2} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`hoverIndicator with color and background`, () => {
     const { container, getByText } = render(
       <Grommet

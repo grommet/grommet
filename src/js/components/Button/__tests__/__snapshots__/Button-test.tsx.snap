@@ -399,8 +399,6 @@ exports[`Button badge should apply background 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -537,10 +535,11 @@ exports[`Button badge should apply background 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -12px; right: -12px;"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
         class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 24px; min-width: 24px;"
       >
         <span
           class="c6"
@@ -572,8 +571,6 @@ exports[`Button badge should be offset from top-right corner 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 12px;
-  min-width: 12px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -703,10 +700,11 @@ exports[`Button badge should be offset from top-right corner 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -3px; right: -3px;"
+      style="top: 0px; right: 0px; transform: translate(25%, -25%); transform-origin: 100% 0%;"
     >
       <div
         class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 12px; min-width: 12px;"
       />
     </div>
   </div>
@@ -732,8 +730,6 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -870,10 +866,11 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -12px; right: -12px;"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
         class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 24px; min-width: 24px;"
       >
         <span
           class="c6"
@@ -905,8 +902,6 @@ exports[`Button badge should display number content 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1043,10 +1038,11 @@ exports[`Button badge should display number content 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -12px; right: -12px;"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
         class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 24px; min-width: 24px;"
       >
         <span
           class="c6"
@@ -1221,7 +1217,7 @@ exports[`Button badge should render custom element 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -0px; right: -0px;"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
         class="c5"
@@ -1299,8 +1295,6 @@ exports[`Button badge should render relative to contents when button has no
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 12px;
-  min-width: 12px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1431,10 +1425,11 @@ exports[`Button badge should render relative to contents when button has no
       </div>
       <div
         class="c5"
-        style="top: -3px; right: -3px;"
+        style="top: 0px; right: 0px; transform: translate(25%, -25%); transform-origin: 100% 0%;"
       >
         <div
           class="c6 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+          style="min-height: 12px; min-width: 12px;"
         />
       </div>
     </div>
