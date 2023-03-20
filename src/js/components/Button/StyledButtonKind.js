@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import {
   activeStyle,
   disabledStyle,
+  edgeStyle,
   focusStyle,
   unfocusStyle,
   genericStyles,
@@ -271,6 +272,10 @@ const StyledButtonKind = styled.button.withConfig({
   ${(props) => !props.disabled && props.active && activeStyle}
   ${(props) => !props.plain && basicStyle(props)}
   ${(props) => !props.plain && kindStyle(props)}
+  ${(props) =>
+    !props.plain &&
+    props.pad &&
+    edgeStyle('padding', props.pad, false, undefined, props.theme)}
   ${(props) =>
     !props.plain &&
     props.align &&
