@@ -60,9 +60,9 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size: size
   }, rest, {
     ref: textRef
-  }), /*#__PURE__*/React.createElement(TextContext.Provider, {
+  }), children !== undefined ? /*#__PURE__*/React.createElement(TextContext.Provider, {
     value: textContextValue
-  }, children));
+  }, children) : undefined);
   if (tipProp || textTruncated) {
     // place the text content in a tip if truncate === 'tip'
     // and the text has been truncated

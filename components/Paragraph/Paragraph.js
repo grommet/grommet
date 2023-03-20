@@ -37,9 +37,9 @@ var Paragraph = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     colorProp: color,
     fillProp: fill,
     size: size
-  }, rest), /*#__PURE__*/_react["default"].createElement(_TextContext.TextContext.Provider, {
+  }, rest), children !== undefined ? /*#__PURE__*/_react["default"].createElement(_TextContext.TextContext.Provider, {
     value: textContextValue
-  }, children));
+  }, children) : undefined);
 });
 exports.Paragraph = Paragraph;
 Paragraph.displayName = 'Paragraph';

@@ -31,9 +31,9 @@ var Paragraph = /*#__PURE__*/forwardRef(function (_ref, ref) {
     colorProp: color,
     fillProp: fill,
     size: size
-  }, rest), /*#__PURE__*/React.createElement(TextContext.Provider, {
+  }, rest), children !== undefined ? /*#__PURE__*/React.createElement(TextContext.Provider, {
     value: textContextValue
-  }, children));
+  }, children) : undefined);
 });
 Paragraph.displayName = 'Paragraph';
 Paragraph.prototype = ParagraphPropTypes;

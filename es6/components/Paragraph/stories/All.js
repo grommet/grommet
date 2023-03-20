@@ -12,7 +12,11 @@ export var All = function All() {
     color: "status-critical"
   }, "This is an error message."), /*#__PURE__*/React.createElement(Paragraph, {
     fill: true
-  }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller));
+  }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller), /*#__PURE__*/React.createElement(Paragraph, {
+    dangerouslySetInnerHTML: {
+      __html: 'This is a dangerouslySetInnerHTML!'
+    }
+  }));
 };
 export default {
   title: 'Type/Paragraph/All'

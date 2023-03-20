@@ -17,7 +17,11 @@ var All = function All() {
     color: "status-critical"
   }, "This is an error message."), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
     fill: true
-  }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller));
+  }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
+    dangerouslySetInnerHTML: {
+      __html: 'This is a dangerouslySetInnerHTML!'
+    }
+  }));
 };
 exports.All = All;
 var _default = {
