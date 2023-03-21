@@ -73,9 +73,11 @@ const Text = forwardRef(
         {...rest}
         ref={textRef}
       >
-        <TextContext.Provider value={textContextValue}>
-          {children}
-        </TextContext.Provider>
+        {children !== undefined ? (
+          <TextContext.Provider value={textContextValue}>
+            {children}
+          </TextContext.Provider>
+        ) : undefined}
       </StyledText>
     );
 
