@@ -120,7 +120,6 @@ export const globalTypes = {
         { title: 'hpe', value: 'hpe' },
         { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
       ],
-      dynamicTitle: true,
     },
   },
   root: {
@@ -128,7 +127,6 @@ export const globalTypes = {
     toolbar: {
       title: 'Root',
       items: ['document', 'shadow'],
-      dynamicTitle: true,
     },
   },
 };
