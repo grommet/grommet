@@ -22493,7 +22493,7 @@ exports[`DataTable should apply pagination styling 1`] = `
 
 .c17 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c17 > svg {
@@ -25736,7 +25736,7 @@ exports[`DataTable should paginate 1`] = `
 
 .c17 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c17 > svg {
@@ -28086,7 +28086,7 @@ exports[`DataTable should pin and paginate 1`] = `
 
 .c18 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c18 > svg {
@@ -30427,7 +30427,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 
 .c17 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c17 > svg {
@@ -31722,7 +31722,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 
 .c17 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c17 > svg {
@@ -34941,7 +34941,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 gBbBJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iEGxtK"
+              class="StyledButtonKind-sc-1vhfpnt-0 gBbBJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               <svg
@@ -34966,7 +34966,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iEGxtK"
+              class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               1
@@ -34981,7 +34981,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 clvxmb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iEGxtK"
+              class="StyledButtonKind-sc-1vhfpnt-0 clvxmb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               2
@@ -34996,7 +34996,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 bxrgft StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iEGxtK"
+              class="StyledButtonKind-sc-1vhfpnt-0 bxrgft StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               disabled=""
               type="button"
             >
@@ -35611,7 +35611,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 
 .c17 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c17 > svg {
@@ -37952,7 +37952,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 
 .c17 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c17 > svg {

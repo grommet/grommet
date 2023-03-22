@@ -11,7 +11,9 @@ var sizeStyle = function sizeStyle(props) {
   return style ? {
     content: {
       fontSize: style.font && style.font.size,
-      lineHeight: style.font && style.font.height
+      // fix for safari, apply line-height 0 on next/previous
+      // icon-only buttons
+      lineHeight: style.font && props.hasLabel ? style.font.height : 0
     },
     container: {
       height: style.height,
