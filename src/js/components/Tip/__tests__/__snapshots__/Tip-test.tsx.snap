@@ -27,7 +27,8 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin: 6px;
-  background: #33333310;
+  background-color: #33333310;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -218,10 +219,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButton-sc-323bzc-0 fFGzFb"
+    class="StyledButton-sc-323bzc-0 jQOuxN"
     type="button"
   >
     Test Events
@@ -256,7 +257,8 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin: 6px;
-  background: #33333310;
+  background-color: #33333310;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -537,7 +539,8 @@ exports[`Tip themed 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin: 6px;
-  background: #FFFFFF18;
+  background-color: #FFFFFF18;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;

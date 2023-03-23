@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import {
   activeStyle,
   disabledStyle,
+  edgeStyle,
   focusStyle,
   unfocusStyle,
   genericStyles,
@@ -33,7 +34,9 @@ const fontStyle = (props) => {
   const data = props.theme.text[size];
   return css`
     font-size: ${data.size};
-    line-height: ${data.height};
+    // fix for safari, when button is icon-only, apply line-height 0
+    // to ensure no extra height is applied above svg
+    line-height: ${props.hasIcon && !props.hasLabel ? 0 : data.height};
   `;
 };
 
@@ -242,6 +245,7 @@ const plainStyle = (props) => css`
       vertical-align: middle;
     }
   `}
+  ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
 const StyledButtonKind = styled.button.withConfig({
@@ -268,6 +272,10 @@ const StyledButtonKind = styled.button.withConfig({
   ${(props) => !props.disabled && props.active && activeStyle}
   ${(props) => !props.plain && basicStyle(props)}
   ${(props) => !props.plain && kindStyle(props)}
+  ${(props) =>
+    !props.plain &&
+    props.pad &&
+    edgeStyle('padding', props.pad, false, undefined, props.theme)}
   ${(props) =>
     !props.plain &&
     props.align &&

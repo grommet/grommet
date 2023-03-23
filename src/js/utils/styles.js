@@ -505,6 +505,23 @@ export const inputStyle = css`
   ${(props) => props.theme.global.input.extend}
 `;
 
+// Apply padding on input to create space for icon.
+// When theme.icon.matchSize is true, the space for the
+// icon should equal the icon dimension + 12px (edgeSize.medium)
+// to ensure there is reasonable space between the icon and value or placeholder
+export const inputPadForIcon = css`
+  ${(props) => {
+    const pad = props.theme?.icon?.matchSize
+      ? `${
+          parseMetricToNum(props.theme.icon?.size?.[props?.size || 'medium']) +
+          parseMetricToNum(props.theme.global.edgeSize.medium)
+        }px`
+      : props.theme.global.edgeSize.large;
+
+    return props.reverse ? `padding-right: ${pad};` : `padding-left: ${pad};`;
+  }}
+`;
+
 export const overflowStyle = (overflowProp) => {
   if (typeof overflowProp === 'string') {
     return css`

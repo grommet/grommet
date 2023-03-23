@@ -13,6 +13,7 @@ import {
   backgroundAndTextColors,
   colorIsDark,
   findButtonParent,
+  useSizedIcon,
   normalizeBackground,
   normalizeColor,
 } from '../../utils';
@@ -184,6 +185,7 @@ const Button = forwardRef(
       onFocus,
       onMouseOut,
       onMouseOver,
+      pad,
       plain,
       primary,
       reverse: reverseProp,
@@ -245,7 +247,6 @@ const Button = forwardRef(
     // for backwards compatibility, no-kind button theme did not
     // default to size "medium" on buttons with no size prop
     const size = sizeProp || (kind && 'medium') || undefined;
-
     // When we have a kind and are not plain, themePaths stores the relative
     // paths within the theme for the current kind and state of the button.
     // These paths are used with getIconColor() above and kindStyle() within
@@ -277,19 +278,6 @@ const Button = forwardRef(
       }
       return result;
     }, [active, disabled, kind, kindObj, plain, selected]);
-
-    if (skeleton) {
-      return (
-        <Skeleton
-          ref={ref}
-          height={theme.text[size || 'medium']?.height || size}
-          a11yTitle={a11yTitle}
-          {...rest}
-          {...theme.button.size?.[size || 'medium']}
-          {...theme.button.skeleton}
-        />
-      );
-    }
 
     // only used when theme does not have button.default
     const isDarkBackground = () => {
@@ -351,10 +339,19 @@ const Button = forwardRef(
         });
     }
 
-    if (icon && !icon.props.size && theme.button?.icon?.size?.[size]) {
-      buttonIcon = cloneElement(buttonIcon, {
-        size: theme.button.icon.size[size],
-      });
+    buttonIcon = useSizedIcon(buttonIcon, size, theme);
+
+    if (skeleton) {
+      return (
+        <Skeleton
+          ref={ref}
+          height={theme.text[size || 'medium']?.height || size}
+          a11yTitle={a11yTitle}
+          {...rest}
+          {...theme.button.size?.[size || 'medium']}
+          {...theme.button.skeleton}
+        />
+      );
     }
 
     const reverse = reverseProp ?? theme.button[kind]?.reverse;
@@ -401,7 +398,9 @@ const Button = forwardRef(
     // (!kind && icon && !label) is necessary because for old button logic,
     // if button has icon but not label, it will be considered "plain",
     // so no border or background will be applied
-    const innerBadge = (!background && !border) || (!kind && icon && !label);
+    const innerBadge =
+      theme.button?.badge?.align !== 'container' &&
+      ((!background && !border) || (!kind && icon && !label));
     if (badgeProp && innerBadge) {
       contents = <Badge content={badgeProp}>{contents}</Badge>;
     }
@@ -440,6 +439,7 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
+          pad={pad}
           plain={plain || Children.count(children) > 0}
           primary={primary}
           sizeProp={size}
@@ -479,7 +479,7 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          pad={!plain}
+          pad={pad || !plain}
           plain={
             typeof plain !== 'undefined'
               ? plain

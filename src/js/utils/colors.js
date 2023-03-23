@@ -79,13 +79,13 @@ const rgbaExp =
 // e.g. hsl(240, 60%, 50%)
 const hslExp = /^hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
 
-const canExtractRGBArray = (color) =>
+export const canExtractRGBArray = (color) =>
   hexExp.test(color) ||
   rgbExp.test(color) ||
   rgbaExp.test(color) ||
   hslExp.test(color);
 
-const getRGBArray = (color) => {
+export const getRGBArray = (color) => {
   if (hexExp.test(color)) {
     const [red, green, blue, alpha] = parseHexToRGB(color);
     return [red, green, blue, alpha !== undefined ? alpha / 255.0 : undefined];

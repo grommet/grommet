@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Data controlled search 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`Data controlled search 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -62,40 +62,7 @@ exports[`Data controlled search 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -112,7 +79,7 @@ exports[`Data controlled search 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -133,7 +100,7 @@ exports[`Data controlled search 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -174,20 +141,20 @@ exports[`Data controlled search 1`] = `
   row-gap: 12px;
 }
 
-.c12 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c11 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -207,66 +174,9 @@ exports[`Data controlled search 1`] = `
   padding: 12px;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
 }
 
 .c9:focus {
@@ -289,38 +199,95 @@ exports[`Data controlled search 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -342,7 +309,7 @@ exports[`Data controlled search 1`] = `
   max-width: 100%;
 }
 
-.c15 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -355,7 +322,7 @@ exports[`Data controlled search 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -367,23 +334,23 @@ exports[`Data controlled search 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c14 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -417,50 +384,42 @@ exports[`Data controlled search 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
         </div>
       </form>
       <div
-        class="c10"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c11"
+          class="c9"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c8"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -474,12 +433,12 @@ exports[`Data controlled search 1`] = `
       </div>
     </div>
     <span
-      class="c12"
+      class="c10"
     >
       4 results of undefined items
     </span>
     <table
-      class="c13 c14"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -488,30 +447,30 @@ exports[`Data controlled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 aa
               </span>
@@ -522,14 +481,14 @@ exports[`Data controlled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 bb
               </span>
@@ -540,14 +499,14 @@ exports[`Data controlled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 cc
               </span>
@@ -558,14 +517,14 @@ exports[`Data controlled search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 dd
               </span>
@@ -580,68 +539,60 @@ exports[`Data controlled search 1`] = `
 
 exports[`Data controlled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hoPFxc"
+    class="StyledBox-sc-13pk1d4-0 fHIHJf"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cA-DryL"
+      class="StyledBox-sc-13pk1d4-0 fnEswI"
     >
       <form
-        class="DataForm__MaxForm-sc-v64e1r-1 dKlaJO"
+        class="DataForm__MaxForm-sc-v64e1r-1 gzNuLh"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMuiZr"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dePIJN"
+            class="StyledTextInput__StyledIcon-sc-1x30a0s-3 iQFXNb"
           >
-            <div
-              class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+            <svg
+              aria-label="Search"
+              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cFBrkA"
-              >
-                <svg
-                  aria-label="Search"
-                  class="StyledIcon-sc-ofa7kd-0 jQvEgu"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="StyledTextInput-sc-1x30a0s-0 bMqJAS"
-                id="data--search"
-                name="_search"
-                type="search"
-                value="a"
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 hLtcCB"
+            id="data--search"
+            name="_search"
+            type="search"
+            value="a"
+          />
         </div>
       </form>
       <div
-        class="StyledBox-sc-13pk1d4-0 lgzxvo"
+        class="StyledBox-sc-13pk1d4-0 imzrdH"
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 wfYUD"
+          class="StyledButton-sc-323bzc-0 bsJryl"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
             viewBox="0 0 24 24"
           >
             <path
@@ -655,44 +606,44 @@ exports[`Data controlled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 fKpAiz"
+      class="StyledText-sc-1sadyjn-0 bCiEBA"
     >
       4 results of undefined items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
+      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 dJRXxk StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYqncX StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dCZrDR"
+              class="StyledBox-sc-13pk1d4-0 hUEhgO"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 cNqjdy"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kqmDKi"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 hUfGMB"
               >
                 aa
               </span>
@@ -700,17 +651,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kqmDKi"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 hUfGMB"
               >
                 bb
               </span>
@@ -718,17 +669,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kqmDKi"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 hUfGMB"
               >
                 cc
               </span>
@@ -736,17 +687,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kqmDKi"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 hUfGMB"
               >
                 dd
               </span>
@@ -760,7 +711,7 @@ exports[`Data controlled search 2`] = `
 `;
 
 exports[`Data messages 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -771,25 +722,25 @@ exports[`Data messages 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -821,40 +772,7 @@ exports[`Data messages 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -871,7 +789,7 @@ exports[`Data messages 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -892,7 +810,7 @@ exports[`Data messages 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -933,25 +851,25 @@ exports[`Data messages 1`] = `
   row-gap: 12px;
 }
 
-.c12 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c21 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -971,66 +889,9 @@ exports[`Data messages 1`] = `
   padding: 12px;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
 }
 
 .c9:focus {
@@ -1053,38 +914,95 @@ exports[`Data messages 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1106,7 +1024,7 @@ exports[`Data messages 1`] = `
   max-width: 100%;
 }
 
-.c15 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1119,7 +1037,7 @@ exports[`Data messages 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1131,23 +1049,23 @@ exports[`Data messages 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c14 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -1181,50 +1099,42 @@ exports[`Data messages 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
         </div>
       </form>
       <div
-        class="c10"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c11"
+          class="c9"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c8"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -1238,12 +1148,12 @@ exports[`Data messages 1`] = `
       </div>
     </div>
     <span
-      class="c12"
+      class="c10"
     >
       4 things
     </span>
     <table
-      class="c13 c14"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -1252,51 +1162,51 @@ exports[`Data messages 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 ZZ
               </span>
@@ -1307,27 +1217,27 @@ exports[`Data messages 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 YY
               </span>
@@ -1338,24 +1248,24 @@ exports[`Data messages 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             />
           </td>
         </tr>
@@ -1363,24 +1273,24 @@ exports[`Data messages 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             />
           </td>
         </tr>
@@ -1489,9 +1399,6 @@ exports[`Data onView 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c9 {
@@ -2171,264 +2078,268 @@ exports[`Data onView 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
-          >
-            <h2
-              class="c6"
-            >
-              Filters
-            </h2>
-          </header>
           <div
-            class="c7 "
+            class="c1"
           >
-            <label
-              class="c8"
-              for="data-name"
+            <header
+              class="c5"
             >
-              name
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-name"
-                role="group"
+              <h2
+                class="c6"
               >
-                <label
-                  class="c11"
-                  label="aa"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    aa
-                  </span>
-                </label>
-                <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="bb"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    bb
-                  </span>
-                </label>
-                <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="cc"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    cc
-                  </span>
-                </label>
-                <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="dd"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    dd
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data-enabled"
-            >
-              enabled
-            </label>
+                Filters
+              </h2>
+            </header>
             <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              class="c7 "
             >
-              <div
-                class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
-                id="data-enabled"
-                role="group"
+              <label
+                class="c8"
+                for="data-name"
               >
-                <label
-                  class="c11"
-                  label="true"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    true
-                  </span>
-                </label>
-                <div
-                  class="c16"
-                />
-                <label
-                  class="c11"
-                  label="false"
-                >
-                  <div
-                    class="c12 c13"
-                  >
-                    <input
-                      class="c14"
-                      type="checkbox"
-                    />
-                    <div
-                      class="c15 "
-                    />
-                  </div>
-                  <span>
-                    false
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c7 "
-          >
-            <label
-              class="c8"
-              for="data-rating"
-            >
-              rating
-            </label>
-            <div
-              class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
-            >
+                name
+              </label>
               <div
-                class="c17"
-                id="data-rating"
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
               >
-                <span
-                  class="c18"
-                  style="width: 0px;"
-                >
-                  2.0999999999999996
-                </span>
                 <div
-                  class="c19 c20"
-                  tabindex="-1"
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
                 >
-                  <div
-                    class="c21"
-                    style="flex: 0 0 0px;"
-                  />
-                  <div
-                    class="c22"
-                    style="flex: 0 0 1px;"
+                  <label
+                    class="c11"
+                    label="aa"
                   >
                     <div
-                      aria-label="Lower Bounds"
-                      aria-valuemax="4.8999999999999995"
-                      aria-valuemin="2.0999999999999996"
-                      aria-valuenow="2.0999999999999996"
-                      class="c23"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
+                      class="c12 c13"
                     >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
                       <div
-                        class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c15 "
                       />
                     </div>
-                  </div>
+                    <span>
+                      aa
+                    </span>
+                  </label>
                   <div
-                    class="c25"
-                    style="flex: 3.8 0 0px; cursor: ew-resize;"
+                    class="c16"
                   />
-                  <div
-                    class="c22"
-                    style="flex: 0 0 1px;"
+                  <label
+                    class="c11"
+                    label="bb"
                   >
                     <div
-                      aria-label="Upper Bounds"
-                      aria-valuemax="4.8999999999999995"
-                      aria-valuemin="2.0999999999999996"
-                      aria-valuenow="4.8999999999999995"
-                      class="c23"
-                      role="slider"
-                      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
-                      tabindex="0"
+                      class="c12 c13"
                     >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
                       <div
-                        class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        class="c15 "
                       />
                     </div>
-                  </div>
+                    <span>
+                      bb
+                    </span>
+                  </label>
                   <div
-                    class="c21"
-                    style="flex: 0 0 0px;"
+                    class="c16"
                   />
+                  <label
+                    class="c11"
+                    label="cc"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      cc
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="dd"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      dd
+                    </span>
+                  </label>
                 </div>
-                <span
-                  class="c26"
-                  style="width: 0px;"
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-enabled"
+              >
+                enabled
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-enabled"
+                  role="group"
                 >
-                  4.8999999999999995
-                </span>
+                  <label
+                    class="c11"
+                    label="true"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      true
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="false"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      false
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-rating"
+              >
+                rating
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c17"
+                  id="data-rating"
+                >
+                  <span
+                    class="c18"
+                    style="width: 0px;"
+                  >
+                    2.0999999999999996
+                  </span>
+                  <div
+                    class="c19 c20"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="c21"
+                      style="flex: 0 0 0px;"
+                    />
+                    <div
+                      class="c22"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Lower Bounds"
+                        aria-valuemax="4.8999999999999995"
+                        aria-valuemin="2.0999999999999996"
+                        aria-valuenow="2.0999999999999996"
+                        class="c23"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c25"
+                      style="flex: 3.8 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c22"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="4.8999999999999995"
+                        aria-valuemin="2.0999999999999996"
+                        aria-valuenow="4.8999999999999995"
+                        class="c23"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c21"
+                      style="flex: 0 0 0px;"
+                    />
+                  </div>
+                  <span
+                    class="c26"
+                    style="width: 0px;"
+                  >
+                    4.8999999999999995
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -2825,7 +2736,7 @@ exports[`Data pagination 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -3020,7 +2931,7 @@ exports[`Data pagination 1`] = `
 
 .c13 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c13 > svg {
@@ -3356,7 +3267,7 @@ exports[`Data pagination step 1`] = `
   border-radius: 4px;
   padding: 4px 4px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
   color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -3551,7 +3462,7 @@ exports[`Data pagination step 1`] = `
 
 .c13 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c13 > svg {
@@ -3778,7 +3689,7 @@ exports[`Data renders 1`] = `
 `;
 
 exports[`Data toolbar 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3789,25 +3700,25 @@ exports[`Data toolbar 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3839,40 +3750,7 @@ exports[`Data toolbar 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3889,7 +3767,7 @@ exports[`Data toolbar 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3910,7 +3788,7 @@ exports[`Data toolbar 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3951,25 +3829,25 @@ exports[`Data toolbar 1`] = `
   row-gap: 12px;
 }
 
-.c12 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c21 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3989,66 +3867,9 @@ exports[`Data toolbar 1`] = `
   padding: 12px;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
 }
 
 .c9:focus {
@@ -4071,38 +3892,95 @@ exports[`Data toolbar 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4124,7 +4002,7 @@ exports[`Data toolbar 1`] = `
   max-width: 100%;
 }
 
-.c15 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4137,7 +4015,7 @@ exports[`Data toolbar 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4149,23 +4027,23 @@ exports[`Data toolbar 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c14 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -4199,50 +4077,42 @@ exports[`Data toolbar 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
         </div>
       </form>
       <div
-        class="c10"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c11"
+          class="c9"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c8"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -4256,12 +4126,12 @@ exports[`Data toolbar 1`] = `
       </div>
     </div>
     <span
-      class="c12"
+      class="c10"
     >
       4 items
     </span>
     <table
-      class="c13 c14"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -4270,51 +4140,51 @@ exports[`Data toolbar 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 ZZ
               </span>
@@ -4325,27 +4195,27 @@ exports[`Data toolbar 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 YY
               </span>
@@ -4356,24 +4226,24 @@ exports[`Data toolbar 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             />
           </td>
         </tr>
@@ -4381,24 +4251,24 @@ exports[`Data toolbar 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             />
           </td>
         </tr>
@@ -4823,7 +4693,7 @@ exports[`Data toolbar filters 1`] = `
 `;
 
 exports[`Data toolbar search 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4834,25 +4704,25 @@ exports[`Data toolbar search 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4884,7 +4754,7 @@ exports[`Data toolbar search 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4896,10 +4766,410 @@ exports[`Data toolbar search 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+
+.c8 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c16 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c7:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c7::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
 }
 
 .c5 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
+.c3 {
+  max-width: 100%;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c10 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c13:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <div
+      class="c2"
+    >
+      <form
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <svg
+              aria-label="Search"
+              class="c6"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
+        </div>
+      </form>
+    </div>
+    <span
+      class="c8"
+    >
+      4 items
+    </span>
+    <table
+      class="c9 c10"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c11 "
+            scope="col"
+          >
+            <div
+              class="c12"
+            />
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c14 "
+            scope="row"
+          >
+            <div
+              class="c15"
+            >
+              <span
+                class="c16"
+              >
+                aa
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c14 "
+            scope="row"
+          >
+            <div
+              class="c15"
+            >
+              <span
+                class="c16"
+              >
+                bb
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c14 "
+            scope="row"
+          >
+            <div
+              class="c15"
+            >
+              <span
+                class="c16"
+              >
+                cc
+              </span>
+            </div>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c14 "
+            scope="row"
+          >
+            <div
+              class="c15"
+            >
+              <span
+                class="c16"
+              >
+                dd
+              </span>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Data uncontrolled search 1`] = `
+.c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4911,10 +5181,26 @@ exports[`Data toolbar search 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .c14 {
@@ -4993,20 +5279,28 @@ exports[`Data toolbar search 1`] = `
 }
 
 .c9 {
+  display: inline-block;
   box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 .c9:focus {
@@ -5029,38 +5323,95 @@ exports[`Data toolbar search 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5157,38 +5508,53 @@ exports[`Data toolbar search 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
         </div>
       </form>
+      <div
+        class="c8"
+      >
+        <button
+          aria-label="Open filters"
+          class="c9"
+          id="data--filters-control"
+          type="button"
+        >
+          <svg
+            aria-label="Filter"
+            class="c6"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
     <span
       class="c10"
@@ -5295,648 +5661,62 @@ exports[`Data toolbar search 1`] = `
 </div>
 `;
 
-exports[`Data uncontrolled search 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-column-gap: 12px;
-  column-gap: 12px;
-  row-gap: 12px;
-}
-
-.c12 {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c20 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c11:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c9::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c9::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c9:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c9::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c9::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
-  opacity: 1;
-}
-
-.c6 {
-  position: relative;
-  width: 100%;
-}
-
-.c7 {
-  position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
-  justify: center;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  pointer-events: none;
-  left: 12px;
-}
-
-.c3 {
-  max-width: 100%;
-}
-
-.c15 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c18 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c13 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c14 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c17:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c17:focus:not(:focus-visible) {
-  outline: none;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    -webkit-column-gap: 6px;
-    column-gap: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
-  >
-    <div
-      class="c2"
-    >
-      <form
-        class="c3"
-      >
-        <div
-          class="c4"
-        >
-          <div
-            class="c5"
-          >
-            <div
-              class="c6"
-            >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-      </form>
-      <div
-        class="c10"
-      >
-        <button
-          aria-label="Open filters"
-          class="c11"
-          id="data--filters-control"
-          type="button"
-        >
-          <svg
-            aria-label="Filter"
-            class="c8"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m3 6 7 7v8h4v-8l7-7V3H3z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <span
-      class="c12"
-    >
-      4 items
-    </span>
-    <table
-      class="c13 c14"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c15 "
-            scope="col"
-          >
-            <div
-              class="c16"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c18 "
-            scope="row"
-          >
-            <div
-              class="c19"
-            >
-              <span
-                class="c20"
-              >
-                aa
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c18 "
-            scope="row"
-          >
-            <div
-              class="c19"
-            >
-              <span
-                class="c20"
-              >
-                bb
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c18 "
-            scope="row"
-          >
-            <div
-              class="c19"
-            >
-              <span
-                class="c20"
-              >
-                cc
-              </span>
-            </div>
-          </th>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c18 "
-            scope="row"
-          >
-            <div
-              class="c19"
-            >
-              <span
-                class="c20"
-              >
-                dd
-              </span>
-            </div>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
 exports[`Data uncontrolled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hoPFxc"
+    class="StyledBox-sc-13pk1d4-0 fHIHJf"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 cA-DryL"
+      class="StyledBox-sc-13pk1d4-0 fnEswI"
     >
       <form
-        class="DataForm__MaxForm-sc-v64e1r-1 dKlaJO"
+        class="DataForm__MaxForm-sc-v64e1r-1 gzNuLh"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMuiZr"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 dePIJN"
+            class="StyledTextInput__StyledIcon-sc-1x30a0s-3 iQFXNb"
           >
-            <div
-              class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
+            <svg
+              aria-label="Search"
+              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cFBrkA"
-              >
-                <svg
-                  aria-label="Search"
-                  class="StyledIcon-sc-ofa7kd-0 jQvEgu"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="StyledTextInput-sc-1x30a0s-0 bMqJAS"
-                id="data--search"
-                name="_search"
-                type="search"
-                value="a"
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 hLtcCB"
+            id="data--search"
+            name="_search"
+            type="search"
+            value="a"
+          />
         </div>
       </form>
       <div
-        class="StyledBox-sc-13pk1d4-0 lgzxvo"
+        class="StyledBox-sc-13pk1d4-0 imzrdH"
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 wfYUD"
+          class="StyledButton-sc-323bzc-0 bsJryl"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="StyledIcon-sc-ofa7kd-0 jQvEgu"
+            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
             viewBox="0 0 24 24"
           >
             <path
@@ -5950,44 +5730,44 @@ exports[`Data uncontrolled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 fKpAiz"
+      class="StyledText-sc-1sadyjn-0 bCiEBA"
     >
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 kfnLZF StyledDataTable-sc-xrlyjm-0 gVAzcD"
+      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 dJRXxk StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYqncX StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dCZrDR"
+              class="StyledBox-sc-13pk1d4-0 hUEhgO"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 cNqjdy"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iYvvim"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hPhAoG StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 kjvNUh"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dEaSmx"
+              class="StyledBox-sc-13pk1d4-0 kqmDKi"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hDSAIu"
+                class="StyledText-sc-1sadyjn-0 hUfGMB"
               >
                 aa
               </span>
@@ -6275,7 +6055,7 @@ exports[`Data view 1`] = `
 `;
 
 exports[`Data view all 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6286,25 +6066,25 @@ exports[`Data view all 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6336,40 +6116,7 @@ exports[`Data view all 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6386,7 +6133,7 @@ exports[`Data view all 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6407,7 +6154,7 @@ exports[`Data view all 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6448,25 +6195,25 @@ exports[`Data view all 1`] = `
   row-gap: 12px;
 }
 
-.c12 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c21 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6486,66 +6233,9 @@ exports[`Data view all 1`] = `
   padding: 12px;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
 }
 
 .c9:focus {
@@ -6568,38 +6258,95 @@ exports[`Data view all 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6621,7 +6368,7 @@ exports[`Data view all 1`] = `
   max-width: 100%;
 }
 
-.c15 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6634,7 +6381,7 @@ exports[`Data view all 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6646,23 +6393,23 @@ exports[`Data view all 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c14 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -6696,50 +6443,42 @@ exports[`Data view all 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value="a"
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value="a"
+          />
         </div>
       </form>
       <div
-        class="c10"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c11"
+          class="c9"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c8"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -6753,12 +6492,12 @@ exports[`Data view all 1`] = `
       </div>
     </div>
     <span
-      class="c12"
+      class="c10"
     >
       1 result of 4 items
     </span>
     <table
-      class="c13 c14"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -6767,51 +6506,51 @@ exports[`Data view all 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 ZZ
               </span>
@@ -6825,7 +6564,7 @@ exports[`Data view all 1`] = `
 `;
 
 exports[`Data view property option 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6836,25 +6575,25 @@ exports[`Data view property option 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6886,40 +6625,7 @@ exports[`Data view property option 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6936,7 +6642,7 @@ exports[`Data view property option 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6957,7 +6663,7 @@ exports[`Data view property option 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6998,25 +6704,25 @@ exports[`Data view property option 1`] = `
   row-gap: 12px;
 }
 
-.c12 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c21 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -7036,66 +6742,9 @@ exports[`Data view property option 1`] = `
   padding: 12px;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
 }
 
 .c9:focus {
@@ -7118,38 +6767,95 @@ exports[`Data view property option 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7171,7 +6877,7 @@ exports[`Data view property option 1`] = `
   max-width: 100%;
 }
 
-.c15 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7184,7 +6890,7 @@ exports[`Data view property option 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7196,23 +6902,23 @@ exports[`Data view property option 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c14 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -7246,50 +6952,42 @@ exports[`Data view property option 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
         </div>
       </form>
       <div
-        class="c10"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c11"
+          class="c9"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c8"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -7303,12 +7001,12 @@ exports[`Data view property option 1`] = `
       </div>
     </div>
     <span
-      class="c12"
+      class="c10"
     >
       1 result of 4 items
     </span>
     <table
-      class="c13 c14"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7317,51 +7015,51 @@ exports[`Data view property option 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 ZZ
               </span>
@@ -7375,7 +7073,7 @@ exports[`Data view property option 1`] = `
 `;
 
 exports[`Data view property range 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -7386,25 +7084,25 @@ exports[`Data view property range 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7436,40 +7134,7 @@ exports[`Data view property range 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7486,7 +7151,7 @@ exports[`Data view property range 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7507,7 +7172,7 @@ exports[`Data view property range 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7548,25 +7213,25 @@ exports[`Data view property range 1`] = `
   row-gap: 12px;
 }
 
-.c12 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c21 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -7586,66 +7251,9 @@ exports[`Data view property range 1`] = `
   padding: 12px;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
 }
 
 .c9:focus {
@@ -7668,38 +7276,95 @@ exports[`Data view property range 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7721,7 +7386,7 @@ exports[`Data view property range 1`] = `
   max-width: 100%;
 }
 
-.c15 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7734,7 +7399,7 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7746,23 +7411,23 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c14 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -7796,50 +7461,42 @@ exports[`Data view property range 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
         </div>
       </form>
       <div
-        class="c10"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c11"
+          class="c9"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c8"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -7853,12 +7510,12 @@ exports[`Data view property range 1`] = `
       </div>
     </div>
     <span
-      class="c12"
+      class="c10"
     >
       1 result of 4 items
     </span>
     <table
-      class="c13 c14"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7867,72 +7524,72 @@ exports[`Data view property range 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 YY
               </span>
             </div>
           </td>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 4.3
               </span>
@@ -7946,7 +7603,7 @@ exports[`Data view property range 1`] = `
 `;
 
 exports[`Data view search 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -7957,25 +7614,25 @@ exports[`Data view search 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8007,40 +7664,7 @@ exports[`Data view search 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8057,7 +7681,7 @@ exports[`Data view search 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8078,7 +7702,7 @@ exports[`Data view search 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8119,25 +7743,25 @@ exports[`Data view search 1`] = `
   row-gap: 12px;
 }
 
-.c12 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c21 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -8157,66 +7781,9 @@ exports[`Data view search 1`] = `
   padding: 12px;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
 }
 
 .c9:focus {
@@ -8239,38 +7806,95 @@ exports[`Data view search 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -8292,7 +7916,7 @@ exports[`Data view search 1`] = `
   max-width: 100%;
 }
 
-.c15 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8305,7 +7929,7 @@ exports[`Data view search 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8317,23 +7941,23 @@ exports[`Data view search 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c14 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -8367,50 +7991,42 @@ exports[`Data view search 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value="a"
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value="a"
+          />
         </div>
       </form>
       <div
-        class="c10"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c11"
+          class="c9"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c8"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -8424,12 +8040,12 @@ exports[`Data view search 1`] = `
       </div>
     </div>
     <span
-      class="c12"
+      class="c10"
     >
       1 result of 4 items
     </span>
     <table
-      class="c13 c14"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -8438,51 +8054,51 @@ exports[`Data view search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 ZZ
               </span>
@@ -8496,7 +8112,7 @@ exports[`Data view search 1`] = `
 `;
 
 exports[`Data view sort 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -8507,25 +8123,25 @@ exports[`Data view sort 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8557,40 +8173,7 @@ exports[`Data view sort 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8607,7 +8190,7 @@ exports[`Data view sort 1`] = `
   flex: 0 0 auto;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8628,7 +8211,7 @@ exports[`Data view sort 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8669,25 +8252,25 @@ exports[`Data view sort 1`] = `
   row-gap: 12px;
 }
 
-.c12 {
+.c10 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c21 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -8707,66 +8290,9 @@ exports[`Data view sort 1`] = `
   padding: 12px;
 }
 
-.c11:hover {
+.c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  padding-left: 48px;
 }
 
 .c9:focus {
@@ -8789,38 +8315,95 @@ exports[`Data view sort 1`] = `
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -8842,7 +8425,7 @@ exports[`Data view sort 1`] = `
   max-width: 100%;
 }
 
-.c15 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8855,7 +8438,7 @@ exports[`Data view sort 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8867,23 +8450,23 @@ exports[`Data view sort 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c14 {
+.c12 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -8917,50 +8500,42 @@ exports[`Data view sort 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
         </div>
       </form>
       <div
-        class="c10"
+        class="c8"
       >
         <button
           aria-label="Open filters"
-          class="c11"
+          class="c9"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="c8"
+            class="c6"
             viewBox="0 0 24 24"
           >
             <path
@@ -8974,12 +8549,12 @@ exports[`Data view sort 1`] = `
       </div>
     </div>
     <span
-      class="c12"
+      class="c10"
     >
       4 items
     </span>
     <table
-      class="c13 c14"
+      class="c11 c12"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -8988,51 +8563,51 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
           <th
-            class="c15 "
+            class="c13 "
             scope="col"
           >
             <div
-              class="c16"
+              class="c14"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 ZZ
               </span>
@@ -9043,27 +8618,27 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c21"
+                class="c19"
               >
                 YY
               </span>
@@ -9074,24 +8649,24 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             />
           </td>
         </tr>
@@ -9099,24 +8674,24 @@ exports[`Data view sort 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c17"
             >
               <span
-                class="c20"
+                class="c18"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c16 "
           >
             <div
-              class="c19"
+              class="c17"
             />
           </td>
         </tr>

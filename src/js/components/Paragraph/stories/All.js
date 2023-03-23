@@ -22,6 +22,9 @@ export const All = () => (
       This is a full-width paragraph, using the &quot;fill&quot; property:{' '}
       {paragraphFiller}
     </Paragraph>
+    <Paragraph
+      dangerouslySetInnerHTML={{ __html: 'This is a dangerouslySetInnerHTML!' }}
+    />
   </>
 );
 
