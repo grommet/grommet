@@ -38,8 +38,8 @@ var DropButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onDropClose = useCallback(function (event) {
     // if the user has clicked on our Button, don't do anything here,
     // handle that in onClickInternal() below.
-    var node = event.target;
-    while (node !== document && node !== buttonRef.current) {
+    var node = event.composed && event.composedPath()[0] || event.target;
+    while (node && node !== document && !(node instanceof ShadowRoot) && node !== buttonRef.current) {
       node = node.parentNode;
     }
     if (node !== buttonRef.current) {
