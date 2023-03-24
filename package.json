@@ -135,6 +135,7 @@
     "react-dev-utils": "^12.0.1",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
+    "react-shadow": "^20.0.0",
     "regenerator-runtime": "^0.13.11",
     "require-reload": "^0.2.2",
     "simple-git": "^3.16.1",

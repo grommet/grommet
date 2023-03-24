@@ -29,7 +29,8 @@
     "afterAll": true,
     "KeyboardEvent": true,
     "MouseEvent": true,
-    "requestAnimationFrame": true
+    "requestAnimationFrame": true,
+    "ShadowRoot": true
   },
   "rules": {
     "default-param-last": 0,
