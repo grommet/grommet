@@ -60,19 +60,13 @@ export const filter = (data, view, properties) => {
           );
 
         // options case
-        if (Array.isArray(filterValue)) {
-          // value is array case
-          if (Array.isArray(value))
-            // from https://stackoverflow.com/a/39893636
-            return !value.some((v) => filterValue.includes(v));
-
-          return !filterValue.includes(value);
-        }
+        if (Array.isArray(filterValue))
+          return Array.isArray(value)
+            ? !value.some((v) => filterValue.includes(v))
+            : !filterValue.includes(value);
 
         // presence case
-        if (typeof filterValue === 'boolean') {
-          return filterValue === !value;
-        }
+        if (typeof filterValue === 'boolean') return filterValue === !value;
 
         // not sure, keep it
         return false;
