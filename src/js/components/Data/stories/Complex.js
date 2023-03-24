@@ -35,6 +35,7 @@ const properties = {
   colors: {
     label: 'Flag Colors',
     options: ['Red', 'White', 'Blue', 'Yellow', 'Black'],
+    search: true,
   },
 };
 
@@ -54,7 +55,7 @@ const columns = [
   },
   {
     property: 'colors',
-    header: 'Flag colors',
+    header: 'Flag Colors',
     // render using map map
     render: (datum) =>
       datum.colors.map((item) => <Text key={item}>{item}</Text>),
@@ -76,7 +77,7 @@ export const Complex = () => (
       message="Data is in 'beta'. The API surface is subject to change."
     />
     <Data data={data} properties={properties} toolbar>
-      <DataTable columns={columns} />
+      <DataTable columns={columns} verticalAlign={{ body: 'top' }} />
     </Data>
   </Grid>
   // </Grommet>
