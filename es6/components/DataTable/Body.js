@@ -160,16 +160,17 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   // Determine if using a keyboard to cover focus behavior
   var usingKeyboard = useKeyboard();
   var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard ? 0 : undefined;
+  var activePrimaryValue = active >= 0 ? datumValue(data[active], primaryProperty) : undefined;
   var selectRow = function selectRow() {
-    var _data$active;
-    var primaryValue = (_data$active = data[active]) == null ? void 0 : _data$active[primaryProperty];
-    if (selected && selected.includes(primaryValue)) {
-      onSelect(selected.filter(function (s) {
-        return s !== primaryValue;
-      }));
-    } else onSelect([].concat(selected, [primaryValue]));
+    if (activePrimaryValue !== undefined) {
+      if (selected && selected.includes(activePrimaryValue)) {
+        onSelect(selected.filter(function (s) {
+          return s !== activePrimaryValue;
+        }));
+      } else onSelect([].concat(selected, [activePrimaryValue]));
+    }
   };
-  var clickableRow = onClickRow && active >= 0 && (!disabled || !disabled.includes(datumValue(data[active], primaryProperty)));
+  var clickableRow = onClickRow && active >= 0 && (!disabled || activePrimaryValue !== undefined && !disabled.includes(activePrimaryValue));
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: clickableRow ? function (event) {
       if (clickableRow) {

@@ -17,7 +17,7 @@ export var set = function set(obj, path, value) {
 
 // get the value for the property in the datum object
 export var datumValue = function datumValue(datum, property) {
-  if (!property) return undefined;
+  if (!property || !datum) return undefined;
   var parts = property.split('.');
   if (parts.length === 1) return datum[property];
   if (!datum[parts[0]]) return undefined;
