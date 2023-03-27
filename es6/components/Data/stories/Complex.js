@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, DataTable, Notification } from 'grommet';
+import { Grid, DataTable, Notification, Text } from 'grommet';
 import { Data } from '../Data';
 var data = [{
   id: 1,
@@ -10,7 +10,8 @@ var data = [{
   },
   economy: {
     GDP: 100
-  }
+  },
+  colors: ['White', 'Blue']
 }, {
   id: 2,
   name: 'Beta',
@@ -20,7 +21,19 @@ var data = [{
   },
   economy: {
     GDP: 150
-  }
+  },
+  colors: ['Red', 'White', 'Blue']
+}, {
+  id: 3,
+  name: 'Theta',
+  location: {
+    city: 'Berlin',
+    country: 'Germany'
+  },
+  economy: {
+    GDP: 200
+  },
+  colors: ['Red', 'Yellow', 'Black']
 }];
 var properties = {
   name: {
@@ -32,6 +45,11 @@ var properties = {
   },
   'economy.GDP': {
     label: 'GDP'
+  },
+  colors: {
+    label: 'Flag Colors',
+    options: ['Red', 'White', 'Blue', 'Yellow', 'Black'],
+    search: true
   }
 };
 var columns = [{
@@ -44,6 +62,17 @@ var columns = [{
 }, {
   property: 'economy.GDP',
   header: 'GDP'
+}, {
+  property: 'colors',
+  header: 'Flag Colors',
+  // render using map map
+  render: function render(datum) {
+    return datum.colors.map(function (item) {
+      return /*#__PURE__*/React.createElement(Text, {
+        key: item
+      }, item);
+    });
+  }
 }];
 export var Complex = function Complex() {
   return (
@@ -64,7 +93,10 @@ export var Complex = function Complex() {
       properties: properties,
       toolbar: true
     }, /*#__PURE__*/React.createElement(DataTable, {
-      columns: columns
+      columns: columns,
+      verticalAlign: {
+        body: 'top'
+      }
     })))
     // </Grommet>
   );

@@ -15,7 +15,8 @@ var data = [{
   },
   economy: {
     GDP: 100
-  }
+  },
+  colors: ['White', 'Blue']
 }, {
   id: 2,
   name: 'Beta',
@@ -25,7 +26,19 @@ var data = [{
   },
   economy: {
     GDP: 150
-  }
+  },
+  colors: ['Red', 'White', 'Blue']
+}, {
+  id: 3,
+  name: 'Theta',
+  location: {
+    city: 'Berlin',
+    country: 'Germany'
+  },
+  economy: {
+    GDP: 200
+  },
+  colors: ['Red', 'Yellow', 'Black']
 }];
 var properties = {
   name: {
@@ -37,6 +50,11 @@ var properties = {
   },
   'economy.GDP': {
     label: 'GDP'
+  },
+  colors: {
+    label: 'Flag Colors',
+    options: ['Red', 'White', 'Blue', 'Yellow', 'Black'],
+    search: true
   }
 };
 var columns = [{
@@ -49,6 +67,17 @@ var columns = [{
 }, {
   property: 'economy.GDP',
   header: 'GDP'
+}, {
+  property: 'colors',
+  header: 'Flag Colors',
+  // render using map map
+  render: function render(datum) {
+    return datum.colors.map(function (item) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+        key: item
+      }, item);
+    });
+  }
 }];
 var Complex = function Complex() {
   return (
@@ -69,7 +98,10 @@ var Complex = function Complex() {
       properties: properties,
       toolbar: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-      columns: columns
+      columns: columns,
+      verticalAlign: {
+        body: 'top'
+      }
     })))
     // </Grommet>
   );
