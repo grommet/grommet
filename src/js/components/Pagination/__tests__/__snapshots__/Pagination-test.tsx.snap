@@ -342,7 +342,7 @@ exports[`Pagination should allow user to control page via state with page +
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -370,7 +370,7 @@ exports[`Pagination should allow user to control page via state with page +
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -1013,7 +1013,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -1041,7 +1041,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -2487,7 +2487,7 @@ exports[`Pagination should apply custom theme 1`] = `
 
 .c6 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c6 > svg {
@@ -2515,7 +2515,7 @@ exports[`Pagination should apply custom theme 1`] = `
 .c12 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c2 {
@@ -3826,7 +3826,7 @@ exports[`Pagination should apply size 1`] = `
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -3835,7 +3835,7 @@ exports[`Pagination should apply size 1`] = `
 
 .c16 {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 0;
 }
 
 .c16 > svg {
@@ -3844,7 +3844,7 @@ exports[`Pagination should apply size 1`] = `
 
 .c24 {
   font-size: 22px;
-  line-height: 28px;
+  line-height: 0;
 }
 
 .c24 > svg {
@@ -3908,19 +3908,19 @@ exports[`Pagination should apply size 1`] = `
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c20 {
   font-weight: bold;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 0;
 }
 
 .c28 {
   font-weight: bold;
   font-size: 22px;
-  line-height: 28px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -4765,7 +4765,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -4793,7 +4793,7 @@ exports[`Pagination should change the page on prop change 1`] = `
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -5436,7 +5436,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -5464,7 +5464,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c10 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -5908,7 +5908,7 @@ exports[`Pagination should disable previous and next controls when numberItems
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -6215,7 +6215,7 @@ exports[`Pagination should disable previous and next controls when numberItems
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -6585,7 +6585,7 @@ exports[`Pagination should disable previous and next controls when numberItems
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -7172,7 +7172,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -7200,7 +7200,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -7728,7 +7728,7 @@ exports[`Pagination should display next page of results when "next" is
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -7756,7 +7756,7 @@ exports[`Pagination should display next page of results when "next" is
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -7943,29 +7943,29 @@ exports[`Pagination should display next page of results when "next" is
 exports[`Pagination should display next page of results when "next" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bbYfqa Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 fHIHJf Pagination__StyledPaginationContainer-sc-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 bbYfqa"
+      class="StyledBox-sc-13pk1d4-0 fHIHJf"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 jXTSeP"
+        class="StyledBox-sc-13pk1d4-0 hjbwhm"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 gMBOVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 gBbBJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 eAbdrF"
+              class="StyledIcon-sc-ofa7kd-0 ebwLTU"
               viewBox="0 0 24 24"
             >
               <path
@@ -7978,116 +7978,116 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 ikruaG StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 clvxmb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eHxAW StyledPageControl__StyledSeparator-sc-1vlfaez-2 kUdTjK"
+            class="StyledText-sc-1sadyjn-0 lhOBjf StyledPageControl__StyledSeparator-sc-1vlfaez-2 jxDSVl"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 gMBOVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 gBbBJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 eAbdrF"
+              class="StyledIcon-sc-ofa7kd-0 ebwLTU"
               viewBox="0 0 24 24"
             >
               <path
@@ -8447,7 +8447,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -8475,7 +8475,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -9001,7 +9001,7 @@ exports[`Pagination should display previous page of results when "previous" is
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -9029,7 +9029,7 @@ exports[`Pagination should display previous page of results when "previous" is
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -9216,29 +9216,29 @@ exports[`Pagination should display previous page of results when "previous" is
 exports[`Pagination should display previous page of results when "previous" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bbYfqa Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 fHIHJf Pagination__StyledPaginationContainer-sc-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 bbYfqa"
+      class="StyledBox-sc-13pk1d4-0 fHIHJf"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 jXTSeP"
+        class="StyledBox-sc-13pk1d4-0 hjbwhm"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 gMBOVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 gBbBJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 eAbdrF"
+              class="StyledIcon-sc-ofa7kd-0 ebwLTU"
               viewBox="0 0 24 24"
             >
               <path
@@ -9251,116 +9251,116 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 ikruaG StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 clvxmb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eHxAW StyledPageControl__StyledSeparator-sc-1vlfaez-2 kUdTjK"
+            class="StyledText-sc-1sadyjn-0 lhOBjf StyledPageControl__StyledSeparator-sc-1vlfaez-2 jxDSVl"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 eOsbSo StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 dPZONJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jemohy"
+          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 bZxSeh"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 gMBOVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fxwLKX"
+            class="StyledButtonKind-sc-1vhfpnt-0 gBbBJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 eAbdrF"
+              class="StyledIcon-sc-ofa7kd-0 ebwLTU"
               viewBox="0 0 24 24"
             >
               <path
@@ -9838,7 +9838,7 @@ exports[`Pagination should display the correct last page based on items length
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -9866,7 +9866,7 @@ exports[`Pagination should display the correct last page based on items length
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -10393,7 +10393,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -10421,7 +10421,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
 .c10 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -11000,7 +11000,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -11028,7 +11028,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 .c10 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -11565,7 +11565,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -11593,7 +11593,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 .c10 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -12262,7 +12262,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -12290,7 +12290,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
 .c11 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -12908,7 +12908,7 @@ exports[`Pagination should set page to last page if page prop > total possible
 
 .c5 {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 .c5 > svg {
@@ -12936,7 +12936,7 @@ exports[`Pagination should set page to last page if page prop > total possible
 .c10 {
   font-weight: bold;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 0;
 }
 
 @media only screen and (max-width:768px) {

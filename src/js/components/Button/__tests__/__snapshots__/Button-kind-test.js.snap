@@ -1686,8 +1686,8 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 2em;
+  padding: 6px 18px;
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF0F;
@@ -1757,8 +1757,8 @@ exports[`Button kind button with transparent background 1`] = `
   background-color: #FFFFFF0F;
   color: #FFFFFFE6;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 2em;
+  padding: 6px 18px;
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF0F;
@@ -1829,12 +1829,12 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 2em;
+  padding: 6px 18px;
   font-size: 18px;
   line-height: 24px;
   background-color: #0000000A;
-  color: #000000;
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1898,17 +1898,17 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: #0000000A;
-  color: #444444;
+  color: #6F6F6F;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 2em;
+  padding: 6px 18px;
   font-size: 18px;
   line-height: 24px;
   background-color: #0000000A;
-  color: #000000;
+  color: #444444;
   background-color: rgba(0,0,0,0.0392156862745098);
-  color: #000000;
-  color: #000000;
+  color: #444444;
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1965,7 +1965,7 @@ exports[`Button kind button with transparent background 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF;
-  color: #444444;
+  color: #6F6F6F;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2223,10 +2223,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 eePHev"
+    class="StyledButtonKind-sc-1vhfpnt-0 cIEjRi"
     disabled=""
     type="button"
   >
@@ -2923,10 +2923,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 fQzYps"
+    class="StyledButtonKind-sc-1vhfpnt-0 jzNLuF"
     type="button"
   >
     Button
@@ -3029,10 +3029,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 fzchmv"
+    class="StyledButtonKind-sc-1vhfpnt-0 knuNti"
     type="button"
   >
     Button
@@ -4499,18 +4499,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 dgNwrs"
+    class="StyledButtonKind-sc-1vhfpnt-0 HagON"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jLKoGz"
+      class="StyledBox-sc-13pk1d4-0 dGYhTK"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 fhGCWd"
+        class="StyledIcon-sc-ofa7kd-0 eJclys"
         viewBox="0 0 24 24"
       >
         <path
@@ -4521,7 +4521,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrTQpQ"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPClIF"
       />
       label
     </div>

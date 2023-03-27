@@ -126,15 +126,21 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
 
   if (!controlled) return content;
 
+  const tip = format({
+    id: badge
+      ? `dataFilters.openSet.${badge === 1 ? 'singular' : 'plural'}`
+      : 'dataFilters.open',
+    messages: messages?.dataFilters,
+    values: { number: badge },
+  });
+
   let control;
   if (drop) {
     control = (
       <DropButton
         id={`${dataId}--filters-control`}
-        aria-label={format({
-          id: 'dataFilters.open',
-          messages: messages?.dataFilters,
-        })}
+        tip={tip}
+        aria-label={tip}
         kind="toolbar"
         icon={<Filter />}
         hoverIndicator
@@ -150,10 +156,8 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
     control = (
       <Button
         id={`${dataId}--filters-control`}
-        aria-label={format({
-          id: 'dataFilters.open',
-          messages: messages?.dataFilters,
-        })}
+        tip={tip}
+        aria-label={tip}
         kind="toolbar"
         hoverIndicator
         icon={<Filter />}
