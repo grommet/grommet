@@ -127,14 +127,19 @@ export var DataFilters = function DataFilters(_ref) {
     }
   })), content);
   if (!controlled) return content;
+  var tip = format({
+    id: badge ? "dataFilters.openSet." + (badge === 1 ? 'singular' : 'plural') : 'dataFilters.open',
+    messages: messages == null ? void 0 : messages.dataFilters,
+    values: {
+      number: badge
+    }
+  });
   var control;
   if (drop) {
     control = /*#__PURE__*/React.createElement(DropButton, {
       id: dataId + "--filters-control",
-      "aria-label": format({
-        id: 'dataFilters.open',
-        messages: messages == null ? void 0 : messages.dataFilters
-      }),
+      tip: tip,
+      "aria-label": tip,
       kind: "toolbar",
       icon: /*#__PURE__*/React.createElement(Filter, null),
       hoverIndicator: true,
@@ -152,10 +157,8 @@ export var DataFilters = function DataFilters(_ref) {
   } else if (layer) {
     control = /*#__PURE__*/React.createElement(Button, {
       id: dataId + "--filters-control",
-      "aria-label": format({
-        id: 'dataFilters.open',
-        messages: messages == null ? void 0 : messages.dataFilters
-      }),
+      tip: tip,
+      "aria-label": tip,
       kind: "toolbar",
       hoverIndicator: true,
       icon: /*#__PURE__*/React.createElement(Filter, null),
