@@ -174,7 +174,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       if (range && Array.isArray(nextValue)) {
         normalizedValue = nextValue[0];
       } // clicking an edge date removes it
-      else if (range) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue;
+      else if (range && nextValue) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue;
       if (schema) setTextValue(valueToText(normalizedValue, schema));
       setValue(normalizedValue);
       setReference(getReference(nextValue));
