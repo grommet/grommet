@@ -11,6 +11,7 @@ import {
   HoverIndicatorType,
   MarginType,
   Omit,
+  PadType,
   PolymorphicType,
 } from '../../utils';
 
@@ -66,6 +67,7 @@ export interface ButtonProps {
     busy?: string;
     success?: string;
   };
+  pad?: PadType;
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;

@@ -4,6 +4,7 @@ import {
   activeStyle,
   backgroundStyle,
   disabledStyle,
+  edgeStyle,
   focusStyle,
   unfocusStyle,
   genericStyles,
@@ -238,12 +239,16 @@ const StyledButton = styled.button`
     line-height: 0;
   `}
   ${(props) =>
-    props.pad &&
+    props.pad === true &&
     props.hasIcon &&
     !props.hasLabel &&
     `
     padding: ${props.theme.global.edgeSize.small};
   `}
+  ${(props) =>
+    !props.plain &&
+    props.pad &&
+    edgeStyle('padding', props.pad, false, undefined, props.theme)}
   ${(props) => props.theme.button && props.theme.button.extend}
 
   ${(props) =>

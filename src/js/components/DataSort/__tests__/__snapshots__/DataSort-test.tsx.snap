@@ -155,7 +155,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="StyledButton-sc-323bzc-0 jFLFmA"
+  class="StyledButton-sc-323bzc-0 hZNOgI"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
@@ -163,7 +163,7 @@ exports[`DataSort drop 2`] = `
 >
   <svg
     aria-label="Descend"
-    class="StyledIcon-sc-ofa7kd-0 jxjidg"
+    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
     viewBox="0 0 24 24"
   >
     <path
@@ -178,63 +178,63 @@ exports[`DataSort drop 2`] = `
 
 exports[`DataSort drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jkVdVC {
+  .jstWSP {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iPSxqg {
+  .bnAVOh {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .knTyqE {
+  .gnAxhJ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fpBxMF {
+  .gkHEjs {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .fpBxMF {
+  .gkHEjs {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bTCisz {
+  .iuoTxe {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hoZlGF {
+  .bKYcZs {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gsyDnL {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fNTNlK {
+  .biJsVL {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gViPnC {
+  .EuOQj {
     width: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bjyyAC {
+  .idXjQT {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bjyyAC {
+  .idXjQT {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;

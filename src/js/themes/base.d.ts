@@ -164,6 +164,7 @@ interface ButtonKindType {
 
 interface ButtonType {
   badge?: {
+    align?: 'container';
     container?: {
       background?: BackgroundType;
       pad?: PadType;

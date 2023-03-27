@@ -4,6 +4,7 @@ import {
   genericProps,
   colorPropType,
   hoverIndicatorPropType,
+  padPropType,
 } from '../../utils/general-prop-types';
 
 let PropType = {};
@@ -69,6 +70,7 @@ if (process.env.NODE_ENV !== 'production') {
       success: PropTypes.string,
     }),
     onClick: PropTypes.func,
+    pad: padPropType,
     plain: PropTypes.bool,
     primary: PropTypes.bool,
     reverse: PropTypes.bool,
