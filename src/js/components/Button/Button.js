@@ -37,6 +37,10 @@ import {
   StyledBusyContents,
 } from './BusyAnimation';
 
+const RelativeBox = styled(Box)`
+  position: relative;
+`;
+
 // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
 // which we use the term "kind" to refer to,
@@ -452,10 +456,6 @@ const Button = forwardRef(
         animationColor =
           theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
       }
-
-      const RelativeBox = styled(Box)`
-        position: relative;
-      `;
 
       contents = (
         // position relative is necessary to have the animation

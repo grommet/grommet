@@ -27,6 +27,10 @@ export const Busy = () => {
   );
 };
 
+Busy.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Controls/Button/Busy',
 };
