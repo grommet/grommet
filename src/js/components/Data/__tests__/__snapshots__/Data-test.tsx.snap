@@ -586,7 +586,7 @@ exports[`Data controlled search 2`] = `
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 bsJryl"
+          class="StyledButton-sc-323bzc-0 ckELTg"
           id="data--filters-control"
           type="button"
         >
@@ -5710,7 +5710,7 @@ exports[`Data uncontrolled search 2`] = `
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 bsJryl"
+          class="StyledButton-sc-323bzc-0 ckELTg"
           id="data--filters-control"
           type="button"
         >

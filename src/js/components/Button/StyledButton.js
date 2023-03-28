@@ -200,7 +200,13 @@ const StyledButton = styled.button`
   ${(props) => !props.plain && basicStyle(props)}
   ${(props) => props.primary && primaryStyle(props)}
 
-  ${(props) => !props.disabled && !props.selected && !props.focus && hoverStyle}
+  ${(props) =>
+    !props.disabled &&
+    !props.selected &&
+    !props.focus &&
+    !props.busy &&
+    !props.success &&
+    hoverStyle}
 
   ${(props) => !props.disabled && props.active && activeButtonStyle(props)}
   ${(props) =>
@@ -244,6 +250,12 @@ const StyledButton = styled.button`
     props.pad &&
     edgeStyle('padding', props.pad, false, undefined, props.theme)}
   ${(props) => props.theme.button && props.theme.button.extend}
+
+  ${(props) =>
+    (props.busy || props.success) &&
+    `
+    cursor: default;
+  `}
 `;
 
 StyledButton.defaultProps = {};
