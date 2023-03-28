@@ -3,10 +3,12 @@
 exports.__esModule = true;
 exports.Button = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
 var _propTypes = require("./propTypes");
+var _AnnounceContext = require("../../contexts/AnnounceContext");
+var _MessageContext = require("../../contexts/MessageContext");
 var _Box = require("../Box");
 var _Tip = require("../Tip");
 var _Badge = require("./Badge");
@@ -14,11 +16,17 @@ var _StyledButton = require("./StyledButton");
 var _StyledButtonKind = require("./StyledButtonKind");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
 var _Skeleton = require("../Skeleton");
-var _excluded = ["active", "align", "aria-label", "badge", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "pad", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "a11yTitle", "as"];
+var _BusyAnimation = require("./BusyAnimation");
+var _excluded = ["active", "align", "aria-label", "badge", "busy", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "messages", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "pad", "plain", "primary", "reverse", "secondary", "selected", "size", "success", "tip", "type", "a11yTitle", "as"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var RelativeBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "Button__RelativeBox",
+  componentId: "sc-zuqsuw-0"
+})(["position:relative;"]);
+
 // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
 // which we use the term "kind" to refer to,
@@ -143,6 +151,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     align = _ref$align === void 0 ? 'center' : _ref$align,
     ariaLabel = _ref['aria-label'],
     badgeProp = _ref.badge,
+    busy = _ref.busy,
     color = _ref.color,
     children = _ref.children,
     disabled = _ref.disabled,
@@ -155,6 +164,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     justify = _ref.justify,
     kindArg = _ref.kind,
     label = _ref.label,
+    messages = _ref.messages,
     _onBlur = _ref.onBlur,
     onClickProp = _ref.onClick,
     _onFocus = _ref.onFocus,
@@ -167,6 +177,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     secondary = _ref.secondary,
     selected = _ref.selected,
     sizeProp = _ref.size,
+    success = _ref.success,
     tip = _ref.tip,
     _ref$type = _ref.type,
     type = _ref$type === void 0 ? 'button' : _ref$type,
@@ -181,6 +192,21 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _useState2 = (0, _react.useState)(false),
     hover = _useState2[0],
     setHover = _useState2[1];
+  var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
+  if (busy && success) {
+    console.warn('Button cannot have both busy and success set to true.');
+  }
+  (0, _react.useEffect)(function () {
+    if (busy) announce(format({
+      id: 'button.busy',
+      messages: messages
+    }));else if (success) announce(format({
+      id: 'button.success',
+      messages: messages
+    }));
+  }, [announce, busy, format, messages, success]);
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
   }
@@ -337,6 +363,38 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       content: badgeProp
     }, contents);
   }
+  if (busy || success) {
+    // match what the label will use
+    var animationColor;
+    if (kind) {
+      if (!plain) {
+        animationColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color, kind);
+      }
+    } else if (primary) {
+      animationColor = theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+    }
+    contents =
+    /*#__PURE__*/
+    // position relative is necessary to have the animation
+    // display over the button content
+    _react["default"].createElement(RelativeBox, {
+      flex: false
+    }, busy && /*#__PURE__*/_react["default"].createElement(_BusyAnimation.EllipsisAnimation, {
+      color: animationColor
+    }), success && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      style: {
+        position: 'absolute'
+      },
+      fill: true,
+      alignContent: "center",
+      justify: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_BusyAnimation.GrowCheckmark, {
+      color: animationColor,
+      "aria-hidden": true
+    })), /*#__PURE__*/_react["default"].createElement(_BusyAnimation.StyledBusyContents, {
+      animating: busy || success
+    }, contents));
+  }
   var styledButtonResult;
   if (kind) {
     styledButtonResult = /*#__PURE__*/_react["default"].createElement(_StyledButtonKind.StyledButtonKind, _extends({}, rest, {
@@ -345,6 +403,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       active: active,
       align: align,
       "aria-label": ariaLabel || a11yTitle,
+      busy: busy,
       badge: badgeProp,
       colorValue: color,
       disabled: disabled,
@@ -358,7 +417,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       href: href,
       kind: kind,
       themePaths: themePaths,
-      onClick: onClick,
+      onClick: !busy && !success && onClick,
       onFocus: function onFocus(event) {
         setFocus(true);
         if (_onFocus) _onFocus(event);
@@ -373,6 +432,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       plain: plain || _react.Children.count(children) > 0,
       primary: primary,
       sizeProp: size,
+      success: success,
       type: !href ? type : undefined
     }), contents);
   } else {
@@ -380,6 +440,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       as: domTag,
       ref: ref,
       "aria-label": ariaLabel || a11yTitle,
+      busy: busy,
       colorValue: color,
       active: active,
       selected: selected,
@@ -393,7 +454,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       href: href,
       kind: kind,
       themePaths: themePaths,
-      onClick: onClick,
+      onClick: !busy && !success && onClick,
       onFocus: function onFocus(event) {
         setFocus(true);
         if (_onFocus) _onFocus(event);
@@ -408,6 +469,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       plain: typeof plain !== 'undefined' ? plain : _react.Children.count(children) > 0 || icon && !label,
       primary: primary,
       sizeProp: size,
+      success: success,
       type: !href ? type : undefined
     }), contents);
   }

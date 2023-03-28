@@ -1,4 +1,8 @@
 {
+  "button": {
+    "busy": "button is in a busy state",
+    "success": "button action succeeded"
+  },
   "calendar": {
     "previousMove": "Moved to {date}",
     "previous": "Go to {date}",

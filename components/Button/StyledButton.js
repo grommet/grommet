@@ -77,14 +77,14 @@ var disabledButtonStyle = function disabledButtonStyle(props) {
 var StyledButton = _styledComponents["default"].button.withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
 }, function (props) {
   return props.primary && primaryStyle(props);
 }, function (props) {
-  return !props.disabled && !props.selected && !props.focus && hoverStyle;
+  return !props.disabled && !props.selected && !props.focus && !props.busy && !props.success && hoverStyle;
 }, function (props) {
   return !props.disabled && props.active && activeButtonStyle(props);
 }, function (props) {
@@ -103,6 +103,8 @@ var StyledButton = _styledComponents["default"].button.withConfig({
   return !props.plain && props.pad && (0, _utils.edgeStyle)('padding', props.pad, false, undefined, props.theme);
 }, function (props) {
   return props.theme.button && props.theme.button.extend;
+}, function (props) {
+  return (props.busy || props.success) && "\n    cursor: default;\n  ";
 });
 exports.StyledButton = StyledButton;
 StyledButton.defaultProps = {};

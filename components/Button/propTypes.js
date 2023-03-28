@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
       max: _propTypes["default"].number,
       value: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].number])
     })]),
+    busy: _propTypes["default"].bool,
     color: _generalPropTypes.colorPropType,
     disabled: _propTypes["default"].bool,
     fill: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['horizontal', 'vertical']), _propTypes["default"].bool]),
@@ -27,6 +28,10 @@ if (process.env.NODE_ENV !== 'production') {
     icon: _propTypes["default"].element,
     justify: _propTypes["default"].oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']),
     label: _propTypes["default"].node,
+    messages: _propTypes["default"].shape({
+      busy: _propTypes["default"].string,
+      success: _propTypes["default"].string
+    }),
     onClick: _propTypes["default"].func,
     pad: _generalPropTypes.padPropType,
     plain: _propTypes["default"].bool,
@@ -34,6 +39,7 @@ if (process.env.NODE_ENV !== 'production') {
     reverse: _propTypes["default"].bool,
     secondary: _propTypes["default"].bool,
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large']), _propTypes["default"].string]),
+    success: _propTypes["default"].bool,
     target: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['_self', '_blank', '_parent', '_top']), _propTypes["default"].string]),
     tip: _propTypes["default"].oneOfType([_propTypes["default"].shape({
       content: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].string]),

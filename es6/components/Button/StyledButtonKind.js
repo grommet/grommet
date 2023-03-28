@@ -77,11 +77,13 @@ var adjustPadStyle = function adjustPadStyle(pad, width) {
 
 // build up CSS from basic to specific based on the supplied sub-object paths
 var kindStyle = function kindStyle(_ref2) {
-  var colorValue = _ref2.colorValue,
+  var busy = _ref2.busy,
+    colorValue = _ref2.colorValue,
     hasIcon = _ref2.hasIcon,
     hasLabel = _ref2.hasLabel,
     kind = _ref2.kind,
     size = _ref2.sizeProp,
+    success = _ref2.success,
     themePaths = _ref2.themePaths,
     theme = _ref2.theme;
   var styles = [];
@@ -128,7 +130,7 @@ var kindStyle = function kindStyle(_ref2) {
         // padding in the hover or hover.kind itself for backward compatibility
         adjPadStyles = adjustPadStyle(pad, obj.border.width);
       }
-      if (partStyles.length > 0) {
+      if (partStyles.length > 0 && !busy && !success) {
         styles.push(css(["&:hover{", " ", "}"], partStyles, adjPadStyles));
       }
     }
@@ -171,7 +173,7 @@ var StyledButtonKind = styled.button.withConfig({
 }).withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.disabled && props.active && activeStyle;
@@ -184,7 +186,7 @@ var StyledButtonKind = styled.button.withConfig({
 }, function (props) {
   return !props.plain && props.align && "\n    text-align: " + props.align + ";\n    ";
 }, function (props) {
-  return !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props);
+  return !props.disabled && props.hoverIndicator && !props.busy && !props.success && hoverIndicatorStyle(props);
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.button.disabled.opacity);
 }, function (props) {
@@ -195,6 +197,8 @@ var StyledButtonKind = styled.button.withConfig({
   return props.fillContainer && fillStyle(props.fillContainer);
 }, function (props) {
   return props.theme.button && props.theme.button.extend;
+}, function (props) {
+  return (props.busy || props.success) && "\n    cursor: default;\n  ";
 });
 StyledButtonKind.defaultProps = {};
 Object.setPrototypeOf(StyledButtonKind.defaultProps, defaultProps);

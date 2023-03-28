@@ -1203,7 +1203,7 @@ exports[`SelectMultiple disabled option 2`] = `
     margin-right: 6px;
   }
 }
-.ezOmYL {
+.dkczdG {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1220,38 +1220,38 @@ exports[`SelectMultiple disabled option 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.ezOmYL:focus {
+.dkczdG:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.ezOmYL:focus > circle,
-.ezOmYL:focus > ellipse,
-.ezOmYL:focus > line,
-.ezOmYL:focus > path,
-.ezOmYL:focus > polygon,
-.ezOmYL:focus > polyline,
-.ezOmYL:focus > rect {
+.dkczdG:focus > circle,
+.dkczdG:focus > ellipse,
+.dkczdG:focus > line,
+.dkczdG:focus > path,
+.dkczdG:focus > polygon,
+.dkczdG:focus > polyline,
+.dkczdG:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.ezOmYL:focus::-moz-focus-inner {
+.dkczdG:focus::-moz-focus-inner {
   border: 0;
 }
-.ezOmYL:focus:not(:focus-visible) {
+.dkczdG:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.ezOmYL:focus:not(:focus-visible) > circle,
-.ezOmYL:focus:not(:focus-visible) > ellipse,
-.ezOmYL:focus:not(:focus-visible) > line,
-.ezOmYL:focus:not(:focus-visible) > path,
-.ezOmYL:focus:not(:focus-visible) > polygon,
-.ezOmYL:focus:not(:focus-visible) > polyline,
-.ezOmYL:focus:not(:focus-visible) > rect {
+.dkczdG:focus:not(:focus-visible) > circle,
+.dkczdG:focus:not(:focus-visible) > ellipse,
+.dkczdG:focus:not(:focus-visible) > line,
+.dkczdG:focus:not(:focus-visible) > path,
+.dkczdG:focus:not(:focus-visible) > polygon,
+.dkczdG:focus:not(:focus-visible) > polyline,
+.dkczdG:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.ezOmYL:focus:not(:focus-visible)::-moz-focus-inner {
+.dkczdG:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 .eWjlvr {
@@ -1894,7 +1894,7 @@ exports[`SelectMultiple limit 2`] = `
     margin-right: 6px;
   }
 }
-.ezOmYL {
+.dkczdG {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1911,38 +1911,38 @@ exports[`SelectMultiple limit 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.ezOmYL:focus {
+.dkczdG:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.ezOmYL:focus > circle,
-.ezOmYL:focus > ellipse,
-.ezOmYL:focus > line,
-.ezOmYL:focus > path,
-.ezOmYL:focus > polygon,
-.ezOmYL:focus > polyline,
-.ezOmYL:focus > rect {
+.dkczdG:focus > circle,
+.dkczdG:focus > ellipse,
+.dkczdG:focus > line,
+.dkczdG:focus > path,
+.dkczdG:focus > polygon,
+.dkczdG:focus > polyline,
+.dkczdG:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.ezOmYL:focus::-moz-focus-inner {
+.dkczdG:focus::-moz-focus-inner {
   border: 0;
 }
-.ezOmYL:focus:not(:focus-visible) {
+.dkczdG:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.ezOmYL:focus:not(:focus-visible) > circle,
-.ezOmYL:focus:not(:focus-visible) > ellipse,
-.ezOmYL:focus:not(:focus-visible) > line,
-.ezOmYL:focus:not(:focus-visible) > path,
-.ezOmYL:focus:not(:focus-visible) > polygon,
-.ezOmYL:focus:not(:focus-visible) > polyline,
-.ezOmYL:focus:not(:focus-visible) > rect {
+.dkczdG:focus:not(:focus-visible) > circle,
+.dkczdG:focus:not(:focus-visible) > ellipse,
+.dkczdG:focus:not(:focus-visible) > line,
+.dkczdG:focus:not(:focus-visible) > path,
+.dkczdG:focus:not(:focus-visible) > polygon,
+.dkczdG:focus:not(:focus-visible) > polyline,
+.dkczdG:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.ezOmYL:focus:not(:focus-visible)::-moz-focus-inner {
+.dkczdG:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 .eWjlvr {
@@ -2855,7 +2855,7 @@ exports[`SelectMultiple select all and clear 2`] = `
     margin-right: 6px;
   }
 }
-.ezOmYL {
+.dkczdG {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2872,38 +2872,38 @@ exports[`SelectMultiple select all and clear 2`] = `
   padding: 0;
   text-align: inherit;
 }
-.ezOmYL:focus {
+.dkczdG:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.ezOmYL:focus > circle,
-.ezOmYL:focus > ellipse,
-.ezOmYL:focus > line,
-.ezOmYL:focus > path,
-.ezOmYL:focus > polygon,
-.ezOmYL:focus > polyline,
-.ezOmYL:focus > rect {
+.dkczdG:focus > circle,
+.dkczdG:focus > ellipse,
+.dkczdG:focus > line,
+.dkczdG:focus > path,
+.dkczdG:focus > polygon,
+.dkczdG:focus > polyline,
+.dkczdG:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.ezOmYL:focus::-moz-focus-inner {
+.dkczdG:focus::-moz-focus-inner {
   border: 0;
 }
-.ezOmYL:focus:not(:focus-visible) {
+.dkczdG:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.ezOmYL:focus:not(:focus-visible) > circle,
-.ezOmYL:focus:not(:focus-visible) > ellipse,
-.ezOmYL:focus:not(:focus-visible) > line,
-.ezOmYL:focus:not(:focus-visible) > path,
-.ezOmYL:focus:not(:focus-visible) > polygon,
-.ezOmYL:focus:not(:focus-visible) > polyline,
-.ezOmYL:focus:not(:focus-visible) > rect {
+.dkczdG:focus:not(:focus-visible) > circle,
+.dkczdG:focus:not(:focus-visible) > ellipse,
+.dkczdG:focus:not(:focus-visible) > line,
+.dkczdG:focus:not(:focus-visible) > path,
+.dkczdG:focus:not(:focus-visible) > polygon,
+.dkczdG:focus:not(:focus-visible) > polyline,
+.dkczdG:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.ezOmYL:focus:not(:focus-visible)::-moz-focus-inner {
+.dkczdG:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 .eWjlvr {
@@ -2917,7 +2917,7 @@ exports[`SelectMultiple select all and clear 3`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open Drop. 0 selected."
-  class="StyledButton-sc-323bzc-0 ezOmYL StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
   data-g-tabindex="0"
   id="test-select__drop"
   tabindex="-1"
@@ -2971,7 +2971,7 @@ exports[`SelectMultiple select all and clear 4`] = `
     margin-right: 6px;
   }
 }
-.ezOmYL {
+.dkczdG {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2988,38 +2988,38 @@ exports[`SelectMultiple select all and clear 4`] = `
   padding: 0;
   text-align: inherit;
 }
-.ezOmYL:focus {
+.dkczdG:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.ezOmYL:focus > circle,
-.ezOmYL:focus > ellipse,
-.ezOmYL:focus > line,
-.ezOmYL:focus > path,
-.ezOmYL:focus > polygon,
-.ezOmYL:focus > polyline,
-.ezOmYL:focus > rect {
+.dkczdG:focus > circle,
+.dkczdG:focus > ellipse,
+.dkczdG:focus > line,
+.dkczdG:focus > path,
+.dkczdG:focus > polygon,
+.dkczdG:focus > polyline,
+.dkczdG:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.ezOmYL:focus::-moz-focus-inner {
+.dkczdG:focus::-moz-focus-inner {
   border: 0;
 }
-.ezOmYL:focus:not(:focus-visible) {
+.dkczdG:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.ezOmYL:focus:not(:focus-visible) > circle,
-.ezOmYL:focus:not(:focus-visible) > ellipse,
-.ezOmYL:focus:not(:focus-visible) > line,
-.ezOmYL:focus:not(:focus-visible) > path,
-.ezOmYL:focus:not(:focus-visible) > polygon,
-.ezOmYL:focus:not(:focus-visible) > polyline,
-.ezOmYL:focus:not(:focus-visible) > rect {
+.dkczdG:focus:not(:focus-visible) > circle,
+.dkczdG:focus:not(:focus-visible) > ellipse,
+.dkczdG:focus:not(:focus-visible) > line,
+.dkczdG:focus:not(:focus-visible) > path,
+.dkczdG:focus:not(:focus-visible) > polygon,
+.dkczdG:focus:not(:focus-visible) > polyline,
+.dkczdG:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.ezOmYL:focus:not(:focus-visible)::-moz-focus-inner {
+.dkczdG:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 .eWjlvr {
@@ -4495,7 +4495,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Open Drop. 0 selected."
-        class="StyledButton-sc-323bzc-0 bqNByo"
+        class="StyledButton-sc-323bzc-0 itsqKV"
         type="button"
       >
         <div
