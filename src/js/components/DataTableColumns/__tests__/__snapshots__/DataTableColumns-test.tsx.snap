@@ -490,7 +490,7 @@ exports[`DataTableColumns remove column 1`] = `
 exports[`DataTableColumns remove column 2`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 eHhrMZ"
+  class="StyledButton-sc-323bzc-0 cJeOQt"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -498,7 +498,7 @@ exports[`DataTableColumns remove column 2`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 bXBQEl"
+    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
     viewBox="0 0 24 24"
   >
     <path
@@ -513,16 +513,16 @@ exports[`DataTableColumns remove column 2`] = `
 
 exports[`DataTableColumns remove column 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gsyDnL {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gViPnC {
+  .EuOQj {
     width: 6px;
   }
 }
-.eHhrMZ {
+.cJeOQt {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -541,47 +541,47 @@ exports[`DataTableColumns remove column 3`] = `
   line-height: 0;
   padding: 12px;
 }
-.eHhrMZ:focus {
+.cJeOQt:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus > circle,
-.eHhrMZ:focus > ellipse,
-.eHhrMZ:focus > line,
-.eHhrMZ:focus > path,
-.eHhrMZ:focus > polygon,
-.eHhrMZ:focus > polyline,
-.eHhrMZ:focus > rect {
+.cJeOQt:focus > circle,
+.cJeOQt:focus > ellipse,
+.cJeOQt:focus > line,
+.cJeOQt:focus > path,
+.cJeOQt:focus > polygon,
+.cJeOQt:focus > polyline,
+.cJeOQt:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus::-moz-focus-inner {
+.cJeOQt:focus::-moz-focus-inner {
   border: 0;
 }
-.eHhrMZ:focus:not(:focus-visible) {
+.cJeOQt:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible) > circle,
-.eHhrMZ:focus:not(:focus-visible) > ellipse,
-.eHhrMZ:focus:not(:focus-visible) > line,
-.eHhrMZ:focus:not(:focus-visible) > path,
-.eHhrMZ:focus:not(:focus-visible) > polygon,
-.eHhrMZ:focus:not(:focus-visible) > polyline,
-.eHhrMZ:focus:not(:focus-visible) > rect {
+.cJeOQt:focus:not(:focus-visible) > circle,
+.cJeOQt:focus:not(:focus-visible) > ellipse,
+.cJeOQt:focus:not(:focus-visible) > line,
+.cJeOQt:focus:not(:focus-visible) > path,
+.cJeOQt:focus:not(:focus-visible) > polygon,
+.cJeOQt:focus:not(:focus-visible) > polyline,
+.cJeOQt:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible)::-moz-focus-inner {
+.cJeOQt:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {
-  .bjyyAC {
+  .idXjQT {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bjyyAC {
+  .idXjQT {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -1723,7 +1723,7 @@ exports[`DataTableColumns search 1`] = `
 exports[`DataTableColumns search 2`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 eHhrMZ"
+  class="StyledButton-sc-323bzc-0 cJeOQt"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -1731,7 +1731,7 @@ exports[`DataTableColumns search 2`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 bXBQEl"
+    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
     viewBox="0 0 24 24"
   >
     <path
@@ -1746,16 +1746,16 @@ exports[`DataTableColumns search 2`] = `
 
 exports[`DataTableColumns search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gsyDnL {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gViPnC {
+  .EuOQj {
     width: 6px;
   }
 }
-.eHhrMZ {
+.cJeOQt {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1774,47 +1774,47 @@ exports[`DataTableColumns search 3`] = `
   line-height: 0;
   padding: 12px;
 }
-.eHhrMZ:focus {
+.cJeOQt:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus > circle,
-.eHhrMZ:focus > ellipse,
-.eHhrMZ:focus > line,
-.eHhrMZ:focus > path,
-.eHhrMZ:focus > polygon,
-.eHhrMZ:focus > polyline,
-.eHhrMZ:focus > rect {
+.cJeOQt:focus > circle,
+.cJeOQt:focus > ellipse,
+.cJeOQt:focus > line,
+.cJeOQt:focus > path,
+.cJeOQt:focus > polygon,
+.cJeOQt:focus > polyline,
+.cJeOQt:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus::-moz-focus-inner {
+.cJeOQt:focus::-moz-focus-inner {
   border: 0;
 }
-.eHhrMZ:focus:not(:focus-visible) {
+.cJeOQt:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible) > circle,
-.eHhrMZ:focus:not(:focus-visible) > ellipse,
-.eHhrMZ:focus:not(:focus-visible) > line,
-.eHhrMZ:focus:not(:focus-visible) > path,
-.eHhrMZ:focus:not(:focus-visible) > polygon,
-.eHhrMZ:focus:not(:focus-visible) > polyline,
-.eHhrMZ:focus:not(:focus-visible) > rect {
+.cJeOQt:focus:not(:focus-visible) > circle,
+.cJeOQt:focus:not(:focus-visible) > ellipse,
+.cJeOQt:focus:not(:focus-visible) > line,
+.cJeOQt:focus:not(:focus-visible) > path,
+.cJeOQt:focus:not(:focus-visible) > polygon,
+.cJeOQt:focus:not(:focus-visible) > polyline,
+.cJeOQt:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible)::-moz-focus-inner {
+.cJeOQt:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {
-  .bjyyAC {
+  .idXjQT {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bjyyAC {
+  .idXjQT {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
@@ -1825,7 +1825,7 @@ exports[`DataTableColumns search 3`] = `
 exports[`DataTableColumns search 4`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 eHhrMZ"
+  class="StyledButton-sc-323bzc-0 cJeOQt"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -1833,7 +1833,7 @@ exports[`DataTableColumns search 4`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 bXBQEl"
+    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
     viewBox="0 0 24 24"
   >
     <path
@@ -1848,16 +1848,16 @@ exports[`DataTableColumns search 4`] = `
 
 exports[`DataTableColumns search 5`] = `
 "@media only screen and (max-width: 768px) {
-  .gsyDnL {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gViPnC {
+  .EuOQj {
     width: 6px;
   }
 }
-.eHhrMZ {
+.cJeOQt {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1876,47 +1876,47 @@ exports[`DataTableColumns search 5`] = `
   line-height: 0;
   padding: 12px;
 }
-.eHhrMZ:focus {
+.cJeOQt:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus > circle,
-.eHhrMZ:focus > ellipse,
-.eHhrMZ:focus > line,
-.eHhrMZ:focus > path,
-.eHhrMZ:focus > polygon,
-.eHhrMZ:focus > polyline,
-.eHhrMZ:focus > rect {
+.cJeOQt:focus > circle,
+.cJeOQt:focus > ellipse,
+.cJeOQt:focus > line,
+.cJeOQt:focus > path,
+.cJeOQt:focus > polygon,
+.cJeOQt:focus > polyline,
+.cJeOQt:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.eHhrMZ:focus::-moz-focus-inner {
+.cJeOQt:focus::-moz-focus-inner {
   border: 0;
 }
-.eHhrMZ:focus:not(:focus-visible) {
+.cJeOQt:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible) > circle,
-.eHhrMZ:focus:not(:focus-visible) > ellipse,
-.eHhrMZ:focus:not(:focus-visible) > line,
-.eHhrMZ:focus:not(:focus-visible) > path,
-.eHhrMZ:focus:not(:focus-visible) > polygon,
-.eHhrMZ:focus:not(:focus-visible) > polyline,
-.eHhrMZ:focus:not(:focus-visible) > rect {
+.cJeOQt:focus:not(:focus-visible) > circle,
+.cJeOQt:focus:not(:focus-visible) > ellipse,
+.cJeOQt:focus:not(:focus-visible) > line,
+.cJeOQt:focus:not(:focus-visible) > path,
+.cJeOQt:focus:not(:focus-visible) > polygon,
+.cJeOQt:focus:not(:focus-visible) > polyline,
+.cJeOQt:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.eHhrMZ:focus:not(:focus-visible)::-moz-focus-inner {
+.cJeOQt:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 @media only screen and (max-width: 768px) {
-  .bjyyAC {
+  .idXjQT {
     margin: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bjyyAC {
+  .idXjQT {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
