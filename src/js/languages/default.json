@@ -1,4 +1,8 @@
 {
+  "button": {
+    "busy": "button is in a busy state",
+    "success": "button action succeeded"
+  },
   "calendar": {
     "previousMove": "Moved to {date}",
     "previous": "Go to {date}",
@@ -18,7 +22,11 @@
   "dataFilters": {
     "clear": "Clear filters",
     "heading": "Filters",
-    "open": "Open filters"
+    "open": "Open filters",
+    "openSet": {
+      "singular": "Open filters, {number} filter applied",
+      "plural": "Open filters, {number} filters applied"
+    }
   },
   "dataForm": {
     "reset": "Undo changes",

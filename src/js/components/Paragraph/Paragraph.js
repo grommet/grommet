@@ -26,9 +26,11 @@ const Paragraph = forwardRef(
         size={size}
         {...rest}
       >
-        <TextContext.Provider value={textContextValue}>
-          {children}
-        </TextContext.Provider>
+        {children !== undefined ? (
+          <TextContext.Provider value={textContextValue}>
+            {children}
+          </TextContext.Provider>
+        ) : undefined}
       </StyledParagraph>
     );
   },

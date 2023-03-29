@@ -327,20 +327,24 @@ exports[`DataSummary renders 1`] = `
         <div
           class="c4"
         >
-          <header
-            class="c5"
+          <div
+            class="c1"
           >
-            <h2
-              class="c6"
+            <header
+              class="c5"
             >
-              Filters
-            </h2>
-          </header>
-          <span
-            class="c7"
-          >
-            2 items
-          </span>
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <span
+              class="c7"
+            >
+              2 items
+            </span>
+          </div>
         </div>
         <footer
           class="c8"

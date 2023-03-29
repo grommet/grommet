@@ -164,6 +164,7 @@ interface ButtonKindType {
 
 interface ButtonType {
   badge?: {
+    align?: 'container';
     container?: {
       background?: BackgroundType;
       pad?: PadType;
@@ -1028,6 +1029,7 @@ export interface ThemeType {
   };
   icon?: {
     extend?: ExtendType;
+    disableScaleDown?: boolean;
     matchSize?: boolean;
     size?: {
       small?: string;

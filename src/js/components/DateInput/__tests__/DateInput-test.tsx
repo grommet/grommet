@@ -88,6 +88,39 @@ describe('DateInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('should handle typing date and clicking date simultaneously', async () => {
+    const user = userEvent.setup();
+
+    const TestComponent = () => {
+      const [value, setValue] = React.useState([]);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy-mm/dd/yyyy"
+            onChange={(event) => {
+              setValue(event.value as any);
+            }}
+            inline
+            value={value}
+          />
+        </Grommet>
+      );
+    };
+
+    render(<TestComponent />);
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '01/01/2022');
+    expect(input).toHaveValue('01/01/2022');
+    const button = screen.queryAllByText('1');
+
+    await user.click(button[0]);
+    expect(input).toHaveValue('');
+  });
+
   test('basic', () => {
     const { container } = render(
       <Grommet>
