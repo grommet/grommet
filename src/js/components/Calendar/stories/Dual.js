@@ -61,6 +61,7 @@ export const Dual = () => {
         )}
       />
       <Calendar
+        activeDate={!date && !dates ? 'end' : undefined}
         animate={false}
         showAdjacentDays={false}
         date={date}
