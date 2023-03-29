@@ -55,7 +55,6 @@ var NameValueList = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: ref,
     columns: columns,
     gap: gap,
-    fill: layout === 'grid',
     margin: "none" // override browser default margin for dl
   }, rest)));
 });

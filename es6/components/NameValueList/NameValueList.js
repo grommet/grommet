@@ -49,7 +49,6 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: ref,
     columns: columns,
     gap: gap,
-    fill: layout === 'grid',
     margin: "none" // override browser default margin for dl
   }, rest)));
 });
