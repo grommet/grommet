@@ -57,7 +57,6 @@ const NameValueList = forwardRef(
           ref={ref}
           columns={columns}
           gap={gap}
-          fill={layout === 'grid'}
           margin="none" // override browser default margin for dl
           {...rest}
         />
