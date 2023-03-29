@@ -134,7 +134,7 @@ const normalizeRange = (value, activeDate) => {
 
 const getReference = (reference, value) => {
   let nextReference;
-  if (value) {
+  if (value && !reference) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
         [nextReference] = value;
@@ -309,9 +309,7 @@ const Calendar = forwardRef(
       getReference(normalizeInput(referenceProp), value),
     );
     useEffect(() => {
-      if (value) {
-        setReference(getReference(normalizeInput(referenceProp), value));
-      }
+      setReference(getReference(normalizeInput(referenceProp), value));
     }, [referenceProp, value]);
 
     const [outputFormat, setOutputFormat] = useState(
