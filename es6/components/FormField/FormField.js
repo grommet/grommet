@@ -1,6 +1,6 @@
 var _excluded = ["error", "info", "message", "type"],
   _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
-  _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate"];
+  _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { Children, cloneElement, forwardRef, useContext, useState, useEffect } from 'react';
@@ -153,6 +153,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     required = _ref3.required,
     style = _ref3.style,
     validate = _ref3.validate,
+    validateOn = _ref3.validateOn,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
@@ -162,7 +163,8 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       info: infoProp,
       name: name,
       required: required,
-      validate: validate
+      validate: validate,
+      validateOn: validateOn
     }),
     error = _formContext$useFormF.error,
     info = _formContext$useFormF.info,

@@ -33,7 +33,8 @@ if (process.env.NODE_ENV !== 'production') {
       // regular expression
       message: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
       status: _propTypes["default"].oneOf(['error', 'info'])
-    }), _propTypes["default"].func]))])
+    }), _propTypes["default"].func]))]),
+    validateOn: _propTypes["default"].oneOf(['blur', 'submit', 'change'])
   };
 }
 var FormFieldPropTypes = PropType;

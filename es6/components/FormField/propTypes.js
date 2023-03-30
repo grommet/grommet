@@ -28,7 +28,8 @@ if (process.env.NODE_ENV !== 'production') {
       // regular expression
       message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       status: PropTypes.oneOf(['error', 'info'])
-    }), PropTypes.func]))])
+    }), PropTypes.func]))]),
+    validateOn: PropTypes.oneOf(['blur', 'submit', 'change'])
   };
 }
 export var FormFieldPropTypes = PropType;

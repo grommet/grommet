@@ -129,11 +129,13 @@ var validateForm = function validateForm(validationRules, formValue, format, mes
     var name = _ref[0],
       _ref$ = _ref[1],
       field = _ref$.field,
-      input = _ref$.input;
+      input = _ref$.input,
+      validateOn = _ref$.validateOn;
     if (!omitValid) {
       nextErrors[name] = undefined;
       nextInfos[name] = undefined;
     }
+    if (!validateOn) return;
     var result;
     if (input) {
       // input() a validation function supplied through useFormInput()
@@ -157,6 +159,9 @@ var validateForm = function validateForm(validationRules, formValue, format, mes
   });
   return [nextErrors, nextInfos];
 };
+var isInstantValidate = function isInstantValidate(validateOn) {
+  return ['blur', 'change'].includes(validateOn);
+};
 var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var children = _ref2.children,
     _ref2$errors = _ref2.errors,
@@ -170,7 +175,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     _onSubmit = _ref2.onSubmit,
     onValidate = _ref2.onValidate,
     _ref2$validate = _ref2.validate,
-    validateOn = _ref2$validate === void 0 ? 'submit' : _ref2$validate,
+    validateOnProp = _ref2$validate === void 0 ? 'submit' : _ref2$validate,
     valueProp = _ref2.value,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
   var formRef = useForwardedRef(ref);
@@ -185,12 +190,15 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var _useState2 = useState(defaultTouched),
     touched = _useState2[0],
     setTouched = _useState2[1];
-  var _useState3 = useState({
+  var _useState3 = useState(validateOnProp),
+    validateOn = _useState3[0],
+    setValidateOn = _useState3[1];
+  var _useState4 = useState({
       errors: errorsProp,
       infos: infosProp
     }),
-    validationResults = _useState3[0],
-    setValidationResults = _useState3[1];
+    validationResults = _useState4[0],
+    setValidationResults = _useState4[1];
   // maintain a copy of validationResults in a ref for useEffects
   // which can't depend on validationResults directly without
   // causing infinite renders.
@@ -198,16 +206,16 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   // Simulated onMount state. Consider Form to be mounted once it has
   // accounted for values originating from controlled inputs (available
   // at second rendering).
-  var _useState4 = useState('unmounted'),
-    mounted = _useState4[0],
-    setMounted = _useState4[1];
+  var _useState5 = useState('unmounted'),
+    mounted = _useState5[0],
+    setMounted = _useState5[1];
   useEffect(function () {
     if (!mounted) setMounted('mounting');else if (mounted === 'mounting') setMounted('mounted');
   }, [mounted]);
   // `pendingValidation` is the name of the FormField awaiting validation.
-  var _useState5 = useState(undefined),
-    pendingValidation = _useState5[0],
-    setPendingValidation = _useState5[1];
+  var _useState6 = useState(undefined),
+    pendingValidation = _useState6[0],
+    setPendingValidation = _useState6[1];
   var validationRulesRef = useRef({});
   var requiredFields = useRef([]);
   var analyticsRef = useRef({
@@ -279,16 +287,20 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var validationRules = Object.entries(validationRulesRef.current);
     // Use simulated onMount state to account for values provided by
     // controlled inputs.
-    if (mounted !== 'mounted' && ['blur', 'change'].includes(validateOn) && Object.keys(value).length > 0 && Object.keys(touched).length === 0) {
-      applyValidationRules(validationRules.filter(function (_ref3) {
-        var n = _ref3[0];
-        return value[n];
+    if (mounted !== 'mounted' && (isInstantValidate(validateOn) || validationRules.some(function (_ref3) {
+      var v = _ref3[1];
+      return isInstantValidate(v.validateOn);
+    })) && Object.keys(value).length > 0 && Object.keys(touched).length === 0) {
+      applyValidationRules(validationRules.filter(function (_ref4) {
+        var n = _ref4[0],
+          v = _ref4[1];
+        return getFieldValue(n, value) && v.validateOn;
       })
       // Exlude empty arrays which may be initial values in
       // an input such as DateInput.
-      .filter(function (_ref4) {
-        var n = _ref4[0];
-        return !(Array.isArray(value[n]) && value[n].length === 0);
+      .filter(function (_ref5) {
+        var n = _ref5[0];
+        return !(Array.isArray(getFieldValue(n, value)) && getFieldValue(n, value).length === 0);
       }));
     }
   }, [applyValidationRules, mounted, touched, validateOn, value]);
@@ -298,10 +310,14 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   useEffect(function () {
     var validationRules = Object.entries(validationRulesRef.current);
     var timer = setTimeout(function () {
-      if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
-        applyValidationRules(validationRules.filter(function (_ref5) {
-          var n = _ref5[0];
-          return touched[n] || pendingValidation.includes(n);
+      if (pendingValidation && (isInstantValidate(validateOn) || validationRules.some(function (_ref6) {
+        var v = _ref6[1];
+        return isInstantValidate(v.validateOn);
+      }))) {
+        applyValidationRules(validationRules.filter(function (_ref7) {
+          var n = _ref7[0],
+            v = _ref7[1];
+          return (touched[n] || pendingValidation.includes(n)) && v.validateOn;
         }));
         setPendingValidation(undefined);
       }
@@ -323,8 +339,8 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var _validationResultsRef2;
     var validationRules = Object.entries(validationRulesRef.current);
     if ((_validationResultsRef2 = validationResultsRef.current) != null && _validationResultsRef2.errors && Object.keys(validationResultsRef.current.errors).length > 0) {
-      applyValidationRules(validationRules.filter(function (_ref6) {
-        var n = _ref6[0];
+      applyValidationRules(validationRules.filter(function (_ref8) {
+        var n = _ref8[0];
         return touched[n] && validationResultsRef.current.errors[n];
       }));
     }
@@ -384,14 +400,14 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   // they can have access to it.
   //
   var formContextValue = useMemo(function () {
-    var useFormInput = function useFormInput(_ref7) {
-      var name = _ref7.name,
-        componentValue = _ref7.value,
-        initialValue = _ref7.initialValue,
-        validateArg = _ref7.validate;
-      var _useState6 = useState(initialValue),
-        inputValue = _useState6[0],
-        setInputValue = _useState6[1];
+    var useFormInput = function useFormInput(_ref9) {
+      var name = _ref9.name,
+        componentValue = _ref9.value,
+        initialValue = _ref9.initialValue,
+        validateArg = _ref9.validate;
+      var _useState7 = useState(initialValue),
+        inputValue = _useState7[0],
+        setInputValue = _useState7[1];
       var formValue = name ? getFieldValue(name, value) : undefined;
       // for dynamic forms, we need to track when an input has been added to
       // the form value. if the input is unmounted, we will delete its
@@ -483,15 +499,26 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         if (initialValue !== undefined) setInputValue(nextComponentValue);
       }];
     };
-    var useFormField = function useFormField(_ref8) {
-      var errorArg = _ref8.error,
-        infoArg = _ref8.info,
-        name = _ref8.name,
-        required = _ref8.required,
-        disabled = _ref8.disabled,
-        validateArg = _ref8.validate;
+    var useFormField = function useFormField(_ref10) {
+      var errorArg = _ref10.error,
+        infoArg = _ref10.info,
+        name = _ref10.name,
+        required = _ref10.required,
+        disabled = _ref10.disabled,
+        validateArg = _ref10.validate,
+        validateOnArg = _ref10.validateOn;
       var error = disabled ? undefined : errorArg || validationResults.errors[name];
       var info = infoArg || validationResults.infos[name];
+      useEffect(function () {
+        setValidateOn(function (prevValues) {
+          var _extends2;
+          if (typeof prevValues === 'string') {
+            var _ref11;
+            return _ref11 = {}, _ref11[name] = validateOnArg || validateOnProp, _ref11;
+          }
+          return _extends({}, prevValues, (_extends2 = {}, _extends2[name] = validateOnArg || validateOnProp, _extends2));
+        });
+      }, [validateOnArg, name]);
 
       // Create validation rules for field
       useEffect(function () {
@@ -504,8 +531,21 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
             validationRulesRef.current[name] = {};
           }
           validationRulesRef.current[name].field = validateName(validateArg, required);
+
+          // priority is given to validateOn prop on formField, if it is
+          // undefined, then we will use the validate prop value of Form.
+          // The reason we don't want to add validateOn = "submit" here is
+          // because we don't want to trigger validation of "submit" field
+          // when the user is typing in the instant (blur, change)
+          // validation fields.
+          if (validateOnArg && validateOnArg !== 'submit') {
+            validationRulesRef.current[name].validateOn = validateOnArg;
+          } else if (!validateOnArg && validateOnProp !== 'submit') {
+            validationRulesRef.current[name].validateOn = validateOnProp;
+          }
           return function () {
             delete validationRulesRef.current[name].field;
+            delete validationRulesRef.current[name].validateOn;
             var requiredFieldIndex = requiredFields.current.indexOf(name);
             if (requiredFieldIndex !== -1) {
               requiredFields.current.splice(requiredFieldIndex, 1);
@@ -513,15 +553,15 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           };
         }
         return undefined;
-      }, [error, name, required, validateArg, disabled]);
+      }, [error, name, required, validateArg, disabled, validateOnArg]);
       return {
         error: error,
         info: info,
         inForm: true,
-        onBlur: validateOn === 'blur' ? function () {
+        onBlur: validateOnArg === 'blur' || validateOn[name] === 'blur' ? function () {
           return setPendingValidation(pendingValidation ? [].concat(pendingValidation, [name]) : [name]);
         } : undefined,
-        onChange: validateOn === 'change' ? function () {
+        onChange: validateOnArg === 'change' || validateOn[name] === 'change' ? function () {
           return setPendingValidation(pendingValidation ? [].concat(pendingValidation, [name]) : [name]);
         } : undefined
       };
@@ -531,7 +571,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       useFormInput: useFormInput,
       kind: kind
     };
-  }, [onChange, kind, pendingValidation, touched, validateOn, validationResults.errors, validationResults.infos, value, valueProp]);
+  }, [onChange, kind, pendingValidation, touched, validateOn, validationResults.errors, validationResults.infos, value, valueProp, validateOnProp]);
   return /*#__PURE__*/React.createElement("form", _extends({
     ref: formRef
   }, rest, {
@@ -569,7 +609,18 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       // otherwise.
       event.preventDefault();
       setPendingValidation(undefined);
-      var _validateForm2 = validateForm(Object.entries(validationRulesRef.current), value, format, messages, true),
+      // adding validateOn: "submit" prop to the undefined validateOn fields
+      // as we want to trigger "submit" validation once form is submitted
+      var newValidationRulesRef = Object.keys(validationRulesRef.current).reduce(function (acc, key) {
+        acc[key] = validationRulesRef.current[key];
+        if (!acc[key].validateOn) {
+          acc[key] = _extends({}, validationRulesRef.current[key], {
+            validateOn: 'submit'
+          });
+        }
+        return acc;
+      }, {});
+      var _validateForm2 = validateForm(Object.entries(newValidationRulesRef), value, format, messages, true),
         nextErrors = _validateForm2[0],
         nextInfos = _validateForm2[1];
       setValidationResults(function () {
