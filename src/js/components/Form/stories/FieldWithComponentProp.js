@@ -16,7 +16,7 @@ import {
 export const FieldWithComponentProp = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill overflow="auto" align="center" justify="center" pad="large">
+  <Box overflow="auto" align="center" justify="center" pad="large">
     <Box flex={false} width="medium">
       <Form
         onReset={(event) => console.log(event)}
@@ -24,6 +24,8 @@ export const FieldWithComponentProp = () => (
       >
         <FormField
           label="Name"
+          htmlFor="name"
+          id="name"
           name="name"
           required
           validate={[
@@ -39,9 +41,18 @@ export const FieldWithComponentProp = () => (
             },
           ]}
         />
-        <FormField label="Email" name="email" type="email" required />
+        <FormField
+          label="Email"
+          htmlFor="email"
+          id="email"
+          name="email"
+          type="email"
+          required
+        />
         <FormField
           label="Employee ID"
+          htmlFor="employeeId"
+          id="employeeId"
           name="employeeId"
           required
           validate={{ regexp: /^[0-9]{4,6}$/, message: '4-6 digits' }}
@@ -54,23 +65,42 @@ export const FieldWithComponentProp = () => (
         />
         <FormField
           label="Size"
+          htmlFor="size"
+          id="size"
+          aria-label="size"
           name="size"
           component={Select}
           onChange={(event) => console.log(event)}
           options={['small', 'medium', 'large', 'xlarge']}
         />
-        <FormField label="Comments" name="comments" component={TextArea} />
+        <FormField
+          label="Comments"
+          htmlFor="comments"
+          id="comments"
+          name="comments"
+          component={TextArea}
+        />
         <FormField
           label="Age"
+          htmlFor="age"
+          id="age"
           name="age"
           component={RangeInput}
           pad
           min={15}
           max={75}
         />
-        <FormField label="File" name="file" component={FileInput} />
+        <FormField
+          label="File"
+          htmlFor="file"
+          id="file"
+          name="file"
+          component={FileInput}
+        />
         <FormField
           label="Custom"
+          htmlFor="custom"
+          id="custom"
           name="custom"
           component={(props) => <input {...props} />}
         />

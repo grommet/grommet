@@ -9,6 +9,9 @@ export interface GrommetProps {
   dir?: 'rtl';
   full?: boolean | 'min';
   options?: {
+    box?: {
+      cssGap?: boolean;
+    };
     layer?: {
       singleId?: boolean;
     };
@@ -67,7 +70,7 @@ export interface GrommetProps {
   onAnalytics?: (data: any) => void;
   plain?: boolean;
   theme?: ThemeType;
-  themeMode?: 'dark' | 'light';
+  themeMode?: 'dark' | 'light' | 'auto';
   userAgent?: string;
 }
 

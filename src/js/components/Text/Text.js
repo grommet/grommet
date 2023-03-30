@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useMemo, useState } from 'react';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
@@ -6,6 +6,9 @@ import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
 import { useForwardedRef } from '../../utils';
 import { TextPropTypes } from './propTypes';
+import { useSkeleton } from '../Skeleton';
+import { TextSkeleton } from './TextSkeleton';
+import { TextContext } from './TextContext';
 
 const Text = forwardRef(
   (
@@ -20,12 +23,17 @@ const Text = forwardRef(
         tipProp?.content ||
         undefined,
       truncate,
+      size,
+      skeleton: skeletonProp,
       ...rest
     },
     ref,
   ) => {
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
+    const textContextValue = useMemo(() => ({ size }), [size]);
+
+    const skeleton = useSkeleton();
 
     useLayoutEffect(() => {
       const updateTip = () => {
@@ -43,16 +51,33 @@ const Text = forwardRef(
       return () => window.removeEventListener('resize', updateTip);
     }, [textRef, truncate]);
 
+    if (skeleton) {
+      return (
+        <TextSkeleton
+          ref={ref}
+          as={as}
+          size={size}
+          {...skeletonProp}
+          {...rest}
+        />
+      );
+    }
+
     const styledTextResult = (
       <StyledText
         as={!as && tag ? tag : as}
         colorProp={color}
         aria-label={a11yTitle}
         truncate={truncate}
+        size={size}
         {...rest}
         ref={textRef}
       >
-        {children}
+        {children !== undefined ? (
+          <TextContext.Provider value={textContextValue}>
+            {children}
+          </TextContext.Provider>
+        ) : undefined}
       </StyledText>
     );
 

@@ -31,6 +31,7 @@ import {
   getSelectIcon,
   getIconColor,
   getDisplayLabelKey,
+  arrayIncludes,
 } from '../Select/utils';
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -143,8 +144,8 @@ const SelectMultiple = forwardRef(
     }, [optionsProp, search]);
 
     useEffect(() => {
-      if (!search && sortSelectedOnClose) setOrderedOptions(optionsProp);
-    }, [optionsProp, search, sortSelectedOnClose]);
+      if (sortSelectedOnClose) setOrderedOptions(optionsProp);
+    }, [optionsProp, sortSelectedOnClose]);
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
@@ -166,20 +167,24 @@ const SelectMultiple = forwardRef(
       if (onOpen) onOpen();
     }, [onOpen, open]);
 
+    // On drop close if sortSelectedOnClose is true, sort options so that
+    // selected options appear first, followed by unselected options.
     useEffect(() => {
-      if (sortSelectedOnClose && ((open && search) || !open)) {
+      if (sortSelectedOnClose && value && !open) {
         const selectedOptions = optionsProp.filter((option) =>
-          value?.includes(
+          arrayIncludes(
+            value,
             valueKey && valueKey.reduce ? applyKey(option, valueKey) : option,
+            valueKey || labelKey,
           ),
         );
         const unselectedOptions = optionsProp.filter(
-          (i) => !selectedOptions.includes(i),
+          (i) => !arrayIncludes(selectedOptions, i, valueKey || labelKey),
         );
         const nextOrderedOptions = selectedOptions.concat(unselectedOptions);
         setOrderedOptions(nextOrderedOptions);
       }
-    }, [open, sortSelectedOnClose, optionsProp, value, valueKey, search]);
+    }, [labelKey, open, sortSelectedOnClose, optionsProp, value, valueKey]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);
@@ -317,6 +322,20 @@ const SelectMultiple = forwardRef(
 
     const iconColor = getIconColor(theme);
 
+    const displaySelectIcon = SelectIcon && (
+      <Box
+        alignSelf="center"
+        margin={theme.select.icons.margin}
+        width={{ min: 'auto' }}
+      >
+        {isValidElement(SelectIcon) ? (
+          SelectIcon
+        ) : (
+          <SelectIcon color={iconColor} size={size} />
+        )}
+      </Box>
+    );
+
     const dropContent = (
       <SelectMultipleContainer
         allOptions={allOptions}
@@ -325,6 +344,7 @@ const SelectMultiple = forwardRef(
         dropHeight={dropHeight}
         emptySearchMessage={emptySearchMessage}
         help={help}
+        icon={displaySelectIcon}
         id={id}
         labelKey={labelKey}
         limit={limit}
@@ -372,20 +392,6 @@ const SelectMultiple = forwardRef(
       dropContent,
       theme,
     };
-
-    const displaySelectIcon = SelectIcon && (
-      <Box
-        alignSelf="center"
-        margin={theme.select.icons.margin}
-        width={{ min: 'auto' }}
-      >
-        {isValidElement(SelectIcon) ? (
-          SelectIcon
-        ) : (
-          <SelectIcon color={iconColor} size={size} />
-        )}
-      </Box>
-    );
 
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>

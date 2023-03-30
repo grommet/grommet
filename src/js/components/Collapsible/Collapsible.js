@@ -37,7 +37,7 @@ const Collapsible = forwardRef(
       [direction],
     );
     const containerRef = useForwardedRef(ref);
-    const sizeRef = useRef();
+    const sizeRef = useRef(0);
     const shouldOpen = !open && openArg;
     const shouldClose = open && !openArg;
 

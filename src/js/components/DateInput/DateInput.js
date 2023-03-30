@@ -20,13 +20,14 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef } from '../../utils';
+import { useForwardedRef, setHoursWithOffset } from '../../utils';
 import {
   formatToSchema,
   schemaToMask,
   valuesAreEqual,
   valueToText,
   textToValue,
+  validateBounds,
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
@@ -40,13 +41,7 @@ const getReference = (value) => {
   else if (Array.isArray(value) && value.length) [res] = value;
 
   if (res) {
-    adjustedDate = new Date(res);
-    // if time is not specified in ISOstring, normalize to midnight
-    if (res?.indexOf('T') === -1) {
-      const offset = adjustedDate.getTimezoneOffset();
-      const hour = adjustedDate.getHours();
-      adjustedDate.setHours(hour, offset);
-    }
+    adjustedDate = setHoursWithOffset(res);
   }
   return adjustedDate;
 };
@@ -79,7 +74,9 @@ const DateInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
-      (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
+      (theme.icon?.matchSize && rest.size) ||
+      theme.dateInput.icon?.size ||
+      'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
@@ -122,7 +119,7 @@ const DateInput = forwardRef(
     const { icon: MaskedInputIcon, ...restOfInputProps } = inputProps || {};
     if (MaskedInputIcon) {
       console.warn(
-        `Customizing the DateInput icon through inputProps is deprecated. 
+        `Customizing the DateInput icon through inputProps is deprecated.
 Use the icon prop instead.`,
       );
     }
@@ -165,6 +162,11 @@ Use the icon prop instead.`,
       announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
     }, [announce, formatMessage, messages]);
 
+    const dates = useMemo(
+      () => (range && value?.length ? [value] : undefined),
+      [range, value],
+    );
+
     const calendar = (
       <Calendar
         ref={inline ? ref : undefined}
@@ -173,7 +175,7 @@ Use the icon prop instead.`,
         date={range ? undefined : value}
         // when caller initializes with empty array, dates should be undefined
         // allowing the user to select both begin and end of the range
-        dates={range && value.length ? [value] : undefined}
+        dates={dates}
         // places focus on days grid when Calendar opens
         initialFocus={open ? 'days' : undefined}
         onSelect={
@@ -184,7 +186,8 @@ Use the icon prop instead.`,
                 if (range && Array.isArray(nextValue))
                   [normalizedValue] = nextValue;
                 // clicking an edge date removes it
-                else if (range) normalizedValue = [nextValue, nextValue];
+                else if (range && nextValue)
+                  normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
 
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
@@ -193,7 +196,7 @@ Use the icon prop instead.`,
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
-                  setTimeout(() => ref.current.focus(), 1);
+                  setTimeout(() => ref.current?.focus(), 1);
                 }
               }
         }
@@ -249,7 +252,7 @@ Use the icon prop instead.`,
           <Box
             ref={containerRef}
             border={!plain}
-            round="xxsmall"
+            round={theme.dateInput.container.round}
             direction="row"
             fill
           >
@@ -275,14 +278,24 @@ Use the icon prop instead.`,
                   reference,
                   outputFormat,
                 );
-                if (nextValue !== undefined)
-                  setReference(getReference(nextValue));
+
+                const validatedNextValue = validateBounds(
+                  calendarProps?.bounds,
+                  nextValue,
+                );
+
+                if (!validatedNextValue && nextValue) {
+                  setTextValue('');
+                }
+
+                if (validatedNextValue !== undefined)
+                  setReference(getReference(validatedNextValue));
                 // update value even when undefined
-                setValue(nextValue);
+                setValue(validatedNextValue);
                 if (onChange) {
                   event.persist(); // extract from React synthetic event pool
                   const adjustedEvent = event;
-                  adjustedEvent.value = nextValue;
+                  adjustedEvent.value = validatedNextValue;
                   onChange(adjustedEvent);
                 }
               }}

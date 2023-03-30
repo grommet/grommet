@@ -72,4 +72,16 @@ describe('SkipLink', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should automatically filter out undefined children', () => {
+    const showSecondLink = false;
+    const result = render(
+      <SkipLinks>
+        {showSecondLink && <SkipLink id="nav" label="Table of Contents" />}
+        <SkipLink id="main" label="Main Content" />
+      </SkipLinks>,
+    );
+
+    expect(result).toBeDefined();
+  });
 });

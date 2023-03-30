@@ -7,6 +7,33 @@ export const alignPropType = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
+const ANIMATION_TYPE = PropTypes.oneOf([
+  'fadeIn',
+  'fadeOut',
+  'jiggle',
+  'pulse',
+  'rotateLeft',
+  'rotateRight',
+  'slideUp',
+  'slideDown',
+  'slideLeft',
+  'slideRight',
+  'zoomIn',
+  'zoomOut',
+]);
+const ANIMATION_SHAPE = PropTypes.shape({
+  type: ANIMATION_TYPE,
+  delay: PropTypes.number,
+  duration: PropTypes.number,
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+});
+
+export const animationPropType = PropTypes.oneOfType([
+  ANIMATION_TYPE,
+  ANIMATION_SHAPE,
+  PropTypes.arrayOf(PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE])),
+]);
+
 export const colorPropType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({ dark: PropTypes.string, light: PropTypes.string }),
@@ -108,7 +135,7 @@ export const padPropType = PropTypes.oneOfType([
 
 export const genericProps = {
   a11yTitle: a11yTitlePropType,
-  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch', 'baseline']),
   gridArea: PropTypes.string,
   margin: marginProp,
 };
@@ -165,6 +192,27 @@ export const roundPropType = PropTypes.oneOfType([
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
+    ]),
+  }),
+]);
+
+export const skeletonColorsPropType = PropTypes.shape({
+  dark: PropTypes.arrayOf(PropTypes.string),
+  light: PropTypes.arrayOf(PropTypes.string),
+});
+
+export const skeletonPropType = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.shape({
+    animation: animationPropType,
+    colors: skeletonColorsPropType,
+    depth: PropTypes.number,
+    message: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        start: PropTypes.string,
+        end: PropTypes.string,
+      }),
     ]),
   }),
 ]);

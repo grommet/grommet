@@ -24,6 +24,8 @@ import {
   PadType,
   PropsOf,
   AlignContentType,
+  SkeletonColorsType,
+  AlignSelfType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -41,6 +43,7 @@ import {
 } from '../components/Grid';
 import { HeadingProps } from '../components/Heading';
 import { ParagraphProps } from '../components/Paragraph';
+import { SkeletonProps } from '../components/Skeleton/index';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -145,7 +148,9 @@ interface ButtonKindType {
       }
     | boolean;
   color?: ColorType;
+  direction?: DirectionType;
   font?: {
+    size?: string;
     weight?: number | string;
   };
   icon?: React.ReactNode | Icon;
@@ -159,6 +164,7 @@ interface ButtonKindType {
 
 interface ButtonType {
   badge?: {
+    align?: 'container';
     container?: {
       background?: BackgroundType;
       pad?: PadType;
@@ -221,6 +227,9 @@ interface ButtonType {
         vertical?: string;
         horizontal?: string;
       };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
+      };
     };
     medium?: {
       border?: {
@@ -229,6 +238,9 @@ interface ButtonType {
       pad?: {
         vertical?: string;
         horizontal?: string;
+      };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
       };
     };
     large?: {
@@ -239,8 +251,12 @@ interface ButtonType {
         vertical?: string;
         horizontal?: string;
       };
+      iconOnly?: {
+        pad?: string | { horizontal?: string; vertical?: string };
+      };
     };
   };
+  skeleton?: SkeletonProps;
   style?: Partial<CSSStyleDeclaration>;
   transition?: {
     timing?: string;
@@ -342,7 +358,7 @@ export interface ThemeType {
       intelligentMargin?: boolean;
       margin?: MarginType;
       shadowSize?: string;
-      zIndex?: string;
+      zIndex?: number | string;
     };
     edgeSize?: {
       none?: string;
@@ -477,6 +493,20 @@ export interface ThemeType {
       textDecoration?: string;
     };
     textDecoration?: string;
+    size?: {
+      medium?: {
+        color?: ColorType;
+        fontWeight?: number;
+        textDecoration?: string;
+      };
+      [x: string]:
+        | {
+            color?: ColorType;
+            fontWeight?: number;
+            textDecoration?: string;
+          }
+        | undefined;
+    };
   };
   avatar?: {
     size?: {
@@ -512,18 +542,21 @@ export interface ThemeType {
     };
     extend?: ExtendType;
     small?: {
+      title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
     };
     medium?: {
+      title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
       slideDuration?: string;
     };
     large?: {
+      title?: TextProps;
       fontSize?: string;
       lineHeight?: number;
       daySize?: string;
@@ -551,6 +584,9 @@ export interface ThemeType {
     header?: BoxProps;
     body?: BoxProps;
     footer?: BoxProps;
+  };
+  cards?: {
+    container?: BoxProps;
   };
   carousel?: {
     animation?: {
@@ -595,6 +631,7 @@ export interface ThemeType {
       background?: {
         color?: ColorType;
       };
+      extend?: ExtendType;
     };
     icon?: {
       size?: string;
@@ -663,6 +700,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dateInput?: {
+    container?: {
+      round?: RoundType;
+    };
     icon?: {
       size?: string;
     };
@@ -984,10 +1024,13 @@ export interface ThemeType {
       };
     };
     responsiveBreakpoint?: string;
+    skeleton?: SkeletonProps;
     weight?: number;
   };
   icon?: {
     extend?: ExtendType;
+    disableScaleDown?: boolean;
+    matchSize?: boolean;
     size?: {
       small?: string;
       medium?: string;
@@ -1010,6 +1053,7 @@ export interface ThemeType {
     extend?: ExtendType;
     overlay?: {
       background?: BackgroundType;
+      backdropFilter?: string;
     };
     responsiveBreakpoint?: string;
     zIndex?: string;
@@ -1402,6 +1446,7 @@ export interface ThemeType {
   selectMultiple?: {
     maxInline?: number;
   };
+  skeleton?: BoxProps & { colors?: SkeletonColorsType };
   skipLinks?: {
     position?: LayerPositionType;
     container?: BoxProps;
@@ -1419,6 +1464,17 @@ export interface ThemeType {
       medium?: string;
       large?: string;
       xlarge?: string;
+    };
+  };
+  starRating?: {
+    color?: ColorType;
+  };
+  thumbsRating?: {
+    dislike?: {
+      color?: ColorType;
+    };
+    like?: {
+      color?: ColorType;
     };
   };
   tab?: {
@@ -1460,6 +1516,7 @@ export interface ThemeType {
     extend?: ExtendType;
     gap?: GapType;
     header?: {
+      alignSelf?: AlignSelfType;
       background?: BackgroundType;
       border?: {
         side?: string;
@@ -1610,6 +1667,7 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
+    skeleton?: BoxProps & { colors?: SkeletonColorsType };
   };
   textArea?: {
     extend?: ExtendType;
@@ -1651,7 +1709,7 @@ export interface ThemeType {
     };
     scrubber?: {
       color?: ColorType;
-      interval: number;
+      interval?: number;
       track?: {
         color?: ColorType;
       };

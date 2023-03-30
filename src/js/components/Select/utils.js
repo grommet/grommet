@@ -5,7 +5,7 @@ export const applyKey = (option, key) => {
   if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
-  if (key !== undefined) return option[key];
+  if (key !== undefined && typeof option === 'object') return option[key];
   if (typeof option === 'object' && Object.keys(option))
     return option[Object.keys(option)[0]];
   return option;
@@ -16,6 +16,26 @@ export const getOptionLabel = (index, options, labelKey) =>
 
 export const getOptionValue = (index, options, valueKey) =>
   applyKey(options[index], valueKey);
+
+export const getOptionIndex = (options, i, valueKey) => {
+  if (options) {
+    if (typeof i === 'object')
+      return options.findIndex(
+        (x) => applyKey(x, valueKey) === applyKey(i, valueKey),
+      );
+    return options.indexOf(i);
+  }
+  return undefined;
+};
+
+export const arrayIncludes = (arr, i, valueKey) => {
+  if (arr) {
+    if (typeof i === 'object')
+      return arr.some((x) => applyKey(x, valueKey) === applyKey(i, valueKey));
+    return arr.includes(i);
+  }
+  return undefined;
+};
 
 export const useDisabled = (disabled, disabledKey, options, valueKey) =>
   useCallback(
@@ -29,7 +49,9 @@ export const useDisabled = (disabled, disabledKey, options, valueKey) =>
           result = disabled.indexOf(index) !== -1;
         } else {
           const optionVal = getOptionValue(index, options, valueKey);
-          result = disabled.indexOf(optionVal) !== -1;
+          result =
+            getOptionIndex(disabled, options[index], valueKey) !== -1 ||
+            getOptionIndex(disabled, optionVal, valueKey) !== -1;
         }
       }
       return result;

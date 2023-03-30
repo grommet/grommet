@@ -217,6 +217,7 @@ const StyledRangeInput = styled.input`
   padding: 0px;
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   background: transparent;
+  margin: 0px;
 
   ${(props) =>
     props.theme.rangeInput.pad &&

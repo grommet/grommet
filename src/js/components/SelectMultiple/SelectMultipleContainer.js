@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-import { FormUp } from 'grommet-icons/icons/FormUp';
 
 import { setFocusWithoutScroll } from '../../utils';
 
@@ -31,6 +30,8 @@ import {
   getOptionLabel,
   getOptionValue,
   useDisabled,
+  getOptionIndex,
+  arrayIncludes,
 } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 
@@ -44,6 +45,7 @@ const SelectMultipleContainer = forwardRef(
       dropHeight,
       emptySearchMessage = 'No matches found',
       help,
+      icon,
       id,
       labelKey,
       limit,
@@ -143,7 +145,11 @@ const SelectMultipleContainer = forwardRef(
       (index) => (event) => {
         if (onChange) {
           const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-          const allOptionsIndex = allOptions.indexOf(options[index]);
+          const allOptionsIndex = getOptionIndex(
+            allOptions,
+            options[index],
+            valueKey || labelKey,
+          );
           const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
           if (valueIndex === -1 && (!limit || value?.length < limit)) {
             nextOptionIndexesInValue.push(allOptionsIndex);
@@ -164,6 +170,7 @@ const SelectMultipleContainer = forwardRef(
         }
       },
       [
+        labelKey,
         limit,
         onChange,
         optionIndexesInValue,
@@ -278,8 +285,10 @@ const SelectMultipleContainer = forwardRef(
             result = disabledProp.indexOf(index) !== -1;
           } else {
             result =
-              disabledProp.indexOf(
+              getOptionIndex(
+                disabledProp,
                 getOptionValue(index, options, valueKey || labelKey),
+                valueKey || labelKey,
               ) !== -1;
           }
         }
@@ -345,15 +354,26 @@ const SelectMultipleContainer = forwardRef(
       />
     );
 
+    let helpContent;
+    if (help) {
+      if (typeof help === 'string')
+        helpContent = (
+          <Box flex={false} pad="xsmall">
+            <Text size="small">{help}</Text>
+          </Box>
+        );
+      else helpContent = <Box flex={false}>{help}</Box>;
+    }
+
     if (showSelectedInline)
       summaryContent = (
         <Box direction="row" justify="between" flex={false}>
           {summaryContent}
-          <Button onClick={onClose} a11yTitle="Close Select">
-            <Box fill alignSelf="start" pad={{ right: 'small', top: 'small' }}>
-              <FormUp />
-            </Box>
-          </Button>
+          <Box>
+            <Button fill="vertical" onClick={onClose} a11yTitle="Close Select">
+              {icon}
+            </Button>
+          </Box>
         </Box>
       );
 
@@ -399,7 +419,7 @@ const SelectMultipleContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
-          <Box flex={false}>{help}</Box>
+          {helpContent}
           <OptionsContainer
             role="listbox"
             tabIndex="0"
@@ -419,10 +439,12 @@ const SelectMultipleContainer = forwardRef(
                 {(option, index, optionRef) => {
                   const optionDisabled = isDisabled(index);
                   const optionSelected = value
-                    ? value.includes(
+                    ? arrayIncludes(
+                        value,
                         valueKey && valueKey.reduce
                           ? applyKey(option, valueKey)
                           : option,
+                        valueKey || labelKey,
                       )
                     : false;
                   const optionActive = activeIndex === index;

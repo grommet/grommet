@@ -21,6 +21,7 @@ exports[`RangeInput onBlur 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -165,6 +166,7 @@ exports[`RangeInput onChange 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -309,6 +311,7 @@ exports[`RangeInput onFocus 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -507,6 +510,7 @@ exports[`RangeInput renders 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -651,6 +655,7 @@ exports[`RangeInput should have no accessibility violations 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -796,6 +801,7 @@ exports[`RangeInput track themed 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -940,6 +946,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -1084,6 +1091,7 @@ exports[`RangeInput with min and max offset 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -1228,6 +1236,7 @@ exports[`RangeInput with multi color 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {
@@ -1373,6 +1382,7 @@ exports[`RangeInput with single color 1`] = `
   padding: 0px;
   cursor: pointer;
   background: transparent;
+  margin: 0px;
 }
 
 .c1::-moz-focus-inner {

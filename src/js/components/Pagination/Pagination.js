@@ -1,6 +1,7 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
@@ -31,22 +32,31 @@ const Pagination = forwardRef(
       onChange,
       page: pageProp,
       size,
-      step = 10,
+      step: stepProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { onView, filteredTotal, view } = useContext(DataContext);
+    const step = stepProp || view?.step || 10;
+    const total = numberItems ?? filteredTotal ?? 0;
+    const page = pageProp || view?.page || 1;
 
     /* Calculate total number pages */
-    const totalPages = Math.ceil(numberItems / step);
+    const totalPages = Math.ceil(total / step);
     const [activePage, setActivePage] = useState(
-      Math.min(pageProp, totalPages) || 1,
+      Math.min(page, totalPages) || 1,
     );
 
+    useEffect(() => setActivePage(page), [page]);
+
     useEffect(() => {
-      setActivePage(pageProp || 1);
-    }, [pageProp]);
+      // if we are getting the step or page from outside the view,
+      // update the Data's view in case it needs to filter.
+      if (onView && (view?.step !== step || view?.page !== page))
+        onView({ ...view, page, step });
+    }, [onView, page, step, view]);
 
     /* Define page indices to display */
     const beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
@@ -110,6 +120,8 @@ const Pagination = forwardRef(
     const handleClick = (event, nextPage) => {
       setActivePage(nextPage);
 
+      if (onView) onView({ ...view, page: nextPage });
+
       if (onChange) {
         event.persist();
         const adjustedEvent = event;
@@ -132,7 +144,7 @@ const Pagination = forwardRef(
       next: {
         // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
         'aria-disabled': activePage === totalPages ? 'true' : undefined,
-        disabled: activePage === totalPages || !numberItems,
+        disabled: activePage === totalPages || !total,
         icon: <NextIcon color={iconColor} />,
         onClick: (event) => {
           const nextPage = activePage + 1;
@@ -142,7 +154,7 @@ const Pagination = forwardRef(
       },
       previous: {
         'aria-disabled': activePage === 1 ? 'true' : undefined,
-        disabled: activePage === 1 || !numberItems,
+        disabled: activePage === 1 || !total,
         icon: <PreviousIcon color={iconColor} />,
         onClick: (event) => {
           const previousPage = activePage - 1;
@@ -184,7 +196,11 @@ const Pagination = forwardRef(
     }));
 
     return (
-      <StyledPaginationContainer {...theme.pagination.container} {...rest}>
+      <StyledPaginationContainer
+        flex={false}
+        {...theme.pagination.container}
+        {...rest}
+      >
         <Nav
           a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
           ref={ref}

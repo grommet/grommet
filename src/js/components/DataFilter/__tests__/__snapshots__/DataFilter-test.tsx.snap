@@ -1,0 +1,3604 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataFilter children 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c14 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c13:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c15 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) > circle,
+.c15:focus:not(:focus-visible) > ellipse,
+.c15:focus:not(:focus-visible) > line,
+.c15:focus:not(:focus-visible) > path,
+.c15:focus:not(:focus-visible) > polygon,
+.c15:focus:not(:focus-visible) > polyline,
+.c15:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c11::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c11::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c11:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c11::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c11::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c11:-moz-placeholder,
+.c11::-moz-placeholder {
+  opacity: 1;
+}
+
+.c10 {
+  position: relative;
+  width: 100%;
+}
+
+.c16 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c1"
+          >
+            <header
+              class="c5"
+            >
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10"
+                >
+                  <input
+                    autocomplete="off"
+                    class="c11"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer
+          class="c12"
+        >
+          <button
+            class="c13"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c14"
+          />
+          <button
+            aria-hidden="true"
+            class="c15 c16"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`DataFilter options 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c16 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c19 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c18:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus > circle,
+.c18:focus > ellipse,
+.c18:focus > line,
+.c18:focus > path,
+.c18:focus > polygon,
+.c18:focus > polyline,
+.c18:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) > circle,
+.c18:focus:not(:focus-visible) > ellipse,
+.c18:focus:not(:focus-visible) > line,
+.c18:focus:not(:focus-visible) > path,
+.c18:focus:not(:focus-visible) > polygon,
+.c18:focus:not(:focus-visible) > polyline,
+.c18:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible) > circle,
+.c20:focus:not(:focus-visible) > ellipse,
+.c20:focus:not(:focus-visible) > line,
+.c20:focus:not(:focus-visible) > path,
+.c20:focus:not(:focus-visible) > polygon,
+.c20:focus:not(:focus-visible) > polyline,
+.c20:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c20:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c14 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c14:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c13 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c21 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c1"
+          >
+            <header
+              class="c5"
+            >
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
+                >
+                  <label
+                    class="c11"
+                    label="aa"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      aa
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="bb"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      bb
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="cc"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      cc
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-enabled"
+              >
+                Enabled
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-enabled"
+                  role="group"
+                >
+                  <label
+                    class="c11"
+                    label="Enabled"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      Enabled
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="Disabled"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      Disabled
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-type.name"
+              >
+                Type
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-type.name"
+                  role="group"
+                >
+                  <label
+                    class="c11"
+                    label="ZZ"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      ZZ
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="YY"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      YY
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer
+          class="c17"
+        >
+          <button
+            class="c18"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c19"
+          />
+          <button
+            aria-hidden="true"
+            class="c20 c21"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`DataFilter range Data 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  background-color: rgba(125,76,219,0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c11 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c19 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c21:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c21:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c21:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c21:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c21:focus:not(:focus-visible) > circle,
+.c21:focus:not(:focus-visible) > ellipse,
+.c21:focus:not(:focus-visible) > line,
+.c21:focus:not(:focus-visible) > path,
+.c21:focus:not(:focus-visible) > polygon,
+.c21:focus:not(:focus-visible) > polyline,
+.c21:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c21:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c23 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c23:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c23:focus > circle,
+.c23:focus > ellipse,
+.c23:focus > line,
+.c23:focus > path,
+.c23:focus > polygon,
+.c23:focus > polyline,
+.c23:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c23:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c23:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c23:focus:not(:focus-visible) > circle,
+.c23:focus:not(:focus-visible) > ellipse,
+.c23:focus:not(:focus-visible) > line,
+.c23:focus:not(:focus-visible) > path,
+.c23:focus:not(:focus-visible) > polygon,
+.c23:focus:not(:focus-visible) > polyline,
+.c23:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c23:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c24 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c18 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c20 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c22 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c1"
+          >
+            <header
+              class="c5"
+            >
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-rating"
+              >
+                Rating
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10"
+                  id="data-rating"
+                >
+                  <span
+                    class="c11"
+                    style="width: 0px;"
+                  >
+                    0
+                  </span>
+                  <div
+                    class="c12 c13"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="c14"
+                      style="flex: 0 0 0px;"
+                    />
+                    <div
+                      class="c15"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Lower Bounds"
+                        aria-valuemax="5"
+                        aria-valuemin="0"
+                        aria-valuenow="0"
+                        class="c16"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c18"
+                      style="flex: 6 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c15"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="5"
+                        aria-valuemin="0"
+                        aria-valuenow="5"
+                        class="c16"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c14"
+                      style="flex: 0 0 0px;"
+                    />
+                  </div>
+                  <span
+                    class="c19"
+                    style="width: 0px;"
+                  >
+                    5
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer
+          class="c20"
+        >
+          <button
+            class="c21"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c22"
+          />
+          <button
+            aria-hidden="true"
+            class="c23 c24"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`DataFilter range prop 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  background-color: rgba(125,76,219,0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c22 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c11 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c19 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c21 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c21:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c21:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c21:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c21:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c21:focus:not(:focus-visible) > circle,
+.c21:focus:not(:focus-visible) > ellipse,
+.c21:focus:not(:focus-visible) > line,
+.c21:focus:not(:focus-visible) > path,
+.c21:focus:not(:focus-visible) > polygon,
+.c21:focus:not(:focus-visible) > polyline,
+.c21:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c21:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c23 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c23:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c23:focus > circle,
+.c23:focus > ellipse,
+.c23:focus > line,
+.c23:focus > path,
+.c23:focus > polygon,
+.c23:focus > polyline,
+.c23:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c23:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c23:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c23:focus:not(:focus-visible) > circle,
+.c23:focus:not(:focus-visible) > ellipse,
+.c23:focus:not(:focus-visible) > line,
+.c23:focus:not(:focus-visible) > path,
+.c23:focus:not(:focus-visible) > polygon,
+.c23:focus:not(:focus-visible) > polyline,
+.c23:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c23:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c24 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c18 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c20 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c22 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c1"
+          >
+            <header
+              class="c5"
+            >
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-rating"
+              >
+                rating
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10"
+                  id="data-rating"
+                >
+                  <span
+                    class="c11"
+                    style="width: 0px;"
+                  >
+                    0
+                  </span>
+                  <div
+                    class="c12 c13"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="c14"
+                      style="flex: 0 0 0px;"
+                    />
+                    <div
+                      class="c15"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Lower Bounds"
+                        aria-valuemax="5"
+                        aria-valuemin="0"
+                        aria-valuenow="0"
+                        class="c16"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c18"
+                      style="flex: 6 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c15"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="5"
+                        aria-valuemin="0"
+                        aria-valuenow="5"
+                        class="c16"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c14"
+                      style="flex: 0 0 0px;"
+                    />
+                  </div>
+                  <span
+                    class="c19"
+                    style="width: 0px;"
+                  >
+                    5
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer
+          class="c20"
+        >
+          <button
+            class="c21"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c22"
+          />
+          <button
+            aria-hidden="true"
+            class="c23 c24"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`DataFilter renders 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  background-color: rgba(125,76,219,0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c16 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c29 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c8 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c26 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c28 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c28:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c28:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c28:focus > circle,
+.c28:focus > ellipse,
+.c28:focus > line,
+.c28:focus > path,
+.c28:focus > polygon,
+.c28:focus > polyline,
+.c28:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c28:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c28:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c28:focus:not(:focus-visible) > circle,
+.c28:focus:not(:focus-visible) > ellipse,
+.c28:focus:not(:focus-visible) > line,
+.c28:focus:not(:focus-visible) > path,
+.c28:focus:not(:focus-visible) > polygon,
+.c28:focus:not(:focus-visible) > polyline,
+.c28:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c28:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c30 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c30:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c30:focus > circle,
+.c30:focus > ellipse,
+.c30:focus > line,
+.c30:focus > path,
+.c30:focus > polygon,
+.c30:focus > polyline,
+.c30:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c30:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c30:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c30:focus:not(:focus-visible) > circle,
+.c30:focus:not(:focus-visible) > ellipse,
+.c30:focus:not(:focus-visible) > line,
+.c30:focus:not(:focus-visible) > path,
+.c30:focus:not(:focus-visible) > polygon,
+.c30:focus:not(:focus-visible) > polyline,
+.c30:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c30:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c11:hover input:not([disabled]) + div,
+.c11:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c14 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c14:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c13 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c20 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c31 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c21 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c25 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c27 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    height: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c29 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c1"
+          >
+            <header
+              class="c5"
+            >
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-name"
+              >
+                name
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-name"
+                  role="group"
+                >
+                  <label
+                    class="c11"
+                    label="aa"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      aa
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="bb"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      bb
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="cc"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      cc
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-enabled"
+              >
+                enabled
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  id="data-enabled"
+                  role="group"
+                >
+                  <label
+                    class="c11"
+                    label="true"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      true
+                    </span>
+                  </label>
+                  <div
+                    class="c16"
+                  />
+                  <label
+                    class="c11"
+                    label="false"
+                  >
+                    <div
+                      class="c12 c13"
+                    >
+                      <input
+                        class="c14"
+                        type="checkbox"
+                      />
+                      <div
+                        class="c15 "
+                      />
+                    </div>
+                    <span>
+                      false
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="c7 "
+            >
+              <label
+                class="c8"
+                for="data-rating"
+              >
+                rating
+              </label>
+              <div
+                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+              >
+                <div
+                  class="c17"
+                  id="data-rating"
+                >
+                  <span
+                    class="c18"
+                    style="width: 0px;"
+                  >
+                    2.0999999999999996
+                  </span>
+                  <div
+                    class="c19 c20"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="c21"
+                      style="flex: 0 0 0px;"
+                    />
+                    <div
+                      class="c22"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Lower Bounds"
+                        aria-valuemax="4.8999999999999995"
+                        aria-valuemin="2.0999999999999996"
+                        aria-valuenow="2.0999999999999996"
+                        class="c23"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c25"
+                      style="flex: 3.8 0 0px; cursor: ew-resize;"
+                    />
+                    <div
+                      class="c22"
+                      style="flex: 0 0 1px;"
+                    >
+                      <div
+                        aria-label="Upper Bounds"
+                        aria-valuemax="4.8999999999999995"
+                        aria-valuemin="2.0999999999999996"
+                        aria-valuenow="4.8999999999999995"
+                        class="c23"
+                        role="slider"
+                        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="c21"
+                      style="flex: 0 0 0px;"
+                    />
+                  </div>
+                  <span
+                    class="c26"
+                    style="width: 0px;"
+                  >
+                    4.8999999999999995
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer
+          class="c27"
+        >
+          <button
+            class="c28"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c29"
+          />
+          <button
+            aria-hidden="true"
+            class="c30 c31"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+  </div>
+</div>
+`;

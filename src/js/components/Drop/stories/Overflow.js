@@ -24,7 +24,7 @@ const OverflowDrop = () => {
     // <Grommet theme={...}>
     <Box fill align="center" justify="center">
       <Box
-        background="dark-3"
+        background="dark-2"
         pad="medium"
         align="center"
         justify="start"
@@ -34,6 +34,7 @@ const OverflowDrop = () => {
       </Box>
       {targetRef.current && (
         <Drop
+          responsive={false}
           overflow="unset"
           align={align}
           target={targetRef.current}

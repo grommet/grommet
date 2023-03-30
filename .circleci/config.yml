@@ -1,10 +1,10 @@
 version: 2.1
-
+orbs:
+  browser-tools: circleci/browser-tools@1.4.1
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: circleci/node:14
-
+    - image: cimg/node:18.13.0-browsers
 jobs:
   checkout:
     <<: *defaults
@@ -46,7 +46,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic test --app-code=9q99in2ygnh --exit-zero-on-changes
+          command: yarn chromatic --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
     steps:
@@ -54,7 +54,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic test --app-code=9q99in2ygnh --exit-zero-on-changes --auto-accept-changes
+          command: yarn chromatic --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     steps:
@@ -75,6 +75,22 @@ jobs:
       - run:
           name: size
           command: yarn test-bundlesize
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run: 
+          name: Start project
+          command: yarn start
+          background: true
+      - run:
+          name: End to end test
+          command: yarn test-e2e-ci
+      - store_test_results:
+          path: /tmp/test-results
   release:
     <<: *defaults
     steps:
@@ -113,6 +129,12 @@ workflows:
             tags:
               only: /.*/
       - jest:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - test:
           requires:
             - checkout
           filters:
