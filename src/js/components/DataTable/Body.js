@@ -78,6 +78,7 @@ const Row = memo(
                 cellProps.pinned.background) ||
               cellProps.background
             }
+            border={cellProps.pinned.border || cellProps.border}
             pinnedOffset={pinnedOffset?._grommetDataTableSelect}
             aria-disabled={isDisabled || !onSelect || undefined}
             column={{
