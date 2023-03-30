@@ -85,13 +85,21 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (focusable) return 0;
     return undefined;
   }, [focusable, tabIndex]);
-  if ((border === 'between' || border && border.side === 'between') && !gap) {
+  if ((border === 'between' || border && border.side === 'between' || Array.isArray(border) && border.find(function (b) {
+    return b.side === 'between';
+  })) && !gap) {
     console.warn('Box must have a gap to use border between');
   }
   var contents = children;
   if (gap && gap !== 'none' && (!(boxOptions != null && boxOptions.cssGap || cssGap) ||
   // need this approach to show border between
-  border === 'between' || (border == null ? void 0 : border.side) === 'between')) {
+  border === 'between' || (border == null ? void 0 : border.side) === 'between' || Array.isArray(border) && border.find(function (b) {
+    return b.side === 'between';
+  }))) {
+    // if border is an array, we need to extract the border between object
+    var styledBoxGapBorder = Array.isArray(border) ? border.find(function (b) {
+      return b.side === 'between';
+    }) : border;
     var boxAs = !as && tag ? tag : as;
     contents = [];
     var firstIndex;
@@ -108,7 +116,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
             gap: gap,
             directionProp: direction,
             responsive: responsive,
-            border: border
+            border: styledBoxGapBorder
           }));
         }
       }
@@ -177,7 +185,9 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     elevationProp: elevation,
     fillProp: fill,
     focus: focus,
-    gap: ((boxOptions == null ? void 0 : boxOptions.cssGap) || cssGap) && gap && gap !== 'none' && border !== 'between' && (border == null ? void 0 : border.side) !== 'between' && gap,
+    gap: ((boxOptions == null ? void 0 : boxOptions.cssGap) || cssGap) && gap && gap !== 'none' && border !== 'between' && (border == null ? void 0 : border.side) !== 'between' && (!Array.isArray(border) || !border.find(function (b) {
+      return b.side === 'between';
+    })) && gap,
     kindProp: kind,
     overflowProp: overflow,
     wrapProp: wrap,

@@ -93,7 +93,21 @@ export var BorderBox = function BorderBox() {
           size: 'large'
         }
       }, /*#__PURE__*/React.createElement(Text, null, "between"), /*#__PURE__*/React.createElement(Text, null, direction));
-    })))
+    })), /*#__PURE__*/React.createElement(Box, {
+      direction: "row",
+      gap: "small",
+      border: [{
+        side: 'between'
+      }, {
+        side: 'top'
+      }, {
+        side: 'right'
+      }, {
+        side: 'bottom'
+      }, {
+        side: 'left'
+      }]
+    }, /*#__PURE__*/React.createElement(Text, null, "Multiple Border"), /*#__PURE__*/React.createElement(Text, null, "With Between")))
     // </Grommet>
   );
 };

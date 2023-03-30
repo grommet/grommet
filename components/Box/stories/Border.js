@@ -98,7 +98,21 @@ var BorderBox = function BorderBox() {
           size: 'large'
         }
       }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "between"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, direction));
-    })))
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      gap: "small",
+      border: [{
+        side: 'between'
+      }, {
+        side: 'top'
+      }, {
+        side: 'right'
+      }, {
+        side: 'bottom'
+      }, {
+        side: 'left'
+      }]
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Multiple Border"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "With Between")))
     // </Grommet>
   );
 };
