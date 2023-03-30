@@ -6,7 +6,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
 import { defaultProps } from '../../default-props';
-import { disabledStyle, parseMetricToNum, useForwardedRef } from '../../utils';
+import { disabledStyle, focusStyle, parseMetricToNum, unfocusStyle, useForwardedRef, useKeyboard } from '../../utils';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -26,7 +26,7 @@ import { formatBytes } from './utils/formatBytes';
 var ContentsBox = styled(Box).withConfig({
   displayName: "FileInput__ContentsBox",
   componentId: "sc-1jzq7im-0"
-})(["cursor:pointer;position:relative;", " ", ";", ";", ";"], function (props) {
+})(["cursor:pointer;position:relative;", " ", ";", ";", ";", ";", ";"], function (props) {
   return props.disabled && disabledStyle();
 }, function (props) {
   return props.theme.fileInput && props.theme.fileInput.extend;
@@ -34,6 +34,10 @@ var ContentsBox = styled(Box).withConfig({
   return props.hover && props.theme.fileInput && props.theme.fileInput.hover && props.theme.fileInput.hover.extend;
 }, function (props) {
   return props.dragOver && props.theme.fileInput && props.theme.fileInput.dragOver && props.theme.fileInput.dragOver.extend;
+}, function (props) {
+  return props.focus && focusStyle();
+}, function (props) {
+  return !props.focus && unfocusStyle();
 });
 var Label = styled(Text).withConfig({
   displayName: "FileInput__Label",
@@ -79,6 +83,9 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _React$useState2 = React.useState(),
     dragOver = _React$useState2[0],
     setDragOver = _React$useState2[1];
+  var _React$useState3 = React.useState(),
+    focus = _React$useState3[0],
+    setFocus = _React$useState3[1];
   var _useState = useState(false),
     showRemoveConfirmation = _useState[0],
     setShowRemoveConfirmation = _useState[1];
@@ -92,6 +99,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var removeRef = useRef();
   var ConfirmRemove = confirmRemove;
   var RemoveIcon = theme.fileInput.icons.remove;
+  var usingKeyboard = useKeyboard();
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
       value: valueProp,
@@ -241,8 +249,54 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseOut: disabled ? undefined : function () {
       return setHover(false);
     },
-    dragOver: dragOver
-  }, (!files.length || files.length > 1) && /*#__PURE__*/React.createElement(Box, {
+    dragOver: dragOver,
+    focus: usingKeyboard && focus
+  }, /*#__PURE__*/React.createElement(StyledFileInput, _extends({
+    ref: inputRef,
+    type: "file",
+    id: id,
+    name: name,
+    maxSize: maxSize,
+    multiple: multiple,
+    disabled: disabled,
+    plain: true,
+    rightOffset: rightOffset
+  }, rest, {
+    onDragOver: function onDragOver() {
+      return setDragOver(true);
+    },
+    onDragLeave: function onDragLeave() {
+      return setDragOver(false);
+    },
+    onChange: function onChange(event) {
+      event.persist();
+      var fileList = event.target.files;
+      var nextFiles = multiple ? [].concat(files) : [];
+      var _loop = function _loop(i) {
+        // avoid duplicates
+        var existing = nextFiles.filter(function (file) {
+          return file.name === fileList[i].name && file.size === fileList[i].size;
+        }).length > 0;
+        if (!existing) {
+          nextFiles.push(fileList[i]);
+        }
+      };
+      for (var i = 0; i < fileList.length; i += 1) {
+        _loop(i);
+      }
+      setFiles(nextFiles);
+      setDragOver(false);
+      if (_onChange) _onChange(event, {
+        files: nextFiles
+      });
+    },
+    onBlur: function onBlur() {
+      return setFocus(false);
+    },
+    onFocus: function onFocus() {
+      return setFocus(true);
+    }
+  })), (!files.length || files.length > 1) && /*#__PURE__*/React.createElement(Box, {
     align: "center",
     fill: "horizontal",
     direction: "row",
@@ -255,7 +309,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onEnter: function onEnter(event) {
       if (controlRef.current === event.target) inputRef.current.click();
     }
-  }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
+  }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button
+  // The focus here is redundant for keyboard users
+  , {
+    tabIndex: -1,
     ref: controlRef,
     kind: theme.fileInput.button,
     label: format({
@@ -266,8 +323,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       inputRef.current.click();
       inputRef.current.focus();
     }
-  }) : /*#__PURE__*/React.createElement(Anchor, {
-    tabIndex: 0,
+  }) : /*#__PURE__*/React.createElement(Anchor
+  // The focus here is redundant for keyboard users
+  , {
+    tabIndex: -1,
     alignSelf: "center",
     ref: controlRef,
     margin: "small",
@@ -315,7 +374,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onEnter: function onEnter(event) {
       if (controlRef.current === event.target) inputRef.current.click();
     }
-  }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
+  }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button
+  // The focus here is redundant for keyboard users
+  , {
+    tabIndex: -1,
     ref: controlRef,
     kind: theme.fileInput.button,
     label: format({
@@ -326,8 +388,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       inputRef.current.click();
       inputRef.current.focus();
     }
-  }) : /*#__PURE__*/React.createElement(Anchor, {
-    tabIndex: 0,
+  }) : /*#__PURE__*/React.createElement(Anchor
+  // The focus here is redundant for keyboard users
+  , {
+    tabIndex: -1,
     alignSelf: "center",
     ref: controlRef,
     margin: "small",
@@ -381,7 +445,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onEnter: function onEnter(event) {
         if (controlRef.current === event.target) inputRef.current.click();
       }
-    }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button, {
+    }, theme.fileInput.button ? /*#__PURE__*/React.createElement(Button
+    // The focus here is redundant for keyboard users
+    , {
+      tabIndex: -1,
       ref: controlRef,
       kind: theme.fileInput.button,
       label: format({
@@ -392,8 +459,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         inputRef.current.click();
         inputRef.current.focus();
       }
-    }) : /*#__PURE__*/React.createElement(Anchor, {
-      tabIndex: 0,
+    }) : /*#__PURE__*/React.createElement(Anchor
+    // The focus here is redundant for keyboard users
+    , {
+      tabIndex: -1,
       ref: controlRef,
       margin: "small",
       onClick: function onClick() {
@@ -405,46 +474,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         messages: messages
       })
     }))));
-  }), /*#__PURE__*/React.createElement(StyledFileInput, _extends({
-    ref: inputRef,
-    type: "file",
-    id: id,
-    name: name,
-    maxSize: maxSize,
-    multiple: multiple,
-    disabled: disabled,
-    plain: true,
-    rightOffset: rightOffset
-  }, rest, {
-    onDragOver: function onDragOver() {
-      return setDragOver(true);
-    },
-    onDragLeave: function onDragLeave() {
-      return setDragOver(false);
-    },
-    onChange: function onChange(event) {
-      event.persist();
-      var fileList = event.target.files;
-      var nextFiles = multiple ? [].concat(files) : [];
-      var _loop = function _loop(i) {
-        // avoid duplicates
-        var existing = nextFiles.filter(function (file) {
-          return file.name === fileList[i].name && file.size === fileList[i].size;
-        }).length > 0;
-        if (!existing) {
-          nextFiles.push(fileList[i]);
-        }
-      };
-      for (var i = 0; i < fileList.length; i += 1) {
-        _loop(i);
-      }
-      setFiles(nextFiles);
-      setDragOver(false);
-      if (_onChange) _onChange(event, {
-        files: nextFiles
-      });
-    }
-  }))), showRemoveConfirmation && /*#__PURE__*/React.createElement(ConfirmRemove, {
+  })), showRemoveConfirmation && /*#__PURE__*/React.createElement(ConfirmRemove, {
     onConfirm: function onConfirm() {
       removeFile(pendingRemoval.index);
       setPendingRemoval(defaultPendingRemoval);
