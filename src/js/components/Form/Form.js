@@ -34,6 +34,24 @@ const stringToArray = (string) => {
   return undefined;
 };
 
+const getValueAt = (valueObject, pathArg) => {
+  if (valueObject === undefined) return undefined;
+  const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
+  if (path.length === 1) return valueObject[path];
+  return getValueAt(valueObject[path.shift()], path);
+};
+
+const setValueAt = (valueObject, pathArg, value) => {
+  const object = valueObject;
+  const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
+  if (path.length === 1) object[path] = value;
+  else {
+    const key = path.shift();
+    if (!object[key]) object[key] = {};
+    setValueAt(object[key], path, value);
+  }
+};
+
 const getFieldValue = (name, value) => {
   const isArrayField = stringToArray(name);
   if (isArrayField) {
@@ -41,7 +59,7 @@ const getFieldValue = (name, value) => {
     const obj = value[arrayName]?.[indexOfArray];
     return arrayObjName ? obj?.[arrayObjName] : obj;
   }
-  return value[name];
+  return getValueAt(value, name);
 };
 
 const setFieldValue = (name, componentValue, prevValue) => {
@@ -58,7 +76,7 @@ const setFieldValue = (name, componentValue, prevValue) => {
       nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
     } else nextValue[arrayName][indexOfArray] = componentValue;
   } else {
-    nextValue[name] = componentValue;
+    setValueAt(nextValue, name, componentValue);
   }
   return nextValue;
 };
@@ -169,6 +187,7 @@ const Form = forwardRef(
       errors: errorsProp = defaultValidationResults.errors,
       infos: infosProp = defaultValidationResults.infos,
       messages,
+      kind,
       onChange,
       onReset,
       onSubmit,
@@ -606,9 +625,10 @@ const Form = forwardRef(
         };
       };
 
-      return { useFormField, useFormInput };
+      return { useFormField, useFormInput, kind };
     }, [
       onChange,
+      kind,
       pendingValidation,
       touched,
       validateOn,

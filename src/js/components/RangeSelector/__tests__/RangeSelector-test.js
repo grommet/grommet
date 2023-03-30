@@ -84,6 +84,17 @@ describe('RangeSelector', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('label', () => {
+    const { container } = render(
+      <Grommet>
+        <RangeSelector label values={[20, 30]} />
+        <RangeSelector label={(value) => `${value}%`} values={[20, 30]} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('opacity', () => {
     const { container } = render(
       <Grommet>

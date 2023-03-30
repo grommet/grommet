@@ -128,7 +128,13 @@ export type AlignContentType =
   | 'start'
   | 'stretch'
   | string;
-export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
+export type AlignSelfType =
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'stretch'
+  | 'baseline'
+  | string;
 export type AnimateType = boolean;
 export interface BackgroundObject {
   color?: ColorType;
@@ -378,11 +384,11 @@ export type SkeletonColorsType = {
   light?: string[];
 };
 
-export type SkeletonType = 
-| boolean
-| {
-  animation?: AnimateType;
-  colors?: SkeletonColorsType;
-  depth?: number;
-  message?: string | { start?: string; end?: string };
-};
+export type SkeletonType =
+  | boolean
+  | {
+      animation?: AnimateType;
+      colors?: SkeletonColorsType;
+      depth?: number;
+      message?: string | { start?: string; end?: string };
+    };

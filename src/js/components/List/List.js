@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
+import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -19,6 +20,8 @@ import {
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 import { ListPropTypes } from './propTypes';
+
+const emptyData = [];
 
 const StyledList = styled.ul`
   list-style: none;
@@ -84,7 +87,7 @@ const StyledContainer = styled(Box)`
 const getValue = (item, index, key) => {
   if (typeof key === 'function') return key(item, index);
   if (typeof item === 'string') return item;
-  if (key !== undefined) return item[key];
+  if (key !== undefined) return item?.[key];
   return undefined;
 };
 
@@ -126,7 +129,7 @@ const List = React.forwardRef(
       background,
       border,
       children,
-      data,
+      data: dataProp,
       defaultItemProps,
       disabled: disabledItems,
       focus,
@@ -150,6 +153,8 @@ const List = React.forwardRef(
   ) => {
     const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
+    const { data: contextData } = useContext(DataContext);
+    const data = dataProp || contextData || emptyData;
 
     // fixes issue where itemKey is undefined when only primaryKey is provided
     const itemKey = defaultItemKey || primaryKey || null;
@@ -473,9 +478,6 @@ const List = React.forwardRef(
                         adjustedEvent.item = item;
                         adjustedEvent.index = index;
                         onClickItem(adjustedEvent);
-                        // put focus on the List container to meet WCAG
-                        // accessibility guidelines that focus remains on `ul`
-                        listRef.current.focus();
                         sendAnalytics({
                           type: 'listItemClick',
                           element: listRef.current,

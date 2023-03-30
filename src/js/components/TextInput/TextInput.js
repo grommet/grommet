@@ -23,6 +23,7 @@ import {
   isNodeBeforeScroll,
   sizeStyle,
   useForwardedRef,
+  useSizedIcon,
 } from '../../utils';
 
 import {
@@ -96,6 +97,7 @@ const TextInput = forwardRef(
       suggestions,
       textAlign,
       value: valueProp,
+      width: widthProp,
       ...rest
     },
     ref,
@@ -440,14 +442,16 @@ const TextInput = forwardRef(
     // otherwise we only listen to onDown on the input element itself,
     // primarily for tests.
 
+    const textInputIcon = useSizedIcon(icon, rest.size, theme);
+
     return (
       <StyledTextInputContainer plain={plain}>
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
-        {icon && (
+        {textInputIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
-            {icon}
+            {textInputIcon}
           </StyledIcon>
         )}
         <Keyboard target={focus ? 'document' : undefined} {...keyboardProps}>
@@ -466,6 +470,7 @@ const TextInput = forwardRef(
             focus={focus}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
+            widthProp={widthProp}
             {...rest}
             {...extraProps}
             {...comboboxProps}

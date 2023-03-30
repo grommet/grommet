@@ -22,7 +22,6 @@ const StyledDataTable = styled(Table)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
-  height: 100%;
   ${genericStyles}
   ${(props) => props.fillProp && fillStyle(props.fillProp)}
   ${(props) =>
@@ -95,7 +94,7 @@ const StyledDataTableBody = styled(TableBody)`
     `
     display: block;
     width: 100%;
-    max-height: ${props.theme.global.size[props.size]};
+    max-height: ${props.theme.global.size[props.size] || props.size};
     overflow: auto;
   `}
 

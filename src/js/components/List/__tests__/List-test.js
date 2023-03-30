@@ -268,6 +268,34 @@ describe('List', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('itemKey function', () => {
+    const onOrder = jest.fn();
+    const TestApp = () => {
+      const [ordered, setOrdered] = useState([
+        { city: 'Fort Collins', state: 'Colorado' },
+        { city: 'Boise', state: 'Idaho' },
+        { city: 'New Orleans', state: 'Louisiana' },
+      ]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            itemKey={(item) => item.state}
+            onOrder={(items) => {
+              onOrder(items);
+              setOrdered(items);
+            }}
+            pinned={['Idaho']}
+          />
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<TestApp />);
+    fireEvent.click(screen.getByRole('button', { name: /Colorado move down/ }));
+    expect(onOrder).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 describe('List events', () => {

@@ -6,7 +6,7 @@ export const DateForm = () => {
   const [value, setValue] = React.useState({ value: '' });
   const onChange = (nextValue) => {
     console.log('onChange iso date:', nextValue);
-    console.log('onChange utc date:', new Date(nextValue));
+    console.log('onChange utc date:', new Date(nextValue.value));
     setValue(nextValue);
   };
   return (

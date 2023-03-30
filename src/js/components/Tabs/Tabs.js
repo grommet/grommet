@@ -325,13 +325,14 @@ const Tabs = forwardRef(
       <StyledTabs
         ref={ref}
         as={Box}
-        role="tablist"
         flex={flex}
         responsive={responsive}
         {...rest}
         background={theme.tabs.background}
       >
         <Box
+          alignSelf={alignControls || theme.tabs.header?.alignSelf}
+          role="tablist"
           flex={false}
           direction={overflow ? 'row' : 'column'}
           {...tabsHeaderStyles}
@@ -360,7 +361,6 @@ const Tabs = forwardRef(
             as={Box}
             direction="row"
             justify={overflow ? 'start' : justify}
-            alignSelf={alignControls}
             flex={!!overflow}
             wrap={false}
             overflow={overflow ? 'hidden' : 'visible'}

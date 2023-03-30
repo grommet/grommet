@@ -128,7 +128,7 @@ describe('Menu', () => {
 
   test('gap between icon and label', () => {
     window.scrollTo = jest.fn();
-    const { container, getByText } = render(
+    const { container } = render(
       <Grommet>
         <Menu
           open
@@ -140,12 +140,6 @@ describe('Menu', () => {
         />
       </Grommet>,
     );
-
-    const firstItem = getByText('Item 1');
-    expect(
-      firstItem.querySelector('div[class^=StyledBox__StyledBoxGap]'),
-    ).toBeInTheDocument();
-
     expect(container).toMatchSnapshot();
   });
 

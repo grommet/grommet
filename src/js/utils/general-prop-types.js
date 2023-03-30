@@ -203,7 +203,7 @@ export const skeletonColorsPropType = PropTypes.shape({
 
 export const skeletonPropType = PropTypes.oneOfType([
   PropTypes.bool,
-  PropTypes.shape({ 
+  PropTypes.shape({
     animation: animationPropType,
     colors: skeletonColorsPropType,
     depth: PropTypes.number,
@@ -211,7 +211,7 @@ export const skeletonPropType = PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.shape({
         start: PropTypes.string,
-        end: PropTypes.end,
+        end: PropTypes.string,
       }),
     ]),
   }),

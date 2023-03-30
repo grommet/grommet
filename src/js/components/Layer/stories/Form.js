@@ -1,23 +1,20 @@
 import React from 'react';
 
-import { Add, Close } from 'grommet-icons';
+import { Add, Close, StatusGood } from 'grommet-icons';
 
 import {
   Box,
   Button,
+  Form,
   FormField,
   Heading,
   Layer,
   Select,
-  TextArea,
   TextInput,
 } from 'grommet';
 
-const suggestions = ['alpha', 'beta'];
-
 export const FormLayer = () => {
   const [open, setOpen] = React.useState(false);
-  const [select, setSelect] = React.useState('');
 
   const onOpen = () => setOpen(true);
 
@@ -36,48 +33,79 @@ export const FormLayer = () => {
           onClickOutside={onClose}
           onEsc={onClose}
         >
-          <Box
-            as="form"
-            fill="vertical"
-            overflow="auto"
-            width="medium"
-            pad="medium"
-            onSubmit={onClose}
-          >
-            <Box flex={false} direction="row" justify="between">
-              <Heading level={2} margin="none">
-                Add
-              </Heading>
-              <Button icon={<Close />} onClick={onClose} />
-            </Box>
-            <Box flex="grow" overflow="auto" pad={{ vertical: 'medium' }}>
-              <FormField label="First">
-                <TextInput suggestions={suggestions} />
+          <Box fill="vertical" overflow="auto" width="medium" pad="medium">
+            <Form
+              validate="blur"
+              onReset={(event) => console.log(event)}
+              onSubmit={({ value }) => console.log('Submit', value)}
+            >
+              <Box flex={false} direction="row" justify="between">
+                <Heading level={2} margin="none">
+                  Add
+                </Heading>
+                <Button icon={<Close />} onClick={onClose} />
+              </Box>
+              <FormField
+                label="Name"
+                aria-label="name"
+                name="name"
+                required
+                validate={[
+                  { regexp: /^[a-z]/i },
+                  (name) => {
+                    if (name && name.length === 1)
+                      return 'must be >1 character';
+                    return undefined;
+                  },
+                  (name) => {
+                    if (name === 'good')
+                      return {
+                        message: (
+                          <Box align="end">
+                            <StatusGood />
+                          </Box>
+                        ),
+                        status: 'info',
+                      };
+                    return undefined;
+                  },
+                ]}
+              />
+
+              <FormField label="Email" name="email" required>
+                <TextInput name="email" aria-label="email" type="email" />
               </FormField>
-              <FormField label="Second">
+
+              <FormField
+                label="Size"
+                name="select-size"
+                htmlFor="select-size__input"
+                required
+                validate={(val) => {
+                  if (val === 'small') {
+                    return {
+                      message: 'Only 10 left in stock!',
+                      status: 'info',
+                    };
+                  }
+                  return undefined;
+                }}
+              >
                 <Select
-                  options={[
-                    'one',
-                    'two',
-                    'three',
-                    'four',
-                    'five',
-                    'six',
-                    'seven',
-                    'eight',
-                  ]}
-                  value={select}
-                  onSearch={() => {}}
-                  onChange={({ option }) => setSelect(option)}
+                  name="select-size"
+                  id="select-size"
+                  options={['small', 'medium', 'large']}
                 />
               </FormField>
-              <FormField label="Third">
-                <TextArea />
-              </FormField>
-            </Box>
-            <Box flex={false} as="footer" align="start">
-              <Button type="submit" label="Submit" onClick={onClose} primary />
-            </Box>
+              <Box flex={false} as="footer" align="start">
+                <Button
+                  type="submit"
+                  label="Submit"
+                  onClick={onClose}
+                  primary
+                />
+              </Box>
+            </Form>
           </Box>
         </Layer>
       )}

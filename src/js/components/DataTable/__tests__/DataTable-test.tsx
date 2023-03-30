@@ -6,9 +6,15 @@ import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { Button } from '../../Button';
 import { Text } from '../../Text';
-import { DataTable } from '..';
+import { DataTable, Sections, SortType } from '..';
+import { BackgroundType, BorderType } from '../../../utils';
 
-const DATA = [];
+interface TestDataItem {
+  a: string;
+  b: number;
+}
+
+const DATA: TestDataItem[] = [];
 for (let i = 0; i < 95; i += 1) {
   DATA.push({ a: `entry-${i}`, b: i });
 }
@@ -275,7 +281,7 @@ describe('DataTable', () => {
 
   test('sort controlled', () => {
     const Test = () => {
-      const [sort, setSort] = React.useState({
+      const [sort, setSort] = React.useState<SortType>({
         property: 'a',
         direction: 'asc',
       });
@@ -416,8 +422,14 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(container.querySelector('[aria-label="Open search by a"]'));
-    const searchInput = container.querySelector('[name="search-a"]');
+    fireEvent.click(
+      container.querySelector(
+        '[aria-label="Open search by a"]',
+      ) as HTMLButtonElement,
+    );
+    const searchInput = container.querySelector(
+      '[name="search-a"]',
+    ) as HTMLInputElement;
     expect(document.activeElement).toBe(searchInput);
     fireEvent.change(searchInput, {
       target: { value: '[' },
@@ -534,8 +546,8 @@ describe('DataTable', () => {
             { a: 'two', b: 2.1 },
             { a: 'two', b: 2.2 },
           ]}
-          rowDetails={(row) => {
-            if (row.b === '1.1') {
+          rowDetails={(row: TestDataItem) => {
+            if (row.b === 1.1) {
               return <Box> {row.a} </Box>;
             }
             return (
@@ -579,7 +591,7 @@ describe('DataTable', () => {
 
   test('groupBy toggle', () => {
     function TestComponent() {
-      const [groupBy, setGroupBy] = React.useState();
+      const [groupBy, setGroupBy] = React.useState<string | undefined>();
       const toggle = () => setGroupBy(groupBy === undefined ? 'a' : undefined);
 
       return (
@@ -653,13 +665,18 @@ describe('DataTable', () => {
   });
 
   test('background', () => {
+    const backgrounds: (
+      | BackgroundType
+      | BackgroundType[]
+      | Sections<BackgroundType | string[], BackgroundType, BackgroundType>
+    )[] = [
+      'accent-1',
+      ['accent-1', 'accent-2'],
+      { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
+    ];
     const { container } = render(
       <Grommet>
-        {[
-          'accent-1',
-          ['accent-1', 'accent-2'],
-          { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
-        ].map((background) => (
+        {backgrounds.map((background) => (
           <DataTable
             key={JSON.stringify(background)}
             columns={[
@@ -679,17 +696,18 @@ describe('DataTable', () => {
   });
 
   test('border', () => {
+    const borders: (BorderType | Sections<BorderType>)[] = [
+      true,
+      'top',
+      { color: 'accent-1', side: 'top', size: 'small' },
+      {
+        header: 'top',
+        body: { color: 'accent-1', side: 'top', size: 'small' },
+      },
+    ];
     const { container } = render(
       <Grommet>
-        {[
-          true,
-          'top',
-          { color: 'accent-1', side: 'top', size: 'small' },
-          {
-            header: 'top',
-            body: { color: 'accent-1', side: 'top', size: 'small' },
-          },
-        ].map((border) => (
+        {borders.map((border) => (
           <DataTable
             key={JSON.stringify(border)}
             columns={[
@@ -912,9 +930,14 @@ describe('DataTable', () => {
   });
 
   test('fill', () => {
+    const fills: (boolean | 'vertical' | 'horizontal')[] = [
+      true,
+      'horizontal',
+      'vertical',
+    ];
     const { container } = render(
       <Grommet>
-        {[true, 'horizontal', 'vertical'].map((fill) => (
+        {fills.map((fill) => (
           <DataTable
             key={JSON.stringify(fill)}
             columns={[
@@ -934,9 +957,10 @@ describe('DataTable', () => {
   });
 
   test('pin', () => {
+    const pins: (boolean | 'header' | 'footer')[] = [true, 'header', 'footer'];
     const { container } = render(
       <Grommet>
-        {[true, 'header', 'footer'].map((pin) => (
+        {pins.map((pin) => (
           <DataTable
             key={JSON.stringify(pin)}
             columns={[
@@ -973,9 +997,11 @@ describe('DataTable', () => {
       },
     };
 
+    const pins: (boolean | 'header' | 'footer')[] = [true, 'header', 'footer'];
+
     const { container } = render(
       <Grommet theme={theme}>
-        {[true, 'header', 'footer'].map((pin) => (
+        {pins.map((pin) => (
           <DataTable
             background={{ pinned: 'red' }}
             key={JSON.stringify(pin)}
@@ -1003,7 +1029,10 @@ describe('DataTable', () => {
           'background-front',
           { color: 'background-back', dark: true },
         ].map((contextBackground) => (
-          <Box key={contextBackground} background={contextBackground}>
+          <Box
+            key={JSON.stringify(contextBackground)}
+            background={contextBackground}
+          >
             <DataTable
               columns={[
                 { property: 'a', header: 'A', footer: 'Total', pin: true },
@@ -1261,8 +1290,8 @@ describe('DataTable', () => {
       </Grommet>,
     );
 
-    const activePage = container.querySelector(
-      `[aria-current="page"]`,
+    const activePage = (
+      container.querySelector(`[aria-current="page"]`) as HTMLButtonElement
     ).innerHTML;
 
     expect(activePage).toEqual(`${desiredPage}`);
@@ -1544,5 +1573,71 @@ describe('DataTable', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should base table body max height on global size', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          size="small"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should base table body max height on css value', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          size="50px"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('rowProps on group header rows', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            {
+              property: 'location',
+              header: 'Location',
+            },
+            {
+              property: 'name',
+              header: <Text>Name with extra</Text>,
+              primary: true,
+            },
+          ]}
+          rowProps={{ 'Fort Collins': { background: 'yellow' } }}
+          data={[
+            { name: 'Bryan', location: 'Fort Collins' },
+            { name: 'Doug', location: 'Fort Collins' },
+            { name: 'Tracy', location: 'San Francisco' },
+          ]}
+          groupBy="location"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

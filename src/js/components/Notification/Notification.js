@@ -169,6 +169,8 @@ const Notification = ({
         message
       );
 
+  const iconDimension = theme.notification?.message?.size || 'medium';
+
   let content = (
     <Box
       {...theme.notification.container}
@@ -186,7 +188,7 @@ const Notification = ({
         avoid nested interactive elements */}
       <Box direction="row" pad={textPad} flex>
         <Box {...theme.notification.iconContainer}>
-          {icon || <StatusIcon color={color} />}
+          {icon || <StatusIcon color={color} height={iconDimension} />}
         </Box>
         <Box {...theme.notification.textContainer}>
           <TextWrapper>
@@ -202,7 +204,13 @@ const Notification = ({
         <Box pad={closeButtonPad}>
           <Box {...theme.notification.textContainer}>
             <Button
-              icon={<CloseIcon color={closeIconColor} />}
+              icon={
+                <CloseIcon
+                  color={closeIconColor}
+                  height={iconDimension}
+                  width={iconDimension}
+                />
+              }
               onClick={close}
               hoverIndicator
               plain

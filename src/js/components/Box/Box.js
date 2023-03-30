@@ -16,6 +16,7 @@ import { StyledBox, StyledBoxGap } from './StyledBox';
 import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 
 const Box = forwardRef(
   (
@@ -24,6 +25,7 @@ const Box = forwardRef(
       background: backgroundProp,
       border,
       children,
+      cssGap, // internal for now
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
@@ -46,6 +48,9 @@ const Box = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    // boxOptions was created to preserve backwards compatibility but
+    // should not be supported in v3
+    const { box: boxOptions } = useContext(OptionsContext);
 
     const skeleton = useSkeleton();
 
@@ -103,7 +108,14 @@ const Box = forwardRef(
     }
 
     let contents = children;
-    if (gap && gap !== 'none') {
+    if (
+      gap &&
+      gap !== 'none' &&
+      (!(boxOptions?.cssGap || cssGap) ||
+        // need this approach to show border between
+        border === 'between' ||
+        border?.side === 'between')
+    ) {
       const boxAs = !as && tag ? tag : as;
       contents = [];
       let firstIndex;
@@ -201,6 +213,14 @@ const Box = forwardRef(
         elevationProp={elevation}
         fillProp={fill}
         focus={focus}
+        gap={
+          (boxOptions?.cssGap || cssGap) &&
+          gap &&
+          gap !== 'none' &&
+          border !== 'between' &&
+          border?.side !== 'between' &&
+          gap
+        }
         kindProp={kind}
         overflowProp={overflow}
         wrapProp={wrap}
