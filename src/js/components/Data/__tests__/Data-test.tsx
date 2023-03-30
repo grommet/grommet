@@ -335,6 +335,24 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('pagination step', () => {
+    const { container } = render(
+      <Grommet>
+        <Data
+          data={[...data].slice(2, 4)}
+          total={data.length}
+          properties={{ name: { label: 'Name' } }}
+          onView={() => {}}
+        >
+          <DataTable />
+          <Pagination step={2} page={2} />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onView', () => {
     const onView = jest.fn();
     const { container } = render(

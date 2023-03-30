@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Data, DataTable, Grid, Toolbar } from 'grommet';
+import { Box, Data, DataTable, Notification, Toolbar } from 'grommet';
 
 import { DataTableColumns } from '../DataTableColumns';
 import { columns, DATA } from '../../DataTable/stories/data';
@@ -14,14 +14,18 @@ const options = columns.map(({ header, property }) => ({
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid pad="large" columns={['large']} justifyContent="center">
+  <Box align="center" justify="start" pad="large" gap="medium">
+    <Notification
+      status="info"
+      message="Data is in 'beta'. The API surface is subject to change."
+    />
     <Data data={DATA} updateOn="change">
       <Toolbar>
         <DataTableColumns drop options={options} />
       </Toolbar>
       <DataTable columns={columns} />
     </Data>
-  </Grid>
+  </Box>
   // </Grommet>
 );
 
@@ -30,5 +34,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Layout/Data/DataTableColumns/Simple',
+  title: 'Data/DataTableColumns/Simple',
 };

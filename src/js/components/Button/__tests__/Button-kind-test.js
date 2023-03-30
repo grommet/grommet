@@ -5,10 +5,12 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Add } from 'grommet-icons';
 
-import { Grommet, Button } from '../..';
+import { hpe } from 'grommet-theme-hpe';
+import { deepMerge } from '../../../utils';
+import { Grommet, Button, Box } from '../..';
 import { buttonKindTheme } from './theme/buttonKindTheme';
 
 describe('Button kind', () => {
@@ -564,6 +566,27 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test(`badge should align to button container if specified in theme`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            badge: {
+              align: 'container',
+            },
+            default: {
+              border: undefined,
+            },
+          },
+        }}
+      >
+        <Button a11yTitle="Button, alert" label="Button" badge={2} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`hoverIndicator with color and background`, () => {
     const { container, getByText } = render(
       <Grommet
@@ -630,6 +653,191 @@ describe('Button kind', () => {
         <Button plain icon={<Add />} />
       </Grommet>,
     );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test(`should apply kind direction`, () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            secondary: {
+              direction: 'column',
+              font: {
+                size: 'xsmall',
+              },
+            },
+          },
+        }}
+      >
+        <Button secondary label="Button" icon={<svg />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('icon only pad should apply when icon but no label', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            size: {
+              small: {
+                pad: {
+                  horizontal: '12px',
+                  vertical: '5px',
+                },
+                iconOnly: {
+                  pad: '5px',
+                },
+              },
+              medium: {
+                pad: {
+                  horizontal: '18px',
+                  vertical: '8px',
+                },
+                iconOnly: {
+                  pad: {
+                    vertical: '8px',
+                    horizontal: '12px',
+                  },
+                },
+              },
+              large: {
+                pad: {
+                  horizontal: '24px',
+                  vertical: '18px',
+                },
+                iconOnly: {
+                  pad: '18px',
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Button icon={<Add />} size="small" />
+        <Button label="Add" size="small" />
+        <Button icon={<Add />} />
+        <Button label="Add" />
+        <Button icon={<Add />} size="large" />
+        <Button label="Add" size="large" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('button with transparent background', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={deepMerge(hpe, {
+          button: {
+            'background-contrast': {
+              background: 'background-contrast',
+              color: 'text-strong',
+            },
+            active: {
+              'background-contrast': {
+                color: 'text-strong',
+              },
+            },
+          },
+        })}
+      >
+        <Box
+          background={{ dark: true, color: 'background' }}
+          pad="large"
+          gap="medium"
+          align="start"
+        >
+          <Button label="Test button" kind="background-contrast" />
+          <Button
+            label="Active Test button"
+            kind="background-contrast"
+            active
+          />
+        </Box>
+        <Box pad="large" gap="medium" align="start">
+          <Button label="Test button" kind="background-contrast" />
+          <Button
+            label="Active Test button"
+            kind="background-contrast"
+            active
+          />
+        </Box>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('match icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+      button: {
+        default: {},
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button size="xsmall" label="Label" icon={<Add />} />
+        <Button size="small" label="Label" icon={<Add />} />
+        <Button label="Label" icon={<Add />} />
+        <Button size="large" label="Label" icon={<Add />} />
+        <Button size="xlarge" label="Label" icon={<Add />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render pad', () => {
+    const theme = {
+      button: {
+        default: {},
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button
+          data-testid="string-pad"
+          label="String pad"
+          icon={<Add />}
+          pad="xlarge"
+        />
+        <Button
+          data-testid="object-pad"
+          label="Object pad"
+          icon={<Add />}
+          pad={{ horizontal: '18px', vertical: '6px' }}
+        />
+        {/* should not render pad on plain button */}
+        <Button data-testid="child-pad" pad="xlarge">
+          <Add />
+        </Button>
+      </Grommet>,
+    );
+
+    const stringPadButton = screen.getByTestId('string-pad');
+    const objectPadButton = screen.getByTestId('object-pad');
+    const childPadButton = screen.getByTestId('child-pad');
+    let style;
+    style = window.getComputedStyle(stringPadButton);
+    expect(style.padding).toBe('96px');
+
+    style = window.getComputedStyle(objectPadButton);
+    expect(style.paddingTop).toBe('6px');
+    expect(style.paddingBottom).toBe('6px');
+    expect(style.paddingLeft).toBe('18px');
+    expect(style.paddingRight).toBe('18px');
+
+    style = window.getComputedStyle(childPadButton);
+    expect(style.padding).toBe('0px');
+
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -191,6 +191,7 @@ const FormField = forwardRef(
       required,
       style,
       validate,
+      validateOn,
       ...rest
     },
     ref,
@@ -204,7 +205,8 @@ const FormField = forwardRef(
       !Array.isArray(validate) &&
       validate !== null;
     // eslint-disable-next-line max-len
-    const isMaxAndThresholdValidation = isObject && 'max' in validate && 'threshold' in validate;
+    const isMaxAndThresholdValidation =
+      isObject && 'max' in validate && 'threshold' in validate;
 
     const getMaxAndThresholdValidation = (value) => {
       const { max, threshold } = validate;
@@ -237,6 +239,7 @@ const FormField = forwardRef(
       validate: isMaxAndThresholdValidation
         ? (value) => getMaxAndThresholdValidation(value)
         : validate,
+      validateOn,
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();

@@ -37,6 +37,7 @@ export interface FormFieldProps {
         max: number;
         threshold: number;
       };
+  validateOn?: 'blur' | 'submit' | 'change';
 }
 
 type inputProps = Omit<

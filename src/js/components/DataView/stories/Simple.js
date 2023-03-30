@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Data } from 'grommet';
+import { Box, Data, DataTable, Notification } from 'grommet';
 
 import { DataView } from '../DataView';
 import { DATA } from '../../DataTable/stories/data';
@@ -8,7 +8,11 @@ import { DATA } from '../../DataTable/stories/data';
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box fill align="center" justify="start" pad="large">
+  <Box align="center" justify="start" pad="large" gap="medium">
+    <Notification
+      status="info"
+      message="Data is in 'beta'. The API surface is subject to change."
+    />
     <Data
       data={DATA}
       views={[
@@ -17,6 +21,7 @@ export const Simple = () => (
       ]}
     >
       <DataView />
+      <DataTable />
     </Data>
   </Box>
   // </Grommet>
@@ -27,5 +32,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Layout/Data/DataView/Simple',
+  title: 'Data/DataView/Simple',
 };

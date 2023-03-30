@@ -101,7 +101,9 @@ const Box = forwardRef(
     }, [focusable, tabIndex]);
 
     if (
-      (border === 'between' || (border && border.side === 'between')) &&
+      (border === 'between' ||
+        (border && border.side === 'between') ||
+        (Array.isArray(border) && border.find((b) => b.side === 'between'))) &&
       !gap
     ) {
       console.warn('Box must have a gap to use border between');
@@ -114,8 +116,13 @@ const Box = forwardRef(
       (!(boxOptions?.cssGap || cssGap) ||
         // need this approach to show border between
         border === 'between' ||
-        border?.side === 'between')
+        border?.side === 'between' ||
+        (Array.isArray(border) && border.find((b) => b.side === 'between')))
     ) {
+      // if border is an array, we need to extract the border between object
+      const styledBoxGapBorder = Array.isArray(border)
+        ? border.find((b) => b.side === 'between')
+        : border;
       const boxAs = !as && tag ? tag : as;
       contents = [];
       let firstIndex;
@@ -132,7 +139,7 @@ const Box = forwardRef(
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
-                border={border}
+                border={styledBoxGapBorder}
               />,
             );
           }
@@ -219,6 +226,8 @@ const Box = forwardRef(
           gap !== 'none' &&
           border !== 'between' &&
           border?.side !== 'between' &&
+          (!Array.isArray(border) ||
+            !border.find((b) => b.side === 'between')) &&
           gap
         }
         kindProp={kind}

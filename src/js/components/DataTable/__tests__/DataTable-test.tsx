@@ -1574,4 +1574,70 @@ describe('DataTable', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should base table body max height on global size', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          size="small"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should base table body max height on css value', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          size="50px"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('rowProps on group header rows', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            {
+              property: 'location',
+              header: 'Location',
+            },
+            {
+              property: 'name',
+              header: <Text>Name with extra</Text>,
+              primary: true,
+            },
+          ]}
+          rowProps={{ 'Fort Collins': { background: 'yellow' } }}
+          data={[
+            { name: 'Bryan', location: 'Fort Collins' },
+            { name: 'Doug', location: 'Fort Collins' },
+            { name: 'Tracy', location: 'San Francisco' },
+          ]}
+          groupBy="location"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

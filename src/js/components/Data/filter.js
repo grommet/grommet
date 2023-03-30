@@ -60,7 +60,10 @@ export const filter = (data, view, properties) => {
           );
 
         // options case
-        if (Array.isArray(filterValue)) return !filterValue.includes(value);
+        if (Array.isArray(filterValue))
+          return Array.isArray(value)
+            ? !value.some((v) => filterValue.includes(v))
+            : !filterValue.includes(value);
 
         // presence case
         if (typeof filterValue === 'boolean') return filterValue === !value;
