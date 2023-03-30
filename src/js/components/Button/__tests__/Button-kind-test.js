@@ -5,7 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Add } from 'grommet-icons';
 
 import { hpe } from 'grommet-theme-hpe';
@@ -566,6 +566,27 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test(`badge should align to button container if specified in theme`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            badge: {
+              align: 'container',
+            },
+            default: {
+              border: undefined,
+            },
+          },
+        }}
+      >
+        <Button a11yTitle="Button, alert" label="Button" badge={2} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`hoverIndicator with color and background`, () => {
     const { container, getByText } = render(
       <Grommet
@@ -651,30 +672,6 @@ describe('Button kind', () => {
         }}
       >
         <Button secondary label="Button" icon={<svg />} />
-      </Grommet>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('button icon size from theme', () => {
-    const { asFragment } = render(
-      <Grommet
-        theme={{
-          button: {
-            default: {},
-            icon: {
-              size: {
-                small: '12px',
-                medium: '18px',
-                large: '28px',
-              },
-            },
-          },
-        }}
-      >
-        <Button icon={<Add />} size="small" />
-        <Button icon={<Add />} />
-        <Button icon={<Add />} size="large" />
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -772,6 +769,75 @@ describe('Button kind', () => {
         </Box>
       </Grommet>,
     );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('match icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+      button: {
+        default: {},
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button size="xsmall" label="Label" icon={<Add />} />
+        <Button size="small" label="Label" icon={<Add />} />
+        <Button label="Label" icon={<Add />} />
+        <Button size="large" label="Label" icon={<Add />} />
+        <Button size="xlarge" label="Label" icon={<Add />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render pad', () => {
+    const theme = {
+      button: {
+        default: {},
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button
+          data-testid="string-pad"
+          label="String pad"
+          icon={<Add />}
+          pad="xlarge"
+        />
+        <Button
+          data-testid="object-pad"
+          label="Object pad"
+          icon={<Add />}
+          pad={{ horizontal: '18px', vertical: '6px' }}
+        />
+        {/* should not render pad on plain button */}
+        <Button data-testid="child-pad" pad="xlarge">
+          <Add />
+        </Button>
+      </Grommet>,
+    );
+
+    const stringPadButton = screen.getByTestId('string-pad');
+    const objectPadButton = screen.getByTestId('object-pad');
+    const childPadButton = screen.getByTestId('child-pad');
+    let style;
+    style = window.getComputedStyle(stringPadButton);
+    expect(style.padding).toBe('96px');
+
+    style = window.getComputedStyle(objectPadButton);
+    expect(style.paddingTop).toBe('6px');
+    expect(style.paddingBottom).toBe('6px');
+    expect(style.paddingLeft).toBe('18px');
+    expect(style.paddingRight).toBe('18px');
+
+    style = window.getComputedStyle(childPadButton);
+    expect(style.padding).toBe('0px');
+
     expect(asFragment()).toMatchSnapshot();
   });
 });

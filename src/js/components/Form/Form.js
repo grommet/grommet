@@ -147,12 +147,12 @@ const validateForm = (
 ) => {
   const nextErrors = {};
   const nextInfos = {};
-  validationRules.forEach(([name, { field, input }]) => {
+  validationRules.forEach(([name, { field, input, validateOn }]) => {
     if (!omitValid) {
       nextErrors[name] = undefined;
       nextInfos[name] = undefined;
     }
-
+    if (!validateOn) return;
     let result;
     if (input) {
       // input() a validation function supplied through useFormInput()
@@ -177,6 +177,9 @@ const validateForm = (
   return [nextErrors, nextInfos];
 };
 
+const isInstantValidate = (validateOn) =>
+  ['blur', 'change'].includes(validateOn);
+
 const Form = forwardRef(
   (
     {
@@ -189,7 +192,7 @@ const Form = forwardRef(
       onReset,
       onSubmit,
       onValidate,
-      validate: validateOn = 'submit',
+      validate: validateOnProp = 'submit',
       value: valueProp,
       ...rest
     },
@@ -203,6 +206,7 @@ const Form = forwardRef(
       [valueProp, valueState],
     );
     const [touched, setTouched] = useState(defaultTouched);
+    const [validateOn, setValidateOn] = useState(validateOnProp);
     const [validationResults, setValidationResults] = useState({
       errors: errorsProp,
       infos: infosProp,
@@ -317,17 +321,22 @@ const Form = forwardRef(
       // controlled inputs.
       if (
         mounted !== 'mounted' &&
-        ['blur', 'change'].includes(validateOn) &&
+        (isInstantValidate(validateOn) ||
+          validationRules.some(([, v]) => isInstantValidate(v.validateOn))) &&
         Object.keys(value).length > 0 &&
         Object.keys(touched).length === 0
       ) {
         applyValidationRules(
           validationRules
-            .filter(([n]) => value[n])
+            .filter(([n, v]) => getFieldValue(n, value) && v.validateOn)
             // Exlude empty arrays which may be initial values in
             // an input such as DateInput.
             .filter(
-              ([n]) => !(Array.isArray(value[n]) && value[n].length === 0),
+              ([n]) =>
+                !(
+                  Array.isArray(getFieldValue(n, value)) &&
+                  getFieldValue(n, value).length === 0
+                ),
             ),
         );
       }
@@ -338,10 +347,15 @@ const Form = forwardRef(
     useEffect(() => {
       const validationRules = Object.entries(validationRulesRef.current);
       const timer = setTimeout(() => {
-        if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
+        if (
+          pendingValidation &&
+          (isInstantValidate(validateOn) ||
+            validationRules.some(([, v]) => isInstantValidate(v.validateOn)))
+        ) {
           applyValidationRules(
             validationRules.filter(
-              ([n]) => touched[n] || pendingValidation.includes(n),
+              ([n, v]) =>
+                (touched[n] || pendingValidation.includes(n)) && v.validateOn,
             ),
           );
           setPendingValidation(undefined);
@@ -534,11 +548,21 @@ const Form = forwardRef(
         required,
         disabled,
         validate: validateArg,
+        validateOn: validateOnArg,
       }) => {
         const error = disabled
           ? undefined
           : errorArg || validationResults.errors[name];
         const info = infoArg || validationResults.infos[name];
+
+        useEffect(() => {
+          setValidateOn((prevValues) => {
+            if (typeof prevValues === 'string') {
+              return { [name]: validateOnArg || validateOnProp };
+            }
+            return { ...prevValues, [name]: validateOnArg || validateOnProp };
+          });
+        }, [validateOnArg, name]);
 
         // Create validation rules for field
         useEffect(() => {
@@ -555,8 +579,21 @@ const Form = forwardRef(
               validateArg,
               required,
             );
+
+            // priority is given to validateOn prop on formField, if it is
+            // undefined, then we will use the validate prop value of Form.
+            // The reason we don't want to add validateOn = "submit" here is
+            // because we don't want to trigger validation of "submit" field
+            // when the user is typing in the instant (blur, change)
+            // validation fields.
+            if (validateOnArg && validateOnArg !== 'submit') {
+              validationRulesRef.current[name].validateOn = validateOnArg;
+            } else if (!validateOnArg && validateOnProp !== 'submit') {
+              validationRulesRef.current[name].validateOn = validateOnProp;
+            }
             return () => {
               delete validationRulesRef.current[name].field;
+              delete validationRulesRef.current[name].validateOn;
               const requiredFieldIndex = requiredFields.current.indexOf(name);
               if (requiredFieldIndex !== -1) {
                 requiredFields.current.splice(requiredFieldIndex, 1);
@@ -565,21 +602,21 @@ const Form = forwardRef(
           }
 
           return undefined;
-        }, [error, name, required, validateArg, disabled]);
+        }, [error, name, required, validateArg, disabled, validateOnArg]);
 
         return {
           error,
           info,
           inForm: true,
           onBlur:
-            validateOn === 'blur'
+            validateOnArg === 'blur' || validateOn[name] === 'blur'
               ? () =>
                   setPendingValidation(
                     pendingValidation ? [...pendingValidation, name] : [name],
                   )
               : undefined,
           onChange:
-            validateOn === 'change'
+            validateOnArg === 'change' || validateOn[name] === 'change'
               ? () =>
                   setPendingValidation(
                     pendingValidation ? [...pendingValidation, name] : [name],
@@ -599,6 +636,7 @@ const Form = forwardRef(
       validationResults.infos,
       value,
       valueProp,
+      validateOnProp,
     ]);
 
     return (
@@ -635,8 +673,23 @@ const Form = forwardRef(
           // otherwise.
           event.preventDefault();
           setPendingValidation(undefined);
+          // adding validateOn: "submit" prop to the undefined validateOn fields
+          // as we want to trigger "submit" validation once form is submitted
+          const newValidationRulesRef = Object.keys(
+            validationRulesRef.current,
+          ).reduce((acc, key) => {
+            acc[key] = validationRulesRef.current[key];
+            if (!acc[key].validateOn) {
+              acc[key] = {
+                ...validationRulesRef.current[key],
+                validateOn: 'submit',
+              };
+            }
+            return acc;
+          }, {});
+
           const [nextErrors, nextInfos] = validateForm(
-            Object.entries(validationRulesRef.current),
+            Object.entries(newValidationRulesRef),
             value,
             format,
             messages,

@@ -45,6 +45,48 @@ const viewFormKeyMap = {
   view: formViewNameKey,
 };
 
+// flatten nested objects. For example: { a: { b: v } } -> { 'a.b': v }
+const flatten = (formValue, options) => {
+  const result = JSON.parse(JSON.stringify(formValue));
+  Object.keys(result).forEach((k) => {
+    let name = k;
+    // flatten one level at a time, ignore _range situations
+    while (
+      typeof result[name] === 'object' &&
+      !Array.isArray(result[name]) &&
+      (options?.full || !result[name][formRangeKey])
+    ) {
+      const subPath = Object.keys(result[name])[0];
+      const path = `${name}.${subPath}`;
+      result[path] = result[name][subPath];
+      delete result[name];
+      name = path;
+    }
+  });
+  return result;
+};
+
+// unflatten nested objects. For example: { 'a.b': v } -> { a: { b: v } }
+const unflatten = (formValue) => {
+  const result = JSON.parse(JSON.stringify(formValue));
+  const specialKeys = Object.values(viewFormKeyMap);
+  Object.keys(result)
+    .filter((k) => !specialKeys.includes(k))
+    .forEach((k) => {
+      const parts = k.split('.');
+      const val = result[k];
+      delete result[k];
+      let parent = result;
+      while (parts.length > 1) {
+        const sub = parts.shift();
+        if (!parent[sub]) parent[sub] = {};
+        parent = parent[sub];
+      }
+      parent[parts.shift()] = val;
+    });
+  return result;
+};
+
 // converts from the external view format to the internal Form value format
 const viewToFormValue = (view) => {
   const result = { ...(view?.properties || {}) };
@@ -69,7 +111,7 @@ const viewToFormValue = (view) => {
   if (view?.name) result[formViewNameKey] = view.name;
   if (view?.columns) result[formColumnsKey] = view.columns;
 
-  return result;
+  return unflatten(result);
 };
 
 // converts from the internal Form value format to the external view format
@@ -91,7 +133,10 @@ const formValueToView = (value, views) => {
     delete valueCopy[viewFormKeyMap[key]];
   });
 
-  result.properties = { ...(result.properties || {}), ...valueCopy };
+  // flatten any nested objects
+  const flatValue = flatten(valueCopy);
+
+  result.properties = { ...(result.properties || {}), ...flatValue };
 
   // convert any ranges
   Object.keys(result.properties).forEach((key) => {
@@ -129,7 +174,7 @@ const transformTouched = (touched, value) => {
     // special case _range fields
     const parts = key.split('.');
     if (parts[1] === formRangeKey) result[key] = value[parts[0]];
-    else result[key] = value[key];
+    else result[key] = flatten(value, { full: true })[key];
   });
   return result;
 };
@@ -146,9 +191,11 @@ const normalizeValue = (nextValue, prevValue, views) => {
       views.find((v) => v.name === nextValue[formViewNameKey]),
     );
   }
+  // something else changed
 
-  // something else changed, clear empty propeties
+  // clear empty properties
   const result = clearEmpty(nextValue);
+
   // if we have a view and something related to it changed, clear the view
   if (result[formViewNameKey]) {
     const view = views.find((v) => v.name === result[formViewNameKey]);
@@ -225,16 +272,12 @@ export const DataForm = ({
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
-  return (
-    <MaxForm
-      {...rest}
-      value={formValue}
-      onSubmit={updateOn === 'submit' ? onSubmit : undefined}
-      onChange={onChange}
-    >
+  let content = children;
+  if (footer !== false || pad) {
+    content = (
       <Box fill="vertical">
         <Box flex overflow="auto" pad={{ horizontal: pad, top: pad }}>
-          {children}
+          <Box flex={false}>{content}</Box>
         </Box>
         {footer !== false && updateOn === 'submit' && (
           <Footer
@@ -263,6 +306,17 @@ export const DataForm = ({
           </Footer>
         )}
       </Box>
+    );
+  }
+
+  return (
+    <MaxForm
+      {...rest}
+      value={formValue}
+      onSubmit={updateOn === 'submit' ? onSubmit : undefined}
+      onChange={onChange}
+    >
+      {content}
     </MaxForm>
   );
 };

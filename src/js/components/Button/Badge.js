@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { parseMetricToNum } from '../../utils';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -13,6 +13,7 @@ const StyledBadgeContainer = styled(Box)`
 
 export const Badge = ({ children, content }) => {
   const theme = useContext(ThemeContext);
+  const containerRef = useRef();
   const contentRef = useRef();
   const stackRef = useRef();
 
@@ -24,11 +25,6 @@ export const Badge = ({ children, content }) => {
         `${parseMetricToNum(theme.button.badge.size.medium) / 2}px`
       : theme.button.badge.size.medium;
 
-  // size should drive height, match width to height by default
-  // allow width to grow when content is wide
-  const [height, setHeight] = useState(defaultBadgeDimension);
-  const [width, setWidth] = useState(height);
-
   // scale badge to fit its contents, leaving space horizontally
   // that is proportional to vertical space
   useLayoutEffect(() => {
@@ -36,35 +32,48 @@ export const Badge = ({ children, content }) => {
     // can change (because pad is responsive, etc.). we want to recalculate
     // width since badge offset is reliant on its dimensions.
     const onResize = () => {
-      if (contentRef && contentRef.current) {
-        if (
-          typeof content === 'number' ||
-          (typeof content === 'object' && content.value)
-        ) {
-          const { height: contentHeight, width: contentWidth } =
-            contentRef.current.getBoundingClientRect();
+      if (containerRef?.current) {
+        containerRef.current.style.minHeight = '';
+        containerRef.current.style.minWidth = '';
 
-          // only adjust the width if contentHeight > 0
-          // jest returns 0 for all getBoundingClientRect values,
-          // so this ensures snapshots are closer to correct values
-          if (contentHeight) {
-            // height of content includes extra space around font from
-            // line-height. account for this extra space with 2.5 multiplier
-            // to add proportional horizontal space
-            const verticalSpace =
-              (parseMetricToNum(height) - contentHeight) * 2.5;
+        if (contentRef?.current) {
+          if (
+            typeof content === 'number' ||
+            (typeof content === 'object' && content.value)
+          ) {
+            containerRef.current.style.minHeight = defaultBadgeDimension;
+            containerRef.current.style.minWidth = defaultBadgeDimension;
+            const { height: contentHeight, width: contentWidth } =
+              contentRef.current.getBoundingClientRect();
 
-            setWidth(
-              `${Math.max(
+            // only adjust the width if contentHeight > 0
+            // jest returns 0 for all getBoundingClientRect values,
+            // so this ensures snapshots are closer to correct values
+            if (contentHeight) {
+              // height of content includes extra space around font from
+              // line-height. account for this extra space with 2.5 multiplier
+              // to add proportional horizontal space
+              const height = defaultBadgeDimension;
+              const width = defaultBadgeDimension;
+              const verticalSpace =
+                (parseMetricToNum(height) - contentHeight) * 2.5;
+
+              containerRef.current.style.minHeight = height;
+              containerRef.current.style.minWidth = `${Math.max(
                 parseMetricToNum(width),
                 Math.ceil(contentWidth + verticalSpace),
-              )}px`,
-            );
+              )}px`;
+            }
+          } else {
+            // caller has provided custom JSX
+            containerRef.current.style.minHeight =
+              contentRef.current.getBoundingClientRect().width;
+            containerRef.current.style.minWidth =
+              contentRef.current.getBoundingClientRect().height;
           }
         } else {
-          // caller has provided custom JSX
-          setWidth(`${contentRef.current.getBoundingClientRect().width}px`);
-          setHeight(`${contentRef.current.getBoundingClientRect().height}px`);
+          containerRef.current.style.minHeight = defaultBadgeDimension;
+          containerRef.current.style.minWidth = defaultBadgeDimension;
         }
       }
     };
@@ -73,29 +82,29 @@ export const Badge = ({ children, content }) => {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, [content, height, width]);
+  }, [content, defaultBadgeDimension]);
 
   // offset the badge so it overlaps content
   useLayoutEffect(() => {
-    if (stackRef && stackRef.current) {
+    if (stackRef?.current) {
       // when badge has content, offset should be 50%.
       // when badge is empty, offset by a smaller amount to keep the badge
       // closer to the content. this value was chosen as a reasonable default
       // after testing with various grommet icons.
-      const divisor =
+      const offset =
         typeof content === 'boolean' || (content && content.value === true)
-          ? 3.5
-          : 2;
-      const offset = {
-        right: `-${Math.round(parseMetricToNum(width) / divisor)}px`,
-        top: `-${Math.round(parseMetricToNum(height) / divisor)}px`,
-      };
+          ? '25%'
+          : '50%';
+
       // second child of Stack is the div that receives absolute positioning
       // and contains our badge content
-      stackRef.current.children[1].style.top = offset.top;
-      stackRef.current.children[1].style.right = offset.right;
+      stackRef.current.children[1].style.top = 0;
+      stackRef.current.children[1].style.right = 0;
+      // eslint-disable-next-line max-len
+      stackRef.current.children[1].style.transform = `translate(${offset}, -${offset})`;
+      stackRef.current.children[1].style.transformOrigin = '100% 0%';
     }
-  }, [content, height, width]);
+  }, [content]);
 
   let value;
   if (typeof content === 'number') value = content;
@@ -122,12 +131,12 @@ export const Badge = ({ children, content }) => {
     }
     badge = (
       <StyledBadgeContainer
+        ref={containerRef}
         align="center"
         background={
           content.background || theme.button.badge.container.background
         }
         flex={false}
-        height={{ min: height }}
         justify="center"
         round
         pad={
@@ -135,7 +144,6 @@ export const Badge = ({ children, content }) => {
             ? theme.button.badge.container.pad
             : undefined
         }
-        width={{ min: width }}
       >
         {badge}
       </StyledBadgeContainer>

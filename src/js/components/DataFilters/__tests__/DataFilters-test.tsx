@@ -3,6 +3,7 @@ import { act, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Data } from '../../Data';
+import { DataTable } from '../../DataTable';
 import { Grommet } from '../../Grommet';
 import { DataFilters } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -110,6 +111,39 @@ describe('DataFilters', () => {
       <Grommet>
         <Data data={data} view={{ search: 'a', properties: { name: ['a'] } }}>
           <DataFilters />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sub objects', () => {
+    const { container } = render(
+      <Grommet>
+        <Data
+          data={[
+            { location: { city: 'Paris', lat: 48 } },
+            { location: { city: 'Sydney', lat: -33 } },
+          ]}
+          properties={{
+            'location.city': { label: 'City' },
+            'location.lat': { label: 'Latitude', range: { min: -90, max: 90 } },
+          }}
+          view={{
+            properties: {
+              'location.city': ['Paris'],
+              'location.lat': { min: 10, max: 90 },
+            },
+          }}
+        >
+          <DataFilters />
+          <DataTable
+            columns={[
+              { property: 'location.city', header: 'City' },
+              { property: 'location.lat', header: 'Latitude' },
+            ]}
+          />
         </Data>
       </Grommet>,
     );

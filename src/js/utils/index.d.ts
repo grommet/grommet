@@ -128,7 +128,13 @@ export type AlignContentType =
   | 'start'
   | 'stretch'
   | string;
-export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
+export type AlignSelfType =
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'stretch'
+  | 'baseline'
+  | string;
 export type AnimateType = boolean;
 export interface BackgroundObject {
   color?: ColorType;

@@ -30,7 +30,7 @@ const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#FF4040',
-  error: '#FF4040',
+  error: '#B30000',
   warning: '#FFAA15',
   ok: '#00C781',
   unknown: '#CCCCCC',
@@ -337,6 +337,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         full: '100%',
       },
     },
+    // icon: {
+    //   extennd: undefined,
+    //   matchSize: undefined,
+    //   size: undefined,
+    // },
     accordion: {
       panel: {
         // border: {
@@ -378,6 +383,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // fontWeight: undefined,
         // extend: undefined,
       },
+      // size: {
+      //   medium: {
+      //     color: undefined,
+      //     fontWeight: undefined,
+      //     textDecoration: undefined,
+      //   },
+      // },
       // extend: undefined,
     },
     avatar: {
@@ -415,6 +427,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     button: {
       badge: {
+        // align: undefined,,
         container: {
           background: 'brand',
           // pad: undefined,
@@ -430,13 +443,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       gap: 'small',
-      // icon: {
-      //   size: {
-      //     small: undefined,
-      //     medium: undefined,
-      //     large: undefined,
-      //   },
-      // },
       size: {
         small: {
           border: {
@@ -1771,6 +1777,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       // gap: undefined,
       header: {
+        // alignSelf: undefined,
         // background: undefined,
         // border: {
         //   side: undefined,

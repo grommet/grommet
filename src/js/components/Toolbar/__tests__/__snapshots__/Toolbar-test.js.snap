@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataFilters renders 1`] = `
-.c8 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`DataFilters renders 1`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -52,7 +52,7 @@ exports[`DataFilters renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -67,7 +67,7 @@ exports[`DataFilters renders 1`] = `
   height: 100%;
 }
 
-.c5 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,9 +123,6 @@ exports[`DataFilters renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c14 {
@@ -475,7 +472,7 @@ exports[`DataFilters renders 1`] = `
   flex-shrink: 0;
 }
 
-.c9 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -492,58 +489,58 @@ exports[`DataFilters renders 1`] = `
   padding-left: 48px;
 }
 
-.c9:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c9::-webkit-input-placeholder {
+.c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-moz-placeholder {
+.c7::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c9:-ms-input-placeholder {
+.c7:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c7::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c9::-moz-focus-inner {
+.c7::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c9:-moz-placeholder,
-.c9::-moz-placeholder {
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c7 {
+.c5 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -680,114 +677,110 @@ exports[`DataFilters renders 1`] = `
           <div
             class="c5"
           >
-            <div
+            <svg
+              aria-label="Search"
               class="c6"
+              viewBox="0 0 24 24"
             >
-              <div
-                class="c7"
-              >
-                <svg
-                  aria-label="Search"
-                  class="c8"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <input
-                aria-label="Search"
-                autocomplete="off"
-                class="c9"
-                id="data--search"
-                name="_search"
-                type="search"
-                value=""
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
               />
-            </div>
+            </svg>
           </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c7"
+            id="data--search"
+            name="_search"
+            type="search"
+            value=""
+          />
         </div>
       </form>
       <form
         class="c3"
       >
         <div
-          class="c4"
+          class="c8"
         >
           <div
-            class="c5"
+            class="c9"
           >
-            <header
-              class="c10"
-            >
-              <h2
-                class="c11"
-              >
-                Filters
-              </h2>
-            </header>
             <div
-              class="c12 "
+              class="c1"
             >
-              <label
-                class="c13"
-                for="data-name"
+              <header
+                class="c10"
               >
-                name
-              </label>
-              <div
-                class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
-              >
-                <div
-                  class="c15 StyledCheckBoxGroup-sc-2nhc5d-0"
-                  id="data-name"
-                  role="group"
+                <h2
+                  class="c11"
                 >
-                  <label
-                    class="c16"
-                    label="a"
-                  >
-                    <div
-                      class="c17 c18"
-                    >
-                      <input
-                        class="c19"
-                        type="checkbox"
-                      />
-                      <div
-                        class="c20 "
-                      />
-                    </div>
-                    <span>
-                      a
-                    </span>
-                  </label>
+                  Filters
+                </h2>
+              </header>
+              <div
+                class="c12 "
+              >
+                <label
+                  class="c13"
+                  for="data-name"
+                >
+                  name
+                </label>
+                <div
+                  class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
+                >
                   <div
-                    class="c21"
-                  />
-                  <label
-                    class="c16"
-                    label="b"
+                    class="c15 StyledCheckBoxGroup-sc-2nhc5d-0"
+                    id="data-name"
+                    role="group"
                   >
-                    <div
-                      class="c17 c18"
+                    <label
+                      class="c16"
+                      label="a"
                     >
-                      <input
-                        class="c19"
-                        type="checkbox"
-                      />
                       <div
-                        class="c20 "
-                      />
-                    </div>
-                    <span>
-                      b
-                    </span>
-                  </label>
+                        class="c17 c18"
+                      >
+                        <input
+                          class="c19"
+                          type="checkbox"
+                        />
+                        <div
+                          class="c20 "
+                        />
+                      </div>
+                      <span>
+                        a
+                      </span>
+                    </label>
+                    <div
+                      class="c21"
+                    />
+                    <label
+                      class="c16"
+                      label="b"
+                    >
+                      <div
+                        class="c17 c18"
+                      >
+                        <input
+                          class="c19"
+                          type="checkbox"
+                        />
+                        <div
+                          class="c20 "
+                        />
+                      </div>
+                      <span>
+                        b
+                      </span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
