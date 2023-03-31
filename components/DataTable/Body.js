@@ -74,6 +74,7 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
     } : undefined
   }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
     background: (pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect) && cellProps.pinned.background || cellProps.background,
+    border: cellProps.pinned.border || cellProps.border,
     pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
     "aria-disabled": isDisabled || !onSelect || undefined,
     column: {

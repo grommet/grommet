@@ -139,6 +139,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       verticalAlign: verticalAlign
     }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
       background: cellProps.background,
+      border: cellProps.pinned.border || cellProps.border,
       plain: "noPad",
       size: "auto",
       verticalAlign: verticalAlign,
