@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NameValueList should apply Grid props 1`] = `
+exports[`NameValueList should accept and apply Grid props 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
