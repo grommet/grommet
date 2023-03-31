@@ -26,6 +26,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { isObject } from '../../utils/object';
 
 const grommetInputNames = [
   'CheckBox',
@@ -50,6 +51,8 @@ const grommetInputPadNames = [
   'RangeInput',
   'RangeSelector',
 ];
+
+const defaultThreshold = 0.5;
 
 const isGrommetInput = (comp) =>
   comp &&
@@ -190,28 +193,26 @@ const FormField = forwardRef(
       pad,
       required,
       style,
-      validate,
+      validate: validateProp,
       validateOn,
       ...rest
     },
     ref,
   ) => {
+    const validate = { ...validateProp };
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    // eslint-disable-next-line max-len
-    const isObject =
-      typeof validate === 'object' &&
-      !Array.isArray(validate) &&
-      validate !== null;
-    // eslint-disable-next-line max-len
+    if (isObject(validate) && 'max' in validate && !('threshold' in validate))
+      validate.threshold = defaultThreshold;
+
     const isMaxAndThresholdValidation =
-      isObject && 'max' in validate && 'threshold' in validate;
+      isObject(validate) && 'max' in validate && 'threshold' in validate;
 
     const getMaxAndThresholdValidation = (value) => {
       const { max, threshold } = validate;
 
-      return value.length / max > threshold
+      return value.length / max > (threshold ?? defaultThreshold)
         ? {
             status: max - value.length >= 0 ? 'info' : 'error',
             message:

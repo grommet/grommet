@@ -35,7 +35,7 @@ export interface FormFieldProps {
       )[]
     | {
         max: number;
-        threshold: number;
+        threshold?: number;
       };
   validateOn?: 'blur' | 'submit' | 'change';
 }
