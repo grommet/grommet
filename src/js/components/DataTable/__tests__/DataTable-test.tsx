@@ -1640,4 +1640,33 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('border on CheckBox cell', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DataTable
+          data={[
+            { name: 'Alan', percent: 20 },
+            { name: 'Bryan', percent: 30 },
+            { name: 'Chris', percent: 20 },
+            { name: 'Eric', percent: 80 },
+          ]}
+          columns={[
+            {
+              property: 'name',
+              header: 'Name',
+              primary: true,
+            },
+            {
+              property: 'percent',
+              header: 'Percent Complete',
+            },
+          ]}
+          border={{ body: { side: 'bottom' } }}
+          onSelect={() => {}}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

@@ -186,6 +186,7 @@ export const GroupedBody = forwardRef(
                 {(selected || onSelect) && (
                   <TableCell
                     background={cellProps.background}
+                    border={cellProps.pinned.border || cellProps.border}
                     plain="noPad"
                     size="auto"
                     verticalAlign={verticalAlign}
