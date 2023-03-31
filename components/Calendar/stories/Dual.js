@@ -29,6 +29,10 @@ var Dual = function Dual() {
       setDates(undefined);
     }
   };
+
+  // We have to track the active date because the Calendars don't know about
+  // each other.
+  var activeDate = date || dates && dates[0] && dates[0][0] && !dates[0][1] ? 'end' : undefined;
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -39,6 +43,7 @@ var Dual = function Dual() {
       direction: "row",
       gap: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
+      activeDate: activeDate,
       animate: false,
       showAdjacentDays: false,
       range: true,
@@ -49,11 +54,9 @@ var Dual = function Dual() {
       onReference: function onReference(reference) {
         var refDate = new Date(reference);
         var nextDate = new Date(refDate);
-        console.log(refDate);
-        console.log(nextDate);
         nextDate.setMonth(refDate.getMonth() + 1, 1);
-        setReference1(refDate.toString());
-        setReference2(nextDate.toString());
+        setReference1(refDate.toISOString());
+        setReference2(nextDate.toISOString());
       },
       header: function header(_ref) {
         var currentDate = _ref.date,
@@ -77,6 +80,7 @@ var Dual = function Dual() {
         })), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Blank, null));
       }
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
+      activeDate: activeDate,
       animate: false,
       showAdjacentDays: false,
       date: date,
@@ -88,8 +92,8 @@ var Dual = function Dual() {
         var refDate = new Date(reference);
         var priorDate = new Date(refDate);
         priorDate.setMonth(refDate.getMonth() - 1, 1);
-        setReference1(priorDate.toString());
-        setReference2(refDate.toString());
+        setReference1(priorDate.toISOString());
+        setReference2(refDate.toISOString());
       },
       header: function header(_ref2) {
         var currentDate = _ref2.date,
