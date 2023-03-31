@@ -199,7 +199,7 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
-    const validate = { ...validateProp };
+    const validate = isObject(validateProp) ? {...validateProp} : validateProp;
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
