@@ -211,6 +211,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
       while (replace && i <= lastPage) {
         if (!pageHeights[i] && pageHeights[i] !== pageHeights[0]) {
           if (!nextPageHeights) nextPageHeights = [].concat(pageHeights || []);
+          // set to first page height
           var _nextPageHeights = nextPageHeights;
           nextPageHeights[i] = _nextPageHeights[0];
         }

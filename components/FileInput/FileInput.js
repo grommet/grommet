@@ -28,7 +28,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 // If there are any files selected, we need to show the buttons to remove them.
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
-
 var ContentsBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FileInput__ContentsBox",
   componentId: "sc-1jzq7im-0"
