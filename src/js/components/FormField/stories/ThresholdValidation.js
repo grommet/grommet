@@ -21,7 +21,7 @@ export const ThresholdValidation = () => (
       </FormField>
 
       <FormField
-        label="Label"
+        label="Label with default threshold"
         validate={{ max: 10 }}
         name="issue-description-with-default-threshold"
         htmlFor="issue-description-with-default-threshold"
