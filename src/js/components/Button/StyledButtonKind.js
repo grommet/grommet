@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import {
   activeStyle,
   disabledStyle,
+  edgeStyle,
   focusStyle,
   unfocusStyle,
   genericStyles,
@@ -122,11 +123,13 @@ const adjustPadStyle = (pad, width) => {
 
 // build up CSS from basic to specific based on the supplied sub-object paths
 const kindStyle = ({
+  busy,
   colorValue,
   hasIcon,
   hasLabel,
   kind,
   sizeProp: size,
+  success,
   themePaths,
   theme,
 }) => {
@@ -177,7 +180,7 @@ const kindStyle = ({
         // padding in the hover or hover.kind itself for backward compatibility
         adjPadStyles = adjustPadStyle(pad, obj.border.width);
       }
-      if (partStyles.length > 0) {
+      if (partStyles.length > 0 && !busy && !success) {
         styles.push(
           css`
             &:hover {
@@ -273,12 +276,20 @@ const StyledButtonKind = styled.button.withConfig({
   ${(props) => !props.plain && kindStyle(props)}
   ${(props) =>
     !props.plain &&
+    props.pad &&
+    edgeStyle('padding', props.pad, false, undefined, props.theme)}
+  ${(props) =>
+    !props.plain &&
     props.align &&
     `
     text-align: ${props.align};
     `}
   ${(props) =>
-    !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props)}
+    !props.disabled &&
+    props.hoverIndicator &&
+    !props.busy &&
+    !props.success &&
+    hoverIndicatorStyle(props)}
   ${(props) =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
 
@@ -300,6 +311,12 @@ const StyledButtonKind = styled.button.withConfig({
   `}
   ${(props) => props.fillContainer && fillStyle(props.fillContainer)}
   ${(props) => props.theme.button && props.theme.button.extend}
+
+  ${(props) =>
+    (props.busy || props.success) &&
+    `
+    cursor: default;
+  `}
 `;
 
 StyledButtonKind.defaultProps = {};

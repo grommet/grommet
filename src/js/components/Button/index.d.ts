@@ -1,3 +1,4 @@
+import { string } from 'prop-types';
 import * as React from 'react';
 import {
   A11yTitleType,
@@ -10,6 +11,7 @@ import {
   HoverIndicatorType,
   MarginType,
   Omit,
+  PadType,
   PolymorphicType,
 } from '../../utils';
 
@@ -38,6 +40,7 @@ export interface ButtonProps {
         hover: boolean;
         focus: boolean;
       }) => React.ReactNode);
+  busy?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
   active?: boolean;
@@ -60,11 +63,17 @@ export interface ButtonProps {
   icon?: JSX.Element;
   kind?: string;
   label?: React.ReactNode;
+  messages?: {
+    busy?: string;
+    success?: string;
+  };
+  pad?: PadType;
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
   secondary?: boolean;
   size?: 'small' | 'medium' | 'large' | string;
+  success?: boolean;
   tip?: TipProps | string;
   type?: 'button' | 'reset' | 'submit';
   as?: PolymorphicType;

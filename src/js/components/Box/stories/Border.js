@@ -79,6 +79,21 @@ export const BorderBox = () => (
         </Box>
       ))}
     </Box>
+
+    <Box
+      direction="row"
+      gap="small"
+      border={[
+        { side: 'between' },
+        { side: 'top' },
+        { side: 'right' },
+        { side: 'bottom' },
+        { side: 'left' },
+      ]}
+    >
+      <Text>Multiple Border</Text>
+      <Text>With Between</Text>
+    </Box>
   </Box>
   // </Grommet>
 );

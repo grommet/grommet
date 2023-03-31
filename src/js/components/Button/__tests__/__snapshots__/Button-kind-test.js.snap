@@ -1,5 +1,173 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button kind badge should align to button container if specified in theme 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  font-weight: normal;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-radius: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-label="Button, alert"
+        class="c3"
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      class="c4"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
+    >
+      <div
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 24px; min-width: 24px;"
+      >
+        <span
+          class="c6"
+        >
+          2
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Button kind badge should apply background 1`] = `
 .c5 {
   display: -webkit-box;
@@ -19,8 +187,6 @@ exports[`Button kind badge should apply background 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -157,10 +323,11 @@ exports[`Button kind badge should apply background 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -12px; right: -12px;"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
         class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 24px; min-width: 24px;"
       >
         <span
           class="c6"
@@ -192,8 +359,6 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 12px;
-  min-width: 12px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -323,10 +488,11 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -3px; right: -3px;"
+      style="top: 0px; right: 0px; transform: translate(25%, -25%); transform-origin: 100% 0%;"
     >
       <div
         class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 12px; min-width: 12px;"
       />
     </div>
   </div>
@@ -352,8 +518,6 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -490,10 +654,11 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
     </div>
     <div
       class="c4"
-      style="top: -12px; right: -12px;"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
         class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 24px; min-width: 24px;"
       >
         <span
           class="c6"
@@ -525,8 +690,6 @@ exports[`Button kind badge should display number content 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 24px;
-  min-width: 24px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -663,10 +826,11 @@ exports[`Button kind badge should display number content 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -12px; right: -12px;"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
         class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        style="min-height: 24px; min-width: 24px;"
       >
         <span
           class="c6"
@@ -841,7 +1005,7 @@ exports[`Button kind badge should render custom element 1`] = `
     </div>
     <div
       class="c4"
-      style="top: -0px; right: -0px;"
+      style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
         class="c5"
@@ -918,8 +1082,6 @@ exports[`Button kind badge should render relative to contents when button has no
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 12px;
-  min-width: 12px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1066,10 +1228,11 @@ exports[`Button kind badge should render relative to contents when button has no
       </div>
       <div
         class="c5"
-        style="top: -3px; right: -3px;"
+        style="top: 0px; right: 0px; transform: translate(25%, -25%); transform-origin: 100% 0%;"
       >
         <div
           class="c6 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+          style="min-height: 12px; min-width: 12px;"
         />
       </div>
     </div>
@@ -1523,8 +1686,8 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 2em;
+  padding: 6px 18px;
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF0F;
@@ -1594,8 +1757,8 @@ exports[`Button kind button with transparent background 1`] = `
   background-color: #FFFFFF0F;
   color: #FFFFFFE6;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 2em;
+  padding: 6px 18px;
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF0F;
@@ -1666,12 +1829,12 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 2em;
+  padding: 6px 18px;
   font-size: 18px;
   line-height: 24px;
   background-color: #0000000A;
-  color: #000000;
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1735,17 +1898,17 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: #0000000A;
-  color: #444444;
+  color: #6F6F6F;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 2em;
+  padding: 6px 18px;
   font-size: 18px;
   line-height: 24px;
   background-color: #0000000A;
-  color: #000000;
+  color: #444444;
   background-color: rgba(0,0,0,0.0392156862745098);
-  color: #000000;
-  color: #000000;
+  color: #444444;
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1802,7 +1965,7 @@ exports[`Button kind button with transparent background 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF;
-  color: #444444;
+  color: #6F6F6F;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2060,10 +2223,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hpbGQm"
+    class="StyledButtonKind-sc-1vhfpnt-0 jVGQvr"
     disabled=""
     type="button"
   >
@@ -2760,10 +2923,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 jPuIfB"
+    class="StyledButtonKind-sc-1vhfpnt-0 daTts"
     type="button"
   >
     Button
@@ -2866,10 +3029,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 bkTbae"
+    class="StyledButtonKind-sc-1vhfpnt-0 hDjQBz"
     type="button"
   >
     Button
@@ -4336,18 +4499,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jImhHp"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 RERdB"
+    class="StyledButtonKind-sc-1vhfpnt-0 cFkjwE"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jLKoGz"
+      class="StyledBox-sc-13pk1d4-0 dGYhTK"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 fhGCWd"
+        class="StyledIcon-sc-ofa7kd-0 eJclys"
         viewBox="0 0 24 24"
       >
         <path
@@ -4358,7 +4521,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hrTQpQ"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPClIF"
       />
       label
     </div>
@@ -5684,6 +5847,376 @@ exports[`Button kind should apply styling according to theme size definitions 1`
     Button
   </button>
 </div>
+`;
+
+exports[`Button kind should render pad 1`] = `
+<DocumentFragment>
+  .c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 96px;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c5 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+      data-testid="string-pad"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <svg
+          aria-label="Add"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 22V2M2 12h20"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <div
+          class="c4"
+        />
+        String pad
+      </div>
+    </button>
+    <button
+      class="c5"
+      data-testid="object-pad"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <svg
+          aria-label="Add"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 22V2M2 12h20"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <div
+          class="c4"
+        />
+        Object pad
+      </div>
+    </button>
+    <button
+      class="c6"
+      data-testid="child-pad"
+      type="button"
+    >
+      <svg
+        aria-label="Add"
+        class="c3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 22V2M2 12h20"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Button kind size of default button 1`] = `
