@@ -38,6 +38,7 @@ if (process.env.NODE_ENV !== 'production') {
         ]),
       ),
     ]),
+    validateOn: PropTypes.oneOf(['blur', 'submit', 'change']),
   };
 }
 export const FormFieldPropTypes = PropType;

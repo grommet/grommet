@@ -1620,7 +1620,7 @@ exports[`Video Play and Pause event handlers 2`] = `
         class="StyledBox-sc-13pk1d4-0 gTjiHd"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gpbdyR"
+          class="StyledButton-sc-323bzc-0 bumPYc"
           type="button"
         >
           .c0 {
@@ -1733,7 +1733,7 @@ exports[`Video Play and Pause event handlers 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 ezOmYL"
+          class="StyledButton-sc-323bzc-0 dkczdG"
           type="button"
         >
           <div
@@ -6016,7 +6016,7 @@ exports[`Video mouse events handlers of controls 2`] = `
         class="StyledBox-sc-13pk1d4-0 gTjiHd"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gpbdyR"
+          class="StyledButton-sc-323bzc-0 bumPYc"
           type="button"
         >
           <svg
@@ -6087,7 +6087,7 @@ exports[`Video mouse events handlers of controls 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 ezOmYL"
+          class="StyledButton-sc-323bzc-0 dkczdG"
           type="button"
         >
           <div
@@ -6140,7 +6140,7 @@ exports[`Video mouse events handlers of controls 3`] = `
         class="StyledBox-sc-13pk1d4-0 gTjiHd"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gpbdyR"
+          class="StyledButton-sc-323bzc-0 bumPYc"
           type="button"
         >
           <svg
@@ -6211,7 +6211,7 @@ exports[`Video mouse events handlers of controls 3`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 ezOmYL"
+          class="StyledButton-sc-323bzc-0 dkczdG"
           type="button"
         >
           <div
@@ -8376,7 +8376,7 @@ exports[`Video scrubber 2`] = `
         class="StyledBox-sc-13pk1d4-0 gTjiHd"
       >
         <button
-          class="StyledButton-sc-323bzc-0 gpbdyR"
+          class="StyledButton-sc-323bzc-0 bumPYc"
           type="button"
         >
           <svg
@@ -8447,7 +8447,7 @@ exports[`Video scrubber 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 ezOmYL"
+          class="StyledButton-sc-323bzc-0 dkczdG"
           type="button"
         >
           <div

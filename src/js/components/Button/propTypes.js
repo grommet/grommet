@@ -32,6 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
         value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
       }),
     ]),
+    busy: PropTypes.bool,
     color: colorPropType,
     disabled: PropTypes.bool,
     fill: PropTypes.oneOfType([
@@ -64,6 +65,10 @@ if (process.env.NODE_ENV !== 'production') {
       'stretch',
     ]),
     label: PropTypes.node,
+    messages: PropTypes.shape({
+      busy: PropTypes.string,
+      success: PropTypes.string,
+    }),
     onClick: PropTypes.func,
     pad: padPropType,
     plain: PropTypes.bool,
@@ -74,6 +79,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOf(['small', 'medium', 'large']),
       PropTypes.string,
     ]),
+    success: PropTypes.bool,
     target: PropTypes.oneOfType([
       PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
       PropTypes.string,

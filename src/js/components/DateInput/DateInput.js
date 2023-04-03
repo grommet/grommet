@@ -186,7 +186,8 @@ Use the icon prop instead.`,
                 if (range && Array.isArray(nextValue))
                   [normalizedValue] = nextValue;
                 // clicking an edge date removes it
-                else if (range) normalizedValue = [nextValue, nextValue];
+                else if (range && nextValue)
+                  normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
 
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
