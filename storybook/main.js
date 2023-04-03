@@ -1,7 +1,4 @@
 module.exports = {
-  core: {
-    builder: 'webpack5',
-  },
   addons: [
     '@storybook/addon-toolbars',
     {
@@ -27,9 +24,13 @@ module.exports = {
   ],
   features: {
     postcss: false,
-  },
-  reactOptions: {
-    strictMode: true,
+    storyStoreV7: false,
   },
   staticDirs: ['./public'],
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {
+      strictMode: true,
+    },
+  },
 };
