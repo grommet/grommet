@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid, DataTable, Notification, Text } from 'grommet';
+import { Grid, DataTable, DataFilters, Notification, Text } from 'grommet';
 
 import { Data } from '../Data';
 
@@ -10,21 +10,21 @@ const data = [
     name: 'Alpha',
     location: { city: 'Athens', country: 'Greece' },
     economy: { GDP: 100 },
-    colors: ['White', 'Blue'],
+    colors: ['white', 'blue'],
   },
   {
     id: 2,
     name: 'Beta',
     location: { city: 'Bangkok', country: 'Thailand' },
     economy: { GDP: 150 },
-    colors: ['Red', 'White', 'Blue'],
+    colors: ['red', 'white', 'blue'],
   },
   {
     id: 3,
     name: 'Theta',
     location: { city: 'Berlin', country: 'Germany' },
     economy: { GDP: 200 },
-    colors: ['Red', 'Yellow', 'Black'],
+    colors: ['red', 'yellow', 'black'],
   },
 ];
 
@@ -34,7 +34,16 @@ const properties = {
   'economy.GDP': { label: 'GDP' },
   colors: {
     label: 'Flag Colors',
-    options: ['Red', 'White', 'Blue', 'Yellow', 'Black'],
+    options: [
+      { label: 'Red', value: 'red' },
+      { label: 'White', value: 'white' },
+      { label: 'Blue', value: 'blue' },
+      { label: 'Yellow', value: 'yellow' },
+      { label: 'Black', value: 'black' },
+      { label: 'Green', value: 'green' },
+      { label: 'Orange', value: 'orange' },
+      { label: 'Gray', value: 'gray' },
+    ],
     search: true,
   },
 };
@@ -76,7 +85,9 @@ export const Complex = () => (
       status="info"
       message="Data is in 'beta'. The API surface is subject to change."
     />
-    <Data data={data} properties={properties} toolbar>
+    {/* <Data data={data} properties={properties} toolbar> */}
+    <Data data={data} properties={properties} updateOn="change">
+      <DataFilters layer />
       <DataTable columns={columns} verticalAlign={{ body: 'top' }} />
     </Data>
   </Grid>
