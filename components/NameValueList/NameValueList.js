@@ -53,6 +53,7 @@ var NameValueList = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Grid.Grid, _extends({
     as: "dl",
     ref: ref,
+    align: align,
     columns: columns,
     gap: gap,
     margin: "none" // override browser default margin for dl
