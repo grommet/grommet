@@ -20,9 +20,9 @@ export const decorators = [
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
-    const full = context.parameters?.args?.full || 'min';
-    const dir = context.parameters?.args?.dir;
-    const options = context.parameters?.args?.options;
+    const full = context.allArgs?.full || 'min';
+    const dir = context.allArgs?.dir;
+    const options = context.allArgs?.options;
     const {
       globals: { root },
     } = context;
