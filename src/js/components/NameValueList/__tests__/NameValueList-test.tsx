@@ -147,6 +147,26 @@ describe('NameValueList', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test(`should accept and apply Grid props`, () => {
+    const { container } = render(
+      <Grommet>
+        <NameValueList
+          align="center"
+          justify="center"
+          gap={{ row: 'large', column: 'xlarge' }}
+        >
+          {Object.entries(data).map(([name, value]) => (
+            <NameValuePair key={name} name={name}>
+              {value}
+            </NameValuePair>
+          ))}
+        </NameValueList>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`should render name/value as a column when pairProps = { direction: 
     'column' }`, () => {
     const { container } = render(
