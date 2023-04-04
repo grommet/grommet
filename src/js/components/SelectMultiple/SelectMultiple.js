@@ -81,7 +81,7 @@ const SelectMultiple = forwardRef(
       onOpen,
       onSearch,
       open: openProp,
-      options: optionsProp,
+      options: rawOptionsProp,
       placeholder,
       plain,
       replace,
@@ -104,7 +104,7 @@ const SelectMultiple = forwardRef(
     const selectBoxRef = useRef();
     const dropButtonRef = useForwardedRef(ref);
     const usingKeyboard = useKeyboard();
-
+    const optionsProp = useMemo(() => rawOptionsProp || [], [rawOptionsProp]);
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
     // When 'valueKey' sets 'reduce', the value(s) here should match
