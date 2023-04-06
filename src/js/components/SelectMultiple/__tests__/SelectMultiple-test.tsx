@@ -260,6 +260,43 @@ describe('SelectMultiple', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('test inline click on object', async () => {
+    const TestComp = () => {
+      const [value, setValue] = useState([
+        { value: 'one', label: 'a' },
+        { value: 'two', label: 'b' },
+        { value: 'tree', label: 'c' },
+      ]);
+      return (
+        <Grommet>
+          <SelectMultiple
+            showSelectedInline
+            options={[
+              { value: 'one', label: 'a' },
+              { value: 'two', label: 'b' },
+              { value: 'tree', label: 'c' },
+              { value: 'four', label: 'd' },
+            ]}
+            labelKey="label"
+            value={value}
+            onChange={({ selected }) => setValue(selected)}
+          />
+        </Grommet>
+      );
+    };
+    render(<TestComp />);
+    const user = userEvent.setup();
+    expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
+    expect(screen.getByRole('option', { name: /b selected/ })).toBeVisible();
+    expect(screen.getByRole('option', { name: /c selected/ })).toBeVisible();
+
+    await user.click(screen.getByRole('option', { name: /c selected/ }));
+
+    expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
+    expect(screen.getByRole('option', { name: /b selected/ })).toBeVisible();
+    expect(screen.queryByRole('option', { name: /c selected/ })).toBeNull();
+  });
+
   test('search', async () => {
     const user = userEvent.setup();
     const onSearch = jest.fn();
