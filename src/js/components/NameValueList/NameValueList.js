@@ -55,6 +55,7 @@ const NameValueList = forwardRef(
         <Grid
           as="dl"
           ref={ref}
+          align={align}
           columns={columns}
           gap={gap}
           margin="none" // override browser default margin for dl
