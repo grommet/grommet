@@ -1,4 +1,3 @@
-// eslint-disable-next-line max-len
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
