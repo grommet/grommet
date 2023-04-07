@@ -39,6 +39,7 @@ export const DataFilter = ({
   children,
   options: optionsProp,
   property,
+  inputOnly,
   range: rangeProp,
   ...rest
 }) => {
@@ -120,7 +121,9 @@ export const DataFilter = ({
     }
   }
 
-  return (
+  return inputOnly ? (
+    content
+  ) : (
     <FormField
       htmlFor={id}
       name={property}

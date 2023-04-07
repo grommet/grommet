@@ -18,6 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
       ]),
     ),
     property: PropTypes.string,
+    inputOnly: PropTypes.bool,
   };
 }
 export const DataFilterPropTypes = PropType;
