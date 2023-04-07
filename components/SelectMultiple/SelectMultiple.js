@@ -44,7 +44,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     disabledKey = _ref.disabledKey,
-    dropAlign = _ref.dropAlign,
+    dropAlignProp = _ref.dropAlign,
     dropHeight = _ref.dropHeight,
     dropProps = _ref.dropProps,
     dropTarget = _ref.dropTarget,
@@ -92,6 +92,16 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var selectBoxRef = (0, _react.useRef)();
   var dropButtonRef = (0, _utils.useForwardedRef)(ref);
   var usingKeyboard = (0, _utils.useKeyboard)();
+  var dropAlign = (0, _react.useMemo)(function () {
+    return dropAlignProp || (showSelectedInline ? {
+      top: 'top',
+      right: 'right',
+      left: 'left'
+    } : {
+      top: 'bottom',
+      left: 'left'
+    });
+  }, [dropAlignProp, showSelectedInline]);
 
   // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
@@ -355,11 +365,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     fill: "horizontal",
     alignSelf: "start"
   }, dropButtonProps, {
-    dropAlign: dropAlign || {
-      top: 'top',
-      right: 'right',
-      left: 'left'
-    },
+    dropAlign: dropAlign,
     dropTarget: dropTarget || selectBoxRef.current
   }), selectValue || displayLabelKey ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     direction: "row"
@@ -402,10 +408,7 @@ var SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, rest)), displaySelectIcon)), !open && (value == null ? void 0 : value.length) > 0 && (selectValue || displayLabelKey))) : /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     width: width
   }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledSelectDropButton, _extends({}, dropButtonProps, {
-    dropAlign: dropAlign || {
-      top: 'bottom',
-      left: 'left'
-    },
+    dropAlign: dropAlign,
     dropTarget: dropTarget,
     alignSelf: alignSelf,
     tabIndex: "0"

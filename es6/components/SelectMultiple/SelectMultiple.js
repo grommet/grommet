@@ -38,7 +38,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     disabledKey = _ref.disabledKey,
-    dropAlign = _ref.dropAlign,
+    dropAlignProp = _ref.dropAlign,
     dropHeight = _ref.dropHeight,
     dropProps = _ref.dropProps,
     dropTarget = _ref.dropTarget,
@@ -86,6 +86,16 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var selectBoxRef = useRef();
   var dropButtonRef = useForwardedRef(ref);
   var usingKeyboard = useKeyboard();
+  var dropAlign = useMemo(function () {
+    return dropAlignProp || (showSelectedInline ? {
+      top: 'top',
+      right: 'right',
+      left: 'left'
+    } : {
+      top: 'bottom',
+      left: 'left'
+    });
+  }, [dropAlignProp, showSelectedInline]);
 
   // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
@@ -349,11 +359,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     fill: "horizontal",
     alignSelf: "start"
   }, dropButtonProps, {
-    dropAlign: dropAlign || {
-      top: 'top',
-      right: 'right',
-      left: 'left'
-    },
+    dropAlign: dropAlign,
     dropTarget: dropTarget || selectBoxRef.current
   }), selectValue || displayLabelKey ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Box, {
     direction: "row"
@@ -396,10 +402,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest)), displaySelectIcon)), !open && (value == null ? void 0 : value.length) > 0 && (selectValue || displayLabelKey))) : /*#__PURE__*/React.createElement(Box, {
     width: width
   }, /*#__PURE__*/React.createElement(StyledSelectDropButton, _extends({}, dropButtonProps, {
-    dropAlign: dropAlign || {
-      top: 'bottom',
-      left: 'left'
-    },
+    dropAlign: dropAlign,
     dropTarget: dropTarget,
     alignSelf: alignSelf,
     tabIndex: "0"
