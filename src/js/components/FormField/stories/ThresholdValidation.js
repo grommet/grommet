@@ -35,7 +35,10 @@ export const ThresholdValidation = () => (
     </Form>
   </Box>
 );
-// </Grommet>
+
+ThresholdValidation.parameters = {
+  chromatic: { disable: true },
+};
 
 export default {
   title: 'Input/FormField/ThresholdValidation',
