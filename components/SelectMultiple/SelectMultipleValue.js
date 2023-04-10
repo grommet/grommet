@@ -60,7 +60,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
               onSelectChange(event, {
                 option: optionValue,
                 value: intermediate.filter(function (v) {
-                  return typeof v === 'object' ? (0, _utils.applyKey)(v, valueKey || labelKey) === (0, _utils.applyKey)(optionValue, valueKey || labelKey) : v !== optionValue;
+                  return typeof v === 'object' ? (0, _utils.applyKey)(v, valueKey || labelKey) !== (0, _utils.applyKey)(optionValue, valueKey || labelKey) : v !== optionValue;
                 })
               });
               if (valueIndex !== intermediate.length - 1) {
