@@ -85,7 +85,6 @@ export const Complex = () => (
       status="info"
       message="Data is in 'beta'. The API surface is subject to change."
     />
-    {/* <Data data={data} properties={properties} toolbar> */}
     <Data data={data} properties={properties} updateOn="change">
       <DataFilters layer />
       <DataTable columns={columns} verticalAlign={{ body: 'top' }} />
