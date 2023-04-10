@@ -91,7 +91,7 @@ const SelectMultipleValue = ({
                     option: optionValue,
                     value: intermediate.filter((v) =>
                       typeof v === 'object'
-                        ? applyKey(v, valueKey || labelKey) ===
+                        ? applyKey(v, valueKey || labelKey) !==
                           applyKey(optionValue, valueKey || labelKey)
                         : v !== optionValue,
                     ),
