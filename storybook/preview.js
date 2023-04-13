@@ -16,7 +16,7 @@ const THEMES = {
 export const decorators = [
   (Story, context) => {
     const [rootRef, setRootRef] = useState(null);
-    const [state, setState] = useState();
+    const [state, setState] = useState('grommet');
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
@@ -37,7 +37,7 @@ export const decorators = [
       if (isChromatic()) {
         return (
           <Grommet theme={THEMES.base}>
-            <Story state={THEMES['base']} />
+            <Story state={THEMES.base} />
           </Grommet>
         );
       }
