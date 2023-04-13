@@ -170,6 +170,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
       })}
       kind="toolbar"
       icon={<Splits />}
+      tip="Manage Columns"
       dropProps={dropProps}
       dropContent={content}
       open={showContent}
