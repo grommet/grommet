@@ -23,7 +23,7 @@ export const Simple = () => (
       <Toolbar>
         <DataTableColumns drop options={options} />
       </Toolbar>
-      <DataTable columns={columns} />
+      <DataTable columns={columns} primaryKey="name" />
     </Data>
   </Box>
   // </Grommet>
