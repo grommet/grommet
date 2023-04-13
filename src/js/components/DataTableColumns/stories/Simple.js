@@ -32,8 +32,7 @@ export const Simple = () => (
         <DataSearch responsive />
         <DataTableColumns drop options={options} />
       </Toolbar>
-      <DataSummary />
-      <DataTable columns={columns} />
+      <DataTable columns={columns} primaryKey="name" />
     </Data>
   </Box>
   // </Grommet>

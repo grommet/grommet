@@ -602,7 +602,7 @@ describe('DataTable', () => {
           <DataTable
             columns={[
               { property: 'a', header: 'A' },
-              { property: 'b', header: 'B' },
+              { property: 'b', header: 'B', primary: true },
             ]}
             data={[
               { a: 'one', b: 1.1 },

@@ -281,7 +281,7 @@ const Body = forwardRef(
               );
               return (
                 <Row
-                  key={index}
+                  key={primaryValue ?? index}
                   setActive={setActive}
                   rowRef={rowRef}
                   cellProps={cellProps}
