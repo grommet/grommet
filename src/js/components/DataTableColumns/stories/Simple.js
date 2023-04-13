@@ -29,9 +29,10 @@ export const Simple = () => (
     />
     <Data data={DATA} updateOn="change">
       <Toolbar>
-        <DataSearch responsive />
+        <DataSearch />
         <DataTableColumns drop options={options} />
       </Toolbar>
+      <DataSummary />
       <DataTable columns={columns} primaryKey="name" />
     </Data>
   </Box>
