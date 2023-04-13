@@ -27,6 +27,12 @@ export const decorators = [
       globals: { root },
     } = context;
 
+    let story = (
+      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
+        {Story()}
+      </Grommet>
+    );
+
     /**
      * This demonstrates that custom themed stories are driven off the "base"
      * theme. Custom themed stories will live under a "CustomThemed" directory.
@@ -35,25 +41,24 @@ export const decorators = [
       // if we are running the story in chromatic we want the chromatic snapshot
       // to be taken in the base theme for custom theme stories
       if (isChromatic()) {
-        return (
+        story = (
           <Grommet theme={THEMES.base}>
             <Story state={THEMES.base} />
           </Grommet>
         );
-      }
-      return (
-        <Box align="center" pad="large">
-          <Text size="large">
-            {`Custom themed stories are only displayed in the
+      } else {
+        story = (
+          <Box align="center" pad="large">
+            <Text size="large">
+              {`Custom themed stories are only displayed in the
                 "base" theme mode. To enable, select "base" from the
                 Theme menu above.`}
-          </Text>
-        </Box>
-      );
-    }
-
-    if (root === 'shadow') {
-      return (
+            </Text>
+          </Box>
+        );
+      }
+    } else if (root === 'shadow') {
+      story = (
         // eslint-disable-next-line react/jsx-pascal-case
         <Root.div ref={setRootRef}>
           {rootRef && (
@@ -73,11 +78,7 @@ export const decorators = [
       );
     }
 
-    return (
-      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
-        <Story state={THEMES[state]} />
-      </Grommet>
-    );
+    return story;
   },
 ];
 
