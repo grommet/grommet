@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { Box, Paragraph, Text, ThemeContext } from 'grommet';
+import { Box, Paragraph, Text } from 'grommet';
 import { Grid } from '../../Grid';
 
-export const BackgroundThemed = () => {
-  const theme = useContext(ThemeContext);
-  const { backgrounds } = theme.global;
+export const BackgroundThemed = (args, context) => {
+  const { backgrounds } = context?.global || {};
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook

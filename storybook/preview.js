@@ -29,7 +29,7 @@ export const decorators = [
 
     let story = (
       <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
-        {Story()}
+        {Story(THEMES[state])}
       </Grommet>
     );
 
@@ -41,11 +41,7 @@ export const decorators = [
       // if we are running the story in chromatic we want the chromatic snapshot
       // to be taken in the base theme for custom theme stories
       if (isChromatic()) {
-        story = (
-          <Grommet theme={THEMES.base}>
-            <Story state={THEMES.base} />
-          </Grommet>
-        );
+        story = <Grommet theme={THEMES.base}>{Story(THEMES[state])}</Grommet>;
       } else {
         story = (
           <Box align="center" pad="large">
@@ -70,7 +66,7 @@ export const decorators = [
                 options={options}
                 containerTarget={rootRef.shadowRoot}
               >
-                <Story state={THEMES[state]} />
+                {Story(THEMES[state])}
               </Grommet>
             </StyleSheetManager>
           )}
