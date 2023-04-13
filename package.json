@@ -76,7 +76,7 @@
     "@storybook/addon-a11y": "7.0.4",
     "@storybook/addon-storysource": "7.0.4",
     "@storybook/addon-toolbars": "7.0.4",
-    "@storybook/addons": "7.0.4",
+    "@storybook/manager-api": "7.0.4",
     "@storybook/react": "7.0.4",
     "@storybook/react-webpack5": "7.0.4",
     "@storybook/source-loader": "7.0.4",

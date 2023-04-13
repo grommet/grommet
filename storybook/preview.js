@@ -16,7 +16,7 @@ const THEMES = {
 export const decorators = [
   (Story, context) => {
     const [rootRef, setRootRef] = useState(null);
-    const [state, setState] = useState('grommet');
+    const [state, setState] = useState();
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
@@ -27,12 +27,6 @@ export const decorators = [
       globals: { root },
     } = context;
 
-    let story = (
-      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
-        {Story(THEMES[state])}
-      </Grommet>
-    );
-
     /**
      * This demonstrates that custom themed stories are driven off the "base"
      * theme. Custom themed stories will live under a "CustomThemed" directory.
@@ -41,20 +35,28 @@ export const decorators = [
       // if we are running the story in chromatic we want the chromatic snapshot
       // to be taken in the base theme for custom theme stories
       if (isChromatic()) {
-        story = <Grommet theme={THEMES.base}>{Story(THEMES[state])}</Grommet>;
-      } else {
-        story = (
-          <Box align="center" pad="large">
-            <Text size="large">
-              {`Custom themed stories are only displayed in the
-                "base" theme mode. To enable, select "base" from the
-                Theme menu above.`}
-            </Text>
-          </Box>
+        return (
+          <Grommet theme={THEMES.base}>
+            <Story state={THEMES['base']} />
+          </Grommet>
         );
       }
-    } else if (root === 'shadow') {
-      story = (
+      return (
+        <Box align="center" pad="large">
+          <Text size="large">
+            {`Custom themed stories are only displayed in the
+                "base" theme mode. To enable, select "base" from the
+                Theme menu above.`}
+          </Text>
+          <div hidden>
+            <Story state={THEMES[state]} />
+          </div>
+        </Box>
+      );
+    }
+
+    if (root === 'shadow') {
+      return (
         // eslint-disable-next-line react/jsx-pascal-case
         <Root.div ref={setRootRef}>
           {rootRef && (
@@ -66,7 +68,7 @@ export const decorators = [
                 options={options}
                 containerTarget={rootRef.shadowRoot}
               >
-                {Story(THEMES[state])}
+                <Story state={THEMES[state]} />
               </Grommet>
             </StyleSheetManager>
           )}
@@ -74,7 +76,11 @@ export const decorators = [
       );
     }
 
-    return story;
+    return (
+      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
+        <Story state={THEMES[state]} />
+      </Grommet>
+    );
   },
 ];
 
