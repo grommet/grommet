@@ -36,7 +36,8 @@ var Simple = function Simple() {
       drop: true,
       options: options
     })), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
-      columns: _data.columns
+      columns: _data.columns,
+      primaryKey: "name"
     })))
     // </Grommet>
   );

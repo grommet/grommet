@@ -26,15 +26,17 @@ export var datumValue = function datumValue(datum, property) {
 
 // get the primary property name
 export var normalizePrimaryProperty = function normalizePrimaryProperty(columns, primaryKey) {
-  var result;
-  columns.forEach(function (column) {
-    // remember the first key property
-    if (column.primary && !result) {
-      result = column.property;
-    }
-  });
-  if (!result) {
-    if (primaryKey === false) result = undefined;else if (primaryKey) result = primaryKey;else if (columns.length > 0) result = columns[0].property;
+  var result = primaryKey;
+  if (result === undefined) {
+    columns.forEach(function (column) {
+      // remember the first key property
+      if (column.primary && !result) {
+        result = column.property;
+      }
+    });
+  }
+  if (result === undefined && columns.length > 0) {
+    result = columns[0].property;
   }
   return result;
 };

@@ -227,7 +227,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     var isRowExpanded = rowExpand && rowExpand.includes(index);
     var cellProps = normalizeRowCellProps(rowProps, cellPropsProp, primaryValue, index);
     return /*#__PURE__*/React.createElement(Row, {
-      key: index,
+      key: primaryValue != null ? primaryValue : index,
       setActive: setActive,
       rowRef: rowRef,
       cellProps: cellProps,

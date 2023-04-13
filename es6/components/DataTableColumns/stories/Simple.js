@@ -32,7 +32,8 @@ export var Simple = function Simple() {
       drop: true,
       options: options
     })), /*#__PURE__*/React.createElement(DataTable, {
-      columns: columns
+      columns: columns,
+      primaryKey: "name"
     })))
     // </Grommet>
   );
