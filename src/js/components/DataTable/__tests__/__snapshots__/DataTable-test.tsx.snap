@@ -51,6 +51,12 @@ exports[`DataTable !primaryKey 1`] = `
   line-height: 24px;
 }
 
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
 .c3 {
   margin: 0;
   padding: 0;
@@ -144,19 +150,20 @@ exports[`DataTable !primaryKey 1`] = `
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
-        <td
+        <th
           class="c7 "
+          scope="row"
         >
           <div
             class="c8"
           >
             <span
-              class="c5"
+              class="c9"
             >
               one
             </span>
           </div>
-        </td>
+        </th>
         <td
           class="c7 "
         >
@@ -174,19 +181,20 @@ exports[`DataTable !primaryKey 1`] = `
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
-        <td
+        <th
           class="c7 "
+          scope="row"
         >
           <div
             class="c8"
           >
             <span
-              class="c5"
+              class="c9"
             >
               two
             </span>
           </div>
-        </td>
+        </th>
         <td
           class="c7 "
         >

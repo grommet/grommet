@@ -28,17 +28,17 @@ export const datumValue = (datum, property) => {
 
 // get the primary property name
 export const normalizePrimaryProperty = (columns, primaryKey) => {
-  let result;
-  columns.forEach((column) => {
-    // remember the first key property
-    if (column.primary && !result) {
-      result = column.property;
-    }
-  });
+  let result = primaryKey;
   if (!result) {
-    if (primaryKey === false) result = undefined;
-    else if (primaryKey) result = primaryKey;
-    else if (columns.length > 0) result = columns[0].property;
+    columns.forEach((column) => {
+      // remember the first key property
+      if (column.primary && !result) {
+        result = column.property;
+      }
+    });
+  }
+  if (!result && columns.length > 0) {
+    result = columns[0].property;
   }
   return result;
 };
