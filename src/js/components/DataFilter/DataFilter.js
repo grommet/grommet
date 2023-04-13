@@ -1,5 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import { DataContext } from '../../contexts/DataContext';
+import { DataForm } from '../Data/DataForm';
+import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
@@ -49,6 +51,12 @@ export const DataFilter = ({
     properties,
     unfilteredData,
   } = useContext(DataContext);
+  const { noForm } = useContext(FormContext);
+
+  // patten from dataview/datasearch - need?
+  // useEffect(() => {
+  //   if (noForm) addToolbarKey('_view');
+  // }, [addToolbarKey, noForm]);
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving
@@ -121,9 +129,11 @@ export const DataFilter = ({
     }
   }
 
-  return inputOnly ? (
-    content
-  ) : (
+  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+
+  if (inputOnly) return content;
+
+  content = (
     <FormField
       htmlFor={id}
       name={property}
@@ -133,6 +143,8 @@ export const DataFilter = ({
       {content}
     </FormField>
   );
+
+  return content;
 };
 
 DataFilter.propTypes = DataFilterPropTypes;
