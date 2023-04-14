@@ -48,6 +48,9 @@ export const decorators = [
                 "base" theme mode. To enable, select "base" from the
                 Theme menu above.`}
           </Text>
+          <div hidden>
+            <Story state={THEMES[state]} />
+          </div>
         </Box>
       );
     }
