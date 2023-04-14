@@ -6,6 +6,7 @@ import {
   DataSearch,
   DataSummary,
   DataTable,
+  DataTableGroupBy,
   Grid,
   Heading,
   Notification,
@@ -33,6 +34,7 @@ const Filters = ({ search, ...rest }) => (
   <DataFilters {...rest}>
     {search && <DataSearch property="sub.name" />}
     <DataFilter property="size" />
+    <DataTableGroupBy options={['size']} />
   </DataFilters>
 );
 

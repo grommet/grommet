@@ -34,6 +34,7 @@ export const formRangeKey = '_range';
 export const formStepKey = '_step';
 export const formPageKey = '_page';
 export const formColumnsKey = '_columns';
+export const formGroupByKey = '_groupBy';
 export const formViewNameKey = '_view';
 
 const viewFormKeyMap = {
@@ -42,6 +43,7 @@ const viewFormKeyMap = {
   step: formStepKey,
   page: formPageKey,
   columns: formColumnsKey,
+  groupBy: formGroupByKey,
   view: formViewNameKey,
 };
 
@@ -110,6 +112,7 @@ const viewToFormValue = (view) => {
   if (view?.sort) result[formSortKey] = view.sort;
   if (view?.name) result[formViewNameKey] = view.name;
   if (view?.columns) result[formColumnsKey] = view.columns;
+  if (view?.groupBy) result[formGroupByKey] = view.groupBy;
 
   return unflatten(result);
 };
