@@ -59,8 +59,11 @@ const Row = memo(
                     onClickRow(adjustedEvent);
                   } else if (onClickRow === 'select') {
                     if (isSelected) {
-                      onSelect(selected.filter((s) => s !== primaryValue));
-                    } else onSelect([...selected, primaryValue]);
+                      onSelect(
+                        selected.filter((s) => s !== primaryValue),
+                        primaryValue,
+                      );
+                    } else onSelect([...selected, primaryValue], primaryValue);
                   }
                 }
               }
@@ -95,8 +98,11 @@ const Row = memo(
                   disabled={isDisabled || !onSelect}
                   onChange={() => {
                     if (isSelected) {
-                      onSelect(selected.filter((s) => s !== primaryValue));
-                    } else onSelect([...selected, primaryValue]);
+                      onSelect(
+                        selected.filter((s) => s !== primaryValue),
+                        primaryValue,
+                      );
+                    } else onSelect([...selected, primaryValue], primaryValue);
                   }}
                   pad={cellProps.pad}
                 />
