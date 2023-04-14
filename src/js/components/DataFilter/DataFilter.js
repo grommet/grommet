@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useEffect } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { FormContext } from '../Form/FormContext';
@@ -41,7 +41,6 @@ export const DataFilter = ({
   children,
   options: optionsProp,
   property,
-  inputOnly,
   range: rangeProp,
   ...rest
 }) => {
@@ -50,13 +49,13 @@ export const DataFilter = ({
     id: dataId,
     properties,
     unfilteredData,
+    addToolbarKey,
   } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
 
-  // patten from dataview/datasearch - need?
-  // useEffect(() => {
-  //   if (noForm) addToolbarKey('_view');
-  // }, [addToolbarKey, noForm]);
+  useEffect(() => {
+    if (noForm) addToolbarKey('_filter');
+  }, [addToolbarKey, noForm]);
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving
@@ -129,20 +128,24 @@ export const DataFilter = ({
     }
   }
 
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
-
-  if (inputOnly) return content;
-
-  content = (
-    <FormField
-      htmlFor={id}
-      name={property}
-      label={properties?.[property]?.label || property}
-      {...rest}
-    >
-      {content}
-    </FormField>
-  );
+  if (noForm)
+    // likely in Toolbar
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
+  else
+    content = (
+      <FormField
+        htmlFor={id}
+        name={property}
+        label={properties?.[property]?.label || property}
+        {...rest}
+      >
+        {content}
+      </FormField>
+    );
 
   return content;
 };
