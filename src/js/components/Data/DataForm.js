@@ -276,7 +276,7 @@ export const DataForm = ({
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
   let content = children;
-  if (footer !== false || pad) {
+  if ((footer !== false && updateOn === 'submit') || pad) {
     content = (
       <Box fill="vertical">
         <Box flex overflow="auto" pad={{ horizontal: pad, top: pad }}>
