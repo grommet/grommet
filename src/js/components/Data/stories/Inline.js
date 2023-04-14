@@ -19,7 +19,7 @@ const sizes = ['small', 'medium', 'large'];
 
 const DATA = [];
 
-for (let i = 0; i < 2; i += 1) {
+for (let i = 0; i < 11; i += 1) {
   DATA.push({
     id: `x-${i}`,
     sub: {
@@ -29,6 +29,13 @@ for (let i = 0; i < 2; i += 1) {
     date: `2022-12-${(i % 30) + 1}`,
   });
 }
+
+const columns = [
+  { property: 'id', header: 'ID' },
+  { property: 'sub.name', header: 'Name' },
+  { property: 'size', header: 'Size' },
+  { property: 'date', header: 'Date' },
+];
 
 const Filters = ({ search, ...rest }) => (
   <DataFilters {...rest}>
@@ -86,7 +93,7 @@ export const Inline = () => {
           {toolbar}
           <DataSummary />
           <Box flex={false}>
-            <DataTable />
+            <DataTable columns={columns} />
           </Box>
         </Box>
       </Grid>
