@@ -152,7 +152,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   const [showContent, setShowContent] = useState();
 
   const tip = format({
-    id: 'dataTableColumns.open',
+    id: 'dataTableColumns.tip',
     messages: messages?.dataTableColumns,
   });
 
