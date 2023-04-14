@@ -1,6 +1,15 @@
 import React from 'react';
 
-import { Grid, DataTable, DataFilters, Notification, Text } from 'grommet';
+import {
+  Grid,
+  DataTable,
+  DataFilters,
+  DataSearch,
+  DataSummary,
+  Notification,
+  Text,
+  Toolbar,
+} from 'grommet';
 
 import { Data } from '../Data';
 
@@ -85,8 +94,12 @@ export const Complex = () => (
       status="info"
       message="Data is in 'beta'. The API surface is subject to change."
     />
-    <Data data={data} properties={properties} updateOn="change">
-      <DataFilters layer />
+    <Data data={data} properties={properties}>
+      <Toolbar>
+        <DataSearch />
+        <DataFilters layer />
+      </Toolbar>
+      <DataSummary />
       <DataTable columns={columns} verticalAlign={{ body: 'top' }} />
     </Data>
   </Grid>
