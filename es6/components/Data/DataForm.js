@@ -36,6 +36,7 @@ export var formRangeKey = '_range';
 export var formStepKey = '_step';
 export var formPageKey = '_page';
 export var formColumnsKey = '_columns';
+export var formGroupByKey = '_groupBy';
 export var formViewNameKey = '_view';
 var viewFormKeyMap = {
   search: formSearchKey,
@@ -43,6 +44,7 @@ var viewFormKeyMap = {
   step: formStepKey,
   page: formPageKey,
   columns: formColumnsKey,
+  groupBy: formGroupByKey,
   view: formViewNameKey
 };
 
@@ -105,6 +107,7 @@ var viewToFormValue = function viewToFormValue(view) {
   if (view != null && view.sort) result[formSortKey] = view.sort;
   if (view != null && view.name) result[formViewNameKey] = view.name;
   if (view != null && view.columns) result[formColumnsKey] = view.columns;
+  if (view != null && view.groupBy) result[formGroupByKey] = view.groupBy;
   return unflatten(result);
 };
 
@@ -253,7 +256,7 @@ export var DataForm = function DataForm(_ref) {
     return setFormValue(viewToFormValue(view));
   }, [view]);
   var content = children;
-  if (footer !== false || pad) {
+  if (footer !== false && updateOn === 'submit' || pad) {
     content = /*#__PURE__*/React.createElement(Box, {
       fill: "vertical"
     }, /*#__PURE__*/React.createElement(Box, {

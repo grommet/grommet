@@ -11,7 +11,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var sizes = ['small', 'medium', 'large'];
 var DATA = [];
-for (var i = 0; i < 2; i += 1) {
+for (var i = 0; i < 11; i += 1) {
   DATA.push({
     id: "x-" + i,
     sub: {
@@ -21,6 +21,19 @@ for (var i = 0; i < 2; i += 1) {
     date: "2022-12-" + (i % 30 + 1)
   });
 }
+var columns = [{
+  property: 'id',
+  header: 'ID'
+}, {
+  property: 'sub.name',
+  header: 'Name'
+}, {
+  property: 'size',
+  header: 'Size'
+}, {
+  property: 'date',
+  header: 'Date'
+}];
 var Filters = function Filters(_ref) {
   var search = _ref.search,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -28,6 +41,8 @@ var Filters = function Filters(_ref) {
     property: "sub.name"
   }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
     property: "size"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.DataTableGroupBy, {
+    options: ['size']
   }));
 };
 var Inline = function Inline() {
@@ -85,7 +100,9 @@ var Inline = function Inline() {
       margin: "none"
     }, "People"), toolbar, /*#__PURE__*/_react["default"].createElement(_grommet.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       flex: false
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, null)))))
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      columns: columns
+    })))))
     // </Grommet>
   );
 };

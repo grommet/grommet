@@ -57,7 +57,7 @@ var DataTable = function DataTable(_ref) {
     dataProp = _ref.data,
     disabled = _ref.disabled,
     fill = _ref.fill,
-    groupBy = _ref.groupBy,
+    groupByProp = _ref.groupBy,
     onClickRow = _ref.onClickRow,
     onMore = _ref.onMore,
     onSearch = _ref.onSearch,
@@ -137,6 +137,9 @@ var DataTable = function DataTable(_ref) {
   (0, _react.useEffect)(function () {
     if (sortProp) setSort(sortProp);else if (view != null && view.sort) setSort(view.sort);
   }, [sortProp, view]);
+
+  // what we are grouping on
+  var groupBy = (view == null ? void 0 : view.groupBy) || groupByProp;
 
   // the data filtered and sorted, if needed
   // Note: onUpdate mode expects the data to be passed

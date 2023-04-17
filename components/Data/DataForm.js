@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.formViewNameKey = exports.formStepKey = exports.formSortKey = exports.formSearchKey = exports.formRangeKey = exports.formPageKey = exports.formColumnsKey = exports.DataForm = void 0;
+exports.formViewNameKey = exports.formStepKey = exports.formSortKey = exports.formSearchKey = exports.formRangeKey = exports.formPageKey = exports.formGroupByKey = exports.formColumnsKey = exports.DataForm = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Box = require("../Box");
@@ -49,6 +49,8 @@ var formPageKey = '_page';
 exports.formPageKey = formPageKey;
 var formColumnsKey = '_columns';
 exports.formColumnsKey = formColumnsKey;
+var formGroupByKey = '_groupBy';
+exports.formGroupByKey = formGroupByKey;
 var formViewNameKey = '_view';
 exports.formViewNameKey = formViewNameKey;
 var viewFormKeyMap = {
@@ -57,6 +59,7 @@ var viewFormKeyMap = {
   step: formStepKey,
   page: formPageKey,
   columns: formColumnsKey,
+  groupBy: formGroupByKey,
   view: formViewNameKey
 };
 
@@ -119,6 +122,7 @@ var viewToFormValue = function viewToFormValue(view) {
   if (view != null && view.sort) result[formSortKey] = view.sort;
   if (view != null && view.name) result[formViewNameKey] = view.name;
   if (view != null && view.columns) result[formColumnsKey] = view.columns;
+  if (view != null && view.groupBy) result[formGroupByKey] = view.groupBy;
   return unflatten(result);
 };
 
@@ -267,7 +271,7 @@ var DataForm = function DataForm(_ref) {
     return setFormValue(viewToFormValue(view));
   }, [view]);
   var content = children;
-  if (footer !== false || pad) {
+  if (footer !== false && updateOn === 'submit' || pad) {
     content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       fill: "vertical"
     }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
