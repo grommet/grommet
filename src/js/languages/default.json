@@ -53,6 +53,10 @@
     "order": "Order columns",
     "select": "Select columns"
   },
+  "dataTableGroupBy": {
+    "clear": "Clear group",
+    "label": "Group by"
+  },
   "dataView": {
     "label": "View"
   },
