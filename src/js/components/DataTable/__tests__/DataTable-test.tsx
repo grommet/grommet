@@ -1066,10 +1066,9 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(
-      expect.arrayContaining(['alpha', 'beta']),
-      'beta',
-    );
+    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
+      a: 'beta',
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1695,6 +1694,6 @@ describe('DataTable', () => {
       </Grommet>,
     );
     fireEvent.click(screen.getByRole('checkbox', { name: 'select Alan' }));
-    expect(onSelect).toBeCalledWith(['Alan'], 'Alan');
+    expect(onSelect).toBeCalledWith(['Alan'], { name: 'Alan', percent: 20 });
   });
 });

@@ -61,9 +61,9 @@ const Row = memo(
                     if (isSelected) {
                       onSelect(
                         selected.filter((s) => s !== primaryValue),
-                        primaryValue,
+                        datum,
                       );
-                    } else onSelect([...selected, primaryValue], primaryValue);
+                    } else onSelect([...selected, primaryValue], datum);
                   }
                 }
               }
@@ -100,9 +100,9 @@ const Row = memo(
                     if (isSelected) {
                       onSelect(
                         selected.filter((s) => s !== primaryValue),
-                        primaryValue,
+                        datum,
                       );
-                    } else onSelect([...selected, primaryValue], primaryValue);
+                    } else onSelect([...selected, primaryValue], datum);
                   }}
                   pad={cellProps.pad}
                 />
