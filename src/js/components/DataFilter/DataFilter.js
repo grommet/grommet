@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useEffect } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { FormContext } from '../Form/FormContext';
@@ -49,13 +49,8 @@ export const DataFilter = ({
     id: dataId,
     properties,
     unfilteredData,
-    addToolbarKey,
   } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
-
-  useEffect(() => {
-    if (noForm) addToolbarKey('_filter');
-  }, [addToolbarKey, noForm]);
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving
