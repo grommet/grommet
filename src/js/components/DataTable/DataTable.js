@@ -64,7 +64,7 @@ const DataTable = ({
   data: dataProp,
   disabled,
   fill,
-  groupBy,
+  groupBy: groupByProp,
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
@@ -143,6 +143,9 @@ const DataTable = ({
     if (sortProp) setSort(sortProp);
     else if (view?.sort) setSort(view.sort);
   }, [sortProp, view]);
+
+  // what we are grouping on
+  const groupBy = view?.groupBy || groupByProp;
 
   // the data filtered and sorted, if needed
   // Note: onUpdate mode expects the data to be passed
