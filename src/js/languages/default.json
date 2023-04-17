@@ -52,7 +52,7 @@
     "open": "Open column selector",
     "order": "Order columns",
     "select": "Select columns",
-    "tip": "Manage Columns"
+    "tip": "Manage columns"
   },
   "dataView": {
     "label": "View"
