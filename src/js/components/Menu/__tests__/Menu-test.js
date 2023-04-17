@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 
@@ -128,7 +128,7 @@ describe('Menu', () => {
 
   test('gap between icon and label', () => {
     window.scrollTo = jest.fn();
-    const { container, getByText } = render(
+    const { container } = render(
       <Grommet>
         <Menu
           open
@@ -140,12 +140,6 @@ describe('Menu', () => {
         />
       </Grommet>,
     );
-
-    const firstItem = getByText('Item 1');
-    expect(
-      firstItem.querySelector('div[class^=StyledBox__StyledBoxGap]'),
-    ).toBeInTheDocument();
-
     expect(container).toMatchSnapshot();
   });
 
@@ -589,5 +583,28 @@ describe('Menu', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should group items', async () => {
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet>
+        <Menu
+          id="test-menu"
+          label="Test Menu"
+          items={[
+            [{ label: 'Item 1' }, { label: 'Item 2' }],
+            [{ label: 'Item 3' }],
+          ]}
+        />
+      </Grommet>,
+    );
+    fireEvent.keyDown(screen.getByText('Test Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+
+    expectPortal('test-menu__drop').toMatchSnapshot();
   });
 });

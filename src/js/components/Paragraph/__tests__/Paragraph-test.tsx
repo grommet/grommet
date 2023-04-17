@@ -59,3 +59,27 @@ test('Paragraph textAlign renders', () => {
 
   expect(container.firstChild).toMatchSnapshot();
 });
+
+test('Paragraph maxLines renders', () => {
+  const { container } = render(
+    <Grommet>
+      <Paragraph maxLines={3} />
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('Paragraph dangerouslySetInnerHTML renders', () => {
+  const { container } = render(
+    <Grommet>
+      <Paragraph
+        dangerouslySetInnerHTML={{
+          __html: 'This is a dangerouslySetInnerHTML!',
+        }}
+      />
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});

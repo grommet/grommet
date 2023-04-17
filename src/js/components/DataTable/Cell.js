@@ -1,4 +1,4 @@
-import React, { memo, useContext } from 'react';
+import React, { isValidElement, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -19,7 +19,7 @@ const Cell = memo(
       footer,
       property,
       render,
-      verticalAlign,
+      verticalAlign: columnVerticalAlign, // deprecate in v3
       size,
     },
     datum,
@@ -28,6 +28,8 @@ const Cell = memo(
     pinnedOffset,
     primaryProperty,
     scope,
+    verticalAlign,
+    ...rest
   }) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const value = datumValue(datum, property);
@@ -40,7 +42,12 @@ const Cell = memo(
     if (render && renderContexts) {
       content = render(datum);
     } else if (value !== undefined) {
-      content = value;
+      if (
+        typeof value === 'string' ||
+        typeof value === 'number' ||
+        isValidElement(value)
+      )
+        content = value;
     }
 
     if (typeof content === 'string' || typeof content === 'number') {
@@ -59,7 +66,7 @@ const Cell = memo(
         {...theme.dataTable[context]}
         align={align}
         context={context}
-        verticalAlign={verticalAlign}
+        verticalAlign={verticalAlign || columnVerticalAlign}
         size={size}
         background={background}
         pinnedOffset={pinnedOffset}
@@ -67,6 +74,7 @@ const Cell = memo(
         pad={pad}
         pin={pin}
         plain={plain ? 'noPad' : undefined}
+        {...rest}
       >
         {content}
       </StyledDataTableCell>

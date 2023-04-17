@@ -12,7 +12,7 @@ import {
   Paragraph,
 } from 'grommet';
 
-const message = `Thank you for clicking the Announce Button, 
+const message = `Thank you for clicking the Announce Button,
 this announcement is being broadcast on the Button's click.`;
 
 const PageContent = ({ mode }) => {
@@ -44,7 +44,7 @@ const PageContent = ({ mode }) => {
 
 export const Polite = () => (
   <Grommet theme={grommet} full>
-    <Box justify="center" align="center" background="brand" fill>
+    <Box justify="center" align="center" fill>
       <PageContent mode="polite" role="log" />
     </Box>
   </Grommet>

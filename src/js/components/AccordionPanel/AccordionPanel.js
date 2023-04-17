@@ -89,11 +89,10 @@ const AccordionPanel = forwardRef(
         margin={abutMargin}
       >
         <Button
-          role="tab"
-          aria-selected={active}
           aria-expanded={active}
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
+          hoverIndicator={theme.accordion.hover.background}
           onMouseOver={(event) => {
             setHover(headingColor);
             if (onMouseOver) onMouseOver(event);
@@ -148,7 +147,7 @@ const AccordionPanel = forwardRef(
             </Box>
           )}
         </Button>
-        <Box border={contentBorder}>
+        <Box role="region" border={contentBorder}>
           {animate ? (
             <Collapsible open={active}>{children}</Collapsible>
           ) : (

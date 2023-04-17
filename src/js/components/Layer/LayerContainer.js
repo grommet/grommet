@@ -12,6 +12,9 @@ import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+
 import {
   backgroundIsDark,
   findVisibleParent,
@@ -26,8 +29,6 @@ const HiddenAnchor = styled.a`
   overflow: hidden;
   position: absolute;
 `;
-
-const defaultPortalContext = [];
 
 const LayerContainer = forwardRef(
   (
@@ -48,6 +49,7 @@ const LayerContainer = forwardRef(
     },
     ref,
   ) => {
+    const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const size = useContext(ResponsiveContext);
     // layerOptions was created to preserve backwards compatibility but
@@ -56,12 +58,35 @@ const LayerContainer = forwardRef(
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
-    const portalContext = useContext(PortalContext) || defaultPortalContext;
+    const portalContext = useContext(PortalContext);
     const portalId = useMemo(() => portalContext.length, [portalContext]);
     const nextPortalContext = useMemo(
       () => [...portalContext, portalId],
       [portalContext, portalId],
     );
+
+    const sendAnalytics = useAnalytics();
+
+    useEffect(() => {
+      const start = new Date();
+      const element = layerRef.current;
+      const isHidden = position === 'hidden';
+      if (!isHidden) {
+        sendAnalytics({
+          type: 'layerOpen',
+          element,
+        });
+      }
+      return () => {
+        if (!isHidden) {
+          sendAnalytics({
+            type: 'layerClose',
+            element,
+            elapsed: new Date().getTime() - start.getTime(),
+          });
+        }
+      };
+    }, [sendAnalytics, layerRef, position]);
 
     useEffect(() => {
       if (position !== 'hidden') {
@@ -96,8 +121,14 @@ const LayerContainer = forwardRef(
       const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
-        let node = event.target;
-        while (clickedPortalId === null && node !== document && node !== null) {
+        let node = (event.composed && event.composedPath()[0]) || event.target;
+
+        while (
+          clickedPortalId === null &&
+          node &&
+          node !== document &&
+          !(node instanceof ShadowRoot)
+        ) {
           // check if user click occurred within the layer
           const attr = node.getAttribute('data-g-portal-id');
           if (attr !== null && attr !== '')
@@ -169,7 +200,7 @@ const LayerContainer = forwardRef(
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
-    }, [layerTarget, onClickOutside, portalContext, portalId]);
+    }, [containerTarget, layerTarget, onClickOutside, portalContext, portalId]);
 
     let content = (
       <StyledContainer
@@ -279,7 +310,7 @@ const LayerContainer = forwardRef(
           // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
           restrictScroll={
-            !layerTarget || hitResponsiveBreakpoint ? true : undefined
+            !layerTarget && hitResponsiveBreakpoint ? true : undefined
           }
           trapFocus
         >

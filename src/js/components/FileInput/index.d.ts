@@ -22,10 +22,15 @@ export interface FileInputProps {
   };
   multiple?: boolean | { aggregateThreshold?: number; max?: number };
   name?: string;
+  onChange?: (
+    event?: React.ChangeEvent<HTMLInputElement>,
+    { files }?: { files: File[] },
+    { target }?: { target: { files: FileList } },
+  ) => void;
   renderFile?: (...args: any[]) => void;
 }
 
-type inputProps = Omit<JSX.IntrinsicElements['input'], 'multiple'>;
+type inputProps = Omit<JSX.IntrinsicElements['input'], 'multiple' | 'onChange'>;
 
 export interface FileInputExtendedProps extends FileInputProps, inputProps {}
 

@@ -1,3 +1,6 @@
+import React from 'react';
+import { FormNextLink } from 'grommet-icons';
+
 export const buttonKindTheme = {
   button: {
     default: {
@@ -21,6 +24,7 @@ export const buttonKindTheme = {
         horizontal: '12px',
         vertical: '6px',
       },
+      icon: <FormNextLink />,
     },
     secondary: {
       border: {
@@ -82,6 +86,7 @@ export const buttonKindTheme = {
           horizontal: '10px',
           vertical: '4px',
         },
+        icon: <FormNextLink color="red" />,
       },
       secondary: {
         border: {

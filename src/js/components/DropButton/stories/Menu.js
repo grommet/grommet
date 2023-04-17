@@ -18,12 +18,14 @@ const MenuItem = () => (
   </Box>
 );
 
+const align = { top: 'bottom' };
+
 const GremlinDropButton = () => (
   <DropButton
     alignSelf="center"
     margin={{ vertical: 'small' }}
     dropContent={renderItems()}
-    dropProps={{ align: { top: 'bottom' } }}
+    dropProps={{ align }}
   >
     <MenuItem />
   </DropButton>

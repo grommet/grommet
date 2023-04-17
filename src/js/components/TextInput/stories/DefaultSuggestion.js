@@ -19,11 +19,13 @@ export const DefaultSuggestion = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <TextInput
+          id="grommet-text-combobox-default-suggestion"
           value={value}
           onChange={onChange}
           onSelect={onSelect}
           suggestions={suggestions}
           defaultSuggestion={1}
+          aria-label="Input Text"
         />
       </Box>
     </Box>

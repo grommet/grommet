@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react';
+import Root from 'react-shadow';
+import { StyleSheetManager } from 'styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
-import { Grommet, grommet, Box, Text } from '../src/js';
+import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
 
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
   hpe,
   grommet,
+  hacktoberfest2022,
   base: {},
 };
 
 export const decorators = [
   (Story, context) => {
+    const [rootRef, setRootRef] = useState(null);
     const [state, setState] = useState('grommet');
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
-    const full = context.parameters?.args?.full || 'min';
-    const dir = context.parameters?.args?.dir;
-    const options = context.parameters?.args?.options;
+    const full = context.allArgs?.full || 'min';
+    const dir = context.allArgs?.dir;
+    const options = context.allArgs?.options;
+    const {
+      globals: { root },
+    } = context;
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
@@ -41,7 +48,31 @@ export const decorators = [
                 "base" theme mode. To enable, select "base" from the
                 Theme menu above.`}
           </Text>
+          <div hidden>
+            <Story state={THEMES[state]} />
+          </div>
         </Box>
+      );
+    }
+
+    if (root === 'shadow') {
+      return (
+        // eslint-disable-next-line react/jsx-pascal-case
+        <Root.div ref={setRootRef}>
+          {rootRef && (
+            <StyleSheetManager target={rootRef.shadowRoot}>
+              <Grommet
+                theme={THEMES[state]}
+                full={full}
+                dir={dir}
+                options={options}
+                containerTarget={rootRef.shadowRoot}
+              >
+                <Story state={THEMES[state]} />
+              </Grommet>
+            </StyleSheetManager>
+          )}
+        </Root.div>
       );
     }
 
@@ -83,11 +114,22 @@ export const parameters = {
 
 export const globalTypes = {
   theme: {
-    name: 'Theme',
     defaultValue: 'grommet',
     toolbar: {
-      items: ['base', 'grommet', 'hpe'],
-      showName: true,
+      title: 'Theme',
+      items: [
+        { title: 'base', value: 'base' },
+        { title: 'grommet', value: 'grommet' },
+        { title: 'hpe', value: 'hpe' },
+        { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
+      ],
+    },
+  },
+  root: {
+    defaultValue: 'document',
+    toolbar: {
+      title: 'Root',
+      items: ['document', 'shadow'],
     },
   },
 };

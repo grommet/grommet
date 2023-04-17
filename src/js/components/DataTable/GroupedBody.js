@@ -15,6 +15,7 @@ export const GroupedBody = forwardRef(
       cellProps: cellPropsProp,
       columns,
       data,
+      disabled,
       groupBy,
       groups,
       groupState,
@@ -29,6 +30,7 @@ export const GroupedBody = forwardRef(
       selected,
       size,
       step,
+      verticalAlign,
       ...rest
     },
     ref,
@@ -40,6 +42,8 @@ export const GroupedBody = forwardRef(
         const memberCount = group.data.length;
         let groupSelected = [];
         let isGroupSelected = false;
+        let groupDisabled = [];
+        let isGroupDisabled = false;
 
         if (memberCount > 1 || (onUpdate && group.key)) {
           // need a header
@@ -60,11 +64,23 @@ export const GroupedBody = forwardRef(
             : groupSelected.length > 0 &&
               groupSelected.length < group.data.length;
 
+          groupDisabled =
+            primaryKeys && disabled
+              ? primaryKeys.filter((val) => disabled.includes(val))
+              : [];
+
+          isGroupDisabled = groupBy.disable
+            ? groupBy.disable[group.key] === 'all'
+            : groupDisabled.length === group.data.length &&
+              groupDisabled.length > 0;
+
           nextItems.push({
             expanded,
             key: group.key,
+            primaryValue: group.key,
             datum: group.datum,
             context: 'groupHeader',
+            isDisabled: isGroupDisabled,
             isSelected: isGroupSelected,
             indeterminate,
             onChange: () => {
@@ -87,6 +103,7 @@ export const GroupedBody = forwardRef(
               ? datumValue(datum, primaryProperty)
               : undefined;
             const isSelected = selected?.includes(primaryValue);
+            const isDisabled = disabled?.includes(primaryValue);
             nextItems.push({
               key: datum[primaryProperty],
               primaryValue: primaryProperty
@@ -97,6 +114,7 @@ export const GroupedBody = forwardRef(
                 memberCount > 1 && index === memberCount - 1
                   ? 'groupEnd'
                   : 'body',
+              isDisabled,
               isSelected,
               onChange: () => {
                 const nextSelected = isSelected
@@ -110,6 +128,7 @@ export const GroupedBody = forwardRef(
       });
       return nextItems;
     }, [
+      disabled,
       groups,
       groupBy,
       groupState,
@@ -138,6 +157,7 @@ export const GroupedBody = forwardRef(
               datum,
               expanded,
               indeterminate,
+              isDisabled,
               isSelected,
               key,
               onChange,
@@ -161,12 +181,16 @@ export const GroupedBody = forwardRef(
                     context === 'groupHeader' ? onToggle(key) : undefined
                   }
                   expanded={expanded}
+                  verticalAlign={verticalAlign}
                 />
                 {(selected || onSelect) && (
                   <TableCell
                     background={cellProps.background}
+                    border={cellProps.pinned.border || cellProps.border}
                     plain="noPad"
                     size="auto"
+                    verticalAlign={verticalAlign}
+                    aria-disabled={isDisabled || !onSelect || undefined}
                   >
                     <CheckBox
                       a11yTitle={`${isSelected ? 'unselect' : 'select'} ${
@@ -174,7 +198,7 @@ export const GroupedBody = forwardRef(
                       }`}
                       checked={isSelected}
                       indeterminate={indeterminate}
-                      disabled={!onSelect}
+                      disabled={isDisabled || !onSelect}
                       onChange={onChange}
                       pad={cellProps.pad}
                     />
@@ -203,6 +227,7 @@ export const GroupedBody = forwardRef(
                         pinnedOffset &&
                         pinnedOffset[column.property]
                       }
+                      verticalAlign={verticalAlign}
                     />
                   );
                 })}

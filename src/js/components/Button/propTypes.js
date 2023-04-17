@@ -4,6 +4,7 @@ import {
   genericProps,
   colorPropType,
   hoverIndicatorPropType,
+  padPropType,
 } from '../../utils/general-prop-types';
 
 let PropType = {};
@@ -16,7 +17,11 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.node,
     ]),
     active: PropTypes.bool,
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    as: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.elementType,
+    ]),
     badge: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.element,
@@ -27,6 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
         value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
       }),
     ]),
+    busy: PropTypes.bool,
     color: colorPropType,
     disabled: PropTypes.bool,
     fill: PropTypes.oneOfType([
@@ -59,12 +65,21 @@ if (process.env.NODE_ENV !== 'production') {
       'stretch',
     ]),
     label: PropTypes.node,
+    messages: PropTypes.shape({
+      busy: PropTypes.string,
+      success: PropTypes.string,
+    }),
     onClick: PropTypes.func,
+    pad: padPropType,
     plain: PropTypes.bool,
     primary: PropTypes.bool,
     reverse: PropTypes.bool,
     secondary: PropTypes.bool,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large']),
+      PropTypes.string,
+    ]),
+    success: PropTypes.bool,
     target: PropTypes.oneOfType([
       PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
       PropTypes.string,

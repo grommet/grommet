@@ -7,7 +7,10 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useForwardedRef } from '../../utils';
+
 import { FormContext } from './FormContext';
 import { FormPropTypes } from './propTypes';
 
@@ -31,6 +34,24 @@ const stringToArray = (string) => {
   return undefined;
 };
 
+const getValueAt = (valueObject, pathArg) => {
+  if (valueObject === undefined) return undefined;
+  const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
+  if (path.length === 1) return valueObject[path];
+  return getValueAt(valueObject[path.shift()], path);
+};
+
+const setValueAt = (valueObject, pathArg, value) => {
+  const object = valueObject;
+  const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
+  if (path.length === 1) object[path] = value;
+  else {
+    const key = path.shift();
+    if (!object[key]) object[key] = {};
+    setValueAt(object[key], path, value);
+  }
+};
+
 const getFieldValue = (name, value) => {
   const isArrayField = stringToArray(name);
   if (isArrayField) {
@@ -38,7 +59,7 @@ const getFieldValue = (name, value) => {
     const obj = value[arrayName]?.[indexOfArray];
     return arrayObjName ? obj?.[arrayObjName] : obj;
   }
-  return value[name];
+  return getValueAt(value, name);
 };
 
 const setFieldValue = (name, componentValue, prevValue) => {
@@ -55,7 +76,7 @@ const setFieldValue = (name, componentValue, prevValue) => {
       nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
     } else nextValue[arrayName][indexOfArray] = componentValue;
   } else {
-    nextValue[name] = componentValue;
+    setValueAt(nextValue, name, componentValue);
   }
   return nextValue;
 };
@@ -126,12 +147,12 @@ const validateForm = (
 ) => {
   const nextErrors = {};
   const nextInfos = {};
-  validationRules.forEach(([name, { field, input }]) => {
+  validationRules.forEach(([name, { field, input, validateOn }]) => {
     if (!omitValid) {
       nextErrors[name] = undefined;
       nextInfos[name] = undefined;
     }
-
+    if (!validateOn) return;
     let result;
     if (input) {
       // input() a validation function supplied through useFormInput()
@@ -156,6 +177,9 @@ const validateForm = (
   return [nextErrors, nextInfos];
 };
 
+const isInstantValidate = (validateOn) =>
+  ['blur', 'change'].includes(validateOn);
+
 const Form = forwardRef(
   (
     {
@@ -163,16 +187,18 @@ const Form = forwardRef(
       errors: errorsProp = defaultValidationResults.errors,
       infos: infosProp = defaultValidationResults.infos,
       messages,
+      kind,
       onChange,
       onReset,
       onSubmit,
       onValidate,
-      validate: validateOn = 'submit',
+      validate: validateOnProp = 'submit',
       value: valueProp,
       ...rest
     },
     ref,
   ) => {
+    const formRef = useForwardedRef(ref);
     const { format } = useContext(MessageContext);
     const [valueState, setValueState] = useState(valueProp || defaultValue);
     const value = useMemo(
@@ -180,6 +206,7 @@ const Form = forwardRef(
       [valueProp, valueState],
     );
     const [touched, setTouched] = useState(defaultTouched);
+    const [validateOn, setValidateOn] = useState(validateOnProp);
     const [validationResults, setValidationResults] = useState({
       errors: errorsProp,
       infos: infosProp,
@@ -201,6 +228,9 @@ const Form = forwardRef(
 
     const validationRulesRef = useRef({});
     const requiredFields = useRef([]);
+    const analyticsRef = useRef({ start: new Date(), errors: {} });
+
+    const sendAnalytics = useAnalytics();
 
     const buildValid = useCallback(
       (nextErrors) => {
@@ -229,6 +259,17 @@ const Form = forwardRef(
             !validationRulesRef.current[n] || nextValidations[n] === undefined,
         )
         .forEach((n) => delete nextValidations[n]);
+    };
+
+    const updateAnalytics = () => {
+      const errorFields = Object.keys(validationResultsRef.current?.errors);
+      const errorCounts = analyticsRef.current.errors;
+
+      if (errorFields.length > 0) {
+        errorFields.forEach((key) => {
+          errorCounts[key] = (errorCounts[key] || 0) + 1;
+        });
+      }
     };
 
     const applyValidationRules = useCallback(
@@ -265,6 +306,7 @@ const Form = forwardRef(
               valid: buildValid(nextErrors),
             });
           validationResultsRef.current = nextValidationResults;
+          updateAnalytics();
           return nextValidationResults;
         });
       },
@@ -279,17 +321,22 @@ const Form = forwardRef(
       // controlled inputs.
       if (
         mounted !== 'mounted' &&
-        ['blur', 'change'].includes(validateOn) &&
+        (isInstantValidate(validateOn) ||
+          validationRules.some(([, v]) => isInstantValidate(v.validateOn))) &&
         Object.keys(value).length > 0 &&
         Object.keys(touched).length === 0
       ) {
         applyValidationRules(
           validationRules
-            .filter(([n]) => value[n])
+            .filter(([n, v]) => getFieldValue(n, value) && v.validateOn)
             // Exlude empty arrays which may be initial values in
             // an input such as DateInput.
             .filter(
-              ([n]) => !(Array.isArray(value[n]) && value[n].length === 0),
+              ([n]) =>
+                !(
+                  Array.isArray(getFieldValue(n, value)) &&
+                  getFieldValue(n, value).length === 0
+                ),
             ),
         );
       }
@@ -300,10 +347,15 @@ const Form = forwardRef(
     useEffect(() => {
       const validationRules = Object.entries(validationRulesRef.current);
       const timer = setTimeout(() => {
-        if (pendingValidation && ['blur', 'change'].includes(validateOn)) {
+        if (
+          pendingValidation &&
+          (isInstantValidate(validateOn) ||
+            validationRules.some(([, v]) => isInstantValidate(v.validateOn)))
+        ) {
           applyValidationRules(
             validationRules.filter(
-              ([n]) => touched[n] || pendingValidation.includes(n),
+              ([n, v]) =>
+                (touched[n] || pendingValidation.includes(n)) && v.validateOn,
             ),
           );
           setPendingValidation(undefined);
@@ -333,6 +385,26 @@ const Form = forwardRef(
         );
       }
     }, [applyValidationRules, touched]);
+
+    useEffect(() => {
+      const element = formRef.current;
+      analyticsRef.current = { start: new Date(), errors: {} };
+      sendAnalytics({
+        type: 'formOpen',
+        element,
+      });
+      return () => {
+        if (!analyticsRef.current.submitted) {
+          sendAnalytics({
+            type: 'formClose',
+            element,
+            errors: analyticsRef.current.errors,
+            elapsed:
+              new Date().getTime() - analyticsRef.current.start.getTime(),
+          });
+        }
+      };
+    }, [sendAnalytics, formRef]);
 
     // There are three basic patterns of handling form input value state:
     //
@@ -476,11 +548,21 @@ const Form = forwardRef(
         required,
         disabled,
         validate: validateArg,
+        validateOn: validateOnArg,
       }) => {
         const error = disabled
           ? undefined
           : errorArg || validationResults.errors[name];
         const info = infoArg || validationResults.infos[name];
+
+        useEffect(() => {
+          setValidateOn((prevValues) => {
+            if (typeof prevValues === 'string') {
+              return { [name]: validateOnArg || validateOnProp };
+            }
+            return { ...prevValues, [name]: validateOnArg || validateOnProp };
+          });
+        }, [validateOnArg, name]);
 
         // Create validation rules for field
         useEffect(() => {
@@ -497,25 +579,44 @@ const Form = forwardRef(
               validateArg,
               required,
             );
-            return () => delete validationRulesRef.current[name].field;
+
+            // priority is given to validateOn prop on formField, if it is
+            // undefined, then we will use the validate prop value of Form.
+            // The reason we don't want to add validateOn = "submit" here is
+            // because we don't want to trigger validation of "submit" field
+            // when the user is typing in the instant (blur, change)
+            // validation fields.
+            if (validateOnArg && validateOnArg !== 'submit') {
+              validationRulesRef.current[name].validateOn = validateOnArg;
+            } else if (!validateOnArg && validateOnProp !== 'submit') {
+              validationRulesRef.current[name].validateOn = validateOnProp;
+            }
+            return () => {
+              delete validationRulesRef.current[name].field;
+              delete validationRulesRef.current[name].validateOn;
+              const requiredFieldIndex = requiredFields.current.indexOf(name);
+              if (requiredFieldIndex !== -1) {
+                requiredFields.current.splice(requiredFieldIndex, 1);
+              }
+            };
           }
 
           return undefined;
-        }, [error, name, required, validateArg, disabled]);
+        }, [error, name, required, validateArg, disabled, validateOnArg]);
 
         return {
           error,
           info,
           inForm: true,
           onBlur:
-            validateOn === 'blur'
+            validateOnArg === 'blur' || validateOn[name] === 'blur'
               ? () =>
                   setPendingValidation(
                     pendingValidation ? [...pendingValidation, name] : [name],
                   )
               : undefined,
           onChange:
-            validateOn === 'change'
+            validateOnArg === 'change' || validateOn[name] === 'change'
               ? () =>
                   setPendingValidation(
                     pendingValidation ? [...pendingValidation, name] : [name],
@@ -524,9 +625,10 @@ const Form = forwardRef(
         };
       };
 
-      return { useFormField, useFormInput };
+      return { useFormField, useFormInput, kind };
     }, [
       onChange,
+      kind,
       pendingValidation,
       touched,
       validateOn,
@@ -534,13 +636,22 @@ const Form = forwardRef(
       validationResults.infos,
       value,
       valueProp,
+      validateOnProp,
     ]);
 
     return (
       <form
-        ref={ref}
+        ref={formRef}
         {...rest}
         onReset={(event) => {
+          sendAnalytics({
+            type: 'formReset',
+            element: formRef.current,
+            data: event,
+            errors: analyticsRef.current.errors,
+            elapsed:
+              new Date().getTime() - analyticsRef.current.start.getTime(),
+          });
           setPendingValidation(undefined);
           if (!valueProp) {
             setValueState(defaultValue);
@@ -548,6 +659,7 @@ const Form = forwardRef(
           }
           setTouched(defaultTouched);
           setValidationResults(defaultValidationResults);
+          analyticsRef.current = { start: new Date(), errors: {} };
           if (onReset) {
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
@@ -561,8 +673,23 @@ const Form = forwardRef(
           // otherwise.
           event.preventDefault();
           setPendingValidation(undefined);
+          // adding validateOn: "submit" prop to the undefined validateOn fields
+          // as we want to trigger "submit" validation once form is submitted
+          const newValidationRulesRef = Object.keys(
+            validationRulesRef.current,
+          ).reduce((acc, key) => {
+            acc[key] = validationRulesRef.current[key];
+            if (!acc[key].validateOn) {
+              acc[key] = {
+                ...validationRulesRef.current[key],
+                validateOn: 'submit',
+              };
+            }
+            return acc;
+          }, {});
+
           const [nextErrors, nextInfos] = validateForm(
-            Object.entries(validationRulesRef.current),
+            Object.entries(newValidationRulesRef),
             value,
             format,
             messages,
@@ -578,6 +705,7 @@ const Form = forwardRef(
             };
             if (onValidate) onValidate(nextValidationResults);
             validationResultsRef.current = nextValidationResults;
+            updateAnalytics();
             return nextValidationResults;
           });
 
@@ -587,6 +715,16 @@ const Form = forwardRef(
             adjustedEvent.value = value;
             adjustedEvent.touched = touched;
             onSubmit(adjustedEvent);
+            sendAnalytics({
+              type: 'formSubmit',
+              element: formRef.current,
+              data: adjustedEvent,
+              errors: analyticsRef.current.errors,
+              elapsed:
+                new Date().getTime() - analyticsRef.current.start.getTime(),
+            });
+            analyticsRef.current.errors = {};
+            analyticsRef.current.submitted = true;
           }
         }}
       >

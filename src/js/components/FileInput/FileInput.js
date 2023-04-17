@@ -5,7 +5,14 @@ import { MessageContext } from '../../contexts/MessageContext';
 
 import { defaultProps } from '../../default-props';
 
-import { disabledStyle, parseMetricToNum, useForwardedRef } from '../../utils';
+import {
+  disabledStyle,
+  focusStyle,
+  parseMetricToNum,
+  unfocusStyle,
+  useForwardedRef,
+  useKeyboard,
+} from '../../utils';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -16,19 +23,7 @@ import { Text } from '../Text';
 
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
-
-const formatBytes = (size) => {
-  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
-  const factor = 1024;
-  let index = 0;
-  let num = size;
-  while (num >= factor && index < units.length - 1) {
-    num /= factor;
-    index += 1;
-  }
-  return `${num.toFixed(1)} ${units[index]}`;
-};
-
+import { formatBytes } from './utils/formatBytes';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
@@ -37,6 +32,7 @@ const formatBytes = (size) => {
 // We don't use Stack because of how we need to control the positioning.
 
 const ContentsBox = styled(Box)`
+  cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.theme.fileInput && props.theme.fileInput.extend};
@@ -50,6 +46,8 @@ const ContentsBox = styled(Box)`
     props.theme.fileInput &&
     props.theme.fileInput.dragOver &&
     props.theme.fileInput.dragOver.extend};
+  ${(props) => props.focus && focusStyle()};
+  ${(props) => !props.focus && unfocusStyle()};
 `;
 
 const Label = styled(Text)`
@@ -99,6 +97,7 @@ const FileInput = forwardRef(
     const formContext = useContext(FormContext);
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
+    const [focus, setFocus] = React.useState();
     const [showRemoveConfirmation, setShowRemoveConfirmation] = useState(false);
     const [pendingRemoval, setPendingRemoval] = useState(defaultPendingRemoval);
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
@@ -108,6 +107,7 @@ const FileInput = forwardRef(
     const removeRef = useRef();
     const ConfirmRemove = confirmRemove;
     const RemoveIcon = theme.fileInput.icons.remove;
+    const usingKeyboard = useKeyboard();
 
     const [files, setFiles] = formContext.useFormInput({
       name,
@@ -229,8 +229,7 @@ const FileInput = forwardRef(
       });
     } else message = `${files.length} items`;
 
-    const removeFile = (event, index) => {
-      event.stopPropagation();
+    const removeFile = (index) => {
       let nextFiles;
       if (index === 'all') {
         nextFiles = [];
@@ -239,8 +238,29 @@ const FileInput = forwardRef(
         nextFiles.splice(index, 1);
       }
       setFiles(nextFiles);
+
+      // Need to have a way to track the files other than an array
+      // since inputRef.current.files is a read-only FileList
+      // https://stackoverflow.com/a/64019766
+      /* eslint-disable no-undef */
+      const dt = new DataTransfer();
+      const curFiles = inputRef.current.files;
+      if (index === 'all' || nextFiles.length === 0)
+        inputRef.current.value = '';
+      for (let i = 0; i < curFiles.length; i += 1) {
+        const curfile = curFiles[i];
+        if (index !== i) dt.items.add(curfile);
+      }
+
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'files',
+      ).set;
+      nativeInputValueSetter.call(inputRef.current, dt.files);
+      const event = new Event('input', { bubbles: true });
+      inputRef.current.dispatchEvent(event);
+
       if (onChange) onChange(event, { files: nextFiles });
-      if (nextFiles.length === 0) inputRef.current.value = '';
       inputRef.current.focus();
     };
 
@@ -261,7 +281,44 @@ const FileInput = forwardRef(
           onMouseOver={disabled ? undefined : () => setHover(true)}
           onMouseOut={disabled ? undefined : () => setHover(false)}
           dragOver={dragOver}
+          focus={usingKeyboard && focus}
         >
+          <StyledFileInput
+            ref={inputRef}
+            type="file"
+            id={id}
+            name={name}
+            maxSize={maxSize}
+            multiple={multiple}
+            disabled={disabled}
+            plain
+            rightOffset={rightOffset}
+            {...rest}
+            onDragOver={() => setDragOver(true)}
+            onDragLeave={() => setDragOver(false)}
+            onChange={(event) => {
+              event.persist();
+              const fileList = event.target.files;
+              const nextFiles = multiple ? [...files] : [];
+              for (let i = 0; i < fileList.length; i += 1) {
+                // avoid duplicates
+                const existing =
+                  nextFiles.filter(
+                    (file) =>
+                      file.name === fileList[i].name &&
+                      file.size === fileList[i].size,
+                  ).length > 0;
+                if (!existing) {
+                  nextFiles.push(fileList[i]);
+                }
+              }
+              setFiles(nextFiles);
+              setDragOver(false);
+              if (onChange) onChange(event, { files: nextFiles });
+            }}
+            onBlur={() => setFocus(false)}
+            onFocus={() => setFocus(true)}
+          />
           {(!files.length || files.length > 1) && (
             <Box
               align="center"
@@ -274,6 +331,7 @@ const FileInput = forwardRef(
                   <Message {...theme.fileInput.message}>{message}</Message>
                   <Keyboard
                     onSpace={(event) => {
+                      event.preventDefault();
                       if (controlRef.current === event.target)
                         inputRef.current.click();
                     }}
@@ -284,6 +342,8 @@ const FileInput = forwardRef(
                   >
                     {theme.fileInput.button ? (
                       <Button
+                        // The focus here is redundant for keyboard users
+                        tabIndex={-1}
                         ref={controlRef}
                         kind={theme.fileInput.button}
                         label={format({
@@ -297,7 +357,8 @@ const FileInput = forwardRef(
                       />
                     ) : (
                       <Anchor
-                        tabIndex={0}
+                        // The focus here is redundant for keyboard users
+                        tabIndex={-1}
                         alignSelf="center"
                         ref={controlRef}
                         margin="small"
@@ -339,7 +400,7 @@ const FileInput = forwardRef(
                       event.persist(); // necessary for when React < v17
                       setPendingRemoval({ event, index: 'all' });
                       setShowRemoveConfirmation(true);
-                    } else removeFile(event, 'all');
+                    } else removeFile('all');
                   }}
                 />
                 <Keyboard
@@ -354,6 +415,8 @@ const FileInput = forwardRef(
                 >
                   {theme.fileInput.button ? (
                     <Button
+                      // The focus here is redundant for keyboard users
+                      tabIndex={-1}
                       ref={controlRef}
                       kind={theme.fileInput.button}
                       label={format({
@@ -367,7 +430,8 @@ const FileInput = forwardRef(
                     />
                   ) : (
                     <Anchor
-                      tabIndex={0}
+                      // The focus here is redundant for keyboard users
+                      tabIndex={-1}
                       alignSelf="center"
                       ref={controlRef}
                       margin="small"
@@ -430,7 +494,7 @@ const FileInput = forwardRef(
                         event.persist(); // necessary for when React < v17
                         setPendingRemoval({ event, index });
                         setShowRemoveConfirmation(true);
-                      } else removeFile(event, index);
+                      } else removeFile(index);
                     }}
                   />
                   {files.length === 1 && (
@@ -446,6 +510,8 @@ const FileInput = forwardRef(
                     >
                       {theme.fileInput.button ? (
                         <Button
+                          // The focus here is redundant for keyboard users
+                          tabIndex={-1}
                           ref={controlRef}
                           kind={theme.fileInput.button}
                           label={format({
@@ -459,7 +525,8 @@ const FileInput = forwardRef(
                         />
                       ) : (
                         <Anchor
-                          tabIndex={0}
+                          // The focus here is redundant for keyboard users
+                          tabIndex={-1}
                           ref={controlRef}
                           margin="small"
                           onClick={() => {
@@ -477,45 +544,11 @@ const FileInput = forwardRef(
                 </Box>
               </Box>
             ))}
-          <StyledFileInput
-            ref={inputRef}
-            type="file"
-            id={id}
-            name={name}
-            maxSize={maxSize}
-            multiple={multiple}
-            disabled={disabled}
-            plain
-            rightOffset={rightOffset}
-            {...rest}
-            onDragOver={() => setDragOver(true)}
-            onDragLeave={() => setDragOver(false)}
-            onChange={(event) => {
-              event.persist();
-              const fileList = event.target.files;
-              const nextFiles = multiple ? [...files] : [];
-              for (let i = 0; i < fileList.length; i += 1) {
-                // avoid duplicates
-                const existing =
-                  nextFiles.filter(
-                    (file) =>
-                      file.name === fileList[i].name &&
-                      file.size === fileList[i].size,
-                  ).length > 0;
-                if (!existing) {
-                  nextFiles.push(fileList[i]);
-                }
-              }
-              setFiles(nextFiles);
-              setDragOver(false);
-              if (onChange) onChange(event, { files: nextFiles });
-            }}
-          />
         </ContentsBox>
         {showRemoveConfirmation && (
           <ConfirmRemove
             onConfirm={() => {
-              removeFile(pendingRemoval.event, pendingRemoval.index);
+              removeFile(pendingRemoval.index);
               setPendingRemoval(defaultPendingRemoval);
               setShowRemoveConfirmation(false);
             }}

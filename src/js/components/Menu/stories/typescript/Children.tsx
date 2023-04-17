@@ -12,7 +12,7 @@ const MenuWithChildren = (props) => (
     ]}
     {...props}
   >
-    {({ disabled, drop, hover, focus }) => {
+    {({ disabled, drop, hover }) => {
       const color = hover && !drop && !disabled ? 'brand' : undefined;
       return (
         <Box
@@ -30,12 +30,7 @@ const MenuWithChildren = (props) => (
 );
 
 const Example = () => (
-  <Box
-    align="center"
-    pad="large"
-    gap="small"
-    background={{ color: 'dark-3', opacity: 0.6 }}
-  >
+  <Box align="center" pad="large" gap="small">
     <MenuWithChildren disabled />
     <MenuWithChildren />
   </Box>

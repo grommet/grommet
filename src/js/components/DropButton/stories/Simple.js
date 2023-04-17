@@ -20,6 +20,8 @@ DropContent.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
+const align = { top: 'bottom' };
+
 const SimpleDropButton = () => {
   const [open, setOpen] = React.useState();
   const onOpen = () => {
@@ -37,7 +39,7 @@ const SimpleDropButton = () => {
         onOpen={onOpen}
         onClose={onClose}
         dropContent={<DropContent onClose={onClose} />}
-        dropProps={{ align: { top: 'bottom' } }}
+        dropProps={{ align }}
       />
     </Box>
   );

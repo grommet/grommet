@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StatusGood } from 'grommet-icons';
-import { Box, Button, Form, FormField, TextInput } from 'grommet';
+import { Box, Button, Form, FormField, Select, TextInput } from 'grommet';
 
 export const ValidateOnBlur = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -15,6 +15,7 @@ export const ValidateOnBlur = () => (
       >
         <FormField
           label="Name"
+          aria-label="name"
           name="name"
           required
           validate={[
@@ -39,7 +40,26 @@ export const ValidateOnBlur = () => (
         />
 
         <FormField label="Email" name="email" required>
-          <TextInput name="email" type="email" />
+          <TextInput name="email" aria-label="email" type="email" />
+        </FormField>
+
+        <FormField
+          label="Size"
+          name="select-size"
+          htmlFor="select-size__input"
+          required
+          validate={(val) => {
+            if (val === 'small') {
+              return { message: 'Only 10 left in stock!', status: 'info' };
+            }
+            return undefined;
+          }}
+        >
+          <Select
+            name="select-size"
+            id="select-size"
+            options={['small', 'medium', 'large']}
+          />
         </FormField>
 
         <Box direction="row" justify="between" margin={{ top: 'medium' }}>

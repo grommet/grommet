@@ -1,6 +1,7 @@
 import React, {
   cloneElement,
   forwardRef,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -9,12 +10,14 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-import { normalizeColor } from '../../utils';
+import { findButtonParent, normalizeColor, useSizedIcon } from '../../utils';
 
 import { Box } from '../Box';
 
 import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
+import { useAnalytics } from '../../contexts/AnalyticsContext';
+import { TextContext } from '../Text/TextContext';
 
 const Anchor = forwardRef(
   (
@@ -24,20 +27,37 @@ const Anchor = forwardRef(
       children,
       color,
       disabled,
-      gap = 'small',
+      gap,
       href,
       icon,
       label,
       onBlur,
-      onClick,
+      onClick: onClickProp,
       onFocus,
       reverse,
+      size: sizeProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
+    const { size } = useContext(TextContext);
+    const sendAnalytics = useAnalytics();
+
+    const onClick = useCallback(
+      (event) => {
+        sendAnalytics({
+          type: 'anchorClick',
+          element: findButtonParent(event.target),
+          event,
+          href,
+          label: typeof label === 'string' ? label : undefined,
+        });
+        if (onClickProp) onClickProp(event);
+      },
+      [onClickProp, sendAnalytics, label, href],
+    );
 
     useEffect(() => {
       if ((icon || label) && children) {
@@ -50,12 +70,19 @@ const Anchor = forwardRef(
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
       coloredIcon = cloneElement(icon, {
-        color: normalizeColor(color || theme.anchor.color, theme),
+        color: normalizeColor(
+          color ||
+            theme.anchor?.size?.[sizeProp || size]?.color ||
+            theme.anchor.color,
+          theme,
+        ),
       });
     }
 
-    const first = reverse ? label : coloredIcon;
-    const second = reverse ? coloredIcon : label;
+    const anchorIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
+
+    const first = reverse ? label : anchorIcon;
+    const second = reverse ? anchorIcon : label;
 
     return (
       <StyledAnchor
@@ -78,13 +105,14 @@ const Anchor = forwardRef(
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
+        size={sizeProp || size}
       >
         {first && second ? (
           <Box
             as="span"
             direction="row"
             align="center"
-            gap={gap}
+            gap={gap || theme.anchor.gap}
             responsive={false}
             style={{ display: 'inline-flex' }}
           >

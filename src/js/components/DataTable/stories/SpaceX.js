@@ -23,7 +23,7 @@ const columns = [
         const content = (
           <Box width={{ max: 'medium' }}>
             {datum.failures?.map(({ reason }) => (
-              <Text>{reason}</Text>
+              <Text key={reason}>{reason}</Text>
             ))}
           </Box>
         );

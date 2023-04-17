@@ -9,6 +9,12 @@ export const baseStyle = css`
   font-size: ${(props) => props.theme.global.font.size};
   line-height: ${(props) => props.theme.global.font.height};
   font-weight: ${(props) => props.theme.global.font.weight};
+  /* check if prop is defined in the theme*/
+  ${(props) =>
+    props.theme.global.font.variant &&
+    `
+    font-variant:${props.theme.global.font.variant};
+  `}
   ${(props) =>
     !props.plain && backgroundStyle(props.theme.baseBackground, props.theme)}
   box-sizing: border-box;
@@ -499,6 +505,23 @@ export const inputStyle = css`
   ${(props) => props.theme.global.input.extend}
 `;
 
+// Apply padding on input to create space for icon.
+// When theme.icon.matchSize is true, the space for the
+// icon should equal the icon dimension + 12px (edgeSize.medium)
+// to ensure there is reasonable space between the icon and value or placeholder
+export const inputPadForIcon = css`
+  ${(props) => {
+    const pad = props.theme?.icon?.matchSize
+      ? `${
+          parseMetricToNum(props.theme.icon?.size?.[props?.size || 'medium']) +
+          parseMetricToNum(props.theme.global.edgeSize.medium)
+        }px`
+      : props.theme.global.edgeSize.large;
+
+    return props.reverse ? `padding-right: ${pad};` : `padding-left: ${pad};`;
+  }}
+`;
+
 export const overflowStyle = (overflowProp) => {
   if (typeof overflowProp === 'string') {
     return css`
@@ -518,6 +541,7 @@ const ALIGN_SELF_MAP = {
   end: 'flex-end',
   start: 'flex-start',
   stretch: 'stretch',
+  baseline: 'baseline',
 };
 
 export const genericStyles = css`

@@ -8,6 +8,7 @@ export const MaxFileCount = () => (
       <Form validate="submit">
         <FormField name="fileInput" htmlFor="fileInput" required>
           <FileInput
+            aria-label="Choose files"
             name="fileInput"
             id="fileInput"
             multiple={{

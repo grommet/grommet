@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import userEvent from '@testing-library/user-event';
 
 import 'jest-styled-components';
 
@@ -10,6 +11,8 @@ import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
 import { Box } from '../../Box';
+import { Select } from '../../Select';
+import { ThumbsRating } from '../../ThumbsRating';
 
 describe('Form controlled', () => {
   test('controlled', () => {
@@ -45,6 +48,30 @@ describe('Form controlled', () => {
         value: { test: 'v' },
         touched: { test: true },
       }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      formField: {
+        survey: {
+          label: {
+            color: 'red',
+            size: 'large',
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Form kind="survey">
+          <FormField name="test" label="custom theme label">
+            <ThumbsRating name="test" />
+          </FormField>
+        </Form>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -421,7 +448,7 @@ describe('Form controlled', () => {
 
   test(`dynamicly removed fields using blur validation
   don't keep validation errors`, () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const onValidate = jest.fn();
     const onSubmit = jest.fn();
 
@@ -473,45 +500,49 @@ describe('Form controlled', () => {
     const moodField = getByPlaceholderText('test mood');
 
     // focus in and out of mood, should fail validation
-    moodField.focus();
-    toggleField.focus();
+    act(() => {
+      moodField.focus();
+      toggleField.focus();
+    });
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
     // set mood, should pass validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: 'testy' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
-      expect.objectContaining({ errors: {}, infos: {} }),
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     // clear mood, should fail validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: '' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
     // remove mood, should clear validation
     fireEvent.click(toggleField);
 
-    nameField.focus();
-    toggleField.focus();
+    act(() => nameField.focus());
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(onValidate).toHaveBeenLastCalledWith(
-      expect.objectContaining({ errors: {}, infos: {} }),
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -926,5 +957,309 @@ describe('Form controlled', () => {
     expect(screen.queryAllByText('invalid')).toHaveLength(2);
     // lastName should not trigger required validation onMount
     expect(screen.queryAllByText('required')).toHaveLength(0);
+  });
+
+  test('validate select with multiple selection', async () => {
+    global.scrollTo = jest.fn();
+    const Test = () => {
+      const options = ['foo', 'bar', 'baz'];
+      const [formValue, setFormValue] = useState({
+        firstName: '',
+        multiple: [],
+      });
+
+      return (
+        <Form
+          value={formValue}
+          validate="change"
+          onChange={(nextValue) => setFormValue(nextValue)}
+        >
+          <FormField
+            label="Multiple"
+            name="multiple"
+            htmlFor="multiple"
+            required
+            validate={[
+              (value) => {
+                if (value.length === 1) {
+                  return {
+                    message: 'multiple selection error',
+                    status: 'error',
+                  };
+                }
+                return undefined;
+              },
+            ]}
+          >
+            <Select
+              data-testid="multiple"
+              multiple
+              size="medium"
+              name="multiple"
+              id="multiple"
+              placeholder="multiple"
+              options={options}
+              closeOnChange={false}
+            />
+          </FormField>
+
+          <FormField
+            label="First Name"
+            htmlFor="first-name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              (firstName) => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput
+              id="first-name"
+              name="firstName"
+              placeholder="firstName"
+            />
+          </FormField>
+        </Form>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    userEvent.click(screen.getByTestId('multiple'));
+    expect(await screen.findByRole('listbox')).toBeTruthy();
+    userEvent.click(screen.getByRole('option', { name: 'foo' }));
+    expect(await screen.findByText('multiple selection error')).toBeTruthy();
+  });
+
+  test('validate on mount using FormField - controlled input', () => {
+    const onSubmit = jest.fn();
+    const Test = () => {
+      const [firstName, setFirstName] = useState('a');
+      const [middleName, setMiddleName] = useState('1');
+      const [lastName, setLastName] = useState('');
+      const [title, setTitle] = useState(1);
+
+      return (
+        <Form onSubmit={onSubmit}>
+          <FormField
+            label="First Name"
+            htmlFor="first-name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="blur"
+          >
+            <TextInput
+              id="first-name"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Middle Name"
+            htmlFor="middle-name"
+            name="middleName"
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (middleName && middleName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="change"
+          >
+            <TextInput
+              id="middle-name"
+              name="middleName"
+              value={middleName}
+              onChange={(e) => {
+                setMiddleName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Last Name"
+            htmlFor="last-name"
+            name="lastName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="submit"
+          >
+            <TextInput
+              id="last-name"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Title"
+            htmlFor="title"
+            name="title"
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (title && title.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="blur"
+          >
+            <TextInput
+              id="title"
+              name="title"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+
+    const { getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    // middleName & title trigger regexp, but not string length validation
+    expect(screen.queryAllByText('invalid')).toHaveLength(2);
+    // lastName should not trigger required validation onMount
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+    fireEvent.click(getByText('Submit'));
+    // lastName should trigger required
+    expect(screen.queryAllByText('required')).toHaveLength(1);
+  });
+
+  test('validate - blur, change and submit using FormField', () => {
+    const onSubmit = jest.fn();
+    const Test = () => (
+      <Form onSubmit={onSubmit}>
+        <FormField
+          label="Blur"
+          name="blur"
+          aria-label="blur"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="blur"
+        />
+
+        <FormField
+          label="Submit"
+          name="submit"
+          aria-label="submit"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="submit"
+        />
+
+        <FormField
+          label="Change"
+          name="change"
+          aria-label="change"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="change"
+        />
+        <Button type="submit" primary label="Submit_Button" />
+      </Form>
+    );
+
+    const { container, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const blur = container.querySelector('input[name="blur"]');
+    const change = container.querySelector('input[name="change"]');
+    const submit = container.querySelector('input[name="submit"]');
+
+    expect(screen.queryAllByText('invalid')).toHaveLength(0);
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+
+    fireEvent.change(blur, {
+      target: { value: 'b' },
+    });
+
+    fireEvent.change(change, {
+      target: { value: 'c' },
+    });
+
+    fireEvent.change(submit, {
+      target: { value: 's' },
+    });
+
+    fireEvent.click(getByText('Submit_Button'));
+
+    expect(screen.queryAllByText('must be >1 character')).toHaveLength(3);
+    expect(screen.queryAllByText('invalid')).toHaveLength(0);
+
+    fireEvent.change(blur, {
+      target: { value: '123213' },
+    });
+
+    fireEvent.change(change, {
+      target: { value: '123213' },
+    });
+
+    fireEvent.change(submit, {
+      target: { value: '123213' },
+    });
+
+    expect(screen.queryAllByText('must be >1 character')).toHaveLength(0);
+    expect(screen.queryAllByText('invalid')).toHaveLength(2);
+
+    fireEvent.click(getByText('Submit_Button'));
+    expect(screen.queryAllByText('invalid')).toHaveLength(3);
   });
 });

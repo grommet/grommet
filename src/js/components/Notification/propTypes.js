@@ -5,9 +5,16 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     actions: PropTypes.arrayOf(PropTypes.shape(AnchorPropTypes)),
+    global: PropTypes.bool,
     title: PropTypes.string,
-    message: PropTypes.string,
-    status: PropTypes.oneOf(['critical', 'warning', 'normal', 'unknown']),
+    message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    status: PropTypes.oneOf([
+      'critical',
+      'warning',
+      'normal',
+      'info',
+      'unknown',
+    ]),
     toast: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
@@ -29,6 +36,8 @@ if (process.env.NODE_ENV !== 'production') {
       }),
     ]),
     onClose: PropTypes.func,
+    icon: PropTypes.element,
+    time: PropTypes.number,
   };
 }
 export const NotificationType = PropType;

@@ -456,6 +456,9 @@ describe('Layer', () => {
         container: {
           elevation: 'large',
         },
+        overlay: {
+          backdropFilter: `blur(12px)`,
+        },
       },
     };
 
@@ -470,7 +473,7 @@ describe('Layer', () => {
   });
 
   test('invokes onEsc when modal={false}', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     window.scrollTo = jest.fn();
     const onEsc = jest.fn();
     const { getByText, queryByText } = render(

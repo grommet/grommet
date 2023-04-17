@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import { Calendar as CalendarIcon } from 'grommet-icons';
+import { Calendar as CalendarIcon, Clock as ClockIcon } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -88,6 +88,39 @@ describe('DateInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('should handle typing date and clicking date simultaneously', async () => {
+    const user = userEvent.setup();
+
+    const TestComponent = () => {
+      const [value, setValue] = React.useState([]);
+      return (
+        <Grommet>
+          <DateInput
+            id="item"
+            name="item"
+            format="mm/dd/yyyy-mm/dd/yyyy"
+            onChange={(event) => {
+              setValue(event.value as any);
+            }}
+            inline
+            value={value}
+          />
+        </Grommet>
+      );
+    };
+
+    render(<TestComponent />);
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '01/01/2022');
+    expect(input).toHaveValue('01/01/2022');
+    const button = screen.queryAllByText('1');
+
+    await user.click(button[0]);
+    expect(input).toHaveValue('');
+  });
+
   test('basic', () => {
     const { container } = render(
       <Grommet>
@@ -101,6 +134,109 @@ describe('DateInput', () => {
     const { container } = render(
       <Grommet>
         <DateInput id="item" name="item" format="mm/dd/yyyy" value={DATE} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('format with date bounds', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          calendarProps={{
+            bounds: ['2022-11-10', '2022-11-20'],
+          }}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '09/09/2022');
+    expect(input).not.toHaveValue();
+
+    await user.clear(input);
+    await user.type(input, '11/15/2022');
+    expect(input).toHaveValue('11/15/2022');
+  });
+
+  test('reverse calendar icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          reverse
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as false', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          inputProps={{ reverse: false }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as true', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          inputProps={{ reverse: true }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as false with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          icon={<ClockIcon />}
+          inputProps={{ reverse: false }}
+          value={DATES}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('input props reverse as true with icon', () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="dd/mm/yyyy"
+          icon={<ClockIcon />}
+          inputProps={{ reverse: true }}
+          value={DATES}
+        />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -177,6 +313,16 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('range format no value', () => {
+    render(
+      <Grommet>
+        <DateInput id="item" name="item" format="mm/dd/yyyy-mm/dd/yyyy" />
+      </Grommet>,
+    );
+
+    expect(screen.queryByRole('button', { name: /Calendar/ })).not.toBeNull();
+  });
+
   test('range format inline', () => {
     const { container } = render(
       <Grommet>
@@ -192,7 +338,35 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('dates initialized with empty array', () => {
+  test('range format with date bounds', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          calendarProps={{
+            bounds: ['2022-11-10', '2022-11-20'],
+          }}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '09/09/2022-09/09/2022');
+    expect(input).not.toHaveValue();
+
+    await user.clear(input);
+    await user.type(input, '11/15/2022-11/15/2022');
+    expect(input).toHaveValue('11/15/2022-11/15/2022');
+  });
+
+  test('dates initialized with empty array', async () => {
+    const user = userEvent.setup();
+
     const onChange = jest.fn((event) => event.value);
 
     const { getByText } = render(
@@ -209,7 +383,7 @@ describe('DateInput', () => {
         />
       </Grommet>,
     );
-    userEvent.click(getByText('20'));
+    await user.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith([
       `2020-07-20T08:00:00.000Z`,
@@ -243,7 +417,9 @@ describe('DateInput', () => {
     expect(document.getElementById('item__drop')).not.toBeNull();
   });
 
-  test('click', () => {
+  test('click', async () => {
+    const user = userEvent.setup();
+
     const { getByPlaceholderText } = render(
       <Grommet>
         <DateInput
@@ -256,7 +432,7 @@ describe('DateInput', () => {
       </Grommet>,
     );
 
-    userEvent.click(getByPlaceholderText('mm/dd/yyyy'));
+    await user.click(getByPlaceholderText('mm/dd/yyyy'));
     expect(document.getElementById('item__drop')).toBeNull();
   });
 
@@ -681,10 +857,9 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
       target: { value: '07//2020-07/27/2021' },
     });
-    expect(onChange).toHaveNthReturnedWith(3, []);
     // cannot check snapshot here as it will be relative to the current date
 
-    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('type format inline range partial without timezone', () => {
@@ -718,10 +893,9 @@ describe('DateInput', () => {
     fireEvent.change(getByPlaceholderText('mm/dd/yyyy-mm/dd/yyyy'), {
       target: { value: '07//2020-07/27/2021' },
     });
-    expect(onChange).toHaveNthReturnedWith(3, []);
     // cannot check snapshot here as it will be relative to the current date
 
-    expect(onChange).toHaveBeenCalledTimes(3);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('controlled format inline', () => {
@@ -893,7 +1067,9 @@ describe('DateInput', () => {
     expect(container.children).toMatchSnapshot();
   });
 
-  test('clicking calendar icon should open drop', () => {
+  test('clicking calendar icon should open drop', async () => {
+    const user = userEvent.setup();
+
     render(
       <Grommet>
         <DateInput format="m/d/yy" defaultValue="2021-01-01" />
@@ -902,13 +1078,15 @@ describe('DateInput', () => {
     expect(
       screen.queryByRole('heading', { name: /January 2021/i }),
     ).not.toBeInTheDocument();
-    userEvent.click(screen.getByRole('button', { name: /Calendar/i }));
+    await user.click(screen.getByRole('button', { name: /Calendar/i }));
     expect(
       screen.getByRole('heading', { name: /January 2021/i }),
     ).toBeInTheDocument();
   });
 
-  test('handle focus in FormField', () => {
+  test('handle focus in FormField', async () => {
+    const user = userEvent.setup();
+
     const onFocus = jest.fn();
     const { asFragment } = render(
       <Grommet>
@@ -919,9 +1097,9 @@ describe('DateInput', () => {
         </Form>
       </Grommet>,
     );
-    userEvent.tab();
+    await user.tab();
     expect(asFragment()).toMatchSnapshot();
-    userEvent.tab();
+    await user.tab();
     expect(asFragment()).toMatchSnapshot();
     expect(onFocus).toHaveBeenCalledTimes(1);
   });
@@ -931,5 +1109,38 @@ describe('DateInput', () => {
       <DateInput icon={<CalendarIcon color="red" />} name="item" />,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      dateInput: {
+        container: {
+          round: 'xsmall',
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('matches icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DateInput size="small" format="mm/dd/yyyy" />
+        <DateInput format="mm/dd/yyyy" />
+        <DateInput size="large" format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

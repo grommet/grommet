@@ -193,6 +193,8 @@ describe('MaskedInput', () => {
   });
 
   test('should not enable to type beyond options via keyboard', async () => {
+    const user = userEvent.setup();
+
     const onChange = jest.fn((event) => event.target.value);
     render(
       <MaskedInput
@@ -209,13 +211,15 @@ describe('MaskedInput', () => {
       />,
     );
 
-    userEvent.type(screen.getByRole('textbox'), 'abbb');
+    await user.type(screen.getByRole('textbox'), 'abbb');
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abb');
   });
 
   test('restrictToOptions=false allows typing beyond options', async () => {
+    const user = userEvent.setup();
+
     const onChange = jest.fn((event) => event.target.value);
     render(
       <MaskedInput
@@ -233,7 +237,7 @@ describe('MaskedInput', () => {
       />,
     );
 
-    userEvent.type(screen.getByRole('textbox'), 'abbb');
+    await user.type(screen.getByRole('textbox'), 'abbb');
 
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('abbb');
@@ -527,5 +531,22 @@ describe('MaskedInput', () => {
     expect(getByLabelText('masked-input-test')).toBeTruthy();
     expect(getByLabelText('masked-input-test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('match icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <MaskedInput size="small" placeholder="mm/dd/yyyy" />
+        <MaskedInput placeholder="mm/dd/yyyy" />
+        <MaskedInput size="large" placeholder="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

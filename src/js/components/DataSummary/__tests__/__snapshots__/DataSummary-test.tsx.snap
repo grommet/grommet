@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataSummary renders 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c7 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c9:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    width: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c1"
+          >
+            <header
+              class="c5"
+            >
+              <h2
+                class="c6"
+              >
+                Filters
+              </h2>
+            </header>
+            <span
+              class="c7"
+            >
+              2 items
+            </span>
+          </div>
+        </div>
+        <footer
+          class="c8"
+        >
+          <button
+            class="c9"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c10"
+          />
+          <button
+            aria-hidden="true"
+            class="c11 c12"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+  </div>
+</div>
+`;

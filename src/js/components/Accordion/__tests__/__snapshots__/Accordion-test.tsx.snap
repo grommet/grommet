@@ -209,6 +209,7 @@ exports[`Accordion AccordionPanel 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -254,16 +255,13 @@ exports[`Accordion AccordionPanel 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -298,6 +296,7 @@ exports[`Accordion AccordionPanel 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -310,9 +309,7 @@ exports[`Accordion AccordionPanel 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -347,6 +344,7 @@ exports[`Accordion AccordionPanel 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -556,6 +554,7 @@ exports[`Accordion accordion border 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -608,16 +607,13 @@ exports[`Accordion accordion border 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -652,6 +648,7 @@ exports[`Accordion accordion border 1`] = `
         </button>
         <div
           class="c1"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -873,6 +870,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -918,16 +916,13 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -963,6 +958,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -1184,6 +1180,7 @@ exports[`Accordion blur styles 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: red;
 }
 
@@ -1234,16 +1231,13 @@ exports[`Accordion blur styles 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -1279,6 +1273,7 @@ exports[`Accordion blur styles 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -1493,6 +1488,7 @@ exports[`Accordion change active index 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -1538,16 +1534,13 @@ exports[`Accordion change active index 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -1582,6 +1575,7 @@ exports[`Accordion change active index 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
       <div
@@ -1589,9 +1583,7 @@ exports[`Accordion change active index 1`] = `
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -1626,6 +1618,7 @@ exports[`Accordion change active index 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           Panel body 2
         </div>
@@ -1895,6 +1888,7 @@ exports[`Accordion change active index 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -1902,6 +1896,7 @@ exports[`Accordion change active index 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -1956,16 +1951,13 @@ exports[`Accordion change active index 2`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -2001,6 +1993,7 @@ exports[`Accordion change active index 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
       <div
@@ -2008,9 +2001,7 @@ exports[`Accordion change active index 2`] = `
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c10"
-          role="tab"
           type="button"
         >
           <div
@@ -2045,6 +2036,7 @@ exports[`Accordion change active index 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           Panel body 2
         </div>
@@ -2263,6 +2255,7 @@ exports[`Accordion change to second Panel 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -2308,16 +2301,13 @@ exports[`Accordion change to second Panel 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -2352,6 +2342,7 @@ exports[`Accordion change to second Panel 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -2364,9 +2355,7 @@ exports[`Accordion change to second Panel 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -2401,6 +2390,7 @@ exports[`Accordion change to second Panel 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -2687,6 +2677,7 @@ exports[`Accordion change to second Panel 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c12 {
@@ -2694,6 +2685,7 @@ exports[`Accordion change to second Panel 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -2748,16 +2740,13 @@ exports[`Accordion change to second Panel 2`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -2792,6 +2781,7 @@ exports[`Accordion change to second Panel 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -2804,9 +2794,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c11"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -2842,6 +2830,7 @@ exports[`Accordion change to second Panel 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
           style=""
         >
           <div
@@ -3061,6 +3050,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -3106,16 +3096,13 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -3150,6 +3137,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
       <div
@@ -3157,9 +3145,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -3194,6 +3180,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
     </div>
@@ -3461,6 +3448,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c11 {
@@ -3468,6 +3456,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -3522,16 +3511,13 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -3566,6 +3552,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
       <div
@@ -3573,9 +3560,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c10"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -3611,6 +3596,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           Panel body 2
         </div>
@@ -3747,16 +3733,13 @@ exports[`Accordion complex header 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div>
@@ -3765,6 +3748,7 @@ exports[`Accordion complex header 1`] = `
         </button>
         <div
           class="c4"
+          role="region"
         />
       </div>
       <div
@@ -3772,9 +3756,7 @@ exports[`Accordion complex header 1`] = `
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c3"
-          role="tab"
           type="button"
         >
           <div>
@@ -3783,6 +3765,7 @@ exports[`Accordion complex header 1`] = `
         </button>
         <div
           class="c4"
+          role="region"
         >
           Panel body 2
         </div>
@@ -4027,16 +4010,13 @@ exports[`Accordion complex title 1`] = `
     >
       <div
         class="c2"
-        role="tablist"
       >
         <div
           class="c3"
         >
           <button
             aria-expanded="false"
-            aria-selected="false"
             class="c4"
-            role="tab"
             type="button"
           >
             <div
@@ -4065,6 +4045,7 @@ exports[`Accordion complex title 1`] = `
           </button>
           <div
             class="c8"
+            role="region"
           >
             <div
               aria-hidden="true"
@@ -4077,9 +4058,7 @@ exports[`Accordion complex title 1`] = `
         >
           <button
             aria-expanded="false"
-            aria-selected="false"
             class="c4"
-            role="tab"
             type="button"
           >
             <div
@@ -4108,6 +4087,7 @@ exports[`Accordion complex title 1`] = `
           </button>
           <div
             class="c8"
+            role="region"
           >
             <div
               aria-hidden="true"
@@ -4278,6 +4258,11 @@ exports[`Accordion custom accordion 1`] = `
   text-align: inherit;
 }
 
+.c3:hover {
+  background-color: #33333310;
+  color: #000000;
+}
+
 .c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -4330,6 +4315,7 @@ exports[`Accordion custom accordion 1`] = `
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -4375,16 +4361,13 @@ exports[`Accordion custom accordion 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -4419,6 +4402,326 @@ exports[`Accordion custom accordion 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
+        >
+          <div
+            aria-hidden="true"
+            class="c1 c10"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Accordion custom accordion 2`] = `
+<DocumentFragment>
+  .c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3:hover {
+  background-color: #33333310;
+  color: #000000;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.c6 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  color: #777777;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <button
+          aria-expanded="false"
+          class="c3"
+          type="button"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <h3
+                class="c6"
+              >
+                Panel 1
+              </h3>
+            </div>
+            <div
+              class="c7"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m18 9-6 6-6-6"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -4640,6 +4943,7 @@ exports[`Accordion focus and hover styles 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: red;
 }
 
@@ -4690,16 +4994,13 @@ exports[`Accordion focus and hover styles 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c3"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -4735,6 +5036,7 @@ exports[`Accordion focus and hover styles 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
           style=""
         >
           <div
@@ -4954,6 +5256,7 @@ exports[`Accordion multiple panels 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -4999,16 +5302,13 @@ exports[`Accordion multiple panels 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -5043,6 +5343,7 @@ exports[`Accordion multiple panels 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
       <div
@@ -5050,9 +5351,7 @@ exports[`Accordion multiple panels 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -5087,6 +5386,7 @@ exports[`Accordion multiple panels 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
     </div>
@@ -5354,6 +5654,7 @@ exports[`Accordion multiple panels 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c11 {
@@ -5361,6 +5662,7 @@ exports[`Accordion multiple panels 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -5415,16 +5717,13 @@ exports[`Accordion multiple panels 2`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -5459,6 +5758,7 @@ exports[`Accordion multiple panels 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
       <div
@@ -5466,9 +5766,7 @@ exports[`Accordion multiple panels 2`] = `
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c10"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -5504,6 +5802,7 @@ exports[`Accordion multiple panels 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           Panel body 2
         </div>
@@ -5773,6 +6072,7 @@ exports[`Accordion multiple panels 3`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -5780,6 +6080,7 @@ exports[`Accordion multiple panels 3`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -5834,16 +6135,13 @@ exports[`Accordion multiple panels 3`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c3"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -5879,6 +6177,7 @@ exports[`Accordion multiple panels 3`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           Panel body 1
         </div>
@@ -5888,9 +6187,7 @@ exports[`Accordion multiple panels 3`] = `
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c10"
-          role="tab"
           style=""
           type="button"
         >
@@ -5926,6 +6223,7 @@ exports[`Accordion multiple panels 3`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           Panel body 2
         </div>
@@ -6195,6 +6493,7 @@ exports[`Accordion multiple panels 4`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c11 {
@@ -6202,6 +6501,7 @@ exports[`Accordion multiple panels 4`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -6256,16 +6556,13 @@ exports[`Accordion multiple panels 4`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c3"
-          role="tab"
           style=""
           type="button"
         >
@@ -6301,6 +6598,7 @@ exports[`Accordion multiple panels 4`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           Panel body 1
         </div>
@@ -6310,9 +6608,7 @@ exports[`Accordion multiple panels 4`] = `
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c10"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -6348,6 +6644,7 @@ exports[`Accordion multiple panels 4`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
     </div>
@@ -6615,6 +6912,7 @@ exports[`Accordion multiple panels 5`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -6622,6 +6920,7 @@ exports[`Accordion multiple panels 5`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -6676,16 +6975,13 @@ exports[`Accordion multiple panels 5`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -6721,6 +7017,7 @@ exports[`Accordion multiple panels 5`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
       <div
@@ -6728,9 +7025,7 @@ exports[`Accordion multiple panels 5`] = `
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c10"
-          role="tab"
           style=""
           type="button"
         >
@@ -6766,6 +7061,7 @@ exports[`Accordion multiple panels 5`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
     </div>
@@ -6804,7 +7100,6 @@ exports[`Accordion no AccordionPanel 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     />
   </div>
 </DocumentFragment>
@@ -7026,16 +7321,13 @@ exports[`Accordion should have no accessibility violations 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -7061,6 +7353,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
         </button>
         <div
           class="c7"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -7282,6 +7575,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: teal;
 }
 
@@ -7332,16 +7626,13 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -7377,6 +7668,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           <div
             aria-hidden="true"
@@ -7591,6 +7883,7 @@ exports[`Accordion wrapped panel 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -7636,16 +7929,13 @@ exports[`Accordion wrapped panel 1`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -7680,6 +7970,7 @@ exports[`Accordion wrapped panel 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
       <div
@@ -7687,9 +7978,7 @@ exports[`Accordion wrapped panel 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c3"
-          role="tab"
           type="button"
         >
           <div
@@ -7724,6 +8013,7 @@ exports[`Accordion wrapped panel 1`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
     </div>
@@ -7991,6 +8281,7 @@ exports[`Accordion wrapped panel 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .c6 {
@@ -7998,6 +8289,7 @@ exports[`Accordion wrapped panel 2`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+  overflow-wrap: break-word;
   color: #777777;
 }
 
@@ -8052,16 +8344,13 @@ exports[`Accordion wrapped panel 2`] = `
   >
     <div
       class="c1"
-      role="tablist"
     >
       <div
         class="c2"
       >
         <button
           aria-expanded="true"
-          aria-selected="true"
           class="c3"
-          role="tab"
           style="z-index: 1;"
           type="button"
         >
@@ -8097,6 +8386,7 @@ exports[`Accordion wrapped panel 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         >
           Panel body 1
         </div>
@@ -8106,9 +8396,7 @@ exports[`Accordion wrapped panel 2`] = `
       >
         <button
           aria-expanded="false"
-          aria-selected="false"
           class="c10"
-          role="tab"
           type="button"
         >
           <div
@@ -8143,6 +8431,7 @@ exports[`Accordion wrapped panel 2`] = `
         </button>
         <div
           class="c9"
+          role="region"
         />
       </div>
     </div>

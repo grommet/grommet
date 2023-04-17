@@ -7,9 +7,10 @@ import '@testing-library/jest-dom';
 import { axe } from 'jest-axe';
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Home } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Notification, Button } from '../..';
+import { Grommet, Notification, Button, Text } from '../..';
 
 const TestNotification = ({ ...rest }) => (
   <Notification title="title" message="message" {...rest} />
@@ -41,7 +42,9 @@ describe('Notification', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('onClose', () => {
+  test('onClose', async () => {
+    const user = userEvent.setup();
+
     const onClose = jest.fn();
     render(
       <Grommet>
@@ -49,7 +52,7 @@ describe('Notification', () => {
       </Grommet>,
     );
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onClose).toBeCalled();
   });
 
@@ -83,8 +86,10 @@ describe('Notification', () => {
     }),
   );
 
-  test('autoClose true', () => {
-    jest.useFakeTimers('modern');
+  test('autoClose true', async () => {
+    const user = userEvent.setup({ delay: null });
+
+    jest.useFakeTimers();
     const onOpen = jest.fn();
     const onClose = jest.fn();
     const Test = () => {
@@ -113,7 +118,7 @@ describe('Notification', () => {
       );
     };
     render(<Test />);
-    userEvent.click(screen.getByRole('button', { name: 'Show Notification' }));
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
     expect(screen.getByText('Status Title')).toBeInTheDocument();
     expect(onOpen).toHaveBeenCalled();
     act(() => {
@@ -122,8 +127,53 @@ describe('Notification', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
-  test('autoClose false', () => {
-    jest.useFakeTimers('modern');
+  test('custom time', async () => {
+    const user = userEvent.setup({ delay: null });
+    const time = 3000;
+
+    jest.useFakeTimers();
+    const onOpen = jest.fn();
+    const onClose = jest.fn();
+    const Test = () => {
+      const [visible, setVisible] = useState(false);
+      return (
+        <Grommet>
+          <Button
+            label="Show Notification"
+            onClick={() => {
+              onOpen();
+              setVisible(true);
+            }}
+          />
+          {visible && (
+            <Notification
+              toast={{ autoClose: true }}
+              title="Status Title"
+              message="Messages should be at max two lines of text."
+              onClose={() => {
+                onClose();
+                setVisible(false);
+              }}
+              time={time}
+            />
+          )}
+        </Grommet>
+      );
+    };
+    render(<Test />);
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
+    expect(screen.getByText('Status Title')).toBeInTheDocument();
+    expect(onOpen).toHaveBeenCalled();
+    act(() => {
+      jest.advanceTimersByTime(4000);
+    });
+    expect(onClose).toHaveBeenCalled();
+  });
+
+  test('autoClose false', async () => {
+    const user = userEvent.setup({ delay: null });
+
+    jest.useFakeTimers();
     const onOpen = jest.fn();
     const onClose = jest.fn();
     const Test = () => {
@@ -152,7 +202,7 @@ describe('Notification', () => {
       );
     };
     render(<Test />);
-    userEvent.click(screen.getByRole('button', { name: 'Show Notification' }));
+    await user.click(screen.getByRole('button', { name: 'Show Notification' }));
     expect(onOpen).toHaveBeenCalled();
     act(() => {
       jest.advanceTimersByTime(9000);
@@ -231,6 +281,56 @@ describe('Notification', () => {
       </Grommet>,
     );
 
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('status', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification global status="normal" />
+        <TestNotification global status="warning" />
+        <TestNotification global status="critical" />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render custom template inside notification', () => {
+    const { container } = render(
+      <Grommet>
+        <Notification
+          title="Test title"
+          message={<Text>A sample text message</Text>}
+        />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  test('should render custom icon', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TestNotification icon={<Home />} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render the default icon if no icon is passed', () => {
+    const theme = {
+      notification: {
+        unknown: {
+          icon: Home,
+          color: 'blue',
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Notification data-testid="test" title="Test title" message="message" />
+      </Grommet>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,0 +1,1035 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StarRating StarRating is present 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c6 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled]) + div,
+.c2:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c4 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    width: 6px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+      data-testid="starRating-icon"
+      role="radiogroup"
+    >
+      <label
+        class="c2"
+        for="1"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="1"
+            name="test"
+            tabindex="0"
+            type="radio"
+            value="1"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="2"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="2"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="2"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="3"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="3"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="3"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="4"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="4"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="4"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="5"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="5"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="5"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StarRating StarRating should have no accessibility violations 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c6 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c2:hover input:not([disabled]) + div,
+.c2:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c4 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    width: 6px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+      role="radiogroup"
+    >
+      <label
+        class="c2"
+        for="1"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="1"
+            name="test"
+            tabindex="0"
+            type="radio"
+            value="1"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="2"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="2"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="2"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="3"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="3"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="3"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="4"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="4"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="4"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+      <div
+        class="c6"
+      />
+      <label
+        class="c2"
+        for="5"
+      >
+        <div
+          class="c3 "
+        >
+          <input
+            class="c4"
+            id="5"
+            name="test"
+            tabindex="-1"
+            type="radio"
+            value="5"
+          />
+          <svg
+            aria-label="Star"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StarRating value for rating 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c10:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c5:hover input:not([disabled]) + div,
+.c5:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c7 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    width: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+      >
+        test-starRating
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+          role="radiogroup"
+        >
+          <label
+            class="c5"
+            for="1"
+          >
+            <div
+              class="c6 "
+            >
+              <input
+                class="c7"
+                id="1"
+                name="test"
+                tabindex="0"
+                type="radio"
+                value="1"
+              />
+              <svg
+                aria-label="Star"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </label>
+          <div
+            class="c9"
+          />
+          <label
+            class="c5"
+            for="2"
+          >
+            <div
+              class="c6 "
+            >
+              <input
+                class="c7"
+                id="2"
+                name="test"
+                tabindex="-1"
+                type="radio"
+                value="2"
+              />
+              <svg
+                aria-label="Star"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </label>
+          <div
+            class="c9"
+          />
+          <label
+            class="c5"
+            for="3"
+          >
+            <div
+              class="c6 "
+            >
+              <input
+                class="c7"
+                id="3"
+                name="test"
+                tabindex="-1"
+                type="radio"
+                value="3"
+              />
+              <svg
+                aria-label="Star"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </label>
+          <div
+            class="c9"
+          />
+          <label
+            class="c5"
+            for="4"
+          >
+            <div
+              class="c6 "
+            >
+              <input
+                class="c7"
+                id="4"
+                name="test"
+                tabindex="-1"
+                type="radio"
+                value="4"
+              />
+              <svg
+                aria-label="Star"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </label>
+          <div
+            class="c9"
+          />
+          <label
+            class="c5"
+            for="5"
+          >
+            <div
+              class="c6 "
+            >
+              <input
+                class="c7"
+                id="5"
+                name="test"
+                tabindex="-1"
+                type="radio"
+                value="5"
+              />
+              <svg
+                aria-label="Star"
+                class="c8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.606 16.805 12 16.343l-.606.462L5.755 21.1l2.381-6.35.263-.701-.599-.45L3 10h6.72l.229-.684L12 3.162l2.051 6.154.228.684H21l-4.8 3.6-.6.45.264.701 2.38 6.35-5.638-4.296Z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <button
+      class="c10"
+      type="submit"
+    >
+      submit
+    </button>
+  </form>
+</div>
+`;

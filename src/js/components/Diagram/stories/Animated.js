@@ -52,47 +52,47 @@ export const Animated = () => {
 
   const [draw, toogleDraw] = useReducer(reducer, true);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     toogleDraw();
-  //   }, 2000);
-  //   return () => clearInterval(timer);
-  // }, [toogleDraw]);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      toogleDraw();
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [toogleDraw]);
 
   const connections = [];
 
   if (draw) {
     connections.push(
       connection(
-        { target: '4', anchor: "vertical" },
-        { target: '1', anchor: "vertical" },
+        { target: '4', anchor: 'vertical' },
+        { target: '1', anchor: 'vertical' },
         // '4', '1',
         {
           // anchor: 'vertical',
-          arrow: "to"
-        }
+          arrow: 'to',
+        },
       ),
     );
     connections.push(
       connection(
         // '4', '2',
-        { target: '4', anchor: "vertical" },
-        { target: '2', anchor: "vertical" },
+        { target: '4', anchor: 'vertical' },
+        { target: '2', anchor: 'vertical' },
         {
           // anchor: 'vertical',
-          arrow: "to"
-        }
+          arrow: 'to',
+        },
       ),
     );
     connections.push(
       connection(
         // '4', '3',
-        { target: '4', anchor: "vertical" },
-        { target: '3', anchor: "vertical" },
-        { 
+        { target: '4', anchor: 'vertical' },
+        { target: '3', anchor: 'vertical' },
+        {
           // anchor: 'vertical',
-          arrow: "to"
-        }
+          arrow: 'to',
+        },
       ),
     );
   }

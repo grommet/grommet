@@ -12,6 +12,9 @@ import { Accordion, AccordionPanel, Box, Grommet } from '../..';
 const customTheme = {
   accordion: {
     heading: { level: '3' },
+    hover: {
+      background: 'background-contrast',
+    },
   },
 };
 
@@ -90,8 +93,8 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('change to second Panel', () => {
-    jest.useFakeTimers('modern');
+  test('change to second Panel', async () => {
+    const user = userEvent.setup();
     const onActive = jest.fn();
     const { asFragment } = render(
       <Grommet>
@@ -103,13 +106,13 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 2/i }));
-
+    await user.click(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onActive).toBeCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('change to second Panel without onActive', () => {
+  test('change to second Panel without onActive', async () => {
+    const user = userEvent.setup();
     const { asFragment } = render(
       <Grommet>
         <Accordion animate={false}>
@@ -120,12 +123,12 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 2/i }));
-
+    await user.click(screen.getByRole('button', { name: /Panel 2/i }));
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('multiple panels', () => {
+  test('multiple panels', async () => {
+    const user = userEvent.setup();
     const onActive = jest.fn();
     const { asFragment } = render(
       <Grommet>
@@ -137,28 +140,30 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onActive).toBeCalledWith([1]);
 
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onActive).toBeCalledWith([1, 0]);
 
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onActive).toBeCalledWith([0]);
 
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onActive).toBeCalledWith([]);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('custom accordion', () => {
+  test('custom accordion', async () => {
+    const user = userEvent.setup();
+
     const { asFragment } = render(
       <Grommet theme={customTheme}>
         <Accordion>
@@ -166,6 +171,9 @@ describe('Accordion', () => {
         </Accordion>
       </Grommet>,
     );
+    expect(asFragment()).toMatchSnapshot();
+
+    await user.hover(screen.getByRole('button', { name: 'Panel 1 FormDown' }));
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -191,7 +199,8 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('change active index', () => {
+  test('change active index', async () => {
+    const user = userEvent.setup();
     const onActive = jest.fn();
     const { asFragment } = render(
       <Grommet>
@@ -203,12 +212,13 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onActive).toBeCalledWith([0]);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('focus and hover styles', () => {
+  test('focus and hover styles', async () => {
+    const user = userEvent.setup();
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { asFragment } = render(
       <Grommet theme={{ accordion: { hover: { color: 'red' } } }}>
@@ -226,13 +236,14 @@ describe('Accordion', () => {
       </Grommet>,
     );
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(asFragment()).toMatchSnapshot();
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
   });
 
-  test('backward compatibility of hover.color = undefined', () => {
+  test('backward compatibility of hover.color = undefined', async () => {
+    const user = userEvent.setup();
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { asFragment } = render(
       <Grommet
@@ -256,14 +267,15 @@ describe('Accordion', () => {
       </Grommet>,
     );
 
-    userEvent.tab();
+    await user.tab();
     // hover color should be undefined
     expect(asFragment()).toMatchSnapshot();
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
   });
 
-  test('theme hover of hover.heading.color', () => {
+  test('theme hover of hover.heading.color', async () => {
+    const user = userEvent.setup();
     const { asFragment } = render(
       <Grommet
         theme={{
@@ -286,12 +298,13 @@ describe('Accordion', () => {
       </Grommet>,
     );
 
-    userEvent.tab();
+    await user.tab();
     // hover color should be undefined
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('set on hover', () => {
+  test('set on hover', async () => {
+    const user = userEvent.setup();
     const onMouseOver1 = jest.fn();
     const onMouseOut1 = jest.fn();
     const onMouseOver2 = jest.fn();
@@ -317,18 +330,19 @@ describe('Accordion', () => {
       </Grommet>,
     );
 
-    userEvent.hover(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.hover(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onMouseOver1).toHaveBeenCalled();
-    userEvent.unhover(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.unhover(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onMouseOut1).toHaveBeenCalled();
 
-    userEvent.hover(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.hover(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onMouseOver2).toHaveBeenCalled();
-    userEvent.unhover(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.unhover(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onMouseOver2).toHaveBeenCalled();
   });
 
-  test('wrapped panel', () => {
+  test('wrapped panel', async () => {
+    const user = userEvent.setup();
     const onActive = jest.fn();
     const { asFragment } = render(
       <Grommet>
@@ -340,13 +354,14 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    userEvent.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onActive).toBeCalledWith([0]);
     expect(screen.getByText('Panel body 1')).not.toBeNull();
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('blur styles', () => {
+  test('blur styles', async () => {
+    const user = userEvent.setup();
     const onBlur = jest.fn();
     const { asFragment } = render(
       <Grommet theme={{ accordion: { hover: { heading: { color: 'red' } } } }}>
@@ -365,10 +380,10 @@ describe('Accordion', () => {
     );
 
     // tab to the first accordion panel
-    userEvent.tab();
+    await user.tab();
     expect(asFragment()).toMatchSnapshot();
     // tab away from the first accordion panel
-    userEvent.tab();
+    await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
 });

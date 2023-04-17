@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useRef,
   useState,
-  Fragment
+  Fragment,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -25,12 +25,7 @@ const computeMidPoint = (fromPoint, toPoint) => [
 ];
 
 const COMMANDS = {
-  curved: (
-    fromPoint,
-    toPoint,
-    offset,
-    anchor,
-  ) => {
+  curved: (fromPoint, toPoint, offset, anchor) => {
     const midPoint = computeMidPoint(fromPoint, toPoint);
     let cmds = `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `;
     if (anchor === 'horizontal') {
@@ -45,22 +40,10 @@ const COMMANDS = {
     cmds += `T ${toPoint[0] + offset},${toPoint[1] + offset}`;
     return cmds;
   },
-  direct: (
-    fromPoint,
-    toPoint,
-    offset,
-  ) => {
-    return (
-      `M ${fromPoint[0] + offset},${fromPoint[1] + offset} ` +
-      `L ${toPoint[0] + offset},${toPoint[1] + offset}`
-    );
-  },
-  rectilinear: (
-    fromPoint,
-    toPoint,
-    offset,
-    anchor,
-  ) => {
+  direct: (fromPoint, toPoint, offset) =>
+    `M ${fromPoint[0] + offset},${fromPoint[1] + offset} ` +
+    `L ${toPoint[0] + offset},${toPoint[1] + offset}`,
+  rectilinear: (fromPoint, toPoint, offset, anchor) => {
     const midPoint = computeMidPoint(fromPoint, toPoint);
     let cmds = `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `;
     if (anchor === 'horizontal') {
@@ -84,7 +67,7 @@ const findTarget = (target) => {
   return target;
 };
 
-const openArrow = (color, index, name = "openArrowEnd", orient = "auto") => (
+const openArrow = (color, index, name = 'openArrowEnd', orient = 'auto') => (
   <marker
     id={`${name}-${index}`}
     markerWidth="7"
@@ -93,11 +76,7 @@ const openArrow = (color, index, name = "openArrowEnd", orient = "auto") => (
     refY="6"
     orient={orient}
   >
-    <path
-      d="M1,4 L3,6 L1,8"
-      stroke={color}
-      fill="none"
-    />
+    <path d="M1,4 L3,6 L1,8" stroke={color} fill="none" />
   </marker>
 );
 
@@ -152,24 +131,29 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   const placeConnections = useCallback(() => {
     const containerRect = svgRef.current.getBoundingClientRect();
     const updatedConnectionPoints = connections.map(
-      ({ anchor: anchorProp, fromTarget: fromTargetProp, toTarget: toTargetProp, arrow }) => {
-        let anchor = anchorProp;
+      ({
+        anchor: anchorProp,
+        fromTarget: fromTargetProp,
+        toTarget: toTargetProp,
+        arrow,
+      }) => {
+        const anchor = anchorProp;
         let fromTarget = fromTargetProp;
         let toTarget = toTargetProp;
         let anchorFromTarget;
         let anchorToTarget;
 
-        if (typeof fromTargetProp === "object") {
+        if (typeof fromTargetProp === 'object') {
           fromTarget = fromTargetProp.target;
           if (fromTargetProp.anchor) {
-            anchorFromTarget = fromTargetProp.anchor
+            anchorFromTarget = fromTargetProp.anchor;
           }
         }
 
-        if (typeof toTargetProp === "object") {
+        if (typeof toTargetProp === 'object') {
           toTarget = toTargetProp.target;
           if (toTargetProp.anchor) {
-            anchorToTarget = toTargetProp.anchor
+            anchorToTarget = toTargetProp.anchor;
           }
         }
 
@@ -195,13 +179,11 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             toRect.left - containerRect.left || 0,
             toRect.top - containerRect.top || 0,
           ];
-          
-          console.log('BEFORE ', { fromPoint: [...fromPoint], fromRect, toPoint: [...toPoint], toRect, anchorFromTarget, anchorToTarget, containerRect, anchorProp, anchor, fromElement, toElement })
 
-          if (anchorFromTarget === "vertical" && !anchorProp) {
+          if (anchorFromTarget === 'vertical' && !anchorProp) {
             fromPoint[0] += fromRect.width / 2;
             fromPoint[1] += fromRect.height;
-          } else if (anchorFromTarget === "horizontal" && !anchorProp) {
+          } else if (anchorFromTarget === 'horizontal' && !anchorProp) {
             fromPoint[1] += fromRect.height / 2;
             fromPoint[0] += fromRect.width;
           } else if (!anchorProp) {
@@ -209,16 +191,15 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             fromPoint[1] += fromRect.height / 2;
           }
 
-          if (anchorToTarget === "vertical" && !anchorProp) {
+          if (anchorToTarget === 'vertical' && !anchorProp) {
             toPoint[0] += toRect.width / 2;
             if (fromRect.top > toRect.top) {
               toPoint[1] += toRect.height;
-              if (arrow)
-                toPoint[1] += toRect.height / 10;
+              if (arrow) toPoint[1] += toRect.height / 10;
             } else if (arrow) {
               toPoint[1] -= toRect.height / 10;
             }
-          } else if (anchorToTarget === "horizontal" && !anchorProp) {
+          } else if (anchorToTarget === 'horizontal' && !anchorProp) {
             toPoint[1] += toRect.height / 2;
             toPoint[0] += toRect.width;
           } else if (!anchorProp) {
@@ -249,7 +230,6 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             toPoint[0] += toRect.width / 2;
             toPoint[1] += toRect.height / 2;
           }
-          console.log('AFTER ', { fromPoint: [...fromPoint], fromRect, toPoint: [...toPoint], toRect, anchorFromTarget, anchorToTarget, containerRect, anchorProp, anchor, fromElement, toElement })
 
           points = [fromPoint, toPoint];
         }
@@ -314,15 +294,25 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
           let arrowMarker = null;
 
           if (arrow === 'from') {
-            arrowMarker = openArrow(normalizeColor(colorName, theme), index, "openArrowStart", "auto-start-reverse");
+            arrowMarker = openArrow(
+              normalizeColor(colorName, theme),
+              index,
+              'openArrowStart',
+              'auto-start-reverse',
+            );
           } else if (arrow === 'to') {
             arrowMarker = openArrow(normalizeColor(colorName, theme), index);
           } else if (arrow) {
             arrowMarker = (
-              <Fragment>
-                {openArrow(normalizeColor(colorName, theme), index, "openArrowStart", "auto-start-reverse")}
+              <>
+                {openArrow(
+                  normalizeColor(colorName, theme),
+                  index,
+                  'openArrowStart',
+                  'auto-start-reverse',
+                )}
                 {openArrow(normalizeColor(colorName, theme), index)}
-              </Fragment>
+              </>
             );
           }
 
@@ -330,6 +320,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             // eslint-disable-next-line react/no-array-index-key
             <Fragment key={index}>
               <path
+                // eslint-disable-next-line react/no-unknown-property
                 animation={animation}
                 {...cleanedRest}
                 stroke={normalizeColor(colorName, theme)}
@@ -341,13 +332,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
                 markerStart={`url("#openArrowStart-${index}")`}
                 markerEnd={`url("#openArrowEnd-${index}")`}
               />
-              {
-                arrow && arrowMarker && (
-                  <defs>
-                    {arrowMarker}
-                  </defs>
-                )
-              }
+              {arrow && arrowMarker && <defs>{arrowMarker}</defs>}
             </Fragment>
           );
         }

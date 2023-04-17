@@ -6,7 +6,7 @@ import { Grommet, SkipLinks, SkipLink, SkipLinkTarget } from '../..';
 
 describe('SkipLink', () => {
   test('basic', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <SkipLinks id="skip-links">
@@ -26,11 +26,15 @@ describe('SkipLink', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    document.getElementById('skip-links').querySelector('a').focus();
+    act(() => {
+      document.getElementById('skip-links').querySelector('a').focus();
+    });
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(document.activeElement);
-    document.getElementById('skip-links').querySelector('a').blur();
+    act(() => {
+      document.getElementById('skip-links').querySelector('a').blur();
+    });
 
     act(() => {
       jest.runAllTimers();
@@ -39,7 +43,7 @@ describe('SkipLink', () => {
   });
 
   test('should allow for single skip link', () => {
-    jest.useFakeTimers('modern');
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <SkipLinks id="skip-links">
@@ -67,5 +71,17 @@ describe('SkipLink', () => {
       jest.runAllTimers();
     });
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should automatically filter out undefined children', () => {
+    const showSecondLink = false;
+    const result = render(
+      <SkipLinks>
+        {showSecondLink && <SkipLink id="nav" label="Table of Contents" />}
+        <SkipLink id="main" label="Main Content" />
+      </SkipLinks>,
+    );
+
+    expect(result).toBeDefined();
   });
 });

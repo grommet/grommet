@@ -274,7 +274,6 @@ exports[`Tag onClick 1`] = `
       <span
         class="c4"
       >
-        
         <span
           class="c5"
         >
@@ -497,7 +496,6 @@ exports[`Tag onRemove 1`] = `
       <span
         class="c3"
       >
-        
         <span
           class="c4"
         >

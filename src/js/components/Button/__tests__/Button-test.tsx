@@ -219,7 +219,9 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('focus', () => {
+  test('focus', async () => {
+    const user = userEvent.setup();
+
     const { container } = render(
       <Grommet>
         <Button label="Test focus" onClick={() => {}} />
@@ -231,8 +233,7 @@ describe('Button', () => {
     expect(button).not.toHaveFocus();
     expect(document.body).toHaveFocus();
 
-    userEvent.tab();
-
+    await user.tab();
     expect(button).toHaveFocus();
     expect(document.body).not.toHaveFocus();
 
@@ -442,14 +443,17 @@ describe('Button', () => {
   });
 
   test('as', () => {
-    const { container } = render(
+    const Anchor = () => <a />;
+
+    const { asFragment } = render(
       <Grommet>
         <Button as="span" />
+        <Button as={Anchor} />
       </Grommet>,
     );
 
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('a11yTitle', () => {
@@ -573,5 +577,46 @@ describe('Button', () => {
     );
 
     expect(getByRole('button')).toHaveStyleRule('line-height', '0');
+  });
+
+  test('should render pad', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Button
+          data-testid="string-pad"
+          label="String pad"
+          icon={<Add />}
+          pad="xlarge"
+        />
+        <Button
+          data-testid="object-pad"
+          label="Object pad"
+          icon={<Add />}
+          pad={{ horizontal: '18px', vertical: '6px' }}
+        />
+        {/* should not render pad on plain button */}
+        <Button data-testid="child-pad" pad="xlarge">
+          <Add />
+        </Button>
+      </Grommet>,
+    );
+
+    const stringPadButton = screen.getByTestId('string-pad');
+    const objectPadButton = screen.getByTestId('object-pad');
+    const childPadButton = screen.getByTestId('child-pad');
+    let style;
+    style = window.getComputedStyle(stringPadButton);
+    expect(style.padding).toBe('96px');
+
+    style = window.getComputedStyle(objectPadButton);
+    expect(style.paddingTop).toBe('6px');
+    expect(style.paddingBottom).toBe('6px');
+    expect(style.paddingLeft).toBe('18px');
+    expect(style.paddingRight).toBe('18px');
+
+    style = window.getComputedStyle(childPadButton);
+    expect(style.padding).toBe('0px');
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

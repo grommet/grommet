@@ -7,8 +7,10 @@ import {
   parseMetricToNum,
   plainInputStyle,
   textAlignStyle,
+  widthStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { inputPadForIcon } from '../../utils/styles';
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
@@ -22,17 +24,14 @@ const getPlainStyle = (plain) => {
 const StyledTextInput = styled.input`
   ${inputStyle}
   ${(props) => getPlainStyle(props.plain)}
-  ${(props) =>
-    props.icon &&
-    (props.reverse
-      ? `padding-right: ${props.theme.global.edgeSize.large};`
-      : `padding-left: ${props.theme.global.edgeSize.large};`)}
+  ${(props) => props.icon && inputPadForIcon}
   ${(props) =>
     props.disabled &&
     disabledStyle(
       props.theme.textInput.disabled && props.theme.textInput.disabled.opacity,
     )}
   ${(props) => props.textAlign && textAlignStyle}
+  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
   ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 

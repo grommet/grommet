@@ -60,15 +60,16 @@ const Notification = ({
   status,
   title,
   toast,
+  icon,
+  time,
+  ...rest
 }) => {
   const autoClose =
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [visible, setVisible] = useState(true);
 
-  const position = useMemo(() => 
-    (toast && toast?.position) || 'top', 
-    [toast]);
+  const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
 
   const close = useCallback(
     (event) => {
@@ -82,7 +83,7 @@ const Notification = ({
     if (autoClose) {
       const timer = setTimeout(
         close,
-        theme.notification.toast.time || theme.notification.time,
+        time || theme.notification.toast.time || theme.notification.time,
       );
 
       return () => clearTimeout(timer);
@@ -93,10 +94,12 @@ const Notification = ({
     close,
     theme.notification.toast.time,
     theme.notification.time,
+    time,
   ]);
 
   const { icon: CloseIcon } = theme.notification.close;
-  const { icon: StatusIcon, color } = theme.notification[status];
+  const { icon: StatusIcon, color } =
+    theme.notification?.[status] || theme.notification.unknown;
   const { color: closeIconColor } = theme.notification.close;
 
   const kind = useMemo(() => {
@@ -155,13 +158,18 @@ const Notification = ({
 
   const Message = direction !== 'row' ? Paragraph : Text;
   if (message || actions)
-    message = (
-      <Message {...theme.notification.message}>
-        <Text margin={{ right: 'xsmall' }}>{message}</Text>
-        {/* include actions with message so it wraps with message */}
-        {actions}
-      </Message>
-    );
+    message =
+      typeof message === 'string' ? (
+        <Message {...theme.notification.message}>
+          <Text margin={{ right: 'xsmall' }}>{message}</Text>
+          {/* include actions with message so it wraps with message */}
+          {actions}
+        </Message>
+      ) : (
+        message
+      );
+
+  const iconDimension = theme.notification?.message?.size || 'medium';
 
   let content = (
     <Box
@@ -173,12 +181,14 @@ const Notification = ({
       pad={undefined}
       direction="row"
       gap="small"
+      id={toast ? undefined : id}
+      {...rest}
     >
       {/* separate from onClose button to allow "onClick" in the future and 
         avoid nested interactive elements */}
       <Box direction="row" pad={textPad} flex>
         <Box {...theme.notification.iconContainer}>
-          <StatusIcon color={color} />
+          {icon || <StatusIcon color={color} height={iconDimension} />}
         </Box>
         <Box {...theme.notification.textContainer}>
           <TextWrapper>
@@ -194,7 +204,13 @@ const Notification = ({
         <Box pad={closeButtonPad}>
           <Box {...theme.notification.textContainer}>
             <Button
-              icon={<CloseIcon color={closeIconColor} />}
+              icon={
+                <CloseIcon
+                  color={closeIconColor}
+                  height={iconDimension}
+                  width={iconDimension}
+                />
+              }
               onClick={close}
               hoverIndicator
               plain

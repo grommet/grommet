@@ -12,7 +12,7 @@ const locations = [
 
 export const Basic = () => (
   <Box align="center" pad="large">
-    <List data={locations} />
+    <List a11yTitle="Locations" data={locations} />
   </Box>
 );
 

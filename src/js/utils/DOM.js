@@ -56,12 +56,35 @@ export const findScrollParents = (element, horizontal) => {
 };
 
 export const containsFocus = (node) => {
-  let element = document.activeElement;
+  const root = node.getRootNode();
+  let element = root.activeElement;
   while (element) {
     if (element === node) break;
     element = element.parentElement;
   }
   return !!element;
+};
+
+export const withinDropPortal = (node, portalContext) => {
+  const root = node?.getRootNode();
+  let element = node;
+  let portalId;
+  while (element && element !== root) {
+    if (element.hasAttribute('data-g-portal-id')) {
+      portalId = element.getAttribute('data-g-portal-id');
+      element = root;
+    } else {
+      element = element.parentElement;
+    }
+  }
+  // if portalContext doesn't contain the portalId then the
+  // portal is new and node is within a drop that just opened
+  if (
+    portalId === undefined ||
+    portalContext.indexOf(parseInt(portalId, 10)) !== -1
+  )
+    return false;
+  return true;
 };
 
 // Check if the element.tagName is an input, select or textarea
@@ -82,8 +105,8 @@ export const getFirstFocusableDescendant = (element) => {
   return undefined;
 };
 
-export const shouldKeepFocus = () => {
-  const element = document.activeElement;
+export const shouldKeepFocus = (root) => {
+  const element = root.activeElement;
   if (isFocusable(element)) return true;
   return !!getFirstFocusableDescendant(element);
 };
@@ -196,4 +219,10 @@ export const isNodeBeforeScroll = (node, target) => {
     ? target.getBoundingClientRect()
     : { top: 0 };
   return top <= targetTop;
+};
+
+export const findButtonParent = (element) => {
+  if (element && element.nodeName !== 'BUTTON' && element.nodeName !== 'A')
+    return findButtonParent(element.parentElement);
+  return element;
 };

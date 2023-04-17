@@ -57,7 +57,7 @@ const Accordion = forwardRef(
     );
 
     return (
-      <Box ref={ref} role="tablist" {...rest}>
+      <Box ref={ref} {...rest}>
         {Children.toArray(children)
           .filter((child) => child)
           .map((child, index) => (
