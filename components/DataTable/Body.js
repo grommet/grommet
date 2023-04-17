@@ -62,8 +62,8 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
           if (isSelected) {
             onSelect(selected.filter(function (s) {
               return s !== primaryValue;
-            }));
-          } else onSelect([].concat(selected, [primaryValue]));
+            }), datum);
+          } else onSelect([].concat(selected, [primaryValue]), datum);
         }
       }
     } : undefined,
@@ -92,8 +92,8 @@ var Row = /*#__PURE__*/(0, _react.memo)(function (_ref) {
             if (isSelected) {
               onSelect(selected.filter(function (s) {
                 return s !== primaryValue;
-              }));
-            } else onSelect([].concat(selected, [primaryValue]));
+              }), datum);
+            } else onSelect([].concat(selected, [primaryValue]), datum);
           },
           pad: cellProps.pad
         });
