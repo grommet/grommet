@@ -9,7 +9,15 @@ const activeAsArray = (active) =>
 
 const Accordion = forwardRef(
   (
-    { activeIndex, animate = true, children, multiple, onActive, ...rest },
+    {
+      activeIndex,
+      animate = true,
+      children,
+      level,
+      multiple,
+      onActive,
+      ...rest
+    },
     ref,
   ) => {
     const [activeIndexes, setActiveIndexes] = useState([]);
@@ -50,10 +58,11 @@ const Accordion = forwardRef(
         return {
           active: activeIndexes.indexOf(index) > -1,
           animate,
+          level,
           onPanelChange: () => onPanelChange(index),
         };
       },
-      [activeIndexes, animate, multiple, onActive],
+      [activeIndexes, animate, level, multiple, onActive],
     );
 
     return (
