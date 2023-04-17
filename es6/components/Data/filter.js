@@ -47,9 +47,15 @@ export var filter = function filter(data, view, properties) {
         if (typeof (filterValue == null ? void 0 : filterValue.min) === 'number' || typeof (filterValue == null ? void 0 : filterValue.max) === 'number') return typeof value !== 'number' || value <= filterValue.min || value >= filterValue.max;
 
         // options case
-        if (Array.isArray(filterValue)) return Array.isArray(value) ? !value.some(function (v) {
-          return filterValue.includes(v);
-        }) : !filterValue.includes(value);
+        if (Array.isArray(filterValue)) {
+          if (Array.isArray(value)) {
+            return !filterValue.some(function (f) {
+              return typeof f === 'object' ? value.includes(f == null ? void 0 : f.value) // from {label: ___, value: ___}
+              : value.includes(f);
+            });
+          }
+          return !filterValue.includes(value);
+        }
 
         // presence case
         if (typeof filterValue === 'boolean') return filterValue === !value;

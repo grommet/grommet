@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, DataTable, Notification, Text } from 'grommet';
+import { Grid, DataTable, DataFilters, DataSearch, DataSummary, Notification, Text, Toolbar } from 'grommet';
 import { Data } from '../Data';
 var data = [{
   id: 1,
@@ -11,7 +11,7 @@ var data = [{
   economy: {
     GDP: 100
   },
-  colors: ['White', 'Blue']
+  colors: ['white', 'blue']
 }, {
   id: 2,
   name: 'Beta',
@@ -22,7 +22,7 @@ var data = [{
   economy: {
     GDP: 150
   },
-  colors: ['Red', 'White', 'Blue']
+  colors: ['red', 'white', 'blue']
 }, {
   id: 3,
   name: 'Theta',
@@ -33,7 +33,7 @@ var data = [{
   economy: {
     GDP: 200
   },
-  colors: ['Red', 'Yellow', 'Black']
+  colors: ['red', 'yellow', 'black']
 }];
 var properties = {
   name: {
@@ -48,7 +48,31 @@ var properties = {
   },
   colors: {
     label: 'Flag Colors',
-    options: ['Red', 'White', 'Blue', 'Yellow', 'Black'],
+    options: [{
+      label: 'Red',
+      value: 'red'
+    }, {
+      label: 'White',
+      value: 'white'
+    }, {
+      label: 'Blue',
+      value: 'blue'
+    }, {
+      label: 'Yellow',
+      value: 'yellow'
+    }, {
+      label: 'Black',
+      value: 'black'
+    }, {
+      label: 'Green',
+      value: 'green'
+    }, {
+      label: 'Orange',
+      value: 'orange'
+    }, {
+      label: 'Gray',
+      value: 'gray'
+    }],
     search: true
   }
 };
@@ -90,9 +114,10 @@ export var Complex = function Complex() {
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/React.createElement(Data, {
       data: data,
-      properties: properties,
-      toolbar: true
-    }, /*#__PURE__*/React.createElement(DataTable, {
+      properties: properties
+    }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilters, {
+      layer: true
+    })), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(DataTable, {
       columns: columns,
       verticalAlign: {
         body: 'top'
