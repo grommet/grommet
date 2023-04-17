@@ -48,8 +48,7 @@ const RadioButtonGroup = forwardRef(
     const [value, setValue] = formContext.useFormInput({
       name,
       value: valueProp,
-      // 0 could be one of the options value
-      initialValue: defaultValue === 0 ? defaultValue : defaultValue || '',
+      initialValue: defaultValue ?? '',
     });
 
     // track if focus is on one of the radio buttons
@@ -104,10 +103,14 @@ const RadioButtonGroup = forwardRef(
 
     const onRadioButtonChange = (event, optionValue) => {
       setValue(optionValue);
-      event.persist(); // extract from React synthetic event pool
-      const adjustedEvent = event;
-      adjustedEvent.value = optionValue;
-      if (onChange) onChange(adjustedEvent);
+      if (onChange) {
+        event.persist(); // extract from React synthetic event pool
+        const adjustedEvent = event;
+        //event.target.value gives value as a string which needs to be manually typecasted according to the type of original option value
+        //return the original option value instead of getting it using event.target.value
+        adjustedEvent.value = optionValue;
+        onChange(adjustedEvent);
+      }
     };
 
     const onBlur = () => setFocus(false);
