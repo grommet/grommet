@@ -64,7 +64,7 @@ export const filter = (data, view, properties) => {
           if (Array.isArray(value)) {
             return !filterValue.some((f) =>
               typeof f === 'object'
-                ? value.includes(f.value) // from {label: ___, value: ___}
+                ? value.includes(f?.value) // from {label: ___, value: ___}
                 : value.includes(f),
             );
           }
