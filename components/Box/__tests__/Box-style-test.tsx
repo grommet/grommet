@@ -228,6 +228,10 @@ describe('Box', () => {
           <Box>one</Box>
           <Box>two</Box>
         </Box>
+        <Box border={[{ side: 'between' }, { side: 'top' }]} gap="small">
+          <Box>one</Box>
+          <Box>two</Box>
+        </Box>
       </Grommet>,
     );
 
