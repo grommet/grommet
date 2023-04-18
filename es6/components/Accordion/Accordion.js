@@ -1,4 +1,4 @@
-var _excluded = ["activeIndex", "animate", "children", "multiple", "onActive"];
+var _excluded = ["activeIndex", "animate", "children", "level", "multiple", "onActive"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { Children, forwardRef, useCallback, useState } from 'react';
@@ -13,6 +13,7 @@ var Accordion = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$animate = _ref.animate,
     animate = _ref$animate === void 0 ? true : _ref$animate,
     children = _ref.children,
+    level = _ref.level,
     multiple = _ref.multiple,
     onActive = _ref.onActive,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -49,11 +50,12 @@ var Accordion = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return {
       active: activeIndexes.indexOf(index) > -1,
       animate: animate,
+      level: level,
       onPanelChange: function onPanelChange() {
         return _onPanelChange(index);
       }
     };
-  }, [activeIndexes, animate, multiple, onActive]);
+  }, [activeIndexes, animate, level, multiple, onActive]);
   return /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref
   }, rest), Children.toArray(children).filter(function (child) {

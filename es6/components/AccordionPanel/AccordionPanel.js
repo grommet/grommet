@@ -25,6 +25,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useContext = useContext(AccordionContext),
     active = _useContext.active,
     animate = _useContext.animate,
+    level = _useContext.level,
     onPanelChange = _useContext.onPanelChange;
   var _useState = useState(undefined),
     hover = _useState[0],
@@ -104,7 +105,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
       horizontal: 'xsmall'
     }
   }, /*#__PURE__*/React.createElement(Heading, {
-    level: theme.accordion.heading && theme.accordion.heading.level || 4,
+    level: level || theme.accordion.heading && theme.accordion.heading.level || 4,
     margin: theme.accordion.heading && theme.accordion.heading.margin || undefined,
     color: hover
   }, label)) : label, AccordionIcon && /*#__PURE__*/React.createElement(Box, {

@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
     activeIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
     animate: PropTypes.bool,
     children: PropTypes.node,
+    level: PropTypes.number,
     onActive: PropTypes.func,
     multiple: PropTypes.bool,
     messages: PropTypes.shape({

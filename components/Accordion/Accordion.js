@@ -6,7 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _propTypes = require("./propTypes");
 var _Box = require("../Box");
 var _AccordionContext = require("./AccordionContext");
-var _excluded = ["activeIndex", "animate", "children", "multiple", "onActive"];
+var _excluded = ["activeIndex", "animate", "children", "level", "multiple", "onActive"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -19,6 +19,7 @@ var Accordion = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     _ref$animate = _ref.animate,
     animate = _ref$animate === void 0 ? true : _ref$animate,
     children = _ref.children,
+    level = _ref.level,
     multiple = _ref.multiple,
     onActive = _ref.onActive,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -55,11 +56,12 @@ var Accordion = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return {
       active: activeIndexes.indexOf(index) > -1,
       animate: animate,
+      level: level,
       onPanelChange: function onPanelChange() {
         return _onPanelChange(index);
       }
     };
-  }, [activeIndexes, animate, multiple, onActive]);
+  }, [activeIndexes, animate, level, multiple, onActive]);
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: ref
   }, rest), _react.Children.toArray(children).filter(function (child) {

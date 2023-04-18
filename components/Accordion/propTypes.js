@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
     activeIndex: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].arrayOf(_propTypes["default"].number)]),
     animate: _propTypes["default"].bool,
     children: _propTypes["default"].node,
+    level: _propTypes["default"].number,
     onActive: _propTypes["default"].func,
     multiple: _propTypes["default"].bool,
     messages: _propTypes["default"].shape({
