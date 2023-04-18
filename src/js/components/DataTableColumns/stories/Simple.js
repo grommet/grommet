@@ -1,6 +1,14 @@
 import React from 'react';
 
-import { Box, Data, DataTable, Notification, Toolbar } from 'grommet';
+import {
+  Box,
+  Data,
+  DataSearch,
+  DataSummary,
+  DataTable,
+  Notification,
+  Toolbar,
+} from 'grommet';
 
 import { DataTableColumns } from '../DataTableColumns';
 import { columns, DATA } from '../../DataTable/stories/data';
@@ -21,8 +29,10 @@ export const Simple = () => (
     />
     <Data data={DATA} updateOn="change">
       <Toolbar>
+        <DataSearch />
         <DataTableColumns drop options={options} />
       </Toolbar>
+      <DataSummary />
       <DataTable columns={columns} primaryKey="name" />
     </Data>
   </Box>

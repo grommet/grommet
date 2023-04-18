@@ -5,6 +5,7 @@ import { BoxProps } from '../Box/index';
 export interface AccordionProps {
   activeIndex?: number | number[];
   animate?: AnimateType;
+  level?: number;
   onActive?: (activeIndexes: number[]) => void;
   multiple?: boolean;
   messages?: { tabContents?: string };

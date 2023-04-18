@@ -11,6 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     animate: PropTypes.bool,
     children: PropTypes.node,
+    level: PropTypes.number,
     onActive: PropTypes.func,
     multiple: PropTypes.bool,
     messages: PropTypes.shape({
