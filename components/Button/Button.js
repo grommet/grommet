@@ -417,7 +417,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       href: href,
       kind: kind,
       themePaths: themePaths,
-      onClick: !busy && !success && onClick,
+      onClick: !busy && !success ? onClick : undefined,
       onFocus: function onFocus(event) {
         setFocus(true);
         if (_onFocus) _onFocus(event);
@@ -454,7 +454,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       href: href,
       kind: kind,
       themePaths: themePaths,
-      onClick: !busy && !success && onClick,
+      onClick: !busy && !success ? onClick : undefined,
       onFocus: function onFocus(event) {
         setFocus(true);
         if (_onFocus) _onFocus(event);
