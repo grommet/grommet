@@ -1,23 +1,14 @@
 import React from 'react';
 
-import {
-  Box,
-  Data,
-  DataSearch,
-  DataSummary,
-  DataTable,
-  Notification,
-  Toolbar,
-} from 'grommet';
+import { Box, Data, DataTable, Notification, Toolbar } from 'grommet';
 
-import { DataTableColumns } from '../DataTableColumns';
+import { DataTableGroupBy } from '../DataTableGroupBy';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 // simplify option label for name property
-const options = columns.map(({ header, property }) => ({
-  property,
-  label: property === 'name' ? 'Name' : header,
-}));
+const options = columns
+  .filter(({ property }) => ['location', 'percent'].includes(property))
+  .map(({ header, property }) => ({ property, label: header }));
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -27,13 +18,11 @@ export const Simple = () => (
       status="info"
       message="Data is in 'beta'. The API surface is subject to change."
     />
-    <Data data={DATA} updateOn="change">
+    <Data data={DATA}>
       <Toolbar>
-        <DataSearch />
-        <DataTableColumns drop options={options} />
+        <DataTableGroupBy options={options} />
       </Toolbar>
-      <DataSummary />
-      <DataTable columns={columns} primaryKey="name" />
+      <DataTable />
     </Data>
   </Box>
   // </Grommet>
@@ -44,5 +33,5 @@ Simple.args = {
 };
 
 export default {
-  title: 'Data/DataTableColumns/Simple',
+  title: 'Data/DataTableGroupBy/Simple',
 };
