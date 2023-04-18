@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataTableColumns remove column 1`] = `
-.c6 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`DataTableColumns remove column 1`] = `
   stroke: #666666;
 }
 
-.c6 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -52,32 +52,7 @@ exports[`DataTableColumns remove column 1`] = `
   flex: 0 0 auto;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -98,7 +73,7 @@ exports[`DataTableColumns remove column 1`] = `
   justify-content: center;
 }
 
-.c14 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -112,18 +87,18 @@ exports[`DataTableColumns remove column 1`] = `
   flex-direction: column;
 }
 
-.c11 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c15 {
+.c13 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c5 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -143,43 +118,43 @@ exports[`DataTableColumns remove column 1`] = `
   padding: 12px;
 }
 
-.c5:focus {
+.c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c3:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -187,16 +162,7 @@ exports[`DataTableColumns remove column 1`] = `
   max-width: 100%;
 }
 
-.c4 {
-  margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
-.c9 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -209,7 +175,7 @@ exports[`DataTableColumns remove column 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -221,23 +187,23 @@ exports[`DataTableColumns remove column 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c5 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c8 {
+.c6 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c12:focus {
+.c10:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -251,20 +217,6 @@ exports[`DataTableColumns remove column 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -275,24 +227,15 @@ exports[`DataTableColumns remove column 1`] = `
     <form
       class="c2"
     >
-      <header
-        class="c3"
-      >
-        <h2
-          class="c4"
-        >
-          Filters
-        </h2>
-      </header>
       <button
         aria-label="Open column selector"
-        class="c5"
+        class="c3"
         id="test-data--columns-control"
         type="button"
       >
         <svg
           aria-label="Splits"
-          class="c6"
+          class="c4"
           viewBox="0 0 24 24"
         >
           <path
@@ -305,7 +248,7 @@ exports[`DataTableColumns remove column 1`] = `
       </button>
     </form>
     <table
-      class="c7 c8"
+      class="c5 c6"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -314,42 +257,42 @@ exports[`DataTableColumns remove column 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c9 "
+            class="c7 "
             scope="col"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 Name
               </span>
             </div>
           </th>
           <th
-            class="c9 "
+            class="c7 "
             scope="col"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 Age
               </span>
             </div>
           </th>
           <th
-            class="c9 "
+            class="c7 "
             scope="col"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 Size
               </span>
@@ -358,40 +301,40 @@ exports[`DataTableColumns remove column 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c13 "
+            class="c11 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c12"
             >
               <span
-                class="c15"
+                class="c13"
               >
                 a
               </span>
             </div>
           </th>
           <td
-            class="c13 "
+            class="c11 "
           >
             <div
-              class="c14"
+              class="c12"
             />
           </td>
           <td
-            class="c13 "
+            class="c11 "
           >
             <div
-              class="c14"
+              class="c12"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 s
               </span>
@@ -402,34 +345,34 @@ exports[`DataTableColumns remove column 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c13 "
+            class="c11 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c12"
             >
               <span
-                class="c15"
+                class="c13"
               >
                 b
               </span>
             </div>
           </th>
           <td
-            class="c13 "
+            class="c11 "
           >
             <div
-              class="c14"
+              class="c12"
             />
           </td>
           <td
-            class="c13 "
+            class="c11 "
           >
             <div
-              class="c14"
+              class="c12"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 m
               </span>
@@ -529,694 +472,10 @@ exports[`DataTableColumns remove column 3`] = `
 }
 .hZNOgI:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-@media only screen and (max-width: 768px) {
-  .idXjQT {
-    margin: 0px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .idXjQT {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
-  }
 }"
 `;
 
 exports[`DataTableColumns renders 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c22 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c10:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c13 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c6 {
-  margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
-.c16 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c20 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c14 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c15 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c19:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c19:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    width: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-    id="test-data"
-  >
-    <form
-      class="c2"
-    >
-      <div
-        class="c3"
-      >
-        <div
-          class="c4"
-        >
-          <div
-            class="c1"
-          >
-            <header
-              class="c5"
-            >
-              <h2
-                class="c6"
-              >
-                Filters
-              </h2>
-            </header>
-            <button
-              aria-label="Open column selector"
-              class="c7"
-              id="test-data--columns-control"
-              type="button"
-            >
-              <svg
-                aria-label="Splits"
-                class="c8"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <footer
-          class="c9"
-        >
-          <button
-            class="c10"
-            type="submit"
-          >
-            Apply filters
-          </button>
-          <div
-            class="c11"
-          />
-          <button
-            aria-hidden="true"
-            class="c12 c13"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
-        </footer>
-      </div>
-    </form>
-    <table
-      class="c14 c15"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c16 "
-            scope="col"
-          >
-            <div
-              class="c17"
-            >
-              <span
-                class="c18"
-              >
-                Name
-              </span>
-            </div>
-          </th>
-          <th
-            class="c16 "
-            scope="col"
-          >
-            <div
-              class="c17"
-            >
-              <span
-                class="c18"
-              >
-                Size
-              </span>
-            </div>
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c19"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c20 "
-            scope="row"
-          >
-            <div
-              class="c21"
-            >
-              <span
-                class="c22"
-              >
-                a
-              </span>
-            </div>
-          </th>
-          <td
-            class="c20 "
-          >
-            <div
-              class="c21"
-            >
-              <span
-                class="c18"
-              >
-                s
-              </span>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c20 "
-            scope="row"
-          >
-            <div
-              class="c21"
-            >
-              <span
-                class="c22"
-              >
-                b
-              </span>
-            </div>
-          </th>
-          <td
-            class="c20 "
-          >
-            <div
-              class="c21"
-            >
-              <span
-                class="c18"
-              >
-                m
-              </span>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
-exports[`DataTableColumns search 1`] = `
 .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1275,6 +534,40 @@ exports[`DataTableColumns search 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 12px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1293,7 +586,7 @@ exports[`DataTableColumns search 1`] = `
   justify-content: space-between;
 }
 
-.c10 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1314,7 +607,7 @@ exports[`DataTableColumns search 1`] = `
   justify-content: center;
 }
 
-.c14 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1328,12 +621,22 @@ exports[`DataTableColumns search 1`] = `
   flex-direction: column;
 }
 
-.c11 {
+.c9 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c16 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c15 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -1399,20 +702,154 @@ exports[`DataTableColumns search 1`] = `
   border: 0;
 }
 
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c8:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c11 {
+  opacity: 0;
+}
+
 .c2 {
   max-width: 100%;
 }
 
-.c4 {
-  margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
-.c9 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1425,7 +862,7 @@ exports[`DataTableColumns search 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1437,23 +874,23 @@ exports[`DataTableColumns search 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c12 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c8 {
+.c13 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c12:focus {
+.c17:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c17:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -1468,16 +905,14 @@ exports[`DataTableColumns search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
+  .c7 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
+  .c9 {
+    width: 6px;
   }
 }
 
@@ -1491,24 +926,406 @@ exports[`DataTableColumns search 1`] = `
     <form
       class="c2"
     >
-      <header
+      <div
         class="c3"
       >
-        <h2
+        <div
           class="c4"
         >
-          Filters
-        </h2>
-      </header>
+          <div
+            class="c1"
+          >
+            <button
+              aria-label="Open column selector"
+              class="c5"
+              id="test-data--columns-control"
+              type="button"
+            >
+              <svg
+                aria-label="Splits"
+                class="c6"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <footer
+          class="c7"
+        >
+          <button
+            class="c8"
+            type="submit"
+          >
+            Apply filters
+          </button>
+          <div
+            class="c9"
+          />
+          <button
+            aria-hidden="true"
+            class="c10 c11"
+            disabled=""
+            tabindex="-1"
+            type="reset"
+          >
+            Undo changes
+          </button>
+        </footer>
+      </div>
+    </form>
+    <table
+      class="c12 c13"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c14 "
+            scope="col"
+          >
+            <div
+              class="c15"
+            >
+              <span
+                class="c16"
+              >
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="c14 "
+            scope="col"
+          >
+            <div
+              class="c15"
+            >
+              <span
+                class="c16"
+              >
+                Size
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c19"
+            >
+              <span
+                class="c20"
+              >
+                a
+              </span>
+            </div>
+          </th>
+          <td
+            class="c18 "
+          >
+            <div
+              class="c19"
+            >
+              <span
+                class="c16"
+              >
+                s
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c18 "
+            scope="row"
+          >
+            <div
+              class="c19"
+            >
+              <span
+                class="c20"
+              >
+                b
+              </span>
+            </div>
+          </th>
+          <td
+            class="c18 "
+          >
+            <div
+              class="c19"
+            >
+              <span
+                class="c16"
+              >
+                m
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`DataTableColumns search 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c13 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c5 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c6 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c10:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="test-data"
+  >
+    <form
+      class="c2"
+    >
       <button
         aria-label="Open column selector"
-        class="c5"
+        class="c3"
         id="test-data--columns-control"
         type="button"
       >
         <svg
           aria-label="Splits"
-          class="c6"
+          class="c4"
           viewBox="0 0 24 24"
         >
           <path
@@ -1521,7 +1338,7 @@ exports[`DataTableColumns search 1`] = `
       </button>
     </form>
     <table
-      class="c7 c8"
+      class="c5 c6"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -1530,28 +1347,28 @@ exports[`DataTableColumns search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c9 "
+            class="c7 "
             scope="col"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 Name
               </span>
             </div>
           </th>
           <th
-            class="c9 "
+            class="c7 "
             scope="col"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 Size
               </span>
@@ -1560,33 +1377,33 @@ exports[`DataTableColumns search 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c13 "
+            class="c11 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c12"
             >
               <span
-                class="c15"
+                class="c13"
               >
                 a
               </span>
             </div>
           </th>
           <td
-            class="c13 "
+            class="c11 "
           >
             <div
-              class="c14"
+              class="c12"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 s
               </span>
@@ -1597,27 +1414,27 @@ exports[`DataTableColumns search 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c13 "
+            class="c11 "
             scope="row"
           >
             <div
-              class="c14"
+              class="c12"
             >
               <span
-                class="c15"
+                class="c13"
               >
                 b
               </span>
             </div>
           </th>
           <td
-            class="c13 "
+            class="c11 "
           >
             <div
-              class="c14"
+              class="c12"
             >
               <span
-                class="c11"
+                class="c9"
               >
                 m
               </span>
@@ -1717,18 +1534,6 @@ exports[`DataTableColumns search 3`] = `
 }
 .hZNOgI:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-@media only screen and (max-width: 768px) {
-  .idXjQT {
-    margin: 0px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .idXjQT {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
-  }
 }"
 `;
 
@@ -1819,17 +1624,5 @@ exports[`DataTableColumns search 5`] = `
 }
 .hZNOgI:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-@media only screen and (max-width: 768px) {
-  .idXjQT {
-    margin: 0px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .idXjQT {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
-  }
 }"
 `;

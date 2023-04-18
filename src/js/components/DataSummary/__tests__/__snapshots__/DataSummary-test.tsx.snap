@@ -51,32 +51,7 @@ exports[`DataSummary renders 1`] = `
   overflow: auto;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c8 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -102,7 +77,7 @@ exports[`DataSummary renders 1`] = `
   justify-content: space-between;
 }
 
-.c10 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -112,14 +87,14 @@ exports[`DataSummary renders 1`] = `
   width: 12px;
 }
 
-.c7 {
+.c5 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c9 {
+.c7 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -147,8 +122,75 @@ exports[`DataSummary renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c9:hover {
+.c7:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c9:focus {
@@ -191,88 +233,12 @@ exports[`DataSummary renders 1`] = `
   border: 0;
 }
 
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c11:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c11:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c12 {
+.c10 {
   opacity: 0;
 }
 
 .c2 {
   max-width: 100%;
-}
-
-.c6 {
-  margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
-  font-weight: 600;
-  overflow-wrap: break-word;
 }
 
 .c0 {
@@ -286,28 +252,14 @@ exports[`DataSummary renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c6 {
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c8 {
     width: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
   }
 }
 
@@ -330,37 +282,28 @@ exports[`DataSummary renders 1`] = `
           <div
             class="c1"
           >
-            <header
-              class="c5"
-            >
-              <h2
-                class="c6"
-              >
-                Filters
-              </h2>
-            </header>
             <span
-              class="c7"
+              class="c5"
             >
               2 items
             </span>
           </div>
         </div>
         <footer
-          class="c8"
+          class="c6"
         >
           <button
-            class="c9"
+            class="c7"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c10"
+            class="c8"
           />
           <button
             aria-hidden="true"
-            class="c11 c12"
+            class="c9 c10"
             disabled=""
             tabindex="-1"
             type="reset"
