@@ -54,6 +54,10 @@
     "select": "Select columns",
     "tip": "Manage columns"
   },
+  "dataTableGroupBy": {
+    "clear": "Clear group",
+    "label": "Group by"
+  },
   "dataView": {
     "label": "View"
   },
