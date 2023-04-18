@@ -32,10 +32,10 @@ var Simple = function Simple() {
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA,
       updateOn: "change"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, null, /*#__PURE__*/_react["default"].createElement(_DataTableColumns.DataTableColumns, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, null, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_DataTableColumns.DataTableColumns, {
       drop: true,
       options: options
-    })), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.columns,
       primaryKey: "name"
     })))

@@ -193,6 +193,10 @@ var DataTableColumns = function DataTableColumns(_ref5) {
   var _useState3 = (0, _react.useState)(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];
+  var tip = format({
+    id: 'dataTableColumns.tip',
+    messages: messages == null ? void 0 : messages.dataTableColumns
+  });
   var content = /*#__PURE__*/_react["default"].createElement(Content, {
     drop: drop,
     options: options
@@ -210,6 +214,7 @@ var DataTableColumns = function DataTableColumns(_ref5) {
     }),
     kind: "toolbar",
     icon: /*#__PURE__*/_react["default"].createElement(_Splits.Splits, null),
+    tip: tip,
     dropProps: dropProps,
     dropContent: content,
     open: showContent,

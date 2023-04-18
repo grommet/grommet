@@ -187,6 +187,10 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
   var _useState3 = useState(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];
+  var tip = format({
+    id: 'dataTableColumns.tip',
+    messages: messages == null ? void 0 : messages.dataTableColumns
+  });
   var content = /*#__PURE__*/React.createElement(Content, {
     drop: drop,
     options: options
@@ -204,6 +208,7 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
     }),
     kind: "toolbar",
     icon: /*#__PURE__*/React.createElement(Splits, null),
+    tip: tip,
     dropProps: dropProps,
     dropContent: content,
     open: showContent,

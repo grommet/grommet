@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Data, DataTable, Notification, Toolbar } from 'grommet';
+import { Box, Data, DataSearch, DataSummary, DataTable, Notification, Toolbar } from 'grommet';
 import { DataTableColumns } from '../DataTableColumns';
 import { columns, DATA } from '../../DataTable/stories/data';
 
@@ -28,10 +28,10 @@ export var Simple = function Simple() {
     }), /*#__PURE__*/React.createElement(Data, {
       data: DATA,
       updateOn: "change"
-    }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataTableColumns, {
+    }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataTableColumns, {
       drop: true,
       options: options
-    })), /*#__PURE__*/React.createElement(DataTable, {
+    })), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(DataTable, {
       columns: columns,
       primaryKey: "name"
     })))

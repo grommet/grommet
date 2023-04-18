@@ -51,7 +51,8 @@
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",
-    "select": "Select columns"
+    "select": "Select columns",
+    "tip": "Manage columns"
   },
   "dataTableGroupBy": {
     "clear": "Clear group",
