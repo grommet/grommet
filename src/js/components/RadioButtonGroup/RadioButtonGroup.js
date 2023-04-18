@@ -105,11 +105,12 @@ const RadioButtonGroup = forwardRef(
       setValue(optionValue);
       if (onChange) {
         event.persist(); // extract from React synthetic event pool
-        
         // event.target.value gives value as a string which needs to be
         // manually typecasted according to the type of original option value.
         // return the original option value attached with the event.
-        onChange({...event, value: optionValue});
+        const adjustedEvent = event;
+        adjustedEvent.value = optionValue;
+        onChange(adjustedEvent);
       }
     };
 
