@@ -118,14 +118,14 @@ var DataFilters = function DataFilters(_ref) {
     } : undefined
   }, !controlled ? rest : {
     fill: 'vertical'
-  }), !drop && /*#__PURE__*/_react["default"].createElement(_Header.Header, null, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
+  }), layer && /*#__PURE__*/_react["default"].createElement(_Header.Header, null, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
     margin: "none",
     level: 2,
     size: "small"
   }, heading || format({
     id: 'dataFilters.heading',
     messages: messages == null ? void 0 : messages.dataFilters
-  })), !controlled && clearControl, layer && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+  })), !controlled && clearControl, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     icon: /*#__PURE__*/_react["default"].createElement(_FormClose.FormClose, null),
     hoverIndicator: true,
     onClick: function onClick() {

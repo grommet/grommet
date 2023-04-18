@@ -112,14 +112,14 @@ export var DataFilters = function DataFilters(_ref) {
     } : undefined
   }, !controlled ? rest : {
     fill: 'vertical'
-  }), !drop && /*#__PURE__*/React.createElement(Header, null, /*#__PURE__*/React.createElement(Heading, {
+  }), layer && /*#__PURE__*/React.createElement(Header, null, /*#__PURE__*/React.createElement(Heading, {
     margin: "none",
     level: 2,
     size: "small"
   }, heading || format({
     id: 'dataFilters.heading',
     messages: messages == null ? void 0 : messages.dataFilters
-  })), !controlled && clearControl, layer && /*#__PURE__*/React.createElement(Button, {
+  })), !controlled && clearControl, /*#__PURE__*/React.createElement(Button, {
     icon: /*#__PURE__*/React.createElement(FormClose, null),
     hoverIndicator: true,
     onClick: function onClick() {
