@@ -11,6 +11,7 @@ exports[`Components loads 1`] = `
       "animate": [Function],
       "children": [Function],
       "gridArea": [Function],
+      "level": [Function],
       "margin": [Function],
       "messages": [Function],
       "multiple": [Function],
@@ -291,6 +292,7 @@ exports[`Components loads 1`] = `
   "DataSummary": [Function],
   "DataTable": [Function],
   "DataTableColumns": [Function],
+  "DataTableGroupBy": [Function],
   "DataView": [Function],
   "DateInput": {
     "$$typeof": Symbol(react.forward_ref),
