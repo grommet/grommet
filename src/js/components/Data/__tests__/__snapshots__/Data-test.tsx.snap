@@ -1368,31 +1368,6 @@ exports[`Data onView 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
@@ -1401,7 +1376,7 @@ exports[`Data onView 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1417,7 +1392,7 @@ exports[`Data onView 1`] = `
   padding: 12px;
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1431,7 +1406,7 @@ exports[`Data onView 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1454,7 +1429,7 @@ exports[`Data onView 1`] = `
   justify-content: center;
 }
 
-.c15 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1480,7 +1455,7 @@ exports[`Data onView 1`] = `
   border-radius: 4px;
 }
 
-.c17 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1500,7 +1475,7 @@ exports[`Data onView 1`] = `
   height: 100%;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1521,7 +1496,7 @@ exports[`Data onView 1`] = `
   cursor: pointer;
 }
 
-.c21 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1540,7 +1515,7 @@ exports[`Data onView 1`] = `
   border-radius: 12px;
 }
 
-.c22 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1566,7 +1541,7 @@ exports[`Data onView 1`] = `
   overflow: visible;
 }
 
-.c23 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1591,7 +1566,7 @@ exports[`Data onView 1`] = `
   justify-content: center;
 }
 
-.c24 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1610,7 +1585,7 @@ exports[`Data onView 1`] = `
   border-radius: 100%;
 }
 
-.c25 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1631,7 +1606,7 @@ exports[`Data onView 1`] = `
   border-radius: 12px;
 }
 
-.c27 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1657,7 +1632,7 @@ exports[`Data onView 1`] = `
   justify-content: space-between;
 }
 
-.c35 {
+.c33 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1678,7 +1653,7 @@ exports[`Data onView 1`] = `
   justify-content: center;
 }
 
-.c16 {
+.c14 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1688,7 +1663,7 @@ exports[`Data onView 1`] = `
   height: 12px;
 }
 
-.c29 {
+.c27 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1698,7 +1673,7 @@ exports[`Data onView 1`] = `
   width: 12px;
 }
 
-.c8 {
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1707,7 +1682,7 @@ exports[`Data onView 1`] = `
   line-height: 24px;
 }
 
-.c18 {
+.c16 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -1715,25 +1690,25 @@ exports[`Data onView 1`] = `
   text-align: right;
 }
 
-.c26 {
+.c24 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c38 {
+.c36 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c39 {
+.c37 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c28 {
+.c26 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1761,8 +1736,75 @@ exports[`Data onView 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c28:hover {
+.c26:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c26:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c26:focus > circle,
+.c26:focus > ellipse,
+.c26:focus > line,
+.c26:focus > path,
+.c26:focus > polygon,
+.c26:focus > polyline,
+.c26:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c26:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c26:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c26:focus:not(:focus-visible) > circle,
+.c26:focus:not(:focus-visible) > ellipse,
+.c26:focus:not(:focus-visible) > line,
+.c26:focus:not(:focus-visible) > path,
+.c26:focus:not(:focus-visible) > polygon,
+.c26:focus:not(:focus-visible) > polyline,
+.c26:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c26:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c28 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c28:focus {
@@ -1805,74 +1847,7 @@ exports[`Data onView 1`] = `
   border: 0;
 }
 
-.c30 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c30:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c30:focus > circle,
-.c30:focus > ellipse,
-.c30:focus > line,
-.c30:focus > path,
-.c30:focus > polygon,
-.c30:focus > polyline,
-.c30:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c30:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c30:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c30:focus:not(:focus-visible) > circle,
-.c30:focus:not(:focus-visible) > ellipse,
-.c30:focus:not(:focus-visible) > line,
-.c30:focus:not(:focus-visible) > path,
-.c30:focus:not(:focus-visible) > polygon,
-.c30:focus:not(:focus-visible) > polyline,
-.c30:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c30:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c11 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1894,12 +1869,12 @@ exports[`Data onView 1`] = `
   cursor: pointer;
 }
 
-.c11:hover input:not([disabled]) + div,
-.c11:hover input:not([disabled]) + span {
+.c9:hover input:not([disabled]) + div,
+.c9:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c14 {
+.c12 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1908,25 +1883,25 @@ exports[`Data onView 1`] = `
   cursor: pointer;
 }
 
-.c14:checked + span > span {
+.c12:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c13 {
+.c11 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c20 {
+.c18 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.c31 {
+.c29 {
   opacity: 0;
 }
 
@@ -1934,16 +1909,7 @@ exports[`Data onView 1`] = `
   max-width: 100%;
 }
 
-.c6 {
-  margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
-.c34 {
+.c32 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1956,7 +1922,7 @@ exports[`Data onView 1`] = `
   padding-bottom: 6px;
 }
 
-.c37 {
+.c35 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1968,97 +1934,83 @@ exports[`Data onView 1`] = `
   padding-bottom: 6px;
 }
 
-.c32 {
+.c30 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c33 {
+.c31 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c36:focus {
+.c34:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c36:focus:not(:focus-visible) {
+.c34:focus:not(:focus-visible) {
   outline: none;
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c5 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c7 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c12 {
+  .c10 {
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c13 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c19 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c23 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c25 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c27 {
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c14 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c29 {
+  .c27 {
     width: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
   }
 }
 
@@ -2081,45 +2033,36 @@ exports[`Data onView 1`] = `
           <div
             class="c1"
           >
-            <header
-              class="c5"
-            >
-              <h2
-                class="c6"
-              >
-                Filters
-              </h2>
-            </header>
             <div
-              class="c7 "
+              class="c5 "
             >
               <label
-                class="c8"
+                class="c6"
                 for="data-name"
               >
                 name
               </label>
               <div
-                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
                 >
                   <label
-                    class="c11"
+                    class="c9"
                     label="aa"
                   >
                     <div
-                      class="c12 c13"
+                      class="c10 c11"
                     >
                       <input
-                        class="c14"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c15 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -2127,21 +2070,21 @@ exports[`Data onView 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c16"
+                    class="c14"
                   />
                   <label
-                    class="c11"
+                    class="c9"
                     label="bb"
                   >
                     <div
-                      class="c12 c13"
+                      class="c10 c11"
                     >
                       <input
-                        class="c14"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c15 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -2149,21 +2092,21 @@ exports[`Data onView 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c16"
+                    class="c14"
                   />
                   <label
-                    class="c11"
+                    class="c9"
                     label="cc"
                   >
                     <div
-                      class="c12 c13"
+                      class="c10 c11"
                     >
                       <input
-                        class="c14"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c15 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -2171,21 +2114,21 @@ exports[`Data onView 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c16"
+                    class="c14"
                   />
                   <label
-                    class="c11"
+                    class="c9"
                     label="dd"
                   >
                     <div
-                      class="c12 c13"
+                      class="c10 c11"
                     >
                       <input
-                        class="c14"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c15 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -2196,35 +2139,35 @@ exports[`Data onView 1`] = `
               </div>
             </div>
             <div
-              class="c7 "
+              class="c5 "
             >
               <label
-                class="c8"
+                class="c6"
                 for="data-enabled"
               >
                 enabled
               </label>
               <div
-                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c10 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-enabled"
                   role="group"
                 >
                   <label
-                    class="c11"
+                    class="c9"
                     label="true"
                   >
                     <div
-                      class="c12 c13"
+                      class="c10 c11"
                     >
                       <input
-                        class="c14"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c15 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -2232,21 +2175,21 @@ exports[`Data onView 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c16"
+                    class="c14"
                   />
                   <label
-                    class="c11"
+                    class="c9"
                     label="false"
                   >
                     <div
-                      class="c12 c13"
+                      class="c10 c11"
                     >
                       <input
-                        class="c14"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c15 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -2257,37 +2200,37 @@ exports[`Data onView 1`] = `
               </div>
             </div>
             <div
-              class="c7 "
+              class="c5 "
             >
               <label
-                class="c8"
+                class="c6"
                 for="data-rating"
               >
                 rating
               </label>
               <div
-                class="c9 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c17"
+                  class="c15"
                   id="data-rating"
                 >
                   <span
-                    class="c18"
+                    class="c16"
                     style="width: 0px;"
                   >
                     2.0999999999999996
                   </span>
                   <div
-                    class="c19 c20"
+                    class="c17 c18"
                     tabindex="-1"
                   >
                     <div
-                      class="c21"
+                      class="c19"
                       style="flex: 0 0 0px;"
                     />
                     <div
-                      class="c22"
+                      class="c20"
                       style="flex: 0 0 1px;"
                     >
                       <div
@@ -2295,22 +2238,22 @@ exports[`Data onView 1`] = `
                         aria-valuemax="4.8999999999999995"
                         aria-valuemin="2.0999999999999996"
                         aria-valuenow="2.0999999999999996"
-                        class="c23"
+                        class="c21"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                         tabindex="0"
                       >
                         <div
-                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
                     <div
-                      class="c25"
+                      class="c23"
                       style="flex: 3.8 0 0px; cursor: ew-resize;"
                     />
                     <div
-                      class="c22"
+                      class="c20"
                       style="flex: 0 0 1px;"
                     >
                       <div
@@ -2318,23 +2261,23 @@ exports[`Data onView 1`] = `
                         aria-valuemax="4.8999999999999995"
                         aria-valuemin="2.0999999999999996"
                         aria-valuenow="4.8999999999999995"
-                        class="c23"
+                        class="c21"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                         tabindex="0"
                       >
                         <div
-                          class="c24 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
                     <div
-                      class="c21"
+                      class="c19"
                       style="flex: 0 0 0px;"
                     />
                   </div>
                   <span
-                    class="c26"
+                    class="c24"
                     style="width: 0px;"
                   >
                     4.8999999999999995
@@ -2345,20 +2288,20 @@ exports[`Data onView 1`] = `
           </div>
         </div>
         <footer
-          class="c27"
+          class="c25"
         >
           <button
-            class="c28"
+            class="c26"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c29"
+            class="c27"
           />
           <button
             aria-hidden="true"
-            class="c30 c31"
+            class="c28 c29"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -2369,7 +2312,7 @@ exports[`Data onView 1`] = `
       </div>
     </form>
     <table
-      class="c32 c33"
+      class="c30 c31"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -2378,35 +2321,35 @@ exports[`Data onView 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c34 "
+            class="c32 "
             scope="col"
           >
             <div
-              class="c35"
+              class="c33"
             />
           </th>
           <th
-            class="c34 "
+            class="c32 "
             scope="col"
           >
             <div
-              class="c35"
+              class="c33"
             />
           </th>
           <th
-            class="c34 "
+            class="c32 "
             scope="col"
           >
             <div
-              class="c35"
+              class="c33"
             />
           </th>
           <th
-            class="c34 "
+            class="c32 "
             scope="col"
           >
             <div
-              class="c35"
+              class="c33"
             />
           </th>
           <th
@@ -2420,50 +2363,50 @@ exports[`Data onView 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c36"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c34"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c37 "
+            class="c35 "
             scope="row"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c38"
+                class="c36"
               >
                 aa
               </span>
             </div>
           </th>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c39"
+                class="c37"
               >
                 2.3
               </span>
             </div>
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
@@ -2478,44 +2421,44 @@ exports[`Data onView 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c37 "
+            class="c35 "
             scope="row"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c38"
+                class="c36"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c39"
+                class="c37"
               >
                 4.3
               </span>
             </div>
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
@@ -2530,38 +2473,38 @@ exports[`Data onView 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c37 "
+            class="c35 "
             scope="row"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c38"
+                class="c36"
               >
                 cc
               </span>
             </div>
           </th>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
@@ -2576,38 +2519,38 @@ exports[`Data onView 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c37 "
+            class="c35 "
             scope="row"
           >
             <div
-              class="c10"
+              class="c8"
             >
               <span
-                class="c38"
+                class="c36"
               >
                 dd
               </span>
             </div>
           </th>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
           <td
