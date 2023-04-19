@@ -9,9 +9,21 @@ import { Pagination } from '../../Pagination';
 import { Data } from '..';
 
 const data = [
-  { name: 'aa', enabled: true, rating: 2.3, sub: { note: 'ZZ' } },
-  { name: 'bb', enabled: false, rating: 4.3, sub: { note: 'YY' } },
-  { name: 'cc', sub: {} },
+  {
+    name: 'aa',
+    enabled: true,
+    rating: 2.3,
+    sub: { note: 'ZZ' },
+    tags: ['qa', 'staging', 'prod'],
+  },
+  {
+    name: 'bb',
+    enabled: false,
+    rating: 4.3,
+    sub: { note: 'YY' },
+    tags: ['qa', 'staging'],
+  },
+  { name: 'cc', sub: {}, tags: ['qa'] },
   { name: 'dd' },
 ];
 

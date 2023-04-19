@@ -2409,6 +2409,14 @@ exports[`Data onView 1`] = `
               class="c35"
             />
           </th>
+          <th
+            class="c34 "
+            scope="col"
+          >
+            <div
+              class="c35"
+            />
+          </th>
         </tr>
       </thead>
       <tbody
@@ -2450,6 +2458,13 @@ exports[`Data onView 1`] = `
                 2.3
               </span>
             </div>
+          </td>
+          <td
+            class="c37 "
+          >
+            <div
+              class="c10"
+            />
           </td>
           <td
             class="c37 "
@@ -2503,6 +2518,13 @@ exports[`Data onView 1`] = `
               class="c10"
             />
           </td>
+          <td
+            class="c37 "
+          >
+            <div
+              class="c10"
+            />
+          </td>
         </tr>
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -2542,6 +2564,13 @@ exports[`Data onView 1`] = `
               class="c10"
             />
           </td>
+          <td
+            class="c37 "
+          >
+            <div
+              class="c10"
+            />
+          </td>
         </tr>
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
@@ -2560,6 +2589,13 @@ exports[`Data onView 1`] = `
               </span>
             </div>
           </th>
+          <td
+            class="c37 "
+          >
+            <div
+              class="c10"
+            />
+          </td>
           <td
             class="c37 "
           >
