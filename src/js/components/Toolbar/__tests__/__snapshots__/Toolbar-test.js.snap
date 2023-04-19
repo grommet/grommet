@@ -400,6 +400,14 @@ exports[`DataFilters renders 1`] = `
   border: 0;
 }
 
+.c24 {
+  opacity: 0;
+}
+
+.c3 {
+  max-width: 100%;
+}
+
 .c14 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -531,14 +539,6 @@ exports[`DataFilters renders 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
-}
-
-.c24 {
-  opacity: 0;
-}
-
-.c3 {
-  max-width: 100%;
 }
 
 .c0 {

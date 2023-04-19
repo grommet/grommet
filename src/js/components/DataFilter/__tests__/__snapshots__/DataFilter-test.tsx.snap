@@ -265,6 +265,14 @@ exports[`DataFilter children 1`] = `
   border: 0;
 }
 
+.c14 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c9 {
   box-sizing: border-box;
   font-size: inherit;
@@ -312,14 +320,6 @@ exports[`DataFilter children 1`] = `
 .c8 {
   position: relative;
   width: 100%;
-}
-
-.c14 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {
@@ -1375,6 +1375,14 @@ exports[`DataFilter options 1`] = `
   border: 0;
 }
 
+.c19 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1420,14 +1428,6 @@ exports[`DataFilter options 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
-
-.c19 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {
@@ -2174,19 +2174,19 @@ exports[`DataFilter range Data 1`] = `
   border: 0;
 }
 
-.c11 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .c22 {
   opacity: 0;
 }
 
 .c2 {
   max-width: 100%;
+}
+
+.c11 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c0 {
@@ -2808,19 +2808,19 @@ exports[`DataFilter range prop 1`] = `
   border: 0;
 }
 
-.c11 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .c22 {
   opacity: 0;
 }
 
 .c2 {
   max-width: 100%;
+}
+
+.c11 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c0 {
@@ -3515,6 +3515,14 @@ exports[`DataFilter renders 1`] = `
   border: 0;
 }
 
+.c29 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3567,14 +3575,6 @@ exports[`DataFilter renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.c29 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {

@@ -170,6 +170,10 @@ exports[`DataTableGroupBy renders 1`] = `
   border: 0;
 }
 
+.c2 {
+  max-width: 100%;
+}
+
 .c8 {
   box-sizing: border-box;
   font-size: inherit;
@@ -226,10 +230,6 @@ exports[`DataTableGroupBy renders 1`] = `
 .c4 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {
