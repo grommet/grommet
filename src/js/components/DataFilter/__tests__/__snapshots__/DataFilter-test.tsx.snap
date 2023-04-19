@@ -428,6 +428,614 @@ exports[`DataFilter children 1`] = `
 </div>
 `;
 
+exports[`DataFilter noForm 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  background-color: rgba(125,76,219,0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+
+.c10 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c12 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c20 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c3 {
+  max-width: 100%;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c5:hover input:not([disabled]) + div,
+.c5:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c8 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c8:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c14 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    -webkit-column-gap: 6px;
+    column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    height: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <div
+      class="c2"
+    >
+      <form
+        class="c3"
+      >
+        <div
+          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
+          id="data-name"
+          role="group"
+        >
+          <label
+            class="c5"
+            label="aa"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              aa
+            </span>
+          </label>
+          <div
+            class="c10"
+          />
+          <label
+            class="c5"
+            label="bb"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              bb
+            </span>
+          </label>
+          <div
+            class="c10"
+          />
+          <label
+            class="c5"
+            label="cc"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              cc
+            </span>
+          </label>
+        </div>
+      </form>
+      <form
+        class="c3"
+      >
+        <div
+          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
+          id="data-enabled"
+          role="group"
+        >
+          <label
+            class="c5"
+            label="true"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              true
+            </span>
+          </label>
+          <div
+            class="c10"
+          />
+          <label
+            class="c5"
+            label="false"
+          >
+            <div
+              class="c6 c7"
+            >
+              <input
+                class="c8"
+                type="checkbox"
+              />
+              <div
+                class="c9 "
+              />
+            </div>
+            <span>
+              false
+            </span>
+          </label>
+        </div>
+      </form>
+      <form
+        class="c3"
+      >
+        <div
+          class="c11"
+          id="data-rating"
+        >
+          <span
+            class="c12"
+            style="width: 0px;"
+          >
+            2.0999999999999996
+          </span>
+          <div
+            class="c13 c14"
+            tabindex="-1"
+          >
+            <div
+              class="c15"
+              style="flex: 0 0 0px;"
+            />
+            <div
+              class="c16"
+              style="flex: 0 0 1px;"
+            >
+              <div
+                aria-label="Lower Bounds"
+                aria-valuemax="4.8999999999999995"
+                aria-valuemin="2.0999999999999996"
+                aria-valuenow="2.0999999999999996"
+                class="c17"
+                role="slider"
+                style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                tabindex="0"
+              >
+                <div
+                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                />
+              </div>
+            </div>
+            <div
+              class="c19"
+              style="flex: 3.8 0 0px; cursor: ew-resize;"
+            />
+            <div
+              class="c16"
+              style="flex: 0 0 1px;"
+            >
+              <div
+                aria-label="Upper Bounds"
+                aria-valuemax="4.8999999999999995"
+                aria-valuemin="2.0999999999999996"
+                aria-valuenow="4.8999999999999995"
+                class="c17"
+                role="slider"
+                style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+                tabindex="0"
+              >
+                <div
+                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                />
+              </div>
+            </div>
+            <div
+              class="c15"
+              style="flex: 0 0 0px;"
+            />
+          </div>
+          <span
+            class="c20"
+            style="width: 0px;"
+          >
+            4.8999999999999995
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DataFilter options 1`] = `
 .c1 {
   display: -webkit-box;
