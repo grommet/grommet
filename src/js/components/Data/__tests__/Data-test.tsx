@@ -1,5 +1,6 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -7,15 +8,30 @@ import { DataFilters } from '../../DataFilters';
 import { DataTable } from '../../DataTable';
 import { Pagination } from '../../Pagination';
 import { Data } from '..';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 const data = [
-  { name: 'aa', enabled: true, rating: 2.3, sub: { note: 'ZZ' } },
-  { name: 'bb', enabled: false, rating: 4.3, sub: { note: 'YY' } },
-  { name: 'cc', sub: {} },
+  {
+    name: 'aa',
+    enabled: true,
+    rating: 2.3,
+    sub: { note: 'ZZ' },
+    tags: ['qa', 'staging', 'prod'],
+  },
+  {
+    name: 'bb',
+    enabled: false,
+    rating: 4.3,
+    sub: { note: 'YY' },
+    tags: ['qa', 'staging'],
+  },
+  { name: 'cc', sub: {}, tags: ['qa'] },
   { name: 'dd' },
 ];
 
 describe('Data', () => {
+  beforeEach(createPortal);
+
   test('renders', () => {
     const { container } = render(
       <Grommet>
@@ -365,5 +381,49 @@ describe('Data', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('properties when property is an array', () => {
+    const user = userEvent.setup();
+
+    const { asFragment } = render(
+      <Grommet>
+        <Data
+          data={data}
+          toolbar
+          properties={{
+            name: { label: 'Name' },
+            'sub.note': { label: 'Note' },
+            tags: {
+              label: 'Tags',
+              options: [
+                { label: '01 - Development', value: 'dev' },
+                { label: '02 - QA', value: 'qa' },
+                { label: '03 - Staging', value: 'staging' },
+                { label: '04 - Production', value: 'prod' },
+              ],
+            },
+          }}
+        >
+          <DataTable
+            columns={[
+              { property: 'name', header: 'Name' },
+              { property: 'sub.note', header: 'Note' },
+              {
+                property: 'tags',
+                header: 'Tags',
+                render: ({ tags }) => (tags ? tags.join(', ') : null),
+              },
+            ]}
+          />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+    const filtersButton = screen.getByRole('button', { name: 'Open filters' });
+    expect(filtersButton).toBeTruthy();
+    user.click(filtersButton);
+    expectPortal('data--filters-control').toMatchSnapshot();
   });
 });
