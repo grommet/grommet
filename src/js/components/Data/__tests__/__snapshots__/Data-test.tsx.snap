@@ -2353,11 +2353,11 @@ exports[`Data onView 1`] = `
             />
           </th>
           <th
-            class="c34 "
+            class="c32 "
             scope="col"
           >
             <div
-              class="c35"
+              class="c33"
             />
           </th>
         </tr>
@@ -2410,10 +2410,10 @@ exports[`Data onView 1`] = `
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
         </tr>
@@ -2462,10 +2462,10 @@ exports[`Data onView 1`] = `
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
         </tr>
@@ -2508,10 +2508,10 @@ exports[`Data onView 1`] = `
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
         </tr>
@@ -2554,10 +2554,10 @@ exports[`Data onView 1`] = `
             />
           </td>
           <td
-            class="c37 "
+            class="c35 "
           >
             <div
-              class="c10"
+              class="c8"
             />
           </td>
         </tr>

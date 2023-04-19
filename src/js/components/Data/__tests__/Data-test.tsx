@@ -385,7 +385,6 @@ describe('Data', () => {
 
   test('properties when property is an array', () => {
     const user = userEvent.setup();
-    // jest.useFakeTimers();
 
     const { asFragment } = render(
       <Grommet>
@@ -425,9 +424,6 @@ describe('Data', () => {
     const filtersButton = screen.getByRole('button', { name: 'Open filters' });
     expect(filtersButton).toBeTruthy();
     user.click(filtersButton);
-
-    // wait for animation
-    // act(() => jest.advanceTimersByTime(200));
     expectPortal('data--filters-control').toMatchSnapshot();
   });
 });
