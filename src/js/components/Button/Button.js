@@ -503,7 +503,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={!busy && !success && onClick}
+          onClick={!busy && !success ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
@@ -545,7 +545,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={!busy && !success && onClick}
+          onClick={!busy && !success ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
