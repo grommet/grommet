@@ -19,19 +19,11 @@ export const Dual = () => {
     }
   };
 
-  // We have to track the active date because the Calendars don't know about
-  // each other.
-  const activeDate =
-    date || (dates && dates[0] && dates[0][0] && !dates[0][1])
-      ? 'end'
-      : undefined;
-
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box justify="center" pad="large" direction="row" gap="small">
       <Calendar
-        activeDate={activeDate}
         animate={false}
         showAdjacentDays={false}
         range
@@ -42,9 +34,11 @@ export const Dual = () => {
         onReference={(reference) => {
           const refDate = new Date(reference);
           const nextDate = new Date(refDate);
+          console.log(refDate);
+          console.log(nextDate);
           nextDate.setMonth(refDate.getMonth() + 1, 1);
-          setReference1(refDate.toISOString());
-          setReference2(nextDate.toISOString());
+          setReference1(refDate.toString());
+          setReference2(nextDate.toString());
         }}
         header={({
           date: currentDate,
@@ -69,7 +63,6 @@ export const Dual = () => {
         )}
       />
       <Calendar
-        activeDate={activeDate}
         animate={false}
         showAdjacentDays={false}
         date={date}
@@ -81,8 +74,8 @@ export const Dual = () => {
           const refDate = new Date(reference);
           const priorDate = new Date(refDate);
           priorDate.setMonth(refDate.getMonth() - 1, 1);
-          setReference1(priorDate.toISOString());
-          setReference2(refDate.toISOString());
+          setReference1(priorDate.toString());
+          setReference2(refDate.toString());
         }}
         header={({ date: currentDate, locale, onNextMonth, nextInBound }) => (
           <Box direction="row" align="center" justify="between">
