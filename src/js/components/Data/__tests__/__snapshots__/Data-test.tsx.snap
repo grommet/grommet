@@ -3854,6 +3854,10 @@ exports[`Data properties when property is an array 1`] = `
   border: 0;
 }
 
+.c3 {
+  max-width: 100%;
+}
+
 .c7 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3938,10 +3942,6 @@ exports[`Data properties when property is an array 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
-}
-
-.c3 {
-  max-width: 100%;
 }
 
 .c13 {
