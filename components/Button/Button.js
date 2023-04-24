@@ -379,9 +379,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     // display over the button content
     _react["default"].createElement(RelativeBox, {
       flex: false
-    }, busy && /*#__PURE__*/_react["default"].createElement(_BusyAnimation.EllipsisAnimation, {
-      color: animationColor
-    }), success && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, busy && /*#__PURE__*/_react["default"].createElement(_BusyAnimation.EllipsisAnimation, null), success && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       style: {
         position: 'absolute'
       },

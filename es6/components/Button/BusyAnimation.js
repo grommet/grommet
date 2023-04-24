@@ -7,13 +7,10 @@ var bounceDelayRule = css(["animation:", " 1.4s infinite ease-in-out both;"], bo
 var Dot = styled(Box).withConfig({
   displayName: "BusyAnimation__Dot",
   componentId: "sc-feuivs-0"
-})(["width:8px;height:8px;background-color:;", " border-radius:100%;display:inline-block;", " ", ""], function (props) {
-  return props.color && "background-color: " + props.color + ";";
-}, bounceDelayRule, function (props) {
+})(["background-color:currentColor;width:8px;height:8px;border-radius:100%;display:inline-block;", " ", ""], bounceDelayRule, function (props) {
   return props.delay && "animation-delay: " + props.delay + ";";
 });
-export var EllipsisAnimation = function EllipsisAnimation(_ref) {
-  var color = _ref.color;
+export var EllipsisAnimation = function EllipsisAnimation() {
   return /*#__PURE__*/React.createElement(Box, {
     style: {
       position: 'absolute'
@@ -26,14 +23,10 @@ export var EllipsisAnimation = function EllipsisAnimation(_ref) {
     direction: "row",
     gap: "small"
   }, /*#__PURE__*/React.createElement(Dot, {
-    color: color,
     delay: "-0.32s"
   }), /*#__PURE__*/React.createElement(Dot, {
-    color: color,
     delay: "-0.16s"
-  }), /*#__PURE__*/React.createElement(Dot, {
-    color: color
-  })));
+  }), /*#__PURE__*/React.createElement(Dot, null)));
 };
 var grow = keyframes(["0%{opacity:0;transform:scale(.3);}20%{opacity:1;transform:scale(1.15);}30%{transform:scale(.9);}45%{transform:scale(1.05);}55%{transform:scale(1);}100%{transform:scale(1);}"]);
 export var GrowCheckmark = styled(Checkmark).withConfig({

@@ -373,9 +373,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // display over the button content
     React.createElement(RelativeBox, {
       flex: false
-    }, busy && /*#__PURE__*/React.createElement(EllipsisAnimation, {
-      color: animationColor
-    }), success && /*#__PURE__*/React.createElement(Box, {
+    }, busy && /*#__PURE__*/React.createElement(EllipsisAnimation, null), success && /*#__PURE__*/React.createElement(Box, {
       style: {
         position: 'absolute'
       },
