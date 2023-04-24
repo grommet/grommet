@@ -97,7 +97,7 @@ var normalizeRange = function normalizeRange(value, activeDate) {
 };
 var getReference = function getReference(reference, value) {
   var nextReference;
-  if (value && !reference) {
+  if (value) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
         nextReference = value[0];
@@ -271,7 +271,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     reference = _useState4[0],
     setReference = _useState4[1];
   useEffect(function () {
-    setReference(getReference(normalizeInput(referenceProp), value));
+    if (value) {
+      setReference(getReference(normalizeInput(referenceProp), value));
+    }
   }, [referenceProp, value]);
   var _useState5 = useState(getOutputFormat(dateProp || datesProp)),
     outputFormat = _useState5[0],

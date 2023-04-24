@@ -29,10 +29,6 @@ var Dual = function Dual() {
       setDates(undefined);
     }
   };
-
-  // We have to track the active date because the Calendars don't know about
-  // each other.
-  var activeDate = date || dates && dates[0] && dates[0][0] && !dates[0][1] ? 'end' : undefined;
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -43,7 +39,6 @@ var Dual = function Dual() {
       direction: "row",
       gap: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
-      activeDate: activeDate,
       animate: false,
       showAdjacentDays: false,
       range: true,
@@ -80,7 +75,6 @@ var Dual = function Dual() {
         })), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Blank, null));
       }
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
-      activeDate: activeDate,
       animate: false,
       showAdjacentDays: false,
       date: date,
