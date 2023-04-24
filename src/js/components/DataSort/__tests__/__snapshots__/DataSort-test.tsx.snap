@@ -711,6 +711,14 @@ exports[`DataSort renders 1`] = `
   border: 0;
 }
 
+.c27 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c18 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -798,14 +806,6 @@ exports[`DataSort renders 1`] = `
 
 .c13 {
   cursor: pointer;
-}
-
-.c27 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {

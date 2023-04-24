@@ -498,6 +498,14 @@ exports[`DataSearch renders 1`] = `
   border: 0;
 }
 
+.c16 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c11 {
   box-sizing: border-box;
   font-size: inherit;
@@ -564,14 +572,6 @@ exports[`DataSearch renders 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
-}
-
-.c16 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {
