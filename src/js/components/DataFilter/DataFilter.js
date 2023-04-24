@@ -1,5 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import { DataContext } from '../../contexts/DataContext';
+import { DataForm } from '../Data/DataForm';
+import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
@@ -48,6 +50,7 @@ export const DataFilter = ({
     properties,
     unfilteredData,
   } = useContext(DataContext);
+  const { noForm } = useContext(FormContext);
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving
@@ -120,16 +123,26 @@ export const DataFilter = ({
     }
   }
 
-  return (
-    <FormField
-      htmlFor={id}
-      name={property}
-      label={properties?.[property]?.label || property}
-      {...rest}
-    >
-      {content}
-    </FormField>
-  );
+  if (noForm)
+    // likely in Toolbar
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
+  else
+    content = (
+      <FormField
+        htmlFor={id}
+        name={property}
+        label={properties?.[property]?.label || property}
+        {...rest}
+      >
+        {content}
+      </FormField>
+    );
+
+  return content;
 };
 
 DataFilter.propTypes = DataFilterPropTypes;

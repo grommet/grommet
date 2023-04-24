@@ -7,6 +7,7 @@ import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
+import { Toolbar } from '../../Toolbar';
 
 const data = [
   { name: 'aa', enabled: true, rating: 2.3, type: { name: 'ZZ', id: 1 } },
@@ -112,6 +113,22 @@ describe('DataFilter', () => {
               <TextInput />
             </DataFilter>
           </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('noForm', () => {
+    const { container } = render(
+      <Grommet>
+        <Data data={data}>
+          <Toolbar>
+            <DataFilter property="name" />
+            <DataFilter property="enabled" />
+            <DataFilter property="rating" />
+          </Toolbar>
         </Data>
       </Grommet>,
     );
