@@ -4,6 +4,8 @@ exports.__esModule = true;
 exports.DataFilter = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _DataContext = require("../../contexts/DataContext");
+var _DataForm = require("../Data/DataForm");
+var _FormContext = require("../Form/FormContext");
 var _FormField = require("../FormField");
 var _CheckBoxGroup = require("../CheckBoxGroup");
 var _RangeSelector = require("../RangeSelector");
@@ -56,6 +58,8 @@ var DataFilter = function DataFilter(_ref) {
     dataId = _useContext.id,
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData;
+  var _useContext2 = (0, _react.useContext)(_FormContext.FormContext),
+    noForm = _useContext2.noForm;
   var _useMemo = (0, _react.useMemo)(function () {
       var _properties$property, _properties$property2;
       if (children) return [undefined, undefined]; // caller driving
@@ -118,11 +122,17 @@ var DataFilter = function DataFilter(_ref) {
       });
     }
   }
-  return /*#__PURE__*/_react["default"].createElement(_FormField.FormField, _extends({
+  if (noForm)
+    // likely in Toolbar
+    content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
+      footer: false,
+      updateOn: "change"
+    }, content);else content = /*#__PURE__*/_react["default"].createElement(_FormField.FormField, _extends({
     htmlFor: id,
     name: property,
     label: (properties == null ? void 0 : (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property
   }, rest), content);
+  return content;
 };
 exports.DataFilter = DataFilter;
 DataFilter.propTypes = _propTypes.DataFilterPropTypes;

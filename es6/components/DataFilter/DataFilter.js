@@ -3,6 +3,8 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useContext, useMemo } from 'react';
 import { DataContext } from '../../contexts/DataContext';
+import { DataForm } from '../Data/DataForm';
+import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
@@ -50,6 +52,8 @@ export var DataFilter = function DataFilter(_ref) {
     dataId = _useContext.id,
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData;
+  var _useContext2 = useContext(FormContext),
+    noForm = _useContext2.noForm;
   var _useMemo = useMemo(function () {
       var _properties$property, _properties$property2;
       if (children) return [undefined, undefined]; // caller driving
@@ -112,10 +116,16 @@ export var DataFilter = function DataFilter(_ref) {
       });
     }
   }
-  return /*#__PURE__*/React.createElement(FormField, _extends({
+  if (noForm)
+    // likely in Toolbar
+    content = /*#__PURE__*/React.createElement(DataForm, {
+      footer: false,
+      updateOn: "change"
+    }, content);else content = /*#__PURE__*/React.createElement(FormField, _extends({
     htmlFor: id,
     name: property,
     label: (properties == null ? void 0 : (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property
   }, rest), content);
+  return content;
 };
 DataFilter.propTypes = DataFilterPropTypes;

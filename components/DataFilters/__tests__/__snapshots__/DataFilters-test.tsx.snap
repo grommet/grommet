@@ -365,6 +365,14 @@ exports[`DataFilters clear 1`] = `
   border: 0;
 }
 
+.c21 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c14 {
   box-sizing: border-box;
   stroke-width: 4px;
@@ -418,14 +426,6 @@ exports[`DataFilters clear 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
-
-.c21 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {
@@ -1694,6 +1694,15 @@ exports[`DataFilters layer 2`] = `
   border: 0;
 }
 
+.c27 {
+  opacity: 0;
+}
+
+.c4 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .c17 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1739,15 +1748,6 @@ exports[`DataFilters layer 2`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
-
-.c27 {
-  opacity: 0;
-}
-
-.c4 {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .c9 {
@@ -2479,6 +2479,14 @@ exports[`DataFilters properties array 1`] = `
   border: 0;
 }
 
+.c19 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2524,14 +2532,6 @@ exports[`DataFilters properties array 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
-
-.c19 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {
@@ -3041,6 +3041,14 @@ exports[`DataFilters properties object 1`] = `
   border: 0;
 }
 
+.c19 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3086,14 +3094,6 @@ exports[`DataFilters properties object 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
-
-.c19 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {
@@ -3603,6 +3603,14 @@ exports[`DataFilters renders 1`] = `
   border: 0;
 }
 
+.c19 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3648,14 +3656,6 @@ exports[`DataFilters renders 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
-
-.c19 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c0 {
@@ -4389,6 +4389,14 @@ exports[`DataFilters sub objects 1`] = `
   border: 0;
 }
 
+.c31 {
+  opacity: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
 .c14 {
   box-sizing: border-box;
   stroke-width: 4px;
@@ -4449,14 +4457,6 @@ exports[`DataFilters sub objects 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.c31 {
-  opacity: 0;
-}
-
-.c2 {
-  max-width: 100%;
 }
 
 .c34 {
