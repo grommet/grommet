@@ -16,17 +16,16 @@ const bounceDelayRule = css`
 `;
 
 const Dot = styled(Box)`
+  background-color: currentColor;
   width: 8px;
   height: 8px;
-  background-color: ;
-  ${(props) => props.color && `background-color: ${props.color};`}
   border-radius: 100%;
   display: inline-block;
   ${bounceDelayRule}
   ${(props) => props.delay && `animation-delay: ${props.delay};`}
 `;
 
-export const EllipsisAnimation = ({ color }) => (
+export const EllipsisAnimation = () => (
   <Box
     style={{ position: 'absolute' }}
     fill
@@ -36,9 +35,9 @@ export const EllipsisAnimation = ({ color }) => (
     <Box alignSelf="center" direction="row" gap="small">
       {/* A negative delay starts the animation sooner. The first dot
       should begin animating before the second and so on. */}
-      <Dot color={color} delay="-0.32s" />
-      <Dot color={color} delay="-0.16s" />
-      <Dot color={color} />
+      <Dot delay="-0.32s" />
+      <Dot delay="-0.16s" />
+      <Dot />
     </Box>
   </Box>
 );

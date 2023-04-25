@@ -19,19 +19,11 @@ export const Dual = () => {
     }
   };
 
-  // We have to track the active date because the Calendars don't know about
-  // each other.
-  const activeDate =
-    date || (dates && dates[0] && dates[0][0] && !dates[0][1])
-      ? 'end'
-      : undefined;
-
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     <Box justify="center" pad="large" direction="row" gap="small">
       <Calendar
-        activeDate={activeDate}
         animate={false}
         showAdjacentDays={false}
         range
@@ -69,7 +61,6 @@ export const Dual = () => {
         )}
       />
       <Calendar
-        activeDate={activeDate}
         animate={false}
         showAdjacentDays={false}
         date={date}
