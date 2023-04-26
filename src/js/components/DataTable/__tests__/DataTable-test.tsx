@@ -564,6 +564,7 @@ describe('DataTable', () => {
     fireEvent.click(expandButtons[1], {});
     expect(container.firstChild).toMatchSnapshot();
   });
+
   test('groupBy', () => {
     const { container, getByText } = render(
       <Grommet>
@@ -586,6 +587,28 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('groupBy 0 value', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+            { property: 'c', header: 'C' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1, c: 0 },
+            { a: 'two', b: 1.2, c: 0 },
+            { a: 'three', b: 2.1, c: 1 },
+            { a: 'four', b: 2.2, c: 2 },
+          ]}
+          groupBy="c"
+        />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
