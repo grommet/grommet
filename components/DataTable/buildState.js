@@ -235,7 +235,7 @@ var buildGroupState = function buildGroupState(groups, groupBy) {
   if (groups) {
     groups.forEach(function (_ref) {
       var key = _ref.key;
-      if (key) result[key] = {
+      if (key !== undefined) result[key] = {
         expanded: false
       };
     });

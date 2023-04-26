@@ -43,7 +43,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var isGroupSelected = false;
       var groupDisabled = [];
       var isGroupDisabled = false;
-      if (memberCount > 1 || onUpdate && group.key) {
+      if (memberCount > 1 || onUpdate && group.key !== undefined) {
         // need a header
         var primaryKeys = group.data.map(function (datum) {
           return datum[primaryProperty];
