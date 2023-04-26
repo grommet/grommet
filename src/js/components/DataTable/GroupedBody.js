@@ -45,7 +45,7 @@ export const GroupedBody = forwardRef(
         let groupDisabled = [];
         let isGroupDisabled = false;
 
-        if (memberCount > 1 || (onUpdate && group.key)) {
+        if (memberCount > 1 || (onUpdate && group.key !== undefined)) {
           // need a header
           const primaryKeys = group.data.map((datum) => datum[primaryProperty]);
 
