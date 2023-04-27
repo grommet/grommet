@@ -23,7 +23,7 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
     _ref$focusIndicator = _ref.focusIndicator,
     focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
     name = _ref.name,
-    _onChange = _ref.onChange,
+    onChange = _ref.onChange,
     optionsProp = _ref.options,
     valueProp = _ref.value,
     gap = _ref.gap,
@@ -46,7 +46,7 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
       value: valueProp,
-      initialValue: defaultValue || ''
+      initialValue: defaultValue != null ? defaultValue : ''
     }),
     value = _formContext$useFormI[0],
     setValue = _formContext$useFormI[1];
@@ -96,6 +96,18 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
       setFocus(true);
     }, 1);
   };
+  var onRadioButtonChange = function onRadioButtonChange(event, optionValue) {
+    setValue(optionValue);
+    if (onChange) {
+      event.persist(); // extract from React synthetic event pool
+      // event.target.value gives value as a string which needs to be
+      // manually typecasted according to the type of original option value.
+      // return the original option value attached with the event.
+      var adjustedEvent = event;
+      adjustedEvent.value = optionValue;
+      onChange(adjustedEvent);
+    }
+  };
   var onBlur = function onBlur() {
     return setFocus(false);
   };
@@ -122,6 +134,10 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
     // when nothing has been selected, show focus
     // on the first radiobutton
     value === '' && index === 0;
+    if (optionRest.checked) {
+      console.warn( // eslint-disable-next-line max-len
+      "'checked' prop of an individual RadioButton shouldn't be used in a RadioButtonGroup component. Use the RadioButtonGroup 'value' prop instead.");
+    }
     return /*#__PURE__*/_react["default"].createElement(_RadioButton.RadioButton, _extends({
       ref: function ref(aRef) {
         optionRefs.current[index] = aRef;
@@ -144,8 +160,7 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
       onFocus: onFocus,
       onBlur: onBlur,
       onChange: function onChange(event) {
-        setValue(optionValue);
-        if (_onChange) _onChange(event);
+        return onRadioButtonChange(event, optionValue);
       },
       tabIndex: focusable ? '0' : '-1' // necessary for Firefox
     }, optionRest), children ? function (state) {

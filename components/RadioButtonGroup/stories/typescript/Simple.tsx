@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 
 import { Box, RadioButtonGroup } from 'grommet';
+
+type EventWithValueProp = ChangeEvent<HTMLInputElement> & {value: string | number};
 
 export const Simple = () => {
   const postMethods = [
@@ -16,8 +18,8 @@ export const Simple = () => {
   ];
 
   // Type arguments can only be used in TypeScript files.
-  // Remove <string | object> if you are not using Typescript.
-  const [value, setValue] = useState<string | object>(postMethods[0]);
+  // Remove <string | number> if you are not using Typescript.
+  const [value, setValue] = useState<string | number>(postMethods[0].value);
 
   return (
     <Box align="center" pad="large">
@@ -25,7 +27,7 @@ export const Simple = () => {
         name="radio"
         options={postMethods}
         value={value}
-        onChange={(event) => setValue(event.target.value)}
+        onChange={(event: EventWithValueProp) => setValue(event.value)}
       />
     </Box>
   );
