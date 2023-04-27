@@ -48,7 +48,7 @@ const RadioButtonGroup = forwardRef(
     const [value, setValue] = formContext.useFormInput({
       name,
       value: valueProp,
-      initialValue: defaultValue || '',
+      initialValue: defaultValue ?? '',
     });
 
     // track if focus is on one of the radio buttons
@@ -101,7 +101,21 @@ const RadioButtonGroup = forwardRef(
       }, 1);
     };
 
+    const onRadioButtonChange = (event, optionValue) => {
+      setValue(optionValue);
+      if (onChange) {
+        event.persist(); // extract from React synthetic event pool
+        // event.target.value gives value as a string which needs to be
+        // manually typecasted according to the type of original option value.
+        // return the original option value attached with the event.
+        const adjustedEvent = event;
+        adjustedEvent.value = optionValue;
+        onChange(adjustedEvent);
+      }
+    };
+
     const onBlur = () => setFocus(false);
+
     return (
       <Keyboard
         target="document"
@@ -142,6 +156,14 @@ const RadioButtonGroup = forwardRef(
                 // when nothing has been selected, show focus
                 // on the first radiobutton
                 (value === '' && index === 0);
+
+              if (optionRest.checked) {
+                console.warn(
+                  // eslint-disable-next-line max-len
+                  `'checked' prop of an individual RadioButton shouldn't be used in a RadioButtonGroup component. Use the RadioButtonGroup 'value' prop instead.`,
+                );
+              }
+
               return (
                 <RadioButton
                   ref={(aRef) => {
@@ -163,10 +185,7 @@ const RadioButtonGroup = forwardRef(
                   value={optionValue}
                   onFocus={onFocus}
                   onBlur={onBlur}
-                  onChange={(event) => {
-                    setValue(optionValue);
-                    if (onChange) onChange(event);
-                  }}
+                  onChange={(event) => onRadioButtonChange(event, optionValue)}
                   tabIndex={focusable ? '0' : '-1'} // necessary for Firefox
                   {...optionRest}
                 >
