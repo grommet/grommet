@@ -222,7 +222,7 @@ export const buildGroupState = (groups, groupBy) => {
   const result = {};
   if (groups) {
     groups.forEach(({ key }) => {
-      if (key) result[key] = { expanded: false };
+      if (key !== undefined) result[key] = { expanded: false };
     });
   }
   if (groupBy && groupBy.expand) {
