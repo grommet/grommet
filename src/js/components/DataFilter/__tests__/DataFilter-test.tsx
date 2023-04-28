@@ -68,6 +68,48 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('select multiple options', () => {
+    const { container } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            enabled: {
+              label: 'Enabled',
+              options: [
+                { label: 'Enabled', value: true },
+                { label: 'Disabled', value: false },
+              ],
+            },
+            'type.name': {
+              label: 'Type',
+            },
+          }}
+        >
+          <DataFilters>
+            <DataFilter property="name" />
+            <DataFilter property="enabled" />
+            <DataFilter
+              property="type.name"
+              options={[
+                { label: 'ZZ', value: 1 },
+                { label: 'YY', value: 2 },
+                { label: 'aa', value: 3 },
+                { label: 'bb', value: 4 },
+                { label: 'cc', value: 5 },
+                { label: 'dd', value: 6 },
+                { label: 'ee', value: 7 },
+                { label: 'ff', value: 8 },
+              ]}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('range prop', () => {
     const { container } = render(
       <Grommet>
