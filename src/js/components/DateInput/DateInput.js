@@ -74,7 +74,9 @@ const DateInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
-      (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
+      (theme.icon?.matchSize && rest.size) ||
+      theme.dateInput.icon?.size ||
+      'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
@@ -184,7 +186,8 @@ Use the icon prop instead.`,
                 if (range && Array.isArray(nextValue))
                   [normalizedValue] = nextValue;
                 // clicking an edge date removes it
-                else if (range) normalizedValue = [nextValue, nextValue];
+                else if (range && nextValue)
+                  normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
 
                 if (schema) setTextValue(valueToText(normalizedValue, schema));
@@ -193,7 +196,7 @@ Use the icon prop instead.`,
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
-                  setTimeout(() => ref.current.focus(), 1);
+                  setTimeout(() => ref.current?.focus(), 1);
                 }
               }
         }

@@ -31,7 +31,7 @@ export const TypedForm = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box fill align="center" justify="center">
+    <Box align="center" justify="center" pad="large">
       <Box width="medium">
         {/* 
             Type annotations can only be used in TypeScript files
@@ -50,13 +50,24 @@ export const TypedForm = () => {
         >
           <FormField
             label="Name"
+            htmlFor="name"
+            id="name"
             name="name"
             required
             validate={{ regexp: /^[a-z]/i }}
           />
-          <FormField label="Email" name="email" type="email" required />
+          <FormField
+            label="Email"
+            htmlFor="email"
+            id="email"
+            name="email"
+            type="email"
+            required
+          />
           <FormField
             label="Employee ID"
+            htmlFor="employeeId"
+            id="employeeId"
             name="employeeId"
             required
             validate={{ regexp: /^[0-9]{4,6}$/, message: '4-6 digits' }}
@@ -75,14 +86,25 @@ export const TypedForm = () => {
           />
           <FormField
             label="Size"
+            htmlFor="size"
+            id="size"
+            aria-label="size"
             name="size"
             component={Select}
             onChange={(event) => console.log(event)}
             options={['small', 'medium', 'large', 'xlarge']}
           />
-          <FormField label="Comments" name="comments" component={TextArea} />
+          <FormField
+            label="Comments"
+            htmlFor="comments"
+            id="comments"
+            name="comments"
+            component={TextArea}
+          />
           <FormField
             label="Age"
+            htmlFor="age"
+            id="age"
             name="age"
             component={RangeInput}
             pad

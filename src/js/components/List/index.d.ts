@@ -43,7 +43,7 @@ export interface ListProps<ListItemType> {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
-  children?: React.ReactNode;
+  children?: (...args: any[]) => any;
   data?: ListItemType[];
   disabled?: string[];
   gridArea?: GridAreaType;
@@ -69,7 +69,7 @@ export interface ListProps<ListItemType> {
   action?: (item: ListItemType, index: number) => void;
 }
 
-type ulProps = JSX.IntrinsicElements['ul'];
+type ulProps = Omit<JSX.IntrinsicElements['ul'], 'children'>;
 
 export interface ListExtendedProps<ListItemType>
   extends ListProps<ListItemType>,

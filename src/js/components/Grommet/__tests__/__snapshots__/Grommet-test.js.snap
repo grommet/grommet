@@ -123,7 +123,7 @@ exports[`Grommet cssVars 1`] = `
   --neutral-3: #00739D;
   --neutral-4: #A2423D;
   --status-critical: #FF4040;
-  --status-error: #FF4040;
+  --status-error: #B30000;
   --status-warning: #FFAA15;
   --status-ok: #00C781;
   --status-unknown: #CCCCCC;
@@ -202,7 +202,7 @@ exports[`Grommet hpe theme 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF;
-  color: #444444;
+  color: #6F6F6F;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

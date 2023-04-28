@@ -106,7 +106,7 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    await user.click(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onActive).toBeCalled();
     expect(asFragment()).toMatchSnapshot();
   });
@@ -123,7 +123,7 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    await user.click(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 2/i }));
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -140,22 +140,22 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    await user.click(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onActive).toBeCalledWith([1]);
 
     expect(asFragment()).toMatchSnapshot();
 
-    await user.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onActive).toBeCalledWith([1, 0]);
 
     expect(asFragment()).toMatchSnapshot();
 
-    await user.click(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onActive).toBeCalledWith([0]);
 
     expect(asFragment()).toMatchSnapshot();
 
-    await user.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onActive).toBeCalledWith([]);
 
     expect(asFragment()).toMatchSnapshot();
@@ -173,7 +173,7 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    await user.hover(screen.getByRole('tab', { name: 'Panel 1 FormDown' }));
+    await user.hover(screen.getByRole('button', { name: 'Panel 1 FormDown' }));
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -212,7 +212,7 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    await user.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onActive).toBeCalledWith([0]);
     expect(asFragment()).toMatchSnapshot();
   });
@@ -236,7 +236,7 @@ describe('Accordion', () => {
       </Grommet>,
     );
 
-    await user.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(asFragment()).toMatchSnapshot();
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
@@ -330,14 +330,14 @@ describe('Accordion', () => {
       </Grommet>,
     );
 
-    await user.hover(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.hover(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onMouseOver1).toHaveBeenCalled();
-    await user.unhover(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.unhover(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onMouseOut1).toHaveBeenCalled();
 
-    await user.hover(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.hover(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onMouseOver2).toHaveBeenCalled();
-    await user.unhover(screen.getByRole('tab', { name: /Panel 2/i }));
+    await user.unhover(screen.getByRole('button', { name: /Panel 2/i }));
     expect(onMouseOver2).toHaveBeenCalled();
   });
 
@@ -354,7 +354,7 @@ describe('Accordion', () => {
     );
     expect(asFragment()).toMatchSnapshot();
 
-    await user.click(screen.getByRole('tab', { name: /Panel 1/i }));
+    await user.click(screen.getByRole('button', { name: /Panel 1/i }));
     expect(onActive).toBeCalledWith([0]);
     expect(screen.getByText('Panel body 1')).not.toBeNull();
     expect(asFragment()).toMatchSnapshot();
@@ -385,5 +385,22 @@ describe('Accordion', () => {
     // tab away from the first accordion panel
     await user.tab();
     expect(onBlur).toHaveBeenCalled();
+  });
+
+  test('should apply level prop to headings', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Accordion level={2}>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Panel 1' }),
+    ).toBeTruthy();
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

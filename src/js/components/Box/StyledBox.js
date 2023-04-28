@@ -200,12 +200,46 @@ const interactiveStyle = css`
   }
 `;
 
+const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
+  const metric = theme.global.edgeSize[gap] || gap;
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
+  const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
+
+  const styles = [];
+  if (directionProp === 'column' || directionProp === 'column-reverse') {
+    styles.push(`row-gap: ${metric};`);
+    if (responsiveMetric) {
+      styles.push(breakpointStyle(breakpoint, `row-gap: ${responsiveMetric};`));
+    }
+  } else {
+    styles.push(`column-gap: ${metric};`);
+    if (wrap) styles.push(`row-gap: ${metric};`);
+    if (responsiveMetric) {
+      if (directionProp === 'row' || directionProp === 'row-reverse') {
+        styles.push(
+          breakpointStyle(breakpoint, `column-gap: ${responsiveMetric};`),
+        );
+      } else if (directionProp === 'row-responsive') {
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
+          row-gap: ${responsiveMetric};
+        `,
+          ),
+        );
+      }
+    }
+  }
+
+  return styles;
+};
+
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
-
   ${genericStyles}
   ${(props) => props.align && alignStyle}
   ${(props) => props.alignContent && alignContentStyle}
@@ -235,6 +269,15 @@ const StyledBox = styled.div`
   ${(props) => props.wrapProp && wrapStyle}
   ${(props) => props.overflowProp && overflowStyle(props.overflowProp)}
   ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
+  ${(props) =>
+    props.gap &&
+    gapStyle(
+      props.directionProp,
+      props.gap,
+      props.responsive,
+      props.wrapProp,
+      props.theme,
+    )}
   ${(props) => props.animation && animationStyle}
   ${(props) => props.onClick && interactiveStyle}
   ${(props) =>
@@ -246,7 +289,10 @@ const StyledBox = styled.div`
   ${(props) => props.kindProp && props.kindProp.extend}
 `;
 
-const gapStyle = (directionProp, gap, responsive, border, theme) => {
+StyledBox.defaultProps = {};
+Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
+
+const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
   const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
@@ -373,15 +419,12 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
   return styles;
 };
 
-StyledBox.defaultProps = {};
-Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
-
 const StyledBoxGap = styled.div`
   flex: 0 0 auto;
   align-self: stretch;
   ${(props) =>
     props.gap &&
-    gapStyle(
+    gapGapStyle(
       props.directionProp,
       props.gap,
       props.responsive,

@@ -5,8 +5,10 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     color: colorPropType,
+    defaultValues: PropTypes.arrayOf(PropTypes.number),
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     invert: PropTypes.bool,
+    label: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
     max: PropTypes.number,
     messages: PropTypes.shape({
       lower: PropTypes.string,
@@ -36,7 +38,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.string,
     ]),
     step: PropTypes.number,
-    values: PropTypes.arrayOf(PropTypes.number).isRequired,
+    values: PropTypes.arrayOf(PropTypes.number),
   };
 }
 export const RangeSelectorPropTypes = PropType;

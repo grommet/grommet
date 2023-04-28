@@ -6,9 +6,15 @@ import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { Button } from '../../Button';
 import { Text } from '../../Text';
-import { DataTable } from '..';
+import { DataTable, Sections, SortType } from '..';
+import { BackgroundType, BorderType } from '../../../utils';
 
-const DATA = [];
+interface TestDataItem {
+  a: string;
+  b: number;
+}
+
+const DATA: TestDataItem[] = [];
 for (let i = 0; i < 95; i += 1) {
   DATA.push({ a: `entry-${i}`, b: i });
 }
@@ -275,7 +281,7 @@ describe('DataTable', () => {
 
   test('sort controlled', () => {
     const Test = () => {
-      const [sort, setSort] = React.useState({
+      const [sort, setSort] = React.useState<SortType>({
         property: 'a',
         direction: 'asc',
       });
@@ -416,8 +422,14 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(container.querySelector('[aria-label="Open search by a"]'));
-    const searchInput = container.querySelector('[name="search-a"]');
+    fireEvent.click(
+      container.querySelector(
+        '[aria-label="Open search by a"]',
+      ) as HTMLButtonElement,
+    );
+    const searchInput = container.querySelector(
+      '[name="search-a"]',
+    ) as HTMLInputElement;
     expect(document.activeElement).toBe(searchInput);
     fireEvent.change(searchInput, {
       target: { value: '[' },
@@ -534,8 +546,8 @@ describe('DataTable', () => {
             { a: 'two', b: 2.1 },
             { a: 'two', b: 2.2 },
           ]}
-          rowDetails={(row) => {
-            if (row.b === '1.1') {
+          rowDetails={(row: TestDataItem) => {
+            if (row.b === 1.1) {
               return <Box> {row.a} </Box>;
             }
             return (
@@ -552,6 +564,7 @@ describe('DataTable', () => {
     fireEvent.click(expandButtons[1], {});
     expect(container.firstChild).toMatchSnapshot();
   });
+
   test('groupBy', () => {
     const { container, getByText } = render(
       <Grommet>
@@ -577,9 +590,31 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('groupBy 0 value', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+            { property: 'c', header: 'C' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1, c: 0 },
+            { a: 'two', b: 1.2, c: 0 },
+            { a: 'three', b: 2.1, c: 1 },
+            { a: 'four', b: 2.2, c: 2 },
+          ]}
+          groupBy="c"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('groupBy toggle', () => {
     function TestComponent() {
-      const [groupBy, setGroupBy] = React.useState();
+      const [groupBy, setGroupBy] = React.useState<string | undefined>();
       const toggle = () => setGroupBy(groupBy === undefined ? 'a' : undefined);
 
       return (
@@ -590,7 +625,7 @@ describe('DataTable', () => {
           <DataTable
             columns={[
               { property: 'a', header: 'A' },
-              { property: 'b', header: 'B' },
+              { property: 'b', header: 'B', primary: true },
             ]}
             data={[
               { a: 'one', b: 1.1 },
@@ -653,13 +688,18 @@ describe('DataTable', () => {
   });
 
   test('background', () => {
+    const backgrounds: (
+      | BackgroundType
+      | BackgroundType[]
+      | Sections<BackgroundType | string[], BackgroundType, BackgroundType>
+    )[] = [
+      'accent-1',
+      ['accent-1', 'accent-2'],
+      { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
+    ];
     const { container } = render(
       <Grommet>
-        {[
-          'accent-1',
-          ['accent-1', 'accent-2'],
-          { header: 'accent-1', body: 'accent-2', footer: 'accent-3' },
-        ].map((background) => (
+        {backgrounds.map((background) => (
           <DataTable
             key={JSON.stringify(background)}
             columns={[
@@ -679,17 +719,18 @@ describe('DataTable', () => {
   });
 
   test('border', () => {
+    const borders: (BorderType | Sections<BorderType>)[] = [
+      true,
+      'top',
+      { color: 'accent-1', side: 'top', size: 'small' },
+      {
+        header: 'top',
+        body: { color: 'accent-1', side: 'top', size: 'small' },
+      },
+    ];
     const { container } = render(
       <Grommet>
-        {[
-          true,
-          'top',
-          { color: 'accent-1', side: 'top', size: 'small' },
-          {
-            header: 'top',
-            body: { color: 'accent-1', side: 'top', size: 'small' },
-          },
-        ].map((border) => (
+        {borders.map((border) => (
           <DataTable
             key={JSON.stringify(border)}
             columns={[
@@ -912,9 +953,14 @@ describe('DataTable', () => {
   });
 
   test('fill', () => {
+    const fills: (boolean | 'vertical' | 'horizontal')[] = [
+      true,
+      'horizontal',
+      'vertical',
+    ];
     const { container } = render(
       <Grommet>
-        {[true, 'horizontal', 'vertical'].map((fill) => (
+        {fills.map((fill) => (
           <DataTable
             key={JSON.stringify(fill)}
             columns={[
@@ -934,9 +980,10 @@ describe('DataTable', () => {
   });
 
   test('pin', () => {
+    const pins: (boolean | 'header' | 'footer')[] = [true, 'header', 'footer'];
     const { container } = render(
       <Grommet>
-        {[true, 'header', 'footer'].map((pin) => (
+        {pins.map((pin) => (
           <DataTable
             key={JSON.stringify(pin)}
             columns={[
@@ -973,9 +1020,11 @@ describe('DataTable', () => {
       },
     };
 
+    const pins: (boolean | 'header' | 'footer')[] = [true, 'header', 'footer'];
+
     const { container } = render(
       <Grommet theme={theme}>
-        {[true, 'header', 'footer'].map((pin) => (
+        {pins.map((pin) => (
           <DataTable
             background={{ pinned: 'red' }}
             key={JSON.stringify(pin)}
@@ -1003,7 +1052,10 @@ describe('DataTable', () => {
           'background-front',
           { color: 'background-back', dark: true },
         ].map((contextBackground) => (
-          <Box key={contextBackground} background={contextBackground}>
+          <Box
+            key={JSON.stringify(contextBackground)}
+            background={contextBackground}
+          >
             <DataTable
               columns={[
                 { property: 'a', header: 'A', footer: 'Total', pin: true },
@@ -1037,10 +1089,9 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(
-      expect.arrayContaining(['alpha', 'beta']),
-      undefined,
-    );
+    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
+      a: 'beta',
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1261,8 +1312,8 @@ describe('DataTable', () => {
       </Grommet>,
     );
 
-    const activePage = container.querySelector(
-      `[aria-current="page"]`,
+    const activePage = (
+      container.querySelector(`[aria-current="page"]`) as HTMLButtonElement
     ).innerHTML;
 
     expect(activePage).toEqual(`${desiredPage}`);
@@ -1544,5 +1595,128 @@ describe('DataTable', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should base table body max height on global size', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          size="small"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should base table body max height on css value', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          size="50px"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('rowProps on group header rows', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            {
+              property: 'location',
+              header: 'Location',
+            },
+            {
+              property: 'name',
+              header: <Text>Name with extra</Text>,
+              primary: true,
+            },
+          ]}
+          rowProps={{ 'Fort Collins': { background: 'yellow' } }}
+          data={[
+            { name: 'Bryan', location: 'Fort Collins' },
+            { name: 'Doug', location: 'Fort Collins' },
+            { name: 'Tracy', location: 'San Francisco' },
+          ]}
+          groupBy="location"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('border on CheckBox cell', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DataTable
+          data={[
+            { name: 'Alan', percent: 20 },
+            { name: 'Bryan', percent: 30 },
+            { name: 'Chris', percent: 20 },
+            { name: 'Eric', percent: 80 },
+          ]}
+          columns={[
+            {
+              property: 'name',
+              header: 'Name',
+              primary: true,
+            },
+            {
+              property: 'percent',
+              header: 'Percent Complete',
+            },
+          ]}
+          border={{ body: { side: 'bottom' } }}
+          onSelect={() => {}}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onSelect datum argument should be defined', () => {
+    const onSelect = jest.fn();
+    render(
+      <Grommet>
+        <DataTable
+          onSelect={onSelect}
+          data={[
+            { name: 'Alan', percent: 20 },
+            { name: 'Bryan', percent: 30 },
+          ]}
+          columns={[
+            {
+              property: 'name',
+              header: 'Name',
+              primary: true,
+            },
+            {
+              property: 'percent',
+              header: 'Percent Complete',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(screen.getByRole('checkbox', { name: 'select Alan' }));
+    expect(onSelect).toBeCalledWith(['Alan'], { name: 'Alan', percent: 20 });
   });
 });

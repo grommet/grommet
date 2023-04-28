@@ -27,7 +27,8 @@ const AccordionPanel = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const { active, animate, onPanelChange } = useContext(AccordionContext);
+    const { active, animate, level, onPanelChange } =
+      useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
     const [focus, setFocus] = useState();
 
@@ -89,8 +90,6 @@ const AccordionPanel = forwardRef(
         margin={abutMargin}
       >
         <Button
-          role="tab"
-          aria-selected={active}
           aria-expanded={active}
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
@@ -121,6 +120,7 @@ const AccordionPanel = forwardRef(
                 <Box pad={{ horizontal: 'xsmall' }}>
                   <Heading
                     level={
+                      level ||
                       (theme.accordion.heading &&
                         theme.accordion.heading.level) ||
                       4
@@ -149,7 +149,7 @@ const AccordionPanel = forwardRef(
             </Box>
           )}
         </Button>
-        <Box border={contentBorder}>
+        <Box role="region" border={contentBorder}>
           {animate ? (
             <Collapsible open={active}>{children}</Collapsible>
           ) : (

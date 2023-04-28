@@ -532,4 +532,21 @@ describe('MaskedInput', () => {
     expect(getByLabelText('masked-input-test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('match icon size to size prop when theme.icon.matchSize is true', () => {
+    const theme = {
+      icon: {
+        matchSize: true,
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <MaskedInput size="small" placeholder="mm/dd/yyyy" />
+        <MaskedInput placeholder="mm/dd/yyyy" />
+        <MaskedInput size="large" placeholder="mm/dd/yyyy" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
