@@ -8,6 +8,7 @@ defaults: &defaults
 jobs:
   checkout:
     <<: *defaults
+    resource_class: large
     steps:
       - checkout
       - restore_cache:
@@ -88,7 +89,7 @@ jobs:
           at: ~/grommet-ci
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - run: 
+      - run:
           name: Start project
           command: yarn start
           background: true
