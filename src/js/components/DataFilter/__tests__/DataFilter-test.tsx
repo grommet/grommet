@@ -1,7 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
-
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
@@ -16,6 +15,7 @@ const data = [
 ];
 
 describe('DataFilter', () => {
+  window.scrollTo = jest.fn();
   test('renders', () => {
     const { container } = render(
       <Grommet>
@@ -69,37 +69,23 @@ describe('DataFilter', () => {
   });
 
   test('select multiple options', () => {
-    const { container } = render(
+    jest.useFakeTimers();
+
+    const { container, getByRole } = render(
       <Grommet>
         <Data
           data={data}
           properties={{
-            enabled: {
-              label: 'Enabled',
-              options: [
-                { label: 'Enabled', value: true },
-                { label: 'Disabled', value: false },
-              ],
-            },
             'type.name': {
               label: 'Type',
             },
           }}
         >
-          <DataFilters>
-            <DataFilter property="name" />
-            <DataFilter property="enabled" />
+          <DataFilters drop>
             <DataFilter
               property="type.name"
               options={[
-                { label: 'ZZ', value: 1 },
-                { label: 'YY', value: 2 },
-                { label: 'aa', value: 3 },
-                { label: 'bb', value: 4 },
-                { label: 'cc', value: 5 },
-                { label: 'dd', value: 6 },
-                { label: 'ee', value: 7 },
-                { label: 'ff', value: 8 },
+                'ZZ', 'YY', 'aa', 'bb', 'cc', 'dd', 'ee', 'ff'
               ]}
             />
           </DataFilters>
@@ -107,6 +93,31 @@ describe('DataFilter', () => {
       </Grommet>,
     );
 
+    expect(getByRole('button', { name: 'Open filters' })).toBeTruthy();
+    fireEvent.click(getByRole('button', { name: 'Open filters' }));
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    // open SelectMultiple
+    fireEvent.click(getByRole('button', { name: /Open Drop/i }));
+    act(() => jest.advanceTimersByTime(200));
+
+    // click the first option 'ZZ'
+    fireEvent.click(getByRole('option', { name: /ZZ/i }));
+    act(() => jest.advanceTimersByTime(200));
+
+    // close SelectMultiple
+    fireEvent.click(getByRole('button', { name: /Close Select/i }));     
+    act(() => jest.advanceTimersByTime(200));
+  
+    // click Apply Filters button
+    expect(getByRole('button', { name: 'Apply filters' })).toBeTruthy();
+    fireEvent.click(getByRole('button', {name: 'Apply filters'}));
+    
+    // advance timers so filters can be applied
+    act(() => jest.advanceTimersByTime(200));
+
+    // snapshot on selected filter
     expect(container.firstChild).toMatchSnapshot();
   });
 
