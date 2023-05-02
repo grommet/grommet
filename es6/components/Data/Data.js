@@ -21,7 +21,8 @@ var normalizeView = function normalizeView(viewProp, views) {
 };
 export var Data = function Data(_ref) {
   var children = _ref.children,
-    dataProp = _ref.data,
+    _ref$data = _ref.data,
+    dataProp = _ref$data === void 0 ? [] : _ref$data,
     _ref$defaultView = _ref.defaultView,
     defaultView = _ref$defaultView === void 0 ? defaultDefaultView : _ref$defaultView,
     filteredTotal = _ref.filteredTotal,

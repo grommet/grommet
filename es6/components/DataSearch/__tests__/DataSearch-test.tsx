@@ -28,6 +28,16 @@ describe('DataSearch', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('no Data', () => {
+    const { container } = render(
+      <Grommet>
+        <DataSearch />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('drop', () => {
     jest.useFakeTimers();
 
