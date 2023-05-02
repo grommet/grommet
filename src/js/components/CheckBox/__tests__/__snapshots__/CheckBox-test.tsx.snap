@@ -79,9 +79,7 @@ exports[`CheckBox checked renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -233,9 +231,7 @@ exports[`CheckBox controlled 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -318,7 +314,7 @@ exports[`CheckBox controlled 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fXbqBx"
     label="test-label"
   >
     <div
@@ -427,9 +423,7 @@ exports[`CheckBox custom theme 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -578,9 +572,7 @@ exports[`CheckBox defaultChecked 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -753,9 +745,7 @@ exports[`CheckBox disabled renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   opacity: 0.5;
   cursor: default;
 }
@@ -959,9 +949,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -986,9 +974,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -1167,9 +1153,7 @@ exports[`CheckBox label renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -1190,9 +1174,7 @@ exports[`CheckBox label renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -1353,9 +1335,7 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -1492,9 +1472,7 @@ exports[`CheckBox renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -1639,9 +1617,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -1790,9 +1766,7 @@ exports[`CheckBox renders custom checked icon 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -1939,9 +1913,7 @@ exports[`CheckBox reverse renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -2279,9 +2251,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -2406,9 +2376,7 @@ exports[`CheckBox toggle renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
@@ -2433,9 +2401,7 @@ exports[`CheckBox toggle renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
