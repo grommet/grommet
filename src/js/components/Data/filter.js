@@ -61,14 +61,16 @@ export const filter = (data, view, properties) => {
 
         // options case
         if (Array.isArray(filterValue)) {
-          if (Array.isArray(value)) {
-            return !filterValue.some((f) =>
-              typeof f === 'object'
-                ? value.includes(f?.value) // from {label: ___, value: ___}
-                : value.includes(f),
-            );
-          }
-          return !filterValue.includes(value);
+          return !filterValue.some((f) => {
+            // f may be an object with form {label: __, value: __}
+            const isObject = typeof f === 'object';
+            // match f within data value array using .includes()
+            if (Array.isArray(value)) {
+              return isObject ? value.includes(f?.value) : value.includes(f);
+            }
+            // match f with data value using ===
+            return isObject ? f?.value === value : f === value;
+          });
         }
 
         // presence case
