@@ -52,13 +52,16 @@ var filter = function filter(data, view, properties) {
 
         // options case
         if (Array.isArray(filterValue)) {
-          if (Array.isArray(value)) {
-            return !filterValue.some(function (f) {
-              return typeof f === 'object' ? value.includes(f == null ? void 0 : f.value) // from {label: ___, value: ___}
-              : value.includes(f);
-            });
-          }
-          return !filterValue.includes(value);
+          return !filterValue.some(function (f) {
+            // f may be an object with form {label: __, value: __}
+            var isObject = typeof f === 'object';
+            // match f within data value array using .includes()
+            if (Array.isArray(value)) {
+              return isObject ? value.includes(f == null ? void 0 : f.value) : value.includes(f);
+            }
+            // match f with data value using ===
+            return isObject ? (f == null ? void 0 : f.value) === value : f === value;
+          });
         }
 
         // presence case
