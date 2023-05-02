@@ -144,9 +144,9 @@
     "testcafe": "^2.4.0",
     "testcafe-react-selectors": "^5.0.2",
     "testcafe-reporter-xunit": "^2.2.2",
-    "ts-jest": "29.0.5",
+    "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.2",
-    "typescript": "^4.9.5",
+    "typescript": "^5.0.4",
     "webpack": "^5.81.0",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"
