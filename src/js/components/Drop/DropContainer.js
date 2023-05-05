@@ -14,6 +14,7 @@ import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
+import { OptionsContext } from '../../contexts/OptionsContext';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -83,6 +84,8 @@ const DropContainer = forwardRef(
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    // dropOptions was created to preserve backwards compatibility
+    const { drop: dropOptions } = useContext(OptionsContext);
     const portalContext = useContext(PortalContext);
     const portalId = useMemo(() => portalContext.length, [portalContext]);
     const nextPortalContext = useMemo(
@@ -193,10 +196,10 @@ const DropContainer = forwardRef(
           let bottom;
           let maxHeight = containerRect.height;
 
-          /* If responsive is true and the Drop doesn't have enough room 
-            to be fully visible and there is more room in the other 
-            direction, change the Drop to display above/below. If there is 
-            less room in the other direction leave the Drop in its current 
+          /* If responsive is true and the Drop doesn't have enough room
+            to be fully visible and there is more room in the other
+            direction, change the Drop to display above/below. If there is
+            less room in the other direction leave the Drop in its current
             position. */
           if (
             responsive &&
@@ -233,10 +236,15 @@ const DropContainer = forwardRef(
               targetRect.top + targetRect.height / 2 - containerRect.height / 2;
           }
 
-          // return the containing block for absolute elements or `null`
-          // for fixed elements
-          const containingBlock = getContainingBlock(container);
-          const containingBlockRect = containingBlock?.getBoundingClientRect();
+          let containingBlock;
+          let containingBlockRect;
+          // dropOptions was created to preserve backwards compatibility
+          if (dropOptions?.checkContainingBlock) {
+            // return the containing block for absolute elements or `null`
+            // for fixed elements
+            containingBlock = getContainingBlock(container);
+            containingBlockRect = containingBlock?.getBoundingClientRect();
+          }
 
           // compute viewport offsets
           const viewportOffsetLeft = containingBlockRect?.left ?? 0;
@@ -249,6 +257,7 @@ const DropContainer = forwardRef(
 
           container.style.left = `${left - viewportOffsetLeft +
             containerOffsetLeft}px`;
+
           if (stretch) {
             // offset width by 0.1 to avoid a bug in ie11 that
             // unnecessarily wraps the text if width is the same
@@ -330,6 +339,7 @@ const DropContainer = forwardRef(
       stretch,
       theme.drop,
       dropRef,
+      dropOptions,
     ]);
 
     useEffect(() => {
