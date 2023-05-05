@@ -121,12 +121,14 @@ const LayerContainer = forwardRef(
       const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
-        let node =
-          containerTarget === document.body
-            ? event.target
-            : event?.composedPath()[0];
+        let node = (event.composed && event.composedPath()[0]) || event.target;
 
-        while (clickedPortalId === null && node !== document && node !== null) {
+        while (
+          clickedPortalId === null &&
+          node &&
+          node !== document &&
+          !(node instanceof ShadowRoot)
+        ) {
           // check if user click occurred within the layer
           const attr = node.getAttribute('data-g-portal-id');
           if (attr !== null && attr !== '')

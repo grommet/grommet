@@ -59,8 +59,11 @@ const Row = memo(
                     onClickRow(adjustedEvent);
                   } else if (onClickRow === 'select') {
                     if (isSelected) {
-                      onSelect(selected.filter((s) => s !== primaryValue));
-                    } else onSelect([...selected, primaryValue]);
+                      onSelect(
+                        selected.filter((s) => s !== primaryValue),
+                        datum,
+                      );
+                    } else onSelect([...selected, primaryValue], datum);
                   }
                 }
               }
@@ -78,6 +81,7 @@ const Row = memo(
                 cellProps.pinned.background) ||
               cellProps.background
             }
+            border={cellProps.pinned.border || cellProps.border}
             pinnedOffset={pinnedOffset?._grommetDataTableSelect}
             aria-disabled={isDisabled || !onSelect || undefined}
             column={{
@@ -94,8 +98,11 @@ const Row = memo(
                   disabled={isDisabled || !onSelect}
                   onChange={() => {
                     if (isSelected) {
-                      onSelect(selected.filter((s) => s !== primaryValue));
-                    } else onSelect([...selected, primaryValue]);
+                      onSelect(
+                        selected.filter((s) => s !== primaryValue),
+                        datum,
+                      );
+                    } else onSelect([...selected, primaryValue], datum);
                   }}
                   pad={cellProps.pad}
                 />
@@ -191,18 +198,23 @@ const Body = forwardRef(
     const onFocusActive =
       active ?? lastActive ?? (usingKeyboard ? 0 : undefined);
 
+    const activePrimaryValue =
+      active >= 0 ? datumValue(data[active], primaryProperty) : undefined;
+
     const selectRow = () => {
-      const primaryValue = data[active]?.[primaryProperty];
-      if (selected && selected.includes(primaryValue)) {
-        onSelect(selected.filter((s) => s !== primaryValue));
-      } else onSelect([...selected, primaryValue]);
+      if (activePrimaryValue !== undefined) {
+        if (selected && selected.includes(activePrimaryValue)) {
+          onSelect(selected.filter((s) => s !== activePrimaryValue));
+        } else onSelect([...selected, activePrimaryValue]);
+      }
     };
 
     const clickableRow =
       onClickRow &&
       active >= 0 &&
       (!disabled ||
-        !disabled.includes(datumValue(data[active], primaryProperty)));
+        (activePrimaryValue !== undefined &&
+          !disabled.includes(activePrimaryValue)));
 
     return (
       <Keyboard
@@ -275,7 +287,7 @@ const Body = forwardRef(
               );
               return (
                 <Row
-                  key={index}
+                  key={primaryValue ?? index}
                   setActive={setActive}
                   rowRef={rowRef}
                   cellProps={cellProps}

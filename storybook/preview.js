@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Root from 'react-shadow';
+import { StyleSheetManager } from 'styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
@@ -13,13 +15,19 @@ const THEMES = {
 
 export const decorators = [
   (Story, context) => {
+    const [rootRef, setRootRef] = useState(null);
     const [state, setState] = useState('grommet');
+    const [root, setRoot] = useState('document');
+    const full = context.allArgs?.full || 'min';
+    const dir = context.allArgs?.dir;
+    const options = context.allArgs?.options;
+
     useEffect(() => {
       setState(context.globals.theme);
     }, [context.globals.theme]);
-    const full = context.parameters?.args?.full || 'min';
-    const dir = context.parameters?.args?.dir;
-    const options = context.parameters?.args?.options;
+    useEffect(() => {
+      setRoot(context.globals.root);
+    }, [context.globals.root]);
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
@@ -42,7 +50,31 @@ export const decorators = [
                 "base" theme mode. To enable, select "base" from the
                 Theme menu above.`}
           </Text>
+          <div hidden>
+            <Story state={THEMES[state]} />
+          </div>
         </Box>
+      );
+    }
+
+    if (root === 'shadow') {
+      return (
+        // eslint-disable-next-line react/jsx-pascal-case
+        <Root.div ref={setRootRef}>
+          {rootRef && (
+            <StyleSheetManager target={rootRef.shadowRoot}>
+              <Grommet
+                theme={THEMES[state]}
+                full={full}
+                dir={dir}
+                options={options}
+                containerTarget={rootRef.shadowRoot}
+              >
+                <Story state={THEMES[state]} />
+              </Grommet>
+            </StyleSheetManager>
+          )}
+        </Root.div>
       );
     }
 
@@ -93,6 +125,13 @@ export const globalTypes = {
         { title: 'hpe', value: 'hpe' },
         { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
       ],
+    },
+  },
+  root: {
+    defaultValue: 'document',
+    toolbar: {
+      title: 'Root',
+      items: ['document', 'shadow'],
     },
   },
 };
