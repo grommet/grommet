@@ -101,7 +101,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
       }
       {...(!controlled ? rest : { fill: 'vertical' })}
     >
-      {!drop && (
+      {layer && (
         <Header>
           <Heading margin="none" level={2} size="small">
             {heading ||
@@ -111,13 +111,11 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
               })}
           </Heading>
           {!controlled && clearControl}
-          {layer && (
-            <Button
-              icon={<FormClose />}
-              hoverIndicator
-              onClick={() => setShowContent(undefined)}
-            />
-          )}
+          <Button
+            icon={<FormClose />}
+            hoverIndicator
+            onClick={() => setShowContent(undefined)}
+          />
         </Header>
       )}
       {content}
