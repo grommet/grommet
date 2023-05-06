@@ -16,6 +16,8 @@ const gradientMaskColor = '#ffffff';
 const defaultSize = { height: 'small', width: 'medium' };
 const defaultValues = [];
 
+const swap = (x, y, yBounds) => [y, yBounds - x];
+
 const Chart = React.forwardRef(
   (
     {
@@ -23,6 +25,7 @@ const Chart = React.forwardRef(
       bounds: propsBounds,
       color,
       dash,
+      direction,
       gap,
       id,
       onClick,
@@ -169,18 +172,28 @@ const Chart = React.forwardRef(
       [bounds, inset, size],
     );
 
-    const viewBounds = useMemo(
-      () =>
-        overflow
-          ? [0, 0, size[0], size[1]]
-          : [
-              -(strokeWidth / 2),
-              -(strokeWidth / 2),
-              size[0] + strokeWidth,
-              size[1] + strokeWidth,
-            ],
-      [overflow, size, strokeWidth],
-    );
+    const viewBounds = useMemo(() => {
+      if (overflow) {
+        if (direction === 'vertical') {
+          return [0, 0, size[1], size[0]];
+        }
+        return [0, 0, size[0], size[1]];
+      }
+      if (direction === 'vertical') {
+        return [
+          -(strokeWidth / 2),
+          -(strokeWidth / 2),
+          size[1] + strokeWidth,
+          size[0] + strokeWidth,
+        ];
+      }
+      return [
+        -(strokeWidth / 2),
+        -(strokeWidth / 2),
+        size[0] + strokeWidth,
+        size[1] + strokeWidth,
+      ];
+    }, [direction, overflow, size, strokeWidth]);
 
     // set container size when we get ref or when size changes
     useLayoutEffect(() => {
@@ -254,17 +267,33 @@ const Chart = React.forwardRef(
 
           const key = `p-${index}`;
           // Math.min/max are to handle negative values
-          const bottom =
-            value.length === 2
-              ? Math.min(Math.max(0, bounds[1][0]), value[1])
-              : Math.min(value[1], value[2]);
-          const top =
-            value.length === 2
-              ? Math.max(Math.min(0, bounds[1][1]), value[1])
-              : Math.max(value[1], value[2]);
-          const d =
-            `M ${valueToCoordinate(value[0], bottom).join(',')}` +
-            ` L ${valueToCoordinate(value[0], top).join(',')}`;
+          let d;
+          if (direction === 'vertical') {
+            const left =
+              value.length === 2
+                ? Math.min(Math.max(0, bounds[0][0]), value[1])
+                : Math.min(value[1], value[2]);
+            const right =
+              value.length === 2
+                ? Math.max(Math.min(0, bounds[0][1]), value[1])
+                : Math.max(value[1], value[2]);
+            const top = bounds[1][1] - value[0];
+            d =
+              `M ${valueToCoordinate(left, top).join(',')}` +
+              ` L ${valueToCoordinate(right, top).join(',')}`;
+          } else {
+            const bottom =
+              value.length === 2
+                ? Math.min(Math.max(0, bounds[1][0]), value[1])
+                : Math.min(value[1], value[2]);
+            const top =
+              value.length === 2
+                ? Math.max(Math.min(0, bounds[1][1]), value[1])
+                : Math.max(value[1], value[2]);
+            d =
+              `M ${valueToCoordinate(value[0], bottom).join(',')}` +
+              ` L ${valueToCoordinate(value[0], top).join(',')}`;
+          }
 
           let hoverProps;
           if (valueOnHover) {
@@ -307,19 +336,19 @@ const Chart = React.forwardRef(
         });
 
     const renderLine = () => {
+      const vert = direction === 'vertical';
       let d = '';
       let d2 = '';
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
         .forEach(({ value }) => {
-          d += `${d ? ' L' : 'M'} ${valueToCoordinate(value[0], value[1]).join(
-            ',',
-          )}`;
+          let [x, y] = [value[0], value[1]];
+          if (vert) [x, y] = swap(x, y, bounds[1][1]);
+          d += `${d ? ' L' : 'M'} ${valueToCoordinate(x, y).join(',')}`;
           if (value[2] !== undefined) {
-            d2 += `${d2 ? ' L' : 'M'} ${valueToCoordinate(
-              value[0],
-              value[2],
-            ).join(',')}`;
+            d2 += `${d2 ? ' L' : 'M'} ${valueToCoordinate(x, value[2]).join(
+              ',',
+            )}`;
           }
         });
 
@@ -356,24 +385,26 @@ const Chart = React.forwardRef(
     };
 
     const renderArea = () => {
+      const vert = direction === 'vertical';
       let d = '';
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
         .forEach(({ value }, index) => {
-          d += `${!index ? 'M' : ' L'} ${valueToCoordinate(
-            value[0],
-            value[value.length === 2 ? 1 : 2],
-          ).join(',')}`;
+          let [x, y] = [value[0], value[value.length === 2 ? 1 : 2]];
+          if (vert) [x, y] = swap(x, y, bounds[1][1]);
+          d += `${!index ? 'M' : ' L'} ${valueToCoordinate(x, y).join(',')}`;
         });
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
         .reverse()
         .forEach(({ value }) => {
-          d += ` L ${valueToCoordinate(
+          let [x, y] = [
             value[0],
             // Math.max() is to account for value[1] being negative
             value.length === 2 ? Math.max(0, bounds[1][0]) : value[1],
-          ).join(',')}`;
+          ];
+          if (vert) [x, y] = swap(x, y, bounds[1][1]);
+          d += ` L ${valueToCoordinate(x, y).join(',')}`;
         });
       if (d.length > 0) {
         d += ' Z';
@@ -440,8 +471,12 @@ const Chart = React.forwardRef(
             : strokeWidth;
 
           const renderPoint = (valueX, valueY) => {
+            const vert = direction === 'vertical';
             const props = { ...hoverProps, ...clickProps, ...valueRest };
-            const [cx, cy] = valueToCoordinate(valueX, valueY);
+            const [cx, cy] = valueToCoordinate(
+              vert ? valueY : valueX,
+              vert ? bounds[1][1] - valueX : valueY,
+            );
             const off = width / 2;
             if (point === 'circle' || (!point && round))
               return <circle cx={cx} cy={cy} r={off} {...props} />;
