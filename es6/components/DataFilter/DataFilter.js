@@ -65,9 +65,11 @@ export var DataFilter = function DataFilter(_ref) {
 
       // generate options from all values for property
       var uniqueValues = generateOptions(unfilteredData || data, property);
+      // if less than two values, nothing to filter
+      if (uniqueValues.length < 2) return [undefined, undefined];
       // if any values aren't numeric, treat as options
       if (uniqueValues.some(function (v) {
-        return v && typeof v !== 'number';
+        return v !== undefined && typeof v !== 'number';
       })) return [uniqueValues, undefined];
       // all values are numeric, treat as range
       // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
@@ -94,28 +96,31 @@ export var DataFilter = function DataFilter(_ref) {
         size: "full",
         round: "small"
       });
-    } else if (options.length === 2 && options[1] === true && options[0] === false) {
-      // special case boolean properties
-      content = /*#__PURE__*/React.createElement(CheckBoxGroup, {
-        id: id,
-        name: property,
-        options: booleanOptions
-      });
-    } else if (options.length < 7) {
-      content = /*#__PURE__*/React.createElement(CheckBoxGroup, {
-        id: id,
-        name: property,
-        options: options
-      });
-    } else {
-      content = /*#__PURE__*/React.createElement(SelectMultiple, {
-        id: id,
-        name: property,
-        showSelectedInline: true,
-        options: options
-      });
+    } else if (options) {
+      if (options.length === 2 && options[1] === true && options[0] === false) {
+        // special case boolean properties
+        content = /*#__PURE__*/React.createElement(CheckBoxGroup, {
+          id: id,
+          name: property,
+          options: booleanOptions
+        });
+      } else if (options.length < 7) {
+        content = /*#__PURE__*/React.createElement(CheckBoxGroup, {
+          id: id,
+          name: property,
+          options: options
+        });
+      } else {
+        content = /*#__PURE__*/React.createElement(SelectMultiple, {
+          id: id,
+          name: property,
+          showSelectedInline: true,
+          options: options
+        });
+      }
     }
   }
+  if (!content) return null;
   if (noForm)
     // likely in Toolbar
     content = /*#__PURE__*/React.createElement(DataForm, {
