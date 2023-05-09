@@ -9,9 +9,23 @@ import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
 
 const data = [
-  { name: 'aa', enabled: true, rating: 2.3, type: { name: 'ZZ', id: 1 } },
-  { name: 'bb', enabled: false, rating: 4.3, type: { name: 'YY', id: 2 } },
-  { name: 'cc', type: { name: 'ZZ', id: 1 } },
+  {
+    name: 'aa',
+    enabled: true,
+    rating: 2.3,
+    type: { name: 'ZZ', id: 1 },
+    blank: '',
+    zero: 0,
+  },
+  {
+    name: 'bb',
+    enabled: false,
+    rating: 4.3,
+    type: { name: 'YY', id: 2 },
+    blank: '',
+    zero: 0,
+  },
+  { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0 },
 ];
 
 describe('DataFilter', () => {
@@ -24,6 +38,8 @@ describe('DataFilter', () => {
             <DataFilter property="name" />
             <DataFilter property="enabled" />
             <DataFilter property="rating" />
+            <DataFilter property="blank" />
+            <DataFilter property="zero" />
           </DataFilters>
         </Data>
       </Grommet>,
@@ -84,9 +100,7 @@ describe('DataFilter', () => {
           <DataFilters drop>
             <DataFilter
               property="type.name"
-              options={[
-                'ZZ', 'YY', 'aa', 'bb', 'cc', 'dd', 'ee', 'ff'
-              ]}
+              options={['ZZ', 'YY', 'aa', 'bb', 'cc', 'dd', 'ee', 'ff']}
             />
           </DataFilters>
         </Data>
@@ -107,13 +121,13 @@ describe('DataFilter', () => {
     act(() => jest.advanceTimersByTime(200));
 
     // close SelectMultiple
-    fireEvent.click(getByRole('button', { name: /Close Select/i }));     
+    fireEvent.click(getByRole('button', { name: /Close Select/i }));
     act(() => jest.advanceTimersByTime(200));
-  
+
     // click Apply Filters button
     expect(getByRole('button', { name: 'Apply filters' })).toBeTruthy();
-    fireEvent.click(getByRole('button', {name: 'Apply filters'}));
-    
+    fireEvent.click(getByRole('button', { name: 'Apply filters' }));
+
     // advance timers so filters can be applied
     act(() => jest.advanceTimersByTime(200));
 
