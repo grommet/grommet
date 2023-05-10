@@ -2,7 +2,7 @@
 declare const normalizeColor: (
   color: string | { dark?: string; light?: string },
   theme: object,
-  required?: boolean,
+  dark?: boolean,
 ) => string;
 
 export { normalizeColor };
