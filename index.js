@@ -1,4 +1,5 @@
 "use strict";
+'use client';
 
 exports.__esModule = true;
 var _components = require("./components");
