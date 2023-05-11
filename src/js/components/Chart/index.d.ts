@@ -67,6 +67,7 @@ export interface ChartProps {
           | 'xlarge'
           | 'fill'
           | 'full'
+          | 'auto'
           | string;
         width?:
           | 'xxsmall'
@@ -77,6 +78,7 @@ export interface ChartProps {
           | 'xlarge'
           | 'fill'
           | 'full'
+          | 'auto'
           | string;
       }
     | string;

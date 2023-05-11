@@ -3009,7 +3009,7 @@ exports[`Chart vertical 1`] = `
     class="c1"
     height="192"
     preserveAspectRatio="none"
-    viewBox="-12 -12 216 408"
+    viewBox="-12 -12 408 216"
     width="384"
   >
     0
@@ -3027,7 +3027,7 @@ exports[`Chart vertical 1`] = `
           sixty
         </title>
         <path
-          d="M 0,3.1999999999999886 L 23040,3.1999999999999886"
+          d="M 0,192 L 384,192"
         />
       </g>
       <g
@@ -3046,7 +3046,7 @@ exports[`Chart vertical 1`] = `
     class="c1"
     height="192"
     preserveAspectRatio="none"
-    viewBox="-12 -12 216 408"
+    viewBox="-12 -12 408 216"
     width="384"
   >
     0
@@ -3061,7 +3061,7 @@ exports[`Chart vertical 1`] = `
         fill="none"
       >
         <path
-          d="M 23040,3.1999999999999886 L 0,0"
+          d="M 384,192 L 0,0"
         />
       </g>
     </g>
@@ -3070,7 +3070,7 @@ exports[`Chart vertical 1`] = `
     class="c1"
     height="192"
     preserveAspectRatio="none"
-    viewBox="-12 -12 216 408"
+    viewBox="-12 -12 408 216"
     width="384"
   >
     0
@@ -3083,7 +3083,7 @@ exports[`Chart vertical 1`] = `
     >
       <g>
         <path
-          d="M 23040,3.1999999999999886 L 0,0 L 0,0 L 0,3.1999999999999886 Z"
+          d="M 384,192 L 0,0 L 0,0 L 0,192 Z"
         />
       </g>
     </g>
@@ -3092,7 +3092,7 @@ exports[`Chart vertical 1`] = `
     class="c1"
     height="192"
     preserveAspectRatio="none"
-    viewBox="-12 -12 216 408"
+    viewBox="-12 -12 408 216"
     width="384"
   >
     0
@@ -3109,7 +3109,7 @@ exports[`Chart vertical 1`] = `
           sixty
         </title>
         <path
-          d="M 23028 -8.800000000000011 L 23052 -8.800000000000011 L 23052 15.199999999999989 L 23028 15.199999999999989 Z"
+          d="M 372 180 L 396 180 L 396 204 L 372 204 Z"
         />
       </g>
       <g
