@@ -11,6 +11,7 @@ export var Pattern = function Pattern() {
       gap: "medium"
     }, ['squares', 'circles', 'stripesHorizontal', 'stripesVertical', 'stripesDiagonalDown', 'stripesDiagonalUp'].map(function (pattern) {
       return /*#__PURE__*/React.createElement(Chart, {
+        key: pattern,
         id: "area-" + pattern,
         type: "area",
         pattern: pattern,

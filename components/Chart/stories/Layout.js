@@ -23,7 +23,8 @@ var Layout = function Layout() {
       level: 2
     }, "full"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "medium",
-      border: true
+      border: true,
+      alignSelf: "stretch"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
       type: type,
       values: values,
@@ -35,7 +36,8 @@ var Layout = function Layout() {
       level: 2
     }, "auto, gap"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "medium",
-      border: true
+      border: true,
+      alignSelf: "start"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
       type: type,
       values: values,
@@ -48,7 +50,8 @@ var Layout = function Layout() {
       level: 2
     }, "default"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "medium",
-      border: true
+      borde: true,
+      alignSelf: "start"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
       type: type,
       values: values,

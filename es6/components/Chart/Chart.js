@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"],
+var _excluded = ["a11yTitle", "bounds", "color", "dash", "direction", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"],
   _excluded2 = ["color", "label", "onHover", "opacity", "thickness", "value"],
   _excluded3 = ["color", "label", "onHover", "opacity", "thickness", "value"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -21,14 +21,15 @@ var defaultSize = {
 var defaultValues = [];
 var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
-    propsBounds = _ref.bounds,
+    boundsProp = _ref.bounds,
     color = _ref.color,
     dash = _ref.dash,
+    direction = _ref.direction,
     gap = _ref.gap,
     id = _ref.id,
     onClick = _ref.onClick,
     onHover = _ref.onHover,
-    propsOpacity = _ref.opacity,
+    opacityProp = _ref.opacity,
     _ref$overflow = _ref.overflow,
     overflow = _ref$overflow === void 0 ? false : _ref$overflow,
     pad = _ref.pad,
@@ -36,50 +37,62 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     point = _ref.point,
     round = _ref.round,
     _ref$size = _ref.size,
-    propsSize = _ref$size === void 0 ? defaultSize : _ref$size,
+    sizeProp = _ref$size === void 0 ? defaultSize : _ref$size,
     _ref$thickness = _ref.thickness,
     thickness = _ref$thickness === void 0 ? 'medium' : _ref$thickness,
     _ref$type = _ref.type,
     type = _ref$type === void 0 ? 'bar' : _ref$type,
     _ref$values = _ref.values,
-    propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
+    valuesProp = _ref$values === void 0 ? defaultValues : _ref$values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerRef = useForwardedRef(ref);
   var theme = useContext(ThemeContext) || defaultProps.theme;
-
-  // normalize variables
-
   var values = useMemo(function () {
-    return normalizeValues(propsValues);
-  }, [propsValues]);
+    return normalizeValues(valuesProp);
+  }, [valuesProp]);
+  var vertical = useMemo(function () {
+    return direction === 'vertical';
+  }, [direction]);
+
+  // bounds is { x: { min, max }, y: { min, max } }, accounting for direction
   var bounds = useMemo(function () {
-    return normalizeBounds(propsBounds, values);
-  }, [propsBounds, values]);
+    return normalizeBounds(boundsProp, values, direction);
+  }, [direction, boundsProp, values]);
   var strokeWidth = useMemo(function () {
     return parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   }, [theme.global.edgeSize, thickness]);
+
+  // inset is { top, left, bottom, right }
   var inset = useMemo(function () {
-    var result = [0, 0, 0, 0];
+    var result = {
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0
+    };
     if (pad) {
       if (pad.horizontal) {
         var padSize = parseMetricToNum(theme.global.edgeSize[pad.horizontal] || pad.horizontal);
-        result[0] = padSize;
-        result[2] = padSize;
+        result.left = padSize;
+        result.right = padSize;
       }
       if (pad.vertical) {
         var _padSize = parseMetricToNum(theme.global.edgeSize[pad.vertical] || pad.vertical);
-        result[1] = _padSize;
-        result[3] = _padSize;
+        result.top = _padSize;
+        result.bottom = _padSize;
       }
       if (pad.start) {
-        result[0] = parseMetricToNum(theme.global.edgeSize[pad.start] || pad.start);
+        result.left = parseMetricToNum(theme.global.edgeSize[pad.start] || pad.start);
       }
       if (pad.end) {
-        result[2] = parseMetricToNum(theme.global.edgeSize[pad.end] || pad.end);
+        result.right = parseMetricToNum(theme.global.edgeSize[pad.end] || pad.end);
       }
       if (typeof pad === 'string') {
         var _padSize2 = parseMetricToNum(theme.global.edgeSize[pad]);
-        result = [_padSize2, _padSize2, _padSize2, _padSize2];
+        result.top = _padSize2;
+        result.left = _padSize2;
+        result.bottom = _padSize2;
+        result.right = _padSize2;
       }
     }
     return result;
@@ -98,36 +111,51 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     containerSize = _useState[0],
     setContainerSize = _useState[1];
   var needContainerSize = useMemo(function () {
-    return propsSize && (propsSize === 'full' || propsSize === 'fill' || propsSize.height === 'full' || propsSize.height === 'fill' || propsSize.width === 'full' || propsSize.width === 'fill');
-  }, [propsSize]);
+    return sizeProp && (sizeProp === 'full' || sizeProp === 'fill' || sizeProp.height === 'full' || sizeProp.height === 'fill' || sizeProp.width === 'full' || sizeProp.width === 'fill');
+  }, [sizeProp]);
+
+  // size is { width, height }
   var size = useMemo(function () {
     var gapWidth = gap ? parseMetricToNum(theme.global.edgeSize[gap] || gap) : strokeWidth;
 
-    // autoWidth is how wide we'd pefer
-    var autoWidth = strokeWidth * values.length + (values.length - 1) * gapWidth;
-    var sizeWidth = typeof propsSize === 'string' ? propsSize : propsSize.width || defaultSize.width;
+    // autoSize is how wide or tall we'd pefer based on the number of values
+    var autoSize = strokeWidth * values.length + (values.length - 1) * gapWidth;
+    var sizeWidth = typeof sizeProp === 'string' ? sizeProp : sizeProp.width || defaultSize.width;
     var width;
     if (sizeWidth === 'full' || sizeWidth === 'fill') {
       width = containerSize[0];
     } else if (sizeWidth === 'auto') {
-      width = autoWidth;
+      width = autoSize;
     } else {
       width = parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
     }
-    var sizeHeight = typeof propsSize === 'string' ? propsSize : propsSize.height || defaultSize.height;
+    var sizeHeight = typeof sizeProp === 'string' ? sizeProp : sizeProp.height || defaultSize.height;
     var height;
     if (sizeHeight === 'full' || sizeHeight === 'fill') {
       height = containerSize[1];
+    } else if (sizeHeight === 'auto') {
+      height = autoSize;
     } else {
       height = parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
     }
-    return [width, height];
-  }, [containerSize, gap, propsSize, strokeWidth, theme.global.edgeSize, theme.global.size, values]);
+    return {
+      width: width,
+      height: height
+    };
+  }, [containerSize, gap, sizeProp, strokeWidth, theme.global.edgeSize, theme.global.size, values]);
+
+  // scale is { x, y }
   var scale = useMemo(function () {
-    return [(size[0] - (inset[0] + inset[2])) / (bounds[0][1] - bounds[0][0]), (size[1] - (inset[1] + inset[3])) / (bounds[1][1] - bounds[1][0])];
+    return {
+      x: (size.width - (inset.left + inset.right)) / (bounds.x.max - bounds.x.min),
+      y: (size.height - (inset.top + inset.bottom)) / (bounds.y.max - bounds.y.min)
+    };
   }, [bounds, inset, size]);
-  var viewBounds = useMemo(function () {
-    return overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
+  var viewBoxBounds = useMemo(function () {
+    if (overflow) {
+      return [0, 0, size.width, size.height];
+    }
+    return [-(strokeWidth / 2), -(strokeWidth / 2), size.width + strokeWidth, size.height + strokeWidth];
   }, [overflow, size, strokeWidth]);
 
   // set container size when we get ref or when size changes
@@ -162,10 +190,19 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     return undefined;
   }, [containerRef, needContainerSize]);
 
+  // rendering helpers, to make rendering code easier to understand
+
+  var valueCoords = function valueCoords(x, y) {
+    return vertical ? [y, x] : [x, y];
+  };
+
   // Converts values to drawing coordinates.
   // Takes into account the bounds, any inset, and the scale.
   var valueToCoordinate = function valueToCoordinate(xValue, yValue) {
-    return [(xValue - bounds[0][0]) * scale[0] + inset[0], size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1])];
+    var y = (yValue - bounds.y.min) * scale.y + inset.top;
+    return [(xValue - bounds.x.min) * scale.x + inset.left,
+    // vertical grows y top down, horizontal grows y bottom up
+    vertical ? y : size.height - y];
   };
   var useGradient = color && Array.isArray(color);
   var patternId;
@@ -188,9 +225,13 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         valueRest = _objectWithoutPropertiesLoose(valueArg, _excluded2);
       var key = "p-" + index;
       // Math.min/max are to handle negative values
-      var bottom = value.length === 2 ? Math.min(Math.max(0, bounds[1][0]), value[1]) : Math.min(value[1], value[2]);
-      var top = value.length === 2 ? Math.max(Math.min(0, bounds[1][1]), value[1]) : Math.max(value[1], value[2]);
-      var d = "M " + valueToCoordinate(value[0], bottom).join(',') + (" L " + valueToCoordinate(value[0], top).join(','));
+      var _valueCoords = valueCoords(value[0], value.length === 2 ? Math.min(Math.max(0, vertical ? bounds.x.min : bounds.y.min), value[1]) : Math.min(value[1], value[2])),
+        startX = _valueCoords[0],
+        startY = _valueCoords[1];
+      var _valueCoords2 = valueCoords(value[0], value.length === 2 ? Math.max(Math.min(0, vertical ? bounds.x.max : bounds.y.max), value[1]) : Math.max(value[1], value[2])),
+        endX = _valueCoords2[0],
+        endY = _valueCoords2[1];
+      var d = "M " + valueToCoordinate(startX, startY).join(',') + (" L " + valueToCoordinate(endX, endY).join(','));
       var hoverProps;
       if (valueOnHover) {
         hoverProps = {
@@ -229,9 +270,15 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       return value[1] !== undefined;
     }).forEach(function (_ref4) {
       var value = _ref4.value;
-      d += (d ? ' L' : 'M') + " " + valueToCoordinate(value[0], value[1]).join(',');
+      var _valueCoords3 = valueCoords(value[0], value[1]),
+        x = _valueCoords3[0],
+        y = _valueCoords3[1];
+      d += (d ? ' L' : 'M') + " " + valueToCoordinate(x, y).join(',');
       if (value[2] !== undefined) {
-        d2 += (d2 ? ' L' : 'M') + " " + valueToCoordinate(value[0], value[2]).join(',');
+        var _valueCoords4 = valueCoords(value[0], value[2]),
+          x2 = _valueCoords4[0],
+          y2 = _valueCoords4[1];
+        d2 += (d2 ? ' L' : 'M') + " " + valueToCoordinate(x2, y2).join(',');
       }
     });
     var hoverProps;
@@ -270,16 +317,24 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       return value[1] !== undefined;
     }).forEach(function (_ref6, index) {
       var value = _ref6.value;
-      d += (!index ? 'M' : ' L') + " " + valueToCoordinate(value[0], value[value.length === 2 ? 1 : 2]).join(',');
+      var _valueCoords5 = valueCoords(value[0],
+        // when a range, second value is on top
+        value[value.length === 2 ? 1 : 2]),
+        x = _valueCoords5[0],
+        y = _valueCoords5[1];
+      d += (!index ? 'M' : ' L') + " " + valueToCoordinate(x, y).join(',');
     });
     (values || []).filter(function (_ref7) {
       var value = _ref7.value;
       return value[1] !== undefined;
     }).reverse().forEach(function (_ref8) {
       var value = _ref8.value;
-      d += " L " + valueToCoordinate(value[0],
-      // Math.max() is to account for value[1] being negative
-      value.length === 2 ? Math.max(0, bounds[1][0]) : value[1]).join(',');
+      var _valueCoords6 = valueCoords(value[0],
+        // Math.max() is to account for value[1] being negative
+        value.length === 2 ? Math.max(0, vertical ? bounds.x.min : bounds.y.min) : value[1]),
+        x = _valueCoords6[0],
+        y = _valueCoords6[1];
+      d += " L " + valueToCoordinate(x, y).join(',');
     });
     if (d.length > 0) {
       d += ' Z';
@@ -340,7 +395,10 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       var width = valueThickness ? parseMetricToNum(theme.global.edgeSize[valueThickness] || valueThickness) : strokeWidth;
       var renderPoint = function renderPoint(valueX, valueY) {
         var props = _extends({}, hoverProps, clickProps, valueRest);
-        var _valueToCoordinate = valueToCoordinate(valueX, valueY),
+        var _valueCoords7 = valueCoords(valueX, valueY),
+          x = _valueCoords7[0],
+          y = _valueCoords7[1];
+        var _valueToCoordinate = valueToCoordinate(x, y),
           cx = _valueToCoordinate[0],
           cy = _valueToCoordinate[1];
         var off = width / 2;
@@ -379,16 +437,16 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   } else if (type === 'point') {
     contents = renderPoints();
   }
-  var viewBox = viewBounds.join(' ');
+  var viewBox = viewBoxBounds.join(' ');
   var colorName;
   if (!useGradient) {
     if (color && color.color) colorName = color.color;else if (color) colorName = color;else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
   }
   var opacity;
-  if (propsOpacity === true) {
+  if (opacityProp === true) {
     opacity = theme.global.opacity.medium;
-  } else if (propsOpacity) {
-    opacity = theme.global.opacity[propsOpacity] ? theme.global.opacity[propsOpacity] : propsOpacity;
+  } else if (opacityProp) {
+    opacity = theme.global.opacity[opacityProp] ? theme.global.opacity[opacityProp] : opacityProp;
   } else if (color && color.opacity) {
     opacity = theme.global.opacity[color.opacity] ? theme.global.opacity[color.opacity] : color.opacity;
   } else opacity = undefined;
@@ -410,7 +468,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   }, contents);
   var defs = [];
   var gradientRect;
-  if (useGradient && size[1]) {
+  if (useGradient && size.height) {
     var uniqueGradientId = color.map(function (element) {
       return element.color;
     }).join('-');
@@ -430,9 +488,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         gradientColor = _ref10.color;
       return /*#__PURE__*/React.createElement("stop", {
         key: value,
-        offset:
-        // TODO:
-        (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],
+        offset: (size.height - (value - bounds.y.min) * scale.y) / size.height,
         stopColor: normalizeColor(gradientColor, theme)
       });
     })));
@@ -441,10 +497,10 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       id: maskId
     }, drawing));
     gradientRect = /*#__PURE__*/React.createElement("rect", {
-      x: viewBounds[0],
-      y: viewBounds[1],
-      width: viewBounds[2],
-      height: viewBounds[3],
+      x: viewBoxBounds[0],
+      y: viewBoxBounds[1],
+      width: viewBoxBounds[2],
+      height: viewBoxBounds[3],
       fill: "url(#" + gradientId + ")",
       mask: "url(#" + maskId + ")"
     });
@@ -509,8 +565,8 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     "aria-label": a11yTitle,
     viewBox: viewBox,
     preserveAspectRatio: "none",
-    width: size === 'full' ? '100%' : size[0],
-    height: size === 'full' ? '100%' : size[1],
+    width: size === 'full' ? '100%' : size.width,
+    height: size === 'full' ? '100%' : size.height,
     typeProp: type // prevent adding to DOM
   }, rest), defs.length && /*#__PURE__*/React.createElement("defs", null, defs), useGradient ? gradientRect : drawing);
 });

@@ -22,6 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
     }))]),
     id: _propTypes["default"].string,
     dash: _propTypes["default"].bool,
+    direction: _propTypes["default"].oneOf(['horizontal', 'vertical']),
     gap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
     onClick: _propTypes["default"].func,
     onHover: _propTypes["default"].func,
