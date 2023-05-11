@@ -605,7 +605,6 @@ const Chart = React.forwardRef(
               <stop
                 key={value}
                 offset={
-                  // TODO:
                   (size.height - (value - bounds.y.min) * scale.y) / size.height
                 }
                 stopColor={normalizeColor(gradientColor, theme)}
