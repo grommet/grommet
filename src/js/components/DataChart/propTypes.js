@@ -169,7 +169,16 @@ if (process.env.NODE_ENV !== 'production') {
     placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     series: PropTypes.oneOfType([seriesType, PropTypes.arrayOf(seriesType)]),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['fill']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'fill',
+        'full',
+      ]),
       PropTypes.shape({
         height: PropTypes.oneOfType([
           PropTypes.oneOf([

@@ -67,7 +67,7 @@ const YAxis = forwardRef(
         return {
           basis: thickness || '1px',
           overflow: 'visible',
-          align: 'center',
+          justify: 'center',
         };
       return {};
     }, [padProp, theme, thickness, values]);
@@ -85,7 +85,6 @@ const YAxis = forwardRef(
               // eslint-disable-next-line react/no-array-index-key
               key={i}
               align="end"
-              justify="center"
               {...labelContainerProps}
             >
               {content}
