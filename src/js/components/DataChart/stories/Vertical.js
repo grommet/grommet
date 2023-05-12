@@ -17,7 +17,7 @@ export const Vertical = () => (
     <DataChart
       data={data}
       series={[{ property: 'percent', suffix: '%' }, {}]}
-      // direction="vertical"
+      direction="vertical"
       size="medium"
       axis={{ x: { granularity: 'fine' }, y: { granularity: 'fine' }}}
       guide={{ x: { granularity: 'fine' }, y: { granularity: 'fine' }}}

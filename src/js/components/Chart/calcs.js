@@ -184,7 +184,7 @@ export const calcs = (values = [], options = {}) => {
     yAxis.push(round(y, 2));
     y -= yStepInterval;
   }
-  // if (vertical) yAxis.reverse();
+  if (vertical) yAxis.reverse();
 
   const xAxis = [];
   let x = minX;
