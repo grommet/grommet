@@ -16,7 +16,10 @@ export interface ChartProps {
   animate?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  bounds?: number[][];
+  // caller must align with direction
+  bounds?:
+    | { x: { min: number; max: number }; y: { min: number; max: number } }
+    | number[][];
   color?:
     | ColorType
     | { color: ColorType; value: number | number[] }[]
@@ -105,12 +108,15 @@ export interface ChartExtendedProps
 
 declare const Chart: React.FC<ChartExtendedProps>;
 
-type Bounds = [[number, number], [number, number]] | [[], []];
+type Bounds =
+  | { x: { min: number; max: number }; y: { min: number; max: number } }
+  | [[number, number], [number, number]]
+  | [[], []];
 
 interface CalcsResult {
-  axis: [number[], number[]];
+  axis: { x: number[]; y: number[] } | [number[], number[]];
   bounds: Bounds;
-  dimensions: [number, number];
+  dimensions: { width: number; height: number } | [number, number];
   pad: string;
   thickness: string;
 }

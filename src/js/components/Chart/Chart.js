@@ -34,7 +34,7 @@ const Chart = React.forwardRef(
       pattern,
       point,
       round,
-      size: sizeProp = defaultSize,
+      size: sizeProp,
       thickness = 'medium',
       type = 'bar',
       values: valuesProp = defaultValues,
@@ -49,7 +49,7 @@ const Chart = React.forwardRef(
 
     const vertical = useMemo(() => direction === 'vertical', [direction]);
 
-    // bounds is { x: { min, max }, y: { min, max } }, accounting for direction
+    // bounds is { x: { min, max }, y: { min, max } }
     const bounds = useMemo(
       () => normalizeBounds(boundsProp, values, direction),
       [direction, boundsProp, values],
@@ -136,7 +136,9 @@ const Chart = React.forwardRef(
       const sizeWidth =
         typeof sizeProp === 'string'
           ? sizeProp
-          : sizeProp.width || defaultSize.width;
+          : sizeProp?.width ||
+            (vertical && defaultSize.height) ||
+            defaultSize.width;
       let width;
       if (sizeWidth === 'full' || sizeWidth === 'fill') {
         [width] = containerSize;
@@ -149,7 +151,9 @@ const Chart = React.forwardRef(
       const sizeHeight =
         typeof sizeProp === 'string'
           ? sizeProp
-          : sizeProp.height || defaultSize.height;
+          : sizeProp?.height ||
+            (vertical && defaultSize.width) ||
+            defaultSize.height;
       let height;
       if (sizeHeight === 'full' || sizeHeight === 'fill') {
         [, height] = containerSize;
@@ -168,6 +172,7 @@ const Chart = React.forwardRef(
       theme.global.edgeSize,
       theme.global.size,
       values,
+      vertical,
     ]);
 
     // scale is { x, y }

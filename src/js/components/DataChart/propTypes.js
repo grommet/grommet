@@ -130,6 +130,7 @@ if (process.env.NODE_ENV !== 'production') {
     chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)]),
     data: PropTypes.arrayOf(PropTypes.shape({})),
     detail: PropTypes.bool,
+    direction: PropTypes.oneOf(['horizontal', 'vertical']),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',

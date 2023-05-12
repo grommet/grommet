@@ -94,3 +94,9 @@ export const createDateFormat = (firstValue, lastValue, full) => {
   }
   return dateFormat;
 };
+
+export const minimum = (value1, value2) =>
+  value1 !== undefined ? Math.min(value1, value2) : value2;
+
+export const maximum = (value1, value2) =>
+  value1 !== undefined ? Math.max(value1, value2) : value2;
