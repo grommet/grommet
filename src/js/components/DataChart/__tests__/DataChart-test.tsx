@@ -362,14 +362,14 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('vertical', () => {
+  test('horizontal', () => {
     const { container } = render(
       <Grommet>
         <DataChart
           data={data}
           series={['a', 'c']}
           chart={[{ property: ['a', 'c'], type: 'lines' }]}
-          direction="vertical"
+          direction="horizontal"
           axis
           guide
         />

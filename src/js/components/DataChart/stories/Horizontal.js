@@ -11,7 +11,7 @@ for (let i = 1; i < 8; i += 1) {
   });
 }
 
-export const Vertical = () => (
+export const Horizontal = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
   <Box align="center" justify="start" pad="large">
@@ -21,7 +21,7 @@ export const Vertical = () => (
         { property: 'label', render: (label) => label },
         { property: 'percent', suffix: '%' },
       ]}
-      direction="vertical"
+      direction="horizontal"
       size="medium"
       axis={{
         x: { granularity: 'fine' },
@@ -34,5 +34,5 @@ export const Vertical = () => (
 );
 
 export default {
-  title: 'Visualizations/DataChart/Vertical',
+  title: 'Visualizations/DataChart/Horizontal',
 };

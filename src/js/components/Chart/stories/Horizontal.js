@@ -2,13 +2,13 @@ import React from 'react';
 
 import { Box, Chart } from 'grommet';
 
-export const Vertical = () => (
+export const Horizontal = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={grommet}>
   <Box align="center" pad="large" gap="large">
     {['bar', 'line', 'area', 'point'].map((type) => (
       <Box key={type} direction="row" gap="medium">
-        {['horizontal', 'vertical'].map((direction) => (
+        {['vertical', 'horizontal'].map((direction) => (
           <Box key={direction} border>
             <Chart
               type={type}
@@ -29,5 +29,5 @@ export const Vertical = () => (
 );
 
 export default {
-  title: 'Visualizations/Chart/Vertical',
+  title: 'Visualizations/Chart/Horizontal',
 };

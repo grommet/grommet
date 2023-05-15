@@ -9,10 +9,10 @@ export const normalizeValues = (values) =>
 export const calcMinMax = (values = [], direction) => {
   // We default to 0 minimum as that's typically what's wanted.
   // If callers want a narrower band, they can pass bounds explicitly.
-  let min0 = 0;
-  let max0 = 1;
-  let min1 = 0;
-  let max1 = 1;
+  let min0 = (direction && 0) ?? undefined;
+  let max0 = (direction && 1) ?? undefined;
+  let min1 = (direction && 0) ?? undefined;
+  let max1 = (direction && 1) ?? undefined;
 
   values.forEach((value) => {
     const [val0, val1, val2] = value.value;
@@ -40,7 +40,7 @@ export const calcMinMax = (values = [], direction) => {
     else max1 = min1 + 1;
   }
 
-  return direction === 'vertical'
+  return direction === 'horizontal'
     ? {
         x: { min: min1, max: max1 },
         y: { min: min0, max: max0 },

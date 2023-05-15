@@ -21,7 +21,7 @@ const normalizeCoarseness = (coarseness, direction) => {
   else if (coarseness) result = { x: undefined, y: coarseness };
   else
     result =
-      direction === 'vertical'
+      direction === 'horizontal'
         ? { x: 5, y: undefined }
         : { x: undefined, y: 5 };
   return result;
@@ -114,7 +114,7 @@ export const calcBounds = (valuesArg, options = {}) => {
       maxY = alignMax(maxY, intervalY);
     }
 
-    if (options.direction === 'vertical')
+    if (options.direction === 'horizontal')
       [minX, maxX] = adjustToShowZero(minX, maxX, stepsX);
     else [minY, maxY] = adjustToShowZero(minY, maxY, stepsY);
 
@@ -138,7 +138,7 @@ export const calcBounds = (valuesArg, options = {}) => {
 // object structure. If options.direction is not present, the results are
 // delivered in [x, y] array structure, for backwards compatibility
 export const calcs = (values = [], options = {}) => {
-  const vertical = options.direction === 'vertical';
+  const horizontal = options.direction === 'horizontal';
 
   // the number of steps is one less than the number of labels
   const { x: stepsX, y: stepsY } = normalizeSteps(options.steps);
@@ -149,13 +149,13 @@ export const calcs = (values = [], options = {}) => {
 
   if (options.min !== undefined) {
     if (options.direction) {
-      if (vertical) bounds.x.min = options.min;
+      if (horizontal) bounds.x.min = options.min;
       else bounds.y.min = options.min;
     } else bounds[1][0] = options.min;
   }
   if (options.max !== undefined) {
     if (options.direction) {
-      if (vertical) bounds.y.max = options.max;
+      if (horizontal) bounds.y.max = options.max;
       else bounds.x.max = options.max;
     } else bounds[1][1] = options.max;
   }
@@ -184,7 +184,7 @@ export const calcs = (values = [], options = {}) => {
     yAxis.push(round(y, 2));
     y -= yStepInterval;
   }
-  if (vertical) yAxis.reverse();
+  if (horizontal) yAxis.reverse();
 
   const xAxis = [];
   let x = minX;

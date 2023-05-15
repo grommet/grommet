@@ -47,7 +47,7 @@ const Chart = React.forwardRef(
 
     const values = useMemo(() => normalizeValues(valuesProp), [valuesProp]);
 
-    const vertical = useMemo(() => direction === 'vertical', [direction]);
+    const horizontal = useMemo(() => direction === 'horizontal', [direction]);
 
     // bounds is { x: { min, max }, y: { min, max } }
     const bounds = useMemo(
@@ -137,7 +137,7 @@ const Chart = React.forwardRef(
         typeof sizeProp === 'string'
           ? sizeProp
           : sizeProp?.width ||
-            (vertical && defaultSize.height) ||
+            (horizontal && defaultSize.height) ||
             defaultSize.width;
       let width;
       if (sizeWidth === 'full' || sizeWidth === 'fill') {
@@ -152,7 +152,7 @@ const Chart = React.forwardRef(
         typeof sizeProp === 'string'
           ? sizeProp
           : sizeProp?.height ||
-            (vertical && defaultSize.width) ||
+            (horizontal && defaultSize.width) ||
             defaultSize.height;
       let height;
       if (sizeHeight === 'full' || sizeHeight === 'fill') {
@@ -167,12 +167,12 @@ const Chart = React.forwardRef(
     }, [
       containerSize,
       gap,
+      horizontal,
       sizeProp,
       strokeWidth,
       theme.global.edgeSize,
       theme.global.size,
       values,
-      vertical,
     ]);
 
     // scale is { x, y }
@@ -236,7 +236,7 @@ const Chart = React.forwardRef(
 
     // rendering helpers, to make rendering code easier to understand
 
-    const valueCoords = (x, y) => (vertical ? [y, x] : [x, y]);
+    const valueCoords = (x, y) => (horizontal ? [y, x] : [x, y]);
 
     // Converts values to drawing coordinates.
     // Takes into account the bounds, any inset, and the scale.
@@ -244,8 +244,8 @@ const Chart = React.forwardRef(
       const y = (yValue - bounds.y.min) * scale.y + inset.top;
       return [
         (xValue - bounds.x.min) * scale.x + inset.left,
-        // vertical grows y top down, horizontal grows y bottom up
-        vertical ? y : size.height - y,
+        // horizontal grows y top down, horizontal grows y bottom up
+        horizontal ? y : size.height - y,
       ];
     };
 
@@ -284,7 +284,7 @@ const Chart = React.forwardRef(
             value[0],
             value.length === 2
               ? Math.min(
-                  Math.max(0, vertical ? bounds.x.min : bounds.y.min),
+                  Math.max(0, horizontal ? bounds.x.min : bounds.y.min),
                   value[1],
                 )
               : Math.min(value[1], value[2]),
@@ -293,7 +293,7 @@ const Chart = React.forwardRef(
             value[0],
             value.length === 2
               ? Math.max(
-                  Math.min(0, vertical ? bounds.x.max : bounds.y.max),
+                  Math.min(0, horizontal ? bounds.x.max : bounds.y.max),
                   value[1],
                 )
               : Math.max(value[1], value[2]),
@@ -408,7 +408,7 @@ const Chart = React.forwardRef(
             value[0],
             // Math.max() is to account for value[1] being negative
             value.length === 2
-              ? Math.max(0, vertical ? bounds.x.min : bounds.y.min)
+              ? Math.max(0, horizontal ? bounds.x.min : bounds.y.min)
               : value[1],
           );
           d += ` L ${valueToCoordinate(x, y).join(',')}`;
