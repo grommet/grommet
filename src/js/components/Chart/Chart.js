@@ -20,23 +20,24 @@ const Chart = React.forwardRef(
   (
     {
       a11yTitle,
-      bounds: propsBounds,
+      bounds: boundsProp,
       color,
       dash,
+      direction,
       gap,
       id,
       onClick,
       onHover,
-      opacity: propsOpacity,
+      opacity: opacityProp,
       overflow = false,
       pad,
       pattern,
       point,
       round,
-      size: propsSize = defaultSize,
+      size: sizeProp = defaultSize,
       thickness = 'medium',
       type = 'bar',
-      values: propsValues = defaultValues,
+      values: valuesProp = defaultValues,
       ...rest
     },
     ref,
@@ -44,13 +45,14 @@ const Chart = React.forwardRef(
     const containerRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    // normalize variables
+    const values = useMemo(() => normalizeValues(valuesProp), [valuesProp]);
 
-    const values = useMemo(() => normalizeValues(propsValues), [propsValues]);
+    const vertical = useMemo(() => direction === 'vertical', [direction]);
 
+    // bounds is { x: { min, max }, y: { min, max } }, accounting for direction
     const bounds = useMemo(
-      () => normalizeBounds(propsBounds, values),
-      [propsBounds, values],
+      () => normalizeBounds(boundsProp, values, direction),
+      [direction, boundsProp, values],
     );
 
     const strokeWidth = useMemo(
@@ -58,36 +60,40 @@ const Chart = React.forwardRef(
       [theme.global.edgeSize, thickness],
     );
 
+    // inset is { top, left, bottom, right }
     const inset = useMemo(() => {
-      let result = [0, 0, 0, 0];
+      const result = { top: 0, left: 0, bottom: 0, right: 0 };
       if (pad) {
         if (pad.horizontal) {
           const padSize = parseMetricToNum(
             theme.global.edgeSize[pad.horizontal] || pad.horizontal,
           );
-          result[0] = padSize;
-          result[2] = padSize;
+          result.left = padSize;
+          result.right = padSize;
         }
         if (pad.vertical) {
           const padSize = parseMetricToNum(
             theme.global.edgeSize[pad.vertical] || pad.vertical,
           );
-          result[1] = padSize;
-          result[3] = padSize;
+          result.top = padSize;
+          result.bottom = padSize;
         }
         if (pad.start) {
-          result[0] = parseMetricToNum(
+          result.left = parseMetricToNum(
             theme.global.edgeSize[pad.start] || pad.start,
           );
         }
         if (pad.end) {
-          result[2] = parseMetricToNum(
+          result.right = parseMetricToNum(
             theme.global.edgeSize[pad.end] || pad.end,
           );
         }
         if (typeof pad === 'string') {
           const padSize = parseMetricToNum(theme.global.edgeSize[pad]);
-          result = [padSize, padSize, padSize, padSize];
+          result.top = padSize;
+          result.left = padSize;
+          result.bottom = padSize;
+          result.right = padSize;
         }
       }
       return result;
@@ -107,80 +113,87 @@ const Chart = React.forwardRef(
 
     const needContainerSize = useMemo(
       () =>
-        propsSize &&
-        (propsSize === 'full' ||
-          propsSize === 'fill' ||
-          propsSize.height === 'full' ||
-          propsSize.height === 'fill' ||
-          propsSize.width === 'full' ||
-          propsSize.width === 'fill'),
-      [propsSize],
+        sizeProp &&
+        (sizeProp === 'full' ||
+          sizeProp === 'fill' ||
+          sizeProp.height === 'full' ||
+          sizeProp.height === 'fill' ||
+          sizeProp.width === 'full' ||
+          sizeProp.width === 'fill'),
+      [sizeProp],
     );
 
+    // size is { width, height }
     const size = useMemo(() => {
       const gapWidth = gap
         ? parseMetricToNum(theme.global.edgeSize[gap] || gap)
         : strokeWidth;
 
-      // autoWidth is how wide we'd pefer
-      const autoWidth =
+      // autoSize is how wide or tall we'd pefer based on the number of values
+      const autoSize =
         strokeWidth * values.length + (values.length - 1) * gapWidth;
 
       const sizeWidth =
-        typeof propsSize === 'string'
-          ? propsSize
-          : propsSize.width || defaultSize.width;
+        typeof sizeProp === 'string'
+          ? sizeProp
+          : sizeProp.width || defaultSize.width;
       let width;
       if (sizeWidth === 'full' || sizeWidth === 'fill') {
         [width] = containerSize;
       } else if (sizeWidth === 'auto') {
-        width = autoWidth;
+        width = autoSize;
       } else {
         width = parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
       }
 
       const sizeHeight =
-        typeof propsSize === 'string'
-          ? propsSize
-          : propsSize.height || defaultSize.height;
+        typeof sizeProp === 'string'
+          ? sizeProp
+          : sizeProp.height || defaultSize.height;
       let height;
       if (sizeHeight === 'full' || sizeHeight === 'fill') {
         [, height] = containerSize;
+      } else if (sizeHeight === 'auto') {
+        height = autoSize;
       } else {
         height = parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
       }
 
-      return [width, height];
+      return { width, height };
     }, [
       containerSize,
       gap,
-      propsSize,
+      sizeProp,
       strokeWidth,
       theme.global.edgeSize,
       theme.global.size,
       values,
     ]);
 
+    // scale is { x, y }
     const scale = useMemo(
-      () => [
-        (size[0] - (inset[0] + inset[2])) / (bounds[0][1] - bounds[0][0]),
-        (size[1] - (inset[1] + inset[3])) / (bounds[1][1] - bounds[1][0]),
-      ],
+      () => ({
+        x:
+          (size.width - (inset.left + inset.right)) /
+          (bounds.x.max - bounds.x.min),
+        y:
+          (size.height - (inset.top + inset.bottom)) /
+          (bounds.y.max - bounds.y.min),
+      }),
       [bounds, inset, size],
     );
 
-    const viewBounds = useMemo(
-      () =>
-        overflow
-          ? [0, 0, size[0], size[1]]
-          : [
-              -(strokeWidth / 2),
-              -(strokeWidth / 2),
-              size[0] + strokeWidth,
-              size[1] + strokeWidth,
-            ],
-      [overflow, size, strokeWidth],
-    );
+    const viewBoxBounds = useMemo(() => {
+      if (overflow) {
+        return [0, 0, size.width, size.height];
+      }
+      return [
+        -(strokeWidth / 2),
+        -(strokeWidth / 2),
+        size.width + strokeWidth,
+        size.height + strokeWidth,
+      ];
+    }, [overflow, size, strokeWidth]);
 
     // set container size when we get ref or when size changes
     useLayoutEffect(() => {
@@ -216,12 +229,20 @@ const Chart = React.forwardRef(
       return undefined;
     }, [containerRef, needContainerSize]);
 
+    // rendering helpers, to make rendering code easier to understand
+
+    const valueCoords = (x, y) => (vertical ? [y, x] : [x, y]);
+
     // Converts values to drawing coordinates.
     // Takes into account the bounds, any inset, and the scale.
-    const valueToCoordinate = (xValue, yValue) => [
-      (xValue - bounds[0][0]) * scale[0] + inset[0],
-      size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1]),
-    ];
+    const valueToCoordinate = (xValue, yValue) => {
+      const y = (yValue - bounds.y.min) * scale.y + inset.top;
+      return [
+        (xValue - bounds.x.min) * scale.x + inset.left,
+        // vertical grows y top down, horizontal grows y bottom up
+        vertical ? y : size.height - y,
+      ];
+    };
 
     const useGradient = color && Array.isArray(color);
     let patternId;
@@ -254,17 +275,27 @@ const Chart = React.forwardRef(
 
           const key = `p-${index}`;
           // Math.min/max are to handle negative values
-          const bottom =
+          const [startX, startY] = valueCoords(
+            value[0],
             value.length === 2
-              ? Math.min(Math.max(0, bounds[1][0]), value[1])
-              : Math.min(value[1], value[2]);
-          const top =
+              ? Math.min(
+                  Math.max(0, vertical ? bounds.x.min : bounds.y.min),
+                  value[1],
+                )
+              : Math.min(value[1], value[2]),
+          );
+          const [endX, endY] = valueCoords(
+            value[0],
             value.length === 2
-              ? Math.max(Math.min(0, bounds[1][1]), value[1])
-              : Math.max(value[1], value[2]);
+              ? Math.max(
+                  Math.min(0, vertical ? bounds.x.max : bounds.y.max),
+                  value[1],
+                )
+              : Math.max(value[1], value[2]),
+          );
           const d =
-            `M ${valueToCoordinate(value[0], bottom).join(',')}` +
-            ` L ${valueToCoordinate(value[0], top).join(',')}`;
+            `M ${valueToCoordinate(startX, startY).join(',')}` +
+            ` L ${valueToCoordinate(endX, endY).join(',')}`;
 
           let hoverProps;
           if (valueOnHover) {
@@ -312,14 +343,11 @@ const Chart = React.forwardRef(
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
         .forEach(({ value }) => {
-          d += `${d ? ' L' : 'M'} ${valueToCoordinate(value[0], value[1]).join(
-            ',',
-          )}`;
+          const [x, y] = valueCoords(value[0], value[1]);
+          d += `${d ? ' L' : 'M'} ${valueToCoordinate(x, y).join(',')}`;
           if (value[2] !== undefined) {
-            d2 += `${d2 ? ' L' : 'M'} ${valueToCoordinate(
-              value[0],
-              value[2],
-            ).join(',')}`;
+            const [x2, y2] = valueCoords(value[0], value[2]);
+            d2 += `${d2 ? ' L' : 'M'} ${valueToCoordinate(x2, y2).join(',')}`;
           }
         });
 
@@ -360,20 +388,25 @@ const Chart = React.forwardRef(
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
         .forEach(({ value }, index) => {
-          d += `${!index ? 'M' : ' L'} ${valueToCoordinate(
+          const [x, y] = valueCoords(
             value[0],
+            // when a range, second value is on top
             value[value.length === 2 ? 1 : 2],
-          ).join(',')}`;
+          );
+          d += `${!index ? 'M' : ' L'} ${valueToCoordinate(x, y).join(',')}`;
         });
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
         .reverse()
         .forEach(({ value }) => {
-          d += ` L ${valueToCoordinate(
+          const [x, y] = valueCoords(
             value[0],
             // Math.max() is to account for value[1] being negative
-            value.length === 2 ? Math.max(0, bounds[1][0]) : value[1],
-          ).join(',')}`;
+            value.length === 2
+              ? Math.max(0, vertical ? bounds.x.min : bounds.y.min)
+              : value[1],
+          );
+          d += ` L ${valueToCoordinate(x, y).join(',')}`;
         });
       if (d.length > 0) {
         d += ' Z';
@@ -441,7 +474,8 @@ const Chart = React.forwardRef(
 
           const renderPoint = (valueX, valueY) => {
             const props = { ...hoverProps, ...clickProps, ...valueRest };
-            const [cx, cy] = valueToCoordinate(valueX, valueY);
+            const [x, y] = valueCoords(valueX, valueY);
+            const [cx, cy] = valueToCoordinate(x, y);
             const off = width / 2;
             if (point === 'circle' || (!point && round))
               return <circle cx={cx} cy={cy} r={off} {...props} />;
@@ -499,7 +533,7 @@ const Chart = React.forwardRef(
       contents = renderPoints();
     }
 
-    const viewBox = viewBounds.join(' ');
+    const viewBox = viewBoxBounds.join(' ');
     let colorName;
     if (!useGradient) {
       if (color && color.color) colorName = color.color;
@@ -508,12 +542,12 @@ const Chart = React.forwardRef(
     }
 
     let opacity;
-    if (propsOpacity === true) {
+    if (opacityProp === true) {
       opacity = theme.global.opacity.medium;
-    } else if (propsOpacity) {
-      opacity = theme.global.opacity[propsOpacity]
-        ? theme.global.opacity[propsOpacity]
-        : propsOpacity;
+    } else if (opacityProp) {
+      opacity = theme.global.opacity[opacityProp]
+        ? theme.global.opacity[opacityProp]
+        : opacityProp;
     } else if (color && color.opacity) {
       opacity = theme.global.opacity[color.opacity]
         ? theme.global.opacity[color.opacity]
@@ -551,7 +585,7 @@ const Chart = React.forwardRef(
 
     const defs = [];
     let gradientRect;
-    if (useGradient && size[1]) {
+    if (useGradient && size.height) {
       const uniqueGradientId = color.map((element) => element.color).join('-');
       const gradientId = `${uniqueGradientId}-${id}-gradient`;
       const maskId = `${uniqueGradientId}-${id}-mask`;
@@ -571,8 +605,7 @@ const Chart = React.forwardRef(
               <stop
                 key={value}
                 offset={
-                  // TODO:
-                  (size[1] - (value - bounds[1][0]) * scale[1]) / size[1]
+                  (size.height - (value - bounds.y.min) * scale.y) / size.height
                 }
                 stopColor={normalizeColor(gradientColor, theme)}
               />
@@ -587,10 +620,10 @@ const Chart = React.forwardRef(
 
       gradientRect = (
         <rect
-          x={viewBounds[0]}
-          y={viewBounds[1]}
-          width={viewBounds[2]}
-          height={viewBounds[3]}
+          x={viewBoxBounds[0]}
+          y={viewBoxBounds[1]}
+          width={viewBoxBounds[2]}
+          height={viewBoxBounds[3]}
           fill={`url(#${gradientId})`}
           mask={`url(#${maskId})`}
         />
@@ -663,8 +696,8 @@ const Chart = React.forwardRef(
         aria-label={a11yTitle}
         viewBox={viewBox}
         preserveAspectRatio="none"
-        width={size === 'full' ? '100%' : size[0]}
-        height={size === 'full' ? '100%' : size[1]}
+        width={size === 'full' ? '100%' : size.width}
+        height={size === 'full' ? '100%' : size.height}
         typeProp={type} // prevent adding to DOM
         {...rest}
       >
