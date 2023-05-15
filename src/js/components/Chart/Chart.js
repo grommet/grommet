@@ -23,7 +23,7 @@ const Chart = React.forwardRef(
       bounds: boundsProp,
       color,
       dash,
-      direction,
+      direction = 'vertical',
       gap,
       id,
       onClick,
@@ -590,7 +590,7 @@ const Chart = React.forwardRef(
 
     const defs = [];
     let gradientRect;
-    if (useGradient && size.height) {
+    if (useGradient && ((horizontal && size.width) || size.height)) {
       const uniqueGradientId = color.map((element) => element.color).join('-');
       const gradientId = `${uniqueGradientId}-${id}-gradient`;
       const maskId = `${uniqueGradientId}-${id}-mask`;
@@ -600,17 +600,22 @@ const Chart = React.forwardRef(
           id={gradientId}
           x1={0}
           y1={0}
-          x2={0}
-          y2={1}
+          x2={horizontal ? 1 : 0}
+          y2={horizontal ? 0 : 1}
         >
           {color
             .slice(0)
-            .sort((c1, c2) => c2.value - c1.value)
+            .sort((c1, c2) =>
+              horizontal ? c1.value - c2.value : c2.value - c1.value,
+            )
             .map(({ value, color: gradientColor }) => (
               <stop
                 key={value}
                 offset={
-                  (size.height - (value - bounds.y.min) * scale.y) / size.height
+                  horizontal
+                    ? ((value - bounds.x.min) * scale.x) / size.width
+                    : (size.height - (value - bounds.y.min) * scale.y) /
+                      size.height
                 }
                 stopColor={normalizeColor(gradientColor, theme)}
               />
