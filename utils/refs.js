@@ -7,7 +7,7 @@ var useForwardedRef = function useForwardedRef(ref) {
   var innerRef = (0, _react.useRef)(null);
   (0, _react.useImperativeHandle)(ref, function () {
     return innerRef.current;
-  });
+  }, [innerRef]);
   return innerRef;
 };
 exports.useForwardedRef = useForwardedRef;
