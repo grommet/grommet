@@ -6,27 +6,50 @@ export const normalizeValues = (values) =>
     return { value: [index, value] };
   });
 
-export const normalizeBounds = (bounds, values) => {
-  let result = bounds;
-  if (!result) {
-    result = [
-      [0, 1],
-      [0, 1],
-    ];
+export const normalizeBounds = (boundsProp, values, direction) => {
+  const vertical = direction === 'vertical';
+  let result;
+  if (boundsProp) {
+    if (vertical)
+      result = {
+        x: { min: boundsProp[1][0], max: boundsProp[1][1] },
+        y: { min: boundsProp[0][0], max: boundsProp[0][1] },
+      };
+    else
+      result = {
+        x: { min: boundsProp[0][0], max: boundsProp[0][1] },
+        y: { min: boundsProp[1][0], max: boundsProp[1][1] },
+      };
+  } else {
+    let min0 = 0;
+    let max0 = 1;
+    let min1 = 0;
+    let max1 = 1;
     (values || []).forEach((value) => {
       if (value.value[0] !== undefined) {
-        result[0][0] = Math.min(result[0][0], value.value[0]);
-        result[0][1] = Math.max(result[0][1], value.value[0]);
+        min0 = Math.min(min0, value.value[0]);
+        max0 = Math.max(max0, value.value[0]);
       }
       if (value.value[1] !== undefined) {
-        result[1][0] = Math.min(result[1][0], value.value[1]);
-        result[1][1] = Math.max(result[1][1], value.value[1]);
+        min1 = Math.min(min1, value.value[1]);
+        max1 = Math.max(max1, value.value[1]);
       }
       if (value.value[2] !== undefined) {
-        result[1][0] = Math.min(result[1][0], value.value[2]);
-        result[1][1] = Math.max(result[1][1], value.value[2]);
+        min1 = Math.min(min1, value.value[2]);
+        max1 = Math.max(max1, value.value[2]);
       }
     });
+    if (vertical) {
+      result = {
+        x: { min: min1, max: max1 },
+        y: { min: min0, max: max0 },
+      };
+    } else {
+      result = {
+        x: { min: min0, max: max0 },
+        y: { min: min1, max: max1 },
+      };
+    }
   }
   return result;
 };

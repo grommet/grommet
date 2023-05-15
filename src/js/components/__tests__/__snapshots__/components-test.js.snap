@@ -184,6 +184,7 @@ exports[`Components loads 1`] = `
       "bounds": [Function],
       "color": [Function],
       "dash": [Function],
+      "direction": [Function],
       "gap": [Function],
       "gridArea": [Function],
       "id": [Function],
