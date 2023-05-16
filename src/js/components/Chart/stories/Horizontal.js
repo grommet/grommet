@@ -35,7 +35,7 @@ export const Horizontal = () => (
       {['vertical', 'horizontal'].map((direction) => (
         <Box key={direction} border>
           <Chart
-            id="line"
+            id={direction}
             type="line"
             direction={direction}
             color={gradient}
