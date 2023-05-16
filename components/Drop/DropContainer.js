@@ -86,8 +86,9 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [onClickOutside, containerTarget, portalContext]);
   (0, _react.useEffect)(function () {
     var notifyAlign = function notifyAlign() {
-      var styleCurrent = dropRef.current.style;
-      var alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
+      var _dropRef$current;
+      var styleCurrent = dropRef == null ? void 0 : (_dropRef$current = dropRef.current) == null ? void 0 : _dropRef$current.style;
+      var alignControl = (styleCurrent == null ? void 0 : styleCurrent.top) !== '' ? 'top' : 'bottom';
       onAlign(alignControl);
     };
 
