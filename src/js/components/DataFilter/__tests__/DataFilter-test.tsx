@@ -7,6 +7,7 @@ import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 const data = [
   {
@@ -30,6 +31,8 @@ const data = [
 
 describe('DataFilter', () => {
   window.scrollTo = jest.fn();
+  beforeEach(createPortal);
+
   test('renders', () => {
     const { container } = render(
       <Grommet>
@@ -133,6 +136,57 @@ describe('DataFilter', () => {
 
     // snapshot on selected filter
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('select multiple options search', () => {
+    jest.useFakeTimers();
+
+    const { getByRole } = render(
+      <Grommet>
+        <Data
+          id="test-data"
+          data={data}
+          properties={{
+            'type.name': {
+              label: 'Type',
+            },
+          }}
+        >
+          <DataFilters drop>
+            <DataFilter
+              property="type.name"
+              options={[
+                'ZZ',
+                'YY',
+                'aa',
+                'bb',
+                'cc',
+                'dd',
+                'ee',
+                'ff',
+                'gg',
+                'hh',
+                'ii',
+                'jj',
+                'kk',
+              ]}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(getByRole('button', { name: 'Open filters' })).toBeTruthy();
+    fireEvent.click(getByRole('button', { name: 'Open filters' }));
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    // open SelectMultiple
+    fireEvent.click(getByRole('button', { name: /Open Drop/i }));
+    act(() => jest.advanceTimersByTime(200));
+
+    // snapshot on search box
+    expectPortal('test-data-type.name__drop').toMatchSnapshot();
   });
 
   test('range prop', () => {
