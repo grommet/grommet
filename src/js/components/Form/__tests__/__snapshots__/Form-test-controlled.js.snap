@@ -26,6 +26,26 @@ exports[`Form controlled controlled 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -39,6 +59,26 @@ exports[`Form controlled controlled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -213,10 +253,10 @@ exports[`Form controlled controlled 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -247,10 +287,10 @@ exports[`Form controlled controlled 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -308,6 +348,26 @@ exports[`Form controlled controlled Array of Form Fields 1`] = `
   justify-content: space-between;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -323,6 +383,26 @@ exports[`Form controlled controlled Array of Form Fields 1`] = `
   flex-direction: column;
 }
 
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -336,6 +416,26 @@ exports[`Form controlled controlled Array of Form Fields 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -617,13 +717,13 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -639,10 +739,10 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -659,13 +759,13 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -681,10 +781,10 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -701,13 +801,13 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -723,10 +823,10 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -758,13 +858,13 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -780,10 +880,10 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -800,13 +900,13 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -822,10 +922,10 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -842,13 +942,13 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -864,10 +964,10 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -926,6 +1026,26 @@ exports[`Form controlled controlled Array of Form Fields onValidate 1`] = `
   justify-content: space-between;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -941,6 +1061,26 @@ exports[`Form controlled controlled Array of Form Fields onValidate 1`] = `
   flex-direction: column;
 }
 
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -954,6 +1094,26 @@ exports[`Form controlled controlled Array of Form Fields onValidate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -1193,13 +1353,13 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 bNVuiM FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -1242,10 +1402,10 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
         </span>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -1262,13 +1422,13 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 bNVuiM FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -1311,10 +1471,10 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
         </span>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -1373,6 +1533,26 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
   justify-content: space-between;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1388,6 +1568,26 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
   flex-direction: column;
 }
 
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1401,6 +1601,26 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -1640,13 +1860,13 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -1662,10 +1882,10 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -1682,13 +1902,13 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 iQlkzn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 bNVuiM FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -1731,10 +1951,10 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
         </span>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+        class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+          class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -1786,6 +2006,26 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1799,6 +2039,26 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c2 {
@@ -1988,7 +2248,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <label
         class="StyledText-sc-1sadyjn-0 esfeug"
@@ -1997,7 +2257,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -2028,7 +2288,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <label
         class="StyledText-sc-1sadyjn-0 esfeug"
@@ -2037,7 +2297,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -2088,6 +2348,26 @@ exports[`Form controlled controlled input 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2101,6 +2381,26 @@ exports[`Form controlled controlled input 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -2275,10 +2575,10 @@ exports[`Form controlled controlled input 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -2309,10 +2609,10 @@ exports[`Form controlled controlled input 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -2363,6 +2663,26 @@ exports[`Form controlled controlled input lazy 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2376,6 +2696,26 @@ exports[`Form controlled controlled input lazy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -2550,10 +2890,10 @@ exports[`Form controlled controlled input lazy 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -2584,10 +2924,10 @@ exports[`Form controlled controlled input lazy 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -2638,6 +2978,26 @@ exports[`Form controlled controlled lazy 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2651,6 +3011,26 @@ exports[`Form controlled controlled lazy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -2825,10 +3205,10 @@ exports[`Form controlled controlled lazy 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -2859,10 +3239,10 @@ exports[`Form controlled controlled lazy 3`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -2913,6 +3293,26 @@ exports[`Form controlled controlled onChange touched 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2926,6 +3326,26 @@ exports[`Form controlled controlled onChange touched 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -3120,6 +3540,26 @@ exports[`Form controlled controlled onValidate 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3133,6 +3573,26 @@ exports[`Form controlled controlled onValidate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -3307,10 +3767,10 @@ exports[`Form controlled controlled onValidate 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 bNVuiM FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -3388,6 +3848,26 @@ exports[`Form controlled controlled onValidate custom error 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3401,6 +3881,26 @@ exports[`Form controlled controlled onValidate custom error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -3575,10 +4075,10 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 bNVuiM FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -3656,6 +4156,26 @@ exports[`Form controlled controlled onValidate custom info 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3669,6 +4189,26 @@ exports[`Form controlled controlled onValidate custom info 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -3843,10 +4383,10 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -3954,6 +4494,26 @@ exports[`Form controlled custom theme 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3969,6 +4529,26 @@ exports[`Form controlled custom theme 1`] = `
   flex-direction: column;
 }
 
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3981,6 +4561,26 @@ exports[`Form controlled custom theme 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -3998,6 +4598,26 @@ exports[`Form controlled custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c9 {
@@ -4186,6 +4806,26 @@ exports[`Form controlled dynamicly removed fields using blur validation
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4199,6 +4839,26 @@ exports[`Form controlled dynamicly removed fields using blur validation
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -4215,6 +4875,26 @@ exports[`Form controlled dynamicly removed fields using blur validation
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c7 {
@@ -4238,6 +4918,26 @@ exports[`Form controlled dynamicly removed fields using blur validation
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c10 {
@@ -4264,6 +4964,26 @@ exports[`Form controlled dynamicly removed fields using blur validation
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -4538,10 +5258,10 @@ exports[`Form controlled dynamicly removed fields using blur validation
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -4557,17 +5277,17 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 gWhYZB FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
+            class="StyledBox-sc-13pk1d4-0 gNXFHa StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
@@ -4575,7 +5295,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 fRMvyw StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="StyledBox-sc-13pk1d4-0 hQKfvd StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
             >
               .c0 {
   box-sizing: border-box;
@@ -4646,6 +5366,26 @@ exports[`Form controlled dynamicly removed fields using blur validation
   flex-direction: column;
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4659,6 +5399,26 @@ exports[`Form controlled dynamicly removed fields using blur validation
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -4778,10 +5538,10 @@ exports[`Form controlled dynamicly removed fields using blur validation
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 ahaGg FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
@@ -4797,17 +5557,17 @@ exports[`Form controlled dynamicly removed fields using blur validation
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 bRnlEa FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1 fdkHPz"
+        class="StyledBox-sc-13pk1d4-0 gWhYZB FormField__FormFieldContentBox-sc-m9hood-1 fdkHPz"
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fomtlz"
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
+            class="StyledBox-sc-13pk1d4-0 gNXFHa StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
@@ -4815,7 +5575,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 gPKPHc StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="StyledBox-sc-13pk1d4-0 hXbJwV StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
             />
           </div>
           <span>

@@ -17,6 +17,7 @@ import {
   overflowStyle,
   parseMetricToNum,
   responsiveBorderStyle,
+  unfocusStyle,
   widthStyle,
 } from '../../utils';
 
@@ -285,6 +286,9 @@ const StyledBox = styled.div`
     props.focus &&
     props.focusIndicator !== false &&
     focusStyle()}
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
   ${(props) => props.theme.box && props.theme.box.extend}
   ${(props) => props.kindProp && props.kindProp.extend}
 `;

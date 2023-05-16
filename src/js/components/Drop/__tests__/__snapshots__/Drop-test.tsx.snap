@@ -17,6 +17,26 @@ exports[`Drop align left left 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -66,7 +86,7 @@ exports[`Drop align left left 1`] = `
 `;
 
 exports[`Drop align left left 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -80,6 +100,23 @@ exports[`Drop align left left 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -110,6 +147,26 @@ exports[`Drop align left right top bottom 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -161,7 +218,7 @@ exports[`Drop align left right top bottom 1`] = `
 `;
 
 exports[`Drop align left right top bottom 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -175,6 +232,23 @@ exports[`Drop align left right top bottom 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -230,6 +304,26 @@ exports[`Drop align right left top top 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -279,7 +373,7 @@ exports[`Drop align right left top top 1`] = `
 `;
 
 exports[`Drop align right left top top 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -293,6 +387,23 @@ exports[`Drop align right left top top 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -323,6 +434,26 @@ exports[`Drop align right right 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -374,7 +505,7 @@ exports[`Drop align right right 1`] = `
 `;
 
 exports[`Drop align right right 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -388,6 +519,23 @@ exports[`Drop align right right 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -418,6 +566,26 @@ exports[`Drop align right right bottom top 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -469,7 +637,7 @@ exports[`Drop align right right bottom top 1`] = `
 `;
 
 exports[`Drop align right right bottom top 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -483,6 +651,23 @@ exports[`Drop align right right bottom top 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -513,6 +698,26 @@ exports[`Drop align right right bottom top 3`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -564,7 +769,7 @@ exports[`Drop align right right bottom top 3`] = `
 `;
 
 exports[`Drop align right right bottom top 4`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -578,6 +783,23 @@ exports[`Drop align right right bottom top 4`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -610,6 +832,26 @@ exports[`Drop background 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -692,6 +934,26 @@ exports[`Drop basic 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -741,7 +1003,7 @@ exports[`Drop basic 1`] = `
 `;
 
 exports[`Drop basic 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -755,6 +1017,23 @@ exports[`Drop basic 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -810,6 +1089,26 @@ exports[`Drop close 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -859,7 +1158,7 @@ exports[`Drop close 1`] = `
 `;
 
 exports[`Drop close 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -873,6 +1172,23 @@ exports[`Drop close 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -928,6 +1244,26 @@ exports[`Drop default elevation renders 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -977,7 +1313,7 @@ exports[`Drop default elevation renders 1`] = `
 `;
 
 exports[`Drop default elevation renders 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -991,6 +1327,23 @@ exports[`Drop default elevation renders 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -1044,6 +1397,26 @@ exports[`Drop elevation 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1127,6 +1500,26 @@ exports[`Drop invalid align 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -1176,7 +1569,7 @@ exports[`Drop invalid align 1`] = `
 `;
 
 exports[`Drop invalid align 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1190,6 +1583,23 @@ exports[`Drop invalid align 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -1245,6 +1655,26 @@ exports[`Drop invoke onClickOutside 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -1294,7 +1724,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 `;
 
 exports[`Drop invoke onClickOutside 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1308,6 +1738,23 @@ exports[`Drop invoke onClickOutside 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -1362,6 +1809,26 @@ exports[`Drop margin 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1451,6 +1918,26 @@ exports[`Drop no stretch 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -1500,7 +1987,7 @@ exports[`Drop no stretch 1`] = `
 `;
 
 exports[`Drop no stretch 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1514,6 +2001,23 @@ exports[`Drop no stretch 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -1566,6 +2070,26 @@ exports[`Drop plain 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1645,6 +2169,26 @@ exports[`Drop resize 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -1694,7 +2238,7 @@ exports[`Drop resize 1`] = `
 `;
 
 exports[`Drop resize 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1708,6 +2252,23 @@ exports[`Drop resize 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -1763,6 +2324,26 @@ exports[`Drop restrict focus 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -1813,7 +2394,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 kkoayD StyledDrop-sc-16s5rx8-0 jWOvQG"
   data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -1824,7 +2405,7 @@ exports[`Drop restrict focus 2`] = `
 `;
 
 exports[`Drop restrict focus 3`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1838,6 +2419,23 @@ exports[`Drop restrict focus 3`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -1900,6 +2498,26 @@ exports[`Drop round 1`] = `
   border-radius: 100%;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2012,6 +2630,26 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -2063,7 +2701,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"bottom","left":"right"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2077,6 +2715,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2108,6 +2763,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2161,7 +2836,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"bottom","right":"left"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2175,6 +2850,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2206,6 +2898,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2259,7 +2971,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","left":"left"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2273,6 +2985,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2304,6 +3033,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2358,7 +3107,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","left":"right"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2372,6 +3121,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2403,6 +3169,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2457,7 +3243,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","right":"left"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2471,6 +3257,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2502,6 +3305,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2556,7 +3379,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","right":"left"} 4`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2570,6 +3393,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2601,6 +3441,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2654,7 +3514,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"right":"right","bottom":"top"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2668,6 +3528,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2699,6 +3576,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2752,7 +3649,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","left":"left"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2766,6 +3663,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2797,6 +3711,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2851,7 +3785,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","left":"right"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2865,6 +3799,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2896,6 +3847,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -2950,7 +3921,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","right":"left"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2964,6 +3935,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -2995,6 +3983,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -3048,7 +4056,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","right":"right"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3062,6 +4070,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -3093,6 +4118,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -3146,7 +4191,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3160,6 +4205,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -3191,6 +4253,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -3244,7 +4326,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"top","left":"right"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3258,6 +4340,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -3289,6 +4388,26 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -3342,7 +4461,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"top","right":"left"} 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3356,6 +4475,23 @@ exports[`Drop should render correct margin depending on value of align:
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
@@ -3386,6 +4522,26 @@ exports[`Drop stretch = align 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -3437,7 +4593,7 @@ exports[`Drop stretch = align 1`] = `
 `;
 
 exports[`Drop stretch = align 2`] = `
-".gDwAlq {
+".kkoayD {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3451,6 +4607,23 @@ exports[`Drop stretch = align 2`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.kkoayD:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible) > circle,
+.kkoayD:focus:not(:focus-visible) > ellipse,
+.kkoayD:focus:not(:focus-visible) > line,
+.kkoayD:focus:not(:focus-visible) > path,
+.kkoayD:focus:not(:focus-visible) > polygon,
+.kkoayD:focus:not(:focus-visible) > polyline,
+.kkoayD:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.kkoayD:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 .jWOvQG {
   font-size: 18px;
@@ -3504,6 +4677,26 @@ exports[`Drop theme elevation renders 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -3585,6 +4778,26 @@ exports[`inline 1`] = `
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {

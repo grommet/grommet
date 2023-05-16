@@ -15,6 +15,26 @@ exports[`Collapsible onClick open default 1`] = `
   flex-direction: column;
 }
 
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c2 {
   -webkit-transition: max-height 200ms,opacity 200ms;
   transition: max-height 200ms,opacity 200ms;
@@ -60,7 +80,7 @@ exports[`Collapsible onClick open default 2`] = `
 >
   <div
     aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 kqmDKi Collapsible__AnimatedBox-sc-15kniua-0 cyvPwx"
+    class="StyledBox-sc-13pk1d4-0 jHLGDv Collapsible__AnimatedBox-sc-15kniua-0 cyvPwx"
     style="max-height: 0px;"
   >
     <span
@@ -85,6 +105,26 @@ exports[`Collapsible open 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c2 {
