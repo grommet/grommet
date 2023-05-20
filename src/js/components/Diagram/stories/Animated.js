@@ -8,7 +8,6 @@ import { data } from './data';
 const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   fromTarget,
   toTarget,
-  anchor: 'vertical',
   color: 'accent-4',
   thickness: 'xsmall',
   round: true,
@@ -63,9 +62,39 @@ export const Animated = () => {
   const connections = [];
 
   if (draw) {
-    connections.push(connection('4', '1', { anchor: 'vertical' }));
-    connections.push(connection('4', '2', { anchor: 'vertical' }));
-    connections.push(connection('4', '3', { anchor: 'vertical' }));
+    connections.push(
+      connection(
+        { target: '4', anchor: 'vertical' },
+        { target: '1', anchor: 'vertical' },
+        // '4', '1',
+        {
+          // anchor: 'vertical',
+          arrow: 'to',
+        },
+      ),
+    );
+    connections.push(
+      connection(
+        // '4', '2',
+        { target: '4', anchor: 'vertical' },
+        { target: '2', anchor: 'vertical' },
+        {
+          // anchor: 'vertical',
+          arrow: 'to',
+        },
+      ),
+    );
+    connections.push(
+      connection(
+        // '4', '3',
+        { target: '4', anchor: 'vertical' },
+        { target: '3', anchor: 'vertical' },
+        {
+          // anchor: 'vertical',
+          arrow: 'to',
+        },
+      ),
+    );
   }
 
   return (
@@ -84,7 +113,7 @@ export const Animated = () => {
                 margin={{ bottom: 'large', top: 'xlarge' }}
               />
             </Box>
-            <Box direction="row" gap="xlarge">
+            <Box direction="row" gap="xlarge" marginTop="10px">
               {[2, 3].map((id) => (
                 <Container key={id} node={data[id - 1]} index={id} />
               ))}

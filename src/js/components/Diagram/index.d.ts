@@ -17,10 +17,16 @@ export type DiagramAnimationType =
 
 export interface DiagramProps {
   animation?: DiagramAnimationType;
+  arrow?: {
+    fill?: boolean;
+    color?: ColorType;
+  };
   connections: {
     anchor?: DiagramConnectionAnchor;
     animation?: DiagramAnimationType;
     color?: ColorType;
+    decreaseLineLength?: Number;
+    elementPosition?: 'top' | 'bottom';
     fromTarget: string | object;
     label?: string;
     offset?: 'xsmall' | 'small' | 'medium' | 'large' | string;

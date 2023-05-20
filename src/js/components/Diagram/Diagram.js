@@ -5,6 +5,7 @@ import React, {
   useEffect,
   useRef,
   useState,
+  Fragment,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -66,6 +67,19 @@ const findTarget = (target) => {
   return target;
 };
 
+const openArrow = (color, index, name = 'openArrowEnd', orient = 'auto') => (
+  <marker
+    id={`${name}-${index}`}
+    markerWidth="7"
+    markerHeight="9"
+    refX="2"
+    refY="6"
+    orient={orient}
+  >
+    <path d="M1,4 L3,6 L1,8" stroke={color} fill="none" />
+  </marker>
+);
+
 const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -117,7 +131,32 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   const placeConnections = useCallback(() => {
     const containerRect = svgRef.current.getBoundingClientRect();
     const updatedConnectionPoints = connections.map(
-      ({ anchor, fromTarget, toTarget }) => {
+      ({
+        anchor: anchorProp,
+        fromTarget: fromTargetProp,
+        toTarget: toTargetProp,
+        arrow,
+      }) => {
+        const anchor = anchorProp;
+        let fromTarget = fromTargetProp;
+        let toTarget = toTargetProp;
+        let anchorFromTarget;
+        let anchorToTarget;
+
+        if (typeof fromTargetProp === 'object') {
+          fromTarget = fromTargetProp.target;
+          if (fromTargetProp.anchor) {
+            anchorFromTarget = fromTargetProp.anchor;
+          }
+        }
+
+        if (typeof toTargetProp === 'object') {
+          toTarget = toTargetProp.target;
+          if (toTargetProp.anchor) {
+            anchorToTarget = toTargetProp.anchor;
+          }
+        }
+
         let points;
         const fromElement = findTarget(fromTarget);
         const toElement = findTarget(toTarget);
@@ -140,6 +179,34 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             toRect.left - containerRect.left || 0,
             toRect.top - containerRect.top || 0,
           ];
+
+          if (anchorFromTarget === 'vertical' && !anchorProp) {
+            fromPoint[0] += fromRect.width / 2;
+            fromPoint[1] += fromRect.height;
+          } else if (anchorFromTarget === 'horizontal' && !anchorProp) {
+            fromPoint[1] += fromRect.height / 2;
+            fromPoint[0] += fromRect.width;
+          } else if (!anchorProp) {
+            fromPoint[0] += fromRect.width / 2;
+            fromPoint[1] += fromRect.height / 2;
+          }
+
+          if (anchorToTarget === 'vertical' && !anchorProp) {
+            toPoint[0] += toRect.width / 2;
+            if (fromRect.top > toRect.top) {
+              toPoint[1] += toRect.height;
+              if (arrow) toPoint[1] += toRect.height / 10;
+            } else if (arrow) {
+              toPoint[1] -= toRect.height / 10;
+            }
+          } else if (anchorToTarget === 'horizontal' && !anchorProp) {
+            toPoint[1] += toRect.height / 2;
+            toPoint[0] += toRect.width;
+          } else if (!anchorProp) {
+            toPoint[0] += toRect.width / 2;
+            toPoint[1] += toRect.height / 2;
+          }
+
           if (anchor === 'vertical') {
             fromPoint[0] += fromRect.width / 2;
             toPoint[0] += toRect.width / 2;
@@ -156,13 +223,14 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             } else {
               toPoint[0] += toRect.width;
             }
-          } else {
+          } else if (!anchorFromTarget && !anchorToTarget) {
             // center
             fromPoint[0] += fromRect.width / 2;
             fromPoint[1] += fromRect.height / 2;
             toPoint[0] += toRect.width / 2;
             toPoint[1] += toRect.height / 2;
           }
+
           points = [fromPoint, toPoint];
         }
 
@@ -185,6 +253,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
         {
           anchor,
           animation,
+          arrow,
           color,
           offset,
           round,
@@ -222,20 +291,49 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             colorName = colors[index % colors.length];
           }
 
+          let arrowMarker = null;
+
+          if (arrow === 'from') {
+            arrowMarker = openArrow(
+              normalizeColor(colorName, theme),
+              index,
+              'openArrowStart',
+              'auto-start-reverse',
+            );
+          } else if (arrow === 'to') {
+            arrowMarker = openArrow(normalizeColor(colorName, theme), index);
+          } else if (arrow) {
+            arrowMarker = (
+              <>
+                {openArrow(
+                  normalizeColor(colorName, theme),
+                  index,
+                  'openArrowStart',
+                  'auto-start-reverse',
+                )}
+                {openArrow(normalizeColor(colorName, theme), index)}
+              </>
+            );
+          }
+
           path = (
-            <path
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
-              // eslint-disable-next-line react/no-unknown-property
-              animation={animation}
-              {...cleanedRest}
-              stroke={normalizeColor(colorName, theme)}
-              strokeWidth={strokeWidth}
-              strokeLinecap={round ? 'round' : 'butt'}
-              strokeLinejoin={round ? 'round' : 'miter'}
-              fill="none"
-              d={d}
-            />
+            // eslint-disable-next-line react/no-array-index-key
+            <Fragment key={index}>
+              <path
+                // eslint-disable-next-line react/no-unknown-property
+                animation={animation}
+                {...cleanedRest}
+                stroke={normalizeColor(colorName, theme)}
+                strokeWidth={strokeWidth}
+                strokeLinecap={round ? 'round' : 'butt'}
+                strokeLinejoin={round ? 'round' : 'miter'}
+                fill="none"
+                d={d}
+                markerStart={`url("#openArrowStart-${index}")`}
+                markerEnd={`url("#openArrowEnd-${index}")`}
+              />
+              {arrow && arrowMarker && <defs>{arrowMarker}</defs>}
+            </Fragment>
           );
         }
         return path;
