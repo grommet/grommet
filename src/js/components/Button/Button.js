@@ -6,9 +6,10 @@ import React, {
   useMemo,
   useState,
   useCallback,
+  useEffect,
 } from 'react';
 
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import {
   backgroundAndTextColors,
   colorIsDark,
@@ -20,6 +21,8 @@ import {
 import { defaultProps } from '../../default-props';
 import { ButtonPropTypes } from './propTypes';
 
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Tip } from '../Tip';
 
@@ -28,6 +31,15 @@ import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { Skeleton, useSkeleton } from '../Skeleton';
+import {
+  EllipsisAnimation,
+  GrowCheckmark,
+  StyledBusyContents,
+} from './BusyAnimation';
+
+const RelativeBox = styled(Box)`
+  position: relative;
+`;
 
 // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
@@ -169,6 +181,7 @@ const Button = forwardRef(
       align = 'center',
       'aria-label': ariaLabel,
       badge: badgeProp,
+      busy,
       color, // munged to avoid styled-components putting it in the DOM
       children,
       disabled,
@@ -180,17 +193,20 @@ const Button = forwardRef(
       justify,
       kind: kindArg,
       label,
+      messages,
       onBlur,
       onClick: onClickProp,
       onFocus,
       onMouseOut,
       onMouseOver,
+      pad,
       plain,
       primary,
       reverse: reverseProp,
       secondary,
       selected,
       size: sizeProp,
+      success,
       tip,
       type = 'button',
       // can't alphabetize a11yTitle before tip is defined
@@ -203,6 +219,29 @@ const Button = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
+    const announce = useContext(AnnounceContext);
+    const { format } = useContext(MessageContext);
+
+    if (busy && success) {
+      console.warn('Button cannot have both busy and success set to true.');
+    }
+
+    useEffect(() => {
+      if (busy)
+        announce(
+          format({
+            id: 'button.busy',
+            messages,
+          }),
+        );
+      else if (success)
+        announce(
+          format({
+            id: 'button.success',
+            messages,
+          }),
+        );
+    }, [announce, busy, format, messages, success]);
 
     if ((icon || label) && children) {
       console.warn(
@@ -397,9 +436,47 @@ const Button = forwardRef(
     // (!kind && icon && !label) is necessary because for old button logic,
     // if button has icon but not label, it will be considered "plain",
     // so no border or background will be applied
-    const innerBadge = (!background && !border) || (!kind && icon && !label);
+    const innerBadge =
+      theme.button?.badge?.align !== 'container' &&
+      ((!background && !border) || (!kind && icon && !label));
     if (badgeProp && innerBadge) {
       contents = <Badge content={badgeProp}>{contents}</Badge>;
+    }
+
+    if (busy || success) {
+      // match what the label will use
+      let animationColor;
+      if (kind) {
+        if (!plain) {
+          animationColor =
+            (hover && getIconColor(themePaths.hover, theme)) ||
+            getIconColor(themePaths.base, theme, color, kind);
+        }
+      } else if (primary) {
+        animationColor =
+          theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+      }
+
+      contents = (
+        // position relative is necessary to have the animation
+        // display over the button content
+        <RelativeBox flex={false}>
+          {busy && <EllipsisAnimation />}
+          {success && (
+            <Box
+              style={{ position: 'absolute' }}
+              fill
+              alignContent="center"
+              justify="center"
+            >
+              <GrowCheckmark color={animationColor} aria-hidden />
+            </Box>
+          )}
+          <StyledBusyContents animating={busy || success}>
+            {contents}
+          </StyledBusyContents>
+        </RelativeBox>
+      );
     }
 
     let styledButtonResult;
@@ -412,6 +489,7 @@ const Button = forwardRef(
           active={active}
           align={align}
           aria-label={ariaLabel || a11yTitle}
+          busy={busy}
           badge={badgeProp}
           colorValue={color}
           disabled={disabled}
@@ -425,7 +503,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={onClick}
+          onClick={!busy && !success ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
@@ -436,9 +514,11 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
+          pad={pad}
           plain={plain || Children.count(children) > 0}
           primary={primary}
           sizeProp={size}
+          success={success}
           type={!href ? type : undefined}
         >
           {contents}
@@ -451,6 +531,7 @@ const Button = forwardRef(
           as={domTag}
           ref={ref}
           aria-label={ariaLabel || a11yTitle}
+          busy={busy}
           colorValue={color}
           active={active}
           selected={selected}
@@ -464,7 +545,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={onClick}
+          onClick={!busy && !success ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
@@ -475,7 +556,7 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          pad={!plain}
+          pad={pad || !plain}
           plain={
             typeof plain !== 'undefined'
               ? plain
@@ -483,6 +564,7 @@ const Button = forwardRef(
           }
           primary={primary}
           sizeProp={size}
+          success={success}
           type={!href ? type : undefined}
         >
           {contents}

@@ -65,12 +65,14 @@ const DropContainer = forwardRef(
       const onClickDocument = (event) => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
-        let node =
-          containerTarget === document.body
-            ? event.target
-            : event?.composedPath()[0];
+        let node = (event.composed && event.composedPath()[0]) || event.target;
 
-        while (clickedPortalId === null && node !== document) {
+        while (
+          clickedPortalId === null &&
+          node &&
+          node !== document &&
+          !(node instanceof ShadowRoot)
+        ) {
           const attr = node.getAttribute('data-g-portal-id');
           if (attr !== null) clickedPortalId = parseInt(attr, 10);
           node = node.parentNode;
@@ -96,8 +98,8 @@ const DropContainer = forwardRef(
 
     useEffect(() => {
       const notifyAlign = () => {
-        const styleCurrent = dropRef.current.style;
-        const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
+        const styleCurrent = dropRef?.current?.style;
+        const alignControl = styleCurrent?.top !== '' ? 'top' : 'bottom';
 
         onAlign(alignControl);
       };

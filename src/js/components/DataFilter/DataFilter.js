@@ -1,5 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import { DataContext } from '../../contexts/DataContext';
+import { DataForm } from '../Data/DataForm';
+import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
@@ -48,6 +50,7 @@ export const DataFilter = ({
     properties,
     unfilteredData,
   } = useContext(DataContext);
+  const { noForm } = useContext(FormContext);
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving
@@ -59,8 +62,10 @@ export const DataFilter = ({
 
     // generate options from all values for property
     const uniqueValues = generateOptions(unfilteredData || data, property);
+    // if less than two values, nothing to filter
+    if (uniqueValues.length < 2) return [undefined, undefined];
     // if any values aren't numeric, treat as options
-    if (uniqueValues.some((v) => v && typeof v !== 'number'))
+    if (uniqueValues.some((v) => v !== undefined && typeof v !== 'number'))
       return [uniqueValues, undefined];
     // all values are numeric, treat as range
     // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
@@ -97,39 +102,49 @@ export const DataFilter = ({
           round="small"
         />
       );
-    } else if (
-      options.length === 2 &&
-      options[1] === true &&
-      options[0] === false
-    ) {
-      // special case boolean properties
-      content = (
-        <CheckBoxGroup id={id} name={property} options={booleanOptions} />
-      );
-    } else if (options.length < 7) {
-      content = <CheckBoxGroup id={id} name={property} options={options} />;
-    } else {
-      content = (
-        <SelectMultiple
-          id={id}
-          name={property}
-          showSelectedInline
-          options={options}
-        />
-      );
+    } else if (options) {
+      if (options.length === 2 && options[1] === true && options[0] === false) {
+        // special case boolean properties
+        content = (
+          <CheckBoxGroup id={id} name={property} options={booleanOptions} />
+        );
+      } else if (options.length < 7) {
+        content = <CheckBoxGroup id={id} name={property} options={options} />;
+      } else {
+        content = (
+          <SelectMultiple
+            id={id}
+            name={property}
+            showSelectedInline
+            options={options}
+          />
+        );
+      }
     }
   }
 
-  return (
-    <FormField
-      htmlFor={id}
-      name={property}
-      label={properties?.[property]?.label || property}
-      {...rest}
-    >
-      {content}
-    </FormField>
-  );
+  if (!content) return null;
+
+  if (noForm)
+    // likely in Toolbar
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
+  else
+    content = (
+      <FormField
+        htmlFor={id}
+        name={property}
+        label={properties?.[property]?.label || property}
+        {...rest}
+      >
+        {content}
+      </FormField>
+    );
+
+  return content;
 };
 
 DataFilter.propTypes = DataFilterPropTypes;

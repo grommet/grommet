@@ -26,6 +26,7 @@ export interface ChartProps {
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
       };
   dash?: boolean;
+  direction?: 'horizontal' | 'vertical';
   gap?: GapType;
   onClick?: (...args: any[]) => any;
   onHover?: (...args: any[]) => any;
@@ -66,6 +67,7 @@ export interface ChartProps {
           | 'xlarge'
           | 'fill'
           | 'full'
+          | 'auto'
           | string;
         width?:
           | 'xxsmall'
@@ -76,6 +78,7 @@ export interface ChartProps {
           | 'xlarge'
           | 'fill'
           | 'full'
+          | 'auto'
           | string;
       }
     | string;

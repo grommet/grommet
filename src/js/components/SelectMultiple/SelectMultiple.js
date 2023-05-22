@@ -56,7 +56,7 @@ const SelectMultiple = forwardRef(
       defaultValue,
       disabled,
       disabledKey,
-      dropAlign,
+      dropAlign: dropAlignProp,
       dropHeight,
       dropProps,
       dropTarget,
@@ -104,6 +104,15 @@ const SelectMultiple = forwardRef(
     const selectBoxRef = useRef();
     const dropButtonRef = useForwardedRef(ref);
     const usingKeyboard = useKeyboard();
+
+    const dropAlign = useMemo(
+      () =>
+        dropAlignProp ||
+        (showSelectedInline
+          ? { top: 'top', right: 'right', left: 'left' }
+          : { top: 'bottom', left: 'left' }),
+      [dropAlignProp, showSelectedInline],
+    );
 
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
@@ -322,6 +331,20 @@ const SelectMultiple = forwardRef(
 
     const iconColor = getIconColor(theme);
 
+    const displaySelectIcon = SelectIcon && (
+      <Box
+        alignSelf="center"
+        margin={theme.select.icons.margin}
+        width={{ min: 'auto' }}
+      >
+        {isValidElement(SelectIcon) ? (
+          SelectIcon
+        ) : (
+          <SelectIcon color={iconColor} size={size} />
+        )}
+      </Box>
+    );
+
     const dropContent = (
       <SelectMultipleContainer
         allOptions={allOptions}
@@ -330,6 +353,7 @@ const SelectMultiple = forwardRef(
         dropHeight={dropHeight}
         emptySearchMessage={emptySearchMessage}
         help={help}
+        icon={displaySelectIcon}
         id={id}
         labelKey={labelKey}
         limit={limit}
@@ -378,20 +402,6 @@ const SelectMultiple = forwardRef(
       theme,
     };
 
-    const displaySelectIcon = SelectIcon && (
-      <Box
-        alignSelf="center"
-        margin={theme.select.icons.margin}
-        width={{ min: 'auto' }}
-      >
-        {isValidElement(SelectIcon) ? (
-          SelectIcon
-        ) : (
-          <SelectIcon color={iconColor} size={size} />
-        )}
-      </Box>
-    );
-
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         {showSelectedInline ? (
@@ -411,9 +421,7 @@ const SelectMultiple = forwardRef(
                 fill="horizontal"
                 alignSelf="start"
                 {...dropButtonProps}
-                dropAlign={
-                  dropAlign || { top: 'top', right: 'right', left: 'left' }
-                }
+                dropAlign={dropAlign}
                 dropTarget={dropTarget || selectBoxRef.current}
               >
                 {selectValue || displayLabelKey ? (
@@ -480,7 +488,7 @@ const SelectMultiple = forwardRef(
           <Box width={width}>
             <StyledSelectDropButton
               {...dropButtonProps}
-              dropAlign={dropAlign || { top: 'bottom', left: 'left' }}
+              dropAlign={dropAlign}
               dropTarget={dropTarget}
               alignSelf={alignSelf}
               tabIndex="0"

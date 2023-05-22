@@ -252,6 +252,19 @@ describe('Chart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('vertical', () => {
+    const { container } = render(
+      <Grommet>
+        <Chart direction="vertical" type="bar" values={VALUES} />
+        <Chart direction="vertical" type="line" values={VALUES} />
+        <Chart direction="vertical" type="area" values={VALUES} />
+        <Chart direction="vertical" type="point" values={VALUES} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('animate', () => {
     const { container } = render(
       <Grommet>
