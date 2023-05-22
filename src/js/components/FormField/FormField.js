@@ -27,6 +27,7 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
 import { isObject } from '../../utils/object';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const grommetInputNames = [
   'CheckBox',
@@ -199,9 +200,12 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
-    const validate = isObject(validateProp) ? {...validateProp} : validateProp;
+    const validate = isObject(validateProp)
+      ? { ...validateProp }
+      : validateProp;
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
+    const { format } = useContext(MessageContext);
 
     if (isObject(validate) && 'max' in validate && !('threshold' in validate))
       validate.threshold = defaultThreshold;
@@ -212,15 +216,28 @@ const FormField = forwardRef(
     const getMaxAndThresholdValidation = (value) => {
       const { max, threshold } = validate;
 
+      const getMessage = () => {
+        const charactersLeft = {
+          id: 'formField.characters.left',
+          values: { number: max - value.length },
+        };
+
+        const charactersOverLimit = (plural) => ({
+          // eslint-disable-next-line max-len
+          id: `formField.characters.overLimit.${
+            plural ? 'plural' : 'singular'
+          }`,
+          values: { number: value.length - max },
+        });
+
+        if (max - value.length >= 0) return format(charactersLeft);
+        return format(charactersOverLimit(value.length - max > 1));
+      };
+
       return value.length / max > (threshold ?? defaultThreshold)
         ? {
             status: max - value.length >= 0 ? 'info' : 'error',
-            message:
-              max - value.length >= 0
-                ? `${max - value.length} characters left`
-                : `${value.length - max} character${
-                    value.length - max > 1 ? 's' : ''
-                  } over limit`,
+            message: getMessage(),
           }
         : undefined;
     };

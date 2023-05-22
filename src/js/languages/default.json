@@ -74,6 +74,15 @@
     "invalid": "invalid",
     "required": "required"
   },
+  "formField": {
+    "characters": {
+      "left": "{number} characters left",
+      "overLimit": {
+        "singular": "{number} character over limit",
+        "plural": "{number} characters over limit"
+      }
+    }
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
