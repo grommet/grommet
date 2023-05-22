@@ -51,7 +51,7 @@ const Pagination = forwardRef(
 
     useEffect(() => {
       setActivePage(page);
-      const pageEvent = new Event('paginationupdate');
+      const pageEvent = new Event('pagechange');
       window.dispatchEvent(pageEvent);
     }, [page]);
 

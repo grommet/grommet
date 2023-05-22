@@ -47,11 +47,11 @@ const Text = forwardRef(
         }
       };
       window.addEventListener('resize', updateTip);
-      window.addEventListener('paginationupdate', updateTip);
+      window.addEventListener('pagechange', updateTip);
       updateTip();
       return () => {
         window.removeEventListener('resize', updateTip);
-        window.removeEventListener('paginationupdate', updateTip);
+        window.removeEventListener('pagechange', updateTip);
       };
     }, [textRef, truncate]);
 
