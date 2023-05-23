@@ -28,17 +28,17 @@ export const datumValue = (datum, property) => {
 
 // get the primary property name
 export const normalizePrimaryProperty = (columns, primaryKey) => {
-  let result;
-  columns.forEach((column) => {
-    // remember the first key property
-    if (column.primary && !result) {
-      result = column.property;
-    }
-  });
-  if (!result) {
-    if (primaryKey === false) result = undefined;
-    else if (primaryKey) result = primaryKey;
-    else if (columns.length > 0) result = columns[0].property;
+  let result = primaryKey;
+  if (result === undefined) {
+    columns.forEach((column) => {
+      // remember the first key property
+      if (column.primary && !result) {
+        result = column.property;
+      }
+    });
+  }
+  if (result === undefined && columns.length > 0) {
+    result = columns[0].property;
   }
   return result;
 };
@@ -222,7 +222,7 @@ export const buildGroupState = (groups, groupBy) => {
   const result = {};
   if (groups) {
     groups.forEach(({ key }) => {
-      if (key) result[key] = { expanded: false };
+      if (key !== undefined) result[key] = { expanded: false };
     });
   }
   if (groupBy && groupBy.expand) {

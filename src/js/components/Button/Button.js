@@ -461,7 +461,7 @@ const Button = forwardRef(
         // position relative is necessary to have the animation
         // display over the button content
         <RelativeBox flex={false}>
-          {busy && <EllipsisAnimation color={animationColor} />}
+          {busy && <EllipsisAnimation />}
           {success && (
             <Box
               style={{ position: 'absolute' }}
@@ -503,7 +503,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={!busy && !success && onClick}
+          onClick={!busy && !success ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
@@ -545,7 +545,7 @@ const Button = forwardRef(
           href={href}
           kind={kind}
           themePaths={themePaths}
-          onClick={!busy && !success && onClick}
+          onClick={!busy && !success ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
             if (onFocus) onFocus(event);

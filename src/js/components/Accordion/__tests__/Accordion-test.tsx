@@ -386,4 +386,21 @@ describe('Accordion', () => {
     await user.tab();
     expect(onBlur).toHaveBeenCalled();
   });
+
+  test('should apply level prop to headings', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Accordion level={2}>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Panel 1' }),
+    ).toBeTruthy();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

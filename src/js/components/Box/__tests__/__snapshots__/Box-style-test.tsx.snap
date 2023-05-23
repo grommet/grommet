@@ -1511,6 +1511,23 @@ exports[`Box border 1`] = `
       two
     </div>
   </div>
+  <div
+    class="c4"
+  >
+    <div
+      class="c17"
+    >
+      one
+    </div>
+    <div
+      class="c18"
+    />
+    <div
+      class="c17"
+    >
+      two
+    </div>
+  </div>
 </div>
 `;
 

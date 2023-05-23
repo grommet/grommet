@@ -17,15 +17,17 @@ export const decorators = [
   (Story, context) => {
     const [rootRef, setRootRef] = useState(null);
     const [state, setState] = useState('grommet');
-    useEffect(() => {
-      setState(context.globals.theme);
-    }, [context.globals.theme]);
+    const [root, setRoot] = useState('document');
     const full = context.allArgs?.full || 'min';
     const dir = context.allArgs?.dir;
     const options = context.allArgs?.options;
-    const {
-      globals: { root },
-    } = context;
+
+    useEffect(() => {
+      setState(context.globals.theme);
+    }, [context.globals.theme]);
+    useEffect(() => {
+      setRoot(context.globals.root);
+    }, [context.globals.root]);
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
@@ -48,6 +50,9 @@ export const decorators = [
                 "base" theme mode. To enable, select "base" from the
                 Theme menu above.`}
           </Text>
+          <div hidden>
+            <Story state={THEMES[state]} />
+          </div>
         </Box>
       );
     }
