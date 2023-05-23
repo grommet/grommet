@@ -62,7 +62,11 @@ export const genericSelectProps = {
   ]),
   plain: PropTypes.bool,
   replace: PropTypes.bool,
-  searchPlaceholder: PropTypes.string,
+  searchPlaceholder: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.node,
+  ]),
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
     PropTypes.string,
