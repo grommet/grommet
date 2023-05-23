@@ -223,7 +223,6 @@ const FormField = forwardRef(
         };
 
         const charactersOverLimit = (plural) => ({
-          // eslint-disable-next-line max-len
           id: `formField.characters.overLimit.${
             plural ? 'plural' : 'singular'
           }`,
