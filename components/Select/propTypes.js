@@ -37,7 +37,7 @@ var genericSelectProps = _extends({}, _generalPropTypes.genericProps, {
   placeholder: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element, _propTypes["default"].node]),
   plain: _propTypes["default"].bool,
   replace: _propTypes["default"].bool,
-  searchPlaceholder: _propTypes["default"].string,
+  searchPlaceholder: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element, _propTypes["default"].node]),
   size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
   valueLabel: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].func]),
   valueKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func, _propTypes["default"].shape({

@@ -32,7 +32,7 @@ export var genericSelectProps = _extends({}, genericProps, {
   placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.node]),
   plain: PropTypes.bool,
   replace: PropTypes.bool,
-  searchPlaceholder: PropTypes.string,
+  searchPlaceholder: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.node]),
   size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]),
   valueLabel: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   valueKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.shape({
