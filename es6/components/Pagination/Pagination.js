@@ -51,7 +51,9 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     activePage = _useState[0],
     setActivePage = _useState[1];
   useEffect(function () {
-    return setActivePage(page);
+    setActivePage(page);
+    var pageEvent = new Event('pagechange');
+    window.dispatchEvent(pageEvent);
   }, [page]);
   useEffect(function () {
     // if we are getting the step or page from outside the view,

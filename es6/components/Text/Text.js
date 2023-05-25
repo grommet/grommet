@@ -40,9 +40,11 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     };
     window.addEventListener('resize', updateTip);
+    window.addEventListener('pagechange', updateTip);
     updateTip();
     return function () {
-      return window.removeEventListener('resize', updateTip);
+      window.removeEventListener('resize', updateTip);
+      window.removeEventListener('pagechange', updateTip);
     };
   }, [textRef, truncate]);
   if (skeleton) {

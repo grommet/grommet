@@ -57,7 +57,9 @@ var Pagination = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     activePage = _useState[0],
     setActivePage = _useState[1];
   (0, _react.useEffect)(function () {
-    return setActivePage(page);
+    setActivePage(page);
+    var pageEvent = new Event('pagechange');
+    window.dispatchEvent(pageEvent);
   }, [page]);
   (0, _react.useEffect)(function () {
     // if we are getting the step or page from outside the view,
