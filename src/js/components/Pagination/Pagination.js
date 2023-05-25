@@ -49,7 +49,11 @@ const Pagination = forwardRef(
       Math.min(page, totalPages) || 1,
     );
 
-    useEffect(() => setActivePage(page), [page]);
+    useEffect(() => {
+      setActivePage(page);
+      const pageEvent = new Event('pagechange');
+      window.dispatchEvent(pageEvent);
+    }, [page]);
 
     useEffect(() => {
       // if we are getting the step or page from outside the view,
