@@ -28,6 +28,7 @@ const FooterContent = () => (
 export const Sitemap = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
+  //Choosing White instead of brand since the brand color does not fits well with the blackish background
   <Box>
     <Main background="light-4" elevation="large" pad="large" gap="large" border>
       <Text margin="small" size="xsmall">
@@ -38,8 +39,8 @@ export const Sitemap = () => (
     <Footer background="dark-1" pad="large">
       <Box direction="row-responsive" gap="xsmall">
         <Box align="center" gap="small">
-          <GrommetIcon color="brand" size="large" />
-          <Text alignSelf="center" color="brand" weight="bold">
+          <GrommetIcon color="white" size="large" />
+          <Text alignSelf="center" color="white" weight="bold">
             grommet.io
           </Text>
         </Box>

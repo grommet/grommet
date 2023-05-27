@@ -37,12 +37,13 @@ export const DoubleFooter = () => (
       </Text>
       <Box flex />
     </Main>
-    <Footer background="dark-1" pad="large">
+    <Footer background="dark-1" pad="large" role=" " aria-label="App Links">
       <FooterContent />
     </Footer>
     <Footer
       background="dark-2"
       pad={{ horizontal: 'large', vertical: 'small' }}
+      role="contentinfo"
     >
       <Box direction="row" gap="small">
         <GrommetIcon color="brand" />
