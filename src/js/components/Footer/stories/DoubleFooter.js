@@ -37,7 +37,7 @@ export const DoubleFooter = () => (
       </Text>
       <Box flex />
     </Main>
-    <Footer background="dark-1" pad="large" role=" " aria-label="App Links">
+    <Footer background="dark-1" pad="large" role=" ">
       <FooterContent />
     </Footer>
     <Footer

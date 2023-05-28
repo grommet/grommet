@@ -28,7 +28,8 @@ const FooterContent = () => (
 export const Sitemap = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  //Choosing White instead of brand since the brand color does not fits well with the blackish background
+  // Choosing White instead of brand since the brand
+  // color does not fits well with the blackish background
   <Box>
     <Main background="light-4" elevation="large" pad="large" gap="large" border>
       <Text margin="small" size="xsmall">
