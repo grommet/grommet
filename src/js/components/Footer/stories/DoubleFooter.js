@@ -37,7 +37,12 @@ export const DoubleFooter = () => (
       </Text>
       <Box flex />
     </Main>
-    <Footer background="dark-1" pad="large" role=" ">
+    <Footer
+      background="dark-1"
+      pad="large"
+      role="region"
+      aria-label="Additional Information"
+    >
       <FooterContent />
     </Footer>
     <Footer
