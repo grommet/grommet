@@ -26,8 +26,8 @@ const Meter = forwardRef(
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
+      reverse: reverseProp,
       value,
-      reverse,
       values: valuesProp,
       ...rest
     },
@@ -42,10 +42,10 @@ const Meter = forwardRef(
       return [];
     }, [color, value, valuesProp]);
 
-    const reverseDirection =
+    const reverse =
       direction === 'horizontal' &&
-      (theme.dir === 'rtl' || reverse) &&
-      !(theme.dir === 'rtl' && reverse);
+      (theme.dir === 'rtl' || reverseProp) &&
+      !(theme.dir === 'rtl' && reverseProp);
 
     const memoizedMax = useMemo(() => deriveMax(values), [values]);
     let content;
@@ -59,7 +59,7 @@ const Meter = forwardRef(
           thickness={thickness}
           background={background}
           direction={direction}
-          reverse={reverseDirection}
+          reverse={reverse}
           {...rest}
         />
       );
@@ -73,7 +73,7 @@ const Meter = forwardRef(
           thickness={thickness}
           type={type}
           background={background}
-          reverse={reverseDirection}
+          reverse={reverse}
           {...rest}
         />
       );
