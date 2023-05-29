@@ -42,7 +42,7 @@ export interface BasicSelectProps {
   placeholder?: PlaceHolderType;
   plain?: boolean;
   replace?: boolean;
-  searchPlaceholder?: string;
+  searchPlaceholder?: PlaceHolderType;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   valueKey?:
     | string
