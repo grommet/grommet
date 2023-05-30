@@ -1692,7 +1692,7 @@ exports[`Video Play and Pause event handlers 2`] = `
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 fVMZrb"
+                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -6046,7 +6046,7 @@ exports[`Video mouse events handlers of controls 2`] = `
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 fVMZrb"
+                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -6170,7 +6170,7 @@ exports[`Video mouse events handlers of controls 3`] = `
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 fVMZrb"
+                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -8406,7 +8406,7 @@ exports[`Video scrubber 2`] = `
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 fVMZrb"
+                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"

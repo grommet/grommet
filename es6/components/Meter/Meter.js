@@ -1,7 +1,9 @@
-var _excluded = ["background", "color", "direction", "size", "thickness", "type", "value", "values"];
+var _excluded = ["background", "color", "direction", "size", "thickness", "type", "reverse", "value", "values"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, useMemo, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 import { MeterPropTypes } from './propTypes';
@@ -30,9 +32,12 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
     thickness = _ref$thickness === void 0 ? 'medium' : _ref$thickness,
     _ref$type = _ref.type,
     type = _ref$type === void 0 ? 'bar' : _ref$type,
+    reverseProp = _ref.reverse,
     value = _ref.value,
     valuesProp = _ref.values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var theme = useContext(ThemeContext) || defaultProps.theme;
+
   // normalize values to an array of objects
   var values = useMemo(function () {
     if (valuesProp) return valuesProp;
@@ -42,6 +47,7 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }];
     return [];
   }, [color, value, valuesProp]);
+  var reverse = direction === 'horizontal' && (theme.dir === 'rtl' || reverseProp) && !(theme.dir === 'rtl' && reverseProp);
   var memoizedMax = useMemo(function () {
     return deriveMax(values);
   }, [values]);
@@ -54,7 +60,8 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
       size: size,
       thickness: thickness,
       background: background,
-      direction: direction
+      direction: direction,
+      reverse: reverse
     }, rest));
   } else if (type === 'circle' || type === 'pie' || type === 'semicircle') {
     content = /*#__PURE__*/React.createElement(Circle, _extends({
@@ -64,7 +71,8 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
       size: size,
       thickness: thickness,
       type: type,
-      background: background
+      background: background,
+      reverse: reverse
     }, rest));
   }
   return content;

@@ -10,6 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
     })]),
     color: PropTypes.string,
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    reverse: PropTypes.bool,
     round: PropTypes.bool,
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string]),
     thickness: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),

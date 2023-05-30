@@ -15,7 +15,9 @@ var roundStyle = (0, _styledComponents.css)(["border-radius:", ";"], function (p
 var StyledMeter = _styledComponents["default"].svg.withConfig({
   displayName: "StyledMeter",
   componentId: "sc-nsxarx-0"
-})(["max-width:100%;overflow:hidden;", " ", " path{transition:stroke 0.3s,stroke-width 0.3s;}", ";"], _utils.genericStyles, function (props) {
+})(["max-width:100%;overflow:hidden;", " ", " ", " path{transition:stroke 0.3s,stroke-width 0.3s;}", ";"], function (props) {
+  return props.reverse && (0, _styledComponents.css)(["transform:scale(-1,1);"]);
+}, _utils.genericStyles, function (props) {
   return props.round && roundStyle;
 }, function (props) {
   return props.theme.meter && props.theme.meter.extend;

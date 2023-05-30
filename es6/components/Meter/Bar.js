@@ -1,4 +1,4 @@
-var _excluded = ["background", "max", "round", "size", "thickness", "direction", "values"],
+var _excluded = ["background", "max", "round", "size", "thickness", "direction", "values", "reverse"],
   _excluded2 = ["color", "highlight", "label", "onHover", "value"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -16,6 +16,7 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
     thicknessProp = props.thickness,
     direction = props.direction,
     values = props.values,
+    reverse = props.reverse,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var length = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
@@ -84,7 +85,9 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
     round: round ? {
       size: thicknessProp
     } : undefined
-  }, rest), /*#__PURE__*/React.createElement("path", _extends({
+  }, rest, {
+    reverse: reverse
+  }), /*#__PURE__*/React.createElement("path", _extends({
     d: backgroundPath,
     fill: "none"
   }, strokeProps(background, theme), {
