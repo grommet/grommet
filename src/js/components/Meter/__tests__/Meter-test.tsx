@@ -212,4 +212,34 @@ describe('Meter', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('reverse', () => {
+    const { container } = render(
+      <Grommet>
+        <Meter reverse values={VALUES} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('rtl theme', () => {
+    const { container } = render(
+      <Grommet dir="rtl">
+        <Meter values={VALUES} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('reverse circle', () => {
+    const { container } = render(
+      <Grommet>
+        <Meter type="circle" background="light-2" reverse values={VALUES} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
