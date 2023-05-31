@@ -85,7 +85,7 @@ const StyledCheckBoxContainer = styled.label`
         props.theme,
       )};
     }
-     
+
     background-color: ${normalizeColor(
       !props.disabled && props.theme.checkBox.hover?.background?.color,
       props.theme,

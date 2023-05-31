@@ -2080,7 +2080,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 100%;
+  width: auto;
   height: 100%;
   max-width: none;
   -webkit-flex: 1 0 auto;
