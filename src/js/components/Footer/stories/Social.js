@@ -33,14 +33,14 @@ export const Social = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box>
-    <Main background="light-2" elevation="large" pad="medium" gap="large">
+    <Main background="light-1" elevation="large" pad="medium" gap="large">
       <Text margin="small" size="xsmall">
         Main Content
       </Text>
       <Box flex />
     </Main>
     {/* Choosing Color similar to brand color for text "Gormmet" */}
-    <Footer background="#dadada" pad="small">
+    <Footer background="light-3" pad="small">
       <Box align="center" direction="row" gap="xsmall">
         <GrommetIcon color="brand" size="medium" />
         <Text alignSelf="center" color="#6F3FD4" size="small">
