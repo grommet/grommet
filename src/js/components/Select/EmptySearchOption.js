@@ -8,12 +8,14 @@ export const EmptySearchOption = ({
   theme,
 }) => (
   <Box
-    {...{
-      ...selectOptionsStyle,
-      pad: selectOptionsStyle?.pad || theme.button?.option?.pad,
-    }}
+    {...(theme?.select?.emptySearchMessage?.container || selectOptionsStyle)}
   >
-    <Text aria-live="polite" role="alert" {...theme.select?.options?.text}>
+    <Text
+      aria-live="polite"
+      role="alert"
+      {...(theme?.select?.emptySearchMessage?.text ||
+        theme.select?.options?.text)}
+    >
       {emptySearchMessage}
     </Text>
   </Box>
