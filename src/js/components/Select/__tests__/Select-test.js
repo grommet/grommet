@@ -940,7 +940,7 @@ describe('Select', () => {
     expect(style.borderBottom).toBe('2px solid blue');
   });
 
-  test('renders empty search with select.empty styling', () => {
+  test('renders empty search with select.emptySearchMessage styling', () => {
     const customTheme = {
       select: {
         emptySearchMessage: {
