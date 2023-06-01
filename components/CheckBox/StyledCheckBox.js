@@ -11,7 +11,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 // added to it to simplify its logic. If this is ever reused somewhere else,
 // consider the need of separating those once again.
 var fillStyle = function fillStyle() {
-  return "\n      width: 100%;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n      justify-content: space-between;\n    ";
+  return "\n      width: auto;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n      justify-content: space-between;\n    ";
 };
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
 var hoverStyle = (0, _styledComponents.css)([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";", "}:hover{background-color:", ";}"], function (props) {
@@ -56,7 +56,7 @@ var StyledCheckBoxContainer = _styledComponents["default"].label.withConfig({
   return !props.disabled && 'cursor: pointer;';
 }, hoverStyle, function (props) {
   var _props$theme$checkBox6, _props$theme$checkBox7, _props$theme$checkBox8, _props$theme$checkBox9;
-  return props.focus && !props.focusIndicator && "\n    input:not([disabled]) + div,\n    input:not([disabled]) + span {\n      border-color: " + (0, _utils.normalizeColor)((_props$theme$checkBox6 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox7 = _props$theme$checkBox6.border) == null ? void 0 : _props$theme$checkBox7.color, props.theme) + ";\n    }\n     \n    background-color: " + (0, _utils.normalizeColor)(!props.disabled && ((_props$theme$checkBox8 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox9 = _props$theme$checkBox8.background) == null ? void 0 : _props$theme$checkBox9.color), props.theme) + ";";
+  return props.focus && !props.focusIndicator && "\n    input:not([disabled]) + div,\n    input:not([disabled]) + span {\n      border-color: " + (0, _utils.normalizeColor)((_props$theme$checkBox6 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox7 = _props$theme$checkBox6.border) == null ? void 0 : _props$theme$checkBox7.color, props.theme) + ";\n    }\n\n    background-color: " + (0, _utils.normalizeColor)(!props.disabled && ((_props$theme$checkBox8 = props.theme.checkBox.hover) == null ? void 0 : (_props$theme$checkBox9 = _props$theme$checkBox8.background) == null ? void 0 : _props$theme$checkBox9.color), props.theme) + ";";
 }, function (props) {
   return props.theme.checkBox.extend;
 });
