@@ -43,7 +43,7 @@ export const Social = () => (
     <Footer background="light-3" pad="small">
       <Box align="center" direction="row" gap="xsmall">
         <GrommetIcon color="brand" size="medium" />
-        <Text alignSelf="center" color="#6F3FD4" size="small">
+        <Text alignSelf="center" color="brand" size="small">
           Grommet
         </Text>
       </Box>
