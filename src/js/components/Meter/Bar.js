@@ -16,6 +16,7 @@ const Bar = forwardRef((props, ref) => {
     thickness: thicknessProp,
     direction,
     values,
+    reverse,
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -107,6 +108,7 @@ const Bar = forwardRef((props, ref) => {
       height={direction === 'horizontal' ? thickness : length}
       round={round ? { size: thicknessProp } : undefined}
       {...rest}
+      reverse={reverse}
     >
       <path
         d={backgroundPath}
