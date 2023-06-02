@@ -1,7 +1,7 @@
 {
   "parser": "@babel/eslint-parser",
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier", "react-hooks", "testing-library"],
+  "extends": ["airbnb", "prettier", "plugin:grommet/recommended"],
+  "plugins": ["prettier", "react-hooks", "testing-library", "grommet"],
   "env": {
     "node": true,
     "es6": true
@@ -37,6 +37,14 @@
     "import/prefer-default-export": 0,
     "indent": "off",
     "comma-dangle": ["error", "always-multiline"],
+    "grommet/anchor-label": 0,
+    "grommet/button-icon-a11ytitle": 0,
+    "grommet/datatable-aria-describedby": 0,
+    "grommet/formfield-htmlfor-id": 0,
+    "grommet/formfield-name": 0,
+    "grommet/formfield-prefer-children": 0,
+    "grommet/image-alt-text": 0,
+    "grommet/spinner-message": 0,
     "max-len": [2, { "ignoreUrls": true, "ignoreRegExpLiterals": true }],
     "no-console": 0,
     "no-restricted-imports": [

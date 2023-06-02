@@ -5714,6 +5714,13 @@ eslint-plugin-babel@^5.3.1:
   dependencies:
     eslint-rule-composer "^0.3.0"
 
+eslint-plugin-grommet@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-grommet/-/eslint-plugin-grommet-0.2.0.tgz#16754c9f989db9e102b264776ad10115310d0ced"
+  integrity sha512-uCKlXByRVIzWIMBQe85lE3aqlSFVIBHsgRq+fzo/jjuFNvj5ogqwaBJ39NLYiS9lqgajK5cqnWEsFcWiotnkXA==
+  dependencies:
+    requireindex "~1.1.0"
+
 eslint-plugin-import@^2.27.5:
   version "2.27.5"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.27.5.tgz#876a6d03f52608a3e5bb439c2550588e51dd6c65"
@@ -10467,6 +10474,11 @@ require-reload@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/require-reload/-/require-reload-0.2.2.tgz#29a7591846caf91b6e8a3cda991683f95f8d7d42"
   integrity sha512-ElZsgUSIyQKuS8Db4t/w30ut7TXWPzEhvBEVWzMHMTHeokHABEiF+oABX/rSp9nEhm+loT/ziZC+/7PQn7+7eA==
+
+requireindex@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.1.0.tgz#e5404b81557ef75db6e49c5a72004893fe03e162"
+  integrity sha512-LBnkqsDE7BZKvqylbmn7lTIVdpx4K/QCduRATpO5R+wtPmky/a8pN1bO2D6wXppn1497AJF9mNjqAXr6bdl9jg==
 
 requires-port@^1.0.0:
   version "1.0.0"
