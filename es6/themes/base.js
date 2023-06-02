@@ -1855,6 +1855,10 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
         // open: undefined,
       },
+      // emptySearchMessage: {
+      //   container: {}, // any box props
+      //   text: {}, // any text props
+      // },
       icons: {
         // color: { dark: undefined, light: undefined },
         margin: {

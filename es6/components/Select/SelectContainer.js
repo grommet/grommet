@@ -296,7 +296,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       return setActiveIndex(-1);
     },
     theme: theme
-  }), /*#__PURE__*/React.createElement(OptionsContainer, {
+  }), options.length > 0 ? /*#__PURE__*/React.createElement(OptionsContainer, {
     role: "listbox",
     tabIndex: "-1",
     ref: optionsRef,
@@ -304,7 +304,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     onMouseMove: function onMouseMove() {
       return setKeyboardNavigation(false);
     }
-  }, options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
+  }, /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: options,
     step: theme.select.step,
     onMore: onMore,
@@ -366,11 +366,11 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       onClick: !optionDisabled ? selectOption(index) : undefined,
       textComponent: textComponent
     }, child);
-  }) : /*#__PURE__*/React.createElement(EmptySearchOption, {
+  })) : /*#__PURE__*/React.createElement(EmptySearchOption, {
     emptySearchMessage: emptySearchMessage,
     selectOptionsStyle: selectOptionsStyle,
     theme: theme
-  })), shouldShowClearButton('bottom') && /*#__PURE__*/React.createElement(ClearButton, {
+  }), shouldShowClearButton('bottom') && /*#__PURE__*/React.createElement(ClearButton, {
     ref: clearRef,
     clear: clear,
     name: name,

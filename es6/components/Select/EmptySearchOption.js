@@ -2,19 +2,13 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 import React from 'react';
 import { Box } from '../Box';
 import { Text } from '../Text';
-import { SelectOption } from './StyledSelect';
 export var EmptySearchOption = function EmptySearchOption(_ref) {
+  var _theme$select, _theme$select$emptySe, _theme$select2, _theme$select2$emptyS, _theme$select3, _theme$select3$option;
   var emptySearchMessage = _ref.emptySearchMessage,
     selectOptionsStyle = _ref.selectOptionsStyle,
     theme = _ref.theme;
-  return /*#__PURE__*/React.createElement(SelectOption, {
-    key: "search_empty",
-    tabIndex: "0",
-    role: "menuitem",
-    hoverIndicator: "background",
-    disabled: true
-  }, /*#__PURE__*/React.createElement(Box, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, _extends({
+  return /*#__PURE__*/React.createElement(Box, (theme == null ? void 0 : (_theme$select = theme.select) == null ? void 0 : (_theme$select$emptySe = _theme$select.emptySearchMessage) == null ? void 0 : _theme$select$emptySe.container) || selectOptionsStyle, /*#__PURE__*/React.createElement(Text, _extends({
     "aria-live": "polite",
     role: "alert"
-  }, theme.select.container.text), emptySearchMessage)));
+  }, (theme == null ? void 0 : (_theme$select2 = theme.select) == null ? void 0 : (_theme$select2$emptyS = _theme$select2.emptySearchMessage) == null ? void 0 : _theme$select2$emptyS.text) || ((_theme$select3 = theme.select) == null ? void 0 : (_theme$select3$option = _theme$select3.options) == null ? void 0 : _theme$select3$option.text)), emptySearchMessage));
 };

@@ -301,7 +301,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       return setActiveIndex(-1);
     },
     theme: theme
-  }), /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
+  }), options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
     role: "listbox",
     tabIndex: "-1",
     ref: optionsRef,
@@ -309,7 +309,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     onMouseMove: function onMouseMove() {
       return setKeyboardNavigation(false);
     }
-  }, options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
+  }, /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: options,
     step: theme.select.step,
     onMore: onMore,
@@ -371,11 +371,11 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       onClick: !optionDisabled ? selectOption(index) : undefined,
       textComponent: textComponent
     }, child);
-  }) : /*#__PURE__*/_react["default"].createElement(_EmptySearchOption.EmptySearchOption, {
+  })) : /*#__PURE__*/_react["default"].createElement(_EmptySearchOption.EmptySearchOption, {
     emptySearchMessage: emptySearchMessage,
     selectOptionsStyle: selectOptionsStyle,
     theme: theme
-  })), shouldShowClearButton('bottom') && /*#__PURE__*/_react["default"].createElement(ClearButton, {
+  }), shouldShowClearButton('bottom') && /*#__PURE__*/_react["default"].createElement(ClearButton, {
     ref: clearRef,
     clear: clear,
     name: name,

@@ -312,7 +312,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setActiveIndex(-1);
       onSearch(nextSearch);
     }
-  }))), helpContent, /*#__PURE__*/React.createElement(OptionsContainer, {
+  }))), helpContent, options.length > 0 ? /*#__PURE__*/React.createElement(OptionsContainer, {
     role: "listbox",
     tabIndex: "0",
     ref: optionsRef,
@@ -321,7 +321,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return setKeyboardNavigation(false);
     },
     "aria-activedescendant": optionsRef == null ? void 0 : (_optionsRef$current = optionsRef.current) == null ? void 0 : _optionsRef$current.children[activeIndex]
-  }, options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
+  }, /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: options,
     step: theme.select.step,
     onMore: onMore,
@@ -414,11 +414,11 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       },
       textComponent: textComponent
     }, child);
-  }) : /*#__PURE__*/React.createElement(EmptySearchOption, {
+  })) : /*#__PURE__*/React.createElement(EmptySearchOption, {
     emptySearchMessage: emptySearchMessage,
     selectOptionsStyle: selectOptionsStyle,
     theme: theme
-  })), usingKeyboard && showA11yLimit && /*#__PURE__*/React.createElement(Box, {
+  }), usingKeyboard && showA11yLimit && /*#__PURE__*/React.createElement(Box, {
     height: "0px",
     width: "0px",
     overflow: "hidden"
