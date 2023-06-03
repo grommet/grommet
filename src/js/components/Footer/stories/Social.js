@@ -39,7 +39,6 @@ export const Social = () => (
       </Text>
       <Box flex />
     </Main>
-    {/* Choosing Color similar to brand color for text "Gormmet" */}
     <Footer background="light-3" pad="small">
       <Box align="center" direction="row" gap="xsmall">
         <GrommetIcon color="brand" size="medium" />
