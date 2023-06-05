@@ -7,7 +7,7 @@ import { defaultProps } from '../../default-props';
 // added to it to simplify its logic. If this is ever reused somewhere else,
 // consider the need of separating those once again.
 const fillStyle = () => `
-      width: 100%;
+      width: auto;
       height: 100%;
       max-width: none;
       flex: 1 0 auto;
@@ -85,7 +85,7 @@ const StyledCheckBoxContainer = styled.label`
         props.theme,
       )};
     }
-     
+
     background-color: ${normalizeColor(
       !props.disabled && props.theme.checkBox.hover?.background?.color,
       props.theme,

@@ -390,14 +390,14 @@ const SelectContainer = forwardRef(
               theme={theme}
             />
           )}
-          <OptionsContainer
-            role="listbox"
-            tabIndex="-1"
-            ref={optionsRef}
-            aria-multiselectable={multiple}
-            onMouseMove={() => setKeyboardNavigation(false)}
-          >
-            {options.length > 0 ? (
+          {options.length > 0 ? (
+            <OptionsContainer
+              role="listbox"
+              tabIndex="-1"
+              ref={optionsRef}
+              aria-multiselectable={multiple}
+              onMouseMove={() => setKeyboardNavigation(false)}
+            >
               <InfiniteScroll
                 items={options}
                 step={theme.select.step}
@@ -482,14 +482,14 @@ const SelectContainer = forwardRef(
                   );
                 }}
               </InfiniteScroll>
-            ) : (
-              <EmptySearchOption
-                emptySearchMessage={emptySearchMessage}
-                selectOptionsStyle={selectOptionsStyle}
-                theme={theme}
-              />
-            )}
-          </OptionsContainer>
+            </OptionsContainer>
+          ) : (
+            <EmptySearchOption
+              emptySearchMessage={emptySearchMessage}
+              selectOptionsStyle={selectOptionsStyle}
+              theme={theme}
+            />
+          )}
           {shouldShowClearButton('bottom') && (
             <ClearButton
               ref={clearRef}
