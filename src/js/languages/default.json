@@ -81,7 +81,10 @@
   },
   "formField": {
     "characters": {
-      "left": "{number} characters left",
+      "left": {
+        "singular": "{number} character left",
+        "plural": "{number} characters left"
+      },
       "overLimit": {
         "singular": "{number} character over limit",
         "plural": "{number} characters over limit"

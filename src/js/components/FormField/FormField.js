@@ -217,10 +217,10 @@ const FormField = forwardRef(
       const { max, threshold } = validate;
 
       const getMessage = () => {
-        const charactersLeft = {
-          id: 'formField.characters.left',
+        const charactersLeft = (plural) => ({
+          id: `formField.characters.left.${plural ? 'plural' : 'singular'}`,
           values: { number: max - value.length },
-        };
+        });
 
         const charactersOverLimit = (plural) => ({
           id: `formField.characters.overLimit.${
@@ -229,7 +229,9 @@ const FormField = forwardRef(
           values: { number: value.length - max },
         });
 
-        if (max - value.length >= 0) return format(charactersLeft);
+        if (max - value.length >= 0) {
+          return format(charactersLeft(max - value.length > 1));
+        }
         return format(charactersOverLimit(value.length - max > 1));
       };
 
