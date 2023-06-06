@@ -1579,5 +1579,18 @@ describe('Select', () => {
     expect(select).toHaveAttribute('aria-expanded', 'true');
   });
 
+  test('valueLabel with value=0', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Select
+          options={[0, 1, 2]}
+          value={0}
+          valueLabel={(val) => `Value: ${val}`}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   window.scrollTo.mockRestore();
 });
