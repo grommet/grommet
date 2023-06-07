@@ -61,11 +61,9 @@ var Sitemap = function Sitemap() {
       align: "center",
       gap: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Grommet, {
-      color: "brand",
       size: "large"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       alignSelf: "center",
-      color: "brand",
       weight: "bold"
     }, "grommet.io"))), /*#__PURE__*/_react["default"].createElement(FooterContent, null)))
     // </Grommet>

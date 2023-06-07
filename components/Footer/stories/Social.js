@@ -37,7 +37,7 @@ var Social = function Social() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Main, {
-      background: "light-2",
+      background: "light-1",
       elevation: "large",
       pad: "medium",
       gap: "large"
@@ -47,7 +47,7 @@ var Social = function Social() {
     }, "Main Content"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       flex: true
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
-      background: "light-4",
+      background: "light-3",
       pad: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       align: "center",

@@ -54,13 +54,17 @@ var DoubleFooter = function DoubleFooter() {
       flex: true
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
       background: "dark-1",
-      pad: "large"
+      pad: "large",
+      title: "Links",
+      role: "contentinfo"
     }, /*#__PURE__*/_react["default"].createElement(FooterContent, null)), /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
       background: "dark-2",
       pad: {
         horizontal: 'large',
         vertical: 'small'
-      }
+      },
+      title: "Copyright",
+      role: "none"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       gap: "small"

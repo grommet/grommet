@@ -56,11 +56,9 @@ export var Sitemap = function Sitemap() {
       align: "center",
       gap: "small"
     }, /*#__PURE__*/React.createElement(GrommetIcon, {
-      color: "brand",
       size: "large"
     }), /*#__PURE__*/React.createElement(Text, {
       alignSelf: "center",
-      color: "brand",
       weight: "bold"
     }, "grommet.io"))), /*#__PURE__*/React.createElement(FooterContent, null)))
     // </Grommet>

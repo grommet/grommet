@@ -49,13 +49,17 @@ export var DoubleFooter = function DoubleFooter() {
       flex: true
     })), /*#__PURE__*/React.createElement(Footer, {
       background: "dark-1",
-      pad: "large"
+      pad: "large",
+      title: "Links",
+      role: "contentinfo"
     }, /*#__PURE__*/React.createElement(FooterContent, null)), /*#__PURE__*/React.createElement(Footer, {
       background: "dark-2",
       pad: {
         horizontal: 'large',
         vertical: 'small'
-      }
+      },
+      title: "Copyright",
+      role: "none"
     }, /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       gap: "small"
