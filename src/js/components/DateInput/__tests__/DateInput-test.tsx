@@ -1143,4 +1143,23 @@ describe('DateInput', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('reseting uncontrolled form should reset text value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Form>
+        <DateInput format="mm/dd/yyyy" name="date" />
+        <Button label="Reset" type="reset" />
+      </Form>,
+    );
+    const input = screen.getByRole('textbox');
+    await user.type(input, '09/09/2022');
+
+    expect(input).toHaveValue('09/09/2022');
+
+    await user.click(screen.getByRole('button', { name: 'Reset' }));
+
+    expect(input).toHaveValue('');
+  });
 });
