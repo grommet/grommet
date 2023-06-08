@@ -1,7 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 import { edgeToNum } from '../../utils';
 import { Box } from '../Box';
-import { round } from '../Chart';
+import { showInUnits } from './utils';
 
 const onlyHorizontalPad = (pad) => {
   let result;
@@ -45,20 +45,6 @@ const XAxis = forwardRef(
       [padProp, theme, thickness],
     );
 
-    let divideBy;
-    let unit;
-    if (!render && !suffix) {
-      // figure out how many digits to show
-      const maxValue = Math.max(...values.map((v) => Math.abs(v)));
-      if (maxValue > 10000000) {
-        divideBy = 1000000;
-        unit = 'M';
-      } else if (maxValue > 10000) {
-        divideBy = 1000;
-        unit = 'K';
-      }
-    }
-
     // When there are only labels at the end of the axis and there isn't
     // much space for them, let them take as much space as they like
     // flowing in from the edges.
@@ -89,9 +75,9 @@ const XAxis = forwardRef(
       >
         {values.map((axisValue, i) => {
           let content = serie ? renderValue(serie, axisValue) : axisValue;
-          if (content === axisValue) {
-            if (divideBy) content = round(content / divideBy, 0);
-            if (unit) content = `${content}${unit}`;
+          if (content === axisValue && !render && !suffix) {
+            const maxValue = Math.max(...values.map((v) => Math.abs(v)));
+            content = showInUnits(content, maxValue);
           }
           return (
             // eslint-disable-next-line react/no-array-index-key

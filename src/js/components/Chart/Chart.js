@@ -244,7 +244,7 @@ const Chart = React.forwardRef(
       const y = (yValue - bounds.y.min) * scale.y + inset.top;
       return [
         (xValue - bounds.x.min) * scale.x + inset.left,
-        // horizontal grows y top down, horizontal grows y bottom up
+        // horizontal grows y top down, vertical grows y bottom up
         horizontal ? y : size.height - y,
       ];
     };

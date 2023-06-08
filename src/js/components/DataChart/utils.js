@@ -1,3 +1,5 @@
+import { round } from '../Chart';
+
 export const points = [
   'circle',
   'diamond',
@@ -41,6 +43,22 @@ const orderedSizes = [
   'xxsmall',
   'hair',
 ];
+
+export const showInUnits = (content, maxValue) => {
+  let divideBy;
+  let unit;
+  let newContent = content;
+  if (maxValue > 10000000) {
+    divideBy = 1000000;
+    unit = 'M';
+  } else if (maxValue > 10000) {
+    divideBy = 1000;
+    unit = 'K';
+  }
+  if (divideBy) newContent = round(newContent / divideBy, 0);
+  if (unit) newContent = `${newContent}${unit}`;
+  return newContent;
+};
 
 export const largestSize = (size1, size2) => {
   if (size1 && !size2) return size1;

@@ -1,7 +1,7 @@
 import React, { forwardRef, useMemo } from 'react';
 import { edgeToNum } from '../../utils';
 import { Box } from '../Box';
-import { round } from '../Chart';
+import { showInUnits } from './utils';
 
 const onlyVerticalPad = (pad) => {
   let result;
@@ -25,33 +25,20 @@ const YAxis = forwardRef(
     // the thickness
     const pad = useMemo(
       () =>
-        (padProp && thickness && {
-          top: `${
-            edgeToNum(padProp.top || padProp.vertical, theme) -
-            edgeToNum(thickness, theme) / 2
-          }px`,
-          bottom: `${
-            edgeToNum(padProp.bottom || padProp.vertical, theme) -
-            edgeToNum(thickness, theme) / 2
-          }px`,
-        }) ||
+        (padProp &&
+          thickness && {
+            top: `${
+              edgeToNum(padProp.top || padProp.vertical, theme) -
+              edgeToNum(thickness, theme) / 2
+            }px`,
+            bottom: `${
+              edgeToNum(padProp.bottom || padProp.vertical, theme) -
+              edgeToNum(thickness, theme) / 2
+            }px`,
+          }) ||
         onlyVerticalPad(padProp),
       [padProp, theme, thickness],
     );
-
-    let divideBy;
-    let unit;
-    if (!render && !suffix) {
-      // figure out how many digits to show
-      const maxValue = Math.max(...values.map((v) => Math.abs(v)));
-      if (maxValue > 10000000) {
-        divideBy = 1000000;
-        unit = 'M';
-      } else if (maxValue > 10000) {
-        divideBy = 1000;
-        unit = 'K';
-      }
-    }
 
     // When there are only labels at the end of the axis and there isn't
     // much space for them, let them take as much space as they like
@@ -76,9 +63,9 @@ const YAxis = forwardRef(
       <Box ref={ref} gridArea="yAxis" justify="between" flex pad={pad}>
         {values.map((axisValue, i) => {
           let content = serie ? renderValue(serie, axisValue, true) : axisValue;
-          if (content === axisValue) {
-            if (divideBy) content = round(content / divideBy, 0);
-            if (unit) content = `${content}${unit}`;
+          if (content === axisValue && !render && !suffix) {
+            const maxValue = Math.max(...values.map((v) => Math.abs(v)));
+            content = showInUnits(content, maxValue);
           }
           return (
             <Box
