@@ -37,12 +37,14 @@ export const DoubleFooter = () => (
       </Text>
       <Box flex />
     </Main>
-    <Footer background="dark-1" pad="large">
+    <Footer background="dark-1" pad="large" title="Links" role="contentinfo">
       <FooterContent />
     </Footer>
     <Footer
       background="dark-2"
       pad={{ horizontal: 'large', vertical: 'small' }}
+      title="Copyright"
+      role="none"
     >
       <Box direction="row" gap="small">
         <GrommetIcon color="brand" />
