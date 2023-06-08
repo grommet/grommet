@@ -153,12 +153,15 @@ Use the icon prop instead.`,
     // for uncontrolled forms, ensure the reset event
     // resets the textValue
     useEffect(() => {
-      const handleFormReset = () => {
-        if (schema) setTextValue('');
+      const handleFormReset = (e) => {
+        if (schema && ref.current && e.target.contains(ref.current)) {
+          setTextValue('');
+        }
       };
+
       window.addEventListener('reset', handleFormReset);
       return () => window.removeEventListener('reset', handleFormReset);
-    }, [schema]);
+    }, [schema, ref]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
