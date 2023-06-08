@@ -3927,7 +3927,8 @@ exports[`DataFilter renders 1`] = `
 `;
 
 exports[`DataFilter select multiple options 1`] = `
-.c6 {
+<DocumentFragment>
+  .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4081,11 +4082,6 @@ exports[`DataFilter select multiple options 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c3:focus {
@@ -4260,6 +4256,26 @@ exports[`DataFilter select multiple options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c8 {
     border-radius: 12px;
   }
@@ -4283,75 +4299,259 @@ exports[`DataFilter select multiple options 1`] = `
 
 }
 
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      id="data"
     >
-      <button
-        aria-label="Open filters, 1 filter applied"
-        class="c3"
-        id="data--filters-control"
-        tabindex="-1"
-        type="button"
-      >
-        <div
-          class="c4"
-        >
-          <div
-            class="c5"
-          >
-            <svg
-              aria-label="Filter"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
-          <div
-            class="c7"
-            style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
-          >
-            <div
-              class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              style="min-height: 24px; min-width: 24px;"
-            >
-              <span
-                class="c9"
-              >
-                1
-              </span>
-            </div>
-          </div>
-        </div>
-      </button>
       <div
-        class="c10"
+        class="c2"
       >
         <button
-          class="c11"
+          aria-label="Open filters, 1 filter applied"
+          class="c3"
+          id="data--filters-control"
           type="button"
         >
-          Clear filters
+          <div
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <svg
+                aria-label="Filter"
+                class="c6"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <div
+              class="c7"
+              style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
+            >
+              <div
+                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                style="min-height: 24px; min-width: 24px;"
+              >
+                <span
+                  class="c9"
+                >
+                  1
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+        <div
+          class="c10"
+        >
+          <button
+            class="c11"
+            type="button"
+          >
+            Clear filters
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter select multiple options search 1`] = `
+<DocumentFragment>
+  .c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c3:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="test-data"
+    >
+      <div
+        class="c2"
+      >
+        <button
+          aria-label="Open filters"
+          class="c3"
+          id="test-data--filters-control"
+          type="button"
+        >
+          <svg
+            aria-label="Filter"
+            class="c4"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </button>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`DataFilter select multiple options search 1`] = `
+exports[`DataFilter select multiple options search 2`] = `
 .c11 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -4633,6 +4833,75 @@ exports[`DataFilter select multiple options search 1`] = `
   line-height: 20px;
 }
 
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c8:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -4727,71 +4996,6 @@ exports[`DataFilter select multiple options search 1`] = `
 }
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c8 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4944,6 +5148,26 @@ exports[`DataFilter select multiple options search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c10 {
     margin-left: 6px;
     margin-right: 6px;
@@ -5000,6 +5224,10 @@ exports[`DataFilter select multiple options search 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -5045,7 +5273,7 @@ exports[`DataFilter select multiple options search 1`] = `
           class="c7"
         />
         <button
-          aria-label="Select all 13 options"
+          aria-label="Select all 10 options"
           class="c8"
           type="button"
         >
@@ -5104,7 +5332,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="ZZ not selected"
         aria-posinset="1"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option0"
         role="option"
@@ -5138,7 +5366,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="YY not selected"
         aria-posinset="2"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option1"
         role="option"
@@ -5172,7 +5400,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="aa not selected"
         aria-posinset="3"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option2"
         role="option"
@@ -5206,7 +5434,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="bb not selected"
         aria-posinset="4"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option3"
         role="option"
@@ -5240,7 +5468,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="cc not selected"
         aria-posinset="5"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option4"
         role="option"
@@ -5274,7 +5502,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="dd not selected"
         aria-posinset="6"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option5"
         role="option"
@@ -5308,7 +5536,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="ee not selected"
         aria-posinset="7"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option6"
         role="option"
@@ -5342,7 +5570,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="ff not selected"
         aria-posinset="8"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option7"
         role="option"
@@ -5376,7 +5604,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="gg not selected"
         aria-posinset="9"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option8"
         role="option"
@@ -5410,7 +5638,7 @@ exports[`DataFilter select multiple options search 1`] = `
         aria-label="hh not selected"
         aria-posinset="10"
         aria-selected="false"
-        aria-setsize="13"
+        aria-setsize="10"
         class="c16 c17"
         id="option9"
         role="option"
@@ -5440,108 +5668,6 @@ exports[`DataFilter select multiple options search 1`] = `
           </div>
         </label>
       </button>
-      <button
-        aria-label="ii not selected"
-        aria-posinset="11"
-        aria-selected="false"
-        aria-setsize="13"
-        class="c16 c17"
-        id="option10"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            ii
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="jj not selected"
-        aria-posinset="12"
-        aria-selected="false"
-        aria-setsize="13"
-        class="c16 c17"
-        id="option11"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            jj
-          </div>
-        </label>
-      </button>
-      <button
-        aria-label="kk not selected"
-        aria-posinset="13"
-        aria-selected="false"
-        aria-setsize="13"
-        class="c16 c17"
-        id="option12"
-        role="option"
-        tabindex="-1"
-        type="button"
-      >
-        <label
-          class="c18"
-          label="[object Object]"
-        >
-          <div
-            class="c19 c20"
-          >
-            <input
-              class="c21"
-              tabindex="-1"
-              type="checkbox"
-            />
-            <div
-              class="c22 "
-            />
-          </div>
-          <div
-            class="c23"
-          >
-            kk
-          </div>
-        </label>
-      </button>
       <div
         class="c24"
       />
@@ -5550,7 +5676,7 @@ exports[`DataFilter select multiple options search 1`] = `
 </div>
 `;
 
-exports[`DataFilter select multiple options search 2`] = `
+exports[`DataFilter select multiple options search 3`] = `
 "@media only screen and (max-width: 768px) {
   .jstWSP {
     margin-bottom: 6px;

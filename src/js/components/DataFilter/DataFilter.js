@@ -9,8 +9,8 @@ import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
 
 // empirical constants for when we change inputs
-const maxCheckBoxGroupOptions = 7;
-const minSelectSearchOptions = 12;
+const maxCheckBoxGroupOptions = 4;
+const minSelectSearchOptions = 10;
 
 const getValueAt = (valueObject, pathArg) => {
   if (valueObject === undefined) return undefined;
@@ -127,7 +127,7 @@ export const DataFilter = ({
         content = (
           <CheckBoxGroup id={id} name={property} options={booleanOptions} />
         );
-      } else if (options.length < maxCheckBoxGroupOptions) {
+      } else if (options.length <= maxCheckBoxGroupOptions) {
         content = <CheckBoxGroup id={id} name={property} options={options} />;
       } else {
         content = (
@@ -137,7 +137,7 @@ export const DataFilter = ({
             showSelectedInline
             options={searchedOptions}
             onSearch={
-              options.length > minSelectSearchOptions
+              options.length >= minSelectSearchOptions
                 ? setSearchText
                 : undefined
             }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
@@ -87,10 +88,9 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('select multiple options', () => {
-    jest.useFakeTimers();
-
-    const { container, getByRole } = render(
+  test('select multiple options', async () => {
+    const user = userEvent.setup();
+    const { asFragment } = render(
       <Grommet>
         <Data
           data={data}
@@ -103,45 +103,42 @@ describe('DataFilter', () => {
           <DataFilters drop>
             <DataFilter
               property="type.name"
-              options={['ZZ', 'YY', 'aa', 'bb', 'cc', 'dd', 'ee', 'ff']}
+              options={['ZZ', 'YY', 'aa', 'bb', 'cc']}
             />
           </DataFilters>
         </Data>
       </Grommet>,
     );
 
-    expect(getByRole('button', { name: 'Open filters' })).toBeTruthy();
-    fireEvent.click(getByRole('button', { name: 'Open filters' }));
-    // advance timers so drop can open
-    act(() => jest.advanceTimersByTime(200));
+    const { getByRole } = screen;
+
+    const filterButton = getByRole('button', { name: 'Open filters' });
+    expect(filterButton).toBeTruthy();
+    await user.click(filterButton);
 
     // open SelectMultiple
-    fireEvent.click(getByRole('button', { name: /Open Drop/i }));
-    act(() => jest.advanceTimersByTime(200));
+    const selectInput = getByRole('button', { name: /Open Drop/i });
+    expect(selectInput).toBeTruthy();
+    await user.click(selectInput);
 
     // click the first option 'ZZ'
-    fireEvent.click(getByRole('option', { name: /ZZ/i }));
-    act(() => jest.advanceTimersByTime(200));
+    await user.click(getByRole('option', { name: /ZZ/i }));
 
     // close SelectMultiple
-    fireEvent.click(getByRole('button', { name: /Close Select/i }));
-    act(() => jest.advanceTimersByTime(200));
+    await user.click(getByRole('button', { name: /Close Select/i }));
 
     // click Apply Filters button
-    expect(getByRole('button', { name: 'Apply filters' })).toBeTruthy();
-    fireEvent.click(getByRole('button', { name: 'Apply filters' }));
-
-    // advance timers so filters can be applied
-    act(() => jest.advanceTimersByTime(200));
+    const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
+    expect(applyFiltersButton).toBeTruthy();
+    await user.click(applyFiltersButton);
 
     // snapshot on selected filter
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('select multiple options search', () => {
-    jest.useFakeTimers();
-
-    const { getByRole } = render(
+  test('select multiple options search', async () => {
+    const user = userEvent.setup();
+    const { asFragment } = render(
       <Grommet>
         <Data
           id="test-data"
@@ -166,9 +163,6 @@ describe('DataFilter', () => {
                 'ff',
                 'gg',
                 'hh',
-                'ii',
-                'jj',
-                'kk',
               ]}
             />
           </DataFilters>
@@ -176,14 +170,18 @@ describe('DataFilter', () => {
       </Grommet>,
     );
 
-    expect(getByRole('button', { name: 'Open filters' })).toBeTruthy();
-    fireEvent.click(getByRole('button', { name: 'Open filters' }));
-    // advance timers so drop can open
-    act(() => jest.advanceTimersByTime(200));
+    expect(asFragment()).toMatchSnapshot();
+    const filterButton = screen.getByRole('button', { name: 'Open filters' });
+    expect(filterButton).toBeTruthy();
+    await user.click(filterButton);
 
     // open SelectMultiple
-    fireEvent.click(getByRole('button', { name: /Open Drop/i }));
-    act(() => jest.advanceTimersByTime(200));
+    const selectInput = screen.getByLabelText('Type');
+    expect(selectInput).toBeTruthy();
+    await user.click(selectInput);
+
+    const searchInput = screen.getByLabelText(/Search to filter/);
+    expect(searchInput).toBeTruthy();
 
     // snapshot on search box
     expectPortal('test-data-type.name__drop').toMatchSnapshot();
