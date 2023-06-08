@@ -223,7 +223,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // element to show, trumps inputValue
   var selectValue = (0, _react.useMemo)(function () {
     if (valueLabel instanceof Function) {
-      if (value) return valueLabel(value);
+      if (value || value === 0 || value === false) return valueLabel(value);
     } else if (valueLabel) return valueLabel;else if ( /*#__PURE__*/_react["default"].isValidElement(value)) return value; // deprecated
     return undefined;
   }, [value, valueLabel]);
