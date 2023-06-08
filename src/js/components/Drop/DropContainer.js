@@ -98,8 +98,8 @@ const DropContainer = forwardRef(
 
     useEffect(() => {
       const notifyAlign = () => {
-        const styleCurrent = dropRef.current.style;
-        const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
+        const styleCurrent = dropRef?.current?.style;
+        const alignControl = styleCurrent?.top !== '' ? 'top' : 'bottom';
 
         onAlign(alignControl);
       };

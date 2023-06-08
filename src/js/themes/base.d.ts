@@ -1429,6 +1429,10 @@ export interface ThemeType {
       open?: string | object;
     };
     extend?: ExtendType;
+    emptySearchMessage?: {
+      container?: BoxProps;
+      text?: TextProps;
+    };
     icons?: {
       color?: ColorType;
       down?: React.ReactNode | Icon;
