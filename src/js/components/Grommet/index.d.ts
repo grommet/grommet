@@ -30,6 +30,18 @@ export interface GrommetProps {
         invalid?: string;
         required?: string;
       };
+      formField?: {
+        characters?: {
+          left?: {
+            singular?: string;
+            plural?: string;
+          };
+          overLimit?: {
+            singular?: string;
+            plural: string;
+          };
+        };
+      };
       menu?: {
         openMenu?: string;
         closeMenu?: string;

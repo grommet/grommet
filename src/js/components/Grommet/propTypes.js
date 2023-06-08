@@ -31,6 +31,18 @@ if (process.env.NODE_ENV !== 'production') {
           invalid: PropTypes.string,
           required: PropTypes.string,
         }),
+        formField: PropTypes.shape({
+          characters: PropTypes.shape({
+            left: PropTypes.shape({
+              singular: PropTypes.string,
+              plural: PropTypes.string,
+            }),
+            overLimit: PropTypes.shape({
+              singular: PropTypes.string,
+              plural: PropTypes.string,
+            }),
+          }),
+        }),
         menu: PropTypes.shape({
           openMenu: PropTypes.string,
           closeMenu: PropTypes.string,
