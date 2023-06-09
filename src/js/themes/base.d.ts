@@ -26,6 +26,7 @@ import {
   AlignContentType,
   SkeletonColorsType,
   AlignSelfType,
+  AlignType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -1087,7 +1088,11 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
-    item?: ButtonType;
+    item?:
+      | ButtonType
+      | {
+          align?: AlignType;
+        };
     drop?: DropType;
     extend?: ExtendType;
     group?: {
