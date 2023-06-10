@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/dom';
+
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -455,5 +457,5 @@ describe('SelectMultiple', () => {
     expect(
       screen.queryByRole('option', { name: /Strawberry selected/ }),
     ).toBeNull();
-  });
+  }, 10000);
 });

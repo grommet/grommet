@@ -91,6 +91,7 @@
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
     "@types/styled-components": "^5.1.26",
+    "@types/testing-library__react": "^10.2.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^29.5.0",
     "babel-loader": "^9.1.2",
