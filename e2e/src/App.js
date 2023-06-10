@@ -13,8 +13,6 @@ import {
 } from '../../src/js/components';
 import { grommet } from '../../src/js/themes';
 
-// test
-
 const App = () => (
   <Grommet full theme={grommet}>
     <Page>
