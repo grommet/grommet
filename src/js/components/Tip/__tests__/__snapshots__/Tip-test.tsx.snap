@@ -473,6 +473,28 @@ exports[`Tip should have no accessibility violations 1`] = `
 </div>
 `;
 
+exports[`Tip should be deactivaed when props is true 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <span>
+      Example
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Tip should work with a child that isn't a React Element 1`] = `
 .c0 {
   font-size: 18px;

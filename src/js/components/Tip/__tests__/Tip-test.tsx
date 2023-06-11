@@ -130,6 +130,21 @@ describe('Tip', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test(`should be deactivaed when props is true`, async () => {
+    const { getByText } = render(
+      <Grommet>
+        <Tip content="tooltip" deactivated>
+          Example
+        </Tip>
+      </Grommet>,
+    );
+
+    // There is no tooltip when deactivated
+    fireEvent.mouseOver(getByText('Example'));
+    const tooltip = await waitFor(() => screen.getByText('Example'));
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
+  });
+
   test(`shouldn't crash with no children`, () => {
     const { container } = render(
       <Grommet>
