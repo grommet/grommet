@@ -1,7 +1,7 @@
 var _excluded = ["children", "options", "property", "range"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { FormContext } from '../Form/FormContext';
@@ -10,6 +10,10 @@ import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
+
+// empirical constants for when we change inputs
+var maxCheckBoxGroupOptions = 4;
+var minSelectSearchOptions = 10;
 var getValueAt = function getValueAt(valueObject, pathArg) {
   if (valueObject === undefined) return undefined;
   var path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
@@ -54,6 +58,9 @@ export var DataFilter = function DataFilter(_ref) {
     unfilteredData = _useContext.unfilteredData;
   var _useContext2 = useContext(FormContext),
     noForm = _useContext2.noForm;
+  var _useState = useState(''),
+    searchText = _useState[0],
+    setSearchText = _useState[1];
   var _useMemo = useMemo(function () {
       var _properties$property, _properties$property2;
       if (children) return [undefined, undefined]; // caller driving
@@ -81,6 +88,19 @@ export var DataFilter = function DataFilter(_ref) {
     }, [children, data, optionsProp, properties, property, rangeProp, unfilteredData]),
     options = _useMemo[0],
     range = _useMemo[1];
+  var searchedOptions = useMemo(function () {
+    if (!searchText) return options;
+    // The line below escapes regular expression special characters:
+    // [ \ ^ $ . | ? * + ( )
+    var escapedText = searchText.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+    // Create the regular expression with modified value which
+    // handles escaping special characters. Without escaping special
+    // characters, errors will appear in the console
+    var exp = new RegExp(escapedText, 'i');
+    return options.filter(function (o) {
+      return typeof o === 'string' ? exp.test(o) : exp.test(o.label);
+    });
+  }, [options, searchText]);
   var id = dataId + "-" + property;
   var content = children;
   if (!content) {
@@ -104,7 +124,7 @@ export var DataFilter = function DataFilter(_ref) {
           name: property,
           options: booleanOptions
         });
-      } else if (options.length < 7) {
+      } else if (options.length <= maxCheckBoxGroupOptions) {
         content = /*#__PURE__*/React.createElement(CheckBoxGroup, {
           id: id,
           name: property,
@@ -115,7 +135,11 @@ export var DataFilter = function DataFilter(_ref) {
           id: id,
           name: property,
           showSelectedInline: true,
-          options: options
+          options: searchedOptions,
+          onSearch: options.length >= minSelectSearchOptions ? setSearchText : undefined,
+          onClose: function onClose() {
+            return setSearchText('');
+          }
         });
       }
     }

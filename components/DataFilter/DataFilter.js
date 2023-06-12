@@ -16,6 +16,9 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+// empirical constants for when we change inputs
+var maxCheckBoxGroupOptions = 4;
+var minSelectSearchOptions = 10;
 var getValueAt = function getValueAt(valueObject, pathArg) {
   if (valueObject === undefined) return undefined;
   var path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
@@ -60,6 +63,9 @@ var DataFilter = function DataFilter(_ref) {
     unfilteredData = _useContext.unfilteredData;
   var _useContext2 = (0, _react.useContext)(_FormContext.FormContext),
     noForm = _useContext2.noForm;
+  var _useState = (0, _react.useState)(''),
+    searchText = _useState[0],
+    setSearchText = _useState[1];
   var _useMemo = (0, _react.useMemo)(function () {
       var _properties$property, _properties$property2;
       if (children) return [undefined, undefined]; // caller driving
@@ -87,6 +93,19 @@ var DataFilter = function DataFilter(_ref) {
     }, [children, data, optionsProp, properties, property, rangeProp, unfilteredData]),
     options = _useMemo[0],
     range = _useMemo[1];
+  var searchedOptions = (0, _react.useMemo)(function () {
+    if (!searchText) return options;
+    // The line below escapes regular expression special characters:
+    // [ \ ^ $ . | ? * + ( )
+    var escapedText = searchText.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+    // Create the regular expression with modified value which
+    // handles escaping special characters. Without escaping special
+    // characters, errors will appear in the console
+    var exp = new RegExp(escapedText, 'i');
+    return options.filter(function (o) {
+      return typeof o === 'string' ? exp.test(o) : exp.test(o.label);
+    });
+  }, [options, searchText]);
   var id = dataId + "-" + property;
   var content = children;
   if (!content) {
@@ -110,7 +129,7 @@ var DataFilter = function DataFilter(_ref) {
           name: property,
           options: booleanOptions
         });
-      } else if (options.length < 7) {
+      } else if (options.length <= maxCheckBoxGroupOptions) {
         content = /*#__PURE__*/_react["default"].createElement(_CheckBoxGroup.CheckBoxGroup, {
           id: id,
           name: property,
@@ -121,7 +140,11 @@ var DataFilter = function DataFilter(_ref) {
           id: id,
           name: property,
           showSelectedInline: true,
-          options: options
+          options: searchedOptions,
+          onSearch: options.length >= minSelectSearchOptions ? setSearchText : undefined,
+          onClose: function onClose() {
+            return setSearchText('');
+          }
         });
       }
     }
