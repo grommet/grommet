@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { FormContext } from '../Form/FormContext';
@@ -7,6 +7,10 @@ import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
+
+// empirical constants for when we change inputs
+const maxCheckBoxGroupOptions = 4;
+const minSelectSearchOptions = 10;
 
 const getValueAt = (valueObject, pathArg) => {
   if (valueObject === undefined) return undefined;
@@ -51,6 +55,7 @@ export const DataFilter = ({
     unfilteredData,
   } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
+  const [searchText, setSearchText] = useState('');
 
   const [options, range] = useMemo(() => {
     if (children) return [undefined, undefined]; // caller driving
@@ -84,6 +89,20 @@ export const DataFilter = ({
     unfilteredData,
   ]);
 
+  const searchedOptions = useMemo(() => {
+    if (!searchText) return options;
+    // The line below escapes regular expression special characters:
+    // [ \ ^ $ . | ? * + ( )
+    const escapedText = searchText.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+    // Create the regular expression with modified value which
+    // handles escaping special characters. Without escaping special
+    // characters, errors will appear in the console
+    const exp = new RegExp(escapedText, 'i');
+    return options.filter((o) =>
+      typeof o === 'string' ? exp.test(o) : exp.test(o.label),
+    );
+  }, [options, searchText]);
+
   const id = `${dataId}-${property}`;
 
   let content = children;
@@ -108,7 +127,7 @@ export const DataFilter = ({
         content = (
           <CheckBoxGroup id={id} name={property} options={booleanOptions} />
         );
-      } else if (options.length < 7) {
+      } else if (options.length <= maxCheckBoxGroupOptions) {
         content = <CheckBoxGroup id={id} name={property} options={options} />;
       } else {
         content = (
@@ -116,7 +135,13 @@ export const DataFilter = ({
             id={id}
             name={property}
             showSelectedInline
-            options={options}
+            options={searchedOptions}
+            onSearch={
+              options.length >= minSelectSearchOptions
+                ? setSearchText
+                : undefined
+            }
+            onClose={() => setSearchText('')}
           />
         );
       }
