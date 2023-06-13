@@ -1089,8 +1089,7 @@ export interface ThemeType {
   menu?: {
     background?: BackgroundType;
     item?:
-      | ButtonType
-      | {
+      | ButtonType & {
           align?: AlignType;
         };
     drop?: DropType;
