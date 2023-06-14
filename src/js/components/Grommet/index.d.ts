@@ -31,8 +31,8 @@ export interface GrommetProps {
         required?: string;
       };
       formField?: {
-        characters?: {
-          left?: {
+        maxCharacters?: {
+          remaining?: {
             singular?: string;
             plural?: string;
           };

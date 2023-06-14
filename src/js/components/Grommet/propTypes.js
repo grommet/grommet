@@ -32,8 +32,8 @@ if (process.env.NODE_ENV !== 'production') {
           required: PropTypes.string,
         }),
         formField: PropTypes.shape({
-          characters: PropTypes.shape({
-            left: PropTypes.shape({
+          maxCharacters: PropTypes.shape({
+            remaining: PropTypes.shape({
               singular: PropTypes.string,
               plural: PropTypes.string,
             }),

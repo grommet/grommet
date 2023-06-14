@@ -217,20 +217,22 @@ const FormField = forwardRef(
       const { max, threshold } = validate;
 
       const getMessage = () => {
-        const charactersLeft = (plural) => ({
-          id: `formField.characters.left.${plural ? 'plural' : 'singular'}`,
+        const charactersRemaining = (plural) => ({
+          id: `formField.maxCharacters.remaining.${
+            plural ? 'plural' : 'singular'
+          }`,
           values: { number: max - value.length },
         });
 
         const charactersOverLimit = (plural) => ({
-          id: `formField.characters.overLimit.${
+          id: `formField.maxCharacters.overLimit.${
             plural ? 'plural' : 'singular'
           }`,
           values: { number: value.length - max },
         });
 
         if (max - value.length >= 0) {
-          return format(charactersLeft(max - value.length > 1));
+          return format(charactersRemaining(max - value.length > 1));
         }
         return format(charactersOverLimit(value.length - max > 1));
       };

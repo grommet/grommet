@@ -80,8 +80,8 @@
     "required": "required"
   },
   "formField": {
-    "characters": {
-      "left": {
+    "maxCharacters": {
+      "remaining": {
         "singular": "{number} character left",
         "plural": "{number} characters left"
       },
