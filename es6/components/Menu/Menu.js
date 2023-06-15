@@ -266,15 +266,15 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     }));
   } : content));
   var menuItem = function menuItem(item, index) {
-    var _theme$menu$item, _theme$menu$item2, _theme$menu$item3;
+    var _theme$menu$item, _theme$menu$item2, _theme$menu$item3, _theme$menu$item4;
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     var child = !theme.button.option ? /*#__PURE__*/React.createElement(Box, {
-      align: "start",
+      align: ((_theme$menu$item = theme.menu.item) == null ? void 0 : _theme$menu$item.align) || 'start',
       pad: "small",
       direction: "row",
-      gap: item.gap || ((_theme$menu$item = theme.menu.item) == null ? void 0 : _theme$menu$item.gap),
-      justify: item.justify || ((_theme$menu$item2 = theme.menu.item) == null ? void 0 : _theme$menu$item2.justify)
+      gap: item.gap || ((_theme$menu$item2 = theme.menu.item) == null ? void 0 : _theme$menu$item2.gap),
+      justify: item.justify || ((_theme$menu$item3 = theme.menu.item) == null ? void 0 : _theme$menu$item3.justify)
     }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined;
 
     // if we have a child, turn on plain, and hoverIndicator
@@ -300,7 +300,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
         kind: !child ? 'option' : undefined,
         hoverIndicator: !child ? undefined : 'background'
       }, theme.menu.item, {
-        justify: item.justify || ((_theme$menu$item3 = theme.menu.item) == null ? void 0 : _theme$menu$item3.justify)
+        justify: item.justify || ((_theme$menu$item4 = theme.menu.item) == null ? void 0 : _theme$menu$item4.justify)
       }, !child ? item : _extends({}, item, {
         gap: undefined,
         icon: undefined,
