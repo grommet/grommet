@@ -306,7 +306,7 @@ const Menu = forwardRef((props, ref) => {
     // as an option Button kind property.
     const child = !theme.button.option ? (
       <Box
-        align="start"
+        align={theme.menu.item?.align || 'start'}
         pad="small"
         direction="row"
         gap={item.gap || theme.menu.item?.gap}
