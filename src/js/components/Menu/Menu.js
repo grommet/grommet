@@ -306,7 +306,7 @@ const Menu = forwardRef((props, ref) => {
     // as an option Button kind property.
     const child = !theme.button.option ? (
       <Box
-        align="start"
+        align={theme.menu.item?.align || 'start'}
         pad="small"
         direction="row"
         gap={item.gap || theme.menu.item?.gap}
@@ -444,7 +444,10 @@ const Menu = forwardRef((props, ref) => {
                 don't show controlMirror when window height has shrunk
               */}
               {!initialAlignTop &&
-              (alignControlMirror === 'bottom' || align.bottom === 'bottom')
+              // don't show controlMirror if caller is using
+              // align.bottom === 'top'
+              ((alignControlMirror === 'bottom' && !align.bottom === 'top') ||
+                align.bottom === 'bottom')
                 ? controlMirror
                 : undefined}
             </ContainerBox>
