@@ -391,7 +391,10 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       overflow: "auto",
       role: "menu",
       a11yTitle: a11y
-    }, menuContent), !initialAlignTop && (alignControlMirror === 'bottom' || align.bottom === 'bottom') ? controlMirror : undefined))
+    }, menuContent), !initialAlignTop && (
+    // don't show controlMirror if caller is using
+    // align.bottom === 'top'
+    alignControlMirror === 'bottom' && !align.bottom === 'top' || align.bottom === 'bottom') ? controlMirror : undefined))
   }), content));
 });
 exports.Menu = Menu;
