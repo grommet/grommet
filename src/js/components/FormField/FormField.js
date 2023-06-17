@@ -196,6 +196,11 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
+    if (validate && !name) {
+      console.error(`For 'validate' prop to work properly,
+       you must specify 'name' 
+      prop to FormField and it must be unique for all FormFields.`);
+    }
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
     const {
@@ -237,6 +242,16 @@ const FormField = forwardRef(
         children &&
         Children.map(children, (child) => {
           if (
+            validate &&
+            name &&
+            child.props.name &&
+            name !== child.props.name
+          ) {
+            console.error(`${child.type.displayName} 'name' prop value - 
+            ${child.props.name} must match with the 'name' prop value -
+             ${name} of FormField.`);
+          }
+          if (
             child &&
             child.type &&
             grommetInputPadNames.indexOf(child.type.displayName) !== -1
@@ -250,6 +265,19 @@ const FormField = forwardRef(
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
+            // If FormField is given 'name' and validate prop, then
+            // add the same value for that FormField children name.
+            if (validate && name && !child.props.name) {
+              return cloneElement(child, {
+                plain: true,
+                focusIndicator: false,
+                name,
+                pad:
+                  'CheckBox'.indexOf(child.type.displayName) !== -1
+                    ? formFieldTheme?.checkBox?.pad
+                    : undefined,
+              });
+            }
             return cloneElement(child, {
               plain: true,
               focusIndicator: false,
