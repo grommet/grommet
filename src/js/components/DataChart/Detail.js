@@ -28,6 +28,7 @@ const Detail = ({
   activeProperty,
   axis,
   data,
+  horizontal: horizontalProp,
   pad: padProp,
   series,
   seriesStyles,
@@ -72,6 +73,17 @@ const Detail = ({
     }
   }, []);
 
+  const dropAlign = useMemo(() => {
+    let res;
+    if (detailIndex > data.length / 2) {
+      if (horizontalProp) res = { bottom: 'top' };
+      else res = { right: 'left' };
+    } else if (horizontalProp) res = { top: 'bottom' };
+    else res = { left: 'right' };
+
+    return res;
+  }, [data.length, detailIndex, horizontalProp]);
+
   return (
     <>
       <Keyboard
@@ -88,49 +100,73 @@ const Detail = ({
         <DetailControl
           key="band"
           tabIndex={0}
-          direction="row"
           fill
-          pad={pad}
           justify="between"
           responsive={false}
+          {...(horizontalProp
+            ? {
+                direction: 'column',
+              }
+            : {
+                direction: 'row',
+                pad,
+              })}
           onFocus={() => {}}
           onBlur={() => setDetailIndex(undefined)}
         >
-          {data.map((_, i) => (
-            <Box
-              // eslint-disable-next-line react/no-array-index-key
-              key={i}
-              align="center"
-              responsive={false}
-              width={thickness}
-              onMouseOver={(event) => {
-                activeIndex.current = event.currentTarget;
-                setDetailIndex(i);
-              }}
-              onMouseLeave={onMouseLeave}
-              onFocus={() => {}}
-              onBlur={() => {}}
-            >
+          {data.map((_, i) => {
+            const ref = (c) => {
+              detailRefs[i] = c;
+            };
+
+            return (
               <Box
-                ref={(c) => {
-                  detailRefs[i] = c;
+                // eslint-disable-next-line react/no-array-index-key
+                key={i}
+                responsive={false}
+                {...(horizontalProp
+                  ? {
+                      justify: 'center',
+                      height: thickness,
+                    }
+                  : {
+                      align: 'center',
+                      width: thickness,
+                    })}
+                onMouseOver={(event) => {
+                  activeIndex.current = event.currentTarget;
+                  setDetailIndex(i);
                 }}
-                fill="vertical"
-                border={detailIndex === i ? true : undefined}
-              />
-            </Box>
-          ))}
+                onMouseLeave={onMouseLeave}
+                onFocus={() => {}}
+                onBlur={() => {}}
+              >
+                <Box
+                  // for horizontal, ref will be placed on child box so
+                  // drop is restricted to drop dimensions as opposed
+                  // to filling the chart width
+                  {...(horizontalProp
+                    ? {
+                        fill: 'horizontal',
+                      }
+                    : {
+                        ref,
+                        fill: 'vertical',
+                      })}
+                  border={detailIndex === i ? true : undefined}
+                >
+                  {horizontalProp ? <Box alignSelf="center" ref={ref} /> : null}
+                </Box>
+              </Box>
+            );
+          })}
         </DetailControl>
       </Keyboard>
       {detailIndex !== undefined && detailRefs[detailIndex] && (
         <Drop
           key="drop"
           target={detailRefs[detailIndex]}
-          align={
-            detailIndex > data.length / 2
-              ? { right: 'left' }
-              : { left: 'right' }
-          }
+          align={dropAlign}
           plain
           onMouseLeave={onMouseLeave}
         >
@@ -149,12 +185,15 @@ const Detail = ({
                 )
                 .map((serie) => {
                   const propertyStyle = seriesStyles[serie.property];
+                  const axisValue = horizontalProp
+                    ? data[detailIndex][serie.property]
+                    : detailIndex;
                   return (
                     <Fragment key={serie.property}>
                       {propertyStyle ? <Swatch {...propertyStyle} /> : <span />}
                       <Text size="small">{serie.label || serie.property}</Text>
                       <Text size="small" weight="bold">
-                        {renderValue(serie, detailIndex)}
+                        {renderValue(serie, axisValue)}
                       </Text>
                     </Fragment>
                   );

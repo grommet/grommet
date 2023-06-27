@@ -707,6 +707,7 @@ const DataChart = forwardRef(
             activeProperty={activeProperty}
             axis={axis}
             data={data}
+            horizontal={horizontal}
             pad={pad}
             series={series}
             seriesStyles={seriesStyles}
