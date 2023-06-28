@@ -1148,7 +1148,9 @@ describe('DateInput', () => {
     const user = userEvent.setup();
 
     render(
-      <Form>
+      // onReset e.stopPropagation() is testing to ensure
+      // the event won't be lost if caller adds custom reset
+      <Form onReset={(e) => e.stopPropagation()}>
         <DateInput format="mm/dd/yyyy" name="date" />
         <Button label="Reset" type="reset" />
       </Form>,
