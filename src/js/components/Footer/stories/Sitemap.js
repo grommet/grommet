@@ -38,8 +38,8 @@ export const Sitemap = () => (
     <Footer background="dark-1" pad="large">
       <Box direction="row-responsive" gap="xsmall">
         <Box align="center" gap="small">
-          <GrommetIcon color="brand" size="large" />
-          <Text alignSelf="center" color="brand" weight="bold">
+          <GrommetIcon size="large" />
+          <Text alignSelf="center" weight="bold">
             grommet.io
           </Text>
         </Box>
