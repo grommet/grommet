@@ -153,7 +153,7 @@ Use the icon prop instead.`,
     // for uncontrolled forms, ensure the reset event
     // resets the textValue
     useEffect(() => {
-      const form = ref?.current.form;
+      const form = ref?.current?.form;
       const handleFormReset = (e) => {
         if (schema && ref.current && e.target.contains(ref.current)) {
           setTextValue('');
