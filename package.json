@@ -80,7 +80,7 @@
     "@storybook/react": "7.0.20",
     "@storybook/react-webpack5": "7.0.20",
     "@storybook/source-loader": "7.0.20",
-    "@testing-library/dom": "^9.3.0",
+    "@testing-library/dom": "9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/testcafe": "^5.0.0",
