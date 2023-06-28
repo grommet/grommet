@@ -1,34 +1,22 @@
 import React from 'react';
 
-import { DateInput, Form, TextInput, Button } from 'grommet';
+import { Box, DateInput, Text } from 'grommet';
 
-export const Simple = () => (
-  <>
-    <Form
-      onChange={(value) => {
-        console.log(JSON.stringify(value));
-      }}
-      onReset={(e) => {
-        console.log('my reset');
-        e.stopPropagation();
-      }}
-    >
-      <DateInput format="mm/dd/yyyy" name="date" />
-      <TextInput name="text" />
-      <Button label="clear" type="reset" />
-    </Form>
-
-    <Form
-      onChange={(value) => {
-        console.log(JSON.stringify(value));
-      }}
-    >
-      <DateInput format="mm/dd/yyyy" name="date-2" />
-      <TextInput name="text-2" />
-      <Button label="clear" type="reset" />
-    </Form>
-  </>
-);
+export const Simple = () => {
+  const [value, setValue] = React.useState('');
+  const onChange = (event) => {
+    const nextValue = event.value;
+    console.log('onChange iso date:', nextValue);
+    console.log('onChange utc date:', new Date(nextValue));
+    setValue(nextValue);
+  };
+  return (
+    <Box direction="row" align="center" justify="center" pad="large">
+      <Text weight="bold">{value && new Date(value).toLocaleDateString()}</Text>
+      <DateInput value={value} onChange={onChange} />
+    </Box>
+  );
+};
 
 Simple.parameters = {
   chromatic: { disable: true },
