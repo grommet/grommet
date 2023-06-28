@@ -160,7 +160,7 @@ Use the icon prop instead.`,
         }
       };
       // place the listener on the form directly. if listener is on window,
-      // the event could get blocked if caller has e.stopPropogation(), etc. in
+      // the event could get blocked if caller has e.stopPropagation(), etc. in
       // their form onReset
       form?.addEventListener('reset', handleFormReset);
       return () => form?.removeEventListener('reset', handleFormReset);
