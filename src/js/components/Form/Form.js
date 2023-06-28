@@ -625,9 +625,8 @@ const Form = forwardRef(
         };
       };
 
-      return { useFormField, useFormInput, kind, formRef };
+      return { useFormField, useFormInput, kind };
     }, [
-      formRef,
       onChange,
       kind,
       pendingValidation,

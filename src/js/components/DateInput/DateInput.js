@@ -77,7 +77,7 @@ const DateInput = forwardRef(
       (theme.icon?.matchSize && rest.size) ||
       theme.dateInput.icon?.size ||
       'medium';
-    const { useFormInput, formRef } = useContext(FormContext);
+    const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
     const [value, setValue] = useFormInput({
@@ -153,7 +153,7 @@ Use the icon prop instead.`,
     // for uncontrolled forms, ensure the reset event
     // resets the textValue
     useEffect(() => {
-      const form = formRef?.current;
+      const form = ref?.current.form;
       const handleFormReset = (e) => {
         if (schema && ref.current && e.target.contains(ref.current)) {
           setTextValue('');
@@ -164,7 +164,7 @@ Use the icon prop instead.`,
       // their form onReset
       form?.addEventListener('reset', handleFormReset);
       return () => form?.removeEventListener('reset', handleFormReset);
-    }, [schema, ref, formRef]);
+    }, [schema, ref]);
 
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
