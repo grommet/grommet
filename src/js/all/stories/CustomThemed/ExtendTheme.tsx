@@ -13,7 +13,7 @@ const custom: ThemeType = {
   },
   anchor: {
     extend: (props) => css`
-      color: ${props.href ? 'green' : 'red'};
+      color: ${props['href'] ? 'green' : 'red'};
     `,
   },
   button: {
@@ -44,7 +44,7 @@ const custom: ThemeType = {
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': TReact.FC' is you are not using TypeScript.
-const ExtendTheme: React.FC = () => {
+export const Extend = () => {
   return (
     <Grommet theme={custom}>
       <Box pad="small" gap="medium" width="medium">
@@ -61,8 +61,6 @@ const ExtendTheme: React.FC = () => {
     </Grommet>
   );
 };
-
-export const Extend = () => <ExtendTheme />;
 
 export default {
   title: 'Utilities/Theme/Custom Themed/Extend',
