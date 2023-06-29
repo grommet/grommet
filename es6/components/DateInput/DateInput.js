@@ -136,6 +136,26 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }
   }, [range, schema, textValue, reference, value]);
 
+  // textValue of MaskedInput is controlled.
+  // for uncontrolled forms, ensure the reset event
+  // resets the textValue
+  useEffect(function () {
+    var _ref$current;
+    var form = ref == null ? void 0 : (_ref$current = ref.current) == null ? void 0 : _ref$current.form;
+    var handleFormReset = function handleFormReset(e) {
+      if (schema && ref.current && e.target.contains(ref.current)) {
+        setTextValue('');
+      }
+    };
+    // place the listener on the form directly. if listener is on window,
+    // the event could get blocked if caller has e.stopPropagation(), etc. in
+    // their form onReset
+    form == null ? void 0 : form.addEventListener('reset', handleFormReset);
+    return function () {
+      return form == null ? void 0 : form.removeEventListener('reset', handleFormReset);
+    };
+  }, [schema, ref]);
+
   // when format and not inline, whether to show the Calendar in a Drop
   var _useState4 = useState(),
     open = _useState4[0],
@@ -184,8 +204,8 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       if (open && !range) {
         closeCalendar();
         setTimeout(function () {
-          var _ref$current;
-          return (_ref$current = ref.current) == null ? void 0 : _ref$current.focus();
+          var _ref$current2;
+          return (_ref$current2 = ref.current) == null ? void 0 : _ref$current2.focus();
         }, 1);
       }
     }
