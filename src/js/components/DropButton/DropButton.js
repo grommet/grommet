@@ -37,8 +37,13 @@ const DropButton = forwardRef(
       (event) => {
         // if the user has clicked on our Button, don't do anything here,
         // handle that in onClickInternal() below.
-        let node = event.target;
-        while (node !== document && node !== buttonRef.current) {
+        let node = (event.composed && event.composedPath()[0]) || event.target;
+        while (
+          node &&
+          node !== document &&
+          !(node instanceof ShadowRoot) &&
+          node !== buttonRef.current
+        ) {
           node = node.parentNode;
         }
         if (node !== buttonRef.current) {
@@ -80,7 +85,7 @@ const DropButton = forwardRef(
             onAlign={onAlign}
             restrictFocus
             align={dropAlign}
-            target={dropTarget || buttonRef.current}
+            target={dropTarget || buttonRef}
             onClickOutside={onDropClose}
             onEsc={onDropClose}
             {...dropProps}

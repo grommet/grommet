@@ -64,7 +64,7 @@ const DataTable = ({
   data: dataProp,
   disabled,
   fill,
-  groupBy,
+  groupBy: groupByProp,
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
@@ -90,19 +90,34 @@ const DataTable = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const { data: contextData, properties } = useContext(DataContext);
+  const {
+    view,
+    data: contextData,
+    properties,
+    onView,
+  } = useContext(DataContext);
   const data = dataProp || contextData || emptyData;
 
   const columns = useMemo(() => {
-    if (columnsProp) return columnsProp;
-    if (properties)
-      return Object.keys(properties).map((p) => ({
+    let result = [];
+    if (columnsProp) result = columnsProp;
+    else if (properties)
+      result = Object.keys(properties).map((p) => ({
         property: p,
         ...properties[p],
       }));
-    if (data.length) return Object.keys(data[0]).map((p) => ({ property: p }));
-    return [];
-  }, [columnsProp, data, properties]);
+    else if (data.length)
+      result = Object.keys(data[0]).map((p) => ({ property: p }));
+    if (view?.columns)
+      result = result
+        .filter((c) => view.columns.includes(c.property))
+        .sort(
+          (c1, c2) =>
+            view.columns.indexOf(c1.property) -
+            view.columns.indexOf(c2.property),
+        );
+    return result;
+  }, [columnsProp, data, properties, view]);
 
   // property name of the primary property
   const primaryProperty = useMemo(
@@ -126,7 +141,11 @@ const DataTable = ({
   const [sort, setSort] = useState(sortProp || {});
   useEffect(() => {
     if (sortProp) setSort(sortProp);
-  }, [sortProp]);
+    else if (view?.sort) setSort(view.sort);
+  }, [sortProp, view]);
+
+  // what we are grouping on
+  const groupBy = view?.groupBy || groupByProp;
 
   // the data filtered and sorted, if needed
   // Note: onUpdate mode expects the data to be passed
@@ -264,6 +283,9 @@ const DataTable = ({
     else direction = 'asc';
     const nextSort = { property, direction, external };
     setSort(nextSort);
+    if (onView) {
+      onView({ ...view, sort: { property, direction } });
+    }
     if (onUpdate) {
       const opts = {
         count: limit,

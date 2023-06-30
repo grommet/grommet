@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-import { FormUp } from 'grommet-icons/icons/FormUp';
 
 import { setFocusWithoutScroll } from '../../utils';
 
@@ -46,6 +45,7 @@ const SelectMultipleContainer = forwardRef(
       dropHeight,
       emptySearchMessage = 'No matches found',
       help,
+      icon,
       id,
       labelKey,
       limit,
@@ -354,15 +354,26 @@ const SelectMultipleContainer = forwardRef(
       />
     );
 
+    let helpContent;
+    if (help) {
+      if (typeof help === 'string')
+        helpContent = (
+          <Box flex={false} pad="xsmall">
+            <Text size="small">{help}</Text>
+          </Box>
+        );
+      else helpContent = <Box flex={false}>{help}</Box>;
+    }
+
     if (showSelectedInline)
       summaryContent = (
         <Box direction="row" justify="between" flex={false}>
           {summaryContent}
-          <Button onClick={onClose} a11yTitle="Close Select">
-            <Box fill alignSelf="start" pad={{ right: 'small', top: 'small' }}>
-              <FormUp />
-            </Box>
-          </Button>
+          <Box>
+            <Button fill="vertical" onClick={onClose} a11yTitle="Close Select">
+              {icon}
+            </Button>
+          </Box>
         </Box>
       );
 
@@ -408,16 +419,16 @@ const SelectMultipleContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
-          <Box flex={false}>{help}</Box>
-          <OptionsContainer
-            role="listbox"
-            tabIndex="0"
-            ref={optionsRef}
-            aria-multiselectable
-            onMouseMove={() => setKeyboardNavigation(false)}
-            aria-activedescendant={optionsRef?.current?.children[activeIndex]}
-          >
-            {options.length > 0 ? (
+          {helpContent}
+          {options.length > 0 ? (
+            <OptionsContainer
+              role="listbox"
+              tabIndex="0"
+              ref={optionsRef}
+              aria-multiselectable
+              onMouseMove={() => setKeyboardNavigation(false)}
+              aria-activedescendant={optionsRef?.current?.children[activeIndex]}
+            >
               <InfiniteScroll
                 items={options}
                 step={theme.select.step}
@@ -566,14 +577,14 @@ const SelectMultipleContainer = forwardRef(
                   );
                 }}
               </InfiniteScroll>
-            ) : (
-              <EmptySearchOption
-                emptySearchMessage={emptySearchMessage}
-                selectOptionsStyle={selectOptionsStyle}
-                theme={theme}
-              />
-            )}
-          </OptionsContainer>
+            </OptionsContainer>
+          ) : (
+            <EmptySearchOption
+              emptySearchMessage={emptySearchMessage}
+              selectOptionsStyle={selectOptionsStyle}
+              theme={theme}
+            />
+          )}
           {usingKeyboard && showA11yLimit && (
             <Box
               height="0px"

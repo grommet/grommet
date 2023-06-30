@@ -31,6 +31,8 @@ export const ValidateOnMount = () => {
         >
           <FormField
             label="First Name"
+            htmlFor="firstName"
+            id="firstName"
             name="firstName"
             required
             validate={[
@@ -45,6 +47,8 @@ export const ValidateOnMount = () => {
 
           <FormField
             label="Last Name"
+            htmlFor="lastName"
+            id="lastName"
             name="lastName"
             required
             validate={[

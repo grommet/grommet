@@ -456,6 +456,9 @@ describe('Layer', () => {
         container: {
           elevation: 'large',
         },
+        overlay: {
+          backdropFilter: `blur(12px)`,
+        },
       },
     };
 

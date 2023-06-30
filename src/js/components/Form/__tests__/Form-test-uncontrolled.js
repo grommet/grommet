@@ -720,6 +720,43 @@ describe('Form uncontrolled', () => {
     expect(queryByText('must be >1 character')).toBe(null);
   });
 
+  test('validate on blur with Select', async () => {
+    jest.useFakeTimers();
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet>
+        <Form validate="blur">
+          <FormField
+            label="Size"
+            name="select-size"
+            htmlFor="select-size"
+            required
+          >
+            <Select
+              name="select-size"
+              id="select-size"
+              options={['small', 'medium', 'large']}
+            />
+          </FormField>
+          <Button label="submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    act(() => screen.getByRole('button', { name: /Open Drop/i }).focus());
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    act(() => screen.getByRole('option', { name: /small/i }).focus());
+
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+
+    act(() => screen.getByText('submit').focus());
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(screen.queryAllByText('required')).toHaveLength(1);
+
+    window.scrollTo.mockRestore();
+  });
+
   test('form validity', async () => {
     jest.useFakeTimers();
     let valid;

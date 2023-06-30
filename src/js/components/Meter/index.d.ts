@@ -16,6 +16,7 @@ export interface MeterProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   max?: number;
+  reverse?: boolean;
   round?: boolean;
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'full' | string;
   thickness?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;

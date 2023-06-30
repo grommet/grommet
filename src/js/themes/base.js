@@ -30,7 +30,7 @@ const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#FF4040',
-  error: '#FF4040',
+  error: '#B30000',
   warning: '#FFAA15',
   ok: '#00C781',
   unknown: '#CCCCCC',
@@ -337,6 +337,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         full: '100%',
       },
     },
+    // icon: {
+    //   extennd: undefined,
+    //   matchSize: undefined,
+    //   size: undefined,
+    // },
     accordion: {
       panel: {
         // border: {
@@ -378,6 +383,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // fontWeight: undefined,
         // extend: undefined,
       },
+      // size: {
+      //   medium: {
+      //     color: undefined,
+      //     fontWeight: undefined,
+      //     textDecoration: undefined,
+      //   },
+      // },
       // extend: undefined,
     },
     avatar: {
@@ -415,6 +427,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     button: {
       badge: {
+        // align: undefined,,
         container: {
           background: 'brand',
           // pad: undefined,
@@ -439,6 +452,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
         medium: {
           border: {
@@ -448,6 +464,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth}px`, // 22px
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
         large: {
           border: {
@@ -457,6 +476,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             vertical: `${baseSpacing / 4 + borderWidth}px`, // 8px
             horizontal: `${baseSpacing + borderWidth * 4}px`, // 32px,
           },
+          // iconOnly: {
+          //   pad: undefined,
+          // },
         },
       },
       border: {
@@ -469,7 +491,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   icon: undefined,
@@ -482,11 +506,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // primary: {
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -497,11 +523,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // secondary: {
       //   font: {
+      //     size: undefined,
       //     weight: undefined,
       //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -514,6 +542,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   direction: undefined,
       //   icon: undefined,
       //   padding: {
       //     vertical: undefined,
@@ -566,18 +595,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     calendar: {
       // daySize must align with global.size
       small: {
+        // title: {},
         fontSize: `${baseFontSize - fontScale}px`,
         lineHeight: 1.375,
         daySize: `${(baseSpacing * 8) / 7}px`,
         slideDuration: '0.2s',
       },
       medium: {
+        // title: {},
         fontSize: `${baseFontSize}px`,
         lineHeight: 1.45,
         daySize: `${(baseSpacing * 16) / 7}px`,
         slideDuration: '0.5s',
       },
       large: {
+        // title: {},
         fontSize: `${baseFontSize + 3 * fontScale}px`,
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
@@ -1030,7 +1062,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
       skeleton: {
-        width: { min: '200px' },
+        width: { min: '150px', max: '200px' },
       },
     },
     layer: {
@@ -1049,6 +1081,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
+        // backdropFilter: undefined,
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '20',
@@ -1645,6 +1678,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
         // open: undefined,
       },
+      // emptySearchMessage: {
+      //   container: {}, // any box props
+      //   text: {}, // any text props
+      // },
       icons: {
         // color: { dark: undefined, light: undefined },
         margin: { horizontal: 'small' },
@@ -1744,6 +1781,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       // gap: undefined,
       header: {
+        // alignSelf: undefined,
         // background: undefined,
         // border: {
         //   side: undefined,

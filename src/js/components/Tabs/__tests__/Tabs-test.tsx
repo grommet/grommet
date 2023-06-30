@@ -5,7 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { Grommet, Tab, Tabs } from '../..';
 import { ThemeType } from '../../../themes';
@@ -249,13 +249,14 @@ describe('Tabs', () => {
     expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
   });
 
-  const ButtonTab = styled(Tab)<{ active?: boolean }>`
-    ${(props) => css`
-      background: ${props.active ? 'blue' : 'green'};
-    `}
-  `;
-
   test('styled component should change tab color when active', () => {
+    // @ts-ignore
+    const ButtonTab = styled(Tab)<{ active?: boolean }>`
+      ${(props) => css`
+        background: ${props.active ? 'blue' : 'green'};
+      `}
+    `;
+
     const { container, getByText } = render(
       <Grommet>
         <Tabs>
@@ -335,5 +336,30 @@ describe('Tabs', () => {
 
     fireEvent.click(getByText('Tab 2'));
     expect(onClick).toBeCalled();
+  });
+
+  test('should apply theme alignSelf to tab controls', () => {
+    const customTheme = {
+      tabs: {
+        header: {
+          alignSelf: 'start',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Tabs>
+          <Tab title="Tab 1">This tab is first</Tab>
+          <Tab title="Tab 2">This tab is second</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+
+    const tabsHeader = screen.getByRole('tablist')!;
+    const tabsHeaderStyle = window.getComputedStyle(tabsHeader);
+    expect(tabsHeaderStyle.alignSelf).toBe('flex-start');
   });
 });

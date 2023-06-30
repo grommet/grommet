@@ -27,7 +27,8 @@ const AccordionPanel = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const { active, animate, onPanelChange } = useContext(AccordionContext);
+    const { active, animate, level, onPanelChange } =
+      useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
     const [focus, setFocus] = useState();
 
@@ -119,6 +120,7 @@ const AccordionPanel = forwardRef(
                 <Box pad={{ horizontal: 'xsmall' }}>
                   <Heading
                     level={
+                      level ||
                       (theme.accordion.heading &&
                         theme.accordion.heading.level) ||
                       4

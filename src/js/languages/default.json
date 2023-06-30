@@ -1,4 +1,8 @@
 {
+  "button": {
+    "busy": "button is in a busy state",
+    "success": "button action succeeded"
+  },
   "calendar": {
     "previousMove": "Moved to {date}",
     "previous": "Go to {date}",
@@ -18,25 +22,44 @@
   "dataFilters": {
     "clear": "Clear filters",
     "heading": "Filters",
-    "open": "Open filters"
+    "open": "Open filters",
+    "openSet": {
+      "singular": "Open filters, {number} filter applied",
+      "plural": "Open filters, {number} filters applied"
+    }
   },
   "dataForm": {
     "reset": "Undo changes",
     "submit": "Apply filters"
   },
   "dataSearch": {
-    "label": "Search data"
+    "label": "Search",
+    "open": "Open search"
   },
   "dataSort": {
     "ascending": "Ascending",
     "by": "Sort by",
     "descending": "Descending",
-    "direction": "Sort direction"
+    "direction": "Sort direction",
+    "open": "Open sort"
   },
   "dataSummary": {
-    "filtered": "{filtered} results of {total} items",
-    "filteredSingle": "{filtered} result of {total} items",
+    "filtered": "{filteredTotal} results of {total} items",
+    "filteredSingle": "{filteredTotal} result of {total} items",
     "total": "{total} items"
+  },
+  "dataTableColumns": {
+    "open": "Open column selector",
+    "order": "Order columns",
+    "select": "Select columns",
+    "tip": "Manage columns"
+  },
+  "dataTableGroupBy": {
+    "clear": "Clear group",
+    "label": "Group by"
+  },
+  "dataView": {
+    "label": "View"
   },
   "fileInput": {
     "browse": "browse",

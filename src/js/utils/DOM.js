@@ -65,6 +65,28 @@ export const containsFocus = (node) => {
   return !!element;
 };
 
+export const withinDropPortal = (node, portalContext) => {
+  const root = node?.getRootNode();
+  let element = node;
+  let portalId;
+  while (element && element !== root) {
+    if (element.hasAttribute('data-g-portal-id')) {
+      portalId = element.getAttribute('data-g-portal-id');
+      element = root;
+    } else {
+      element = element.parentElement;
+    }
+  }
+  // if portalContext doesn't contain the portalId then the
+  // portal is new and node is within a drop that just opened
+  if (
+    portalId === undefined ||
+    portalContext.indexOf(parseInt(portalId, 10)) !== -1
+  )
+    return false;
+  return true;
+};
+
 // Check if the element.tagName is an input, select or textarea
 export const isFocusable = (element) => {
   const tagName = element.tagName.toLowerCase();

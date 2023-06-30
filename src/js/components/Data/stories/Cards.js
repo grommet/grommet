@@ -64,5 +64,5 @@ Example.args = {
 };
 
 export default {
-  title: 'Layout/Data/Cards',
+  title: 'Data/Data/Cards',
 };

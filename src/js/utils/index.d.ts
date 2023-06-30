@@ -2,7 +2,7 @@
 declare const normalizeColor: (
   color: string | { dark?: string; light?: string },
   theme: object,
-  required?: boolean,
+  dark?: boolean,
 ) => string;
 
 export { normalizeColor };
@@ -128,7 +128,13 @@ export type AlignContentType =
   | 'start'
   | 'stretch'
   | string;
-export type AlignSelfType = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
+export type AlignSelfType =
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'stretch'
+  | 'baseline'
+  | string;
 export type AnimateType = boolean;
 export interface BackgroundObject {
   color?: ColorType;

@@ -165,7 +165,8 @@ exports[`Skeleton Box skeleton loading 1`] = `
   background-color: #EDEDED;
   color: #444444;
   height: 56px;
-  min-width: 200px;
+  max-width: 200px;
+  min-width: 150px;
 }
 
 .c4 {
@@ -349,7 +350,8 @@ exports[`Skeleton Box skeleton sizes loading 1`] = `
   background-color: #EDEDED;
   color: #444444;
   height: 32px;
-  min-width: 200px;
+  max-width: 200px;
+  min-width: 150px;
 }
 
 .c4 {
