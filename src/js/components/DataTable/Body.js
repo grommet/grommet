@@ -39,127 +39,158 @@ const Row = memo(
     primaryProperty,
     data,
     verticalAlign,
-  }) => (
-    <>
-      <StyledDataTableRow
-        ref={rowRef}
-        size={size}
-        active={active}
-        aria-disabled={(onClickRow && isDisabled) || undefined}
-        onClick={
-          onClickRow
-            ? (event) => {
-                if (onClickRow && !isDisabled) {
-                  if (typeof onClickRow === 'function') {
-                    // extract from React's synthetic event pool
-                    event.persist();
-                    const adjustedEvent = event;
-                    adjustedEvent.datum = datum;
-                    adjustedEvent.index = index;
-                    onClickRow(adjustedEvent);
-                  } else if (onClickRow === 'select') {
-                    if (isSelected) {
-                      onSelect(
-                        selected.filter((s) => s !== primaryValue),
-                        datum,
-                      );
-                    } else onSelect([...selected, primaryValue], datum);
+  }) => {
+    // If there is a controlled function, use that, otherwise the internal.
+    const isExpanded =
+      (rowDetails &&
+        rowDetails.expanded &&
+        rowDetails.expanded(data[index])) ??
+      isRowExpanded;
+
+    // If there's a controlled function, don't do anything, otherwise use
+    // internal setRowExpand.
+    const setExpanded =
+      rowDetails && rowDetails.expanded
+      ? (rowDetails.onClickExpand &&
+          rowDetails.onClickExpand.bind(this, data[index])) ||
+        (() => {})
+      : setRowExpand;
+
+    // Determine the rowDetails render function.
+    const rowDetailsRender =
+      rowDetails && typeof rowDetails.render === 'function'
+      ? rowDetails.render
+      : rowDetails;
+
+    // rowExpandable contains true if the row should be expandable.
+    const rowExpandable =
+      rowDetails && rowDetails.expandable
+      ? rowDetails.expandable(data[index])
+      : true;
+
+    return (
+      <>
+        <StyledDataTableRow
+          ref={rowRef}
+          size={size}
+          active={active}
+          aria-disabled={(onClickRow && isDisabled) || undefined}
+          onClick={
+            onClickRow
+              ? (event) => {
+                  if (onClickRow && !isDisabled) {
+                    if (typeof onClickRow === 'function') {
+                      // extract from React's synthetic event pool
+                      event.persist();
+                      const adjustedEvent = event;
+                      adjustedEvent.datum = datum;
+                      adjustedEvent.index = index;
+                      onClickRow(adjustedEvent);
+                    } else if (onClickRow === 'select') {
+                      if (isSelected) {
+                        onSelect(
+                          selected.filter((s) => s !== primaryValue),
+                          datum,
+                        );
+                      } else onSelect([...selected, primaryValue], datum);
+                    }
                   }
                 }
+              : undefined
+          }
+          onMouseEnter={
+            onClickRow && !isDisabled ? () => setActive(index) : undefined
+          }
+          onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
+        >
+          {(selected || onSelect) && (
+            <Cell
+              background={
+                (pinnedOffset?._grommetDataTableSelect &&
+                  cellProps.pinned.background) ||
+                cellProps.background
               }
-            : undefined
-        }
-        onMouseEnter={
-          onClickRow && !isDisabled ? () => setActive(index) : undefined
-        }
-        onMouseLeave={onClickRow ? () => setActive(undefined) : undefined}
-      >
-        {(selected || onSelect) && (
-          <Cell
-            background={
-              (pinnedOffset?._grommetDataTableSelect &&
-                cellProps.pinned.background) ||
-              cellProps.background
-            }
-            border={cellProps.pinned.border || cellProps.border}
-            pinnedOffset={pinnedOffset?._grommetDataTableSelect}
-            aria-disabled={isDisabled || !onSelect || undefined}
-            column={{
-              pin: Boolean(pinnedOffset?._grommetDataTableSelect),
-              plain: 'noPad',
-              size: 'auto',
-              render: () => (
-                <CheckBox
-                  tabIndex={onClickRow === 'select' ? -1 : undefined}
-                  a11yTitle={`${
-                    isSelected ? 'unselect' : 'select'
-                  } ${primaryValue}`}
-                  checked={isSelected}
-                  disabled={isDisabled || !onSelect}
-                  onChange={() => {
-                    if (isSelected) {
-                      onSelect(
-                        selected.filter((s) => s !== primaryValue),
-                        datum,
-                      );
-                    } else onSelect([...selected, primaryValue], datum);
-                  }}
-                  pad={cellProps.pad}
-                />
-              ),
-            }}
-            verticalAlign={verticalAlign}
-          />
-        )}
+              border={cellProps.pinned.border || cellProps.border}
+              pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+              aria-disabled={isDisabled || !onSelect || undefined}
+              column={{
+                pin: Boolean(pinnedOffset?._grommetDataTableSelect),
+                plain: 'noPad',
+                size: 'auto',
+                render: () => (
+                  <CheckBox
+                    tabIndex={onClickRow === 'select' ? -1 : undefined}
+                    a11yTitle={`${
+                      isSelected ? 'unselect' : 'select'
+                    } ${primaryValue}`}
+                    checked={isSelected}
+                    disabled={isDisabled || !onSelect}
+                    onChange={() => {
+                      if (isSelected) {
+                        onSelect(
+                          selected.filter((s) => s !== primaryValue),
+                          datum,
+                        );
+                      } else onSelect([...selected, primaryValue], datum);
+                    }}
+                    pad={cellProps.pad}
+                  />
+                ),
+              }}
+              verticalAlign={verticalAlign}
+            />
+          )}
 
-        {rowDetails && (
-          <ExpanderCell
-            context={isRowExpanded ? 'groupHeader' : 'body'}
-            expanded={isRowExpanded}
-            onToggle={() => {
-              if (isRowExpanded) {
-                setRowExpand(rowExpand.filter((s) => s !== index));
-              } else {
-                setRowExpand([...rowExpand, index]);
+          {rowDetailsRender && (
+            <ExpanderCell
+              context={isExpanded ? 'groupHeader' : 'body'}
+              expanded={isExpanded}
+              disabled={!rowExpandable}
+              onToggle={() => {
+                if (isExpanded) {
+                  setExpanded(rowExpand.filter((s) => s !== index));
+                } else {
+                  setExpanded([...rowExpand, index]);
+                }
+              }}
+              pad={cellProps.pad}
+              verticalAlign={verticalAlign}
+            />
+          )}
+          {columns.map((column) => (
+            <Cell
+              key={column.property}
+              background={
+                (column.pin && cellProps.pinned.background) ||
+                cellProps.background
               }
-            }}
-            pad={cellProps.pad}
-            verticalAlign={verticalAlign}
-          />
-        )}
-        {columns.map((column) => (
-          <Cell
-            key={column.property}
-            background={
-              (column.pin && cellProps.pinned.background) ||
-              cellProps.background
-            }
-            border={(column.pin && cellProps.pinned.border) || cellProps.border}
-            context="body"
-            column={column}
-            datum={datum}
-            pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
-            pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
-            primaryProperty={primaryProperty}
-            scope={
-              column.primary || column.property === primaryProperty
-                ? 'row'
-                : undefined
-            }
-            verticalAlign={verticalAlign}
-          />
-        ))}
-      </StyledDataTableRow>
-      {rowDetails && isRowExpanded && (
-        <StyledDataTableRow key={`${index.toString()}_expand`}>
-          {(selected || onSelect) && <TableCell />}
-          <TableCell colSpan={columns.length + 1}>
-            {rowDetails(data[index])}
-          </TableCell>
+              border={(column.pin && cellProps.pinned.border) || cellProps.border}
+              context="body"
+              column={column}
+              datum={datum}
+              pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
+              pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
+              primaryProperty={primaryProperty}
+              scope={
+                column.primary || column.property === primaryProperty
+                  ? 'row'
+                  : undefined
+              }
+              verticalAlign={verticalAlign}
+            />
+          ))}
         </StyledDataTableRow>
-      )}
-    </>
-  ),
+        {rowDetailsRender && rowExpandable && isExpanded && (
+          <StyledDataTableRow key={`${index.toString()}_expand`}>
+            {(selected || onSelect) && <TableCell />}
+            <TableCell colSpan={columns.length + 1}>
+              {rowDetailsRender(data[index])}
+            </TableCell>
+          </StyledDataTableRow>
+        )}
+      </>
+    );
+  },
 );
 
 const Body = forwardRef(
