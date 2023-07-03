@@ -420,15 +420,15 @@ const SelectMultipleContainer = forwardRef(
             </Box>
           )}
           {helpContent}
-          <OptionsContainer
-            role="listbox"
-            tabIndex="0"
-            ref={optionsRef}
-            aria-multiselectable
-            onMouseMove={() => setKeyboardNavigation(false)}
-            aria-activedescendant={optionsRef?.current?.children[activeIndex]}
-          >
-            {options.length > 0 ? (
+          {options.length > 0 ? (
+            <OptionsContainer
+              role="listbox"
+              tabIndex="0"
+              ref={optionsRef}
+              aria-multiselectable
+              onMouseMove={() => setKeyboardNavigation(false)}
+              aria-activedescendant={optionsRef?.current?.children[activeIndex]}
+            >
               <InfiniteScroll
                 items={options}
                 step={theme.select.step}
@@ -577,14 +577,14 @@ const SelectMultipleContainer = forwardRef(
                   );
                 }}
               </InfiniteScroll>
-            ) : (
-              <EmptySearchOption
-                emptySearchMessage={emptySearchMessage}
-                selectOptionsStyle={selectOptionsStyle}
-                theme={theme}
-              />
-            )}
-          </OptionsContainer>
+            </OptionsContainer>
+          ) : (
+            <EmptySearchOption
+              emptySearchMessage={emptySearchMessage}
+              selectOptionsStyle={selectOptionsStyle}
+              theme={theme}
+            />
+          )}
           {usingKeyboard && showA11yLimit && (
             <Box
               height="0px"

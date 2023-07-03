@@ -17,20 +17,20 @@ exports[`StarRating StarRating is present 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -316,20 +316,20 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -614,20 +614,20 @@ exports[`StarRating value for rating 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

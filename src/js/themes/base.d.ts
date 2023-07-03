@@ -26,6 +26,7 @@ import {
   AlignContentType,
   SkeletonColorsType,
   AlignSelfType,
+  AlignType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -1087,7 +1088,10 @@ export interface ThemeType {
   };
   menu?: {
     background?: BackgroundType;
-    item?: ButtonType;
+    item?:
+      | ButtonType & {
+          align?: AlignType;
+        };
     drop?: DropType;
     extend?: ExtendType;
     group?: {
@@ -1429,6 +1433,10 @@ export interface ThemeType {
       open?: string | object;
     };
     extend?: ExtendType;
+    emptySearchMessage?: {
+      container?: BoxProps;
+      text?: TextProps;
+    };
     icons?: {
       color?: ColorType;
       down?: React.ReactNode | Icon;

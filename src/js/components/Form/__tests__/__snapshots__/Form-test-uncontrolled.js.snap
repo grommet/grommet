@@ -514,20 +514,20 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2010,7 +2010,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1 fdkHPz"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fomtlz"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hhVOvb"
           label="toggle"
         >
           <div
@@ -2474,20 +2474,20 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c11 *[fill-rule],
 .c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3394,7 +3394,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-sc-ofa7kd-0 eSslYk"
+                class="StyledIcon-sc-ofa7kd-0 jtseoQ"
                 viewBox="0 0 24 24"
               >
                 <path

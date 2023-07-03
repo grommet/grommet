@@ -24,6 +24,9 @@ const customTheme = {
     icons: {
       color: '#F08080',
     },
+    item: {
+      align: 'center',
+    },
   },
 };
 
@@ -539,6 +542,22 @@ describe('Menu', () => {
         <Menu
           label="Test Menu"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme icon alignment', () => {
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Menu
+          label="Test Menu"
+          items={[
+            { label: 'Item 1', icon: <svg /> },
+            { label: 'Item 2', icon: <svg /> },
+          ]}
         />
       </Grommet>,
     );
