@@ -124,6 +124,7 @@ if (process.env.NODE_ENV !== 'production') {
     bounds: PropTypes.oneOfType([
       PropTypes.oneOf(['align']),
       PropTypes.shape({
+        x: PropTypes.arrayOf(PropTypes.number),
         y: PropTypes.arrayOf(PropTypes.number),
       }),
     ]),
