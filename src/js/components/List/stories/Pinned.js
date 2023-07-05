@@ -26,7 +26,6 @@ export const Pinned = () => {
   return (
     <Box align="center" pad="large">
       <List
-        role="list"
         aria-label="pinned list"
         data={ordered}
         onOrder={setOrder}
