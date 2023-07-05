@@ -11,7 +11,16 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, _generalPropTypes.genericProps, {
     animate: _propTypes["default"].bool,
-    bounds: _propTypes["default"].arrayOf(_propTypes["default"].arrayOf(_propTypes["default"].number)),
+    bounds: _propTypes["default"].oneOfType([_propTypes["default"].shape({
+      x: _propTypes["default"].shape({
+        min: _propTypes["default"].number,
+        max: _propTypes["default"].number
+      }),
+      y: _propTypes["default"].shape({
+        min: _propTypes["default"].number,
+        max: _propTypes["default"].number
+      })
+    }), _propTypes["default"].arrayOf(_propTypes["default"].arrayOf(_propTypes["default"].number))]),
     color: _propTypes["default"].oneOfType([_generalPropTypes.colorPropType, _propTypes["default"].shape({
       color: _generalPropTypes.colorPropType,
       // deprecated, use top level 'opacity'

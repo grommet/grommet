@@ -13,6 +13,7 @@ var _utils = require("../../utils");
 var _Swatch = require("./Swatch");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 var DetailControl = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Detail__DetailControl",
   componentId: "sc-huiwg9-0"
@@ -21,6 +22,7 @@ var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
     axis = _ref.axis,
     data = _ref.data,
+    horizontalProp = _ref.horizontal,
     padProp = _ref.pad,
     series = _ref.series,
     seriesStyles = _ref.seriesStyles,
@@ -58,6 +60,21 @@ var Detail = function Detail(_ref) {
       setDetailIndex(undefined);
     }
   }, []);
+  var dropAlign = (0, _react.useMemo)(function () {
+    var res;
+    if (detailIndex > data.length / 2) {
+      if (horizontalProp) res = {
+        bottom: 'top'
+      };else res = {
+        right: 'left'
+      };
+    } else if (horizontalProp) res = {
+      top: 'bottom'
+    };else res = {
+      left: 'right'
+    };
+    return res;
+  }, [data.length, detailIndex, horizontalProp]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onLeft: function onLeft() {
       if (detailIndex === undefined) setDetailIndex(data.length - 1);else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
@@ -65,26 +82,38 @@ var Detail = function Detail(_ref) {
     onRight: function onRight() {
       if (detailIndex === undefined) setDetailIndex(0);else if (detailIndex < data.length - 1) setDetailIndex(detailIndex + 1);
     }
-  }, /*#__PURE__*/_react["default"].createElement(DetailControl, {
+  }, /*#__PURE__*/_react["default"].createElement(DetailControl, _extends({
     key: "band",
     tabIndex: 0,
-    direction: "row",
     fill: true,
-    pad: pad,
     justify: "between",
-    responsive: false,
+    responsive: false
+  }, horizontalProp ? {
+    direction: 'column'
+  } : {
+    direction: 'row',
+    pad: pad
+  }, {
     onFocus: function onFocus() {},
     onBlur: function onBlur() {
       return setDetailIndex(undefined);
     }
-  }, data.map(function (_, i) {
+  }), data.map(function (_, i) {
+    var ref = function ref(c) {
+      detailRefs[i] = c;
+    };
     return /*#__PURE__*/_react["default"].createElement(_Box.Box
     // eslint-disable-next-line react/no-array-index-key
-    , {
+    , _extends({
       key: i,
-      align: "center",
-      responsive: false,
-      width: thickness,
+      responsive: false
+    }, horizontalProp ? {
+      justify: 'center',
+      height: thickness
+    } : {
+      align: 'center',
+      width: thickness
+    }, {
       onMouseOver: function onMouseOver(event) {
         activeIndex.current = event.currentTarget;
         setDetailIndex(i);
@@ -92,21 +121,25 @@ var Detail = function Detail(_ref) {
       onMouseLeave: onMouseLeave,
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
-    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      ref: function ref(c) {
-        detailRefs[i] = c;
-      },
-      fill: "vertical",
+    }), /*#__PURE__*/_react["default"].createElement(_Box.Box
+    // for horizontal, ref will be placed on child box so
+    // drop is restricted to drop dimensions as opposed
+    // to filling the chart width
+    , _extends({}, horizontalProp ? {
+      fill: 'horizontal'
+    } : {
+      ref: ref,
+      fill: 'vertical'
+    }, {
       border: detailIndex === i ? true : undefined
-    }));
+    }), horizontalProp ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      alignSelf: "center",
+      ref: ref
+    }) : null));
   }))), detailIndex !== undefined && detailRefs[detailIndex] && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, {
     key: "drop",
     target: detailRefs[detailIndex],
-    align: detailIndex > data.length / 2 ? {
-      right: 'left'
-    } : {
-      left: 'right'
-    },
+    align: dropAlign,
     plain: true,
     onMouseLeave: onMouseLeave
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -124,6 +157,7 @@ var Detail = function Detail(_ref) {
     return (!activeProperty || activeProperty === property) && (data == null ? void 0 : (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
     var propertyStyle = seriesStyles[serie.property];
+    var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;
     return /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
       key: serie.property
     }, propertyStyle ? /*#__PURE__*/_react["default"].createElement(_Swatch.Swatch, propertyStyle) : /*#__PURE__*/_react["default"].createElement("span", null), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
@@ -131,7 +165,7 @@ var Detail = function Detail(_ref) {
     }, serie.label || serie.property), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       size: "small",
       weight: "bold"
-    }, renderValue(serie, detailIndex)));
+    }, renderValue(serie, axisValue)));
   })))));
 };
 exports.Detail = Detail;

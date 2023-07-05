@@ -18,7 +18,7 @@ var _XGuide = require("./XGuide");
 var _YGuide = require("./YGuide");
 var _utils2 = require("./utils");
 var _propTypes = require("./propTypes");
-var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "gap", "guide", "legend", "offset", "placeholder", "pad", "series", "size"],
+var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "direction", "gap", "guide", "legend", "offset", "placeholder", "pad", "series", "size"],
   _excluded2 = ["property"],
   _excluded3 = ["property", "type", "x", "y"],
   _excluded4 = ["property"];
@@ -39,7 +39,7 @@ var stackedChartType = {
 // normalize and automatically handle whatever the caller didn't specify.
 
 var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _boundsProp$y;
+  var _boundsProp$x, _boundsProp$y;
   var a11yTitle = _ref.a11yTitle,
     _ref$axis = _ref.axis,
     axisProp = _ref$axis === void 0 ? true : _ref$axis,
@@ -49,6 +49,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     _ref$data = _ref.data,
     data = _ref$data === void 0 ? [] : _ref$data,
     detail = _ref.detail,
+    _ref$direction = _ref.direction,
+    direction = _ref$direction === void 0 ? 'vertical' : _ref$direction,
     _ref$gap = _ref.gap,
     gap = _ref$gap === void 0 ? 'small' : _ref$gap,
     guideProp = _ref.guide,
@@ -65,6 +67,9 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _useState = (0, _react.useState)(),
     activeProperty = _useState[0],
     setActiveProperty = _useState[1];
+  var horizontal = (0, _react.useMemo)(function () {
+    return direction === 'horizontal';
+  }, [direction]);
 
   // normalize seriesProp to an array of objects, one per property
   var series = (0, _react.useMemo)(function () {
@@ -214,20 +219,25 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     var steps = data.length - 1;
     // special case property driven point charts
     if (charts[0] && typeof charts[0].property === 'object') medium = 3;else if (steps < 4) medium = data.length;else if (steps === 4) medium = 3;else if (steps % 4 === 0) medium = 5;else if (steps % 3 === 0) medium = 4;else if (steps % 2 === 0) medium = 3;else medium = 2;
-    return {
-      x: {
-        coarse: Math.min(data.length, 2),
-        fine: data.length,
-        medium: medium
-      },
-      y: _extends({}, _utils2.heightYGranularity[size && size.height || 'small'] || {
-        fine: 5,
-        medium: 3
-      }, {
-        coarse: 2
-      })
+    var granularity0 = {
+      coarse: Math.min(data.length, 2),
+      fine: data.length,
+      medium: medium
     };
-  }, [charts, data.length, size]);
+    var granularity1 = _extends({}, _utils2.heightYGranularity[size && size.height || 'small'] || {
+      fine: 5,
+      medium: 3
+    }, {
+      coarse: 2
+    });
+    return horizontal ? {
+      x: granularity1,
+      y: granularity0
+    } : {
+      x: granularity0,
+      y: granularity1
+    };
+  }, [charts, data.length, horizontal, size]);
 
   // normalize axis to objects, convert granularity to a number
   var axis = (0, _react.useMemo)(function () {
@@ -244,16 +254,23 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (result.x) {
       if (!result.x.property) {
         // see if we have a point chart that has an x property
-        if (data && data[0]) {
+        if (horizontal) {
+          if (charts[0]) result.x.property = charts[0].property.x || charts[0].property;
+        } else if (data && data[0]) {
           if (data[0].date) result.x.property = 'date';else if (data[0].time) result.x.property = 'time';
         }
       }
       if (!result.x.granularity) result.x.granularity = 'coarse';
     }
     if (result.y) {
-      if (!result.y.property && charts[0])
-        // see if we have a point chart that has an x property
-        result.y.property = charts[0].property.y || charts[0].property;
+      if (!result.y.property) {
+        // see if we have a point chart that has an y property
+        if (horizontal) {
+          if (data && data[0]) {
+            if (data[0].date) result.y.property = 'date';else if (data[0].time) result.y.property = 'time';
+          }
+        } else if (charts[0]) result.y.property = charts[0].property.y || charts[0].property;
+      }
       if (!result.y.granularity) result.y.granularity = 'coarse';
     }
 
@@ -269,22 +286,22 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       result.y.count = granularities.y[_granularity];
     }
     return result;
-  }, [axisProp, data, charts, granularities]);
+  }, [axisProp, data, charts, granularities, horizontal]);
 
   // calculate axis, bounds, and thickness for each chart
   var chartProps = (0, _react.useMemo)(function () {
-    var steps = [];
-    var coarseness = [undefined, 5];
+    var steps = {};
+    var coarseness = horizontal ? [5, undefined] : [undefined, 5];
     if (axis && axis.x) {
       var _axis$x$granularity = axis.x.granularity,
         granularity = _axis$x$granularity === void 0 ? 'coarse' : _axis$x$granularity;
-      steps[0] = granularities.x[granularity] - 1;
-    } else steps[0] = data.length - 1;
+      steps.x = granularities.x[granularity] - 1;
+    } else steps.x = horizontal ? 1 : data.length - 1;
     if (axis && axis.y) {
       var _axis$y$granularity = axis.y.granularity,
         _granularity2 = _axis$y$granularity === void 0 ? 'coarse' : _axis$y$granularity;
-      steps[1] = granularities.y[_granularity2] - 1;
-    } else steps[1] = 1;
+      steps.y = granularities.y[_granularity2] - 1;
+    } else steps.y = horizontal ? data.length - 1 : 1;
     var chartBounds = chartValues.map(function (_, index) {
       var type = charts[index].type;
       if (stackedChartType[type]) {
@@ -302,30 +319,33 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         });
         return (0, _Chart.calcBounds)(mergedValues, {
           coarseness: coarseness,
+          direction: direction,
           steps: steps
         });
       }
       // if this is a data driven x chart, set coarseness for x
       return (0, _Chart.calcBounds)(chartValues[index], {
-        coarseness: charts[index].property.x ? [5, 5] : coarseness,
+        coarseness: charts[index].property.x ? {
+          x: 5,
+          y: 5
+        } : coarseness,
+        direction: direction,
         steps: steps
       });
     });
     if (boundsProp === 'align' && chartBounds.length) {
-      var alignedBounds = [].concat(chartBounds[0]);
+      var alignedBounds = {
+        x: {},
+        y: {}
+      };
       chartBounds.forEach(function (bounds) {
-        alignedBounds[0][0] = Math.min(alignedBounds[0][0], bounds[0][0]);
-        alignedBounds[0][1] = Math.max(alignedBounds[0][1], bounds[0][1]);
-        alignedBounds[1][0] = Math.min(alignedBounds[1][0], bounds[1][0]);
-        alignedBounds[1][1] = Math.max(alignedBounds[1][1], bounds[1][1]);
+        alignedBounds.x.min = (0, _utils2.minimum)(alignedBounds.x.min, bounds.x.min);
+        alignedBounds.x.max = (0, _utils2.maximum)(alignedBounds.x.max, bounds.x.max);
+        alignedBounds.y.min = (0, _utils2.minimum)(alignedBounds.y.min, bounds.y.min);
+        alignedBounds.y.max = (0, _utils2.maximum)(alignedBounds.y.max, bounds.y.max);
       });
       chartBounds = chartBounds.map(function () {
         return alignedBounds;
-      });
-    }
-    if (typeof boundsProp === 'object') {
-      if (boundsProp.y) chartBounds = chartBounds.map(function (b) {
-        return [b[0], [].concat(boundsProp.y)];
       });
     }
     return chartValues.map(function (values, index) {
@@ -335,11 +355,12 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       var calcValues = stackedChartType[type] ? values[0] : values;
       return (0, _Chart.calcs)(calcValues, {
         bounds: chartBounds[index],
+        direction: direction,
         steps: steps,
         thickness: thickness
       });
     });
-  }, [axis, boundsProp, charts, chartValues, data, granularities]);
+  }, [axis, boundsProp, charts, chartValues, data, direction, granularities, horizontal]);
 
   // normalize how we style data properties for use by Legend and Detail
   var seriesStyles = (0, _react.useMemo)(function () {
@@ -429,15 +450,22 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // except when using offset, then add even more horizontal pad
   var pad = (0, _react.useMemo)(function () {
     if (padProp !== undefined) return padProp;
-    var result = {};
+    var pad0;
+    var pad1;
     charts.forEach(function (_ref7, index) {
       var type = _ref7.type;
       var thickness = chartProps[index].thickness;
-      result.horizontal = (0, _utils2.largestSize)(result.horizontal, _utils2.halfPad[thickness]);
-      if (type && type !== 'bar') result.vertical = (0, _utils2.largestSize)(result.vertical, _utils2.halfPad[thickness]);
+      pad0 = (0, _utils2.largestSize)(pad0, _utils2.halfPad[thickness]);
+      if (type && type !== 'bar') pad1 = (0, _utils2.largestSize)(pad1, _utils2.halfPad[thickness]);
     });
-    return result;
-  }, [chartProps, charts, padProp]);
+    return horizontal ? {
+      horizontal: pad1,
+      vertical: pad0
+    } : {
+      horizontal: pad0,
+      vertical: pad1
+    };
+  }, [chartProps, charts, horizontal, padProp]);
 
   // calculate the thickness in pixels of each chart
   var thicknesses = (0, _react.useMemo)(function () {
@@ -495,47 +523,60 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     });
     return result;
   }, [axis, data, series]);
-  var renderValue = function renderValue(serie, dataIndex, valueArg) {
-    var value;
-    if (valueArg !== undefined) {
-      if (serie && serie.render) return serie.render(valueArg);
-      value = valueArg;
-    } else {
-      var datum = data[dataIndex];
-      value = datum[serie.property];
-      if (serie && serie.render) return serie.render(value, datum, serie.property);
+  var renderValue = function renderValue(serie, axisValue, y) {
+    if (serie === void 0) {
+      serie = {};
     }
-    if (serie) {
-      var dateFormat = dateFormats[serie.property];
-      if (dateFormat) return dateFormat(new Date(value));
-      if (serie.prefix) value = "" + serie.prefix + value;
-      if (serie.suffix) value = "" + value + serie.suffix;
+    var _serie = serie,
+      prefix = _serie.prefix,
+      property = _serie.property,
+      render = _serie.render,
+      suffix = _serie.suffix;
+    var value = axisValue;
+    if (value !== undefined) {
+      if (!property || !horizontal && y || horizontal && !y) {
+        if (render) return render(value);
+      } else {
+        var datum = data[axisValue];
+        value = datum[property];
+        if (render) return render(value, datum, property);
+      }
+      if (property) {
+        var dateFormat = dateFormats[property];
+        if (dateFormat) return dateFormat(new Date(value));
+        if (prefix) value = "" + prefix + value;
+        if (suffix) value = "" + value + suffix;
+      }
     }
     return value;
   };
 
   // TODO: revisit how x/y axis are hooked up to charts and series
 
-  var xAxisElement = axis && axis.x && chartProps.length ? /*#__PURE__*/_react["default"].createElement(_XAxis.XAxis, {
+  var xAxisElement = axis && axis.x && (chartProps.length || boundsProp != null && boundsProp.x) ? /*#__PURE__*/_react["default"].createElement(_XAxis.XAxis, {
     axis: axis,
-    values: (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[0],
-    pad: offsetPad ? _extends({}, pad, {
+    values: (boundsProp == null ? void 0 : (_boundsProp$x = boundsProp.x) == null ? void 0 : _boundsProp$x.slice(0)) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis.x,
+    pad: !horizontal && offsetPad ? _extends({}, pad, {
       end: offsetPad
     }) : pad,
     renderValue: renderValue,
-    thickness: segmentThickness,
     serie: axis.x.property && getPropertySeries(axis.x.property),
     style: offsetPad ? {
       transform: "translate(" + offsets[Math.floor(offsets.length / 2)] + "px, 0px)"
     } : {},
+    thickness: horizontal ? undefined : segmentThickness,
     theme: theme
   }) : null;
   var yAxisElement = axis && axis.y && (chartProps.length || boundsProp != null && boundsProp.y) ? /*#__PURE__*/_react["default"].createElement(_YAxis.YAxis, {
     axis: axis,
-    values: (boundsProp == null ? void 0 : (_boundsProp$y = boundsProp.y) == null ? void 0 : _boundsProp$y.slice(0).reverse()) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis[1],
-    pad: pad,
+    values: (boundsProp == null ? void 0 : (_boundsProp$y = boundsProp.y) == null ? void 0 : _boundsProp$y.slice(0).reverse()) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis.y,
+    pad: horizontal && offsetPad ? _extends({}, pad, {
+      bottom: offsetPad
+    }) : pad,
     renderValue: renderValue,
-    serie: axis.y.property && getPropertySeries(axis.y.property)
+    serie: axis.y.property && getPropertySeries(axis.y.property),
+    thickness: horizontal ? segmentThickness : undefined,
+    theme: theme
   }) : null;
   var stackFill = (0, _react.useMemo)(function () {
     if (size === 'fill' || size && size.width === 'fill' && size.height === 'fill') return true;
@@ -555,10 +596,12 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     fill: stackFill
   }, guide && guide.x && /*#__PURE__*/_react["default"].createElement(_XGuide.XGuide, {
     guide: guide,
-    pad: pad
+    pad: pad,
+    thickness: horizontal
   }), guide && guide.y && /*#__PURE__*/_react["default"].createElement(_YGuide.YGuide, {
     guide: guide,
-    pad: pad
+    pad: pad,
+    thickness: !horizontal
   }), charts.map(function (_ref9, i) {
     var prop = _ref9.property,
       type = _ref9.type,
@@ -592,7 +635,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           // when property name isn't valid, send empty array
           ,
           values: chartValues[i][j] || [],
-          overflow: true
+          overflow: true,
+          direction: direction
         }, seriesStyles[pProp], chartProps[i], chartRest, propRest, offsetProps, {
           type: stackedChartType[type] || type,
           size: size,
@@ -605,7 +649,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     , _extends({
       key: i,
       values: chartValues[i],
-      overflow: true
+      overflow: true,
+      direction: direction
     }, seriesStyles[prop], chartProps[i], chartRest, offsetProps, {
       type: type,
       size: size,
@@ -626,6 +671,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     activeProperty: activeProperty,
     axis: axis,
     data: data,
+    horizontal: horizontal,
     pad: pad,
     series: series,
     seriesStyles: seriesStyles,

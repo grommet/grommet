@@ -12,72 +12,75 @@ export var normalizeValues = function normalizeValues(values) {
     };
   });
 };
-export var normalizeBounds = function normalizeBounds(boundsProp, values, direction) {
-  var vertical = direction === 'vertical';
-  var result;
-  if (boundsProp) {
-    if (vertical) result = {
-      x: {
-        min: boundsProp[1][0],
-        max: boundsProp[1][1]
-      },
-      y: {
-        min: boundsProp[0][0],
-        max: boundsProp[0][1]
-      }
-    };else result = {
-      x: {
-        min: boundsProp[0][0],
-        max: boundsProp[0][1]
-      },
-      y: {
-        min: boundsProp[1][0],
-        max: boundsProp[1][1]
-      }
-    };
-  } else {
-    var min0 = 0;
-    var max0 = 1;
-    var min1 = 0;
-    var max1 = 1;
-    (values || []).forEach(function (value) {
-      if (value.value[0] !== undefined) {
-        min0 = Math.min(min0, value.value[0]);
-        max0 = Math.max(max0, value.value[0]);
-      }
-      if (value.value[1] !== undefined) {
-        min1 = Math.min(min1, value.value[1]);
-        max1 = Math.max(max1, value.value[1]);
-      }
-      if (value.value[2] !== undefined) {
-        min1 = Math.min(min1, value.value[2]);
-        max1 = Math.max(max1, value.value[2]);
-      }
-    });
-    if (vertical) {
-      result = {
-        x: {
-          min: min1,
-          max: max1
-        },
-        y: {
-          min: min0,
-          max: max0
-        }
-      };
-    } else {
-      result = {
-        x: {
-          min: min0,
-          max: max0
-        },
-        y: {
-          min: min1,
-          max: max1
-        }
-      };
-    }
+export var calcMinMax = function calcMinMax(values, direction) {
+  var _ref, _ref2, _ref3, _ref4;
+  if (values === void 0) {
+    values = [];
   }
+  // We default to 0 minimum as that's typically what's wanted.
+  // If callers want a narrower band, they can pass bounds explicitly.
+  var min0 = (_ref = direction && 0) != null ? _ref : undefined;
+  var max0 = (_ref2 = direction && 1) != null ? _ref2 : undefined;
+  var min1 = (_ref3 = direction && 0) != null ? _ref3 : undefined;
+  var max1 = (_ref4 = direction && 1) != null ? _ref4 : undefined;
+  values.forEach(function (value) {
+    var _value$value = value.value,
+      val0 = _value$value[0],
+      val1 = _value$value[1],
+      val2 = _value$value[2];
+    if (val0 !== undefined) {
+      min0 = min0 === undefined ? val0 : Math.min(min0, val0);
+      max0 = max0 === undefined ? val0 : Math.max(max0, val0);
+    }
+    if (val1 !== undefined) {
+      min1 = min1 === undefined ? val1 : Math.min(min1, val1);
+      max1 = max1 === undefined ? val1 : Math.max(max1, val1);
+    }
+    if (val2 !== undefined) {
+      min1 = min1 === undefined ? val2 : Math.min(min1, val2);
+      max1 = max1 === undefined ? val2 : Math.max(max1, val2);
+    }
+  });
+
+  // when max === min, offset them so we can show something
+  if (max0 === min0) {
+    if (max0 > 0) min0 = max0 - 1;else max0 = min0 + 1;
+  }
+  if (max1 === min1) {
+    if (max1 > 0) min1 = max1 - 1;else max1 = min1 + 1;
+  }
+  return direction === 'horizontal' ? {
+    x: {
+      min: min1,
+      max: max1
+    },
+    y: {
+      min: min0,
+      max: max0
+    }
+  } : {
+    x: {
+      min: min0,
+      max: max0
+    },
+    y: {
+      min: min1,
+      max: max1
+    }
+  };
+};
+export var normalizeBounds = function normalizeBounds(boundsProp, values, direction) {
+  var result;
+  if (Array.isArray(boundsProp)) result = {
+    x: {
+      min: boundsProp[0][0],
+      max: boundsProp[0][1]
+    },
+    y: {
+      min: boundsProp[1][0],
+      max: boundsProp[1][1]
+    }
+  };else if (typeof boundsProp === 'object') result = boundsProp;else result = calcMinMax(values, direction);
   return result;
 };
 export var areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valuesY) {

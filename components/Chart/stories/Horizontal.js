@@ -1,11 +1,24 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Vertical = void 0;
+exports["default"] = exports.Horizontal = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Vertical = function Vertical() {
+var gradient = [{
+  value: 0,
+  color: 'status-ok'
+}, {
+  value: 25,
+  color: 'status-ok'
+}, {
+  value: 27,
+  color: 'status-warning'
+}, {
+  value: 30,
+  color: 'status-critical'
+}];
+var Horizontal = function Horizontal() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -19,7 +32,7 @@ var Vertical = function Vertical() {
         key: type,
         direction: "row",
         gap: "medium"
-      }, ['horizontal', 'vertical'].map(function (direction) {
+      }, ['vertical', 'horizontal'].map(function (direction) {
         return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
           key: direction,
           border: true
@@ -30,12 +43,27 @@ var Vertical = function Vertical() {
           values: [[10, 20], [20, 30], [30, 15]]
         }));
       }));
-    }))
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      gap: "medium"
+    }, ['vertical', 'horizontal'].map(function (direction) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        key: direction,
+        border: true
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
+        id: direction,
+        type: "line",
+        direction: direction,
+        color: gradient,
+        values: [20, 30, 15],
+        size: "small"
+      }));
+    })))
     // </Grommet>
   );
 };
-exports.Vertical = Vertical;
+exports.Horizontal = Horizontal;
 var _default = {
-  title: 'Visualizations/Chart/Vertical'
+  title: 'Visualizations/Chart/Horizontal'
 };
 exports["default"] = _default;

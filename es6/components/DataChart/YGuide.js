@@ -3,16 +3,19 @@ import React, { forwardRef } from 'react';
 import { Box } from '../Box';
 var YGuide = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var guide = _ref.guide,
-    padArg = _ref.pad;
-  // omit any horizontal pad so the guides cover the thickness that
-  // is within the pad
-  var pad;
-  if (typeof padArg === 'object') pad = _extends({}, padArg, {
-    start: 'none',
-    end: 'none'
-  });else if (typeof padArg === 'string') pad = {
-    vertical: padArg
-  };
+    padArg = _ref.pad,
+    thickness = _ref.thickness;
+  var pad = padArg;
+  if (thickness) {
+    // omit any horizontal pad so the guides cover the thickness that
+    // is within the pad
+    if (typeof padArg === 'object') pad = _extends({}, padArg, {
+      start: 'none',
+      end: 'none'
+    });else if (typeof padArg === 'string') pad = {
+      vertical: padArg
+    };
+  }
   return /*#__PURE__*/React.createElement(Box, {
     ref: ref,
     fill: true,

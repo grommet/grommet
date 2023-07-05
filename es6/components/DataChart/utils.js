@@ -1,3 +1,4 @@
+import { round } from '../Chart';
 export var points = ['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown'];
 export var heightYGranularity = {
   xxsmall: {
@@ -40,6 +41,21 @@ export var doublePad = {
   xxsmall: 'xsmall'
 };
 var orderedSizes = ['xlarge', 'large', 'medium', 'small', 'xsmall', 'xxsmall', 'hair'];
+export var showInUnits = function showInUnits(content, maxValue) {
+  var divideBy;
+  var unit;
+  var newContent = content;
+  if (maxValue > 10000000) {
+    divideBy = 1000000;
+    unit = 'M';
+  } else if (maxValue > 10000) {
+    divideBy = 1000;
+    unit = 'K';
+  }
+  if (divideBy) newContent = round(newContent / divideBy, 0);
+  if (unit) newContent = "" + newContent + unit;
+  return newContent;
+};
 export var largestSize = function largestSize(size1, size2) {
   if (size1 && !size2) return size1;
   if (size2 && !size1) return size2;
@@ -95,4 +111,10 @@ export var createDateFormat = function createDateFormat(firstValue, lastValue, f
     if (options) dateFormat = new Intl.DateTimeFormat(undefined, options).format;
   }
   return dateFormat;
+};
+export var minimum = function minimum(value1, value2) {
+  return value1 !== undefined ? Math.min(value1, value2) : value2;
+};
+export var maximum = function maximum(value1, value2) {
+  return value1 !== undefined ? Math.max(value1, value2) : value2;
 };

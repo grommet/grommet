@@ -1,3 +1,4 @@
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import React, { Fragment, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
@@ -15,6 +16,7 @@ var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
     axis = _ref.axis,
     data = _ref.data,
+    horizontalProp = _ref.horizontal,
     padProp = _ref.pad,
     series = _ref.series,
     seriesStyles = _ref.seriesStyles,
@@ -52,6 +54,21 @@ var Detail = function Detail(_ref) {
       setDetailIndex(undefined);
     }
   }, []);
+  var dropAlign = useMemo(function () {
+    var res;
+    if (detailIndex > data.length / 2) {
+      if (horizontalProp) res = {
+        bottom: 'top'
+      };else res = {
+        right: 'left'
+      };
+    } else if (horizontalProp) res = {
+      top: 'bottom'
+    };else res = {
+      left: 'right'
+    };
+    return res;
+  }, [data.length, detailIndex, horizontalProp]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Keyboard, {
     onLeft: function onLeft() {
       if (detailIndex === undefined) setDetailIndex(data.length - 1);else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
@@ -59,26 +76,38 @@ var Detail = function Detail(_ref) {
     onRight: function onRight() {
       if (detailIndex === undefined) setDetailIndex(0);else if (detailIndex < data.length - 1) setDetailIndex(detailIndex + 1);
     }
-  }, /*#__PURE__*/React.createElement(DetailControl, {
+  }, /*#__PURE__*/React.createElement(DetailControl, _extends({
     key: "band",
     tabIndex: 0,
-    direction: "row",
     fill: true,
-    pad: pad,
     justify: "between",
-    responsive: false,
+    responsive: false
+  }, horizontalProp ? {
+    direction: 'column'
+  } : {
+    direction: 'row',
+    pad: pad
+  }, {
     onFocus: function onFocus() {},
     onBlur: function onBlur() {
       return setDetailIndex(undefined);
     }
-  }, data.map(function (_, i) {
+  }), data.map(function (_, i) {
+    var ref = function ref(c) {
+      detailRefs[i] = c;
+    };
     return /*#__PURE__*/React.createElement(Box
     // eslint-disable-next-line react/no-array-index-key
-    , {
+    , _extends({
       key: i,
-      align: "center",
-      responsive: false,
-      width: thickness,
+      responsive: false
+    }, horizontalProp ? {
+      justify: 'center',
+      height: thickness
+    } : {
+      align: 'center',
+      width: thickness
+    }, {
       onMouseOver: function onMouseOver(event) {
         activeIndex.current = event.currentTarget;
         setDetailIndex(i);
@@ -86,21 +115,25 @@ var Detail = function Detail(_ref) {
       onMouseLeave: onMouseLeave,
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
-    }, /*#__PURE__*/React.createElement(Box, {
-      ref: function ref(c) {
-        detailRefs[i] = c;
-      },
-      fill: "vertical",
+    }), /*#__PURE__*/React.createElement(Box
+    // for horizontal, ref will be placed on child box so
+    // drop is restricted to drop dimensions as opposed
+    // to filling the chart width
+    , _extends({}, horizontalProp ? {
+      fill: 'horizontal'
+    } : {
+      ref: ref,
+      fill: 'vertical'
+    }, {
       border: detailIndex === i ? true : undefined
-    }));
+    }), horizontalProp ? /*#__PURE__*/React.createElement(Box, {
+      alignSelf: "center",
+      ref: ref
+    }) : null));
   }))), detailIndex !== undefined && detailRefs[detailIndex] && /*#__PURE__*/React.createElement(Drop, {
     key: "drop",
     target: detailRefs[detailIndex],
-    align: detailIndex > data.length / 2 ? {
-      right: 'left'
-    } : {
-      left: 'right'
-    },
+    align: dropAlign,
     plain: true,
     onMouseLeave: onMouseLeave
   }, /*#__PURE__*/React.createElement(Box, {
@@ -118,6 +151,7 @@ var Detail = function Detail(_ref) {
     return (!activeProperty || activeProperty === property) && (data == null ? void 0 : (_data$detailIndex = data[detailIndex]) == null ? void 0 : _data$detailIndex[property]) !== undefined || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
     var propertyStyle = seriesStyles[serie.property];
+    var axisValue = horizontalProp ? data[detailIndex][serie.property] : detailIndex;
     return /*#__PURE__*/React.createElement(Fragment, {
       key: serie.property
     }, propertyStyle ? /*#__PURE__*/React.createElement(Swatch, propertyStyle) : /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement(Text, {
@@ -125,7 +159,7 @@ var Detail = function Detail(_ref) {
     }, serie.label || serie.property), /*#__PURE__*/React.createElement(Text, {
       size: "small",
       weight: "bold"
-    }, renderValue(serie, detailIndex)));
+    }, renderValue(serie, axisValue)));
   })))));
 };
 export { Detail };

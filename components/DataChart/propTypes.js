@@ -59,11 +59,13 @@ if (process.env.NODE_ENV !== 'production') {
       })])
     })]),
     bounds: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['align']), _propTypes["default"].shape({
+      x: _propTypes["default"].arrayOf(_propTypes["default"].number),
       y: _propTypes["default"].arrayOf(_propTypes["default"].number)
     })]),
     chart: _propTypes["default"].oneOfType([chartType, _propTypes["default"].arrayOf(chartType)]),
     data: _propTypes["default"].arrayOf(_propTypes["default"].shape({})),
     detail: _propTypes["default"].bool,
+    direction: _propTypes["default"].oneOf(['horizontal', 'vertical']),
     gap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
     guide: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].shape({
       x: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].shape({
@@ -80,7 +82,7 @@ if (process.env.NODE_ENV !== 'production') {
     pad: _generalPropTypes.padPropType,
     placeholder: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
     series: _propTypes["default"].oneOfType([seriesType, _propTypes["default"].arrayOf(seriesType)]),
-    size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['fill']), _propTypes["default"].shape({
+    size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'full']), _propTypes["default"].shape({
       height: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill']), _propTypes["default"].string]),
       width: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'auto']), _propTypes["default"].string])
     })])

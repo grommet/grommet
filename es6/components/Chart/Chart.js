@@ -24,7 +24,8 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     boundsProp = _ref.bounds,
     color = _ref.color,
     dash = _ref.dash,
-    direction = _ref.direction,
+    _ref$direction = _ref.direction,
+    direction = _ref$direction === void 0 ? 'vertical' : _ref$direction,
     gap = _ref.gap,
     id = _ref.id,
     onClick = _ref.onClick,
@@ -36,8 +37,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     pattern = _ref.pattern,
     point = _ref.point,
     round = _ref.round,
-    _ref$size = _ref.size,
-    sizeProp = _ref$size === void 0 ? defaultSize : _ref$size,
+    sizeProp = _ref.size,
     _ref$thickness = _ref.thickness,
     thickness = _ref$thickness === void 0 ? 'medium' : _ref$thickness,
     _ref$type = _ref.type,
@@ -50,11 +50,11 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var values = useMemo(function () {
     return normalizeValues(valuesProp);
   }, [valuesProp]);
-  var vertical = useMemo(function () {
-    return direction === 'vertical';
+  var horizontal = useMemo(function () {
+    return direction === 'horizontal';
   }, [direction]);
 
-  // bounds is { x: { min, max }, y: { min, max } }, accounting for direction
+  // bounds is { x: { min, max }, y: { min, max } }
   var bounds = useMemo(function () {
     return normalizeBounds(boundsProp, values, direction);
   }, [direction, boundsProp, values]);
@@ -120,7 +120,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
     // autoSize is how wide or tall we'd pefer based on the number of values
     var autoSize = strokeWidth * values.length + (values.length - 1) * gapWidth;
-    var sizeWidth = typeof sizeProp === 'string' ? sizeProp : sizeProp.width || defaultSize.width;
+    var sizeWidth = typeof sizeProp === 'string' ? sizeProp : (sizeProp == null ? void 0 : sizeProp.width) || horizontal && defaultSize.height || defaultSize.width;
     var width;
     if (sizeWidth === 'full' || sizeWidth === 'fill') {
       width = containerSize[0];
@@ -129,7 +129,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     } else {
       width = parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
     }
-    var sizeHeight = typeof sizeProp === 'string' ? sizeProp : sizeProp.height || defaultSize.height;
+    var sizeHeight = typeof sizeProp === 'string' ? sizeProp : (sizeProp == null ? void 0 : sizeProp.height) || horizontal && defaultSize.width || defaultSize.height;
     var height;
     if (sizeHeight === 'full' || sizeHeight === 'fill') {
       height = containerSize[1];
@@ -142,7 +142,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       width: width,
       height: height
     };
-  }, [containerSize, gap, sizeProp, strokeWidth, theme.global.edgeSize, theme.global.size, values]);
+  }, [containerSize, gap, horizontal, sizeProp, strokeWidth, theme.global.edgeSize, theme.global.size, values]);
 
   // scale is { x, y }
   var scale = useMemo(function () {
@@ -193,7 +193,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   // rendering helpers, to make rendering code easier to understand
 
   var valueCoords = function valueCoords(x, y) {
-    return vertical ? [y, x] : [x, y];
+    return horizontal ? [y, x] : [x, y];
   };
 
   // Converts values to drawing coordinates.
@@ -201,8 +201,8 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var valueToCoordinate = function valueToCoordinate(xValue, yValue) {
     var y = (yValue - bounds.y.min) * scale.y + inset.top;
     return [(xValue - bounds.x.min) * scale.x + inset.left,
-    // vertical grows y top down, horizontal grows y bottom up
-    vertical ? y : size.height - y];
+    // horizontal grows y top down, vertical grows y bottom up
+    horizontal ? y : size.height - y];
   };
   var useGradient = color && Array.isArray(color);
   var patternId;
@@ -225,10 +225,10 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         valueRest = _objectWithoutPropertiesLoose(valueArg, _excluded2);
       var key = "p-" + index;
       // Math.min/max are to handle negative values
-      var _valueCoords = valueCoords(value[0], value.length === 2 ? Math.min(Math.max(0, vertical ? bounds.x.min : bounds.y.min), value[1]) : Math.min(value[1], value[2])),
+      var _valueCoords = valueCoords(value[0], value.length === 2 ? Math.min(Math.max(0, horizontal ? bounds.x.min : bounds.y.min), value[1]) : Math.min(value[1], value[2])),
         startX = _valueCoords[0],
         startY = _valueCoords[1];
-      var _valueCoords2 = valueCoords(value[0], value.length === 2 ? Math.max(Math.min(0, vertical ? bounds.x.max : bounds.y.max), value[1]) : Math.max(value[1], value[2])),
+      var _valueCoords2 = valueCoords(value[0], value.length === 2 ? Math.max(Math.min(0, horizontal ? bounds.x.max : bounds.y.max), value[1]) : Math.max(value[1], value[2])),
         endX = _valueCoords2[0],
         endY = _valueCoords2[1];
       var d = "M " + valueToCoordinate(startX, startY).join(',') + (" L " + valueToCoordinate(endX, endY).join(','));
@@ -331,7 +331,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       var value = _ref8.value;
       var _valueCoords6 = valueCoords(value[0],
         // Math.max() is to account for value[1] being negative
-        value.length === 2 ? Math.max(0, vertical ? bounds.x.min : bounds.y.min) : value[1]),
+        value.length === 2 ? Math.max(0, horizontal ? bounds.x.min : bounds.y.min) : value[1]),
         x = _valueCoords6[0],
         y = _valueCoords6[1];
       d += " L " + valueToCoordinate(x, y).join(',');
@@ -468,7 +468,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   }, contents);
   var defs = [];
   var gradientRect;
-  if (useGradient && size.height) {
+  if (useGradient && (horizontal && size.width || size.height)) {
     var uniqueGradientId = color.map(function (element) {
       return element.color;
     }).join('-');
@@ -479,16 +479,16 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       id: gradientId,
       x1: 0,
       y1: 0,
-      x2: 0,
-      y2: 1
+      x2: horizontal ? 1 : 0,
+      y2: horizontal ? 0 : 1
     }, color.slice(0).sort(function (c1, c2) {
-      return c2.value - c1.value;
+      return horizontal ? c1.value - c2.value : c2.value - c1.value;
     }).map(function (_ref10) {
       var value = _ref10.value,
         gradientColor = _ref10.color;
       return /*#__PURE__*/React.createElement("stop", {
         key: value,
-        offset: (size.height - (value - bounds.y.min) * scale.y) / size.height,
+        offset: horizontal ? (value - bounds.x.min) * scale.x / size.width : (size.height - (value - bounds.y.min) * scale.y) / size.height,
         stopColor: normalizeColor(gradientColor, theme)
       });
     })));

@@ -1,6 +1,19 @@
 import React from 'react';
 import { Box, Chart } from 'grommet';
-export var Vertical = function Vertical() {
+var gradient = [{
+  value: 0,
+  color: 'status-ok'
+}, {
+  value: 25,
+  color: 'status-ok'
+}, {
+  value: 27,
+  color: 'status-warning'
+}, {
+  value: 30,
+  color: 'status-critical'
+}];
+export var Horizontal = function Horizontal() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -14,7 +27,7 @@ export var Vertical = function Vertical() {
         key: type,
         direction: "row",
         gap: "medium"
-      }, ['horizontal', 'vertical'].map(function (direction) {
+      }, ['vertical', 'horizontal'].map(function (direction) {
         return /*#__PURE__*/React.createElement(Box, {
           key: direction,
           border: true
@@ -25,11 +38,26 @@ export var Vertical = function Vertical() {
           values: [[10, 20], [20, 30], [30, 15]]
         }));
       }));
-    }))
+    }), /*#__PURE__*/React.createElement(Box, {
+      direction: "row",
+      gap: "medium"
+    }, ['vertical', 'horizontal'].map(function (direction) {
+      return /*#__PURE__*/React.createElement(Box, {
+        key: direction,
+        border: true
+      }, /*#__PURE__*/React.createElement(Chart, {
+        id: direction,
+        type: "line",
+        direction: direction,
+        color: gradient,
+        values: [20, 30, 15],
+        size: "small"
+      }));
+    })))
     // </Grommet>
   );
 };
 
 export default {
-  title: 'Visualizations/Chart/Vertical'
+  title: 'Visualizations/Chart/Horizontal'
 };
