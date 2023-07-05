@@ -103,6 +103,8 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-0")"
+            marker-start="url("#openArrowStart-0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -111,6 +113,8 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-1")"
+            marker-start="url("#openArrowStart-1")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -119,6 +123,8 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-2")"
+            marker-start="url("#openArrowStart-2")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -234,6 +240,8 @@ exports[`Diagram basic 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-0")"
+            marker-start="url("#openArrowStart-0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -349,6 +357,8 @@ exports[`Diagram color 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-0")"
+            marker-start="url("#openArrowStart-0")"
             stroke="#7D4CDB"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -464,6 +474,8 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 6,6 Q 6,6 6,6 T 6,6"
             fill="none"
+            marker-end="url("#openArrowEnd-0")"
+            marker-start="url("#openArrowStart-0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -472,6 +484,8 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 12,12 Q 12,12 12,12 T 12,12"
             fill="none"
+            marker-end="url("#openArrowEnd-1")"
+            marker-start="url("#openArrowStart-1")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -480,6 +494,8 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 24,24 Q 24,24 24,24 T 24,24"
             fill="none"
+            marker-end="url("#openArrowEnd-2")"
+            marker-start="url("#openArrowStart-2")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -595,6 +611,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-0")"
+            marker-start="url("#openArrowStart-0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -603,6 +621,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-1")"
+            marker-start="url("#openArrowStart-1")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -611,6 +631,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-2")"
+            marker-start="url("#openArrowStart-2")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -619,6 +641,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-3")"
+            marker-start="url("#openArrowStart-3")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -627,6 +651,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-4")"
+            marker-start="url("#openArrowStart-4")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -635,6 +661,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-5")"
+            marker-start="url("#openArrowStart-5")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -750,6 +778,8 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 L 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-0")"
+            marker-start="url("#openArrowStart-0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -758,6 +788,8 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-1")"
+            marker-start="url("#openArrowStart-1")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -766,6 +798,8 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 L 0,0 L 0,0 L 0,0"
             fill="none"
+            marker-end="url("#openArrowEnd-2")"
+            marker-start="url("#openArrowStart-2")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"

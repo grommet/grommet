@@ -20,6 +20,7 @@ export interface DiagramProps {
   connections: {
     anchor?: DiagramConnectionAnchor;
     animation?: DiagramAnimationType;
+    arrow?: 'from' | 'to' | boolean;
     color?: ColorType;
     fromTarget: string | object;
     label?: string;

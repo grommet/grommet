@@ -1,4 +1,5 @@
 import React, {
+  Fragment,
   forwardRef,
   useCallback,
   useContext,
@@ -66,6 +67,19 @@ const findTarget = (target) => {
   return target;
 };
 
+const openArrow = (color, index, name = 'openArrowEnd', orient = 'auto') => (
+  <marker
+    id={`${name}-${index}`}
+    markerWidth="7"
+    markerHeight="9"
+    refX="2"
+    refY="6"
+    orient={orient}
+  >
+    <path d="M1,4 L3,6 L1,8" stroke={color} fill="none" />
+  </marker>
+);
+
 const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -117,7 +131,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   const placeConnections = useCallback(() => {
     const containerRect = svgRef.current.getBoundingClientRect();
     const updatedConnectionPoints = connections.map(
-      ({ anchor, fromTarget, toTarget }) => {
+      ({ anchor, fromTarget, toTarget, arrow }) => {
         let points;
         const fromElement = findTarget(fromTarget);
         const toElement = findTarget(toTarget);
@@ -145,16 +159,52 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             toPoint[0] += toRect.width / 2;
             if (fromRect.top < toRect.top) {
               fromPoint[1] += fromRect.height;
+
+              if (arrow === 'from') {
+                fromPoint[1] += 10;
+              } else if (arrow === 'to') {
+                toPoint[1] -= 10;
+              } else if (arrow) {
+                fromPoint[1] += 10;
+                toPoint[1] -= 10;
+              }
             } else {
               toPoint[1] += toRect.height;
+
+              if (arrow === 'from') {
+                fromPoint[1] -= 10;
+              } else if (arrow === 'to') {
+                toPoint[1] += 10;
+              } else if (arrow) {
+                fromPoint[1] -= 10;
+                toPoint[1] += 10;
+              }
             }
           } else if (anchor === 'horizontal') {
             fromPoint[1] += fromRect.height / 2;
             toPoint[1] += toRect.height / 2;
             if (fromRect.left < toRect.left) {
               fromPoint[0] += fromRect.width;
+
+              if (arrow === 'from') {
+                fromPoint[0] += 10;
+              } else if (arrow === 'to') {
+                toPoint[0] -= 10;
+              } else if (arrow) {
+                fromPoint[0] += 10;
+                toPoint[0] -= 10;
+              }
             } else {
               toPoint[0] += toRect.width;
+
+              if (arrow === 'from') {
+                fromPoint[0] -= 10;
+              } else if (arrow === 'to') {
+                toPoint[0] += 10;
+              } else if (arrow) {
+                fromPoint[0] -= 10;
+                toPoint[0] += 10;
+              }
             }
           } else {
             // center
@@ -190,6 +240,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
           round,
           thickness,
           type,
+          arrow,
           ...connectionRest
         },
         index,
@@ -222,20 +273,49 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             colorName = colors[index % colors.length];
           }
 
+          let arrowMarker = null;
+
+          if (arrow === 'from') {
+            arrowMarker = openArrow(
+              normalizeColor(colorName, theme),
+              index,
+              'openArrowStart',
+              'auto-start-reverse',
+            );
+          } else if (arrow === 'to') {
+            arrowMarker = openArrow(normalizeColor(colorName, theme), index);
+          } else if (arrow) {
+            arrowMarker = (
+              <>
+                {openArrow(
+                  normalizeColor(colorName, theme),
+                  index,
+                  'openArrowStart',
+                  'auto-start-reverse',
+                )}
+                {openArrow(normalizeColor(colorName, theme), index)}
+              </>
+            );
+          }
+
           path = (
-            <path
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
-              // eslint-disable-next-line react/no-unknown-property
-              animation={animation}
-              {...cleanedRest}
-              stroke={normalizeColor(colorName, theme)}
-              strokeWidth={strokeWidth}
-              strokeLinecap={round ? 'round' : 'butt'}
-              strokeLinejoin={round ? 'round' : 'miter'}
-              fill="none"
-              d={d}
-            />
+            // eslint-disable-next-line react/no-array-index-key
+            <Fragment key={index}>
+              <path
+                // eslint-disable-next-line react/no-unknown-property
+                animation={animation}
+                {...cleanedRest}
+                stroke={normalizeColor(colorName, theme)}
+                strokeWidth={strokeWidth}
+                strokeLinecap={round ? 'round' : 'butt'}
+                strokeLinejoin={round ? 'round' : 'miter'}
+                fill="none"
+                d={d}
+                markerStart={`url("#openArrowStart-${index}")`}
+                markerEnd={`url("#openArrowEnd-${index}")`}
+              />
+              {arrow && arrowMarker && <defs>{arrowMarker}</defs>}
+            </Fragment>
           );
         }
         return path;

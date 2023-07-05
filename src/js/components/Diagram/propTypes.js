@@ -42,6 +42,7 @@ if (process.env.NODE_ENV !== 'production') {
         toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
           .isRequired,
         type: PropTypes.oneOf(['direct', 'curved', 'rectilinear']),
+        arrow: PropTypes.oneOf(['from', 'to', PropTypes.bool]),
       }),
     ).isRequired,
   };
