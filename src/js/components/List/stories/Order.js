@@ -14,12 +14,7 @@ export const Order = () => {
   const [ordered, setOrder] = useState(locations);
   return (
     <Box align="center" pad="large">
-      <List
-        role="list"
-        aria-label="order list"
-        data={ordered}
-        onOrder={setOrder}
-      />
+      <List aria-label="order list" data={ordered} onOrder={setOrder} />
     </Box>
   );
 };
