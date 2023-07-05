@@ -17,6 +17,8 @@ import {
   halfPad,
   heightYGranularity,
   largestSize,
+  maximum,
+  minimum,
   points,
 } from './utils';
 import { DataChartPropTypes } from './propTypes';
@@ -42,6 +44,7 @@ const DataChart = forwardRef(
       chart: chartProp,
       data = [],
       detail,
+      direction = 'vertical',
       gap = 'small',
       guide: guideProp,
       legend,
@@ -58,6 +61,8 @@ const DataChart = forwardRef(
 
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();
+
+    const horizontal = useMemo(() => direction === 'horizontal', [direction]);
 
     // normalize seriesProp to an array of objects, one per property
     const series = useMemo(() => {
@@ -186,17 +191,22 @@ const DataChart = forwardRef(
       else if (steps % 3 === 0) medium = 4;
       else if (steps % 2 === 0) medium = 3;
       else medium = 2;
-      return {
-        x: { coarse: Math.min(data.length, 2), fine: data.length, medium },
-        y: {
-          ...(heightYGranularity[(size && size.height) || 'small'] || {
-            fine: 5,
-            medium: 3,
-          }),
-          coarse: 2,
-        },
+      const granularity0 = {
+        coarse: Math.min(data.length, 2),
+        fine: data.length,
+        medium,
       };
-    }, [charts, data.length, size]);
+      const granularity1 = {
+        ...(heightYGranularity[(size && size.height) || 'small'] || {
+          fine: 5,
+          medium: 3,
+        }),
+        coarse: 2,
+      };
+      return horizontal
+        ? { x: granularity1, y: granularity0 }
+        : { x: granularity0, y: granularity1 };
+    }, [charts, data.length, horizontal, size]);
 
     // normalize axis to objects, convert granularity to a number
     const axis = useMemo(() => {
@@ -219,7 +229,10 @@ const DataChart = forwardRef(
       if (result.x) {
         if (!result.x.property) {
           // see if we have a point chart that has an x property
-          if (data && data[0]) {
+          if (horizontal) {
+            if (charts[0])
+              result.x.property = charts[0].property.x || charts[0].property;
+          } else if (data && data[0]) {
             if (data[0].date) result.x.property = 'date';
             else if (data[0].time) result.x.property = 'time';
           }
@@ -228,9 +241,16 @@ const DataChart = forwardRef(
       }
 
       if (result.y) {
-        if (!result.y.property && charts[0])
-          // see if we have a point chart that has an x property
-          result.y.property = charts[0].property.y || charts[0].property;
+        if (!result.y.property) {
+          // see if we have a point chart that has an y property
+          if (horizontal) {
+            if (data && data[0]) {
+              if (data[0].date) result.y.property = 'date';
+              else if (data[0].time) result.y.property = 'time';
+            }
+          } else if (charts[0])
+            result.y.property = charts[0].property.y || charts[0].property;
+        }
         if (!result.y.granularity) result.y.granularity = 'coarse';
       }
 
@@ -245,21 +265,21 @@ const DataChart = forwardRef(
       }
 
       return result;
-    }, [axisProp, data, charts, granularities]);
+    }, [axisProp, data, charts, granularities, horizontal]);
 
     // calculate axis, bounds, and thickness for each chart
     const chartProps = useMemo(() => {
-      const steps = [];
-      const coarseness = [undefined, 5];
+      const steps = {};
+      const coarseness = horizontal ? [5, undefined] : [undefined, 5];
       if (axis && axis.x) {
         const { granularity = 'coarse' } = axis.x;
-        steps[0] = granularities.x[granularity] - 1;
-      } else steps[0] = data.length - 1;
+        steps.x = granularities.x[granularity] - 1;
+      } else steps.x = horizontal ? 1 : data.length - 1;
 
       if (axis && axis.y) {
         const { granularity = 'coarse' } = axis.y;
-        steps[1] = granularities.y[granularity] - 1;
-      } else steps[1] = 1;
+        steps.y = granularities.y[granularity] - 1;
+      } else steps.y = horizontal ? data.length - 1 : 1;
 
       let chartBounds = chartValues.map((_, index) => {
         const { type } = charts[index];
@@ -284,29 +304,25 @@ const DataChart = forwardRef(
                     ],
               );
             });
-          return calcBounds(mergedValues, { coarseness, steps });
+          return calcBounds(mergedValues, { coarseness, direction, steps });
         }
         // if this is a data driven x chart, set coarseness for x
         return calcBounds(chartValues[index], {
-          coarseness: charts[index].property.x ? [5, 5] : coarseness,
+          coarseness: charts[index].property.x ? { x: 5, y: 5 } : coarseness,
+          direction,
           steps,
         });
       });
 
       if (boundsProp === 'align' && chartBounds.length) {
-        const alignedBounds = [...chartBounds[0]];
+        const alignedBounds = { x: {}, y: {} };
         chartBounds.forEach((bounds) => {
-          alignedBounds[0][0] = Math.min(alignedBounds[0][0], bounds[0][0]);
-          alignedBounds[0][1] = Math.max(alignedBounds[0][1], bounds[0][1]);
-          alignedBounds[1][0] = Math.min(alignedBounds[1][0], bounds[1][0]);
-          alignedBounds[1][1] = Math.max(alignedBounds[1][1], bounds[1][1]);
+          alignedBounds.x.min = minimum(alignedBounds.x.min, bounds.x.min);
+          alignedBounds.x.max = maximum(alignedBounds.x.max, bounds.x.max);
+          alignedBounds.y.min = minimum(alignedBounds.y.min, bounds.y.min);
+          alignedBounds.y.max = maximum(alignedBounds.y.max, bounds.y.max);
         });
         chartBounds = chartBounds.map(() => alignedBounds);
-      }
-
-      if (typeof boundsProp === 'object') {
-        if (boundsProp.y)
-          chartBounds = chartBounds.map((b) => [b[0], [...boundsProp.y]]);
       }
 
       return chartValues.map((values, index) => {
@@ -314,11 +330,21 @@ const DataChart = forwardRef(
         const calcValues = stackedChartType[type] ? values[0] : values;
         return calcs(calcValues, {
           bounds: chartBounds[index],
+          direction,
           steps,
           thickness,
         });
       });
-    }, [axis, boundsProp, charts, chartValues, data, granularities]);
+    }, [
+      axis,
+      boundsProp,
+      charts,
+      chartValues,
+      data,
+      direction,
+      granularities,
+      horizontal,
+    ]);
 
     // normalize how we style data properties for use by Legend and Detail
     const seriesStyles = useMemo(() => {
@@ -419,16 +445,19 @@ const DataChart = forwardRef(
     // except when using offset, then add even more horizontal pad
     const pad = useMemo(() => {
       if (padProp !== undefined) return padProp;
-      const result = {};
+      let pad0;
+      let pad1;
 
       charts.forEach(({ type }, index) => {
         const { thickness } = chartProps[index];
-        result.horizontal = largestSize(result.horizontal, halfPad[thickness]);
+        pad0 = largestSize(pad0, halfPad[thickness]);
         if (type && type !== 'bar')
-          result.vertical = largestSize(result.vertical, halfPad[thickness]);
+          pad1 = largestSize(pad1, halfPad[thickness]);
       });
-      return result;
-    }, [chartProps, charts, padProp]);
+      return horizontal
+        ? { horizontal: pad1, vertical: pad0 }
+        : { horizontal: pad0, vertical: pad1 };
+    }, [chartProps, charts, horizontal, padProp]);
 
     // calculate the thickness in pixels of each chart
     const thicknesses = useMemo(
@@ -511,22 +540,23 @@ const DataChart = forwardRef(
       return result;
     }, [axis, data, series]);
 
-    const renderValue = (serie, dataIndex, valueArg) => {
-      let value;
-      if (valueArg !== undefined) {
-        if (serie && serie.render) return serie.render(valueArg);
-        value = valueArg;
-      } else {
-        const datum = data[dataIndex];
-        value = datum[serie.property];
-        if (serie && serie.render)
-          return serie.render(value, datum, serie.property);
-      }
-      if (serie) {
-        const dateFormat = dateFormats[serie.property];
-        if (dateFormat) return dateFormat(new Date(value));
-        if (serie.prefix) value = `${serie.prefix}${value}`;
-        if (serie.suffix) value = `${value}${serie.suffix}`;
+    const renderValue = (serie = {}, axisValue, y) => {
+      const { prefix, property, render, suffix } = serie;
+      let value = axisValue;
+      if (value !== undefined) {
+        if (!property || (!horizontal && y) || (horizontal && !y)) {
+          if (render) return render(value);
+        } else {
+          const datum = data[axisValue];
+          value = datum[property];
+          if (render) return render(value, datum, property);
+        }
+        if (property) {
+          const dateFormat = dateFormats[property];
+          if (dateFormat) return dateFormat(new Date(value));
+          if (prefix) value = `${prefix}${value}`;
+          if (suffix) value = `${value}${suffix}`;
+        }
       }
       return value;
     };
@@ -534,16 +564,16 @@ const DataChart = forwardRef(
     // TODO: revisit how x/y axis are hooked up to charts and series
 
     const xAxisElement =
-      axis && axis.x && chartProps.length ? (
+      axis && axis.x && (chartProps.length || boundsProp?.x) ? (
         <XAxis
           axis={axis}
           values={
+            boundsProp?.x?.slice(0) ||
             (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
-              .axis[0]
+              .axis.x
           }
-          pad={offsetPad ? { ...pad, end: offsetPad } : pad}
+          pad={!horizontal && offsetPad ? { ...pad, end: offsetPad } : pad}
           renderValue={renderValue}
-          thickness={segmentThickness}
           serie={axis.x.property && getPropertySeries(axis.x.property)}
           style={
             offsetPad
@@ -554,6 +584,7 @@ const DataChart = forwardRef(
                 }
               : {}
           }
+          thickness={horizontal ? undefined : segmentThickness}
           theme={theme}
         />
       ) : null;
@@ -565,11 +596,13 @@ const DataChart = forwardRef(
           values={
             boundsProp?.y?.slice(0).reverse() ||
             (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0])
-              .axis[1]
+              .axis.y
           }
-          pad={pad}
+          pad={horizontal && offsetPad ? { ...pad, bottom: offsetPad } : pad}
           renderValue={renderValue}
           serie={axis.y.property && getPropertySeries(axis.y.property)}
+          thickness={horizontal ? segmentThickness : undefined}
+          theme={theme}
         />
       ) : null;
 
@@ -593,8 +626,12 @@ const DataChart = forwardRef(
 
     const stackElement = (
       <Stack gridArea="charts" guidingChild={guidingChild} fill={stackFill}>
-        {guide && guide.x && <XGuide guide={guide} pad={pad} />}
-        {guide && guide.y && <YGuide guide={guide} pad={pad} />}
+        {guide && guide.x && (
+          <XGuide guide={guide} pad={pad} thickness={horizontal} />
+        )}
+        {guide && guide.y && (
+          <YGuide guide={guide} pad={pad} thickness={!horizontal} />
+        )}
         {charts.map(({ property: prop, type, x, y, ...chartRest }, i) => {
           // When we offset, we increase the padding on the end for all charts
           // by the same amount and we shift each successive chart to the
@@ -620,6 +657,7 @@ const DataChart = forwardRef(
                     // when property name isn't valid, send empty array
                     values={chartValues[i][j] || []}
                     overflow
+                    direction={direction}
                     {...seriesStyles[pProp]}
                     {...chartProps[i]}
                     {...chartRest}
@@ -640,6 +678,7 @@ const DataChart = forwardRef(
               key={i}
               values={chartValues[i]}
               overflow
+              direction={direction}
               {...seriesStyles[prop]}
               {...chartProps[i]}
               {...chartRest}
@@ -668,6 +707,7 @@ const DataChart = forwardRef(
             activeProperty={activeProperty}
             axis={axis}
             data={data}
+            horizontal={horizontal}
             pad={pad}
             series={series}
             seriesStyles={seriesStyles}
