@@ -1,4 +1,4 @@
-import { normalizeValues } from './utils';
+import { calcMinMax, normalizeValues } from './utils';
 
 const thicknessPad = {
   xlarge: 'large',
@@ -10,6 +10,30 @@ const thicknessPad = {
 
 export const round = (value, decimals) =>
   Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
+
+// Normalize coarseness to an object.
+// Backwards compatible has no coarseness for x-axis.
+const normalizeCoarseness = (coarseness, direction) => {
+  let result;
+  if (Array.isArray(coarseness))
+    result = { x: coarseness[0], y: coarseness[1] };
+  else if (typeof coarseness === 'object') result = coarseness;
+  else if (coarseness) result = { x: undefined, y: coarseness };
+  else
+    result =
+      direction === 'horizontal'
+        ? { x: 5, y: undefined }
+        : { x: undefined, y: 5 };
+  return result;
+};
+
+const normalizeSteps = (steps) => {
+  let result;
+  if (Array.isArray(steps)) result = { x: steps[0], y: steps[1] };
+  else if (typeof steps === 'object') result = steps;
+  else result = { x: 1, y: 1 };
+  return result;
+};
 
 const alignMax = (value, interval) => {
   if (value > 0) return value - (value % interval) + interval;
@@ -23,56 +47,56 @@ const alignMin = (value, interval) => {
   return value;
 };
 
-export const calcBounds = (values, options = {}) => {
+const adjustToShowZero = (minArg, maxArg, steps) => {
+  let min = minArg;
+  let max = maxArg;
+  if (min < 0 && max > 0 && Math.abs(min) !== Math.abs(max)) {
+    // Adjust min and max when crossing 0 to ensure 0 will be shown on
+    // the axis based on the number of steps.
+    if (steps === 1) {
+      const largest = Math.max(Math.abs(min), Math.abs(max));
+      min = -largest;
+      max = largest;
+    } else {
+      let stepInterval = (max - min) / steps;
+      const minSteps = min / stepInterval;
+      const maxSteps = max / stepInterval;
+      if (Math.abs(minSteps) < Math.abs(maxSteps)) {
+        // more above than below
+        stepInterval = max / Math.floor(maxSteps);
+        max = stepInterval * Math.floor(maxSteps);
+        min = stepInterval * Math.floor(minSteps);
+      } else {
+        // more below than above
+        stepInterval = Math.abs(min / Math.ceil(minSteps));
+        min = stepInterval * Math.ceil(minSteps);
+        max = stepInterval * Math.ceil(maxSteps);
+      }
+    }
+  }
+  return [min, max];
+};
+
+export const calcBounds = (valuesArg, options = {}) => {
   // coarseness influences the rounding of the bounds, the smaller the
-  // number, the more the bounds will be rounded. e.g. 111 -> 110 -> 100
-  // Normalize to an array. Backwards compatible has no coarseness for x-axis
-  const coarseness = (Array.isArray(options.coarseness) &&
-    options.coarseness) ||
-    (options.coarseness && [undefined, options.coarseness]) || [undefined, 5];
-  const [coarseX, coarseY] = coarseness;
+  // number, the more the bounds will be rounded. e.g. 111 -> 110 -> 100.
+  const { x: coarseX, y: coarseY } = normalizeCoarseness(
+    options.coarseness,
+    options.direction,
+  );
+
   // the number of steps is one less than the number of labels
-  const steps = options.steps || [1, 1];
-  const [, stepsY] = steps;
-  const calcValues = normalizeValues(values || []);
+  const { x: stepsX, y: stepsY } = normalizeSteps(options.steps);
 
-  // min and max values
-  let minX;
-  let maxX;
-  let minY;
-  let maxY;
-  if (calcValues.length) {
-    // Calculate the max and min values.
-    calcValues
-      .filter((value) => value !== undefined)
-      .forEach((value) => {
-        const x = value.value[0];
-        if (x !== undefined) {
-          minX = minX === undefined ? x : Math.min(minX, x);
-          maxX = maxX === undefined ? x : Math.max(maxX, x);
-        }
-        const y = value.value[1];
-        if (y !== undefined) {
-          minY = minY === undefined ? y : Math.min(minY, y);
-          maxY = maxY === undefined ? y : Math.max(maxY, y);
-        }
-        // handle ranges of values
-        const y2 = value.value[2];
-        if (y2 !== undefined) {
-          minY = Math.min(minY, y2);
-          maxY = Math.max(maxY, y2);
-        }
-      });
+  const values = normalizeValues(valuesArg || []);
 
-    // when max === min, offset them so we can show something
-    if (maxX === minX) {
-      if (maxX > 0) minX = maxX - 1;
-      else maxX = minX + 1;
-    }
-    if (maxY === minY) {
-      if (maxY > 0) minY = maxY - 1;
-      else maxY = minY + 1;
-    }
+  let result;
+  if (values.length) {
+    // min and max values
+    let {
+      x: { min: minX, max: maxX },
+      y: { min: minY, max: maxY },
+    } = calcMinMax(values, options.direction);
 
     // Calculate some reasonable bounds based on the max and min values.
     // This is so values like 87342.12 don't end up being displayed as the
@@ -90,74 +114,82 @@ export const calcBounds = (values, options = {}) => {
       maxY = alignMax(maxY, intervalY);
     }
 
-    if (minY < 0 && maxY > 0 && Math.abs(minY) !== Math.abs(maxY)) {
-      // Adjust min and max when crossing 0 to ensure 0 will be shown on
-      // the Y axis based on the number of steps.
-      if (stepsY === 1) {
-        const largest = Math.max(Math.abs(minY), Math.abs(maxY));
-        minY = -largest;
-        maxY = largest;
-      } else {
-        let stepInterval = (maxY - minY) / stepsY;
-        const minSteps = minY / stepInterval;
-        const maxSteps = maxY / stepInterval;
-        if (Math.abs(minSteps) < Math.abs(maxSteps)) {
-          // more above than below
-          stepInterval = maxY / Math.floor(maxSteps);
-          maxY = stepInterval * Math.floor(maxSteps);
-          minY = stepInterval * Math.floor(minSteps);
-        } else {
-          // more below than above
-          stepInterval = Math.abs(minY / Math.ceil(minSteps));
-          minY = stepInterval * Math.ceil(minSteps);
-          maxY = stepInterval * Math.ceil(maxSteps);
-        }
-      }
-    }
+    if (options.direction === 'horizontal')
+      [minX, maxX] = adjustToShowZero(minX, maxX, stepsX);
+    else [minY, maxY] = adjustToShowZero(minY, maxY, stepsY);
+
+    // if options.direction is present, the results are delivered in { x, y }
+    // object structure. If options.direction is not present, the results are
+    // delivered in [x, y] array structure, for backwards compatibility
+    result = options.direction
+      ? { x: { min: minX, max: maxX }, y: { min: minY, max: maxY } }
+      : [
+          [minX, maxX],
+          [minY, maxY],
+        ];
+  } else {
+    result = options.direction ? { x: {}, y: {} } : [[], []];
   }
 
-  let bounds;
-  if (calcValues.length)
-    bounds = [
-      [minX, maxX],
-      [minY, maxY],
-    ];
-  else bounds = [[], []];
-  return bounds;
+  return result;
 };
 
+// if options.direction is present, the results are delivered in { x, y }
+// object structure. If options.direction is not present, the results are
+// delivered in [x, y] array structure, for backwards compatibility
 export const calcs = (values = [], options = {}) => {
-  // the number of steps is one less than the number of labels
-  const steps = options.steps || [1, 1];
-  const [stepsX, stepsY] = steps;
-  const bounds = options.bounds || calcBounds(values, options);
-  if (options.min !== undefined) bounds[1][0] = options.min;
-  if (options.max !== undefined) bounds[1][1] = options.max;
-  const [boundsX, boundsY] = bounds;
-  const [boundsXmin, boundsXmax] = boundsX;
-  const [boundsYmin, boundsYmax] = boundsY;
+  const horizontal = options.direction === 'horizontal';
 
-  const dimensions = [
-    round(boundsXmax - boundsXmin, 2),
-    round(boundsYmax - boundsYmin, 2),
-  ];
-  const [dimensionsX, dimensionsY] = dimensions;
+  // the number of steps is one less than the number of labels
+  const { x: stepsX, y: stepsY } = normalizeSteps(options.steps);
+
+  // bounds is { x: { min, max }, y: { min, max } } when options.direction is
+  // present and [[min, max], [min, max]] if not, for backwards compatibility
+  const bounds = options.bounds || calcBounds(values, options);
+
+  if (options.min !== undefined) {
+    if (options.direction) {
+      if (horizontal) bounds.x.min = options.min;
+      else bounds.y.min = options.min;
+    } else bounds[1][0] = options.min;
+  }
+  if (options.max !== undefined) {
+    if (options.direction) {
+      if (horizontal) bounds.y.max = options.max;
+      else bounds.x.max = options.max;
+    } else bounds[1][1] = options.max;
+  }
+
+  const {
+    x: { min: minX, max: maxX },
+    y: { min: minY, max: maxY },
+  } = options.direction
+    ? bounds
+    : {
+        x: { min: bounds[0][0], max: bounds[0][1] },
+        y: { min: bounds[1][0], max: bounds[1][1] },
+      };
+
+  const width = round(maxX - minX, 2);
+  const height = round(maxY - minY, 2);
+  const dimensions = options.direction ? { width, height } : [width, height];
 
   // Calculate x and y axis values across the specfied number of steps.
   const yAxis = [];
-  let y = boundsYmax;
+  let y = maxY;
   // To deal with javascript math limitations, round the step with 4 decimal
   // places and then push the values with 2 decimal places
-  const yStepInterval = round(dimensionsY / stepsY, 4);
-  while (round(y, 2) >= boundsYmin) {
+  const yStepInterval = round(height / stepsY, 4);
+  while (round(y, 2) >= minY) {
     yAxis.push(round(y, 2));
     y -= yStepInterval;
   }
+  if (horizontal) yAxis.reverse();
 
   const xAxis = [];
-  let x = boundsXmin;
-  const xStepInterval = round(dimensionsX / stepsX, 4);
-  while (round(x, 2) <= boundsXmax) {
+  let x = minX;
+  const xStepInterval = round(width / stepsX, 4);
+  while (round(x, 2) <= maxX) {
     xAxis.push(round(x, 2));
     x += xStepInterval;
   }
@@ -185,5 +217,11 @@ export const calcs = (values = [], options = {}) => {
 
   const pad = thicknessPad[thickness];
 
-  return { axis: [xAxis, yAxis], bounds, dimensions, pad, thickness };
+  return {
+    axis: options.direction ? { x: xAxis, y: yAxis } : [xAxis, yAxis],
+    bounds,
+    dimensions,
+    pad,
+    thickness,
+  };
 };

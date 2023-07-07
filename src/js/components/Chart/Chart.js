@@ -23,7 +23,7 @@ const Chart = React.forwardRef(
       bounds: boundsProp,
       color,
       dash,
-      direction,
+      direction = 'vertical',
       gap,
       id,
       onClick,
@@ -34,7 +34,7 @@ const Chart = React.forwardRef(
       pattern,
       point,
       round,
-      size: sizeProp = defaultSize,
+      size: sizeProp,
       thickness = 'medium',
       type = 'bar',
       values: valuesProp = defaultValues,
@@ -47,9 +47,9 @@ const Chart = React.forwardRef(
 
     const values = useMemo(() => normalizeValues(valuesProp), [valuesProp]);
 
-    const vertical = useMemo(() => direction === 'vertical', [direction]);
+    const horizontal = useMemo(() => direction === 'horizontal', [direction]);
 
-    // bounds is { x: { min, max }, y: { min, max } }, accounting for direction
+    // bounds is { x: { min, max }, y: { min, max } }
     const bounds = useMemo(
       () => normalizeBounds(boundsProp, values, direction),
       [direction, boundsProp, values],
@@ -136,7 +136,9 @@ const Chart = React.forwardRef(
       const sizeWidth =
         typeof sizeProp === 'string'
           ? sizeProp
-          : sizeProp.width || defaultSize.width;
+          : sizeProp?.width ||
+            (horizontal && defaultSize.height) ||
+            defaultSize.width;
       let width;
       if (sizeWidth === 'full' || sizeWidth === 'fill') {
         [width] = containerSize;
@@ -149,7 +151,9 @@ const Chart = React.forwardRef(
       const sizeHeight =
         typeof sizeProp === 'string'
           ? sizeProp
-          : sizeProp.height || defaultSize.height;
+          : sizeProp?.height ||
+            (horizontal && defaultSize.width) ||
+            defaultSize.height;
       let height;
       if (sizeHeight === 'full' || sizeHeight === 'fill') {
         [, height] = containerSize;
@@ -163,6 +167,7 @@ const Chart = React.forwardRef(
     }, [
       containerSize,
       gap,
+      horizontal,
       sizeProp,
       strokeWidth,
       theme.global.edgeSize,
@@ -231,7 +236,7 @@ const Chart = React.forwardRef(
 
     // rendering helpers, to make rendering code easier to understand
 
-    const valueCoords = (x, y) => (vertical ? [y, x] : [x, y]);
+    const valueCoords = (x, y) => (horizontal ? [y, x] : [x, y]);
 
     // Converts values to drawing coordinates.
     // Takes into account the bounds, any inset, and the scale.
@@ -239,8 +244,8 @@ const Chart = React.forwardRef(
       const y = (yValue - bounds.y.min) * scale.y + inset.top;
       return [
         (xValue - bounds.x.min) * scale.x + inset.left,
-        // vertical grows y top down, horizontal grows y bottom up
-        vertical ? y : size.height - y,
+        // horizontal grows y top down, vertical grows y bottom up
+        horizontal ? y : size.height - y,
       ];
     };
 
@@ -279,7 +284,7 @@ const Chart = React.forwardRef(
             value[0],
             value.length === 2
               ? Math.min(
-                  Math.max(0, vertical ? bounds.x.min : bounds.y.min),
+                  Math.max(0, horizontal ? bounds.x.min : bounds.y.min),
                   value[1],
                 )
               : Math.min(value[1], value[2]),
@@ -288,7 +293,7 @@ const Chart = React.forwardRef(
             value[0],
             value.length === 2
               ? Math.max(
-                  Math.min(0, vertical ? bounds.x.max : bounds.y.max),
+                  Math.min(0, horizontal ? bounds.x.max : bounds.y.max),
                   value[1],
                 )
               : Math.max(value[1], value[2]),
@@ -403,7 +408,7 @@ const Chart = React.forwardRef(
             value[0],
             // Math.max() is to account for value[1] being negative
             value.length === 2
-              ? Math.max(0, vertical ? bounds.x.min : bounds.y.min)
+              ? Math.max(0, horizontal ? bounds.x.min : bounds.y.min)
               : value[1],
           );
           d += ` L ${valueToCoordinate(x, y).join(',')}`;
@@ -585,7 +590,7 @@ const Chart = React.forwardRef(
 
     const defs = [];
     let gradientRect;
-    if (useGradient && size.height) {
+    if (useGradient && ((horizontal && size.width) || size.height)) {
       const uniqueGradientId = color.map((element) => element.color).join('-');
       const gradientId = `${uniqueGradientId}-${id}-gradient`;
       const maskId = `${uniqueGradientId}-${id}-mask`;
@@ -595,17 +600,22 @@ const Chart = React.forwardRef(
           id={gradientId}
           x1={0}
           y1={0}
-          x2={0}
-          y2={1}
+          x2={horizontal ? 1 : 0}
+          y2={horizontal ? 0 : 1}
         >
           {color
             .slice(0)
-            .sort((c1, c2) => c2.value - c1.value)
+            .sort((c1, c2) =>
+              horizontal ? c1.value - c2.value : c2.value - c1.value,
+            )
             .map(({ value, color: gradientColor }) => (
               <stop
                 key={value}
                 offset={
-                  (size.height - (value - bounds.y.min) * scale.y) / size.height
+                  horizontal
+                    ? ((value - bounds.x.min) * scale.x) / size.width
+                    : (size.height - (value - bounds.y.min) * scale.y) /
+                      size.height
                 }
                 stopColor={normalizeColor(gradientColor, theme)}
               />

@@ -26,7 +26,13 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
     animate: PropTypes.bool,
-    bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    bounds: PropTypes.oneOfType([
+      PropTypes.shape({
+        x: PropTypes.shape({ min: PropTypes.number, max: PropTypes.number }),
+        y: PropTypes.shape({ min: PropTypes.number, max: PropTypes.number }),
+      }),
+      PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
+    ]),
     color: PropTypes.oneOfType([
       colorPropType,
       PropTypes.shape({
