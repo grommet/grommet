@@ -29,7 +29,7 @@ var Content = function Content(_ref) {
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
   var options = useMemo(function () {
-    return optionsArg || properties && Object.keys(properties).sort() || Object.keys(data[0]).sort();
+    return optionsArg || properties && Object.keys(properties).sort() || data.length > 0 && Object.keys(data[0]).sort() || data;
   }, [data, optionsArg, properties]);
   var directionOptions = [{
     label: format({

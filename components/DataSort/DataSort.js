@@ -35,7 +35,7 @@ var Content = function Content(_ref) {
   var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext2.format;
   var options = (0, _react.useMemo)(function () {
-    return optionsArg || properties && Object.keys(properties).sort() || Object.keys(data[0]).sort();
+    return optionsArg || properties && Object.keys(properties).sort() || data.length > 0 && Object.keys(data[0]).sort() || data;
   }, [data, optionsArg, properties]);
   var directionOptions = [{
     label: format({
