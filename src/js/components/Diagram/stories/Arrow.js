@@ -3,22 +3,32 @@ import React from 'react';
 import { Gremlin, IceCream } from 'grommet-icons';
 import { Stack, Box, Diagram } from 'grommet';
 
-const anchor = 'vertical';
-const type = 'curved';
-
-const connection = {
-  id: 'shimi',
-  anchor,
-  color: 'accent-1',
-  thickness: 'xsmall',
-  type,
-  toTarget: 'yummy',
-  fromTarget: 'gremlin',
-  round: true,
-  endpoint: { to: 'arrow' },
-};
-
-const connections = [connection];
+const connections = [
+  {
+    fromTarget: 'gremlin',
+    toTarget: 'yummy',
+    thickness: 'xxsmall',
+    endpoint: 'arrow',
+    anchor: 'center',
+    color: 'red',
+  },
+  {
+    fromTarget: 'gremlin',
+    toTarget: 'yummy',
+    thickness: 'xxsmall',
+    endpoint: { from: 'arrow' },
+    anchor: 'horizontal',
+    color: 'blue',
+  },
+  {
+    fromTarget: 'gremlin',
+    toTarget: 'yummy',
+    thickness: 'xxsmall',
+    endpoint: { to: 'arrow' },
+    anchor: 'vertical',
+    color: 'green',
+  },
+];
 
 export const Arrow = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -29,7 +39,7 @@ export const Arrow = () => (
         <Gremlin id="gremlin" color="neutral-2" size="xlarge" />
       </Box>
       <Box
-        align="start"
+        align="end"
         pad={{ vertical: 'large' }}
         style={{ marginTop: '5rem' }}
       >
