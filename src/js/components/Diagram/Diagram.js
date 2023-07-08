@@ -131,7 +131,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   const placeConnections = useCallback(() => {
     const containerRect = svgRef.current.getBoundingClientRect();
     const updatedConnectionPoints = connections.map(
-      ({ anchor, fromTarget, toTarget, arrow }) => {
+      ({ anchor, fromTarget, toTarget, endpoint }) => {
         let points;
         const fromElement = findTarget(fromTarget);
         const toElement = findTarget(toTarget);
@@ -160,22 +160,22 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             if (fromRect.top < toRect.top) {
               fromPoint[1] += fromRect.height;
 
-              if (arrow === 'from') {
+              if (typeof endpoint === 'object' && endpoint?.from) {
                 fromPoint[1] += 10;
-              } else if (arrow === 'to') {
+              } else if (typeof endpoint === 'object' && endpoint?.to) {
                 toPoint[1] -= 10;
-              } else if (arrow) {
+              } else if (typeof endpoint === 'string') {
                 fromPoint[1] += 10;
                 toPoint[1] -= 10;
               }
             } else {
               toPoint[1] += toRect.height;
 
-              if (arrow === 'from') {
+              if (typeof endpoint === 'object' && endpoint?.from) {
                 fromPoint[1] -= 10;
-              } else if (arrow === 'to') {
+              } else if (typeof endpoint === 'object' && endpoint?.to) {
                 toPoint[1] += 10;
-              } else if (arrow) {
+              } else if (typeof endpoint === 'string') {
                 fromPoint[1] -= 10;
                 toPoint[1] += 10;
               }
@@ -186,22 +186,22 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             if (fromRect.left < toRect.left) {
               fromPoint[0] += fromRect.width;
 
-              if (arrow === 'from') {
+              if (typeof endpoint === 'object' && endpoint?.from) {
                 fromPoint[0] += 10;
-              } else if (arrow === 'to') {
+              } else if (typeof endpoint === 'object' && endpoint?.to) {
                 toPoint[0] -= 10;
-              } else if (arrow) {
+              } else if (typeof endpoint === 'string') {
                 fromPoint[0] += 10;
                 toPoint[0] -= 10;
               }
             } else {
               toPoint[0] += toRect.width;
 
-              if (arrow === 'from') {
+              if (typeof endpoint === 'object' && endpoint?.from) {
                 fromPoint[0] -= 10;
-              } else if (arrow === 'to') {
+              } else if (typeof endpoint === 'object' && endpoint?.to) {
                 toPoint[0] += 10;
-              } else if (arrow) {
+              } else if (typeof endpoint === 'string') {
                 fromPoint[0] -= 10;
                 toPoint[0] += 10;
               }
@@ -240,7 +240,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
           round,
           thickness,
           type,
-          arrow,
+          endpoint,
           ...connectionRest
         },
         index,
@@ -275,16 +275,16 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
 
           let arrowMarker = null;
 
-          if (arrow === 'from') {
+          if (typeof endpoint === 'object' && endpoint?.from === 'arrow') {
             arrowMarker = openArrow(
               normalizeColor(colorName, theme),
               index,
               'openArrowStart',
               'auto-start-reverse',
             );
-          } else if (arrow === 'to') {
+          } else if (typeof endpoint === 'object' && endpoint?.to === 'arrow') {
             arrowMarker = openArrow(normalizeColor(colorName, theme), index);
-          } else if (arrow) {
+          } else if (typeof endpoint === 'string' && endpoint === 'arrow') {
             arrowMarker = (
               <>
                 {openArrow(
@@ -314,7 +314,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
                 markerStart={`url("#openArrowStart-${index}")`}
                 markerEnd={`url("#openArrowEnd-${index}")`}
               />
-              {arrow && arrowMarker && <defs>{arrowMarker}</defs>}
+              {endpoint && arrowMarker && <defs>{arrowMarker}</defs>}
             </Fragment>
           );
         }

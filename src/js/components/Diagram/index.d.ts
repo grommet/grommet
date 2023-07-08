@@ -20,8 +20,8 @@ export interface DiagramProps {
   connections: {
     anchor?: DiagramConnectionAnchor;
     animation?: DiagramAnimationType;
-    arrow?: 'from' | 'to' | boolean;
     color?: ColorType;
+    endpoint?: 'arrow' | { from: 'arrow'; to: 'arrow' };
     fromTarget: string | object;
     label?: string;
     offset?: 'xsmall' | 'small' | 'medium' | 'large' | string;

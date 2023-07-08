@@ -15,7 +15,7 @@ const connection = {
   toTarget: 'yummy',
   fromTarget: 'gremlin',
   round: true,
-  arrow: 'to',
+  endpoint: { to: 'arrow' },
 };
 
 const connections = [connection];

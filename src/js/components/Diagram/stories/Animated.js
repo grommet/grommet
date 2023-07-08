@@ -13,7 +13,7 @@ const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   thickness: 'xsmall',
   round: true,
   type: 'curved',
-  arrow: 'to',
+  endpoint: { to: 'arrow' },
   ...rest,
 });
 
