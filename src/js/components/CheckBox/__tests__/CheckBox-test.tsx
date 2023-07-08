@@ -218,4 +218,17 @@ describe('CheckBox', () => {
     expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('renders custom cursor when disabled', async () => {
+    const { container } = render(
+      <Grommet
+        theme={{ global: { input: { disabled: { cursor: 'not-allowed' } } } }}
+      >
+        <CheckBox disabled />
+        <CheckBox disabled checked />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

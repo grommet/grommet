@@ -69,6 +69,7 @@ const StyledCheckBoxContainer = styled.label`
       props.theme,
     )}
   ${(props) => props.disabled && disabledStyle}
+  ${(props) => props.disabled && props.theme.global.input.disabled}
   ${(props) => !props.disabled && 'cursor: pointer;'}
   ${hoverStyle}
   // when the CheckBox has focus but there is no focusIndicator,

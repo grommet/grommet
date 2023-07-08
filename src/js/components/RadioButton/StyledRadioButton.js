@@ -14,8 +14,9 @@ const StyledRadioButtonContainer = styled.label`
   align-items: center;
   user-select: none;
   width: fit-content;
-  ${(props) => props.disabled && disabledStyle} ${(props) =>
-    !props.disabled && 'cursor: pointer;'}
+  ${(props) => props.disabled && disabledStyle}
+  ${(props) => props.disabled && props.theme.global.input.disabled}
+  ${(props) => !props.disabled && 'cursor: pointer;'}
 
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {

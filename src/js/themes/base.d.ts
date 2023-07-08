@@ -439,6 +439,9 @@ export interface ThemeType {
         weight?: number | string;
       };
       weight?: number | string;
+      disabled?: {
+        cursor?: string;
+      };
     };
     opacity?: {
       strong?: number;

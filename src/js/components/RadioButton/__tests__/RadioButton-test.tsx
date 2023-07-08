@@ -192,4 +192,17 @@ describe('RadioButton', () => {
     expect(getByLabelText('test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('renders custom cursor when disabled', () => {
+    const { container } = render(
+      <Grommet
+        theme={{ global: { input: { disabled: { cursor: 'not-allowed' } } } }}
+      >
+        <RadioButton disabled name="test" value="1" />
+        <RadioButton disabled checked name="test" value="2" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
