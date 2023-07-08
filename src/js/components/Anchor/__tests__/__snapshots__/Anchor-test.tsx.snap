@@ -457,20 +457,20 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -491,20 +491,20 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -525,20 +525,20 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -559,20 +559,20 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -593,20 +593,20 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill="none"] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*="#"],
-.c12 *[STROKE*="#"] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c12 *[fill-rule],
 .c12 *[FILL-RULE],
-.c12 *[fill*="#"],
-.c12 *[FILL*="#"] {
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -966,20 +966,20 @@ exports[`Anchor renders size specific theming 1`] = `
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c18 *[fill-rule],
 .c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1000,20 +1000,20 @@ exports[`Anchor renders size specific theming 1`] = `
   stroke: inherit;
 }
 
-.c20 *:not([stroke])[fill="none"] {
+.c20 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c20 *[stroke*="#"],
-.c20 *[STROKE*="#"] {
+.c20 *[stroke*='#'],
+.c20 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c20 *[fill-rule],
 .c20 *[FILL-RULE],
-.c20 *[fill*="#"],
-.c20 *[FILL*="#"] {
+.c20 *[fill*='#'],
+.c20 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

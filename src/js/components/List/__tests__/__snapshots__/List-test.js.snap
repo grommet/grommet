@@ -1235,20 +1235,20 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1895,20 +1895,20 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4195,20 +4195,20 @@ exports[`List events should apply pagination styling 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4229,20 +4229,20 @@ exports[`List events should apply pagination styling 1`] = `
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c18 *[fill-rule],
 .c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5356,20 +5356,20 @@ exports[`List events should paginate 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5390,20 +5390,20 @@ exports[`List events should paginate 1`] = `
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c18 *[fill-rule],
 .c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6358,20 +6358,20 @@ exports[`List events should render correct num items per page (step) 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6392,20 +6392,20 @@ exports[`List events should render correct num items per page (step) 1`] = `
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c18 *[fill-rule],
 .c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -7250,20 +7250,20 @@ exports[`List events should render new data when page changes 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -7284,20 +7284,20 @@ exports[`List events should render new data when page changes 1`] = `
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c18 *[fill-rule],
 .c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11827,7 +11827,7 @@ exports[`List events should render new data when page changes 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ebwLTU"
+                class="StyledIcon-sc-ofa7kd-0 hpynaY"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -11883,7 +11883,7 @@ exports[`List events should render new data when page changes 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -11919,20 +11919,20 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11953,20 +11953,20 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c18 *[fill-rule],
 .c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -12921,20 +12921,20 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -12955,20 +12955,20 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c18 *[fill-rule],
 .c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -13899,20 +13899,20 @@ exports[`List itemKey function 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -15013,20 +15013,20 @@ exports[`List onOrder Keyboard move down 1`] = `
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -15505,7 +15505,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -15525,7 +15525,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -15574,7 +15574,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -15595,7 +15595,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -15659,7 +15659,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -15679,7 +15679,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -15728,7 +15728,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -15749,7 +15749,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -15783,20 +15783,20 @@ exports[`List onOrder Keyboard move up 1`] = `
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -16275,7 +16275,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -16295,7 +16295,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -16344,7 +16344,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -16365,7 +16365,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -16429,7 +16429,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -16449,7 +16449,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -16498,7 +16498,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -16519,7 +16519,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -16553,20 +16553,20 @@ exports[`List onOrder Mouse move down 1`] = `
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -17044,7 +17044,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -17064,7 +17064,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -17113,7 +17113,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -17134,7 +17134,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -17169,20 +17169,20 @@ exports[`List onOrder with action Render 1`] = `
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill="none"] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*="#"],
-.c12 *[STROKE*="#"] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c12 *[fill-rule],
 .c12 *[FILL-RULE],
-.c12 *[fill*="#"],
-.c12 *[FILL*="#"] {
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -17970,20 +17970,20 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -18638,20 +18638,20 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -19395,20 +19395,20 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -19730,20 +19730,20 @@ exports[`List pinned Should apply pinned styling to items when data are children
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -20125,20 +20125,20 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
