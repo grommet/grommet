@@ -6,51 +6,60 @@ export const normalizeValues = (values) =>
     return { value: [index, value] };
   });
 
-export const normalizeBounds = (boundsProp, values, direction) => {
-  const vertical = direction === 'vertical';
-  let result;
-  if (boundsProp) {
-    if (vertical)
-      result = {
-        x: { min: boundsProp[1][0], max: boundsProp[1][1] },
-        y: { min: boundsProp[0][0], max: boundsProp[0][1] },
-      };
-    else
-      result = {
-        x: { min: boundsProp[0][0], max: boundsProp[0][1] },
-        y: { min: boundsProp[1][0], max: boundsProp[1][1] },
-      };
-  } else {
-    let min0 = 0;
-    let max0 = 1;
-    let min1 = 0;
-    let max1 = 1;
-    (values || []).forEach((value) => {
-      if (value.value[0] !== undefined) {
-        min0 = Math.min(min0, value.value[0]);
-        max0 = Math.max(max0, value.value[0]);
-      }
-      if (value.value[1] !== undefined) {
-        min1 = Math.min(min1, value.value[1]);
-        max1 = Math.max(max1, value.value[1]);
-      }
-      if (value.value[2] !== undefined) {
-        min1 = Math.min(min1, value.value[2]);
-        max1 = Math.max(max1, value.value[2]);
-      }
-    });
-    if (vertical) {
-      result = {
+export const calcMinMax = (values = [], direction) => {
+  // We default to 0 minimum as that's typically what's wanted.
+  // If callers want a narrower band, they can pass bounds explicitly.
+  let min0 = (direction && 0) ?? undefined;
+  let max0 = (direction && 1) ?? undefined;
+  let min1 = (direction && 0) ?? undefined;
+  let max1 = (direction && 1) ?? undefined;
+
+  values.forEach((value) => {
+    const [val0, val1, val2] = value.value;
+    if (val0 !== undefined) {
+      min0 = min0 === undefined ? val0 : Math.min(min0, val0);
+      max0 = max0 === undefined ? val0 : Math.max(max0, val0);
+    }
+    if (val1 !== undefined) {
+      min1 = min1 === undefined ? val1 : Math.min(min1, val1);
+      max1 = max1 === undefined ? val1 : Math.max(max1, val1);
+    }
+    if (val2 !== undefined) {
+      min1 = min1 === undefined ? val2 : Math.min(min1, val2);
+      max1 = max1 === undefined ? val2 : Math.max(max1, val2);
+    }
+  });
+
+  // when max === min, offset them so we can show something
+  if (max0 === min0) {
+    if (max0 > 0) min0 = max0 - 1;
+    else max0 = min0 + 1;
+  }
+  if (max1 === min1) {
+    if (max1 > 0) min1 = max1 - 1;
+    else max1 = min1 + 1;
+  }
+
+  return direction === 'horizontal'
+    ? {
         x: { min: min1, max: max1 },
         y: { min: min0, max: max0 },
-      };
-    } else {
-      result = {
+      }
+    : {
         x: { min: min0, max: max0 },
         y: { min: min1, max: max1 },
       };
-    }
-  }
+};
+
+export const normalizeBounds = (boundsProp, values, direction) => {
+  let result;
+  if (Array.isArray(boundsProp))
+    result = {
+      x: { min: boundsProp[0][0], max: boundsProp[0][1] },
+      y: { min: boundsProp[1][0], max: boundsProp[1][1] },
+    };
+  else if (typeof boundsProp === 'object') result = boundsProp;
+  else result = calcMinMax(values, direction);
   return result;
 };
 
