@@ -23,7 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
         color: colorPropType,
         endpoint: PropTypes.oneOfType([
           PropTypes.oneOf(['arrow']),
-          PropTypes.object
+          PropTypes.object,
         ]),
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
           .isRequired,
