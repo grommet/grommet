@@ -76,6 +76,7 @@ export interface DataChartProps {
   bounds?:
     | 'align'
     | {
+        x?: number[];
         y?: number[];
       };
   // chart - if undefined, { type: 'bar', property: <first series property> }
@@ -84,6 +85,7 @@ export interface DataChartProps {
   data: {}[];
   // detail - whether to show details via hover/touch interaction
   detail?: boolean | ((datum: {}, index: number) => React.ReactNode);
+  direction?: 'horizontal' | 'vertical';
   gap?: GridProps['gap']; // between axes and guides/visuals
   gridArea?: GridAreaType; // generic
   // guide - when true, {

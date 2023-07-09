@@ -149,6 +149,23 @@ Use the icon prop instead.`,
       }
     }, [range, schema, textValue, reference, value]);
 
+    // textValue of MaskedInput is controlled.
+    // for uncontrolled forms, ensure the reset event
+    // resets the textValue
+    useEffect(() => {
+      const form = ref?.current?.form;
+      const handleFormReset = (e) => {
+        if (schema && ref.current && e.target.contains(ref.current)) {
+          setTextValue('');
+        }
+      };
+      // place the listener on the form directly. if listener is on window,
+      // the event could get blocked if caller has e.stopPropagation(), etc. in
+      // their form onReset
+      form?.addEventListener('reset', handleFormReset);
+      return () => form?.removeEventListener('reset', handleFormReset);
+    }, [schema, ref]);
+
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
 
