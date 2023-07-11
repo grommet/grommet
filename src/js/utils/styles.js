@@ -548,14 +548,14 @@ const ALIGN_SELF_MAP = {
 export const genericStyles = css`
   ${(props) =>
     props.$alignSelf && `align-self: ${ALIGN_SELF_MAP[props.$alignSelf]};`}
-  ${(props) => props.gridArea && `grid-area: ${props.gridArea};`}
+  ${(props) => props.$gridArea && `grid-area: ${props.$gridArea};`}
   ${(props) =>
     props.$margin &&
     props.theme.global &&
     edgeStyle(
       'margin',
       props.$margin,
-      props.responsive,
+      props.$responsive,
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )}
@@ -798,7 +798,7 @@ const ALIGN_ITEMS_MAP = {
 };
 
 export const alignStyle = css`
-  align-items: ${(props) => ALIGN_ITEMS_MAP[props.align] ?? props.align};
+  align-items: ${(props) => ALIGN_ITEMS_MAP[props.$align] ?? props.$align};
 `;
 
 const ALIGN_CONTENT_MAP = {
@@ -814,7 +814,7 @@ const ALIGN_CONTENT_MAP = {
 
 export const alignContentStyle = css`
   align-content: ${(props) =>
-    ALIGN_CONTENT_MAP[props.alignContent] ?? props.alignContent};
+    ALIGN_CONTENT_MAP[props.$alignContent] ?? props.$alignContent};
 `;
 const getSize = (theme, size) => theme.global.size[size] || size;
 

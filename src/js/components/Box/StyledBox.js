@@ -37,9 +37,9 @@ const BASIS_MAP = {
 
 const basisStyle = css`
   flex-basis: ${(props) =>
-    BASIS_MAP[props.basis] ||
-    props.theme.global.size[props.basis] ||
-    props.basis};
+    BASIS_MAP[props.$basis] ||
+    props.theme.global.size[props.$basis] ||
+    props.$basis};
 `;
 
 // min-width and min-height needed because of this
@@ -100,8 +100,8 @@ const flexGrowShrinkProp = (flex) => {
 
 const flexStyle = css`
   flex: ${(props) =>
-    `${flexGrowShrinkProp(props.flex)}${
-      props.flex !== true && !props.basis ? ' auto' : ''
+    `${flexGrowShrinkProp(props.$flex)}${
+      props.$flex !== true && !props.$basis ? ' auto' : ''
     }`};
 `;
 
@@ -115,7 +115,7 @@ const JUSTIFY_MAP = {
 };
 
 const justifyStyle = css`
-  justify-content: ${(props) => JUSTIFY_MAP[props.justify]};
+  justify-content: ${(props) => JUSTIFY_MAP[props.$justify]};
 `;
 
 const WRAP_MAP = {
@@ -124,7 +124,7 @@ const WRAP_MAP = {
 };
 
 const wrapStyle = css`
-  flex-wrap: ${(props) => WRAP_MAP[props.wrapProp]};
+  flex-wrap: ${(props) => WRAP_MAP[props.$wrap]};
 `;
 
 const animationItemStyle = (item, theme) => {
@@ -182,8 +182,8 @@ const animationInitialStyle = (item) => {
 
 const animationStyle = css`
   ${(props) => css`
-    ${animationInitialStyle(props.animation)}
-    animation: ${animationItemStyle(props.animation, props.theme)};
+    ${animationInitialStyle(props.$animation)}
+    animation: ${animationItemStyle(props.$animation, props.theme)};
   `};
 `;
 
@@ -192,21 +192,21 @@ const interactiveStyle = css`
 
   &:hover {
     ${(props) =>
-      props.kindProp?.hover &&
-      getHoverIndicatorStyle(props.kindProp.hover, props.theme)}
+      props.$kind?.hover &&
+      getHoverIndicatorStyle(props.$kind.hover, props.theme)}
     ${(props) =>
-      props.hoverIndicator &&
-      getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+      props.$hoverIndicator &&
+      getHoverIndicatorStyle(props.$hoverIndicator, props.theme)}
   }
 `;
 
-const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
+const gapStyle = (direction, gap, responsive, wrap, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
   const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
-  if (directionProp === 'column' || directionProp === 'column-reverse') {
+  if (direction === 'column' || direction === 'column-reverse') {
     styles.push(`row-gap: ${metric};`);
     if (responsiveMetric) {
       styles.push(breakpointStyle(breakpoint, `row-gap: ${responsiveMetric};`));
@@ -215,11 +215,11 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
     styles.push(`column-gap: ${metric};`);
     if (wrap) styles.push(`row-gap: ${metric};`);
     if (responsiveMetric) {
-      if (directionProp === 'row' || directionProp === 'row-reverse') {
+      if (direction === 'row' || direction === 'row-reverse') {
         styles.push(
           breakpointStyle(breakpoint, `column-gap: ${responsiveMetric};`),
         );
-      } else if (directionProp === 'row-responsive') {
+      } else if (direction === 'row-responsive') {
         styles.push(
           breakpointStyle(
             breakpoint,
@@ -239,66 +239,66 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
 const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
-  ${(props) => !props.basis && 'max-width: 100%;'};
+  ${(props) => !props.$basis && 'max-width: 100%;'};
   ${genericStyles}
-  ${(props) => props.align && alignStyle}
-  ${(props) => props.alignContent && alignContentStyle}
+  ${(props) => props.$align && alignStyle}
+  ${(props) => props.$alignContent && alignContentStyle}
   ${(props) =>
-    props.background && backgroundStyle(props.background, props.theme)}
+    props.$background && backgroundStyle(props.$background, props.theme)}
   ${(props) =>
-    props.border && borderStyle(props.border, props.responsive, props.theme)}
+    props.$border && borderStyle(props.$border, props.$responsive, props.theme)}
   ${(props) =>
-    props.directionProp && directionStyle(props.directionProp, props.theme)}
-  ${(props) => props.heightProp && heightStyle(props.heightProp, props.theme)}
-  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
-  ${(props) => props.flex !== undefined && flexStyle}
-  ${(props) => props.basis && basisStyle}
-  ${(props) => props.fillProp && fillStyle(props.fillProp)}
-  ${(props) => props.justify && justifyStyle}
+    props.$direction && directionStyle(props.$direction, props.theme)}
+  ${(props) => props.$height && heightStyle(props.$height, props.theme)}
+  ${(props) => props.$width && widthStyle(props.$width, props.theme)}
+  ${(props) => props.$flex !== undefined && flexStyle}
+  ${(props) => props.$basis && basisStyle}
+  ${(props) => props.$fill && fillStyle(props.$fill)}
+  ${(props) => props.$justify && justifyStyle}
   ${(props) =>
-    props.pad &&
+    props.$pad &&
     edgeStyle(
       'padding',
-      props.pad,
-      props.responsive,
+      props.$pad,
+      props.$responsive,
       props.theme.box.responsiveBreakpoint,
       props.theme,
     )}
   ${(props) =>
-    props.round && roundStyle(props.round, props.responsive, props.theme)}
-  ${(props) => props.wrapProp && wrapStyle}
-  ${(props) => props.overflowProp && overflowStyle(props.overflowProp)}
-  ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
+    props.$round && roundStyle(props.$round, props.$responsive, props.theme)}
+  ${(props) => props.$wrap && wrapStyle}
+  ${(props) => props.$overflow && overflowStyle(props.$overflow)}
+  ${(props) => props.$elevation && elevationStyle(props.$elevation)}
   ${(props) =>
-    props.gap &&
+    props.$gap &&
     gapStyle(
-      props.directionProp,
-      props.gap,
-      props.responsive,
-      props.wrapProp,
+      props.$direction,
+      props.$gap,
+      props.$responsive,
+      props.$wrap,
       props.theme,
     )}
-  ${(props) => props.animation && animationStyle}
+  ${(props) => props.$animation && animationStyle}
   ${(props) => props.onClick && interactiveStyle}
   ${(props) =>
     props.onClick &&
-    props.focus &&
-    props.focusIndicator !== false &&
+    props.$focus &&
+    props.$focusIndicator !== false &&
     focusStyle()}
   ${(props) => props.theme.box && props.theme.box.extend}
-  ${(props) => props.kindProp && props.kindProp.extend}
+  ${(props) => props.$kind && props.$kind.extend}
 `;
 
 StyledBox.defaultProps = {};
 Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
-const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
+const gapGapStyle = (direction, gap, responsive, border, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
   const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
-  if (directionProp === 'column' || directionProp === 'column-reverse') {
+  if (direction === 'column' || direction === 'column-reverse') {
     styles.push(`height: ${metric};`);
     if (responsiveMetric) {
       styles.push(breakpointStyle(breakpoint, `height: ${responsiveMetric};`));
@@ -306,9 +306,9 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
   } else {
     styles.push(`width: ${metric};`);
     if (responsiveMetric) {
-      if (directionProp === 'row' || directionProp === 'row-reverse') {
+      if (direction === 'row' || direction === 'row-reverse') {
         styles.push(breakpointStyle(breakpoint, `width: ${responsiveMetric};`));
-      } else if (directionProp === 'row-responsive') {
+      } else if (direction === 'row-responsive') {
         styles.push(
           breakpointStyle(
             breakpoint,
@@ -339,7 +339,7 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
         parseMetricToNum(responsiveBorderMetric) / 2
       }px`;
 
-    if (directionProp === 'column' || directionProp === 'column-reverse') {
+    if (direction === 'column' || direction === 'column-reverse') {
       const adjustedBorder =
         typeof border === 'string' ? 'top' : { ...border, side: 'top' };
       styles.push(css`
@@ -376,13 +376,13 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
           left: ${borderOffset};
           ${borderStyle(
             adjustedBorder,
-            directionProp !== 'row-responsive' && responsive,
+            direction !== 'row-responsive' && responsive,
             theme,
           )}
         }
       `);
       if (responsiveBorderOffset) {
-        if (directionProp === 'row' || directionProp === 'row-reverse') {
+        if (direction === 'row' || direction === 'row-reverse') {
           styles.push(
             breakpointStyle(
               breakpoint,
@@ -393,7 +393,7 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
               }`,
             ),
           );
-        } else if (directionProp === 'row-responsive') {
+        } else if (direction === 'row-responsive') {
           const adjustedBorder2 =
             typeof border === 'string' ? 'top' : { ...border, side: 'top' };
           styles.push(
@@ -423,12 +423,12 @@ const StyledBoxGap = styled.div`
   flex: 0 0 auto;
   align-self: stretch;
   ${(props) =>
-    props.gap &&
+    props.$gap &&
     gapGapStyle(
-      props.directionProp,
-      props.gap,
-      props.responsive,
-      props.border,
+      props.$direction,
+      props.$gap,
+      props.$responsive,
+      props.$border,
       props.theme,
     )};
 `;
