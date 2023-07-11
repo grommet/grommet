@@ -233,12 +233,12 @@ const Box = forwardRef(
             !border.find((b) => b.side === 'between')) &&
           gap
         }
+        $height={height}
         $kind={kind}
         $overflow={overflow}
-        $wrap={wrap}
-        $width={width}
-        $height={height}
         $responsive={responsive}
+        $width={width}
+        $wrap={wrap}
         {...clickProps}
         {...restProps}
         {...skeletonProps}
