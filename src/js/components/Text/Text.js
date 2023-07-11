@@ -73,8 +73,8 @@ const Text = forwardRef(
         as={!as && tag ? tag : as}
         aria-label={a11yTitle}
         $colorProp={color}
-        $truncate={truncate}
         $size={size}
+        $truncate={truncate}
         {...rest}
         ref={textRef}
       >
