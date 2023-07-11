@@ -78,7 +78,7 @@ const truncateStyle = `
 
 const colorStyle = css`
   color: ${(props) =>
-    normalizeColor(props.$colorProp || props.theme.heading.color, props.theme)};
+    normalizeColor(props.$color || props.theme.heading.color, props.theme)};
 `;
 
 const StyledHeading = styled.h1`
@@ -87,7 +87,7 @@ const StyledHeading = styled.h1`
   ${(props) => sizeStyle(props)}
   ${(props) => props.$textAlign && textAlignStyle}
   ${(props) => props.$truncate && truncateStyle}
-  ${(props) => (props.$colorProp || props.theme.heading.color) && colorStyle}
+  ${(props) => (props.$color || props.theme.heading.color) && colorStyle}
   ${(props) => props.theme.heading && props.theme.heading.extend}
 `;
 

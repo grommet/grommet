@@ -58,7 +58,7 @@ const Heading = forwardRef(
       <StyledHeading
         as={`h${level}`}
         ref={headingRef}
-        $colorProp={color}
+        $color={color}
         $fill={fill}
         $level={+level}
         $overflowWrap={overflowWrap}
