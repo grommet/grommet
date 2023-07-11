@@ -54,6 +54,7 @@
     "styled-components": ">= 5.1"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.1",
     "grommet-icons": "^4.10.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.2.0",
