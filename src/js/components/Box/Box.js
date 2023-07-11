@@ -17,36 +17,38 @@ import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { convertRestToTransientProps } from '../../utils/styles';
 
 const Box = forwardRef(
   (
     {
       a11yTitle,
+      as,
       background: backgroundProp,
       border,
       children,
       cssGap, // internal for now
       direction = 'column',
-      elevation, // munged to avoid styled-components putting it in the DOM
-      fill, // munged to avoid styled-components putting it in the DOM
+      elevation,
+      fill,
       gap,
-      kind, // munged to avoid styled-components putting it in the DOM
+      height,
+      kind,
       onBlur,
       onClick,
       onFocus,
-      overflow, // munged to avoid styled-components putting it in the DOM
+      overflow,
       responsive = true,
-      tag,
-      as,
-      wrap, // munged to avoid styled-components putting it in the DOM,
-      width, // munged to avoid styled-components putting it in the DOM
-      height, // munged to avoid styled-components putting it in the DOM
-      tabIndex,
       skeleton: skeletonProp,
+      tabIndex,
+      tag,
+      wrap,
+      width,
       ...rest
     },
     ref,
   ) => {
+    const restProps = convertRestToTransientProps(rest);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     // boxOptions was created to preserve backwards compatibility but
     // should not be supported in v3
@@ -133,13 +135,13 @@ const Box = forwardRef(
           } else {
             contents.push(
               <StyledBoxGap
+                as={boxAs === 'span' ? boxAs : 'div'}
                 // eslint-disable-next-line react/no-array-index-key
                 key={`gap-${index}`}
-                as={boxAs === 'span' ? boxAs : 'div'}
-                gap={gap}
-                directionProp={direction}
-                responsive={responsive}
-                border={styledBoxGapBorder}
+                $border={styledBoxGapBorder}
+                $direction={direction}
+                $gap={gap}
+                $responsive={responsive}
               />,
             );
           }
@@ -213,14 +215,15 @@ const Box = forwardRef(
       <StyledBox
         as={!as && tag ? tag : as}
         aria-label={a11yTitle}
-        background={background}
-        border={border}
         ref={ref}
-        directionProp={direction}
-        elevationProp={elevation}
-        fillProp={fill}
-        focus={focus}
-        gap={
+        tabIndex={adjustedTabIndex}
+        $background={background}
+        $border={border}
+        $direction={direction}
+        $elevation={elevation}
+        $fill={fill}
+        $focus={focus}
+        $gap={
           (boxOptions?.cssGap || cssGap) &&
           gap &&
           gap !== 'none' &&
@@ -230,15 +233,14 @@ const Box = forwardRef(
             !border.find((b) => b.side === 'between')) &&
           gap
         }
-        kindProp={kind}
-        overflowProp={overflow}
-        wrapProp={wrap}
-        widthProp={width}
-        heightProp={height}
-        responsive={responsive}
-        tabIndex={adjustedTabIndex}
+        $kind={kind}
+        $overflow={overflow}
+        $wrap={wrap}
+        $width={width}
+        $height={height}
+        $responsive={responsive}
         {...clickProps}
-        {...rest}
+        {...restProps}
         {...skeletonProps}
       >
         <ThemeContext.Provider value={nextTheme}>

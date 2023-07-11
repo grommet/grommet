@@ -1,8 +1,21 @@
 import { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
+
+export const convertRestToTransientProps = (rest) => {
+  const res = {};
+  Object.entries(rest).forEach(([key, value]) => {
+    if (isPropValid(key)) {
+      res[key] = value;
+    } else {
+      res[`$${key}`] = value;
+    }
+  });
+  return res;
+};
 
 export const baseStyle = css`
   font-family: ${(props) => props.theme.global.font.family};
@@ -546,15 +559,15 @@ const ALIGN_SELF_MAP = {
 
 export const genericStyles = css`
   ${(props) =>
-    props.alignSelf && `align-self: ${ALIGN_SELF_MAP[props.alignSelf]};`}
-  ${(props) => props.gridArea && `grid-area: ${props.gridArea};`}
+    props.$alignSelf && `align-self: ${ALIGN_SELF_MAP[props.$alignSelf]};`}
+  ${(props) => props.$gridArea && `grid-area: ${props.$gridArea};`}
   ${(props) =>
-    props.margin &&
+    props.$margin &&
     props.theme.global &&
     edgeStyle(
       'margin',
-      props.margin,
-      props.responsive,
+      props.$margin,
+      props.$responsive,
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )}
@@ -797,7 +810,7 @@ const ALIGN_ITEMS_MAP = {
 };
 
 export const alignStyle = css`
-  align-items: ${(props) => ALIGN_ITEMS_MAP[props.align] ?? props.align};
+  align-items: ${(props) => ALIGN_ITEMS_MAP[props.$align] ?? props.$align};
 `;
 
 const ALIGN_CONTENT_MAP = {
@@ -813,7 +826,7 @@ const ALIGN_CONTENT_MAP = {
 
 export const alignContentStyle = css`
   align-content: ${(props) =>
-    ALIGN_CONTENT_MAP[props.alignContent] ?? props.alignContent};
+    ALIGN_CONTENT_MAP[props.$alignContent] ?? props.$alignContent};
 `;
 const getSize = (theme, size) => theme.global.size[size] || size;
 
