@@ -4,7 +4,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledText } from './StyledText';
 import { Tip } from '../Tip';
-import { useForwardedRef } from '../../utils';
+import { convertRestToTransientProps, useForwardedRef } from '../../utils';
 import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
@@ -25,13 +25,14 @@ const Text = forwardRef(
       truncate,
       size,
       skeleton: skeletonProp,
-      ...rest
+      ...restProps
     },
     ref,
   ) => {
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
     const textContextValue = useMemo(() => ({ size }), [size]);
+    const rest = convertRestToTransientProps(restProps);
 
     const skeleton = useSkeleton();
 
@@ -70,10 +71,10 @@ const Text = forwardRef(
     const styledTextResult = (
       <StyledText
         as={!as && tag ? tag : as}
-        colorProp={color}
         aria-label={a11yTitle}
-        truncate={truncate}
-        size={size}
+        $colorProp={color}
+        $size={size}
+        $truncate={truncate}
         {...rest}
         ref={textRef}
       >
@@ -107,9 +108,6 @@ const Text = forwardRef(
 );
 
 Text.displayName = 'Text';
-Text.defaultProps = {
-  level: 1,
-};
 Text.propTypes = TextPropTypes;
 
 export { Text };

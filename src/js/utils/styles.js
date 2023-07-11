@@ -5,18 +5,6 @@ import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
-export const convertRestToTransientProps = (rest) => {
-  const res = {};
-  Object.entries(rest).forEach(([key, value]) => {
-    if (isPropValid(key)) {
-      res[key] = value;
-    } else {
-      res[`$${key}`] = value;
-    }
-  });
-  return res;
-};
-
 export const baseStyle = css`
   font-family: ${(props) => props.theme.global.font.family};
   font-size: ${(props) => props.theme.global.font.size};
@@ -798,7 +786,7 @@ const TEXT_ALIGN_MAP = {
 };
 
 export const textAlignStyle = css`
-  text-align: ${(props) => TEXT_ALIGN_MAP[props.textAlign]};
+  text-align: ${(props) => TEXT_ALIGN_MAP[props.$textAlign]};
 `;
 
 const ALIGN_ITEMS_MAP = {
@@ -902,3 +890,13 @@ export const heightStyle = (height, theme) =>
   typeof height === 'object'
     ? heightObjectStyle(height, theme)
     : heightStringStyle(height, theme);
+
+export const convertRestToTransientProps = (rest) => {
+  const res = {};
+  Object.entries(rest).forEach(([key, value]) => {
+    if (!isPropValid(key)) res[`$${key}`] = value;
+    else res[key] = value;
+  });
+
+  return res;
+};
