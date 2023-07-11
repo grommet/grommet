@@ -272,6 +272,7 @@ exports[`Components loads 1`] = `
       "chart": [Function],
       "data": [Function],
       "detail": [Function],
+      "direction": [Function],
       "gap": [Function],
       "gridArea": [Function],
       "guide": [Function],

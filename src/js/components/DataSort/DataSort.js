@@ -23,7 +23,8 @@ const Content = ({ options: optionsArg }) => {
     () =>
       optionsArg ||
       (properties && Object.keys(properties).sort()) ||
-      Object.keys(data[0]).sort(),
+      (data.length > 0 && Object.keys(data[0]).sort()) ||
+      data,
     [data, optionsArg, properties],
   );
 
