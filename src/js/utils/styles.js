@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
@@ -546,14 +547,14 @@ const ALIGN_SELF_MAP = {
 
 export const genericStyles = css`
   ${(props) =>
-    props.alignSelf && `align-self: ${ALIGN_SELF_MAP[props.alignSelf]};`}
+    props.$alignSelf && `align-self: ${ALIGN_SELF_MAP[props.$alignSelf]};`}
   ${(props) => props.gridArea && `grid-area: ${props.gridArea};`}
   ${(props) =>
-    props.margin &&
+    props.$margin &&
     props.theme.global &&
     edgeStyle(
       'margin',
-      props.margin,
+      props.$margin,
       props.responsive,
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
@@ -785,7 +786,7 @@ const TEXT_ALIGN_MAP = {
 };
 
 export const textAlignStyle = css`
-  text-align: ${(props) => TEXT_ALIGN_MAP[props.textAlign]};
+  text-align: ${(props) => TEXT_ALIGN_MAP[props.$textAlign]};
 `;
 
 const ALIGN_ITEMS_MAP = {
@@ -889,3 +890,13 @@ export const heightStyle = (height, theme) =>
   typeof height === 'object'
     ? heightObjectStyle(height, theme)
     : heightStringStyle(height, theme);
+
+export const convertRestToTransientProps = (rest) => {
+  const res = {};
+  Object.entries(rest).forEach(([key, value]) => {
+    if (!isPropValid(key)) res[`$${key}`] = value;
+    else res[key] = value;
+  });
+
+  return res;
+};

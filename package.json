@@ -73,6 +73,7 @@
     "@babel/plugin-proposal-pipeline-operator": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
+    "@emotion/is-prop-valid": "^1.2.1",
     "@storybook/addon-a11y": "7.0.20",
     "@storybook/addon-storysource": "7.0.20",
     "@storybook/addon-toolbars": "7.0.20",
