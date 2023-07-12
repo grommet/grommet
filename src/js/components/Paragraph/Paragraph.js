@@ -5,11 +5,13 @@ import { ParagraphPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { ParagraphSkeleton } from './ParagraphSkeleton';
 import { TextContext } from '../Text/TextContext';
+import { convertRestToTransientProps } from '../../utils';
 
 const Paragraph = forwardRef(
-  ({ children, color, fill, size, ...rest }, ref) => {
+  ({ children, color, fill, size, ...restProps }, ref) => {
     const skeleton = useSkeleton();
     const textContextValue = useMemo(() => ({ size }), [size]);
+    const rest = convertRestToTransientProps(restProps);
 
     if (skeleton) {
       return (
@@ -21,9 +23,9 @@ const Paragraph = forwardRef(
     return (
       <StyledParagraph
         ref={ref}
-        colorProp={color}
-        fillProp={fill}
-        size={size}
+        $colorProp={color}
+        $fill={fill}
+        $size={size}
         {...rest}
       >
         {children !== undefined ? (

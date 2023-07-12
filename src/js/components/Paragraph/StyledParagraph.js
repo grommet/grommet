@@ -4,16 +4,16 @@ import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const colorStyle = css`
-  color: ${(props) => normalizeColor(props.colorProp, props.theme)};
+  color: ${(props) => normalizeColor(props.$colorProp, props.theme)};
 `;
 
 const sizeStyle = (props) => {
-  const size = props.size || 'medium';
+  const size = props.$size || 'medium';
   const data = props.theme.paragraph[size];
   return css`
     font-size: ${data ? data.size : size};
     line-height: ${data ? data.height : 'normal'};
-    max-width: ${props.fillProp ? 'none' : data && data.maxWidth};
+    max-width: ${props.$fill ? 'none' : data && data.maxWidth};
   `;
 };
 
@@ -22,10 +22,10 @@ const fontFamily = css`
 `;
 
 const maxlinesStyle = (props) =>
-  props.maxLines &&
+  props.$maxLines &&
   css`
     display: -webkit-box;
-    -webkit-line-clamp: ${props.maxLines};
+    -webkit-line-clamp: ${props.$maxLines};
     -webkit-box-orient: vertical;
     overflow: hidden;
   `;
@@ -34,8 +34,8 @@ const StyledParagraph = styled.p`
   ${genericStyles}
   ${(props) => maxlinesStyle(props)}
   ${(props) => sizeStyle(props)}
-  ${(props) => props.textAlign && textAlignStyle}
-  ${(props) => props.colorProp && colorStyle}
+  ${(props) => props.$textAlign && textAlignStyle}
+  ${(props) => props.$colorProp && colorStyle}
   ${(props) =>
     props.theme.paragraph.font &&
     props.theme.paragraph.font.family &&
