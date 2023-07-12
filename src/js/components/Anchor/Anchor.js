@@ -23,9 +23,9 @@ import { convertRestToTransientProps } from '../../utils/styles';
 const Anchor = forwardRef(
   (
     {
-      as,
       a11yTitle,
       'aria-label': ariaLabel,
+      as,
       children,
       color,
       disabled,
