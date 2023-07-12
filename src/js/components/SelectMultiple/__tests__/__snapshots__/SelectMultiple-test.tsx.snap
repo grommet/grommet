@@ -5187,8 +5187,6 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
 </div>
 `;
 
-exports[`SelectMultiple test inline click on object 1`] = `null`;
-
 exports[`SelectMultiple valueKey and labelKey 1`] = `
 .c10 {
   display: inline-block;
