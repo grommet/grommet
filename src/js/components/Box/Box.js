@@ -44,11 +44,11 @@ const Box = forwardRef(
       tag,
       wrap,
       width,
-      ...rest
+      ...restProps
     },
     ref,
   ) => {
-    const restProps = convertRestToTransientProps(rest);
+    const rest = convertRestToTransientProps(restProps);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     // boxOptions was created to preserve backwards compatibility but
     // should not be supported in v3
@@ -240,7 +240,7 @@ const Box = forwardRef(
         $width={width}
         $wrap={wrap}
         {...clickProps}
-        {...restProps}
+        {...rest}
         {...skeletonProps}
       >
         <ThemeContext.Provider value={nextTheme}>
