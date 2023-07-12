@@ -18,6 +18,7 @@ import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { TextContext } from '../Text/TextContext';
+import { convertRestToTransientProps } from '../../utils/styles';
 
 const Anchor = forwardRef(
   (
@@ -36,10 +37,11 @@ const Anchor = forwardRef(
       onFocus,
       reverse,
       size: sizeProp,
-      ...rest
+      ...restProps
     },
     ref,
   ) => {
+    const rest = convertRestToTransientProps(restProps);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
     const { size } = useContext(TextContext);
@@ -89,12 +91,9 @@ const Anchor = forwardRef(
         {...rest}
         ref={ref}
         aria-label={ariaLabel || a11yTitle}
-        colorProp={color}
+        // disabled is not supported by native HTML,
+        // but keeping because is passes @emotion/is-prop-valid check
         disabled={disabled}
-        hasIcon={!!icon}
-        focus={focus}
-        hasLabel={label}
-        reverse={reverse}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
         onFocus={(event) => {
@@ -105,7 +104,12 @@ const Anchor = forwardRef(
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
-        size={sizeProp || size}
+        $colorProp={color}
+        $hasIcon={!!icon}
+        $focus={focus}
+        $hasLabel={label}
+        $reverse={reverse}
+        $size={sizeProp || size}
       >
         {first && second ? (
           <Box
