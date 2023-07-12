@@ -23,6 +23,7 @@ import { convertRestToTransientProps } from '../../utils/styles';
 const Anchor = forwardRef(
   (
     {
+      as,
       a11yTitle,
       'aria-label': ariaLabel,
       children,
@@ -89,6 +90,7 @@ const Anchor = forwardRef(
     return (
       <StyledAnchor
         {...rest}
+        as={as}
         ref={ref}
         aria-label={ariaLabel || a11yTitle}
         // disabled is not supported by native HTML,

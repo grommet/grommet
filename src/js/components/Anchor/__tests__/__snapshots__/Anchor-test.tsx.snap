@@ -1331,12 +1331,12 @@ exports[`Anchor renders tag 1`] = `
   <div
     class="c0"
   >
-    <a
+    <span
       class="c1"
       href="#"
     >
       Test
-    </a>
+    </span>
   </div>
 </div>
 `;
@@ -1493,6 +1493,16 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
 }
 
 .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.c2 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1502,16 +1512,17 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   cursor: pointer;
 }
 
-.c1:hover {
+.c2:hover {
   text-decoration: underline;
 }
 
 <div
   class="c0"
 >
-  <a
-    class="c1"
+  <div
+    class="c1 c2"
     href="#"
+    tabindex="0"
   />
 </div>
 `;
