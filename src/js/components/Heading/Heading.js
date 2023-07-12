@@ -6,6 +6,7 @@ import { HeadingPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
 import { useSkeleton } from '../Skeleton';
 import { HeadingSkeleton } from './HeadingSkeleton';
+import { convertRestToTransientProps } from '../../utils/styles';
 
 const Heading = forwardRef(
   (
@@ -16,11 +17,12 @@ const Heading = forwardRef(
       level,
       overflowWrap: overflowWrapProp,
       weight,
-      ...rest
+      ...restProps
     },
 
     ref, // munged to avoid styled-components putting it in the DOM
   ) => {
+    const rest = convertRestToTransientProps(restProps);
     const headingRef = useForwardedRef(ref);
     const [overflowWrap, setOverflowWrap] = useState(
       overflowWrapProp || 'break-word',
@@ -55,13 +57,13 @@ const Heading = forwardRef(
       // enforce level to be a number
       <StyledHeading
         as={`h${level}`}
-        colorProp={color}
-        fillProp={fill}
-        level={+level}
-        overflowWrap={overflowWrap}
-        weight={weight}
-        {...rest}
         ref={headingRef}
+        $color={color}
+        $fill={fill}
+        $level={+level}
+        $overflowWrap={overflowWrap}
+        $weight={weight}
+        {...rest}
       >
         {content}
       </StyledHeading>
