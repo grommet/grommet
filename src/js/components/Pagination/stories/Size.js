@@ -7,11 +7,11 @@ export const Size = () => (
   // <Grommet theme={...}>
   <Box align="start" pad="small" gap="medium">
     <Text>Small</Text>
-    <Pagination numberItems={237} size="small" />
+    <Pagination a11yTitle="small-text" numberItems={237} size="small" />
     <Text>Medium (Default)</Text>
-    <Pagination numberItems={237} size="medium" />
+    <Pagination a11yTitle="medium-text" numberItems={237} size="medium" />
     <Text>Large</Text>
-    <Pagination numberItems={237} size="large" />
+    <Pagination a11yTitle="large-text" numberItems={237} size="large" />
   </Box>
   // </Grommet>
 );
