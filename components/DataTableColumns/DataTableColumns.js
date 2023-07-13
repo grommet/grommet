@@ -114,8 +114,8 @@ var Content = function Content(_ref) {
     if (nextSearch) {
       var lowerSearch = nextSearch.toLowerCase();
       nextFilteredOptions = options.filter(function (o) {
-        var _ref2, _ref3, _o$property;
-        return (_ref2 = (_ref3 = (_o$property = o.property) != null ? _o$property : o.label) != null ? _ref3 : o) == null ? void 0 : _ref2.toLowerCase().includes(lowerSearch);
+        var _ref2, _ref3, _o$label;
+        return (_ref2 = (_ref3 = (_o$label = o.label) != null ? _o$label : o.property) != null ? _ref3 : o) == null ? void 0 : _ref2.toLowerCase().includes(lowerSearch);
       });
     }
     setSearch(nextSearch);
