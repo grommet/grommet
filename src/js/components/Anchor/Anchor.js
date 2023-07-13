@@ -90,9 +90,8 @@ const Anchor = forwardRef(
     return (
       <StyledAnchor
         {...rest}
-        as={as}
-        ref={ref}
         aria-label={ariaLabel || a11yTitle}
+        as={as}
         // disabled is not supported by native HTML,
         // but keeping because is passes @emotion/is-prop-valid check
         disabled={disabled}
@@ -106,9 +105,10 @@ const Anchor = forwardRef(
           setFocus(false);
           if (onBlur) onBlur(event);
         }}
+        ref={ref}
         $colorProp={color}
-        $hasIcon={!!icon}
         $focus={focus}
+        $hasIcon={!!icon}
         $hasLabel={label}
         $reverse={reverse}
         $size={sizeProp || size}
