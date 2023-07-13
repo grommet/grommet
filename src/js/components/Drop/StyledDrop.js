@@ -65,8 +65,8 @@ const StyledDrop = styled.div`
   ${baseStyle}
 
   ${(props) =>
-    !props.plain &&
-    ((props.round && roundStyle(props.round, true, props.theme)) ||
+    !props.$plain &&
+    ((props.$round && roundStyle(props.$round, true, props.theme)) ||
       `border-radius: ${props.theme.global.drop.border.radius};`)}
 
   position: fixed;
@@ -74,26 +74,26 @@ const StyledDrop = styled.div`
   outline: none;
 
   ${(props) =>
-    !props.plain &&
+    !props.$plain &&
     backgroundStyle(
-      props.background || props.theme.global.drop.background,
+      props.$background || props.theme.global.drop.background,
       props.theme,
     )}
 
   ${(props) =>
-    !props.plain &&
-    (props.margin || props.theme.global.drop.margin) &&
+    !props.$plain &&
+    (props.$margin || props.theme.global.drop.margin) &&
     props.theme.global &&
     marginStyle(
       props.theme,
-      props.alignProp,
+      props.$alignProp,
       props.theme.global.drop.margin,
-      props.responsive,
-      props.margin,
+      props.$responsive,
+      props.$margin,
     )}
 
   opacity: 0;
-  transform-origin: ${(props) => getTransformOriginStyle(props.alignProp)};
+  transform-origin: ${(props) => getTransformOriginStyle(props.$alignProp)};
   animation: ${dropKeyFrames} 0.1s forwards;
   animation-delay: 0.01s;
 
