@@ -1748,19 +1748,12 @@ exports[`Drop resize 2`] = `
 
 exports[`Drop restrict focus 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c1 {
@@ -1778,24 +1771,14 @@ exports[`Drop restrict focus 1`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -3572,19 +3555,12 @@ exports[`Drop theme elevation renders 2`] = `
 
 exports[`inline 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c1 {
@@ -3602,24 +3578,14 @@ exports[`inline 1`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
