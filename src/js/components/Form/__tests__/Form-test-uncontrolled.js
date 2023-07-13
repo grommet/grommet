@@ -26,7 +26,7 @@ describe('Form accessibility', () => {
     const { container } = render(
       <Grommet>
         <Form>
-          <FormField a11yTitle="test" />
+          <FormField name="formField" a11yTitle="test" />
         </Form>
       </Grommet>,
     );
@@ -40,7 +40,11 @@ describe('Form accessibility', () => {
       <Grommet>
         <Form>
           <FormField>
-            <Select options={['small', 'medium', 'large']} a11yTitle="test" />
+            <Select
+              name="select"
+              options={['small', 'medium', 'large']}
+              a11yTitle="test"
+            />
           </FormField>
         </Form>
       </Grommet>,
@@ -68,7 +72,7 @@ describe('Form accessibility', () => {
       <Grommet>
         <Form>
           <FormField>
-            <CheckBox label="test" />
+            <CheckBox name="checkbox" label="test" />
           </FormField>
         </Form>
       </Grommet>,
@@ -84,7 +88,7 @@ describe('Form accessibility', () => {
       <Grommet>
         <Form>
           <FormField>
-            <TextInput a11yTitle="test" />
+            <TextInput name="textInput" a11yTitle="test" />
           </FormField>
         </Form>
       </Grommet>,
@@ -101,7 +105,7 @@ describe('Form accessibility', () => {
         <Form>
           <FormField>
             <Box>
-              <TextInput a11yTitle="test" />
+              <TextInput name="textInput" a11yTitle="test" />
             </Box>
           </FormField>
         </Form>
@@ -911,7 +915,11 @@ describe('Form uncontrolled', () => {
     const { getByPlaceholderText, getByText } = render(
       <Form onSubmit={onSubmit}>
         <FormField>
-          <TextInput a11yTitle="test" placeholder="test input" />
+          <TextInput
+            name="textInput"
+            a11yTitle="test"
+            placeholder="test input"
+          />
         </FormField>
         <Button type="submit" primary label="Submit" />
       </Form>,
@@ -954,7 +962,11 @@ describe('Form uncontrolled', () => {
       <Grommet>
         <Form onSubmit={onSubmit}>
           <FormField disabled>
-            <TextInput a11yTitle="test" placeholder="test input" />
+            <TextInput
+              name="textInput"
+              a11yTitle="test"
+              placeholder="test input"
+            />
           </FormField>
           <Button type="submit" primary label="Submit" />
         </Form>
@@ -1352,6 +1364,7 @@ describe('Form uncontrolled', () => {
           <FormField>
             <Select
               a11yTitle="select form"
+              name="select"
               placeholder="test input"
               options={['small', 'medium', 'large']}
               onChange={onChange}

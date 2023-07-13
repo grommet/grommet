@@ -155,6 +155,7 @@ exports[`Form accessibility Box with TextInput in Form should
               aria-label="test"
               autocomplete="off"
               class="c5"
+              name="textInput"
               value=""
             />
           </div>
@@ -352,6 +353,7 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
           >
             <input
               class="c6"
+              name="checkbox"
               type="checkbox"
             />
             <div
@@ -488,6 +490,7 @@ exports[`Form accessibility FormField with an explicit TextInput child
             aria-label="test"
             autocomplete="off"
             class="c4"
+            name="textInput"
             value=""
           />
         </div>
@@ -772,6 +775,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
                   aria-label="test"
                   autocomplete="off"
                   class="c7 c8"
+                  name="select"
                   readonly=""
                   tabindex="-1"
                   type="text"
@@ -924,6 +928,7 @@ exports[`Form accessibility TextInput in Form should have
             aria-label="test"
             autocomplete="off"
             class="c4"
+            name="formField"
             value=""
           />
         </div>

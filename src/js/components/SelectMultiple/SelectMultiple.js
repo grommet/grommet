@@ -100,6 +100,12 @@ const SelectMultiple = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
     const formContext = useContext(FormContext);
+    if (!formContext.noForm && !name) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `The 'name' prop must be defined for SelectMultiple while it is within a Form.`,
+      );
+    }
     const { format } = useContext(MessageContext);
     const selectBoxRef = useRef();
     const dropButtonRef = useForwardedRef(ref);

@@ -181,6 +181,12 @@ const MaskedInput = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
+    if (!formContext.noForm && !name) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `The 'name' prop must be defined for MaskedInput while it is within a Form.`,
+      );
+    }
 
     const [value, setValue] = formContext.useFormInput({
       name,

@@ -265,19 +265,6 @@ const FormField = forwardRef(
             child.props.plain === undefined &&
             child.props.focusIndicator === undefined
           ) {
-            // If FormField is given 'name' and validate prop, then
-            // add the same value for that FormField children name.
-            if (validate && name && !child.props.name) {
-              return cloneElement(child, {
-                plain: true,
-                focusIndicator: false,
-                name,
-                pad:
-                  'CheckBox'.indexOf(child.type.displayName) !== -1
-                    ? formFieldTheme?.checkBox?.pad
-                    : undefined,
-              });
-            }
             return cloneElement(child, {
               plain: true,
               focusIndicator: false,

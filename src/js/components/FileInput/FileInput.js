@@ -95,6 +95,12 @@ const FileInput = forwardRef(
     const theme = useContext(ThemeContext);
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
+    if (!formContext.noForm && !name) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `The 'name' prop must be defined for FileInput while it is within a Form.`,
+      );
+    }
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
     const [focus, setFocus] = React.useState();

@@ -34,6 +34,12 @@ const RangeInput = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
+    if (!formContext.noForm && !name) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `The 'name' prop must be defined for RangeInput while it is within a Form.`,
+      );
+    }
     const [focus, setFocus] = useState(focusProp);
 
     const [value, setValue] = formContext.useFormInput({

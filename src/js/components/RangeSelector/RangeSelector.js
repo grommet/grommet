@@ -46,6 +46,12 @@ const RangeSelector = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
+    if (!formContext.noForm && !name) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `The 'name' prop must be defined for RangeSelector while it is within a Form.`,
+      );
+    }
     const [changing, setChanging] = useState();
     const [lastChange, setLastChange] = useState();
     const [moveValue, setMoveValue] = useState();

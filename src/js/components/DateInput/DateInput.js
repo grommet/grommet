@@ -77,7 +77,13 @@ const DateInput = forwardRef(
       (theme.icon?.matchSize && rest.size) ||
       theme.dateInput.icon?.size ||
       'medium';
-    const { useFormInput } = useContext(FormContext);
+    const { useFormInput, noForm } = useContext(FormContext);
+    if (!noForm && !name) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `The 'name' prop must be defined for DateInput while it is within a Form.`,
+      );
+    }
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
     const [value, setValue] = useFormInput({
@@ -224,6 +230,7 @@ Use the icon prop instead.`,
     const formContextValue = useMemo(
       () => ({
         useFormInput: ({ value: valueProp }) => [valueProp, () => {}],
+        noForm: true,
       }),
       [],
     );

@@ -89,6 +89,11 @@ const Select = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
     const formContext = useContext(FormContext);
+    if (!formContext.noForm && !name) {
+      console.warn(
+        `The 'name' prop must be defined for Select while it is within a Form.`,
+      );
+    }
     const { format } = useContext(MessageContext);
     // For greater resilience, use labelKey if valueKey isn't provided and
     // vice versa. https://github.com/grommet/grommet/pull/6299

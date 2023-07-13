@@ -8491,6 +8491,7 @@ exports[`DateInput handle focus in FormField 1`] = `
               <input
                 autocomplete="off"
                 class="c6"
+                name="dateInput"
                 placeholder="mm/dd/yyyy"
                 value=""
               />
@@ -8759,6 +8760,7 @@ exports[`DateInput handle focus in FormField 2`] = `
               <input
                 autocomplete="off"
                 class="c5"
+                name="dateInput"
                 placeholder="mm/dd/yyyy"
                 value=""
               />

@@ -1092,7 +1092,7 @@ describe('DateInput', () => {
       <Grommet>
         <Form>
           <FormField>
-            <DateInput format="mm/dd/yyyy" onFocus={onFocus} />
+            <DateInput name="dateInput" format="mm/dd/yyyy" onFocus={onFocus} />
           </FormField>
         </Form>
       </Grommet>,
