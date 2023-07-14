@@ -14,6 +14,7 @@ import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
+import { convertRestToTransientProps } from '../../utils/styles';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -47,10 +48,11 @@ const DropContainer = forwardRef(
       restrictFocus,
       stretch = 'width',
       trapFocus,
-      ...rest
+      ...restProps
     },
     ref,
   ) => {
+    const rest = convertRestToTransientProps(restProps);
     const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const portalContext = useContext(PortalContext);
@@ -284,11 +286,14 @@ const DropContainer = forwardRef(
     let content = (
       <StyledDrop
         aria-label={a11yTitle || ariaLabel}
-        ref={dropRef}
         as={Box}
-        background={background}
-        plain={plain}
-        elevation={
+        data-g-portal-id={portalId}
+        ref={dropRef}
+        tabIndex="-1"
+        $alignProp={align}
+        $background={background}
+        $plain={plain}
+        $elevation={
           !plain
             ? elevation ||
               theme.global.drop.elevation ||
@@ -296,10 +301,7 @@ const DropContainer = forwardRef(
               'small'
             : undefined
         }
-        tabIndex="-1"
-        alignProp={align}
-        overflow={overflow}
-        data-g-portal-id={portalId}
+        $overflow={overflow}
         {...rest}
       >
         {children}
