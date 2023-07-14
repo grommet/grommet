@@ -10,8 +10,8 @@ const disabledStyle = `
 `;
 
 const sizeStyle = (props) => {
-  if (props.size) {
-    const size = props.size || 'medium';
+  if (props.$size) {
+    const size = props.$size || 'medium';
     const data = props.theme.text[size];
     return css`
       font-size: ${data ? data.size : size};
@@ -24,36 +24,29 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledAnchor = styled.a.withConfig({
-  // prevent custom props from bleeding into DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['as', 'colorProp', 'focus', 'hasIcon', 'hasLabel', 'reverse'].includes(
-      prop,
-    ) && defaultValidatorFn(prop),
-})`
+const StyledAnchor = styled.a`
   box-sizing: border-box;
   ${(props) => sizeStyle(props)}
   color: ${(props) =>
     normalizeColor(
-      props.colorProp ||
-        props.theme.anchor?.size?.[props.size]?.color ||
+      props.$colorProp ||
+        props.theme.anchor?.size?.[props.$size]?.color ||
         props.theme.anchor.color,
       props.theme,
     )};
   ${(props) =>
-    props.weight
-      ? `font-weight: ${props.weight};`
-      : (props.theme.anchor?.size?.[props.size]?.fontWeight ||
+    props.$weight
+      ? `font-weight: ${props.$weight};`
+      : (props.theme.anchor?.size?.[props.$size]?.fontWeight ||
           props.theme.anchor.fontWeight) &&
         `font-weight: ${
-          props.theme.anchor?.size?.[props.size]?.fontWeight ||
+          props.theme.anchor?.size?.[props.$size]?.fontWeight ||
           props.theme.anchor.fontWeight
         };`}
   text-decoration: ${(props) =>
-    props.hasIcon
+    props.$hasIcon
       ? 'none'
-      : props.theme.anchor?.size?.[props.size]?.textDecoration ||
+      : props.theme.anchor?.size?.[props.$size]?.textDecoration ||
         props.theme.anchor.textDecoration};
   cursor: pointer;
   ${genericStyles}
@@ -71,13 +64,13 @@ const StyledAnchor = styled.a.withConfig({
       }
     `}
   ${(props) =>
-    props.hasIcon &&
-    !props.hasLabel &&
+    props.$hasIcon &&
+    !props.$hasLabel &&
     `
     padding: ${props.theme.global.edgeSize.small};
   `}
   ${(props) => props.disabled && disabledStyle}
-  ${(props) => props.focus && focusStyle()}
+  ${(props) => props.$focus && focusStyle()}
   ${(props) => props.theme.anchor.extend}
 `;
 
