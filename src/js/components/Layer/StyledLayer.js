@@ -39,15 +39,15 @@ const StyledLayer = styled.div`
   outline: none;
 
   ${(props) => {
-    if (props.position === 'hidden') {
+    if (props.$position === 'hidden') {
       return hiddenPositionStyle;
     }
     const styles = [];
     styles.push(desktopLayerStyle);
     if (
-      props.responsive &&
+      props.$responsive &&
       props.theme.layer.responsiveBreakpoint &&
-      !props.layerTarget
+      !props.$layerTarget
     ) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
@@ -64,7 +64,7 @@ Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
 const StyledOverlay = styled.div`
   position: absolute;
   ${(props) => {
-    if (props.responsive && props.theme.layer.responsiveBreakpoint) {
+    if (props.$responsive && props.theme.layer.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
       return breakpointStyle(breakpoint, 'position: relative;');
@@ -78,7 +78,7 @@ const StyledOverlay = styled.div`
     props.theme.layer.overlay.backdropFilter &&
     `backdrop-filter: ${props.theme.layer.overlay.backdropFilter};`}
   ${(props) =>
-    !props.plain &&
+    !props.$plain &&
     props.theme.layer.overlay.background &&
     backgroundStyle(
       props.theme.layer.overlay.background,
@@ -255,7 +255,7 @@ const animationDuration = 200;
 
 const getAnimationStyle = (props, position, full) => {
   let animation =
-    props.animation !== undefined ? props.animation : props.animate;
+    props.$animation !== undefined ? props.$animation : props.$animate;
   if (animation === undefined) animation = 'slide';
   let keys;
   if (animation === 'slide' || animation === true) {
@@ -713,43 +713,43 @@ const bounds = { left: 0, right: 0, top: 0, bottom: 0 };
 
 const desktopContainerStyle = css`
   ${(props) => {
-    if (!props.modal && props.position === 'hidden') {
+    if (!props.$modal && props.$position === 'hidden') {
       return hiddenPositionStyle;
     }
     return css`
       // when there is a target (modal or non-modal) we need to position
       // layer with respect to the target's position
       // ensures positioning and animations stay aligned
-      position: ${props.modal || props.layerTarget ? 'absolute' : 'fixed'};
+      position: ${props.$modal || props.$layerTarget ? 'absolute' : 'fixed'};
     `;
   }}
   max-height: ${(props) =>
     `calc(100% - ${getBounds(
       bounds,
-      props.margin,
+      props.$margin,
       props.theme,
       'top',
-    )}px - ${getBounds(bounds, props.margin, props.theme, 'bottom')}px)`};
+    )}px - ${getBounds(bounds, props.$margin, props.theme, 'bottom')}px)`};
   max-width: ${(props) =>
     `calc(100% - ${getBounds(
       bounds,
-      props.margin,
+      props.$margin,
       props.theme,
       'left',
-    )}px - ${getBounds(bounds, props.margin, props.theme, 'right')}px)`};
+    )}px - ${getBounds(bounds, props.$margin, props.theme, 'right')}px)`};
   ${(props) =>
-    props.plain || (props.full && props.margin === 'none')
+    props.$plain || (props.$full && props.$margin === 'none')
       ? `border-radius: 0;`
       : roundStyle(
           props.theme.layer.border.radius,
           props.theme,
-          props.position,
-          props.margin,
+          props.$position,
+          props.$margin,
         )};
   ${(props) =>
-    (props.position !== 'hidden' &&
-      POSITIONS[props.position][props.full](
-        getBounds(bounds, props.margin, props.theme),
+    (props.$position !== 'hidden' &&
+      POSITIONS[props.$position][props.$full](
+        getBounds(bounds, props.$margin, props.theme),
         bounds,
       )) ||
     ''};
@@ -760,8 +760,8 @@ const responsiveContainerStyle = (props) => css`
   max-height: none;
   max-width: none;
   border-radius: 0;
-  height: ${!props.layerTarget ? '100vh' : '100%'};
-  width: ${!props.layerTarget ? '100vw' : '100%'};
+  height: ${!props.$layerTarget ? '100vh' : '100%'};
+  width: ${!props.$layerTarget ? '100vw' : '100%'};
 `;
 
 const elevationStyle = css`
@@ -771,30 +771,25 @@ const elevationStyle = css`
     ]};
 `;
 
-const StyledContainer = styled.div.withConfig({
-  // don't let elevation leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['elevation'].includes(prop) && defaultValidatorFn(prop),
-})`
-  ${(props) => (!props.modal ? baseStyle : '')}
+const StyledContainer = styled.div`
+  ${(props) => (!props.$modal ? baseStyle : '')}
   display: flex;
   flex-direction: column;
   min-height: ${(props) => props.theme.global.size.xxsmall};
   ${(props) =>
-    !props.plain &&
-    (props.background || props.theme.layer.background) &&
+    !props.$plain &&
+    (props.$background || props.theme.layer.background) &&
     backgroundStyle(
-      props.background || props.theme.layer.background,
+      props.$background || props.theme.layer.background,
       props.theme,
     )} outline: none;
   pointer-events: all;
   z-index: ${(props) => props.theme.layer.container.zIndex};
   ${(props) =>
-    !props.plain && props.theme.layer.container.elevation && elevationStyle}
+    !props.$plain && props.theme.layer.container.elevation && elevationStyle}
   ${desktopContainerStyle}
   ${(props) => {
-    if (props.responsive && props.theme.layer.responsiveBreakpoint) {
+    if (props.$responsive && props.theme.layer.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
       if (breakpoint) {

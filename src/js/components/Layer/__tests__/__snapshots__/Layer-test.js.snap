@@ -1114,12 +1114,7 @@ exports[`Layer dark context 2`] = `
 
 exports[`Layer focus on layer 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -1133,10 +1128,7 @@ exports[`Layer focus on layer 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -1147,15 +1139,15 @@ exports[`Layer focus on layer 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c0 {
     position: relative;
     max-height: none;
@@ -2358,15 +2350,15 @@ exports[`Layer invokes onEsc when modal={false} 2`] = `
 `;
 
 exports[`Layer is accessible 1`] = `
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -2381,15 +2373,15 @@ exports[`Layer is accessible 1`] = `
 `;
 
 exports[`Layer is accessible 2`] = `
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -3368,12 +3360,7 @@ exports[`Layer non-modal 2`] = `
 
 exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -3387,10 +3374,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -3401,15 +3385,15 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   position: absolute;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c0 {
     position: relative;
     max-height: none;
