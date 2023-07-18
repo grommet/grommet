@@ -9,6 +9,7 @@ import { Keyboard } from '../Keyboard';
 import { Pagination } from '../Pagination';
 import { Text } from '../Text';
 import {
+  convertRestToTransientProps,
   focusStyle,
   genericStyles,
   normalizeColor,
@@ -25,7 +26,7 @@ const emptyData = [];
 
 const StyledList = styled.ul`
   list-style: none;
-  ${(props) => !props.margin && 'margin: 0;'}
+  ${(props) => !props.$margin && 'margin: 0;'}
   padding: 0;
   ${genericStyles}
 
@@ -42,14 +43,14 @@ const StyledList = styled.ul`
   // for visual consistency, we want to keep the focus indicator on the
   // list container the whole time.
   ${(props) =>
-    props.itemFocus &&
+    props.$itemFocus &&
     focusStyle({ forceOutline: true, skipSvgChildren: true })}}
   ${(props) => props.theme.list && props.theme.list.extend}}
 `;
 
 const StyledItem = styled(Box)`
-  ${(props) => props.onClick && !props.isDisabled && `cursor: pointer;`}
-  ${(props) => props.draggable && !props.isDisabled && `cursor: move;`}
+  ${(props) => props.onClick && !props.$isDisabled && `cursor: pointer;`}
+  ${(props) => props.draggable && !props.$isDisabled && `cursor: move;`}
   // during the interim state when a user is holding down a click,
   // the individual list item has focus in the DOM until the click
   // completes and focus is placed back on the list container.
@@ -60,7 +61,7 @@ const StyledItem = styled(Box)`
   }
   ${(props) => {
     let disabledStyle;
-    if (props.isDisabled && props.theme.list?.item?.disabled) {
+    if (props.$isDisabled && props.theme.list?.item?.disabled) {
       const { color, cursor } = props.theme.list.item.disabled;
       disabledStyle = {
         color: normalizeColor(color, props.theme),
@@ -70,7 +71,7 @@ const StyledItem = styled(Box)`
     return disabledStyle;
   }}
   &:hover {
-    ${(props) => props.isDisabled && `background-color: unset;`}
+    ${(props) => props.$isDisabled && `background-color: unset;`}
   }
   ${(props) =>
     props.theme.list && props.theme.list.item && props.theme.list.item.extend}
@@ -151,6 +152,7 @@ const List = React.forwardRef(
     },
     ref,
   ) => {
+    const transientRest = convertRestToTransientProps(rest);
     const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
     const { data: contextData } = useContext(DataContext);
@@ -320,9 +322,8 @@ const List = React.forwardRef(
         >
           <StyledList
             aria-label={ariaLabel || a11yTitle}
-            ref={listRef}
             as={as || 'ul'}
-            itemFocus={itemFocus}
+            ref={listRef}
             tabIndex={onClickItem || onOrder ? 0 : undefined}
             onFocus={() =>
               // Fixes zero-th index showing undefined.
@@ -337,8 +338,9 @@ const List = React.forwardRef(
               setLastActive(active);
               updateActive(undefined);
             }}
+            $itemFocus={itemFocus}
             {...ariaProps}
-            {...rest}
+            {...transientRest}
           >
             <InfiniteScroll
               items={!paginate ? orderingData || data : items}
@@ -464,7 +466,6 @@ const List = React.forwardRef(
                   clickProps = {
                     role: 'option',
                     tabIndex: -1,
-                    active: active === index,
                     onClick: (event) => {
                       // Only prevent event when disabled. We still want screen
                       // readers to be aware that an option exists, but is in a
@@ -497,6 +498,7 @@ const List = React.forwardRef(
                       updateActive(undefined);
                       setItemFocus(false);
                     },
+                    $active: active === index,
                   };
                 }
 
@@ -679,9 +681,9 @@ const List = React.forwardRef(
                     tag="li"
                     background={adjustedBackground}
                     border={adjustedBorder}
-                    isDisabled={isDisabled}
                     flex={false}
                     pad={pad || theme.list.item.pad}
+                    $isDisabled={isDisabled}
                     {...defaultItemProps}
                     {...boxProps}
                     {...clickProps}

@@ -12,23 +12,16 @@ exports[`List background array 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -37,22 +30,15 @@ exports[`List background array 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   background-color: #FD6FFF;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -61,22 +47,15 @@ exports[`List background array 1`] = `
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -94,61 +73,61 @@ exports[`List background array 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -198,23 +177,16 @@ exports[`List background string 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -223,22 +195,15 @@ exports[`List background string 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -256,41 +221,41 @@ exports[`List background string 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -330,19 +295,12 @@ exports[`List border boolean false 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -360,14 +318,14 @@ exports[`List border boolean false 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -407,20 +365,13 @@ exports[`List border boolean true 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -438,20 +389,20 @@ exports[`List border boolean true 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border: solid 1px rgba(0,0,0,0.33);
+    border: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -491,9 +442,6 @@ exports[`List border object 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -501,11 +449,7 @@ exports[`List border object 1`] = `
   border-bottom: solid 12px #6FFFB0;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -523,21 +467,21 @@ exports[`List border object 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     border-top: solid 6px #6FFFB0;
     border-bottom: solid 6px #6FFFB0;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -577,21 +521,14 @@ exports[`List border side 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -600,20 +537,13 @@ exports[`List border side 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -631,41 +561,41 @@ exports[`List border side 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -705,21 +635,14 @@ exports[`List children render 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -728,20 +651,13 @@ exports[`List children render 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -759,41 +675,41 @@ exports[`List children render 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -833,21 +749,14 @@ exports[`List data objects 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -856,20 +765,13 @@ exports[`List data objects 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -887,41 +789,41 @@ exports[`List data objects 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -961,21 +863,14 @@ exports[`List data strings 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -984,20 +879,13 @@ exports[`List data strings 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -1015,41 +903,41 @@ exports[`List data strings 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -1089,27 +977,17 @@ exports[`List defaultItemProps 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   background-color: #6FFFB0;
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -1118,26 +996,16 @@ exports[`List defaultItemProps 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   background-color: #6FFFB0;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -1155,41 +1023,41 @@ exports[`List defaultItemProps 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -2599,21 +2467,14 @@ exports[`List disabled Should apply disabled styling to items 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -2622,20 +2483,13 @@ exports[`List disabled Should apply disabled styling to items 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -2666,41 +2520,41 @@ exports[`List disabled Should apply disabled styling to items 1`] = `
   background-color: unset;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -2759,21 +2613,14 @@ exports[`List disabled Should apply disabled styling to items when data are chil
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -2782,34 +2629,22 @@ exports[`List disabled Should apply disabled styling to items when data are chil
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -2846,41 +2681,41 @@ exports[`List disabled Should apply disabled styling to items when data are chil
   background-color: unset;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -2979,21 +2814,14 @@ exports[`List disabled Should apply disabled styling to items when data are obje
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3002,20 +2830,13 @@ exports[`List disabled Should apply disabled styling to items when data are obje
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3046,41 +2867,41 @@ exports[`List disabled Should apply disabled styling to items when data are obje
   background-color: unset;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -3165,21 +2986,14 @@ exports[`List events ArrowDown key 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3189,22 +3003,15 @@ exports[`List events ArrowDown key 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3231,65 +3038,65 @@ exports[`List events ArrowDown key 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -3335,21 +3142,14 @@ exports[`List events ArrowDown key on last element 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3359,22 +3159,15 @@ exports[`List events ArrowDown key on last element 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3401,53 +3194,53 @@ exports[`List events ArrowDown key on last element 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -3493,20 +3286,13 @@ exports[`List events ArrowUp key 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3516,23 +3302,16 @@ exports[`List events ArrowUp key 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #444444;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3559,65 +3338,65 @@ exports[`List events ArrowUp key 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -3663,21 +3442,14 @@ exports[`List events Enter key 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3687,20 +3459,13 @@ exports[`List events Enter key 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3727,41 +3492,41 @@ exports[`List events Enter key 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -3796,23 +3561,23 @@ exports[`List events Enter key 1`] = `
 
 exports[`List events Enter key 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 emlizS"
 >
   <ul
     aria-activedescendant="1"
-    class="List__StyledList-sc-130gdqg-0 dxbbVo"
+    class="List__StyledList-sc-130gdqg-0 iVfRCe"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 eXuOOI List__StyledItem-sc-130gdqg-1 hGEFRI"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 flmliY List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 dvsKTK List__StyledItem-sc-130gdqg-1 hGEFRI"
       role="option"
       tabindex="-1"
     >
@@ -3834,21 +3599,14 @@ exports[`List events focus and blur 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3858,20 +3616,13 @@ exports[`List events focus and blur 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -3899,41 +3650,41 @@ exports[`List events focus and blur 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -3968,22 +3719,22 @@ exports[`List events focus and blur 1`] = `
 
 exports[`List events focus and blur 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 emlizS"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 dxbbVo"
+    class="List__StyledList-sc-130gdqg-0 iVfRCe"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 eXuOOI List__StyledItem-sc-130gdqg-1 hGEFRI"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 iMIEqi List__StyledItem-sc-130gdqg-1 hGEFRI"
       role="option"
       tabindex="-1"
     >
@@ -4005,21 +3756,14 @@ exports[`List events mouse events 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -4029,22 +3773,15 @@ exports[`List events mouse events 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -4071,53 +3808,53 @@ exports[`List events mouse events 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -4153,22 +3890,22 @@ exports[`List events mouse events 1`] = `
 
 exports[`List events mouse events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 emlizS"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 dxbbVo"
+    class="List__StyledList-sc-130gdqg-0 iVfRCe"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 eXuOOI List__StyledItem-sc-130gdqg-1 hGEFRI"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 iMIEqi List__StyledItem-sc-130gdqg-1 hGEFRI"
       role="option"
       tabindex="-1"
     >
@@ -5200,35 +4937,23 @@ exports[`List events should not show paginate controls when length of data < ste
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -5237,20 +4962,13 @@ exports[`List events should not show paginate controls when length of data < ste
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -5268,41 +4986,41 @@ exports[`List events should not show paginate controls when length of data < ste
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -14460,21 +14178,14 @@ exports[`List itemProps 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -14483,23 +14194,16 @@ exports[`List itemProps 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   background-color: #6FFFB0;
   color: #444444;
-  border-top: solid 2px rgba(0,0,0,0.33);
-  border-bottom: solid 2px rgba(0,0,0,0.33);
+  border-top: solid 2px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding: 48px;
 }
@@ -14514,35 +14218,35 @@ exports[`List itemProps 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-top: solid 2px rgba(0,0,0,0.33);
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    border-top: solid 2px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 2px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding: 24px;
   }
@@ -14581,21 +14285,14 @@ exports[`List margin object 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -14604,20 +14301,13 @@ exports[`List margin object 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -14636,41 +14326,41 @@ exports[`List margin object 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -14710,21 +14400,14 @@ exports[`List margin string 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -14733,20 +14416,13 @@ exports[`List margin string 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -14764,41 +14440,41 @@ exports[`List margin string 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -14838,21 +14514,14 @@ exports[`List onClickItem 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -14862,20 +14531,13 @@ exports[`List onClickItem 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -14902,41 +14564,41 @@ exports[`List onClickItem 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -14971,22 +14633,22 @@ exports[`List onClickItem 1`] = `
 
 exports[`List onClickItem 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 emlizS"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 dxbbVo"
+    class="List__StyledList-sc-130gdqg-0 iVfRCe"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 eXuOOI List__StyledItem-sc-130gdqg-1 hGEFRI"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 iMIEqi List__StyledItem-sc-130gdqg-1 hGEFRI"
       role="option"
       tabindex="-1"
     >
@@ -17748,41 +17410,27 @@ exports[`List pad object 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 48px;
   padding-right: 48px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 48px;
   padding-right: 48px;
@@ -17798,27 +17446,27 @@ exports[`List pad object 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 24px;
     padding-right: 24px;
@@ -17858,40 +17506,26 @@ exports[`List pad string 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding: 48px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding: 48px;
 }
@@ -17906,26 +17540,26 @@ exports[`List pad string 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 24px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding: 24px;
   }
@@ -19381,8 +19015,6 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
 <DocumentFragment>
   .c8 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -19424,21 +19056,14 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -19447,26 +19072,16 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background-color: #33333310;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -19475,60 +19090,35 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 12px;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -19537,11 +19127,7 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
 }
 
 .c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 24px;
 }
@@ -19556,74 +19142,74 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     width: 12px;
   }
@@ -19716,8 +19302,6 @@ exports[`List pinned Should apply pinned styling to items when data are children
 <DocumentFragment>
   .c10 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -19759,21 +19343,14 @@ exports[`List pinned Should apply pinned styling to items when data are children
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -19782,40 +19359,25 @@ exports[`List pinned Should apply pinned styling to items when data are children
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background-color: #33333310;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -19824,60 +19386,35 @@ exports[`List pinned Should apply pinned styling to items when data are children
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 12px;
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -19886,11 +19423,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
 }
 
 .c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 24px;
 }
@@ -19911,74 +19444,74 @@ exports[`List pinned Should apply pinned styling to items when data are children
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     width: 12px;
   }
@@ -20111,8 +19644,6 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
 <DocumentFragment>
   .c8 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -20154,21 +19685,14 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -20177,26 +19701,16 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background-color: #33333310;
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -20205,60 +19719,35 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 12px;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -20267,11 +19756,7 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
 }
 
 .c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 24px;
 }
@@ -20286,74 +19771,74 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     width: 12px;
   }
@@ -20454,21 +19939,14 @@ exports[`List primaryKey 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -20477,20 +19955,13 @@ exports[`List primaryKey 1`] = `
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -20514,41 +19985,41 @@ exports[`List primaryKey 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -20596,21 +20067,14 @@ exports[`List renders a11yTitle and aria-label 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -20619,20 +20083,13 @@ exports[`List renders a11yTitle and aria-label 1`] = `
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -20650,41 +20107,41 @@ exports[`List renders a11yTitle and aria-label 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -20743,29 +20200,16 @@ exports[`List secondaryKey 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 24px;
   padding-right: 24px;
@@ -20774,28 +20218,15 @@ exports[`List secondaryKey 1`] = `
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 24px;
   padding-right: 24px;
@@ -20804,11 +20235,7 @@ exports[`List secondaryKey 1`] = `
 }
 
 .c5 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 24px;
 }
@@ -20834,48 +20261,48 @@ exports[`List secondaryKey 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     width: 12px;
   }
