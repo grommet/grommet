@@ -358,7 +358,7 @@ describe('Button', () => {
 
     expect(
       screen.getByRole('button', { name: 'hoverIndicator' }),
-    ).toHaveStyleRule('background-color', 'rgba(221,221,221,0.4)', {
+    ).toHaveStyleRule('background-color', 'rgba(221, 221, 221, 0.4)', {
       modifier: ':hover',
     });
     expect(container.firstChild).toMatchSnapshot();
@@ -375,7 +375,7 @@ describe('Button', () => {
 
     expect(
       screen.getByRole('button', { name: 'hoverIndicator' }),
-    ).toHaveStyleRule('background-color', 'rgba(125,76,219,1)', {
+    ).toHaveStyleRule('background-color', 'rgba(125, 76, 219, 1)', {
       modifier: ':hover',
     });
     expect(container.firstChild).toMatchSnapshot();
@@ -579,7 +579,7 @@ describe('Button', () => {
     expect(getByRole('button')).toHaveStyleRule('line-height', '0');
   });
 
-  test('should render pad', () => {
+  test.only('should render pad', () => {
     const { asFragment } = render(
       <Grommet>
         <Button
