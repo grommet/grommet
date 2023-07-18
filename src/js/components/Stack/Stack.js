@@ -2,6 +2,7 @@ import React, { Children, forwardRef } from 'react';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
 import { StackPropTypes } from './propTypes';
+import { convertRestToTransientProps } from '../../utils';
 
 const buildStyledChildren =
   ({ anchor, fill, guidingIndex, interactiveChild, interactiveIndex }) =>
@@ -9,12 +10,16 @@ const buildStyledChildren =
     const interactive =
       interactiveChild === undefined || interactiveIndex === index;
     const isGuidingIndex = index === guidingIndex;
-    const props = isGuidingIndex
-      ? { guiding: true, fillContainer: fill }
-      : { anchor };
+    const transientProps = isGuidingIndex
+      ? { $guiding: true, $fillContainer: fill }
+      : { $anchor: anchor };
 
     return (
-      <StyledStackLayer key={index} interactive={interactive} {...props}>
+      <StyledStackLayer
+        key={index}
+        $interactive={interactive}
+        {...transientProps}
+      >
         {child}
       </StyledStackLayer>
     );
@@ -25,6 +30,7 @@ const Stack = forwardRef(
     { anchor, children, fill, guidingChild, interactiveChild, ...rest },
     ref,
   ) => {
+    const transientRest = convertRestToTransientProps(rest);
     const prunedChildren = Children.toArray(children).filter((c) => c);
     const toChildIndex = (child) => {
       let index = child;
@@ -47,7 +53,7 @@ const Stack = forwardRef(
     );
 
     return (
-      <StyledStack ref={ref} fillContainer={fill} {...rest}>
+      <StyledStack ref={ref} $fillContainer={fill} {...transientRest}>
         {styledChildren}
       </StyledStack>
     );
