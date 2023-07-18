@@ -13,6 +13,7 @@ import styled, { ThemeContext } from 'styled-components';
 import {
   backgroundAndTextColors,
   colorIsDark,
+  convertRestToTransientProps,
   findButtonParent,
   useSizedIcon,
   normalizeBackground,
@@ -216,6 +217,7 @@ const Button = forwardRef(
     },
     ref,
   ) => {
+    const transientRest = convertRestToTransientProps(rest);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
@@ -483,26 +485,11 @@ const Button = forwardRef(
     if (kind) {
       styledButtonResult = (
         <StyledButtonKind
-          {...rest}
-          as={domTag}
-          ref={ref}
-          active={active}
-          align={align}
+          {...transientRest}
           aria-label={ariaLabel || a11yTitle}
-          busy={busy}
-          badge={badgeProp}
-          colorValue={color}
+          as={domTag}
           disabled={disabled}
-          hasIcon={!!icon}
-          gap={gap}
-          hasLabel={!!label}
-          icon={icon}
-          fillContainer={fill}
-          focus={focus}
-          focusIndicator={focusIndicator}
           href={href}
-          kind={kind}
-          themePaths={themePaths}
           onClick={!busy && !success ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
@@ -514,12 +501,27 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          pad={pad}
-          plain={plain || Children.count(children) > 0}
-          primary={primary}
-          sizeProp={size}
-          success={success}
+          ref={ref}
           type={!href ? type : undefined}
+          $active={active}
+          $align={align}
+          $badge={badgeProp}
+          $busy={busy}
+          $colorValue={color}
+          $fillContainer={fill}
+          $focus={focus}
+          $focusIndicator={focusIndicator}
+          $gap={gap}
+          $hasIcon={!!icon}
+          $hasLabel={!!label}
+          $icon={icon}
+          $kind={kind}
+          $pad={pad}
+          $plain={plain || Children.count(children) > 0}
+          $primary={primary}
+          $sizeProp={size}
+          $success={success}
+          $themePaths={themePaths}
         >
           {contents}
         </StyledButtonKind>
@@ -527,24 +529,11 @@ const Button = forwardRef(
     } else {
       styledButtonResult = (
         <StyledButton
-          {...rest}
-          as={domTag}
-          ref={ref}
+          {...transientRest}
           aria-label={ariaLabel || a11yTitle}
-          busy={busy}
-          colorValue={color}
-          active={active}
-          selected={selected}
+          as={domTag}
           disabled={disabled}
-          hasIcon={!!icon}
-          gap={gap}
-          hasLabel={!!label}
-          fillContainer={fill}
-          focus={focus}
-          focusIndicator={focusIndicator}
           href={href}
-          kind={kind}
-          themePaths={themePaths}
           onClick={!busy && !success ? onClick : undefined}
           onFocus={(event) => {
             setFocus(true);
@@ -556,16 +545,29 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          pad={pad || !plain}
-          plain={
+          ref={ref}
+          type={!href ? type : undefined}
+          $active={active}
+          $busy={busy}
+          $colorValue={color}
+          $fillContainer={fill}
+          $focus={focus}
+          $focusIndicator={focusIndicator}
+          $gap={gap}
+          $hasIcon={!!icon}
+          $hasLabel={!!label}
+          $kind={kind}
+          $pad={pad || !plain}
+          $plain={
             typeof plain !== 'undefined'
               ? plain
               : Children.count(children) > 0 || (icon && !label)
           }
-          primary={primary}
-          sizeProp={size}
-          success={success}
-          type={!href ? type : undefined}
+          $primary={primary}
+          $selected={selected}
+          $sizeProp={size}
+          $success={success}
+          $themePaths={themePaths}
         >
           {contents}
         </StyledButton>

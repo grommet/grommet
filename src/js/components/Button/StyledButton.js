@@ -15,8 +15,8 @@ import { defaultProps } from '../../default-props';
 
 const radiusStyle = (props) => {
   // border.radius shouldn't impact an only-icon rendering.
-  const isIconOnly = props.hasIcon && !props.hasLabel;
-  const size = props.sizeProp;
+  const isIconOnly = props.$hasIcon && !props.$hasLabel;
+  const size = props.$sizeProp;
 
   if (
     !isIconOnly &&
@@ -30,7 +30,7 @@ const radiusStyle = (props) => {
 };
 
 const fontStyle = (props) => {
-  const size = props.sizeProp || 'medium';
+  const size = props.$sizeProp || 'medium';
   const data = props.theme.text[size];
   return css`
     font-size: ${data.size};
@@ -39,7 +39,7 @@ const fontStyle = (props) => {
 };
 
 const padStyle = (props) => {
-  const size = props.sizeProp;
+  const size = props.$sizeProp;
 
   if (size && props.theme.button.size && props.theme.button.size[size]) {
     return css`
@@ -56,7 +56,7 @@ const padStyle = (props) => {
 const basicStyle = (props) => css`
   border: ${props.theme.button.border.width} solid
     ${normalizeColor(
-      props.colorValue || props.theme.button.border.color || 'control',
+      props.$colorValue || props.theme.button.border.color || 'control',
       props.theme,
     )};
   border-radius: ${radiusStyle(props)};
@@ -68,7 +68,7 @@ const basicStyle = (props) => css`
 const primaryStyle = (props) => css`
   ${backgroundStyle(
     normalizeColor(
-      props.colorValue ||
+      props.$colorValue ||
         (props.theme.button.primary && props.theme.button.primary.color) ||
         'control',
       props.theme,
@@ -81,12 +81,12 @@ const primaryStyle = (props) => css`
 `;
 
 function getHoverColor(props) {
-  if (props.colorValue) {
-    return normalizeColor(props.colorValue, props.theme);
+  if (props.$colorValue) {
+    return normalizeColor(props.$colorValue, props.theme);
   }
   if (
-    props.active &&
-    props.primary &&
+    props.$active &&
+    props.$primary &&
     props.theme.button.primary &&
     props.theme.button.primary.active &&
     props.theme.button.primary.active.border &&
@@ -106,9 +106,9 @@ function getHoverColor(props) {
 const hoverStyle = css`
   &:hover {
     ${(props) =>
-      props.hoverIndicator &&
-      getHoverIndicatorStyle(props.hoverIndicator, props.theme)} ${(props) =>
-      !props.plain &&
+      props.$hoverIndicator &&
+      getHoverIndicatorStyle(props.$hoverIndicator, props.theme)} ${(props) =>
+      !props.$plain &&
       css`
         box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};
       `};
@@ -134,7 +134,7 @@ const fillStyle = (fillContainer) => {
 };
 
 const plainStyle = (props) => css`
-  color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
+  color: ${normalizeColor(props.$colorValue || 'inherit', props.theme)};
   outline: none;
   border: none;
   padding: 0;
@@ -143,7 +143,7 @@ const plainStyle = (props) => css`
 
 const activeButtonStyle = (props) => css`
   ${activeStyle}
-  ${props.primary &&
+  ${props.$primary &&
   props.theme.button.primary &&
   props.theme.button.primary.active &&
   props.theme.button.primary.active.border &&
@@ -154,7 +154,7 @@ const activeButtonStyle = (props) => css`
       props.theme,
     )};
     `}
-  ${props.primary &&
+  ${props.$primary &&
   props.theme.button.primary &&
   props.theme.button.primary.active &&
   props.theme.button.primary.active.extend}
@@ -162,7 +162,7 @@ const activeButtonStyle = (props) => css`
 
 const disabledButtonStyle = (props) => css`
   ${disabledStyle(props.theme.button.disabled.opacity)}
-  ${!props.plain &&
+  ${!props.$plain &&
   props.theme.button.disabled.border &&
   props.theme.button.disabled.border.color &&
   `border: ${props.theme.button.border.width} solid
@@ -170,7 +170,7 @@ const disabledButtonStyle = (props) => css`
   ${props.theme.button.disabled.color &&
   // if primary button, apply disabled color to background. otherwise,
   // apply disabled color to the label
-  (props.primary
+  (props.$primary
     ? backgroundStyle(
         normalizeColor(props.theme.button.disabled.color, props.theme),
         props.theme,
@@ -196,19 +196,19 @@ const StyledButton = styled.button`
   text-transform: none;
 
   ${genericStyles}
-  ${(props) => props.plain && plainStyle(props)}
-  ${(props) => !props.plain && basicStyle(props)}
-  ${(props) => props.primary && primaryStyle(props)}
+  ${(props) => props.$plain && plainStyle(props)}
+  ${(props) => !props.$plain && basicStyle(props)}
+  ${(props) => props.$primary && primaryStyle(props)}
 
   ${(props) =>
     !props.disabled &&
-    !props.selected &&
-    !props.focus &&
-    !props.busy &&
-    !props.success &&
+    !props.$selected &&
+    !props.$focus &&
+    !props.$busy &&
+    !props.$success &&
     hoverStyle}
 
-  ${(props) => !props.disabled && props.active && activeButtonStyle(props)}
+  ${(props) => !props.disabled && props.$active && activeButtonStyle(props)}
   ${(props) =>
     props.disabled &&
     props.theme.button &&
@@ -216,7 +216,7 @@ const StyledButton = styled.button`
     disabledButtonStyle(props)}
 
   &:focus {
-    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
+    ${(props) => (!props.$plain || props.$focusIndicator) && focusStyle()}
   }
 
   &:focus:not(:focus-visible) {
@@ -224,35 +224,35 @@ const StyledButton = styled.button`
   }
 
   ${(props) =>
-    !props.plain &&
+    !props.$plain &&
     props.theme.button.transition &&
     `
     transition-property: ${props.theme.button.transition.properties.join(',')};
     transition-duration: ${props.theme.button.transition.duration}s;
     transition-timing-function: ${props.theme.button.transition.timing};
   `}
-  ${(props) => props.fillContainer && fillStyle(props.fillContainer)}
+  ${(props) => props.$fillContainer && fillStyle(props.$fillContainer)}
   ${(props) =>
-    props.hasIcon &&
-    !props.hasLabel &&
+    props.$hasIcon &&
+    !props.$hasLabel &&
     `
     line-height: 0;
   `}
   ${(props) =>
-    props.pad === true &&
-    props.hasIcon &&
-    !props.hasLabel &&
+    props.$pad === true &&
+    props.$hasIcon &&
+    !props.$hasLabel &&
     `
     padding: ${props.theme.global.edgeSize.small};
   `}
   ${(props) =>
-    !props.plain &&
-    props.pad &&
-    edgeStyle('padding', props.pad, false, undefined, props.theme)}
+    !props.$plain &&
+    props.$pad &&
+    edgeStyle('padding', props.$pad, false, undefined, props.theme)}
   ${(props) => props.theme.button && props.theme.button.extend}
 
   ${(props) =>
-    (props.busy || props.success) &&
+    (props.$busy || props.$success) &&
     `
     cursor: default;
   `}
