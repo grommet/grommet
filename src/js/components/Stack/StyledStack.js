@@ -4,15 +4,15 @@ import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const fillStyle = css`
-  ${props =>
-    props.fillContainer === true || props.fillContainer === 'horizontal'
+  ${(props) =>
+    props.$fillContainer === true || props.$fillContainer === 'horizontal'
       ? `
         width: 100%;
         max-width: none;
       `
       : ''}
-  ${props =>
-    props.fillContainer === true || props.fillContainer === 'vertical'
+  ${(props) =>
+    props.$fillContainer === true || props.$fillContainer === 'vertical'
       ? 'height: 100%;'
       : ''}
   flex-grow: 1;
@@ -22,8 +22,8 @@ const fillStyle = css`
 const StyledStack = styled.div`
   position: relative;
   ${genericStyles}
-  ${props => props.fillContainer && fillStyle}
-  ${props => props.theme.stack && props.theme.stack.extend}
+  ${(props) => props.$fillContainer && fillStyle}
+  ${(props) => props.theme.stack && props.theme.stack.extend}
 `;
 
 StyledStack.defaultProps = {};
@@ -80,16 +80,16 @@ const styleMap = {
 };
 
 const StyledStackLayer = styled.div`
-  position: ${props => (props.guiding ? 'relative' : 'absolute')};
-  ${props => props.guiding && 'display: block;'}
-  ${props => !props.guiding && `${styleMap[props.anchor || 'fill']};`}
-  ${props =>
-    props.fillContainer &&
+  position: ${(props) => (props.$guiding ? 'relative' : 'absolute')};
+  ${(props) => props.$guiding && 'display: block;'}
+  ${(props) => !props.$guiding && `${styleMap[props.$anchor || 'fill']};`}
+  ${(props) =>
+    props.$fillContainer &&
     `
     width: 100%;
     height: 100%;
   `}
-  ${props => !props.interactive && `pointer-events: none;`}
+  ${(props) => !props.$interactive && `pointer-events: none;`}
 `;
 
 StyledStackLayer.defaultProps = {};
