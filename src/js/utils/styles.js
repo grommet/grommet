@@ -17,7 +17,7 @@ export const baseStyle = css`
     font-variant:${props.theme.global.font.variant};
   `}
   ${(props) =>
-    !props.plain && backgroundStyle(props.theme.baseBackground, props.theme)}
+    !props.$plain && backgroundStyle(props.theme.baseBackground, props.theme)}
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

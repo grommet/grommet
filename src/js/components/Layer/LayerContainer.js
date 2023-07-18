@@ -17,6 +17,7 @@ import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 import {
   backgroundIsDark,
+  convertRestToTransientProps,
   findVisibleParent,
   PortalContext,
 } from '../../utils';
@@ -49,6 +50,7 @@ const LayerContainer = forwardRef(
     },
     ref,
   ) => {
+    const transientRest = convertRestToTransientProps(rest);
     const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const size = useContext(ResponsiveContext);
@@ -204,22 +206,22 @@ const LayerContainer = forwardRef(
 
     let content = (
       <StyledContainer
-        ref={ref || containerRef}
-        background={background}
-        elevation={theme.layer.container.elevation}
+        dir={theme.dir}
         // layerOptions was created to preserve backwards compatibility but
         // should not be supported in v3. In v3, this should always be
         // ${id}__container
         id={layerOptions && layerOptions.singleId ? `${id}__container` : id}
-        full={full}
-        margin={margin}
-        modal={modal}
-        {...rest}
-        position={position}
-        plain={plain}
-        responsive={responsive}
-        layerTarget={layerTarget}
-        dir={theme.dir}
+        ref={ref || containerRef}
+        $background={background}
+        $elevation={theme.layer.container.elevation}
+        $full={full}
+        $margin={margin}
+        $modal={modal}
+        {...transientRest}
+        $position={position}
+        $plain={plain}
+        $responsive={responsive}
+        $layerTarget={layerTarget}
         // portalId is used to determine if click occurred inside
         // or outside of the layer
         data-g-portal-id={portalId}
@@ -234,20 +236,20 @@ const LayerContainer = forwardRef(
     );
     content = (
       <StyledLayer
-        ref={layerRef}
-        id={id}
-        plain={plain}
-        position={position}
-        responsive={responsive}
-        layerTarget={layerTarget}
-        tabIndex="-1"
         dir={theme.dir}
+        id={id}
+        ref={layerRef}
+        tabIndex="-1"
+        $layerTarget={layerTarget}
+        $plain={plain}
+        $position={position}
+        $responsive={responsive}
       >
         {modal && (
           <StyledOverlay
-            plain={plain}
-            responsive={responsive}
             onMouseDown={onClickOutside}
+            $plain={plain}
+            $responsive={responsive}
           />
         )}
         {content}
@@ -310,8 +312,9 @@ const LayerContainer = forwardRef(
           // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
           restrictScroll={
-            !layerTarget &&
-            (modal || hitResponsiveBreakpoint) ? true : undefined
+            !layerTarget && (modal || hitResponsiveBreakpoint)
+              ? true
+              : undefined
           }
           trapFocus
         >
