@@ -142,6 +142,7 @@ const Header = forwardRef(
       sort,
       widths,
       verticalAlign,
+      allSelectedDisabled,
       ...rest
     },
     ref,
@@ -253,7 +254,7 @@ const Header = forwardRef(
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
               verticalAlign={verticalAlign}
             >
-              {onSelect && (
+              {onSelect && !allSelectedDisabled && (
                 <CheckBox
                   a11yTitle={
                     totalSelected === data.length
