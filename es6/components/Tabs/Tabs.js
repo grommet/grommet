@@ -176,8 +176,9 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   };
   useEffect(function () {
+    var _tabRefs$activeIndex;
     // if the active tab isn't visible scroll to it
-    if (overflow && tabRefs && tabRefs[activeIndex].current && !isVisible(activeIndex)) scrollTo(activeIndex, true);
+    if (overflow && tabRefs && (_tabRefs$activeIndex = tabRefs[activeIndex]) != null && _tabRefs$activeIndex.current && !isVisible(activeIndex)) scrollTo(activeIndex, true);
   }, [overflow, activeIndex, tabRefs, isVisible, scrollTo]);
   useEffect(function () {
     // scroll focus item into view if it is not already visible

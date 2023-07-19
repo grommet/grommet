@@ -182,8 +182,9 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   };
   (0, _react.useEffect)(function () {
+    var _tabRefs$activeIndex;
     // if the active tab isn't visible scroll to it
-    if (overflow && tabRefs && tabRefs[activeIndex].current && !isVisible(activeIndex)) scrollTo(activeIndex, true);
+    if (overflow && tabRefs && (_tabRefs$activeIndex = tabRefs[activeIndex]) != null && _tabRefs$activeIndex.current && !isVisible(activeIndex)) scrollTo(activeIndex, true);
   }, [overflow, activeIndex, tabRefs, isVisible, scrollTo]);
   (0, _react.useEffect)(function () {
     // scroll focus item into view if it is not already visible
