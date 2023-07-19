@@ -83,13 +83,14 @@ jobs:
           command: yarn test-bundlesize
   test:
     <<: *defaults
-    resource_class: small 
+    resource_class: small
     # Assigned a size small resource class because we currently only have 3 end
     # to end tests. As we expand our e2e testing we may want to adjust this.
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - browser-tools/install-chrome
+      - browser-tools/install-chrome:
+        chrome-version: '114.0.5735.90'
       - browser-tools/install-chromedriver
       - run:
           name: Start project
