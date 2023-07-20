@@ -95,7 +95,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, []);
   useEffect(function () {
     var optionsNode = optionsRef.current;
-    if (optionsNode.children) {
+    if (optionsNode != null && optionsNode.children) {
       var optionNode = optionsNode.children[activeIndex];
       if (optionNode) optionNode.focus();
     }
@@ -143,7 +143,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onNextOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
-    if (nextActiveIndex !== options.length) {
+    if (nextActiveIndex !== (options == null ? void 0 : options.length)) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
     }
@@ -190,7 +190,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     };
   }, [keyboardNavigation]);
   var onSelectOption = useCallback(function (event) {
-    if (!isDisabled(activeIndex) && activeIndex >= 0 && activeIndex < options.length) {
+    if (!isDisabled(activeIndex) && activeIndex >= 0 && activeIndex < (options == null ? void 0 : options.length)) {
       event.preventDefault(); // prevent submitting forms
       selectOption(activeIndex)(event);
     }
@@ -219,7 +219,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       if (value.length === limit) {
         var newDisabled = [].concat(disabledProp);
         // disable everything that is not selected
-        for (var i = 0; i < options.length; i += 1) {
+        for (var i = 0; i < (options == null ? void 0 : options.length); i += 1) {
           if (!isSelected(i) && !originallyDisabled(i)) {
             newDisabled.push(options[i]);
           }
@@ -312,7 +312,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setActiveIndex(-1);
       onSearch(nextSearch);
     }
-  }))), helpContent, options.length > 0 ? /*#__PURE__*/React.createElement(OptionsContainer, {
+  }))), helpContent, (options == null ? void 0 : options.length) > 0 ? /*#__PURE__*/React.createElement(OptionsContainer, {
     role: "listbox",
     tabIndex: "0",
     ref: optionsRef,

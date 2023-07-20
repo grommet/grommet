@@ -101,7 +101,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   }, []);
   (0, _react.useEffect)(function () {
     var optionsNode = optionsRef.current;
-    if (optionsNode.children) {
+    if (optionsNode != null && optionsNode.children) {
       var optionNode = optionsNode.children[activeIndex];
       if (optionNode) optionNode.focus();
     }
@@ -149,7 +149,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var onNextOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
-    if (nextActiveIndex !== options.length) {
+    if (nextActiveIndex !== (options == null ? void 0 : options.length)) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
     }
@@ -196,7 +196,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     };
   }, [keyboardNavigation]);
   var onSelectOption = (0, _react.useCallback)(function (event) {
-    if (!isDisabled(activeIndex) && activeIndex >= 0 && activeIndex < options.length) {
+    if (!isDisabled(activeIndex) && activeIndex >= 0 && activeIndex < (options == null ? void 0 : options.length)) {
       event.preventDefault(); // prevent submitting forms
       selectOption(activeIndex)(event);
     }
@@ -225,7 +225,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       if (value.length === limit) {
         var newDisabled = [].concat(disabledProp);
         // disable everything that is not selected
-        for (var i = 0; i < options.length; i += 1) {
+        for (var i = 0; i < (options == null ? void 0 : options.length); i += 1) {
           if (!isSelected(i) && !originallyDisabled(i)) {
             newDisabled.push(options[i]);
           }
@@ -318,7 +318,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       setActiveIndex(-1);
       onSearch(nextSearch);
     }
-  }))), helpContent, options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
+  }))), helpContent, (options == null ? void 0 : options.length) > 0 ? /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
     role: "listbox",
     tabIndex: "0",
     ref: optionsRef,
