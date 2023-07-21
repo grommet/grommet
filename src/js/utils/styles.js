@@ -53,6 +53,7 @@ export const edgeStyle = (
             `
         ${kind}: ${breakpoint.edgeSize[data] || data};
       `,
+            responsive,
           )
         : ''};
     `;
@@ -81,6 +82,7 @@ export const edgeStyle = (
             `
         ${kind}: ${breakpoint.edgeSize[value] || value};
       `,
+            responsive,
           )
         : ''};
     `;
@@ -97,6 +99,7 @@ export const edgeStyle = (
           ${kind}-left: ${breakpoint.edgeSize[horizontal] || horizontal};
           ${kind}-right: ${breakpoint.edgeSize[horizontal] || horizontal};
         `,
+            responsive,
           )
         : ''};
     `);
@@ -112,6 +115,7 @@ export const edgeStyle = (
           ${kind}-top: ${breakpoint.edgeSize[vertical] || vertical};
           ${kind}-bottom: ${breakpoint.edgeSize[vertical] || vertical};
         `,
+            responsive,
           )
         : ''};
     `);
@@ -125,6 +129,7 @@ export const edgeStyle = (
             `
           ${kind}-top: ${breakpoint.edgeSize[top] || top};
         `,
+            responsive,
           )
         : ''};
     `);
@@ -138,6 +143,7 @@ export const edgeStyle = (
             `
           ${kind}-bottom: ${breakpoint.edgeSize[bottom] || bottom};
         `,
+            responsive,
           )
         : ''};
     `);
@@ -151,6 +157,7 @@ export const edgeStyle = (
             `
           ${kind}-left: ${breakpoint.edgeSize[left] || left};
         `,
+            responsive,
           )
         : ''};
     `);
@@ -164,6 +171,7 @@ export const edgeStyle = (
             `
           ${kind}-right: ${breakpoint.edgeSize[right] || right};
         `,
+            responsive,
           )
         : ''};
     `);
@@ -179,6 +187,7 @@ export const edgeStyle = (
               breakpoint.edgeSize[data.start] || data.start
             };
         `,
+            responsive,
           )
         : ''};
     `);
@@ -192,6 +201,7 @@ export const edgeStyle = (
             `
           ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
         `,
+            responsive,
           )
         : ''};
     `);
@@ -677,6 +687,7 @@ export const roundStyle = (data, responsive, theme) => {
           border-top-left-radius: ${responsiveSize};
           border-top-right-radius: ${responsiveSize};
         `,
+            responsive,
           ),
         );
       }
@@ -693,6 +704,7 @@ export const roundStyle = (data, responsive, theme) => {
           border-bottom-left-radius: ${responsiveSize};
           border-bottom-right-radius: ${responsiveSize};
         `,
+            responsive,
           ),
         );
       }
@@ -709,6 +721,7 @@ export const roundStyle = (data, responsive, theme) => {
           border-top-left-radius: ${responsiveSize};
           border-bottom-left-radius: ${responsiveSize};
         `,
+            responsive,
           ),
         );
       }
@@ -725,6 +738,7 @@ export const roundStyle = (data, responsive, theme) => {
           border-top-right-radius: ${responsiveSize};
           border-bottom-right-radius: ${responsiveSize};
         `,
+            responsive,
           ),
         );
       }
@@ -739,6 +753,7 @@ export const roundStyle = (data, responsive, theme) => {
             `
           border-${data.corner}-radius: ${responsiveSize};
         `,
+            responsive,
           ),
         );
       }
@@ -753,6 +768,7 @@ export const roundStyle = (data, responsive, theme) => {
             `
           border-radius: ${responsiveSize};
         `,
+            responsive,
           ),
         );
       }
@@ -770,6 +786,7 @@ export const roundStyle = (data, responsive, theme) => {
           `
         border-radius: ${responsiveSize};
       `,
+          responsive,
         ),
       );
     }
