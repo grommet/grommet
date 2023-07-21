@@ -197,7 +197,7 @@ const FormField = forwardRef(
     ref,
   ) => {
     if (validate && !name) {
-      console.error(`For 'validate' prop to work properly,
+      console.warn(`For 'validate' prop to work properly,
        you must specify 'name' 
       prop to FormField and it must be unique for all FormFields.`);
     }
@@ -247,7 +247,7 @@ const FormField = forwardRef(
             child.props.name &&
             name !== child.props.name
           ) {
-            console.error(`${child.type.displayName} 'name' prop value - 
+            console.warn(`${child.type.displayName} 'name' prop value - 
             ${child.props.name} must match with the 'name' prop value -
              ${name} of FormField.`);
           }
