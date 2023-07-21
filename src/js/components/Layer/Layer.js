@@ -64,10 +64,8 @@ const Layer = forwardRef((props, ref) => {
               layerContainer.remove();
             }
           }, animationDuration);
-        } else {
-          if (containerTarget.contains(layerContainer)) {
-            containerTarget.removeChild(layerContainer);
-          }
+        } else if (containerTarget.contains(layerContainer)) {
+          containerTarget.removeChild(layerContainer);
         }
       }
     },

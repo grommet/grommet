@@ -7153,21 +7153,6 @@ grommet-icons@^4.10.0:
   resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.11.0.tgz#8cb97d24e84a02c1fb23f84c776ffc46b61ae29d"
   integrity sha512-ArXf2XyXmpk5JsQ8NudzNz3mbWv+TeZkPiyog2s9yoNAWTlIr3vzNjr97uon/Xm4Uiq2kiHkvO4i2fG1u6EaDg==
 
-grommet-theme-aruba@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/grommet-theme-aruba/-/grommet-theme-aruba-0.1.2.tgz#e72c7d5e3c46d854d614b67976b0dddb146405cc"
-  integrity sha512-A+NDKYCwLUMPXsZm1UhxePwSKkQmg6VrFxSLAe2rRQ4FkBL3WS2rtQfweTj/oh2DD8pdJLsPkIMSFDP6eiZByw==
-
-grommet-theme-dxc@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/grommet-theme-dxc/-/grommet-theme-dxc-0.1.2.tgz#56ba5bd5c3e38ba328f588e6157fa16bb786c208"
-  integrity sha512-ZNW9bR69Ay00sZSmh1qm4158tdUr3uSnCAUuDXjrItnk2XB0dJd4ierh8JE/SDOtd6rSb5D/i5JY4eMEVQG26w==
-
-grommet-theme-hp@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/grommet-theme-hp/-/grommet-theme-hp-0.1.2.tgz#52eac70d7cce2136b9ca6d7f6bf37649a40208a8"
-  integrity sha512-pRJxgzJ6oWKNg4hq8csi7hEgH0qeMyP3m/cjQVTk473lH1OdgzqNfjyjQXJf80Fnp6Azm+ovwuNNGCKWCZxcvg==
-
 grommet-theme-hpe@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-5.0.3.tgz#cf122da8fbd81eeb94daf12e804fdbb8096ea8f2"
