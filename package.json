@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.33.0",
+  "version": "2.33.1",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -116,9 +116,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.11.0",
     "fs-extra": "^11.1.1",
-    "grommet-theme-aruba": "^0.1.2",
-    "grommet-theme-dxc": "^0.1.2",
-    "grommet-theme-hp": "^0.1.2",
     "grommet-theme-hpe": "^5.0.3",
     "jest": "^29.5.0",
     "jest-axe": "^7.0.1",
