@@ -288,6 +288,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
           }
 
           if (typeof endpoint === 'object' && endpoint?.from === 'arrow') {
+            // eslint-disable-next-line max-len
             cleanedRest.markerStart = `url("#__grommet__openArrowStart__${normalizeColor(
               colorName,
               theme,
@@ -313,6 +314,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
               );
             }
           } else if (typeof endpoint === 'object' && endpoint?.to === 'arrow') {
+            // eslint-disable-next-line max-len
             cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${normalizeColor(
               colorName,
               theme,
@@ -337,10 +339,12 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
               );
             }
           } else if (typeof endpoint === 'string' && endpoint === 'arrow') {
+            // eslint-disable-next-line max-len
             cleanedRest.markerStart = `url("#__grommet__openArrowStart__${normalizeColor(
               colorName,
               theme,
             )}")`;
+            // eslint-disable-next-line max-len
             cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${normalizeColor(
               colorName,
               theme,
