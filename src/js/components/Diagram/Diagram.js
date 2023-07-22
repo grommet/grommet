@@ -67,9 +67,9 @@ const findTarget = (target) => {
   return target;
 };
 
-const openArrow = (color, index, name = 'openArrowEnd', orient = 'auto') => (
+const openArrow = (color, id, orient = 'auto') => (
   <marker
-    id={`${name}-${index}`}
+    id={id}
     markerWidth="7"
     markerHeight="9"
     refX="2"
@@ -160,6 +160,9 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             if (fromRect.top < toRect.top) {
               fromPoint[1] += fromRect.height;
 
+              // Here, we are +10 or -10 the length of the line based
+              // on the anchor - vertical or horizontal, so that it
+              // doesn't touch the start or end of the main digram closely.
               if (typeof endpoint === 'object' && endpoint?.from) {
                 fromPoint[1] += 10;
               } else if (typeof endpoint === 'object' && endpoint?.to) {
@@ -229,7 +232,18 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   }, [connectionPoints, placeConnections]);
 
   let paths;
+  const markerElements = [];
   if (connectionPoints) {
+    // addedMarkerElmentIds - To track the marker elements are added
+    // with their id's based on open and closed arrows and their
+    // color. For eg:
+    // There can be a open arrow with blue color -
+    // __grommet__openArrowStart__blue
+    // And there can be a closed arrow with pink color -
+    // __grommet__openArrowEnd__pink
+    // So, instead of creating multiple arrows of the same color, we
+    // will be leveraging one arrow based on open, close and it's color.
+    const addedMarkerElmentIds = {};
     paths = connections.map(
       (
         {
@@ -273,49 +287,99 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             colorName = colors[index % colors.length];
           }
 
-          let arrowMarker = null;
+          let endpointMarker = null;
 
-          if (typeof endpoint === 'object' && endpoint?.from === 'arrow') {
-            arrowMarker = openArrow(
+          if (
+            typeof endpoint === 'object' &&
+            endpoint?.from === 'arrow' &&
+            !addedMarkerElmentIds[
+              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+            ]
+          ) {
+            endpointMarker = openArrow(
               normalizeColor(colorName, theme),
-              index,
-              'openArrowStart',
+              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`,
               'auto-start-reverse',
             );
-          } else if (typeof endpoint === 'object' && endpoint?.to === 'arrow') {
-            arrowMarker = openArrow(normalizeColor(colorName, theme), index);
-          } else if (typeof endpoint === 'string' && endpoint === 'arrow') {
-            arrowMarker = (
+            addedMarkerElmentIds[
+              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+            ] = true;
+            markerElements.push(endpointMarker);
+          } else if (
+            typeof endpoint === 'object' &&
+            endpoint?.to === 'arrow' &&
+            !addedMarkerElmentIds[
+              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+            ]
+          ) {
+            endpointMarker = openArrow(
+              normalizeColor(colorName, theme),
+              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`,
+            );
+            addedMarkerElmentIds[
+              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+            ] = true;
+            markerElements.push(endpointMarker);
+          } else if (
+            typeof endpoint === 'string' &&
+            endpoint === 'arrow' &&
+            !addedMarkerElmentIds[
+              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+            ] &&
+            !addedMarkerElmentIds[
+              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+            ]
+          ) {
+            endpointMarker = (
               <>
                 {openArrow(
                   normalizeColor(colorName, theme),
-                  index,
-                  'openArrowStart',
+                  `__grommet__openArrowStart__${normalizeColor(
+                    colorName,
+                    theme,
+                  )}`,
                   'auto-start-reverse',
                 )}
-                {openArrow(normalizeColor(colorName, theme), index)}
+                {openArrow(
+                  normalizeColor(colorName, theme),
+                  `__grommet__openArrowEnd__${normalizeColor(
+                    colorName,
+                    theme,
+                  )}`,
+                )}
               </>
             );
+            addedMarkerElmentIds[
+              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+            ] = true;
+            addedMarkerElmentIds[
+              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+            ] = true;
+            markerElements.push(endpointMarker);
           }
 
           path = (
-            // eslint-disable-next-line react/no-array-index-key
-            <Fragment key={index}>
-              <path
-                // eslint-disable-next-line react/no-unknown-property
-                animation={animation}
-                {...cleanedRest}
-                stroke={normalizeColor(colorName, theme)}
-                strokeWidth={strokeWidth}
-                strokeLinecap={round ? 'round' : 'butt'}
-                strokeLinejoin={round ? 'round' : 'miter'}
-                fill="none"
-                d={d}
-                markerStart={`url("#openArrowStart-${index}")`}
-                markerEnd={`url("#openArrowEnd-${index}")`}
-              />
-              {endpoint && arrowMarker && <defs>{arrowMarker}</defs>}
-            </Fragment>
+            <path
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              // eslint-disable-next-line react/no-unknown-property
+              animation={animation}
+              {...cleanedRest}
+              stroke={normalizeColor(colorName, theme)}
+              strokeWidth={strokeWidth}
+              strokeLinecap={round ? 'round' : 'butt'}
+              strokeLinejoin={round ? 'round' : 'miter'}
+              fill="none"
+              d={d}
+              markerStart={`url("#__grommet__openArrowStart__${normalizeColor(
+                colorName,
+                theme,
+              )}")`}
+              markerEnd={`url("#__grommet__openArrowEnd__${normalizeColor(
+                colorName,
+                theme,
+              )}")`}
+            />
           );
         }
         return path;
@@ -331,6 +395,14 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
       connections={paths}
       {...rest}
     >
+      {markerElements.length > 0 && (
+        <defs>
+          {markerElements.map((marker, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <Fragment key={index}>{marker}</Fragment>
+          ))}
+        </defs>
+      )}
       <g>{paths}</g>
     </StyledDiagram>
   );

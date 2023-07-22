@@ -103,8 +103,8 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-0")"
-            marker-start="url("#openArrowStart-0")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -113,8 +113,8 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-1")"
-            marker-start="url("#openArrowStart-1")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -123,8 +123,8 @@ exports[`Diagram anchor 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-2")"
-            marker-start="url("#openArrowStart-2")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -240,8 +240,8 @@ exports[`Diagram basic 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-0")"
-            marker-start="url("#openArrowStart-0")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -357,8 +357,8 @@ exports[`Diagram color 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-0")"
-            marker-start="url("#openArrowStart-0")"
+            marker-end="url("#__grommet__openArrowEnd__#7D4CDB")"
+            marker-start="url("#__grommet__openArrowStart__#7D4CDB")"
             stroke="#7D4CDB"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -470,99 +470,67 @@ exports[`Diagram endpoint - arrow 1`] = `
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
       >
+        <defs>
+          <marker
+            id="__grommet__openArrowStart__#6FFFB0"
+            markerHeight="9"
+            markerWidth="7"
+            orient="auto-start-reverse"
+            refX="2"
+            refY="6"
+          >
+            <path
+              d="M1,4 L3,6 L1,8"
+              fill="none"
+              stroke="#6FFFB0"
+            />
+          </marker>
+          <marker
+            id="__grommet__openArrowEnd__#6FFFB0"
+            markerHeight="9"
+            markerWidth="7"
+            orient="auto"
+            refX="2"
+            refY="6"
+          >
+            <path
+              d="M1,4 L3,6 L1,8"
+              fill="none"
+              stroke="#6FFFB0"
+            />
+          </marker>
+        </defs>
         <g>
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-0")"
-            marker-start="url("#openArrowStart-0")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
           />
-          <defs>
-            <marker
-              id="openArrowStart-0"
-              markerHeight="9"
-              markerWidth="7"
-              orient="auto-start-reverse"
-              refX="2"
-              refY="6"
-            >
-              <path
-                d="M1,4 L3,6 L1,8"
-                fill="none"
-                stroke="#6FFFB0"
-              />
-            </marker>
-            <marker
-              id="openArrowEnd-0"
-              markerHeight="9"
-              markerWidth="7"
-              orient="auto"
-              refX="2"
-              refY="6"
-            >
-              <path
-                d="M1,4 L3,6 L1,8"
-                fill="none"
-                stroke="#6FFFB0"
-              />
-            </marker>
-          </defs>
           <path
             d="M -10,0 Q -5,0 -5,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-1")"
-            marker-start="url("#openArrowStart-1")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
           />
-          <defs>
-            <marker
-              id="openArrowStart-1"
-              markerHeight="9"
-              markerWidth="7"
-              orient="auto-start-reverse"
-              refX="2"
-              refY="6"
-            >
-              <path
-                d="M1,4 L3,6 L1,8"
-                fill="none"
-                stroke="#6FFFB0"
-              />
-            </marker>
-          </defs>
           <path
             d="M 0,0 Q 0,5 0,5 T 0,10"
             fill="none"
-            marker-end="url("#openArrowEnd-2")"
-            marker-start="url("#openArrowStart-2")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="1"
           />
-          <defs>
-            <marker
-              id="openArrowEnd-2"
-              markerHeight="9"
-              markerWidth="7"
-              orient="auto"
-              refX="2"
-              refY="6"
-            >
-              <path
-                d="M1,4 L3,6 L1,8"
-                fill="none"
-                stroke="#6FFFB0"
-              />
-            </marker>
-          </defs>
         </g>
       </svg>
     </div>
@@ -673,8 +641,8 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 6,6 Q 6,6 6,6 T 6,6"
             fill="none"
-            marker-end="url("#openArrowEnd-0")"
-            marker-start="url("#openArrowStart-0")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -683,8 +651,8 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 12,12 Q 12,12 12,12 T 12,12"
             fill="none"
-            marker-end="url("#openArrowEnd-1")"
-            marker-start="url("#openArrowStart-1")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -693,8 +661,8 @@ exports[`Diagram offset 1`] = `
           <path
             d="M 24,24 Q 24,24 24,24 T 24,24"
             fill="none"
-            marker-end="url("#openArrowEnd-2")"
-            marker-start="url("#openArrowStart-2")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -810,8 +778,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-0")"
-            marker-start="url("#openArrowStart-0")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -820,8 +788,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-1")"
-            marker-start="url("#openArrowStart-1")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -830,8 +798,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-2")"
-            marker-start="url("#openArrowStart-2")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -840,8 +808,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-3")"
-            marker-start="url("#openArrowStart-3")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -850,8 +818,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-4")"
-            marker-start="url("#openArrowStart-4")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -860,8 +828,8 @@ exports[`Diagram thickness 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-5")"
-            marker-start="url("#openArrowStart-5")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -977,8 +945,8 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 L 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-0")"
-            marker-start="url("#openArrowStart-0")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -987,8 +955,8 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-1")"
-            marker-start="url("#openArrowStart-1")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -997,8 +965,8 @@ exports[`Diagram type 1`] = `
           <path
             d="M 0,0 L 0,0 L 0,0 L 0,0"
             fill="none"
-            marker-end="url("#openArrowEnd-2")"
-            marker-start="url("#openArrowStart-2")"
+            marker-end="url("#__grommet__openArrowEnd__#6FFFB0")"
+            marker-start="url("#__grommet__openArrowStart__#6FFFB0")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
