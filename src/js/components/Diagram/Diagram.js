@@ -287,75 +287,99 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             colorName = colors[index % colors.length];
           }
 
-          let endpointMarker = null;
+          if (typeof endpoint === 'object' && endpoint?.from === 'arrow') {
+            cleanedRest.markerStart = `url("#__grommet__openArrowStart__${normalizeColor(
+              colorName,
+              theme,
+            )}")`;
 
-          if (
-            typeof endpoint === 'object' &&
-            endpoint?.from === 'arrow' &&
-            !addedMarkerElmentIds[
-              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
-            ]
-          ) {
-            endpointMarker = openArrow(
-              normalizeColor(colorName, theme),
-              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`,
-              'auto-start-reverse',
-            );
-            addedMarkerElmentIds[
-              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
-            ] = true;
-            markerElements.push(endpointMarker);
-          } else if (
-            typeof endpoint === 'object' &&
-            endpoint?.to === 'arrow' &&
-            !addedMarkerElmentIds[
-              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
-            ]
-          ) {
-            endpointMarker = openArrow(
-              normalizeColor(colorName, theme),
-              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`,
-            );
-            addedMarkerElmentIds[
-              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
-            ] = true;
-            markerElements.push(endpointMarker);
-          } else if (
-            typeof endpoint === 'string' &&
-            endpoint === 'arrow' &&
-            !addedMarkerElmentIds[
-              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
-            ] &&
-            !addedMarkerElmentIds[
-              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
-            ]
-          ) {
-            endpointMarker = (
-              <>
-                {openArrow(
+            if (
+              !addedMarkerElmentIds[
+                `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+              ]
+            ) {
+              addedMarkerElmentIds[
+                `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+              ] = true;
+              markerElements.push(
+                openArrow(
                   normalizeColor(colorName, theme),
                   `__grommet__openArrowStart__${normalizeColor(
                     colorName,
                     theme,
                   )}`,
                   'auto-start-reverse',
-                )}
-                {openArrow(
+                ),
+              );
+            }
+          } else if (typeof endpoint === 'object' && endpoint?.to === 'arrow') {
+            cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${normalizeColor(
+              colorName,
+              theme,
+            )}")`;
+
+            if (
+              !addedMarkerElmentIds[
+                `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+              ]
+            ) {
+              addedMarkerElmentIds[
+                `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+              ] = true;
+              markerElements.push(
+                openArrow(
                   normalizeColor(colorName, theme),
                   `__grommet__openArrowEnd__${normalizeColor(
                     colorName,
                     theme,
                   )}`,
-                )}
-              </>
-            );
-            addedMarkerElmentIds[
-              `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
-            ] = true;
-            addedMarkerElmentIds[
-              `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
-            ] = true;
-            markerElements.push(endpointMarker);
+                ),
+              );
+            }
+          } else if (typeof endpoint === 'string' && endpoint === 'arrow') {
+            cleanedRest.markerStart = `url("#__grommet__openArrowStart__${normalizeColor(
+              colorName,
+              theme,
+            )}")`;
+            cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${normalizeColor(
+              colorName,
+              theme,
+            )}")`;
+
+            if (
+              !addedMarkerElmentIds[
+                `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+              ] &&
+              !addedMarkerElmentIds[
+                `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+              ]
+            ) {
+              addedMarkerElmentIds[
+                `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+              ] = true;
+              addedMarkerElmentIds[
+                `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+              ] = true;
+              markerElements.push(
+                <>
+                  {openArrow(
+                    normalizeColor(colorName, theme),
+                    `__grommet__openArrowStart__${normalizeColor(
+                      colorName,
+                      theme,
+                    )}`,
+                    'auto-start-reverse',
+                  )}
+                  {openArrow(
+                    normalizeColor(colorName, theme),
+                    `__grommet__openArrowEnd__${normalizeColor(
+                      colorName,
+                      theme,
+                    )}`,
+                  )}
+                </>,
+              );
+            }
           }
 
           path = (
@@ -371,14 +395,6 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
               strokeLinejoin={round ? 'round' : 'miter'}
               fill="none"
               d={d}
-              markerStart={`url("#__grommet__openArrowStart__${normalizeColor(
-                colorName,
-                theme,
-              )}")`}
-              markerEnd={`url("#__grommet__openArrowEnd__${normalizeColor(
-                colorName,
-                theme,
-              )}")`}
             />
           );
         }
