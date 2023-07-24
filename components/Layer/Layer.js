@@ -62,11 +62,13 @@ var Layer = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
             // we add the id and query here so the unit tests work
             var clone = containerTarget.getRootNode().getElementById('layerClone');
             if (clone) {
-              containerTarget.removeChild(clone);
+              if (containerTarget.contains(clone)) {
+                containerTarget.removeChild(clone);
+              }
               layerContainer.remove();
             }
           }, _StyledLayer.animationDuration);
-        } else {
+        } else if (containerTarget.contains(layerContainer)) {
           containerTarget.removeChild(layerContainer);
         }
       }
