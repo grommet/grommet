@@ -255,6 +255,7 @@ const Header = forwardRef(
             >
               {onSelect && (
                 <CheckBox
+                  name="DataTableHeader"
                   a11yTitle={
                     totalSelected === data.length
                       ? 'unselect all'

@@ -150,6 +150,7 @@ const SelectMultipleValue = ({
           >
             {child || (
               <CheckBox
+                name={`SelectMultipleCheckBox-${optionValue}`}
                 disabled={optionDisabled}
                 label={
                   <Box alignSelf="center" align="start">

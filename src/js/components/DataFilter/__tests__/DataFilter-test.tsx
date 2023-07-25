@@ -229,7 +229,7 @@ describe('DataFilter', () => {
         <Data data={data}>
           <DataFilters>
             <DataFilter property="name">
-              <TextInput />
+              <TextInput name="DataFilter children" />
             </DataFilter>
           </DataFilters>
         </Data>

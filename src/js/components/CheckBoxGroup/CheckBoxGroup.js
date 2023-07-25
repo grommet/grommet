@@ -106,6 +106,7 @@ const CheckBoxGroup = forwardRef(
               {...optionProps}
               disabled={disabled}
               checked={checked}
+              name={name}
               // when contained in a FormField, focusIndicator = false,
               // so that the FormField has focus style. However, we still
               // need to visually indicate when a CheckBox is active.

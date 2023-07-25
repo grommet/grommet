@@ -364,6 +364,7 @@ const SelectContainer = forwardRef(
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <SelectTextInput
+                name="SelectTextInput"
                 focusIndicator={!customSearchInput}
                 size="small"
                 ref={searchRef}

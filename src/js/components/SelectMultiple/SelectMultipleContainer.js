@@ -402,6 +402,7 @@ const SelectMultipleContainer = forwardRef(
                 }}
               >
                 <SelectTextInput
+                  name="SelectMultipleContainer"
                   a11yTitle="Search to filter options."
                   focusIndicator={!customSearchInput}
                   size="small"
@@ -474,6 +475,7 @@ const SelectMultipleContainer = forwardRef(
                   } else {
                     child = (
                       <CheckBox
+                        name="SelectMultipleContainer"
                         label={
                           <Box alignSelf="center" width="100%" align="start">
                             {optionLabel}
@@ -511,6 +513,7 @@ const SelectMultipleContainer = forwardRef(
                       );
                       child = (
                         <CheckBox
+                          name="SelectMultipleContainer"
                           label={
                             <Box
                               alignSelf="center"

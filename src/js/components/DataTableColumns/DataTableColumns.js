@@ -97,6 +97,7 @@ const Content = ({ drop, options, ...rest }) => {
         >
           <Box pad={{ vertical: 'small' }} gap="xsmall">
             <TextInput
+              name="DataTable"
               type="search"
               icon={<Search />}
               placeholder="Search"

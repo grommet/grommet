@@ -2720,6 +2720,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
                   <input
                     aria-label="select all"
                     class="c8"
+                    name="DataTableHeader"
                     type="checkbox"
                   />
                   <div
@@ -2781,6 +2782,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
                   <input
                     aria-label="select Alan"
                     class="c8"
+                    name="DataTableBody"
                     type="checkbox"
                   />
                   <div
@@ -2837,6 +2839,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
                   <input
                     aria-label="select Bryan"
                     class="c8"
+                    name="DataTableBody"
                     type="checkbox"
                   />
                   <div
@@ -2893,6 +2896,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
                   <input
                     aria-label="select Chris"
                     class="c8"
+                    name="DataTableBody"
                     type="checkbox"
                   />
                   <div
@@ -2949,6 +2953,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
                   <input
                     aria-label="select Eric"
                     class="c8"
+                    name="DataTableBody"
                     type="checkbox"
                   />
                   <div
@@ -3824,6 +3829,7 @@ exports[`DataTable custom theme 1`] = `
                   checked=""
                   class="c24"
                   disabled=""
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -3843,6 +3849,7 @@ exports[`DataTable custom theme 1`] = `
                   </svg>
                 </div>
                 <input
+                  name="DataTableBody"
                   type="hidden"
                   value="true"
                 />
@@ -3888,6 +3895,7 @@ exports[`DataTable custom theme 1`] = `
                   aria-label="select beta"
                   class="c24"
                   disabled=""
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -4014,6 +4022,7 @@ exports[`DataTable custom theme 2`] = `
                   checked=""
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gWZMFl"
                   disabled=""
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -4033,6 +4042,7 @@ exports[`DataTable custom theme 2`] = `
                   </svg>
                 </div>
                 <input
+                  name="DataTableBody"
                   type="hidden"
                   value="true"
                 />
@@ -4078,6 +4088,7 @@ exports[`DataTable custom theme 2`] = `
                   aria-label="select beta"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gWZMFl"
                   disabled=""
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -4715,6 +4726,7 @@ exports[`DataTable disabled select 1`] = `
                 <input
                   aria-label="select all"
                   class="c8"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -4777,6 +4789,7 @@ exports[`DataTable disabled select 1`] = `
                   aria-label="select alpha"
                   class="c17"
                   disabled=""
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -4822,6 +4835,7 @@ exports[`DataTable disabled select 1`] = `
                   aria-label="unselect beta"
                   checked=""
                   class="c8"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -9954,6 +9968,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 <input
                   aria-label="select all"
                   class="c13"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -10057,6 +10072,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 <input
                   aria-label="select one"
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -10137,6 +10153,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   aria-label="select 1.1"
                   checked=""
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -10211,6 +10228,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   aria-label="unselect 1.2"
                   checked=""
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -10308,6 +10326,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 <input
                   aria-label="select two"
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -10833,6 +10852,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 <input
                   aria-label="select all"
                   class="c13"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -10936,6 +10956,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 <input
                   aria-label="select one"
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -11028,6 +11049,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                 <input
                   aria-label="select two"
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -11584,6 +11606,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
                 <input
                   aria-label="select all"
                   class="c13"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -11687,6 +11710,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
                 <input
                   aria-label="unselect one"
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -11779,6 +11803,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
                 <input
                   aria-label="select two"
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -12295,6 +12320,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
                 <input
                   aria-label="select all"
                   class="c13"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -12387,6 +12413,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
                 <input
                   aria-label="select one"
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -12468,6 +12495,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
                 <input
                   aria-label="select two"
                   class="c13"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -12565,6 +12593,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 <input
                   aria-label="unselect all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -12692,6 +12721,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 <input
                   aria-label="unselect one"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -12808,6 +12838,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                 <input
                   aria-label="unselect two"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -12940,6 +12971,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 <input
                   aria-label="select all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -13032,6 +13064,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 <input
                   aria-label="select one"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -13113,6 +13146,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                 <input
                   aria-label="select two"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableGroupedBody"
                   type="checkbox"
                 />
                 <div
@@ -13420,6 +13454,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
                 <input
                   aria-label="select all"
                   class="c8"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -13481,6 +13516,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
                 <input
                   aria-label="select 1.1"
                   class="c8"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -13537,6 +13573,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
                 <input
                   aria-label="select 1.2"
                   class="c8"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -13593,6 +13630,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
                 <input
                   aria-label="select 2.1"
                   class="c8"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -13649,6 +13687,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
                 <input
                   aria-label="select 2.2"
                   class="c8"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -13721,6 +13760,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 <input
                   aria-label="unselect all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -13809,6 +13849,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 <input
                   aria-label="unselect 1.1"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -13892,6 +13933,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 <input
                   aria-label="unselect 1.2"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -13975,6 +14017,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 <input
                   aria-label="unselect 2.1"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -14058,6 +14101,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                 <input
                   aria-label="unselect 2.2"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -14157,6 +14201,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 <input
                   aria-label="select all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -14218,6 +14263,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 <input
                   aria-label="select 1.1"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -14274,6 +14320,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 <input
                   aria-label="select 1.2"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -14330,6 +14377,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 <input
                   aria-label="select 2.1"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -14386,6 +14434,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                 <input
                   aria-label="select 2.2"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -22660,6 +22709,7 @@ exports[`DataTable select 1`] = `
                 <input
                   aria-label="select all"
                   class="c8"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -22719,6 +22769,7 @@ exports[`DataTable select 1`] = `
                   aria-label="unselect alpha"
                   checked=""
                   class="c8"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -22773,6 +22824,7 @@ exports[`DataTable select 1`] = `
                 <input
                   aria-label="select beta"
                   class="c8"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -22832,6 +22884,7 @@ exports[`DataTable select 2`] = `
                 <input
                   aria-label="unselect all"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableHeader"
                   type="checkbox"
                 />
                 <div
@@ -22907,6 +22960,7 @@ exports[`DataTable select 2`] = `
                   aria-label="unselect alpha"
                   checked=""
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div
@@ -22961,6 +23015,7 @@ exports[`DataTable select 2`] = `
                 <input
                   aria-label="unselect beta"
                   class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+                  name="DataTableBody"
                   type="checkbox"
                 />
                 <div

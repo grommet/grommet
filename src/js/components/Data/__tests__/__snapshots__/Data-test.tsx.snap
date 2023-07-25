@@ -2059,6 +2059,7 @@ exports[`Data onView 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -2081,6 +2082,7 @@ exports[`Data onView 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -2103,6 +2105,7 @@ exports[`Data onView 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -2125,6 +2128,7 @@ exports[`Data onView 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -2164,6 +2168,7 @@ exports[`Data onView 1`] = `
                     >
                       <input
                         class="c12"
+                        name="enabled"
                         type="checkbox"
                       />
                       <div
@@ -2186,6 +2191,7 @@ exports[`Data onView 1`] = `
                     >
                       <input
                         class="c12"
+                        name="enabled"
                         type="checkbox"
                       />
                       <div

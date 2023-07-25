@@ -691,6 +691,7 @@ exports[`DataFilters renders 1`] = `
                       >
                         <input
                           class="c17"
+                          name="name"
                           type="checkbox"
                         />
                         <div
@@ -713,6 +714,7 @@ exports[`DataFilters renders 1`] = `
                       >
                         <input
                           class="c17"
+                          name="name"
                           type="checkbox"
                         />
                         <div

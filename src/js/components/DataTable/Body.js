@@ -90,6 +90,7 @@ const Row = memo(
               size: 'auto',
               render: () => (
                 <CheckBox
+                  name="DataTableBody"
                   tabIndex={onClickRow === 'select' ? -1 : undefined}
                   a11yTitle={`${
                     isSelected ? 'unselect' : 'select'

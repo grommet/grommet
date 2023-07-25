@@ -538,6 +538,7 @@ exports[`DataFilters clear 1`] = `
                       <input
                         checked=""
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -571,6 +572,7 @@ exports[`DataFilters clear 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -2032,6 +2034,7 @@ exports[`DataFilters layer 2`] = `
                     >
                       <input
                         class="c20"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -2054,6 +2057,7 @@ exports[`DataFilters layer 2`] = `
                     >
                       <input
                         class="c20"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -2637,6 +2641,7 @@ exports[`DataFilters properties array 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -2659,6 +2664,7 @@ exports[`DataFilters properties array 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -3199,6 +3205,7 @@ exports[`DataFilters properties object 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -3221,6 +3228,7 @@ exports[`DataFilters properties object 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -3761,6 +3769,7 @@ exports[`DataFilters renders 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -3783,6 +3792,7 @@ exports[`DataFilters renders 1`] = `
                     >
                       <input
                         class="c12"
+                        name="name"
                         type="checkbox"
                       />
                       <div
@@ -4626,6 +4636,7 @@ exports[`DataFilters sub objects 1`] = `
                       <input
                         checked=""
                         class="c12"
+                        name="location.city"
                         type="checkbox"
                       />
                       <div
@@ -4659,6 +4670,7 @@ exports[`DataFilters sub objects 1`] = `
                     >
                       <input
                         class="c12"
+                        name="location.city"
                         type="checkbox"
                       />
                       <div

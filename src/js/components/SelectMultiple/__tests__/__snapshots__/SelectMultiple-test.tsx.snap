@@ -4233,6 +4233,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                name="SelectMultipleCheckBox-0"
                 tabindex="-1"
                 type="checkbox"
               />
@@ -4279,6 +4280,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                name="SelectMultipleCheckBox-1"
                 tabindex="-1"
                 type="checkbox"
               />
@@ -4325,6 +4327,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                name="SelectMultipleCheckBox-2"
                 tabindex="-1"
                 type="checkbox"
               />
@@ -5500,6 +5503,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
                 checked=""
                 class="c17"
                 disabled=""
+                name="SelectMultipleCheckBox-one"
                 tabindex="-1"
                 type="checkbox"
               />
@@ -5520,6 +5524,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
                 </svg>
               </div>
               <input
+                name="SelectMultipleCheckBox-one"
                 type="hidden"
                 value="true"
               />
@@ -6069,6 +6074,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
               <input
                 checked=""
                 class="c17"
+                name="SelectMultipleCheckBox-one"
                 tabindex="-1"
                 type="checkbox"
               />

@@ -1962,6 +1962,7 @@ exports[`Select Search timeout 2`] = `
 <input
   autocomplete="off"
   class="c0"
+  name="SelectTextInput"
   type="search"
   value="o"
 />
@@ -5731,6 +5732,7 @@ exports[`Select empty results search 1`] = `
 <input
   autocomplete="off"
   class="c0"
+  name="SelectTextInput"
   type="search"
   value="o"
 />
@@ -13931,6 +13933,7 @@ exports[`Select renders empty search with select.emptySearchMessage styling 1`] 
 <input
   autocomplete="off"
   class="c0"
+  name="SelectTextInput"
   type="search"
   value="o"
 />
@@ -15588,6 +15591,7 @@ exports[`Select search 2`] = `
         <input
           autocomplete="off"
           class="c6"
+          name="SelectTextInput"
           type="search"
           value=""
         />
@@ -15657,6 +15661,7 @@ exports[`Select search 4`] = `
 <input
   autocomplete="off"
   class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  name="SelectTextInput"
   type="search"
   value=""
 />
@@ -15666,6 +15671,7 @@ exports[`Select search 5`] = `
 <input
   autocomplete="off"
   class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  name="SelectTextInput"
   type="search"
   value="o"
 />
@@ -16236,6 +16242,7 @@ exports[`Select search and select 2`] = `
         <input
           autocomplete="off"
           class="c6"
+          name="SelectTextInput"
           type="search"
           value=""
         />
@@ -16305,6 +16312,7 @@ exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
   class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  name="SelectTextInput"
   type="search"
   value=""
 />
@@ -16314,6 +16322,7 @@ exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
   class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  name="SelectTextInput"
   type="search"
   value="t"
 />

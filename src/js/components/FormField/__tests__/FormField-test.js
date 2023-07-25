@@ -194,7 +194,7 @@ describe('FormField', () => {
       <Grommet>
         <FormField disabled /> {/* don't use FormField without Form */}
         <Form>
-          <FormField disabled />
+          <FormField name="formField" disabled />
         </Form>
       </Grommet>,
     );
@@ -207,7 +207,7 @@ describe('FormField', () => {
       <Grommet>
         <FormField required /> {/* don't use FormField without Form */}
         <Form>
-          <FormField required />
+          <FormField name="formField" required />
         </Form>
       </Grommet>,
     );
@@ -230,7 +230,7 @@ describe('FormField', () => {
         }}
       >
         <Form>
-          <FormField label="label" />
+          <FormField name="formField" label="label" />
         </Form>
       </Grommet>,
     );
@@ -258,7 +258,7 @@ describe('FormField', () => {
         }}
       >
         <Form>
-          <FormField disabled label="label" />
+          <FormField name="formField" disabled label="label" />
         </Form>
       </Grommet>,
     );
@@ -279,7 +279,7 @@ describe('FormField', () => {
         }}
       >
         <Form>
-          <FormField label="label" pad />
+          <FormField name="formField" label="label" pad />
         </Form>
       </Grommet>,
     );
@@ -299,7 +299,7 @@ describe('FormField', () => {
         }}
       >
         <Form>
-          <FormField label="label" />
+          <FormField name="formField" label="label" />
         </Form>
       </Grommet>,
     );
@@ -312,6 +312,7 @@ describe('FormField', () => {
       <Grommet>
         <Form>
           <FormField
+            name="formField"
             label="label"
             contentProps={{
               border: false,
@@ -348,6 +349,7 @@ describe('FormField', () => {
       >
         <Form>
           <FormField
+            name="formField"
             label="label"
             error="This is an error message."
             info="Here is a little added info on FormField."
@@ -374,7 +376,7 @@ describe('FormField', () => {
         }}
       >
         <Form>
-          <FormField label="label" required />
+          <FormField name="formField" label="label" required />
         </Form>
       </Grommet>,
     );
@@ -395,7 +397,7 @@ describe('FormField', () => {
         }}
       >
         <Form>
-          <FormField label="label" required />
+          <FormField name="formField" label="label" required />
         </Form>
       </Grommet>,
     );
@@ -415,7 +417,11 @@ describe('FormField', () => {
         }}
       >
         <Form>
-          <FormField label="label" required={{ indicator: false }} />
+          <FormField
+            name="formField"
+            label="label"
+            required={{ indicator: false }}
+          />
         </Form>
       </Grommet>,
     );
@@ -439,9 +445,9 @@ describe('FormField', () => {
       >
         <Form>
           <FormField label="label">
-            <CheckBox label="checkbox with pad" />
+            <CheckBox name="checkbox" label="checkbox with pad" />
           </FormField>
-          <CheckBox label="checkbox without pad" />
+          <CheckBox name="checkbox" label="checkbox without pad" />
         </Form>
       </Grommet>,
     );

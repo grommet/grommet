@@ -106,7 +106,7 @@ const TextInput = forwardRef(
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
-    if (formContext.noForm !== undefined && !formContext.noForm && !name) {
+    if (!formContext.noForm && !name) {
       console.warn(
         // eslint-disable-next-line max-len
         `The 'name' prop must be defined for TextInput while it is within a Form.`,

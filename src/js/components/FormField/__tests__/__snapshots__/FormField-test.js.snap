@@ -364,6 +364,7 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
           >
             <input
               class="c7"
+              name="checkbox"
               type="checkbox"
             />
             <div
@@ -385,6 +386,7 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
       >
         <input
           class="c7"
+          name="checkbox"
           type="checkbox"
         />
         <div
@@ -524,6 +526,7 @@ exports[`FormField contentProps 1`] = `
           <input
             autocomplete="off"
             class="c5"
+            name="formField"
             value=""
           />
         </div>
@@ -769,6 +772,7 @@ exports[`FormField custom error and info icon and container 1`] = `
             aria-invalid="true"
             autocomplete="off"
             class="c5"
+            name="formField"
             value=""
           />
         </div>
@@ -1039,6 +1043,7 @@ exports[`FormField custom input margin 1`] = `
           <input
             autocomplete="off"
             class="c5"
+            name="formField"
             value=""
           />
         </div>
@@ -1179,6 +1184,7 @@ exports[`FormField custom label 1`] = `
           <input
             autocomplete="off"
             class="c5"
+            name="formField"
             value=""
           />
         </div>
@@ -1451,6 +1457,7 @@ exports[`FormField disabled 1`] = `
             autocomplete="off"
             class="c4"
             disabled=""
+            name="formField"
             value=""
           />
         </div>
@@ -1596,6 +1603,7 @@ exports[`FormField disabled with custom label 1`] = `
             autocomplete="off"
             class="c5"
             disabled=""
+            name="formField"
             value=""
           />
         </div>
@@ -2328,6 +2336,7 @@ exports[`FormField pad with border undefined 1`] = `
           <input
             autocomplete="off"
             class="c5"
+            name="formField"
             value=""
           />
         </div>
@@ -2463,6 +2472,7 @@ exports[`FormField required 1`] = `
           <input
             autocomplete="off"
             class="c4"
+            name="formField"
             value=""
           />
         </div>
@@ -2670,6 +2680,7 @@ exports[`FormField should not render asterisk when required.indicator === false 
           <input
             autocomplete="off"
             class="c5"
+            name="formField"
             value=""
           />
         </div>
@@ -2845,6 +2856,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
           <input
             autocomplete="off"
             class="c8"
+            name="formField"
             value=""
           />
         </div>
@@ -3033,6 +3045,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
           <input
             autocomplete="off"
             class="c6"
+            name="formField"
             value=""
           />
         </div>

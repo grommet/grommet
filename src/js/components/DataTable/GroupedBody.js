@@ -193,6 +193,7 @@ export const GroupedBody = forwardRef(
                     aria-disabled={isDisabled || !onSelect || undefined}
                   >
                     <CheckBox
+                      name="DataTableGroupedBody"
                       a11yTitle={`${isSelected ? 'unselect' : 'select'} ${
                         context === 'groupHeader' ? key : primaryValue
                       }`}
