@@ -39,6 +39,7 @@ exports[`Tag basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 100%;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
@@ -142,6 +143,7 @@ exports[`Tag onClick 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 100%;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
@@ -358,6 +360,7 @@ exports[`Tag onRemove 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 100%;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
@@ -563,6 +566,7 @@ exports[`Tag size 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 100%;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
@@ -584,6 +588,7 @@ exports[`Tag size 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 100%;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
@@ -605,6 +610,7 @@ exports[`Tag size 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 100%;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
@@ -626,6 +632,7 @@ exports[`Tag size 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 100%;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
@@ -647,6 +654,7 @@ exports[`Tag size 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 100%;
   min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
