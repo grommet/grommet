@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.1
+  browser-tools: circleci/browser-tools@1.4.3
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
@@ -83,7 +83,7 @@ jobs:
           command: yarn test-bundlesize
   test:
     <<: *defaults
-    resource_class: small 
+    resource_class: small
     # Assigned a size small resource class because we currently only have 3 end
     # to end tests. As we expand our e2e testing we may want to adjust this.
     steps:

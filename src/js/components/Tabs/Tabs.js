@@ -204,7 +204,7 @@ const Tabs = forwardRef(
       if (
         overflow &&
         tabRefs &&
-        tabRefs[activeIndex].current &&
+        tabRefs[activeIndex]?.current &&
         !isVisible(activeIndex)
       )
         scrollTo(activeIndex, true);
