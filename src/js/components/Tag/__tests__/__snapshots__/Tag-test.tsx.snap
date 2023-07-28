@@ -36,17 +36,15 @@ exports[`Tag basic 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: NaNpx;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  overflow: hidden;
 }
 
 .c3 {
@@ -83,6 +81,14 @@ exports[`Tag basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
@@ -108,22 +114,18 @@ exports[`Tag basic 1`] = `
       <span
         class="c3"
       >
-        <span
-          class="c3"
-        >
-           
-          Name
-        </span>
-        <span
-          class="c3"
-        >
-           : 
-        </span>
-        <span
-          class="c4"
-        >
-          Value
-        </span>
+         
+        Name
+      </span>
+      <span
+        class="c3"
+      >
+         : 
+      </span>
+      <span
+        class="c4"
+      >
+        Value
       </span>
     </div>
   </div>
@@ -140,25 +142,18 @@ exports[`Tag onClick 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: NaNpx;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  overflow: hidden;
 }
 
 .c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c5 {
   font-size: 18px;
   line-height: 24px;
   font-weight: 600;
@@ -238,6 +233,14 @@ exports[`Tag onClick 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 6px;
     padding-right: 6px;
@@ -276,11 +279,7 @@ exports[`Tag onClick 1`] = `
       <span
         class="c4"
       >
-        <span
-          class="c5"
-        >
-          Test
-        </span>
+        Test
       </span>
     </div>
   </button>
@@ -288,7 +287,7 @@ exports[`Tag onClick 1`] = `
 `;
 
 exports[`Tag onRemove 1`] = `
-.c7 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -299,25 +298,25 @@ exports[`Tag onRemove 1`] = `
   stroke: #666666;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -357,31 +356,24 @@ exports[`Tag onRemove 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: NaNpx;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  overflow: hidden;
 }
 
 .c3 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
   font-weight: 600;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -401,43 +393,43 @@ exports[`Tag onRemove 1`] = `
   line-height: 0;
 }
 
-.c5:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c5:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -451,7 +443,7 @@ exports[`Tag onRemove 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c6 {
+.c5 {
   border-radius: 48px;
 }
 
@@ -465,6 +457,14 @@ exports[`Tag onRemove 1`] = `
   .c1 {
     border-radius: 24px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -482,7 +482,7 @@ exports[`Tag onRemove 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c5 {
     border-radius: 24px;
   }
 }
@@ -499,20 +499,16 @@ exports[`Tag onRemove 1`] = `
       <span
         class="c3"
       >
-        <span
-          class="c4"
-        >
-          Test
-        </span>
+        Test
       </span>
     </div>
     <button
-      class="c5 c6"
+      class="c4 c5"
       type="button"
     >
       <svg
         aria-label="FormClose"
-        class="c7"
+        class="c6"
         viewBox="0 0 24 24"
       >
         <path
@@ -563,17 +559,15 @@ exports[`Tag size 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: NaNpx;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 3px;
   padding-bottom: 3px;
+  overflow: hidden;
 }
 
 .c5 {
@@ -585,17 +579,15 @@ exports[`Tag size 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: NaNpx;
   padding-left: 9.600000000000001px;
   padding-right: 9.600000000000001px;
   padding-top: 3px;
   padding-bottom: 3px;
+  overflow: hidden;
 }
 
 .c8 {
@@ -607,17 +599,15 @@ exports[`Tag size 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: NaNpx;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+  overflow: hidden;
 }
 
 .c11 {
@@ -629,17 +619,15 @@ exports[`Tag size 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: NaNpx;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 6px;
   padding-bottom: 6px;
+  overflow: hidden;
 }
 
 .c14 {
@@ -651,22 +639,40 @@ exports[`Tag size 1`] = `
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  max-width: NaNpx;
   padding-left: 18px;
   padding-right: 18px;
   padding-top: 6px;
   padding-bottom: 6px;
+  overflow: hidden;
 }
 
 .c3 {
   font-size: 12px;
   line-height: 18px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c12 {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.c15 {
+  font-size: 26px;
+  line-height: 32px;
 }
 
 .c4 {
@@ -675,20 +681,10 @@ exports[`Tag size 1`] = `
   font-weight: 600;
 }
 
-.c6 {
-  font-size: 14px;
-  line-height: 20px;
-}
-
 .c7 {
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c10 {
@@ -697,20 +693,10 @@ exports[`Tag size 1`] = `
   font-weight: 600;
 }
 
-.c12 {
-  font-size: 22px;
-  line-height: 28px;
-}
-
 .c13 {
   font-size: 22px;
   line-height: 28px;
   font-weight: 600;
-}
-
-.c15 {
-  font-size: 26px;
-  line-height: 32px;
 }
 
 .c16 {
@@ -739,6 +725,46 @@ exports[`Tag size 1`] = `
   .c1 {
     border-radius: 24px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -823,22 +849,18 @@ exports[`Tag size 1`] = `
       <span
         class="c3"
       >
-        <span
-          class="c3"
-        >
-           
-          Name
-        </span>
-        <span
-          class="c3"
-        >
-           : 
-        </span>
-        <span
-          class="c4"
-        >
-          Value
-        </span>
+         
+        Name
+      </span>
+      <span
+        class="c3"
+      >
+         : 
+      </span>
+      <span
+        class="c4"
+      >
+        Value
       </span>
     </div>
   </div>
@@ -851,22 +873,18 @@ exports[`Tag size 1`] = `
       <span
         class="c6"
       >
-        <span
-          class="c6"
-        >
-           
-          Name
-        </span>
-        <span
-          class="c6"
-        >
-           : 
-        </span>
-        <span
-          class="c7"
-        >
-          Value
-        </span>
+         
+        Name
+      </span>
+      <span
+        class="c6"
+      >
+         : 
+      </span>
+      <span
+        class="c7"
+      >
+        Value
       </span>
     </div>
   </div>
@@ -879,22 +897,18 @@ exports[`Tag size 1`] = `
       <span
         class="c9"
       >
-        <span
-          class="c9"
-        >
-           
-          Name
-        </span>
-        <span
-          class="c9"
-        >
-           : 
-        </span>
-        <span
-          class="c10"
-        >
-          Value
-        </span>
+         
+        Name
+      </span>
+      <span
+        class="c9"
+      >
+         : 
+      </span>
+      <span
+        class="c10"
+      >
+        Value
       </span>
     </div>
   </div>
@@ -907,22 +921,18 @@ exports[`Tag size 1`] = `
       <span
         class="c12"
       >
-        <span
-          class="c12"
-        >
-           
-          Name
-        </span>
-        <span
-          class="c12"
-        >
-           : 
-        </span>
-        <span
-          class="c13"
-        >
-          Value
-        </span>
+         
+        Name
+      </span>
+      <span
+        class="c12"
+      >
+         : 
+      </span>
+      <span
+        class="c13"
+      >
+        Value
       </span>
     </div>
   </div>
@@ -935,22 +945,18 @@ exports[`Tag size 1`] = `
       <span
         class="c15"
       >
-        <span
-          class="c15"
-        >
-           
-          Name
-        </span>
-        <span
-          class="c15"
-        >
-           : 
-        </span>
-        <span
-          class="c16"
-        >
-          Value
-        </span>
+         
+        Name
+      </span>
+      <span
+        class="c15"
+      >
+         : 
+      </span>
+      <span
+        class="c16"
+      >
+        Value
       </span>
     </div>
   </div>
