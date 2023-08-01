@@ -17,20 +17,20 @@ exports[`DataSort drop 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -163,7 +163,7 @@ exports[`DataSort drop 2`] = `
 >
   <svg
     aria-label="Descend"
-    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+    class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
     viewBox="0 0 24 24"
   >
     <path
@@ -247,20 +247,20 @@ exports[`DataSort renders 1`] = `
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c15 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c15 *[fill-rule],
 .c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1053,6 +1053,577 @@ exports[`DataSort renders 1`] = `
             Undo changes
           </button>
         </footer>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`DataSort sort when data array is empty 1`] = `
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c20 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+.c4 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c16:hover input:not([disabled]) + div,
+.c16:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c18 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c10 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c10::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c10::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c10:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c10::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c10::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c10:-moz-placeholder,
+.c10::-moz-placeholder {
+  opacity: 1;
+}
+
+.c9 {
+  position: relative;
+  width: 100%;
+}
+
+.c11 {
+  cursor: pointer;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c20 {
+    height: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="test-data"
+  >
+    <form
+      class="c2"
+    >
+      <div
+        class="c3 "
+      >
+        <label
+          class="c4"
+          for="test-data--sort-property"
+        >
+          Sort by
+        </label>
+        <div
+          class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Open Drop"
+            class="c6 "
+            id="test-data--sort-property"
+            type="button"
+          >
+            <div
+              class="c7"
+            >
+              <div
+                class="c8"
+              >
+                <div
+                  class="c9"
+                >
+                  <input
+                    autocomplete="off"
+                    class="c10 c11"
+                    id="test-data--sort-property__input"
+                    name="_sort.property"
+                    readonly=""
+                    tabindex="-1"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="c12"
+                style="min-width: auto;"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c13"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        class="c3 "
+      >
+        <label
+          class="c4"
+          for="test-data--sort-direction"
+        >
+          Sort direction
+        </label>
+        <div
+          class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
+        >
+          <div
+            class="c15"
+            id="test-data--sort-direction"
+            role="radiogroup"
+          >
+            <label
+              class="c16"
+            >
+              <div
+                class="c17 "
+              >
+                <input
+                  class="c18"
+                  name="_sort.direction"
+                  tabindex="0"
+                  type="radio"
+                  value="asc"
+                />
+                <div
+                  class="c19 "
+                />
+              </div>
+              <span
+                class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+              >
+                Ascending
+              </span>
+            </label>
+            <div
+              class="c20"
+            />
+            <label
+              class="c16"
+            >
+              <div
+                class="c17 "
+              >
+                <input
+                  class="c18"
+                  name="_sort.direction"
+                  tabindex="-1"
+                  type="radio"
+                  value="desc"
+                />
+                <div
+                  class="c19 "
+                />
+              </div>
+              <span
+                class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+              >
+                Descending
+              </span>
+            </label>
+          </div>
+        </div>
       </div>
     </form>
   </div>

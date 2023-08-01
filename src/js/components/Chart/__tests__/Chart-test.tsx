@@ -252,13 +252,13 @@ describe('Chart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('vertical', () => {
+  test('horizontal', () => {
     const { container } = render(
       <Grommet>
-        <Chart direction="vertical" type="bar" values={VALUES} />
-        <Chart direction="vertical" type="line" values={VALUES} />
-        <Chart direction="vertical" type="area" values={VALUES} />
-        <Chart direction="vertical" type="point" values={VALUES} />
+        <Chart direction="horizontal" type="bar" values={VALUES} />
+        <Chart direction="horizontal" type="line" values={VALUES} />
+        <Chart direction="horizontal" type="area" values={VALUES} />
+        <Chart direction="horizontal" type="point" values={VALUES} />
       </Grommet>,
     );
 

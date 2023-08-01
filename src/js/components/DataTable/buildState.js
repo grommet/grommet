@@ -28,7 +28,14 @@ export const datumValue = (datum, property) => {
 
 // get the primary property name
 export const normalizePrimaryProperty = (columns, primaryKey) => {
-  let result = primaryKey;
+  let result;
+  if (typeof primaryKey === 'string' || typeof primaryKey === 'boolean') {
+    result = primaryKey;
+  } else if (primaryKey === null) {
+    console.warn(
+      'null is not a supported value for primaryKey. See supported values: https://v2.grommet.io/datatable#primaryKey',
+    );
+  }
   if (result === undefined) {
     columns.forEach((column) => {
       // remember the first key property

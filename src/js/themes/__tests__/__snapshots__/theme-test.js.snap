@@ -58,20 +58,20 @@ exports[`Grommet custom theme 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -92,20 +92,20 @@ exports[`Grommet custom theme 1`] = `
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -126,20 +126,20 @@ exports[`Grommet custom theme 1`] = `
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
