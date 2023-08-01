@@ -10,8 +10,8 @@ export var StyledSkeleton = styled.div.withConfig({
 })(["display:flex;box-sizing:border-box;", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.background && backgroundStyle(props.background, props.theme);
 }, function (props) {
-  var _props$theme$text, _props$theme$text$med;
-  return heightStyle(props.heightProp || ((_props$theme$text = props.theme.text) == null ? void 0 : (_props$theme$text$med = _props$theme$text.medium) == null ? void 0 : _props$theme$text$med.height), props.theme);
+  var _props$theme$text;
+  return heightStyle(props.heightProp || ((_props$theme$text = props.theme.text) == null || (_props$theme$text = _props$theme$text.medium) == null ? void 0 : _props$theme$text.height), props.theme);
 }, function (props) {
   return widthStyle(props.widthProp || '100%', props.theme);
 }, function (props) {

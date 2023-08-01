@@ -56,7 +56,7 @@ var NotificationAnchor = (0, _styledComponents["default"])(_Anchor.Anchor).withC
   componentId: "sc-1yq09yz-0"
 })(["white-space:nowrap;"]);
 var Notification = function Notification(_ref) {
-  var _theme$notification, _theme$notification2, _theme$notification2$, _theme$notification2$2, _theme$notification3, _theme$notification3$, _theme$notification4, _theme$notification4$, _theme$notification4$2, _theme$notification5, _theme$notification5$;
+  var _theme$notification, _theme$notification2, _theme$notification3, _theme$notification4, _theme$notification5;
   var actionsProp = _ref.actions,
     messageProp = _ref.message,
     onClose = _ref.onClose,
@@ -102,7 +102,7 @@ var Notification = function Notification(_ref) {
   var direction;
   if (kind && theme.notification[kind].direction) direction = theme.notification[kind].direction;else direction = theme.notification.direction;
   var background;
-  if (kind && (_theme$notification2 = theme.notification) != null && (_theme$notification2$ = _theme$notification2[status]) != null && (_theme$notification2$2 = _theme$notification2$[kind]) != null && _theme$notification2$2.background) background = theme.notification[status][kind].background;else if ((_theme$notification3 = theme.notification) != null && (_theme$notification3$ = _theme$notification3[status]) != null && _theme$notification3$.background) background = theme.notification[status].background;else background = ((_theme$notification4 = theme.notification) == null ? void 0 : (_theme$notification4$ = _theme$notification4[kind]) == null ? void 0 : (_theme$notification4$2 = _theme$notification4$.container) == null ? void 0 : _theme$notification4$2.background) || theme.notification.container.background;
+  if (kind && (_theme$notification2 = theme.notification) != null && (_theme$notification2 = _theme$notification2[status]) != null && (_theme$notification2 = _theme$notification2[kind]) != null && _theme$notification2.background) background = theme.notification[status][kind].background;else if ((_theme$notification3 = theme.notification) != null && (_theme$notification3 = _theme$notification3[status]) != null && _theme$notification3.background) background = theme.notification[status].background;else background = ((_theme$notification4 = theme.notification) == null || (_theme$notification4 = _theme$notification4[kind]) == null || (_theme$notification4 = _theme$notification4.container) == null ? void 0 : _theme$notification4.background) || theme.notification.container.background;
   var TextWrapper = direction === 'row' ? _Text.Text : _react.Fragment;
 
   // notification is built with two child boxes that contain:
@@ -139,7 +139,7 @@ var Notification = function Notification(_ref) {
       right: 'xsmall'
     }
   }, message), actions) : message;
-  var iconDimension = ((_theme$notification5 = theme.notification) == null ? void 0 : (_theme$notification5$ = _theme$notification5.message) == null ? void 0 : _theme$notification5$.size) || 'medium';
+  var iconDimension = ((_theme$notification5 = theme.notification) == null || (_theme$notification5 = _theme$notification5.message) == null ? void 0 : _theme$notification5.size) || 'medium';
   var content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, theme.notification.container, global ? _extends({}, theme.notification.global.container) : {}, toast ? _extends({}, theme.notification.toast.container) : {}, {
     background: background
     // let internal box control pad

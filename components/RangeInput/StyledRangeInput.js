@@ -86,8 +86,8 @@ var rangeTrackStyle = (0, _styledComponents.css)(["box-sizing:border-box;width:1
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.track && props.theme.rangeInput.track.extend;
 }, function (props) {
-  var _props$theme, _props$theme$rangeInp4;
-  return props.disabled && ((_props$theme = props.theme) == null ? void 0 : (_props$theme$rangeInp4 = _props$theme.rangeInput) == null ? void 0 : _props$theme$rangeInp4.disabled) && disabledRangeInputStyle(props, 'track');
+  var _props$theme;
+  return props.disabled && ((_props$theme = props.theme) == null || (_props$theme = _props$theme.rangeInput) == null ? void 0 : _props$theme.disabled) && disabledRangeInputStyle(props, 'track');
 });
 var rangeThumbStyle = (0, _styledComponents.css)(["box-sizing:border-box;position:relative;border-radius:", ";height:", ";width:", ";overflow:visible;background:", ";-webkit-appearance:none;cursor:pointer;", " ", ";"], function (props) {
   return props.theme.global.spacing;
@@ -100,8 +100,8 @@ var rangeThumbStyle = (0, _styledComponents.css)(["box-sizing:border-box;positio
 }, function (props) {
   return props.theme.rangeInput && props.theme.rangeInput.thumb && props.theme.rangeInput.thumb.extend;
 }, function (props) {
-  var _props$theme2, _props$theme2$rangeIn;
-  return props.disabled && ((_props$theme2 = props.theme) == null ? void 0 : (_props$theme2$rangeIn = _props$theme2.rangeInput) == null ? void 0 : _props$theme2$rangeIn.disabled) && disabledRangeInputStyle(props, 'thumb');
+  var _props$theme2;
+  return props.disabled && ((_props$theme2 = props.theme) == null || (_props$theme2 = _props$theme2.rangeInput) == null ? void 0 : _props$theme2.disabled) && disabledRangeInputStyle(props, 'thumb');
 });
 var firefoxMicrosoftThumbStyle = (0, _styledComponents.css)(["", " margin-top:0px;height:", ";width:", ";", " ", ""], rangeThumbStyle, function (props) {
   return props.theme.global.spacing;

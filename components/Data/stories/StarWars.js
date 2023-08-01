@@ -64,7 +64,7 @@ var StarWars = function StarWars() {
   (0, _react.useEffect)(function () {
     var _abortRef$current;
     // This API is a bit slow, abort any uncompleted requests.
-    abortRef == null ? void 0 : (_abortRef$current = abortRef.current) == null ? void 0 : _abortRef$current.abort();
+    abortRef == null || (_abortRef$current = abortRef.current) == null ? void 0 : _abortRef$current.abort();
     abortRef.current = new AbortController();
     fetchData(view, abortRef.current.signal).then(function (_ref2) {
       var count = _ref2.count,

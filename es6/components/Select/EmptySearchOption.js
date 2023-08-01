@@ -3,12 +3,12 @@ import React from 'react';
 import { Box } from '../Box';
 import { Text } from '../Text';
 export var EmptySearchOption = function EmptySearchOption(_ref) {
-  var _theme$select, _theme$select$emptySe, _theme$select2, _theme$select2$emptyS, _theme$select3, _theme$select3$option;
+  var _theme$select, _theme$select2, _theme$select3;
   var emptySearchMessage = _ref.emptySearchMessage,
     selectOptionsStyle = _ref.selectOptionsStyle,
     theme = _ref.theme;
-  return /*#__PURE__*/React.createElement(Box, (theme == null ? void 0 : (_theme$select = theme.select) == null ? void 0 : (_theme$select$emptySe = _theme$select.emptySearchMessage) == null ? void 0 : _theme$select$emptySe.container) || selectOptionsStyle, /*#__PURE__*/React.createElement(Text, _extends({
+  return /*#__PURE__*/React.createElement(Box, (theme == null || (_theme$select = theme.select) == null || (_theme$select = _theme$select.emptySearchMessage) == null ? void 0 : _theme$select.container) || selectOptionsStyle, /*#__PURE__*/React.createElement(Text, _extends({
     "aria-live": "polite",
     role: "alert"
-  }, (theme == null ? void 0 : (_theme$select2 = theme.select) == null ? void 0 : (_theme$select2$emptyS = _theme$select2.emptySearchMessage) == null ? void 0 : _theme$select2$emptyS.text) || ((_theme$select3 = theme.select) == null ? void 0 : (_theme$select3$option = _theme$select3.options) == null ? void 0 : _theme$select3$option.text)), emptySearchMessage));
+  }, (theme == null || (_theme$select2 = theme.select) == null || (_theme$select2 = _theme$select2.emptySearchMessage) == null ? void 0 : _theme$select2.text) || ((_theme$select3 = theme.select) == null || (_theme$select3 = _theme$select3.options) == null ? void 0 : _theme$select3.text)), emptySearchMessage));
 };

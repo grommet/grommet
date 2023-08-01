@@ -299,9 +299,9 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var chartBounds = chartValues.map(function (_, index) {
       var type = charts[index].type;
       if (stackedChartType[type]) {
-        var _chartValues$index, _chartValues$index$;
+        var _chartValues$index;
         // merge values for bars, areas, and lines cases
-        var mergedValues = ((_chartValues$index = chartValues[index]) == null ? void 0 : (_chartValues$index$ = _chartValues$index[0]) == null ? void 0 : _chartValues$index$.slice(0)) || [];
+        var mergedValues = ((_chartValues$index = chartValues[index]) == null || (_chartValues$index = _chartValues$index[0]) == null ? void 0 : _chartValues$index.slice(0)) || [];
         chartValues[index].slice(1) // skip first index as that is the x value
         .filter(function (values) {
           return values;
@@ -549,7 +549,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var xAxisElement = axis && axis.x && (chartProps.length || boundsProp != null && boundsProp.x) ? /*#__PURE__*/React.createElement(XAxis, {
     axis: axis,
-    values: (boundsProp == null ? void 0 : (_boundsProp$x = boundsProp.x) == null ? void 0 : _boundsProp$x.slice(0)) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis.x,
+    values: (boundsProp == null || (_boundsProp$x = boundsProp.x) == null ? void 0 : _boundsProp$x.slice(0)) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis.x,
     pad: !horizontal && offsetPad ? _extends({}, pad, {
       end: offsetPad
     }) : pad,
@@ -563,7 +563,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }) : null;
   var yAxisElement = axis && axis.y && (chartProps.length || boundsProp != null && boundsProp.y) ? /*#__PURE__*/React.createElement(YAxis, {
     axis: axis,
-    values: (boundsProp == null ? void 0 : (_boundsProp$y = boundsProp.y) == null ? void 0 : _boundsProp$y.slice(0).reverse()) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis.y,
+    values: (boundsProp == null || (_boundsProp$y = boundsProp.y) == null ? void 0 : _boundsProp$y.slice(0).reverse()) || (Array.isArray(chartProps[0]) ? chartProps[0][0] : chartProps[0]).axis.y,
     pad: horizontal && offsetPad ? _extends({}, pad, {
       bottom: offsetPad
     }) : pad,

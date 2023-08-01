@@ -10,7 +10,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$tag$size, _theme$tag$size$size, _theme$tag$size2, _theme$tag$size2$size, _theme$tag$size3, _theme$tag$size3$size, _theme$tag$size4, _theme$tag$size4$size;
+  var _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4;
   var name = _ref.name,
     value = _ref.value,
     size = _ref.size,
@@ -23,13 +23,13 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     align: 'center',
     background: theme.tag.background,
     border: theme.tag.border,
-    round: ((_theme$tag$size = theme.tag.size) == null ? void 0 : (_theme$tag$size$size = _theme$tag$size[size]) == null ? void 0 : _theme$tag$size$size.round) || theme.tag.round
+    round: ((_theme$tag$size = theme.tag.size) == null || (_theme$tag$size = _theme$tag$size[size]) == null ? void 0 : _theme$tag$size.round) || theme.tag.round
   }, rest);
   var contents = /*#__PURE__*/React.createElement(Box, {
     width: {
       min: 'min-content'
     },
-    pad: ((_theme$tag$size2 = theme.tag.size) == null ? void 0 : (_theme$tag$size2$size = _theme$tag$size2[size]) == null ? void 0 : _theme$tag$size2$size.pad) || theme.tag.pad
+    pad: ((_theme$tag$size2 = theme.tag.size) == null || (_theme$tag$size2 = _theme$tag$size2[size]) == null ? void 0 : _theme$tag$size2.pad) || theme.tag.pad
   }, /*#__PURE__*/React.createElement(Text, {
     size: size
   }, name && /*#__PURE__*/React.createElement(Text, _extends({}, theme.tag.name, {
@@ -53,8 +53,8 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     plain: true,
     hoverIndicator: true,
     focusIndicator: true,
-    icon: /*#__PURE__*/React.createElement(FormClose, (_theme$tag$size3 = theme.tag.size) == null ? void 0 : (_theme$tag$size3$size = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3$size.icon),
-    round: ((_theme$tag$size4 = theme.tag.size) == null ? void 0 : (_theme$tag$size4$size = _theme$tag$size4[size]) == null ? void 0 : _theme$tag$size4$size.round) || theme.tag.round
+    icon: /*#__PURE__*/React.createElement(FormClose, (_theme$tag$size3 = theme.tag.size) == null || (_theme$tag$size3 = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3.icon),
+    round: ((_theme$tag$size4 = theme.tag.size) == null || (_theme$tag$size4 = _theme$tag$size4[size]) == null ? void 0 : _theme$tag$size4.round) || theme.tag.round
   }, theme.tag.remove))) : /*#__PURE__*/React.createElement(StyledTagButton, _extends({
     flex: false,
     plain: true,

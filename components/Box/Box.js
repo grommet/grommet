@@ -57,7 +57,7 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (skeletonProp != null && (_skeletonProp$message = skeletonProp.message) != null && _skeletonProp$message.start) announce(skeletonProp.message.start);else if (typeof (skeletonProp == null ? void 0 : skeletonProp.message) === 'string') announce(skeletonProp.message);
     return function () {
       var _skeletonProp$message2;
-      return (skeletonProp == null ? void 0 : (_skeletonProp$message2 = skeletonProp.message) == null ? void 0 : _skeletonProp$message2.end) && announce(skeletonProp.message.end);
+      return (skeletonProp == null || (_skeletonProp$message2 = skeletonProp.message) == null ? void 0 : _skeletonProp$message2.end) && announce(skeletonProp.message.end);
     };
   }, [announce, skeletonProp]);
   var focusable = (0, _react.useMemo)(function () {

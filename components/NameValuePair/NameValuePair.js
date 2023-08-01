@@ -12,7 +12,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 var NameValuePair = function NameValuePair(_ref) {
-  var _theme$nameValuePair, _theme$nameValuePair$;
+  var _theme$nameValuePair;
   var children = _ref.children,
     nameProp = _ref.name;
   var _useContext = (0, _react.useContext)(_NameValueListContext.NameValueListContext),
@@ -30,7 +30,7 @@ var NameValuePair = function NameValuePair(_ref) {
   // <dl> elements must only directly contain
   // properly-ordered <dt> and <dd> groups
   var valueGap;
-  if (column && (_theme$nameValuePair = theme.nameValuePair) != null && (_theme$nameValuePair$ = _theme$nameValuePair.column) != null && _theme$nameValuePair$.gap) valueGap = {
+  if (column && (_theme$nameValuePair = theme.nameValuePair) != null && (_theme$nameValuePair = _theme$nameValuePair.column) != null && _theme$nameValuePair.gap) valueGap = {
     bottom: theme.nameValuePair.column.gap
   };
   var name;

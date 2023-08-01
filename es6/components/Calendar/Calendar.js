@@ -426,14 +426,14 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     }));
   };
   var handleRange = useCallback(function (selectedDate) {
-    var _priorRange$, _priorRange$$, _priorRange$2, _priorRange$2$;
+    var _priorRange$, _priorRange$2;
     var result;
     var priorRange = normalizeRange(value, activeDate);
     // deselect when date clicked was the start/end of the range
-    if (selectedDate.getTime() === (priorRange == null ? void 0 : (_priorRange$ = priorRange[0]) == null ? void 0 : (_priorRange$$ = _priorRange$[0]) == null ? void 0 : _priorRange$$.getTime())) {
+    if (selectedDate.getTime() === (priorRange == null || (_priorRange$ = priorRange[0]) == null || (_priorRange$ = _priorRange$[0]) == null ? void 0 : _priorRange$.getTime())) {
       result = [[undefined, priorRange[0][1]]];
       setActiveDate('start');
-    } else if (selectedDate.getTime() === (priorRange == null ? void 0 : (_priorRange$2 = priorRange[0]) == null ? void 0 : (_priorRange$2$ = _priorRange$2[1]) == null ? void 0 : _priorRange$2$.getTime())) {
+    } else if (selectedDate.getTime() === (priorRange == null || (_priorRange$2 = priorRange[0]) == null || (_priorRange$2 = _priorRange$2[1]) == null ? void 0 : _priorRange$2.getTime())) {
       result = [[priorRange[0][0], undefined]];
       setActiveDate('end');
     }

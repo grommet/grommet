@@ -6,7 +6,7 @@ import { ThemeContext } from 'styled-components';
 import { findScrollParent, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 var Header = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
-  var _theme$header2, _theme$header2$sticky;
+  var _theme$header2;
   var sticky = _ref.sticky,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext);
@@ -23,11 +23,11 @@ var Header = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           header.style.top = "-" + header.getBoundingClientRect().height + "px";
           header.style.zIndex = '';
         } else if (scrollTop - nextScrollTop > 0) {
-          var _theme$header, _theme$header$sticky;
+          var _theme$header;
           // ensure that header moves with the target
           header.style.position = 'sticky';
           header.style.top = '0px';
-          header.style.zIndex = "" + ((_theme$header = theme.header) == null ? void 0 : (_theme$header$sticky = _theme$header.sticky) == null ? void 0 : _theme$header$sticky.zIndex);
+          header.style.zIndex = "" + ((_theme$header = theme.header) == null || (_theme$header = _theme$header.sticky) == null ? void 0 : _theme$header.zIndex);
           header.style.transition = 'top 0.6s';
         }
         scrollTop = nextScrollTop;
@@ -44,7 +44,7 @@ var Header = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         window.removeEventListener('scroll', updateScrollDir, true);
       }
     };
-  }, [headerRef, sticky, (_theme$header2 = theme.header) == null ? void 0 : (_theme$header2$sticky = _theme$header2.sticky) == null ? void 0 : _theme$header2$sticky.zIndex]);
+  }, [headerRef, sticky, (_theme$header2 = theme.header) == null || (_theme$header2 = _theme$header2.sticky) == null ? void 0 : _theme$header2.zIndex]);
   return /*#__PURE__*/React.createElement(Box, _extends({
     align: "center",
     as: "header",

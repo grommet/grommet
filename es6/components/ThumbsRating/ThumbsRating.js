@@ -14,20 +14,20 @@ var ThumbsRating = function ThumbsRating(_ref) {
     direction: "row",
     options: ['like', 'dislike']
   }, rest), function (option, _ref2) {
-    var _theme$thumbsRating3, _theme$thumbsRating3$, _theme$thumbsRating4, _theme$thumbsRating4$;
+    var _theme$thumbsRating3, _theme$thumbsRating4;
     var checked = _ref2.checked;
     if (option === 'like') {
-      var _theme$thumbsRating, _theme$thumbsRating$l, _theme$thumbsRating2, _theme$thumbsRating2$;
+      var _theme$thumbsRating, _theme$thumbsRating2;
       return checked ? /*#__PURE__*/React.createElement(LikeFill, {
-        color: (_theme$thumbsRating = theme.thumbsRating) == null ? void 0 : (_theme$thumbsRating$l = _theme$thumbsRating.like) == null ? void 0 : _theme$thumbsRating$l.color
+        color: (_theme$thumbsRating = theme.thumbsRating) == null || (_theme$thumbsRating = _theme$thumbsRating.like) == null ? void 0 : _theme$thumbsRating.color
       }) : /*#__PURE__*/React.createElement(Like, {
-        color: (_theme$thumbsRating2 = theme.thumbsRating) == null ? void 0 : (_theme$thumbsRating2$ = _theme$thumbsRating2.like) == null ? void 0 : _theme$thumbsRating2$.color
+        color: (_theme$thumbsRating2 = theme.thumbsRating) == null || (_theme$thumbsRating2 = _theme$thumbsRating2.like) == null ? void 0 : _theme$thumbsRating2.color
       });
     }
     return checked ? /*#__PURE__*/React.createElement(DislikeFill, {
-      color: (_theme$thumbsRating3 = theme.thumbsRating) == null ? void 0 : (_theme$thumbsRating3$ = _theme$thumbsRating3.dislike) == null ? void 0 : _theme$thumbsRating3$.color
+      color: (_theme$thumbsRating3 = theme.thumbsRating) == null || (_theme$thumbsRating3 = _theme$thumbsRating3.dislike) == null ? void 0 : _theme$thumbsRating3.color
     }) : /*#__PURE__*/React.createElement(Dislike, {
-      color: (_theme$thumbsRating4 = theme.thumbsRating) == null ? void 0 : (_theme$thumbsRating4$ = _theme$thumbsRating4.dislike) == null ? void 0 : _theme$thumbsRating4$.color
+      color: (_theme$thumbsRating4 = theme.thumbsRating) == null || (_theme$thumbsRating4 = _theme$thumbsRating4.dislike) == null ? void 0 : _theme$thumbsRating4.color
     });
   });
 };

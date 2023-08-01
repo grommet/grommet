@@ -14,8 +14,8 @@ var StyledSkeleton = _styledComponents["default"].div.withConfig({
 })(["display:flex;box-sizing:border-box;", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.background && (0, _utils.backgroundStyle)(props.background, props.theme);
 }, function (props) {
-  var _props$theme$text, _props$theme$text$med;
-  return (0, _utils.heightStyle)(props.heightProp || ((_props$theme$text = props.theme.text) == null ? void 0 : (_props$theme$text$med = _props$theme$text.medium) == null ? void 0 : _props$theme$text$med.height), props.theme);
+  var _props$theme$text;
+  return (0, _utils.heightStyle)(props.heightProp || ((_props$theme$text = props.theme.text) == null || (_props$theme$text = _props$theme$text.medium) == null ? void 0 : _props$theme$text.height), props.theme);
 }, function (props) {
   return (0, _utils.widthStyle)(props.widthProp || '100%', props.theme);
 }, function (props) {

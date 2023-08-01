@@ -22,8 +22,8 @@ var AnalyticsProvider = function AnalyticsProvider(_ref) {
     var observer;
     if (onAnalytics) {
       observer = new window.MutationObserver(function () {
-        var _window, _window$location;
-        var url = (_window = window) == null ? void 0 : (_window$location = _window.location) == null ? void 0 : _window$location.href;
+        var _window;
+        var url = (_window = window) == null || (_window = _window.location) == null ? void 0 : _window.href;
         var previousUrl = lastUrlRef.current;
         if (url !== previousUrl) {
           lastUrlRef.current = url;

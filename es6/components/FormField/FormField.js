@@ -194,7 +194,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       return /*#__PURE__*/cloneElement(child, {
         plain: true,
         focusIndicator: false,
-        pad: 'CheckBox'.indexOf(child.type.displayName) !== -1 ? formFieldTheme == null ? void 0 : (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
+        pad: 'CheckBox'.indexOf(child.type.displayName) !== -1 ? formFieldTheme == null || (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
       });
     }
     return child;

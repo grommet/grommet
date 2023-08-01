@@ -141,7 +141,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   // resets the textValue
   useEffect(function () {
     var _ref$current;
-    var form = ref == null ? void 0 : (_ref$current = ref.current) == null ? void 0 : _ref$current.form;
+    var form = ref == null || (_ref$current = ref.current) == null ? void 0 : _ref$current.form;
     var handleFormReset = function handleFormReset(e) {
       if (schema && ref.current && e.target.contains(ref.current)) {
         setTextValue('');

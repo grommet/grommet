@@ -70,7 +70,7 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
       while (obj && parts.length) obj = obj[parts.shift()];
     }
     if (obj) {
-      var _obj, _obj$icon, _obj$icon$props;
+      var _obj;
       // use passed in color for background if the theme has a background color
       var background = colorProp && obj.background && obj.background.color ? colorProp : obj.background;
 
@@ -78,14 +78,14 @@ var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
       // to indicate that the theme doesn't want any text color
       var objColor = obj.color || (Object.prototype.hasOwnProperty.call(obj, 'color') && obj.color === undefined ? false : undefined);
       var color = void 0;
-      if ((_obj = obj) != null && (_obj$icon = _obj.icon) != null && (_obj$icon$props = _obj$icon.props) != null && _obj$icon$props.color) color = obj.icon.props.color;
+      if ((_obj = obj) != null && (_obj = _obj.icon) != null && (_obj = _obj.props) != null && _obj.color) color = obj.icon.props.color;
       // if no icon defined for this state, see if there is an icon
       // with color defined at one higher level
       else if (paths[index + 1]) {
-        var _obj2, _obj2$icon, _obj2$icon$props;
+        var _obj2;
         var _parts = paths[index + 1].split('.');
         while (baseObj && _parts.length) obj = baseObj[_parts.shift()];
-        if ((_obj2 = obj) != null && (_obj2$icon = _obj2.icon) != null && (_obj2$icon$props = _obj2$icon.props) != null && _obj2$icon$props.color) color = obj.icon.props.color;
+        if ((_obj2 = obj) != null && (_obj2 = _obj2.icon) != null && (_obj2 = _obj2.props) != null && _obj2.color) color = obj.icon.props.color;
       }
       // use passed in color for text if the theme doesn't have
       // background or border color
@@ -145,7 +145,7 @@ var getPropertyColor = function getPropertyColor(property, paths, theme, kind, p
   return result;
 };
 var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _theme$button$kind, _theme$button2, _theme$button2$badge;
+  var _theme$button$kind, _theme$button2;
   var active = _ref.active,
     _ref$align = _ref.align,
     align = _ref$align === void 0 ? 'center' : _ref$align,
@@ -333,9 +333,9 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var second = reverse ? buttonIcon : label;
   var contents;
   if (first && second) {
-    var _theme$button, _theme$button$kind2;
+    var _theme$button;
     contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      direction: ((_theme$button = theme.button) == null ? void 0 : (_theme$button$kind2 = _theme$button[kind]) == null ? void 0 : _theme$button$kind2.direction) || 'row',
+      direction: ((_theme$button = theme.button) == null || (_theme$button = _theme$button[kind]) == null ? void 0 : _theme$button.direction) || 'row',
       align: "center",
       justify: justify || (align === 'center' ? 'center' : 'between'),
       gap: gap || theme.button.gap,
@@ -357,7 +357,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // (!kind && icon && !label) is necessary because for old button logic,
   // if button has icon but not label, it will be considered "plain",
   // so no border or background will be applied
-  var innerBadge = ((_theme$button2 = theme.button) == null ? void 0 : (_theme$button2$badge = _theme$button2.badge) == null ? void 0 : _theme$button2$badge.align) !== 'container' && (!background && !border || !kind && icon && !label);
+  var innerBadge = ((_theme$button2 = theme.button) == null || (_theme$button2 = _theme$button2.badge) == null ? void 0 : _theme$button2.align) !== 'container' && (!background && !border || !kind && icon && !label);
   if (badgeProp && innerBadge) {
     contents = /*#__PURE__*/_react["default"].createElement(_Badge.Badge, {
       content: badgeProp

@@ -23,7 +23,7 @@ var Skeleton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
   var skeleton = (0, _SkeletonContext.useSkeleton)();
   var depth = (skeleton == null ? void 0 : skeleton.depth) || 0;
-  var colors = colorsProp || (theme == null ? void 0 : (_theme$skeleton = theme.skeleton) == null ? void 0 : _theme$skeleton.colors);
+  var colors = colorsProp || (theme == null || (_theme$skeleton = theme.skeleton) == null ? void 0 : _theme$skeleton.colors);
   var themeColors = colors[theme.dark ? 'dark' : 'light'];
   var background = themeColors[(depth + 1) % themeColors.length];
   return /*#__PURE__*/_react["default"].createElement(_StyledSkeleton.StyledSkeleton, _extends({

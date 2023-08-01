@@ -6,7 +6,7 @@ import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
 var NameValuePair = function NameValuePair(_ref) {
-  var _theme$nameValuePair, _theme$nameValuePair$;
+  var _theme$nameValuePair;
   var children = _ref.children,
     nameProp = _ref.name;
   var _useContext = useContext(NameValueListContext),
@@ -24,7 +24,7 @@ var NameValuePair = function NameValuePair(_ref) {
   // <dl> elements must only directly contain
   // properly-ordered <dt> and <dd> groups
   var valueGap;
-  if (column && (_theme$nameValuePair = theme.nameValuePair) != null && (_theme$nameValuePair$ = _theme$nameValuePair.column) != null && _theme$nameValuePair$.gap) valueGap = {
+  if (column && (_theme$nameValuePair = theme.nameValuePair) != null && (_theme$nameValuePair = _theme$nameValuePair.column) != null && _theme$nameValuePair.gap) valueGap = {
     bottom: theme.nameValuePair.column.gap
   };
   var name;

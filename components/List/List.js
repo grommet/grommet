@@ -49,12 +49,12 @@ var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({
   forceOutline: true,
   skipSvgChildren: true
 }), function (props) {
-  var _props$theme$list, _props$theme$list$ite;
+  var _props$theme$list;
   var disabledStyle;
-  if (props.isDisabled && (_props$theme$list = props.theme.list) != null && (_props$theme$list$ite = _props$theme$list.item) != null && _props$theme$list$ite.disabled) {
-    var _props$theme$list$ite2 = props.theme.list.item.disabled,
-      color = _props$theme$list$ite2.color,
-      cursor = _props$theme$list$ite2.cursor;
+  if (props.isDisabled && (_props$theme$list = props.theme.list) != null && (_props$theme$list = _props$theme$list.item) != null && _props$theme$list.disabled) {
+    var _props$theme$list$ite = props.theme.list.item.disabled,
+      color = _props$theme$list$ite.color,
+      cursor = _props$theme$list$ite.cursor;
     disabledStyle = {
       color: (0, _utils.normalizeColor)(color, props.theme),
       cursor: cursor

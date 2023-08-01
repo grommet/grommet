@@ -45,9 +45,9 @@ export var StyledSelectDropButton = styled(DropButton).withConfig({
 })(["", ";", ";", ";"], function (props) {
   return !props.plainSelect && controlBorderStyle;
 }, function (props) {
-  var _props$theme$select, _props$theme$select$c;
-  return (_props$theme$select = props.theme.select) == null ? void 0 : (_props$theme$select$c = _props$theme$select.control) == null ? void 0 : _props$theme$select$c.extend;
+  var _props$theme$select;
+  return (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
 }, function (props) {
-  var _props$theme$select2, _props$theme$select2$;
-  return props.open && ((_props$theme$select2 = props.theme.select) == null ? void 0 : (_props$theme$select2$ = _props$theme$select2.control) == null ? void 0 : _props$theme$select2$.open);
+  var _props$theme$select2;
+  return props.open && ((_props$theme$select2 = props.theme.select) == null || (_props$theme$select2 = _props$theme$select2.control) == null ? void 0 : _props$theme$select2.open);
 });

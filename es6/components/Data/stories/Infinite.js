@@ -37,7 +37,7 @@ var fetchLaunches = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           query = buildQuery(view);
-          sort = (_sort = {}, _sort[(view == null ? void 0 : (_view$sort = view.sort) == null ? void 0 : _view$sort.property) || 'name'] = (view == null ? void 0 : (_view$sort2 = view.sort) == null ? void 0 : _view$sort2.direction) || 'asc', _sort);
+          sort = (_sort = {}, _sort[(view == null || (_view$sort = view.sort) == null ? void 0 : _view$sort.property) || 'name'] = (view == null || (_view$sort2 = view.sort) == null ? void 0 : _view$sort2.direction) || 'asc', _sort);
           body = {
             options: {
               populate: [{
@@ -188,7 +188,7 @@ export var Table = function Table() {
     });
   }, [search, limit, sort, view.properties]);
   var numberItems = (data == null ? void 0 : data.totalDocs) || 0;
-  var rocketOptions = (rockets == null ? void 0 : (_rockets$docs = rockets.docs) == null ? void 0 : _rockets$docs.map(function (_ref4) {
+  var rocketOptions = (rockets == null || (_rockets$docs = rockets.docs) == null ? void 0 : _rockets$docs.map(function (_ref4) {
     var name = _ref4.name,
       id = _ref4.id;
     return {

@@ -328,7 +328,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   if (itemCount && Array.isArray(items[0])) {
     var index = 0;
     menuContent = items.map(function (group, groupIndex) {
-      var _theme$menu$group, _theme$menu$group$sep, _theme$menu$group2, _theme$menu$group2$se, _theme$menu$group3;
+      var _theme$menu$group, _theme$menu$group2, _theme$menu$group3;
       return /*#__PURE__*/_react["default"].createElement(_Box.Box
       // eslint-disable-next-line react/no-array-index-key
       , {
@@ -338,8 +338,8 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         border: {
           side: 'top',
-          color: (_theme$menu$group = theme.menu.group) == null ? void 0 : (_theme$menu$group$sep = _theme$menu$group.separator) == null ? void 0 : _theme$menu$group$sep.color,
-          size: (_theme$menu$group2 = theme.menu.group) == null ? void 0 : (_theme$menu$group2$se = _theme$menu$group2.separator) == null ? void 0 : _theme$menu$group2$se.size
+          color: (_theme$menu$group = theme.menu.group) == null || (_theme$menu$group = _theme$menu$group.separator) == null ? void 0 : _theme$menu$group.color,
+          size: (_theme$menu$group2 = theme.menu.group) == null || (_theme$menu$group2 = _theme$menu$group2.separator) == null ? void 0 : _theme$menu$group2.size
         }
       })), /*#__PURE__*/_react["default"].createElement(_Box.Box, (_theme$menu$group3 = theme.menu.group) == null ? void 0 : _theme$menu$group3.container, group.map(function (item) {
         // item index needs to be its index in the entire menu as if

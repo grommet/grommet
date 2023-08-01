@@ -267,20 +267,20 @@ export var normalizeCellProps = function normalizeCellProps(props, theme) {
       pinned: {}
     };
     cellPropertyNames.forEach(function (propName) {
-      var _props$propName, _theme$dataTable, _theme$dataTable$cont, _theme$table, _theme$table$context, _props$propName3, _props$propName3$pinn, _props$propName5, _theme$dataTable2, _theme$dataTable2$pin, _theme$dataTable2$pin2;
-      var value = (props == null ? void 0 : (_props$propName = props[propName]) == null ? void 0 : _props$propName[context]) ||
+      var _props$propName, _theme$dataTable, _theme$table, _props$propName3, _props$propName5, _theme$dataTable2;
+      var value = (props == null || (_props$propName = props[propName]) == null ? void 0 : _props$propName[context]) ||
       // if the propName is used without context, it applies to all contexts
       tableContextNames.every(function (n) {
         var _props$propName2;
         return !(props != null && (_props$propName2 = props[propName]) != null && _props$propName2[n]);
-      }) && (props == null ? void 0 : props[propName]) || (theme == null ? void 0 : (_theme$dataTable = theme.dataTable) == null ? void 0 : (_theme$dataTable$cont = _theme$dataTable[context]) == null ? void 0 : _theme$dataTable$cont[propName]) || (theme == null ? void 0 : (_theme$table = theme.table) == null ? void 0 : (_theme$table$context = _theme$table[context]) == null ? void 0 : _theme$table$context[propName]);
+      }) && (props == null ? void 0 : props[propName]) || (theme == null || (_theme$dataTable = theme.dataTable) == null || (_theme$dataTable = _theme$dataTable[context]) == null ? void 0 : _theme$dataTable[propName]) || (theme == null || (_theme$table = theme.table) == null || (_theme$table = _theme$table[context]) == null ? void 0 : _theme$table[propName]);
       if (value !== undefined) result[context][propName] = value;
 
       // pinned case
-      value = (props == null ? void 0 : (_props$propName3 = props[propName]) == null ? void 0 : (_props$propName3$pinn = _props$propName3.pinned) == null ? void 0 : _props$propName3$pinn[context]) || context === 'body' && tableContextNames.every(function (n) {
-        var _props$propName4, _props$propName4$pinn;
-        return !(props != null && (_props$propName4 = props[propName]) != null && (_props$propName4$pinn = _props$propName4.pinned) != null && _props$propName4$pinn[n]);
-      }) && (props == null ? void 0 : (_props$propName5 = props[propName]) == null ? void 0 : _props$propName5.pinned) || (theme == null ? void 0 : (_theme$dataTable2 = theme.dataTable) == null ? void 0 : (_theme$dataTable2$pin = _theme$dataTable2.pinned) == null ? void 0 : (_theme$dataTable2$pin2 = _theme$dataTable2$pin[context]) == null ? void 0 : _theme$dataTable2$pin2[propName]);
+      value = (props == null || (_props$propName3 = props[propName]) == null || (_props$propName3 = _props$propName3.pinned) == null ? void 0 : _props$propName3[context]) || context === 'body' && tableContextNames.every(function (n) {
+        var _props$propName4;
+        return !(props != null && (_props$propName4 = props[propName]) != null && (_props$propName4 = _props$propName4.pinned) != null && _props$propName4[n]);
+      }) && (props == null || (_props$propName5 = props[propName]) == null ? void 0 : _props$propName5.pinned) || (theme == null || (_theme$dataTable2 = theme.dataTable) == null || (_theme$dataTable2 = _theme$dataTable2.pinned) == null || (_theme$dataTable2 = _theme$dataTable2[context]) == null ? void 0 : _theme$dataTable2[propName]);
       if (value !== undefined) {
         if (propName === 'background' && theme.background && value.opacity && !value.color)
           // theme context has an active background color but the
@@ -304,7 +304,7 @@ export var normalizeRowCellProps = function normalizeRowCellProps(rowProps, cell
   };
   ['background', 'border', 'pad'].forEach(function (propName) {
     var _rowProps$primaryKey;
-    var row = primaryKey && rowProps && (rowProps == null ? void 0 : (_rowProps$primaryKey = rowProps[primaryKey]) == null ? void 0 : _rowProps$primaryKey[propName]);
+    var row = primaryKey && rowProps && (rowProps == null || (_rowProps$primaryKey = rowProps[primaryKey]) == null ? void 0 : _rowProps$primaryKey[propName]);
     var cell = cellProps[propName];
     var value = row && (Array.isArray(row) ? row[index % row.length] : row) || (Array.isArray(cell) ? cell[index % cell.length] : cell);
     if (value !== undefined) result[propName] = value;

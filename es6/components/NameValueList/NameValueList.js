@@ -7,7 +7,7 @@ import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from './NameValueListContext';
 var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$nameValueList$, _theme$nameValueList$2;
+  var _theme$nameValueList$;
   var align = _ref.align,
     _ref$layout = _ref.layout,
     layout = _ref$layout === void 0 ? 'column' : _ref$layout,
@@ -32,7 +32,7 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth
   };else if (layout === 'column' && pairProps.direction === 'row') columns = [nameWidth, !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth];else columns = [valueWidth];
   var gap = theme.nameValueList.gap;
-  if ((pairProps.direction === 'column' || size === 'small') && (_theme$nameValueList$ = theme.nameValueList.pair) != null && (_theme$nameValueList$2 = _theme$nameValueList$.column) != null && _theme$nameValueList$2.gap) {
+  if ((pairProps.direction === 'column' || size === 'small') && (_theme$nameValueList$ = theme.nameValueList.pair) != null && (_theme$nameValueList$ = _theme$nameValueList$.column) != null && _theme$nameValueList$.gap) {
     gap = theme.nameValueList.pair.column.gap;
   }
   var listContextValue = useMemo(function () {

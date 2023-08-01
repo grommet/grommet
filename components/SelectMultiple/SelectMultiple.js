@@ -28,11 +28,11 @@ var StyledSelectBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 })(["", ";", ";", ";"], function (props) {
   return !props.plainSelect && _utils.controlBorderStyle;
 }, function (props) {
-  var _props$theme$select, _props$theme$select$c;
-  return (_props$theme$select = props.theme.select) == null ? void 0 : (_props$theme$select$c = _props$theme$select.control) == null ? void 0 : _props$theme$select$c.extend;
+  var _props$theme$select;
+  return (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
 }, function (props) {
-  var _props$theme$select$c2;
-  return props.open && ((_props$theme$select$c2 = props.theme.select.control) == null ? void 0 : _props$theme$select$c2.open);
+  var _props$theme$select$c;
+  return props.open && ((_props$theme$select$c = props.theme.select.control) == null ? void 0 : _props$theme$select$c.open);
 });
 _StyledSelect.StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(_StyledSelect.StyledSelectDropButton.defaultProps, _defaultProps.defaultProps);

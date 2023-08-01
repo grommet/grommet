@@ -16,19 +16,19 @@ var fontStyle = function fontStyle(props) {
   return css(["font-size:", ";line-height:", ";"], data.size, props.hasIcon && !props.hasLabel ? 0 : data.height);
 };
 var padFromTheme = function padFromTheme(size, theme, themeObj, kind, iconOnly) {
-  var _themeObj$size, _themeObj$size$size, _themeObj$size$size$i, _themeObj$size3, _themeObj$size3$size, _themeObj$size3$size$;
+  var _themeObj$size, _themeObj$size3;
   if (size === void 0) {
     size = 'medium';
   }
-  if (size && iconOnly && themeObj != null && (_themeObj$size = themeObj.size) != null && (_themeObj$size$size = _themeObj$size[size]) != null && (_themeObj$size$size$i = _themeObj$size$size.iconOnly) != null && _themeObj$size$size$i.pad) {
-    var _themeObj$size2, _themeObj$size2$size, _themeObj$size2$size$;
-    var pad = themeObj == null ? void 0 : (_themeObj$size2 = themeObj.size) == null ? void 0 : (_themeObj$size2$size = _themeObj$size2[size]) == null ? void 0 : (_themeObj$size2$size$ = _themeObj$size2$size.iconOnly) == null ? void 0 : _themeObj$size2$size$.pad;
+  if (size && iconOnly && themeObj != null && (_themeObj$size = themeObj.size) != null && (_themeObj$size = _themeObj$size[size]) != null && (_themeObj$size = _themeObj$size.iconOnly) != null && _themeObj$size.pad) {
+    var _themeObj$size2;
+    var pad = themeObj == null || (_themeObj$size2 = themeObj.size) == null || (_themeObj$size2 = _themeObj$size2[size]) == null || (_themeObj$size2 = _themeObj$size2.iconOnly) == null ? void 0 : _themeObj$size2.pad;
     return {
       vertical: typeof pad === 'string' ? pad : pad.vertical,
       horizontal: typeof pad === 'string' ? pad : pad.horizontal
     };
   }
-  if (size && themeObj != null && (_themeObj$size3 = themeObj.size) != null && (_themeObj$size3$size = _themeObj$size3[size]) != null && (_themeObj$size3$size$ = _themeObj$size3$size[kind]) != null && _themeObj$size3$size$.pad) {
+  if (size && themeObj != null && (_themeObj$size3 = themeObj.size) != null && (_themeObj$size3 = _themeObj$size3[size]) != null && (_themeObj$size3 = _themeObj$size3[kind]) != null && _themeObj$size3.pad) {
     return themeObj.size[size][kind].pad;
   }
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {

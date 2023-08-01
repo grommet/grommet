@@ -263,8 +263,8 @@ var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-fa
 // to ensure there is reasonable space between the icon and value or placeholder
 exports.inputStyle = inputStyle;
 var inputPadForIcon = (0, _styledComponents.css)(["", ""], function (props) {
-  var _props$theme, _props$theme$icon, _props$theme$icon2, _props$theme$icon2$si;
-  var pad = (_props$theme = props.theme) != null && (_props$theme$icon = _props$theme.icon) != null && _props$theme$icon.matchSize ? (0, _mixins.parseMetricToNum)((_props$theme$icon2 = props.theme.icon) == null ? void 0 : (_props$theme$icon2$si = _props$theme$icon2.size) == null ? void 0 : _props$theme$icon2$si[(props == null ? void 0 : props.size) || 'medium']) + (0, _mixins.parseMetricToNum)(props.theme.global.edgeSize.medium) + "px" : props.theme.global.edgeSize.large;
+  var _props$theme, _props$theme$icon;
+  var pad = (_props$theme = props.theme) != null && (_props$theme = _props$theme.icon) != null && _props$theme.matchSize ? (0, _mixins.parseMetricToNum)((_props$theme$icon = props.theme.icon) == null || (_props$theme$icon = _props$theme$icon.size) == null ? void 0 : _props$theme$icon[(props == null ? void 0 : props.size) || 'medium']) + (0, _mixins.parseMetricToNum)(props.theme.global.edgeSize.medium) + "px" : props.theme.global.edgeSize.large;
   return props.reverse ? "padding-right: " + pad + ";" : "padding-left: " + pad + ";";
 });
 exports.inputPadForIcon = inputPadForIcon;

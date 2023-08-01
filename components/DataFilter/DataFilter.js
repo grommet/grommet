@@ -70,8 +70,8 @@ var DataFilter = function DataFilter(_ref) {
       var _properties$property, _properties$property2;
       if (children) return [undefined, undefined]; // caller driving
 
-      var optionsIn = optionsProp || (properties == null ? void 0 : (_properties$property = properties[property]) == null ? void 0 : _properties$property.options);
-      var rangeIn = rangeProp || (properties == null ? void 0 : (_properties$property2 = properties[property]) == null ? void 0 : _properties$property2.range);
+      var optionsIn = optionsProp || (properties == null || (_properties$property = properties[property]) == null ? void 0 : _properties$property.options);
+      var rangeIn = rangeProp || (properties == null || (_properties$property2 = properties[property]) == null ? void 0 : _properties$property2.range);
       if (optionsIn) return [optionsIn, undefined];
       if (rangeIn) return [undefined, [rangeIn.min, rangeIn.max]];
 
@@ -158,7 +158,7 @@ var DataFilter = function DataFilter(_ref) {
     }, content);else content = /*#__PURE__*/_react["default"].createElement(_FormField.FormField, _extends({
     htmlFor: id,
     name: property,
-    label: (properties == null ? void 0 : (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property
+    label: (properties == null || (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property
   }, rest), content);
   return content;
 };

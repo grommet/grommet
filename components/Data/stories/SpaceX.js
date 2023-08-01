@@ -42,7 +42,7 @@ var fetchLaunches = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           query = buildQuery(view);
-          sort = (_sort = {}, _sort[(view == null ? void 0 : (_view$sort = view.sort) == null ? void 0 : _view$sort.property) || 'name'] = (view == null ? void 0 : (_view$sort2 = view.sort) == null ? void 0 : _view$sort2.direction) || 'asc', _sort);
+          sort = (_sort = {}, _sort[(view == null || (_view$sort = view.sort) == null ? void 0 : _view$sort.property) || 'name'] = (view == null || (_view$sort2 = view.sort) == null ? void 0 : _view$sort2.direction) || 'asc', _sort);
           body = {
             options: {
               populate: [{

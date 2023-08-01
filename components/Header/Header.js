@@ -12,7 +12,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var Header = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var _theme$header2, _theme$header2$sticky;
+  var _theme$header2;
   var sticky = _ref.sticky,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
@@ -29,11 +29,11 @@ var Header = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           header.style.top = "-" + header.getBoundingClientRect().height + "px";
           header.style.zIndex = '';
         } else if (scrollTop - nextScrollTop > 0) {
-          var _theme$header, _theme$header$sticky;
+          var _theme$header;
           // ensure that header moves with the target
           header.style.position = 'sticky';
           header.style.top = '0px';
-          header.style.zIndex = "" + ((_theme$header = theme.header) == null ? void 0 : (_theme$header$sticky = _theme$header.sticky) == null ? void 0 : _theme$header$sticky.zIndex);
+          header.style.zIndex = "" + ((_theme$header = theme.header) == null || (_theme$header = _theme$header.sticky) == null ? void 0 : _theme$header.zIndex);
           header.style.transition = 'top 0.6s';
         }
         scrollTop = nextScrollTop;
@@ -50,7 +50,7 @@ var Header = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         window.removeEventListener('scroll', updateScrollDir, true);
       }
     };
-  }, [headerRef, sticky, (_theme$header2 = theme.header) == null ? void 0 : (_theme$header2$sticky = _theme$header2.sticky) == null ? void 0 : _theme$header2$sticky.zIndex]);
+  }, [headerRef, sticky, (_theme$header2 = theme.header) == null || (_theme$header2 = _theme$header2.sticky) == null ? void 0 : _theme$header2.zIndex]);
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     align: "center",
     as: "header",

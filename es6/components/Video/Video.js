@@ -180,9 +180,9 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
           var nextActiveTrack;
           for (var j = 0; j < track.cues.length; j += 1) {
             var _track$cues$j, _track$cues$j2;
-            if (currentVideoTime > (track == null ? void 0 : (_track$cues$j = track.cues[j]) == null ? void 0 : _track$cues$j.startTime) && currentVideoTime < (track == null ? void 0 : (_track$cues$j2 = track.cues[j]) == null ? void 0 : _track$cues$j2.endTime)) {
+            if (currentVideoTime > (track == null || (_track$cues$j = track.cues[j]) == null ? void 0 : _track$cues$j.startTime) && currentVideoTime < (track == null || (_track$cues$j2 = track.cues[j]) == null ? void 0 : _track$cues$j2.endTime)) {
               var _track$cues$j3;
-              nextActiveTrack = track == null ? void 0 : (_track$cues$j3 = track.cues[j]) == null ? void 0 : _track$cues$j3.text;
+              nextActiveTrack = track == null || (_track$cues$j3 = track.cues[j]) == null ? void 0 : _track$cues$j3.text;
             }
           }
           return nextActiveTrack;

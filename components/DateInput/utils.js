@@ -178,14 +178,14 @@ var textToValue = function textToValue(text, schema, range, reference, outputFor
         parts.m = pullDigits(text, index);
         index += parts.m.length;
       } else if (_char3 === 'd') {
-        var _parts, _parts$d;
+        var _parts;
         parts.d = pullDigits(text, index);
         // when format is something like yyyy/mm/dd,
         // '0' as incomplete day can cause date to be
         // prematurely calculated.
         // ex: 2022/01/0 would reutrn 2021/12/31 in addDate()
         if (parts.d === '0') delete parts.d;
-        index += ((_parts = parts) == null ? void 0 : (_parts$d = _parts.d) == null ? void 0 : _parts$d.length) || 0;
+        index += ((_parts = parts) == null || (_parts = _parts.d) == null ? void 0 : _parts.length) || 0;
       } else if (_char3 === 'y') {
         parts.y = pullDigits(text, index);
         index += parts.y.length;

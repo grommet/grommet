@@ -82,7 +82,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   useEffect(function () {
     var notifyAlign = function notifyAlign() {
       var _dropRef$current;
-      var styleCurrent = dropRef == null ? void 0 : (_dropRef$current = dropRef.current) == null ? void 0 : _dropRef$current.style;
+      var styleCurrent = dropRef == null || (_dropRef$current = dropRef.current) == null ? void 0 : _dropRef$current.style;
       var alignControl = (styleCurrent == null ? void 0 : styleCurrent.top) !== '' ? 'top' : 'bottom';
       onAlign(alignControl);
     };
