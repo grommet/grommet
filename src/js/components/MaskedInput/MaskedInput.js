@@ -185,6 +185,7 @@ const MaskedInput = forwardRef(
     const [value, setValue] = formContext.useFormInput({
       name,
       value: valueProp,
+      initialValue: '',
     });
 
     const valueParts = useMemo(() => parseValue(mask, value), [mask, value]);

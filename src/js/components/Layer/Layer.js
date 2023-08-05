@@ -58,11 +58,13 @@ const Layer = forwardRef((props, ref) => {
               .getRootNode()
               .getElementById('layerClone');
             if (clone) {
-              containerTarget.removeChild(clone);
+              if (containerTarget.contains(clone)) {
+                containerTarget.removeChild(clone);
+              }
               layerContainer.remove();
             }
           }, animationDuration);
-        } else {
+        } else if (containerTarget.contains(layerContainer)) {
           containerTarget.removeChild(layerContainer);
         }
       }
