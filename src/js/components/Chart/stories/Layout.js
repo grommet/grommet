@@ -17,12 +17,12 @@ export const Layout = () => (
   // <Grommet theme={grommet}>
   <Box margin="medium">
     <Heading level={2}>full</Heading>
-    <Box pad="medium" border>
+    <Box pad="medium" border alignSelf="stretch">
       <Chart type={type} values={values} size={{ width: 'full' }} round />
     </Box>
 
     <Heading level={2}>auto, gap</Heading>
-    <Box pad="medium" border>
+    <Box pad="medium" border alignSelf="start">
       <Chart
         type={type}
         values={values}
@@ -33,7 +33,7 @@ export const Layout = () => (
     </Box>
 
     <Heading level={2}>default</Heading>
-    <Box pad="medium" border>
+    <Box pad="medium" borde alignSelf="start">
       <Chart type={type} values={values} round />
     </Box>
   </Box>

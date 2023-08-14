@@ -124,12 +124,14 @@ if (process.env.NODE_ENV !== 'production') {
     bounds: PropTypes.oneOfType([
       PropTypes.oneOf(['align']),
       PropTypes.shape({
+        x: PropTypes.arrayOf(PropTypes.number),
         y: PropTypes.arrayOf(PropTypes.number),
       }),
     ]),
     chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)]),
     data: PropTypes.arrayOf(PropTypes.shape({})),
     detail: PropTypes.bool,
+    direction: PropTypes.oneOf(['horizontal', 'vertical']),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',
@@ -168,7 +170,16 @@ if (process.env.NODE_ENV !== 'production') {
     placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     series: PropTypes.oneOfType([seriesType, PropTypes.arrayOf(seriesType)]),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['fill']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'fill',
+        'full',
+      ]),
       PropTypes.shape({
         height: PropTypes.oneOfType([
           PropTypes.oneOf([

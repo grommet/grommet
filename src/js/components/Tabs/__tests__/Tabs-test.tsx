@@ -249,13 +249,14 @@ describe('Tabs', () => {
     expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
   });
 
-  const ButtonTab = styled(Tab)<{ active?: boolean }>`
-    ${(props) => css`
-      background: ${props.active ? 'blue' : 'green'};
-    `}
-  `;
-
   test('styled component should change tab color when active', () => {
+    // @ts-ignore
+    const ButtonTab = styled(Tab)<{ active?: boolean }>`
+      ${(props) => css`
+        background: ${props.active ? 'blue' : 'green'};
+      `}
+    `;
+
     const { container, getByText } = render(
       <Grommet>
         <Tabs>

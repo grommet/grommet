@@ -940,6 +940,57 @@ describe('Select', () => {
     expect(style.borderBottom).toBe('2px solid blue');
   });
 
+  test('renders empty search with select.emptySearchMessage styling', () => {
+    const customTheme = {
+      select: {
+        emptySearchMessage: {
+          container: {
+            pad: {
+              horizontal: 'small', // t-shirt size
+              vertical: '6px', // px value
+            },
+          },
+          text: {
+            color: 'green',
+          },
+        },
+      },
+    };
+
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          id="test-select"
+          data-testid
+          placeholder="test select"
+          options={[]}
+          onSearch={() => {}}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('test select'));
+    // advance timers so that the select drop can open
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    fireEvent.change(document.activeElement, { target: { value: 'o' } });
+
+    let style;
+    const emptySearchContainer = getByText('No matches found').closest('div');
+    style = window.getComputedStyle(emptySearchContainer);
+    expect(style.paddingLeft).toBe('12px');
+    expect(style.paddingRight).toBe('12px');
+    expect(style.paddingTop).toBe('6px');
+    expect(style.paddingBottom).toBe('6px');
+
+    const emptySearchMessage = getByText('No matches found').closest('span');
+    style = window.getComputedStyle(emptySearchMessage);
+    expect(style.color).toBe('green');
+
+    expect(document.activeElement).toMatchSnapshot();
+  });
+
   test('applies custom global.hover theme to options', () => {
     const customTheme = {
       global: {
@@ -1526,6 +1577,19 @@ describe('Select', () => {
     const select = screen.getByRole('button', { name: /test select/ });
     fireEvent.click(select);
     expect(select).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  test('valueLabel with value=0', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Select
+          options={[0, 1, 2]}
+          value={0}
+          valueLabel={(val) => `Value: ${val}`}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   window.scrollTo.mockRestore();

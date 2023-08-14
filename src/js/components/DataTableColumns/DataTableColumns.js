@@ -76,7 +76,7 @@ const Content = ({ drop, options, ...rest }) => {
       if (nextSearch) {
         const lowerSearch = nextSearch.toLowerCase();
         nextFilteredOptions = options.filter((o) =>
-          (o.property ?? o.label ?? o)?.toLowerCase().includes(lowerSearch),
+          (o.label ?? o.property ?? o)?.toLowerCase().includes(lowerSearch),
         );
       }
       setSearch(nextSearch);

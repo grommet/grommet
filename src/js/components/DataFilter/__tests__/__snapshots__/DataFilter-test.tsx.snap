@@ -3927,7 +3927,8 @@ exports[`DataFilter renders 1`] = `
 `;
 
 exports[`DataFilter select multiple options 1`] = `
-.c6 {
+<DocumentFragment>
+  .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3943,20 +3944,20 @@ exports[`DataFilter select multiple options 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4081,11 +4082,6 @@ exports[`DataFilter select multiple options 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c3:focus {
@@ -4260,6 +4256,26 @@ exports[`DataFilter select multiple options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
   .c8 {
     border-radius: 12px;
   }
@@ -4283,70 +4299,1432 @@ exports[`DataFilter select multiple options 1`] = `
 
 }
 
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    id="data"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      id="data"
     >
-      <button
-        aria-label="Open filters, 1 filter applied"
-        class="c3"
-        id="data--filters-control"
-        tabindex="-1"
-        type="button"
+      <div
+        class="c2"
       >
-        <div
-          class="c4"
+        <button
+          aria-label="Open filters, 1 filter applied"
+          class="c3"
+          id="data--filters-control"
+          type="button"
         >
           <div
-            class="c5"
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <svg
+                aria-label="Filter"
+                class="c6"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <div
+              class="c7"
+              style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
+            >
+              <div
+                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                style="min-height: 24px; min-width: 24px;"
+              >
+                <span
+                  class="c9"
+                >
+                  1
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+        <div
+          class="c10"
+        >
+          <button
+            class="c11"
+            type="button"
+          >
+            Clear filters
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter select multiple options search 1`] = `
+<DocumentFragment>
+  .c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c3:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      id="test-data"
+    >
+      <div
+        class="c2"
+      >
+        <button
+          aria-label="Open filters"
+          class="c3"
+          id="test-data--filters-control"
+          type="button"
+        >
+          <svg
+            aria-label="Filter"
+            class="c4"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m3 6 7 7v8h4v-8l7-7V3H3z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataFilter select multiple options search 2`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  min-height: 48px;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 6px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c8:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.c18:hover input:not([disabled]) + div,
+.c18:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c21 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c21:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c20 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c14 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c14::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c14:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c14::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c14::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c14:-moz-placeholder,
+.c14::-moz-placeholder {
+  opacity: 1;
+}
+
+.c13 {
+  position: relative;
+  width: 100%;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c15 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c17 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c19 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c22 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="1"
+  id="test-data-type.name__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    aria-label="Select dropdown"
+    class="c2 c3"
+    id="test-data-type.name__select-drop"
+  >
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        <span
+          class="c6"
+        >
+          0 selected
+        </span>
+        <div
+          class="c7"
+        />
+        <button
+          aria-label="Select all 10 options"
+          class="c8"
+          type="button"
+        >
+          Select All
+        </button>
+      </div>
+      <div
+        class="c2"
+      >
+        <button
+          aria-label="Close Select"
+          class="c9"
+          type="button"
+        >
+          <div
+            class="c10"
           >
             <svg
-              aria-label="Filter"
-              class="c6"
+              aria-label="FormDown"
+              class="c11"
               viewBox="0 0 24 24"
             >
               <path
-                d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                d="m18 9-6 6-6-6"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
               />
             </svg>
           </div>
-          <div
-            class="c7"
-            style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
-          >
-            <div
-              class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
-              style="min-height: 24px; min-width: 24px;"
-            >
-              <span
-                class="c9"
-              >
-                1
-              </span>
-            </div>
-          </div>
-        </div>
-      </button>
-      <div
-        class="c10"
-      >
-        <button
-          class="c11"
-          type="button"
-        >
-          Clear filters
         </button>
       </div>
     </div>
+    <div
+      class="c12"
+    >
+      <div
+        class="c13"
+      >
+        <input
+          aria-label="Search to filter options."
+          autocomplete="off"
+          class="c14"
+          type="search"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      aria-multiselectable="true"
+      class="c15"
+      role="listbox"
+      tabindex="0"
+    >
+      <button
+        aria-label="ZZ not selected"
+        aria-posinset="1"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option0"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            ZZ
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="YY not selected"
+        aria-posinset="2"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option1"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            YY
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="aa not selected"
+        aria-posinset="3"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option2"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            aa
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="bb not selected"
+        aria-posinset="4"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option3"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            bb
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="cc not selected"
+        aria-posinset="5"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option4"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            cc
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="dd not selected"
+        aria-posinset="6"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option5"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            dd
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="ee not selected"
+        aria-posinset="7"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option6"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            ee
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="ff not selected"
+        aria-posinset="8"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option7"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            ff
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="gg not selected"
+        aria-posinset="9"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option8"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            gg
+          </div>
+        </label>
+      </button>
+      <button
+        aria-label="hh not selected"
+        aria-posinset="10"
+        aria-selected="false"
+        aria-setsize="10"
+        class="c16 c17"
+        id="option9"
+        role="option"
+        tabindex="-1"
+        type="button"
+      >
+        <label
+          class="c18"
+          label="[object Object]"
+        >
+          <div
+            class="c19 c20"
+          >
+            <input
+              class="c21"
+              tabindex="-1"
+              type="checkbox"
+            />
+            <div
+              class="c22 "
+            />
+          </div>
+          <div
+            class="c23"
+          >
+            hh
+          </div>
+        </label>
+      </button>
+      <div
+        class="c24"
+      />
+    </div>
   </div>
 </div>
+`;
+
+exports[`DataFilter select multiple options search 3`] = `
+"@media only screen and (max-width: 768px) {
+  .jstWSP {
+    margin-bottom: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gkHEjs {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gkHEjs {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .vOYHH {
+    margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gPKPHc {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .dmBBcR {
+    border-radius: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iPXDvR {
+    border-radius: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .dypTlm {
+    margin-top: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .biJsVL {
+    height: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .EuOQj {
+    width: 6px;
+  }
+}"
 `;
