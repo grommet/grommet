@@ -93,6 +93,7 @@ const DropContainer = forwardRef(
       [portalContext, portalId],
     );
     const dropRef = useForwardedRef(ref);
+    const target = dropTarget?.current || dropTarget;
 
     useEffect(() => {
       const onClickDocument = (event) => {
@@ -143,7 +144,6 @@ const DropContainer = forwardRef(
       const place = (preserveHeight) => {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-        const target = dropTarget?.current || dropTarget;
         const container = dropRef.current;
         if (container && target) {
           // clear prior styling
@@ -291,8 +291,8 @@ const DropContainer = forwardRef(
       let scrollParentsHorizontal;
 
       const addScrollListeners = () => {
-        scrollParents = findScrollParents(dropTarget);
-        scrollParentsHorizontal = findScrollParents(dropTarget, true);
+        scrollParents = findScrollParents(target);
+        scrollParentsHorizontal = findScrollParents(target, true);
         scrollParents.forEach((scrollParent) =>
           scrollParent.addEventListener('scroll', place),
         );
@@ -331,7 +331,7 @@ const DropContainer = forwardRef(
       align,
       containerTarget,
       onAlign,
-      dropTarget,
+      target,
       portalContext,
       portalId,
       responsive,
