@@ -26,8 +26,6 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
-import { isObject } from '../../utils/object';
-import { MessageContext } from '../../contexts/MessageContext';
 
 const grommetInputNames = [
   'CheckBox',
@@ -52,8 +50,6 @@ const grommetInputPadNames = [
   'RangeInput',
   'RangeSelector',
 ];
-
-const defaultThreshold = 0.5;
 
 const isGrommetInput = (comp) =>
   comp &&
@@ -194,56 +190,14 @@ const FormField = forwardRef(
       pad,
       required,
       style,
-      validate: validateProp,
+      validate,
       validateOn,
       ...rest
     },
     ref,
   ) => {
-    const validate = isObject(validateProp)
-      ? { ...validateProp }
-      : validateProp;
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
-    const { format } = useContext(MessageContext);
-
-    if (isObject(validate) && 'max' in validate && !('threshold' in validate))
-      validate.threshold = defaultThreshold;
-
-    const isMaxAndThresholdValidation =
-      isObject(validate) && 'max' in validate && 'threshold' in validate;
-
-    const getMaxAndThresholdValidation = (value) => {
-      const { max, threshold } = validate;
-
-      const getMessage = () => {
-        const charactersRemaining = (plural) => ({
-          id: `formField.maxCharacters.remaining.${
-            plural ? 'plural' : 'singular'
-          }`,
-          values: { number: max - value.length },
-        });
-
-        const charactersOverLimit = (plural) => ({
-          id: `formField.maxCharacters.overLimit.${
-            plural ? 'plural' : 'singular'
-          }`,
-          values: { number: value.length - max },
-        });
-
-        if (max - value.length >= 0) {
-          return format(charactersRemaining(max - value.length > 1));
-        }
-        return format(charactersOverLimit(value.length - max > 1));
-      };
-
-      return value.length / max > (threshold ?? defaultThreshold)
-        ? {
-            status: max - value.length >= 0 ? 'info' : 'error',
-            message: getMessage(),
-          }
-        : undefined;
-    };
 
     const {
       error,
@@ -257,9 +211,7 @@ const FormField = forwardRef(
       info: infoProp,
       name,
       required,
-      validate: isMaxAndThresholdValidation
-        ? (value) => getMaxAndThresholdValidation(value)
-        : validate,
+      validate,
       validateOn,
     });
     const formKind = formContext.kind;
