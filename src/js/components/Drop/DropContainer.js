@@ -288,16 +288,11 @@ const DropContainer = forwardRef(
       };
 
       let scrollParents;
-      let scrollParentsHorizontal;
 
       const addScrollListeners = () => {
         scrollParents = findScrollParents(target);
-        scrollParentsHorizontal = findScrollParents(target, true);
         scrollParents.forEach((scrollParent) =>
           scrollParent.addEventListener('scroll', place),
-        );
-        scrollParentsHorizontal.forEach((scrollParentHorizontal) =>
-          scrollParentHorizontal.addEventListener('scroll', place),
         );
       };
 
@@ -306,10 +301,6 @@ const DropContainer = forwardRef(
           scrollParent.removeEventListener('scroll', place),
         );
         scrollParents = [];
-        scrollParentsHorizontal.forEach((scrollParentHorizontal) =>
-          scrollParentHorizontal.removeEventListener('scroll', place),
-        );
-        scrollParentsHorizontal = [];
       };
 
       const onResize = () => {
