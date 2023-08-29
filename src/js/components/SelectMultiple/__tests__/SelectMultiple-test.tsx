@@ -456,4 +456,18 @@ describe('SelectMultiple', () => {
       screen.queryByRole('option', { name: /Strawberry selected/ }),
     ).toBeNull();
   });
+
+  test('empty options', async () => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <SelectMultiple id="test-select__drop" options={[]} />
+      </Grommet>,
+    );
+    // open SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
 });

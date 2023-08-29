@@ -49,4 +49,16 @@ describe('DataSort', () => {
     // snapshot on drop
     expectPortal('test-data--sort-control').toMatchSnapshot();
   });
+
+  test('sort when data array is empty', () => {
+    const { container } = render(
+      <Grommet>
+        <Data id="test-data" data={[]}>
+          <DataSort />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

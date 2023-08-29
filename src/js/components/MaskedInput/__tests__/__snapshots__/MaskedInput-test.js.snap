@@ -314,20 +314,20 @@ exports[`MaskedInput custom theme 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1062,7 +1062,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
     id="item"
     name="item"
     placeholder="!"
-    value=""
+    value="aa!"
   />
 </div>
 `;
@@ -1084,20 +1084,20 @@ exports[`MaskedInput icon 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1234,20 +1234,20 @@ exports[`MaskedInput icon reverse 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2519,7 +2519,7 @@ exports[`MaskedInput option via mouse 4`] = `
     id="item"
     name="item"
     placeholder="!"
-    value=""
+    value="aa!"
   />
 </div>
 `;
