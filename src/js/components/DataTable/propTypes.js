@@ -179,6 +179,7 @@ if (process.env.NODE_ENV !== 'production') {
         footer: PropTypes.oneOf(verticalAlign),
       }),
     ]),
+    allowSelectAll: PropTypes.bool,
   };
 }
 export const DataTablePropTypes = PropType;

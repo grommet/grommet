@@ -142,6 +142,7 @@ export interface DataTableProps<TRowType = any> {
         body?: VerticalAlignType;
         footer?: VerticalAlignType;
       };
+  allowSelectAll?: boolean;
 }
 
 export interface DataTableExtendedProps<TRowType = any>
