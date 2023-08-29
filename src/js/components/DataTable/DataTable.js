@@ -87,7 +87,7 @@ const DataTable = ({
   rowDetails,
   step = 50,
   verticalAlign,
-  allSelectedDisabled = false,
+  allowSelectAll = true,
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -556,7 +556,7 @@ const DataTable = ({
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
-            allSelectedDisabled={allSelectedDisabled}
+            allowSelectAll={allowSelectAll}
             verticalAlign={
               typeof verticalAlign === 'string'
                 ? verticalAlign

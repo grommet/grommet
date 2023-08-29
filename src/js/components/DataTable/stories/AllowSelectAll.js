@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { DataTable } from 'grommet';
+import { Box, DataTable, Text } from 'grommet';
+import { CheckBox } from '../../CheckBox';
 
 const DATA = [
   {
@@ -69,25 +70,34 @@ const columns = [
   { property: 'paid', header: 'Paid' },
 ];
 
-export const ColumnSize = () => {
+export const AllowSelectAll = () => {
+  const [allowSelectAll, setAllowSelectAll] = React.useState(true);
   const [select, setSelect] = React.useState([]);
 
   return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={grommet}>
-    <DataTable
-      data={DATA}
-      columns={columns}
-      select={select}
-      onSelect={(selected) => setSelect(selected)}
-      allSelectedDisabled
-    />
-    // </Grommet>
+    <Box justify="center" direction="column" gap="medium" pad="medium">
+      <Text>
+        When checked, the Select All checkbox of the DataTable is allowed
+      </Text>
+      <CheckBox
+        checked={allowSelectAll}
+        label="Allow Select All"
+        onChange={(event) => setAllowSelectAll(event.target.checked)}
+      />
+
+      <DataTable
+        data={DATA}
+        columns={columns}
+        select={select}
+        onSelect={(selected) => setSelect(selected)}
+        allowSelectAll={allowSelectAll}
+      />
+    </Box>
   );
 };
 
-ColumnSize.storyName = 'All Selected Disabled';
+AllowSelectAll.storyName = 'Allow Select All';
 
 export default {
-  title: 'Visualizations/DataTable/All Selected Disabled',
+  title: 'Visualizations/DataTable/Allow Select All',
 };
