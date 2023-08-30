@@ -89,7 +89,11 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - browser-tools/install-chrome
+      - browser-tools/install-chrome:
+        # temporary solution until
+        # https://github.com/CircleCI-Public/browser-tools-orb/issues/90 
+        # is fixed. Once fixed remove chrome-version.
+        chrome-version: 116.0.5845.96
       - browser-tools/install-chromedriver
       - run:
           name: Start project
