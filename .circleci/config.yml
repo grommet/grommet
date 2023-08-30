@@ -89,6 +89,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
+      - run: sudo apt-get update
       - browser-tools/install-chrome:
           replace-existing: true
           chrome-version: 116.0.5845.96
