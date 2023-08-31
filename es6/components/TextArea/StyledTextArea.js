@@ -17,7 +17,7 @@ var resizeStyle = function resizeStyle(resize) {
 var StyledTextArea = styled.textarea.withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
-})(["", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", ";max-width:100%;"], inputStyle, function (props) {
   return props.resize !== undefined && resizeStyle(props.resize);
 }, function (props) {
   return props.fillArg && 'height: 100%;';
