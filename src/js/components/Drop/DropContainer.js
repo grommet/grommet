@@ -93,7 +93,6 @@ const DropContainer = forwardRef(
       [portalContext, portalId],
     );
     const dropRef = useForwardedRef(ref);
-    const target = dropTarget?.current || dropTarget;
 
     useEffect(() => {
       const onClickDocument = (event) => {
@@ -131,6 +130,8 @@ const DropContainer = forwardRef(
     }, [onClickOutside, containerTarget, portalContext]);
 
     useEffect(() => {
+      const target = dropTarget?.current || dropTarget;
+
       const notifyAlign = () => {
         const styleCurrent = dropRef?.current?.style;
         const alignControl = styleCurrent?.top !== '' ? 'top' : 'bottom';
@@ -322,7 +323,7 @@ const DropContainer = forwardRef(
       align,
       containerTarget,
       onAlign,
-      target,
+      dropTarget,
       portalContext,
       portalId,
       responsive,
