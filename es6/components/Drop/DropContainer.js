@@ -193,7 +193,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     };
     var scrollParents;
     var addScrollListeners = function addScrollListeners() {
-      scrollParents = findScrollParents(dropTarget);
+      scrollParents = findScrollParents((dropTarget == null ? void 0 : dropTarget.current) || dropTarget);
       scrollParents.forEach(function (scrollParent) {
         return scrollParent.addEventListener('scroll', place);
       });

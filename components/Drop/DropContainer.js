@@ -198,7 +198,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     };
     var scrollParents;
     var addScrollListeners = function addScrollListeners() {
-      scrollParents = (0, _utils.findScrollParents)(dropTarget);
+      scrollParents = (0, _utils.findScrollParents)((dropTarget == null ? void 0 : dropTarget.current) || dropTarget);
       scrollParents.forEach(function (scrollParent) {
         return scrollParent.addEventListener('scroll', place);
       });
