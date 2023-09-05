@@ -233,7 +233,7 @@ const DropContainer = forwardRef(
       let scrollParents;
 
       const addScrollListeners = () => {
-        scrollParents = findScrollParents(dropTarget);
+        scrollParents = findScrollParents(dropTarget?.current || dropTarget);
         scrollParents.forEach((scrollParent) =>
           scrollParent.addEventListener('scroll', place),
         );
