@@ -5309,22 +5309,6 @@ exports[`Menu should group items 1`] = `
   overflow: auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5340,6 +5324,22 @@ exports[`Menu should group items 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c12 {
@@ -5590,7 +5590,7 @@ exports[`Menu should group items 1`] = `
       role="menu"
     >
       <div
-        class="c2"
+        class="c4"
       >
         <div
           class="c11"
@@ -5630,7 +5630,7 @@ exports[`Menu should group items 1`] = `
         </div>
       </div>
       <div
-        class="c2"
+        class="c4"
       >
         <div
           class="c13"
