@@ -82,7 +82,7 @@ const setFieldValue = (name, componentValue, prevValue) => {
   return nextValue;
 };
 
-const getMaxAndThresholdValidation = (format, rule, value) => {
+const validateCharacterCount = (format, rule, value) => {
   const { max, threshold } = rule;
 
   const getMessage = () => {
@@ -123,8 +123,8 @@ const validate = (rule, fieldValue, formValue, format, messages) => {
         result = { message: result, status: rule.status };
       }
     }
-  } else if ('threshold' in rule) {
-    result = getMaxAndThresholdValidation(format, rule, fieldValue);
+  } else if (rule.max) {
+    result = validateCharacterCount(format, rule, fieldValue);
   }
 
   return result;
