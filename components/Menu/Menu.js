@@ -333,6 +333,10 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       // eslint-disable-next-line react/no-array-index-key
       , {
         key: groupIndex
+        // ensure menu groups don't collapse if vertical space on screen
+        // causes scrolling within the menu
+        ,
+        flex: false
       }, groupIndex > 0 && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         pad: theme.menu.group.separator.pad
       }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
