@@ -48,18 +48,23 @@ var viewFormKeyMap = {
   view: formViewNameKey
 };
 
-// flatten nested objects. For example: { a: { b: v } } -> { 'a.b': v }
+// flatten nested objects.
+// For example: { a: { b: v, c: z } } -> { 'a.b': v, 'a.c': z }
 var flatten = function flatten(formValue, options) {
   var result = JSON.parse(JSON.stringify(formValue));
-  Object.keys(result).forEach(function (k) {
-    var name = k;
-    // flatten one level at a time, ignore _range situations
-    while (typeof result[name] === 'object' && !Array.isArray(result[name]) && (options != null && options.full || !result[name][formRangeKey])) {
-      var subPath = Object.keys(result[name])[0];
-      var path = name + "." + subPath;
-      result[path] = result[name][subPath];
-      delete result[name];
-      name = path;
+  Object.keys(result).forEach(function (i) {
+    // We check the type of the i using
+    // typeof() function and recursively
+    // call the function again
+    // ignore _range situations
+    if (typeof result[i] === 'object' && !Array.isArray(result[i]) && (options != null && options.full || !result[i][formRangeKey])) {
+      var temp = flatten(result[i]);
+      Object.keys(temp).forEach(function (j) {
+        // Store temp in result
+        // ignore empty arrays
+        if (!Array.isArray(temp[j]) || Array.isArray(temp[j]) && temp[j].length) result[i + "." + j] = temp[j];
+      });
+      delete result[i];
     }
   });
   return result;
