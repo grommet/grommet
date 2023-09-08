@@ -9,6 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])]),
     options: PropTypes.shape({
       layer: PropTypes.shape({ singleId: PropTypes.bool }),
+      drop: PropTypes.shape({ checkContainingBlock: PropTypes.bool }),
     }),
     plain: PropTypes.bool,
     cssVars: PropTypes.bool,
