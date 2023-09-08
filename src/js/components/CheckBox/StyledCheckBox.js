@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { edgeStyle, focusStyle, normalizeColor } from '../../utils';
+import {
+  edgeStyle,
+  focusStyle,
+  normalizeColor,
+  styledComponentsConfig,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 // Note: since `fillStyle` is only used in one place, `justify-content` was
@@ -35,7 +40,7 @@ const hoverStyle = css`
   }
 `;
 
-const StyledCheckBoxIcon = styled.svg`
+const StyledCheckBoxIcon = styled.svg.withConfig(styledComponentsConfig)`
   box-sizing: border-box;
   stroke-width: ${(props) => props.theme.checkBox.check.thickness};
   stroke: ${(props) =>
@@ -50,7 +55,7 @@ const StyledCheckBoxIcon = styled.svg`
 StyledCheckBoxIcon.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 
-const StyledCheckBoxContainer = styled.label`
+const StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig)`
   display: flex;
   flex-direction: row;
   align-items: ${(props) =>
@@ -96,7 +101,7 @@ const StyledCheckBoxContainer = styled.label`
 StyledCheckBoxContainer.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, defaultProps);
 
-const StyledCheckBoxInput = styled.input`
+const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)`
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -116,7 +121,7 @@ const StyledCheckBoxInput = styled.input`
 StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
 
-const StyledCheckBoxBox = styled.div`
+const StyledCheckBoxBox = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.focus && props.focusIndicator && focusStyle()};
   ${(props) => props.theme.checkBox.check.extend};
 `;
@@ -124,7 +129,7 @@ const StyledCheckBoxBox = styled.div`
 StyledCheckBoxBox.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, defaultProps);
 
-const StyledCheckBoxToggle = styled.span`
+const StyledCheckBoxToggle = styled.span.withConfig(styledComponentsConfig)`
   box-sizing: border-box;
   vertical-align: middle;
   display: inline-block;
@@ -146,7 +151,7 @@ const StyledCheckBoxToggle = styled.span`
 StyledCheckBoxToggle.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, defaultProps);
 
-const StyledCheckBoxKnob = styled.span`
+const StyledCheckBoxKnob = styled.span.withConfig(styledComponentsConfig)`
   box-sizing: border-box;
   position: relative;
   display: inherit;
@@ -165,7 +170,7 @@ const StyledCheckBoxKnob = styled.span`
 StyledCheckBoxKnob.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 
-const StyledCheckBox = styled.div`
+const StyledCheckBox = styled.div.withConfig(styledComponentsConfig)`
   flex-shrink: 0;
 `;
 

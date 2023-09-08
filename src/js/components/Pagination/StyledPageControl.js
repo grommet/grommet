@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { styledComponentsConfig } from '../../utils/styles';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
@@ -32,7 +32,7 @@ export const StyledPaginationButton = styled(Button)`
   ${(props) => sizeStyle(props).content};
 `;
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   align-items: center;
   justify-content: center;

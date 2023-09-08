@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor } from '../../utils';
+import {
+  genericStyles,
+  normalizeColor,
+  styledComponentsConfig,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const tabHoverStyle = css`
@@ -25,7 +29,7 @@ const tabHoverStyle = css`
   }
 `;
 
-const StyledTab = styled.div`
+const StyledTab = styled.div.withConfig(styledComponentsConfig)`
   white-space: nowrap;
   ${genericStyles}
   ${(props) =>

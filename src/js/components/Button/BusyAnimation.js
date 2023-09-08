@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { Box } from '../Box';
+import { styledComponentsConfig } from '../../utils/styles';
 
 const bounceDelay = keyframes`
   0%, 80%, 100% { 
@@ -63,6 +64,6 @@ export const GrowCheckmark = styled(Checkmark)`
   animation: ${grow} 0.9s ease-in-out;
 `;
 
-export const StyledBusyContents = styled.div`
+export const StyledBusyContents = styled.div.withConfig(styledComponentsConfig)`
   opacity: ${(props) => (props.animating ? 0 : 1)};}
 `;

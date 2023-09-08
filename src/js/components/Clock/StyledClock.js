@@ -1,9 +1,9 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { normalizeColor, genericStyles } from '../../utils';
+import { normalizeColor, genericStyles, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const StyledHour = styled.line`
+const StyledHour = styled.line.withConfig(styledComponentsConfig)`
   stroke-width: ${props => props.theme.clock.analog.hour.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
@@ -13,7 +13,7 @@ const StyledHour = styled.line`
 StyledHour.defaultProps = {};
 Object.setPrototypeOf(StyledHour.defaultProps, defaultProps);
 
-const StyledMinute = styled.line`
+const StyledMinute = styled.line.withConfig(styledComponentsConfig)`
   stroke-width: ${props => props.theme.clock.analog.minute.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
@@ -23,7 +23,7 @@ const StyledMinute = styled.line`
 StyledMinute.defaultProps = {};
 Object.setPrototypeOf(StyledMinute.defaultProps, defaultProps);
 
-const StyledSecond = styled.line`
+const StyledSecond = styled.line.withConfig(styledComponentsConfig)`
   stroke-width: ${props => props.theme.clock.analog.second.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.second.color, props.theme)};
@@ -33,7 +33,7 @@ const StyledSecond = styled.line`
 StyledSecond.defaultProps = {};
 Object.setPrototypeOf(StyledSecond.defaultProps, defaultProps);
 
-const StyledAnalog = styled.svg`
+const StyledAnalog = styled.svg.withConfig(styledComponentsConfig)`
   width: ${props => props.theme.clock.analog.size[props.size]};
   height: ${props => props.theme.clock.analog.size[props.size]};
 
@@ -54,7 +54,7 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledDigitalDigit = styled.div`
+const StyledDigitalDigit = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   width: 0.8em;
   text-align: center;
@@ -75,7 +75,7 @@ const previousDown = keyframes`
   100% { transform: translateY(100%); }
 `;
 
-const StyledDigitalPrevious = styled.div`
+const StyledDigitalPrevious = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   top: 0;
   left: 0;
@@ -99,7 +99,7 @@ const nextDown = keyframes`
   100% { transform: translateY(0); }
 `;
 
-const StyledDigitalNext = styled.div`
+const StyledDigitalNext = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   top: 0;
   left: 0;

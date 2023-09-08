@@ -5,6 +5,7 @@ import {
   backgroundStyle,
   breakpointStyle,
   parseMetricToNum,
+  styledComponentsConfig,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -30,7 +31,7 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-const StyledLayer = styled.div`
+const StyledLayer = styled.div.withConfig(styledComponentsConfig)`
   ${baseStyle}
   background: transparent;
   position: relative;
@@ -61,7 +62,7 @@ const StyledLayer = styled.div`
 StyledLayer.defaultProps = {};
 Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
 
-const StyledOverlay = styled.div`
+const StyledOverlay = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -771,7 +772,7 @@ const elevationStyle = css`
     ]};
 `;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => (!props.modal ? baseStyle : '')}
   display: flex;
   flex-direction: column;

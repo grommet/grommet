@@ -9,6 +9,7 @@ import {
   genericStyles,
   kindPartStyles,
   parseMetricToNum,
+  styledComponentsConfig,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -250,7 +251,7 @@ const plainStyle = (props) => css`
   ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
-const StyledButtonKind = styled.button`
+const StyledButtonKind = styled.button.withConfig(styledComponentsConfig)`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;

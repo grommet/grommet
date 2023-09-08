@@ -16,6 +16,7 @@ import {
   unfocusStyle,
   useForwardedRef,
   usePagination,
+  styledComponentsConfig,
 } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
@@ -23,7 +24,7 @@ import { ListPropTypes } from './propTypes';
 
 const emptyData = [];
 
-const StyledList = styled.ul`
+const StyledList = styled.ul.withConfig(styledComponentsConfig)`
   list-style: none;
   ${(props) => !props.margin && 'margin: 0;'}
   padding: 0;

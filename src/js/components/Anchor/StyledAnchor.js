@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, genericStyles, normalizeColor } from '../../utils';
+import {
+  focusStyle,
+  genericStyles,
+  normalizeColor,
+  styledComponentsConfig,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const disabledStyle = `
@@ -24,7 +29,7 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledAnchor = styled.a`
+const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
   box-sizing: border-box;
   ${(props) => sizeStyle(props)}
   color: ${(props) =>
