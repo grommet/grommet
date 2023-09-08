@@ -175,7 +175,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         return !disabled.includes(v) || selected.includes(v);
       }) : primaryValues;
       nextGroupSelected[''] = 'all';
-      groupBy == null || (_groupBy$expandable = groupBy.expandable) == null ? void 0 : _groupBy$expandable.forEach(function (key) {
+      groupBy == null || (_groupBy$expandable = groupBy.expandable) == null || _groupBy$expandable.forEach(function (key) {
         nextGroupSelected[key] = 'all';
       });
     }

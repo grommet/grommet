@@ -394,7 +394,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     };
     var controlsMenuItems = [];
-    (_controls$items = controls.items) == null ? void 0 : _controls$items.map(function (item) {
+    (_controls$items = controls.items) == null || _controls$items.map(function (item) {
       if (item === 'volume') {
         volumeControls.map(function (control) {
           return controlsMenuItems.push(control);

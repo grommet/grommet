@@ -93,7 +93,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   // for keyboard/screenreader, keep the active option in focus
   useEffect(function () {
     var _activeRef$current;
-    if (activeIndex >= 0) (_activeRef$current = activeRef.current) == null ? void 0 : _activeRef$current.focus();
+    if (activeIndex >= 0) (_activeRef$current = activeRef.current) == null || _activeRef$current.focus();
   }, [activeIndex]);
 
   // set initial focus

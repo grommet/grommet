@@ -150,7 +150,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     // place the listener on the form directly. if listener is on window,
     // the event could get blocked if caller has e.stopPropagation(), etc. in
     // their form onReset
-    form == null ? void 0 : form.addEventListener('reset', handleFormReset);
+    form == null || form.addEventListener('reset', handleFormReset);
     return function () {
       return form == null ? void 0 : form.removeEventListener('reset', handleFormReset);
     };

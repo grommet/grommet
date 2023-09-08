@@ -74,7 +74,7 @@ var SelectMultipleContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   // for keyboard/screenreader, keep the active option in focus
   (0, _react.useEffect)(function () {
     var _activeRef$current;
-    if (activeIndex) (_activeRef$current = activeRef.current) == null ? void 0 : _activeRef$current.focus();
+    if (activeIndex) (_activeRef$current = activeRef.current) == null || _activeRef$current.focus();
   }, [activeIndex]);
 
   // set initial focus
