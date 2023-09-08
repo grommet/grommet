@@ -1,8 +1,13 @@
 import { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
+
+export const styledComponentsConfig = {
+  shouldForwardProp: isPropValid,
+};
 
 export const baseStyle = css`
   font-family: ${(props) => props.theme.global.font.family};

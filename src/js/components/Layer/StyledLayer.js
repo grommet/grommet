@@ -771,12 +771,7 @@ const elevationStyle = css`
     ]};
 `;
 
-const StyledContainer = styled.div.withConfig({
-  // don't let elevation leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['elevation'].includes(prop) && defaultValidatorFn(prop),
-})`
+const StyledContainer = styled.div`
   ${(props) => (!props.modal ? baseStyle : '')}
   display: flex;
   flex-direction: column;

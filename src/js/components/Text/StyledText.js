@@ -41,10 +41,7 @@ const fontFamily = css`
   font-family: ${props => props.theme.text.font.family};
 `;
 
-const StyledText = styled('span').withConfig({
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    defaultValidatorFn(prop) && prop !== 'size',
-})`
+const StyledText = styled('span')`
   ${genericStyles}
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
