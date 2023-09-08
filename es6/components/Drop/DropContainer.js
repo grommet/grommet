@@ -10,6 +10,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { StyledDrop } from './StyledDrop';
+import { OptionsContext } from '../../contexts/OptionsContext';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -18,6 +19,29 @@ var preventLayerClose = function preventLayerClose(event) {
   if (key === 27) {
     event.stopPropagation();
   }
+};
+
+// Gets the closest ancestor positioned element
+var getParentNode = function getParentNode(element) {
+  var _element$offsetParent;
+  return (_element$offsetParent = element.offsetParent) != null ? _element$offsetParent : element.parentNode;
+};
+
+// return the containing block
+var getContainingBlock = function getContainingBlock(element) {
+  var currentNode = getParentNode(element);
+  while (currentNode instanceof window.HTMLElement && !['html', 'body'].includes(currentNode.nodeName.toLowerCase())) {
+    var _currentNode;
+    var css = window.getComputedStyle(currentNode);
+    // This is non-exhaustive but covers the most common CSS properties that
+    // create a containing block.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
+    if ((css.transform ? css.transform !== 'none' : false) || (css.perspective ? css.perspective !== 'none' : false) || (css.backdropFilter ? css.backdropFilter !== 'none' : false) || css.contain === 'paint' || ['transform', 'perspective'].includes(css.willChange) || css.willChange === 'filter' || (css.filter ? css.filter !== 'none' : false)) {
+      return currentNode;
+    }
+    currentNode = (_currentNode = currentNode) == null ? void 0 : _currentNode.parentNode;
+  }
+  return null;
 };
 var defaultAlign = {
   top: 'top',
@@ -48,6 +72,9 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = useContext(ContainerTargetContext);
   var theme = useContext(ThemeContext) || defaultProps.theme;
+  // dropOptions was created to preserve backwards compatibility
+  var _useContext = useContext(OptionsContext),
+    dropOptions = _useContext.drop;
   var portalContext = useContext(PortalContext);
   var portalId = useMemo(function () {
     return portalContext.length;
@@ -80,6 +107,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     };
   }, [onClickOutside, containerTarget, portalContext]);
   useEffect(function () {
+    var target = (dropTarget == null ? void 0 : dropTarget.current) || dropTarget;
     var notifyAlign = function notifyAlign() {
       var _dropRef$current;
       var styleCurrent = dropRef == null || (_dropRef$current = dropRef.current) == null ? void 0 : _dropRef$current.style;
@@ -93,9 +121,9 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     var place = function place(preserveHeight) {
       var windowWidth = window.innerWidth;
       var windowHeight = window.innerHeight;
-      var target = (dropTarget == null ? void 0 : dropTarget.current) || dropTarget;
       var container = dropRef.current;
       if (container && target) {
+        var _containingBlockRect$, _containingBlockRect, _containingBlockRect$2, _containingBlockRect2, _containingBlockRect$3, _containingBlockRect3, _containingBlock$scro, _containingBlock2, _containingBlock$scro2, _containingBlock3;
         // clear prior styling
         container.style.left = '';
         container.style.top = '';
@@ -141,10 +169,10 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         var bottom;
         var maxHeight = containerRect.height;
 
-        /* If responsive is true and the Drop doesn't have enough room 
-          to be fully visible and there is more room in the other 
-          direction, change the Drop to display above/below. If there is 
-          less room in the other direction leave the Drop in its current 
+        /* If responsive is true and the Drop doesn't have enough room
+          to be fully visible and there is more room in the other
+          direction, change the Drop to display above/below. If there is
+          less room in the other direction leave the Drop in its current
           position. */
         if (responsive && (align.top === 'top' && targetRect.top < 0 || align.bottom === 'top' && targetRect.top - containerRect.height <= 0 && targetRect.bottom + containerRect.height < windowHeight)) {
           top = targetRect.bottom;
@@ -167,7 +195,24 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         } else {
           top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
         }
-        container.style.left = left + "px";
+        var containingBlock;
+        var containingBlockRect;
+        // dropOptions was created to preserve backwards compatibility
+        if (dropOptions != null && dropOptions.checkContainingBlock) {
+          var _containingBlock;
+          // return the containing block for absolute elements or `null`
+          // for fixed elements
+          containingBlock = getContainingBlock(container);
+          containingBlockRect = (_containingBlock = containingBlock) == null ? void 0 : _containingBlock.getBoundingClientRect();
+        }
+
+        // compute viewport offsets
+        var viewportOffsetLeft = (_containingBlockRect$ = (_containingBlockRect = containingBlockRect) == null ? void 0 : _containingBlockRect.left) != null ? _containingBlockRect$ : 0;
+        var viewportOffsetTop = (_containingBlockRect$2 = (_containingBlockRect2 = containingBlockRect) == null ? void 0 : _containingBlockRect2.top) != null ? _containingBlockRect$2 : 0;
+        var viewportOffsetBottom = (_containingBlockRect$3 = (_containingBlockRect3 = containingBlockRect) == null ? void 0 : _containingBlockRect3.bottom) != null ? _containingBlockRect$3 : windowHeight;
+        var containerOffsetLeft = (_containingBlock$scro = (_containingBlock2 = containingBlock) == null ? void 0 : _containingBlock2.scrollLeft) != null ? _containingBlock$scro : 0;
+        var containerOffsetTop = (_containingBlock$scro2 = (_containingBlock3 = containingBlock) == null ? void 0 : _containingBlock3.scrollTop) != null ? _containingBlock$scro2 : 0;
+        container.style.left = left - viewportOffsetLeft + containerOffsetLeft + "px";
         if (stretch) {
           // offset width by 0.1 to avoid a bug in ie11 that
           // unnecessarily wraps the text if width is the same
@@ -177,10 +222,10 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         // the (position:absolute + scrollTop)
         // is presenting issues with desktop scroll flickering
         if (top !== '') {
-          container.style.top = top + "px";
+          container.style.top = top - viewportOffsetTop + containerOffsetTop + "px";
         }
         if (bottom !== '') {
-          container.style.bottom = windowHeight - bottom + "px";
+          container.style.bottom = viewportOffsetBottom - bottom - containerOffsetTop + "px";
         }
         if (!preserveHeight) {
           if (theme.drop && theme.drop.maxHeight) {
@@ -193,7 +238,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     };
     var scrollParents;
     var addScrollListeners = function addScrollListeners() {
-      scrollParents = findScrollParents((dropTarget == null ? void 0 : dropTarget.current) || dropTarget);
+      scrollParents = findScrollParents(target);
       scrollParents.forEach(function (scrollParent) {
         return scrollParent.addEventListener('scroll', place);
       });
@@ -216,7 +261,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       removeScrollListeners();
       window.removeEventListener('resize', onResize);
     };
-  }, [align, containerTarget, onAlign, dropTarget, portalContext, portalId, responsive, restrictFocus, stretch, theme.drop, dropRef]);
+  }, [align, containerTarget, onAlign, dropTarget, portalContext, portalId, responsive, restrictFocus, stretch, theme.drop, dropRef, dropOptions]);
   useEffect(function () {
     if (restrictFocus) {
       dropRef.current.focus();

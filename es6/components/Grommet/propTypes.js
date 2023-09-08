@@ -9,6 +9,9 @@ if (process.env.NODE_ENV !== 'production') {
     options: PropTypes.shape({
       layer: PropTypes.shape({
         singleId: PropTypes.bool
+      }),
+      drop: PropTypes.shape({
+        checkContainingBlock: PropTypes.bool
       })
     }),
     plain: PropTypes.bool,

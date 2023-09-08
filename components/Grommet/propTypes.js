@@ -14,6 +14,9 @@ if (process.env.NODE_ENV !== 'production') {
     options: _propTypes["default"].shape({
       layer: _propTypes["default"].shape({
         singleId: _propTypes["default"].bool
+      }),
+      drop: _propTypes["default"].shape({
+        checkContainingBlock: _propTypes["default"].bool
       })
     }),
     plain: _propTypes["default"].bool,
