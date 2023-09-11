@@ -15,6 +15,9 @@ export interface GrommetProps {
     layer?: {
       singleId?: boolean;
     };
+    drop?: {
+      checkContainingBlock?: boolean;
+    }
   };
   messages?: {
     messages?: {
