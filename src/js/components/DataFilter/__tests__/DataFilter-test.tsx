@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
 import { Data } from '../../Data';
@@ -18,6 +18,7 @@ const data = [
     type: { name: 'ZZ', id: 1 },
     blank: '',
     zero: 0,
+    total: 4,
   },
   {
     name: 'bb',
@@ -26,8 +27,9 @@ const data = [
     type: { name: 'YY', id: 2 },
     blank: '',
     zero: 0,
+    total: 200,
   },
-  { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0 },
+  { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0, total: 35 },
 ];
 
 describe('DataFilter', () => {
@@ -199,6 +201,54 @@ describe('DataFilter', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('range prop step', async () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Data data={data}>
+          <DataFilters>
+            <DataFilter
+              property="total"
+              range={{ step: 15, min: 0, max: 250 }}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    fireEvent.mouseDown(lowerBound);
+    fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
+    fireEvent.mouseUp(lowerBound);
+    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('range step Data', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            total: {
+              label: 'Total',
+            },
+          }}
+        >
+          <DataFilters>
+            <DataFilter property="total" range={{ step: 15 }} />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    fireEvent.mouseDown(lowerBound);
+    fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
+    fireEvent.mouseUp(lowerBound);
+    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('range Data', () => {

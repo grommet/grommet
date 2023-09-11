@@ -22,7 +22,10 @@ const getValueAt = (valueObject, pathArg) => {
 const generateOptions = (data, property) =>
   Array.from(new Set(data.map((d) => getValueAt(d, property))))
     .filter((v) => v !== undefined && v !== '')
-    .sort();
+    // ensure number values are sorted appropriately
+    // [132, 15, 100] --> [15, 100, 132]
+    // empty sort() would result in [100, 132, 15]
+    .sort((a, b) => a - b);
 
 const alignMax = (value, interval) => {
   if (value > 0) return value - (value % interval) + interval;
@@ -63,7 +66,8 @@ export const DataFilter = ({
     const optionsIn = optionsProp || properties?.[property]?.options;
     const rangeIn = rangeProp || properties?.[property]?.range;
     if (optionsIn) return [optionsIn, undefined];
-    if (rangeIn) return [undefined, [rangeIn.min, rangeIn.max]];
+    if (rangeIn && 'min' in rangeIn && 'max' in rangeIn)
+      return [undefined, [rangeIn.min, rangeIn.max]];
 
     // generate options from all values for property
     const uniqueValues = generateOptions(unfilteredData || data, property);
@@ -116,7 +120,13 @@ export const DataFilter = ({
           label
           min={range[0]}
           max={range[1]}
-          step={(range[1] - range[0]) / 20}
+          step={
+            // from `range` on DataFilter
+            rangeProp?.step ||
+            // from range in Data `properties`
+            properties?.[property]?.range?.step ||
+            (range[1] - range[0]) / 20
+          }
           size="full"
           round="small"
         />
