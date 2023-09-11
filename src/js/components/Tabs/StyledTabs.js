@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
 
+import { Box } from '../Box';
 import { genericStyles, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const StyledTabsHeader = styled.div.withConfig(styledComponentsConfig)`
+const StyledTabsHeader = styled(Box)`
   ${(props) => props.theme.tabs.header.extend};
 `;
 
@@ -31,7 +32,7 @@ const StyledTabPanel = styled.div.withConfig(styledComponentsConfig)`
 StyledTabPanel.defaultProps = {};
 Object.setPrototypeOf(StyledTabPanel.defaultProps, defaultProps);
 
-const StyledTabs = styled.div.withConfig(styledComponentsConfig)`
+const StyledTabs = styled(Box)`
   ${genericStyles} ${(props) => props.theme.tabs.extend};
 `;
 

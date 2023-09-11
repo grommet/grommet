@@ -192,7 +192,7 @@
       }
     },
     "moduleNameMapper": {
-      "styled-components": "styled-components/dist/styled-components.browser.cjs.js"
+      "^styled-components": "styled-components/dist/styled-components.browser.cjs.js"
     },
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"

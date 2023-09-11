@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import {
-  genericStyles,
-  normalizeColor,
-  styledComponentsConfig,
-} from '../../utils';
+import { Box } from '../Box';
+import { genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const tabHoverStyle = css`
@@ -29,7 +26,7 @@ const tabHoverStyle = css`
   }
 `;
 
-const StyledTab = styled.div.withConfig(styledComponentsConfig)`
+const StyledTab = styled(Box)`
   white-space: nowrap;
   ${genericStyles}
   ${(props) =>
