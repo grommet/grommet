@@ -26,10 +26,10 @@ const layerProps = {
 export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   const {
     clearFilters,
-    data,
     id: dataId,
     messages,
     properties,
+    unfilteredData,
     view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
@@ -66,10 +66,10 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   let content = children;
   if (Children.count(children) === 0) {
     let filtersFor;
-    if (!properties && data && data.length)
+    if (!properties && unfilteredData && unfilteredData.length)
       // build from a piece of data, ignore object values
-      filtersFor = Object.keys(data[0]).filter(
-        (k) => typeof data[0][k] !== 'object',
+      filtersFor = Object.keys(unfilteredData[0]).filter(
+        (k) => typeof unfilteredData[0][k] !== 'object',
       );
     else if (Array.isArray(properties)) filtersFor = properties;
     else if (typeof properties === 'object')
