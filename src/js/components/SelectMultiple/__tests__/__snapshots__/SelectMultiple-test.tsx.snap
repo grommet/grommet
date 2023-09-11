@@ -990,6 +990,18 @@ exports[`SelectMultiple disabled option 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1647,6 +1659,18 @@ exports[`SelectMultiple keyboard interactions 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1900,6 +1924,18 @@ exports[`SelectMultiple limit 1`] = `
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -2758,6 +2794,18 @@ exports[`SelectMultiple select all and clear 1`] = `
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -3339,20 +3387,27 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c18 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c20 {
@@ -3619,6 +3674,22 @@ exports[`SelectMultiple showSelectionInline 1`] = `
 
 @media only screen and (max-width: 768px) {
 
+}
+
+@media only screen and (max-width: 768px) {
+  .c15 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c18 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -4492,20 +4563,27 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c18 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c20 {
@@ -4762,6 +4840,18 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c15 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c18 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
 <div
   class="c0"
 >
@@ -4965,20 +5055,27 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c18 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c20 {
@@ -5236,6 +5333,18 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c15 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c18 {
+    border: solid 2px #7D4CDB;
   }
 }
 

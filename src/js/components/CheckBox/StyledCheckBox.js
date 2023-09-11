@@ -7,6 +7,7 @@ import {
   styledComponentsConfig,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
 
 // Note: since `fillStyle` is only used in one place, `justify-content` was
 // added to it to simplify its logic. If this is ever reused somewhere else,
@@ -121,7 +122,7 @@ const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)`
 StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
 
-const StyledCheckBoxBox = styled.div.withConfig(styledComponentsConfig)`
+const StyledCheckBoxBox = styled(Box)`
   ${(props) => props.focus && props.focusIndicator && focusStyle()};
   ${(props) => props.theme.checkBox.check.extend};
 `;
@@ -170,7 +171,7 @@ const StyledCheckBoxKnob = styled.span.withConfig(styledComponentsConfig)`
 StyledCheckBoxKnob.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 
-const StyledCheckBox = styled.div.withConfig(styledComponentsConfig)`
+const StyledCheckBox = styled(Box)`
   flex-shrink: 0;
 `;
 

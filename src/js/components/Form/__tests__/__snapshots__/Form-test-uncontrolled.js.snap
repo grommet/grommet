@@ -185,20 +185,27 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c3 {
@@ -248,6 +255,18 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
 @media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -835,20 +854,27 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c6 {
@@ -1021,6 +1047,18 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
 @media only screen and (max-width: 768px) {
   .c5 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1118,7 +1156,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
@@ -1126,7 +1164,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+              class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             />
           </div>
           <span>
@@ -1192,20 +1230,27 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c6 {
@@ -1378,6 +1423,18 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 @media only screen and (max-width: 768px) {
   .c5 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1476,7 +1533,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
@@ -1484,7 +1541,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+              class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             >
               .c0 {
   box-sizing: border-box;
@@ -1492,6 +1549,18 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -1617,6 +1686,18 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
 <div
       class="c0 "
     >
@@ -1680,7 +1761,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
@@ -1688,7 +1769,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+              class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             />
           </div>
           <span>
@@ -2212,23 +2293,80 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
-.c17 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  height: 24px;
-  width: 24px;
 }
 
 .c21 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c23 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c25 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c24 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -2274,7 +2412,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   flex-shrink: 0;
 }
 
-.c19 {
+.c20 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -2283,12 +2421,12 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   cursor: pointer;
 }
 
-.c19 :hover input:not([disabled])+div,
-.c19 :hover input:not([disabled])+span {
+.c20 :hover input:not([disabled])+div,
+.c20 :hover input:not([disabled])+span {
   border-color: #000000;
 }
 
-.c20 {
+.c22 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -2297,7 +2435,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   cursor: pointer;
 }
 
-.c22 {
+.c26 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
@@ -2350,7 +2488,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   border: 0;
 }
 
-.c23 {
+.c27 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2374,47 +2512,47 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   transition-timing-function: ease-in-out;
 }
 
-.c23:hover {
+.c27:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c23:focus {
+.c27:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus >circle,
-.c23:focus >ellipse,
-.c23:focus >line,
-.c23:focus >path,
-.c23:focus >polygon,
-.c23:focus >polyline,
-.c23:focus >rect {
+.c27:focus >circle,
+.c27:focus >ellipse,
+.c27:focus >line,
+.c27:focus >path,
+.c27:focus >polygon,
+.c27:focus >polyline,
+.c27:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus ::-moz-focus-inner {
+.c27:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c23:focus:not(:focus-visible) {
+.c27:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible) >circle,
-.c23:focus:not(:focus-visible) >ellipse,
-.c23:focus:not(:focus-visible) >line,
-.c23:focus:not(:focus-visible) >path,
-.c23:focus:not(:focus-visible) >polygon,
-.c23:focus:not(:focus-visible) >polyline,
-.c23:focus:not(:focus-visible) >rect {
+.c27:focus:not(:focus-visible) >circle,
+.c27:focus:not(:focus-visible) >ellipse,
+.c27:focus:not(:focus-visible) >line,
+.c27:focus:not(:focus-visible) >path,
+.c27:focus:not(:focus-visible) >polygon,
+.c27:focus:not(:focus-visible) >polyline,
+.c27:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible) ::-moz-focus-inner {
+.c27:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2503,11 +2641,45 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 }
 
 @media only screen and (max-width: 768px) {
+  .c14 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
 
 }
 
 @media only screen and (max-width: 768px) {
   .c21 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c23 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c17 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c25 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c24 {
     height: 6px;
   }
 }
@@ -2647,19 +2819,19 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
         class="c12 FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="c14"
+          class="c19"
           id="test-radiobuttongroup"
           role="radiogroup"
         >
           <label
-            class="c19"
+            class="c20"
             for="test-radiobuttongroup-one"
           >
             <div
-              class="c14 "
+              class="c21 "
             >
               <input
-                class="c20"
+                class="c22"
                 id="test-radiobuttongroup-one"
                 name="test-radiobuttongroup"
                 tabindex="-1"
@@ -2667,7 +2839,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
                 value="one"
               />
               <div
-                class="c17 "
+                class="c23 "
               />
             </div>
             <span
@@ -2677,17 +2849,17 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
             </span>
           </label>
           <div
-            class="c21"
+            class="c24"
           />
           <label
-            class="c19"
+            class="c20"
             for="test-radiobuttongroup-two"
           >
             <div
-              class="c14 "
+              class="c21 "
             >
               <input
-                class="c20"
+                class="c22"
                 id="test-radiobuttongroup-two"
                 name="test-radiobuttongroup"
                 tabindex="0"
@@ -2695,10 +2867,10 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
                 value="two"
               />
               <div
-                class="c17 "
+                class="c25 "
               >
                 <svg
-                  class="c22"
+                  class="c26"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -2717,17 +2889,17 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
             </span>
           </label>
           <div
-            class="c21"
+            class="c24"
           />
           <label
-            class="c19"
+            class="c20"
             for="test-radiobuttongroup-three"
           >
             <div
-              class="c14 "
+              class="c21 "
             >
               <input
-                class="c20"
+                class="c22"
                 id="test-radiobuttongroup-three"
                 name="test-radiobuttongroup"
                 tabindex="-1"
@@ -2735,7 +2907,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
                 value="three"
               />
               <div
-                class="c17 "
+                class="c23 "
               />
             </div>
             <span
@@ -2748,7 +2920,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
       </div>
     </div>
     <button
-      class="c23"
+      class="c27"
       type="reset"
     >
       Reset
@@ -2843,7 +3015,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
           label="test-checkbox"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
@@ -2852,7 +3024,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+              class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             />
           </div>
           <span>
@@ -2883,7 +3055,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             for="test-radiobuttongroup-one"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 faWFoE StyledRadioButton-sc-g1f6ld-5 dLoTNH"
+              class="StyledBox-sc-13pk1d4-0 hNesJs StyledRadioButton-sc-g1f6ld-5 dLoTNH"
             >
               <input
                 class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fNcwFS"
@@ -2894,7 +3066,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="one"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 jtNUjl StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
+                class="StyledBox-sc-13pk1d4-0 bVQzZu StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
               />
             </div>
             <span
@@ -2911,7 +3083,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             for="test-radiobuttongroup-two"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 faWFoE StyledRadioButton-sc-g1f6ld-5 dLoTNH"
+              class="StyledBox-sc-13pk1d4-0 hNesJs StyledRadioButton-sc-g1f6ld-5 dLoTNH"
             >
               <input
                 class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fNcwFS"
@@ -2922,7 +3094,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="two"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 jtNUjl StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
+                class="StyledBox-sc-13pk1d4-0 bVQzZu StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
               />
             </div>
             <span
@@ -2939,7 +3111,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             for="test-radiobuttongroup-three"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 faWFoE StyledRadioButton-sc-g1f6ld-5 dLoTNH"
+              class="StyledBox-sc-13pk1d4-0 hNesJs StyledRadioButton-sc-g1f6ld-5 dLoTNH"
             >
               <input
                 class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fNcwFS"
@@ -2950,7 +3122,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="three"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 jtNUjl StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
+                class="StyledBox-sc-13pk1d4-0 bVQzZu StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
               />
             </div>
             <span

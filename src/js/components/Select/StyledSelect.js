@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
@@ -11,7 +12,7 @@ import {
   styledComponentsConfig,
 } from '../../utils';
 
-export const StyledContainer = styled.div.withConfig(styledComponentsConfig)`
+export const StyledContainer = styled(Box)`
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;

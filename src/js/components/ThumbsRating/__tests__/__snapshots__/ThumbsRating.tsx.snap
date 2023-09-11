@@ -49,6 +49,7 @@ exports[`ThumbsRating StarRating is present 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c6 {
@@ -220,6 +221,7 @@ exports[`ThumbsRating StarRating should have no accessibility violations 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c6 {
@@ -410,6 +412,7 @@ exports[`ThumbsRating value for thumbs 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c9 {

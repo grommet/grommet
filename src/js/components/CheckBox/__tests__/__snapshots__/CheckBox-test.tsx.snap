@@ -15,20 +15,26 @@ exports[`CheckBox checked renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c6 {
@@ -68,6 +74,12 @@ exports[`CheckBox checked renders 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -118,20 +130,27 @@ exports[`CheckBox controlled 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c6 {
@@ -172,6 +191,18 @@ exports[`CheckBox controlled 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -220,7 +251,7 @@ exports[`CheckBox controlled 2`] = `
     label="test-label"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+      class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
     >
       <input
         checked=""
@@ -228,7 +259,7 @@ exports[`CheckBox controlled 2`] = `
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+        class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
       >
         <svg
           class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 WheCn"
@@ -264,20 +295,27 @@ exports[`CheckBox custom theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c1 {
@@ -314,6 +352,18 @@ exports[`CheckBox custom theme 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -356,20 +406,26 @@ exports[`CheckBox defaultChecked 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c6 {
@@ -409,6 +465,12 @@ exports[`CheckBox defaultChecked 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -459,23 +521,44 @@ exports[`CheckBox disabled renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c7 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -512,6 +595,18 @@ exports[`CheckBox disabled renders 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -551,11 +646,11 @@ exports[`CheckBox disabled renders 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 "
+        class="c6 "
         disabled=""
       >
         <svg
-          class="c6"
+          class="c7"
           disabled=""
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
@@ -590,20 +685,38 @@ exports[`CheckBox indeterminate renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .c6 {
@@ -659,6 +772,18 @@ exports[`CheckBox indeterminate renders 1`] = `
   flex-shrink: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -693,7 +818,7 @@ exports[`CheckBox indeterminate renders 1`] = `
     label="test label"
   >
     <div
-      class="c2 c3"
+      class="c8 c3"
     >
       <input
         class="c4"
@@ -736,20 +861,27 @@ exports[`CheckBox label renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c1 {
@@ -795,6 +927,18 @@ exports[`CheckBox label renders 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -856,20 +1000,27 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c1 {
@@ -902,6 +1053,18 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -944,20 +1107,26 @@ exports[`CheckBox renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c1 {
@@ -989,6 +1158,12 @@ exports[`CheckBox renders 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -1045,20 +1220,26 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c1 {
@@ -1090,6 +1271,12 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -1145,20 +1332,27 @@ exports[`CheckBox renders custom checked icon 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c1 {
@@ -1191,6 +1385,18 @@ exports[`CheckBox renders custom checked icon 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -1238,20 +1444,27 @@ exports[`CheckBox reverse renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-left: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c1 {
@@ -1284,6 +1497,18 @@ exports[`CheckBox reverse renders 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -1326,9 +1551,24 @@ exports[`CheckBox reverse toggle fill 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-left: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .c1 {
@@ -1392,6 +1632,18 @@ exports[`CheckBox reverse toggle fill 1`] = `
   flex-shrink: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    margin-right: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -1423,7 +1675,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
     label="test label"
   >
     <div
-      class="c2 c3"
+      class="c7 c3"
     >
       <input
         class="c4"
@@ -1459,20 +1711,26 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c1 {
@@ -1504,6 +1762,12 @@ exports[`CheckBox should not have accessibility violations 1`] = `
 
 .c3 {
   flex-shrink: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -1543,9 +1807,23 @@ exports[`CheckBox toggle renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .c1 {
@@ -1618,6 +1896,12 @@ exports[`CheckBox toggle renders 1`] = `
   flex-shrink: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .c8 {
+    margin-right: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -1665,7 +1949,7 @@ exports[`CheckBox toggle renders 1`] = `
     label="test label"
   >
     <div
-      class="c2 c3"
+      class="c8 c3"
     >
       <input
         class="c4"

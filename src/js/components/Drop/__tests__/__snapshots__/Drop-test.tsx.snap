@@ -438,6 +438,8 @@ exports[`Drop background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #33333310;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -484,17 +486,7 @@ exports[`Drop background 1`] = `
 `;
 
 exports[`Drop background 2`] = `
-".ecJdkQ {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .eVyACd {
     display: flex;
     align-items: stretch;
@@ -1007,6 +999,7 @@ exports[`Drop margin 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1035,6 +1028,12 @@ exports[`Drop margin 1`] = `
   animation-delay: 0.01s;
 }
 
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 6px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
     display: flex;
@@ -1054,17 +1053,7 @@ exports[`Drop margin 1`] = `
 `;
 
 exports[`Drop margin 2`] = `
-".ecJdkQ {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .eVyACd {
     display: flex;
     align-items: stretch;
@@ -1419,6 +1408,7 @@ exports[`Drop round 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  border-radius: 100%;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
@@ -1462,17 +1452,7 @@ exports[`Drop round 1`] = `
 `;
 
 exports[`Drop round 2`] = `
-".ecJdkQ {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .eVyACd {
     display: flex;
     align-items: stretch;

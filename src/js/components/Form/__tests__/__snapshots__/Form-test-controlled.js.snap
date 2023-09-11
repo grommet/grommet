@@ -3772,6 +3772,7 @@ exports[`Form controlled custom theme 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c9 {
@@ -3963,20 +3964,27 @@ exports[`Form controlled dynamicly removed fields using blur validation
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c6 {
@@ -4152,6 +4160,18 @@ exports[`Form controlled dynamicly removed fields using blur validation
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c7 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
 <div
   class="c0"
 >
@@ -4249,7 +4269,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
@@ -4257,7 +4277,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+              class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             >
               .c0 {
   box-sizing: border-box;
@@ -4265,6 +4285,18 @@ exports[`Form controlled dynamicly removed fields using blur validation
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -4390,6 +4422,18 @@ exports[`Form controlled dynamicly removed fields using blur validation
 
 }
 
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
 <div
       class="c0 "
     >
@@ -4455,7 +4499,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
@@ -4463,7 +4507,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+              class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             />
           </div>
           <span>

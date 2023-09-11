@@ -194,6 +194,16 @@ exports[`DataSort drop 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
+  .hNesJs {
+    margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bVQzZu {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+@media only screen and (max-width: 768px) {
   .rQmrI {
     margin-top: 6px;
   }
@@ -347,18 +357,33 @@ exports[`DataSort renders 1`] = `
   flex-direction: column;
 }
 
-.c20 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c21 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
-.c22 {
+.c23 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -371,13 +396,13 @@ exports[`DataSort renders 1`] = `
   justify-content: space-between;
 }
 
-.c21 {
+.c22 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
 }
 
-.c24 {
+.c25 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
@@ -429,7 +454,7 @@ exports[`DataSort renders 1`] = `
   border: 0;
 }
 
-.c23 {
+.c24 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -453,51 +478,51 @@ exports[`DataSort renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c23:hover {
+.c24:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c23:focus {
+.c24:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus >circle,
-.c23:focus >ellipse,
-.c23:focus >line,
-.c23:focus >path,
-.c23:focus >polygon,
-.c23:focus >polyline,
-.c23:focus >rect {
+.c24:focus >circle,
+.c24:focus >ellipse,
+.c24:focus >line,
+.c24:focus >path,
+.c24:focus >polygon,
+.c24:focus >polyline,
+.c24:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c23:focus ::-moz-focus-inner {
+.c24:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c23:focus:not(:focus-visible) {
+.c24:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible) >circle,
-.c23:focus:not(:focus-visible) >ellipse,
-.c23:focus:not(:focus-visible) >line,
-.c23:focus:not(:focus-visible) >path,
-.c23:focus:not(:focus-visible) >polygon,
-.c23:focus:not(:focus-visible) >polyline,
-.c23:focus:not(:focus-visible) >rect {
+.c24:focus:not(:focus-visible) >circle,
+.c24:focus:not(:focus-visible) >ellipse,
+.c24:focus:not(:focus-visible) >line,
+.c24:focus:not(:focus-visible) >path,
+.c24:focus:not(:focus-visible) >polygon,
+.c24:focus:not(:focus-visible) >polyline,
+.c24:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c23:focus:not(:focus-visible) ::-moz-focus-inner {
+.c24:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c25 {
+.c26 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -520,47 +545,47 @@ exports[`DataSort renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c25:focus {
+.c26:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus >circle,
-.c25:focus >ellipse,
-.c25:focus >line,
-.c25:focus >path,
-.c25:focus >polygon,
-.c25:focus >polyline,
-.c25:focus >rect {
+.c26:focus >circle,
+.c26:focus >ellipse,
+.c26:focus >line,
+.c26:focus >path,
+.c26:focus >polygon,
+.c26:focus >polyline,
+.c26:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus ::-moz-focus-inner {
+.c26:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c25:focus:not(:focus-visible) {
+.c26:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible) >circle,
-.c25:focus:not(:focus-visible) >ellipse,
-.c25:focus:not(:focus-visible) >line,
-.c25:focus:not(:focus-visible) >path,
-.c25:focus:not(:focus-visible) >polygon,
-.c25:focus:not(:focus-visible) >polyline,
-.c25:focus:not(:focus-visible) >rect {
+.c26:focus:not(:focus-visible) >circle,
+.c26:focus:not(:focus-visible) >ellipse,
+.c26:focus:not(:focus-visible) >line,
+.c26:focus:not(:focus-visible) >path,
+.c26:focus:not(:focus-visible) >polygon,
+.c26:focus:not(:focus-visible) >polyline,
+.c26:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible) ::-moz-focus-inner {
+.c26:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c26 {
+.c27 {
   opacity: 0;
 }
 
@@ -582,7 +607,7 @@ exports[`DataSort renders 1`] = `
   border-color: #000000;
 }
 
-.c19 {
+.c20 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -686,19 +711,31 @@ exports[`DataSort renders 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c22 {
-    margin-top: 6px;
+  .c19 {
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c21 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c23 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c22 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c24 {
+  .c25 {
     width: 6px;
   }
 }
@@ -805,17 +842,17 @@ exports[`DataSort renders 1`] = `
                     class="c18"
                   >
                     <div
-                      class="c17 "
+                      class="c19 "
                     >
                       <input
-                        class="c19"
+                        class="c20"
                         name="_sort.direction"
                         tabindex="0"
                         type="radio"
                         value="asc"
                       />
                       <div
-                        class="c20 "
+                        class="c21 "
                       />
                     </div>
                     <span
@@ -825,23 +862,23 @@ exports[`DataSort renders 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c21"
+                    class="c22"
                   />
                   <label
                     class="c18"
                   >
                     <div
-                      class="c17 "
+                      class="c19 "
                     >
                       <input
-                        class="c19"
+                        class="c20"
                         name="_sort.direction"
                         tabindex="-1"
                         type="radio"
                         value="desc"
                       />
                       <div
-                        class="c20 "
+                        class="c21 "
                       />
                     </div>
                     <span
@@ -856,20 +893,20 @@ exports[`DataSort renders 1`] = `
           </div>
         </div>
         <footer
-          class="c22"
+          class="c23"
         >
           <button
-            class="c23"
+            class="c24"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c24"
+            class="c25"
           />
           <button
             aria-hidden="true"
-            class="c25 c26"
+            class="c26 c27"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -999,18 +1036,33 @@ exports[`DataSort sort when data array is empty 1`] = `
   flex-direction: column;
 }
 
-.c18 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
-.c19 {
+.c20 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
@@ -1080,7 +1132,7 @@ exports[`DataSort sort when data array is empty 1`] = `
   border-color: #000000;
 }
 
-.c17 {
+.c18 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1184,7 +1236,19 @@ exports[`DataSort sort when data array is empty 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c17 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c19 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c20 {
     height: 6px;
   }
 }
@@ -1282,17 +1346,17 @@ exports[`DataSort sort when data array is empty 1`] = `
               class="c16"
             >
               <div
-                class="c15 "
+                class="c17 "
               >
                 <input
-                  class="c17"
+                  class="c18"
                   name="_sort.direction"
                   tabindex="0"
                   type="radio"
                   value="asc"
                 />
                 <div
-                  class="c18 "
+                  class="c19 "
                 />
               </div>
               <span
@@ -1302,23 +1366,23 @@ exports[`DataSort sort when data array is empty 1`] = `
               </span>
             </label>
             <div
-              class="c19"
+              class="c20"
             />
             <label
               class="c16"
             >
               <div
-                class="c15 "
+                class="c17 "
               >
                 <input
-                  class="c17"
+                  class="c18"
                   name="_sort.direction"
                   tabindex="-1"
                   type="radio"
                   value="desc"
                 />
                 <div
-                  class="c18 "
+                  class="c19 "
                 />
               </div>
               <span

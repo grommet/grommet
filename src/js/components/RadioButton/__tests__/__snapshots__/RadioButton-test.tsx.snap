@@ -18,17 +18,22 @@ exports[`RadioButton background-color themed 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -56,6 +61,12 @@ exports[`RadioButton background-color themed 1`] = `
 
 .c5 {
   background-color: red;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -98,17 +109,22 @@ exports[`RadioButton background-color themed symbolic 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -136,6 +152,12 @@ exports[`RadioButton background-color themed symbolic 1`] = `
 
 .c5 {
   background-color: #7D4CDB;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -178,17 +200,22 @@ exports[`RadioButton basic 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -212,6 +239,12 @@ exports[`RadioButton basic 1`] = `
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -274,17 +307,22 @@ exports[`RadioButton checked 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -315,6 +353,12 @@ exports[`RadioButton checked 1`] = `
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -371,6 +415,7 @@ exports[`RadioButton children 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
@@ -491,17 +536,37 @@ exports[`RadioButton disabled 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -527,11 +592,23 @@ exports[`RadioButton disabled 1`] = `
   margin: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -572,10 +649,10 @@ exports[`RadioButton disabled 1`] = `
         value="2"
       />
       <div
-        class="c4 "
+        class="c5 "
       >
         <svg
-          class="c5"
+          class="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -606,20 +683,26 @@ exports[`RadioButton label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -643,6 +726,18 @@ exports[`RadioButton label 1`] = `
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -708,20 +803,26 @@ exports[`RadioButton label themed 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -749,6 +850,18 @@ exports[`RadioButton label themed 1`] = `
 
 .c5 {
   font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -796,17 +909,22 @@ exports[`RadioButton renders custom circle icon 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -830,6 +948,12 @@ exports[`RadioButton renders custom circle icon 1`] = `
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -879,17 +1003,22 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -913,6 +1042,12 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -973,17 +1108,22 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .c1 {
@@ -1007,6 +1147,12 @@ exports[`RadioButton should have no accessibility violations 1`] = `
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div

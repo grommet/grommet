@@ -10,7 +10,6 @@ import {
   useForwardedRef,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
-import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
@@ -347,7 +346,6 @@ const DropContainer = forwardRef(
       <StyledDrop
         aria-label={a11yTitle || ariaLabel}
         ref={dropRef}
-        as={Box}
         background={background}
         plain={plain}
         elevation={

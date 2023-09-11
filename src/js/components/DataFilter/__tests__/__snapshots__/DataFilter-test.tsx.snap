@@ -393,18 +393,34 @@ exports[`DataFilter noForm 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
-.c10 {
+.c11 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -416,7 +432,7 @@ exports[`DataFilter noForm 1`] = `
   height: 100%;
 }
 
-.c12 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -429,7 +445,7 @@ exports[`DataFilter noForm 1`] = `
   cursor: pointer;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -441,7 +457,7 @@ exports[`DataFilter noForm 1`] = `
   border-radius: 12px;
 }
 
-.c15 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -454,7 +470,7 @@ exports[`DataFilter noForm 1`] = `
   overflow: visible;
 }
 
-.c16 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -466,7 +482,7 @@ exports[`DataFilter noForm 1`] = `
   justify-content: center;
 }
 
-.c17 {
+.c18 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -480,7 +496,7 @@ exports[`DataFilter noForm 1`] = `
   border-radius: 100%;
 }
 
-.c18 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -508,13 +524,13 @@ exports[`DataFilter noForm 1`] = `
   row-gap: 12px;
 }
 
-.c9 {
+.c10 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
 }
 
-.c11 {
+.c12 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -522,7 +538,7 @@ exports[`DataFilter noForm 1`] = `
   text-align: right;
 }
 
-.c19 {
+.c20 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -547,7 +563,7 @@ exports[`DataFilter noForm 1`] = `
   border-color: #000000;
 }
 
-.c7 {
+.c8 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -556,16 +572,16 @@ exports[`DataFilter noForm 1`] = `
   cursor: pointer;
 }
 
-.c7 :checked+span>span {
+.c8 :checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c6 {
+.c7 {
   flex-shrink: 0;
 }
 
-.c13 {
+.c14 {
   user-select: none;
 }
 
@@ -584,13 +600,25 @@ exports[`DataFilter noForm 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
+  .c6 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c15 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c18 {
+  .c19 {
     border-radius: 6px;
   }
 }
@@ -602,7 +630,7 @@ exports[`DataFilter noForm 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
+  .c10 {
     height: 6px;
   }
 }
@@ -630,14 +658,14 @@ exports[`DataFilter noForm 1`] = `
             label="aa"
           >
             <div
-              class="c4 c6"
+              class="c6 c7"
             >
               <input
-                class="c7"
+                class="c8"
                 type="checkbox"
               />
               <div
-                class="c8 "
+                class="c9 "
               />
             </div>
             <span>
@@ -645,21 +673,21 @@ exports[`DataFilter noForm 1`] = `
             </span>
           </label>
           <div
-            class="c9"
+            class="c10"
           />
           <label
             class="c5"
             label="bb"
           >
             <div
-              class="c4 c6"
+              class="c6 c7"
             >
               <input
-                class="c7"
+                class="c8"
                 type="checkbox"
               />
               <div
-                class="c8 "
+                class="c9 "
               />
             </div>
             <span>
@@ -667,21 +695,21 @@ exports[`DataFilter noForm 1`] = `
             </span>
           </label>
           <div
-            class="c9"
+            class="c10"
           />
           <label
             class="c5"
             label="cc"
           >
             <div
-              class="c4 c6"
+              class="c6 c7"
             >
               <input
-                class="c7"
+                class="c8"
                 type="checkbox"
               />
               <div
-                class="c8 "
+                class="c9 "
               />
             </div>
             <span>
@@ -703,14 +731,14 @@ exports[`DataFilter noForm 1`] = `
             label="true"
           >
             <div
-              class="c4 c6"
+              class="c6 c7"
             >
               <input
-                class="c7"
+                class="c8"
                 type="checkbox"
               />
               <div
-                class="c8 "
+                class="c9 "
               />
             </div>
             <span>
@@ -718,21 +746,21 @@ exports[`DataFilter noForm 1`] = `
             </span>
           </label>
           <div
-            class="c9"
+            class="c10"
           />
           <label
             class="c5"
             label="false"
           >
             <div
-              class="c4 c6"
+              class="c6 c7"
             >
               <input
-                class="c7"
+                class="c8"
                 type="checkbox"
               />
               <div
-                class="c8 "
+                class="c9 "
               />
             </div>
             <span>
@@ -745,25 +773,25 @@ exports[`DataFilter noForm 1`] = `
         class="c3"
       >
         <div
-          class="c10"
+          class="c11"
           id="data-rating"
         >
           <span
-            class="c11"
+            class="c12"
             style="width: 0px;"
           >
             2.0999999999999996
           </span>
           <div
-            class="c12 c13"
+            class="c13 c14"
             tabindex="-1"
           >
             <div
-              class="c14"
+              class="c15"
               style="flex: 0 0 0px;"
             />
             <div
-              class="c15"
+              class="c16"
               style="flex: 0 0 1px;"
             >
               <div
@@ -771,22 +799,22 @@ exports[`DataFilter noForm 1`] = `
                 aria-valuemax="4.8999999999999995"
                 aria-valuemin="2.0999999999999996"
                 aria-valuenow="2.0999999999999996"
-                class="c16"
+                class="c17"
                 role="slider"
                 style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                 tabindex="0"
               >
                 <div
-                  class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
                 />
               </div>
             </div>
             <div
-              class="c18"
+              class="c19"
               style="flex: 3.8 0 0px; cursor: ew-resize;"
             />
             <div
-              class="c15"
+              class="c16"
               style="flex: 0 0 1px;"
             >
               <div
@@ -794,23 +822,23 @@ exports[`DataFilter noForm 1`] = `
                 aria-valuemax="4.8999999999999995"
                 aria-valuemin="2.0999999999999996"
                 aria-valuenow="4.8999999999999995"
-                class="c16"
+                class="c17"
                 role="slider"
                 style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                 tabindex="0"
               >
                 <div
-                  class="c17 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
                 />
               </div>
             </div>
             <div
-              class="c14"
+              class="c15"
               style="flex: 0 0 0px;"
             />
           </div>
           <span
-            class="c19"
+            class="c20"
             style="width: 0px;"
           >
             4.8999999999999995
@@ -884,18 +912,34 @@ exports[`DataFilter options 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -908,13 +952,13 @@ exports[`DataFilter options 1`] = `
   justify-content: space-between;
 }
 
-.c13 {
+.c14 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
 }
 
-.c16 {
+.c17 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
@@ -929,7 +973,7 @@ exports[`DataFilter options 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -953,51 +997,51 @@ exports[`DataFilter options 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c15:hover {
+.c16:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c15:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c15:focus ::-moz-focus-inner {
+.c16:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c15:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c17 {
+.c18 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1020,47 +1064,47 @@ exports[`DataFilter options 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c17:focus {
+.c18:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus ::-moz-focus-inner {
+.c18:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c18:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c18 {
+.c19 {
   opacity: 0;
 }
 
@@ -1082,7 +1126,7 @@ exports[`DataFilter options 1`] = `
   border-color: #000000;
 }
 
-.c11 {
+.c12 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -1091,12 +1135,12 @@ exports[`DataFilter options 1`] = `
   cursor: pointer;
 }
 
-.c11 :checked+span>span {
+.c12 :checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c10 {
+.c11 {
   flex-shrink: 0;
 }
 
@@ -1129,19 +1173,31 @@ exports[`DataFilter options 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
-    margin-top: 6px;
+  .c10 {
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c13 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c15 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c14 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c16 {
+  .c17 {
     width: 6px;
   }
 }
@@ -1187,14 +1243,14 @@ exports[`DataFilter options 1`] = `
                     label="aa"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1202,21 +1258,21 @@ exports[`DataFilter options 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c13"
+                    class="c14"
                   />
                   <label
                     class="c9"
                     label="bb"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1224,21 +1280,21 @@ exports[`DataFilter options 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c13"
+                    class="c14"
                   />
                   <label
                     class="c9"
                     label="cc"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1270,14 +1326,14 @@ exports[`DataFilter options 1`] = `
                     label="Enabled"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1285,21 +1341,21 @@ exports[`DataFilter options 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c13"
+                    class="c14"
                   />
                   <label
                     class="c9"
                     label="Disabled"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1331,14 +1387,14 @@ exports[`DataFilter options 1`] = `
                     label="ZZ"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1346,21 +1402,21 @@ exports[`DataFilter options 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c13"
+                    class="c14"
                   />
                   <label
                     class="c9"
                     label="YY"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1373,20 +1429,20 @@ exports[`DataFilter options 1`] = `
           </div>
         </div>
         <footer
-          class="c14"
+          class="c15"
         >
           <button
-            class="c15"
+            class="c16"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c16"
+            class="c17"
           />
           <button
             aria-hidden="true"
-            class="c17 c18"
+            class="c18 c19"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -2494,18 +2550,34 @@ exports[`DataFilter renders 1`] = `
   flex-direction: column;
 }
 
-.c12 {
+.c10 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c13 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2517,7 +2589,7 @@ exports[`DataFilter renders 1`] = `
   height: 100%;
 }
 
-.c16 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2530,7 +2602,7 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c18 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2542,7 +2614,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 12px;
 }
 
-.c19 {
+.c20 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2555,7 +2627,7 @@ exports[`DataFilter renders 1`] = `
   overflow: visible;
 }
 
-.c20 {
+.c21 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -2567,7 +2639,7 @@ exports[`DataFilter renders 1`] = `
   justify-content: center;
 }
 
-.c21 {
+.c22 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2581,7 +2653,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 100%;
 }
 
-.c22 {
+.c23 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2595,7 +2667,7 @@ exports[`DataFilter renders 1`] = `
   border-radius: 12px;
 }
 
-.c24 {
+.c25 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2608,13 +2680,13 @@ exports[`DataFilter renders 1`] = `
   justify-content: space-between;
 }
 
-.c13 {
+.c14 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
 }
 
-.c26 {
+.c27 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
@@ -2629,7 +2701,7 @@ exports[`DataFilter renders 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
@@ -2637,14 +2709,14 @@ exports[`DataFilter renders 1`] = `
   text-align: right;
 }
 
-.c23 {
+.c24 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c25 {
+.c26 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2668,51 +2740,51 @@ exports[`DataFilter renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c25:hover {
+.c26:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c25:focus {
+.c26:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus >circle,
-.c25:focus >ellipse,
-.c25:focus >line,
-.c25:focus >path,
-.c25:focus >polygon,
-.c25:focus >polyline,
-.c25:focus >rect {
+.c26:focus >circle,
+.c26:focus >ellipse,
+.c26:focus >line,
+.c26:focus >path,
+.c26:focus >polygon,
+.c26:focus >polyline,
+.c26:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c25:focus ::-moz-focus-inner {
+.c26:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c25:focus:not(:focus-visible) {
+.c26:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible) >circle,
-.c25:focus:not(:focus-visible) >ellipse,
-.c25:focus:not(:focus-visible) >line,
-.c25:focus:not(:focus-visible) >path,
-.c25:focus:not(:focus-visible) >polygon,
-.c25:focus:not(:focus-visible) >polyline,
-.c25:focus:not(:focus-visible) >rect {
+.c26:focus:not(:focus-visible) >circle,
+.c26:focus:not(:focus-visible) >ellipse,
+.c26:focus:not(:focus-visible) >line,
+.c26:focus:not(:focus-visible) >path,
+.c26:focus:not(:focus-visible) >polygon,
+.c26:focus:not(:focus-visible) >polyline,
+.c26:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c25:focus:not(:focus-visible) ::-moz-focus-inner {
+.c26:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c27 {
+.c28 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2735,47 +2807,47 @@ exports[`DataFilter renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c27:focus {
+.c28:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c27:focus >circle,
-.c27:focus >ellipse,
-.c27:focus >line,
-.c27:focus >path,
-.c27:focus >polygon,
-.c27:focus >polyline,
-.c27:focus >rect {
+.c28:focus >circle,
+.c28:focus >ellipse,
+.c28:focus >line,
+.c28:focus >path,
+.c28:focus >polygon,
+.c28:focus >polyline,
+.c28:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c27:focus ::-moz-focus-inner {
+.c28:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c27:focus:not(:focus-visible) {
+.c28:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c27:focus:not(:focus-visible) >circle,
-.c27:focus:not(:focus-visible) >ellipse,
-.c27:focus:not(:focus-visible) >line,
-.c27:focus:not(:focus-visible) >path,
-.c27:focus:not(:focus-visible) >polygon,
-.c27:focus:not(:focus-visible) >polyline,
-.c27:focus:not(:focus-visible) >rect {
+.c28:focus:not(:focus-visible) >circle,
+.c28:focus:not(:focus-visible) >ellipse,
+.c28:focus:not(:focus-visible) >line,
+.c28:focus:not(:focus-visible) >path,
+.c28:focus:not(:focus-visible) >polygon,
+.c28:focus:not(:focus-visible) >polyline,
+.c28:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c27:focus:not(:focus-visible) ::-moz-focus-inner {
+.c28:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c28 {
+.c29 {
   opacity: 0;
 }
 
@@ -2797,7 +2869,7 @@ exports[`DataFilter renders 1`] = `
   border-color: #000000;
 }
 
-.c11 {
+.c12 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -2806,16 +2878,16 @@ exports[`DataFilter renders 1`] = `
   cursor: pointer;
 }
 
-.c11 :checked+span>span {
+.c12 :checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c10 {
+.c11 {
   flex-shrink: 0;
 }
 
-.c17 {
+.c18 {
   user-select: none;
 }
 
@@ -2848,31 +2920,43 @@ exports[`DataFilter renders 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c18 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c22 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c24 {
-    margin-top: 6px;
+  .c10 {
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c13 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c19 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c23 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c25 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c14 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c26 {
+  .c27 {
     width: 6px;
   }
 }
@@ -2918,14 +3002,14 @@ exports[`DataFilter renders 1`] = `
                     label="aa"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -2933,21 +3017,21 @@ exports[`DataFilter renders 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c13"
+                    class="c14"
                   />
                   <label
                     class="c9"
                     label="bb"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -2955,21 +3039,21 @@ exports[`DataFilter renders 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c13"
+                    class="c14"
                   />
                   <label
                     class="c9"
                     label="cc"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -3001,14 +3085,14 @@ exports[`DataFilter renders 1`] = `
                     label="true"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -3016,21 +3100,21 @@ exports[`DataFilter renders 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c13"
+                    class="c14"
                   />
                   <label
                     class="c9"
                     label="false"
                   >
                     <div
-                      class="c8 c10"
+                      class="c10 c11"
                     >
                       <input
-                        class="c11"
+                        class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c12 "
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -3053,25 +3137,25 @@ exports[`DataFilter renders 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c14"
+                  class="c15"
                   id="data-rating"
                 >
                   <span
-                    class="c15"
+                    class="c16"
                     style="width: 0px;"
                   >
                     2.0999999999999996
                   </span>
                   <div
-                    class="c16 c17"
+                    class="c17 c18"
                     tabindex="-1"
                   >
                     <div
-                      class="c18"
+                      class="c19"
                       style="flex: 0 0 0px;"
                     />
                     <div
-                      class="c19"
+                      class="c20"
                       style="flex: 0 0 1px;"
                     >
                       <div
@@ -3079,22 +3163,22 @@ exports[`DataFilter renders 1`] = `
                         aria-valuemax="4.8999999999999995"
                         aria-valuemin="2.0999999999999996"
                         aria-valuenow="2.0999999999999996"
-                        class="c20"
+                        class="c21"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                         tabindex="0"
                       >
                         <div
-                          class="c21 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
                     <div
-                      class="c22"
+                      class="c23"
                       style="flex: 3.8 0 0px; cursor: ew-resize;"
                     />
                     <div
-                      class="c19"
+                      class="c20"
                       style="flex: 0 0 1px;"
                     >
                       <div
@@ -3102,23 +3186,23 @@ exports[`DataFilter renders 1`] = `
                         aria-valuemax="4.8999999999999995"
                         aria-valuemin="2.0999999999999996"
                         aria-valuenow="4.8999999999999995"
-                        class="c20"
+                        class="c21"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
                         tabindex="0"
                       >
                         <div
-                          class="c21 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
                     <div
-                      class="c18"
+                      class="c19"
                       style="flex: 0 0 0px;"
                     />
                   </div>
                   <span
-                    class="c23"
+                    class="c24"
                     style="width: 0px;"
                   >
                     4.8999999999999995
@@ -3129,20 +3213,20 @@ exports[`DataFilter renders 1`] = `
           </div>
         </div>
         <footer
-          class="c24"
+          class="c25"
         >
           <button
-            class="c25"
+            class="c26"
             type="submit"
           >
             Apply filters
           </button>
           <div
-            class="c26"
+            class="c27"
           />
           <button
             aria-hidden="true"
-            class="c27 c28"
+            class="c28 c29"
             disabled=""
             tabindex="-1"
             type="reset"
@@ -3390,6 +3474,22 @@ exports[`DataFilter select multiple options 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -3812,18 +3912,34 @@ exports[`DataFilter select multiple options search 2`] = `
   padding: 6px;
 }
 
-.c21 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c22 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
-.c22 {
+.c23 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3835,7 +3951,7 @@ exports[`DataFilter select multiple options search 2`] = `
   width: 100%;
 }
 
-.c23 {
+.c24 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4051,7 +4167,7 @@ exports[`DataFilter select multiple options search 2`] = `
   border-color: #000000;
 }
 
-.c20 {
+.c21 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -4060,12 +4176,12 @@ exports[`DataFilter select multiple options search 2`] = `
   cursor: pointer;
 }
 
-.c20 :checked+span>span {
+.c21 :checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c19 {
+.c20 {
   flex-shrink: 0;
 }
 
@@ -4187,6 +4303,10 @@ exports[`DataFilter select multiple options search 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
   .c10 {
     margin-left: 6px;
     margin-right: 6px;
@@ -4225,6 +4345,18 @@ exports[`DataFilter select multiple options search 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
+  .c19 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c22 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c7 {
     width: 6px;
   }
@@ -4255,6 +4387,7 @@ exports[`DataFilter select multiple options search 2`] = `
   tabindex="-1"
 >
   <div
+    aria-label="Select dropdown"
     class="c2 c3"
     id="test-data-type.name__select-drop"
   >
@@ -4344,19 +4477,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             ZZ
           </div>
@@ -4378,19 +4511,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             YY
           </div>
@@ -4412,19 +4545,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             aa
           </div>
@@ -4446,19 +4579,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             bb
           </div>
@@ -4480,19 +4613,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             cc
           </div>
@@ -4514,19 +4647,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             dd
           </div>
@@ -4548,19 +4681,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             ee
           </div>
@@ -4582,19 +4715,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             ff
           </div>
@@ -4616,19 +4749,19 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             gg
           </div>
@@ -4650,26 +4783,26 @@ exports[`DataFilter select multiple options search 2`] = `
           label="[object Object]"
         >
           <div
-            class="c2 c19"
+            class="c19 c20"
           >
             <input
-              class="c20"
+              class="c21"
               tabindex="-1"
               type="checkbox"
             />
             <div
-              class="c21 "
+              class="c22 "
             />
           </div>
           <div
-            class="c22"
+            class="c23"
           >
             hh
           </div>
         </label>
       </button>
       <div
-        class="c23"
+        class="c24"
       />
     </div>
   </div>
@@ -4690,6 +4823,16 @@ exports[`DataFilter select multiple options search 3`] = `
 @media only screen and (max-width: 768px) {
   .fuemCy {
     padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .kgDPDh {
+    margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fwNyOi {
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
@@ -4953,6 +5096,22 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {

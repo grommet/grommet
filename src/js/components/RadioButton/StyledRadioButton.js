@@ -6,6 +6,7 @@ import {
   styledComponentsConfig,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
 
 const disabledStyle = `
   opacity: 0.5;
@@ -106,7 +107,7 @@ const StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig)`
 StyledRadioButtonIcon.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
 
-const StyledRadioButtonBox = styled.div.withConfig(styledComponentsConfig)`
+const StyledRadioButtonBox = styled(Box)`
   background-color: ${(props) =>
     normalizeColor(
       props.theme.radioButton.check.background?.color,
@@ -119,7 +120,7 @@ const StyledRadioButtonBox = styled.div.withConfig(styledComponentsConfig)`
 StyledRadioButtonBox.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, defaultProps);
 
-const StyledRadioButton = styled.div.withConfig(styledComponentsConfig)`
+const StyledRadioButton = styled(Box)`
   ${(props) => props.theme.radioButton && props.theme.radioButton.extend};
 `;
 

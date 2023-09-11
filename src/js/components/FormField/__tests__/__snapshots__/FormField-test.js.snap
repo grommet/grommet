@@ -148,20 +148,27 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c4 {
@@ -238,6 +245,18 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
 @media only screen and (max-width: 768px) {
   .c3 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c8 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 

@@ -2391,20 +2391,26 @@ exports[`DataTable border on CheckBox cell 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c11 {
@@ -2418,12 +2424,21 @@ exports[`DataTable border on CheckBox cell 1`] = `
   justify-content: center;
 }
 
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c12 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c14 {
+.c15 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -2506,6 +2521,12 @@ exports[`DataTable border on CheckBox cell 1`] = `
 
 .c13:focus:not(:focus-visible) {
   outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 <div
@@ -2612,10 +2633,10 @@ exports[`DataTable border on CheckBox cell 1`] = `
             scope="row"
           >
             <div
-              class="c6"
+              class="c14"
             >
               <span
-                class="c14"
+                class="c15"
               >
                 Alan
               </span>
@@ -2625,7 +2646,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
             class="c10 "
           >
             <div
-              class="c6"
+              class="c14"
             >
               <span
                 class="c12"
@@ -2668,10 +2689,10 @@ exports[`DataTable border on CheckBox cell 1`] = `
             scope="row"
           >
             <div
-              class="c6"
+              class="c14"
             >
               <span
-                class="c14"
+                class="c15"
               >
                 Bryan
               </span>
@@ -2681,7 +2702,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
             class="c10 "
           >
             <div
-              class="c6"
+              class="c14"
             >
               <span
                 class="c12"
@@ -2724,10 +2745,10 @@ exports[`DataTable border on CheckBox cell 1`] = `
             scope="row"
           >
             <div
-              class="c6"
+              class="c14"
             >
               <span
-                class="c14"
+                class="c15"
               >
                 Chris
               </span>
@@ -2737,7 +2758,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
             class="c10 "
           >
             <div
-              class="c6"
+              class="c14"
             >
               <span
                 class="c12"
@@ -2780,10 +2801,10 @@ exports[`DataTable border on CheckBox cell 1`] = `
             scope="row"
           >
             <div
-              class="c6"
+              class="c14"
             >
               <span
-                class="c14"
+                class="c15"
               >
                 Eric
               </span>
@@ -2793,7 +2814,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
             class="c10 "
           >
             <div
-              class="c6"
+              class="c14"
             >
               <span
                 class="c12"
@@ -3142,20 +3163,50 @@ exports[`DataTable custom theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c25 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c28 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c29 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c11 {
@@ -3380,6 +3431,18 @@ exports[`DataTable custom theme 1`] = `
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c25 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c29 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
 <div
   class="c0"
 >
@@ -3506,7 +3569,7 @@ exports[`DataTable custom theme 1`] = `
           scope="row"
         >
           <div
-            class="c22"
+            class="c28"
           >
             <span
               class="c10"
@@ -3542,7 +3605,7 @@ exports[`DataTable custom theme 1`] = `
                   type="checkbox"
                 />
                 <div
-                  class="c25 "
+                  class="c29 "
                   disabled=""
                 />
               </div>
@@ -3554,7 +3617,7 @@ exports[`DataTable custom theme 1`] = `
           scope="row"
         >
           <div
-            class="c22"
+            class="c28"
           >
             <span
               class="c10"
@@ -3657,7 +3720,7 @@ exports[`DataTable custom theme 2`] = `
               disabled=""
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
                 disabled=""
               >
                 <input
@@ -3668,7 +3731,7 @@ exports[`DataTable custom theme 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                   disabled=""
                 >
                   <svg
@@ -3722,7 +3785,7 @@ exports[`DataTable custom theme 2`] = `
               disabled=""
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
                 disabled=""
               >
                 <input
@@ -3732,7 +3795,7 @@ exports[`DataTable custom theme 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                   disabled=""
                 />
               </div>
@@ -4024,20 +4087,26 @@ exports[`DataTable disabled select 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c12 {
@@ -4051,12 +4120,36 @@ exports[`DataTable disabled select 1`] = `
   justify-content: center;
 }
 
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c21 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
 .c13 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c19 {
+.c20 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -4202,6 +4295,18 @@ exports[`DataTable disabled select 1`] = `
   outline: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c21 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
 <div
   class="c0"
 >
@@ -4308,10 +4413,10 @@ exports[`DataTable disabled select 1`] = `
           scope="row"
         >
           <div
-            class="c6"
+            class="c19"
           >
             <span
-              class="c19"
+              class="c20"
             >
               alpha
             </span>
@@ -4341,7 +4446,7 @@ exports[`DataTable disabled select 1`] = `
                   type="checkbox"
                 />
                 <div
-                  class="c9 "
+                  class="c21 "
                 >
                   <svg
                     class="c10"
@@ -4363,10 +4468,10 @@ exports[`DataTable disabled select 1`] = `
           scope="row"
         >
           <div
-            class="c6"
+            class="c19"
           >
             <span
-              class="c19"
+              class="c20"
             >
               beta
             </span>
@@ -8666,7 +8771,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   stroke: none;
 }
 
-.c23 {
+.c24 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -8675,25 +8780,25 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   stroke: #666666;
 }
 
-.c23 g {
+.c24 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill='none'] {
+.c24 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*='#'],
-.c23 *[STROKE*='#'] {
+.c24 *[stroke*='#'],
+.c24 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*='#'],
-.c23 *[FILL*='#'] {
+.c24 *[fill-rule],
+.c24 *[FILL-RULE],
+.c24 *[fill*='#'],
+.c24 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8748,20 +8853,26 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c17 {
@@ -8775,7 +8886,31 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   justify-content: center;
 }
 
-.c25 {
+.c23 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c27 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c26 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -8970,7 +9105,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   padding-bottom: 6px;
 }
 
-.c24 {
+.c25 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9013,6 +9148,18 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c14 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c27 {
+    border: solid 2px #7D4CDB;
   }
 }
 
@@ -9204,7 +9351,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="row"
         >
           <div
-            class="c11"
+            class="c23"
           >
             <span
               class="c18"
@@ -9217,7 +9364,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c11"
+            class="c23"
           />
         </td>
       </tr>
@@ -9236,7 +9383,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <svg
                 aria-hidden="true"
-                class="c23"
+                class="c24"
                 viewBox="0 0 24 24"
               />
             </div>
@@ -9272,7 +9419,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c11"
+            class="c23"
           >
             <span
               class="c18"
@@ -9285,7 +9432,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c11"
+            class="c23"
           >
             <span
               class="c18"
@@ -9299,10 +9446,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c24"
+          class="c25"
         >
           <div
-            class="c25"
+            class="c26"
             style="height: 0px;"
           >
             <div
@@ -9310,7 +9457,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <svg
                 aria-hidden="true"
-                class="c23"
+                class="c24"
                 viewBox="0 0 24 24"
               />
             </div>
@@ -9336,7 +9483,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   type="checkbox"
                 />
                 <div
-                  class="c14 "
+                  class="c27 "
                 >
                   <svg
                     class="c15"
@@ -9357,7 +9504,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c11"
+            class="c23"
           >
             <span
               class="c18"
@@ -9370,7 +9517,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c11"
+            class="c23"
           >
             <span
               class="c18"
@@ -9444,7 +9591,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="row"
         >
           <div
-            class="c11"
+            class="c23"
           >
             <span
               class="c18"
@@ -9457,7 +9604,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c11"
+            class="c23"
           />
         </td>
       </tr>
@@ -9550,20 +9697,26 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c17 {
@@ -9575,6 +9728,15 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex-direction: column;
   flex: 1 0 auto;
   justify-content: center;
+}
+
+.c23 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
 }
 
 .c18 {
@@ -9793,6 +9955,12 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c14 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -9984,7 +10152,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="row"
         >
           <div
-            class="c11"
+            class="c23"
           >
             <span
               class="c18"
@@ -9997,7 +10165,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c11"
+            class="c23"
           />
         </td>
       </tr>
@@ -10065,7 +10233,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           scope="row"
         >
           <div
-            class="c11"
+            class="c23"
           >
             <span
               class="c18"
@@ -10078,7 +10246,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           class="c22 "
         >
           <div
-            class="c11"
+            class="c23"
           />
         </td>
       </tr>
@@ -10170,20 +10338,26 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c17 {
@@ -10195,6 +10369,30 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   flex-direction: column;
   flex: 1 0 auto;
   justify-content: center;
+}
+
+.c24 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c22 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c18 {
@@ -10370,7 +10568,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   text-align: start;
 }
 
-.c22 {
+.c23 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -10413,6 +10611,18 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c14 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c22 {
+    border: solid 2px #7D4CDB;
   }
 }
 
@@ -10582,7 +10792,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
                   type="checkbox"
                 />
                 <div
-                  class="c14 "
+                  class="c22 "
                 >
                   <svg
                     class="c15"
@@ -10600,11 +10810,11 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </div>
         </td>
         <th
-          class="c22 "
+          class="c23 "
           scope="row"
         >
           <div
-            class="c11"
+            class="c24"
           >
             <span
               class="c18"
@@ -10614,10 +10824,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </div>
         </th>
         <td
-          class="c22 "
+          class="c23 "
         >
           <div
-            class="c11"
+            class="c24"
           />
         </td>
       </tr>
@@ -10681,11 +10891,11 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </div>
         </td>
         <th
-          class="c22 "
+          class="c23 "
           scope="row"
         >
           <div
-            class="c11"
+            class="c24"
           >
             <span
               class="c18"
@@ -10695,10 +10905,10 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
           </div>
         </th>
         <td
-          class="c22 "
+          class="c23 "
         >
           <div
-            class="c11"
+            class="c24"
           />
         </td>
       </tr>
@@ -10790,20 +11000,26 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c16 {
@@ -10815,6 +11031,15 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   flex-direction: column;
   flex: 1 0 auto;
   justify-content: center;
+}
+
+.c22 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
 }
 
 .c17 {
@@ -11028,6 +11253,12 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .c14 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
 <div
   class="c0"
 >
@@ -11194,7 +11425,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           scope="row"
         >
           <div
-            class="c11"
+            class="c22"
           >
             <span
               class="c17"
@@ -11207,7 +11438,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           class="c21 "
         >
           <div
-            class="c11"
+            class="c22"
           />
         </td>
       </tr>
@@ -11275,7 +11506,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           scope="row"
         >
           <div
-            class="c11"
+            class="c22"
           >
             <span
               class="c17"
@@ -11288,7 +11519,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
           class="c21 "
         >
           <div
-            class="c11"
+            class="c22"
           />
         </td>
       </tr>
@@ -11353,7 +11584,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect all"
@@ -11361,7 +11592,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11369,6 +11600,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -11472,7 +11711,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect one"
@@ -11480,7 +11719,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11488,6 +11727,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -11580,7 +11827,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect two"
@@ -11588,7 +11835,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -11596,6 +11843,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -11704,7 +11959,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select all"
@@ -11712,7 +11967,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 />
               </div>
             </label>
@@ -11796,7 +12051,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select one"
@@ -11804,7 +12059,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 />
               </div>
             </label>
@@ -11877,7 +12132,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select two"
@@ -11885,7 +12140,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 />
               </div>
             </label>
@@ -11943,20 +12198,26 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c11 {
@@ -11970,12 +12231,21 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   justify-content: center;
 }
 
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c12 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -12082,6 +12352,12 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   outline: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
 <div
   class="c0"
 >
@@ -12185,7 +12461,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c6"
+            class="c16"
           >
             <span
               class="c12"
@@ -12199,10 +12475,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c6"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               1.1
             </span>
@@ -12241,7 +12517,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c6"
+            class="c16"
           >
             <span
               class="c12"
@@ -12255,10 +12531,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c6"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               1.2
             </span>
@@ -12297,7 +12573,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c6"
+            class="c16"
           >
             <span
               class="c12"
@@ -12311,10 +12587,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c6"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               2.1
             </span>
@@ -12353,7 +12629,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           class="c15 "
         >
           <div
-            class="c6"
+            class="c16"
           >
             <span
               class="c12"
@@ -12367,10 +12643,10 @@ exports[`DataTable onSelect select/unselect all 1`] = `
           scope="row"
         >
           <div
-            class="c6"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               2.2
             </span>
@@ -12407,7 +12683,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect all"
@@ -12415,7 +12691,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12423,6 +12699,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 <svg
@@ -12487,7 +12771,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect 1.1"
@@ -12495,7 +12779,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12503,6 +12787,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 <svg
@@ -12562,7 +12854,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect 1.2"
@@ -12570,7 +12862,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12578,6 +12870,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 <svg
@@ -12637,7 +12937,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect 2.1"
@@ -12645,7 +12945,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12653,6 +12953,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 <svg
@@ -12712,7 +13020,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect 2.2"
@@ -12720,7 +13028,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -12728,6 +13036,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 <svg
@@ -12803,7 +13119,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select all"
@@ -12811,7 +13127,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 />
               </div>
             </label>
@@ -12864,7 +13180,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select 1.1"
@@ -12872,7 +13188,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 />
               </div>
             </label>
@@ -12920,7 +13236,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select 1.2"
@@ -12928,7 +13244,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 />
               </div>
             </label>
@@ -12976,7 +13292,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select 2.1"
@@ -12984,7 +13300,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 />
               </div>
             </label>
@@ -13032,7 +13348,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select 2.2"
@@ -13040,7 +13356,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 />
               </div>
             </label>
@@ -20561,20 +20877,26 @@ exports[`DataTable select 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 .c12 {
@@ -20588,12 +20910,36 @@ exports[`DataTable select 1`] = `
   justify-content: center;
 }
 
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c18 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c13 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c17 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -20676,7 +21022,7 @@ exports[`DataTable select 1`] = `
   text-align: start;
 }
 
-.c16 {
+.c17 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -20706,6 +21052,18 @@ exports[`DataTable select 1`] = `
 
 .c14:focus:not(:focus-visible) {
   outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c16 {
+    border: solid 2px #7D4CDB;
+  }
 }
 
 <div
@@ -20799,7 +21157,7 @@ exports[`DataTable select 1`] = `
                   type="checkbox"
                 />
                 <div
-                  class="c9 "
+                  class="c16 "
                 >
                   <svg
                     class="c10"
@@ -20817,14 +21175,14 @@ exports[`DataTable select 1`] = `
           </div>
         </td>
         <th
-          class="c16 "
+          class="c17 "
           scope="row"
         >
           <div
-            class="c6"
+            class="c18"
           >
             <span
-              class="c17"
+              class="c19"
             >
               alpha
             </span>
@@ -20860,14 +21218,14 @@ exports[`DataTable select 1`] = `
           </div>
         </td>
         <th
-          class="c16 "
+          class="c17 "
           scope="row"
         >
           <div
-            class="c6"
+            class="c18"
           >
             <span
-              class="c17"
+              class="c19"
             >
               beta
             </span>
@@ -20904,7 +21262,7 @@ exports[`DataTable select 2`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect all"
@@ -20912,7 +21270,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -20920,6 +21278,14 @@ exports[`DataTable select 2`] = `
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 <svg
@@ -20970,7 +21336,7 @@ exports[`DataTable select 2`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect alpha"
@@ -20979,7 +21345,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   <svg
                     class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 WheCn"
@@ -21025,7 +21391,7 @@ exports[`DataTable select 2`] = `
               class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 faWFoE StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+                class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect beta"
@@ -21033,7 +21399,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 jtNUjl StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+                  class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -21041,6 +21407,14 @@ exports[`DataTable select 2`] = `
   stroke: #7D4CDB;
   width: 24px;
   height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 <svg

@@ -94,18 +94,34 @@ exports[`DataFilters renders 1`] = `
   flex-direction: column;
 }
 
-.c17 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-right: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c18 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
   flex-direction: column;
   height: 24px;
   width: 24px;
+  justify-content: center;
+  border-radius: 4px;
 }
 
-.c19 {
+.c20 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -132,13 +148,13 @@ exports[`DataFilters renders 1`] = `
   row-gap: 12px;
 }
 
-.c18 {
+.c19 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
 }
 
-.c21 {
+.c22 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
@@ -153,7 +169,7 @@ exports[`DataFilters renders 1`] = `
   line-height: 24px;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -177,51 +193,51 @@ exports[`DataFilters renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c20:hover {
+.c21:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus >circle,
-.c20:focus >ellipse,
-.c20:focus >line,
-.c20:focus >path,
-.c20:focus >polygon,
-.c20:focus >polyline,
-.c20:focus >rect {
+.c21:focus >circle,
+.c21:focus >ellipse,
+.c21:focus >line,
+.c21:focus >path,
+.c21:focus >polygon,
+.c21:focus >polyline,
+.c21:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus ::-moz-focus-inner {
+.c21:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c20:focus:not(:focus-visible) {
+.c21:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible) >circle,
-.c20:focus:not(:focus-visible) >ellipse,
-.c20:focus:not(:focus-visible) >line,
-.c20:focus:not(:focus-visible) >path,
-.c20:focus:not(:focus-visible) >polygon,
-.c20:focus:not(:focus-visible) >polyline,
-.c20:focus:not(:focus-visible) >rect {
+.c21:focus:not(:focus-visible) >circle,
+.c21:focus:not(:focus-visible) >ellipse,
+.c21:focus:not(:focus-visible) >line,
+.c21:focus:not(:focus-visible) >path,
+.c21:focus:not(:focus-visible) >polygon,
+.c21:focus:not(:focus-visible) >polyline,
+.c21:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c20:focus:not(:focus-visible) ::-moz-focus-inner {
+.c21:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c22 {
+.c23 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -244,47 +260,47 @@ exports[`DataFilters renders 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c22:focus {
+.c23:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
+.c23:focus >circle,
+.c23:focus >ellipse,
+.c23:focus >line,
+.c23:focus >path,
+.c23:focus >polygon,
+.c23:focus >polyline,
+.c23:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus ::-moz-focus-inner {
+.c23:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c22:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
+.c23:focus:not(:focus-visible) >circle,
+.c23:focus:not(:focus-visible) >ellipse,
+.c23:focus:not(:focus-visible) >line,
+.c23:focus:not(:focus-visible) >path,
+.c23:focus:not(:focus-visible) >polygon,
+.c23:focus:not(:focus-visible) >polyline,
+.c23:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
+.c23:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c23 {
+.c24 {
   opacity: 0;
 }
 
@@ -306,7 +322,7 @@ exports[`DataFilters renders 1`] = `
   border-color: #000000;
 }
 
-.c16 {
+.c17 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -315,12 +331,12 @@ exports[`DataFilters renders 1`] = `
   cursor: pointer;
 }
 
-.c16 :checked+span>span {
+.c17 :checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c15 {
+.c16 {
   flex-shrink: 0;
 }
 
@@ -435,7 +451,19 @@ exports[`DataFilters renders 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
+  .c15 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c18 {
+    border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c20 {
     margin-top: 6px;
   }
 }
@@ -447,13 +475,13 @@ exports[`DataFilters renders 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c18 {
+  .c19 {
     height: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c21 {
+  .c22 {
     width: 6px;
   }
 }
@@ -535,14 +563,14 @@ exports[`DataFilters renders 1`] = `
                       label="a"
                     >
                       <div
-                        class="c13 c15"
+                        class="c15 c16"
                       >
                         <input
-                          class="c16"
+                          class="c17"
                           type="checkbox"
                         />
                         <div
-                          class="c17 "
+                          class="c18 "
                         />
                       </div>
                       <span>
@@ -550,21 +578,21 @@ exports[`DataFilters renders 1`] = `
                       </span>
                     </label>
                     <div
-                      class="c18"
+                      class="c19"
                     />
                     <label
                       class="c14"
                       label="b"
                     >
                       <div
-                        class="c13 c15"
+                        class="c15 c16"
                       >
                         <input
-                          class="c16"
+                          class="c17"
                           type="checkbox"
                         />
                         <div
-                          class="c17 "
+                          class="c18 "
                         />
                       </div>
                       <span>
@@ -577,20 +605,20 @@ exports[`DataFilters renders 1`] = `
             </div>
           </div>
           <footer
-            class="c19"
+            class="c20"
           >
             <button
-              class="c20"
+              class="c21"
               type="submit"
             >
               Apply filters
             </button>
             <div
-              class="c21"
+              class="c22"
             />
             <button
               aria-hidden="true"
-              class="c22 c23"
+              class="c23 c24"
               disabled=""
               tabindex="-1"
               type="reset"

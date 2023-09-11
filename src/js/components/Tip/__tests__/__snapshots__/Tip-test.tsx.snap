@@ -5,6 +5,8 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin: 0px;
+  background: none;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -48,6 +50,12 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 0px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -203,6 +211,8 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin: 0px;
+  background: none;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -255,6 +265,12 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 0px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -315,6 +331,8 @@ exports[`Tip plain 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin: 0px;
+  background: none;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -340,6 +358,12 @@ exports[`Tip plain 1`] = `
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 0px;
+  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -428,6 +452,9 @@ exports[`Tip themed 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin: 21px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -472,6 +499,12 @@ exports[`Tip themed 1`] = `
   transform-origin: top left;
   animation: kPQHBD 0.1s forwards;
   animation-delay: 0.01s;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 21px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
