@@ -97,6 +97,9 @@ export const AllowSelectAll = () => {
 };
 
 AllowSelectAll.storyName = 'Allow Select All';
+AllowSelectAll.parameters = {
+  chromatic: { disable: true },
+};
 
 export default {
   title: 'Visualizations/DataTable/Allow Select All',

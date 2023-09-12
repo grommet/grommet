@@ -76,6 +76,7 @@ export interface DataTableProps<TRowType = any> {
 
   // Appearance
   alignSelf?: AlignSelfType;
+  allowSelectAll?: boolean;
   background?:
     | BackgroundType
     | BackgroundType[]
@@ -142,7 +143,6 @@ export interface DataTableProps<TRowType = any> {
         body?: VerticalAlignType;
         footer?: VerticalAlignType;
       };
-  allowSelectAll?: boolean;
 }
 
 export interface DataTableExtendedProps<TRowType = any>
