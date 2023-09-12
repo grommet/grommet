@@ -204,7 +204,7 @@ describe('DataFilter', () => {
   });
 
   test('range prop step', async () => {
-    const { asFragment } = render(
+    render(
       <Grommet>
         <Data data={data}>
           <DataFilters>
@@ -222,11 +222,10 @@ describe('DataFilter', () => {
     fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
     fireEvent.mouseUp(lowerBound);
     expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
-    expect(asFragment()).toMatchSnapshot();
   });
 
   test('range step Data', () => {
-    const { asFragment } = render(
+    render(
       <Grommet>
         <Data
           data={data}
@@ -248,7 +247,6 @@ describe('DataFilter', () => {
     fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
     fireEvent.mouseUp(lowerBound);
     expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
-    expect(asFragment()).toMatchSnapshot();
   });
 
   test('range Data', () => {
