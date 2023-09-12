@@ -53,8 +53,8 @@ exports[`CheckBox checked renders 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -67,7 +67,7 @@ exports[`CheckBox checked renders 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -170,8 +170,8 @@ exports[`CheckBox controlled 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -184,7 +184,7 @@ exports[`CheckBox controlled 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -247,7 +247,7 @@ exports[`CheckBox controlled 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iccYuC"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
     label="test-label"
   >
     <div
@@ -255,7 +255,7 @@ exports[`CheckBox controlled 2`] = `
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
         type="checkbox"
       />
       <div
@@ -331,8 +331,8 @@ exports[`CheckBox custom theme 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -345,7 +345,7 @@ exports[`CheckBox custom theme 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -444,8 +444,8 @@ exports[`CheckBox defaultChecked 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -458,7 +458,7 @@ exports[`CheckBox defaultChecked 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -575,8 +575,8 @@ exports[`CheckBox disabled renders 1`] = `
   cursor: default;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -588,7 +588,7 @@ exports[`CheckBox disabled renders 1`] = `
   margin: 0;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -735,8 +735,8 @@ exports[`CheckBox indeterminate renders 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -749,8 +749,8 @@ exports[`CheckBox indeterminate renders 1`] = `
   cursor: pointer;
 }
 
-.c7 :hover input:not([disabled])+div,
-.c7 :hover input:not([disabled])+span {
+.c7:hover input:not([disabled])+div,
+.c7:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -763,7 +763,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -893,8 +893,8 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -906,8 +906,8 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c6 :hover input:not([disabled])+div,
-.c6 :hover input:not([disabled])+span {
+.c6:hover input:not([disabled])+div,
+.c6:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -920,7 +920,7 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1032,8 +1032,8 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1046,7 +1046,7 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1137,8 +1137,8 @@ exports[`CheckBox renders 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1151,7 +1151,7 @@ exports[`CheckBox renders 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1250,8 +1250,8 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1264,7 +1264,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1364,8 +1364,8 @@ exports[`CheckBox renders custom checked icon 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1378,7 +1378,7 @@ exports[`CheckBox renders custom checked icon 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1476,8 +1476,8 @@ exports[`CheckBox reverse renders 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1490,7 +1490,7 @@ exports[`CheckBox reverse renders 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1584,8 +1584,8 @@ exports[`CheckBox reverse toggle fill 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1598,7 +1598,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1741,8 +1741,8 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1755,7 +1755,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1834,8 +1834,8 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c1 :hover input:not([disabled])+div,
-.c1 :hover input:not([disabled])+span {
+.c1:hover input:not([disabled])+div,
+.c1:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1848,8 +1848,8 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c7 :hover input:not([disabled])+div,
-.c7 :hover input:not([disabled])+span {
+.c7:hover input:not([disabled])+div,
+.c7:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1862,7 +1862,7 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c4 :checked+span>span {
+.c4:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }

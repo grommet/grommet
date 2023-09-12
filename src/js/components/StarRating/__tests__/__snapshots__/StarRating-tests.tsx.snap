@@ -77,8 +77,8 @@ exports[`StarRating StarRating is present 1`] = `
   cursor: pointer;
 }
 
-.c2 :hover input:not([disabled])+div,
-.c2 :hover input:not([disabled])+span {
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -345,8 +345,8 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c2 :hover input:not([disabled])+div,
-.c2 :hover input:not([disabled])+span {
+.c2:hover input:not([disabled])+div,
+.c2:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -706,8 +706,8 @@ exports[`StarRating value for rating 1`] = `
   cursor: pointer;
 }
 
-.c5 :hover input:not([disabled])+div,
-.c5 :hover input:not([disabled])+span {
+.c5:hover input:not([disabled])+div,
+.c5:hover input:not([disabled])+span {
   border-color: #000000;
 }
 

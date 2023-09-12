@@ -184,8 +184,8 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   cursor: pointer;
 }
 
-.c4 :hover input:not([disabled])+div,
-.c4 :hover input:not([disabled])+span {
+.c4:hover input:not([disabled])+div,
+.c4:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -198,8 +198,8 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   cursor: pointer;
 }
 
-.c9 :hover input:not([disabled])+div,
-.c9 :hover input:not([disabled])+span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -212,7 +212,7 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   cursor: pointer;
 }
 
-.c7 :checked+span>span {
+.c7:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }

@@ -2456,8 +2456,8 @@ exports[`DataTable border on CheckBox cell 1`] = `
   cursor: pointer;
 }
 
-.c5 :hover input:not([disabled])+div,
-.c5 :hover input:not([disabled])+span {
+.c5:hover input:not([disabled])+div,
+.c5:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2470,7 +2470,7 @@ exports[`DataTable border on CheckBox cell 1`] = `
   cursor: pointer;
 }
 
-.c8 :checked+span>span {
+.c8:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -3310,8 +3310,8 @@ exports[`DataTable custom theme 1`] = `
   cursor: default;
 }
 
-.c21 :hover input:not([disabled])+div,
-.c21 :hover input:not([disabled])+span {
+.c21:hover input:not([disabled])+div,
+.c21:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -3323,7 +3323,7 @@ exports[`DataTable custom theme 1`] = `
   margin: 0;
 }
 
-.c24 :checked+span>span {
+.c24:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -3716,7 +3716,7 @@ exports[`DataTable custom theme 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 etWRWH"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gYmsVl"
               disabled=""
             >
               <div
@@ -3726,7 +3726,7 @@ exports[`DataTable custom theme 2`] = `
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iIKVij"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ktRHAh"
                   disabled=""
                   type="checkbox"
                 />
@@ -3781,7 +3781,7 @@ exports[`DataTable custom theme 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 etWRWH"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gYmsVl"
               disabled=""
             >
               <div
@@ -3790,7 +3790,7 @@ exports[`DataTable custom theme 2`] = `
               >
                 <input
                   aria-label="select beta"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 iIKVij"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ktRHAh"
                   disabled=""
                   type="checkbox"
                 />
@@ -4175,8 +4175,8 @@ exports[`DataTable disabled select 1`] = `
   cursor: pointer;
 }
 
-.c5 :hover input:not([disabled])+div,
-.c5 :hover input:not([disabled])+span {
+.c5:hover input:not([disabled])+div,
+.c5:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -4193,8 +4193,8 @@ exports[`DataTable disabled select 1`] = `
   cursor: default;
 }
 
-.c16 :hover input:not([disabled])+div,
-.c16 :hover input:not([disabled])+span {
+.c16:hover input:not([disabled])+div,
+.c16:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -4207,7 +4207,7 @@ exports[`DataTable disabled select 1`] = `
   cursor: pointer;
 }
 
-.c8 :checked+span>span {
+.c8:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -4220,7 +4220,7 @@ exports[`DataTable disabled select 1`] = `
   margin: 0;
 }
 
-.c17 :checked+span>span {
+.c17:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -9011,8 +9011,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   cursor: pointer;
 }
 
-.c10 :hover input:not([disabled])+div,
-.c10 :hover input:not([disabled])+span {
+.c10:hover input:not([disabled])+div,
+.c10:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -9025,7 +9025,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   cursor: pointer;
 }
 
-.c13 :checked+span>span {
+.c13:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -9830,8 +9830,8 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   cursor: pointer;
 }
 
-.c10 :hover input:not([disabled])+div,
-.c10 :hover input:not([disabled])+span {
+.c10:hover input:not([disabled])+div,
+.c10:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -9844,7 +9844,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   cursor: pointer;
 }
 
-.c13 :checked+span>span {
+.c13:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -10486,8 +10486,8 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   cursor: pointer;
 }
 
-.c10 :hover input:not([disabled])+div,
-.c10 :hover input:not([disabled])+span {
+.c10:hover input:not([disabled])+div,
+.c10:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -10500,7 +10500,7 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   cursor: pointer;
 }
 
-.c13 :checked+span>span {
+.c13:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -11125,8 +11125,8 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   cursor: pointer;
 }
 
-.c10 :hover input:not([disabled])+div,
-.c10 :hover input:not([disabled])+span {
+.c10:hover input:not([disabled])+div,
+.c10:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -11139,7 +11139,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   cursor: pointer;
 }
 
-.c13 :checked+span>span {
+.c13:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -11581,14 +11581,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -11708,14 +11708,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect one"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -11824,14 +11824,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect two"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -11956,14 +11956,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -12048,14 +12048,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select one"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -12129,14 +12129,14 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select two"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -12263,8 +12263,8 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   cursor: pointer;
 }
 
-.c5 :hover input:not([disabled])+div,
-.c5 :hover input:not([disabled])+span {
+.c5:hover input:not([disabled])+div,
+.c5:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -12277,7 +12277,7 @@ exports[`DataTable onSelect select/unselect all 1`] = `
   cursor: pointer;
 }
 
-.c8 :checked+span>span {
+.c8:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -12680,14 +12680,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -12768,14 +12768,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect 1.1"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -12851,14 +12851,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect 1.2"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -12934,14 +12934,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect 2.1"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -13017,14 +13017,14 @@ exports[`DataTable onSelect select/unselect all 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect 2.2"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -13116,14 +13116,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -13177,14 +13177,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select 1.1"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -13233,14 +13233,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select 1.2"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -13289,14 +13289,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select 2.1"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -13345,14 +13345,14 @@ exports[`DataTable onSelect select/unselect all 3`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="select 2.2"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -20965,8 +20965,8 @@ exports[`DataTable select 1`] = `
   cursor: pointer;
 }
 
-.c5 :hover input:not([disabled])+div,
-.c5 :hover input:not([disabled])+span {
+.c5:hover input:not([disabled])+div,
+.c5:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -20979,7 +20979,7 @@ exports[`DataTable select 1`] = `
   cursor: pointer;
 }
 
-.c8 :checked+span>span {
+.c8:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -21259,14 +21259,14 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect all"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -21333,7 +21333,7 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
@@ -21341,7 +21341,7 @@ exports[`DataTable select 2`] = `
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div
@@ -21388,14 +21388,14 @@ exports[`DataTable select 2`] = `
             style="height: 0px;"
           >
             <label
-              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 nsCKO"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 kGdzQM"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 dwXsPw StyledCheckBox-sc-1dbk5ju-6 kvMkah"
               >
                 <input
                   aria-label="unselect beta"
-                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
                   type="checkbox"
                 />
                 <div

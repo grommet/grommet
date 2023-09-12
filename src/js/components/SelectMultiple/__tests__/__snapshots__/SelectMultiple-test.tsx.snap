@@ -3560,8 +3560,8 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   cursor: pointer;
 }
 
-.c14 :hover input:not([disabled])+div,
-.c14 :hover input:not([disabled])+span {
+.c14:hover input:not([disabled])+div,
+.c14:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -3574,7 +3574,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   cursor: pointer;
 }
 
-.c17 :checked+span>span {
+.c17:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -4732,8 +4732,8 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   cursor: default;
 }
 
-.c14 :hover input:not([disabled])+div,
-.c14 :hover input:not([disabled])+span {
+.c14:hover input:not([disabled])+div,
+.c14:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -4745,7 +4745,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   margin: 0;
 }
 
-.c17 :checked+span>span {
+.c17:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -5228,8 +5228,8 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   cursor: pointer;
 }
 
-.c14 :hover input:not([disabled])+div,
-.c14 :hover input:not([disabled])+span {
+.c14:hover input:not([disabled])+div,
+.c14:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -5242,7 +5242,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   cursor: pointer;
 }
 
-.c17 :checked+span>span {
+.c17:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }

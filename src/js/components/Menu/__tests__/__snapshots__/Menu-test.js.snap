@@ -478,7 +478,7 @@ exports[`Menu close by clicking outside 2`] = `
   max-height: inherit;
 }
 
-.c3 :focus {
+.c3:focus {
   outline: none;
 }
 
@@ -3113,7 +3113,7 @@ exports[`Menu open and close on click 3`] = `
   max-height: inherit;
 }
 
-.c3 :focus {
+.c3:focus {
   outline: none;
 }
 
@@ -3780,7 +3780,7 @@ exports[`Menu open on up close on esc 2`] = `
   max-height: inherit;
 }
 
-.c3 :focus {
+.c3:focus {
   outline: none;
 }
 
@@ -4835,7 +4835,7 @@ exports[`Menu should group items 1`] = `
   max-height: inherit;
 }
 
-.c3 :focus {
+.c3:focus {
   outline: none;
 }
 
@@ -5703,7 +5703,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   max-height: inherit;
 }
 
-.c3 :focus {
+.c3:focus {
   outline: none;
 }
 
@@ -6180,7 +6180,7 @@ exports[`Menu with dropAlign top renders 2`] = `
   max-height: inherit;
 }
 
-.c3 :focus {
+.c3:focus {
   outline: none;
 }
 

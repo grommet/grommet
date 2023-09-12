@@ -24,12 +24,12 @@ const StyledRadioButtonContainer = styled.label.withConfig(
   ${(props) => props.disabled && disabledStyle} ${(props) =>
     !props.disabled && 'cursor: pointer;'}
 
-  :hover input:not([disabled]) + div,
-  :hover input:not([disabled]) + span {
+  &:hover input:not([disabled]) + div,
+  &:hover input:not([disabled]) + span {
     border-color: ${(props) =>
       normalizeColor(props.theme.radioButton.hover.border.color, props.theme)};
   }
-  :hover {
+  &:hover {
     background-color: ${(props) =>
       normalizeColor(
         !props.disabled &&

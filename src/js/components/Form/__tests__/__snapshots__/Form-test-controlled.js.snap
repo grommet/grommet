@@ -3790,8 +3790,8 @@ exports[`Form controlled custom theme 1`] = `
   cursor: pointer;
 }
 
-.c5 :hover input:not([disabled])+div,
-.c5 :hover input:not([disabled])+span {
+.c5:hover input:not([disabled])+div,
+.c5:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -3996,8 +3996,8 @@ exports[`Form controlled dynamicly removed fields using blur validation
   cursor: pointer;
 }
 
-.c6 :hover input:not([disabled])+div,
-.c6 :hover input:not([disabled])+span {
+.c6:hover input:not([disabled])+div,
+.c6:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -4010,7 +4010,7 @@ exports[`Form controlled dynamicly removed fields using blur validation
   cursor: pointer;
 }
 
-.c9 :checked+span>span {
+.c9:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -4265,14 +4265,14 @@ exports[`Form controlled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iccYuC"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
           label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               name="toggle"
               type="checkbox"
             />
@@ -4495,14 +4495,14 @@ exports[`Form controlled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1 bKZzYl"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eCFCTg"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iZdzGC"
           label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               name="toggle"
               type="checkbox"
             />

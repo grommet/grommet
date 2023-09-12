@@ -317,8 +317,8 @@ exports[`DataFilters renders 1`] = `
   cursor: pointer;
 }
 
-.c14 :hover input:not([disabled])+div,
-.c14 :hover input:not([disabled])+span {
+.c14:hover input:not([disabled])+div,
+.c14:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -331,7 +331,7 @@ exports[`DataFilters renders 1`] = `
   cursor: pointer;
 }
 
-.c17 :checked+span>span {
+.c17:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }

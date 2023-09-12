@@ -294,8 +294,8 @@ exports[`DataFilters clear 1`] = `
   cursor: pointer;
 }
 
-.c9 :hover input:not([disabled])+div,
-.c9 :hover input:not([disabled])+span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -308,7 +308,7 @@ exports[`DataFilters clear 1`] = `
   cursor: pointer;
 }
 
-.c12 :checked+span>span {
+.c12:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1445,8 +1445,8 @@ exports[`DataFilters layer 2`] = `
   cursor: pointer;
 }
 
-.c17 :hover input:not([disabled])+div,
-.c17 :hover input:not([disabled])+span {
+.c17:hover input:not([disabled])+div,
+.c17:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1459,7 +1459,7 @@ exports[`DataFilters layer 2`] = `
   cursor: pointer;
 }
 
-.c20 :checked+span>span {
+.c20:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -2121,8 +2121,8 @@ exports[`DataFilters properties array 1`] = `
   cursor: pointer;
 }
 
-.c9 :hover input:not([disabled])+div,
-.c9 :hover input:not([disabled])+span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2135,7 +2135,7 @@ exports[`DataFilters properties array 1`] = `
   cursor: pointer;
 }
 
-.c12 :checked+span>span {
+.c12:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -2583,8 +2583,8 @@ exports[`DataFilters properties object 1`] = `
   cursor: pointer;
 }
 
-.c9 :hover input:not([disabled])+div,
-.c9 :hover input:not([disabled])+span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2597,7 +2597,7 @@ exports[`DataFilters properties object 1`] = `
   cursor: pointer;
 }
 
-.c12 :checked+span>span {
+.c12:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -3045,8 +3045,8 @@ exports[`DataFilters renders 1`] = `
   cursor: pointer;
 }
 
-.c9 :hover input:not([disabled])+div,
-.c9 :hover input:not([disabled])+span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -3059,7 +3059,7 @@ exports[`DataFilters renders 1`] = `
   cursor: pointer;
 }
 
-.c12 :checked+span>span {
+.c12:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -3657,8 +3657,8 @@ exports[`DataFilters sub objects 1`] = `
   cursor: pointer;
 }
 
-.c9 :hover input:not([disabled])+div,
-.c9 :hover input:not([disabled])+span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -3671,7 +3671,7 @@ exports[`DataFilters sub objects 1`] = `
   cursor: pointer;
 }
 
-.c12 :checked+span>span {
+.c12:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }

@@ -602,8 +602,8 @@ exports[`DataSort renders 1`] = `
   cursor: pointer;
 }
 
-.c18 :hover input:not([disabled])+div,
-.c18 :hover input:not([disabled])+span {
+.c18:hover input:not([disabled])+div,
+.c18:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1127,8 +1127,8 @@ exports[`DataSort sort when data array is empty 1`] = `
   cursor: pointer;
 }
 
-.c16 :hover input:not([disabled])+div,
-.c16 :hover input:not([disabled])+span {
+.c16:hover input:not([disabled])+div,
+.c16:hover input:not([disabled])+span {
   border-color: #000000;
 }
 

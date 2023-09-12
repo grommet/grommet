@@ -217,8 +217,8 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   cursor: pointer;
 }
 
-.c3 :hover input:not([disabled])+div,
-.c3 :hover input:not([disabled])+span {
+.c3:hover input:not([disabled])+div,
+.c3:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -231,7 +231,7 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   cursor: pointer;
 }
 
-.c6 :checked+span>span {
+.c6:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -886,8 +886,8 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   cursor: pointer;
 }
 
-.c6 :hover input:not([disabled])+div,
-.c6 :hover input:not([disabled])+span {
+.c6:hover input:not([disabled])+div,
+.c6:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -900,7 +900,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   cursor: pointer;
 }
 
-.c9 :checked+span>span {
+.c9:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1152,14 +1152,14 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iccYuC"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
           label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               name="toggle"
               type="checkbox"
             />
@@ -1262,8 +1262,8 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   cursor: pointer;
 }
 
-.c6 :hover input:not([disabled])+div,
-.c6 :hover input:not([disabled])+span {
+.c6:hover input:not([disabled])+div,
+.c6:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1276,7 +1276,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   cursor: pointer;
 }
 
-.c9 :checked+span>span {
+.c9:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1529,14 +1529,14 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iccYuC"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
           label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               name="toggle"
               type="checkbox"
             />
@@ -1757,14 +1757,14 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1 bKZzYl"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 eCFCTg"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iZdzGC"
           label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               name="toggle"
               type="checkbox"
             />
@@ -2389,8 +2389,8 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   cursor: pointer;
 }
 
-.c13 :hover input:not([disabled])+div,
-.c13 :hover input:not([disabled])+span {
+.c13:hover input:not([disabled])+div,
+.c13:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2403,7 +2403,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   cursor: pointer;
 }
 
-.c16 :checked+span>span {
+.c16:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -2421,8 +2421,8 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   cursor: pointer;
 }
 
-.c20 :hover input:not([disabled])+div,
-.c20 :hover input:not([disabled])+span {
+.c20:hover input:not([disabled])+div,
+.c20:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -3010,7 +3010,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iccYuC"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
           for="test-checkbox"
           label="test-checkbox"
         >
@@ -3018,7 +3018,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gqxqlT"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               id="test-checkbox"
               name="test-checkbox"
               type="checkbox"
@@ -3051,7 +3051,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
           role="radiogroup"
         >
           <label
-            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 jmwMIg"
+            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 cQtooq"
             for="test-radiobuttongroup-one"
           >
             <div
@@ -3079,7 +3079,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eobCJW"
           />
           <label
-            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 jmwMIg"
+            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 cQtooq"
             for="test-radiobuttongroup-two"
           >
             <div
@@ -3107,7 +3107,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eobCJW"
           />
           <label
-            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 jmwMIg"
+            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 cQtooq"
             for="test-radiobuttongroup-three"
           >
             <div
