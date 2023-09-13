@@ -51,15 +51,15 @@
   "peerDependencies": {
     "react": "^16.6.1 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.6.1 || ^17.0.0 || ^18.0.0",
-    "styled-components": "^6.0.0"
+    "styled-components": "^5.1.0 || ^6.0.0",
+    "stylis": "^4.0.0"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
     "grommet-icons": "^4.10.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.2.0",
-    "prop-types": "^15.8.1",
-    "stylis": "^4.0.0"
+    "prop-types": "^15.8.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",
@@ -139,6 +139,7 @@
     "simple-git": "^3.19.1",
     "storybook": "7.0.20",
     "styled-components": "^6.0.0",
+    "stylis": "^4.0.0",
     "tarball-extract": "^0.0.6",
     "testcafe": "^3.3.0",
     "testcafe-react-selectors": "^5.0.3",
