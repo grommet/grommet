@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-
+import isPropValid from '@emotion/is-prop-valid';
 import {
   baseStyle,
   backgroundStyle,
@@ -772,7 +772,10 @@ const elevationStyle = css`
     ]};
 `;
 
-const StyledContainer = styled.div.withConfig(styledComponentsConfig)`
+const StyledContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) =>
+    isPropValid(prop) && !['elevation'].includes(prop),
+})`
   ${(props) => (!props.modal ? baseStyle : '')}
   display: flex;
   flex-direction: column;

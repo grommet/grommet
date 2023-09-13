@@ -2692,7 +2692,6 @@ exports[`Data pagination 1`] = `
             <button
               aria-label="Go to previous page"
               class="c12 c13"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -2718,7 +2717,6 @@ exports[`Data pagination 1`] = `
             <button
               aria-label="Go to page 1"
               class="c16 c13"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -2733,7 +2731,6 @@ exports[`Data pagination 1`] = `
             <button
               aria-label="Go to next page"
               class="c12 c13"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -3164,7 +3161,6 @@ exports[`Data pagination step 1`] = `
             <button
               aria-label="Go to previous page"
               class="c12 c13"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -3190,7 +3186,6 @@ exports[`Data pagination step 1`] = `
             <button
               aria-label="Go to page 1"
               class="c16 c13"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -3205,7 +3200,6 @@ exports[`Data pagination step 1`] = `
             <button
               aria-label="Go to next page"
               class="c12 c13"
-              kind="[object Object]"
               type="button"
             >
               <svg

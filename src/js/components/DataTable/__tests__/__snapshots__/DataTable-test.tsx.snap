@@ -23625,7 +23625,6 @@ exports[`DataTable should apply pagination styling 1`] = `
               aria-label="Go to previous page"
               class="c16 c17"
               disabled=""
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -23652,7 +23651,6 @@ exports[`DataTable should apply pagination styling 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c20 c17"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -23667,7 +23665,6 @@ exports[`DataTable should apply pagination styling 1`] = `
             <button
               aria-label="Go to page 2"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               2
@@ -23682,7 +23679,6 @@ exports[`DataTable should apply pagination styling 1`] = `
             <button
               aria-label="Go to next page"
               class="c22 c17"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -26693,7 +26689,6 @@ exports[`DataTable should paginate 1`] = `
               aria-label="Go to previous page"
               class="c16 c17"
               disabled=""
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -26720,7 +26715,6 @@ exports[`DataTable should paginate 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c20 c17"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -26735,7 +26729,6 @@ exports[`DataTable should paginate 1`] = `
             <button
               aria-label="Go to page 2"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               2
@@ -26750,7 +26743,6 @@ exports[`DataTable should paginate 1`] = `
             <button
               aria-label="Go to next page"
               class="c22 c17"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -28947,7 +28939,6 @@ exports[`DataTable should pin and paginate 1`] = `
               aria-label="Go to previous page"
               class="c17 c18"
               disabled=""
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -28974,7 +28965,6 @@ exports[`DataTable should pin and paginate 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c21 c18"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -28989,7 +28979,6 @@ exports[`DataTable should pin and paginate 1`] = `
             <button
               aria-label="Go to page 2"
               class="c22 c18"
-              kind="[object Object]"
               type="button"
             >
               2
@@ -29004,7 +28993,6 @@ exports[`DataTable should pin and paginate 1`] = `
             <button
               aria-label="Go to next page"
               class="c23 c18"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -30077,7 +30065,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               aria-label="Go to previous page"
               class="c16 c17"
               disabled=""
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -30104,7 +30091,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c20 c17"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -30119,7 +30105,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 2"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               2
@@ -30134,7 +30119,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 3"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               3
@@ -30149,7 +30133,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 4"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               4
@@ -30164,7 +30147,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 5"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               5
@@ -30179,7 +30161,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 6"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               6
@@ -30194,7 +30175,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 7"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               7
@@ -30209,7 +30189,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to next page"
               class="c22 c17"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -32398,7 +32377,6 @@ exports[`DataTable should render new data when page changes 1`] = `
               aria-label="Go to previous page"
               class="c16 c17"
               disabled=""
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -32425,7 +32403,6 @@ exports[`DataTable should render new data when page changes 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c20 c17"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -32440,7 +32417,6 @@ exports[`DataTable should render new data when page changes 1`] = `
             <button
               aria-label="Go to page 2"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               2
@@ -32455,7 +32431,6 @@ exports[`DataTable should render new data when page changes 1`] = `
             <button
               aria-label="Go to next page"
               class="c22 c17"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -36108,7 +36083,6 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-label="Go to previous page"
               class="StyledButtonKind-sc-1vhfpnt-0 jOdEzT StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fbERgR"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -36134,7 +36108,6 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-label="Go to page 1"
               class="StyledButtonKind-sc-1vhfpnt-0 gQVyBf StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fbERgR"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -36150,7 +36123,6 @@ exports[`DataTable should render new data when page changes 2`] = `
               aria-current="page"
               aria-label="Go to page 2"
               class="StyledButtonKind-sc-1vhfpnt-0 bygwap StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fbERgR"
-              kind="[object Object]"
               type="button"
             >
               2
@@ -36167,7 +36139,6 @@ exports[`DataTable should render new data when page changes 2`] = `
               aria-label="Go to next page"
               class="StyledButtonKind-sc-1vhfpnt-0 eUyeaz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 fbERgR"
               disabled=""
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -38356,7 +38327,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               aria-label="Go to previous page"
               class="c16 c17"
               disabled=""
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -38383,7 +38353,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
               aria-current="page"
               aria-label="Go to page 1"
               class="c20 c17"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -38398,7 +38367,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
             <button
               aria-label="Go to page 2"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               2
@@ -38413,7 +38381,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
             <button
               aria-label="Go to next page"
               class="c22 c17"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -40445,7 +40412,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
             <button
               aria-label="Go to previous page"
               class="c16 c17"
-              kind="[object Object]"
               type="button"
             >
               <svg
@@ -40471,7 +40437,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
             <button
               aria-label="Go to page 1"
               class="c20 c17"
-              kind="[object Object]"
               type="button"
             >
               1
@@ -40487,7 +40452,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
               aria-current="page"
               aria-label="Go to page 2"
               class="c21 c17"
-              kind="[object Object]"
               type="button"
             >
               2
@@ -40504,7 +40468,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
               aria-label="Go to next page"
               class="c22 c17"
               disabled=""
-              kind="[object Object]"
               type="button"
             >
               <svg

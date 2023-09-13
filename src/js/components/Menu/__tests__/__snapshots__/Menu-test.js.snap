@@ -1645,7 +1645,6 @@ exports[`Menu custom theme with default button 1`] = `
     aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
-    kind="default"
     type="button"
   >
     <div
@@ -2544,7 +2543,6 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
     aria-haspopup="menu"
     aria-label="Open Menu"
     class="c1"
-    kind="default"
     type="button"
   >
     Test Menu

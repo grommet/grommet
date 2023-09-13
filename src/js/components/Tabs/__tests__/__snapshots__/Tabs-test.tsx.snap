@@ -3415,7 +3415,6 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
           aria-expanded="true"
           aria-selected="true"
           class="c4"
-          kind="default"
           role="tab"
           type="button"
         >
@@ -3434,7 +3433,6 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
           aria-selected="false"
           class="c8"
           disabled=""
-          kind="default"
           role="tab"
           type="button"
         >

@@ -127,7 +127,6 @@ exports[`Button kind badge should align to button container if specified in them
       <button
         aria-label="Button, alert"
         class="c3"
-        kind="default"
         type="button"
       >
         Button
@@ -283,7 +282,6 @@ exports[`Button kind badge should apply background 1`] = `
       <button
         aria-label="Button, 100 unread alerts"
         class="c3"
-        kind="default"
         type="button"
       >
         Button
@@ -432,7 +430,6 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
       <button
         aria-label="Button, alert"
         class="c3"
-        kind="default"
         type="button"
       >
         Button
@@ -582,7 +579,6 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
       <button
         aria-label="Button, 100 unread alerts"
         class="c3"
-        kind="default"
         type="button"
       >
         Button
@@ -738,7 +734,6 @@ exports[`Button kind badge should display number content 1`] = `
       <button
         aria-label="Button, 2 unread alerts"
         class="c3"
-        kind="default"
         type="button"
       >
         Button
@@ -907,7 +902,6 @@ exports[`Button kind badge should render custom element 1`] = `
       <button
         aria-label="Button, Add user alert"
         class="c3"
-        kind="default"
         type="button"
       >
         Button
@@ -1091,7 +1085,6 @@ exports[`Button kind badge should render relative to contents when button has no
   <button
     aria-label="Button, Add user alert"
     class="c1"
-    kind="default"
     type="button"
   >
     <div
@@ -1208,7 +1201,6 @@ exports[`Button kind border on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -1333,7 +1325,6 @@ exports[`Button kind button icon colors 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     <svg
@@ -1467,7 +1458,6 @@ exports[`Button kind button with icon and align 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     <svg
@@ -1827,7 +1817,6 @@ exports[`Button kind button with transparent background 1`] = `
     >
       <button
         class="c2"
-        kind="background-contrast"
         type="button"
       >
         Test button
@@ -1837,7 +1826,6 @@ exports[`Button kind button with transparent background 1`] = `
       />
       <button
         class="c4"
-        kind="background-contrast"
         type="button"
       >
         Active Test button
@@ -1848,7 +1836,6 @@ exports[`Button kind button with transparent background 1`] = `
     >
       <button
         class="c6"
-        kind="background-contrast"
         type="button"
       >
         Test button
@@ -1858,7 +1845,6 @@ exports[`Button kind button with transparent background 1`] = `
       />
       <button
         class="c7"
-        kind="background-contrast"
         type="button"
       >
         Active Test button
@@ -1952,7 +1938,6 @@ exports[`Button kind default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   />
 </div>
@@ -2039,7 +2024,6 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   <button
     class="c1"
     disabled=""
-    kind="default"
     type="button"
   >
     Button
@@ -2054,7 +2038,6 @@ exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
   <button
     class="StyledButtonKind-sc-1vhfpnt-0 kICbHw"
     disabled=""
-    kind="default"
     type="button"
   >
     Button
@@ -2140,7 +2123,6 @@ exports[`Button kind extend on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -2353,21 +2335,18 @@ exports[`Button kind fill 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
   </button>
   <button
     class="c2"
-    kind="default"
     type="button"
   >
     Test
   </button>
   <button
     class="c3"
-    kind="default"
     type="button"
   >
     Test
@@ -2454,7 +2433,6 @@ exports[`Button kind font on button default 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -2539,7 +2517,6 @@ exports[`Button kind font undefined 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -2625,7 +2602,6 @@ exports[`Button kind hover on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -2717,7 +2693,6 @@ exports[`Button kind hover secondary with color and background 1`] = `
 >
   <button
     class="c1"
-    kind="secondary"
     type="button"
   >
     Button
@@ -2731,7 +2706,6 @@ exports[`Button kind hover secondary with color and background 2`] = `
 >
   <button
     class="StyledButtonKind-sc-1vhfpnt-0 hRcIMz"
-    kind="secondary"
     type="button"
   >
     Button
@@ -2821,7 +2795,6 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Button
@@ -2835,7 +2808,6 @@ exports[`Button kind hoverIndicator with color and background 2`] = `
 >
   <button
     class="StyledButtonKind-sc-1vhfpnt-0 dQjPfg"
-    kind="default"
     type="button"
   >
     Button
@@ -3276,7 +3248,6 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   >
     <button
       class="c1"
-      kind="default"
       type="button"
     >
       <svg
@@ -3294,14 +3265,12 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
     </button>
     <button
       class="c3"
-      kind="default"
       type="button"
     >
       Add
     </button>
     <button
       class="c4"
-      kind="default"
       type="button"
     >
       <svg
@@ -3319,14 +3288,12 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
     </button>
     <button
       class="c5"
-      kind="default"
       type="button"
     >
       Add
     </button>
     <button
       class="c6"
-      kind="default"
       type="button"
     >
       <svg
@@ -3344,7 +3311,6 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
     </button>
     <button
       class="c7"
-      kind="default"
       type="button"
     >
       Add
@@ -3882,7 +3848,6 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   >
     <button
       class="c1"
-      kind="default"
       type="button"
     >
       <div
@@ -3908,7 +3873,6 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
     </button>
     <button
       class="c5"
-      kind="default"
       type="button"
     >
       <div
@@ -3934,7 +3898,6 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
     </button>
     <button
       class="c7"
-      kind="default"
       type="button"
     >
       <div
@@ -3960,7 +3923,6 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
     </button>
     <button
       class="c9"
-      kind="default"
       type="button"
     >
       <div
@@ -3986,7 +3948,6 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
     </button>
     <button
       class="c11"
-      kind="default"
       type="button"
     >
       <div
@@ -4148,7 +4109,6 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     <div
@@ -4181,7 +4141,6 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
 >
   <button
     class="StyledButtonKind-sc-1vhfpnt-0 ilmJMb"
-    kind="default"
     type="button"
   >
     <div
@@ -4286,7 +4245,6 @@ exports[`Button kind no border on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -4373,7 +4331,6 @@ exports[`Button kind no padding on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -4459,7 +4416,6 @@ exports[`Button kind opacity on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -4547,7 +4503,6 @@ exports[`Button kind padding on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -4668,7 +4623,6 @@ exports[`Button kind plain with icon 1`] = `
   >
     <button
       class="c1"
-      kind="default"
       type="button"
     >
       <svg
@@ -4905,7 +4859,6 @@ exports[`Button kind primary button 1`] = `
 >
   <button
     class="c1"
-    kind="primary"
     type="button"
   >
     <svg
@@ -4924,7 +4877,6 @@ exports[`Button kind primary button 1`] = `
   <button
     class="c3"
     disabled=""
-    kind="primary"
     type="button"
   >
     <svg
@@ -5016,7 +4968,6 @@ exports[`Button kind render of children 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -5112,7 +5063,6 @@ exports[`Button kind secondary button 1`] = `
 >
   <button
     class="c1"
-    kind="secondary"
     type="button"
   />
 </div>
@@ -5220,7 +5170,6 @@ exports[`Button kind should apply kind direction 1`] = `
   >
     <button
       class="c1"
-      kind="secondary"
       type="button"
     >
       <div
@@ -5436,28 +5385,24 @@ exports[`Button kind should apply styling according to theme size definitions 1`
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Button
   </button>
   <button
     class="c2"
-    kind="default"
     type="button"
   >
     Button
   </button>
   <button
     class="c2"
-    kind="default"
     type="button"
   >
     Button
   </button>
   <button
     class="c3"
-    kind="default"
     type="button"
   >
     Button
@@ -5728,7 +5673,6 @@ exports[`Button kind should render pad 1`] = `
     <button
       class="c1"
       data-testid="string-pad"
-      kind="default"
       type="button"
     >
       <div
@@ -5755,7 +5699,6 @@ exports[`Button kind should render pad 1`] = `
     <button
       class="c5"
       data-testid="object-pad"
-      kind="default"
       type="button"
     >
       <div
@@ -5782,7 +5725,6 @@ exports[`Button kind should render pad 1`] = `
     <button
       class="c6"
       data-testid="child-pad"
-      kind="default"
       type="button"
     >
       <svg
@@ -5879,7 +5821,6 @@ exports[`Button kind size of default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
