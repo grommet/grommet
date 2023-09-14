@@ -117,6 +117,7 @@ const StyledContentBox = styled(Box)`
 const Header = forwardRef(
   (
     {
+      allowSelectAll,
       cellProps,
       columns,
       data,
@@ -142,7 +143,6 @@ const Header = forwardRef(
       sort,
       widths,
       verticalAlign,
-      allowSelectAll,
       ...rest
     },
     ref,

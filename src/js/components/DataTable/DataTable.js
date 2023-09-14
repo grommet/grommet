@@ -58,6 +58,7 @@ function useGroupState(groups, groupBy) {
 }
 
 const DataTable = ({
+  allowSelectAll = true,
   background,
   border,
   columns: columnsProp,
@@ -87,7 +88,6 @@ const DataTable = ({
   rowDetails,
   step = 50,
   verticalAlign,
-  allowSelectAll = true,
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -523,6 +523,7 @@ const DataTable = ({
         >
           <Header
             ref={headerRef}
+            allowSelectAll={allowSelectAll}
             cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}
@@ -556,7 +557,6 @@ const DataTable = ({
             primaryProperty={primaryProperty}
             scrollOffset={scrollOffset}
             rowDetails={rowDetails}
-            allowSelectAll={allowSelectAll}
             verticalAlign={
               typeof verticalAlign === 'string'
                 ? verticalAlign
