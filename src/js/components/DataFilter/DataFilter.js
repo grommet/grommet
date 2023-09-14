@@ -25,7 +25,15 @@ const generateOptions = (data, property) =>
     // ensure number values are sorted appropriately
     // [132, 15, 100] --> [15, 100, 132]
     // empty sort() would result in [100, 132, 15]
-    .sort((a, b) => a - b);
+    .sort((a, b) => {
+      if (typeof a === 'number' && typeof b === 'number') return a - b;
+      if (
+        (typeof a === 'string' && typeof b === 'string') ||
+        (typeof a === 'boolean' && typeof b === 'boolean')
+      )
+        return a < b ? -1 : 1;
+      return 0;
+    });
 
 const alignMax = (value, interval) => {
   if (value > 0) return value - (value % interval) + interval;
