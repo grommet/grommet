@@ -58,6 +58,7 @@ function useGroupState(groups, groupBy) {
 }
 
 const DataTable = ({
+  allowSelectAll = true,
   background,
   border,
   columns: columnsProp,
@@ -522,6 +523,7 @@ const DataTable = ({
         >
           <Header
             ref={headerRef}
+            allowSelectAll={allowSelectAll}
             cellProps={cellProps.header}
             columns={columns}
             data={adjustedData}

@@ -1095,6 +1095,28 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('select with allowSelectAll={false}', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          primaryKey="a"
+          select={['alpha']}
+          onSelect={onSelect}
+          allowSelectAll={false}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByLabelText('select beta'));
+    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
+      a: 'beta',
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('disabled select', () => {
     const onSelect = jest.fn();
     const { container, getByText } = render(
