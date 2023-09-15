@@ -1,5 +1,5 @@
 var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
-  _excluded2 = ["cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
+  _excluded2 = ["allowSelectAll", "cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 /* eslint-disable no-underscore-dangle */
@@ -93,7 +93,8 @@ var StyledContentBox = styled(Box).withConfig({
   return props.extend;
 });
 var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
-  var cellProps = _ref2.cellProps,
+  var allowSelectAll = _ref2.allowSelectAll,
+    cellProps = _ref2.cellProps,
     columns = _ref2.columns,
     data = _ref2.data,
     disabled = _ref2.disabled,
@@ -205,7 +206,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     pin: selectPin,
     pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
     verticalAlign: verticalAlign
-  }, onSelect && /*#__PURE__*/React.createElement(CheckBox, {
+  }, onSelect && allowSelectAll && /*#__PURE__*/React.createElement(CheckBox, {
     a11yTitle: totalSelected === data.length ? 'unselect all' : 'select all',
     checked: groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected > 0 && data.length > 0 && totalSelected === data.length,
     indeterminate: groupBy != null && groupBy.select ? groupBy.select[''] === 'some' : totalSelected > 0 && totalSelected < data.length,

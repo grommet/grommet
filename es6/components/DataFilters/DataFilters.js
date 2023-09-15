@@ -34,10 +34,10 @@ export var DataFilters = function DataFilters(_ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
     clearFilters = _useContext.clearFilters,
-    data = _useContext.data,
     dataId = _useContext.id,
     messages = _useContext.messages,
     properties = _useContext.properties,
+    unfilteredData = _useContext.unfilteredData,
     view = _useContext.view;
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
@@ -78,10 +78,10 @@ export var DataFilters = function DataFilters(_ref) {
   var content = children;
   if (Children.count(children) === 0) {
     var filtersFor;
-    if (!properties && data && data.length)
+    if (!properties && unfilteredData && unfilteredData.length)
       // build from a piece of data, ignore object values
-      filtersFor = Object.keys(data[0]).filter(function (k) {
-        return typeof data[0][k] !== 'object';
+      filtersFor = Object.keys(unfilteredData[0]).filter(function (k) {
+        return typeof unfilteredData[0][k] !== 'object';
       });else if (Array.isArray(properties)) filtersFor = properties;else if (typeof properties === 'object') filtersFor = Object.keys(properties);else filtersFor = [];
     content = filtersFor.map(function (property) {
       return /*#__PURE__*/React.createElement(DataFilter, {

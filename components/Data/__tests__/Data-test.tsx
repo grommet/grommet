@@ -30,6 +30,7 @@ const data = [
 ];
 
 describe('Data', () => {
+  window.scrollTo = jest.fn();
   beforeEach(createPortal);
 
   test('renders', () => {
@@ -383,7 +384,7 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('properties when property is an array', () => {
+  test('properties when property is an array', async () => {
     const user = userEvent.setup();
 
     const { asFragment } = render(
@@ -423,7 +424,8 @@ describe('Data', () => {
     expect(asFragment()).toMatchSnapshot();
     const filtersButton = screen.getByRole('button', { name: 'Open filters' });
     expect(filtersButton).toBeTruthy();
-    user.click(filtersButton);
+    await user.click(filtersButton);
+    expect(screen.getByRole('button', { name: 'Apply filters' })).toBeTruthy();
     expectPortal('data--filters-control').toMatchSnapshot();
   });
 });

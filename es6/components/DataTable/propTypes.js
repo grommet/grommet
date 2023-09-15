@@ -38,6 +38,7 @@ parts.forEach(function (part) {
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericProps, {
+    allowSelectAll: PropTypes.bool,
     background: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string), PropTypes.shape(backgroundShape)]),
     border: PropTypes.oneOfType([].concat(borderTypes, [PropTypes.shape(borderShape)])),
     columns: PropTypes.arrayOf(PropTypes.shape({
