@@ -21,11 +21,16 @@ exports[`Clock hourLimit 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -137,18 +142,21 @@ exports[`Clock run 1`] = `
 .c4 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
   stroke: #6FFFB0;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -167,11 +175,16 @@ exports[`Clock run 1`] = `
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -476,6 +489,7 @@ exports[`Clock run 2`] = `
   left: 0;
   width: 0.8em;
   text-align: center;
+  -webkit-animation: gDuLQv 0.5s forwards;
   animation: gDuLQv 0.5s forwards;
 }
 
@@ -491,6 +505,7 @@ exports[`Clock run 2`] = `
   left: 0;
   width: 0.8em;
   text-align: center;
+  -webkit-animation: cQwfQi 0.5s forwards;
   animation: cQwfQi 0.5s forwards;
 }
 
@@ -549,6 +564,7 @@ exports[`Clock run 2`] = `
   left: 0;
   width: 0.8em;
   text-align: center;
+  -webkit-animation: buZueW 0.5s forwards;
   animation: buZueW 0.5s forwards;
 }
 
@@ -564,6 +580,7 @@ exports[`Clock run 2`] = `
   left: 0;
   width: 0.8em;
   text-align: center;
+  -webkit-animation: ffftsv 0.5s forwards;
   animation: ffftsv 0.5s forwards;
 }
 
@@ -599,11 +616,16 @@ exports[`Clock time 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -803,6 +825,7 @@ exports[`Clock type analog precision hours size huge 1`] = `
 .c2 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -850,6 +873,7 @@ exports[`Clock type analog precision hours size large 1`] = `
 .c2 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -897,6 +921,7 @@ exports[`Clock type analog precision hours size medium 1`] = `
 .c2 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -944,6 +969,7 @@ exports[`Clock type analog precision hours size small 1`] = `
 .c2 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -991,6 +1017,7 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 .c2 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1038,6 +1065,7 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 .c2 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1085,6 +1113,7 @@ exports[`Clock type analog precision hours size xxlarge 1`] = `
 .c2 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1132,12 +1161,14 @@ exports[`Clock type analog precision minutes size huge 1`] = `
 .c3 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1195,12 +1226,14 @@ exports[`Clock type analog precision minutes size large 1`] = `
 .c3 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1258,12 +1291,14 @@ exports[`Clock type analog precision minutes size medium 1`] = `
 .c3 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1321,12 +1356,14 @@ exports[`Clock type analog precision minutes size small 1`] = `
 .c3 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1384,12 +1421,14 @@ exports[`Clock type analog precision minutes size xlarge 1`] = `
 .c3 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1447,12 +1486,14 @@ exports[`Clock type analog precision minutes size xsmall 1`] = `
 .c3 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1510,12 +1551,14 @@ exports[`Clock type analog precision minutes size xxlarge 1`] = `
 .c3 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1573,18 +1616,21 @@ exports[`Clock type analog precision seconds size huge 1`] = `
 .c4 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
   stroke: #6FFFB0;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1652,18 +1698,21 @@ exports[`Clock type analog precision seconds size large 1`] = `
 .c4 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
   stroke: #6FFFB0;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1731,18 +1780,21 @@ exports[`Clock type analog precision seconds size medium 1`] = `
 .c4 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
   stroke: #6FFFB0;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1810,18 +1862,21 @@ exports[`Clock type analog precision seconds size small 1`] = `
 .c4 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
   stroke: #6FFFB0;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1889,18 +1944,21 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 .c4 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
   stroke: #6FFFB0;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -1968,18 +2026,21 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 .c4 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
   stroke: #6FFFB0;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -2047,18 +2108,21 @@ exports[`Clock type analog precision seconds size xxlarge 1`] = `
 .c4 {
   stroke-width: 8px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c3 {
   stroke-width: 4px;
   stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
 .c2 {
   stroke-width: 3px;
   stroke: #6FFFB0;
+  -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
 
@@ -2133,11 +2197,16 @@ exports[`Clock type digital custom size 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2212,11 +2281,16 @@ exports[`Clock type digital precision hours size large 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2261,11 +2335,16 @@ exports[`Clock type digital precision hours size medium 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2310,11 +2389,16 @@ exports[`Clock type digital precision hours size small 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2359,11 +2443,16 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2408,11 +2497,16 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2457,11 +2551,16 @@ exports[`Clock type digital precision hours size xxlarge 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2506,11 +2605,16 @@ exports[`Clock type digital precision minutes size large 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2570,11 +2674,16 @@ exports[`Clock type digital precision minutes size medium 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2634,11 +2743,16 @@ exports[`Clock type digital precision minutes size small 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2698,11 +2812,16 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2762,11 +2881,16 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2826,11 +2950,16 @@ exports[`Clock type digital precision minutes size xxlarge 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2890,11 +3019,16 @@ exports[`Clock type digital precision seconds size large 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -2969,11 +3103,16 @@ exports[`Clock type digital precision seconds size medium 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -3048,11 +3187,16 @@ exports[`Clock type digital precision seconds size small 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -3127,11 +3271,16 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -3206,11 +3355,16 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -3285,11 +3439,16 @@ exports[`Clock type digital precision seconds size xxlarge 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 

@@ -34,7 +34,12 @@ exports[`Layer animation fadeIn 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -48,7 +53,11 @@ exports[`Layer animation fadeIn 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: RcxFP 0.2s ease-in-out forwards;
   animation: RcxFP 0.2s ease-in-out forwards;
 }
 
@@ -187,7 +196,12 @@ exports[`Layer animation false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -201,6 +215,9 @@ exports[`Layer animation false 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
@@ -339,7 +356,12 @@ exports[`Layer animation slide 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -353,7 +375,11 @@ exports[`Layer animation slide 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -492,7 +518,12 @@ exports[`Layer animation true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -506,7 +537,11 @@ exports[`Layer animation true 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -645,7 +680,12 @@ exports[`Layer custom margin 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -659,7 +699,11 @@ exports[`Layer custom margin 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -791,6 +835,7 @@ exports[`Layer custom theme 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   background-color: rgba(0, 0, 0, 0.5);
   color: #f8f8f8;
@@ -799,7 +844,12 @@ exports[`Layer custom theme 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -814,6 +864,9 @@ exports[`Layer custom theme 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
@@ -947,7 +1000,12 @@ exports[`Layer dark context 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #000000;
@@ -961,7 +1019,11 @@ exports[`Layer dark context 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -1059,7 +1121,12 @@ exports[`Layer dark context 2`] = `
 
 exports[`Layer focus on layer 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -1073,7 +1140,11 @@ exports[`Layer focus on layer 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -1150,7 +1221,12 @@ exports[`Layer hidden 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -1335,7 +1411,12 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -1349,6 +1430,9 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
@@ -1478,7 +1562,12 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -1492,6 +1581,9 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
@@ -1594,7 +1686,12 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -1608,6 +1705,9 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
@@ -1751,7 +1851,12 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -1765,6 +1870,9 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
@@ -1845,6 +1953,8 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] 
 exports[`Layer invokes onEsc when modal={false} 1`] = `
 .c11 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1876,27 +1986,49 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
 .c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1904,7 +2036,11 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -1913,6 +2049,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2051,7 +2188,12 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -2065,6 +2207,9 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
@@ -2315,7 +2460,12 @@ exports[`Layer margin large 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -2329,7 +2479,11 @@ exports[`Layer margin large 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -2468,7 +2622,12 @@ exports[`Layer margin medium 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -2482,7 +2641,11 @@ exports[`Layer margin medium 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -2621,7 +2784,12 @@ exports[`Layer margin none 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -2635,7 +2803,11 @@ exports[`Layer margin none 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -2774,7 +2946,12 @@ exports[`Layer margin small 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -2788,7 +2965,11 @@ exports[`Layer margin small 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -2927,7 +3108,12 @@ exports[`Layer margin xsmall 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -2941,7 +3127,11 @@ exports[`Layer margin xsmall 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -3075,7 +3265,12 @@ exports[`Layer non-modal 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -3089,7 +3284,11 @@ exports[`Layer non-modal 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -3187,7 +3386,12 @@ exports[`Layer non-modal 2`] = `
 
 exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -3201,7 +3405,11 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -3284,7 +3492,12 @@ exports[`Layer plain 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   outline: none;
@@ -3296,7 +3509,11 @@ exports[`Layer plain 1`] = `
   border-radius: 0;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -3435,7 +3652,12 @@ exports[`Layer position: bottom - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -3449,7 +3671,11 @@ exports[`Layer position: bottom - full: false 1`] = `
   border-radius: 4px;
   bottom: 0px;
   left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
+  -webkit-animation: fdqiZe 0.2s ease-in-out forwards;
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
@@ -3588,7 +3814,12 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -3603,7 +3834,11 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -3742,7 +3977,12 @@ exports[`Layer position: bottom - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -3758,7 +3998,11 @@ exports[`Layer position: bottom - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -3897,7 +4141,12 @@ exports[`Layer position: bottom - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -3912,7 +4161,11 @@ exports[`Layer position: bottom - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
+  -webkit-animation: fdqiZe 0.2s ease-in-out forwards;
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
@@ -4051,7 +4304,12 @@ exports[`Layer position: bottom-left - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -4065,7 +4323,11 @@ exports[`Layer position: bottom-left - full: false 1`] = `
   border-radius: 4px;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -4204,7 +4466,12 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -4219,7 +4486,11 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -4358,7 +4629,12 @@ exports[`Layer position: bottom-left - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -4374,7 +4650,11 @@ exports[`Layer position: bottom-left - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -4513,7 +4793,12 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -4528,7 +4813,11 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -4667,7 +4956,12 @@ exports[`Layer position: bottom-right - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -4681,7 +4975,11 @@ exports[`Layer position: bottom-right - full: false 1`] = `
   border-radius: 4px;
   bottom: 0px;
   right: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -4820,7 +5118,12 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -4835,7 +5138,11 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -4974,7 +5281,12 @@ exports[`Layer position: bottom-right - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -4990,7 +5302,11 @@ exports[`Layer position: bottom-right - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -5129,7 +5445,12 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -5144,7 +5465,11 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -5283,7 +5608,12 @@ exports[`Layer position: center - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -5297,7 +5627,11 @@ exports[`Layer position: center - full: false 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -5436,7 +5770,12 @@ exports[`Layer position: center - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -5451,7 +5790,11 @@ exports[`Layer position: center - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-animation: fEUQAU 0.2s ease-in-out forwards;
   animation: fEUQAU 0.2s ease-in-out forwards;
 }
 
@@ -5590,7 +5933,12 @@ exports[`Layer position: center - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -5606,6 +5954,7 @@ exports[`Layer position: center - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-animation: gVgDGd 0.2s ease-in-out forwards;
   animation: gVgDGd 0.2s ease-in-out forwards;
 }
 
@@ -5744,7 +6093,12 @@ exports[`Layer position: center - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -5759,7 +6113,11 @@ exports[`Layer position: center - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  -webkit-animation: bgBtCZ 0.2s ease-in-out forwards;
   animation: bgBtCZ 0.2s ease-in-out forwards;
 }
 
@@ -5898,7 +6256,12 @@ exports[`Layer position: end - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -5912,7 +6275,11 @@ exports[`Layer position: end - full: false 1`] = `
   border-radius: 4px;
   inset-inline-end: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
@@ -6051,7 +6418,12 @@ exports[`Layer position: end - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -6066,7 +6438,11 @@ exports[`Layer position: end - full: horizontal 1`] = `
   inset-inline-start: 0px;
   inset-inline-end: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
@@ -6205,7 +6581,12 @@ exports[`Layer position: end - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -6221,7 +6602,11 @@ exports[`Layer position: end - full: true 1`] = `
   bottom: 0px;
   inset-inline-start: 0px;
   inset-inline-end: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: bKtuJK 0.2s ease-in-out forwards;
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
@@ -6360,7 +6745,12 @@ exports[`Layer position: end - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -6375,7 +6765,11 @@ exports[`Layer position: end - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   inset-inline-end: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: bKtuJK 0.2s ease-in-out forwards;
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
@@ -6514,7 +6908,12 @@ exports[`Layer position: left - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -6528,7 +6927,11 @@ exports[`Layer position: left - full: false 1`] = `
   border-radius: 4px;
   left: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
@@ -6667,7 +7070,12 @@ exports[`Layer position: left - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -6682,7 +7090,11 @@ exports[`Layer position: left - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
@@ -6821,7 +7233,12 @@ exports[`Layer position: left - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -6837,7 +7254,11 @@ exports[`Layer position: left - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: kDpYdX 0.2s ease-in-out forwards;
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
@@ -6976,7 +7397,12 @@ exports[`Layer position: left - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -6991,7 +7417,11 @@ exports[`Layer position: left - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: kDpYdX 0.2s ease-in-out forwards;
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
@@ -7130,7 +7560,12 @@ exports[`Layer position: right - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -7144,7 +7579,11 @@ exports[`Layer position: right - full: false 1`] = `
   border-radius: 4px;
   right: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
@@ -7283,7 +7722,12 @@ exports[`Layer position: right - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -7298,7 +7742,11 @@ exports[`Layer position: right - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
@@ -7437,7 +7885,12 @@ exports[`Layer position: right - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -7453,7 +7906,11 @@ exports[`Layer position: right - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: bKtuJK 0.2s ease-in-out forwards;
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
@@ -7592,7 +8049,12 @@ exports[`Layer position: right - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -7607,7 +8069,11 @@ exports[`Layer position: right - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: bKtuJK 0.2s ease-in-out forwards;
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
@@ -7746,7 +8212,12 @@ exports[`Layer position: start - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -7760,7 +8231,11 @@ exports[`Layer position: start - full: false 1`] = `
   border-radius: 4px;
   inset-inline-start: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
@@ -7899,7 +8374,12 @@ exports[`Layer position: start - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -7914,7 +8394,11 @@ exports[`Layer position: start - full: horizontal 1`] = `
   inset-inline-start: 0px;
   inset-inline-end: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
@@ -8053,7 +8537,12 @@ exports[`Layer position: start - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -8069,7 +8558,11 @@ exports[`Layer position: start - full: true 1`] = `
   bottom: 0px;
   inset-inline-start: 0px;
   inset-inline-end: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: kDpYdX 0.2s ease-in-out forwards;
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
@@ -8208,7 +8701,12 @@ exports[`Layer position: start - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -8223,7 +8721,11 @@ exports[`Layer position: start - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   inset-inline-start: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: kDpYdX 0.2s ease-in-out forwards;
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
@@ -8362,7 +8864,12 @@ exports[`Layer position: top - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -8376,7 +8883,11 @@ exports[`Layer position: top - full: false 1`] = `
   border-radius: 4px;
   top: 0px;
   left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
@@ -8515,7 +9026,12 @@ exports[`Layer position: top - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -8530,7 +9046,11 @@ exports[`Layer position: top - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   top: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -8669,7 +9189,12 @@ exports[`Layer position: top - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -8685,7 +9210,11 @@ exports[`Layer position: top - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -8824,7 +9353,12 @@ exports[`Layer position: top - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -8839,7 +9373,11 @@ exports[`Layer position: top - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   left: 50%;
+  -webkit-transform: translate(-50%,0%);
+  -moz-transform: translate(-50%,0%);
+  -ms-transform: translate(-50%,0%);
   transform: translate(-50%,0%);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
@@ -8978,7 +9516,12 @@ exports[`Layer position: top-left - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -8992,7 +9535,11 @@ exports[`Layer position: top-left - full: false 1`] = `
   border-radius: 4px;
   top: 0px;
   left: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -9131,7 +9678,12 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -9146,7 +9698,11 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   top: 0;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -9285,7 +9841,12 @@ exports[`Layer position: top-left - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -9301,7 +9862,11 @@ exports[`Layer position: top-left - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -9440,7 +10005,12 @@ exports[`Layer position: top-left - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -9455,7 +10025,11 @@ exports[`Layer position: top-left - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -9594,7 +10168,12 @@ exports[`Layer position: top-right - full: false 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -9608,7 +10187,11 @@ exports[`Layer position: top-right - full: false 1`] = `
   border-radius: 4px;
   top: 0px;
   right: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -9747,7 +10330,12 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -9762,7 +10350,11 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
   left: 0px;
   right: 0px;
   top: 0;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -9901,7 +10493,12 @@ exports[`Layer position: top-right - full: true 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -9917,7 +10514,11 @@ exports[`Layer position: top-right - full: true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -10056,7 +10657,12 @@ exports[`Layer position: top-right - full: vertical 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -10071,7 +10677,11 @@ exports[`Layer position: top-right - full: vertical 1`] = `
   top: 0px;
   bottom: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -10210,7 +10820,12 @@ exports[`Layer should apply background 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #7D4CDB;
@@ -10224,7 +10839,11 @@ exports[`Layer should apply background 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -10363,7 +10982,12 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -10377,6 +11001,9 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
 
@@ -10516,7 +11143,12 @@ exports[`Layer should render correct border radius for position: bottom -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -10530,7 +11162,11 @@ exports[`Layer should render correct border radius for position: bottom -
   border-radius: 48px 48px 0 0;
   bottom: 0px;
   left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
+  -webkit-animation: fdqiZe 0.2s ease-in-out forwards;
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
@@ -10671,7 +11307,12 @@ exports[`Layer should render correct border radius for position: bottom -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -10686,7 +11327,11 @@ exports[`Layer should render correct border radius for position: bottom -
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -10827,7 +11472,12 @@ exports[`Layer should render correct border radius for position: bottom -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -10843,7 +11493,11 @@ exports[`Layer should render correct border radius for position: bottom -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -10984,7 +11638,12 @@ exports[`Layer should render correct border radius for position: bottom -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -10999,7 +11658,11 @@ exports[`Layer should render correct border radius for position: bottom -
   top: 0px;
   bottom: 0px;
   left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
+  -webkit-animation: fdqiZe 0.2s ease-in-out forwards;
   animation: fdqiZe 0.2s ease-in-out forwards;
 }
 
@@ -11140,7 +11803,12 @@ exports[`Layer should render correct border radius for position: bottom-left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -11154,7 +11822,11 @@ exports[`Layer should render correct border radius for position: bottom-left -
   border-radius: 0 48px 0 0;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -11295,7 +11967,12 @@ exports[`Layer should render correct border radius for position: bottom-left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -11310,7 +11987,11 @@ exports[`Layer should render correct border radius for position: bottom-left -
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -11451,7 +12132,12 @@ exports[`Layer should render correct border radius for position: bottom-left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -11467,7 +12153,11 @@ exports[`Layer should render correct border radius for position: bottom-left -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -11608,7 +12298,12 @@ exports[`Layer should render correct border radius for position: bottom-left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -11623,7 +12318,11 @@ exports[`Layer should render correct border radius for position: bottom-left -
   top: 0px;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -11764,7 +12463,12 @@ exports[`Layer should render correct border radius for position: bottom-right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -11778,7 +12482,11 @@ exports[`Layer should render correct border radius for position: bottom-right -
   border-radius: 48px 0 0 0;
   bottom: 0px;
   right: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -11919,7 +12627,12 @@ exports[`Layer should render correct border radius for position: bottom-right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -11934,7 +12647,11 @@ exports[`Layer should render correct border radius for position: bottom-right -
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -12075,7 +12792,12 @@ exports[`Layer should render correct border radius for position: bottom-right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -12091,7 +12813,11 @@ exports[`Layer should render correct border radius for position: bottom-right -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -12232,7 +12958,12 @@ exports[`Layer should render correct border radius for position: bottom-right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -12247,7 +12978,11 @@ exports[`Layer should render correct border radius for position: bottom-right -
   top: 0px;
   bottom: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
   animation: cQwfQi 0.2s ease-in-out forwards;
 }
 
@@ -12388,7 +13123,12 @@ exports[`Layer should render correct border radius for position: center -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -12402,7 +13142,11 @@ exports[`Layer should render correct border radius for position: center -
   border-radius: 48px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -12543,7 +13287,12 @@ exports[`Layer should render correct border radius for position: center -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -12558,7 +13307,11 @@ exports[`Layer should render correct border radius for position: center -
   left: 0px;
   right: 0px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-animation: fEUQAU 0.2s ease-in-out forwards;
   animation: fEUQAU 0.2s ease-in-out forwards;
 }
 
@@ -12699,7 +13452,12 @@ exports[`Layer should render correct border radius for position: center -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -12715,6 +13473,7 @@ exports[`Layer should render correct border radius for position: center -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-animation: gVgDGd 0.2s ease-in-out forwards;
   animation: gVgDGd 0.2s ease-in-out forwards;
 }
 
@@ -12855,7 +13614,12 @@ exports[`Layer should render correct border radius for position: center -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -12870,7 +13634,11 @@ exports[`Layer should render correct border radius for position: center -
   top: 0px;
   bottom: 0px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  -webkit-animation: bgBtCZ 0.2s ease-in-out forwards;
   animation: bgBtCZ 0.2s ease-in-out forwards;
 }
 
@@ -13011,7 +13779,12 @@ exports[`Layer should render correct border radius for position: end -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -13026,7 +13799,11 @@ exports[`Layer should render correct border radius for position: end -
   border-end-start-radius: 48px;
   inset-inline-end: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
@@ -13167,7 +13944,12 @@ exports[`Layer should render correct border radius for position: end -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -13182,7 +13964,11 @@ exports[`Layer should render correct border radius for position: end -
   inset-inline-start: 0px;
   inset-inline-end: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
@@ -13323,7 +14109,12 @@ exports[`Layer should render correct border radius for position: end -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -13339,7 +14130,11 @@ exports[`Layer should render correct border radius for position: end -
   bottom: 0px;
   inset-inline-start: 0px;
   inset-inline-end: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: bKtuJK 0.2s ease-in-out forwards;
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
@@ -13480,7 +14275,12 @@ exports[`Layer should render correct border radius for position: end -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -13495,7 +14295,11 @@ exports[`Layer should render correct border radius for position: end -
   top: 0px;
   bottom: 0px;
   inset-inline-end: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: bKtuJK 0.2s ease-in-out forwards;
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
@@ -13636,7 +14440,12 @@ exports[`Layer should render correct border radius for position: left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -13650,7 +14459,11 @@ exports[`Layer should render correct border radius for position: left -
   border-radius: 0 48px 48px 0;
   left: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
@@ -13791,7 +14604,12 @@ exports[`Layer should render correct border radius for position: left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -13806,7 +14624,11 @@ exports[`Layer should render correct border radius for position: left -
   left: 0px;
   right: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
@@ -13947,7 +14769,12 @@ exports[`Layer should render correct border radius for position: left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -13963,7 +14790,11 @@ exports[`Layer should render correct border radius for position: left -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: kDpYdX 0.2s ease-in-out forwards;
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
@@ -14104,7 +14935,12 @@ exports[`Layer should render correct border radius for position: left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -14119,7 +14955,11 @@ exports[`Layer should render correct border radius for position: left -
   top: 0px;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: kDpYdX 0.2s ease-in-out forwards;
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
@@ -14260,7 +15100,12 @@ exports[`Layer should render correct border radius for position: right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -14274,7 +15119,11 @@ exports[`Layer should render correct border radius for position: right -
   border-radius: 48px 0 0 48px;
   right: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
@@ -14415,7 +15264,12 @@ exports[`Layer should render correct border radius for position: right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -14430,7 +15284,11 @@ exports[`Layer should render correct border radius for position: right -
   left: 0px;
   right: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: drjPPC 0.2s ease-in-out forwards;
   animation: drjPPC 0.2s ease-in-out forwards;
 }
 
@@ -14571,7 +15429,12 @@ exports[`Layer should render correct border radius for position: right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -14587,7 +15450,11 @@ exports[`Layer should render correct border radius for position: right -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: bKtuJK 0.2s ease-in-out forwards;
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
@@ -14728,7 +15595,12 @@ exports[`Layer should render correct border radius for position: right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -14743,7 +15615,11 @@ exports[`Layer should render correct border radius for position: right -
   top: 0px;
   bottom: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: bKtuJK 0.2s ease-in-out forwards;
   animation: bKtuJK 0.2s ease-in-out forwards;
 }
 
@@ -14884,7 +15760,12 @@ exports[`Layer should render correct border radius for position: start -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -14899,7 +15780,11 @@ exports[`Layer should render correct border radius for position: start -
   border-start-end-radius: 48px;
   inset-inline-start: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
@@ -15040,7 +15925,12 @@ exports[`Layer should render correct border radius for position: start -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -15055,7 +15945,11 @@ exports[`Layer should render correct border radius for position: start -
   inset-inline-start: 0px;
   inset-inline-end: 0px;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+  -webkit-animation: kPYden 0.2s ease-in-out forwards;
   animation: kPYden 0.2s ease-in-out forwards;
 }
 
@@ -15196,7 +16090,12 @@ exports[`Layer should render correct border radius for position: start -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -15212,7 +16111,11 @@ exports[`Layer should render correct border radius for position: start -
   bottom: 0px;
   inset-inline-start: 0px;
   inset-inline-end: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: kDpYdX 0.2s ease-in-out forwards;
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
@@ -15353,7 +16256,12 @@ exports[`Layer should render correct border radius for position: start -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -15368,7 +16276,11 @@ exports[`Layer should render correct border radius for position: start -
   top: 0px;
   bottom: 0px;
   inset-inline-start: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: kDpYdX 0.2s ease-in-out forwards;
   animation: kDpYdX 0.2s ease-in-out forwards;
 }
 
@@ -15509,7 +16421,12 @@ exports[`Layer should render correct border radius for position: top -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -15523,7 +16440,11 @@ exports[`Layer should render correct border radius for position: top -
   border-radius: 0 0 48px 48px;
   top: 0px;
   left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
@@ -15664,7 +16585,12 @@ exports[`Layer should render correct border radius for position: top -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -15679,7 +16605,11 @@ exports[`Layer should render correct border radius for position: top -
   left: 0px;
   right: 0px;
   top: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -15820,7 +16750,12 @@ exports[`Layer should render correct border radius for position: top -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -15836,7 +16771,11 @@ exports[`Layer should render correct border radius for position: top -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -15977,7 +16916,12 @@ exports[`Layer should render correct border radius for position: top -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -15992,7 +16936,11 @@ exports[`Layer should render correct border radius for position: top -
   top: 0px;
   bottom: 0px;
   left: 50%;
+  -webkit-transform: translate(-50%,0%);
+  -moz-transform: translate(-50%,0%);
+  -ms-transform: translate(-50%,0%);
   transform: translate(-50%,0%);
+  -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
   animation: hnDkLj 0.2s ease-in-out forwards;
 }
 
@@ -16133,7 +17081,12 @@ exports[`Layer should render correct border radius for position: top-left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -16147,7 +17100,11 @@ exports[`Layer should render correct border radius for position: top-left -
   border-radius: 0 0 48px 0;
   top: 0px;
   left: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -16288,7 +17245,12 @@ exports[`Layer should render correct border radius for position: top-left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -16303,7 +17265,11 @@ exports[`Layer should render correct border radius for position: top-left -
   left: 0px;
   right: 0px;
   top: 0;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -16444,7 +17410,12 @@ exports[`Layer should render correct border radius for position: top-left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -16460,7 +17431,11 @@ exports[`Layer should render correct border radius for position: top-left -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -16601,7 +17576,12 @@ exports[`Layer should render correct border radius for position: top-left -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -16616,7 +17596,11 @@ exports[`Layer should render correct border radius for position: top-left -
   top: 0px;
   bottom: 0px;
   left: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -16757,7 +17741,12 @@ exports[`Layer should render correct border radius for position: top-right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -16771,7 +17760,11 @@ exports[`Layer should render correct border radius for position: top-right -
   border-radius: 0 0 0 48px;
   top: 0px;
   right: 0px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -16912,7 +17905,12 @@ exports[`Layer should render correct border radius for position: top-right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -16927,7 +17925,11 @@ exports[`Layer should render correct border radius for position: top-right -
   left: 0px;
   right: 0px;
   top: 0;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -17068,7 +18070,12 @@ exports[`Layer should render correct border radius for position: top-right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -17084,7 +18091,11 @@ exports[`Layer should render correct border radius for position: top-right -
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -17225,7 +18236,12 @@ exports[`Layer should render correct border radius for position: top-right -
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -17240,7 +18256,11 @@ exports[`Layer should render correct border radius for position: top-right -
   top: 0px;
   bottom: 0px;
   right: 0px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
   transform: translateX(0);
+  -webkit-animation: ffftsv 0.2s ease-in-out forwards;
   animation: ffftsv 0.2s ease-in-out forwards;
 }
 
@@ -17380,7 +18400,12 @@ exports[`Layer target 1`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -17394,7 +18419,11 @@ exports[`Layer target 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
@@ -17501,7 +18530,12 @@ exports[`Layer target not modal 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
   background-color: #FFFFFF;
@@ -17515,7 +18549,11 @@ exports[`Layer target not modal 1`] = `
   border-radius: 4px;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
   animation: hWAzxx 0.2s ease-in-out forwards;
 }
 

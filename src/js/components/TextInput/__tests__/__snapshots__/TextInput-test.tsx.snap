@@ -283,33 +283,51 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
 
 exports[`TextInput calls onSuggestionsClose 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -330,7 +348,9 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -339,6 +359,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -412,7 +433,13 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -498,33 +525,51 @@ exports[`TextInput calls onSuggestionsClose 4`] = `
 
 exports[`TextInput calls onSuggestionsOpen 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -545,7 +590,9 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -554,6 +601,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -627,7 +675,13 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -790,33 +844,51 @@ exports[`TextInput close suggestion drop 1`] = `
 
 exports[`TextInput close suggestion drop 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -837,7 +909,9 @@ exports[`TextInput close suggestion drop 2`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -846,6 +920,7 @@ exports[`TextInput close suggestion drop 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -919,7 +994,13 @@ exports[`TextInput close suggestion drop 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -1103,33 +1184,51 @@ exports[`TextInput complex suggestions 1`] = `
 
 exports[`TextInput complex suggestions 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -1150,7 +1249,9 @@ exports[`TextInput complex suggestions 2`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -1159,6 +1260,7 @@ exports[`TextInput complex suggestions 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1232,7 +1334,13 @@ exports[`TextInput complex suggestions 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -2056,6 +2164,8 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 <DocumentFragment>
   .c3 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
   height: 12px;
@@ -2088,6 +2198,8 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 
 .c5 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2120,6 +2232,8 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 
 .c7 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
@@ -2362,9 +2476,15 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
 
 .c2 {
   position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   justify: center;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -3908,33 +4028,51 @@ exports[`TextInput select suggestion 1`] = `
 
 exports[`TextInput select suggestion 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -3955,7 +4093,9 @@ exports[`TextInput select suggestion 2`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -3964,6 +4104,7 @@ exports[`TextInput select suggestion 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4037,7 +4178,13 @@ exports[`TextInput select suggestion 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -4806,8 +4953,17 @@ exports[`TextInput should show non-string placeholder 1`] = `
   position: absolute;
   left: 11px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   pointer-events: none;
 }

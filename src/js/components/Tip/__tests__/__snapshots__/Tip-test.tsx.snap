@@ -2,6 +2,9 @@
 
 exports[`Tip dropProps should pass props to Drop 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -9,12 +12,17 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   background: none;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: none;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -23,6 +31,8 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   color: #444444;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
@@ -48,7 +58,9 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   margin: 0px;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -86,7 +98,13 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -115,6 +133,7 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -208,6 +227,9 @@ exports[`Tip focus and blur events on the Tip's child 2`] = `
 
 exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -215,12 +237,17 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   background: none;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: none;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -229,6 +256,8 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   color: #444444;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
@@ -239,11 +268,16 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -263,7 +297,9 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   margin: 0px;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -301,7 +337,13 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -328,6 +370,9 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 exports[`Tip plain 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -335,6 +380,8 @@ exports[`Tip plain 1`] = `
   background: none;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: none;
@@ -356,7 +403,9 @@ exports[`Tip plain 1`] = `
   margin: 0px;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -368,7 +417,13 @@ exports[`Tip plain 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -449,6 +504,9 @@ exports[`Tip shouldn't crash with no children 1`] = `
 
 exports[`Tip themed 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -457,12 +515,17 @@ exports[`Tip themed 1`] = `
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.40);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -471,6 +534,8 @@ exports[`Tip themed 1`] = `
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
@@ -497,7 +562,9 @@ exports[`Tip themed 1`] = `
   margin: 21px;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -535,7 +602,13 @@ exports[`Tip themed 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }

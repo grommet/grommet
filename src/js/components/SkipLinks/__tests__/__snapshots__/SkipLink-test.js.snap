@@ -7,11 +7,13 @@ exports[`SkipLink basic 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -146,11 +148,13 @@ exports[`SkipLink should allow for single skip link 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 

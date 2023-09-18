@@ -17,6 +17,7 @@ exports[`Meter background 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -158,6 +159,7 @@ exports[`Meter basic 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -207,6 +209,7 @@ exports[`Meter boundary values 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -264,6 +267,7 @@ exports[`Meter default 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -306,6 +310,7 @@ exports[`Meter large circle values 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -384,6 +389,7 @@ exports[`Meter many values 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -479,10 +485,14 @@ exports[`Meter reverse 1`] = `
 .c1 {
   max-width: 100%;
   overflow: hidden;
+  -webkit-transform: scale(-1,1);
+  -moz-transform: scale(-1,1);
+  -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -529,10 +539,14 @@ exports[`Meter reverse circle 1`] = `
 .c1 {
   max-width: 100%;
   overflow: hidden;
+  -webkit-transform: scale(-1,1);
+  -moz-transform: scale(-1,1);
+  -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -583,6 +597,7 @@ exports[`Meter round 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -592,6 +607,7 @@ exports[`Meter round 1`] = `
 }
 
 .c2 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -698,10 +714,14 @@ exports[`Meter rtl theme 1`] = `
 .c1 {
   max-width: 100%;
   overflow: hidden;
+  -webkit-transform: scale(-1,1);
+  -moz-transform: scale(-1,1);
+  -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -752,6 +772,7 @@ exports[`Meter single 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -801,6 +822,7 @@ exports[`Meter size 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -1478,6 +1500,7 @@ exports[`Meter thickness 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -1786,6 +1809,7 @@ exports[`Meter type 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -1905,6 +1929,7 @@ exports[`Meter vertical 1`] = `
 }
 
 .c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 

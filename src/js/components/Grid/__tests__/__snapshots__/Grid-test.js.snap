@@ -12,6 +12,7 @@ exports[`Grid a11yTitle and aria-label renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
 }
@@ -44,80 +45,132 @@ exports[`Grid align renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
   align-items: flex-end;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch;
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline;
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: normal;
+  -webkit-box-align: normal;
+  -ms-flex-align: normal;
   align-items: normal;
 }
 
 .c7 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: first baseline;
+  -webkit-box-align: first baseline;
+  -ms-flex-align: first baseline;
   align-items: first baseline;
 }
 
 .c8 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: last baseline;
+  -webkit-box-align: last baseline;
+  -ms-flex-align: last baseline;
   align-items: last baseline;
 }
 
 .c9 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: safe center;
+  -webkit-box-align: safe center;
+  -ms-flex-align: safe center;
   align-items: safe center;
 }
 
 .c10 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: unsafe center;
+  -webkit-box-align: unsafe center;
+  -ms-flex-align: unsafe center;
   align-items: unsafe center;
 }
 
 .c11 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: inherit;
+  -webkit-box-align: inherit;
+  -ms-flex-align: inherit;
   align-items: inherit;
 }
 
 .c12 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
   align-items: initial;
 }
 
 .c13 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-items: unset;
+  -webkit-box-align: unset;
+  -ms-flex-align: unset;
   align-items: unset;
 }
 
@@ -178,98 +231,146 @@ exports[`Grid alignContent renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
   align-content: flex-start;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
   align-content: space-between;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: space-around;
   align-content: space-around;
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: flex-end;
+  -ms-flex-line-pack: end;
   align-content: flex-end;
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
   align-content: stretch;
 }
 
 .c7 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: baseline;
+  -ms-flex-line-pack: baseline;
   align-content: baseline;
 }
 
 .c8 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
   align-content: space-evenly;
 }
 
 .c9 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: normal;
+  -ms-flex-line-pack: normal;
   align-content: normal;
 }
 
 .c10 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: first baseline;
+  -ms-flex-line-pack: first baseline;
   align-content: first baseline;
 }
 
 .c11 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: last baseline;
+  -ms-flex-line-pack: last baseline;
   align-content: last baseline;
 }
 
 .c12 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: safe center;
+  -ms-flex-line-pack: safe center;
   align-content: safe center;
 }
 
 .c13 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: unsafe center;
+  -ms-flex-line-pack: unsafe center;
   align-content: unsafe center;
 }
 
 .c14 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: inherit;
+  -ms-flex-line-pack: inherit;
   align-content: inherit;
 }
 
 .c15 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: initial;
+  -ms-flex-line-pack: initial;
   align-content: initial;
 }
 
 .c16 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-align-content: unset;
+  -ms-flex-line-pack: unset;
   align-content: unset;
 }
 
@@ -348,10 +449,13 @@ exports[`Grid areas renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "header main footer" "header sidebar footer" ". .";
+  -ms-grid-columns: 75% 25%;
   grid-template-columns: 75% 25%;
+  -ms-grid-rows: 48px 384px 96px;
   grid-template-rows: 48px 384px 96px;
 }
 
@@ -376,10 +480,13 @@ exports[`Grid areas renders when given an array of string arrays 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "header header" "sidebar main" "footer footer";
+  -ms-grid-columns: 75% 25%;
   grid-template-columns: 75% 25%;
+  -ms-grid-rows: 48px 384px 96px;
   grid-template-rows: 48px 384px 96px;
 }
 
@@ -404,6 +511,7 @@ exports[`Grid as renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
 }
@@ -429,12 +537,14 @@ exports[`Grid border 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border-top: solid 1px rgba(0, 0, 0, 0.33);
@@ -442,6 +552,7 @@ exports[`Grid border 1`] = `
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border-left: solid 1px rgba(0, 0, 0, 0.33);
@@ -449,78 +560,91 @@ exports[`Grid border 1`] = `
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border-top: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border-left: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border-bottom: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c7 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border-right: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c8 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: solid 1px #6FFFB0;
 }
 
 .c9 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: solid 2px rgba(0, 0, 0, 0.33);
 }
 
 .c10 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: solid 4px rgba(0, 0, 0, 0.33);
 }
 
 .c11 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: solid 12px rgba(0, 0, 0, 0.33);
 }
 
 .c12 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: solid 24px rgba(0, 0, 0, 0.33);
 }
 
 .c13 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: dotted 1px rgba(0, 0, 0, 0.33);
 }
 
 .c14 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: double 1px rgba(0, 0, 0, 0.33);
 }
 
 .c15 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border: dashed 1px rgba(0, 0, 0, 0.33);
 }
 
 .c16 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   border-top: dotted 4px #6FFFB0;
@@ -703,74 +827,98 @@ exports[`Grid columns renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: 50% 50%;
   grid-template-columns: 50% 50%;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: 33.33% 66.66%;
   grid-template-columns: 33.33% 66.66%;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: 25% 75%;
   grid-template-columns: 25% 75%;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: minmax(50%, 50%) 25% 75%;
   grid-template-columns: minmax(50%, 50%) 25% 75%;
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: repeat( auto-fill,minmax(min(192px, 100%), 1fr) );
   grid-template-columns: repeat( auto-fill,minmax(min(192px, 100%), 1fr) );
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: repeat( auto-fill,minmax(33.33%, 1fr) );
   grid-template-columns: repeat( auto-fill,minmax(33.33%, 1fr) );
 }
 
 .c7 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: repeat( auto-fill,1fr );
   grid-template-columns: repeat( auto-fill,1fr );
 }
 
 .c8 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: repeat( auto-fit,minmax(min(192px, 100%), 1fr) );
   grid-template-columns: repeat( auto-fit,minmax(min(192px, 100%), 1fr) );
 }
 
 .c9 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: repeat( auto-fill,minmax(min(192px, 100%), 384px) );
   grid-template-columns: repeat( auto-fill,minmax(min(192px, 100%), 384px) );
 }
 
 .c10 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: repeat( auto-fit,minmax(min(192px, 100%), 50%) );
   grid-template-columns: repeat( auto-fit,minmax(min(192px, 100%), 50%) );
 }
 
 .c11 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: repeat( auto-fit,minmax(25%, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(25%, 384px) );
 }
 
 .c12 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-columns: repeat( auto-fill,minmax(auto, auto) );
   grid-template-columns: repeat( auto-fill,minmax(auto, auto) );
 }
 
@@ -828,6 +976,7 @@ exports[`Grid fill renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 100%;
@@ -835,17 +984,20 @@ exports[`Grid fill renders 1`] = `
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 100%;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   height: 100%;
@@ -881,66 +1033,87 @@ exports[`Grid gap renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-gap: 24px 24px;
   grid-gap: 24px 24px;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-gap: 48px 48px;
   grid-gap: 48px 48px;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-row-gap: 12px;
   grid-row-gap: 12px;
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-row-gap: 24px;
   grid-row-gap: 24px;
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-row-gap: 48px;
   grid-row-gap: 48px;
 }
 
 .c7 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-column-gap: 12px;
   grid-column-gap: 12px;
 }
 
 .c8 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-column-gap: 24px;
   grid-column-gap: 24px;
 }
 
 .c9 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-column-gap: 48px;
   grid-column-gap: 48px;
 }
 
 .c10 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-gap: 12px 24px;
   grid-gap: 12px 24px;
 }
 
 .c11 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
 }
@@ -996,36 +1169,42 @@ exports[`Grid height 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   height: 96px;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   height: 192px;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   height: 384px;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   height: 768px;
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   height: 1152px;
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   height: 111px;
@@ -1069,6 +1248,7 @@ exports[`Grid height object 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   max-height: 100%;
@@ -1098,24 +1278,28 @@ exports[`Grid justify renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   justify-items: flex-start;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   justify-items: center;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   justify-items: flex-end;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   justify-items: stretch;
@@ -1151,38 +1335,61 @@ exports[`Grid justifyContent renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
   justify-content: space-around;
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-box-pack: stretch;
+  -ms-flex-pack: stretch;
+  -webkit-justify-content: stretch;
   justify-content: stretch;
 }
 
@@ -1222,24 +1429,28 @@ exports[`Grid pad 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding: 12px;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding: 24px;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding: 48px;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding-left: 12px;
@@ -1247,6 +1458,7 @@ exports[`Grid pad 1`] = `
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding-top: 12px;
@@ -1254,36 +1466,44 @@ exports[`Grid pad 1`] = `
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding-bottom: 12px;
 }
 
 .c7 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding-left: 12px;
 }
 
 .c8 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding-right: 12px;
 }
 
 .c9 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-padding-start: 12px;
   padding-inline-start: 12px;
 }
 
 .c10 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -webkit-padding-end: 12px;
   padding-inline-end: 12px;
 }
 
 .c11 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   padding-top: 12px;
@@ -1341,12 +1561,14 @@ exports[`Grid pad 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c9 {
+    -webkit-padding-start: 6px;
     padding-inline-start: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c10 {
+    -webkit-padding-end: 6px;
     padding-inline-end: 6px;
   }
 }
@@ -1408,6 +1630,7 @@ exports[`Grid renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
 }
@@ -1433,6 +1656,7 @@ exports[`Grid responsive 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
 }
@@ -1461,20 +1685,26 @@ exports[`Grid rows renders 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-rows: minmax(192px, 384px) 768px 384px;
   grid-template-rows: minmax(192px, 384px) 768px 384px;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-rows: 192px 768px 384px;
   grid-template-rows: 192px 768px 384px;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
+  -ms-grid-auto-rows: 192px;
   grid-auto-rows: 192px;
 }
 
@@ -1505,36 +1735,42 @@ exports[`Grid width 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 96px;
 }
 
 .c2 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 192px;
 }
 
 .c3 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 384px;
 }
 
 .c4 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 768px;
 }
 
 .c5 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 1152px;
 }
 
 .c6 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 111px;
@@ -1578,6 +1814,7 @@ exports[`Grid width object 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   max-width: 100%;

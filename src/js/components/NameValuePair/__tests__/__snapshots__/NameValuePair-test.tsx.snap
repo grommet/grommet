@@ -2,15 +2,23 @@
 
 exports[`NameValuePair should render name when name is JSX Element 1`] = `
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -18,6 +26,8 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -33,10 +43,13 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
@@ -129,11 +142,16 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
 
 exports[`NameValuePair should render name when name is typeof string 1`] = `
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -148,10 +166,13 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
@@ -235,11 +256,16 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 exports[`NameValuePair should render value when provided as child of type 
   string or number 1`] = `
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -254,10 +280,13 @@ exports[`NameValuePair should render value when provided as child of type
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 96px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 96px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
@@ -340,21 +369,31 @@ exports[`NameValuePair should render value when provided as child of type
 
 exports[`NameValuePair should render value when provided as child of type JSX Element 1`] = `
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 0px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -374,14 +413,18 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 }
 
 .c6 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 

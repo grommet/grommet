@@ -12,21 +12,32 @@ exports[`NameValueList should accept and apply Grid props 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 48px 96px;
   grid-gap: 48px 96px;
   justify-items: center;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -119,19 +130,27 @@ exports[`NameValueList should render 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -224,19 +243,27 @@ exports[`NameValueList should render correct alignment of name 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -329,19 +356,27 @@ exports[`NameValueList should render correct alignment of value 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -434,19 +469,27 @@ exports[`NameValueList should render correct gap between rows and columns 1`] = 
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -539,19 +582,27 @@ exports[`NameValueList should render correct width of name 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -644,19 +695,27 @@ exports[`NameValueList should render correct width of value 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 96px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 96px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -750,19 +809,27 @@ exports[`NameValueList should render correct width of value when value is array 
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 96px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 96px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -857,19 +924,27 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -962,19 +1037,27 @@ exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1068,19 +1151,27 @@ exports[`NameValueList should render value above name when pairProps = { directi
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
+  -ms-grid-gap: 24px 48px;
   grid-gap: 24px 48px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1173,19 +1264,27 @@ exports[`NameValueList should support custom theme 1`] = `
 }
 
 .c1 {
+  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
+  -ms-grid-columns: repeat( auto-fit,minmax(auto, 192px) );
   grid-template-columns: repeat( auto-fit,minmax(auto, 192px) );
+  -ms-grid-gap: 12px 24px;
   grid-gap: 12px 24px;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 

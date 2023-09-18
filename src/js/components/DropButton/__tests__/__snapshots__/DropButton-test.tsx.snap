@@ -608,6 +608,7 @@ exports[`DropButton rendersr a11yTitle and aria-label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;

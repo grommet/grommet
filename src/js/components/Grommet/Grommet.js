@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useMemo, useState } from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, StyleSheetManager } from 'styled-components';
 
 import {
   ContainerTargetContext,
@@ -157,10 +157,12 @@ const Grommet = forwardRef((props, ref) => {
             <OptionsContext.Provider value={options}>
               <MessageContext.Provider value={messages}>
                 <AnalyticsProvider onAnalytics={onAnalytics}>
-                  <StyledGrommet full={full} {...rest} ref={grommetRef}>
-                    {children}
-                  </StyledGrommet>
-                  {full && <FullGlobalStyle />}
+                  <StyleSheetManager enableVendorPrefixes>
+                    <StyledGrommet full={full} {...rest} ref={grommetRef}>
+                      {children}
+                    </StyledGrommet>
+                    {full && <FullGlobalStyle />}
+                  </StyleSheetManager>
                 </AnalyticsProvider>
               </MessageContext.Provider>
             </OptionsContext.Provider>
