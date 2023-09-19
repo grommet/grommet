@@ -2,8 +2,10 @@
 
 exports[`Select 0 value 1`] = `
 <DocumentFragment>
-  .c8 {
+  .c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -11,51 +13,73 @@ exports[`Select 0 value 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -63,15 +87,20 @@ exports[`Select 0 value 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -84,47 +113,47 @@ exports[`Select 0 value 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -142,63 +171,73 @@ exports[`Select 0 value 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-label="test select"
-    class="c0 c1"
-    id="test-select"
-    type="button"
+<div
+    class="c0"
   >
-    <div
-      class="c2"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="test select"
+      class="c1 c2"
+      id="test-select"
+      type="button"
     >
       <div
         class="c3"
@@ -206,37 +245,41 @@ exports[`Select 0 value 1`] = `
         <div
           class="c4"
         >
-          <input
-            autocomplete="off"
-            class="c5 c6"
-            id="test-select__input"
-            placeholder="test select"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value="0"
-          />
+          <div
+            class="c5"
+          >
+            <input
+              autocomplete="off"
+              class="c6 c7"
+              id="test-select__input"
+              placeholder="test select"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value="0"
+            />
+          </div>
+        </div>
+        <div
+          class="c8"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </div>
       </div>
-      <div
-        class="c7"
-        style="min-width: auto;"
-      >
-        <svg
-          aria-label="FormDown"
-          class="c8"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
@@ -2316,8 +2359,10 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 `;
 
 exports[`Select basic 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2325,51 +2370,73 @@ exports[`Select basic 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2377,15 +2444,20 @@ exports[`Select basic 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2398,47 +2470,47 @@ exports[`Select basic 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2456,63 +2528,73 @@ exports[`Select basic 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="Select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -2520,42 +2602,48 @@ exports[`Select basic 1`] = `
       <div
         class="c4"
       >
-        <input
-          aria-label="Select"
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            aria-label="Select"
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select complex options and children 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2563,51 +2651,73 @@ exports[`Select complex options and children 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2615,15 +2725,20 @@ exports[`Select complex options and children 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2636,47 +2751,47 @@ exports[`Select complex options and children 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2694,63 +2809,73 @@ exports[`Select complex options and children 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -2758,119 +2883,144 @@ exports[`Select complex options and children 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select complex options and children 2`] = `
-<button
-  aria-expanded="true"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dBXNXE StyledSelect__StyledSelectDropButton-sc-znp66n-5 ceNWQc"
-  id="test-select"
-  type="button"
+<div
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
-  <div
-    class="StyledBox-sc-13pk1d4-0 bqbJY"
+  <button
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="StyledButton-sc-323bzc-0 dBXNXE StyledSelect__StyledSelectDropButton-sc-znp66n-5 ceNWQc"
+    id="test-select"
+    type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 pvKre"
+      class="StyledBox-sc-13pk1d4-0 bqbJY"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+        class="StyledBox-sc-13pk1d4-0 pvKre"
       >
-        <input
-          autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 caEEsY StyledSelect__SelectTextInput-sc-znp66n-4 jPYOxt"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY StyledSelect__SelectTextInput-sc-znp66n-4 jPYOxt"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cftizD"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-sc-ofa7kd-0 csYGBW"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 cftizD"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 csYGBW"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select complex options and children 3`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -2890,7 +3040,9 @@ exports[`Select complex options and children 3`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -2899,6 +3051,7 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2953,7 +3106,13 @@ exports[`Select complex options and children 3`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -4282,8 +4441,10 @@ exports[`Select default value object options 1`] = `
 `;
 
 exports[`Select disabled 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4291,51 +4452,73 @@ exports[`Select disabled 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4343,15 +4526,20 @@ exports[`Select disabled 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4366,47 +4554,47 @@ exports[`Select disabled 1`] = `
   cursor: default;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -4424,64 +4612,74 @@ exports[`Select disabled 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: default;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  disabled=""
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    disabled=""
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -4489,89 +4687,97 @@ exports[`Select disabled 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select disabled 2`] = `
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="StyledButton-sc-323bzc-0 fRGvwi StyledSelect__StyledSelectDropButton-sc-znp66n-5 ceNWQc"
-  disabled=""
-  id="test-select"
-  type="button"
+<div
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
-  <div
-    class="StyledBox-sc-13pk1d4-0 bqbJY"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="StyledButton-sc-323bzc-0 fRGvwi StyledSelect__StyledSelectDropButton-sc-znp66n-5 ceNWQc"
+    disabled=""
+    id="test-select"
+    type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 pvKre"
+      class="StyledBox-sc-13pk1d4-0 bqbJY"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+        class="StyledBox-sc-13pk1d4-0 pvKre"
       >
-        <input
-          autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 caEEsY StyledSelect__SelectTextInput-sc-znp66n-4 cpbNHl"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY StyledSelect__SelectTextInput-sc-znp66n-4 cpbNHl"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 cftizD"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-sc-ofa7kd-0 csYGBW"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 cftizD"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 csYGBW"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select disabled key 1`] = `
@@ -5843,44 +6049,69 @@ exports[`Select keyboard navigation timeout 1`] = `
 
 exports[`Select large drop container height 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -5900,7 +6131,9 @@ exports[`Select large drop container height 1`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -5915,6 +6148,7 @@ exports[`Select large drop container height 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5975,7 +6209,13 @@ exports[`Select large drop container height 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -6050,44 +6290,69 @@ exports[`Select large drop container height 1`] = `
 
 exports[`Select medium drop container height 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -6107,7 +6372,9 @@ exports[`Select medium drop container height 1`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -6122,6 +6389,7 @@ exports[`Select medium drop container height 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6182,7 +6450,13 @@ exports[`Select medium drop container height 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -6540,8 +6814,10 @@ exports[`Select modifies select control style on open 1`] = `
 
 exports[`Select null value 1`] = `
 <DocumentFragment>
-  .c8 {
+  .c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -6549,51 +6825,73 @@ exports[`Select null value 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6601,15 +6899,20 @@ exports[`Select null value 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6622,47 +6925,47 @@ exports[`Select null value 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -6680,63 +6983,73 @@ exports[`Select null value 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-label="test select"
-    class="c0 c1"
-    id="test-select"
-    type="button"
+<div
+    class="c0"
   >
-    <div
-      class="c2"
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="test select"
+      class="c1 c2"
+      id="test-select"
+      type="button"
     >
       <div
         class="c3"
@@ -6744,37 +7057,41 @@ exports[`Select null value 1`] = `
         <div
           class="c4"
         >
-          <input
-            autocomplete="off"
-            class="c5 c6"
-            id="test-select__input"
-            placeholder="test select"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value=""
-          />
+          <div
+            class="c5"
+          >
+            <input
+              autocomplete="off"
+              class="c6 c7"
+              id="test-select__input"
+              placeholder="test select"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c8"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
         </div>
       </div>
-      <div
-        class="c7"
-        style="min-width: auto;"
-      >
-        <svg
-          aria-label="FormDown"
-          class="c8"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m18 9-6 6-6-6"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
 </DocumentFragment>
 `;
 
@@ -11390,8 +11707,10 @@ exports[`Select onChange without valueKey 4`] = `
 `;
 
 exports[`Select prop: onClose 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -11399,51 +11718,73 @@ exports[`Select prop: onClose 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -11451,15 +11792,20 @@ exports[`Select prop: onClose 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -11472,47 +11818,47 @@ exports[`Select prop: onClose 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -11530,48 +11876,58 @@ exports[`Select prop: onClose 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -11589,16 +11945,16 @@ exports[`Select prop: onClose 1`] = `
 
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -11606,42 +11962,48 @@ exports[`Select prop: onClose 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select prop: onClose 2`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -11649,51 +12011,73 @@ exports[`Select prop: onClose 2`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -11701,15 +12085,20 @@ exports[`Select prop: onClose 2`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -11722,47 +12111,47 @@ exports[`Select prop: onClose 2`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -11780,48 +12169,58 @@ exports[`Select prop: onClose 2`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -11842,16 +12241,16 @@ exports[`Select prop: onClose 2`] = `
 <body>
   <div />
   <div>
-    <button
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-label="test select"
-      class="c0 c1"
-      id="test-select"
-      type="button"
+    <div
+      class="c0"
     >
-      <div
-        class="c2"
+      <button
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-label="test select"
+        class="c1 c2"
+        id="test-select"
+        type="button"
       >
         <div
           class="c3"
@@ -11859,37 +12258,41 @@ exports[`Select prop: onClose 2`] = `
           <div
             class="c4"
           >
-            <input
-              autocomplete="off"
-              class="c5 c6"
-              id="test-select__input"
-              placeholder="test select"
-              readonly=""
-              tabindex="-1"
-              type="text"
-              value=""
-            />
+            <div
+              class="c5"
+            >
+              <input
+                autocomplete="off"
+                class="c6 c7"
+                id="test-select__input"
+                placeholder="test select"
+                readonly=""
+                tabindex="-1"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="c8"
+            style="min-width: auto;"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c9"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m18 9-6 6-6-6"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
           </div>
         </div>
-        <div
-          class="c7"
-          style="min-width: auto;"
-        >
-          <svg
-            aria-label="FormDown"
-            class="c8"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="m18 9-6 6-6-6"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
+      </button>
+    </div>
   </div>
 </body>
 `;
@@ -12450,8 +12853,10 @@ exports[`Select prop: onOpen 5`] = `
 `;
 
 exports[`Select renders custom icon 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -12459,51 +12864,73 @@ exports[`Select renders custom icon 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -12511,15 +12938,20 @@ exports[`Select renders custom icon 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -12532,47 +12964,47 @@ exports[`Select renders custom icon 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -12590,63 +13022,73 @@ exports[`Select renders custom icon 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="Open Drop"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Open Drop"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -12654,36 +13096,40 @@ exports[`Select renders custom icon 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="CaretDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M22 8 12 20 2 8z"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="CaretDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M22 8 12 20 2 8z"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select renders custom up and down icons 1`] = `
@@ -13069,8 +13515,10 @@ exports[`Select renders custom up and down icons 2`] = `
 `;
 
 exports[`Select renders default icon 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -13078,51 +13526,73 @@ exports[`Select renders default icon 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -13130,15 +13600,20 @@ exports[`Select renders default icon 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -13151,47 +13626,47 @@ exports[`Select renders default icon 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -13209,63 +13684,73 @@ exports[`Select renders default icon 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="Open Drop"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Open Drop"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -13273,36 +13758,40 @@ exports[`Select renders default icon 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select renders empty search with select.emptySearchMessage styling 1`] = `
@@ -14252,32 +14741,52 @@ exports[`Select renders styled select options using select.options.container 1`]
 `;
 
 exports[`Select renders without icon 1`] = `
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -14290,47 +14799,47 @@ exports[`Select renders without icon 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -14348,56 +14857,66 @@ exports[`Select renders without icon 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="Open Drop"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Open Drop"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -14405,24 +14924,30 @@ exports[`Select renders without icon 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
     </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select search 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -14430,51 +14955,73 @@ exports[`Select search 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -14482,15 +15029,20 @@ exports[`Select search 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -14503,47 +15055,47 @@ exports[`Select search 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -14561,63 +15113,73 @@ exports[`Select search 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select; Selected: two"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select; Selected: two"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -14625,90 +15187,126 @@ exports[`Select search 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value="two"
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value="two"
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select search 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding: 6px;
 }
 
 .c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -14728,7 +15326,9 @@ exports[`Select search 2`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -14743,6 +15343,7 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -14780,6 +15381,7 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -14922,7 +15524,13 @@ exports[`Select search 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -15037,8 +15645,10 @@ exports[`Select search 5`] = `
 `;
 
 exports[`Select search and select 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -15046,51 +15656,73 @@ exports[`Select search and select 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -15098,15 +15730,20 @@ exports[`Select search and select 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -15119,47 +15756,47 @@ exports[`Select search and select 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -15177,63 +15814,73 @@ exports[`Select search and select 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -15241,90 +15888,126 @@ exports[`Select search and select 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select search and select 2`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   padding: 6px;
 }
 
 .c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -15344,7 +16027,9 @@ exports[`Select search and select 2`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -15359,6 +16044,7 @@ exports[`Select search and select 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -15494,7 +16180,13 @@ exports[`Select search and select 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -15609,8 +16301,10 @@ exports[`Select search and select 5`] = `
 `;
 
 exports[`Select select an object with label key specific with keypress 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -15618,51 +16312,73 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -15670,15 +16386,20 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -15691,47 +16412,47 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -15749,63 +16470,73 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -15813,42 +16544,48 @@ exports[`Select select an object with label key specific with keypress 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select select an option 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -15856,51 +16593,73 @@ exports[`Select select an option 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -15908,15 +16667,20 @@ exports[`Select select an option 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -15929,47 +16693,47 @@ exports[`Select select an option 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -15987,63 +16751,73 @@ exports[`Select select an option 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -16051,42 +16825,48 @@ exports[`Select select an option 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select select an option with complex options 1`] = `
-.c5 {
+.c6 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -16094,51 +16874,73 @@ exports[`Select select an option with complex options 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c1 {
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c4 {
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -16146,15 +16948,20 @@ exports[`Select select an option with complex options 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -16167,105 +16974,121 @@ exports[`Select select an option with complex options 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c3 {
+.c4 {
   display: none;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="Open Drop; Selected: [object Object]"
-  class="c0 "
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c1"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Open Drop; Selected: [object Object]"
+    class="c1 "
+    id="test-select"
+    type="button"
   >
     <div
       class="c2"
     >
-      <span>
-        one
-      </span>
-      <input
+      <div
         class="c3"
-        id="test-select__input"
-        readonly=""
-        type="text"
-      />
-    </div>
-    <div
-      class="c4"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c5"
-        viewBox="0 0 24 24"
       >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
+        <span>
+          one
+        </span>
+        <input
+          class="c4"
+          id="test-select__input"
+          readonly=""
+          type="text"
         />
-      </svg>
+      </div>
+      <div
+        class="c5"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c6"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
     </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select select an option with enter 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -16273,51 +17096,73 @@ exports[`Select select an option with enter 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -16325,15 +17170,20 @@ exports[`Select select an option with enter 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -16346,47 +17196,47 @@ exports[`Select select an option with enter 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -16404,63 +17254,73 @@ exports[`Select select an option with enter 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -16468,42 +17328,48 @@ exports[`Select select an option with enter 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select select an option with keypress 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -16511,51 +17377,73 @@ exports[`Select select an option with keypress 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -16563,15 +17451,20 @@ exports[`Select select an option with keypress 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -16584,47 +17477,47 @@ exports[`Select select an option with keypress 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -16642,63 +17535,73 @@ exports[`Select select an option with keypress 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -16706,42 +17609,48 @@ exports[`Select select an option with keypress 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select select on multiple keydown always picks first enabled option 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -16749,51 +17658,73 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -16801,15 +17732,20 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -16822,47 +17758,47 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -16880,63 +17816,73 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="test select"
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="test select"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -16944,37 +17890,41 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select select option by typing should not break if caller passes JSX 1`] = `
@@ -18199,8 +19149,10 @@ exports[`Select should not have accessibility violations 1`] = `
 `;
 
 exports[`Select size 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
@@ -18208,51 +19160,73 @@ exports[`Select size 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
   flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -18260,15 +19234,20 @@ exports[`Select size 1`] = `
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -18281,47 +19260,47 @@ exports[`Select size 1`] = `
   text-align: inherit;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -18341,63 +19320,73 @@ exports[`Select size 1`] = `
   border: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5 ::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: pointer;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-<button
-  aria-expanded="false"
-  aria-haspopup="listbox"
-  aria-label="Open Drop; Selected: "
-  class="c0 c1"
-  id="test-select"
-  type="button"
+<div
+  class="c0"
 >
-  <div
-    class="c2"
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-label="Open Drop; Selected: "
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
       class="c3"
@@ -18405,78 +19394,107 @@ exports[`Select size 1`] = `
       <div
         class="c4"
       >
-        <input
-          autocomplete="off"
-          class="c5 c6"
-          id="test-select__input"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m18 9-6 6-6-6"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="m18 9-6 6-6-6"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
+  </button>
+</div>
 `;
 
 exports[`Select small drop container height 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -18496,7 +19514,9 @@ exports[`Select small drop container height 1`] = `
   color: #444444;
   opacity: 0;
   transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -18511,6 +19531,7 @@ exports[`Select small drop container height 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -18571,7 +19592,13 @@ exports[`Select small drop container height 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }

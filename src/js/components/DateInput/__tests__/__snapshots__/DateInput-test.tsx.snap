@@ -8768,8 +8768,10 @@ exports[`DateInput handle focus in FormField 2`] = `
 `;
 
 exports[`DateInput icon 1`] = `
-.c1 {
+.c2 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -8777,34 +8779,45 @@ exports[`DateInput icon 1`] = `
   stroke: red;
 }
 
-.c1 g {
+.c2 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c1 *:not([stroke])[fill='none'] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c1 *[stroke*='#'],
-.c1 *[STROKE*='#'] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c1 *[fill-rule],
-.c1 *[FILL-RULE],
-.c1 *[fill*='#'],
-.c1 *[FILL*='#'] {
+.c2 *[fill-rule],
+.c2 *[FILL-RULE],
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
 .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -8819,64 +8832,69 @@ exports[`DateInput icon 1`] = `
   padding: 12px;
 }
 
-.c0:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-<button
-  aria-label="Open Drop"
+<div
   class="c0"
-  type="button"
 >
-  <svg
-    aria-label="Calendar"
+  <button
+    aria-label="Open Drop"
     class="c1"
-    viewBox="0 0 24 24"
+    type="button"
   >
-    <path
-      d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
-      fill="none"
-      stroke="#000"
-      stroke-width="2"
-    />
-  </svg>
-</button>
+    <svg
+      aria-label="Calendar"
+      class="c2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
+        fill="none"
+        stroke="#000"
+        stroke-width="2"
+      />
+    </svg>
+  </button>
+  ,
+</div>
 `;
 
 exports[`DateInput inline 1`] = `

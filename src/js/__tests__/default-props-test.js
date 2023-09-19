@@ -14,26 +14,42 @@ CustomBox.defaultProps = {};
 Object.setPrototypeOf(CustomBox.defaultProps, defaultProps);
 
 test('default theme is used', () => {
-  const { container } = render(<Box background="brand" />);
+  const { container } = render(
+    <Grommet>
+      <Box background="brand" />
+    </Grommet>,
+  );
 
   expect(container.firstChild).toMatchSnapshot();
 });
 
 test('extends default theme', () => {
   extendDefaultTheme({ global: { colors: { brand: '#ff0000' } } });
-  const { container } = render(<Box background="brand" />);
+  const { container } = render(
+    <Grommet>
+      <Box background="brand" />
+    </Grommet>,
+  );
 
   expect(container.firstChild).toMatchSnapshot();
 });
 
 test('extends default theme twice', () => {
   extendDefaultTheme({ global: { colors: { brand: '#ff0000' } } });
-  const { rerender, asFragment } = render(<Box background="brand" />);
+  const { rerender, asFragment } = render(
+    <Grommet>
+      <Box background="brand" />
+    </Grommet>,
+  );
 
   expect(asFragment()).toMatchSnapshot();
 
   extendDefaultTheme({ global: { colors: { brand: '#0000ff' } } });
-  rerender(<Box background="brand" />);
+  rerender(
+    <Grommet>
+      <Box background="brand" />
+    </Grommet>,
+  );
 
   expect(asFragment()).toMatchSnapshot();
 });
@@ -51,7 +67,11 @@ test('uses Grommet theme instead of default', () => {
 
 test('leverages default theme', () => {
   extendDefaultTheme({ global: { colors: { brand: 'red' } } });
-  const { container } = render(<CustomBox />);
+  const { container } = render(
+    <Grommet>
+      <CustomBox />
+    </Grommet>,
+  );
 
   expect(container.firstChild).toMatchSnapshot();
 });
