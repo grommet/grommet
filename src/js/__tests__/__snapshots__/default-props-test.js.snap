@@ -1,10 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`default theme is used 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.c0 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -12,164 +9,77 @@ exports[`default theme is used 1`] = `
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 <div
   class="c0"
->
-  <div
-    class="c1"
-  />
-</div>
+/>
 `;
 
 exports[`extends default theme 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.c0 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7D4CDB;
+  background-color: #ff0000;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 <div
   class="c0"
->
-  <div
-    class="c1"
-  />
-</div>
+/>
 `;
 
 exports[`extends default theme twice 1`] = `
 <DocumentFragment>
-  .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  .c0 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7D4CDB;
+  background-color: #ff0000;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 <div
     class="c0"
-  >
-    <div
-      class="c1"
-    />
-  </div>
+  />
 </DocumentFragment>
 `;
 
 exports[`extends default theme twice 2`] = `
 <DocumentFragment>
-  .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  .c0 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7D4CDB;
+  background-color: #0000ff;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 <div
     class="c0"
-  >
-    <div
-      class="c1"
-    />
-  </div>
+  />
 </DocumentFragment>
 `;
 
 exports[`leverages default theme 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  background: #7D4CDB;
+  background: red;
 }
 
 <div
   class="c0"
->
-  <div
-    class="c1"
-  />
-</div>
+/>
 `;
 
 exports[`uses Grommet theme instead of default 1`] = `
