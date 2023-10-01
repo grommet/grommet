@@ -4433,7 +4433,7 @@ exports[`Select default value object options 1`] = `
 `;
 
 exports[`Select disabled 1`] = `
-.c8 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4444,30 +4444,30 @@ exports[`Select disabled 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4489,7 +4489,7 @@ exports[`Select disabled 1`] = `
   justify-content: space-between;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4508,7 +4508,7 @@ exports[`Select disabled 1`] = `
   flex-basis: auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4527,7 +4527,7 @@ exports[`Select disabled 1`] = `
   flex: 0 0 auto;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4547,47 +4547,47 @@ exports[`Select disabled 1`] = `
   cursor: default;
 }
 
-.c0:focus {
+cursor:default .c0:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+cursor:default .c0:focus > circle,
+cursor:default .c1:focus > ellipse,
+cursor:default .c1:focus > line,
+cursor:default .c1:focus > path,
+cursor:default .c1:focus > polygon,
+cursor:default .c1:focus > polyline,
+cursor:default .c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+cursor:default .c0:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -4603,50 +4603,52 @@ exports[`Select disabled 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  opacity: 0.3;
+  cursor: default;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
   opacity: 1;
 }
 
-.c4 {
+.c5 {
   position: relative;
   width: 100%;
 }
 
-.c6 {
+.c7 {
   cursor: default;
 }
 
-.c1 {
+.c2 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4656,23 +4658,24 @@ exports[`Select disabled 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 c2"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="c2"
+    class="c3"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c6 c7"
+          disabled=""
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4683,12 +4686,12 @@ exports[`Select disabled 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c8"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c9"
         viewBox="0 0 24 24"
       >
         <path
@@ -4708,7 +4711,7 @@ exports[`Select disabled 2`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dDqEVs StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 bXuoHr StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
   disabled=""
   id="test-select"
   type="button"
@@ -4724,7 +4727,8 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
+          class="StyledTextInput-sc-1x30a0s-0 jlffmT StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
+          disabled=""
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5905,6 +5909,8 @@ exports[`Select keyboard navigation timeout 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c6::-webkit-input-placeholder {
@@ -6003,6 +6009,7 @@ exports[`Select keyboard navigation timeout 1`] = `
             autocomplete="off"
             class="c6 c7"
             data-g-tabindex="-1"
+            disabled=""
             id="test-select__input"
             placeholder="test select"
             readonly=""

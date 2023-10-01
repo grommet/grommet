@@ -196,7 +196,7 @@ describe('RadioButton', () => {
   test('renders custom cursor when disabled', () => {
     const { container } = render(
       <Grommet
-        theme={{ global: { input: { disabled: { cursor: 'not-allowed' } } } }}
+        theme={{ global: { control: { disabled: { cursor: 'not-allowed' } } } }}
       >
         <RadioButton disabled name="test" value="1" />
         <RadioButton disabled checked name="test" value="2" />

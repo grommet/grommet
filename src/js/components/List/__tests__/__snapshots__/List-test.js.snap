@@ -15497,7 +15497,7 @@ exports[`List onOrder Keyboard move down 2`] = `
       >
         <button
           aria-label="1 alpha move up"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="alphaMoveUp"
           tabindex="-1"
@@ -15587,7 +15587,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         </button>
         <button
           aria-label="2 beta move down"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="betaMoveDown"
           tabindex="-1"
@@ -15651,7 +15651,7 @@ exports[`List onOrder Keyboard move down 3`] = `
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -15741,7 +15741,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -16267,7 +16267,7 @@ exports[`List onOrder Keyboard move up 2`] = `
       >
         <button
           aria-label="1 alpha move up"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="alphaMoveUp"
           tabindex="-1"
@@ -16357,7 +16357,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         </button>
         <button
           aria-label="2 beta move down"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="betaMoveDown"
           tabindex="-1"
@@ -16421,7 +16421,7 @@ exports[`List onOrder Keyboard move up 3`] = `
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -16511,7 +16511,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -17036,7 +17036,7 @@ exports[`List onOrder Mouse move down 2`] = `
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -17126,7 +17126,7 @@ exports[`List onOrder Mouse move down 2`] = `
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 gbBdiL"
+          class="StyledButton-sc-323bzc-0 XyRpY"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"

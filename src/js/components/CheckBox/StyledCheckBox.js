@@ -14,9 +14,9 @@ const fillStyle = () => `
       justify-content: space-between;
     `;
 
-const disabledStyle = `
+const disabledStyle = (theme) => `
   opacity: 0.5;
-  cursor: default;
+  cursor: ${theme.global?.control?.disabled?.cursor || 'default'};
 `;
 
 const hoverStyle = css`
@@ -68,8 +68,7 @@ const StyledCheckBoxContainer = styled.label`
       props.theme.box.responsiveBreakpoint,
       props.theme,
     )}
-  ${(props) => props.disabled && disabledStyle}
-  ${(props) => props.disabled && props.theme.global.input.disabled}
+  ${(props) => props.disabled && disabledStyle(props.theme)}
   ${(props) => !props.disabled && 'cursor: pointer;'}
   ${hoverStyle}
   // when the CheckBox has focus but there is no focusIndicator,

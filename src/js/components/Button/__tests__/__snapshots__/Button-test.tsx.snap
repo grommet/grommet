@@ -1624,12 +1624,12 @@ exports[`Button children function 1`] = `
 `;
 
 exports[`Button children function with disabled prop 1`] = `
-.c2 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1656,47 +1656,47 @@ exports[`Button children function with disabled prop 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c1:focus {
+cursor:default .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+cursor:default .c1:focus > circle,
+cursor:default .c2:focus > ellipse,
+cursor:default .c2:focus > line,
+cursor:default .c2:focus > path,
+cursor:default .c2:focus > polygon,
+cursor:default .c2:focus > polyline,
+cursor:default .c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+cursor:default .c1:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1721,47 +1721,47 @@ exports[`Button children function with disabled prop 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c3:hover {
+.c4:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1779,22 +1779,22 @@ exports[`Button children function with disabled prop 1`] = `
   class="c0"
 >
   <button
-    class="c1"
+    class="c1 c2"
     disabled=""
     type="button"
   >
     <span
-      class="c2"
+      class="c3"
     >
       Button#1 Disabled
     </span>
   </button>
   <button
-    class="c3"
+    class="c1 c4"
     type="button"
   >
     <span
-      class="c2"
+      class="c3"
     >
       Button#2 not Disabled
     </span>
@@ -2129,7 +2129,7 @@ exports[`Button color 1`] = `
 `;
 
 exports[`Button disabled 1`] = `
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2151,7 +2151,7 @@ exports[`Button disabled 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2159,73 +2159,6 @@ exports[`Button disabled 1`] = `
   -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c1:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
 }
 
 .c2 {
@@ -2245,9 +2178,6 @@ exports[`Button disabled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
   opacity: 0.3;
   cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
@@ -2258,23 +2188,23 @@ exports[`Button disabled 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c2:focus {
+cursor:default .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+cursor:default .c1:focus > circle,
+cursor:default .c2:focus > ellipse,
+cursor:default .c2:focus > line,
+cursor:default .c2:focus > path,
+cursor:default .c2:focus > polygon,
+cursor:default .c2:focus > polyline,
+cursor:default .c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+cursor:default .c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2309,32 +2239,42 @@ exports[`Button disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
   opacity: 0.3;
   cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
-.c3:focus {
+cursor:default .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+cursor:default .c1:focus > circle,
+cursor:default .c3:focus > ellipse,
+cursor:default .c3:focus > line,
+cursor:default .c3:focus > path,
+cursor:default .c3:focus > polygon,
+cursor:default .c3:focus > polyline,
+cursor:default .c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+cursor:default .c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2376,27 +2316,25 @@ exports[`Button disabled 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
-  line-height: 0;
-  padding: 12px;
 }
 
-.c4:focus {
+cursor:default .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+cursor:default .c1:focus > circle,
+cursor:default .c4:focus > ellipse,
+cursor:default .c4:focus > line,
+cursor:default .c4:focus > path,
+cursor:default .c4:focus > polygon,
+cursor:default .c4:focus > polyline,
+cursor:default .c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+cursor:default .c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2439,25 +2377,26 @@ exports[`Button disabled 1`] = `
   opacity: 0.3;
   cursor: default;
   line-height: 0;
+  padding: 12px;
 }
 
-.c5:focus {
+cursor:default .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+cursor:default .c1:focus > circle,
+cursor:default .c5:focus > ellipse,
+cursor:default .c5:focus > line,
+cursor:default .c5:focus > path,
+cursor:default .c5:focus > polygon,
+cursor:default .c5:focus > polyline,
+cursor:default .c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+cursor:default .c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2492,41 +2431,33 @@ exports[`Button disabled 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
   opacity: 0.3;
   cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
   line-height: 0;
-  padding: 12px;
 }
 
-.c6:focus {
+cursor:default .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+cursor:default .c1:focus > circle,
+cursor:default .c6:focus > ellipse,
+cursor:default .c6:focus > line,
+cursor:default .c6:focus > path,
+cursor:default .c6:focus > polygon,
+cursor:default .c6:focus > polyline,
+cursor:default .c6:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+cursor:default .c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2550,6 +2481,75 @@ exports[`Button disabled 1`] = `
   border: 0;
 }
 
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  line-height: 0;
+  padding: 12px;
+}
+
+cursor:default .c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+cursor:default .c1:focus > circle,
+cursor:default .c7:focus > ellipse,
+cursor:default .c7:focus > line,
+cursor:default .c7:focus > path,
+cursor:default .c7:focus > polygon,
+cursor:default .c7:focus > polyline,
+cursor:default .c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+cursor:default .c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2564,102 +2564,102 @@ exports[`Button disabled 1`] = `
   class="c0"
 >
   <button
-    class="c1"
+    class="c1 c2"
     disabled=""
     type="button"
   />
   <button
-    class="c2"
+    class="c1 c3"
     disabled=""
     type="button"
   >
     Button
   </button>
   <button
-    class="c1"
+    class="c1 c2"
     disabled=""
     type="button"
   >
     Button
   </button>
   <button
-    class="c3"
+    class="c1 c4"
     disabled=""
     type="button"
   >
     Button
   </button>
   <button
-    class="c1"
+    class="c1 c2"
     disabled=""
     type="button"
   >
     Button
   </button>
   <button
-    class="c4"
+    class="c1 c5"
     disabled=""
     type="button"
   >
     <svg />
   </button>
   <button
-    class="c5"
+    class="c1 c6"
     disabled=""
     type="button"
   >
     <svg />
   </button>
   <button
-    class="c6"
+    class="c1 c7"
     disabled=""
     type="button"
   >
     <svg />
   </button>
   <button
-    class="c1"
+    class="c1 c2"
     disabled=""
     type="button"
   >
     <div
-      class="c7"
+      class="c8"
     >
       <svg />
       <div
-        class="c8"
+        class="c9"
       />
       Button
     </div>
   </button>
   <button
-    class="c3"
+    class="c1 c4"
     disabled=""
     type="button"
   >
     <div
-      class="c7"
+      class="c8"
     >
       <svg />
       <div
-        class="c8"
+        class="c9"
       />
       Button
     </div>
   </button>
   <button
-    class="c2"
+    class="c1 c3"
     disabled=""
     type="button"
   >
     <div
-      class="c7"
+      class="c8"
     >
       <svg
         color="#f8f8f8"
       />
       <div
-        class="c8"
+        class="c9"
       />
       Button
     </div>

@@ -318,7 +318,7 @@ exports[`CheckBox controlled 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iZpAHU"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
     label="test-label"
   >
     <div
@@ -1972,7 +1972,6 @@ exports[`CheckBox renders custom cursor when disabled 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   opacity: 0.5;
-  cursor: default;
   cursor: not-allowed;
 }
 

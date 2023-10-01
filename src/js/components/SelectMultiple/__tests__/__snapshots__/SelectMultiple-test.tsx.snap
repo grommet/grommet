@@ -598,7 +598,7 @@ exports[`SelectMultiple defaultValue 1`] = `
 `;
 
 exports[`SelectMultiple disabled 1`] = `
-.c10 {
+.c11 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -609,25 +609,25 @@ exports[`SelectMultiple disabled 1`] = `
   stroke: #7D4CDB;
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -646,7 +646,7 @@ exports[`SelectMultiple disabled 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -668,7 +668,7 @@ exports[`SelectMultiple disabled 1`] = `
   justify-content: space-between;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -687,7 +687,7 @@ exports[`SelectMultiple disabled 1`] = `
   flex-basis: auto;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -707,7 +707,7 @@ exports[`SelectMultiple disabled 1`] = `
   min-width: auto;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -727,47 +727,47 @@ exports[`SelectMultiple disabled 1`] = `
   cursor: default;
 }
 
-.c2:focus {
+cursor:default .c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+cursor:default .c2:focus > circle,
+cursor:default .c3:focus > ellipse,
+cursor:default .c3:focus > line,
+cursor:default .c3:focus > path,
+cursor:default .c3:focus > polygon,
+cursor:default .c3:focus > polyline,
+cursor:default .c3:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+cursor:default .c2:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c2:focus:not(:focus-visible) {
+.c3:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) > circle,
-.c2:focus:not(:focus-visible) > ellipse,
-.c2:focus:not(:focus-visible) > line,
-.c2:focus:not(:focus-visible) > path,
-.c2:focus:not(:focus-visible) > polygon,
-.c2:focus:not(:focus-visible) > polyline,
-.c2:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) > circle,
+.c3:focus:not(:focus-visible) > ellipse,
+.c3:focus:not(:focus-visible) > line,
+.c3:focus:not(:focus-visible) > path,
+.c3:focus:not(:focus-visible) > polygon,
+.c3:focus:not(:focus-visible) > polyline,
+.c3:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -783,44 +783,46 @@ exports[`SelectMultiple disabled 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  opacity: 0.3;
+  cursor: default;
 }
 
-.c7::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-moz-placeholder {
+.c8::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c7:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c8::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c7::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c7:-moz-placeholder,
-.c7::-moz-placeholder {
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
   opacity: 1;
 }
 
-.c6 {
+.c7 {
   position: relative;
   width: 100%;
 }
 
-.c8 {
+.c9 {
   cursor: default;
 }
 
-.c3 {
+.c4 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -836,7 +838,7 @@ exports[`SelectMultiple disabled 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -852,23 +854,24 @@ exports[`SelectMultiple disabled 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Open Drop. 0 selected."
-      class="c2 c3"
+      class="c2 c3 c4"
       disabled=""
       tabindex="0"
       type="button"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <div
-          class="c5"
+          class="c6"
         >
           <div
-            class="c6"
+            class="c7"
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c8 c9"
+              disabled=""
               readonly=""
               tabindex="-1"
               type="text"
@@ -877,11 +880,11 @@ exports[`SelectMultiple disabled 1`] = `
           </div>
         </div>
         <div
-          class="c9"
+          class="c10"
         >
           <svg
             aria-label="FormDown"
-            class="c10"
+            class="c11"
             viewBox="0 0 24 24"
           >
             <path
@@ -1068,6 +1071,8 @@ exports[`SelectMultiple disabled option 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1168,6 +1173,7 @@ exports[`SelectMultiple disabled option 1`] = `
           autocomplete="off"
           class="c5 c6"
           data-g-tabindex="-1"
+          disabled=""
           id="test-select__drop__input"
           readonly=""
           tabindex="-1"

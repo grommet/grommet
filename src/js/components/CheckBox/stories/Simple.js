@@ -15,7 +15,7 @@ const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
 
 export const Simple = () => (
   <Grommet
-    theme={{ global: { input: { disabled: { cursor: 'not-allowed' } } } }}
+    theme={{ global: { control: { disabled: { cursor: 'not-allowed' } } } }}
   >
     <SimpleCheckBox label="Reversed Checkbox" reverse />
     <SimpleCheckBox label="Disabled Checkbox" checked disabled />

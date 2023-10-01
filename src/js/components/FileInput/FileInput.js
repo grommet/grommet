@@ -55,6 +55,8 @@ const Label = styled(Text)`
     props.theme.fileInput &&
     props.theme.fileInput.label &&
     props.theme.fileInput.label.extend};
+  cursor: ${(props) =>
+    props.disabled ? props.theme.global.control.disabled.cursor : 'default'};
 `;
 
 const Message = styled(Text)`
@@ -344,6 +346,7 @@ const FileInput = forwardRef(
                       <Button
                         // The focus here is redundant for keyboard users
                         tabIndex={-1}
+                        disabled={disabled}
                         ref={controlRef}
                         kind={theme.fileInput.button}
                         label={format({
@@ -359,6 +362,7 @@ const FileInput = forwardRef(
                       <Anchor
                         // The focus here is redundant for keyboard users
                         tabIndex={-1}
+                        disabled={disabled}
                         alignSelf="center"
                         ref={controlRef}
                         margin="small"
@@ -379,7 +383,7 @@ const FileInput = forwardRef(
           )}
           {files.length > aggregateThreshold && (
             <Box justify="between" direction="row" align="center">
-              <Label {...theme.fileInput.label}>
+              <Label {...theme.fileInput.label} disabled={disabled}>
                 {files.length}{' '}
                 {format({
                   id: 'fileInput.files',
@@ -417,6 +421,7 @@ const FileInput = forwardRef(
                     <Button
                       // The focus here is redundant for keyboard users
                       tabIndex={-1}
+                      disabled={disabled}
                       ref={controlRef}
                       kind={theme.fileInput.button}
                       label={format({
@@ -432,6 +437,7 @@ const FileInput = forwardRef(
                     <Anchor
                       // The focus here is redundant for keyboard users
                       tabIndex={-1}
+                      disabled={disabled}
                       alignSelf="center"
                       ref={controlRef}
                       margin="small"
@@ -489,10 +495,14 @@ const FileInput = forwardRef(
                     })} ${file.name}`}
                     icon={<RemoveIcon />}
                     hoverIndicator
+                    disabled={disabled}
                     onClick={(event) => {
                       if (confirmRemove) {
                         event.persist(); // necessary for when React < v17
-                        setPendingRemoval({ event, index });
+                        setPendingRemoval({
+                          event,
+                          index,
+                        });
                         setShowRemoveConfirmation(true);
                       } else removeFile(index);
                     }}
@@ -512,6 +522,7 @@ const FileInput = forwardRef(
                         <Button
                           // The focus here is redundant for keyboard users
                           tabIndex={-1}
+                          disabled={disabled}
                           ref={controlRef}
                           kind={theme.fileInput.button}
                           label={format({
@@ -527,6 +538,7 @@ const FileInput = forwardRef(
                         <Anchor
                           // The focus here is redundant for keyboard users
                           tabIndex={-1}
+                          disabled={disabled}
                           ref={controlRef}
                           margin="small"
                           onClick={() => {

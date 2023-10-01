@@ -1483,6 +1483,7 @@ exports[`Components loads 1`] = `
               "width": "1px",
             },
             "disabled": {
+              "cursor": "default",
               "opacity": 0.3,
             },
           },
@@ -3472,6 +3473,7 @@ exports[`Components loads 1`] = `
               "width": "1px",
             },
             "disabled": {
+              "cursor": "default",
               "opacity": 0.3,
             },
           },

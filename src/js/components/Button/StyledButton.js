@@ -6,10 +6,10 @@ import {
   disabledStyle,
   edgeStyle,
   focusStyle,
-  unfocusStyle,
   genericStyles,
   getHoverIndicatorStyle,
   normalizeColor,
+  unfocusStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -162,6 +162,7 @@ const activeButtonStyle = (props) => css`
 
 const disabledButtonStyle = (props) => css`
   ${disabledStyle(props.theme.button.disabled.opacity)}
+  ${props.theme.global.input.disabled && props.theme.global.input.disabled}
   ${!props.plain &&
   props.theme.button.disabled.border &&
   props.theme.button.disabled.border.color &&
@@ -181,6 +182,9 @@ const disabledButtonStyle = (props) => css`
         props.theme,
       )};`)}
   ${props.theme.button.disabled && props.theme.button.disabled.extend}
+  cursor: ${props.disabled
+    ? props.theme.global.control.disabled.cursor || 'default'
+    : 'default'}
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
@@ -199,7 +203,6 @@ const StyledButton = styled.button`
   ${(props) => props.plain && plainStyle(props)}
   ${(props) => !props.plain && basicStyle(props)}
   ${(props) => props.primary && primaryStyle(props)}
-
   ${(props) =>
     !props.disabled &&
     !props.selected &&
@@ -207,14 +210,12 @@ const StyledButton = styled.button`
     !props.busy &&
     !props.success &&
     hoverStyle}
-
   ${(props) => !props.disabled && props.active && activeButtonStyle(props)}
   ${(props) =>
     props.disabled &&
     props.theme.button &&
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
-
   &:focus {
     ${(props) => (!props.plain || props.focusIndicator) && focusStyle()}
   }

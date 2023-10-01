@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 import { focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const disabledStyle = `
+const disabledStyle = (theme) => `
   opacity: 0.3;
-  cursor: default;
+  cursor: ${theme.global.control.disabled.cursor || 'default'};
   text-decoration: none;
 `;
 
@@ -76,7 +76,7 @@ const StyledAnchor = styled.a.withConfig({
     `
     padding: ${props.theme.global.edgeSize.small};
   `}
-  ${(props) => props.disabled && disabledStyle}
+  ${(props) => props.disabled && disabledStyle(props.theme)}
   ${(props) => props.focus && focusStyle()}
   ${(props) => props.theme.anchor.extend}
 `;

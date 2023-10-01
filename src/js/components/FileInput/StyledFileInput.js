@@ -11,20 +11,23 @@ const StyledFileInput = styled.input`
   font-size: 0;
   opacity: 0;
   border: none;
-  ${(props) => !props.disabled && 'cursor: pointer;'}
+  cursor: ${(props) =>
+    props.disabled ? props.theme.global.control.disabled.cursor : 'pointer'};
+
   ${(props) =>
     props.rightOffset &&
     `
     width: calc(100% - ${props.rightOffset}px);
     right: ${props.rightOffset}px;
     `}
-
   &::-moz-focus-inner {
     border: none;
     outline: none;
   }
+
   &::-webkit-file-upload-button {
-    cursor: pointer;
+    cursor: ${(props) =>
+      props.disabled ? props.theme.global.control.disabled.cursor : 'pointer'};
   }
 `;
 

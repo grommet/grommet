@@ -1,24 +1,29 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { SelectTextInput } from './StyledSelect';
+import { defaultProps } from '../../default-props';
 
 export const DefaultSelectTextInput = forwardRef(
-  ({ disabled, id, ...rest }, ref) => (
-    <SelectTextInput
-      // When Select is disabled, we want to show a default cursor
-      // but not have disabled styling come from TextInput
-      // Disabled can be a bool or an array of options to disable.
-      // We only want to disable the TextInput if the control
-      // button should be disabled which occurs when disabled
-      // equals true.
-      defaultCursor={disabled === true || undefined}
-      focusIndicator={false}
-      id={id ? `${id}__input` : undefined}
-      ref={ref}
-      {...rest}
-      tabIndex="-1"
-      type="text"
-      plain
-      readOnly
-    />
-  ),
+  ({ disabled, id, ...rest }, ref) => {
+    // This component override default cursor for the TextInput
+    // By default the cursor is 'pointer'
+    // If the component is disabled the cursor is the one define in
+    // theme.global.control.disabled.cursor, else is 'default"
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+
+    return (
+      <SelectTextInput
+        disabled={disabled}
+        focusIndicator={false}
+        id={id ? `${id}__input` : undefined}
+        ref={ref}
+        {...rest}
+        theme={theme}
+        tabIndex="-1"
+        type="text"
+        plain
+        readOnly
+      />
+    );
+  },
 );

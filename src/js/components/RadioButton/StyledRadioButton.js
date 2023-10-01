@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 import { focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const disabledStyle = `
+const disabledStyle = (theme) => `
   opacity: 0.5;
-  cursor: default;
+  cursor: ${theme.global.control.disabled.cursor || 'default'};
 `;
 
 const StyledRadioButtonContainer = styled.label`
@@ -14,8 +14,7 @@ const StyledRadioButtonContainer = styled.label`
   align-items: center;
   user-select: none;
   width: fit-content;
-  ${(props) => props.disabled && disabledStyle}
-  ${(props) => props.disabled && props.theme.global.input.disabled}
+  ${(props) => props.disabled && disabledStyle(props.theme)}
   ${(props) => !props.disabled && 'cursor: pointer;'}
 
   :hover input:not([disabled]) + div,

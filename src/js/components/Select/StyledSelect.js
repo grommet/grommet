@@ -4,9 +4,9 @@ import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
 import {
+  controlBorderStyle,
   getHoverIndicatorStyle,
   selectedStyle,
-  controlBorderStyle,
   sizeStyle,
 } from '../../utils';
 
@@ -40,15 +40,15 @@ export const HiddenInput = styled.input`
 export const SelectOption = styled(Button)`
   ${(props) => props.selected && props.textComponent && selectedStyle}
   // applies theme.global.hover.background to the active
-  // option for mouse and keyboard interactions
+    // option for mouse and keyboard interactions
   ${(props) =>
     props.active &&
     getHoverIndicatorStyle(
       !props.children && !props.theme.select.options ? undefined : 'background',
       props.theme,
     )}
-  // apply hover styling when option receives tab focus so it's
-  // visible to keyboard users
+    // apply hover styling when option receives tab focus so it's
+    // visible to keyboard users
   &:focus {
     ${(props) =>
       props.active &&
@@ -59,13 +59,17 @@ export const SelectOption = styled(Button)`
         props.theme,
       )}
   }
+
   display: block;
   width: 100%;
   ${(props) => props[`aria-disabled`] && `cursor: default`};
 `;
 
 export const SelectTextInput = styled(TextInput)`
-  cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
+  cursor: ${(props) =>
+    props.disabled === true
+      ? props.theme.global.control.disabled.cursor || 'default'
+      : 'pointer'};
 `;
 
 export const StyledSelectDropButton = styled(DropButton)`

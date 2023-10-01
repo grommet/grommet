@@ -1085,11 +1085,10 @@ exports[`FileInput disabled 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
-}
-
-.c6:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c5 {
@@ -1118,6 +1117,7 @@ exports[`FileInput disabled 1`] = `
   font-size: 0;
   opacity: 0;
   border: none;
+  cursor: default;
 }
 
 .c3::-webkit-input-placeholder {
@@ -1152,7 +1152,7 @@ exports[`FileInput disabled 1`] = `
 }
 
 .c3::-webkit-file-upload-button {
-  cursor: pointer;
+  cursor: default;
 }
 
 .c2 {
@@ -1208,6 +1208,7 @@ exports[`FileInput disabled 1`] = `
       </span>
       <a
         class="c6"
+        disabled=""
         tabindex="-1"
       >
         browse
