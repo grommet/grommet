@@ -14,6 +14,7 @@ export const Responsive = () => (
         actions={<Button label="Get Started" primary />}
         parent={<Anchor label="Parent Page" />}
         responsive
+        level="1"
       />
     </PageContent>
   </Page>
