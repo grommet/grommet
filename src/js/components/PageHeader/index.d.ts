@@ -20,6 +20,7 @@ export interface PageHeaderProps {
   size?: 'small' | 'medium' | 'large';
   subtitle?: string | JSX.Element;
   title?: string | JSX.Element;
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick' | 'title'>;

@@ -13,6 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    level: PropTypes.oneOf([1, 2, 3, 4, 5, 6])
   };
 }
 export const PageHeaderPropTypes = PropType;

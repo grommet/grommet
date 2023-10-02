@@ -32,6 +32,7 @@ const PageHeader = forwardRef(
       size,
       subtitle,
       title,
+      level,
       ...rest
     },
     ref,
@@ -76,7 +77,7 @@ const PageHeader = forwardRef(
           </Box>
           <Box gridArea="title">
             {typeof title === 'string' ? (
-              <Heading {...sizeStyle(size, 'title', theme)}>{title}</Heading>
+              <Heading {...sizeStyle(size, 'title', theme)} level={level}>{title}</Heading>
             ) : (
               title
             )}
