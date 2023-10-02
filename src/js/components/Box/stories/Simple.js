@@ -11,13 +11,13 @@ export const SimpleBox = () => (
     justify="center"
     align="center"
     pad="xlarge"
-    background="dark-2"
+    background="dark-3"
     gap="medium"
   >
     <Box
       pad="large"
       align="center"
-      background={{ color: 'light-2', opacity: 'strong' }}
+      background={{ color: 'dark-2', opacity: 'strong' }}
       round
       gap="small"
     >
@@ -26,7 +26,7 @@ export const SimpleBox = () => (
       <Anchor href="" label="Link" />
       <Button label="Button" onClick={() => {}} />
     </Box>
-    <Box pad="large" align="center" background="dark-3" round gap="small">
+    <Box pad="large" align="center" background="dark-2" round gap="small">
       <Car size="large" color="light-2" />
       <Text>Travel</Text>
       <Anchor href="" label="Link" />
