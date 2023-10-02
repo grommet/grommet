@@ -150,26 +150,26 @@ const Grommet = forwardRef((props, ref) => {
   }, [grommetRef]);
 
   return (
-    <ThemeContext.Provider value={theme}>
-      <ResponsiveContext.Provider value={responsive}>
-        <RootsContext.Provider value={roots}>
-          <ContainerTargetContext.Provider value={containerTarget}>
-            <OptionsContext.Provider value={options}>
-              <MessageContext.Provider value={messages}>
-                <AnalyticsProvider onAnalytics={onAnalytics}>
-                  <StyleSheetManager enableVendorPrefixes>
+    <StyleSheetManager enableVendorPrefixes>
+      <ThemeContext.Provider value={theme}>
+        <ResponsiveContext.Provider value={responsive}>
+          <RootsContext.Provider value={roots}>
+            <ContainerTargetContext.Provider value={containerTarget}>
+              <OptionsContext.Provider value={options}>
+                <MessageContext.Provider value={messages}>
+                  <AnalyticsProvider onAnalytics={onAnalytics}>
                     <StyledGrommet full={full} {...rest} ref={grommetRef}>
                       {children}
                     </StyledGrommet>
                     {full && <FullGlobalStyle />}
-                  </StyleSheetManager>
-                </AnalyticsProvider>
-              </MessageContext.Provider>
-            </OptionsContext.Provider>
-          </ContainerTargetContext.Provider>
-        </RootsContext.Provider>
-      </ResponsiveContext.Provider>
-    </ThemeContext.Provider>
+                  </AnalyticsProvider>
+                </MessageContext.Provider>
+              </OptionsContext.Provider>
+            </ContainerTargetContext.Provider>
+          </RootsContext.Provider>
+        </ResponsiveContext.Provider>
+      </ThemeContext.Provider>
+    </StyleSheetManager>
   );
 });
 
