@@ -23,11 +23,79 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       format: PropTypes.func,
       messages: PropTypes.shape({
+        button: PropTypes.shape({
+          busy: PropTypes.string,
+          success: PropTypes.string
+        }),
+        calendar: PropTypes.shape({
+          previousMove: PropTypes.string,
+          previous: PropTypes.string,
+          nextMove: PropTypes.string,
+          next: PropTypes.string
+        }),
+        carousel: PropTypes.shape({
+          previous: PropTypes.string,
+          next: PropTypes.string,
+          jump: PropTypes.string
+        }),
+        dateInput: PropTypes.shape({
+          openCalendar: PropTypes.string,
+          enterCalendar: PropTypes.string,
+          exitCalendar: PropTypes.string
+        }),
+        dataFilters: PropTypes.shape({
+          clear: PropTypes.string,
+          heading: PropTypes.string,
+          open: PropTypes.string,
+          openSet: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string
+          })
+        }),
+        dataForm: PropTypes.shape({
+          reset: PropTypes.string,
+          submit: PropTypes.string
+        }),
+        dataSearch: PropTypes.shape({
+          label: PropTypes.string,
+          open: PropTypes.string
+        }),
+        dataSort: PropTypes.shape({
+          ascending: PropTypes.string,
+          by: PropTypes.string,
+          descending: PropTypes.string,
+          direction: PropTypes.string,
+          open: PropTypes.string
+        }),
+        dataSummary: PropTypes.shape({
+          filtered: PropTypes.string,
+          filteredSingle: PropTypes.string,
+          total: PropTypes.string
+        }),
+        dataTableColumns: PropTypes.shape({
+          open: PropTypes.string,
+          order: PropTypes.string,
+          select: PropTypes.string,
+          tip: PropTypes.string
+        }),
+        dataTableGroupBy: PropTypes.shape({
+          clear: PropTypes.string,
+          label: PropTypes.string
+        }),
+        dataView: PropTypes.shape({
+          label: PropTypes.string
+        }),
         fileInput: PropTypes.shape({
           browse: PropTypes.string,
           dropPrompt: PropTypes.string,
           dropPromptMultiple: PropTypes.string,
           files: PropTypes.string,
+          maxFile: PropTypes.string,
+          maxSizeSingle: PropTypes.string,
+          maxSizeMultiple: PropTypes.shape({
+            singular: PropTypes.string,
+            plural: PropTypes.string
+          }),
           remove: PropTypes.string,
           removeAll: PropTypes.string
         }),
@@ -44,7 +112,8 @@ if (process.env.NODE_ENV !== 'production') {
           upper: PropTypes.string
         }),
         select: PropTypes.shape({
-          multiple: PropTypes.string
+          multiple: PropTypes.string,
+          selected: PropTypes.string
         }),
         skipLinks: PropTypes.shape({
           skipTo: PropTypes.string
@@ -59,7 +128,10 @@ if (process.env.NODE_ENV !== 'production') {
           suggestionIsOpen: PropTypes.string
         }),
         video: PropTypes.shape({
+          audioDescriptions: PropTypes.string,
+          captions: PropTypes.string,
           closeMenu: PropTypes.string,
+          description: PropTypes.string,
           fullScreen: PropTypes.string,
           progressMeter: PropTypes.string,
           scrubber: PropTypes.string,
