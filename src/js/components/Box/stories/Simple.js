@@ -11,7 +11,7 @@ export const SimpleBox = () => (
     justify="center"
     align="center"
     pad="xlarge"
-    background="dark-2"
+    background="dark-1"
     gap="medium"
   >
     <Box
