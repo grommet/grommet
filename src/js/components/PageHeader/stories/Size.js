@@ -15,7 +15,6 @@ export const Size = () => (
         actions={<Button label="Page-level action" />}
         parent={<Anchor label="Parent Page" />}
         size="small"
-        level="1"
       />
       <PageHeader
         title="Medium PageHeader (default)"
@@ -24,7 +23,6 @@ export const Size = () => (
           library.`}
         actions={<Button label="Page-level action" />}
         parent={<Anchor label="Parent Page" />}
-        level="1"
       />
       <PageHeader
         title="Large PageHeader"
@@ -34,7 +32,6 @@ export const Size = () => (
         actions={<Button label="Page-level action" />}
         parent={<Anchor label="Parent Page" />}
         size="large"
-        level="1"
       />
     </PageContent>
   </Page>

@@ -67,7 +67,6 @@ export const MultipleActions = () => {
             </Box>
           }
           parent={<Anchor label="Parent Page" />}
-          level="1"
         />
       </PageContent>
     </Page>
