@@ -27,7 +27,7 @@ export const SimpleBox = () => (
       <Button label="Button" onClick={() => {}} />
     </Box>
     <Box pad="large" align="center" background="dark-3" round gap="small">
-      <Car size="large" color="light-2" />
+      <Car size="large" color="light-6" />
       <Text>Travel</Text>
       <Anchor href="" label="Link" />
       <Button label="Button" onClick={() => {}} />
