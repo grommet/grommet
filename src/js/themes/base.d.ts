@@ -1617,6 +1617,9 @@ export interface ThemeType {
       };
     };
     value?: TextProps;
+    icons?: {
+      remove?: React.ReactNode | Icon;
+    };
   };
   text?: {
     extend?: ExtendType;
