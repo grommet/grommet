@@ -5,9 +5,9 @@ import { StarOutline } from 'grommet-icons/icons/StarOutline';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
 const StarRating = ({ ...rest }) => {
+  const { value: defaultValue } = rest;
   const theme = useContext(ThemeContext);
-  const [value, setValue] = useState();
-
+  const [value, setValue] = useState(defaultValue);
   const options = [];
   for (let i = 1; i < 6; i += 1) {
     options.push(i);
