@@ -14,6 +14,9 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   var _useState = useState(false),
     over = _useState[0],
     setOver = _useState[1];
+  var _useState2 = useState(false),
+    tooltipOver = _useState2[0],
+    setTooltipOver = _useState2[1];
   var usingKeyboard = useKeyboard();
   var componentRef = useForwardedRef(tipRef);
 
@@ -62,11 +65,18 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
       }
     }
   });
-  return [clonedChild, over && /*#__PURE__*/React.createElement(Drop, _extends({
+  return [clonedChild, (over || tooltipOver) && /*#__PURE__*/React.createElement(Drop, _extends({
     target: componentRef.current,
     trapFocus: false,
     key: "tip-drop"
-  }, theme.tip.drop, dropProps), plain ? content : /*#__PURE__*/React.createElement(Box, theme.tip.content, content))];
+  }, theme.tip.drop, dropProps, {
+    onMouseEnter: function onMouseEnter() {
+      return setTooltipOver(true);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return setTooltipOver(false);
+    }
+  }), plain ? content : /*#__PURE__*/React.createElement(Box, theme.tip.content, content))];
 });
 Tip.displayName = 'Tip';
 Tip.propTypes = TipPropTypes;
