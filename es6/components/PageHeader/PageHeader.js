@@ -1,4 +1,4 @@
-var _excluded = ["actions", "gridProps", "parent", "responsive", "size", "subtitle", "title"];
+var _excluded = ["actions", "gridProps", "parent", "responsive", "size", "subtitle", "title", "level"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import React, { forwardRef, useContext } from 'react';
@@ -24,6 +24,7 @@ var PageHeader = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     size = _ref2.size,
     subtitle = _ref2.subtitle,
     title = _ref2.title,
+    level = _ref2.level,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
   var theme = useContext(ThemeContext);
   var breakpoint = useContext(ResponsiveContext);
@@ -53,7 +54,9 @@ var PageHeader = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     gridArea: "parent"
   }, theme.pageHeader.parent), parent), /*#__PURE__*/React.createElement(Box, {
     gridArea: "title"
-  }, typeof title === 'string' ? /*#__PURE__*/React.createElement(Heading, sizeStyle(size, 'title', theme), title) : title), /*#__PURE__*/React.createElement(Box, {
+  }, typeof title === 'string' ? /*#__PURE__*/React.createElement(Heading, _extends({}, sizeStyle(size, 'title', theme), {
+    level: level
+  }), title) : title), /*#__PURE__*/React.createElement(Box, {
     gridArea: "subtitle"
   }, typeof subtitle === 'string' ? /*#__PURE__*/React.createElement(Paragraph, sizeStyle(size, 'subtitle', theme, breakpoint), subtitle) : subtitle), /*#__PURE__*/React.createElement(Box, _extends({
     gridArea: "actions"

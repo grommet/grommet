@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
     parent: _propTypes["default"].element,
     responsive: _propTypes["default"].bool,
     size: _propTypes["default"].oneOf(['small', 'medium', 'large']),
+    level: _propTypes["default"].oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']),
     subtitle: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element]),
     title: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element])
   });
