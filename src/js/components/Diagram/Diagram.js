@@ -238,9 +238,9 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
     // with their id's based on open and closed arrows and their
     // color. For eg:
     // There can be a open arrow with blue color -
-    // __grommet__openArrowStart__blue
+    // __grommet__openArrowStart__blue__${fromTarget}
     // And there can be a closed arrow with pink color -
-    // __grommet__openArrowEnd__pink
+    // __grommet__openArrowEnd__pink__${toTarget}
     // So, instead of creating multiple arrows of the same color, we
     // will be leveraging one arrow based on open, close and it's color.
     const addedMarkerElmentIds = {};
@@ -292,15 +292,23 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             cleanedRest.markerStart = `url("#__grommet__openArrowStart__${normalizeColor(
               colorName,
               theme,
-            )}")`;
+            )}__${connectionRest.fromTarget}")`;
 
             if (
               !addedMarkerElmentIds[
-                `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+                /* eslint-disable max-len */
+                `__grommet__openArrowStart__${normalizeColor(
+                  colorName,
+                  theme,
+                )}__${connectionRest.fromTarget}`
               ]
             ) {
               addedMarkerElmentIds[
-                `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+                /* eslint-disable max-len */
+                `__grommet__openArrowStart__${normalizeColor(
+                  colorName,
+                  theme,
+                )}__${connectionRest.fromTarget}`
               ] = true;
               markerElements.push(
                 openArrow(
@@ -308,7 +316,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
                   `__grommet__openArrowStart__${normalizeColor(
                     colorName,
                     theme,
-                  )}`,
+                  )}__${connectionRest.fromTarget}`,
                   'auto-start-reverse',
                 ),
               );
@@ -318,15 +326,23 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${normalizeColor(
               colorName,
               theme,
-            )}")`;
+            )}__${connectionRest.toTarget}")`;
 
             if (
               !addedMarkerElmentIds[
-                `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+                /* eslint-disable max-len */
+                `__grommet__openArrowEnd__${normalizeColor(
+                  colorName,
+                  theme,
+                )}__${connectionRest.toTarget}`
               ]
             ) {
               addedMarkerElmentIds[
-                `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+                /* eslint-disable max-len */
+                `__grommet__openArrowEnd__${normalizeColor(
+                  colorName,
+                  theme,
+                )}__${connectionRest.toTarget}`
               ] = true;
               markerElements.push(
                 openArrow(
@@ -334,7 +350,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
                   `__grommet__openArrowEnd__${normalizeColor(
                     colorName,
                     theme,
-                  )}`,
+                  )}__${connectionRest.toTarget}`,
                 ),
               );
             }
@@ -343,26 +359,42 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             cleanedRest.markerStart = `url("#__grommet__openArrowStart__${normalizeColor(
               colorName,
               theme,
-            )}")`;
+            )}__${connectionRest.fromTarget}")`;
             // eslint-disable-next-line max-len
             cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${normalizeColor(
               colorName,
               theme,
-            )}")`;
+            )}__${connectionRest.toTarget}")`;
 
             if (
               !addedMarkerElmentIds[
-                `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+                /* eslint-disable max-len */
+                `__grommet__openArrowStart__${normalizeColor(
+                  colorName,
+                  theme,
+                )}__${connectionRest.fromTarget}`
               ] &&
               !addedMarkerElmentIds[
-                `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+                /* eslint-disable max-len */
+                `__grommet__openArrowEnd__${normalizeColor(
+                  colorName,
+                  theme,
+                )}__${connectionRest.toTarget}`
               ]
             ) {
               addedMarkerElmentIds[
-                `__grommet__openArrowStart__${normalizeColor(colorName, theme)}`
+                /* eslint-disable max-len */
+                `__grommet__openArrowStart__${normalizeColor(
+                  colorName,
+                  theme,
+                )}__${connectionRest.fromTarget}`
               ] = true;
               addedMarkerElmentIds[
-                `__grommet__openArrowEnd__${normalizeColor(colorName, theme)}`
+                /* eslint-disable max-len */
+                `__grommet__openArrowEnd__${normalizeColor(
+                  colorName,
+                  theme,
+                )}__${connectionRest.toTarget}`
               ] = true;
               markerElements.push(
                 <>
@@ -371,7 +403,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
                     `__grommet__openArrowStart__${normalizeColor(
                       colorName,
                       theme,
-                    )}`,
+                    )}__${connectionRest.fromTarget}`,
                     'auto-start-reverse',
                   )}
                   {openArrow(
@@ -379,7 +411,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
                     `__grommet__openArrowEnd__${normalizeColor(
                       colorName,
                       theme,
-                    )}`,
+                    )}__${connectionRest.toTarget}`,
                   )}
                 </>,
               );
@@ -415,14 +447,11 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
       connections={paths}
       {...rest}
     >
-      {markerElements.length > 0 && (
-        <defs>
-          {markerElements.map((marker, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <Fragment key={index}>{marker}</Fragment>
-          ))}
-        </defs>
-      )}
+      {markerElements.length > 0 &&
+        markerElements.map((marker, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <Fragment key={index}>{marker}</Fragment>
+        ))}
       <g>{paths}</g>
     </StyledDiagram>
   );
