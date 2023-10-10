@@ -33,7 +33,7 @@ export var RoundBox = function RoundBox() {
         responsive: false,
         key: size,
         pad: "large",
-        background: "dark-4",
+        background: "dark-2",
         round: {
           size: size
         }
