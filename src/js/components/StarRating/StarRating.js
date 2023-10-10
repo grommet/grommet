@@ -4,8 +4,7 @@ import { Star } from 'grommet-icons/icons/Star';
 import { StarOutline } from 'grommet-icons/icons/StarOutline';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
-const StarRating = ({ ...rest }) => {
-  const { value: defaultValue } = rest;
+const StarRating = ({ value: defaultValue, ...rest }) => {
   const theme = useContext(ThemeContext);
   const [value, setValue] = useState(defaultValue);
   const options = [];
