@@ -18,6 +18,7 @@ export interface PageHeaderProps {
   parent?: JSX.Element;
   responsive?: boolean;
   size?: 'small' | 'medium' | 'large';
+  level?: '1' | '2' | '3' | '4' | '5' | '6' | 1 | 2 | 3 | 4 | 5 | 6;
   subtitle?: string | JSX.Element;
   title?: string | JSX.Element;
 }
