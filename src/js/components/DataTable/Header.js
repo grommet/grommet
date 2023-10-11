@@ -117,6 +117,7 @@ const StyledContentBox = styled(Box)`
 const Header = forwardRef(
   (
     {
+      allowSelectAll,
       cellProps,
       columns,
       data,
@@ -253,7 +254,7 @@ const Header = forwardRef(
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
               verticalAlign={verticalAlign}
             >
-              {onSelect && (
+              {onSelect && allowSelectAll && (
                 <CheckBox
                   a11yTitle={
                     totalSelected === data.length

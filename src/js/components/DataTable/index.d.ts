@@ -76,6 +76,7 @@ export interface DataTableProps<TRowType = any> {
 
   // Appearance
   alignSelf?: AlignSelfType;
+  allowSelectAll?: boolean;
   background?:
     | BackgroundType
     | BackgroundType[]

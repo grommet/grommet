@@ -369,6 +369,9 @@ const Menu = forwardRef((props, ref) => {
       <Box
         // eslint-disable-next-line react/no-array-index-key
         key={groupIndex}
+        // ensure menu groups don't collapse if vertical space on screen
+        // causes scrolling within the menu
+        flex={false}
       >
         {groupIndex > 0 && (
           <Box pad={theme.menu.group.separator.pad}>
