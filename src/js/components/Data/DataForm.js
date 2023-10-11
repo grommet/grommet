@@ -47,22 +47,31 @@ const viewFormKeyMap = {
   view: formViewNameKey,
 };
 
-// flatten nested objects. For example: { a: { b: v } } -> { 'a.b': v }
+// flatten nested objects.
+// For example: { a: { b: v, c: z } } -> { 'a.b': v, 'a.c': z }
 const flatten = (formValue, options) => {
   const result = JSON.parse(JSON.stringify(formValue));
-  Object.keys(result).forEach((k) => {
-    let name = k;
-    // flatten one level at a time, ignore _range situations
-    while (
-      typeof result[name] === 'object' &&
-      !Array.isArray(result[name]) &&
-      (options?.full || !result[name][formRangeKey])
+  Object.keys(result).forEach((i) => {
+    // We check the type of the i using
+    // typeof() function and recursively
+    // call the function again
+    // ignore _range situations
+    if (
+      typeof result[i] === 'object' &&
+      !Array.isArray(result[i]) &&
+      (options?.full || !result[i][formRangeKey])
     ) {
-      const subPath = Object.keys(result[name])[0];
-      const path = `${name}.${subPath}`;
-      result[path] = result[name][subPath];
-      delete result[name];
-      name = path;
+      const temp = flatten(result[i]);
+      Object.keys(temp).forEach((j) => {
+        // Store temp in result
+        // ignore empty arrays
+        if (
+          !Array.isArray(temp[j]) ||
+          (Array.isArray(temp[j]) && temp[j].length)
+        )
+          result[`${i}.${j}`] = temp[j];
+      });
+      delete result[i];
     }
   });
   return result;

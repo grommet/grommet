@@ -254,4 +254,65 @@ describe('DataFilter', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should allow filtering on multiple sub-properties from same parent property', async () => {
+    const user = userEvent.setup();
+    const { asFragment } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            'type.name': {
+              label: 'Type',
+            },
+            'type.id': {
+              label: 'ID',
+            },
+          }}
+        >
+          <DataFilters drop>
+            <DataFilter
+              property="type.name"
+              options={['ZZ', 'YY', 'aa', 'bb', 'cc']}
+            />
+            <DataFilter property="type.id" options={['1', '2']} />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const { getByRole, getByLabelText } = screen;
+
+    const filterButton = getByRole('button', { name: 'Open filters' });
+    expect(filterButton).toBeTruthy();
+    await user.click(filterButton);
+
+    // open SelectMultiple
+    const selectInput = getByRole('button', { name: /Open Drop/i });
+    expect(selectInput).toBeTruthy();
+    await user.click(selectInput);
+
+    // click the first option 'ZZ'
+    await user.click(getByRole('option', { name: /ZZ/i }));
+
+    // close SelectMultiple
+    await user.click(getByRole('button', { name: /Close Select/i }));
+
+    const checkBox = getByLabelText(1);
+
+    await user.click(checkBox);
+
+    // click Apply Filters button
+    const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
+    expect(applyFiltersButton).toBeTruthy();
+    await user.click(applyFiltersButton);
+
+    const updatedFilterButton = getByRole('button', {
+      name: 'Open filters, 2 filters applied',
+    });
+
+    expect(updatedFilterButton).toBeTruthy();
+    // snapshot on selected filter
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

@@ -15,14 +15,85 @@ export interface GrommetProps {
     layer?: {
       singleId?: boolean;
     };
+    drop?: {
+      checkContainingBlock?: boolean;
+    };
   };
   messages?: {
     messages?: {
+      button?: {
+        busy?: string;
+        success?: string;
+      };
+      calendar?: {
+        previousMove?: string;
+        previous?: string;
+        nextMove?: string;
+        next?: string;
+      };
+      carousel?: {
+        previous?: string;
+        next?: string;
+        jump?: string;
+      };
+      dateInput?: {
+        openCalendar?: string;
+        enterCalendar?: string;
+        exitCalendar?: string;
+      };
+      dataFilters?: {
+        clear?: string;
+        heading?: string;
+        open?: string;
+        openSet?: {
+          singular?: string;
+          plural?: string;
+        };
+      };
+      dataForm?: {
+        reset?: string;
+        submit?: string;
+      };
+      dataSearch?: {
+        label?: string;
+        open?: string;
+      };
+      dataSort?: {
+        ascending?: string;
+        by?: string;
+        descending?: string;
+        direction?: string;
+        open?: string;
+      };
+      dataSummary?: {
+        filtered?: string;
+        filteredSingle?: string;
+        total?: string;
+      };
+      dataTableColumns?: {
+        open?: string;
+        order?: string;
+        select?: string;
+        tip?: string;
+      };
+      dataTableGroupBy?: {
+        clear?: string;
+        label?: string;
+      };
+      dataView?: {
+        label?: string;
+      };
       fileInput?: {
         browse?: string;
         dropPrompt?: string;
         dropPromptMultiple?: string;
         files?: string;
+        maxFile?: string;
+        maxSizeSingle?: string;
+        maxSizeMultiple?: {
+          singular?: string;
+          plural?: string;
+        };
         remove?: string;
         removeAll?: string;
       };
@@ -40,6 +111,7 @@ export interface GrommetProps {
       };
       select?: {
         multiple?: string;
+        selected?: string;
       };
       skipLinks?: {
         skipTo?: string;
@@ -54,7 +126,10 @@ export interface GrommetProps {
         suggestionIsOpen?: string;
       };
       video?: {
+        audioDescriptions?: string;
+        captions?: string;
         closeMenu?: string;
+        description?: string;
         fullScreen?: string;
         progressMeter?: string;
         scrubber?: string;
