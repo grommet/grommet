@@ -17,16 +17,16 @@ export const SimpleBox = () => (
     <Box
       pad="large"
       align="center"
-      background={{ color: 'light-2', opacity: 'strong' }}
+      background={{ color: 'light-4', opacity: 'strong' }}
       round
       gap="small"
     >
       <Attraction size="large" />
       <Text>Party</Text>
-      <Anchor href="" label="Link" />
+      <Anchor href="" label="Link" color="dark-1" />
       <Button label="Button" onClick={() => {}} />
     </Box>
-    <Box pad="large" align="center" background="dark-3" round gap="small">
+    <Box pad="large" align="center" background="dark-1" round gap="small">
       <Car size="large" color="light-2" />
       <Text>Travel</Text>
       <Anchor href="" label="Link" />
