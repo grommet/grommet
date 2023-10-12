@@ -17,20 +17,20 @@ exports[`DataSort drop 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill='none'] {
+.c3 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*='#'],
-.c3 *[STROKE*='#'] {
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*='#'],
-.c3 *[FILL*='#'] {
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -155,7 +155,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="StyledButton-sc-323bzc-0 hZNOgI"
+  class="StyledButton-sc-zqivih-0 ekFJPc"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
@@ -163,7 +163,7 @@ exports[`DataSort drop 2`] = `
 >
   <svg
     aria-label="Descend"
-    class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
+    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
     viewBox="0 0 24 24"
   >
     <path
@@ -178,53 +178,53 @@ exports[`DataSort drop 2`] = `
 
 exports[`DataSort drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jstWSP {
+  .lnGyJa {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bnAVOh {
+  .eBSfgQ {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .bCIdDg {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .bDTNRx {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .bDTNRx {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iuoTxe {
+  .cUQwev {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bKYcZs {
+  .eGTfSl {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .dypTlm {
+  .kzSbIL {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .biJsVL {
+  .iedZbW {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .EuOQj {
+  .jGAsvW {
     width: 6px;
   }
 }"
@@ -247,20 +247,20 @@ exports[`DataSort renders 1`] = `
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill='none'] {
+.c15 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*='#'],
-.c15 *[STROKE*='#'] {
+.c15 *[stroke*="#"],
+.c15 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c15 *[fill-rule],
 .c15 *[FILL-RULE],
-.c15 *[fill*='#'],
-.c15 *[FILL*='#'] {
+.c15 *[fill*="#"],
+.c15 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -908,7 +908,7 @@ exports[`DataSort renders 1`] = `
                 Sort by
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-3538nd-1"
               >
                 <button
                   aria-expanded="false"
@@ -970,7 +970,7 @@ exports[`DataSort renders 1`] = `
                 Sort direction
               </label>
               <div
-                class="c16 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c16 FormField__FormFieldContentBox-sc-3538nd-1"
               >
                 <div
                   class="c17"
@@ -995,7 +995,7 @@ exports[`DataSort renders 1`] = `
                       />
                     </div>
                     <span
-                      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                      class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
                     >
                       Ascending
                     </span>
@@ -1021,7 +1021,7 @@ exports[`DataSort renders 1`] = `
                       />
                     </div>
                     <span
-                      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                      class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
                     >
                       Descending
                     </span>
@@ -1076,20 +1076,20 @@ exports[`DataSort sort when data array is empty 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1504,7 +1504,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort by
         </label>
         <div
-          class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
+          class="c5 FormField__FormFieldContentBox-sc-3538nd-1"
         >
           <button
             aria-expanded="false"
@@ -1566,7 +1566,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort direction
         </label>
         <div
-          class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
+          class="c14 FormField__FormFieldContentBox-sc-3538nd-1"
         >
           <div
             class="c15"
@@ -1591,7 +1591,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                 />
               </div>
               <span
-                class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
               >
                 Ascending
               </span>
@@ -1617,7 +1617,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                 />
               </div>
               <span
-                class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+                class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
               >
                 Descending
               </span>

@@ -154,7 +154,7 @@ exports[`Button kind badge should align to button container if specified in them
       style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
         style="min-height: 24px; min-width: 24px;"
       >
         <span
@@ -326,7 +326,7 @@ exports[`Button kind badge should apply background 1`] = `
       style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
         style="min-height: 24px; min-width: 24px;"
       >
         <span
@@ -491,7 +491,7 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
       style="top: 0px; right: 0px; transform: translate(25%, -25%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
         style="min-height: 12px; min-width: 12px;"
       />
     </div>
@@ -657,7 +657,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
       style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
         style="min-height: 24px; min-width: 24px;"
       >
         <span
@@ -829,7 +829,7 @@ exports[`Button kind badge should display number content 1`] = `
       style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
         style="min-height: 24px; min-width: 24px;"
       >
         <span
@@ -860,20 +860,20 @@ exports[`Button kind badge should render custom element 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1046,20 +1046,20 @@ exports[`Button kind badge should render relative to contents when button has no
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill='none'] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*='#'],
-.c4 *[STROKE*='#'] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*='#'],
-.c4 *[FILL*='#'] {
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1231,7 +1231,7 @@ exports[`Button kind badge should render relative to contents when button has no
         style="top: 0px; right: 0px; transform: translate(25%, -25%); transform-origin: 100% 0%;"
       >
         <div
-          class="c6 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+          class="c6 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
           style="min-height: 12px; min-width: 12px;"
         />
       </div>
@@ -1349,20 +1349,20 @@ exports[`Button kind button icon colors 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c2 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1495,20 +1495,20 @@ exports[`Button kind button with icon and align 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c2 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2223,10 +2223,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 jVGQvr"
+    class="StyledButtonKind-sc-1icrfag-0 frvPsh"
     disabled=""
     type="button"
   >
@@ -2923,10 +2923,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 daTts"
+    class="StyledButtonKind-sc-1icrfag-0 gbtaYm"
     type="button"
   >
     Button
@@ -3029,10 +3029,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hDjQBz"
+    class="StyledButtonKind-sc-1icrfag-0 iTvKXl"
     type="button"
   >
     Button
@@ -3058,20 +3058,20 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c2 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3603,20 +3603,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill='none'] {
+.c3 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*='#'],
-.c3 *[STROKE*='#'] {
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*='#'],
-.c3 *[FILL*='#'] {
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3637,20 +3637,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3671,20 +3671,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3705,20 +3705,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3739,20 +3739,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill='none'] {
+.c12 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*='#'],
-.c12 *[STROKE*='#'] {
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c12 *[fill-rule],
 .c12 *[FILL-RULE],
-.c12 *[fill*='#'],
-.c12 *[FILL*='#'] {
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4328,20 +4328,20 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill='none'] {
+.c3 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*='#'],
-.c3 *[STROKE*='#'] {
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*='#'],
-.c3 *[FILL*='#'] {
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4499,18 +4499,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 cFkjwE"
+    class="StyledButtonKind-sc-1icrfag-0 dRWQOS"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dGYhTK"
+      class="StyledBox-sc-17m3pep-0 icJrQL"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 krqAqI"
+        class="StyledIcon-sc-ofa7kd-0 eJclys"
         viewBox="0 0 24 24"
       >
         <path
@@ -4521,7 +4521,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPClIF"
+        class="StyledBox__StyledBoxGap-sc-17m3pep-1 bpHqcQ"
       />
       label
     </div>
@@ -4906,20 +4906,20 @@ exports[`Button kind plain with icon 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c2 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5045,20 +5045,20 @@ exports[`Button kind primary button 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c2 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5079,20 +5079,20 @@ exports[`Button kind primary button 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill='none'] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*='#'],
-.c4 *[STROKE*='#'] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*='#'],
-.c4 *[FILL*='#'] {
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5867,20 +5867,20 @@ exports[`Button kind should render pad 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill='none'] {
+.c3 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*='#'],
-.c3 *[STROKE*='#'] {
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*='#'],
-.c3 *[FILL*='#'] {
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }

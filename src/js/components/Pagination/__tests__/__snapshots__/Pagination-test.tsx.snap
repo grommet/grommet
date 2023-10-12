@@ -18,20 +18,20 @@ exports[`Pagination should allow user to control page via state with page +
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -395,7 +395,7 @@ exports[`Pagination should allow user to control page via state with page +
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -571,20 +571,20 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -605,20 +605,20 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1066,7 +1066,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="pagination-test"
@@ -1225,7 +1225,7 @@ exports[`Pagination should apply a11yTitle and aria-label 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="pagination-test-2"
@@ -1403,20 +1403,20 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1867,7 +1867,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -2045,20 +2045,20 @@ exports[`Pagination should apply custom theme 1`] = `
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill='none'] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2079,20 +2079,20 @@ exports[`Pagination should apply custom theme 1`] = `
   stroke: inherit;
 }
 
-.c14 *:not([stroke])[fill='none'] {
+.c14 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c14 *[stroke*='#'],
-.c14 *[STROKE*='#'] {
+.c14 *[stroke*="#"],
+.c14 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c14 *[fill-rule],
 .c14 *[FILL-RULE],
-.c14 *[fill*='#'],
-.c14 *[FILL*='#'] {
+.c14 *[fill*="#"],
+.c14 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2722,20 +2722,20 @@ exports[`Pagination should apply size 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2756,20 +2756,20 @@ exports[`Pagination should apply size 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3945,7 +3945,7 @@ exports[`Pagination should apply size 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -4104,7 +4104,7 @@ exports[`Pagination should apply size 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -4263,7 +4263,7 @@ exports[`Pagination should apply size 1`] = `
     </nav>
   </div>
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -4441,20 +4441,20 @@ exports[`Pagination should change the page on prop change 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4818,7 +4818,7 @@ exports[`Pagination should change the page on prop change 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -4994,20 +4994,20 @@ exports[`Pagination should disable next button if on last page 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5028,20 +5028,20 @@ exports[`Pagination should disable next button if on last page 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5489,7 +5489,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -5668,20 +5668,20 @@ exports[`Pagination should disable previous and next controls when numberItems
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5955,7 +5955,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -6054,20 +6054,20 @@ exports[`Pagination should disable previous and next controls when numberItems
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6262,7 +6262,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -6345,20 +6345,20 @@ exports[`Pagination should disable previous and next controls when numberItems
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6632,7 +6632,7 @@ exports[`Pagination should disable previous and next controls when numberItems
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -6730,20 +6730,20 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6764,20 +6764,20 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7225,7 +7225,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -7404,20 +7404,20 @@ exports[`Pagination should display next page of results when "next" is
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7781,7 +7781,7 @@ exports[`Pagination should display next page of results when "next" is
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -7943,29 +7943,29 @@ exports[`Pagination should display next page of results when "next" is
 exports[`Pagination should display next page of results when "next" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fHIHJf Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-17m3pep-0 boDQxi Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 fHIHJf"
+      class="StyledBox-sc-17m3pep-0 boDQxi"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 hjbwhm"
+        class="StyledBox-sc-17m3pep-0 dPAXRX"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fIKELk StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 bAhbVi StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 hpynaY"
+              class="StyledIcon-sc-ofa7kd-0 ebwLTU"
               viewBox="0 0 24 24"
             >
               <path
@@ -7978,116 +7978,116 @@ exports[`Pagination should display next page of results when "next" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 hfXAPS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 faPrPg StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 lhOBjf StyledPageControl__StyledSeparator-sc-1vlfaez-2 jxDSVl"
+            class="StyledText-sc-1p5i9wp-0 blEysi StyledPageControl__StyledSeparator-sc-kisikl-2 jCmeXh"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fIKELk StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 bAhbVi StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 hpynaY"
+              class="StyledIcon-sc-ofa7kd-0 ebwLTU"
               viewBox="0 0 24 24"
             >
               <path
@@ -8123,20 +8123,20 @@ exports[`Pagination should display page 'n' of results when "page n" is
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8500,7 +8500,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -8677,20 +8677,20 @@ exports[`Pagination should display previous page of results when "previous" is
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -9054,7 +9054,7 @@ exports[`Pagination should display previous page of results when "previous" is
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -9216,29 +9216,29 @@ exports[`Pagination should display previous page of results when "previous" is
 exports[`Pagination should display previous page of results when "previous" is
   selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fHIHJf Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-17m3pep-0 boDQxi Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 fHIHJf"
+      class="StyledBox-sc-17m3pep-0 boDQxi"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 hjbwhm"
+        class="StyledBox-sc-17m3pep-0 dPAXRX"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fIKELk StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 bAhbVi StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 hpynaY"
+              class="StyledIcon-sc-ofa7kd-0 ebwLTU"
               viewBox="0 0 24 24"
             >
               <path
@@ -9251,116 +9251,116 @@ exports[`Pagination should display previous page of results when "previous" is
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 hfXAPS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 faPrPg StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 lhOBjf StyledPageControl__StyledSeparator-sc-1vlfaez-2 jxDSVl"
+            class="StyledText-sc-1p5i9wp-0 blEysi StyledPageControl__StyledSeparator-sc-kisikl-2 jCmeXh"
           >
             …
           </span>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 fnlTkS StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fxBvyv"
+          class="StyledBox__StyledBoxGap-sc-17m3pep-1 Hxxci"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 dcsBDI"
+          class="StyledPageControl__StyledContainer-sc-kisikl-1 wWJsI"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fIKELk StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+            class="StyledButtonKind-sc-1icrfag-0 bAhbVi StyledPageControl__StyledPaginationButton-sc-kisikl-0 ibgVxg"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 hpynaY"
+              class="StyledIcon-sc-ofa7kd-0 ebwLTU"
               viewBox="0 0 24 24"
             >
               <path
@@ -9396,20 +9396,20 @@ exports[`Pagination should display the correct last page based on items length
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -9430,20 +9430,20 @@ exports[`Pagination should display the correct last page based on items length
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -9891,7 +9891,7 @@ exports[`Pagination should display the correct last page based on items length
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -10069,20 +10069,20 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -10446,7 +10446,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -10676,20 +10676,20 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -11053,7 +11053,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -11241,20 +11241,20 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -11618,7 +11618,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -11820,20 +11820,20 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -11854,20 +11854,20 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -12315,7 +12315,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -12466,20 +12466,20 @@ exports[`Pagination should set page to last page if page prop > total possible
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -12500,20 +12500,20 @@ exports[`Pagination should set page to last page if page prop > total possible
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c13 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -12961,7 +12961,7 @@ exports[`Pagination should set page to last page if page prop > total possible
   class="c0"
 >
   <div
-    class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="c1 Pagination__StyledPaginationContainer-sc-11nflcs-0"
   >
     <nav
       aria-label="Pagination Navigation"

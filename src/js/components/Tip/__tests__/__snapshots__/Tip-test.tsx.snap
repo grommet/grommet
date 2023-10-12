@@ -219,10 +219,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <button
-    class="StyledButton-sc-323bzc-0 dvoKHE"
+    class="StyledButton-sc-zqivih-0 frbfRc"
     type="button"
   >
     Test Events
@@ -577,12 +577,6 @@ exports[`Tip themed 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-@media only screen and (max-width:768px) {
-  .c0 {
-    margin: 21px;
-  }
 }
 
 @media only screen and (max-width:768px) {

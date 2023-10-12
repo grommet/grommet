@@ -17,20 +17,20 @@ exports[`Video Configure Menu Button 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -557,20 +557,20 @@ exports[`Video End event handler 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1085,20 +1085,20 @@ exports[`Video Play and Pause event handlers 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1598,14 +1598,14 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 dJOlyN"
+    class="StyledVideo__StyledVideoContainer-sc-l18ns0-1 bprriZ"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 jzTXbQ"
+      class="StyledVideo-sc-l18ns0-0 kGbxkc"
     >
       <source
         src="small.mp4"
@@ -1614,13 +1614,13 @@ exports[`Video Play and Pause event handlers 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 hJnTAx"
+      class="StyledVideo__StyledVideoControls-sc-l18ns0-2 kOzjEt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gTjiHd"
+        class="StyledBox-sc-17m3pep-0 dJosfU"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bumPYc"
+          class="StyledButton-sc-zqivih-0 kVBjhQ"
           type="button"
         >
           .c0 {
@@ -1639,20 +1639,20 @@ exports[`Video Play and Pause event handlers 2`] = `
   stroke: inherit;
 }
 
-.c0 *:not([stroke])[fill='none'] {
+.c0 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c0 *[stroke*='#'],
-.c0 *[STROKE*='#'] {
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c0 *[fill-rule],
 .c0 *[FILL-RULE],
-.c0 *[fill*='#'],
-.c0 *[FILL*='#'] {
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1679,20 +1679,20 @@ exports[`Video Play and Pause event handlers 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 wXGiU"
+          class="StyledBox-sc-17m3pep-0 dymfst"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cliJaU"
+            class="StyledBox-sc-17m3pep-0 dLaLx"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 bkMvqh"
+              class="StyledStack-sc-jxf7do-0 dpytld"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 gLEcPM"
+                class="StyledStack__StyledStackLayer-sc-jxf7do-1 jVqkzU"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
+                  class="StyledMeter-sc-1couehz-0 hlOQV"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1708,11 +1708,11 @@ exports[`Video Play and Pause event handlers 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 kukkTH"
+                class="StyledStack__StyledStackLayer-sc-jxf7do-1 ckqRpH"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 kzfBmj"
+                  class="StyledVideo__StyledVideoScrubber-sc-l18ns0-3 bkofEv"
                   role="button"
                   tabindex="0"
                 />
@@ -1720,10 +1720,10 @@ exports[`Video Play and Pause event handlers 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 TDUwo"
+            class="StyledBox-sc-17m3pep-0 bBvaiJ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iqSVxz"
+              class="StyledText-sc-1p5i9wp-0 kRDemC"
             >
               NaN:NaN
             </span>
@@ -1733,18 +1733,18 @@ exports[`Video Play and Pause event handlers 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 dkczdG"
+          class="StyledButton-sc-zqivih-0 dmuKTS"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ftCvDe"
+            class="StyledBox-sc-17m3pep-0 eMMaRH"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 lhOBjf"
+              class="StyledText-sc-1p5i9wp-0 blEysi"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 krqAqI"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -1779,20 +1779,20 @@ exports[`Video autoPlay renders 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2308,20 +2308,20 @@ exports[`Video controls below renders 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2830,20 +2830,20 @@ exports[`Video controls over renders 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3358,20 +3358,20 @@ exports[`Video duration event handler 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3886,20 +3886,20 @@ exports[`Video fit  cover renders 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4419,20 +4419,20 @@ exports[`Video fit contain renders 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4952,20 +4952,20 @@ exports[`Video loop renders 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5481,20 +5481,20 @@ exports[`Video mouse events handlers of controls 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5994,14 +5994,14 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 exports[`Video mouse events handlers of controls 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 dJOlyN"
+    class="StyledVideo__StyledVideoContainer-sc-l18ns0-1 bprriZ"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 jzTXbQ"
+      class="StyledVideo-sc-l18ns0-0 kGbxkc"
     >
       <source
         src="small.mp4"
@@ -6010,18 +6010,18 @@ exports[`Video mouse events handlers of controls 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jVzbJt"
+      class="StyledVideo__StyledVideoControls-sc-l18ns0-2 hjvJNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gTjiHd"
+        class="StyledBox-sc-17m3pep-0 dJosfU"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bumPYc"
+          class="StyledButton-sc-zqivih-0 kVBjhQ"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 krqAqI"
+            class="StyledIcon-sc-ofa7kd-0 eJclys"
             viewBox="0 0 24 24"
           >
             <path
@@ -6033,20 +6033,20 @@ exports[`Video mouse events handlers of controls 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 wXGiU"
+          class="StyledBox-sc-17m3pep-0 dymfst"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cliJaU"
+            class="StyledBox-sc-17m3pep-0 dLaLx"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 bkMvqh"
+              class="StyledStack-sc-jxf7do-0 dpytld"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 gLEcPM"
+                class="StyledStack__StyledStackLayer-sc-jxf7do-1 jVqkzU"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
+                  class="StyledMeter-sc-1couehz-0 hlOQV"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -6062,11 +6062,11 @@ exports[`Video mouse events handlers of controls 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 kukkTH"
+                class="StyledStack__StyledStackLayer-sc-jxf7do-1 ckqRpH"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 kzfBmj"
+                  class="StyledVideo__StyledVideoScrubber-sc-l18ns0-3 bkofEv"
                   role="button"
                   tabindex="0"
                 />
@@ -6074,10 +6074,10 @@ exports[`Video mouse events handlers of controls 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 TDUwo"
+            class="StyledBox-sc-17m3pep-0 bBvaiJ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iqSVxz"
+              class="StyledText-sc-1p5i9wp-0 kRDemC"
             >
               NaN:NaN
             </span>
@@ -6087,18 +6087,18 @@ exports[`Video mouse events handlers of controls 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 dkczdG"
+          class="StyledButton-sc-zqivih-0 dmuKTS"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ftCvDe"
+            class="StyledBox-sc-17m3pep-0 eMMaRH"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 lhOBjf"
+              class="StyledText-sc-1p5i9wp-0 blEysi"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 krqAqI"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -6118,14 +6118,14 @@ exports[`Video mouse events handlers of controls 2`] = `
 
 exports[`Video mouse events handlers of controls 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 dJOlyN"
+    class="StyledVideo__StyledVideoContainer-sc-l18ns0-1 bprriZ"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 jzTXbQ"
+      class="StyledVideo-sc-l18ns0-0 kGbxkc"
     >
       <source
         src="small.mp4"
@@ -6134,18 +6134,18 @@ exports[`Video mouse events handlers of controls 3`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jVzbJt"
+      class="StyledVideo__StyledVideoControls-sc-l18ns0-2 hjvJNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gTjiHd"
+        class="StyledBox-sc-17m3pep-0 dJosfU"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bumPYc"
+          class="StyledButton-sc-zqivih-0 kVBjhQ"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 krqAqI"
+            class="StyledIcon-sc-ofa7kd-0 eJclys"
             viewBox="0 0 24 24"
           >
             <path
@@ -6157,20 +6157,20 @@ exports[`Video mouse events handlers of controls 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 wXGiU"
+          class="StyledBox-sc-17m3pep-0 dymfst"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cliJaU"
+            class="StyledBox-sc-17m3pep-0 dLaLx"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 bkMvqh"
+              class="StyledStack-sc-jxf7do-0 dpytld"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 gLEcPM"
+                class="StyledStack__StyledStackLayer-sc-jxf7do-1 jVqkzU"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
+                  class="StyledMeter-sc-1couehz-0 hlOQV"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -6186,11 +6186,11 @@ exports[`Video mouse events handlers of controls 3`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 kukkTH"
+                class="StyledStack__StyledStackLayer-sc-jxf7do-1 ckqRpH"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 kzfBmj"
+                  class="StyledVideo__StyledVideoScrubber-sc-l18ns0-3 bkofEv"
                   role="button"
                   tabindex="0"
                 />
@@ -6198,10 +6198,10 @@ exports[`Video mouse events handlers of controls 3`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 TDUwo"
+            class="StyledBox-sc-17m3pep-0 bBvaiJ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iqSVxz"
+              class="StyledText-sc-1p5i9wp-0 kRDemC"
             >
               NaN:NaN
             </span>
@@ -6211,18 +6211,18 @@ exports[`Video mouse events handlers of controls 3`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 dkczdG"
+          class="StyledButton-sc-zqivih-0 dmuKTS"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ftCvDe"
+            class="StyledBox-sc-17m3pep-0 eMMaRH"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 lhOBjf"
+              class="StyledText-sc-1p5i9wp-0 blEysi"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 krqAqI"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -6257,20 +6257,20 @@ exports[`Video mute renders 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6785,20 +6785,20 @@ exports[`Video renders 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7313,20 +7313,20 @@ exports[`Video renders with theme 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7841,20 +7841,20 @@ exports[`Video scrubber 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8354,14 +8354,14 @@ exports[`Video scrubber 1`] = `
 
 exports[`Video scrubber 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-u9ttri-0 khiswu"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 dJOlyN"
+    class="StyledVideo__StyledVideoContainer-sc-l18ns0-1 bprriZ"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 jzTXbQ"
+      class="StyledVideo-sc-l18ns0-0 kGbxkc"
     >
       <source
         src="small.mp4"
@@ -8370,18 +8370,18 @@ exports[`Video scrubber 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jVzbJt"
+      class="StyledVideo__StyledVideoControls-sc-l18ns0-2 hjvJNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gTjiHd"
+        class="StyledBox-sc-17m3pep-0 dJosfU"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bumPYc"
+          class="StyledButton-sc-zqivih-0 kVBjhQ"
           type="button"
         >
           <svg
             aria-label="play"
-            class="StyledIcon-sc-ofa7kd-0 krqAqI"
+            class="StyledIcon-sc-ofa7kd-0 eJclys"
             viewBox="0 0 24 24"
           >
             <path
@@ -8393,20 +8393,20 @@ exports[`Video scrubber 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 wXGiU"
+          class="StyledBox-sc-17m3pep-0 dymfst"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cliJaU"
+            class="StyledBox-sc-17m3pep-0 dLaLx"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 bkMvqh"
+              class="StyledStack-sc-jxf7do-0 dpytld"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 gLEcPM"
+                class="StyledStack__StyledStackLayer-sc-jxf7do-1 jVqkzU"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
+                  class="StyledMeter-sc-1couehz-0 hlOQV"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -8422,11 +8422,11 @@ exports[`Video scrubber 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 kukkTH"
+                class="StyledStack__StyledStackLayer-sc-jxf7do-1 ckqRpH"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 kzfBmj"
+                  class="StyledVideo__StyledVideoScrubber-sc-l18ns0-3 bkofEv"
                   role="button"
                   tabindex="0"
                 />
@@ -8434,10 +8434,10 @@ exports[`Video scrubber 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 TDUwo"
+            class="StyledBox-sc-17m3pep-0 bBvaiJ"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iqSVxz"
+              class="StyledText-sc-1p5i9wp-0 kRDemC"
             >
               NaN:NaN
             </span>
@@ -8447,18 +8447,18 @@ exports[`Video scrubber 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 dkczdG"
+          class="StyledButton-sc-zqivih-0 dmuKTS"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ftCvDe"
+            class="StyledBox-sc-17m3pep-0 eMMaRH"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 lhOBjf"
+              class="StyledText-sc-1p5i9wp-0 blEysi"
             />
             <svg
               aria-label="Actions"
-              class="StyledIcon-sc-ofa7kd-0 krqAqI"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -8493,20 +8493,20 @@ exports[`Video timeUpdate event handler 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }

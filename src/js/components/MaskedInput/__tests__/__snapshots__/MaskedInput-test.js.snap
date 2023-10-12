@@ -314,20 +314,20 @@ exports[`MaskedInput custom theme 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill='none'] {
+.c3 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*='#'],
-.c3 *[STROKE*='#'] {
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*='#'],
-.c3 *[FILL*='#'] {
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1053,11 +1053,11 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-q4lqrc-1 gKHgZt"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 hFqKLz"
+    class="StyledMaskedInput-sc-q4lqrc-0 iQTEsM"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1084,20 +1084,20 @@ exports[`MaskedInput icon 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c2 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1234,20 +1234,20 @@ exports[`MaskedInput icon reverse 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c2 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2093,11 +2093,11 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-q4lqrc-1 gKHgZt"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 duIeri"
+    class="StyledMaskedInput-sc-q4lqrc-0 fSAWdt"
     data-testid="test-input"
     id="item"
     name="item"
@@ -2510,11 +2510,11 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-q4lqrc-1 gKHgZt"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 hFqKLz"
+    class="StyledMaskedInput-sc-q4lqrc-0 iQTEsM"
     data-testid="test-input"
     id="item"
     name="item"
