@@ -23,7 +23,7 @@ export const SimpleBox = () => (
     >
       <Attraction size="large" />
       <Text>Party</Text>
-      <Anchor href="" label="Link" color="blue-4" />
+      <Anchor href="" label="Link" color="dark-1" />
       <Button label="Button" onClick={() => {}} />
     </Box>
     <Box pad="large" align="center" background="dark-1" round gap="small">
