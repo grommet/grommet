@@ -11,11 +11,11 @@ for (let i = 0; i < 95; i += 1) {
 export const Paginated = () => (
   <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
     <Cards
-    data={data}
-    step={9}
-    show={{ page: 7 }}
-    paginate
-  />
+      data={data}
+      step={9}
+      show={{ page: 7 }}
+      paginate
+    />
   </Grid>
 );
 
