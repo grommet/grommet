@@ -18,7 +18,7 @@ export var SimpleBox = function SimpleBox() {
       pad: "large",
       align: "center",
       background: {
-        color: 'light-2',
+        color: 'light-4',
         opacity: 'strong'
       },
       round: true,
@@ -27,14 +27,15 @@ export var SimpleBox = function SimpleBox() {
       size: "large"
     }), /*#__PURE__*/React.createElement(Text, null, "Party"), /*#__PURE__*/React.createElement(Anchor, {
       href: "",
-      label: "Link"
+      label: "Link",
+      color: "dark-1"
     }), /*#__PURE__*/React.createElement(Button, {
       label: "Button",
       onClick: function onClick() {}
     })), /*#__PURE__*/React.createElement(Box, {
       pad: "large",
       align: "center",
-      background: "dark-3",
+      background: "dark-1",
       round: true,
       gap: "small"
     }, /*#__PURE__*/React.createElement(Car, {

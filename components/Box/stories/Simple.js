@@ -22,7 +22,7 @@ var SimpleBox = function SimpleBox() {
       pad: "large",
       align: "center",
       background: {
-        color: 'light-2',
+        color: 'light-4',
         opacity: 'strong'
       },
       round: true,
@@ -31,14 +31,15 @@ var SimpleBox = function SimpleBox() {
       size: "large"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Party"), /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
       href: "",
-      label: "Link"
+      label: "Link",
+      color: "dark-1"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
       label: "Button",
       onClick: function onClick() {}
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "large",
       align: "center",
-      background: "dark-3",
+      background: "dark-1",
       round: true,
       gap: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Car, {
