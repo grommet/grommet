@@ -1,11 +1,11 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
-import { act, cleanup, render, fireEvent } from '@testing-library/react';
+import { act, render, fireEvent, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { Grommet } from '../../Grommet';
@@ -18,10 +18,9 @@ import { Select } from '../../Select';
 import { CheckBox } from '../../CheckBox';
 import { RadioButtonGroup } from '../../RadioButtonGroup';
 import { Box } from '../../Box';
+import { DateInput } from '../../DateInput';
 
 describe('Form accessibility', () => {
-  afterEach(cleanup);
-
   test(`TextInput in Form should have
   no accessibility violations`, async () => {
     const { container } = render(
@@ -46,7 +45,20 @@ describe('Form accessibility', () => {
         </Form>
       </Grommet>,
     );
-    const results = await axe(container);
+    const results = await axe(container, {
+      rules: {
+        /* This rule is flagged because Select is built using a 
+        TextInput within a DropButton. According to Dequeue and 
+        WCAG 4.1.2 "interactive controls must not have focusable 
+        descendants". Jest-axe is assuming that the input is focusable
+        and since the input is a descendant of the button the rule is 
+        flagged. However, the TextInput is built so that it is read 
+        only and cannot receive focus. Select is accessible 
+        according to the WCAG specification, but jest-axe is flagging
+        it so we are disabling this rule. */
+        'nested-interactive': { enabled: false },
+      },
+    });
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
   });
@@ -102,28 +114,26 @@ describe('Form accessibility', () => {
 });
 
 describe('Form uncontrolled', () => {
-  afterEach(cleanup);
-
   test('empty', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Form />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('with field', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Form>
           <FormField name="test" />
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('errors', () => {
@@ -204,7 +214,7 @@ describe('Form uncontrolled', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: errorMessage,
       status: 'error',
     };
@@ -234,7 +244,7 @@ describe('Form uncontrolled', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: infoMessage,
       status: 'info',
     };
@@ -358,14 +368,14 @@ describe('Form uncontrolled', () => {
             name="test"
             required
             validate={[
-              value => (value.length === 1 ? 'simple string' : undefined),
-              value =>
+              (value) => (value.length === 1 ? 'simple string' : undefined),
+              (value) =>
                 value.length === 2 ? <Text> ReactNode </Text> : undefined,
-              value =>
+              (value) =>
                 value.length === 3
                   ? { message: 'status error', status: 'error' }
                   : undefined,
-              value =>
+              (value) =>
                 value.length === 4
                   ? { message: 'status info', status: 'info' }
                   : undefined,
@@ -419,6 +429,35 @@ describe('Form uncontrolled', () => {
       target: { value: '1' },
     });
     expect(queryByText('required')).toBeNull();
+  });
+
+  test('should not submit when field is required and value is "[]"', () => {
+    const onSubmit = jest.fn();
+    render(
+      <Grommet>
+        <Form onSubmit={onSubmit}>
+          <FormField
+            label="Date Range"
+            htmlFor="date-range"
+            name="date-range"
+            required
+          >
+            <DateInput
+              name="date-range"
+              value={[]}
+              format="mm/dd/yyyy-mm/dd/yyyy"
+            />
+          </FormField>
+          <Button type="submit" label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(screen.queryByText('required')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+    expect(onSubmit).not.toHaveBeenCalled();
+    expect(screen.getByText('required')).toBeInTheDocument();
   });
 
   test('reset clears form', () => {
@@ -481,11 +520,11 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              name => {
+              (name) => {
                 if (name && name.length === 1) return 'must be >1 character';
                 return undefined;
               },
-              name => {
+              (name) => {
                 if (name === 'good')
                   return {
                     message: 'good',
@@ -509,7 +548,7 @@ describe('Form uncontrolled', () => {
             name="test-select"
             htmlFor="test-select"
             required
-            validate={val => {
+            validate={(val) => {
               if (val === 'small')
                 return {
                   message: 'good',
@@ -561,10 +600,7 @@ describe('Form uncontrolled', () => {
     expect(queryAllByText('good')).toHaveLength(1);
   });
 
-  test('validate on mount', async () => {
-    jest.useFakeTimers();
-    window.scrollTo = jest.fn();
-
+  test('validate on mount', () => {
     const defaultValue = {
       firstName: 'J',
       lastName: '',
@@ -579,7 +615,7 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              firstName => {
+              (firstName) => {
                 if (firstName && firstName.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -593,7 +629,7 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              lastName => {
+              (lastName) => {
                 if (lastName && lastName.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -610,82 +646,115 @@ describe('Form uncontrolled', () => {
   test('validate on blur', async () => {
     jest.useFakeTimers();
     const onFocus = jest.fn();
-    const {
-      getByText,
-      getByPlaceholderText,
-      queryAllByText,
-      queryByText,
-    } = render(
-      <Grommet>
-        <Form validate="blur">
-          <FormField
-            onFocus={onFocus}
-            label="Name"
-            name="name"
-            placeholder="name"
-            required
-            validate={[
-              { regexp: /^[a-z]/i },
-              name => {
-                if (name && name.length === 1) return 'must be >1 character';
-                return undefined;
-              },
-              name => {
-                if (name === 'good')
-                  return {
-                    message: 'good',
-                    status: 'info',
-                  };
-                return undefined;
-              },
-            ]}
-          />
-
-          <FormField onFocus={onFocus} label="Email" name="email" required>
-            <TextInput
-              a11yTitle="test"
-              name="email"
-              type="email"
-              placeholder="email"
+    const { getByText, getByPlaceholderText, queryAllByText, queryByText } =
+      render(
+        <Grommet>
+          <Form validate="blur">
+            <FormField
+              onFocus={onFocus}
+              label="Name"
+              name="name"
+              placeholder="name"
+              required
+              validate={[
+                { regexp: /^[a-z]/i },
+                (name) => {
+                  if (name && name.length === 1) return 'must be >1 character';
+                  return undefined;
+                },
+                (name) => {
+                  if (name === 'good')
+                    return {
+                      message: 'good',
+                      status: 'info',
+                    };
+                  return undefined;
+                },
+              ]}
             />
-          </FormField>
-          <Button onFocus={onFocus} label="submit" type="submit" />
-        </Form>
-      </Grommet>,
-    );
+
+            <FormField onFocus={onFocus} label="Email" name="email" required>
+              <TextInput
+                a11yTitle="test"
+                name="email"
+                type="email"
+                placeholder="email"
+              />
+            </FormField>
+            <Button onFocus={onFocus} label="submit" type="submit" />
+          </Form>
+        </Grommet>,
+      );
 
     // both fields have required error message
-    getByText('submit').focus();
+    act(() => getByText('submit').focus());
     fireEvent.click(getByText('submit'));
     expect(queryAllByText('required')).toHaveLength(2);
 
     // one fields has required error message
-    getByPlaceholderText('name').focus();
+    act(() => getByPlaceholderText('name').focus());
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'Input has changed' },
     });
-    getByText('submit').focus();
+    act(() => getByText('submit').focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(queryAllByText('required')).toHaveLength(1);
 
     // name field has new error and email field still has required error message
-    getByPlaceholderText('name').focus();
+    act(() => getByPlaceholderText('name').focus());
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'a' },
     });
-    getByText('submit').focus();
+    act(() => getByText('submit').focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBeTruthy();
 
     //  new value in name does not remove the error message in email
-    getByPlaceholderText('name').focus();
+    act(() => getByPlaceholderText('name').focus());
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'abc' },
     });
     expect(onFocus).toBeCalledTimes(6);
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBe(null);
+  });
+
+  test('validate on blur with Select', async () => {
+    jest.useFakeTimers();
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet>
+        <Form validate="blur">
+          <FormField
+            label="Size"
+            name="select-size"
+            htmlFor="select-size"
+            required
+          >
+            <Select
+              name="select-size"
+              id="select-size"
+              options={['small', 'medium', 'large']}
+            />
+          </FormField>
+          <Button label="submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    act(() => screen.getByRole('button', { name: /Open Drop/i }).focus());
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    act(() => screen.getByRole('option', { name: /small/i }).focus());
+
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+
+    act(() => screen.getByText('submit').focus());
+    act(() => jest.advanceTimersByTime(200)); // allow validations to run
+    expect(screen.queryAllByText('required')).toHaveLength(1);
+
+    window.scrollTo.mockRestore();
   });
 
   test('form validity', async () => {
@@ -695,7 +764,7 @@ describe('Form uncontrolled', () => {
       <Grommet>
         <Form
           validate="change"
-          onValidate={validationResults => {
+          onValidate={(validationResults) => {
             valid = validationResults.valid;
           }}
         >
@@ -706,7 +775,7 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              firstName => {
+              (firstName) => {
                 if (firstName && firstName.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -720,7 +789,7 @@ describe('Form uncontrolled', () => {
             required
             validate={[
               { regexp: /^[a-z]/i },
-              lastName => {
+              (lastName) => {
                 if (lastName && lastName.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -733,7 +802,7 @@ describe('Form uncontrolled', () => {
             placeholder="Address"
             validate={[
               { regexp: /^[a-z]/i },
-              address => {
+              (address) => {
                 if (address && address.length === 1)
                   return 'must be >1 character';
                 return undefined;
@@ -976,7 +1045,7 @@ describe('Form uncontrolled', () => {
    */
   test('should validate when supplied an object', () => {
     const regexValidation = {
-      regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+      regexp: /(?=.*?[#?!@$ %^&*-])/,
       message: 'At least one special character or space',
       status: 'error',
     };
@@ -1020,7 +1089,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('should validate when supplied a function', () => {
-    const functionValidation = combination =>
+    const functionValidation = (combination) =>
       combination === '12345'
         ? {
             message:
@@ -1068,16 +1137,16 @@ describe('Form uncontrolled', () => {
   test(`should validate with array of objects and/or functions`, () => {
     const validationArray = [
       {
-        regexp: new RegExp('(?=.*?[0-9])'),
+        regexp: /(?=.*?[0-9])/,
         message: 'At least one number',
         status: 'error',
       },
       {
-        regexp: new RegExp('.{5,}'),
+        regexp: /.{5,}/,
         message: 'At least five characters',
         status: 'error',
       },
-      combination =>
+      (combination) =>
         combination === '12345'
           ? {
               message:
@@ -1086,7 +1155,7 @@ describe('Form uncontrolled', () => {
             }
           : undefined,
       {
-        regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+        regexp: /(?=.*?[#?!@$ %^&*-])/,
         message: 'At least one special character or space',
         status: 'error',
       },
@@ -1160,7 +1229,7 @@ describe('Form uncontrolled', () => {
       target: { value: '123456%' },
     });
     fireEvent.click(submitButton);
-    validationMessages.forEach(message =>
+    validationMessages.forEach((message) =>
       expect(queryByText(message)).toBeNull(),
     );
   });
@@ -1344,59 +1413,53 @@ describe('Form uncontrolled', () => {
     const toggleField = getByLabelText('toggle');
 
     // add mood
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     expect(container.firstChild).toMatchSnapshot();
     const moodField = getByPlaceholderText('test mood');
 
     // focus in and out of mood, should fail validation
-    moodField.focus();
-    toggleField.focus();
+    act(() => moodField.focus());
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      1,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
     // set mood, should pass validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: 'testy' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      2,
-      expect.objectContaining({ errors: {}, infos: {} }),
+    expect(onValidate).toHaveBeenLastCalledWith(
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     // clear mood, should fail validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: '' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      3,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
     // remove mood, should clear validation
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
-    nameField.focus();
-    toggleField.focus();
+    fireEvent.click(toggleField);
+
+    act(() => nameField.focus());
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      4,
-      expect.objectContaining({ errors: {}, infos: {} }),
+    expect(onValidate).toHaveBeenLastCalledWith(
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -1418,14 +1481,14 @@ describe('Form uncontrolled', () => {
         <Form
           value={value}
           validate="blur"
-          onChange={nextValue => {
+          onChange={(nextValue) => {
             setValue(nextValue);
           }}
           onValidate={onValidate}
         >
           <FormField
             validate={[
-              name => {
+              (name) => {
                 if (name && name.length === 1) return 'must be >1 character';
                 return undefined;
               },
@@ -1455,17 +1518,80 @@ describe('Form uncontrolled', () => {
 
     const nameField = getByPlaceholderText('test name');
 
-    nameField.focus();
+    act(() => nameField.focus());
     fireEvent.change(nameField, { target: { value: 'John' } });
-    getByText('Focus out').focus();
+    act(() => getByText('Focus out').focus());
 
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      2,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: {},
         infos: {},
         valid: true,
+      }),
+    );
+  });
+
+  test(`dynamicly removed fields should be removed from form value`, () => {
+    jest.useFakeTimers();
+    const onValidate = jest.fn();
+    const onSubmit = jest.fn();
+
+    const Test = () => {
+      const [toggle, setToggle] = React.useState(false);
+
+      return (
+        <Form validate="blur" onValidate={onValidate} onSubmit={onSubmit}>
+          <FormField name="name">
+            <TextInput name="name" placeholder="test name" />
+          </FormField>
+          <FormField name="toggle">
+            <CheckBox
+              name="toggle"
+              label="toggle"
+              onChange={({ target: { checked } }) => setToggle(checked)}
+            />
+          </FormField>
+          {toggle && (
+            <FormField name="mood" required>
+              <TextInput name="mood" placeholder="test mood" />
+            </FormField>
+          )}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByLabelText, getByText, container } =
+      render(
+        <Grommet>
+          <Test />
+        </Grommet>,
+      );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const nameField = getByPlaceholderText('test name');
+    const toggleField = getByLabelText('toggle');
+
+    // add name
+    fireEvent.change(nameField, { target: { value: 'name' } });
+
+    // add mood
+    fireEvent.click(toggleField);
+
+    const moodField = getByPlaceholderText('test mood');
+
+    // set mood
+    fireEvent.change(moodField, { target: { value: 'happy' } });
+
+    // remove mood
+    fireEvent.click(toggleField);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: { name: 'name', toggle: false },
       }),
     );
   });

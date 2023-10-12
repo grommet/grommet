@@ -1,3 +1,5 @@
+import { round } from '../Chart';
+
 export const points = [
   'circle',
   'diamond',
@@ -30,6 +32,39 @@ export const doublePad = {
   small: 'medium',
   xsmall: 'small',
   xxsmall: 'xsmall',
+};
+
+const orderedSizes = [
+  'xlarge',
+  'large',
+  'medium',
+  'small',
+  'xsmall',
+  'xxsmall',
+  'hair',
+];
+
+export const showInUnits = (content, maxValue) => {
+  let divideBy;
+  let unit;
+  let newContent = content;
+  if (maxValue > 10000000) {
+    divideBy = 1000000;
+    unit = 'M';
+  } else if (maxValue > 10000) {
+    divideBy = 1000;
+    unit = 'K';
+  }
+  if (divideBy) newContent = round(newContent / divideBy, 0);
+  if (unit) newContent = `${newContent}${unit}`;
+  return newContent;
+};
+
+export const largestSize = (size1, size2) => {
+  if (size1 && !size2) return size1;
+  if (size2 && !size1) return size2;
+  if (orderedSizes.indexOf(size1) < orderedSizes.indexOf(size2)) return size1;
+  return size2;
 };
 
 export const createDateFormat = (firstValue, lastValue, full) => {
@@ -77,3 +112,9 @@ export const createDateFormat = (firstValue, lastValue, full) => {
   }
   return dateFormat;
 };
+
+export const minimum = (value1, value2) =>
+  value1 !== undefined ? Math.min(value1, value2) : value2;
+
+export const maximum = (value1, value2) =>
+  value1 !== undefined ? Math.max(value1, value2) : value2;

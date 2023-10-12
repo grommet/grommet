@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { grommet } from 'grommet/themes';
-
-import { Box, Button, Grommet, Paragraph, Spinner } from 'grommet';
+import { Box, Button, Paragraph, Spinner } from 'grommet';
 
 const PageContent = () => {
   // 'show=true' will trigger the announcement
@@ -28,11 +26,9 @@ const PageContent = () => {
 };
 
 export const Announced = () => (
-  <Grommet theme={grommet} full>
-    <Box align="center" pad="large">
-      <PageContent />
-    </Box>
-  </Grommet>
+  <Box align="center" pad="large">
+    <PageContent />
+  </Box>
 );
 
 Announced.parameters = {

@@ -5,11 +5,17 @@ import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
 export const baseStyle = css`
-  font-family: ${props => props.theme.global.font.family};
-  font-size: ${props => props.theme.global.font.size};
-  line-height: ${props => props.theme.global.font.height};
-  font-weight: ${props => props.theme.global.font.weight};
-  ${props =>
+  font-family: ${(props) => props.theme.global.font.family};
+  font-size: ${(props) => props.theme.global.font.size};
+  line-height: ${(props) => props.theme.global.font.height};
+  font-weight: ${(props) => props.theme.global.font.weight};
+  /* check if prop is defined in the theme*/
+  ${(props) =>
+    props.theme.global.font.variant &&
+    `
+    font-variant:${props.theme.global.font.variant};
+  `}
+  ${(props) =>
     !props.plain && backgroundStyle(props.theme.baseBackground, props.theme)}
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -19,13 +25,13 @@ export const baseStyle = css`
 `;
 
 export const controlBorderStyle = css`
-  border: ${props => props.theme.global.control.border.width} solid
-    ${props =>
+  border: ${(props) => props.theme.global.control.border.width} solid
+    ${(props) =>
       normalizeColor(
         props.theme.global.control.border.color || 'border',
         props.theme,
       )};
-  border-radius: ${props => props.theme.global.control.border.radius};
+  border-radius: ${(props) => props.theme.global.control.border.radius};
 `;
 
 export const edgeStyle = (
@@ -169,8 +175,9 @@ export const edgeStyle = (
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-inline-start: ${breakpoint.edgeSize[data.start] ||
-              data.start};
+          ${kind}-inline-start: ${
+              breakpoint.edgeSize[data.start] || data.start
+            };
         `,
           )
         : ''};
@@ -193,7 +200,7 @@ export const edgeStyle = (
   return result;
 };
 
-export const fillStyle = fillProp => {
+export const fillStyle = (fillProp) => {
   if (fillProp === 'horizontal') {
     return 'width: 100%;';
   }
@@ -307,7 +314,7 @@ export const focusStyle = ({
   justBorder,
   skipSvgChildren,
 } = {}) => css`
-  ${props =>
+  ${(props) =>
     !skipSvgChildren &&
     `
   > circle,
@@ -319,9 +326,9 @@ export const focusStyle = ({
   > rect {
     ${focusStyles(props)}
   }`}
-  ${props => focusStyles(props, { forceOutline, justBorder })}
+  ${(props) => focusStyles(props, { forceOutline, justBorder })}
   ${!forceOutline &&
-    `
+  `
   ::-moz-focus-inner {
     border: 0;
   }
@@ -339,7 +346,7 @@ export const unfocusStyle = ({
   justBorder,
   skipSvgChildren,
 } = {}) => css`
-  ${props =>
+  ${(props) =>
     !skipSvgChildren &&
     `
   > circle,
@@ -351,9 +358,9 @@ export const unfocusStyle = ({
   > rect {
     ${unfocusStyles(props)}
   }`}
-  ${props => unfocusStyles(props, { forceOutline, justBorder })}
+  ${(props) => unfocusStyles(props, { forceOutline, justBorder })}
   ${!forceOutline &&
-    `
+  `
   ::-moz-focus-inner {
     border: 0;
   }
@@ -367,8 +374,10 @@ export const unfocusStyle = ({
 // theme itself, we have to add back in the border width here.
 // This is used for placeholder/icon in TextInput and MaskedInput.
 const adjustPad = (props, value) =>
-  `${parseMetricToNum(`${props.theme.global.edgeSize[value] || value}px`) +
-    parseMetricToNum(`${props.theme.global.control.border.width}px`)}px`;
+  `${
+    parseMetricToNum(`${props.theme.global.edgeSize[value] || value}px`) +
+    parseMetricToNum(`${props.theme.global.control.border.width}px`)
+  }px`;
 
 export const getInputPadBySide = (props, side) => {
   if (typeof props.theme.global.input.padding !== 'object') {
@@ -393,7 +402,7 @@ export const getInputPadBySide = (props, side) => {
 };
 
 const placeholderColor = css`
-  color: ${props =>
+  color: ${(props) =>
     normalizeColor(props.theme.global.colors.placeholder, props.theme)};
 `;
 
@@ -411,8 +420,15 @@ const placeholderStyle = css`
   }
 `;
 
-const inputSizeStyle = props => {
+const inputSizeStyle = (props) => {
   const data = props.theme.text[props.size];
+
+  if (!data) {
+    return css`
+      font-size: ${props.size};
+    `;
+  }
+
   return css`
     font-size: ${data.size};
     line-height: ${data.height};
@@ -421,10 +437,10 @@ const inputSizeStyle = props => {
 
 export const inputStyle = css`
   box-sizing: border-box;
-  ${props =>
+  ${(props) =>
     `font-size: ${
       props.theme.global.input.font.size
-        ? props.theme.text[props.theme.global.input.font.size].size ||
+        ? props.theme.text[props.theme.global.input.font.size]?.size ||
           props.theme.global.input.font.size
         : 'inherit'
     };`}
@@ -434,20 +450,22 @@ export const inputStyle = css`
   background: transparent;
   color: inherit;
   width: 100%;
-  ${props =>
+  ${(props) =>
     props.theme.global.input.font.height &&
     `line-height: ${props.theme.global.input.font.height};`}
-  ${props =>
+  ${(props) =>
     props.theme.global.input.padding &&
     typeof props.theme.global.input.padding !== 'object'
       ? // On a breaking change release, this condition could be removed and
         // just the edgeStyle could remain. Currently, this is needed for
         // backwards compatibility since we are placing the calculation in
         // base.js
-        `padding: ${parseMetricToNum(
-          props.theme.global.edgeSize[props.theme.global.input.padding] ||
-            props.theme.global.input.padding,
-        ) - parseMetricToNum(props.theme.global.control.border.width)}px;`
+        `padding: ${
+          parseMetricToNum(
+            props.theme.global.edgeSize[props.theme.global.input.padding] ||
+              props.theme.global.input.padding,
+          ) - parseMetricToNum(props.theme.global.control.border.width)
+        }px;`
       : edgeStyle(
           'padding',
           props.theme.global.input.padding,
@@ -455,16 +473,16 @@ export const inputStyle = css`
           props.theme.box.responsiveBreakpoint,
           props.theme,
         )}
-  ${props =>
+  ${(props) =>
     // for backwards compatibility, check if props.theme.global.input.weight
     (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
     css`
       font-weight: ${props.theme.global.input.weight ||
-        props.theme.global.input.font.weight};
+      props.theme.global.input.font.weight};
     `} margin: 0;
-  ${props => props.size && inputSizeStyle(props)}
+  ${(props) => props.size && inputSizeStyle(props)}
   &:focus {
-    ${props => (!props.plain || props.focusIndicator) && focusStyle()};
+    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()};
   }
   ${controlBorderStyle}
   ${placeholderStyle}
@@ -479,14 +497,32 @@ export const inputStyle = css`
   }
 
   &:-moz-placeholder, // FF 18-
-  &::-moz-placeholder { // FF 19+
+  &::-moz-placeholder {
+    // FF 19+
     opacity: 1;
   }
 
-  ${props => props.theme.global.input.extend}
+  ${(props) => props.theme.global.input.extend}
 `;
 
-export const overflowStyle = overflowProp => {
+// Apply padding on input to create space for icon.
+// When theme.icon.matchSize is true, the space for the
+// icon should equal the icon dimension + 12px (edgeSize.medium)
+// to ensure there is reasonable space between the icon and value or placeholder
+export const inputPadForIcon = css`
+  ${(props) => {
+    const pad = props.theme?.icon?.matchSize
+      ? `${
+          parseMetricToNum(props.theme.icon?.size?.[props?.size || 'medium']) +
+          parseMetricToNum(props.theme.global.edgeSize.medium)
+        }px`
+      : props.theme.global.edgeSize.large;
+
+    return props.reverse ? `padding-right: ${pad};` : `padding-left: ${pad};`;
+  }}
+`;
+
+export const overflowStyle = (overflowProp) => {
   if (typeof overflowProp === 'string') {
     return css`
       overflow: ${overflowProp};
@@ -495,8 +531,8 @@ export const overflowStyle = overflowProp => {
 
   return css`
     ${overflowProp.horizontal &&
-      `overflow-x: ${overflowProp.horizontal};`} ${overflowProp.vertical &&
-      `overflow-y: ${overflowProp.vertical};`};
+    `overflow-x: ${overflowProp.horizontal};`} ${overflowProp.vertical &&
+    `overflow-y: ${overflowProp.vertical};`};
   `;
 };
 
@@ -505,13 +541,14 @@ const ALIGN_SELF_MAP = {
   end: 'flex-end',
   start: 'flex-start',
   stretch: 'stretch',
+  baseline: 'baseline',
 };
 
 export const genericStyles = css`
-  ${props =>
+  ${(props) =>
     props.alignSelf && `align-self: ${ALIGN_SELF_MAP[props.alignSelf]};`}
-  ${props => props.gridArea && `grid-area: ${props.gridArea};`}
-  ${props =>
+  ${(props) => props.gridArea && `grid-area: ${props.gridArea};`}
+  ${(props) =>
     props.margin &&
     props.theme.global &&
     edgeStyle(
@@ -523,8 +560,8 @@ export const genericStyles = css`
     )}
 `;
 
-export const disabledStyle = componentStyle => css`
-  opacity: ${props =>
+export const disabledStyle = (componentStyle) => css`
+  opacity: ${(props) =>
     componentStyle || props.theme.global.control.disabled.opacity};
   cursor: default;
 `;
@@ -546,9 +583,9 @@ export const kindPartStyles = (obj, theme, colorValue) => {
     const pad = obj.padding || obj.pad;
     if (pad.vertical || pad.horizontal)
       styles.push(
-        `padding: ${theme.global.edgeSize[pad.vertical] ||
-          pad.vertical ||
-          0} ${theme.global.edgeSize[pad.horizontal] || pad.horizontal || 0};`,
+        `padding: ${theme.global.edgeSize[pad.vertical] || pad.vertical || 0} ${
+          theme.global.edgeSize[pad.horizontal] || pad.horizontal || 0
+        };`,
       );
     else styles.push(`padding: ${theme.global.edgeSize[pad] || pad || 0};`);
   }
@@ -743,9 +780,112 @@ export const roundStyle = (data, responsive, theme) => {
 const TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',
+  justify: 'justify',
   start: 'left',
 };
 
 export const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
+  text-align: ${(props) => TEXT_ALIGN_MAP[props.textAlign]};
 `;
+
+const ALIGN_ITEMS_MAP = {
+  baseline: 'baseline',
+  center: 'center',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch',
+};
+
+export const alignStyle = css`
+  align-items: ${(props) => ALIGN_ITEMS_MAP[props.align] ?? props.align};
+`;
+
+const ALIGN_CONTENT_MAP = {
+  around: 'space-around',
+  baseline: 'baseline',
+  between: 'space-between',
+  center: 'center',
+  evenly: 'space-evenly',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch',
+};
+
+export const alignContentStyle = css`
+  align-content: ${(props) =>
+    ALIGN_CONTENT_MAP[props.alignContent] ?? props.alignContent};
+`;
+const getSize = (theme, size) => theme.global.size[size] || size;
+
+const widthObjectStyle = (width, theme) => {
+  const result = [];
+  if (width.max)
+    result.push(
+      css`
+        max-width: ${getSize(theme, width.max)};
+      `,
+    );
+  if (width.min)
+    result.push(
+      css`
+        min-width: ${getSize(theme, width.min)};
+      `,
+    );
+  if (width.width)
+    result.push(
+      css`
+        width: ${getSize(theme, width.width)};
+      `,
+    );
+  return result;
+};
+
+const widthStringStyle = (width, theme) =>
+  css`
+    width: ${getSize(theme, width)};
+  `;
+
+export const widthStyle = (width, theme) =>
+  typeof width === 'object'
+    ? widthObjectStyle(width, theme)
+    : widthStringStyle(width, theme);
+
+const heightObjectStyle = (height, theme) => {
+  const result = [];
+  if (height.max)
+    result.push(
+      css`
+        max-height: ${getSize(theme, height.max)};
+      `,
+    );
+  if (height.min)
+    result.push(
+      css`
+        min-height: ${getSize(theme, height.min)};
+      `,
+    );
+  // backwards compatibile
+  if (height.width)
+    result.push(
+      css`
+        height: ${getSize(theme, height.height)};
+      `,
+    );
+  if (height.height)
+    result.push(
+      css`
+        height: ${getSize(theme, height.height)};
+      `,
+    );
+  return result;
+};
+
+const heightStringStyle = (height, theme) =>
+  css`
+    height: ${getSize(theme, height)};
+  `;
+
+export const heightStyle = (height, theme) =>
+  typeof height === 'object'
+    ? heightObjectStyle(height, theme)
+    : heightStringStyle(height, theme);

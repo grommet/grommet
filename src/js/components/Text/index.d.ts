@@ -7,8 +7,11 @@ import {
   MarginType,
   Omit,
   PolymorphicType,
+  SkeletonType,
   TextAlignType,
 } from '../../utils';
+
+import { TipProps } from '../Tip';
 
 export interface TextProps {
   a11yTitle?: A11yTitleType;
@@ -30,16 +33,19 @@ export interface TextProps {
     | '5xl'
     | '6xl'
     | string;
+  skeleton?: SkeletonType;
   tag?: PolymorphicType;
   textAlign?: TextAlignType;
-  truncate?: boolean;
-  weight?: 'normal' | 'bold' | number;
+  truncate?: boolean | 'tip';
+  weight?: 'normal' | 'bold' | 'bolder' | 'lighter' | number;
   wordBreak?: 'normal' | 'break-all' | 'keep-all' | 'break-word';
+  tip?: TipProps | string;
 }
 export interface TextExtendedProps
   extends TextProps,
     Omit<JSX.IntrinsicElements['span'], 'color'> {}
 
 declare const Text: React.FC<TextExtendedProps>;
+export type TextType = TextProps;
 
 export { Text };

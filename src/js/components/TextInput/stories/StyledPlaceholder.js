@@ -1,16 +1,20 @@
 import React from 'react';
 
-import { Box, Form, Grommet, TextInput, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Form, TextInput, Text } from 'grommet';
 
 export const StyledPlaceholder = () => (
-  <Grommet full theme={grommet}>
-    <Box>
-      <Form>
-        <TextInput name="name" placeholder={<Text>placeholder</Text>} />
-      </Form>
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
+    <Form>
+      <TextInput
+        name="name"
+        placeholder={<Text>placeholder</Text>}
+        aria-label="Input Text"
+      />
+    </Form>
+  </Box>
+  // </Grommet>
 );
 
 StyledPlaceholder.storyName = 'Styled placeholder';

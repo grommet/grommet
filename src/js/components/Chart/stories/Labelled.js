@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, Chart, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Chart, Text } from 'grommet';
 
 const LabelledChart = ({ color, label, value }) => (
   <Box flex={false} basis="xsmall" align="center" gap="small">
@@ -24,13 +23,14 @@ const LabelledChart = ({ color, label, value }) => (
 );
 
 export const LabelledCharts = () => (
-  <Grommet theme={grommet}>
-    <Box pad="large" direction="row" gap="medium">
-      <LabelledChart label="Exported" value={300} />
-      <LabelledChart label="Usable" value={200} color="accent-2" />
-      <LabelledChart label="Used" value={98.2} color="accent-3" />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box pad="large" direction="row" gap="medium">
+    <LabelledChart label="Exported" value={300} />
+    <LabelledChart label="Usable" value={200} color="graph-1" />
+    <LabelledChart label="Used" value={98.2} color="graph-2" />
+  </Box>
+  // </Grommet>
 );
 
 LabelledCharts.storyName = 'Labelled';

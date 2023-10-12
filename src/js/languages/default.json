@@ -1,0 +1,120 @@
+{
+  "button": {
+    "busy": "button is in a busy state",
+    "success": "button action succeeded"
+  },
+  "calendar": {
+    "previousMove": "Moved to {date}",
+    "previous": "Go to {date}",
+    "nextMove": "Moved to {date}",
+    "next": "Go to {date}"
+  },
+  "carousel": {
+    "previous": "Go to slide {slide}",
+    "next": "Go to slide {slide}",
+    "jump": "Jump to slide {slide}"
+  },
+  "dateInput": {
+    "openCalendar": "Press space to open calendar",
+    "enterCalendar": "Calendar is open, use arrow keys and enter to select a date.",
+    "exitCalendar": "Exited calendar dialog"
+  },
+  "dataFilters": {
+    "clear": "Clear filters",
+    "heading": "Filters",
+    "open": "Open filters",
+    "openSet": {
+      "singular": "Open filters, {number} filter applied",
+      "plural": "Open filters, {number} filters applied"
+    }
+  },
+  "dataForm": {
+    "reset": "Undo changes",
+    "submit": "Apply filters"
+  },
+  "dataSearch": {
+    "label": "Search",
+    "open": "Open search"
+  },
+  "dataSort": {
+    "ascending": "Ascending",
+    "by": "Sort by",
+    "descending": "Descending",
+    "direction": "Sort direction",
+    "open": "Open sort"
+  },
+  "dataSummary": {
+    "filtered": "{filteredTotal} results of {total} items",
+    "filteredSingle": "{filteredTotal} result of {total} items",
+    "total": "{total} items"
+  },
+  "dataTableColumns": {
+    "open": "Open column selector",
+    "order": "Order columns",
+    "select": "Select columns",
+    "tip": "Manage columns"
+  },
+  "dataTableGroupBy": {
+    "clear": "Clear group",
+    "label": "Group by"
+  },
+  "dataView": {
+    "label": "View"
+  },
+  "fileInput": {
+    "browse": "browse",
+    "dropPrompt": "Drop file here or",
+    "dropPromptMultiple": "Drop files here or",
+    "files": "files",
+    "maxFile": "Attach a maximum of {max} files only.",
+    "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize}.",
+    "maxSizeMultiple": {
+      "singular": "One file is too large. Select files which are no larger than {maxSize}.",
+      "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
+    },
+    "remove": "remove",
+    "removeAll": "remove all"
+  },
+  "form": {
+    "invalid": "invalid",
+    "required": "required"
+  },
+  "menu": {
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu"
+  },
+  "rangeSelector": {
+    "lower": "Lower Bounds",
+    "upper": "Upper Bounds"
+  },
+  "select": {
+    "multiple": "multiple",
+    "selected": "; Selected: {currentSelectedValue}"
+  },
+  "skipLinks": {
+    "skipTo": "Skip To:"
+  },
+  "tabs": {
+    "tabContents": "Tab Contents"
+  },
+  "textInput": {
+    "enterSelect": "(Press Enter to Select)",
+    "suggestionsCount": "suggestions available",
+    "suggestionsExist": "This input has suggestions use arrow keys to navigate",
+    "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
+  },
+  "video": {
+    "audioDescriptions": "video audio description",
+    "captions": "closed captions",
+    "closeMenu": "close menu",
+    "description": "video audio description",
+    "fullScreen": "full screen",
+    "progressMeter": "video progress",
+    "scrubber": "scrubber",
+    "openMenu": "open menu",
+    "pauseButton": "pause",
+    "playButton": "play",
+    "volumeDown": "volume down",
+    "volumeUp": "volume up"
+  }
+}

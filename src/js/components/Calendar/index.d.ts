@@ -14,7 +14,7 @@ export interface RenderProps {
   isSelected: boolean;
 }
 
-export interface HeaderProps {
+export interface CalendarHeaderProps {
   date: Date;
   locale?: string;
   onPreviousMonth: () => void;
@@ -32,14 +32,18 @@ export interface CalendarProps {
   animate?: AnimateType;
   bounds?: string[];
   children?: (args: RenderProps) => React.ReactNode;
-  date?: string;
+  date?: string | (string | string[])[];
   dates?: (string | string[])[];
   daysOfWeek?: boolean;
   disabled?: (string | string[])[];
   fill?: boolean;
   firstDayOfWeek?: 0 | 1;
-  header?: (args: HeaderProps) => React.ReactNode;
+  header?: (args: CalendarHeaderProps) => React.ReactNode;
   locale?: string;
+  messages?: {
+    previous?: string;
+    next?: string;
+  };
   onReference?: (reference: string) => void;
   onSelect?: (select: string | string[]) => any;
   range?: boolean | 'array';

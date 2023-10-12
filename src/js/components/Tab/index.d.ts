@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Omit } from '../../utils';
+import { A11yTitleType, Omit } from '../../utils';
 
 export interface TabProps {
+  a11yTitle?: A11yTitleType;
   disabled?: boolean;
   icon?: JSX.Element;
   plain?: boolean;

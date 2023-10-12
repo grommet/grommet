@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Box, Grommet, Markdown } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Markdown } from 'grommet';
 
 const CONTENT = `
   # Out of Breath
@@ -28,15 +27,16 @@ import { Grommet } from 'grommet';
 `;
 
 const StyledPre = styled.pre`
-  background-color: #7d4cdb;
+  background-color: #ffca58;
 `;
 
 export const ComponentOverrideMarkdown = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Markdown components={{ pre: StyledPre }}>{CONTENT}</Markdown>
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box align="center" pad="large">
+    <Markdown components={{ pre: StyledPre }}>{CONTENT}</Markdown>
+  </Box>
+  // </Grommet>
 );
 
 ComponentOverrideMarkdown.storyName = 'Component override markdown';

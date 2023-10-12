@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BoxTypes } from '../Box';
+import { BoxTypes } from '../Box/index';
 
 export interface TableCellProps {
   plain?: boolean | 'noPad'; // noPad is for internal use only

@@ -7,6 +7,7 @@ import { getNewContainer } from '../../utils';
 import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { LayerPropTypes } from './propTypes';
 
 const Layer = forwardRef((props, ref) => {
   const { animate, animation, targetChildPosition } = props;
@@ -53,13 +54,17 @@ const Layer = forwardRef((props, ref) => {
           }
           setTimeout(() => {
             // we add the id and query here so the unit tests work
-            const clone = document.getElementById('layerClone');
+            const clone = containerTarget
+              .getRootNode()
+              .getElementById('layerClone');
             if (clone) {
-              containerTarget.removeChild(clone);
+              if (containerTarget.contains(clone)) {
+                containerTarget.removeChild(clone);
+              }
               layerContainer.remove();
             }
           }, animationDuration);
-        } else {
+        } else if (containerTarget.contains(layerContainer)) {
           containerTarget.removeChild(layerContainer);
         }
       }
@@ -79,11 +84,6 @@ const Layer = forwardRef((props, ref) => {
 });
 
 Layer.displayName = 'Layer';
+Layer.propTypes = LayerPropTypes;
 
-let LayerDoc;
-if (process.env.NODE_ENV !== 'production') {
-  LayerDoc = require('./doc').doc(Layer); // eslint-disable-line global-require
-}
-const LayerWrapper = LayerDoc || Layer;
-
-export { LayerWrapper as Layer };
+export { Layer };

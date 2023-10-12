@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBox, Grid, Layer, Select } from 'grommet';
 
 const positions = ['left', 'right', 'top', 'bottom', 'center'];
 
@@ -18,7 +17,9 @@ export const TargetLayer = () => {
   const onClose = () => setOpen(undefined);
 
   return (
-    <Grommet theme={grommet} full>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <>
       <Grid
         fill
         columns={[gutter, 'flex', gutter]}
@@ -74,11 +75,16 @@ export const TargetLayer = () => {
           </Box>
         </Layer>
       )}
-    </Grommet>
+    </>
+    // </Grommet>
   );
 };
 
 TargetLayer.storyName = 'Target';
+
+TargetLayer.args = {
+  full: true,
+};
 
 export default {
   title: 'Layout/Layer/Target',

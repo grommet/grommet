@@ -1,4 +1,11 @@
-import React, { forwardRef, useContext } from 'react';
+/* eslint-disable no-underscore-dangle */
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import styled, { css, ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -6,7 +13,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
-import { TableCell } from '../TableCell';
+import { TableCell, verticalAlignToJustify } from '../TableCell/TableCell';
 import { Text } from '../Text';
 
 import { Resizer } from './Resizer';
@@ -17,36 +24,42 @@ import {
   StyledDataTableHeader,
   StyledDataTableRow,
 } from './StyledDataTable';
-import { datumValue, calcPinnedBackground } from './buildState';
+import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
-const separateThemeProps = theme => {
+const separateThemeProps = (theme) => {
   const {
-    background,
-    border,
+    background, // covered by cellProps
+    border, // covered by cellProps
     color,
     font,
     gap, // gap is used for space between header cell elements only
+    pad, // covered by cellProps
     units,
     ...rest
   } = theme.dataTable.header;
 
-  const cellProps = { background, border };
   const textProps = { color, ...font };
   const iconProps = { color };
   const layoutProps = { ...rest };
 
-  return [cellProps, layoutProps, textProps, iconProps];
+  return [layoutProps, textProps, iconProps];
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
-const buttonStyle = ({ theme }) => {
+const buttonStyle = ({ pad, theme, verticalAlign }) => {
   const styles = [];
-  const [, layoutProps, , iconProps] = separateThemeProps(theme);
+  const [layoutProps, , iconProps] = separateThemeProps(theme);
+
+  // if cell is sortable, we want pad to be applied
+  // to the button instead of the cell
+  if (pad) {
+    styles.push(kindPartStyles({ pad }, theme));
+  }
 
   if (layoutProps) {
     styles.push(kindPartStyles(layoutProps, theme));
@@ -76,28 +89,43 @@ const buttonStyle = ({ theme }) => {
     );
   }
 
+  let align = 'center';
+  if (verticalAlign === 'bottom') align = 'end';
+  if (verticalAlign === 'top') align = 'start';
+
+  if (verticalAlign) {
+    styles.push(
+      css`
+        display: inline-flex;
+        align-items: ${align};
+      `,
+    );
+  }
+
   return styles;
 };
 
 const StyledHeaderCellButton = styled(Button)`
-  ${props => buttonStyle(props)}
+  ${(props) => buttonStyle(props)}
 `;
 
 // allow extend to spread onto Box that surrounds column label
 const StyledContentBox = styled(Box)`
-  ${props => props.extend}
+  ${(props) => props.extend}
 `;
 
 const Header = forwardRef(
   (
     {
-      background: backgroundProp,
-      border,
+      allowSelectAll,
+      cellProps,
       columns,
       data,
+      disabled,
       fill,
       filtering,
       filters,
+      groupBy,
       groups,
       groupState,
       onFilter,
@@ -106,72 +134,147 @@ const Header = forwardRef(
       onSelect,
       onSort,
       onToggle,
-      pad,
-      pin: tablePin,
+      onWidths,
+      pin: pinProp,
+      pinnedOffset,
       primaryProperty,
       selected,
       rowDetails,
       sort,
       widths,
+      verticalAlign,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
-    const pin = tablePin ? ['top'] : [];
+    const [layoutProps, textProps] = separateThemeProps(theme);
+
+    const [cellWidths, setCellWidths] = useState([]);
+
+    const updateWidths = useCallback(
+      (width) => setCellWidths((values) => [...values, width]),
+      [],
+    );
+
+    useEffect(() => {
+      if (onWidths && cellWidths.length !== 0) {
+        onWidths(cellWidths);
+      }
+    }, [cellWidths, onWidths]);
+
+    const pin = pinProp ? ['top'] : [];
+    const selectPin = pinnedOffset?._grommetDataTableSelect
+      ? [...pin, 'left']
+      : pin;
+
+    const totalSelectedGroups = groupBy?.select
+      ? Object.keys(groupBy.select).reduce(
+          (total, cur) =>
+            cur && groupBy.select[cur] === 'all' ? total + 1 : total,
+          0,
+        )
+      : 0;
+    const totalSelected = (selected?.length || 0) + totalSelectedGroups;
+
+    const onChangeSelection = useCallback(() => {
+      let nextSelected;
+      const nextGroupSelected = {};
+
+      // Since some rows might be disabled but already selected, we need to
+      // note which rows are enabled when determining how aggregate selection
+      // works.
+      const primaryValues =
+        data.map((datum) => datumValue(datum, primaryProperty)) || [];
+      // enabled includes what can be changed
+      const enabled =
+        (disabled && primaryValues.filter((v) => !disabled.includes(v))) ||
+        primaryValues;
+      // enabledSelected includes what can be changed and is currently selected
+      const enabledSelected =
+        (selected && enabled.filter((v) => selected.includes(v))) ||
+        primaryValues;
+
+      const allSelected = groupBy?.select
+        ? groupBy.select[''] === 'all'
+        : enabledSelected.length === enabled.length;
+
+      if (allSelected) {
+        // if any are disabled and selected, leave those, otherwise clear
+        nextSelected = disabled
+          ? primaryValues.filter(
+              (v) => disabled.includes(v) && selected.includes(v),
+            )
+          : [];
+        nextGroupSelected[''] = 'none';
+      } else {
+        // if some or none are selected, select all enabled plus all disabled
+        // that are already selected
+        nextSelected = disabled
+          ? primaryValues.filter(
+              (v) => !disabled.includes(v) || selected.includes(v),
+            )
+          : primaryValues;
+        nextGroupSelected[''] = 'all';
+        groupBy?.expandable?.forEach((key) => {
+          nextGroupSelected[key] = 'all';
+        });
+      }
+      if (groupBy?.onSelect) {
+        groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
+      } else onSelect(nextSelected);
+    }, [data, disabled, groupBy, onSelect, primaryProperty, selected]);
 
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
         <StyledDataTableRow>
           {groups && (
             <ExpanderCell
+              background={cellProps.background}
+              border={cellProps.border}
               context="header"
               expanded={
-                Object.keys(groupState).filter(k => !groupState[k].expanded)
+                Object.keys(groupState).filter((k) => !groupState[k].expanded)
                   .length === 0
               }
               onToggle={onToggle}
+              pad={cellProps.pad}
             />
           )}
 
           {(selected || onSelect) && (
             <StyledDataTableCell
-              background={
-                calcPinnedBackground(backgroundProp, pin, theme, 'header') ||
-                cellProps.background
-              }
+              background={cellProps.background}
+              onWidth={updateWidths}
               plain="noPad"
               size="auto"
               context="header"
               scope="col"
-              pin={pin}
+              pin={selectPin}
+              pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+              verticalAlign={verticalAlign}
             >
-              {onSelect && (
+              {onSelect && allowSelectAll && (
                 <CheckBox
                   a11yTitle={
-                    selected.length === data.length
+                    totalSelected === data.length
                       ? 'unselect all'
                       : 'select all'
                   }
                   checked={
-                    selected.length > 0 &&
-                    data.length > 0 &&
-                    selected.length === data.length
+                    groupBy?.select
+                      ? groupBy.select[''] === 'all'
+                      : totalSelected > 0 &&
+                        data.length > 0 &&
+                        totalSelected === data.length
                   }
                   indeterminate={
-                    selected.length > 0 && selected.length < data.length
+                    groupBy?.select
+                      ? groupBy.select[''] === 'some'
+                      : totalSelected > 0 && totalSelected < data.length
                   }
-                  onChange={() => {
-                    // if any are selected, clear selection
-                    if (selected.length === data.length) onSelect([]);
-                    // if none are selected, select all data
-                    else
-                      onSelect(
-                        data.map(datum => datumValue(datum, primaryProperty)),
-                      );
-                  }}
-                  pad={pad || theme.table.header.pad}
+                  onChange={onChangeSelection}
+                  pad={cellProps.pad}
                 />
               )}
             </StyledDataTableCell>
@@ -185,7 +288,7 @@ const Header = forwardRef(
               pin: columnPin,
               search,
               sortable,
-              verticalAlign,
+              verticalAlign: columnVerticalAlign, // depcrecate in v3
               size,
               units,
             }) => {
@@ -194,9 +297,7 @@ const Header = forwardRef(
                 <Text {...textProps} {...theme.dataTable.header.units}>
                   {units}
                 </Text>
-              ) : (
-                undefined
-              );
+              ) : undefined;
               if (typeof header === 'string') {
                 content = <Text {...textProps}>{header}</Text>;
                 if (
@@ -213,6 +314,24 @@ const Header = forwardRef(
                   );
                 }
               } else content = header;
+
+              if (unitsContent) {
+                content = (
+                  <Box justify={align} direction="row">
+                    {content}
+                    {unitsContent}
+                  </Box>
+                );
+              }
+
+              if (verticalAlign || columnVerticalAlign) {
+                const vertical = verticalAlign || columnVerticalAlign;
+                content = (
+                  <Box height="100%" justify={verticalAlignToJustify[vertical]}>
+                    {content}
+                  </Box>
+                );
+              }
 
               if (onSort && sortable !== false) {
                 let Icon;
@@ -234,7 +353,9 @@ const Header = forwardRef(
                     fill="vertical"
                     onClick={onSort(property)}
                     sort={sort}
+                    pad={cellProps.pad}
                     sortable
+                    verticalAlign={verticalAlign || columnVerticalAlign}
                   >
                     <Box
                       direction="row"
@@ -249,16 +370,20 @@ const Header = forwardRef(
                 );
               }
 
-              if (unitsContent) {
-                content = (
-                  <Box align="baseline" direction="row">
-                    {content}
-                    {unitsContent}
-                  </Box>
-                );
-              }
               // content should fill any available space in cell
-              content = <Box flex="grow">{content}</Box>;
+              // If `onResize` or `search` is true we need to explicitly set
+              // fill because later if either of these props is true content
+              // will be wrapped with an additional Box, preventing this Box
+              // from automatically filling the vertical space.
+              content = (
+                <Box
+                  flex="grow"
+                  fill={onResize || search ? 'vertical' : false}
+                  justify={(!align && 'center') || align}
+                >
+                  {content}
+                </Box>
+              );
 
               if (search || onResize) {
                 const resizer = onResize ? (
@@ -303,24 +428,20 @@ const Header = forwardRef(
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
 
-              const background = calcPinnedBackground(
-                backgroundProp,
-                cellPin,
-                theme,
-                'header',
-              );
-
               return (
                 <StyledDataTableCell
                   key={property}
                   align={align}
                   context="header"
-                  verticalAlign={verticalAlign}
-                  background={background || cellProps.background}
-                  border={border || cellProps.border}
-                  pad={pad}
+                  verticalAlign={verticalAlign || columnVerticalAlign}
+                  background={cellProps.background}
+                  border={cellProps.border}
+                  onWidth={updateWidths}
+                  // if sortable, pad will be included in the button styling
+                  pad={sortable === false || !onSort ? cellProps.pad : 'none'}
                   pin={cellPin}
                   plain
+                  pinnedOffset={pinnedOffset && pinnedOffset[property]}
                   scope="col"
                   size={widths && widths[property] ? undefined : size}
                   style={

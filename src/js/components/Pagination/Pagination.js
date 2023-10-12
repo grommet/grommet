@@ -1,12 +1,14 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
+import { PaginationPropTypes } from './propTypes';
 
 const StyledPaginationContainer = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.theme.pagination.container && props.theme.pagination.container.extend}
 `;
 
@@ -22,6 +24,7 @@ const Pagination = forwardRef(
   (
     {
       a11yTitle,
+      'aria-label': ariaLabel,
       numberItems,
       numberEdgePages = 1, // number of pages at each edge of page indices
       // number of page controls in the middle
@@ -29,22 +32,35 @@ const Pagination = forwardRef(
       onChange,
       page: pageProp,
       size,
-      step = 10,
+      step: stepProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { onView, filteredTotal, view } = useContext(DataContext);
+    const step = stepProp || view?.step || 10;
+    const total = numberItems ?? filteredTotal ?? 0;
+    const page = pageProp || view?.page || 1;
 
     /* Calculate total number pages */
-    const totalPages = Math.ceil(numberItems / step);
+    const totalPages = Math.ceil(total / step);
     const [activePage, setActivePage] = useState(
-      Math.min(pageProp, totalPages) || 1,
+      Math.min(page, totalPages) || 1,
     );
 
     useEffect(() => {
-      setActivePage(pageProp || 1);
-    }, [pageProp]);
+      setActivePage(page);
+      const pageEvent = new Event('pagechange');
+      window.dispatchEvent(pageEvent);
+    }, [page]);
+
+    useEffect(() => {
+      // if we are getting the step or page from outside the view,
+      // update the Data's view in case it needs to filter.
+      if (onView && (view?.step !== step || view?.page !== page))
+        onView({ ...view, page, step });
+    }, [onView, page, step, view]);
 
     /* Define page indices to display */
     const beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
@@ -99,7 +115,7 @@ const Pagination = forwardRef(
     else if (totalPages - numberEdgePages > numberEdgePages)
       endFlex = [totalPages - numberEdgePages];
 
-    const getItemIndices = nextPage => {
+    const getItemIndices = (nextPage) => {
       const startIndex = step * (nextPage - 1);
       const endIndex = startIndex + step;
       return { startIndex, endIndex };
@@ -107,6 +123,8 @@ const Pagination = forwardRef(
 
     const handleClick = (event, nextPage) => {
       setActivePage(nextPage);
+
+      if (onView) onView({ ...view, page: nextPage });
 
       if (onChange) {
         event.persist();
@@ -130,9 +148,9 @@ const Pagination = forwardRef(
       next: {
         // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
         'aria-disabled': activePage === totalPages ? 'true' : undefined,
-        disabled: activePage === totalPages || !numberItems,
+        disabled: activePage === totalPages || !total,
         icon: <NextIcon color={iconColor} />,
-        onClick: event => {
+        onClick: (event) => {
           const nextPage = activePage + 1;
           handleClick(event, nextPage);
         },
@@ -140,9 +158,9 @@ const Pagination = forwardRef(
       },
       previous: {
         'aria-disabled': activePage === 1 ? 'true' : undefined,
-        disabled: activePage === 1 || !numberItems,
+        disabled: activePage === 1 || !total,
         icon: <PreviousIcon color={iconColor} />,
-        onClick: event => {
+        onClick: (event) => {
           const previousPage = activePage - 1;
           handleClick(event, previousPage);
         },
@@ -164,7 +182,7 @@ const Pagination = forwardRef(
      * clickable index, control, or placeholder (e.g. ellipsis) indicating
      * more pages are available.
      */
-    controls = controls.map(control => ({
+    controls = controls.map((control) => ({
       active: control === activePage,
       a11yTitle:
         typeof control === 'number'
@@ -174,7 +192,7 @@ const Pagination = forwardRef(
       // https://www.w3.org/TR/wai-aria-1.1/#aria-current
       'aria-current': control === activePage ? 'page' : undefined,
       control,
-      onClick: event => {
+      onClick: (event) => {
         handleClick(event, control);
       },
       separator: control === 'more-prev' || control === 'more-next',
@@ -182,8 +200,15 @@ const Pagination = forwardRef(
     }));
 
     return (
-      <StyledPaginationContainer {...theme.pagination.container} {...rest}>
-        <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
+      <StyledPaginationContainer
+        flex={false}
+        {...theme.pagination.container}
+        {...rest}
+      >
+        <Nav
+          a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
+          ref={ref}
+        >
           <Box as="ul" {...theme.pagination.controls}>
             {controls.map((control, index) => (
               /* Using index as key (as opposed to a unique id) seems to
@@ -201,12 +226,6 @@ const Pagination = forwardRef(
 );
 
 Pagination.displayName = 'Pagination';
+Pagination.propTypes = PaginationPropTypes;
 
-let PaginationDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  PaginationDoc = require('./doc').doc(Pagination);
-}
-const PaginationWrapper = PaginationDoc || Pagination;
-
-export { PaginationWrapper as Pagination };
+export { Pagination };

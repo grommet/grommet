@@ -1,7 +1,6 @@
 import React, { ReactText, useState } from 'react';
 
-import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Meter, Text } from 'grommet';
 
 import { ColumnConfig } from '../..';
 
@@ -24,34 +23,25 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'location',
     header: 'Location',
-    render: datum =>
+    render: (datum) =>
       datum.location ? (
-        <Box
-          pad={{ horizontal: 'small', vertical: 'xsmall' }}
-          onClick={() => {}}
-          hoverIndicator
-          fill
-        >
-          <Text truncate weight="bold">
-            {datum.location}
-          </Text>
-        </Box>
-      ) : (
-        undefined
-      ),
+        <Text truncate weight="bold">
+          {datum.location}
+        </Text>
+      ) : undefined,
     plain: true,
   },
   {
     property: 'date',
     header: 'Date',
-    render: datum =>
+    render: (datum) =>
       datum.date && new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
   {
     property: 'percent',
     header: 'Percent Complete',
-    render: datum => (
+    render: (datum) => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter
           values={[{ value: datum.percent }]}
@@ -64,7 +54,7 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'paid',
     header: 'Paid',
-    render: datum => amountFormatter.format(datum.paid / 100),
+    render: (datum) => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
     footer: { aggregate: true },
@@ -162,17 +152,20 @@ export const OnSelectDataTable = () => {
   const [select, setSelect] = useState<ReactText[]>([]);
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <DataTable
-          columns={columns}
-          data={DATA}
-          step={10}
-          select={select}
-          onSelect={setSelect}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <DataTable
+        columns={columns}
+        data={DATA}
+        step={10}
+        disabled={['Matt']}
+        select={select}
+        onClickRow="select"
+        onSelect={setSelect}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

@@ -1,13 +1,16 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, useMemo, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
+import { defaultProps } from '../../default-props';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
+import { MeterPropTypes } from './propTypes';
 
-const deriveMax = values => {
+const deriveMax = (values) => {
   let max = 100;
   if (values && values.length > 1) {
     max = 0;
-    values.forEach(v => {
+    values.forEach((v) => {
       max += v.value;
     });
   }
@@ -23,18 +26,26 @@ const Meter = forwardRef(
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
+      reverse: reverseProp,
       value,
       values: valuesProp,
       ...rest
     },
     ref,
   ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+
     // normalize values to an array of objects
     const values = useMemo(() => {
       if (valuesProp) return valuesProp;
       if (value) return [{ color, value }];
       return [];
     }, [color, value, valuesProp]);
+
+    const reverse =
+      direction === 'horizontal' &&
+      (theme.dir === 'rtl' || reverseProp) &&
+      !(theme.dir === 'rtl' && reverseProp);
 
     const memoizedMax = useMemo(() => deriveMax(values), [values]);
     let content;
@@ -48,10 +59,11 @@ const Meter = forwardRef(
           thickness={thickness}
           background={background}
           direction={direction}
+          reverse={reverse}
           {...rest}
         />
       );
-    } else if (type === 'circle' || type === 'pie') {
+    } else if (type === 'circle' || type === 'pie' || type === 'semicircle') {
       content = (
         <Circle
           ref={ref}
@@ -61,6 +73,7 @@ const Meter = forwardRef(
           thickness={thickness}
           type={type}
           background={background}
+          reverse={reverse}
           {...rest}
         />
       );
@@ -70,11 +83,6 @@ const Meter = forwardRef(
 );
 
 Meter.displayName = 'Meter';
+Meter.prototype = MeterPropTypes;
 
-let MeterDoc;
-if (process.env.NODE_ENV !== 'production') {
-  MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
-}
-const MeterWrapper = MeterDoc || Meter;
-
-export { MeterWrapper as Meter };
+export { Meter };

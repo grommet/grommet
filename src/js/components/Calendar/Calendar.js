@@ -2,19 +2,24 @@ import React, {
   forwardRef,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useRef,
   useState,
-  useEffect,
 } from 'react';
 import { ThemeContext } from 'styled-components';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { Header } from '../Header';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
+import { Text } from '../Text';
 
+import { CalendarPropTypes } from './propTypes';
 import {
   StyledCalendar,
   StyledDay,
@@ -29,13 +34,15 @@ import {
   betweenDates,
   daysApart,
   endOfMonth,
-  formatToLocalYYYYMMDD,
-  localTimezoneToUTC,
+  handleOffset,
+  sameDayOrAfter,
+  sameDayOrBefore,
   startOfMonth,
   subtractDays,
   subtractMonths,
   withinDates,
 } from './utils';
+import { setHoursWithOffset } from '../../utils/dates';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -43,41 +50,108 @@ const headingPadMap = {
   large: 'medium',
 };
 
-const activeDates = {
-  start: 'start',
-  end: 'end',
-};
+const getLocaleString = (value, locale) =>
+  value?.toLocaleDateString(locale, {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
 
-const timeStamp = new RegExp(/T.*/);
-
-const normalizeForTimezone = (date, refDate) => {
-  if (!date) return undefined;
-  return (!timeStamp.test(refDate || date)
-    ? localTimezoneToUTC(new Date(date))
-    : new Date(date)
-  ).toISOString();
-};
-
-const normalizeReference = (reference, date, dates) => {
-  let normalizedReference;
-  if (reference) {
-    normalizedReference = new Date(reference);
-  } else if (date) {
-    normalizedReference = new Date(date);
-  } else if (dates && dates.length > 0) {
-    if (typeof dates[0] === 'string') {
-      normalizedReference = new Date(dates[0]);
-    } else if (Array.isArray(dates[0])) {
-      normalizedReference = new Date(dates[0][0] ? dates[0][0] : dates[0][1]);
-    } else {
-      normalizedReference = new Date();
-      normalizedReference.setHours(0, 0, 0, 0);
-    }
+const currentlySelectedString = (value, locale) => {
+  let selected;
+  if (value instanceof Date) {
+    selected = `Currently selected ${getLocaleString(value, locale)};`;
+  } else if (value?.length) {
+    selected = `Currently selected ${value.map((item) => {
+      let dates;
+      if (!Array.isArray(item)) {
+        dates = `${getLocaleString(item, locale)}`;
+      } else {
+        const start =
+          item[0] !== undefined ? getLocaleString(item[0], locale) : 'none';
+        const end =
+          item[1] !== undefined ? getLocaleString(item[1], locale) : 'none';
+        dates = `${start} through ${end}`;
+      }
+      return dates;
+    })}`;
   } else {
-    normalizedReference = new Date();
-    normalizedReference.setHours(0, 0, 0, 0);
+    selected = 'No date selected';
   }
-  return normalizedReference;
+
+  return selected;
+};
+
+// calendar value may be a single date, multiple dates, a range of dates
+// supplied as ISOstrings.
+const normalizeInput = (dateValue) => {
+  let result;
+  if (dateValue instanceof Date) {
+    result = dateValue;
+  }
+  // date may be an empty string ''
+  else if (typeof dateValue === 'string' && dateValue.length) {
+    result = setHoursWithOffset(dateValue);
+  } else if (Array.isArray(dateValue)) {
+    result = dateValue.map((d) => normalizeInput(d));
+  }
+  return result;
+};
+
+const normalizeOutput = (dateValue, outputFormat) => {
+  let result;
+
+  const normalize = (value) => {
+    let normalizedValue = value.toISOString();
+    if (normalizedValue && outputFormat === 'no timezone') {
+      [normalizedValue] = handleOffset(normalizedValue)
+        .toISOString()
+        .split('T');
+    }
+    return normalizedValue;
+  };
+
+  if (dateValue instanceof Date) {
+    result = normalize(dateValue);
+  } else if (typeof dateValue === 'undefined') {
+    result = undefined;
+  } else {
+    result = dateValue.map((d) => normalizeOutput(d, outputFormat));
+  }
+  return result;
+};
+
+// format value to [[]] for internal functions
+const normalizeRange = (value, activeDate) => {
+  let range = value;
+  if (range instanceof Date)
+    range =
+      activeDate === 'start' ? [[undefined, range]] : [[range, undefined]];
+  else if (Array.isArray(range) && !Array.isArray(range[0])) range = [range];
+
+  return range;
+};
+
+const getReference = (reference, value) => {
+  let nextReference;
+  if (value) {
+    if (Array.isArray(value)) {
+      if (value[0] instanceof Date) {
+        [nextReference] = value;
+      } else if (Array.isArray(value[0])) {
+        nextReference = value[0][0] ? value[0][0] : value[0][1];
+      } else {
+        nextReference = new Date();
+        nextReference.setHours(0, 0, 0, 0);
+      }
+    } else nextReference = value;
+  } else if (reference) {
+    nextReference = reference;
+  } else {
+    nextReference = new Date();
+    nextReference.setHours(0, 0, 0, 0);
+  }
+  return nextReference;
 };
 
 const buildDisplayBounds = (reference, firstDayOfWeek) => {
@@ -97,9 +171,35 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
   return [start, end];
 };
 
+const disabledCalendarPreviousMonthButton = (date, reference, bounds) => {
+  if (!bounds) return false;
+
+  const lastBound = new Date(bounds[1]);
+
+  return !sameDayOrBefore(lastBound, reference) && !betweenDates(date, bounds);
+};
+
+const disabledCalendarNextMonthButton = (date, reference, bounds) => {
+  if (!bounds) return false;
+
+  const firstBound = new Date(bounds[0]);
+
+  return !sameDayOrAfter(firstBound, reference) && !betweenDates(date, bounds);
+};
+
+export const getOutputFormat = (dates) => {
+  if (typeof dates === 'string' && dates?.indexOf('T') === -1) {
+    return 'no timezone';
+  }
+  if (Array.isArray(dates)) {
+    return getOutputFormat(dates[0]);
+  }
+  return 'date timezone';
+};
+
 const millisecondsPerYear = 31557600000;
 
-const CalendarDayButton = props => <Button tabIndex={-1} plain {...props} />;
+const CalendarDayButton = (props) => <Button tabIndex={-1} plain {...props} />;
 
 const CalendarDay = ({
   children,
@@ -110,7 +210,7 @@ const CalendarDay = ({
   otherMonth,
   buttonProps = {},
 }) => (
-  <StyledDayContainer sizeProp={size} fillContainer={fill}>
+  <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
     <CalendarDayButton fill={fill} {...buttonProps}>
       <StyledDay
         disabledProp={buttonProps.disabled}
@@ -129,14 +229,14 @@ const CalendarDay = ({
 const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
   if (!buttonProps) {
     return (
-      <StyledDayContainer sizeProp={size} fillContainer={fill}>
+      <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
         {children}
       </StyledDayContainer>
     );
   }
 
   return (
-    <StyledDayContainer sizeProp={size} fillContainer={fill}>
+    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
       <CalendarDayButton fill={fill} {...buttonProps}>
         {children}
       </CalendarDayButton>
@@ -155,85 +255,76 @@ const Calendar = forwardRef(
       dates: datesProp,
       daysOfWeek,
       disabled,
+      initialFocus, // internal only for DateInput
       fill,
       firstDayOfWeek = 0,
       header,
       locale = 'en-US',
+      messages,
       onReference,
       onSelect,
       range,
       reference: referenceProp,
       showAdjacentDays = true,
       size = 'medium',
+      timestamp: timestampProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const announce = useContext(AnnounceContext);
+    const { format } = useContext(MessageContext);
+
+    // when mousedown, we don't want to let Calendar set
+    // active date to firstInMonth
+    const [mouseDown, setMouseDown] = useState(false);
+    const onMouseDown = () => setMouseDown(true);
+    const onMouseUp = () => setMouseDown(false);
+    useEffect(() => {
+      document.addEventListener('mousedown', onMouseDown);
+      document.addEventListener('mouseup', onMouseUp);
+      return () => {
+        document.removeEventListener('mousedown', onMouseDown);
+        document.removeEventListener('mouseup', onMouseUp);
+      };
+    }, []);
 
     // set activeDate when caller changes it, allows us to change
     // it internally too
     const [activeDate, setActiveDate] = useState(
-      dateProp && range ? activeDates.end : activeDates.start,
+      dateProp && typeof dateProp === 'string' && range ? 'end' : 'start',
     );
     useEffect(() => {
       if (activeDateProp) setActiveDate(activeDateProp);
     }, [activeDateProp]);
 
-    // set date when caller changes it, allows us to change it internally too
-    const [date, setDate] = useState(dateProp);
-    useEffect(() => setDate(normalizeForTimezone(dateProp)), [dateProp]);
-
-    // set dates when caller changes it, allows us to change it internally too
-    const [dates, setDates] = useState(datesProp);
+    const [value, setValue] = useState(normalizeInput(dateProp || datesProp));
     useEffect(() => {
-      // convert all values to UTC
-      if (Array.isArray(datesProp)) {
-        if (Array.isArray(datesProp[0])) {
-          let from;
-          let to;
-          [from, to] = datesProp[0].map(day =>
-            day ? new Date(day) : undefined,
-          );
-          if (from) from = normalizeForTimezone(from, datesProp[0][0]);
-          if (to) to = normalizeForTimezone(to, datesProp[0][0]);
+      const val = dateProp || datesProp;
+      setValue(normalizeInput(val));
+    }, [dateProp, datesProp]);
 
-          setDates([[from, to]]);
-        } else {
-          const datesArray = [];
-          datesProp.forEach(d => {
-            if (Array.isArray(d)) {
-              let from;
-              let to;
-              [from, to] = d.map(day => new Date(day));
-              from = normalizeForTimezone(from, d[0]);
-              to = normalizeForTimezone(to, d[0]);
-              datesArray.push([from, to]);
-            } else {
-              datesArray.push(normalizeForTimezone(d));
-            }
-          });
-          setDates(datesArray);
-        }
-      } else setDates(undefined);
-    }, [datesProp]);
-
-    // set reference based on what the caller passed or date/dates.
     const [reference, setReference] = useState(
-      normalizeReference(referenceProp, date, dates),
+      getReference(normalizeInput(referenceProp), value),
     );
-    useEffect(
-      () =>
-        setReference(normalizeReference(referenceProp, dateProp, datesProp)),
-      [dateProp, datesProp, referenceProp],
+    useEffect(() => {
+      if (value) {
+        setReference(getReference(normalizeInput(referenceProp), value));
+      }
+    }, [referenceProp, value]);
+
+    const [outputFormat, setOutputFormat] = useState(
+      getOutputFormat(dateProp || datesProp),
     );
+    useEffect(() => {
+      setOutputFormat(getOutputFormat(dateProp || datesProp));
+    }, [dateProp, datesProp]);
 
     // normalize bounds
-    const [bounds, setBounds] = useState(
-      boundsProp ? boundsProp.map(b => normalizeForTimezone(b)) : undefined,
-    );
+    const [bounds, setBounds] = useState(boundsProp);
     useEffect(() => {
-      if (boundsProp) setBounds(boundsProp.map(b => normalizeForTimezone(b)));
+      if (boundsProp) setBounds(boundsProp);
       else setBounds(undefined);
     }, [boundsProp]);
 
@@ -289,14 +380,22 @@ const Calendar = forwardRef(
     }, [animate, firstDayOfWeek, reference, displayBounds]);
 
     useEffect(() => {
+      // if the reference timezone has changed (e.g., controlled component),
+      // both ends of the displayBounds should inherit that new timestamp
       if (targetDisplayBounds) {
+        if (
+          targetDisplayBounds[0].getTime() < displayBounds[0].getTime() ||
+          targetDisplayBounds[1].getTime() > displayBounds[1].getTime()
+        ) {
+          setDisplayBounds([targetDisplayBounds[0], targetDisplayBounds[1]]);
+        }
         if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
           // only animate if the duration is within a year
           if (
             displayBounds[0].getTime() - targetDisplayBounds[0].getTime() <
-            millisecondsPerYear
+              millisecondsPerYear &&
+            daysApart(displayBounds[0], targetDisplayBounds[0])
           ) {
-            setDisplayBounds([targetDisplayBounds[0], displayBounds[1]]);
             setSlide({
               direction: 'down',
               weeks: daysApart(displayBounds[0], targetDisplayBounds[0]) / 7,
@@ -308,9 +407,9 @@ const Calendar = forwardRef(
         ) {
           if (
             targetDisplayBounds[1].getTime() - displayBounds[1].getTime() <
-            millisecondsPerYear
+              millisecondsPerYear &&
+            daysApart(targetDisplayBounds[1], displayBounds[1])
           ) {
-            setDisplayBounds([displayBounds[0], targetDisplayBounds[1]]);
             setSlide({
               direction: 'up',
               weeks: daysApart(targetDisplayBounds[1], displayBounds[1]) / 7,
@@ -360,141 +459,123 @@ const Calendar = forwardRef(
     const [focus, setFocus] = useState();
     const [active, setActive] = useState();
 
-    const changeReference = useCallback(
-      nextReference => {
-        if (betweenDates(nextReference, bounds)) {
-          setReference(nextReference);
-          if (onReference) onReference(nextReference.toISOString());
-        }
+    useEffect(() => {
+      if (initialFocus === 'days') daysRef.current.focus();
+    }, [initialFocus]);
+
+    const handleReference = useCallback(
+      (nextReference) => {
+        setReference(nextReference);
+        if (onReference) onReference(nextReference.toISOString());
       },
-      [onReference, bounds],
+      [onReference],
     );
-    const selectDate = useCallback(
-      selectedDate => {
-        let nextDates;
-        let nextDate;
-        // output date with no timestamp if that's how user provided it
-        let adjustedDate;
-        if (!range) {
-          nextDate = selectedDate;
-          if (datesProp) {
-            datesProp.forEach(d => {
-              if (!timeStamp.test(d)) {
-                adjustedDate = formatToLocalYYYYMMDD(nextDate);
-                if (d === adjustedDate) {
-                  nextDate = undefined;
-                } else {
-                  adjustedDate = undefined;
-                }
-              }
-            });
-          } else if (dateProp) {
-            if (!timeStamp.test(dateProp)) {
-              adjustedDate = formatToLocalYYYYMMDD(selectedDate);
-              if (dateProp === adjustedDate) {
-                nextDate = undefined;
-              } else {
-                adjustedDate = undefined;
-              }
-            } else {
-              adjustedDate = undefined;
-            }
-          }
+
+    const changeReference = useCallback(
+      (nextReference) => {
+        if (betweenDates(nextReference, bounds)) handleReference(nextReference);
+      },
+      [handleReference, bounds],
+    );
+
+    const changeCalendarMonth = (messageId, newMonth) => {
+      handleReference(newMonth);
+
+      announce(
+        format({
+          id: messageId,
+          messages,
+          values: {
+            date: newMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            }),
+          },
+        }),
+      );
+    };
+
+    const handleRange = useCallback(
+      (selectedDate) => {
+        let result;
+        const priorRange = normalizeRange(value, activeDate);
+        // deselect when date clicked was the start/end of the range
+        if (selectedDate.getTime() === priorRange?.[0]?.[0]?.getTime()) {
+          result = [[undefined, priorRange[0][1]]];
+          setActiveDate('start');
+        } else if (selectedDate.getTime() === priorRange?.[0]?.[1]?.getTime()) {
+          result = [[priorRange[0][0], undefined]];
+          setActiveDate('end');
         }
-        // everything down is a range
-        else if (!dates) {
-          // if user supplies date, convert this into dates
-          if (date) {
-            const priorDate = new Date(date);
-            const selDate = new Date(selectedDate);
-            if (activeDate === activeDates.start) {
-              if (selDate.getTime() > priorDate.getTime()) {
-                nextDates = [[selectedDate, undefined]];
-              } else {
-                nextDates = [[selectedDate, date]];
-              }
-              setActiveDate(activeDates.end);
-              if (activeDateProp) setActiveDate(activeDateProp);
-            } else if (activeDate === activeDates.end) {
-              if (selDate.getTime() < priorDate.getTime()) {
-                nextDates = [[selectedDate, undefined]];
-                setActiveDate(activeDates.end);
-              } else {
-                nextDates = [[date, selectedDate]];
-                setActiveDate(activeDates.start);
-              }
-              if (activeDateProp) setActiveDate(activeDateProp);
-            }
-          } else if (activeDate === activeDates.start) {
-            nextDates = [[selectedDate, undefined]];
-            setActiveDate(activeDates.end);
-          } else if (activeDate === activeDates.end) {
-            nextDates = [[undefined, selectedDate]];
+        // selecting start date
+        else if (activeDate === 'start') {
+          if (!priorRange) {
+            result = [[selectedDate, undefined]];
+          } else if (!priorRange[0][1]) {
+            result = [[selectedDate, priorRange[0][1]]];
+          } else if (selectedDate.getTime() < priorRange[0][1].getTime()) {
+            result = [[selectedDate, priorRange[0][1]]];
+          } else if (selectedDate.getTime() > priorRange[0][1].getTime()) {
+            result = [[selectedDate, undefined]];
           }
-          if (activeDateProp) setActiveDate(activeDateProp);
-        } else {
-          // have dates
-          const priorDates = dates[0].map(d => new Date(d));
-          const selDate = new Date(selectedDate);
-          if (selDate.getTime() === priorDates[0].getTime()) {
-            nextDates = [[undefined, dates[0][1]]];
-            setActiveDate(activeDates.start);
-          } else if (selDate.getTime() === priorDates[1].getTime()) {
-            nextDates = [[dates[0][0], undefined]];
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.start) {
-            if (selDate.getTime() > priorDates[1].getTime()) {
-              nextDates = [[selectedDate, undefined]];
-            } else {
-              nextDates = [[selectedDate, dates[0][1]]];
-            }
-            setActiveDate(activeDates.end);
-            if (activeDateProp) setActiveDate(activeDateProp);
-          } else if (activeDate === activeDates.end) {
-            if (selDate.getTime() < priorDates[0].getTime()) {
-              nextDates = [[selectedDate, undefined]];
-              setActiveDate(activeDates.end);
-            } else {
-              nextDates = [[dates[0][0], selectedDate]];
-              setActiveDate(activeDates.start);
-            }
-            if (activeDateProp) setActiveDate(activeDateProp);
-          }
-          // cleanup
-          if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
+          setActiveDate('end');
+        }
+        // selecting end date
+        else if (!priorRange) {
+          result = [[undefined, selectedDate]];
+          setActiveDate('start');
+        } else if (selectedDate.getTime() < priorRange[0][0].getTime()) {
+          result = [[selectedDate, undefined]];
+          setActiveDate('end');
+        } else if (selectedDate.getTime() > priorRange[0][0].getTime()) {
+          result = [[priorRange[0][0], selectedDate]];
+          setActiveDate('start');
         }
 
-        setDates(nextDates);
-        if (!dates) setDate(nextDate);
-        setActive(new Date(selectedDate));
-        if (onSelect) {
-          let adjustedDates;
-          if (
-            nextDates &&
-            Array.isArray(nextDates[0]) &&
-            (!nextDates[0][0] || !nextDates[0][1]) &&
-            range === true
-          ) {
-            // return string for backwards compatibility
-            [adjustedDates] = nextDates[0].filter(d => d);
+        // If no dates selected, always return undefined; else format
+        // result according to specified range value.
+        if (result[0].includes(undefined)) {
+          if (range === 'array') {
+            result = !result[0][0] && !result[0][1] ? undefined : result;
           } else {
-            adjustedDates = nextDates;
+            result = result[0].find((d) => d !== undefined);
           }
-          onSelect(adjustedDates || adjustedDate || nextDate);
+        }
+        setValue(result);
+        return result;
+      },
+      [activeDate, value, range],
+    );
+
+    const selectDate = useCallback(
+      (selectedDate) => {
+        let nextValue;
+
+        if (range || Array.isArray(value?.[0])) {
+          nextValue = handleRange(selectedDate);
+        } else {
+          nextValue = selectedDate;
+        }
+
+        if (onSelect) {
+          nextValue = normalizeOutput(nextValue, outputFormat);
+          onSelect(nextValue);
         }
       },
-      [
-        activeDate,
-        activeDateProp,
-        date,
-        dateProp,
-        dates,
-        datesProp,
-        onSelect,
-        range,
-      ],
+      [handleRange, onSelect, outputFormat, range, value],
     );
+
+    const onClick = (selectedDate) => {
+      selectDate(selectedDate);
+      announce(
+        `Selected ${getLocaleString(selectedDate, locale)}`,
+        'assertive',
+      );
+      // Chrome moves the focus indicator to this button. Set
+      // the focus to the grid of days instead.
+      daysRef.current.focus();
+      setActive(selectedDate);
+    };
 
     const renderCalendarHeader = () => {
       const PreviousIcon =
@@ -507,44 +588,79 @@ const Calendar = forwardRef(
           ? theme.calendar.icons.small.next
           : theme.calendar.icons.next;
 
+      const monthAndYear = reference.toLocaleDateString(locale, {
+        month: 'long',
+        year: 'numeric',
+      });
+
       return (
         <Box direction="row" justify="between" align="center">
-          <Box flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
-            <Heading
-              level={
-                size === 'small'
-                  ? (theme.calendar.heading && theme.calendar.heading.level) ||
-                    4
-                  : ((theme.calendar.heading && theme.calendar.heading.level) ||
-                      4) - 1
-              }
-              size={size}
-              margin="none"
-            >
-              {reference.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
-              })}
-            </Heading>
-          </Box>
+          <Header flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
+            {theme.calendar[size]?.title ? (
+              <Text {...theme.calendar[size].title}>{monthAndYear}</Text>
+            ) : (
+              // theme.calendar.heading.level should be removed in v3 of grommet
+              // theme.calendar[size].title should be used instead
+              <Heading
+                level={
+                  size === 'small'
+                    ? (theme.calendar.heading &&
+                        theme.calendar.heading.level) ||
+                      4
+                    : ((theme.calendar.heading &&
+                        theme.calendar.heading.level) ||
+                        4) - 1
+                }
+                size={size}
+                margin="none"
+                overflowWrap="normal"
+              >
+                {monthAndYear}
+              </Heading>
+            )}
+          </Header>
           <Box flex={false} direction="row" align="center">
             <Button
-              a11yTitle={previousMonth.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
+              a11yTitle={format({
+                id: 'calendar.previous',
+                messages,
+                values: {
+                  date: previousMonth.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  }),
+                },
               })}
               icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
-              disabled={!betweenDates(previousMonth, bounds)}
-              onClick={() => changeReference(previousMonth)}
+              disabled={disabledCalendarPreviousMonthButton(
+                previousMonth,
+                reference,
+                bounds,
+              )}
+              onClick={() =>
+                changeCalendarMonth('calendar.previousMove', previousMonth)
+              }
             />
             <Button
-              a11yTitle={nextMonth.toLocaleDateString(locale, {
-                month: 'long',
-                year: 'numeric',
+              a11yTitle={format({
+                id: 'calendar.next',
+                messages,
+                values: {
+                  date: nextMonth.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  }),
+                },
               })}
               icon={<NextIcon size={size !== 'small' ? size : undefined} />}
-              disabled={!betweenDates(nextMonth, bounds)}
-              onClick={() => changeReference(nextMonth)}
+              disabled={disabledCalendarNextMonthButton(
+                nextMonth,
+                reference,
+                bounds,
+              )}
+              onClick={() =>
+                changeCalendarMonth('calendar.nextMove', nextMonth)
+              }
             />
           </Box>
         </Box>
@@ -557,6 +673,7 @@ const Calendar = forwardRef(
       while (days.length < 7) {
         days.push(
           <StyledDayContainer
+            role="gridcell"
             key={days.length}
             sizeProp={size}
             fillContainer={fill}
@@ -568,19 +685,20 @@ const Calendar = forwardRef(
         );
         day = addDays(day, 1);
       }
-      return <StyledWeek>{days}</StyledWeek>;
+      return <StyledWeek role="row">{days}</StyledWeek>;
     };
 
     const weeks = [];
     let day = new Date(displayBounds[0]);
     let days;
     let firstDayInMonth;
+    let blankWeek = false;
 
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
           weeks.push(
-            <StyledWeek key={day.getTime()} fillContainer={fill}>
+            <StyledWeek role="row" key={day.getTime()} fillContainer={fill}>
               {days}
             </StyledWeek>,
           );
@@ -599,8 +717,17 @@ const Calendar = forwardRef(
             <StyledDay sizeProp={size} fillContainer={fill} />
           </StyledDayContainer>,
         );
+
+        if (
+          weeks.length === 5 &&
+          /* If the length days array is less than the current getDate()
+          we know that all days in the array are from the next month. */
+          days.length < day.getDate()
+        ) {
+          blankWeek = true;
+        }
       } else if (
-        /* Do not show adjacent days in 6th row if all days 
+        /* Do not show adjacent days in 6th row if all days
         fall in the next month */
         showAdjacentDays === 'trim' &&
         otherMonth &&
@@ -609,6 +736,7 @@ const Calendar = forwardRef(
         we know that all days in the array are from the next month. */
         days.length < day.getDate()
       ) {
+        blankWeek = true;
         days.push(
           <StyledDayContainer
             key={day.getTime()}
@@ -619,25 +747,29 @@ const Calendar = forwardRef(
           </StyledDayContainer>,
         );
       } else {
-        const dateString = day.toISOString();
-        // this.dayRefs[dateString] = React.createRef();
+        const dateObject = day;
+        // this.dayRefs[dateObject] = React.createRef();
         let selected = false;
         let inRange = false;
 
-        const selectedState = withinDates(day, date || dates);
+        const selectedState = withinDates(
+          day,
+          range ? normalizeRange(value, activeDate) : value,
+        );
         if (selectedState === 2) {
           selected = true;
         } else if (selectedState === 1) {
           inRange = true;
         }
         const dayDisabled =
-          withinDates(day, disabled) || (bounds && !betweenDates(day, bounds));
+          withinDates(day, normalizeInput(disabled)) ||
+          (bounds && !betweenDates(day, normalizeInput(bounds)));
         if (
           !firstDayInMonth &&
           !dayDisabled &&
           day.getMonth() === reference.getMonth()
         ) {
-          firstDayInMonth = dateString;
+          firstDayInMonth = dateObject;
         }
 
         if (!children) {
@@ -648,13 +780,8 @@ const Calendar = forwardRef(
                 a11yTitle: day.toDateString(),
                 active: active && active.getTime() === day.getTime(),
                 disabled: dayDisabled && !!dayDisabled,
-                onClick: () => {
-                  selectDate(dateString);
-                  // Chrome moves the focus indicator to this button. Set
-                  // the focus to the grid of days instead.
-                  daysRef.current.focus();
-                },
-                onMouseOver: () => setActive(new Date(dateString)),
+                onClick: () => onClick(dateObject),
+                onMouseOver: () => setActive(dateObject),
                 onMouseOut: () => setActive(undefined),
               }}
               isInRange={inRange}
@@ -676,13 +803,8 @@ const Calendar = forwardRef(
                       a11yTitle: day.toDateString(),
                       active: active && active.getTime() === day.getTime(),
                       disabled: dayDisabled && !!dayDisabled,
-                      onClick: () => {
-                        selectDate(dateString);
-                        // Chrome moves the focus indicator to this button. Set
-                        // the focus to the grid of days instead.
-                        daysRef.current.focus();
-                      },
-                      onMouseOver: () => setActive(new Date(dateString)),
+                      onClick: () => onClick(dateObject),
+                      onMouseOver: () => setActive(dateObject),
                       onMouseOut: () => setActive(undefined),
                     }
                   : null
@@ -700,11 +822,16 @@ const Calendar = forwardRef(
           );
         }
       }
-
       day = addDays(day, 1);
     }
     weeks.push(
-      <StyledWeek key={day.getTime()} fillContainer={fill}>
+      <StyledWeek
+        // if a week contains only blank days, for screen reader accessibility
+        // we don't want to set role="row"
+        role={!blankWeek ? 'row' : undefined}
+        key={day.getTime()}
+        fillContainer={fill}
+      >
         {days}
       </StyledWeek>,
     );
@@ -716,39 +843,87 @@ const Calendar = forwardRef(
             ? header({
                 date: reference,
                 locale,
-                onPreviousMonth: () => changeReference(previousMonth),
-                onNextMonth: () => changeReference(nextMonth),
+                onPreviousMonth: () => {
+                  changeReference(previousMonth);
+                  announce(
+                    format({
+                      id: 'calendar.previous',
+                      messages,
+                      values: {
+                        date: previousMonth.toLocaleDateString(locale, {
+                          month: 'long',
+                          year: 'numeric',
+                        }),
+                      },
+                    }),
+                  );
+                },
+                onNextMonth: () => {
+                  changeReference(nextMonth);
+                  announce(
+                    format({
+                      id: 'calendar.next',
+                      messages,
+                      values: {
+                        date: nextMonth.toLocaleDateString(locale, {
+                          month: 'long',
+                          year: 'numeric',
+                        }),
+                      },
+                    }),
+                  );
+                },
                 previousInBound: betweenDates(previousMonth, bounds),
                 nextInBound: betweenDates(nextMonth, bounds),
               })
             : renderCalendarHeader(previousMonth, nextMonth)}
           {daysOfWeek && renderDaysOfWeek()}
           <Keyboard
-            onEnter={() => selectDate(active.toISOString())}
-            onUp={event => {
+            onEnter={() => (active !== undefined ? onClick(active) : undefined)}
+            onUp={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, -7));
+              if (!betweenDates(addDays(active, -7), displayBounds)) {
+                changeReference(addDays(active, -7));
+              }
             }}
-            onDown={event => {
+            onDown={(event) => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
               setActive(addDays(active, 7));
+              if (!betweenDates(addDays(active, 7), displayBounds)) {
+                changeReference(active);
+              }
             }}
-            onLeft={() => active && setActive(addDays(active, -1))}
-            onRight={() => active && setActive(addDays(active, 1))}
+            onLeft={() => {
+              setActive(addDays(active, -1));
+              if (!betweenDates(addDays(active, -1), displayBounds)) {
+                changeReference(active);
+              }
+            }}
+            onRight={() => {
+              setActive(addDays(active, 1));
+              if (!betweenDates(addDays(active, 2), displayBounds)) {
+                changeReference(active);
+              }
+            }}
           >
             <StyledWeeksContainer
+              tabIndex={0}
+              role="grid"
+              aria-label={`${reference.toLocaleDateString(locale, {
+                month: 'long',
+                year: 'numeric',
+              })}; ${currentlySelectedString(value, locale)}`}
               ref={daysRef}
               sizeProp={size}
               fillContainer={fill}
-              tabIndex={0}
               focus={focus}
               onFocus={() => {
                 setFocus(true);
-                if (date && betweenDates(new Date(date), displayBounds)) {
-                  setActive(new Date(date));
-                } else {
+                // caller focused onto Calendar via keyboard
+                if (!mouseDown) {
                   setActive(new Date(firstDayInMonth));
                 }
               }}
@@ -769,12 +944,6 @@ const Calendar = forwardRef(
 );
 
 Calendar.displayName = 'Calendar';
+Calendar.propTypes = CalendarPropTypes;
 
-let CalendarDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CalendarDoc = require('./doc').doc(Calendar);
-}
-const CalendarWrapper = CalendarDoc || Calendar;
-
-export { CalendarWrapper as Calendar };
+export { Calendar };

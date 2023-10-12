@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox } from 'grommet';
 
 const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
   const [checked, setChecked] = useState(!!checkedProp);
-  const onChange = event => setChecked(event.target.checked);
+  const onChange = (event) => setChecked(event.target.checked);
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <CheckBox {...rest} checked={checked} onChange={onChange} />
-      </Box>
-    </Grommet>
+    <Box align="center" pad="large">
+      <CheckBox {...rest} checked={checked} onChange={onChange} />
+    </Box>
   );
 };
 
-export const NoLabel = () => <SimpleCheckBox />;
+export const NoLabel = () => (
+  <SimpleCheckBox a11yTitle="Checkbox without a label" />
+);
 
 NoLabel.storyName = 'No label';
 

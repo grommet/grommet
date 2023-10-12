@@ -4,6 +4,7 @@ import { A11yTitleType, PadType } from '../../utils';
 export interface CheckBoxProps {
   a11yTitle?: A11yTitleType;
   checked?: boolean;
+  children?: React.ReactNode | Function;
   disabled?: boolean;
   fill?: boolean;
   id?: string;
@@ -15,7 +16,7 @@ export interface CheckBoxProps {
   indeterminate?: boolean;
 }
 
-type inputType = JSX.IntrinsicElements['input'];
+type inputType = Omit<JSX.IntrinsicElements['input'], 'children'>;
 
 export interface CheckBoxExtendedProps extends CheckBoxProps, inputType {}
 

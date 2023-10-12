@@ -1,25 +1,24 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import styled from 'styled-components';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { axe } from 'jest-axe';
-import { cleanup, render } from '@testing-library/react';
 import { Alert, New, StatusInfo } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Form } from '../../Form';
+import { CheckBox } from '../../CheckBox';
 import { FormField } from '..';
 import { TextInput } from '../../TextInput';
+import { TextArea } from '../../TextArea';
 
 const CustomFormField = styled(FormField)`
   font-size: 40px;
 `;
 
 describe('FormField', () => {
-  afterEach(cleanup);
-
   test(`should have no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
@@ -32,7 +31,7 @@ describe('FormField', () => {
   });
 
   test('default', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField />
         <FormField>
@@ -40,101 +39,92 @@ describe('FormField', () => {
         </FormField>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('label', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField label="test label" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('help', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField help="test help" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('error', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField error="test error" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('info', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField info="test info" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('htmlFor', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField htmlFor="test-id" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('margin', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField margin="medium" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('empty margin', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField margin="none" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField pad />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('abut', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet
         theme={{
           formField: {
@@ -157,13 +147,12 @@ describe('FormField', () => {
         <FormField htmlFor="test-id" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('abut with margin', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet
         theme={{
           formField: {
@@ -186,24 +175,22 @@ describe('FormField', () => {
         <FormField margin="medium" htmlFor="test-id" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('custom formfield', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <CustomFormField htmlFor="test-id" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('disabled', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField disabled /> {/* don't use FormField without Form */}
         <Form>
@@ -211,13 +198,12 @@ describe('FormField', () => {
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('required', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <FormField required /> {/* don't use FormField without Form */}
         <Form>
@@ -225,13 +211,12 @@ describe('FormField', () => {
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('custom label', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet
         theme={{
           formField: {
@@ -249,13 +234,12 @@ describe('FormField', () => {
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('disabled with custom label', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet
         theme={{
           formField: {
@@ -278,13 +262,12 @@ describe('FormField', () => {
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad with border undefined', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet
         theme={{
           formField: {
@@ -300,13 +283,12 @@ describe('FormField', () => {
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('custom input margin', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet
         theme={{
           formField: {
@@ -321,13 +303,12 @@ describe('FormField', () => {
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('contentProps', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Form>
           <FormField
@@ -339,13 +320,12 @@ describe('FormField', () => {
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('custom error and info icon and container', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet
         theme={{
           formField: {
@@ -378,9 +358,8 @@ describe('FormField', () => {
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    component.unmount();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('should render asterisk when requiredIndicator === true', () => {
@@ -403,7 +382,7 @@ describe('FormField', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should render custom indicator when requiredIndicator is 
+  test(`should render custom indicator when requiredIndicator is
   element`, () => {
     const { container } = render(
       <Grommet
@@ -422,5 +401,63 @@ describe('FormField', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should not render asterisk when required.indicator === false', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              requiredIndicator: true,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" required={{ indicator: false }} />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('checkbox pad is defined in formfield', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            checkBox: {
+              pad: {
+                horizontal: 'small',
+                vertical: 'xsmall',
+              },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label">
+            <CheckBox label="checkbox with pad" />
+          </FormField>
+          <CheckBox label="checkbox without pad" />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Field with autoFocus', () => {
+    const mockFocus = jest.fn();
+    render(
+      <Grommet>
+        <FormField label="Label" htmlFor="select">
+          <TextArea onFocus={mockFocus} autoFocus />
+        </FormField>
+      </Grommet>,
+    );
+    expect(mockFocus).toHaveBeenCalledTimes(1);
   });
 });

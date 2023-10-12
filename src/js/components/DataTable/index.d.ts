@@ -8,9 +8,15 @@ import {
   PadType,
   BorderType,
 } from '../../utils';
+import { BoxProps } from '../Box';
 import { PaginationType } from '../Pagination';
 
-type Sections<TBody, THeader = TBody, TFooter = TBody, TPinned = TBody> = {
+export type Sections<
+  TBody,
+  THeader = TBody,
+  TFooter = TBody,
+  TPinned = TBody,
+> = {
   header?: THeader;
   body?: TBody;
   footer?: TFooter;
@@ -36,6 +42,8 @@ export type MouseClick<TRowType> = React.MouseEvent<HTMLTableRowElement> & {
 
 export type KeyPress<TRowType> = React.KeyboardEvent & { datum: TRowType };
 
+type VerticalAlignType = 'middle' | 'top' | 'bottom';
+
 export interface ColumnConfig<TRowType> {
   align?: 'center' | 'start' | 'end';
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
@@ -51,7 +59,16 @@ export interface ColumnConfig<TRowType> {
   sortable?: boolean;
   size?: ColumnSizeType | string;
   units?: string;
-  verticalAlign?: 'middle' | 'top' | 'bottom';
+  verticalAlign?: VerticalAlignType;
+}
+
+interface SortDefinition {
+  property: string;
+  direction: 'asc' | 'desc';
+}
+
+export interface SortType extends SortDefinition {
+  external?: boolean;
 }
 
 export interface DataTableProps<TRowType = any> {
@@ -59,8 +76,10 @@ export interface DataTableProps<TRowType = any> {
 
   // Appearance
   alignSelf?: AlignSelfType;
+  allowSelectAll?: boolean;
   background?:
     | BackgroundType
+    | BackgroundType[]
     | Sections<BackgroundType | string[], BackgroundType, BackgroundType>;
   border?: BorderType | Sections<BorderType>;
   columns?: ColumnConfig<TRowType>[];
@@ -68,7 +87,7 @@ export interface DataTableProps<TRowType = any> {
   gridArea?: GridAreaType;
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;
-  paginate?: boolean | PaginationType;
+  paginate?: boolean | PaginationType | BoxProps;
   pin?: boolean | 'header' | 'footer';
   placeholder?: string | React.ReactNode;
   resizeable?: boolean;
@@ -80,35 +99,58 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
-  rowDetails?: React.ReactNode;
+  rowDetails?: (row: TRowType) => React.ReactNode;
+  show?: number | { page?: number };
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
   data?: TRowType[];
+  disabled?: (string | number)[];
   groupBy?:
     | string
     | {
-        property: string;
-        expand: Array<string>;
-        onExpand: (expandedKeys: string[]) => void;
+        property?: string;
+        expand?: Array<string>;
+        expandable?: Array<string>;
+        select?: { [key: string]: 'all' | 'some' | 'none' };
+        onExpand?: (expandedKeys: string[]) => void;
+        onSelect?: (select: (string | number)[], datum: TRowType) => void;
       };
   primaryKey?: string | boolean;
   select?: (string | number)[];
-  sort?: { property: string; direction: 'asc' | 'desc'; external?: boolean };
+  sort?: SortType;
   sortable?: boolean;
   step?: number;
 
   // Events
-  onClickRow?: (event: MouseClick<TRowType> | KeyPress<TRowType>) => void;
+  onClickRow?:
+    | 'select'
+    | ((event: MouseClick<TRowType> | KeyPress<TRowType>) => void);
   onMore?: () => void;
-  onSearch?: (search: string) => void;
-  onSelect?: (select: (string | number)[]) => void;
-  onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
+  onSearch?: (search: object) => void;
+  onSelect?: (select: (string | number)[], datum: TRowType) => void;
+  onSort?: (sort: SortDefinition) => void;
+  onUpdate?: (datatableState: {
+    sort?: SortDefinition;
+    expanded?: Array<string>;
+    show: number;
+    count: number;
+  }) => void;
+  verticalAlign?:
+    | VerticalAlignType
+    | {
+        header?: VerticalAlignType;
+        body?: VerticalAlignType;
+        footer?: VerticalAlignType;
+      };
 }
 
 export interface DataTableExtendedProps<TRowType = any>
   extends DataTableProps<TRowType>,
-    Omit<JSX.IntrinsicElements['table'], 'onSelect' | 'placeholder'> {}
+    Omit<
+      JSX.IntrinsicElements['table'],
+      'onSelect' | 'placeholder' | 'border'
+    > {}
 
 declare class DataTable<TRowType = any> extends React.Component<
   DataTableExtendedProps<TRowType>

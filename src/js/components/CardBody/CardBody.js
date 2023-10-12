@@ -9,11 +9,4 @@ const CardBody = ({ ...rest }) => {
   return <Box flex {...theme.card.body} {...rest} />;
 };
 
-let CardBodyDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CardBodyDoc = require('./doc').doc(CardBody);
-}
-const CardBodyWrapper = CardBodyDoc || CardBody;
-
-export { CardBodyWrapper as CardBody };
+export { CardBody };

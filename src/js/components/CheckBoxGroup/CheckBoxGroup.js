@@ -4,12 +4,16 @@ import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
 import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
+import { CheckBoxGroupPropTypes } from './propTypes';
 
-export const CheckBoxGroup = forwardRef(
+const CheckBoxGroup = forwardRef(
   (
     {
+      children,
+      defaultValue,
       value: valueProp,
       disabled: disabledProp,
+      focusIndicator = true,
       gap,
       labelKey,
       valueKey,
@@ -24,7 +28,7 @@ export const CheckBoxGroup = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // In case option is a string, normalize it to be an object
-    const options = optionsProp.map(option =>
+    const options = optionsProp.map((option) =>
       typeof option === 'string'
         ? {
             disabled: disabledProp,
@@ -35,7 +39,11 @@ export const CheckBoxGroup = forwardRef(
     );
 
     // 'value' is an array of checked valueKeys
-    const [value, setValue] = formContext.useFormInput(name, valueProp, []);
+    const [value, setValue] = formContext.useFormInput({
+      name,
+      value: valueProp,
+      initialValue: defaultValue || [],
+    });
 
     // Logic is necessary to maintain a proper data structure for Form logic
     const onCheckBoxChange = (event, optionValue, option) => {
@@ -70,7 +78,7 @@ export const CheckBoxGroup = forwardRef(
         }
         {...rest}
       >
-        {options.map(option => {
+        {options.map((option, index) => {
           const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
           const valueOption = valueKey ? option[valueKey] : optionValue;
@@ -92,11 +100,19 @@ export const CheckBoxGroup = forwardRef(
               {...optionProps}
               disabled={disabled}
               checked={checked}
+              // when contained in a FormField, focusIndicator = false,
+              // so that the FormField has focus style. However, we still
+              // need to visually indicate when a CheckBox is active.
+              // In CheckBox, if focus = true but focusIndicator = false,
+              // we will apply the hover treament.
+              focusIndicator={focusIndicator}
               label={label}
-              onChange={event =>
+              onChange={(event) =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }
-            />
+            >
+              {children ? (state) => children(options[index], state) : null}
+            </CheckBox>
           );
         })}
       </StyledCheckBoxGroup>
@@ -105,12 +121,6 @@ export const CheckBoxGroup = forwardRef(
 );
 
 CheckBoxGroup.displayName = 'CheckBoxGroup';
+CheckBoxGroup.propTypes = CheckBoxGroupPropTypes;
 
-let CheckBoxGroupDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CheckBoxGroupDoc = require('./doc').doc(CheckBoxGroup);
-}
-const RadioButtonGroupWrapper = CheckBoxGroupDoc || CheckBoxGroup;
-
-export { RadioButtonGroupWrapper as RadioButtonGroup };
+export { CheckBoxGroup };

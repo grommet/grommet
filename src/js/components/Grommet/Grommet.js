@@ -18,6 +18,11 @@ import {
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 import { RootsContext } from '../../contexts/RootsContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
+import { format, MessageContext } from '../../contexts/MessageContext';
+import defaultMessages from '../../languages/default.json';
+import { GrommetPropTypes } from './propTypes';
+import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -44,18 +49,22 @@ const deviceResponsive = (userAgent, theme) => {
   return undefined;
 };
 
+const defaultOptions = {};
+
 const Grommet = forwardRef((props, ref) => {
   const {
     children,
     full,
     containerTarget = typeof document === 'object' ? document.body : undefined,
     theme: themeProp,
+    options = defaultOptions,
+    messages: messagesProp,
+    onAnalytics,
     ...rest
   } = props;
-
   const { background, dir, themeMode, userAgent } = props;
-
   const [stateResponsive, setResponsive] = useState();
+  const [roots, setRoots] = useState([]);
 
   const theme = useMemo(() => {
     const nextTheme = deepMerge(baseTheme, themeProp || {});
@@ -77,6 +86,15 @@ const Grommet = forwardRef((props, ref) => {
     } = nextTheme.global;
 
     nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
+
+    if (
+      themeMode === 'auto' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      nextTheme.dark = true;
+    }
+
     const color = normalizeColor(background || themeBackground, nextTheme);
     nextTheme.dark = backgroundIsDark(color, nextTheme);
     nextTheme.baseBackground = background || themeBackground;
@@ -90,6 +108,24 @@ const Grommet = forwardRef((props, ref) => {
 
     return nextTheme;
   }, [background, dir, themeMode, themeProp]);
+
+  const messages = useMemo(() => {
+    // combine the passed in messages, if any, with the default
+    // messages and format function.
+    const nextMessages = deepMerge(
+      defaultMessages,
+      messagesProp?.messages || {},
+    );
+    return {
+      messages: nextMessages,
+      format: (opts) => {
+        const message = messagesProp?.format && messagesProp.format(opts);
+        return typeof message !== 'undefined'
+          ? message
+          : format(opts, nextMessages);
+      },
+    };
+  }, [messagesProp]);
 
   useEffect(() => {
     const onResize = () => {
@@ -109,15 +145,25 @@ const Grommet = forwardRef((props, ref) => {
 
   const grommetRef = useForwardedRef(ref);
 
+  useEffect(() => {
+    if (grommetRef.current) setRoots([grommetRef.current]);
+  }, [grommetRef]);
+
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <RootsContext.Provider value={[grommetRef.current]}>
+        <RootsContext.Provider value={roots}>
           <ContainerTargetContext.Provider value={containerTarget}>
-            <StyledGrommet full={full} {...rest} ref={grommetRef}>
-              {children}
-            </StyledGrommet>
-            {full && <FullGlobalStyle />}
+            <OptionsContext.Provider value={options}>
+              <MessageContext.Provider value={messages}>
+                <AnalyticsProvider onAnalytics={onAnalytics}>
+                  <StyledGrommet full={full} {...rest} ref={grommetRef}>
+                    {children}
+                  </StyledGrommet>
+                  {full && <FullGlobalStyle />}
+                </AnalyticsProvider>
+              </MessageContext.Provider>
+            </OptionsContext.Provider>
           </ContainerTargetContext.Provider>
         </RootsContext.Provider>
       </ResponsiveContext.Provider>
@@ -126,12 +172,6 @@ const Grommet = forwardRef((props, ref) => {
 });
 
 Grommet.displayName = 'Grommet';
+Grommet.propTypes = GrommetPropTypes;
 
-let GrommetDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  GrommetDoc = require('./doc').doc(Grommet);
-}
-const GrommetWrapper = GrommetDoc || Grommet;
-
-export { GrommetWrapper as Grommet };
+export { Grommet };

@@ -1,26 +1,9 @@
 import React, { useReducer, useEffect } from 'react';
 
-import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
+import { Box, Diagram, Stack, Text } from 'grommet';
 import { Diamond } from 'grommet-icons';
-import { deepMerge } from 'grommet/utils';
 
 import { data } from './data';
-
-const customTheme = deepMerge(grommet, {
-  diagram: {
-    extend: `@keyframes
-  example {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  path {
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
-    animation: example 3s linear forwards;
-  }`,
-  },
-});
 
 const connection = (fromTarget, toTarget, { ...rest } = {}) => ({
   fromTarget,
@@ -66,7 +49,7 @@ const Container = ({ node, index }) => (
 );
 
 export const Animated = () => {
-  const reducer = draw => !draw;
+  const reducer = (draw) => !draw;
 
   const [draw, toogleDraw] = useReducer(reducer, true);
 
@@ -86,31 +69,35 @@ export const Animated = () => {
   }
 
   return (
-    <Grommet theme={customTheme}>
-      <Box align="center">
-        <Box pad="large">
-          <Stack>
-            <Box>
-              <Box alignSelf="center" margin={{ bottom: 'large' }}>
-                <Container node={data[0]} index={1} />
-                <Box pad="small" />
-                <Box
-                  id="4"
-                  width="xsmall"
-                  margin={{ bottom: 'large', top: 'xlarge' }}
-                />
-              </Box>
-              <Box direction="row" gap="xlarge">
-                {[2, 3].map(id => (
-                  <Container key={id} node={data[id - 1]} index={id} />
-                ))}
-              </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box align="center">
+      <Box pad="large">
+        <Stack>
+          <Box>
+            <Box alignSelf="center" margin={{ bottom: 'large' }}>
+              <Container node={data[0]} index={1} />
+              <Box pad="small" />
+              <Box
+                id="4"
+                width="xsmall"
+                margin={{ bottom: 'large', top: 'xlarge' }}
+              />
             </Box>
-            <Diagram connections={connections} />
-          </Stack>
-        </Box>
+            <Box direction="row" gap="xlarge">
+              {[2, 3].map((id) => (
+                <Container key={id} node={data[id - 1]} index={id} />
+              ))}
+            </Box>
+          </Box>
+          <Diagram
+            animation={{ type: 'draw', duration: 3000 }}
+            connections={connections}
+          />
+        </Stack>
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 

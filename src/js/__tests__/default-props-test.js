@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import styled from 'styled-components';
 
 import 'jest-styled-components';
@@ -7,56 +7,50 @@ import 'jest-styled-components';
 import { grommet, defaultProps, extendDefaultTheme, Box, Grommet } from '..';
 
 const CustomBox = styled.div`
-  background: ${props => props.theme.global.colors.brand};
+  background: ${(props) => props.theme.global.colors.brand};
 `;
 CustomBox.defaultProps = {};
 Object.setPrototypeOf(CustomBox.defaultProps, defaultProps);
 
 test('default theme is used', () => {
-  const component = renderer.create(<Box background="brand" />);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-  component.unmount();
+  const { container } = render(<Box background="brand" />);
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('extends default theme', () => {
   extendDefaultTheme({ global: { colors: { brand: '#ff0000' } } });
-  const component = renderer.create(<Box background="brand" />);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-  component.unmount();
+  const { container } = render(<Box background="brand" />);
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('extends default theme twice', () => {
   extendDefaultTheme({ global: { colors: { brand: '#ff0000' } } });
-  let component = renderer.create(<Box background="brand" />);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { rerender, asFragment } = render(<Box background="brand" />);
+
+  expect(asFragment()).toMatchSnapshot();
 
   extendDefaultTheme({ global: { colors: { brand: '#0000ff' } } });
+  rerender(<Box background="brand" />);
 
-  component = renderer.create(<Box background="brand" />);
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-  component.unmount();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('uses Grommet theme instead of default', () => {
   extendDefaultTheme({ global: { colors: { brand: 'red' } } });
-  const component = renderer.create(
+  const { container } = render(
     <Grommet theme={grommet}>
       <Box background="brand" />
     </Grommet>,
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-  component.unmount();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 test('leverages default theme', () => {
   extendDefaultTheme({ global: { colors: { brand: 'red' } } });
-  const component = renderer.create(<CustomBox />);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-  component.unmount();
+  const { container } = render(<CustomBox />);
+
+  expect(container.firstChild).toMatchSnapshot();
 });

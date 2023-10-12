@@ -9,7 +9,7 @@ import {
 
 import { defaultProps } from '../../default-props';
 
-const sizeStyle = props => {
+const sizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
   const width = props.fillContainer
     ? '100%'
@@ -19,20 +19,20 @@ const sizeStyle = props => {
     font-size: ${data.fontSize};
     line-height: ${data.lineHeight};
     width: ${width};
-    ${p => p.fillContainer && 'height: 100%;'}
+    ${(p) => p.fillContainer && 'height: 100%;'}
   `;
 };
 
 const StyledCalendar = styled.div`
   ${genericStyles}
-  ${props => sizeStyle(props)}
-  ${props => props.theme.calendar && props.theme.calendar.extend}
+  ${(props) => sizeStyle(props)}
+  ${(props) => props.theme.calendar && props.theme.calendar.extend}
 `;
 
 StyledCalendar.defaultProps = {};
 Object.setPrototypeOf(StyledCalendar.defaultProps, defaultProps);
 
-const weeksContainerSizeStyle = props => {
+const weeksContainerSizeStyle = (props) => {
   const height = props.fillContainer
     ? '100%'
     : `${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6}px`;
@@ -43,14 +43,14 @@ const weeksContainerSizeStyle = props => {
 };
 const StyledWeeksContainer = styled.div`
   overflow: hidden;
-  ${props => weeksContainerSizeStyle(props)}
-  ${props => props.focus && !props.plain && focusStyle()};
+  ${(props) => weeksContainerSizeStyle(props)}
+  ${(props) => props.focus && !props.plain && focusStyle()};
 `;
 
 StyledWeeksContainer.defaultProps = {};
 Object.setPrototypeOf(StyledWeeksContainer.defaultProps, defaultProps);
 
-const slideStyle = props => {
+const slideStyle = (props) => {
   const {
     slide: { direction, weeks },
     sizeProp,
@@ -81,8 +81,8 @@ const weeksSizeStyle = () => css`
 `;
 const StyledWeeks = styled.div`
   position: relative;
-  ${props => props.fillContainer && weeksSizeStyle()}
-  ${props => props.slide && slideStyle(props)};
+  ${(props) => props.fillContainer && weeksSizeStyle()}
+  ${(props) => props.slide && slideStyle(props)};
 `;
 
 StyledWeeks.defaultProps = {};
@@ -91,7 +91,7 @@ Object.setPrototypeOf(StyledWeeks.defaultProps, defaultProps);
 const StyledWeek = styled.div`
   display: flex;
   justify-content: space-between;
-  ${props => props.fillContainer && 'flex: 1;'}
+  ${(props) => props.fillContainer && 'flex: 1;'}
 `;
 
 StyledWeek.defaultProps = {};
@@ -101,13 +101,13 @@ Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
 // widths of 7 days to equally fill 100% of the row.
 const StyledDayContainer = styled.div`
   flex: 0 1 auto;
-  ${props => props.fillContainer && 'width: 14.3%;'}
+  ${(props) => props.fillContainer && 'width: 14.3%;'}
 `;
 
 StyledDayContainer.defaultProps = {};
 Object.setPrototypeOf(StyledDayContainer.defaultProps, defaultProps);
 
-const daySizeStyle = props => {
+const daySizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
 
   return css`
@@ -120,20 +120,20 @@ const StyledDay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${props => daySizeStyle(props)}
-  ${props =>
+  ${(props) => daySizeStyle(props)}
+  ${(props) =>
     (props.isSelected && backgroundStyle('control', props.theme)) ||
     (props.inRange &&
       backgroundStyle({ color: 'control', opacity: 'weak' }, props.theme))}
-  ${props => props.otherMonth && 'opacity: 0.5;'}
-  ${props => props.isSelected && 'font-weight: bold;'}
-  ${props =>
+  ${(props) => props.otherMonth && 'opacity: 0.5;'}
+  ${(props) => props.isSelected && 'font-weight: bold;'}
+  ${(props) =>
     // when theme uses kind Buttons, since we use children for Button,
     // we have to special case how we handle disabled days here
     props.disabledProp &&
     props.theme.button.default &&
     kindPartStyles(props.theme.button.disabled, props.theme)}
-  ${props =>
+  ${(props) =>
     props.theme.calendar &&
     props.theme.calendar.day &&
     props.theme.calendar.day.extend}

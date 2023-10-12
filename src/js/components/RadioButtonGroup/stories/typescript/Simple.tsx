@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 
-import { RadioButtonGroup } from 'grommet';
+import { Box, RadioButtonGroup } from 'grommet';
 
-export const SimpleTS = () => {
+type EventWithValueProp = ChangeEvent<HTMLInputElement> & {
+  value: string | number;
+};
+
+export const Simple = () => {
   const postMethods = [
     { label: 'FTP', value: 'FTP' },
     {
@@ -16,21 +20,21 @@ export const SimpleTS = () => {
   ];
 
   // Type arguments can only be used in TypeScript files.
-  // Remove <string | object> if you are not using Typescript.
-  const [value, setValue] = useState<string | object>(postMethods[0]);
+  // Remove <string | number> if you are not using Typescript.
+  const [value, setValue] = useState<string | number>(postMethods[0].value);
 
   return (
-    <RadioButtonGroup
-      name="radio"
-      options={postMethods}
-      value={value}
-      onChange={event => setValue(event.target.value)}
-    />
+    <Box align="center" pad="large">
+      <RadioButtonGroup
+        name="radio"
+        options={postMethods}
+        value={value}
+        onChange={(event: EventWithValueProp) => setValue(event.value)}
+      />
+    </Box>
   );
 };
 
-SimpleTS.storyName = 'Simple TS';
-
 export default {
-  title: 'Input/RadioButtonGroup/Simple TS',
+  title: 'Input/RadioButtonGroup/Simple',
 };

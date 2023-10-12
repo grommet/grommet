@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnnounceContextPropTypes } from './propTypes';
 
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
@@ -29,3 +30,5 @@ export const AnnounceContext = React.createContext(
     }, timeout);
   },
 );
+
+AnnounceContext.propTypes = AnnounceContextPropTypes;

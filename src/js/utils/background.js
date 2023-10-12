@@ -1,6 +1,12 @@
 import { css } from 'styled-components';
 
-import { colorIsDark, getRGBA, normalizeColor } from './colors';
+import {
+  colorIsDark,
+  getRGBA,
+  normalizeColor,
+  canExtractRGBArray,
+  getRGBArray,
+} from './colors';
 
 // evalStyle() converts a styled-components item into a string
 const evalStyle = (arg, theme) => {
@@ -10,9 +16,10 @@ const evalStyle = (arg, theme) => {
   return arg;
 };
 
-export const normalizeBackground = (background, theme) => {
-  // If the background has a light or dark object, use that
+export const normalizeBackground = (backgroundArg, theme) => {
+  const background = theme.global.backgrounds?.[backgroundArg] || backgroundArg;
   let result = background;
+  // If the background has a light or dark object, use that
   if (background) {
     if (theme.dark && background.dark && typeof background.dark !== 'boolean') {
       result = background.dark;
@@ -25,6 +32,64 @@ export const normalizeBackground = (background, theme) => {
     }
     result = evalStyle(result, theme);
   }
+  return result;
+};
+
+const normalizeBackgroundColor = (backgroundArg, theme) => {
+  const background = backgroundArg.color || backgroundArg;
+  const result = normalizeColor(
+    // Background color may be defined by theme.global.backgrounds or
+    // theme.global.colors.
+    theme.global.backgrounds?.[background] || background,
+    theme,
+    backgroundArg.dark,
+  );
+  return result;
+};
+
+const normalizeBackgroundImage = (background, theme) => {
+  let result;
+  if (background.image) {
+    result =
+      normalizeBackground(
+        background.dark
+          ? theme.global.backgrounds?.[background.image]?.dark
+          : theme.global.backgrounds?.[background.image],
+        theme,
+      ) || background.image;
+  } else {
+    const normalized = normalizeBackground(
+      theme.global.backgrounds?.[background],
+      theme,
+    );
+    result =
+      typeof normalized === 'object'
+        ? normalizeBackgroundImage(normalized, theme)
+        : normalized;
+  }
+  return result;
+};
+
+const rotateBackground = (background, theme) => {
+  const backgroundImage = normalizeBackgroundImage(background, theme);
+  let result = backgroundImage;
+
+  if (backgroundImage.lastIndexOf('linear-gradient', 0) === 0) {
+    const regex = /\d{1,}deg\b,/gm; // Contains rotation specified in degrees. Only targets 'deg' string with a trailing comma. Do not match 'deg' string for hsl, etc..
+    result =
+      backgroundImage.lastIndexOf('deg,') >= 0
+        ? backgroundImage.replace(regex, `${background.rotate}deg,`)
+        : backgroundImage.replace(
+            'linear-gradient(',
+            `linear-gradient(${background.rotate}deg, `,
+          );
+  } else {
+    console.warn(
+      // eslint-disable-next-line max-len
+      `'background.rotate' property only supports 'background.image' containing a linear-gradient string.`,
+    );
+  }
+
   return result;
 };
 
@@ -56,7 +121,7 @@ export const backgroundIsDark = (backgroundArg, theme) => {
   return result;
 };
 
-const darkContext = backgroundColor => {
+const darkContext = (backgroundColor) => {
   const isDark = colorIsDark(backgroundColor);
   if (isDark === undefined) return undefined;
   return isDark ? 'dark' : 'light';
@@ -82,7 +147,7 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
     }
 
     if (background.color) {
-      const color = normalizeColor(background.color, theme, background.dark);
+      const color = normalizeBackgroundColor(background, theme);
       const opacity =
         background.opacity === true
           ? global.opacity.medium
@@ -98,10 +163,19 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       }
     }
   } else {
-    backgroundColor = normalizeColor(background, theme);
+    backgroundColor = normalizeBackgroundColor(background, theme);
     const shade = darkContext(backgroundColor, theme);
+    let transparent;
+
+    if (backgroundColor && canExtractRGBArray(backgroundColor)) {
+      const colorArray = getRGBArray(backgroundColor);
+      // check if the alpha value is less than 0.5
+      if (colorArray[3] < 0.5) transparent = true;
+    }
     if (shade) {
       textColor = normalizeColor(text[shade] || text, theme, shade === 'dark');
+    } else if (transparent && text) {
+      textColor = normalizeColor(text, theme);
     } else {
       // If we can't determine the shade, we assume this isn't a simple color.
       // It could be a gradient. backgroundStyle() will take care of that case.
@@ -121,6 +195,26 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
 
   const background = normalizeBackground(backgroundArg, theme);
 
+  const [backgroundColor, textColor] = backgroundAndTextColors(
+    background,
+    textColorArg,
+    theme,
+  );
+
+  const backgroundImage = background.rotate
+    ? rotateBackground(background, theme)
+    : normalizeBackgroundImage(background, theme);
+
+  let backgroundClipStyle = '';
+  if (background.clip) {
+    backgroundClipStyle =
+      background.clip === 'text'
+        ? `-webkit-text-fill-color: transparent; 
+           -webkit-background-clip: text; 
+           background-clip: text;`
+        : `background-clip: ${background.clip};`;
+  }
+
   if (
     typeof background === 'string' &&
     background.lastIndexOf('url', 0) === 0
@@ -131,19 +225,16 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
     `;
   }
 
-  const [backgroundColor, textColor] = backgroundAndTextColors(
-    background,
-    textColorArg,
-    theme,
-  );
-
-  if (background.image) {
+  if (backgroundImage) {
     const backgroundStyles = `
       ${backgroundColor ? `background-color: ${backgroundColor};` : ''}
-      background-image: ${background.image};
-      background-repeat: ${background.repeat || 'no-repeat'};
+      background-image: ${backgroundImage};
+      background-repeat: ${
+        (typeof background === 'object' && background.repeat) || 'no-repeat'
+      };
       background-position: ${background.position || 'center center'};
       background-size: ${background.size || 'cover'};
+      ${backgroundClipStyle}
     `;
 
     // allow both background color and image, in case the image doesn't fill
@@ -164,6 +255,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
           left: 0;
           bottom: 0;
           z-index: -1;
+          border-radius: inherit;
           ${backgroundStyles}
           opacity: ${
             background.opacity === true
@@ -192,7 +284,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
 };
 
 export const activeStyle = css`
-  ${props =>
+  ${(props) =>
     backgroundStyle(
       normalizeColor(props.theme.global.active.background, props.theme),
       props.theme,
@@ -201,7 +293,7 @@ export const activeStyle = css`
 `;
 
 export const selectedStyle = css`
-  ${props =>
+  ${(props) =>
     backgroundStyle(
       normalizeColor(props.theme.global.selected.background, props.theme),
       props.theme,
@@ -224,8 +316,8 @@ export const getHoverIndicatorStyle = (hoverIndicator, theme) => {
   return css`
     ${backgroundStyle(background, theme, theme.global.hover.color)}
     ${elevation &&
-      `box-shadow: ${
-        theme.global.elevation[theme.dark ? 'dark' : 'light'][elevation]
-      };`}
+    `box-shadow: ${
+      theme.global.elevation[theme.dark ? 'dark' : 'light'][elevation]
+    };`}
   `;
 };

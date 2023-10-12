@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collapsible onClick open default 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 1;
+  overflow: visible;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    aria-hidden="false"
+    class="c1 c2"
+    open=""
+  >
+    <span
+      class="c3"
+    >
+      Example
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Collapsible onClick open default 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+>
+  <div
+    aria-hidden="true"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi Collapsible__AnimatedBox-sc-15kniua-0 cyvPwx"
+    style="max-height: 0px;"
+  >
+    <span
+      class="StyledText-sc-1sadyjn-0 lhOBjf"
+    >
+      Example
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Collapsible open 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 1;
+  overflow: visible;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    aria-hidden="false"
+    class="c1 c2"
+    open=""
+  >
+    <span
+      class="c3"
+    >
+      Example
+    </span>
+  </div>
+</div>
+`;

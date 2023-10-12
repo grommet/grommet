@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, TextInput } from 'grommet';
 
 const allSuggestions = Array(100)
   .fill()
@@ -11,33 +10,36 @@ export const Suggestions = () => {
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
   const [value, setValue] = React.useState('');
 
-  const onChange = event => {
+  const onChange = (event) => {
     const nextValue = event.target.value;
     setValue(nextValue);
     if (!nextValue) setSuggestions(allSuggestions);
     else {
       const regexp = new RegExp(`^${nextValue}`);
-      setSuggestions(allSuggestions.filter(s => regexp.test(s)));
+      setSuggestions(allSuggestions.filter((s) => regexp.test(s)));
     }
   };
 
-  const onSuggestionSelect = event => {
+  const onSuggestionSelect = (event) => {
     setValue(event.suggestion);
   };
 
   return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Box width="medium">
-          <TextInput
-            value={value}
-            onChange={onChange}
-            onSuggestionSelect={onSuggestionSelect}
-            suggestions={suggestions}
-          />
-        </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box fill align="center" justify="start" pad="large">
+      <Box width="medium">
+        <TextInput
+          id="grommet-text-combobox"
+          value={value}
+          onChange={onChange}
+          onSuggestionSelect={onSuggestionSelect}
+          suggestions={suggestions}
+          aria-label="Input Text"
+        />
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 

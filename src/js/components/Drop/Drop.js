@@ -1,4 +1,10 @@
-import React, { forwardRef, useEffect, useState, useContext } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useState,
+  useContext,
+  useRef,
+} from 'react';
 import { createPortal } from 'react-dom';
 
 import { ThemeContext } from 'styled-components';
@@ -6,10 +12,12 @@ import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
+import { DropPropTypes } from './propTypes';
 
 const Drop = forwardRef(
   (
     {
+      inline,
       restrictFocus,
       target: dropTarget, // avoid DOM leakage
       trapFocus = true,
@@ -22,9 +30,18 @@ const Drop = forwardRef(
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();
     const containerTarget = useContext(ContainerTargetContext);
-    useEffect(() => setDropContainer(getNewContainer(containerTarget)), [
-      containerTarget,
-    ]);
+    const containerChildNodesLength = useRef(null);
+    useEffect(() => {
+      // we need this condition to prevent getNewContainer to run multiple times
+      // in the event that the component gets created, destroyed, and recreated.
+      // see https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state
+      if (!containerChildNodesLength?.current) {
+        containerChildNodesLength.current = containerTarget.childNodes.length;
+        setDropContainer(
+          !inline ? getNewContainer(containerTarget) : undefined,
+        );
+      }
+    }, [containerTarget, inline]);
 
     // just a few things to clean up when the Drop is unmounted
     useEffect(
@@ -47,28 +64,26 @@ const Drop = forwardRef(
       [containerTarget, dropContainer, originalFocusedElement, restrictFocus],
     );
 
-    return dropContainer
-      ? createPortal(
-          <DropContainer
-            ref={ref}
-            dir={theme && theme.dir}
-            dropTarget={dropTarget}
-            restrictFocus={restrictFocus}
-            trapFocus={trapFocus}
-            {...rest}
-          />,
-          dropContainer,
-        )
-      : null;
+    const content = (
+      <DropContainer
+        ref={ref}
+        dir={theme && theme.dir}
+        dropTarget={dropTarget}
+        restrictFocus={restrictFocus}
+        trapFocus={trapFocus}
+        {...rest}
+      />
+    );
+
+    if (inline) return content;
+
+    if (dropContainer) return createPortal(content, dropContainer);
+
+    return null;
   },
 );
 
 Drop.displayName = 'Drop';
+Drop.propTypes = DropPropTypes;
 
-let DropDoc;
-if (process.env.NODE_ENV !== 'production') {
-  DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
-}
-const DropWrapper = DropDoc || Drop;
-
-export { DropWrapper as Drop };
+export { Drop };

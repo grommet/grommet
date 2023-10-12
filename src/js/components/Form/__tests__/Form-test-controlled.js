@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import userEvent from '@testing-library/user-event';
 
 import 'jest-styled-components';
 
-import { act, cleanup, render, fireEvent } from '@testing-library/react';
+import { act, render, fireEvent, screen } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
 import { FormField } from '../../FormField';
 import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
+import { Box } from '../../Box';
+import { Select } from '../../Select';
+import { ThumbsRating } from '../../ThumbsRating';
 
 describe('Form controlled', () => {
-  afterEach(cleanup);
-
   test('controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField name="test">
@@ -47,11 +52,38 @@ describe('Form controlled', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('custom theme', () => {
+    const customTheme = {
+      formField: {
+        survey: {
+          label: {
+            color: 'red',
+            size: 'large',
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Form kind="survey">
+          <FormField name="test" label="custom theme label">
+            <ThumbsRating name="test" />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('controlled onValidate', () => {
     const onValidate = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" required>
@@ -82,14 +114,17 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: errorMessage,
       status: 'error',
     };
 
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" validate={testRules}>
@@ -120,14 +155,17 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const infoMessage = 'One uppercase letter';
     const testRules = {
-      regexp: new RegExp('(?=.*?[A-Z])'),
+      regexp: /(?=.*?[A-Z])/,
       message: infoMessage,
       status: 'info',
     };
 
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" validate={testRules}>
@@ -159,7 +197,10 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       React.useEffect(() => setValue({ test: 'test' }), []);
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField name="test">
@@ -194,7 +235,7 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState('');
       const onChange = React.useCallback(
-        event => setValue(event.target.value),
+        (event) => setValue(event.target.value),
         [],
       );
       return (
@@ -237,7 +278,7 @@ describe('Form controlled', () => {
       const [value, setValue] = React.useState('');
       React.useEffect(() => setValue('test'), []);
       const onChange = React.useCallback(
-        event => setValue(event.target.value),
+        (event) => setValue(event.target.value),
         [],
       );
       return (
@@ -306,7 +347,10 @@ describe('Form controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField label="test" name="test" id="test" htmlFor="test" />
@@ -337,7 +381,10 @@ describe('Form controlled', () => {
     const onReset = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        (nextValue) => setValue(nextValue),
+        [],
+      );
       return (
         <Grommet>
           <Form
@@ -411,7 +458,7 @@ describe('Form controlled', () => {
         <Form
           validate="blur"
           value={value}
-          onChange={nextValue => {
+          onChange={(nextValue) => {
             const adjustedValue = { ...nextValue };
             if (!adjustedValue.toggle) delete adjustedValue.mood;
             else if (!adjustedValue.mood) adjustedValue.mood = '';
@@ -447,61 +494,772 @@ describe('Form controlled', () => {
     const toggleField = getByLabelText('toggle');
 
     // add mood
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
+    fireEvent.click(toggleField);
+
     expect(container.firstChild).toMatchSnapshot();
     const moodField = getByPlaceholderText('test mood');
 
     // focus in and out of mood, should fail validation
-    moodField.focus();
-    toggleField.focus();
+    act(() => {
+      moodField.focus();
+      toggleField.focus();
+    });
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      1,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
     // set mood, should pass validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: 'testy' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      2,
-      expect.objectContaining({ errors: {}, infos: {} }),
+    expect(onValidate).toHaveBeenLastCalledWith(
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     // clear mood, should fail validation
-    moodField.focus();
+    act(() => moodField.focus());
     fireEvent.change(moodField, { target: { value: '' } });
-    toggleField.focus();
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      3,
+    expect(onValidate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         errors: { mood: 'required' },
         infos: {},
+        valid: false,
       }),
     );
 
     // remove mood, should clear validation
-    act(() => {
-      fireEvent.click(toggleField);
-      return undefined;
-    });
-    nameField.focus();
-    toggleField.focus();
+    fireEvent.click(toggleField);
+
+    act(() => nameField.focus());
+    act(() => toggleField.focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
-    expect(onValidate).toHaveBeenNthCalledWith(
-      4,
-      expect.objectContaining({ errors: {}, infos: {} }),
+    expect(onValidate).toHaveBeenLastCalledWith(
+      expect.objectContaining({ errors: {}, infos: {}, valid: true }),
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled Array of Form Fields', () => {
+    const onSubmit = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        phones: [
+          { number: '', ext: '' },
+          { number: '', ext: '' },
+          { number: '', ext: '' },
+        ],
+      });
+      const onChange = (nextValue) => setValue(nextValue);
+      return (
+        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
+          {value.phones.length &&
+            value.phones.map((phone, idx) => (
+              <Box
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                direction="row"
+                justify="between"
+                align="center"
+              >
+                <FormField name={`phones[${idx}].number`}>
+                  <TextInput
+                    name={`phones[${idx}].number`}
+                    placeholder={`number test input ${idx + 1}`}
+                  />
+                </FormField>
+                <FormField name={`phones[${idx}].ext`}>
+                  <TextInput
+                    name={`phones[${idx}].ext`}
+                    placeholder={`ext test input ${idx + 1}`}
+                  />
+                </FormField>
+              </Box>
+            ))}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.change(getByPlaceholderText('number test input 2'), {
+      target: { value: '123456789' },
+    });
+    fireEvent.change(getByPlaceholderText('ext test input 3'), {
+      target: { value: '999' },
+    });
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          phones: [
+            { number: '', ext: '' },
+            { number: '123456789', ext: '' },
+            { number: '', ext: '999' },
+          ],
+        },
+        touched: {
+          'phones[1].number': true,
+          'phones[2].ext': true,
+        },
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled Array of Form Fields onValidate', () => {
+    const onValidate = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        test: '',
+        phones: [
+          { number: '', ext: '' },
+          { number: '', ext: '' },
+        ],
+      });
+      const onChange = (nextValue) => setValue(nextValue);
+      return (
+        <Form value={value} onChange={onChange} onValidate={onValidate}>
+          {value.phones.length &&
+            value.phones.map((phone, idx) => (
+              <Box
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                direction="row"
+                justify="between"
+                align="center"
+              >
+                <FormField name={`phones[${idx}].number`} required>
+                  <TextInput
+                    name={`phones[${idx}].number`}
+                    placeholder={`number test input ${idx + 1}`}
+                  />
+                </FormField>
+                <FormField name={`phones[${idx}].ext`}>
+                  <TextInput
+                    name={`phones[${idx}].ext`}
+                    placeholder={`ext test input ${idx + 1}`}
+                  />
+                </FormField>
+              </Box>
+            ))}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        errors: {
+          'phones[0].number': 'required',
+          'phones[1].number': 'required',
+        },
+        infos: {},
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled Array of Form Fields onValidate custom error', () => {
+    const onValidate = jest.fn();
+    const errorMessage = 'Only Numbers';
+    const testRules = {
+      regexp: /^[0-9]*$/,
+      message: errorMessage,
+      status: 'error',
+    };
+
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        test: '',
+        phones: [
+          { number: '', ext: '' },
+          { number: '', ext: '' },
+        ],
+      });
+      const onChange = (nextValue) => setValue(nextValue);
+      return (
+        <Form value={value} onChange={onChange} onValidate={onValidate}>
+          {value.phones.length &&
+            value.phones.map((phone, idx) => (
+              <Box
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                direction="row"
+                justify="between"
+                align="center"
+              >
+                <FormField name={`phones[${idx}].number`} validate={testRules}>
+                  <TextInput
+                    name={`phones[${idx}].number`}
+                    placeholder={`number test input ${idx + 1}`}
+                  />
+                </FormField>
+                <FormField name={`phones[${idx}].ext`}>
+                  <TextInput
+                    name={`phones[${idx}].ext`}
+                    placeholder={`ext test input ${idx + 1}`}
+                  />
+                </FormField>
+              </Box>
+            ))}
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.change(getByPlaceholderText('number test input 2'), {
+      target: { value: 'sadasd' },
+    });
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        errors: {
+          'phones[1].number': errorMessage,
+        },
+        infos: {},
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('validate on mount - controlled form', () => {
+    const Test = () => {
+      const [formValue, setFormValue] = useState({
+        firstName: 'J',
+        middleName: '1',
+        lastName: '',
+        title: 1,
+      });
+
+      return (
+        <Form
+          value={formValue}
+          validate="change"
+          onChange={(nextValue) => setFormValue(nextValue)}
+        >
+          <FormField
+            label="First Name"
+            htmlFor="first-name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              (firstName) => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput id="first-name" name="firstName" />
+          </FormField>
+          <FormField
+            label="Middle Name"
+            htmlFor="middle-name"
+            name="middleName"
+            validate={[
+              { regexp: /^[a-z]/i },
+              (middleName) => {
+                if (middleName && middleName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput id="middle-name" name="middleName" />
+          </FormField>
+          <FormField
+            label="Last Name"
+            htmlFor="last-name"
+            name="lastName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              (lastName) => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput id="last-name" name="lastName" />
+          </FormField>
+          <FormField
+            label="Title"
+            htmlFor="title"
+            name="title"
+            validate={[
+              { regexp: /^[a-z]/i },
+              (title) => {
+                if (title && title.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput id="title" name="title" />
+          </FormField>
+        </Form>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    // firstName triggers string length validation, but not regexp
+    expect(screen.queryAllByText('must be >1 character')).toHaveLength(1);
+    // middleName & title trigger regexp, but not string length validation
+    expect(screen.queryAllByText('invalid')).toHaveLength(2);
+    // lastName should not trigger required validation onMount
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+  });
+
+  test('validate on mount - controlled input', () => {
+    const Test = () => {
+      const [firstName, setFirstName] = useState('J');
+      const [middleName, setMiddleName] = useState('1');
+      const [lastName, setLastName] = useState('');
+      const [title, setTitle] = useState(1);
+
+      return (
+        <Form validate="change">
+          <FormField
+            label="First Name"
+            htmlFor="first-name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput
+              id="first-name"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Middle Name"
+            htmlFor="middle-name"
+            name="middleName"
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (middleName && middleName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput
+              id="middle-name"
+              name="middleName"
+              value={middleName}
+              onChange={(e) => {
+                setMiddleName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Last Name"
+            htmlFor="last-name"
+            name="lastName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput
+              id="last-name"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Title"
+            htmlFor="title"
+            name="title"
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (title && title.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput
+              id="title"
+              name="title"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
+          </FormField>
+        </Form>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    // firstName triggers string length validation, but not regexp
+    expect(screen.queryAllByText('must be >1 character')).toHaveLength(1);
+    // middleName & title trigger regexp, but not string length validation
+    expect(screen.queryAllByText('invalid')).toHaveLength(2);
+    // lastName should not trigger required validation onMount
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+  });
+
+  test('validate select with multiple selection', async () => {
+    global.scrollTo = jest.fn();
+    const Test = () => {
+      const options = ['foo', 'bar', 'baz'];
+      const [formValue, setFormValue] = useState({
+        firstName: '',
+        multiple: [],
+      });
+
+      return (
+        <Form
+          value={formValue}
+          validate="change"
+          onChange={(nextValue) => setFormValue(nextValue)}
+        >
+          <FormField
+            label="Multiple"
+            name="multiple"
+            htmlFor="multiple"
+            required
+            validate={[
+              (value) => {
+                if (value.length === 1) {
+                  return {
+                    message: 'multiple selection error',
+                    status: 'error',
+                  };
+                }
+                return undefined;
+              },
+            ]}
+          >
+            <Select
+              data-testid="multiple"
+              multiple
+              size="medium"
+              name="multiple"
+              id="multiple"
+              placeholder="multiple"
+              options={options}
+              closeOnChange={false}
+            />
+          </FormField>
+
+          <FormField
+            label="First Name"
+            htmlFor="first-name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              (firstName) => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+          >
+            <TextInput
+              id="first-name"
+              name="firstName"
+              placeholder="firstName"
+            />
+          </FormField>
+        </Form>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    userEvent.click(screen.getByTestId('multiple'));
+    expect(await screen.findByRole('listbox')).toBeTruthy();
+    userEvent.click(screen.getByRole('option', { name: 'foo' }));
+    expect(await screen.findByText('multiple selection error')).toBeTruthy();
+  });
+
+  test('validate on mount using FormField - controlled input', () => {
+    const onSubmit = jest.fn();
+    const Test = () => {
+      const [firstName, setFirstName] = useState('a');
+      const [middleName, setMiddleName] = useState('1');
+      const [lastName, setLastName] = useState('');
+      const [title, setTitle] = useState(1);
+
+      return (
+        <Form onSubmit={onSubmit}>
+          <FormField
+            label="First Name"
+            htmlFor="first-name"
+            name="firstName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (firstName && firstName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="blur"
+          >
+            <TextInput
+              id="first-name"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Middle Name"
+            htmlFor="middle-name"
+            name="middleName"
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (middleName && middleName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="change"
+          >
+            <TextInput
+              id="middle-name"
+              name="middleName"
+              value={middleName}
+              onChange={(e) => {
+                setMiddleName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Last Name"
+            htmlFor="last-name"
+            name="lastName"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (lastName && lastName.length === 1)
+                  return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="submit"
+          >
+            <TextInput
+              id="last-name"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+            />
+          </FormField>
+          <FormField
+            label="Title"
+            htmlFor="title"
+            name="title"
+            validate={[
+              { regexp: /^[a-z]/i },
+              () => {
+                if (title && title.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+            ]}
+            validateOn="blur"
+          >
+            <TextInput
+              id="title"
+              name="title"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+
+    const { getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    // middleName & title trigger regexp, but not string length validation
+    expect(screen.queryAllByText('invalid')).toHaveLength(2);
+    // lastName should not trigger required validation onMount
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+    fireEvent.click(getByText('Submit'));
+    // lastName should trigger required
+    expect(screen.queryAllByText('required')).toHaveLength(1);
+  });
+
+  test('validate - blur, change and submit using FormField', () => {
+    const onSubmit = jest.fn();
+    const Test = () => (
+      <Form onSubmit={onSubmit}>
+        <FormField
+          label="Blur"
+          name="blur"
+          aria-label="blur"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="blur"
+        />
+
+        <FormField
+          label="Submit"
+          name="submit"
+          aria-label="submit"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="submit"
+        />
+
+        <FormField
+          label="Change"
+          name="change"
+          aria-label="change"
+          required
+          validate={[
+            { regexp: /^[a-z]/i },
+            (name) => {
+              if (name && name.length === 1) return 'must be >1 character';
+              return undefined;
+            },
+          ]}
+          validateOn="change"
+        />
+        <Button type="submit" primary label="Submit_Button" />
+      </Form>
+    );
+
+    const { container, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const blur = container.querySelector('input[name="blur"]');
+    const change = container.querySelector('input[name="change"]');
+    const submit = container.querySelector('input[name="submit"]');
+
+    expect(screen.queryAllByText('invalid')).toHaveLength(0);
+    expect(screen.queryAllByText('required')).toHaveLength(0);
+
+    fireEvent.change(blur, {
+      target: { value: 'b' },
+    });
+
+    fireEvent.change(change, {
+      target: { value: 'c' },
+    });
+
+    fireEvent.change(submit, {
+      target: { value: 's' },
+    });
+
+    fireEvent.click(getByText('Submit_Button'));
+
+    expect(screen.queryAllByText('must be >1 character')).toHaveLength(3);
+    expect(screen.queryAllByText('invalid')).toHaveLength(0);
+
+    fireEvent.change(blur, {
+      target: { value: '123213' },
+    });
+
+    fireEvent.change(change, {
+      target: { value: '123213' },
+    });
+
+    fireEvent.change(submit, {
+      target: { value: '123213' },
+    });
+
+    expect(screen.queryAllByText('must be >1 character')).toHaveLength(0);
+    expect(screen.queryAllByText('invalid')).toHaveLength(2);
+
+    fireEvent.click(getByText('Submit_Button'));
+    expect(screen.queryAllByText('invalid')).toHaveLength(3);
   });
 });

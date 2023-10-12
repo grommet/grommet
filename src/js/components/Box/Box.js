@@ -2,6 +2,7 @@ import React, {
   Children,
   forwardRef,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -12,18 +13,24 @@ import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
+import { BoxPropTypes } from './propTypes';
+import { SkeletonContext, useSkeleton } from '../Skeleton';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 
 const Box = forwardRef(
   (
     {
       a11yTitle,
-      background,
+      background: backgroundProp,
       border,
       children,
+      cssGap, // internal for now
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
       gap,
+      kind, // munged to avoid styled-components putting it in the DOM
       onBlur,
       onClick,
       onFocus,
@@ -35,16 +42,34 @@ const Box = forwardRef(
       width, // munged to avoid styled-components putting it in the DOM
       height, // munged to avoid styled-components putting it in the DOM
       tabIndex,
+      skeleton: skeletonProp,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    // boxOptions was created to preserve backwards compatibility but
+    // should not be supported in v3
+    const { box: boxOptions } = useContext(OptionsContext);
 
-    const focusable = useMemo(() => onClick && !(tabIndex < 0), [
-      onClick,
-      tabIndex,
-    ]);
+    const skeleton = useSkeleton();
+
+    let background = backgroundProp;
+
+    const announce = useContext(AnnounceContext);
+
+    useEffect(() => {
+      if (skeletonProp?.message?.start) announce(skeletonProp.message.start);
+      else if (typeof skeletonProp?.message === 'string')
+        announce(skeletonProp.message);
+      return () =>
+        skeletonProp?.message?.end && announce(skeletonProp.message.end);
+    }, [announce, skeletonProp]);
+
+    const focusable = useMemo(
+      () => onClick && !(tabIndex < 0),
+      [onClick, tabIndex],
+    );
 
     const [focus, setFocus] = useState();
 
@@ -52,11 +77,11 @@ const Box = forwardRef(
       if (focusable) {
         return {
           onClick,
-          onFocus: event => {
+          onFocus: (event) => {
             setFocus(true);
             if (onFocus) onFocus(event);
           },
-          onBlur: event => {
+          onBlur: (event) => {
             setFocus(false);
             if (onBlur) onBlur(event);
           },
@@ -76,14 +101,28 @@ const Box = forwardRef(
     }, [focusable, tabIndex]);
 
     if (
-      (border === 'between' || (border && border.side === 'between')) &&
+      (border === 'between' ||
+        (border && border.side === 'between') ||
+        (Array.isArray(border) && border.find((b) => b.side === 'between'))) &&
       !gap
     ) {
       console.warn('Box must have a gap to use border between');
     }
 
     let contents = children;
-    if (gap && gap !== 'none') {
+    if (
+      gap &&
+      gap !== 'none' &&
+      (!(boxOptions?.cssGap || cssGap) ||
+        // need this approach to show border between
+        border === 'between' ||
+        border?.side === 'between' ||
+        (Array.isArray(border) && border.find((b) => b.side === 'between')))
+    ) {
+      // if border is an array, we need to extract the border between object
+      const styledBoxGapBorder = Array.isArray(border)
+        ? border.find((b) => b.side === 'between')
+        : border;
       const boxAs = !as && tag ? tag : as;
       contents = [];
       let firstIndex;
@@ -100,7 +139,7 @@ const Box = forwardRef(
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
-                border={border}
+                border={styledBoxGapBorder}
               />,
             );
           }
@@ -109,26 +148,66 @@ const Box = forwardRef(
       });
     }
 
-    const themeProviderValue = { ...theme };
-
-    if (background || theme.darkChanged) {
-      const dark = backgroundIsDark(background, theme);
-      const darkChanged = dark !== undefined && dark !== theme.dark;
-      if (darkChanged || theme.darkChanged) {
-        themeProviderValue.dark = dark === undefined ? theme.dark : dark;
-        themeProviderValue.background = background;
-      } else if (background) {
-        // This allows DataTable to intelligently set the background of a pinned
-        // header or footer.
-        themeProviderValue.background = background;
+    const nextSkeleton = useMemo(() => {
+      // Decide if we need to add a new SkeletonContext. We need one if:
+      //   1. skeleton info was set in a property OR
+      //   2. there already is a SkeletonContext but this box has a
+      //      background or border. This means the box probably is more
+      //      distinguishable from the area around it.
+      // We keep track of a depth so we know how to alternate backgrounds.
+      if (skeletonProp || ((background || border) && skeleton)) {
+        const depth = skeleton ? skeleton.depth + 1 : 0;
+        return {
+          ...skeleton,
+          depth,
+          ...(typeof skeletonProp === 'object' ? skeletonProp : {}),
+        };
       }
+      return undefined;
+    }, [background, border, skeleton, skeletonProp]);
+
+    let skeletonProps = {};
+    if (nextSkeleton) {
+      const {
+        colors: skeletonThemeColors,
+        size: skeletonThemeSize,
+        ...skeletonThemeProps
+      } = theme.skeleton;
+      const skeletonColors = nextSkeleton.colors
+        ? nextSkeleton.colors[theme.dark ? 'dark' : 'light']
+        : skeletonThemeColors?.[theme.dark ? 'dark' : 'light'];
+      skeletonProps = { ...skeletonThemeProps };
+      background = skeletonColors[nextSkeleton.depth % skeletonColors.length];
+      if (skeletonProp?.animation) {
+        skeletonProps.animation = skeletonProp.animation;
+      }
+      contents = (
+        <SkeletonContext.Provider value={nextSkeleton}>
+          {contents}
+        </SkeletonContext.Provider>
+      );
     }
 
-    contents = (
-      <ThemeContext.Provider value={themeProviderValue}>
-        {contents}
-      </ThemeContext.Provider>
-    );
+    // construct a new theme object in case we have a background that wants
+    // to change the background color context
+    const nextTheme = useMemo(() => {
+      let result;
+      if (background || theme.darkChanged) {
+        const dark = backgroundIsDark(background, theme);
+        const darkChanged = dark !== undefined && dark !== theme.dark;
+        if (darkChanged || theme.darkChanged) {
+          result = { ...theme };
+          result.dark = dark === undefined ? theme.dark : dark;
+          result.background = background;
+        } else if (background) {
+          // This allows DataTable to intelligently set the background
+          // of a pinned header or footer.
+          result = { ...theme };
+          result.background = background;
+        }
+      }
+      return result || theme;
+    }, [background, theme]);
 
     let content = (
       <StyledBox
@@ -141,6 +220,17 @@ const Box = forwardRef(
         elevationProp={elevation}
         fillProp={fill}
         focus={focus}
+        gap={
+          (boxOptions?.cssGap || cssGap) &&
+          gap &&
+          gap !== 'none' &&
+          border !== 'between' &&
+          border?.side !== 'between' &&
+          (!Array.isArray(border) ||
+            !border.find((b) => b.side === 'between')) &&
+          gap
+        }
+        kindProp={kind}
         overflowProp={overflow}
         wrapProp={wrap}
         widthProp={width}
@@ -149,8 +239,11 @@ const Box = forwardRef(
         tabIndex={adjustedTabIndex}
         {...clickProps}
         {...rest}
+        {...skeletonProps}
       >
-        {contents}
+        <ThemeContext.Provider value={nextTheme}>
+          {contents}
+        </ThemeContext.Provider>
       </StyledBox>
     );
 
@@ -163,11 +256,5 @@ const Box = forwardRef(
 );
 
 Box.displayName = 'Box';
-
-let BoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
-}
-const BoxWrapper = BoxDoc || Box;
-
-export { BoxWrapper as Box };
+Box.propTypes = BoxPropTypes;
+export { Box };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, Fragment } from 'react';
 import Markdown from 'markdown-to-jsx';
 
 import { deepMerge } from '../../utils';
@@ -13,43 +13,50 @@ import { TableCell } from '../TableCell';
 import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
+import { MarkdownPropTypes } from './propTypes';
 
-const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
-  const heading = [1, 2, 3, 4].reduce((obj, level) => {
-    const result = { ...obj };
-    result[`h${level}`] = {
-      component: Heading,
-      props: { level },
-    };
-    return result;
-  }, {});
+const GrommetMarkdown = forwardRef(
+  ({ children, components, options, theme, ...rest }, ref) => {
+    const heading = [1, 2, 3, 4].reduce((obj, level) => {
+      const result = { ...obj };
+      result[`h${level}`] = {
+        component: Heading,
+        props: { level },
+      };
+      return result;
+    }, {});
 
-  const overrides = deepMerge(
-    {
-      a: { component: Anchor },
-      img: { component: Image },
-      p: { component: Paragraph },
-      table: { component: Table },
-      td: { component: TableCell },
-      tbody: { component: TableBody },
-      tfoot: { component: TableFooter },
-      th: { component: TableCell },
-      thead: { component: TableHeader },
-      tr: { component: TableRow },
-    },
-    heading,
-    components,
-    options && options.overrides,
-  );
+    const overrides = deepMerge(
+      {
+        a: { component: Anchor },
+        img: { component: Image },
+        p: { component: Paragraph },
+        table: { component: Table },
+        td: { component: TableCell, props: { plain: true } },
+        tbody: { component: TableBody },
+        tfoot: { component: TableFooter },
+        th: { component: TableCell },
+        thead: { component: TableHeader },
+        tr: { component: TableRow },
+      },
+      heading,
+      components,
+      options && options.overrides,
+    );
 
-  return <Markdown options={{ ...options, overrides }} {...rest} />;
-};
+    // we use Fragment as the wrapper so we can assign the ref with the div
+    // wrapper can still be overridden with the options.
+    return (
+      <div ref={ref} {...rest}>
+        <Markdown
+          {...{ children }}
+          options={{ wrapper: Fragment, ...options, overrides }}
+        />
+      </div>
+    );
+  },
+);
 
-let GrommetMarkdownDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown);
-}
-const GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
+GrommetMarkdown.propTypes = MarkdownPropTypes;
 
-export { GrommetMarkdownWrapper as Markdown };
+export { GrommetMarkdown as Markdown };

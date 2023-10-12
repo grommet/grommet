@@ -9,9 +9,10 @@ import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
+import { SpinnerPropTypes } from './propTypes';
 
 const BasicSpinner = ({ ref, size, ...rest }) => (
-  <Box height={size} width={size} ref={ref} {...rest} />
+  <Box flex={false} height={size} width={size} ref={ref} {...rest} />
 );
 /**
  * If the user is calling <Spinner>…</Spinner> with children, it will take
@@ -43,6 +44,7 @@ const Spinner = forwardRef(
     const {
       size: sizeThemeProp,
       color: colorThemeProp,
+      border: borderThemeProp,
       ...themeProps
     } = theme.spinner.container;
 
@@ -51,6 +53,20 @@ const Spinner = forwardRef(
 
     const color = colorProp || colorThemeProp;
     const Icon = theme.spinner.icon;
+
+    const defaultBorder = [
+      { side: 'all', color: 'background-contrast', size },
+      { side: 'top', color, size },
+    ];
+    const spinnerBorder = Array.isArray(borderThemeProp)
+      ? borderThemeProp.map((borderSide) => ({
+          ...borderSide,
+          color:
+            borderSide.side === 'all'
+              ? borderSide.color || 'background-contrast'
+              : color,
+        }))
+      : borderThemeProp;
 
     // children will take precedence over theme attributes
     if (children) {
@@ -78,10 +94,9 @@ const Spinner = forwardRef(
       <BasicSpinner
         size={spinnerSize}
         ref={ref}
-        border={[
-          { side: 'all', color: 'background-contrast', size },
-          { side: 'top', color, size },
-        ]}
+        border={
+          typeof borderThemeProp === 'undefined' ? defaultBorder : spinnerBorder
+        }
         {...themeProps}
         {...rest}
       />
@@ -90,12 +105,6 @@ const Spinner = forwardRef(
 );
 
 Spinner.displayName = 'Spinner';
+Spinner.propTypes = SpinnerPropTypes;
 
-let SpinnerDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SpinnerDoc = require('./doc').doc(Spinner);
-}
-const SpinnerWrapper = SpinnerDoc || Spinner;
-
-export { SpinnerWrapper as Spinner };
+export { Spinner };

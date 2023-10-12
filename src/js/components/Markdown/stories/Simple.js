@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, Markdown } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Markdown } from 'grommet';
 
 const CONTENT = `
   # Out of Breath
@@ -22,17 +21,21 @@ import { Grommet } from 'grommet';
 
   Markdown | Less | Pretty
   --- | --- | ---
-  *Still* | \`renders\` | **nicely**
+  Content *still* | \`renders\` | **nicely** in a table
   1 | 2 | 3
 `;
 
-export const Simple = () => (
-  <Grommet theme={grommet}>
+export const Simple = () => {
+  const ref = React.useRef();
+  return (
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
     <Box align="center" pad="large">
-      <Markdown>{CONTENT}</Markdown>
+      <Markdown ref={ref}>{CONTENT}</Markdown>
     </Box>
-  </Grommet>
-);
+    // </Grommet>
+  );
+};
 
 export default {
   title: 'Type/Markdown/Simple',

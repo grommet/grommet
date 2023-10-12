@@ -19,38 +19,41 @@ export const set = (obj, path, value) => {
 
 // get the value for the property in the datum object
 export const datumValue = (datum, property) => {
-  if (!property) return undefined;
+  if (!property || !datum) return undefined;
   const parts = property.split('.');
-  if (parts.length === 1) {
-    return datum[property];
-  }
-  if (!datum[parts[0]]) {
-    return undefined;
-  }
+  if (parts.length === 1) return datum[property];
+  if (!datum[parts[0]]) return undefined;
   return datumValue(datum[parts[0]], parts.slice(1).join('.'));
 };
 
 // get the primary property name
 export const normalizePrimaryProperty = (columns, primaryKey) => {
   let result;
-  columns.forEach(column => {
-    // remember the first key property
-    if (column.primary && !result) {
-      result = column.property;
-    }
-  });
-  if (!result) {
-    if (primaryKey === false) result = undefined;
-    else if (primaryKey) result = primaryKey;
-    else if (columns.length > 0) result = columns[0].property;
+  if (typeof primaryKey === 'string' || typeof primaryKey === 'boolean') {
+    result = primaryKey;
+  } else if (primaryKey === null) {
+    console.warn(
+      'null is not a supported value for primaryKey. See supported values: https://v2.grommet.io/datatable#primaryKey',
+    );
+  }
+  if (result === undefined) {
+    columns.forEach((column) => {
+      // remember the first key property
+      if (column.primary && !result) {
+        result = column.property;
+      }
+    });
+  }
+  if (result === undefined && columns.length > 0) {
+    result = columns[0].property;
   }
   return result;
 };
 
 // initialize filters with empty strings
-export const initializeFilters = columns => {
+export const initializeFilters = (columns) => {
   const result = {};
-  columns.forEach(column => {
+  columns.forEach((column) => {
     if (column.search) {
       result[column.property] = '';
     }
@@ -59,7 +62,7 @@ export const initializeFilters = columns => {
 };
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
-const escapeRegExp = input => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegExp = (input) => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 // filter data based on filters then sort
 export const filterAndSortData = (data, filters, onSearch, sort) => {
@@ -67,15 +70,15 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
   if (!onSearch) {
     const regexps = {};
     Object.keys(filters)
-      .filter(n => filters[n])
-      .forEach(n => {
+      .filter((n) => filters[n])
+      .forEach((n) => {
         regexps[n] = new RegExp(escapeRegExp(filters[n]), 'i');
       });
     if (Object.keys(regexps).length > 0) {
       result = data.filter(
-        datum =>
+        (datum) =>
           !Object.keys(regexps).some(
-            property => !regexps[property].test(datumValue(datum, property)),
+            (property) => !regexps[property].test(datumValue(datum, property)),
           ),
       );
     }
@@ -84,11 +87,24 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
   if (sort && !sort.external) {
     const { property, direction } = sort;
     result = result === data ? [...data] : result; // don't sort caller's data
-    const before = direction === 'asc' ? 1 : -1;
-    const after = direction === 'asc' ? -1 : 1;
+    const sortAsc = direction === 'asc';
+    const before = sortAsc ? 1 : -1;
+    const after = sortAsc ? -1 : 1;
     result.sort((d1, d2) => {
-      if (datumValue(d1, property) > datumValue(d2, property)) return before;
-      if (datumValue(d1, property) < datumValue(d2, property)) return after;
+      const d1Val = datumValue(d1, property);
+      const d2Val = datumValue(d2, property);
+      if (
+        (typeof d1Val === 'string' && typeof d2Val === 'string') ||
+        (typeof d1Val === 'string' && !d2Val) ||
+        (typeof d2Val === 'string' && !d1Val)
+      ) {
+        const sortResult = (d1Val || '').localeCompare(d2Val || '', undefined, {
+          sensitivity: 'base',
+        });
+        return sortAsc ? sortResult : -sortResult;
+      }
+      if (d1Val > d2Val) return before;
+      if (d1Val < d2Val) return after;
       return 0;
     });
   }
@@ -120,11 +136,11 @@ const reducersInitValues = {
 const aggregateColumn = (column, data) => {
   let value;
   if (column.aggregate === 'avg') {
-    value = data.map(d => datumValue(d, column.property)).reduce(sumReducer);
+    value = data.map((d) => datumValue(d, column.property)).reduce(sumReducer);
     value /= data.length;
   } else {
     value = data
-      .map(d => datumValue(d, column.property))
+      .map((d) => datumValue(d, column.property))
       .reduce(reducers[column.aggregate], reducersInitValues[column.aggregate]);
   }
   return value;
@@ -133,7 +149,7 @@ const aggregateColumn = (column, data) => {
 // aggregate all columns that can
 const aggregate = (columns, data) => {
   let result = {};
-  columns.forEach(column => {
+  columns.forEach((column) => {
     if (column.aggregate) {
       const value = aggregateColumn(column, data);
       result = set(result, column.property, value);
@@ -148,13 +164,13 @@ export const buildFooterValues = (columns, data) => {
   const aggregateValues = aggregate(columns, data);
 
   let result = {};
-  columns.forEach(column => {
+  columns.forEach((column) => {
     if (column.footer) {
-      if (typeof column.footer === 'string') {
-        result = set(result, column.property, column.footer);
-      } else if (column.footer.aggregate) {
+      if (column.footer.aggregate) {
         const value = datumValue(aggregateValues, column.property);
         result = set(result, column.property, value);
+      } else {
+        result = set(result, column.property, column.footer);
       }
     }
   });
@@ -164,32 +180,45 @@ export const buildFooterValues = (columns, data) => {
 
 // looks at the groupBy property of each data object and returns an
 // array with one item for each unique value of that property.
-export const buildGroups = (columns, data, groupBy) => {
+export const buildGroups = (columns, data, groupBy, primaryProperty) => {
   let result;
-  if (groupBy) {
+  if (groupBy?.property || typeof groupBy === 'string') {
     result = [];
     const groupMap = {};
-    data.forEach(datum => {
+    data.forEach((datum) => {
+      const key = datumValue(datum, primaryProperty);
+      const isGroup = key && groupBy.expandable?.includes(key);
+
       const groupByProperty = groupBy.property ? groupBy.property : groupBy;
-      const groupValue = datumValue(datum, groupByProperty);
+      const groupValue = isGroup ? key : datumValue(datum, groupByProperty);
       if (!groupMap[groupValue]) {
-        const group = { data: [], datum: {}, key: groupValue };
+        const group = {
+          data: [],
+          datum: isGroup ? datum : {},
+          key: groupValue,
+        };
         group.datum[groupByProperty] = groupValue;
         result.push(group);
         groupMap[groupValue] = group;
       }
-      groupMap[groupValue].data.push(datum);
+      if (!isGroup) groupMap[groupValue].data.push(datum);
     });
 
     // include any aggregate column values across the data for each group
-    columns.forEach(column => {
-      if (column.aggregate) {
-        result.forEach(group => {
-          const { datum } = group;
-          datum[column.property] = aggregateColumn(column, group.data);
-        });
-      }
-    });
+    // If expandable was specified we let the onUpdate callback do it since
+    // we may not have access to all the data to aggregate it.
+    if (!groupBy.expandable) {
+      columns.forEach((column) => {
+        if (column.aggregate) {
+          result.forEach((group) => {
+            const { datum } = group;
+            datum[column.property] = aggregateColumn(column, group.data);
+          });
+        }
+      });
+    }
+  } else if (groupBy?.expandable) {
+    result = groupBy.expandable.map((key) => ({ data: [], datum: {}, key }));
   }
 
   return result;
@@ -200,18 +229,18 @@ export const buildGroupState = (groups, groupBy) => {
   const result = {};
   if (groups) {
     groups.forEach(({ key }) => {
-      result[key] = { expanded: false };
+      if (key !== undefined) result[key] = { expanded: false };
     });
   }
   if (groupBy && groupBy.expand) {
-    groupBy.expand.forEach(value => {
+    groupBy.expand.forEach((value) => {
       result[value] = { expanded: true };
     });
   }
   return result;
 };
 
-export const normalizeBackgroundColor = theme => {
+export const normalizeBackgroundColor = (theme) => {
   const { background } = theme; // context background
   if (typeof background === 'string') return background;
   if (background.light && background.dark) return background;
@@ -219,35 +248,85 @@ export const normalizeBackgroundColor = theme => {
   return undefined;
 };
 
-// calculate a header or footer cell background based
-// on the table background prop and whether it's pinned.
-// Pin is an array of side strings, empty if not pinned.
-// If pinned, the background comes from the
-// datable.pinned[themeContext].background in the theme
-// where themeContext is either 'header' or 'footer'.
-export const calcPinnedBackground = (
-  backgroundProp,
-  pin,
-  theme,
-  themeContext,
+export const normalizeRowProp = (name, rowProp, prop) => {
+  if (rowProp && rowProp[name]) return rowProp[name];
+  return prop;
+};
+
+const tableContextNames = ['header', 'body', 'footer'];
+const cellPropertyNames = ['background', 'border', 'pad'];
+
+// Convert property specific cell props to context specific cell props.
+// For example, background={{ header: { background } }}
+// will become cellProps.header.background
+export const normalizeCellProps = (props, theme) => {
+  const result = {};
+  tableContextNames.forEach((context) => {
+    result[context] = { pinned: {} };
+    cellPropertyNames.forEach((propName) => {
+      let value =
+        props?.[propName]?.[context] ||
+        // if the propName is used without context, it applies to all contexts
+        (tableContextNames.every((n) => !props?.[propName]?.[n]) &&
+          props?.[propName]) ||
+        theme?.dataTable?.[context]?.[propName] ||
+        theme?.table?.[context]?.[propName];
+      if (value !== undefined) result[context][propName] = value;
+
+      // pinned case
+      value =
+        props?.[propName]?.pinned?.[context] ||
+        (context === 'body' &&
+          tableContextNames.every((n) => !props?.[propName]?.pinned?.[n]) &&
+          props?.[propName]?.pinned) ||
+        theme?.dataTable?.pinned?.[context]?.[propName];
+      if (value !== undefined) {
+        if (
+          propName === 'background' &&
+          theme.background &&
+          value.opacity &&
+          !value.color
+        )
+          // theme context has an active background color but the
+          // theme doesn't set an explicit color, repeat the context
+          // background explicitly
+          value.color = normalizeBackgroundColor(theme);
+
+        if (context === 'body')
+          // in case we have pinned columns, store the pinned stuff in
+          // cellProps.body.pinned
+          result[context].pinned[propName] = value;
+        else if (props.pin === true || props.pin === context)
+          // this context is pinned, use the pinned value directly
+          result[context][propName] = value;
+      }
+    });
+  });
+  return result;
+};
+
+export const normalizeRowCellProps = (
+  rowProps,
+  cellProps,
+  primaryKey,
+  index,
 ) => {
-  let background;
-  if (backgroundProp) background = backgroundProp;
-  else if (
-    pin.length > 0 &&
-    theme.dataTable.pinned &&
-    theme.dataTable.pinned.header
-  ) {
-    background = theme.dataTable.pinned[themeContext].background;
-    if (!background.color && theme.background) {
-      // theme context has an active background color but the
-      // theme doesn't set an explicit color, repeat the context
-      // background explicitly
-      background = {
-        ...background,
-        color: normalizeBackgroundColor(theme),
-      };
-    }
-  } else background = undefined;
-  return background;
+  const result = { pinned: {} };
+  ['background', 'border', 'pad'].forEach((propName) => {
+    const row = primaryKey && rowProps && rowProps?.[primaryKey]?.[propName];
+    const cell = cellProps[propName];
+    let value =
+      (row && (Array.isArray(row) ? row[index % row.length] : row)) ||
+      (Array.isArray(cell) ? cell[index % cell.length] : cell);
+    if (value !== undefined) result[propName] = value;
+
+    const rowPin = rowProps && rowProps.pinned && rowProps.pinned[propName];
+    const cellPin = cellProps.pinned[propName];
+    value =
+      (rowPin &&
+        (Array.isArray(rowPin) ? rowPin[index % rowPin.length] : rowPin)) ||
+      (Array.isArray(cellPin) ? cellPin[index % cellPin.length] : cellPin);
+    if (value !== undefined) result.pinned[propName] = value;
+  });
+  return result;
 };

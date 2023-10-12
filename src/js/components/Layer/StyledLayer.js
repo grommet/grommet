@@ -34,11 +34,11 @@ const StyledLayer = styled.div`
   ${baseStyle}
   background: transparent;
   position: relative;
-  z-index: ${props => props.theme.layer.zIndex};
+  z-index: ${(props) => props.theme.layer.zIndex};
   pointer-events: none;
   outline: none;
 
-  ${props => {
+  ${(props) => {
     if (props.position === 'hidden') {
       return hiddenPositionStyle;
     }
@@ -55,7 +55,7 @@ const StyledLayer = styled.div`
     }
     return styles;
   }}
-  ${props => props.theme.layer && props.theme.layer.extend};
+  ${(props) => props.theme.layer && props.theme.layer.extend};
 `;
 
 StyledLayer.defaultProps = {};
@@ -63,7 +63,7 @@ Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
 
 const StyledOverlay = styled.div`
   position: absolute;
-  ${props => {
+  ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
@@ -74,7 +74,10 @@ const StyledOverlay = styled.div`
   left: 0px;
   right: 0px;
   bottom: 0px;
-  ${props =>
+  ${(props) =>
+    props.theme.layer.overlay.backdropFilter &&
+    `backdrop-filter: ${props.theme.layer.overlay.backdropFilter};`}
+  ${(props) =>
     !props.plain &&
     props.theme.layer.overlay.background &&
     backgroundStyle(
@@ -275,342 +278,342 @@ const getAnimationStyle = (props, position, full) => {
 // as well so they must take into account the non-animated positioning.
 const POSITIONS = {
   center: {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: 50%;
       transform: translateX(-50%);
-      ${props => getAnimationStyle(props, 'center', 'vertical')}
+      ${(props) => getAnimationStyle(props, 'center', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 50%;
       transform: translateY(-50%);
-      ${props => getAnimationStyle(props, 'center', 'horizontal')}
+      ${(props) => getAnimationStyle(props, 'center', 'horizontal')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
-      ${props => getAnimationStyle(props, 'center', 'true')}
+      ${(props) => getAnimationStyle(props, 'center', 'true')}
     `,
     false: () => css`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      ${props => getAnimationStyle(props, 'center', 'false')}
+      ${(props) => getAnimationStyle(props, 'center', 'false')}
     `,
   },
 
   top: {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: 50%;
       transform: translate(-50%, 0%);
-      ${props => getAnimationStyle(props, 'top', 'vertical')}
+      ${(props) => getAnimationStyle(props, 'top', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: ${bounds.top}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'top', 'horizontal')}
+      ${(props) => getAnimationStyle(props, 'top', 'horizontal')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'top', 'true')}
+      ${(props) => getAnimationStyle(props, 'top', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       top: ${bounds.top}px;
       left: 50%;
       transform: translate(-50%, 0);
-      ${props => getAnimationStyle(props, 'top', 'false')}
+      ${(props) => getAnimationStyle(props, 'top', 'false')}
     `,
   },
 
   bottom: {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: 50%;
       transform: translate(-50%, 0);
-      ${props => getAnimationStyle(props, 'bottom', 'vertical')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'bottom', 'horizontal')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'horizontal')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       bottom: ${bounds.bottom}px;
       left: 50%;
       transform: translate(-50%, 0);
-      ${props => getAnimationStyle(props, 'bottom', 'false')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'false')}
     `,
   },
 
   left: {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'left', 'vertical')}
+      ${(props) => getAnimationStyle(props, 'left', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props, 'left', 'horizontal')}
+      ${(props) => getAnimationStyle(props, 'left', 'horizontal')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'left', 'true')}
+      ${(props) => getAnimationStyle(props, 'left', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       left: ${bounds.left}px;
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props, 'left', 'false')}
+      ${(props) => getAnimationStyle(props, 'left', 'false')}
     `,
   },
 
   right: {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'right', 'vertical')}
+      ${(props) => getAnimationStyle(props, 'right', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props, 'right', 'horizontal')}
+      ${(props) => getAnimationStyle(props, 'right', 'horizontal')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'right', 'true')}
+      ${(props) => getAnimationStyle(props, 'right', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       right: ${bounds.right}px;
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props, 'right', 'false')}
+      ${(props) => getAnimationStyle(props, 'right', 'false')}
     `,
   },
 
   start: {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       inset-inline-start: ${bounds.start}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'start', 'vertical')}
+      ${(props) => getAnimationStyle(props, 'start', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       inset-inline-start: ${bounds.start}px;
       inset-inline-end: ${bounds.end}px;
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props, 'start', 'horizontal')}
+      ${(props) => getAnimationStyle(props, 'start', 'horizontal')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       inset-inline-start: ${bounds.start}px;
       inset-inline-end: ${bounds.end}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'start', 'true')}
+      ${(props) => getAnimationStyle(props, 'start', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       inset-inline-start: ${bounds.start}px;
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props, 'start', 'false')}
+      ${(props) => getAnimationStyle(props, 'start', 'false')}
     `,
   },
 
   end: {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       inset-inline-end: ${bounds.end}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'end', 'vertical')}
+      ${(props) => getAnimationStyle(props, 'end', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       inset-inline-start: ${bounds.start}px;
       inset-inline-end: ${bounds.end}px;
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props, 'end', 'horizontal')}
+      ${(props) => getAnimationStyle(props, 'end', 'horizontal')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       inset-inline-start: ${bounds.start}px;
       inset-inline-end: ${bounds.end}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'end', 'true')}
+      ${(props) => getAnimationStyle(props, 'end', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       inset-inline-end: ${bounds.end}px;
       top: 50%;
       transform: translate(0, -50%);
-      ${props => getAnimationStyle(props, 'end', 'false')}
+      ${(props) => getAnimationStyle(props, 'end', 'false')}
     `,
   },
 
   'top-right': {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'top', 'true')};
+      ${(props) => getAnimationStyle(props, 'top', 'true')};
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 0;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'top', 'true')};
+      ${(props) => getAnimationStyle(props, 'top', 'true')};
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'top', 'true')};
+      ${(props) => getAnimationStyle(props, 'top', 'true')};
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       top: ${bounds.top}px;
       right: ${bounds.right}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'top', 'true')};
+      ${(props) => getAnimationStyle(props, 'top', 'true')};
     `,
   },
 
   'top-left': {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'top', 'true')}
+      ${(props) => getAnimationStyle(props, 'top', 'true')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 0;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'top', 'true')}
+      ${(props) => getAnimationStyle(props, 'top', 'true')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'top', 'true')}
+      ${(props) => getAnimationStyle(props, 'top', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       top: ${bounds.top}px;
       left: ${bounds.left}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'top', 'true')}
+      ${(props) => getAnimationStyle(props, 'top', 'true')}
     `,
   },
 
   'bottom-right': {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       bottom: ${bounds.bottom}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       bottom: ${bounds.bottom}px;
       right: ${bounds.right}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
   },
 
   'bottom-left': {
-    vertical: bounds => css`
+    vertical: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    horizontal: bounds => css`
+    horizontal: (bounds) => css`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       bottom: ${bounds.bottom}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    true: bounds => css`
+    true: (bounds) => css`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       transform: translateX(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    false: bounds => css`
+    false: (bounds) => css`
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       transform: translateY(0);
-      ${props => getAnimationStyle(props, 'bottom', 'true')}
+      ${(props) => getAnimationStyle(props, 'bottom', 'true')}
     `,
   },
 };
@@ -709,7 +712,7 @@ const roundStyle = (data, theme, position, margin) => {
 const bounds = { left: 0, right: 0, top: 0, bottom: 0 };
 
 const desktopContainerStyle = css`
-  ${props => {
+  ${(props) => {
     if (!props.modal && props.position === 'hidden') {
       return hiddenPositionStyle;
     }
@@ -720,21 +723,21 @@ const desktopContainerStyle = css`
       position: ${props.modal || props.layerTarget ? 'absolute' : 'fixed'};
     `;
   }}
-  max-height: ${props =>
+  max-height: ${(props) =>
     `calc(100% - ${getBounds(
       bounds,
       props.margin,
       props.theme,
       'top',
     )}px - ${getBounds(bounds, props.margin, props.theme, 'bottom')}px)`};
-  max-width: ${props =>
+  max-width: ${(props) =>
     `calc(100% - ${getBounds(
       bounds,
       props.margin,
       props.theme,
       'left',
     )}px - ${getBounds(bounds, props.margin, props.theme, 'right')}px)`};
-  ${props =>
+  ${(props) =>
     props.plain || (props.full && props.margin === 'none')
       ? `border-radius: 0;`
       : roundStyle(
@@ -743,7 +746,7 @@ const desktopContainerStyle = css`
           props.position,
           props.margin,
         )};
-  ${props =>
+  ${(props) =>
     (props.position !== 'hidden' &&
       POSITIONS[props.position][props.full](
         getBounds(bounds, props.margin, props.theme),
@@ -752,23 +755,17 @@ const desktopContainerStyle = css`
     ''};
 `;
 
-const responsiveContainerStyle = props => css`
+const responsiveContainerStyle = (props) => css`
   position: relative;
   max-height: none;
   max-width: none;
   border-radius: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transform: none;
-  animation: none;
   height: ${!props.layerTarget ? '100vh' : '100%'};
   width: ${!props.layerTarget ? '100vw' : '100%'};
 `;
 
 const elevationStyle = css`
-  box-shadow: ${props =>
+  box-shadow: ${(props) =>
     props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
       props.theme.layer.container.elevation
     ]};
@@ -780,11 +777,11 @@ const StyledContainer = styled.div.withConfig({
   shouldForwardProp: (prop, defaultValidatorFn) =>
     !['elevation'].includes(prop) && defaultValidatorFn(prop),
 })`
-  ${props => (!props.modal ? baseStyle : '')}
+  ${(props) => (!props.modal ? baseStyle : '')}
   display: flex;
   flex-direction: column;
-  min-height: ${props => props.theme.global.size.xxsmall};
-  ${props =>
+  min-height: ${(props) => props.theme.global.size.xxsmall};
+  ${(props) =>
     !props.plain &&
     (props.background || props.theme.layer.background) &&
     backgroundStyle(
@@ -792,11 +789,11 @@ const StyledContainer = styled.div.withConfig({
       props.theme,
     )} outline: none;
   pointer-events: all;
-  z-index: ${props => props.theme.layer.container.zIndex};
-  ${props =>
+  z-index: ${(props) => props.theme.layer.container.zIndex};
+  ${(props) =>
     !props.plain && props.theme.layer.container.elevation && elevationStyle}
   ${desktopContainerStyle}
-  ${props => {
+  ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
@@ -806,7 +803,8 @@ const StyledContainer = styled.div.withConfig({
     }
     return '';
   }};
-  ${props => props.theme.layer.container && props.theme.layer.container.extend};
+  ${(props) =>
+    props.theme.layer.container && props.theme.layer.container.extend};
 `;
 
 StyledContainer.defaultProps = {};

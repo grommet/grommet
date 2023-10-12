@@ -2,11 +2,9 @@
 import React from 'react';
 
 import {
-  grommet,
   Avatar,
   Box,
   Anchor,
-  Grommet,
   Header,
   Nav,
   Paragraph,
@@ -76,13 +74,15 @@ const Info = ({ label }) => (
 );
 
 export const Simple = () => (
-  <Grommet theme={grommet}>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={...}>
+  <Box>
     <SkipLinks>
       <SkipLink id="main" label="Main Content" />
       <SkipLink id="footer" label="Footer" />
     </SkipLinks>
     <Box gap="large" margin={{ bottom: 'xlarge' }}>
-      <Box background="light-4" pad="small" fill="horizontal">
+      <Box background="light-3" pad="small" fill="horizontal">
         <Header pad={{ horizontal: 'large' }}>
           <Avatar src={avatarSrc} />
           <Nav direction="row">
@@ -120,8 +120,13 @@ export const Simple = () => (
         </Box>
       </Box>
     </Box>
-  </Grommet>
+  </Box>
+  // </Grommet>
 );
+
+Simple.parameters = {
+  chromatic: { disable: true },
+};
 
 export default {
   title: 'Utilities/SkipLinks/Simple',

@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { Grommet, Box, Menu, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Menu, Text } from 'grommet';
 import { FormDown } from 'grommet-icons';
 
-const MenuWithChildren = props => (
+const MenuWithChildren = (props) => (
   <Menu
     plain
     items={[
@@ -13,8 +12,8 @@ const MenuWithChildren = props => (
     ]}
     {...props}
   >
-    {({ disabled, drop, hover, focus }) => {
-      const color = hover && !drop && !disabled ? 'accent-1' : undefined;
+    {({ disabled, drop, hover }) => {
+      const color = hover && !drop && !disabled ? 'brand' : undefined;
       return (
         <Box
           direction="row"
@@ -22,7 +21,7 @@ const MenuWithChildren = props => (
           pad="small"
           background={hover && drop ? 'light-2' : undefined}
         >
-          <Text color={color}>{focus ? 'actions' : 'Actions'}</Text>
+          <Text color={color}>Actions</Text>
           <FormDown color={color} />
         </Box>
       );
@@ -31,16 +30,10 @@ const MenuWithChildren = props => (
 );
 
 const Example = () => (
-  <Grommet theme={grommet}>
-    <Box
-      align="center"
-      pad="large"
-      background={{ color: 'dark-2', opacity: 0.7 }}
-    >
-      <MenuWithChildren disabled />
-      <MenuWithChildren />
-    </Box>
-  </Grommet>
+  <Box align="center" pad="large" gap="small">
+    <MenuWithChildren disabled />
+    <MenuWithChildren />
+  </Box>
 );
 
 export const Children = () => <Example />;

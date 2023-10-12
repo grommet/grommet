@@ -31,7 +31,7 @@ export const data = [
 ];
 
 let TOTAL = 0;
-data.forEach(datum => {
+data.forEach((datum) => {
   TOTAL += datum.amount;
 });
 
@@ -46,7 +46,7 @@ export const columns = [
     property: 'name',
     label: 'Name',
     dataScope: 'row',
-    format: datum => <Text weight="bold">{datum.name}</Text>,
+    format: ({ name }) => <Text weight="bold">{name}</Text>,
   },
   {
     property: 'email',
@@ -57,6 +57,6 @@ export const columns = [
     label: 'Amount',
     align: 'end',
     footer: amountFormatter.format(TOTAL / 100),
-    format: datum => amountFormatter.format(datum.amount / 100),
+    format: (datum) => amountFormatter.format(datum.amount / 100),
   },
 ];

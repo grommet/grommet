@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading } from 'grommet';
 
 const DATA = [
   {
@@ -39,13 +38,61 @@ const columns = [
   },
 ];
 
+const SORTABLE_DATA = [
+  {
+    last: 'Lullaby',
+    first: 'Julius',
+    count: '7',
+    percentUsed: '79.3',
+    consumption: '651',
+  },
+  {
+    last: 'Rhodes',
+    first: 'Fender',
+    count: '5',
+    percentUsed: '22.5',
+    consumption: '37',
+  },
+];
+
+const sortableColumns = [
+  {
+    property: 'last',
+    header: 'Last',
+  },
+  {
+    property: 'first',
+    header: 'First',
+  },
+  {
+    property: 'count',
+    header: 'Count',
+    align: 'end',
+  },
+  {
+    property: 'percentUsed',
+    header: 'Percent Used',
+    align: 'end',
+    units: '%',
+  },
+  {
+    property: 'consumption',
+    header: 'Consumption',
+    align: 'end',
+    units: 'TiB',
+  },
+];
+
 export const UnitsDataTable = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Heading level="3">Table with units in the heading</Heading>
-      <DataTable columns={columns} data={DATA} primaryKey={false} />
-    </Box>
-  </Grommet>
+  // Uncomment <Grommet> lines when using outside of storybook
+  // <Grommet theme={grommet}>
+  <Box align="center">
+    <Heading level="3">Table with units in the heading</Heading>
+    <DataTable columns={columns} data={DATA} primaryKey={false} />
+    <Heading level="3">Sortable with units in the heading</Heading>
+    <DataTable sortable columns={sortableColumns} data={SORTABLE_DATA} />
+  </Box>
+  // </Grommet>
 );
 
 UnitsDataTable.storyName = 'Units';

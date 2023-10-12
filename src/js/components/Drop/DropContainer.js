@@ -1,28 +1,24 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-} from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
-
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { FocusedContainer } from '../FocusedContainer';
 import {
   backgroundIsDark,
   findScrollParents,
   parseMetricToNum,
   PortalContext,
+  useForwardedRef,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
+import { OptionsContext } from '../../contexts/OptionsContext';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
-const preventLayerClose = event => {
+const preventLayerClose = (event) => {
   const key = event.keyCode ? event.keyCode : event.which;
 
   if (key === 27) {
@@ -30,12 +26,43 @@ const preventLayerClose = event => {
   }
 };
 
+// Gets the closest ancestor positioned element
+const getParentNode = (element) => element.offsetParent ?? element.parentNode;
+
+// return the containing block
+const getContainingBlock = (element) => {
+  let currentNode = getParentNode(element);
+  while (
+    currentNode instanceof window.HTMLElement &&
+    !['html', 'body'].includes(currentNode.nodeName.toLowerCase())
+  ) {
+    const css = window.getComputedStyle(currentNode);
+    // This is non-exhaustive but covers the most common CSS properties that
+    // create a containing block.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
+    if (
+      (css.transform ? css.transform !== 'none' : false) ||
+      (css.perspective ? css.perspective !== 'none' : false) ||
+      (css.backdropFilter ? css.backdropFilter !== 'none' : false) ||
+      css.contain === 'paint' ||
+      ['transform', 'perspective'].includes(css.willChange) ||
+      css.willChange === 'filter' ||
+      (css.filter ? css.filter !== 'none' : false)
+    ) {
+      return currentNode;
+    }
+    currentNode = currentNode?.parentNode;
+  }
+  return null;
+};
+
 const defaultAlign = { top: 'top', left: 'left' };
-const defaultPortalContext = [];
 
 const DropContainer = forwardRef(
   (
     {
+      a11yTitle,
+      'aria-label': ariaLabel,
       align = defaultAlign,
       background,
       onAlign,
@@ -47,7 +74,7 @@ const DropContainer = forwardRef(
       onKeyDown,
       overflow = 'auto',
       plain,
-      responsive,
+      responsive = true,
       restrictFocus,
       stretch = 'width',
       trapFocus,
@@ -55,18 +82,59 @@ const DropContainer = forwardRef(
     },
     ref,
   ) => {
+    const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const portalContext = useContext(PortalContext) || defaultPortalContext;
+    // dropOptions was created to preserve backwards compatibility
+    const { drop: dropOptions } = useContext(OptionsContext);
+    const portalContext = useContext(PortalContext);
     const portalId = useMemo(() => portalContext.length, [portalContext]);
-    const nextPortalContext = useMemo(() => [...portalContext, portalId], [
-      portalContext,
-      portalId,
-    ]);
-    const dropRef = useRef();
+    const nextPortalContext = useMemo(
+      () => [...portalContext, portalId],
+      [portalContext, portalId],
+    );
+    const dropRef = useForwardedRef(ref);
+
     useEffect(() => {
+      const onClickDocument = (event) => {
+        // determine which portal id the target is in, if any
+        let clickedPortalId = null;
+        let node = (event.composed && event.composedPath()[0]) || event.target;
+
+        while (
+          clickedPortalId === null &&
+          node &&
+          node !== document &&
+          !(node instanceof ShadowRoot)
+        ) {
+          const attr = node.getAttribute('data-g-portal-id');
+          if (attr !== null) clickedPortalId = parseInt(attr, 10);
+          node = node.parentNode;
+        }
+        if (
+          clickedPortalId === null ||
+          portalContext.indexOf(clickedPortalId) !== -1
+        ) {
+          onClickOutside(event);
+        }
+      };
+
+      if (onClickOutside) {
+        document.addEventListener('mousedown', onClickDocument);
+      }
+
+      return () => {
+        if (onClickOutside) {
+          document.removeEventListener('mousedown', onClickDocument);
+        }
+      };
+    }, [onClickOutside, containerTarget, portalContext]);
+
+    useEffect(() => {
+      const target = dropTarget?.current || dropTarget;
+
       const notifyAlign = () => {
-        const styleCurrent = (ref || dropRef).current.style;
-        const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
+        const styleCurrent = dropRef?.current?.style;
+        const alignControl = styleCurrent?.top !== '' ? 'top' : 'bottom';
 
         onAlign(alignControl);
       };
@@ -74,11 +142,10 @@ const DropContainer = forwardRef(
       // We try to preserve the maxHeight as changing it causes any scroll
       // position to be lost. We set the maxHeight on mount and if the window
       // is resized.
-      const place = preserveHeight => {
+      const place = (preserveHeight) => {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-        const target = dropTarget;
-        const container = (ref || dropRef).current;
+        const container = dropRef.current;
         if (container && target) {
           // clear prior styling
           container.style.left = '';
@@ -129,87 +196,70 @@ const DropContainer = forwardRef(
           let top;
           let bottom;
           let maxHeight = containerRect.height;
-          if (align.top) {
-            if (align.top === 'top') {
-              ({ top } = targetRect);
-            } else {
-              top = targetRect.bottom;
-            }
 
-            // Calculate visible area underneath the control w.r.t window height
-            const percentVisibleAreaBelow =
-              100 - (targetRect.bottom / windowHeight) * 100;
-
-            // Check whether it is within 20% from bottom of the window or
-            // visible area to flip the control
-            // DropContainer doesn't fit well within visible area when
-            // percentVisibleAreaBelow value<=20%
-            // There is enough space from DropContainer to bottom of the window
-            // when percentVisibleAreaBelow>20%.
-
-            if (windowHeight === top || percentVisibleAreaBelow <= 20) {
-              // We need more room than we have.
-              // We put it below, but there's more room above, put it above
-              top = '';
-              if (align.top === 'bottom') {
-                bottom = targetRect.top;
-              } else {
-                ({ bottom } = targetRect);
-              }
-              maxHeight = bottom;
-              container.style.maxHeight = `${maxHeight}px`;
-            } else if (top > 0) {
-              maxHeight = windowHeight - top;
-              container.style.maxHeight = `${maxHeight}px`;
-            } else {
-              maxHeight = windowHeight - top;
-            }
-          } else if (align.bottom) {
-            if (align.bottom === 'bottom') {
-              ({ bottom } = targetRect);
-            } else {
-              bottom = targetRect.top;
-            }
-            maxHeight = bottom;
-            container.style.maxHeight = `${maxHeight}px`;
-          } else {
-            // center
-            top =
-              targetRect.top + targetRect.height / 2 - containerRect.height / 2;
-            maxHeight = windowHeight - top;
-          }
-          // if we can't fit it all, or we're rather close,
-          // see if there's more room the other direction
+          /* If responsive is true and the Drop doesn't have enough room
+            to be fully visible and there is more room in the other
+            direction, change the Drop to display above/below. If there is
+            less room in the other direction leave the Drop in its current
+            position. */
           if (
             responsive &&
-            (containerRect.height > maxHeight || maxHeight < windowHeight / 10)
+            ((align.top === 'top' && targetRect.top < 0) ||
+              (align.bottom === 'top' &&
+                targetRect.top - containerRect.height <= 0 &&
+                targetRect.bottom + containerRect.height < windowHeight))
           ) {
-            // We need more room than we have.
-            if (align.top && top > windowHeight / 2) {
-              // We put it below, but there's more room above, put it above
-              top = '';
-              if (align.top === 'bottom') {
-                // top = Math.max(targetRect.top - containerRect.height, 0);
-                // maxHeight = targetRect.top - top;
-                bottom = targetRect.top;
-              } else {
-                // top = Math.max(targetRect.bottom - containerRect.height, 0);
-                // maxHeight = targetRect.bottom - top;
-                ({ bottom } = targetRect);
-              }
-              maxHeight = bottom;
-            } else if (align.bottom && maxHeight < windowHeight / 2) {
-              // We put it above but there's more room below, put it below
-              bottom = '';
-              if (align.bottom === 'bottom') {
-                ({ top } = targetRect);
-              } else {
-                top = targetRect.bottom;
-              }
-              maxHeight = windowHeight - top;
-            }
+            top = targetRect.bottom;
+            maxHeight = top;
+          } else if (
+            responsive &&
+            ((align.bottom === 'bottom' && targetRect.bottom > windowHeight) ||
+              (align.top === 'bottom' &&
+                targetRect.bottom + containerRect.height >= windowHeight &&
+                targetRect.top - containerRect.height > 0))
+          ) {
+            bottom = targetRect.top;
+            maxHeight = bottom;
+          } else if (align.top === 'top') {
+            top = targetRect.top;
+            maxHeight = windowHeight - top;
+          } else if (align.top === 'bottom') {
+            top = targetRect.bottom;
+            maxHeight = windowHeight - top;
+          } else if (align.bottom === 'top') {
+            bottom = targetRect.top;
+            maxHeight = bottom;
+          } else if (align.bottom === 'bottom') {
+            bottom = targetRect.bottom;
+            maxHeight = bottom;
+          } else {
+            top =
+              targetRect.top + targetRect.height / 2 - containerRect.height / 2;
           }
-          container.style.left = `${left}px`;
+
+          let containingBlock;
+          let containingBlockRect;
+          // dropOptions was created to preserve backwards compatibility
+          if (dropOptions?.checkContainingBlock) {
+            // return the containing block for absolute elements or `null`
+            // for fixed elements
+            containingBlock = getContainingBlock(container);
+            containingBlockRect = containingBlock?.getBoundingClientRect();
+          }
+
+          // compute viewport offsets
+          const viewportOffsetLeft = containingBlockRect?.left ?? 0;
+          const viewportOffsetTop = containingBlockRect?.top ?? 0;
+          const viewportOffsetBottom =
+            containingBlockRect?.bottom ?? windowHeight;
+
+          const containerOffsetLeft = containingBlock?.scrollLeft ?? 0;
+          const containerOffsetTop = containingBlock?.scrollTop ?? 0;
+
+          container.style.left = `${
+            left - viewportOffsetLeft + containerOffsetLeft
+          }px`;
+
           if (stretch) {
             // offset width by 0.1 to avoid a bug in ie11 that
             // unnecessarily wraps the text if width is the same
@@ -219,10 +269,14 @@ const DropContainer = forwardRef(
           // the (position:absolute + scrollTop)
           // is presenting issues with desktop scroll flickering
           if (top !== '') {
-            container.style.top = `${top}px`;
+            container.style.top = `${
+              top - viewportOffsetTop + containerOffsetTop
+            }px`;
           }
           if (bottom !== '') {
-            container.style.bottom = `${windowHeight - bottom}px`;
+            container.style.bottom = `${
+              viewportOffsetBottom - bottom - containerOffsetTop
+            }px`;
           }
           if (!preserveHeight) {
             if (theme.drop && theme.drop.maxHeight) {
@@ -240,34 +294,17 @@ const DropContainer = forwardRef(
       let scrollParents;
 
       const addScrollListeners = () => {
-        scrollParents = findScrollParents(dropTarget);
-        scrollParents.forEach(scrollParent =>
+        scrollParents = findScrollParents(target);
+        scrollParents.forEach((scrollParent) =>
           scrollParent.addEventListener('scroll', place),
         );
       };
 
       const removeScrollListeners = () => {
-        scrollParents.forEach(scrollParent =>
+        scrollParents.forEach((scrollParent) =>
           scrollParent.removeEventListener('scroll', place),
         );
         scrollParents = [];
-      };
-
-      const onClickDocument = event => {
-        // determine which portal id the target is in, if any
-        let clickedPortalId = null;
-        let node = event.target;
-        while (clickedPortalId === null && node !== document) {
-          const attr = node.getAttribute('data-g-portal-id');
-          if (attr !== null) clickedPortalId = parseInt(attr, 10);
-          node = node.parentNode;
-        }
-        if (
-          clickedPortalId === null ||
-          portalContext.indexOf(clickedPortalId) !== -1
-        ) {
-          onClickOutside(event);
-        }
       };
 
       const onResize = () => {
@@ -278,42 +315,38 @@ const DropContainer = forwardRef(
 
       addScrollListeners();
       window.addEventListener('resize', onResize);
-      if (onClickOutside) {
-        document.addEventListener('mousedown', onClickDocument);
-      }
 
       place(false);
 
       return () => {
         removeScrollListeners();
         window.removeEventListener('resize', onResize);
-        if (onClickOutside) {
-          document.removeEventListener('mousedown', onClickDocument);
-        }
       };
     }, [
       align,
+      containerTarget,
       onAlign,
       dropTarget,
-      onClickOutside,
       portalContext,
       portalId,
-      ref,
       responsive,
       restrictFocus,
       stretch,
       theme.drop,
+      dropRef,
+      dropOptions,
     ]);
 
     useEffect(() => {
       if (restrictFocus) {
-        (ref || dropRef).current.focus();
+        dropRef.current.focus();
       }
-    }, [ref, restrictFocus]);
+    }, [dropRef, restrictFocus]);
 
     let content = (
       <StyledDrop
-        ref={ref || dropRef}
+        aria-label={a11yTitle || ariaLabel}
+        ref={dropRef}
         as={Box}
         background={background}
         plain={plain}
@@ -335,18 +368,24 @@ const DropContainer = forwardRef(
       </StyledDrop>
     );
 
-    if (background || theme.global.drop.background) {
-      const dark = backgroundIsDark(
-        background || theme.global.drop.background,
-        theme,
-      );
-      if (dark !== undefined && dark !== theme.dark) {
-        content = (
-          <ThemeContext.Provider value={{ ...theme, dark }}>
-            {content}
-          </ThemeContext.Provider>
+    const themeContextValue = useMemo(() => {
+      let dark;
+      if (background || theme.global.drop.background) {
+        dark = backgroundIsDark(
+          background || theme.global.drop.background,
+          theme,
         );
       }
+      return { ...theme, dark };
+    }, [background, theme]);
+
+    const { dark } = themeContextValue;
+    if (dark !== undefined && dark !== theme.dark) {
+      content = (
+        <ThemeContext.Provider value={themeContextValue}>
+          {content}
+        </ThemeContext.Provider>
+      );
     }
 
     return (
@@ -362,7 +401,7 @@ const DropContainer = forwardRef(
             capture
             onEsc={
               onEsc
-                ? event => {
+                ? (event) => {
                     event.stopPropagation();
                     onEsc(event);
                   }

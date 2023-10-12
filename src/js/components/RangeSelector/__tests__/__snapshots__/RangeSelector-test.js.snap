@@ -29,6 +29,7 @@ exports[`RangeSelector basic 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -143,96 +144,61 @@ exports[`RangeSelector basic 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
 </div>
@@ -267,6 +233,7 @@ exports[`RangeSelector color 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -381,96 +348,61 @@ exports[`RangeSelector color 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
 </div>
@@ -505,6 +437,7 @@ exports[`RangeSelector direction 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -629,6 +562,7 @@ exports[`RangeSelector direction 1`] = `
   flex-direction: column;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c9 {
@@ -724,186 +658,116 @@ exports[`RangeSelector direction 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c8 c2"
-    tabIndex="-1"
+    class="c8 c2"
+    tabindex="-1"
   >
     <div
-      className="c9"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c9"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c10"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c10"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c11"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "row-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c11"
+        role="slider"
+        style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c12"
-      style={
-        Object {
-          "cursor": "ns-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c12"
+      style="flex: 11 0 0px; cursor: ns-resize;"
     />
     <div
-      className="c10"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c10"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c11"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "row-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c11"
+        role="slider"
+        style="cursor: row-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c9"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c9"
+      style="flex: 70 0 0px;"
     />
   </div>
 </div>
@@ -1069,8 +933,12 @@ exports[`RangeSelector handle keyboard 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1088,8 +956,12 @@ exports[`RangeSelector handle keyboard 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1265,8 +1137,12 @@ exports[`RangeSelector handle mouse 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1284,8 +1160,12 @@ exports[`RangeSelector handle mouse 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -1296,6 +1176,210 @@ exports[`RangeSelector handle mouse 1`] = `
     <div
       class="c3"
       style="flex: 70 0 0px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`RangeSelector handle touch gestures 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 100%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(125,76,219,0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 100%;
+}
+
+.c2 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+    tabindex="-1"
+  >
+    <div
+      class="c3"
+      style="flex: 10 0 0px;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <div
+        aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
+      >
+        <div
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+        />
+      </div>
+    </div>
+    <div
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
+    />
+    <div
+      class="c4"
+      style="flex: 0 0 1px;"
+    >
+      <div
+        aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
+      >
+        <div
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+        />
+      </div>
+    </div>
+    <div
+      class="c3"
+      style="flex: 80 0 0px;"
     />
   </div>
 </div>
@@ -1330,6 +1414,7 @@ exports[`RangeSelector invert 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -1462,187 +1547,443 @@ exports[`RangeSelector invert 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c7"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c8"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c8"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 70 0 0px;"
     />
+  </div>
+</div>
+`;
+
+exports[`RangeSelector label 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 100%;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(125,76,219,0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 100%;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.c10 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c4 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+      style="width: 0px;"
+    >
+      20
+    </span>
+    <div
+      class="c3 c4"
+      tabindex="-1"
+    >
+      <div
+        class="c5"
+        style="flex: 20 0 0px;"
+      />
+      <div
+        class="c6"
+        style="flex: 0 0 1px;"
+      >
+        <div
+          aria-label="Lower Bounds"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
+          class="c7"
+          role="slider"
+          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+          tabindex="0"
+        >
+          <div
+            class="c8 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          />
+        </div>
+      </div>
+      <div
+        class="c9"
+        style="flex: 11 0 0px; cursor: ew-resize;"
+      />
+      <div
+        class="c6"
+        style="flex: 0 0 1px;"
+      >
+        <div
+          aria-label="Upper Bounds"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="30"
+          class="c7"
+          role="slider"
+          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+          tabindex="0"
+        >
+          <div
+            class="c8 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          />
+        </div>
+      </div>
+      <div
+        class="c5"
+        style="flex: 70 0 0px;"
+      />
+    </div>
+    <span
+      class="c10"
+      style="width: 0px;"
+    >
+      30
+    </span>
+  </div>
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+      style="width: 0px;"
+    >
+      20%
+    </span>
+    <div
+      class="c3 c4"
+      tabindex="-1"
+    >
+      <div
+        class="c5"
+        style="flex: 20 0 0px;"
+      />
+      <div
+        class="c6"
+        style="flex: 0 0 1px;"
+      >
+        <div
+          aria-label="Lower Bounds"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
+          class="c7"
+          role="slider"
+          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+          tabindex="0"
+        >
+          <div
+            class="c8 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          />
+        </div>
+      </div>
+      <div
+        class="c9"
+        style="flex: 11 0 0px; cursor: ew-resize;"
+      />
+      <div
+        class="c6"
+        style="flex: 0 0 1px;"
+      >
+        <div
+          aria-label="Upper Bounds"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="30"
+          class="c7"
+          role="slider"
+          style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+          tabindex="0"
+        >
+          <div
+            class="c8 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          />
+        </div>
+      </div>
+      <div
+        class="c5"
+        style="flex: 70 0 0px;"
+      />
+    </div>
+    <span
+      class="c10"
+      style="width: 0px;"
+    >
+      30%
+    </span>
   </div>
 </div>
 `;
@@ -1676,6 +2017,7 @@ exports[`RangeSelector max 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -1790,96 +2132,61 @@ exports[`RangeSelector max 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="50"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="50"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
   </div>
 </div>
@@ -1914,6 +2221,7 @@ exports[`RangeSelector min 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -2028,96 +2336,61 @@ exports[`RangeSelector min 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "10 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 10 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="10"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="10"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
 </div>
@@ -2152,6 +2425,7 @@ exports[`RangeSelector opacity 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -2301,276 +2575,171 @@ exports[`RangeSelector opacity 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c8"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c8"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c9"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c9"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
 </div>
@@ -2605,6 +2774,7 @@ exports[`RangeSelector round 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -2913,456 +3083,281 @@ exports[`RangeSelector round 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c8"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c8"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c9"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c9"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c8"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c8"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c10"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c10"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c11"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c11"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c10"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c10"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c12"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c12"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c13"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c13"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c12"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c12"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c14"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c14"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c15"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c15"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c14"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c14"
+      style="flex: 70 0 0px;"
     />
   </div>
 </div>
@@ -3397,6 +3392,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -3527,8 +3523,12 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
         class="c5"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3546,8 +3546,12 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
         class="c5"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -3592,6 +3596,7 @@ exports[`RangeSelector size 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c3 {
@@ -3914,636 +3919,391 @@ exports[`RangeSelector size 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c7"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c3"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c3"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c8"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c8"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c9"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c9"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c8"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c8"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c10"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c10"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c11"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c11"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c10"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c10"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c12"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c12"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c13"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c13"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c12"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c12"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c14"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c14"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c15"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c15"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c14"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c14"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c16"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c16"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c17"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c17"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c16"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c16"
+      style="flex: 70 0 0px;"
     />
   </div>
   <div
-    className="c1 c2"
-    tabIndex="-1"
+    class="c1 c2"
+    tabindex="-1"
   >
     <div
-      className="c18"
-      style={
-        Object {
-          "flex": "20 0 0",
-        }
-      }
+      class="c18"
+      style="flex: 20 0 0px;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c19"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "11 0 0",
-        }
-      }
+      class="c19"
+      style="flex: 11 0 0px; cursor: ew-resize;"
     />
     <div
-      className="c4"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
+      class="c4"
+      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
-        className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "outline": "none",
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+        tabindex="0"
       >
         <div
-          className="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
+          class="c6 EdgeControl__StyledBox-sc-1xo2yt9-0"
         />
       </div>
     </div>
     <div
-      className="c18"
-      style={
-        Object {
-          "flex": "70 0 0",
-        }
-      }
+      class="c18"
+      style="flex: 70 0 0px;"
     />
   </div>
 </div>
@@ -4709,8 +4469,12 @@ exports[`RangeSelector step renders correct values 1`] = `
     >
       <div
         aria-label="Lower Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
         class="c5"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div
@@ -4728,8 +4492,12 @@ exports[`RangeSelector step renders correct values 1`] = `
     >
       <div
         aria-label="Upper Bounds"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="100"
         class="c5"
-        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 10;"
+        role="slider"
+        style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
         tabindex="0"
       >
         <div

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {
   A11yTitleType,
+  AlignType,
   AlignContentType,
   AlignSelfType,
   BackgroundType,
@@ -11,10 +12,14 @@ import {
   FillType,
   GapType,
   GridAreaType,
+  HeightType,
   MarginType,
   PadType,
   PolymorphicType,
   RoundType,
+  WidthType,
+  AnimationType,
+  SkeletonType,
 } from '../../utils';
 
 export interface BoxProps {
@@ -22,67 +27,9 @@ export interface BoxProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  align?: 'start' | 'center' | 'end' | 'baseline' | 'stretch';
+  align?: AlignType;
   alignContent?: AlignContentType;
-  animation?:
-    | 'fadeIn'
-    | 'fadeOut'
-    | 'jiggle'
-    | 'pulse'
-    | 'rotateLeft'
-    | 'rotateRight'
-    | 'slideUp'
-    | 'slideDown'
-    | 'slideLeft'
-    | 'slideRight'
-    | 'zoomIn'
-    | 'zoomOut'
-    | {
-        type?:
-          | 'fadeIn'
-          | 'fadeOut'
-          | 'jiggle'
-          | 'pulse'
-          | 'rotateLeft'
-          | 'rotateRight'
-          | 'slideUp'
-          | 'slideDown'
-          | 'slideLeft'
-          | 'slideRight'
-          | 'zoomIn'
-          | 'zoomOut';
-        delay?: number;
-        duration?: number;
-        size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
-      }
-    | (
-        | 'fadeIn'
-        | 'fadeOut'
-        | 'jiggle'
-        | 'pulse'
-        | 'slideUp'
-        | 'slideDown'
-        | 'slideLeft'
-        | 'slideRight'
-        | 'zoomIn'
-        | 'zoomOut'
-        | {
-            type?:
-              | 'fadeIn'
-              | 'fadeOut'
-              | 'jiggle'
-              | 'pulse'
-              | 'slideUp'
-              | 'slideDown'
-              | 'slideLeft'
-              | 'slideRight'
-              | 'zoomIn'
-              | 'zoomOut';
-            delay?: number;
-            duration?: number;
-            size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
-          }
-      )[];
+  animation?: AnimationType;
   background?: BackgroundType;
   basis?: BasisType;
   border?: BorderType;
@@ -92,35 +39,7 @@ export interface BoxProps {
   fill?: FillType;
   focusIndicator?: boolean;
   gap?: GapType;
-  height?:
-    | 'xxsmall'
-    | 'xsmall'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | string
-    | {
-        max?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        min?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-      };
+  height?: HeightType;
   hoverIndicator?:
     | { background?: BackgroundType; elevation?: ElevationType }
     | BackgroundType
@@ -147,46 +66,10 @@ export interface BoxProps {
   pad?: PadType;
   responsive?: boolean;
   round?: RoundType;
+  skeleton?: SkeletonType;
   tag?: PolymorphicType;
   as?: PolymorphicType;
-  width?:
-    | 'xxsmall'
-    | 'xsmall'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | string
-    | {
-        width?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        max?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-        min?:
-          | 'xxsmall'
-          | 'xsmall'
-          | 'small'
-          | 'medium'
-          | 'large'
-          | 'xlarge'
-          | 'xxlarge'
-          | string;
-      };
+  width?: WidthType;
   wrap?: boolean | 'reverse';
 }
 

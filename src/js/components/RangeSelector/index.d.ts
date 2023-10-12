@@ -3,8 +3,10 @@ import { Omit, ColorType } from '../../utils';
 
 export interface RangeSelectorProps {
   color?: ColorType;
+  defaultValues?: number[];
   direction?: 'horizontal' | 'vertical';
   invert?: boolean;
+  label?: boolean | ((value: number) => React.ReactNode);
   max?: number;
   messages?: { lower?: string; upper?: string };
   min?: number;
@@ -21,14 +23,15 @@ export interface RangeSelectorProps {
     | 'full'
     | string;
   step?: number;
-  values: number[];
+  values?: number[];
 }
 
 export interface RangeSelectorExtendedProps
   extends RangeSelectorProps,
     Omit<JSX.IntrinsicElements['div'], 'color' | 'onChange'> {}
 
-declare const RangeSelector: React.FC<RangeSelectorProps &
-  Omit<JSX.IntrinsicElements['div'], 'color'>>;
+declare const RangeSelector: React.FC<
+  RangeSelectorProps & Omit<JSX.IntrinsicElements['div'], 'color'>
+>;
 
 export { RangeSelector };

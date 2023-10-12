@@ -9,11 +9,4 @@ const CardHeader = ({ ...rest }) => {
   return <Header {...theme.card.header} {...rest} />;
 };
 
-let CardHeaderDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CardHeaderDoc = require('./doc').doc(CardHeader);
-}
-const CardHeaderWrapper = CardHeaderDoc || CardHeader;
-
-export { CardHeaderWrapper as CardHeader };
+export { CardHeader };

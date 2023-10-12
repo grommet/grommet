@@ -1,4 +1,3 @@
-import { rgba } from 'polished';
 import { css } from 'styled-components';
 
 import { deepFreeze } from '../utils/object';
@@ -17,7 +16,7 @@ const statusColors = {
 const backgroundColor = '#111111';
 
 const colors = {
-  active: rgba(102, 102, 102, 0.5),
+  active: 'rgba(102, 102, 102, 0.5)',
   background: backgroundColor,
   black: '#000000',
   brand: '#FD6FFF',
@@ -45,7 +44,7 @@ const colorArray = (array, prefix) =>
 
 colorArray(accentColors, 'accent');
 colorArray(neutralColors, 'neutral');
-Object.keys(statusColors).forEach(color => {
+Object.keys(statusColors).forEach((color) => {
   colors[`status-${color}`] = statusColors[color];
 });
 
@@ -58,7 +57,7 @@ export const dark = deepFreeze({
     focus: {
       border: {
         color: css`
-          ${props => normalizeColor('focus', props.theme)};
+          ${(props) => normalizeColor('focus', props.theme)};
         `,
         width: '2px',
       },
@@ -76,7 +75,7 @@ export const dark = deepFreeze({
   layer: {
     background: backgroundColor,
     overlay: {
-      background: rgba(48, 48, 48, 0.5),
+      background: 'rgba(48, 48, 48, 0.5)',
     },
   },
 });

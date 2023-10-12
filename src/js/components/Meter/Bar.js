@@ -16,6 +16,7 @@ const Bar = forwardRef((props, ref) => {
     thickness: thicknessProp,
     direction,
     values,
+    reverse,
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -28,7 +29,7 @@ const Bar = forwardRef((props, ref) => {
   const capOffset = round ? thickness / 2 : 0;
   const mid = thickness / 2;
 
-  const someHighlight = (values || []).some(v => v.highlight);
+  const someHighlight = (values || []).some((v) => v.highlight);
   let start =
     direction === 'horizontal'
       ? capOffset
@@ -37,14 +38,8 @@ const Bar = forwardRef((props, ref) => {
   const paths = (values || [])
     .reduce((acc, valueArg, index) => {
       if (valueArg.value > 0) {
-        const {
-          color,
-          highlight,
-          label,
-          onHover,
-          value,
-          ...pathRest
-        } = valueArg;
+        const { color, highlight, label, onHover, value, ...pathRest } =
+          valueArg;
         const key = `p-${index}`;
         const delta = (value * (length - 2 * capOffset)) / max;
         const d =
@@ -113,6 +108,7 @@ const Bar = forwardRef((props, ref) => {
       height={direction === 'horizontal' ? thickness : length}
       round={round ? { size: thicknessProp } : undefined}
       {...rest}
+      reverse={reverse}
     >
       <path
         d={backgroundPath}

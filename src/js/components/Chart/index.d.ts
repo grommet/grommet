@@ -16,7 +16,10 @@ export interface ChartProps {
   animate?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  bounds?: number[][];
+  // caller must align with direction
+  bounds?:
+    | { x: { min: number; max: number }; y: { min: number; max: number } }
+    | number[][];
   color?:
     | ColorType
     | { color: ColorType; value: number | number[] }[]
@@ -26,6 +29,7 @@ export interface ChartProps {
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
       };
   dash?: boolean;
+  direction?: 'horizontal' | 'vertical';
   gap?: GapType;
   onClick?: (...args: any[]) => any;
   onHover?: (...args: any[]) => any;
@@ -66,6 +70,7 @@ export interface ChartProps {
           | 'xlarge'
           | 'fill'
           | 'full'
+          | 'auto'
           | string;
         width?:
           | 'xxsmall'
@@ -76,6 +81,7 @@ export interface ChartProps {
           | 'xlarge'
           | 'fill'
           | 'full'
+          | 'auto'
           | string;
       }
     | string;
@@ -96,6 +102,35 @@ export interface ChartProps {
   )[];
 }
 
-declare const Chart: React.FC<ChartProps>;
+export interface ChartExtendedProps
+  extends ChartProps,
+    Omit<JSX.IntrinsicElements['svg'], keyof ChartProps> {}
 
-export { Chart };
+declare const Chart: React.FC<ChartExtendedProps>;
+
+type Bounds =
+  | { x: { min: number; max: number }; y: { min: number; max: number } }
+  | [[number, number], [number, number]]
+  | [[], []];
+
+interface CalcsResult {
+  axis: { x: number[]; y: number[] } | [number[], number[]];
+  bounds: Bounds;
+  dimensions: { width: number; height: number } | [number, number];
+  pad: string;
+  thickness: string;
+}
+
+interface CalcsOptions {
+  min?: number;
+  max?: number;
+  bounds?: Bounds;
+  thickness?: string;
+}
+
+declare const calcs: (
+  values: number[] | number[][],
+  options?: CalcsOptions,
+) => CalcsResult;
+
+export { Chart, calcs };

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BoxProps } from '../Box';
+import { BoxProps } from '../Box/index';
 
 export interface AvatarProps {
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;

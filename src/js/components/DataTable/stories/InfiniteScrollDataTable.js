@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Grommet, Box, DataTable, Heading, Meter, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Heading, Meter, Text } from 'grommet';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -29,19 +28,17 @@ const columns = [
   {
     property: 'date',
     header: 'Due',
-    render: datum =>
+    render: (datum) =>
       datum.date && new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
   {
     property: 'percent',
     header: 'Percent Complete',
-    render: datum => (
+    render: ({ key, percent }) => (
       <Box pad={{ vertical: 'xsmall' }} alignSelf="center">
         <Meter
-          values={[
-            { value: datum.percent, color: `accent-${(datum.key % 4) + 1}` },
-          ]}
+          values={[{ value: percent, color: `graph-${(key % 4) + 1}` }]}
           thickness="small"
           size="xxsmall"
           type="circle"
@@ -52,7 +49,7 @@ const columns = [
   {
     property: 'paid',
     header: 'Paid',
-    render: datum => amountFormatter.format(datum.paid / 100),
+    render: (datum) => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
     footer: { aggregate: true },
@@ -310,24 +307,25 @@ export const InfiniteScrollDataTable = () => {
   };
 
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Heading level={3}>
-          <Box gap="small">
-            <strong>InfiniteScroll embedded in DataTable</strong>
-            <Text>
-              Scroll down to load more data, open console to see loading info
-            </Text>
-          </Box>
-        </Heading>
-        <DataTable
-          columns={columns}
-          data={DATA}
-          step={step}
-          onMore={() => load()}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <Heading level={3}>
+        <Box gap="small">
+          <strong>InfiniteScroll embedded in DataTable</strong>
+          <Text>
+            Scroll down to load more data, open console to see loading info
+          </Text>
+        </Box>
+      </Heading>
+      <DataTable
+        columns={columns}
+        data={DATA}
+        step={step}
+        onMore={() => load()}
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import 'jest-styled-components';
-import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
+import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -15,7 +15,6 @@ import { Select } from '..';
 describe('Select', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
-  afterEach(cleanup);
 
   test('should not have accessibility violations', async () => {
     const { container } = render(
@@ -23,27 +22,44 @@ describe('Select', () => {
         <Select options={['one', 'two', 'three']} a11yTitle="test" />
       </Grommet>,
     );
-    const results = await axe(container);
-    expect(container.firstChild).toMatchSnapshot();
+
+    const results = await axe(container, {
+      rules: {
+        /* This rule is flagged because Select is built using a 
+        TextInput within a DropButton. According to Dequeue and 
+        WCAG 4.1.2 "interactive controls must not have focusable 
+        descendants". Jest-axe is assuming that the input is focusable
+        and since the input is a descendant of the button the rule is 
+        flagged. However, the TextInput is built so that it is read 
+        only and cannot receive focus. Select is accessible 
+        according to the WCAG specification, but jest-axe is flagging
+        it so we are disabling this rule. */
+        'nested-interactive': { enabled: false },
+      },
+    });
     expect(results).toHaveNoViolations();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('dark', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Box fill background="dark-1" align="center" justify="center">
           <Select placeholder="Select" options={['one', 'two']} />
         </Box>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('prop: onOpen', () => {
@@ -95,17 +111,20 @@ describe('Select', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
-  test('0 value', () => {
-    const component = renderer.create(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={[0, 1]}
-        value={0}
-      />,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
+  [0, null].forEach((value) =>
+    test(`${value} value`, () => {
+      const { asFragment } = render(
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[0, 1]}
+          value={value}
+        />,
+      );
+
+      expect(asFragment()).toMatchSnapshot();
+    }),
+  );
 
   test('search', () => {
     jest.useFakeTimers();
@@ -148,7 +167,7 @@ describe('Select', () => {
           placeholder="test select"
           options={options}
           onChange={onChange}
-          onSearch={arg => {
+          onSearch={(arg) => {
             onSearch(arg);
             setOptions(['two']);
           }}
@@ -184,7 +203,7 @@ describe('Select', () => {
         options={[{ test: 'one' }, { test: 'two' }]}
         onChange={onChange}
       >
-        {option => <span>{option.test}</span>}
+        {(option) => <span>{option.test}</span>}
       </Select>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -202,7 +221,7 @@ describe('Select', () => {
   });
 
   test('size', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select
         id="test-select"
         size="large"
@@ -212,10 +231,11 @@ describe('Select', () => {
         onChange={() => {}}
       />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  ['small', 'medium', 'large'].forEach(dropHeight => {
+  ['small', 'medium', 'large'].forEach((dropHeight) => {
     test(`${dropHeight} drop container height`, () => {
       const { getByPlaceholderText } = render(
         <Select
@@ -258,7 +278,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -277,6 +297,101 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange without labelKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          valueKey="id"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange without labelKey or valueKey', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('1')); // 1 matches first key
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: {
+          id: 1,
+          name: 'Value1',
+        },
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('onChange with valueKey string', () => {
@@ -304,7 +419,7 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText, container, asFragment } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -323,6 +438,53 @@ describe('Select', () => {
         },
       }),
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onChange with valueKey object', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey={{ key: 'id', reduce: true }}
+          value={value}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+          onChange={onChange}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, asFragment } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(getByText('Value1'));
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: 1,
+      }),
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('disabled key', () => {
@@ -370,7 +532,7 @@ describe('Select', () => {
         placeholder="test select"
         options={[{ test: 'one' }, { test: 'two' }]}
       >
-        {option => <span>{option.test}</span>}
+        {(option) => <span>{option.test}</span>}
       </Select>,
     );
     // before opening
@@ -599,24 +761,27 @@ describe('Select', () => {
   });
 
   test('renders without icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon={false} />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders custom icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon={CaretDown} />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders default icon', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Select id="test-select" options={['one', 'two']} icon />,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('modifies select control style on open', () => {
@@ -647,7 +812,7 @@ describe('Select', () => {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    const selectButton = container.querySelector('Button');
+    const selectButton = document.getElementById('test-open-id');
     let style;
 
     style = window.getComputedStyle(selectButton);
@@ -773,6 +938,57 @@ describe('Select', () => {
     style = window.getComputedStyle(optionButton.firstChild);
     expect(style.background).toBe('lightgreen');
     expect(style.borderBottom).toBe('2px solid blue');
+  });
+
+  test('renders empty search with select.emptySearchMessage styling', () => {
+    const customTheme = {
+      select: {
+        emptySearchMessage: {
+          container: {
+            pad: {
+              horizontal: 'small', // t-shirt size
+              vertical: '6px', // px value
+            },
+          },
+          text: {
+            color: 'green',
+          },
+        },
+      },
+    };
+
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          id="test-select"
+          data-testid
+          placeholder="test select"
+          options={[]}
+          onSearch={() => {}}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('test select'));
+    // advance timers so that the select drop can open
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    fireEvent.change(document.activeElement, { target: { value: 'o' } });
+
+    let style;
+    const emptySearchContainer = getByText('No matches found').closest('div');
+    style = window.getComputedStyle(emptySearchContainer);
+    expect(style.paddingLeft).toBe('12px');
+    expect(style.paddingRight).toBe('12px');
+    expect(style.paddingTop).toBe('6px');
+    expect(style.paddingBottom).toBe('6px');
+
+    const emptySearchMessage = getByText('No matches found').closest('span');
+    style = window.getComputedStyle(emptySearchMessage);
+    expect(style.color).toBe('green');
+
+    expect(document.activeElement).toMatchSnapshot();
   });
 
   test('applies custom global.hover theme to options', () => {
@@ -956,7 +1172,7 @@ describe('Select', () => {
           value={value}
           valueLabel={<span>{value || 'none'}</span>}
           options={['one', 'two']}
-          onChange={event => {
+          onChange={(event) => {
             setValue(event.value);
             onChange(event);
           }}
@@ -978,6 +1194,9 @@ describe('Select', () => {
       expect.objectContaining({
         value: 'one',
         option: 'one',
+        target: expect.objectContaining({
+          value: 'one',
+        }),
       }),
     );
   });
@@ -1087,13 +1306,19 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText } = render(
+    render(
       <Grommet>
         <Test />
       </Grommet>,
     );
-    fireEvent.click(getByPlaceholderText('test select'));
 
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press down arrow to move to select options',
+    });
+    expect(clearButton).toBeTruthy();
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
@@ -1110,12 +1335,19 @@ describe('Select', () => {
         />
       );
     };
-    const { getByPlaceholderText } = render(
+    render(
       <Grommet>
         <Test />
       </Grommet>,
     );
-    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    fireEvent.click(screen.getByRole('option', { name: 'one' }));
+    fireEvent.click(screen.getByPlaceholderText('test select'));
+    const clearButton = screen.getByRole('button', {
+      name: 'Clear selection. Or, press shift tab to move to select options',
+    });
+    expect(clearButton).toBeTruthy();
 
     expectPortal('test-select__drop').toMatchSnapshot();
   });
@@ -1307,6 +1539,57 @@ describe('Select', () => {
     });
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply a11yTitle or aria-label', () => {
+    const { container, getByRole } = render(
+      <Grommet>
+        <Select options={['one', 'two', 'three']} a11yTitle="test" />
+        <Select options={['one', 'two', 'three']} aria-label="test-select" />
+      </Grommet>,
+    );
+
+    expect(getByRole('button', { name: 'test' })).toBeTruthy();
+    expect(getByRole('button', { name: 'test-select' })).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('object options and null value', () => {
+    render(
+      <Grommet>
+        <Select
+          placeholder="test select"
+          valueKey="id"
+          value={null}
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+            },
+            {
+              id: 2,
+              name: 'Value2',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    const select = screen.getByRole('button', { name: /test select/ });
+    fireEvent.click(select);
+    expect(select).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  test('valueLabel with value=0', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Select
+          options={[0, 1, 2]}
+          value={0}
+          valueLabel={(val) => `Value: ${val}`}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   window.scrollTo.mockRestore();

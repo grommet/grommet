@@ -1,0 +1,522 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NameValuePair should render name when name is JSX Element 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-gap: 24px 48px;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <dl
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <dt
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          name
+        </div>
+      </dt>
+      <dd
+        class="c4"
+      >
+        entry
+      </dd>
+    </div>
+    <div
+      class="c2"
+    >
+      <dt
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          location
+        </div>
+      </dt>
+      <dd
+        class="c4"
+      >
+        San Francisco
+      </dd>
+    </div>
+    <div
+      class="c2"
+    >
+      <dt
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          health
+        </div>
+      </dt>
+      <dd
+        class="c4"
+      >
+        80
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
+
+exports[`NameValuePair should render name when name is typeof string 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-gap: 24px 48px;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <dl
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        name
+      </dt>
+      <dd
+        class="c4"
+      >
+        entry
+      </dd>
+    </div>
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        location
+      </dt>
+      <dd
+        class="c4"
+      >
+        San Francisco
+      </dd>
+    </div>
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        health
+      </dt>
+      <dd
+        class="c4"
+      >
+        80
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
+
+exports[`NameValuePair should render value when provided as child of type 
+  string or number 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,96px) );
+  grid-gap: 24px 48px;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <dl
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        name
+      </dt>
+      <dd
+        class="c4"
+      >
+        entry
+      </dd>
+    </div>
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        location
+      </dt>
+      <dd
+        class="c4"
+      >
+        San Francisco
+      </dd>
+    </div>
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        health
+      </dt>
+      <dd
+        class="c4"
+      >
+        80
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
+
+exports[`NameValuePair should render value when provided as child of type JSX Element 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c6 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
+  grid-gap: 24px 48px;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c3 {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <dl
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        name
+      </dt>
+      <dd
+        class="c4"
+      >
+        entry
+      </dd>
+    </div>
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        location
+      </dt>
+      <dd
+        class="c4"
+      >
+        San Francisco
+      </dd>
+    </div>
+    <div
+      class="c2"
+    >
+      <dt
+        class="c3"
+      >
+        health
+      </dt>
+      <dd
+        class="c5"
+      >
+        <svg
+          class="c6"
+          height="24"
+          preserveAspectRatio="none"
+          viewBox="0 0 384 24"
+          width="384"
+        >
+          <path
+            d="M 0,12 L 384,12"
+            fill="none"
+            stroke="#F2F2F2"
+            stroke-linecap="square"
+            stroke-opacity="0.4"
+            stroke-width="24"
+          />
+          <path
+            d="M 0,12 L 307.2,12"
+            fill="none"
+            stroke="#6FFFB0"
+            stroke-linecap="butt"
+            stroke-width="24"
+          />
+        </svg>
+      </dd>
+    </div>
+  </dl>
+</div>
+`;

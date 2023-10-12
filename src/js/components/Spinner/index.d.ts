@@ -1,10 +1,12 @@
 import * as React from 'react';
 
 import { ColorType } from 'grommet/utils';
-import { BoxProps } from '../Box';
+import { BoxProps } from '../Box/index';
+
 export interface SpinnerProps {
-  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+  children?: React.ReactNode;
   color?: ColorType;
+  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   message?: string | { start?: string; end?: string };
 }
 

@@ -28,15 +28,12 @@ exports[`RoutedAnchor renders 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div>
     <a
-      className="c1"
+      class="c1"
       href="/"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
     >
       Test
     </a>

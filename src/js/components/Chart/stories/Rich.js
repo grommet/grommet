@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Grommet, Box, Chart, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Chart, Stack, Text } from 'grommet';
 
 import { calcs } from '../calcs';
 
@@ -21,12 +20,12 @@ export const Rich = () => {
     }
 
     // convert for displaying
-    const values = averages.map(avg => ({
+    const values = averages.map((avg) => ({
       value: [new Date(avg.date).getTime(), avg.value],
     }));
 
     const { axis, bounds } = calcs(values, { coarseness: 5, steps: [3, 3] });
-    const xAxis = axis[0].map(x =>
+    const xAxis = axis[0].map((x) =>
       new Date(x).toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
@@ -44,57 +43,58 @@ export const Rich = () => {
     overflow: true,
   };
   return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Box
-          direction="row"
-          justify="between"
-          width="medium"
-          margin={{ vertical: 'small' }}
-        >
-          {xAxis.map(x => (
-            <Text key={x}>{x}</Text>
-          ))}
-        </Box>
-        <Stack guidingChild="last">
-          <Box fill justify="between">
-            {yAxis.map((y, index) => {
-              const first = index === 0;
-              const last = index === yAxis.length - 1 && !first;
-              let align;
-              if (first) {
-                align = 'start';
-              } else if (last) {
-                align = 'end';
-              } else {
-                align = 'center';
-              }
-              return (
-                <Box key={y} direction="row" align={align}>
-                  <Box pad={{ horizontal: 'small' }}>
-                    <Text>{y}</Text>
-                  </Box>
-                  <Box border="top" flex />
-                </Box>
-              );
-            })}
-          </Box>
-          <Chart
-            {...chartProps}
-            type="area"
-            color={{ color: 'accent-1', opacity: 'medium' }}
-            thickness="hair"
-          />
-          <Chart
-            {...chartProps}
-            type="line"
-            round
-            color={{ color: 'accent-3', opacity: 'strong' }}
-            thickness="small"
-          />
-        </Stack>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <Box
+        direction="row"
+        justify="between"
+        width="medium"
+        margin={{ vertical: 'small' }}
+      >
+        {xAxis.map((x) => (
+          <Text key={x}>{x}</Text>
+        ))}
       </Box>
-    </Grommet>
+      <Stack guidingChild="last">
+        <Box fill justify="between">
+          {yAxis.map((y, index) => {
+            const first = index === 0;
+            const last = index === yAxis.length - 1 && !first;
+            let align;
+            if (first) {
+              align = 'start';
+            } else if (last) {
+              align = 'end';
+            } else {
+              align = 'center';
+            }
+            return (
+              <Box key={y} direction="row" align={align}>
+                <Box pad={{ horizontal: 'small' }}>
+                  <Text>{y}</Text>
+                </Box>
+                <Box border="top" flex />
+              </Box>
+            );
+          })}
+        </Box>
+        <Chart
+          {...chartProps}
+          type="area"
+          color={{ color: 'accent-1', opacity: 'medium' }}
+          thickness="hair"
+        />
+        <Chart
+          {...chartProps}
+          type="line"
+          round
+          color={{ color: 'accent-3', opacity: 'strong' }}
+          thickness="small"
+        />
+      </Stack>
+    </Box>
+    // </Grommet>
   );
 };
 

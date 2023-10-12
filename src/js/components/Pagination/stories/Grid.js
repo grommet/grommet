@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Card, Grid, Grommet, Pagination, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Card, Grid, Pagination, Text } from 'grommet';
 
 const data = [];
 
@@ -28,27 +27,32 @@ export const PaginatedGrid = () => {
   };
 
   return (
-    <Grommet theme={grommet} full>
-      <Box pad="large" gap="medium">
-        <Box height={{ min: 'medium' }}>
-          <Grid columns="small" rows="small" gap="medium" justify="center">
-            {currentData.map(datum => (
-              <CardResult item={datum} key={datum.entry} />
-            ))}
-          </Grid>
-        </Box>
-        <Box align="center" direction="row" justify="between">
-          <Text>
-            Showing {indices[0] + 1} - {indices[1]} of {data.length}
-          </Text>
-          <Pagination numberItems={data.length} onChange={handleChange} />
-        </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="large" gap="medium">
+      <Box height={{ min: 'medium' }}>
+        <Grid columns="small" rows="small" gap="medium" justify="center">
+          {currentData.map((datum) => (
+            <CardResult item={datum} key={datum.entry} />
+          ))}
+        </Grid>
       </Box>
-    </Grommet>
+      <Box align="center" direction="row" justify="between">
+        <Text>
+          Showing {indices[0] + 1} - {indices[1]} of {data.length}
+        </Text>
+        <Pagination numberItems={data.length} onChange={handleChange} />
+      </Box>
+    </Box>
+    // </Grommet>
   );
 };
 
 PaginatedGrid.storyName = 'Grid';
+
+PaginatedGrid.args = {
+  full: true,
+};
 
 export default {
   title: 'Controls/Pagination/Grid',

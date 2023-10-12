@@ -1,25 +1,23 @@
 import React from 'react';
 
-import { Grommet, Box, Menu } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Menu } from 'grommet';
 
 const SimpleMenu = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      <Menu
-        dropProps={{
-          align: { top: 'bottom', left: 'left' },
-          elevation: 'xlarge',
-        }}
-        label="actions"
-        items={[
-          { label: 'Launch', onClick: () => {} },
-          { label: 'Abort', onClick: () => {} },
-          { label: 'Disabled', disabled: true },
-        ]}
-      />
-    </Box>
-  </Grommet>
+  <Box align="center" pad="large">
+    <Menu
+      dropProps={{
+        a11yTitle: 'Simple drop content',
+        align: { top: 'bottom', left: 'left' },
+        elevation: 'xlarge',
+      }}
+      label="actions"
+      items={[
+        { label: 'Launch', onClick: () => {} },
+        { label: 'Abort', onClick: () => {} },
+        { label: 'Disabled', disabled: true },
+      ]}
+    />
+  </Box>
 );
 
 export const Simple = () => <SimpleMenu />;

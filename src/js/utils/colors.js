@@ -29,11 +29,11 @@ export const normalizeColor = (color, theme, dark) => {
   return result;
 };
 
-const parseHexToRGB = color =>
+const parseHexToRGB = (color) =>
   color.length < 7 // 7 is what's needed for '#RRGGBB'
-    ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(`${v}${v}`, 16))
+    ? color.match(/[A-Za-z0-9]{1}/g).map((v) => parseInt(`${v}${v}`, 16))
     : // https://stackoverflow.com/a/42429333
-      color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
+      color.match(/[A-Za-z0-9]{2}/g).map((v) => parseInt(v, 16));
 
 // From: https://stackoverflow.com/a/9493060/8513067
 // Converts an HSL color value to RGB. Conversion formula
@@ -74,38 +74,39 @@ const hslToRGB = (h, s, l) => {
 // allow for alpha: #RGB, #RGBA, #RRGGBB, or #RRGGBBAA
 const hexExp = /^#[A-Za-z0-9]{3,4}$|^#[A-Za-z0-9]{6,8}$/;
 const rgbExp = /^rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?\)/;
-const rgbaExp = /^rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([.0-9]*)\s?\)/;
+const rgbaExp =
+  /^rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([.0-9]*)\s?\)/;
 // e.g. hsl(240, 60%, 50%)
 const hslExp = /^hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
 
-const canExtractRGBArray = color =>
+export const canExtractRGBArray = (color) =>
   hexExp.test(color) ||
   rgbExp.test(color) ||
   rgbaExp.test(color) ||
   hslExp.test(color);
 
-const getRGBArray = color => {
+export const getRGBArray = (color) => {
   if (hexExp.test(color)) {
     const [red, green, blue, alpha] = parseHexToRGB(color);
     return [red, green, blue, alpha !== undefined ? alpha / 255.0 : undefined];
   }
   let match = color.match(rgbExp);
   if (match) {
-    return match.splice(1).map(v => parseInt(v, 10));
+    return match.splice(1).map((v) => parseInt(v, 10));
   }
   match = color.match(rgbaExp);
   if (match) {
-    return match.splice(1).map(v => parseFloat(v, 10));
+    return match.splice(1).map((v) => parseFloat(v, 10));
   }
   match = color.match(hslExp);
   if (match) {
-    const [h, s, l] = match.splice(1).map(v => parseInt(v, 10));
+    const [h, s, l] = match.splice(1).map((v) => parseInt(v, 10));
     return hslToRGB(h / 360.0, s / 100.0, l / 100.0);
   }
   return color;
 };
 
-export const colorIsDark = color => {
+export const colorIsDark = (color) => {
   if (color && canExtractRGBArray(color)) {
     const [red, green, blue, alpha] = getRGBArray(color);
     // if there is an alpha and it's greater than 50%, we can't really tell

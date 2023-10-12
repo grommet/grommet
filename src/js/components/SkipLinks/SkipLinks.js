@@ -11,11 +11,13 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { Layer } from '../Layer';
 import { defaultProps } from '../../default-props';
+import { MessageContext } from '../../contexts/MessageContext';
+import { SkipLinksPropTypes } from './propTypes';
 
 const SkipLinks = ({ children, id, messages }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [showLayer, setShowLayer] = useState(false);
-
+  const { format } = useContext(MessageContext);
   const layerRef = useRef(null);
 
   const onFocus = () => {
@@ -53,15 +55,19 @@ const SkipLinks = ({ children, id, messages }) => {
       responsive={false}
     >
       <Box {...theme.skipLinks.container}>
-        {messages.skipTo && (
-          <Text {...theme.skipLinks.label}>{messages.skipTo}</Text>
-        )}
+        <Text {...theme.skipLinks.label}>
+          {format({ id: 'skipLinks.skipTo', messages })}
+        </Text>
         <Box align="center" gap="medium">
-          {Children.map(children, (child, index) =>
-            cloneElement(child, {
-              key: `skip-link-${index}`,
-              onClick: removeLayer,
-            }),
+          {Children.map(
+            children,
+            (child, index) =>
+              child &&
+              cloneElement(child, {
+                // eslint-disable-next-line react/no-array-index-key
+                key: `skip-link-${index}`,
+                onClick: removeLayer,
+              }),
           )}
         </Box>
       </Box>
@@ -69,17 +75,7 @@ const SkipLinks = ({ children, id, messages }) => {
   );
 };
 
-SkipLinks.defaultProps = {
-  messages: {
-    skipTo: 'Skip To:',
-  },
-};
+SkipLinks.defaultProps = {};
+SkipLinks.propTypes = SkipLinksPropTypes;
 
-let SkipLinksDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  SkipLinksDoc = require('./doc').doc(SkipLinks);
-}
-const SkipLinksWrapper = SkipLinksDoc || SkipLinks;
-
-export { SkipLinksWrapper as SkipLinks };
+export { SkipLinks };

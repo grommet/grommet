@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Box, Grommet, DataTable, Meter, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, DataTable, Meter, Text } from 'grommet';
 
 import { ColumnConfig } from '../..';
 
@@ -28,14 +27,14 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'date',
     header: 'Date',
-    render: datum =>
+    render: (datum) =>
       datum.date && new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
   {
     property: 'percent',
     header: 'Percent Complete',
-    render: datum => (
+    render: (datum) => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter
           values={[{ value: datum.percent }]}
@@ -48,7 +47,7 @@ const columns: ColumnConfig<RowType>[] = [
   {
     property: 'paid',
     header: 'Paid',
-    render: datum => amountFormatter.format(datum.paid / 100),
+    render: (datum) => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
     footer: { aggregate: true },
@@ -143,19 +142,20 @@ const DATA: RowType[] = [
 export const Paginated = () => {
   const [select, setSelect] = React.useState([]);
   return (
-    <Grommet theme={grommet} full>
-      <Box pad="large">
-        <DataTable
-          columns={columns}
-          data={DATA}
-          onSelect={setSelect}
-          select={select}
-          sortable
-          step={3}
-          paginate
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet} full>
+    <Box pad="large">
+      <DataTable
+        columns={columns}
+        data={DATA}
+        onSelect={setSelect}
+        select={select}
+        sortable
+        step={3}
+        paginate
+      />
+    </Box>
+    // </Grommet>
   );
 };
 

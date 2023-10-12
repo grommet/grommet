@@ -16,10 +16,11 @@ export interface MeterProps {
   gridArea?: GridAreaType;
   margin?: MarginType;
   max?: number;
+  reverse?: boolean;
   round?: boolean;
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'full' | string;
   thickness?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  type?: 'bar' | 'circle' | 'pie';
+  type?: 'bar' | 'circle' | 'pie' | 'semicircle';
   value?: number;
   values?: {
     color?: string;

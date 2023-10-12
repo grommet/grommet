@@ -1,21 +1,16 @@
-import React, { memo, useContext } from 'react';
+import React, { isValidElement, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
-import { datumValue, normalizeBackgroundColor } from './buildState';
+import { datumValue } from './buildState';
 import { TableContext } from '../Table/TableContext';
-
-const normalizeProp = (name, rowProp, prop) => {
-  if (rowProp && rowProp[name]) return rowProp[name];
-  return prop;
-};
 
 const Cell = memo(
   ({
-    background: backgroundProp,
+    background,
     border,
     column: {
       align,
@@ -24,16 +19,17 @@ const Cell = memo(
       footer,
       property,
       render,
-      verticalAlign,
+      verticalAlign: columnVerticalAlign, // deprecate in v3
       size,
     },
     datum,
-    index,
     pad,
     pin: cellPin,
+    pinnedOffset,
     primaryProperty,
-    rowProp,
     scope,
+    verticalAlign,
+    ...rest
   }) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const value = datumValue(datum, property);
@@ -46,7 +42,12 @@ const Cell = memo(
     if (render && renderContexts) {
       content = render(datum);
     } else if (value !== undefined) {
-      content = value;
+      if (
+        typeof value === 'string' ||
+        typeof value === 'number' ||
+        isValidElement(value)
+      )
+        content = value;
     }
 
     if (typeof content === 'string' || typeof content === 'number') {
@@ -55,23 +56,9 @@ const Cell = memo(
       content = <Text {...textProps}>{content}</Text>;
     }
 
-    let pin;
-    if (cellPin) pin = cellPin;
-    else if (columnPin) pin = ['left'];
-
-    let background;
-    if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
-      background = theme.dataTable.pinned[context].background;
-      if (!background.color && theme.background) {
-        // theme context has an active background color but the
-        // theme doesn't set an explicit color, repeat the context
-        // background explicitly
-        background = {
-          ...background,
-          color: normalizeBackgroundColor(theme),
-        };
-      }
-    } else background = undefined;
+    const pin = [];
+    if (cellPin) pin.push(...cellPin);
+    if (columnPin) pin.push('left');
 
     return (
       <StyledDataTableCell
@@ -79,21 +66,15 @@ const Cell = memo(
         {...theme.dataTable[context]}
         align={align}
         context={context}
-        verticalAlign={verticalAlign}
+        verticalAlign={verticalAlign || columnVerticalAlign}
         size={size}
-        background={
-          normalizeProp(
-            'background',
-            rowProp,
-            Array.isArray(backgroundProp)
-              ? backgroundProp[index % backgroundProp.length]
-              : backgroundProp,
-          ) || background
-        }
-        border={normalizeProp('border', rowProp, border)}
-        pad={normalizeProp('pad', rowProp, pad)}
+        background={background}
+        pinnedOffset={pinnedOffset}
+        border={border}
+        pad={pad}
         pin={pin}
         plain={plain ? 'noPad' : undefined}
+        {...rest}
       >
         {content}
       </StyledDataTableCell>

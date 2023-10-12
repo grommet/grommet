@@ -1,13 +1,14 @@
 version: 2.1
-
+orbs:
+  browser-tools: circleci/browser-tools@1.4.4
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: circleci/node:14
-
+    - image: cimg/node:18.13.0-browsers
 jobs:
   checkout:
     <<: *defaults
+    resource_class: large # resource class size determined by run time of jobs
     steps:
       - checkout
       - restore_cache:
@@ -25,6 +26,7 @@ jobs:
             - ./
   lint:
     <<: *defaults
+    resource_class: small
     steps:
       - attach_workspace:
           at: ~/grommet-ci
@@ -33,6 +35,7 @@ jobs:
           command: yarn lint
   jest:
     <<: *defaults
+    resource_class: large
     steps:
       - attach_workspace:
           at: ~/grommet-ci
@@ -41,12 +44,13 @@ jobs:
           command: yarn test
   chromatic:
     <<: *defaults
+    resource_class: large
     steps:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic test --app-code=9q99in2ygnh --exit-zero-on-changes
+          command: yarn chromatic --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
     steps:
@@ -54,9 +58,10 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic test --app-code=9q99in2ygnh --exit-zero-on-changes --auto-accept-changes
+          command: yarn chromatic --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
+    resource_class: medium+
     steps:
       - attach_workspace:
           at: ~/grommet-ci
@@ -69,12 +74,38 @@ jobs:
             - ./
   bundlesize:
     <<: *defaults
+    resource_class: small
     steps:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
           name: size
           command: yarn test-bundlesize
+  test:
+    <<: *defaults
+    resource_class: small
+    # Assigned a size small resource class because we currently only have 3 end
+    # to end tests. As we expand our e2e testing we may want to adjust this.
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run: sudo apt-get update
+      - browser-tools/install-chrome:
+          replace-existing: true
+          chrome-version: 116.0.5845.96
+          # temporary solution until
+          # https://github.com/CircleCI-Public/browser-tools-orb/issues/90
+          # is fixed. Once fixed remove chrome-version.
+      - browser-tools/install-chromedriver
+      - run:
+          name: Start project
+          command: yarn start
+          background: true
+      - run:
+          name: End to end test
+          command: yarn test-e2e-ci
+      - store_test_results:
+          path: /tmp/test-results
   release:
     <<: *defaults
     steps:
@@ -99,9 +130,6 @@ jobs:
       - run:
           name: Publish package
           command: cd dist && npm publish
-      - run:
-          name: Validate publish
-          command: cd ~/grommet-ci/templates/grommet-v2-template && yarn install && yarn build
 workflows:
   build_test:
     jobs:
@@ -116,6 +144,12 @@ workflows:
             tags:
               only: /.*/
       - jest:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - test:
           requires:
             - checkout
           filters:

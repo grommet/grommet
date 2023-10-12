@@ -31,12 +31,10 @@ exports[`Grommet ThemeContext theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <a
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
+    class="c1"
   >
     Hello
   </a>
@@ -60,20 +58,20 @@ exports[`Grommet custom theme 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -94,20 +92,20 @@ exports[`Grommet custom theme 1`] = `
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -128,20 +126,20 @@ exports[`Grommet custom theme 1`] = `
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -343,153 +341,125 @@ exports[`Grommet custom theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <a
-      className="c2"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c2"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c4"
+          class="c4"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
         <span
-          className="c5"
+          class="c5"
         />
         Add
       </span>
     </a>
     <a
-      className="c6"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c6"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c7"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
         <span
-          className="c5"
+          class="c5"
         />
         Add
       </span>
     </a>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <a
-      className="c9"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c9"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c10"
+          class="c10"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
         <span
-          className="c5"
+          class="c5"
         />
         Add
       </span>
     </a>
     <a
-      className="c6"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c6"
     >
       <span
-        className="c3"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
+        class="c3"
+        style="display: inline-flex;"
       >
         <svg
           aria-label="Add"
-          className="c7"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <path
-            d="M12,22 L12,2 M2,12 L22,12"
+            d="M12 22V2M2 12h20"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
         <span
-          className="c5"
+          class="c5"
         />
         Add
       </span>
     </a>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c11"
+      class="c11"
     >
       <input
-        autoComplete="off"
-        className="c12"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
+        autocomplete="off"
+        class="c12"
         placeholder="Placeholder"
         value="Value"
       />
@@ -822,229 +792,229 @@ exports[`Grommet dark theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-1
     </span>
   </div>
   <div
-    className="c3"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-2
     </span>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-3
     </span>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c5"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-1
     </span>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-2
     </span>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-3
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-4
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-5
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-6
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c10"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-1
     </span>
   </div>
   <div
-    className="c11"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-2
     </span>
   </div>
   <div
-    className="c12"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-3
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-4
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-5
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-6
     </span>
   </div>
   <div
-    className="c14"
+    class="c14"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-1
     </span>
   </div>
   <div
-    className="c15"
+    class="c15"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-2
     </span>
   </div>
   <div
-    className="c16"
+    class="c16"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-3
     </span>
   </div>
   <div
-    className="c17"
+    class="c17"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c19"
+    class="c19"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c20"
+    class="c20"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
     </span>
@@ -1373,229 +1343,229 @@ exports[`Grommet default theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-1
     </span>
   </div>
   <div
-    className="c3"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-2
     </span>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
       accent-3
     </span>
   </div>
   <div
-    className="c5"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c6"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-1
     </span>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-2
     </span>
   </div>
   <div
-    className="c8"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-3
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-4
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-5
     </span>
   </div>
   <div
-    className="c9"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       dark-6
     </span>
   </div>
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c10"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-1
     </span>
   </div>
   <div
-    className="c11"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-2
     </span>
   </div>
   <div
-    className="c12"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-3
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-4
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-5
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       light-6
     </span>
   </div>
   <div
-    className="c14"
+    class="c14"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-1
     </span>
   </div>
   <div
-    className="c15"
+    class="c15"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-2
     </span>
   </div>
   <div
-    className="c16"
+    class="c16"
   >
     <span
-      className="c2"
+      class="c2"
     >
       neutral-3
     </span>
   </div>
   <div
-    className="c17"
+    class="c17"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c19"
+    class="c19"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c18"
+    class="c18"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c20"
+    class="c20"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
     </span>
@@ -1746,24 +1716,16 @@ exports[`Grommet grommet theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <button
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c1"
     type="button"
   >
     test
   </button>
   <button
-    className="c2"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    class="c2"
     type="button"
   >
     test
@@ -1780,7 +1742,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #01A982;
-  color: #C0CADC;
+  color: #FFFFFFE6;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1795,7 +1757,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background: #0000000A;
+  background-color: #0000000A;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1811,7 +1774,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #FFFFFF;
-  color: #444444;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1826,8 +1789,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #17EBA0;
-  color: #444444;
+  background-color: #FF8300;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1842,8 +1805,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FF8300;
-  color: #444444;
+  background-color: #00739D;
+  color: #FFFFFFE6;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1858,8 +1821,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00739D;
-  color: #C0CADC;
+  background-color: #7630EA;
+  color: #FFFFFFE6;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1874,8 +1837,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #7630EA;
-  color: #C0CADC;
+  background-color: #FEC901;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1890,8 +1853,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FEC901;
-  color: #444444;
+  background-color: #00E8CF;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1906,8 +1869,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00E8CF;
-  color: #444444;
+  background-color: #FC5A5A;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1922,8 +1885,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FC5A5A;
-  color: #444444;
+  background-color: #CCCCCC;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1938,8 +1901,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #CCCCCC;
-  color: #444444;
+  background-color: #17EBA0;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1955,7 +1918,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #FFBC44;
-  color: #444444;
+  color: #6F6F6F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1970,8 +1933,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #444444;
-  color: #C0CADC;
+  background-color: #6F6F6F;
+  color: #FFFFFFE6;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1989,7 +1952,7 @@ exports[`Grommet hpe theme 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF;
-  color: #444444;
+  color: #6F6F6F;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1998,148 +1961,148 @@ exports[`Grommet hpe theme 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       brand
     </span>
   </div>
   <div
-    className="c3"
+    class="c3"
   >
     <span
-      className="c2"
+      class="c2"
     >
       background-contrast
     </span>
   </div>
   <div
-    className="c4"
+    class="c4"
   >
     <span
-      className="c2"
+      class="c2"
     >
       background-front
     </span>
   </div>
   <div
-    className="c5"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       control
     </span>
   </div>
   <div
-    className="c6"
+    class="c5"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-0
     </span>
   </div>
   <div
-    className="c7"
+    class="c6"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-1
     </span>
   </div>
   <div
-    className="c8"
+    class="c7"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-2
     </span>
   </div>
   <div
-    className="c9"
+    class="c8"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-3
     </span>
   </div>
   <div
-    className="c10"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       graph-4
     </span>
   </div>
   <div
-    className="c10"
+    class="c9"
   >
     <span
-      className="c2"
+      class="c2"
     >
       focus
     </span>
   </div>
   <div
-    className="c11"
+    class="c10"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-critical
     </span>
   </div>
   <div
-    className="c12"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-disabled
     </span>
   </div>
   <div
-    className="c5"
+    class="c12"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-ok
     </span>
   </div>
   <div
-    className="c12"
+    class="c11"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-unknown
     </span>
   </div>
   <div
-    className="c13"
+    class="c13"
   >
     <span
-      className="c2"
+      class="c2"
     >
       status-warning
     </span>
   </div>
   <div
-    className="c14"
+    class="c14"
   >
     <span
-      className="c2"
+      class="c2"
     >
       text
     </span>

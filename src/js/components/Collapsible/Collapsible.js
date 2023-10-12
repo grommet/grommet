@@ -12,9 +12,10 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
+import { CollapsiblePropTypes } from './propTypes';
 
 const AnimatedBox = styled(Box)`
-  ${props =>
+  ${(props) =>
     props.shouldOpen
       ? `visibility: hidden;
       position: absolute;
@@ -36,7 +37,7 @@ const Collapsible = forwardRef(
       [direction],
     );
     const containerRef = useForwardedRef(ref);
-    const sizeRef = useRef();
+    const sizeRef = useRef(0);
     const shouldOpen = !open && openArg;
     const shouldClose = open && !openArg;
 
@@ -128,12 +129,6 @@ const Collapsible = forwardRef(
 );
 
 Collapsible.displayName = 'Collapsible';
+Collapsible.propTypes = CollapsiblePropTypes;
 
-let CollapsibleDoc;
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  CollapsibleDoc = require('./doc').doc(Collapsible);
-}
-const CollapsibleWrapper = CollapsibleDoc || Collapsible;
-
-export { CollapsibleWrapper as Collapsible };
+export { Collapsible };
