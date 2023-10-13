@@ -53,7 +53,7 @@ const RadioButton = forwardRef(
 
       if (theme.radioButton.check?.background?.color) {
         backgroundColor = normalizeColor(
-          theme.radioButton.check?.background?.color,
+          theme.radioButton.check.background.color,
           theme,
         );
       }

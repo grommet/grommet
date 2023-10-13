@@ -2331,7 +2331,6 @@ exports[`Components loads 1`] = `
           },
         },
         "radioButton": {
-          "background": {},
           "border": {
             "color": {
               "dark": "rgba(255, 255, 255, 0.5)",
@@ -4327,7 +4326,6 @@ exports[`Components loads 1`] = `
           },
         },
         "radioButton": {
-          "background": {},
           "border": {
             "color": {
               "dark": "rgba(255, 255, 255, 0.5)",
