@@ -7,7 +7,7 @@ type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick'>;
 
 export interface ToolbarExtendedProps
   extends BoxProps,
-    ToolbarProps,
+  ToolbarProps,
     divProps {}
 
 declare const Toolbar: React.FC<ToolbarExtendedProps>;
