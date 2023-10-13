@@ -256,9 +256,8 @@ const DropContainer = forwardRef(
           const containerOffsetLeft = containingBlock?.scrollLeft ?? 0;
           const containerOffsetTop = containingBlock?.scrollTop ?? 0;
 
-          container.style.left = `${
-            left - viewportOffsetLeft + containerOffsetLeft
-          }px`;
+          container.style.left = `${left - viewportOffsetLeft +
+            containerOffsetLeft}px`;
 
           if (stretch) {
             // offset width by 0.1 to avoid a bug in ie11 that
@@ -269,14 +268,12 @@ const DropContainer = forwardRef(
           // the (position:absolute + scrollTop)
           // is presenting issues with desktop scroll flickering
           if (top !== '') {
-            container.style.top = `${
-              top - viewportOffsetTop + containerOffsetTop
-            }px`;
+            container.style.top = `${top - viewportOffsetTop +
+              containerOffsetTop}px`;
           }
           if (bottom !== '') {
-            container.style.bottom = `${
-              viewportOffsetBottom - bottom - containerOffsetTop
-            }px`;
+            container.style.bottom = `${viewportOffsetBottom - bottom -
+              containerOffsetTop}px`;
           }
           if (!preserveHeight) {
             if (theme.drop && theme.drop.maxHeight) {
