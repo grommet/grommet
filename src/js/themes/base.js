@@ -1582,16 +1582,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: '2px',
       },
       background: {
-        color: {
-          dark: 'light-4',
-          light: 'light-1',
-        },
+        // color: undefined,
       },
       check: {
         radius: '100%',
-        background: {
-          color: undefined,
-        },
+        // background: {
+        //   color: undefined,
+        // },
         // color: { dark: undefined, light: undefined },
         // extend: undefined,
       },

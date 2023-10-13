@@ -2331,12 +2331,7 @@ exports[`Components loads 1`] = `
           },
         },
         "radioButton": {
-          "background": {
-            "color": {
-              "dark": "light-4",
-              "light": "light-1",
-            },
-          },
+          "background": {},
           "border": {
             "color": {
               "dark": "rgba(255, 255, 255, 0.5)",
@@ -2345,9 +2340,6 @@ exports[`Components loads 1`] = `
             "width": "2px",
           },
           "check": {
-            "background": {
-              "color": undefined,
-            },
             "radius": "100%",
           },
           "container": {},
@@ -4335,12 +4327,7 @@ exports[`Components loads 1`] = `
           },
         },
         "radioButton": {
-          "background": {
-            "color": {
-              "dark": "light-4",
-              "light": "light-1",
-            },
-          },
+          "background": {},
           "border": {
             "color": {
               "dark": "rgba(255, 255, 255, 0.5)",
@@ -4349,9 +4336,6 @@ exports[`Components loads 1`] = `
             "width": "2px",
           },
           "check": {
-            "background": {
-              "color": undefined,
-            },
             "radius": "100%",
           },
           "container": {},

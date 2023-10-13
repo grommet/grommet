@@ -44,16 +44,16 @@ const RadioButton = forwardRef(
     const Icon = theme.radioButton.icons.circle;
     let borderColor = normalizeColor(theme.radioButton.border.color, theme);
     let backgroundColor = normalizeColor(
-      theme.radioButton.background.color,
+      theme.radioButton.background?.color,
       theme,
     );
 
     if (checked) {
       borderColor = normalizeColor(theme.radioButton.color || 'control', theme);
 
-      if (theme.radioButton.check.background.color) {
+      if (theme.radioButton.check?.background?.color) {
         backgroundColor = normalizeColor(
-          theme.radioButton.check.background.color,
+          theme.radioButton.check?.background?.color,
           theme,
         );
       }
