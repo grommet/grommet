@@ -1587,7 +1587,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       check: {
         radius: '100%',
         // background: {
-        //   color: undefined,
+        //  color: undefined,
         // },
         // color: { dark: undefined, light: undefined },
         // extend: undefined,
