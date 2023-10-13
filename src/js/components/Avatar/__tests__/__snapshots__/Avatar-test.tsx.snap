@@ -79,20 +79,20 @@ exports[`Avatar icon renders 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

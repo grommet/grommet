@@ -17,20 +17,20 @@ exports[`DateInput basic 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -148,20 +148,20 @@ exports[`DateInput buttonProps should pass props to Button
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -280,20 +280,20 @@ exports[`DateInput controlled format inline 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1748,7 +1748,7 @@ exports[`DateInput controlled format inline 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+          class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
           viewBox="0 0 24 24"
         >
           <path
@@ -1788,7 +1788,7 @@ exports[`DateInput controlled format inline 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1806,7 +1806,7 @@ exports[`DateInput controlled format inline 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2604,20 +2604,20 @@ exports[`DateInput controlled format inline without timezone 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4063,20 +4063,20 @@ exports[`DateInput controlled format inline without timezone 2`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5522,20 +5522,20 @@ exports[`DateInput custom theme 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5764,20 +5764,20 @@ exports[`DateInput disabled 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5894,20 +5894,20 @@ exports[`DateInput dropProps should pass props to Drop
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6135,20 +6135,20 @@ exports[`DateInput focus 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6378,20 +6378,20 @@ exports[`DateInput format 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6621,20 +6621,20 @@ exports[`DateInput format disabled 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6867,20 +6867,20 @@ exports[`DateInput format inline 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8250,20 +8250,20 @@ exports[`DateInput handle focus in FormField 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8538,20 +8538,20 @@ exports[`DateInput handle focus in FormField 2`] = `
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8805,20 +8805,20 @@ exports[`DateInput icon 1`] = `
   stroke: inherit;
 }
 
-.c1 *:not([stroke])[fill="none"] {
+.c1 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c1 *[stroke*="#"],
-.c1 *[STROKE*="#"] {
+.c1 *[stroke*='#'],
+.c1 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c1 *[fill-rule],
 .c1 *[FILL-RULE],
-.c1 *[fill*="#"],
-.c1 *[FILL*="#"] {
+.c1 *[fill*='#'],
+.c1 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8920,20 +8920,20 @@ exports[`DateInput inline 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -10107,20 +10107,20 @@ exports[`DateInput input props reverse as false 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -10350,20 +10350,20 @@ exports[`DateInput input props reverse as false with icon 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -10597,20 +10597,20 @@ exports[`DateInput input props reverse as true 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -10840,20 +10840,20 @@ exports[`DateInput input props reverse as true with icon 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11088,20 +11088,20 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11122,20 +11122,20 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11156,20 +11156,20 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11592,20 +11592,20 @@ exports[`DateInput range 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11722,20 +11722,20 @@ exports[`DateInput range format 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11965,20 +11965,20 @@ exports[`DateInput range format inline 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -13365,20 +13365,20 @@ exports[`DateInput range inline 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -14571,20 +14571,20 @@ HTMLCollection [
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -14935,20 +14935,20 @@ exports[`DateInput reverse calendar icon 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -15178,20 +15178,20 @@ exports[`DateInput select format 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -15429,7 +15429,7 @@ exports[`DateInput select format 2`] = `
     >
       <svg
         aria-label="Calendar"
-        class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+        class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
         viewBox="0 0 24 24"
       >
         <path
@@ -15461,20 +15461,20 @@ exports[`DateInput select format 3`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -16810,20 +16810,20 @@ exports[`DateInput select format inline 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -18203,7 +18203,7 @@ exports[`DateInput select format inline 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+          class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
           viewBox="0 0 24 24"
         >
           <path
@@ -18243,7 +18243,7 @@ exports[`DateInput select format inline 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -18261,7 +18261,7 @@ exports[`DateInput select format inline 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -19053,20 +19053,20 @@ exports[`DateInput select format inline 3`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -20437,20 +20437,20 @@ exports[`DateInput select format inline 4`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -21897,20 +21897,20 @@ exports[`DateInput select format inline range 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -23308,7 +23308,7 @@ exports[`DateInput select format inline range 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+          class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
           viewBox="0 0 24 24"
         >
           <path
@@ -23348,7 +23348,7 @@ exports[`DateInput select format inline range 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -23366,7 +23366,7 @@ exports[`DateInput select format inline range 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -24158,20 +24158,20 @@ exports[`DateInput select format inline range without timezone 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -25560,20 +25560,20 @@ exports[`DateInput select format inline range without timezone 2`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -27021,20 +27021,20 @@ exports[`DateInput select format no timezone 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -27266,20 +27266,20 @@ exports[`DateInput select format no timezone 2`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -27510,20 +27510,20 @@ exports[`DateInput select format no timezone 3`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -28859,20 +28859,20 @@ exports[`DateInput select inline 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -30046,20 +30046,20 @@ exports[`DateInput select inline without timezone 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -31233,20 +31233,20 @@ exports[`DateInput type format inline 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -32626,7 +32626,7 @@ exports[`DateInput type format inline 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+          class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
           viewBox="0 0 24 24"
         >
           <path
@@ -32666,7 +32666,7 @@ exports[`DateInput type format inline 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -32684,7 +32684,7 @@ exports[`DateInput type format inline 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -33475,20 +33475,20 @@ exports[`DateInput type format inline partial 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -34858,20 +34858,20 @@ exports[`DateInput type format inline partial without timezone 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -36241,20 +36241,20 @@ exports[`DateInput type format inline range 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -37652,7 +37652,7 @@ exports[`DateInput type format inline range 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+          class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
           viewBox="0 0 24 24"
         >
           <path
@@ -37692,7 +37692,7 @@ exports[`DateInput type format inline range 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -37710,7 +37710,7 @@ exports[`DateInput type format inline range 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -38501,20 +38501,20 @@ exports[`DateInput type format inline range partial 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -39912,7 +39912,7 @@ exports[`DateInput type format inline range partial 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+          class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
           viewBox="0 0 24 24"
         >
           <path
@@ -39952,7 +39952,7 @@ exports[`DateInput type format inline range partial 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -39970,7 +39970,7 @@ exports[`DateInput type format inline range partial 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -40772,7 +40772,7 @@ exports[`DateInput type format inline range partial 3`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+          class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
           viewBox="0 0 24 24"
         >
           <path
@@ -40812,7 +40812,7 @@ exports[`DateInput type format inline range partial 3`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -40830,7 +40830,7 @@ exports[`DateInput type format inline range partial 3`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -41622,20 +41622,20 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -43024,20 +43024,20 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -44408,20 +44408,20 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -45792,20 +45792,20 @@ exports[`DateInput type format inline range without timezone 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -47194,20 +47194,20 @@ exports[`DateInput type format inline range without timezone 2`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -48595,20 +48595,20 @@ exports[`DateInput type format inline short 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -49988,7 +49988,7 @@ exports[`DateInput type format inline short 2`] = `
       >
         <svg
           aria-label="Calendar"
-          class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+          class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
           viewBox="0 0 24 24"
         >
           <path
@@ -50028,7 +50028,7 @@ exports[`DateInput type format inline short 2`] = `
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -50046,7 +50046,7 @@ exports[`DateInput type format inline short 2`] = `
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+                class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -50838,20 +50838,20 @@ exports[`DateInput type format inline short without timezone 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -52222,20 +52222,20 @@ exports[`DateInput type format inline short without timezone 2`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -53606,20 +53606,20 @@ exports[`DateInput type format inline without timezone 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -54990,20 +54990,20 @@ exports[`DateInput type format inline without timezone 2`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

@@ -1072,20 +1072,20 @@ exports[`Button badge should render custom element 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1259,20 +1259,20 @@ exports[`Button badge should render relative to contents when button has no
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3897,20 +3897,20 @@ exports[`Button should render pad 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4252,20 +4252,20 @@ exports[`Button size 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4286,20 +4286,20 @@ exports[`Button size 1`] = `
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c11 *[fill-rule],
 .c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

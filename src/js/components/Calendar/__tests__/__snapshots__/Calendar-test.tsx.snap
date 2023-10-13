@@ -18,20 +18,20 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1262,20 +1262,20 @@ exports[`Calendar change months 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2443,7 +2443,7 @@ exports[`Calendar change months 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -2461,7 +2461,7 @@ exports[`Calendar change months 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -3706,20 +3706,20 @@ exports[`Calendar children 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4514,20 +4514,20 @@ exports[`Calendar date 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5700,20 +5700,20 @@ exports[`Calendar dates 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6904,20 +6904,20 @@ exports[`Calendar daysOfWeek 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8184,20 +8184,20 @@ exports[`Calendar disabled 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -9432,20 +9432,20 @@ exports[`Calendar fill 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -10639,20 +10639,20 @@ exports[`Calendar first day sunday week monday 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -11825,20 +11825,20 @@ exports[`Calendar firstDayOfWeek 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -13827,20 +13827,20 @@ exports[`Calendar header 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -14982,20 +14982,20 @@ exports[`Calendar reference 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -16148,20 +16148,20 @@ exports[`Calendar select date 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -17349,7 +17349,7 @@ exports[`Calendar select date 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -17367,7 +17367,7 @@ exports[`Calendar select date 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -18157,20 +18157,20 @@ exports[`Calendar select dates 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -19376,7 +19376,7 @@ exports[`Calendar select dates 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -19394,7 +19394,7 @@ exports[`Calendar select dates 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -20184,20 +20184,20 @@ exports[`Calendar showAdjacentDays 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -22820,20 +22820,20 @@ exports[`Calendar size 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -22854,20 +22854,20 @@ exports[`Calendar size 1`] = `
   stroke: inherit;
 }
 
-.c27 *:not([stroke])[fill="none"] {
+.c27 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c27 *[stroke*="#"],
-.c27 *[STROKE*="#"] {
+.c27 *[stroke*='#'],
+.c27 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c27 *[fill-rule],
 .c27 *[FILL-RULE],
-.c27 *[fill*="#"],
-.c27 *[FILL*="#"] {
+.c27 *[fill*='#'],
+.c27 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

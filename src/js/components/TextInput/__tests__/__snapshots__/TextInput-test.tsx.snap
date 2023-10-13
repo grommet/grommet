@@ -1727,20 +1727,20 @@ exports[`TextInput icon 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1876,20 +1876,20 @@ exports[`TextInput icon reverse 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2249,20 +2249,20 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2283,20 +2283,20 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2317,20 +2317,20 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

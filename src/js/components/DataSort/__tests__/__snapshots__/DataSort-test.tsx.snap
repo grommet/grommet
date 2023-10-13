@@ -17,20 +17,20 @@ exports[`DataSort drop 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -163,7 +163,7 @@ exports[`DataSort drop 2`] = `
 >
   <svg
     aria-label="Descend"
-    class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+    class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
     viewBox="0 0 24 24"
   >
     <path
@@ -247,20 +247,20 @@ exports[`DataSort renders 1`] = `
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c15 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c15 *[fill-rule],
 .c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1076,20 +1076,20 @@ exports[`DataSort sort when data array is empty 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

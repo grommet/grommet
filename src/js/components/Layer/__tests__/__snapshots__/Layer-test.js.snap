@@ -1955,20 +1955,20 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c11 *[fill-rule],
 .c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

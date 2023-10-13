@@ -860,20 +860,20 @@ exports[`Button kind badge should render custom element 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1046,20 +1046,20 @@ exports[`Button kind badge should render relative to contents when button has no
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1349,20 +1349,20 @@ exports[`Button kind button icon colors 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1495,20 +1495,20 @@ exports[`Button kind button with icon and align 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3058,20 +3058,20 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3603,20 +3603,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3637,20 +3637,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3671,20 +3671,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3705,20 +3705,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3739,20 +3739,20 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill="none"] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*="#"],
-.c12 *[STROKE*="#"] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c12 *[fill-rule],
 .c12 *[FILL-RULE],
-.c12 *[fill*="#"],
-.c12 *[FILL*="#"] {
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4328,20 +4328,20 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4510,7 +4510,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 eJclys"
+        class="StyledIcon-sc-ofa7kd-0 krqAqI"
         viewBox="0 0 24 24"
       >
         <path
@@ -4906,20 +4906,20 @@ exports[`Button kind plain with icon 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5045,20 +5045,20 @@ exports[`Button kind primary button 1`] = `
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill="none"] {
+.c2 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*="#"],
-.c2 *[STROKE*="#"] {
+.c2 *[stroke*='#'],
+.c2 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c2 *[fill-rule],
 .c2 *[FILL-RULE],
-.c2 *[fill*="#"],
-.c2 *[FILL*="#"] {
+.c2 *[fill*='#'],
+.c2 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5079,20 +5079,20 @@ exports[`Button kind primary button 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5867,20 +5867,20 @@ exports[`Button kind should render pad 1`] = `
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

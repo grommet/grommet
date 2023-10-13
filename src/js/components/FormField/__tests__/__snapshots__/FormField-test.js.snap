@@ -550,20 +550,20 @@ exports[`FormField custom error and info icon and container 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2872,20 +2872,20 @@ exports[`FormField should render custom indicator when requiredIndicator is
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill="none"] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*="#"],
-.c3 *[STROKE*="#"] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c3 *[fill-rule],
 .c3 *[FILL-RULE],
-.c3 *[fill*="#"],
-.c3 *[FILL*="#"] {
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

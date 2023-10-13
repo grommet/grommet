@@ -17,20 +17,20 @@ exports[`Data controlled search 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -559,7 +559,7 @@ exports[`Data controlled search 2`] = `
           >
             <svg
               aria-label="Search"
-              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -592,7 +592,7 @@ exports[`Data controlled search 2`] = `
         >
           <svg
             aria-label="Filter"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -727,20 +727,20 @@ exports[`Data messages 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1964,20 +1964,20 @@ exports[`Data pagination 1`] = `
   stroke: inherit;
 }
 
-.c14 *:not([stroke])[fill="none"] {
+.c14 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c14 *[stroke*="#"],
-.c14 *[STROKE*="#"] {
+.c14 *[stroke*='#'],
+.c14 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c14 *[fill-rule],
 .c14 *[FILL-RULE],
-.c14 *[fill*="#"],
-.c14 *[FILL*="#"] {
+.c14 *[fill*='#'],
+.c14 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2495,20 +2495,20 @@ exports[`Data pagination step 1`] = `
   stroke: inherit;
 }
 
-.c14 *:not([stroke])[fill="none"] {
+.c14 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c14 *[stroke*="#"],
-.c14 *[STROKE*="#"] {
+.c14 *[stroke*='#'],
+.c14 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c14 *[fill-rule],
 .c14 *[FILL-RULE],
-.c14 *[fill*="#"],
-.c14 *[FILL*="#"] {
+.c14 *[fill*='#'],
+.c14 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3027,20 +3027,20 @@ exports[`Data properties when property is an array 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3690,20 +3690,20 @@ exports[`Data properties when property is an array 2`] = `
   stroke: inherit;
 }
 
-.c1 *:not([stroke])[fill="none"] {
+.c1 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c1 *[stroke*="#"],
-.c1 *[STROKE*="#"] {
+.c1 *[stroke*='#'],
+.c1 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c1 *[fill-rule],
 .c1 *[FILL-RULE],
-.c1 *[fill*="#"],
-.c1 *[FILL*="#"] {
+.c1 *[fill*='#'],
+.c1 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3937,20 +3937,20 @@ exports[`Data toolbar 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4527,20 +4527,20 @@ exports[`Data toolbar filters 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4941,20 +4941,20 @@ exports[`Data toolbar search 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5373,20 +5373,20 @@ exports[`Data uncontrolled search 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5915,7 +5915,7 @@ exports[`Data uncontrolled search 2`] = `
           >
             <svg
               aria-label="Search"
-              class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -5948,7 +5948,7 @@ exports[`Data uncontrolled search 2`] = `
         >
           <svg
             aria-label="Filter"
-            class="StyledIcon-sc-ofa7kd-0 ejqDKc"
+            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
             viewBox="0 0 24 24"
           >
             <path
@@ -6303,20 +6303,20 @@ exports[`Data view all 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6812,20 +6812,20 @@ exports[`Data view property option 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -7321,20 +7321,20 @@ exports[`Data view property range 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -7851,20 +7851,20 @@ exports[`Data view search 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8360,20 +8360,20 @@ exports[`Data view sort 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
