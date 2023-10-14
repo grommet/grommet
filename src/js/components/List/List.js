@@ -370,7 +370,9 @@ const List = React.forwardRef(
                         {primary}
                       </Text>
                     ) : (
-                      primary
+                      <Text key="p" {...primary[1].props}>
+                        {primary[0]}
+                      </Text>
                     );
                   if (secondaryKey) {
                     const secondary = getValue(item, index, secondaryKey);
