@@ -546,8 +546,19 @@ const DataTable = ({
             onSelect={
               onSelect
                 ? (nextSelected) => {
-                    setSelected(nextSelected);
-                    if (onSelect) onSelect(nextSelected);
+                    const selectedItems = [
+                      ...nextSelected.filter(
+                        (item) => !selected.includes(item),
+                      ),
+                      ...selected,
+                    ];
+                    setSelected(
+                      nextSelected.length ? selectedItems : nextSelected,
+                    );
+                    if (onSelect)
+                      onSelect(
+                        nextSelected.length ? selectedItems : nextSelected,
+                      );
                   }
                 : undefined
             }
