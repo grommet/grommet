@@ -22,17 +22,17 @@ export const RenderedList = () => (
   <Box align="center" pad="large">
     <List
       data={data.slice(0, 10)}
-      primaryKey={(item) => [
-        item.entry,
-        <Text size="large" weight="bold">
+      primaryKey={(item) => (
+        <Text key={item.entry} size="large" weight="bold">
           {item.entry}
-        </Text>,
-      ]}
+        </Text>
+      )}
       secondaryKey={(item) => (
         <Text key={item.location} size="small" color="dark-4">
           {item.location}
         </Text>
       )}
+      itemKey="key"
     />
   </Box>
 );
