@@ -15909,19 +15909,6 @@ exports[`DateInput select format 3`] = `
   }
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
 @media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
@@ -27955,19 +27942,6 @@ exports[`DateInput select format no timezone 3`] = `
   .c5 {
     padding-left: 6px;
     padding-right: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 

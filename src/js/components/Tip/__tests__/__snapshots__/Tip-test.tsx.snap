@@ -98,19 +98,6 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   }
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
 <div
   aria-hidden="false"
 >
@@ -342,19 +329,6 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   }
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
 <div
   class="c0 c1"
   data-g-portal-id="0"
@@ -421,19 +395,6 @@ exports[`Tip plain 1`] = `
 @media only screen and (max-width:768px) {
   .c0 {
     margin: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -608,19 +569,6 @@ exports[`Tip themed 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     border-radius: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 

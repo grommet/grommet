@@ -413,10 +413,6 @@ exports[`Video Configure Menu Button 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   class="c0"
 >

@@ -80,10 +80,6 @@ exports[`DropButton close by clicking outside 1`] = `
 `;
 
 exports[`DropButton close by clicking outside 2`] = `
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   id="drop-contents"
 >
@@ -330,10 +326,6 @@ exports[`DropButton open and close 1`] = `
 `;
 
 exports[`DropButton open and close 2`] = `
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   id="drop-contents"
 >
@@ -411,10 +403,6 @@ exports[`DropButton opened 1`] = `
 
 .c0:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
 }
 
 <button
@@ -496,10 +484,6 @@ exports[`DropButton opened ref 1`] = `
   border: 0;
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <button
   aria-label="Open Drop"
   class="c0"
@@ -510,10 +494,6 @@ exports[`DropButton opened ref 1`] = `
 `;
 
 exports[`DropButton opened ref 2`] = `
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   id="drop-contents"
 >
@@ -593,10 +573,6 @@ exports[`DropButton ref function 1`] = `
   border: 0;
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <button
   aria-label="Open Drop"
   class="c0"
@@ -607,10 +583,6 @@ exports[`DropButton ref function 1`] = `
 `;
 
 exports[`DropButton ref function 2`] = `
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   id="drop-contents"
 >

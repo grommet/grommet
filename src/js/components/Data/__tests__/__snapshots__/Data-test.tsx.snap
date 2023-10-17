@@ -3849,14 +3849,6 @@ exports[`Data properties when property is an array 2`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <button
   aria-label="Open filters"
   class="c0"

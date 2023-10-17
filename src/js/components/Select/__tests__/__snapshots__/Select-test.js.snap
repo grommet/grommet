@@ -558,19 +558,6 @@ exports[`Select Clear option renders - bottom 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -836,19 +823,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -1087,19 +1061,6 @@ exports[`Select Clear option renders custom label 1`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -1468,19 +1429,6 @@ exports[`Select Clear option renders- top 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -1812,10 +1760,6 @@ exports[`Select Search timeout 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   aria-hidden="true"
   class="c0"
@@ -1948,10 +1892,6 @@ exports[`Select Search timeout 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -2336,10 +2276,6 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   .c2 {
     padding: 6px;
   }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -3086,19 +3022,6 @@ exports[`Select complex options and children 3`] = `
 
 @media only screen and (max-width:768px) {
 
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -4042,19 +3965,6 @@ exports[`Select default value clear 1`] = `
 @media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -5249,19 +5159,6 @@ exports[`Select disabled key 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -5552,19 +5449,6 @@ exports[`Select disabled option value 1`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -5717,10 +5601,6 @@ exports[`Select empty results search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -5972,10 +5852,6 @@ exports[`Select keyboard navigation timeout 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   aria-hidden="true"
   class="c0"
@@ -6196,19 +6072,6 @@ exports[`Select large drop container height 1`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -6442,19 +6305,6 @@ exports[`Select medium drop container height 1`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -7530,19 +7380,6 @@ exports[`Select onChange with valueKey object 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -7849,10 +7686,6 @@ exports[`Select onChange with valueKey object 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -8363,19 +8196,6 @@ exports[`Select onChange with valueKey string 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -8682,10 +8502,6 @@ exports[`Select onChange with valueKey string 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -9139,19 +8955,6 @@ exports[`Select onChange with valueLabel 2`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -9682,19 +9485,6 @@ exports[`Select onChange without labelKey 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -10001,10 +9791,6 @@ exports[`Select onChange without labelKey 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -10515,19 +10301,6 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -10834,10 +10607,6 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -11348,19 +11117,6 @@ exports[`Select onChange without valueKey 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -11674,10 +11430,6 @@ exports[`Select onChange without valueKey 4`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
     class="c0"
   >
@@ -11959,10 +11711,6 @@ exports[`Select prop: onClose 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <button
   aria-expanded="false"
   aria-haspopup="listbox"
@@ -12232,10 +11980,6 @@ exports[`Select prop: onClose 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -12779,19 +12523,6 @@ exports[`Select prop: onOpen 3`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -13550,10 +13281,6 @@ exports[`Select renders custom up and down icons 2`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <svg
           aria-label="CaretUp"
           class="c0"
@@ -13917,10 +13644,6 @@ exports[`Select renders empty search with select.emptySearchMessage styling 1`] 
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -15550,19 +15273,6 @@ exports[`Select search 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -16194,19 +15904,6 @@ exports[`Select search and select 2`] = `
 @media only screen and (max-width:768px) {
   .c10 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -19525,19 +19222,6 @@ exports[`Select small drop container height 1`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 

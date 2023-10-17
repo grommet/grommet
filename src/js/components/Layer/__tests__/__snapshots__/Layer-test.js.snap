@@ -2223,10 +2223,6 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;

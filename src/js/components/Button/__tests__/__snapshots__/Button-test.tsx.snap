@@ -5154,10 +5154,6 @@ exports[`Button tip 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   class="c0"
 >

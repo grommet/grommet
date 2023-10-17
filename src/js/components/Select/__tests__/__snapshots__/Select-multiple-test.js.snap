@@ -1028,19 +1028,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -1566,19 +1553,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -2100,19 +2074,6 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -2644,19 +2605,6 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -2736,7 +2684,7 @@ exports[`Select Controlled multiple onChange without labelKey 3`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 emLdFx"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -2809,7 +2757,7 @@ exports[`Select Controlled multiple onChange without labelKey 5`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 emLdFx"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -3110,10 +3058,6 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -3624,19 +3568,6 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -3716,7 +3647,7 @@ exports[`Select Controlled multiple onChange without valueKey 3`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 emLdFx"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -3789,7 +3720,7 @@ exports[`Select Controlled multiple onChange without valueKey 5`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 emLdFx"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -4090,10 +4021,6 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -4606,19 +4533,6 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -4698,7 +4612,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 3`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 emLdFx"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -4769,7 +4683,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 5`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 emLdFx"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -5068,10 +4982,6 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -5621,19 +5531,6 @@ exports[`Select Controlled multiple values 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -6155,19 +6052,6 @@ exports[`Select Controlled multiple with empty results 2`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 

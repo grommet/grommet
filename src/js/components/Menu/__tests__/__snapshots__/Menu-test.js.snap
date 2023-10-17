@@ -587,19 +587,6 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -2239,10 +2226,6 @@ exports[`Menu gap between icon and label 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div>
   <div
     class="c0"
@@ -3540,19 +3523,6 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -4301,19 +4271,6 @@ exports[`Menu open on up close on esc 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -4569,10 +4526,6 @@ exports[`Menu reverse icon and label 1`] = `
   .c4 {
     width: 6px;
   }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -5164,10 +5117,6 @@ exports[`Menu should apply themed drop props 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   class="c0"
 >
@@ -5517,19 +5466,6 @@ exports[`Menu should group items 1`] = `
 @media only screen and (max-width:768px) {
   .c8 {
     width: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
@@ -6477,19 +6413,6 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c3 {
     width: 100%;
   }
@@ -7026,19 +6949,6 @@ exports[`Menu with dropAlign top renders 2`] = `
 @media only screen and (max-width:768px) {
   .c8 {
     width: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }
 
