@@ -6,7 +6,8 @@ import { hpe as hpeTheme } from 'grommet-theme-hpe';
 
 import { Grommet } from '..';
 import { grommet } from '../../../themes/grommet';
-// import { MessageContext } from '../../../contexts/MessageContext';
+// @ts-ignore
+import { MessageContext } from '../../../contexts/MessageContext';
 import {
   AnnounceContext,
   AnnounceValue,
@@ -88,29 +89,42 @@ describe('Grommet', () => {
     }, 600); // wait the aria-live container to clear
   });
 
-  // test('messages', () => {
-  //   const { container } = render(
-  //     <Grommet
-  //       messages={{
-  //         messages: {
-  //           test: {
-  //             label: 'My Label',
-  //           },
-  //         },
-  //       }}
-  //     >
-  //       <MessageContext.Consumer>
-  //         {({ format }) => format({ id: 'test.label' })}
-  //       </MessageContext.Consumer>
-  //     </Grommet>,
-  //   );
-  //   expect(container.firstChild).toMatchSnapshot();
-  // });
+  test('messages', () => {
+    const { container } = render(
+      <Grommet
+        messages={{
+          messages: {
+            // @ts-ignore
+            test: {
+              label: 'My Label',
+            },
+          },
+        }}
+      >
+        <MessageContext.Consumer>
+          {/* @ts-ignore */}
+          {({ format }) => format({ id: 'test.label' })}
+        </MessageContext.Consumer>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 
   test('message format function', () => {
+    const messages = {
+      'test.label': 'My Label',
+    };
     const { container } = render(
       <Grommet full background="#0000ff">
         Grommet App
+      </Grommet>,
+
+      // @ts-ignore
+      <Grommet messages={{ format: (opts) => messages[opts.id] }}>
+        <MessageContext.Consumer>
+          {/* @ts-ignore */}
+          {({ format }) => format({ id: 'test.label' })}
+        </MessageContext.Consumer>
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
