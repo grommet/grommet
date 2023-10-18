@@ -5,12 +5,16 @@ import 'jest-styled-components';
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
 
 import { Grommet } from '..';
-import { AnnounceContext } from '../../../contexts';
 import { grommet } from '../../../themes/grommet';
+// @ts-ignore
 import { MessageContext } from '../../../contexts/MessageContext';
+import {
+  AnnounceContext,
+  AnnounceValue,
+} from '../../../contexts/AnnounceContext';
 
-const TestAnnouncer = ({ announce }) => {
-  React.useEffect(() => announce('hello', 'assertive'));
+const TestAnnouncer = (props: { announce: AnnounceValue }) => {
+  React.useEffect(() => props.announce('hello', 'assertive', 0));
   return <div>hi</div>;
 };
 
@@ -90,6 +94,7 @@ describe('Grommet', () => {
       <Grommet
         messages={{
           messages: {
+            // @ts-ignore
             test: {
               label: 'My Label',
             },
@@ -97,6 +102,7 @@ describe('Grommet', () => {
         }}
       >
         <MessageContext.Consumer>
+          {/* @ts-ignore */}
           {({ format }) => format({ id: 'test.label' })}
         </MessageContext.Consumer>
       </Grommet>,
@@ -113,8 +119,10 @@ describe('Grommet', () => {
         Grommet App
       </Grommet>,
 
+      // @ts-ignore
       <Grommet messages={{ format: (opts) => messages[opts.id] }}>
         <MessageContext.Consumer>
+          {/* @ts-ignore */}
           {({ format }) => format({ id: 'test.label' })}
         </MessageContext.Consumer>
       </Grommet>,
