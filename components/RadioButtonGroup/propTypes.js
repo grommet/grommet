@@ -20,5 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number, _propTypes["default"].bool, _propTypes["default"].object])
   };
 }
-var RadioButtonGroupPropTypes = PropType;
-exports.RadioButtonGroupPropTypes = RadioButtonGroupPropTypes;
+var RadioButtonGroupPropTypes = exports.RadioButtonGroupPropTypes = PropType;

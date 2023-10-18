@@ -32,7 +32,7 @@ var theme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var ThemeRadioButton = function ThemeRadioButton() {
+var ThemeRadioButton = exports.ThemeRadioButton = function ThemeRadioButton() {
   var _React$useState = _react["default"].useState(),
     selected = _React$useState[0],
     setSelected = _React$useState[1];
@@ -57,9 +57,7 @@ var ThemeRadioButton = function ThemeRadioButton() {
     }
   })));
 };
-exports.ThemeRadioButton = ThemeRadioButton;
 ThemeRadioButton.storyName = 'Theme';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/RadioButton/Custom Themed/Theme'
 };
-exports["default"] = _default;

@@ -20,5 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     weight: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['normal', 'bold', 'lighter', 'bolder']), _propTypes["default"].number, _propTypes["default"].string])
   });
 }
-var HeadingPropTypes = PropType;
-exports.HeadingPropTypes = HeadingPropTypes;
+var HeadingPropTypes = exports.HeadingPropTypes = PropType;

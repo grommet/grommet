@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _Cards = require("../Cards");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     pad: "large",
     columns: [['medium', 'large']],
@@ -21,8 +21,6 @@ var Simple = function Simple() {
     data: locations
   }));
 };
-exports.Simple = Simple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Cards/Simple'
 };
-exports["default"] = _default;

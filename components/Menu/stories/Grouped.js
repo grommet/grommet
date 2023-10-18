@@ -5,7 +5,7 @@ exports["default"] = exports.Grouped = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Grouped = function Grouped() {
+var Grouped = exports.Grouped = function Grouped() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -35,13 +35,12 @@ var Grouped = function Grouped() {
     // </Grommet>
   );
 };
-exports.Grouped = Grouped;
+
 Grouped.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Menu/Grouped'
 };
-exports["default"] = _default;

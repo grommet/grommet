@@ -23,5 +23,4 @@ if (process.env.NODE_ENV !== 'production') {
     weight: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['normal', 'bold']), _propTypes["default"].string, _propTypes["default"].number])
   });
 }
-var AnchorPropTypes = PropType;
-exports.AnchorPropTypes = AnchorPropTypes;
+var AnchorPropTypes = exports.AnchorPropTypes = PropType;

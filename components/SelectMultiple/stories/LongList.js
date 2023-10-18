@@ -13,7 +13,7 @@ var dummyOptions = Array(2000).fill().map(function (_, i) {
     sensitivity: 'base'
   });
 });
-var LongList = function LongList() {
+var LongList = exports.LongList = function LongList() {
   var _React$useState = _react["default"].useState([]),
     selected = _React$useState[0],
     setSelected = _React$useState[1];
@@ -50,7 +50,7 @@ var LongList = function LongList() {
     // </Grommet>
   );
 };
-exports.LongList = LongList;
+
 LongList.storyName = 'Long list';
 LongList.parameters = {
   chromatic: {
@@ -60,7 +60,6 @@ LongList.parameters = {
 LongList.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/SelectMultiple/Long list'
 };
-exports["default"] = _default;

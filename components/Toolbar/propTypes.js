@@ -6,5 +6,4 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {};
 }
-var ToolbarPropTypes = PropType;
-exports.ToolbarPropTypes = ToolbarPropTypes;
+var ToolbarPropTypes = exports.ToolbarPropTypes = PropType;

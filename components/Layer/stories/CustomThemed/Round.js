@@ -16,7 +16,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var RoundLayer = function RoundLayer() {
+var RoundLayer = exports.RoundLayer = function RoundLayer() {
   var _React$useState = _react["default"].useState(false),
     open = _React$useState[0],
     setOpen = _React$useState[1];
@@ -94,14 +94,12 @@ var RoundLayer = function RoundLayer() {
     onClick: onClose
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Hi, I am a Layer!"))));
 };
-exports.RoundLayer = RoundLayer;
 RoundLayer.storyName = 'Border Radius';
 RoundLayer.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Layer/Custom Themed/Border Radius'
 };
-exports["default"] = _default;

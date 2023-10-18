@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Autoplay = function Autoplay() {
+var Autoplay = exports.Autoplay = function Autoplay() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -42,8 +42,6 @@ var Autoplay = function Autoplay() {
     // </Grommet>
   );
 };
-exports.Autoplay = Autoplay;
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Carousel/Autoplay'
 };
-exports["default"] = _default;

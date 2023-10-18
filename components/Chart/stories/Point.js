@@ -12,7 +12,7 @@ var values = [{
 }, {
   value: [30, 15]
 }];
-var Point = function Point() {
+var Point = exports.Point = function Point() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -37,8 +37,6 @@ var Point = function Point() {
     // </Grommet>
   );
 };
-exports.Point = Point;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Point'
 };
-exports["default"] = _default;

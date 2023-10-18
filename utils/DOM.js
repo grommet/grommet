@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 exports.withinDropPortal = exports.shouldKeepFocus = exports.setFocusWithoutScroll = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.isFocusable = exports.getNewContainer = exports.getFirstFocusableDescendant = exports.findVisibleParent = exports.findScrollParents = exports.findScrollParent = exports.findButtonParent = exports.containsFocus = void 0;
-var findScrollParent = function findScrollParent(element, horizontal) {
+var findScrollParent = exports.findScrollParent = function findScrollParent(element, horizontal) {
   var result;
   if (element) {
     var parent = element.parentNode;
@@ -28,9 +28,8 @@ var findScrollParent = function findScrollParent(element, horizontal) {
   }
   return result;
 };
-exports.findScrollParent = findScrollParent;
 var documentTags = ['html', 'body'];
-var findScrollParents = function findScrollParents(element, horizontal) {
+var findScrollParents = exports.findScrollParents = function findScrollParents(element, horizontal) {
   var result = [];
   if (element) {
     var parent = element.parentNode;
@@ -54,8 +53,7 @@ var findScrollParents = function findScrollParents(element, horizontal) {
   }
   return result;
 };
-exports.findScrollParents = findScrollParents;
-var containsFocus = function containsFocus(node) {
+var containsFocus = exports.containsFocus = function containsFocus(node) {
   var root = node.getRootNode();
   var element = root.activeElement;
   while (element) {
@@ -64,8 +62,7 @@ var containsFocus = function containsFocus(node) {
   }
   return !!element;
 };
-exports.containsFocus = containsFocus;
-var withinDropPortal = function withinDropPortal(node, portalContext) {
+var withinDropPortal = exports.withinDropPortal = function withinDropPortal(node, portalContext) {
   var root = node == null ? void 0 : node.getRootNode();
   var element = node;
   var portalId;
@@ -84,15 +81,13 @@ var withinDropPortal = function withinDropPortal(node, portalContext) {
 };
 
 // Check if the element.tagName is an input, select or textarea
-exports.withinDropPortal = withinDropPortal;
-var isFocusable = function isFocusable(element) {
+var isFocusable = exports.isFocusable = function isFocusable(element) {
   var tagName = element.tagName.toLowerCase();
   return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
 };
 
 // Get the first element that can receive focus
-exports.isFocusable = isFocusable;
-var getFirstFocusableDescendant = function getFirstFocusableDescendant(element) {
+var getFirstFocusableDescendant = exports.getFirstFocusableDescendant = function getFirstFocusableDescendant(element) {
   var children = element.getElementsByTagName('*');
   for (var i = 0; i < children.length; i += 1) {
     var child = children[i];
@@ -102,14 +97,12 @@ var getFirstFocusableDescendant = function getFirstFocusableDescendant(element) 
   }
   return undefined;
 };
-exports.getFirstFocusableDescendant = getFirstFocusableDescendant;
-var shouldKeepFocus = function shouldKeepFocus(root) {
+var shouldKeepFocus = exports.shouldKeepFocus = function shouldKeepFocus(root) {
   var element = root.activeElement;
   if (isFocusable(element)) return true;
   return !!getFirstFocusableDescendant(element);
 };
-exports.shouldKeepFocus = shouldKeepFocus;
-var getNewContainer = function getNewContainer(target, targetChildPosition) {
+var getNewContainer = exports.getNewContainer = function getNewContainer(target, targetChildPosition) {
   if (target === void 0) {
     target = document.body;
   }
@@ -123,17 +116,15 @@ var getNewContainer = function getNewContainer(target, targetChildPosition) {
   }
   return container;
 };
-exports.getNewContainer = getNewContainer;
-var setFocusWithoutScroll = function setFocusWithoutScroll(element) {
+var setFocusWithoutScroll = exports.setFocusWithoutScroll = function setFocusWithoutScroll(element) {
   var x = window.scrollX;
   var y = window.scrollY;
   element.focus();
   window.scrollTo(x, y);
 };
-exports.setFocusWithoutScroll = setFocusWithoutScroll;
 var TABINDEX = 'tabindex';
 var TABINDEX_STATE = 'data-g-tabindex';
-var makeNodeFocusable = function makeNodeFocusable(node) {
+var makeNodeFocusable = exports.makeNodeFocusable = function makeNodeFocusable(node) {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.removeAttribute('aria-hidden');
@@ -153,9 +144,8 @@ var makeNodeFocusable = function makeNodeFocusable(node) {
     });
   }
 };
-exports.makeNodeFocusable = makeNodeFocusable;
 var autoFocusingTags = /(a|area|input|select|textarea|button|iframe)$/;
-var makeNodeUnfocusable = function makeNodeUnfocusable(node) {
+var makeNodeUnfocusable = exports.makeNodeUnfocusable = function makeNodeUnfocusable(node) {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', true);
@@ -179,16 +169,14 @@ var makeNodeUnfocusable = function makeNodeUnfocusable(node) {
     });
   }
 };
-exports.makeNodeUnfocusable = makeNodeUnfocusable;
-var findVisibleParent = function findVisibleParent(element) {
+var findVisibleParent = exports.findVisibleParent = function findVisibleParent(element) {
   if (element) {
     // Get the closest ancestor element that is positioned.
     return element.offsetParent ? element : findVisibleParent(element.parentElement) || element;
   }
   return undefined;
 };
-exports.findVisibleParent = findVisibleParent;
-var isNodeAfterScroll = function isNodeAfterScroll(node, target) {
+var isNodeAfterScroll = exports.isNodeAfterScroll = function isNodeAfterScroll(node, target) {
   var _node$getBoundingClie = node.getBoundingClientRect(),
     bottom = _node$getBoundingClie.bottom;
   // target will be the document from findScrollParent()
@@ -200,8 +188,7 @@ var isNodeAfterScroll = function isNodeAfterScroll(node, target) {
     top = _ref.top;
   return bottom >= top + height;
 };
-exports.isNodeAfterScroll = isNodeAfterScroll;
-var isNodeBeforeScroll = function isNodeBeforeScroll(node, target) {
+var isNodeBeforeScroll = exports.isNodeBeforeScroll = function isNodeBeforeScroll(node, target) {
   var _node$getBoundingClie2 = node.getBoundingClientRect(),
     top = _node$getBoundingClie2.top;
   // target will be the document from findScrollParent()
@@ -211,9 +198,7 @@ var isNodeBeforeScroll = function isNodeBeforeScroll(node, target) {
     targetTop = _ref2.top;
   return top <= targetTop;
 };
-exports.isNodeBeforeScroll = isNodeBeforeScroll;
-var findButtonParent = function findButtonParent(element) {
+var findButtonParent = exports.findButtonParent = function findButtonParent(element) {
   if (element && element.nodeName !== 'BUTTON' && element.nodeName !== 'A') return findButtonParent(element.parentElement);
   return element;
 };
-exports.findButtonParent = findButtonParent;

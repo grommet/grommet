@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Active = function Active() {
+var Active = exports.Active = function Active() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: {
       global: {
@@ -32,9 +32,7 @@ var Active = function Active() {
     gap: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Kind")))));
 };
-exports.Active = Active;
 Active.storyName = 'Active';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Button/Custom Themed/Active'
 };
-exports["default"] = _default;

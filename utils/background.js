@@ -13,7 +13,7 @@ var evalStyle = function evalStyle(arg, theme) {
   }
   return arg;
 };
-var normalizeBackground = function normalizeBackground(backgroundArg, theme) {
+var normalizeBackground = exports.normalizeBackground = function normalizeBackground(backgroundArg, theme) {
   var _theme$global$backgro;
   var background = ((_theme$global$backgro = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro[backgroundArg]) || backgroundArg;
   var result = background;
@@ -28,7 +28,6 @@ var normalizeBackground = function normalizeBackground(backgroundArg, theme) {
   }
   return result;
 };
-exports.normalizeBackground = normalizeBackground;
 var normalizeBackgroundColor = function normalizeBackgroundColor(backgroundArg, theme) {
   var _theme$global$backgro2;
   var background = backgroundArg.color || backgroundArg;
@@ -62,7 +61,7 @@ var rotateBackground = function rotateBackground(background, theme) {
   }
   return result;
 };
-var backgroundIsDark = function backgroundIsDark(backgroundArg, theme) {
+var backgroundIsDark = exports.backgroundIsDark = function backgroundIsDark(backgroundArg, theme) {
   var background = normalizeBackground(backgroundArg, theme);
   var result;
   if (background) {
@@ -89,7 +88,6 @@ var backgroundIsDark = function backgroundIsDark(backgroundArg, theme) {
   }
   return result;
 };
-exports.backgroundIsDark = backgroundIsDark;
 var darkContext = function darkContext(backgroundColor) {
   var isDark = (0, _colors.colorIsDark)(backgroundColor);
   if (isDark === undefined) return undefined;
@@ -99,7 +97,7 @@ var darkContext = function darkContext(backgroundColor) {
 // Returns an array of two CSS colors: [background, color]
 // Either could be undefined.
 // background could be a CSS gradient, like "linear-gradient(...)"
-var backgroundAndTextColors = function backgroundAndTextColors(backgroundArg, textArg, theme) {
+var backgroundAndTextColors = exports.backgroundAndTextColors = function backgroundAndTextColors(backgroundArg, textArg, theme) {
   if (!backgroundArg) return [undefined, textArg];
   var global = theme.global;
   var background = normalizeBackground(backgroundArg, theme);
@@ -149,8 +147,7 @@ var backgroundAndTextColors = function backgroundAndTextColors(backgroundArg, te
   if (textArg === false) textColor = undefined;
   return [backgroundColor, textColor];
 };
-exports.backgroundAndTextColors = backgroundAndTextColors;
-var backgroundStyle = function backgroundStyle(backgroundArg, theme, textColorArg) {
+var backgroundStyle = exports.backgroundStyle = function backgroundStyle(backgroundArg, theme, textColorArg) {
   // for Grommet component, if the background isn't defined, don't set it
   if (backgroundArg === undefined) return undefined;
   var background = normalizeBackground(backgroundArg, theme);
@@ -183,16 +180,13 @@ var backgroundStyle = function backgroundStyle(backgroundArg, theme, textColorAr
     return (0, _styledComponents.css)(["background:", ";"], (0, _colors.normalizeColor)(background, theme));
   return undefined;
 };
-exports.backgroundStyle = backgroundStyle;
-var activeStyle = (0, _styledComponents.css)(["", ""], function (props) {
+var activeStyle = exports.activeStyle = (0, _styledComponents.css)(["", ""], function (props) {
   return backgroundStyle((0, _colors.normalizeColor)(props.theme.global.active.background, props.theme), props.theme, props.theme.global.active.color);
 });
-exports.activeStyle = activeStyle;
-var selectedStyle = (0, _styledComponents.css)(["", ""], function (props) {
+var selectedStyle = exports.selectedStyle = (0, _styledComponents.css)(["", ""], function (props) {
   return backgroundStyle((0, _colors.normalizeColor)(props.theme.global.selected.background, props.theme), props.theme, props.theme.global.selected.color);
 });
-exports.selectedStyle = selectedStyle;
-var getHoverIndicatorStyle = function getHoverIndicatorStyle(hoverIndicator, theme) {
+var getHoverIndicatorStyle = exports.getHoverIndicatorStyle = function getHoverIndicatorStyle(hoverIndicator, theme) {
   var background;
   var elevation;
   if (hoverIndicator === true || hoverIndicator === 'background') {
@@ -207,4 +201,3 @@ var getHoverIndicatorStyle = function getHoverIndicatorStyle(hoverIndicator, the
   }
   return (0, _styledComponents.css)(["", " ", ""], backgroundStyle(background, theme, theme.global.hover.color), elevation && "box-shadow: " + theme.global.elevation[theme.dark ? 'dark' : 'light'][elevation] + ";");
 };
-exports.getHoverIndicatorStyle = getHoverIndicatorStyle;

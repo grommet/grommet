@@ -15,7 +15,7 @@ var createAnnouncer = function createAnnouncer() {
   document.body.insertBefore(announcer, document.body.firstChild);
   return announcer;
 };
-var AnnounceContext = /*#__PURE__*/_react["default"].createContext(function (message, mode, timeout) {
+var AnnounceContext = exports.AnnounceContext = /*#__PURE__*/_react["default"].createContext(function (message, mode, timeout) {
   if (mode === void 0) {
     mode = 'polite';
   }
@@ -32,5 +32,4 @@ var AnnounceContext = /*#__PURE__*/_react["default"].createContext(function (mes
     announcer.innerHTML = '';
   }, timeout);
 });
-exports.AnnounceContext = AnnounceContext;
 AnnounceContext.propTypes = _propTypes.AnnounceContextPropTypes;

@@ -11,5 +11,4 @@ if (process.env.NODE_ENV !== 'production') {
     name: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node])
   };
 }
-var NameValuePairType = PropType;
-exports.NameValuePairType = NameValuePairType;
+var NameValuePairType = exports.NameValuePairType = PropType;

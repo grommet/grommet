@@ -12,5 +12,4 @@ if (process.env.NODE_ENV !== 'production') {
     plain: _propTypes["default"].bool
   };
 }
-var TipPropTypes = PropType;
-exports.TipPropTypes = TipPropTypes;
+var TipPropTypes = exports.TipPropTypes = PropType;

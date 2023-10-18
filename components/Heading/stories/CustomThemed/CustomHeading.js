@@ -30,7 +30,7 @@ var customlevel = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var Custom = function Custom() {
+var Custom = exports.Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customlevel
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
@@ -44,8 +44,6 @@ var Custom = function Custom() {
     size: "large"
   }, "Heading level 5 small"));
 };
-exports.Custom = Custom;
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Heading/Custom Themed/Custom'
 };
-exports["default"] = _default;

@@ -32,16 +32,14 @@ var ReverseMenu = function ReverseMenu() {
     }]
   }));
 };
-var Reverse = function Reverse() {
+var Reverse = exports.Reverse = function Reverse() {
   return /*#__PURE__*/_react["default"].createElement(ReverseMenu, null);
 };
-exports.Reverse = Reverse;
 Reverse.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Menu/Reverse'
 };
-exports["default"] = _default;

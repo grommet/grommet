@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var positions = ['left', 'right', 'top', 'bottom', 'center'];
-var TargetLayer = function TargetLayer() {
+var TargetLayer = exports.TargetLayer = function TargetLayer() {
   var _React$useState = _react["default"].useState(),
     open = _React$useState[0],
     setOpen = _React$useState[1];
@@ -102,12 +102,11 @@ var TargetLayer = function TargetLayer() {
     // </Grommet>
   );
 };
-exports.TargetLayer = TargetLayer;
+
 TargetLayer.storyName = 'Target';
 TargetLayer.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Layer/Target'
 };
-exports["default"] = _default;

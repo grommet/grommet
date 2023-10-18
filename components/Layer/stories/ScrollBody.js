@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var ScrollBodyLayer = function ScrollBodyLayer() {
+var ScrollBodyLayer = exports.ScrollBodyLayer = function ScrollBodyLayer() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -51,9 +51,8 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
     // </Grommet>
   );
 };
-exports.ScrollBodyLayer = ScrollBodyLayer;
+
 ScrollBodyLayer.storyName = 'Fixed header, scroll body';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Layer/Fixed header, scroll body'
 };
-exports["default"] = _default;

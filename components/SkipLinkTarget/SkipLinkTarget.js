@@ -13,7 +13,7 @@ var HiddenAnchor = (0, _styledComponents["default"])(_Anchor.Anchor).withConfig(
   displayName: "SkipLinkTarget__HiddenAnchor",
   componentId: "sc-16wjfgk-0"
 })(["width:0;height:0;overflow:hidden;position:absolute;"]);
-var SkipLinkTarget = function SkipLinkTarget(_ref) {
+var SkipLinkTarget = exports.SkipLinkTarget = function SkipLinkTarget(_ref) {
   var label = _ref.label,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(HiddenAnchor, _extends({}, rest, {
@@ -21,4 +21,3 @@ var SkipLinkTarget = function SkipLinkTarget(_ref) {
     "aria-hidden": "true"
   }), label);
 };
-exports.SkipLinkTarget = SkipLinkTarget;

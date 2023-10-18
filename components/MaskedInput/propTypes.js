@@ -30,5 +30,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])
   };
 }
-var MaskedInputPropTypes = PropType;
-exports.MaskedInputPropTypes = MaskedInputPropTypes;
+var MaskedInputPropTypes = exports.MaskedInputPropTypes = PropType;

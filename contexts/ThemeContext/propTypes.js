@@ -10,5 +10,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: _propTypes["default"].shape({})
   };
 }
-var ThemeContextPropTypes = PropType;
-exports.ThemeContextPropTypes = ThemeContextPropTypes;
+var ThemeContextPropTypes = exports.ThemeContextPropTypes = PropType;

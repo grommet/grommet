@@ -5,7 +5,7 @@ exports["default"] = exports.Phone = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Phone = function Phone() {
+var Phone = exports.Phone = function Phone() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -50,11 +50,10 @@ var Phone = function Phone() {
     // </Grommet>
   );
 };
-exports.Phone = Phone;
+
 Phone.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Phone'
 };
-exports["default"] = _default;

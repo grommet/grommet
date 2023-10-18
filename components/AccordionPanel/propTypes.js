@@ -11,5 +11,4 @@ if (process.env.NODE_ENV !== 'production') {
     header: _propTypes["default"].node
   };
 }
-var AccordionPanelPropTypes = PropType;
-exports.AccordionPanelPropTypes = AccordionPanelPropTypes;
+var AccordionPanelPropTypes = exports.AccordionPanelPropTypes = PropType;

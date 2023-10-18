@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports.hacktoberfest2022 = void 0;
 var _styledComponents = require("styled-components");
 var _object = require("../utils/object");
-var hacktoberfest2022 = (0, _object.deepFreeze)({
+var hacktoberfest2022 = exports.hacktoberfest2022 = (0, _object.deepFreeze)({
   defaultMode: 'dark',
   global: {
     colors: {
@@ -131,4 +131,3 @@ var hacktoberfest2022 = (0, _object.deepFreeze)({
     extend: (0, _styledComponents.css)(["text-shadow:rgba(255,215,77,0.6) -1px -1px 6px,rgba(124,127,255,0.6) 1px 1px 6px;"])
   }
 });
-exports.hacktoberfest2022 = hacktoberfest2022;

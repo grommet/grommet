@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var ValidateOnBlur = function ValidateOnBlur() {
+var ValidateOnBlur = exports.ValidateOnBlur = function ValidateOnBlur() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -90,12 +90,11 @@ var ValidateOnBlur = function ValidateOnBlur() {
     // </Grommet>
   );
 };
-exports.ValidateOnBlur = ValidateOnBlur;
+
 ValidateOnBlur.storyName = 'Validate on blur';
 ValidateOnBlur.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Validate on blur'
 };
-exports["default"] = _default;

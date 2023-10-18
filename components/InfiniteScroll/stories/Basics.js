@@ -9,7 +9,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-var Simple = function Simple(props) {
+var Simple = exports.Simple = function Simple(props) {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -29,8 +29,6 @@ var Simple = function Simple(props) {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Simple'
 };
-exports["default"] = _default;

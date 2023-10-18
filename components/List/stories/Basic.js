@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
-var Basic = function Basic() {
+var Basic = exports.Basic = function Basic() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -15,8 +15,6 @@ var Basic = function Basic() {
     data: locations
   }));
 };
-exports.Basic = Basic;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Basic'
 };
-exports["default"] = _default;

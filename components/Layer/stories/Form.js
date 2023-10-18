@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var FormLayer = function FormLayer() {
+var FormLayer = exports.FormLayer = function FormLayer() {
   var _React$useState = _react["default"].useState(false),
     open = _React$useState[0],
     setOpen = _React$useState[1];
@@ -116,7 +116,7 @@ var FormLayer = function FormLayer() {
     // </Grommet>
   );
 };
-exports.FormLayer = FormLayer;
+
 FormLayer.storyName = 'Form';
 FormLayer.parameters = {
   chromatic: {
@@ -126,7 +126,6 @@ FormLayer.parameters = {
 FormLayer.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Layer/Form'
 };
-exports["default"] = _default;

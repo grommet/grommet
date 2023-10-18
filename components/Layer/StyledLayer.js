@@ -5,12 +5,12 @@ exports.animationDuration = exports.StyledOverlay = exports.StyledLayer = export
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var hiddenPositionStyle = (0, _styledComponents.css)(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
 var responsiveLayerStyle = "\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
-var StyledLayer = _styledComponents["default"].div.withConfig({
+var StyledLayer = exports.StyledLayer = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer",
   componentId: "sc-rmtehz-0"
 })(["", " background:transparent;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], _utils.baseStyle, function (props) {
@@ -29,10 +29,9 @@ var StyledLayer = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.theme.layer && props.theme.layer.extend;
 });
-exports.StyledLayer = StyledLayer;
 StyledLayer.defaultProps = {};
 Object.setPrototypeOf(StyledLayer.defaultProps, _defaultProps.defaultProps);
-var StyledOverlay = _styledComponents["default"].div.withConfig({
+var StyledOverlay = exports.StyledOverlay = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "sc-rmtehz-1"
 })(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " ", " pointer-events:all;will-change:transform;"], function (props) {
@@ -46,7 +45,6 @@ var StyledOverlay = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return !props.plain && props.theme.layer.overlay.background && (0, _utils.backgroundStyle)(props.theme.layer.overlay.background, props.theme);
 });
-exports.StyledOverlay = StyledOverlay;
 var getMargin = function getMargin(margin, theme, position) {
   var axis = position.indexOf('top') !== -1 || position.indexOf('bottom') !== -1 ? 'vertical' : 'horizontal';
   var marginValue = margin[position] || margin[axis] || margin;
@@ -119,8 +117,7 @@ var KEYFRAMES = {
     "false": (0, _styledComponents.keyframes)(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"])
   }
 };
-var animationDuration = 200;
-exports.animationDuration = animationDuration;
+var animationDuration = exports.animationDuration = 200;
 var getAnimationStyle = function getAnimationStyle(props, position, full) {
   var animation = props.animation !== undefined ? props.animation : props.animate;
   if (animation === undefined) animation = 'slide';
@@ -449,7 +446,7 @@ var responsiveContainerStyle = function responsiveContainerStyle(props) {
 var elevationStyle = (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
   return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.theme.layer.container.elevation];
 });
-var StyledContainer = _styledComponents["default"].div.withConfig({
+var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig({
   // don't let elevation leak to DOM
   // https://styled-components.com/docs/api#shouldforwardprop
   shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
@@ -479,6 +476,5 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.theme.layer.container && props.theme.layer.container.extend;
 });
-exports.StyledContainer = StyledContainer;
 StyledContainer.defaultProps = {};
 Object.setPrototypeOf(StyledContainer.defaultProps, _defaultProps.defaultProps);

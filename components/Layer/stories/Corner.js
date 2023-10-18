@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var CornerLayer = function CornerLayer() {
+var CornerLayer = exports.CornerLayer = function CornerLayer() {
   var _React$useState = _react["default"].useState(),
     open = _React$useState[0],
     setOpen = _React$useState[1];
@@ -43,7 +43,7 @@ var CornerLayer = function CornerLayer() {
     // </Grommet>
   );
 };
-exports.CornerLayer = CornerLayer;
+
 CornerLayer.storyName = 'Corner';
 CornerLayer.parameters = {
   chromatic: {
@@ -53,7 +53,6 @@ CornerLayer.parameters = {
 CornerLayer.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Layer/Corner'
 };
-exports["default"] = _default;

@@ -22,5 +22,4 @@ if (process.env.NODE_ENV !== 'production') {
     onUp: _propTypes["default"].func
   };
 }
-var KeyboardPropTypes = PropType;
-exports.KeyboardPropTypes = KeyboardPropTypes;
+var KeyboardPropTypes = exports.KeyboardPropTypes = PropType;

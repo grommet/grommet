@@ -16,7 +16,7 @@ for (var i = 0; i < 40; i += 1) {
     paid: (i + 1) * 17 % 1000
   });
 }
-var OnClickItemList = function OnClickItemList() {
+var OnClickItemList = exports.OnClickItemList = function OnClickItemList() {
   var _React$useState = _react["default"].useState(),
     clicked = _React$useState[0],
     setClicked = _React$useState[1];
@@ -54,7 +54,6 @@ var OnClickItemList = function OnClickItemList() {
     }
   }))));
 };
-exports.OnClickItemList = OnClickItemList;
 OnClickItemList.storyName = 'onClickItem';
 OnClickItemList.parameters = {
   // chromatic disabled because snapshot is covered by jest testing
@@ -63,7 +62,6 @@ OnClickItemList.parameters = {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/onClickItem'
 };
-exports["default"] = _default;

@@ -24,5 +24,4 @@ if (process.env.NODE_ENV !== 'production') {
     open: _propTypes["default"].bool
   });
 }
-var DropButtonPropTypes = PropType;
-exports.DropButtonPropTypes = DropButtonPropTypes;
+var DropButtonPropTypes = exports.DropButtonPropTypes = PropType;

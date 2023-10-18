@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
 var _data = require("./data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var CustomValue = function CustomValue() {
+var CustomValue = exports.CustomValue = function CustomValue() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -73,8 +73,6 @@ var CustomValue = function CustomValue() {
     // </Grommet>
   );
 };
-exports.CustomValue = CustomValue;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/NameValueList/Custom Value'
 };
-exports["default"] = _default;

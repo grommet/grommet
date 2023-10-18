@@ -66,7 +66,7 @@ var columnsResize = [{
   size: 'xsmall',
   align: 'end'
 }];
-var ResizableDataTable = function ResizableDataTable() {
+var ResizableDataTable = exports.ResizableDataTable = function ResizableDataTable() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -85,9 +85,8 @@ var ResizableDataTable = function ResizableDataTable() {
     // </Grommet>
   );
 };
-exports.ResizableDataTable = ResizableDataTable;
+
 ResizableDataTable.storyName = 'Resizable columns';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Resizable columns'
 };
-exports["default"] = _default;

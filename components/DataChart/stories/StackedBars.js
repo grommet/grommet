@@ -13,7 +13,7 @@ for (var i = 0; i < 7; i += 1) {
     forecast: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
   });
 }
-var StackedBars = function StackedBars() {
+var StackedBars = exports.StackedBars = function StackedBars() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -63,9 +63,8 @@ var StackedBars = function StackedBars() {
     // </Grommet>
   );
 };
-exports.StackedBars = StackedBars;
+
 StackedBars.storyName = 'Stacked bars';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Stacked bars'
 };
-exports["default"] = _default;

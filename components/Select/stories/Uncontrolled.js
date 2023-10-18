@@ -5,7 +5,7 @@ exports["default"] = exports.Uncontrolled = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Uncontrolled = function Uncontrolled() {
+var Uncontrolled = exports.Uncontrolled = function Uncontrolled() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -28,7 +28,7 @@ var Uncontrolled = function Uncontrolled() {
     // </Grommet>
   );
 };
-exports.Uncontrolled = Uncontrolled;
+
 Uncontrolled.parameters = {
   chromatic: {
     disable: true
@@ -37,7 +37,6 @@ Uncontrolled.parameters = {
 Uncontrolled.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Select/Uncontrolled'
 };
-exports["default"] = _default;

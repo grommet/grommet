@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var disabledLocations = ['Fort Collins', 'Palo Alto'];
-var Disabled = function Disabled() {
+var Disabled = exports.Disabled = function Disabled() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -20,8 +20,6 @@ var Disabled = function Disabled() {
     }
   }));
 };
-exports.Disabled = Disabled;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Disabled'
 };
-exports["default"] = _default;

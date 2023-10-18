@@ -30,14 +30,12 @@ var Example = function Example(props) {
   );
 };
 
-var Show = function Show() {
+var Show = exports.Show = function Show() {
   return /*#__PURE__*/_react["default"].createElement(Example, {
     show: 117
   });
 };
-exports.Show = Show;
 Show.storyName = 'Show 118th item';
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Show 118th item'
 };
-exports["default"] = _default;

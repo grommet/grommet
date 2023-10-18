@@ -19,7 +19,7 @@ var data = [{
   city: 'San Diego',
   state: 'California'
 }];
-var Children = function Children() {
+var Children = exports.Children = function Children() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     height: "100%",
@@ -47,8 +47,6 @@ var Children = function Children() {
     }, datum.city)));
   }));
 };
-exports.Children = Children;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Children'
 };
-exports["default"] = _default;

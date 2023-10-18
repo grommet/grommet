@@ -24,7 +24,7 @@ Value.propTypes = {
   basis: _propTypes["default"].string.isRequired,
   children: _propTypes["default"].node.isRequired
 };
-var Distribution = function Distribution(_ref2) {
+var Distribution = exports.Distribution = function Distribution(_ref2) {
   var basis = _ref2.basis,
     children = _ref2.children,
     direction = _ref2.direction,
@@ -100,7 +100,6 @@ var Distribution = function Distribution(_ref2) {
   }
   return null;
 };
-exports.Distribution = Distribution;
 Distribution.defaultProps = {
   basis: undefined,
   children: function children(value) {

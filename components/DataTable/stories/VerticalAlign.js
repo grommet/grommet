@@ -9,7 +9,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
-var VerticalAlign = function VerticalAlign() {
+var VerticalAlign = exports.VerticalAlign = function VerticalAlign() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -38,9 +38,8 @@ var VerticalAlign = function VerticalAlign() {
     // </Grommet>
   );
 };
-exports.VerticalAlign = VerticalAlign;
+
 VerticalAlign.storyName = 'Vertical Align';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Vertical Align'
 };
-exports["default"] = _default;

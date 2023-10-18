@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 exports.data = void 0;
-var data = [{
+var data = exports.data = [{
   name: 'Las Vegas',
   carat: '1',
   color: 'white gold',
@@ -18,4 +18,3 @@ var data = [{
   color: 'yellow',
   cut: 'pear'
 }];
-exports.data = data;

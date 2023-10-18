@@ -5,7 +5,7 @@ exports["default"] = exports.PlainLayer = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var PlainLayer = function PlainLayer() {
+var PlainLayer = exports.PlainLayer = function PlainLayer() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -28,12 +28,11 @@ var PlainLayer = function PlainLayer() {
     // </Grommet>
   );
 };
-exports.PlainLayer = PlainLayer;
+
 PlainLayer.storyName = 'Plain';
 PlainLayer.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Layer/Plain'
 };
-exports["default"] = _default;

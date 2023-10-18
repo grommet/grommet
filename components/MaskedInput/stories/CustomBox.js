@@ -5,7 +5,7 @@ exports["default"] = exports.CustomBoxMaskedInput = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
+var CustomBoxMaskedInput = exports.CustomBoxMaskedInput = function CustomBoxMaskedInput() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -56,7 +56,7 @@ var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
     // </Grommet>
   );
 };
-exports.CustomBoxMaskedInput = CustomBoxMaskedInput;
+
 CustomBoxMaskedInput.storyName = 'Custom box';
 CustomBoxMaskedInput.parameters = {
   chromatic: {
@@ -66,7 +66,6 @@ CustomBoxMaskedInput.parameters = {
 CustomBoxMaskedInput.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Custom box'
 };
-exports["default"] = _default;

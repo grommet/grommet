@@ -9,7 +9,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
-var Placeholder = function Placeholder() {
+var Placeholder = exports.Placeholder = function Placeholder() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -39,8 +39,6 @@ var Placeholder = function Placeholder() {
     // </Grommet>
   );
 };
-exports.Placeholder = Placeholder;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Placeholder'
 };
-exports["default"] = _default;

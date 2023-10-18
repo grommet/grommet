@@ -18,5 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     type: _propTypes["default"].oneOf(['analog', 'digital'])
   });
 }
-var ClockPropTypes = PropType;
-exports.ClockPropTypes = ClockPropTypes;
+var ClockPropTypes = exports.ClockPropTypes = PropType;

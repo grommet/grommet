@@ -50,7 +50,7 @@ var customBreakpoints = {
     }
   }
 };
-var CustomBreakpoints = function CustomBreakpoints() {
+var CustomBreakpoints = exports.CustomBreakpoints = function CustomBreakpoints() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints,
     full: true
@@ -61,9 +61,7 @@ var CustomBreakpoints = function CustomBreakpoints() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "Hi, I'm " + size + ", resize me!"));
   }));
 };
-exports.CustomBreakpoints = CustomBreakpoints;
 CustomBreakpoints.storyName = 'Custom breakpoints';
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/ResponsiveContext/Custom breakpoints'
 };
-exports["default"] = _default;

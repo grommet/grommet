@@ -13,7 +13,7 @@ for (var i = 0; i < 13; i += 1) {
     amount: Math.floor(v * 100)
   });
 }
-var MultipleTypes = function MultipleTypes() {
+var MultipleTypes = exports.MultipleTypes = function MultipleTypes() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -73,9 +73,8 @@ var MultipleTypes = function MultipleTypes() {
     // </Grommet>
   );
 };
-exports.MultipleTypes = MultipleTypes;
+
 MultipleTypes.storyName = 'Multiple types';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Multiple types'
 };
-exports["default"] = _default;

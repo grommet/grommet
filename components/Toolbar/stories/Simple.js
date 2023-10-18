@@ -8,7 +8,7 @@ var _Search = require("grommet-icons/icons/Search");
 var _Filter = require("grommet-icons/icons/Filter");
 var _Toolbar = require("../Toolbar");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -42,11 +42,10 @@ var Simple = function Simple() {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
+
 Simple.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Data/Toolbar/Simple'
 };
-exports["default"] = _default;

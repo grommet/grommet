@@ -30,7 +30,7 @@ var Example = function Example(props) {
   );
 };
 
-var Marker = function Marker() {
+var Marker = exports.Marker = function Marker() {
   return /*#__PURE__*/_react["default"].createElement(Example, {
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -40,8 +40,6 @@ var Marker = function Marker() {
     }
   });
 };
-exports.Marker = Marker;
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Marker'
 };
-exports["default"] = _default;

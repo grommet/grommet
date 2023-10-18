@@ -5,7 +5,7 @@ exports["default"] = exports.FieldWithComponentProp = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var FieldWithComponentProp = function FieldWithComponentProp() {
+var FieldWithComponentProp = exports.FieldWithComponentProp = function FieldWithComponentProp() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -129,12 +129,11 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
     // </Grommet>
   );
 };
-exports.FieldWithComponentProp = FieldWithComponentProp;
+
 FieldWithComponentProp.storyName = 'Field with component prop';
 FieldWithComponentProp.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Field with component prop'
 };
-exports["default"] = _default;

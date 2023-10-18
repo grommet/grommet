@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var text = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
-var Maxlines = function Maxlines() {
+var Maxlines = exports.Maxlines = function Maxlines() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
@@ -24,8 +24,6 @@ var Maxlines = function Maxlines() {
     maxLines: 3
   }, text));
 };
-exports.Maxlines = Maxlines;
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Paragraph/Maxlines'
 };
-exports["default"] = _default;

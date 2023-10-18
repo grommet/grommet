@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Password = function Password() {
+var Password = exports.Password = function Password() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -45,8 +45,6 @@ var Password = function Password() {
     // </Grommet>
   );
 };
-exports.Password = Password;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/TextInput/Password'
 };
-exports["default"] = _default;

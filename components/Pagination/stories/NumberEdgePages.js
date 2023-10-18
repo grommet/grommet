@@ -5,7 +5,7 @@ exports["default"] = exports.NumberEdgePages = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var NumberEdgePages = function NumberEdgePages() {
+var NumberEdgePages = exports.NumberEdgePages = function NumberEdgePages() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -25,9 +25,8 @@ var NumberEdgePages = function NumberEdgePages() {
     // </Grommet>
   );
 };
-exports.NumberEdgePages = NumberEdgePages;
+
 NumberEdgePages.storyName = 'Number edge pages';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Pagination/Number edge pages'
 };
-exports["default"] = _default;

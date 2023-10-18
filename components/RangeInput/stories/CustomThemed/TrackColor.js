@@ -16,7 +16,7 @@ var rangeInputTheme = {
     }
   }
 };
-var TrackColor = function TrackColor() {
+var TrackColor = exports.TrackColor = function TrackColor() {
   var _React$useState = _react["default"].useState(0.4),
     value1 = _React$useState[0],
     setValue1 = _React$useState[1];
@@ -67,9 +67,7 @@ var TrackColor = function TrackColor() {
     }]
   })));
 };
-exports.TrackColor = TrackColor;
 TrackColor.storyName = 'Track Color';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/RangeInput/Custom Themed/Track Color'
 };
-exports["default"] = _default;

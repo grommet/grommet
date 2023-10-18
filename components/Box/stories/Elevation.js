@@ -5,7 +5,7 @@ exports["default"] = exports.ElevationBox = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var ElevationBox = function ElevationBox() {
+var ElevationBox = exports.ElevationBox = function ElevationBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -34,9 +34,8 @@ var ElevationBox = function ElevationBox() {
     // </Grommet>
   );
 };
-exports.ElevationBox = ElevationBox;
+
 ElevationBox.storyName = 'Elevation';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/Elevation'
 };
-exports["default"] = _default;

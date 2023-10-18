@@ -15,7 +15,7 @@ var columns = [{
   property: 'location',
   header: 'Location'
 }];
-var NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
+var NoPrimaryKeyDataTable = exports.NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -32,9 +32,8 @@ var NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
     // </Grommet>
   );
 };
-exports.NoPrimaryKeyDataTable = NoPrimaryKeyDataTable;
+
 NoPrimaryKeyDataTable.storyName = 'No primary';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/No primary'
 };
-exports["default"] = _default;

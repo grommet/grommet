@@ -115,7 +115,7 @@ var SidebarButton = function SidebarButton(_ref) {
     }, iconsMap(hover ? 'black' : 'white')[index]);
   })));
 };
-var SidebarTip = function SidebarTip() {
+var SidebarTip = exports.SidebarTip = function SidebarTip() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme,
     full: true
@@ -142,9 +142,7 @@ var SidebarTip = function SidebarTip() {
     });
   })))));
 };
-exports.SidebarTip = SidebarTip;
 SidebarTip.storyName = 'Sidebar';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Tip/Custom Themed/Sidebar'
 };
-exports["default"] = _default;

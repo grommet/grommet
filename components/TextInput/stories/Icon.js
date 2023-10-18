@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Icon = function Icon() {
+var Icon = exports.Icon = function Icon() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -30,8 +30,6 @@ var Icon = function Icon() {
     // </Grommet>
   );
 };
-exports.Icon = Icon;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/TextInput/Icon'
 };
-exports["default"] = _default;

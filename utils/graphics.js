@@ -3,17 +3,15 @@
 exports.__esModule = true;
 exports.translateEndAngle = exports.polarToCartesian = exports.baseUnit = exports.arcCommands = void 0;
 var POST_DECIMAL_DIGITS = 10;
-var baseUnit = 24;
-exports.baseUnit = baseUnit;
-var polarToCartesian = function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+var baseUnit = exports.baseUnit = 24;
+var polarToCartesian = exports.polarToCartesian = function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
   var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
   return {
     x: centerX + radius * Math.cos(angleInRadians),
     y: centerY + radius * Math.sin(angleInRadians)
   };
 };
-exports.polarToCartesian = polarToCartesian;
-var arcCommands = function arcCommands(centerX, centerY, radius, startAngle, endAngle) {
+var arcCommands = exports.arcCommands = function arcCommands(centerX, centerY, radius, startAngle, endAngle) {
   // handle that we can't draw a complete circle
   var normalizedEndAngle = endAngle;
   /* 
@@ -36,8 +34,6 @@ startAngle + anglePer * value and mod by 360. This was added
 to take account the startAngle not being 0. So no matter the
 value it will be % 360 to get the correct angle. 
 */
-exports.arcCommands = arcCommands;
-var translateEndAngle = function translateEndAngle(startAngle, anglePer, value) {
+var translateEndAngle = exports.translateEndAngle = function translateEndAngle(startAngle, anglePer, value) {
   return Math.max(0, startAngle + anglePer * value) % 360;
 };
-exports.translateEndAngle = translateEndAngle;

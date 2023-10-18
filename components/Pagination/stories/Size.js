@@ -5,7 +5,7 @@ exports["default"] = exports.Size = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Size = function Size() {
+var Size = exports.Size = function Size() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -27,8 +27,6 @@ var Size = function Size() {
     // </Grommet>
   );
 };
-exports.Size = Size;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Pagination/Size'
 };
-exports["default"] = _default;

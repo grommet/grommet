@@ -5,8 +5,8 @@ exports.StyledTableRow = exports.StyledTableHeader = exports.StyledTableFooter =
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var SIZE_MAP = {
   '1/2': '50%',
   '1/4': '25%',
@@ -27,7 +27,7 @@ var sizeStyle = (0, _styledComponents.css)(["width:", ";max-width:", ";overflow:
 }, function (props) {
   return props.size !== 'auto' ? SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size : undefined;
 });
-var StyledTableCell = _styledComponents["default"].td.withConfig({
+var StyledTableCell = exports.StyledTableCell = _styledComponents["default"].td.withConfig({
   displayName: "StyledTable__StyledTableCell",
   componentId: "sc-1m3u5g-0"
 })(["margin:0;padding:0;font-weight:inherit;text-align:inherit;", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -45,52 +45,45 @@ var StyledTableCell = _styledComponents["default"].td.withConfig({
 }, function (props) {
   return props.tableContextTheme && props.tableContextTheme.extend;
 });
-exports.StyledTableCell = StyledTableCell;
 StyledTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledTableCell.defaultProps, _defaultProps.defaultProps);
-var StyledTableDataCaption = _styledComponents["default"].caption.withConfig({
+var StyledTableDataCaption = exports.StyledTableDataCaption = _styledComponents["default"].caption.withConfig({
   displayName: "StyledTable__StyledTableDataCaption",
   componentId: "sc-1m3u5g-1"
 })(["margin-bottom:", ";"], function (props) {
   return props.theme.global.edgeSize.xxsmall;
 });
-exports.StyledTableDataCaption = StyledTableDataCaption;
 StyledTableDataCaption.defaultProps = {};
 Object.setPrototypeOf(StyledTableDataCaption.defaultProps, _defaultProps.defaultProps);
-var StyledTableRow = _styledComponents["default"].tr.withConfig({
+var StyledTableRow = exports.StyledTableRow = _styledComponents["default"].tr.withConfig({
   displayName: "StyledTable__StyledTableRow",
   componentId: "sc-1m3u5g-2"
 })([""]);
-exports.StyledTableRow = StyledTableRow;
 StyledTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledTableRow.defaultProps, _defaultProps.defaultProps);
-var StyledTableBody = _styledComponents["default"].tbody.withConfig({
+var StyledTableBody = exports.StyledTableBody = _styledComponents["default"].tbody.withConfig({
   displayName: "StyledTable__StyledTableBody",
   componentId: "sc-1m3u5g-3"
 })([""]);
-exports.StyledTableBody = StyledTableBody;
 StyledTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledTableBody.defaultProps, _defaultProps.defaultProps);
-var StyledTableHeader = _styledComponents["default"].thead.withConfig({
+var StyledTableHeader = exports.StyledTableHeader = _styledComponents["default"].thead.withConfig({
   displayName: "StyledTable__StyledTableHeader",
   componentId: "sc-1m3u5g-4"
 })([""]);
-exports.StyledTableHeader = StyledTableHeader;
 StyledTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledTableHeader.defaultProps, _defaultProps.defaultProps);
-var StyledTableFooter = _styledComponents["default"].tfoot.withConfig({
+var StyledTableFooter = exports.StyledTableFooter = _styledComponents["default"].tfoot.withConfig({
   displayName: "StyledTable__StyledTableFooter",
   componentId: "sc-1m3u5g-5"
 })([""]);
-exports.StyledTableFooter = StyledTableFooter;
 StyledTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledTableFooter.defaultProps, _defaultProps.defaultProps);
-var StyledTable = _styledComponents["default"].table.withConfig({
+var StyledTable = exports.StyledTable = _styledComponents["default"].table.withConfig({
   displayName: "StyledTable",
   componentId: "sc-1m3u5g-6"
 })(["border-spacing:0;border-collapse:collapse;width:inherit;", " ", ";"], _utils.genericStyles, function (props) {
   return props.theme.table && props.theme.table.extend;
 });
-exports.StyledTable = StyledTable;
 StyledTable.defaultProps = {};
 Object.setPrototypeOf(StyledTable.defaultProps, _defaultProps.defaultProps);

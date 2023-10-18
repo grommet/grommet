@@ -13,7 +13,7 @@ for (var i = 0; i < 40; i += 1) {
     location: locations[i % locations.length]
   });
 }
-var RenderedList = function RenderedList() {
+var RenderedList = exports.RenderedList = function RenderedList() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -35,9 +35,7 @@ var RenderedList = function RenderedList() {
     }
   }));
 };
-exports.RenderedList = RenderedList;
 RenderedList.storyName = 'Key render';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Key render'
 };
-exports["default"] = _default;

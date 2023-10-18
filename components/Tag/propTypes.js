@@ -17,5 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string])
   });
 }
-var TagPropTypes = PropType;
-exports.TagPropTypes = TagPropTypes;
+var TagPropTypes = exports.TagPropTypes = PropType;

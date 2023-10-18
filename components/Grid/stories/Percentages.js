@@ -5,7 +5,7 @@ exports["default"] = exports.Percentages = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Percentages = function Percentages() {
+var Percentages = exports.Percentages = function Percentages() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -34,11 +34,10 @@ var Percentages = function Percentages() {
     // </Grommet>
   );
 };
-exports.Percentages = Percentages;
+
 Percentages.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Grid/Percentages'
 };
-exports["default"] = _default;

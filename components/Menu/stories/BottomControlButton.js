@@ -31,17 +31,15 @@ var ControlBottomMenu = function ControlBottomMenu() {
     }]
   }));
 };
-var BottomControlButton = function BottomControlButton() {
+var BottomControlButton = exports.BottomControlButton = function BottomControlButton() {
   return /*#__PURE__*/_react["default"].createElement(ControlBottomMenu, null);
 };
-exports.BottomControlButton = BottomControlButton;
 BottomControlButton.storyName = 'Bottom control button';
 BottomControlButton.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Menu/Bottom control button'
 };
-exports["default"] = _default;

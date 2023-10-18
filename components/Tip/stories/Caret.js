@@ -27,7 +27,7 @@ var TipContent = function TipContent(_ref) {
     round: "xsmall"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, message)));
 };
-var Caret = function Caret() {
+var Caret = exports.Caret = function Caret() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -63,7 +63,7 @@ var Caret = function Caret() {
     // </Grommet>
   );
 };
-exports.Caret = Caret;
+
 Caret.args = {
   full: true
 };
@@ -72,7 +72,6 @@ Caret.parameters = {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Tip/Caret'
 };
-exports["default"] = _default;

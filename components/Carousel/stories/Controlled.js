@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Controlled = function Controlled() {
+var Controlled = exports.Controlled = function Controlled() {
   var _React$useState = _react["default"].useState(0),
     activeSlide = _React$useState[0],
     setActiveSlide = _React$useState[1];
@@ -53,13 +53,12 @@ var Controlled = function Controlled() {
     // </Grommet>
   );
 };
-exports.Controlled = Controlled;
+
 Controlled.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Carousel/Controlled'
 };
-exports["default"] = _default;

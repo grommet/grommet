@@ -32,5 +32,4 @@ if (process.env.NODE_ENV !== 'production') {
     target: _propTypes["default"].object
   };
 }
-var LayerPropTypes = PropType;
-exports.LayerPropTypes = LayerPropTypes;
+var LayerPropTypes = exports.LayerPropTypes = PropType;

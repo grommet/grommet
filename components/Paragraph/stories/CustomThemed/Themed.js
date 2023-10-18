@@ -14,18 +14,16 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var Themed = function Themed() {
+var Themed = exports.Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "The font family for this paragraph is being defined by a custom theme."));
 };
-exports.Themed = Themed;
 Themed.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Paragraph/Custom Themed/Themed'
 };
-exports["default"] = _default;

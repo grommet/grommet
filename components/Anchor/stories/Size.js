@@ -20,11 +20,9 @@ var SizeAnchor = function SizeAnchor() {
     }));
   }));
 };
-var Size = function Size() {
+var Size = exports.Size = function Size() {
   return /*#__PURE__*/_react["default"].createElement(SizeAnchor, null);
 };
-exports.Size = Size;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Anchor/Size'
 };
-exports["default"] = _default;

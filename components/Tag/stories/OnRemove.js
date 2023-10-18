@@ -5,7 +5,7 @@ exports["default"] = exports.OnRemove = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var OnRemove = function OnRemove() {
+var OnRemove = exports.OnRemove = function OnRemove() {
   var onRemove = function onRemove() {};
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
@@ -24,9 +24,7 @@ var OnRemove = function OnRemove() {
     onRemove: onRemove
   }));
 };
-exports.OnRemove = OnRemove;
 OnRemove.storyName = 'OnRemove';
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Tag/OnRemove'
 };
-exports["default"] = _default;

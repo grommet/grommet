@@ -32,11 +32,9 @@ var GapAnchor = function GapAnchor() {
     gap: "5px"
   }));
 };
-var Gap = function Gap() {
+var Gap = exports.Gap = function Gap() {
   return /*#__PURE__*/_react["default"].createElement(GapAnchor, null);
 };
-exports.Gap = Gap;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Anchor/Gap'
 };
-exports["default"] = _default;

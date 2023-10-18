@@ -151,5 +151,4 @@ if (process.env.NODE_ENV !== 'production') {
     })
   };
 }
-var GrommetPropTypes = PropType;
-exports.GrommetPropTypes = GrommetPropTypes;
+var GrommetPropTypes = exports.GrommetPropTypes = PropType;

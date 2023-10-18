@@ -5,7 +5,7 @@ exports["default"] = exports.InteractiveSlides = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var InteractiveSlides = function InteractiveSlides() {
+var InteractiveSlides = exports.InteractiveSlides = function InteractiveSlides() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -60,9 +60,8 @@ var InteractiveSlides = function InteractiveSlides() {
     // </Grommet>
   );
 };
-exports.InteractiveSlides = InteractiveSlides;
+
 InteractiveSlides.storyName = 'Interactive slides';
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Carousel/Interactive slides'
 };
-exports["default"] = _default;

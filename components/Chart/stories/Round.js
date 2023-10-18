@@ -12,7 +12,7 @@ var values = [{
 }, {
   value: [30, 15]
 }];
-var Round = function Round() {
+var Round = exports.Round = function Round() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -37,8 +37,6 @@ var Round = function Round() {
     // </Grommet>
   );
 };
-exports.Round = Round;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Round'
 };
-exports["default"] = _default;

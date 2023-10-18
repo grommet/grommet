@@ -12,5 +12,4 @@ if (process.env.NODE_ENV !== 'production') {
     caption: _propTypes["default"].string
   });
 }
-var TablePropTypes = PropType;
-exports.TablePropTypes = TablePropTypes;
+var TablePropTypes = exports.TablePropTypes = PropType;

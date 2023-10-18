@@ -22,7 +22,7 @@ var theme = {
     }
   }
 };
-var RichFooter = function RichFooter() {
+var RichFooter = exports.RichFooter = function RichFooter() {
   var _React$useState = _react["default"].useState(false),
     open = _React$useState[0],
     setOpen = _React$useState[1];
@@ -98,9 +98,7 @@ var RichFooter = function RichFooter() {
     color: "dark-3"
   }, "The greatest bridge builders of antiquity were the ancient Romans. The Romans built arch bridges and aqueducts that could stand in conditions that would damage or destroy earlier designs. Some stand today.")))));
 };
-exports.RichFooter = RichFooter;
 RichFooter.storyName = 'Rich footer';
-var _default = {
+var _default = exports["default"] = {
   title: "Layout/Card/Custom Themed/Rich footer"
 };
-exports["default"] = _default;

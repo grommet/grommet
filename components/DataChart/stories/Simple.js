@@ -12,7 +12,7 @@ for (var i = 1; i < 8; i += 1) {
     percent: Math.abs(v * 100)
   });
 }
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -30,8 +30,6 @@ var Simple = function Simple() {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Simple'
 };
-exports["default"] = _default;

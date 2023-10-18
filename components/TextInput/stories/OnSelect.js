@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
-var OnSelect = function OnSelect() {
+var OnSelect = exports.OnSelect = function OnSelect() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -45,14 +45,13 @@ var OnSelect = function OnSelect() {
     // </Grommet>
   );
 };
-exports.OnSelect = OnSelect;
+
 OnSelect.storyName = 'onSelect and onSuggestionSelect';
 OnSelect.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/TextInput/onSelect and onSuggestionSelect'
 };
-exports["default"] = _default;

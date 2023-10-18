@@ -44,7 +44,7 @@ var customTheme = {
     }
   }
 };
-var Custom = function Custom() {
+var Custom = exports.Custom = function Custom() {
   var _React$useState = _react["default"].useState({
       property: 'name',
       direction: 'desc'
@@ -64,8 +64,6 @@ var Custom = function Custom() {
     onSort: setSort
   })));
 };
-exports.Custom = Custom;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Custom Themed/Custom'
 };
-exports["default"] = _default;

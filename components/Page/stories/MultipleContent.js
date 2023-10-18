@@ -5,7 +5,7 @@ exports["default"] = exports.MultipleContent = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var MultipleContent = function MultipleContent() {
+var MultipleContent = exports.MultipleContent = function MultipleContent() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -36,9 +36,8 @@ var MultipleContent = function MultipleContent() {
     // </Grommet>
   );
 };
-exports.MultipleContent = MultipleContent;
+
 MultipleContent.storyName = 'Multiple content';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Page/Multiple content'
 };
-exports["default"] = _default;

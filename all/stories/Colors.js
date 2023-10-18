@@ -39,7 +39,7 @@ var customTheme = {
     }
   }
 };
-var Colors = function Colors() {
+var Colors = exports.Colors = function Colors() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -54,8 +54,6 @@ var Colors = function Colors() {
     href: "https://github.com/grommet/grommet/wiki/Color-Properties"
   }, "Click here to read more about Grommet Colors")));
 };
-exports.Colors = Colors;
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/Theme/Colors'
 };
-exports["default"] = _default;

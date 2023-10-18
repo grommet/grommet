@@ -9,7 +9,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -25,8 +25,6 @@ var Simple = function Simple() {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Simple'
 };
-exports["default"] = _default;

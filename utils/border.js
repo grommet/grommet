@@ -5,7 +5,7 @@ exports.responsiveBorderStyle = exports.borderStyle = void 0;
 var _styledComponents = require("styled-components");
 var _colors = require("./colors");
 var _mixins = require("./mixins");
-var responsiveBorderStyle = function responsiveBorderStyle(data, theme) {
+var responsiveBorderStyle = exports.responsiveBorderStyle = function responsiveBorderStyle(data, theme) {
   var color = (0, _colors.normalizeColor)(data.color || 'border', theme);
   var borderSize = data.size || 'xsmall';
   var style = data.style || 'solid';
@@ -21,8 +21,7 @@ var responsiveBorderStyle = function responsiveBorderStyle(data, theme) {
   if (side === 'between') return undefined; // no-op
   return "border: " + value + ";";
 };
-exports.responsiveBorderStyle = responsiveBorderStyle;
-var borderStyle = function borderStyle(borderData, responsive, theme) {
+var borderStyle = exports.borderStyle = function borderStyle(borderData, responsive, theme) {
   var borderStyles = [];
   (Array.isArray(borderData) ? borderData : [borderData]).forEach(function (data) {
     var styles = [];
@@ -65,4 +64,3 @@ var borderStyle = function borderStyle(borderData, responsive, theme) {
   });
   return borderStyles;
 };
-exports.borderStyle = borderStyle;

@@ -18,7 +18,7 @@ var gradient = [{
   value: 30,
   color: 'status-critical'
 }];
-var Horizontal = function Horizontal() {
+var Horizontal = exports.Horizontal = function Horizontal() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -62,8 +62,6 @@ var Horizontal = function Horizontal() {
     // </Grommet>
   );
 };
-exports.Horizontal = Horizontal;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Horizontal'
 };
-exports["default"] = _default;

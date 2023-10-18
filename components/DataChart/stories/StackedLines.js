@@ -13,7 +13,7 @@ for (var i = 0; i < 7; i += 1) {
     bonus: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
   });
 }
-var StackedLines = function StackedLines() {
+var StackedLines = exports.StackedLines = function StackedLines() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -58,9 +58,8 @@ var StackedLines = function StackedLines() {
     // </Grommet>
   );
 };
-exports.StackedLines = StackedLines;
+
 StackedLines.storyName = 'Stacked lines';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Stacked lines'
 };
-exports["default"] = _default;

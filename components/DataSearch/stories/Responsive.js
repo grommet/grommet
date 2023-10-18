@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _DataSearch = require("../DataSearch");
 var _data = require("../../DataTable/stories/data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Responsive = function Responsive() {
+var Responsive = exports.Responsive = function Responsive() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -32,11 +32,10 @@ var Responsive = function Responsive() {
     // </Grommet>
   );
 };
-exports.Responsive = Responsive;
+
 Responsive.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Data/DataSearch/Responsive'
 };
-exports["default"] = _default;

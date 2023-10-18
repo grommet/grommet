@@ -36,7 +36,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var Extend = function Extend() {
+var Extend = exports.Extend = function Extend() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
@@ -50,8 +50,6 @@ var Extend = function Extend() {
     size: "small"
   }, "This is using the extend property on Heading"));
 };
-exports.Extend = Extend;
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Heading/Custom Themed/Extend'
 };
-exports["default"] = _default;

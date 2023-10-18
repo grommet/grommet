@@ -5,7 +5,7 @@ exports["default"] = exports.Size = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Size = function Size() {
+var Size = exports.Size = function Size() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     direction: "row",
@@ -33,8 +33,6 @@ var Size = function Size() {
     }));
   }));
 };
-exports.Size = Size;
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Tag/Size'
 };
-exports["default"] = _default;

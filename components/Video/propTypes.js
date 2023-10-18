@@ -36,5 +36,4 @@ if (process.env.NODE_ENV !== 'production') {
     skipInterval: _propTypes["default"].number
   });
 }
-var VideoPropTypes = PropType;
-exports.VideoPropTypes = VideoPropTypes;
+var VideoPropTypes = exports.VideoPropTypes = PropType;

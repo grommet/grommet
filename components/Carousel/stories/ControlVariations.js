@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var ControlVariations = function ControlVariations() {
+var ControlVariations = exports.ControlVariations = function ControlVariations() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -156,9 +156,8 @@ var ControlVariations = function ControlVariations() {
     // </Grommet>
   );
 };
-exports.ControlVariations = ControlVariations;
+
 ControlVariations.storyName = 'Control variations';
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Carousel/Control variations'
 };
-exports["default"] = _default;

@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var daysInMonth = function daysInMonth(month) {
   return new Date(2019, month, 0).getDate();
 };
-var DateMaskedInput = function DateMaskedInput() {
+var DateMaskedInput = exports.DateMaskedInput = function DateMaskedInput() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -64,7 +64,7 @@ var DateMaskedInput = function DateMaskedInput() {
     // </Grommet>
   );
 };
-exports.DateMaskedInput = DateMaskedInput;
+
 DateMaskedInput.storyName = 'Date';
 DateMaskedInput.parameters = {
   chromatic: {
@@ -74,7 +74,6 @@ DateMaskedInput.parameters = {
 DateMaskedInput.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Date'
 };
-exports["default"] = _default;

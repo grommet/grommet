@@ -6,5 +6,4 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {};
 }
-var DataViewPropTypes = PropType;
-exports.DataViewPropTypes = DataViewPropTypes;
+var DataViewPropTypes = exports.DataViewPropTypes = PropType;

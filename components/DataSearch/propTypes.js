@@ -11,5 +11,4 @@ if (process.env.NODE_ENV !== 'production') {
     responsive: _propTypes["default"].bool
   };
 }
-var DataSearchPropTypes = PropType;
-exports.DataSearchPropTypes = DataSearchPropTypes;
+var DataSearchPropTypes = exports.DataSearchPropTypes = PropType;

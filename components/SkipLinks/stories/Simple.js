@@ -15,7 +15,7 @@ var Info = function Info(_ref) {
   var label = _ref.label;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "After choosing the ", label, " option on the SkipLinks layer, the following interactive element will be the next focusable item.");
 };
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -99,13 +99,12 @@ var Simple = function Simple() {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
+
 Simple.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/SkipLinks/Simple'
 };
-exports["default"] = _default;

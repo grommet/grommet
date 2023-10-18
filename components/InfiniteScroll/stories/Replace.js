@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var allItems = Array(240).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-var Replace = function Replace() {
+var Replace = exports.Replace = function Replace() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -29,13 +29,12 @@ var Replace = function Replace() {
     // </Grommet>
   );
 };
-exports.Replace = Replace;
+
 Replace.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Replace'
 };
-exports["default"] = _default;

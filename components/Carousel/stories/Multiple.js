@@ -51,7 +51,7 @@ var View2 = function View2() {
     });
   }));
 };
-var Multi = function Multi() {
+var Multi = exports.Multi = function Multi() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -60,8 +60,6 @@ var Multi = function Multi() {
     // </Grommet>
   );
 };
-exports.Multi = Multi;
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Carousel/Multi'
 };
-exports["default"] = _default;

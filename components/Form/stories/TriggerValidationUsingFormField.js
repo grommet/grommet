@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var TriggerValidationUsingFormField = function TriggerValidationUsingFormField() {
+var TriggerValidationUsingFormField = exports.TriggerValidationUsingFormField = function TriggerValidationUsingFormField() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
@@ -101,9 +101,7 @@ var TriggerValidationUsingFormField = function TriggerValidationUsingFormField()
     primary: true
   })))));
 };
-exports.TriggerValidationUsingFormField = TriggerValidationUsingFormField;
 TriggerValidationUsingFormField.storyName = 'Trigger Validation using Form Field';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Trigger Validation using Form Field'
 };
-exports["default"] = _default;

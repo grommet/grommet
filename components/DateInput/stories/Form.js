@@ -5,7 +5,7 @@ exports["default"] = exports.DateForm = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var DateForm = function DateForm() {
+var DateForm = exports.DateForm = function DateForm() {
   var _React$useState = _react["default"].useState({
       value: ''
     }),
@@ -41,9 +41,7 @@ var DateForm = function DateForm() {
     label: "submit"
   })));
 };
-exports.DateForm = DateForm;
 DateForm.storyName = 'Form';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/DateInput/Form'
 };
-exports["default"] = _default;

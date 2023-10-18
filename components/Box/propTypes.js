@@ -55,5 +55,4 @@ if (process.env.NODE_ENV !== 'production') {
     wrap: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['reverse'])])
   });
 }
-var BoxPropTypes = PropType;
-exports.BoxPropTypes = BoxPropTypes;
+var BoxPropTypes = exports.BoxPropTypes = PropType;

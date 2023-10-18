@@ -5,7 +5,7 @@ exports["default"] = exports.RTLBox = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var RTLBox = function RTLBox() {
+var RTLBox = exports.RTLBox = function RTLBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -39,12 +39,11 @@ var RTLBox = function RTLBox() {
     // </Grommet>
   );
 };
-exports.RTLBox = RTLBox;
+
 RTLBox.storyName = 'RTL';
 RTLBox.args = {
   dir: 'rtl'
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/RTL'
 };
-exports["default"] = _default;

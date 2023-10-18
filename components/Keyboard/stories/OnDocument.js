@@ -5,7 +5,7 @@ exports["default"] = exports.OnDocument = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var OnDocument = function OnDocument() {
+var OnDocument = exports.OnDocument = function OnDocument() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Keyboard, {
     target: "document",
     onEsc: function onEsc() {
@@ -18,13 +18,11 @@ var OnDocument = function OnDocument() {
     level: "3"
   }, "Press Esc on me!"))));
 };
-exports.OnDocument = OnDocument;
 OnDocument.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/Keyboard/On Document'
 };
-exports["default"] = _default;

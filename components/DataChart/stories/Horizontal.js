@@ -13,7 +13,7 @@ for (var i = 1; i < 8; i += 1) {
     label: "Label " + i
   });
 }
-var Horizontal = function Horizontal() {
+var Horizontal = exports.Horizontal = function Horizontal() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -56,8 +56,6 @@ var Horizontal = function Horizontal() {
     // </Grommet>
   );
 };
-exports.Horizontal = Horizontal;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Horizontal'
 };
-exports["default"] = _default;

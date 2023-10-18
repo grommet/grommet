@@ -37,7 +37,7 @@ var customTheme = {
     }
   }
 };
-var LeftColumn = function LeftColumn() {
+var LeftColumn = exports.LeftColumn = function LeftColumn() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Page, {
@@ -64,9 +64,7 @@ var LeftColumn = function LeftColumn() {
     pad: "large"
   }, "Card"))), /*#__PURE__*/_react["default"].createElement(_grommet.PageContent, null, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida tincidunt. Nunc fringilla blandit tortor, id accumsan nisi dictum quis. Aenean porttitor at mi id semper. Donec mattis bibendum leo, interdum ullamcorper lectus ultrices vel. Fusce nec enim faucibus nunc porta egestas. Fusce dapibus lobortis tincidunt."))));
 };
-exports.LeftColumn = LeftColumn;
 LeftColumn.storyName = 'Left column';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Page/Custom Themed/Left column'
 };
-exports["default"] = _default;

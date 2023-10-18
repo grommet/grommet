@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
-var Medium = function Medium() {
+var Medium = exports.Medium = function Medium() {
   var margin = undefined;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
@@ -42,8 +42,6 @@ var Medium = function Medium() {
     margin: margin
   }, "Paragraph - Small", paragraphFiller))));
 };
-exports.Medium = Medium;
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Typography/Medium'
 };
-exports["default"] = _default;

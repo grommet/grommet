@@ -30,20 +30,18 @@ var Example = function Example(props) {
   );
 };
 
-var ShowBefore = function ShowBefore() {
+var ShowBefore = exports.ShowBefore = function ShowBefore() {
   return /*#__PURE__*/_react["default"].createElement(Example, {
     replace: true,
     show: 27
   });
 };
-exports.ShowBefore = ShowBefore;
 ShowBefore.storyName = 'Replace, show before step';
 ShowBefore.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Replace, show before step'
 };
-exports["default"] = _default;

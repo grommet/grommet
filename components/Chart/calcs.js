@@ -10,13 +10,12 @@ var thicknessPad = {
   small: 'xsmall',
   xsmall: 'xxsmall'
 };
-var round = function round(value, decimals) {
+var round = exports.round = function round(value, decimals) {
   return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
 };
 
 // Normalize coarseness to an object.
 // Backwards compatible has no coarseness for x-axis.
-exports.round = round;
 var normalizeCoarseness = function normalizeCoarseness(coarseness, direction) {
   var result;
   if (Array.isArray(coarseness)) result = {
@@ -84,7 +83,7 @@ var adjustToShowZero = function adjustToShowZero(minArg, maxArg, steps) {
   }
   return [min, max];
 };
-var calcBounds = function calcBounds(valuesArg, options) {
+var calcBounds = exports.calcBounds = function calcBounds(valuesArg, options) {
   if (options === void 0) {
     options = {};
   }
@@ -160,8 +159,7 @@ var calcBounds = function calcBounds(valuesArg, options) {
 // if options.direction is present, the results are delivered in { x, y }
 // object structure. If options.direction is not present, the results are
 // delivered in [x, y] array structure, for backwards compatibility
-exports.calcBounds = calcBounds;
-var calcs = function calcs(values, options) {
+var calcs = exports.calcs = function calcs(values, options) {
   if (values === void 0) {
     values = [];
   }
@@ -262,4 +260,3 @@ var calcs = function calcs(values, options) {
     thickness: thickness
   };
 };
-exports.calcs = calcs;

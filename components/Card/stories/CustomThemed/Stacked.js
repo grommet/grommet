@@ -38,7 +38,7 @@ var data = [{
   image: "https://img.jakpost.net/c/2020/04/07/2020_04_07_92088_1586233705._large.jpg",
   state: 'Australia'
 }];
-var Stacked = function Stacked() {
+var Stacked = exports.Stacked = function Stacked() {
   var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
@@ -84,8 +84,6 @@ var Stacked = function Stacked() {
     }, item.state)))));
   }))));
 };
-exports.Stacked = Stacked;
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Card/Custom Themed/Stacked'
 };
-exports["default"] = _default;

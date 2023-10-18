@@ -14,7 +14,7 @@ var RoundSpinner = function RoundSpinner(_ref) {
     background: "linear-gradient(to right, #fc466b, #3f5efb)"
   });
 };
-var Round = function Round() {
+var Round = exports.Round = function Round() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     direction: "row",
@@ -30,13 +30,11 @@ var Round = function Round() {
     round: "full"
   }));
 };
-exports.Round = Round;
 Round.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Spinner/Round'
 };
-exports["default"] = _default;

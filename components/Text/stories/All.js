@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var sizes = ['6xl', '5xl', '4xl', '3xl', '2xl', 'xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
-var All = function All() {
+var All = exports.All = function All() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, sizes.map(function (size) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: size,
@@ -27,8 +27,6 @@ var All = function All() {
     color: "brand"
   }, "Colored Text")));
 };
-exports.All = All;
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Text/All'
 };
-exports["default"] = _default;

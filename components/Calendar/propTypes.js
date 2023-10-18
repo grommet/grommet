@@ -33,5 +33,4 @@ if (process.env.NODE_ENV !== 'production') {
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large']), _propTypes["default"].string])
   });
 }
-var CalendarPropTypes = PropType;
-exports.CalendarPropTypes = CalendarPropTypes;
+var CalendarPropTypes = exports.CalendarPropTypes = PropType;

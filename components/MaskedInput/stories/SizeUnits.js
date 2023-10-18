@@ -5,7 +5,7 @@ exports["default"] = exports.SizeUnitsMaskedInput = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
+var SizeUnitsMaskedInput = exports.SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -42,7 +42,7 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
     // </Grommet>
   );
 };
-exports.SizeUnitsMaskedInput = SizeUnitsMaskedInput;
+
 SizeUnitsMaskedInput.storyName = 'Size + units';
 SizeUnitsMaskedInput.parameters = {
   chromatic: {
@@ -52,7 +52,6 @@ SizeUnitsMaskedInput.parameters = {
 SizeUnitsMaskedInput.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Size + units'
 };
-exports["default"] = _default;

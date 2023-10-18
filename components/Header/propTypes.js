@@ -10,5 +10,4 @@ if (process.env.NODE_ENV !== 'production') {
     sticky: _propTypes["default"].oneOf(['scrollup'])
   };
 }
-var HeaderPropTypes = PropType;
-exports.HeaderPropTypes = HeaderPropTypes;
+var HeaderPropTypes = exports.HeaderPropTypes = PropType;

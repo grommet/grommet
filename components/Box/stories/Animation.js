@@ -5,7 +5,7 @@ exports["default"] = exports.Animation = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Animation = function Animation() {
+var Animation = exports.Animation = function Animation() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -30,8 +30,6 @@ var Animation = function Animation() {
     // </Grommet>
   );
 };
-exports.Animation = Animation;
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/Animation'
 };
-exports["default"] = _default;

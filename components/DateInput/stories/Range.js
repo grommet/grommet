@@ -9,7 +9,7 @@ var dateFormat = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric'
 });
-var Range = function Range() {
+var Range = exports.Range = function Range() {
   var _React$useState = _react["default"].useState(['2020-07-31T15:27:42.920Z', '2020-08-07T15:27:42.920Z']),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -30,13 +30,11 @@ var Range = function Range() {
     onChange: onChange
   }));
 };
-exports.Range = Range;
 Range.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/DateInput/Range'
 };
-exports["default"] = _default;

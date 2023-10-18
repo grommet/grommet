@@ -5,7 +5,7 @@ exports["default"] = exports.GradientColorBox = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var GradientColorBox = function GradientColorBox() {
+var GradientColorBox = exports.GradientColorBox = function GradientColorBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -22,9 +22,8 @@ var GradientColorBox = function GradientColorBox() {
     // </Grommet>
   );
 };
-exports.GradientColorBox = GradientColorBox;
+
 GradientColorBox.storyName = 'Gradient';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/Gradient'
 };
-exports["default"] = _default;

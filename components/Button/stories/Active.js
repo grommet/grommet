@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Active = function Active() {
+var Active = exports.Active = function Active() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     gap: "large"
@@ -23,8 +23,6 @@ var Active = function Active() {
     gap: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Add")))));
 };
-exports.Active = Active;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Button/Active'
 };
-exports["default"] = _default;

@@ -302,7 +302,7 @@ var handleClickRow = function handleClickRow(obj) {
   // eslint-disable-next-line no-alert
   alert("\n  Record was clicked:\n  {\n      id: " + obj.id + ",\n      poolName: " + obj.poolName + "\n  }\n\n  You can use onClickRow() to navigate to a record's detail\n  page, open a panel or modal to edit the record, or perform\n  other actions as you see fit.\n  ");
 };
-var MultiplePins = function MultiplePins() {
+var MultiplePins = exports.MultiplePins = function MultiplePins() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -354,9 +354,8 @@ var MultiplePins = function MultiplePins() {
     // </Grommet>
   );
 };
-exports.MultiplePins = MultiplePins;
+
 MultiplePins.storyName = 'Multiple pins';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Multiple pins'
 };
-exports["default"] = _default;

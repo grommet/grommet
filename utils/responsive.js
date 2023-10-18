@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 exports.getDeviceBreakpoint = exports.getBreakpointStyle = exports.getBreakpoint = void 0;
-var getBreakpoint = function getBreakpoint(viewportWidth, theme) {
+var getBreakpoint = exports.getBreakpoint = function getBreakpoint(viewportWidth, theme) {
   var sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(function (a, b) {
     var first = theme.global.breakpoints[a];
     var second = theme.global.breakpoints[b];
@@ -22,16 +22,13 @@ var getBreakpoint = function getBreakpoint(viewportWidth, theme) {
   });
   return result || lastBreakpoint;
 };
-exports.getBreakpoint = getBreakpoint;
-var getDeviceBreakpoint = function getDeviceBreakpoint(type, theme) {
+var getDeviceBreakpoint = exports.getDeviceBreakpoint = function getDeviceBreakpoint(type, theme) {
   return theme.global.deviceBreakpoints[type];
 };
-exports.getDeviceBreakpoint = getDeviceBreakpoint;
-var getBreakpointStyle = function getBreakpointStyle(theme, breakpointSize) {
+var getBreakpointStyle = exports.getBreakpointStyle = function getBreakpointStyle(theme, breakpointSize) {
   var breakpoint = breakpointSize && theme.global.breakpoints[breakpointSize] || {};
   if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
   if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
   if (!breakpoint.size) breakpoint.size = theme.global.size;
   return breakpoint;
 };
-exports.getBreakpointStyle = getBreakpointStyle;

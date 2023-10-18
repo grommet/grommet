@@ -31,7 +31,7 @@ var ZOOM_SIZES = {
   large: 0.1,
   xlarge: 0.5
 };
-var animationBounds = function animationBounds(type, size) {
+var animationBounds = exports.animationBounds = function animationBounds(type, size) {
   if (size === void 0) {
     size = 'medium';
   }
@@ -83,12 +83,10 @@ var animationBounds = function animationBounds(type, size) {
   }
   return [];
 };
-exports.animationBounds = animationBounds;
-var normalizeTiming = function normalizeTiming(time, defaultTiming) {
+var normalizeTiming = exports.normalizeTiming = function normalizeTiming(time, defaultTiming) {
   return typeof time === 'number' ? time / 1000.0 + "s" : time || defaultTiming;
 };
-exports.normalizeTiming = normalizeTiming;
-var animationEnding = function animationEnding(type) {
+var animationEnding = exports.animationEnding = function animationEnding(type) {
   if (type === 'draw') {
     return 'linear forwards';
   }
@@ -103,8 +101,7 @@ var animationEnding = function animationEnding(type) {
   }
   return 'forwards';
 };
-exports.animationEnding = animationEnding;
-var animationObjectStyle = function animationObjectStyle(animation, theme, themeObj) {
+var animationObjectStyle = exports.animationObjectStyle = function animationObjectStyle(animation, theme, themeObj) {
   var bounds = animationBounds(animation.type, animation.size);
   var animationTheme = themeObj && themeObj.animation || theme.global.animation;
   if (bounds) {
@@ -116,4 +113,3 @@ var animationObjectStyle = function animationObjectStyle(animation, theme, theme
   }
   return '';
 };
-exports.animationObjectStyle = animationObjectStyle;

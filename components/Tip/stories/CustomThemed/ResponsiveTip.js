@@ -93,7 +93,7 @@ var TipContent = function TipContent(_ref) {
     }, datum.entry));
   }))));
 };
-var ResponsiveTip = function ResponsiveTip() {
+var ResponsiveTip = exports.ResponsiveTip = function ResponsiveTip() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
     full: true
@@ -133,14 +133,12 @@ var ResponsiveTip = function ResponsiveTip() {
     })));
   }));
 };
-exports.ResponsiveTip = ResponsiveTip;
 ResponsiveTip.storyName = 'Responsive';
 ResponsiveTip.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Tip/Custom Themed/Responsive'
 };
-exports["default"] = _default;

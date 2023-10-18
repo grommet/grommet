@@ -5,7 +5,7 @@ exports["default"] = exports.Range = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Range = function Range() {
+var Range = exports.Range = function Range() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -20,8 +20,6 @@ var Range = function Range() {
     // </Grommet>
   );
 };
-exports.Range = Range;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Calendar/Range'
 };
-exports["default"] = _default;

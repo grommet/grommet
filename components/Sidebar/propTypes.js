@@ -12,5 +12,4 @@ if (process.env.NODE_ENV !== 'production') {
     header: _propTypes["default"].node
   };
 }
-var SidebarPropTypes = PropType;
-exports.SidebarPropTypes = SidebarPropTypes;
+var SidebarPropTypes = exports.SidebarPropTypes = PropType;

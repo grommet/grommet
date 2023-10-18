@@ -49,5 +49,4 @@ if (process.env.NODE_ENV !== 'production') {
     width: _generalPropTypes.widthPropType
   });
 }
-var GridPropTypes = PropType;
-exports.GridPropTypes = GridPropTypes;
+var GridPropTypes = exports.GridPropTypes = PropType;

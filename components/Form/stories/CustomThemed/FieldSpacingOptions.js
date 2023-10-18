@@ -47,7 +47,7 @@ var adjustedLabelMargins = {
     margin: 'none'
   }
 };
-var FieldSpacingOptions = function FieldSpacingOptions() {
+var FieldSpacingOptions = exports.FieldSpacingOptions = function FieldSpacingOptions() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
@@ -225,9 +225,7 @@ var FieldSpacingOptions = function FieldSpacingOptions() {
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   })))))));
 };
-exports.FieldSpacingOptions = FieldSpacingOptions;
 FieldSpacingOptions.storyName = 'Field spacing options';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Custom Themed/Field spacing options'
 };
-exports["default"] = _default;

@@ -13,5 +13,4 @@ if (process.env.NODE_ENV !== 'production') {
     }))])
   };
 }
-var DataTableGroupByPropTypes = PropType;
-exports.DataTableGroupByPropTypes = DataTableGroupByPropTypes;
+var DataTableGroupByPropTypes = exports.DataTableGroupByPropTypes = PropType;

@@ -10,5 +10,4 @@ if (process.env.NODE_ENV !== 'production') {
     drop: _propTypes["default"].bool
   };
 }
-var DataSortPropTypes = PropType;
-exports.DataSortPropTypes = DataSortPropTypes;
+var DataSortPropTypes = exports.DataSortPropTypes = PropType;

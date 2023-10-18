@@ -11,5 +11,4 @@ if (process.env.NODE_ENV !== 'production') {
     options: _propTypes["default"].shape({})
   };
 }
-var MarkdownPropTypes = PropType;
-exports.MarkdownPropTypes = MarkdownPropTypes;
+var MarkdownPropTypes = exports.MarkdownPropTypes = PropType;

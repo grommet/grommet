@@ -12,7 +12,7 @@ for (var i = 1; i < 8; i += 1) {
     percent: Math.abs(v * 100)
   });
 }
-var Pattern = function Pattern() {
+var Pattern = exports.Pattern = function Pattern() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -36,8 +36,6 @@ var Pattern = function Pattern() {
     // </Grommet>
   );
 };
-exports.Pattern = Pattern;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Pattern'
 };
-exports["default"] = _default;

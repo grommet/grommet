@@ -21,14 +21,13 @@ var sizeStyle = function sizeStyle(props) {
     }
   } : '';
 };
-var StyledPaginationButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
+var StyledPaginationButton = exports.StyledPaginationButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledPageControl__StyledPaginationButton",
   componentId: "sc-1vlfaez-0"
 })(["> svg{margin:0 auto;}", ";"], function (props) {
   return sizeStyle(props).content;
 });
-exports.StyledPaginationButton = StyledPaginationButton;
-var StyledContainer = _styledComponents["default"].div.withConfig({
+var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledPageControl__StyledContainer",
   componentId: "sc-1vlfaez-1"
 })(["display:flex;align-items:center;justify-content:center;max-width:100%;", ";", ";"], function (props) {
@@ -36,8 +35,7 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.theme.pagination.control && props.theme.pagination.control.extend;
 });
-exports.StyledContainer = StyledContainer;
-var StyledSeparator = (0, _styledComponents["default"])(_Text.Text).withConfig({
+var StyledSeparator = exports.StyledSeparator = (0, _styledComponents["default"])(_Text.Text).withConfig({
   displayName: "StyledPageControl__StyledSeparator",
   componentId: "sc-1vlfaez-2"
 })(["font-weight:bold;", ";", ";"], function (props) {
@@ -45,4 +43,3 @@ var StyledSeparator = (0, _styledComponents["default"])(_Text.Text).withConfig({
 }, function (props) {
   return "line-height: " + (sizeStyle(props).content && sizeStyle(props).content.lineHeight);
 });
-exports.StyledSeparator = StyledSeparator;

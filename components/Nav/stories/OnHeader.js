@@ -49,12 +49,10 @@ var OnHeaderNav = function OnHeaderNav() {
   );
 };
 
-var OnHeader = function OnHeader() {
+var OnHeader = exports.OnHeader = function OnHeader() {
   return /*#__PURE__*/_react["default"].createElement(OnHeaderNav, null);
 };
-exports.OnHeader = OnHeader;
 OnHeader.storyName = 'On Header';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Nav/On Header'
 };
-exports["default"] = _default;

@@ -5,7 +5,7 @@ exports.set = exports.normalizeRowProp = exports.normalizeRowCellProps = exports
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
 
-var set = function set(obj, path, value) {
+var set = exports.set = function set(obj, path, value) {
   var parts = path;
   if (Object(obj) !== obj) return obj;
   if (!Array.isArray(path)) parts = path.toString().match(/[^.[\]]+/g) || [];
@@ -20,8 +20,7 @@ var set = function set(obj, path, value) {
 };
 
 // get the value for the property in the datum object
-exports.set = set;
-var datumValue = function datumValue(datum, property) {
+var datumValue = exports.datumValue = function datumValue(datum, property) {
   if (!property || !datum) return undefined;
   var parts = property.split('.');
   if (parts.length === 1) return datum[property];
@@ -30,8 +29,7 @@ var datumValue = function datumValue(datum, property) {
 };
 
 // get the primary property name
-exports.datumValue = datumValue;
-var normalizePrimaryProperty = function normalizePrimaryProperty(columns, primaryKey) {
+var normalizePrimaryProperty = exports.normalizePrimaryProperty = function normalizePrimaryProperty(columns, primaryKey) {
   var result;
   if (typeof primaryKey === 'string' || typeof primaryKey === 'boolean') {
     result = primaryKey;
@@ -53,8 +51,7 @@ var normalizePrimaryProperty = function normalizePrimaryProperty(columns, primar
 };
 
 // initialize filters with empty strings
-exports.normalizePrimaryProperty = normalizePrimaryProperty;
-var initializeFilters = function initializeFilters(columns) {
+var initializeFilters = exports.initializeFilters = function initializeFilters(columns) {
   var result = {};
   columns.forEach(function (column) {
     if (column.search) {
@@ -65,13 +62,12 @@ var initializeFilters = function initializeFilters(columns) {
 };
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
-exports.initializeFilters = initializeFilters;
 var escapeRegExp = function escapeRegExp(input) {
   return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 };
 
 // filter data based on filters then sort
-var filterAndSortData = function filterAndSortData(data, filters, onSearch, sort) {
+var filterAndSortData = exports.filterAndSortData = function filterAndSortData(data, filters, onSearch, sort) {
   var result = data;
   if (!onSearch) {
     var regexps = {};
@@ -113,7 +109,6 @@ var filterAndSortData = function filterAndSortData(data, filters, onSearch, sort
 };
 
 // aggregate reducers
-exports.filterAndSortData = filterAndSortData;
 var sumReducer = function sumReducer(accumulated, next) {
   return accumulated + next;
 };
@@ -165,7 +160,7 @@ var aggregate = function aggregate(columns, data) {
 };
 
 // build the values for the footer cells
-var buildFooterValues = function buildFooterValues(columns, data) {
+var buildFooterValues = exports.buildFooterValues = function buildFooterValues(columns, data) {
   var aggregateValues = aggregate(columns, data);
   var result = {};
   columns.forEach(function (column) {
@@ -183,8 +178,7 @@ var buildFooterValues = function buildFooterValues(columns, data) {
 
 // looks at the groupBy property of each data object and returns an
 // array with one item for each unique value of that property.
-exports.buildFooterValues = buildFooterValues;
-var buildGroups = function buildGroups(columns, data, groupBy, primaryProperty) {
+var buildGroups = exports.buildGroups = function buildGroups(columns, data, groupBy, primaryProperty) {
   var result;
   if (groupBy != null && groupBy.property || typeof groupBy === 'string') {
     result = [];
@@ -234,8 +228,7 @@ var buildGroups = function buildGroups(columns, data, groupBy, primaryProperty) 
 };
 
 // build group expanded state, expanding any in groupBy.expand
-exports.buildGroups = buildGroups;
-var buildGroupState = function buildGroupState(groups, groupBy) {
+var buildGroupState = exports.buildGroupState = function buildGroupState(groups, groupBy) {
   var result = {};
   if (groups) {
     groups.forEach(function (_ref) {
@@ -254,27 +247,24 @@ var buildGroupState = function buildGroupState(groups, groupBy) {
   }
   return result;
 };
-exports.buildGroupState = buildGroupState;
-var normalizeBackgroundColor = function normalizeBackgroundColor(theme) {
+var normalizeBackgroundColor = exports.normalizeBackgroundColor = function normalizeBackgroundColor(theme) {
   var background = theme.background; // context background
   if (typeof background === 'string') return background;
   if (background.light && background.dark) return background;
   if (background.color) return background.color;
   return undefined;
 };
-exports.normalizeBackgroundColor = normalizeBackgroundColor;
-var normalizeRowProp = function normalizeRowProp(name, rowProp, prop) {
+var normalizeRowProp = exports.normalizeRowProp = function normalizeRowProp(name, rowProp, prop) {
   if (rowProp && rowProp[name]) return rowProp[name];
   return prop;
 };
-exports.normalizeRowProp = normalizeRowProp;
 var tableContextNames = ['header', 'body', 'footer'];
 var cellPropertyNames = ['background', 'border', 'pad'];
 
 // Convert property specific cell props to context specific cell props.
 // For example, background={{ header: { background } }}
 // will become cellProps.header.background
-var normalizeCellProps = function normalizeCellProps(props, theme) {
+var normalizeCellProps = exports.normalizeCellProps = function normalizeCellProps(props, theme) {
   var result = {};
   tableContextNames.forEach(function (context) {
     result[context] = {
@@ -312,8 +302,7 @@ var normalizeCellProps = function normalizeCellProps(props, theme) {
   });
   return result;
 };
-exports.normalizeCellProps = normalizeCellProps;
-var normalizeRowCellProps = function normalizeRowCellProps(rowProps, cellProps, primaryKey, index) {
+var normalizeRowCellProps = exports.normalizeRowCellProps = function normalizeRowCellProps(rowProps, cellProps, primaryKey, index) {
   var result = {
     pinned: {}
   };
@@ -330,4 +319,3 @@ var normalizeRowCellProps = function normalizeRowCellProps(rowProps, cellProps, 
   });
   return result;
 };
-exports.normalizeRowCellProps = normalizeRowCellProps;

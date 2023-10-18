@@ -12,7 +12,7 @@ for (var i = 1; i < 3; i += 1) {
     percent: Math.abs(v * 100)
   });
 }
-var Pad = function Pad() {
+var Pad = exports.Pad = function Pad() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -40,8 +40,6 @@ var Pad = function Pad() {
     // </Grommet>
   );
 };
-exports.Pad = Pad;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Pad'
 };
-exports["default"] = _default;

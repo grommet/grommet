@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _data = require("./data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Width = function Width() {
+var Width = exports.Width = function Width() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -46,8 +46,6 @@ var Width = function Width() {
     // </Grommet>
   );
 };
-exports.Width = Width;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/NameValueList/Width'
 };
-exports["default"] = _default;

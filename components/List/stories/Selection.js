@@ -11,7 +11,7 @@ for (var i = 0; i < 40; i += 1) {
     entry: "entry-" + (i + 1)
   });
 }
-var Selection = function Selection() {
+var Selection = exports.Selection = function Selection() {
   var _ref;
   var _React$useState = _react["default"].useState(),
     selected = _React$useState[0],
@@ -31,8 +31,6 @@ var Selection = function Selection() {
     }
   }));
 };
-exports.Selection = Selection;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Selection'
 };
-exports["default"] = _default;

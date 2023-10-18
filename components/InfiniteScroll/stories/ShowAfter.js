@@ -30,20 +30,18 @@ var Example = function Example(props) {
   );
 };
 
-var ShowAfter = function ShowAfter() {
+var ShowAfter = exports.ShowAfter = function ShowAfter() {
   return /*#__PURE__*/_react["default"].createElement(Example, {
     replace: true,
     show: 87
   });
 };
-exports.ShowAfter = ShowAfter;
 ShowAfter.storyName = 'Replace, show after step';
 ShowAfter.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Replace, show after step'
 };
-exports["default"] = _default;

@@ -33,7 +33,7 @@ var Set = function Set(_ref2) {
 Set.propTypes = {
   size: _propTypes["default"].string.isRequired
 };
-var All = function All() {
+var All = exports.All = function All() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -57,8 +57,6 @@ var All = function All() {
     // </Grommet>
   );
 };
-exports.All = All;
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Heading/All'
 };
-exports["default"] = _default;

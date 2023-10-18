@@ -13,7 +13,7 @@ var datumValue = function datumValue(datum, property) {
 
 // This is where we filter the data internally, when the caller doesn't
 // provide an onView.
-var filter = function filter(data, view, properties) {
+var filter = exports.filter = function filter(data, view, properties) {
   var _view$sort, _view$sort2;
   // from https://stackoverflow.com/a/6300266/8513067
   var searchExp = view != null && view.search ? new RegExp(view.search.replace(/[#-.]|[[-^]|[?|{}]/g, '\\$&'), 'i') : undefined;
@@ -110,4 +110,3 @@ var filter = function filter(data, view, properties) {
     filteredTotal: filteredData.length
   };
 };
-exports.filter = filter;

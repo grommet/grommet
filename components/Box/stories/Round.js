@@ -5,7 +5,7 @@ exports["default"] = exports.RoundBox = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var RoundBox = function RoundBox() {
+var RoundBox = exports.RoundBox = function RoundBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -66,9 +66,8 @@ var RoundBox = function RoundBox() {
     // </Grommet>
   );
 };
-exports.RoundBox = RoundBox;
+
 RoundBox.storyName = 'Round';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/Round'
 };
-exports["default"] = _default;

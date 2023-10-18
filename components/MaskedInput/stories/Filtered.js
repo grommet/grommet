@@ -12,7 +12,7 @@ var data = {
   Poe: ['The Raven', 'Romance', 'Song'],
   Whitman: ['To You', 'O Captain! My Captain!', 'O Me! O Life!']
 };
-var Filtered = function Filtered() {
+var Filtered = exports.Filtered = function Filtered() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -59,7 +59,7 @@ var Filtered = function Filtered() {
     // </Grommet>
   );
 };
-exports.Filtered = Filtered;
+
 Filtered.parameters = {
   chromatic: {
     disable: true
@@ -68,7 +68,6 @@ Filtered.parameters = {
 Filtered.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Filtered'
 };
-exports["default"] = _default;

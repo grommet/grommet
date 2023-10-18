@@ -62,7 +62,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var Themed = function Themed() {
+var Themed = exports.Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -126,8 +126,6 @@ var Themed = function Themed() {
     disabled: true
   }))))));
 };
-exports.Themed = Themed;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Custom Themed/Themed'
 };
-exports["default"] = _default;

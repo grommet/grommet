@@ -26,7 +26,7 @@ for (var i = 1; i <= 7; i += 1) {
   });
 }
 
-var Axis = function Axis() {
+var Axis = exports.Axis = function Axis() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -56,8 +56,6 @@ var Axis = function Axis() {
     // </Grommet>
   );
 };
-exports.Axis = Axis;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Axis'
 };
-exports["default"] = _default;

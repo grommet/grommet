@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -33,13 +33,12 @@ var Simple = function Simple() {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
+
 Simple.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Carousel/Simple'
 };
-exports["default"] = _default;

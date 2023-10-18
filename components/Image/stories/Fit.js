@@ -5,7 +5,7 @@ exports["default"] = exports.Fit = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Fit = function Fit() {
+var Fit = exports.Fit = function Fit() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -31,8 +31,6 @@ var Fit = function Fit() {
     // </Grommet>
   );
 };
-exports.Fit = Fit;
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Image/Fit'
 };
-exports["default"] = _default;

@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 //     positional variables in the message text.
 //   defaultMessage: (optional) default message to use if
 //     the message isn't found elsewhere.
-var _format = function format(options, messages) {
+var _format = exports.format = function format(options, messages) {
   var _options$id;
   // Message id's are hierarchical. For the component-specific
   // message objects passed as options.messages, just use the last
@@ -48,12 +48,10 @@ var _format = function format(options, messages) {
   });
   return values ? newMessage : message;
 };
-exports.format = _format;
 var defaultValue = {
   messages: _default["default"],
   format: function format(options) {
     return _format(options, _default["default"]);
   }
 };
-var MessageContext = /*#__PURE__*/_react["default"].createContext(defaultValue);
-exports.MessageContext = MessageContext;
+var MessageContext = exports.MessageContext = /*#__PURE__*/_react["default"].createContext(defaultValue);

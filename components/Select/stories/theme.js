@@ -5,7 +5,7 @@ exports.theme = void 0;
 var _grommetIcons = require("grommet-icons");
 var _utils = require("../../../utils");
 var _SearchInput = require("./components/SearchInput");
-var theme = {
+var theme = exports.theme = {
   global: {
     colors: {
       selected: 'neutral-3',
@@ -107,4 +107,3 @@ var theme = {
     }
   }
 };
-exports.theme = theme;

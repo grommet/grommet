@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _Data = require("../Data");
 var _data = require("../../DataTable/stories/data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Example = function Example() {
+var Example = exports.Example = function Example() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -40,12 +40,11 @@ var Example = function Example() {
     // </Grommet>
   );
 };
-exports.Example = Example;
+
 Example.storyName = 'Cards';
 Example.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Data/Data/Cards'
 };
-exports["default"] = _default;

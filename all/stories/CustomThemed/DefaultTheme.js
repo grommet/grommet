@@ -14,15 +14,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
     }
   }
 }));
-var CustomDefaultProps = function CustomDefaultProps() {
+var CustomDefaultProps = exports.CustomDefaultProps = function CustomDefaultProps() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "brand",
     pad: "small"
   }, "Hello");
 };
-exports.CustomDefaultProps = CustomDefaultProps;
 CustomDefaultProps.storyName = 'Extend default';
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/Theme/Custom Themed/Extend default'
 };
-exports["default"] = _default;

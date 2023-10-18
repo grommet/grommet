@@ -18,7 +18,7 @@ var gradient = [{
   value: 30,
   color: 'status-critical'
 }];
-var GradientCharts = function GradientCharts() {
+var GradientCharts = exports.GradientCharts = function GradientCharts() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -58,9 +58,8 @@ var GradientCharts = function GradientCharts() {
     // </Grommet>
   );
 };
-exports.GradientCharts = GradientCharts;
+
 GradientCharts.storyName = 'Gradient';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Gradient'
 };
-exports["default"] = _default;

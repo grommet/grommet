@@ -126,7 +126,7 @@ var Identifier = function Identifier(_ref2) {
     size: size
   }, subTitle)));
 };
-var Clickable = function Clickable() {
+var Clickable = exports.Clickable = function Clickable() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
     full: true
@@ -164,13 +164,11 @@ var Clickable = function Clickable() {
     }, value.message)));
   }))));
 };
-exports.Clickable = Clickable;
 Clickable.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Card/Custom Themed/Clickable'
 };
-exports["default"] = _default;

@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var daysInMonth = function daysInMonth(month) {
   return new Date(2019, month, 0).getDate();
 };
-var DateRange = function DateRange() {
+var DateRange = exports.DateRange = function DateRange() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -97,12 +97,11 @@ var DateRange = function DateRange() {
     // </Grommet>
   );
 };
-exports.DateRange = DateRange;
+
 DateRange.storyName = 'Date range';
 DateRange.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Date range'
 };
-exports["default"] = _default;

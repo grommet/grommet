@@ -38,7 +38,7 @@ var myTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var Fill = function Fill() {
+var Fill = exports.Fill = function Fill() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: myTheme,
     full: true
@@ -57,9 +57,7 @@ var Fill = function Fill() {
     }
   })));
 };
-exports.Fill = Fill;
 Fill.storyName = 'Fill and pin';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Custom Themed/Fill and pin'
 };
-exports["default"] = _default;

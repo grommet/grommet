@@ -13,5 +13,4 @@ if (process.env.NODE_ENV !== 'production') {
     })
   };
 }
-var DataSummaryPropTypes = PropType;
-exports.DataSummaryPropTypes = DataSummaryPropTypes;
+var DataSummaryPropTypes = exports.DataSummaryPropTypes = PropType;

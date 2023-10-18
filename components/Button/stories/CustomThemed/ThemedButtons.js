@@ -137,7 +137,7 @@ var coloredButton = {
     }
   }
 };
-var ThemedButtons = function ThemedButtons() {
+var ThemedButtons = exports.ThemedButtons = function ThemedButtons() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: kindButtonTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -245,9 +245,7 @@ var ThemedButtons = function ThemedButtons() {
     label: "Custom as=span"
   })));
 };
-exports.ThemedButtons = ThemedButtons;
 ThemedButtons.storyName = 'Themed Buttons';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Button/Custom Themed/Themed Buttons'
 };
-exports["default"] = _default;

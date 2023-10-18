@@ -35,5 +35,4 @@ if (process.env.NODE_ENV !== 'production') {
     trapFocus: _propTypes["default"].bool
   };
 }
-var DropPropTypes = PropType;
-exports.DropPropTypes = DropPropTypes;
+var DropPropTypes = exports.DropPropTypes = PropType;

@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _data = require("./data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Default = function Default() {
+var Default = exports.Default = function Default() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -41,8 +41,6 @@ var Default = function Default() {
     // </Grommet>
   );
 };
-exports.Default = Default;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Table/Default'
 };
-exports["default"] = _default;

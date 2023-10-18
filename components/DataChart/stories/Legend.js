@@ -15,7 +15,7 @@ for (var i = 1; i < 8; i += 1) {
     inverse: 100 - Math.round(Math.abs(v * 50))
   });
 }
-var Legend = function Legend() {
+var Legend = exports.Legend = function Legend() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -66,8 +66,6 @@ var Legend = function Legend() {
     // </Grommet>
   );
 };
-exports.Legend = Legend;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Legend'
 };
-exports["default"] = _default;

@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Justify = function Justify() {
+var Justify = exports.Justify = function Justify() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Menu, {
@@ -26,13 +26,11 @@ var Justify = function Justify() {
     }]
   }));
 };
-exports.Justify = Justify;
 Justify.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Menu/Justify'
 };
-exports["default"] = _default;

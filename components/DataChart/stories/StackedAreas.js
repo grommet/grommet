@@ -13,7 +13,7 @@ for (var i = 0; i < 7; i += 1) {
     bonus: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
   });
 }
-var StackedAreas = function StackedAreas() {
+var StackedAreas = exports.StackedAreas = function StackedAreas() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -62,9 +62,8 @@ var StackedAreas = function StackedAreas() {
     // </Grommet>
   );
 };
-exports.StackedAreas = StackedAreas;
+
 StackedAreas.storyName = 'Stacked areas';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Stacked areas'
 };
-exports["default"] = _default;

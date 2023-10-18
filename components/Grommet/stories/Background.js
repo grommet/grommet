@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _grommetThemeHpe = require("grommet-theme-hpe");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Background = function Background() {
+var Background = exports.Background = function Background() {
   var themeColor = 'background-back';
   var hexValue = '#DCD0FF';
   var cssColor = 'gold';
@@ -45,8 +45,6 @@ var Background = function Background() {
     pad: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Grommet with background as object containing color and image"))));
 };
-exports.Background = Background;
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/Grommet/Background'
 };
-exports["default"] = _default;

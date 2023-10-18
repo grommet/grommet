@@ -11,7 +11,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 // Converting between Date and String types is handled via a "schema".
 // The schema is an array of strings, split into strings with identical
 // characters. So, 'mm/dd/yyyy' will be ['mm', '/', 'dd', '/', 'yyyyy'].
-var formatToSchema = function formatToSchema(format) {
+var formatToSchema = exports.formatToSchema = function formatToSchema(format) {
   if (!format) return undefined;
   var result = [];
   var i = 0;
@@ -28,7 +28,6 @@ var formatToSchema = function formatToSchema(format) {
   if (part) result.push(part);
   return result;
 };
-exports.formatToSchema = formatToSchema;
 var masks = {
   m: {
     length: [1, 2],
@@ -55,7 +54,7 @@ var masks = {
     regexp: /^[0-9]{1,4}$/
   }
 };
-var schemaToMask = function schemaToMask(schema) {
+var schemaToMask = exports.schemaToMask = function schemaToMask(schema) {
   if (!schema) return undefined;
   return schema.map(function (part) {
     var lower = part.toLowerCase();
@@ -70,8 +69,7 @@ var schemaToMask = function schemaToMask(schema) {
 };
 
 // convert value into text representation using the schema
-exports.schemaToMask = schemaToMask;
-var valueToText = function valueToText(value, schema) {
+var valueToText = exports.valueToText = function valueToText(value, schema) {
   var text = '';
   // when user initializes dates as empty array, we want to still
   // show the placeholder text
@@ -116,7 +114,6 @@ var valueToText = function valueToText(value, schema) {
   });
   return text;
 };
-exports.valueToText = valueToText;
 var charCodeZero = '0'.charCodeAt(0);
 var charCodeNine = '9'.charCodeAt(0);
 var pullDigits = function pullDigits(text, index) {
@@ -124,7 +121,7 @@ var pullDigits = function pullDigits(text, index) {
   while (text.charCodeAt(end) >= charCodeZero && text.charCodeAt(end) <= charCodeNine) end += 1;
   return text.slice(index, end);
 };
-var validateBounds = function validateBounds(dateBounds, selectedDate) {
+var validateBounds = exports.validateBounds = function validateBounds(dateBounds, selectedDate) {
   if (!dateBounds || !selectedDate) return selectedDate;
   var _dateBounds$map = dateBounds.map(function (date) {
       return (0, _utils.setHoursWithOffset)(date).toISOString();
@@ -139,8 +136,7 @@ var validateBounds = function validateBounds(dateBounds, selectedDate) {
   });
   return validSelection ? selectedDate : undefined;
 };
-exports.validateBounds = validateBounds;
-var textToValue = function textToValue(text, schema, range, reference, outputFormat) {
+var textToValue = exports.textToValue = function textToValue(text, schema, range, reference, outputFormat) {
   if (!text) return range ? [] : undefined;
   var result;
   var addDate = function addDate(parts) {
@@ -206,10 +202,8 @@ var textToValue = function textToValue(text, schema, range, reference, outputFor
   if (!result) return range ? [] : undefined;
   return result;
 };
-exports.textToValue = textToValue;
-var valuesAreEqual = function valuesAreEqual(value1, value2) {
+var valuesAreEqual = exports.valuesAreEqual = function valuesAreEqual(value1, value2) {
   return Array.isArray(value1) && Array.isArray(value2) && value1.every(function (d1, i) {
     return d1 === value2[i];
   }) || value1 === value2;
 };
-exports.valuesAreEqual = valuesAreEqual;

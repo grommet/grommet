@@ -5,7 +5,7 @@ exports["default"] = exports.MinMaxSizesBox = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var MinMaxSizesBox = function MinMaxSizesBox() {
+var MinMaxSizesBox = exports.MinMaxSizesBox = function MinMaxSizesBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -215,9 +215,8 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     // </Grommet>
   );
 };
-exports.MinMaxSizesBox = MinMaxSizesBox;
+
 MinMaxSizesBox.storyName = 'Min and max sizes';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/Min and max sizes'
 };
-exports["default"] = _default;

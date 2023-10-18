@@ -20,5 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), _propTypes["default"].string])
   };
 }
-var TextAreaPropTypes = PropType;
-exports.TextAreaPropTypes = TextAreaPropTypes;
+var TextAreaPropTypes = exports.TextAreaPropTypes = PropType;

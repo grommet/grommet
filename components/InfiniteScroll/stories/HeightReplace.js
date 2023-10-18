@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var allItems = Array(240).fill().map(function (_, i) {
   return i + 1;
 });
-var HeightReplace = function HeightReplace() {
+var HeightReplace = exports.HeightReplace = function HeightReplace() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -30,14 +30,13 @@ var HeightReplace = function HeightReplace() {
     // </Grommet>
   );
 };
-exports.HeightReplace = HeightReplace;
+
 HeightReplace.storyName = 'Variable item height with replace';
 HeightReplace.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Variable item height with replace'
 };
-exports["default"] = _default;

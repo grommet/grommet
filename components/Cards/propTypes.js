@@ -20,5 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: _propTypes["default"].number
   });
 }
-var CardsPropTypes = PropType;
-exports.CardsPropTypes = CardsPropTypes;
+var CardsPropTypes = exports.CardsPropTypes = PropType;

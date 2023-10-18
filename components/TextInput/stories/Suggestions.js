@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var allSuggestions = Array(100).fill().map(function (_, i) {
   return i + 1 + " suggestion";
 });
-var Suggestions = function Suggestions() {
+var Suggestions = exports.Suggestions = function Suggestions() {
   var _React$useState = _react["default"].useState(allSuggestions),
     suggestions = _React$useState[0],
     setSuggestions = _React$useState[1];
@@ -50,13 +50,12 @@ var Suggestions = function Suggestions() {
     // </Grommet>
   );
 };
-exports.Suggestions = Suggestions;
+
 Suggestions.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/TextInput/Suggestions'
 };
-exports["default"] = _default;

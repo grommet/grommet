@@ -5,7 +5,7 @@ exports["default"] = exports.SemiCircle = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var SemiCircle = function SemiCircle() {
+var SemiCircle = exports.SemiCircle = function SemiCircle() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -22,8 +22,6 @@ var SemiCircle = function SemiCircle() {
     // </Grommet>
   );
 };
-exports.SemiCircle = SemiCircle;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Meter/Semi Circle'
 };
-exports["default"] = _default;

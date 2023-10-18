@@ -32,7 +32,7 @@ var LabelledChart = function LabelledChart(_ref) {
     weight: "bold"
   }, value, " TiB")));
 };
-var LabelledCharts = function LabelledCharts() {
+var LabelledCharts = exports.LabelledCharts = function LabelledCharts() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -56,9 +56,8 @@ var LabelledCharts = function LabelledCharts() {
     // </Grommet>
   );
 };
-exports.LabelledCharts = LabelledCharts;
+
 LabelledCharts.storyName = 'Labelled';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Labelled'
 };
-exports["default"] = _default;

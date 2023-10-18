@@ -5,7 +5,7 @@ exports["default"] = exports.FullLayer = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var FullLayer = function FullLayer() {
+var FullLayer = exports.FullLayer = function FullLayer() {
   var _React$useState = _react["default"].useState(false),
     showLayer = _React$useState[0],
     setShowLayer = _React$useState[1];
@@ -44,7 +44,7 @@ var FullLayer = function FullLayer() {
     // </Grommet>
   );
 };
-exports.FullLayer = FullLayer;
+
 FullLayer.storyName = 'Full';
 FullLayer.parameters = {
   chromatic: {
@@ -54,7 +54,6 @@ FullLayer.parameters = {
 FullLayer.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Layer/Full'
 };
-exports["default"] = _default;

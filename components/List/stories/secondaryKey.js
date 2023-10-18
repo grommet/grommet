@@ -13,7 +13,7 @@ for (var i = 0; i < 40; i += 1) {
     location: locations[i % locations.length]
   });
 }
-var SecondaryKey = function SecondaryKey() {
+var SecondaryKey = exports.SecondaryKey = function SecondaryKey() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -23,9 +23,7 @@ var SecondaryKey = function SecondaryKey() {
     secondaryKey: "location"
   }));
 };
-exports.SecondaryKey = SecondaryKey;
 SecondaryKey.storyName = 'Secondary key';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Secondary key'
 };
-exports["default"] = _default;

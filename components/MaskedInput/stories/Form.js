@@ -5,7 +5,7 @@ exports["default"] = exports.MaskedInputForm = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var MaskedInputForm = function MaskedInputForm() {
+var MaskedInputForm = exports.MaskedInputForm = function MaskedInputForm() {
   var _React$useState = _react["default"].useState({
       value: ''
     }),
@@ -50,9 +50,8 @@ var MaskedInputForm = function MaskedInputForm() {
     // </Grommet>
   );
 };
-exports.MaskedInputForm = MaskedInputForm;
+
 MaskedInputForm.storyName = 'Form';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Form'
 };
-exports["default"] = _default;

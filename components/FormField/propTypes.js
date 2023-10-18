@@ -37,5 +37,4 @@ if (process.env.NODE_ENV !== 'production') {
     validateOn: _propTypes["default"].oneOf(['blur', 'submit', 'change'])
   };
 }
-var FormFieldPropTypes = PropType;
-exports.FormFieldPropTypes = FormFieldPropTypes;
+var FormFieldPropTypes = exports.FormFieldPropTypes = PropType;

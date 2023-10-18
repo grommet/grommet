@@ -14,7 +14,7 @@ var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
     }
   }
 });
-var Custom = function Custom() {
+var Custom = exports.Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Page, null, /*#__PURE__*/_react["default"].createElement(_grommet.PageContent, null, /*#__PURE__*/_react["default"].createElement(_grommet.PageHeader, {
@@ -32,8 +32,6 @@ var Custom = function Custom() {
     })
   }))));
 };
-exports.Custom = Custom;
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/PageHeader/Custom Themed/Custom'
 };
-exports["default"] = _default;

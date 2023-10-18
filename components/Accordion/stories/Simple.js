@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _excluded = ["animate", "multiple"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-var Simple = function Simple(props) {
+var Simple = exports.Simple = function Simple(props) {
   var animate = props.animate,
     multiple = props.multiple,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
@@ -45,8 +45,6 @@ var Simple = function Simple(props) {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Accordion/Simple'
 };
-exports["default"] = _default;

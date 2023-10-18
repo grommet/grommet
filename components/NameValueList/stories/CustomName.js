@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _data = require("./data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var CustomName = function CustomName() {
+var CustomName = exports.CustomName = function CustomName() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -31,8 +31,6 @@ var CustomName = function CustomName() {
     // </Grommet>
   );
 };
-exports.CustomName = CustomName;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/NameValueList/Custom Name'
 };
-exports["default"] = _default;

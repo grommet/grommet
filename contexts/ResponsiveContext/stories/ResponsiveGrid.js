@@ -35,7 +35,7 @@ var ResponsiveGrid = function ResponsiveGrid(_ref) {
     areas: areas[size]
   }, props), children);
 };
-var ResponsiveGridExample = function ResponsiveGridExample() {
+var ResponsiveGridExample = exports.ResponsiveGridExample = function ResponsiveGridExample() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints,
     full: true
@@ -126,9 +126,7 @@ var ResponsiveGridExample = function ResponsiveGridExample() {
     background: "dark-3"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
 };
-exports.ResponsiveGridExample = ResponsiveGridExample;
 ResponsiveGridExample.storyName = 'Responsive grid';
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/ResponsiveContext/Responsive grid'
 };
-exports["default"] = _default;

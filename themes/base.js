@@ -112,7 +112,7 @@ colorArray(neutralColors, 'neutral');
 Object.keys(statusColors).forEach(function (color) {
   colors["status-" + color] = statusColors[color];
 });
-var generate = function generate(baseSpacing, scale) {
+var generate = exports.generate = function generate(baseSpacing, scale) {
   if (baseSpacing === void 0) {
     baseSpacing = 24;
   }
@@ -2191,6 +2191,4 @@ var generate = function generate(baseSpacing, scale) {
   });
   return (0, _object.deepFreeze)(result);
 };
-exports.generate = generate;
-var base = generate(24);
-exports.base = base;
+var base = exports.base = generate(24);

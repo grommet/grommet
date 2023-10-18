@@ -31,5 +31,4 @@ if (process.env.NODE_ENV !== 'production') {
     hoverColor: _generalPropTypes.colorPropType
   });
 }
-var WorldMapPropTypes = PropType;
-exports.WorldMapPropTypes = WorldMapPropTypes;
+var WorldMapPropTypes = exports.WorldMapPropTypes = PropType;

@@ -49,5 +49,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: _propTypes["default"].number
   });
 }
-var ListPropTypes = PropType;
-exports.ListPropTypes = ListPropTypes;
+var ListPropTypes = exports.ListPropTypes = PropType;

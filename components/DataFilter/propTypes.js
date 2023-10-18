@@ -14,5 +14,4 @@ if (process.env.NODE_ENV !== 'production') {
     property: _propTypes["default"].string
   };
 }
-var DataFilterPropTypes = PropType;
-exports.DataFilterPropTypes = DataFilterPropTypes;
+var DataFilterPropTypes = exports.DataFilterPropTypes = PropType;

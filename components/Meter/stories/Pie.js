@@ -5,7 +5,7 @@ exports["default"] = exports.Pie = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Pie = function Pie() {
+var Pie = exports.Pie = function Pie() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook8
@@ -28,8 +28,6 @@ var Pie = function Pie() {
     // </Grommet>
   );
 };
-exports.Pie = Pie;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Meter/Pie'
 };
-exports["default"] = _default;

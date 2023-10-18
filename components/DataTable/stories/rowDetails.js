@@ -15,7 +15,7 @@ delete controlledColumns[0].footer;
 delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;
 delete controlledColumns[4].aggregate;
-var ControlledDataTable = function ControlledDataTable() {
+var ControlledDataTable = exports.ControlledDataTable = function ControlledDataTable() {
   var _React$useState = _react["default"].useState([]),
     checked = _React$useState[0],
     setChecked = _React$useState[1];
@@ -77,9 +77,8 @@ var ControlledDataTable = function ControlledDataTable() {
     // </Grommet>
   );
 };
-exports.ControlledDataTable = ControlledDataTable;
+
 ControlledDataTable.storyName = 'rowDetails';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/rowDetails'
 };
-exports["default"] = _default;

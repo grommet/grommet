@@ -227,12 +227,10 @@ var AllDrops = function AllDrops() {
   );
 };
 
-var AllNotStretched = function AllNotStretched() {
+var AllNotStretched = exports.AllNotStretched = function AllNotStretched() {
   return /*#__PURE__*/_react["default"].createElement(AllDrops, null);
 };
-exports.AllNotStretched = AllNotStretched;
 AllNotStretched.storyName = 'All not stretched';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Drop/All not stretched'
 };
-exports["default"] = _default;

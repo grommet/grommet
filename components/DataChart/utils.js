@@ -3,9 +3,8 @@
 exports.__esModule = true;
 exports.showInUnits = exports.points = exports.minimum = exports.maximum = exports.largestSize = exports.heightYGranularity = exports.halfPad = exports.doublePad = exports.createDateFormat = void 0;
 var _Chart = require("../Chart");
-var points = ['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown'];
-exports.points = points;
-var heightYGranularity = {
+var points = exports.points = ['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown'];
+var heightYGranularity = exports.heightYGranularity = {
   xxsmall: {
     fine: 2,
     medium: 2
@@ -31,25 +30,22 @@ var heightYGranularity = {
     medium: 5
   }
 };
-exports.heightYGranularity = heightYGranularity;
-var halfPad = {
+var halfPad = exports.halfPad = {
   xlarge: 'large',
   large: 'medium',
   medium: 'small',
   small: 'xsmall',
   xsmall: 'xxsmall'
 };
-exports.halfPad = halfPad;
-var doublePad = {
+var doublePad = exports.doublePad = {
   large: 'xlarge',
   medium: 'large',
   small: 'medium',
   xsmall: 'small',
   xxsmall: 'xsmall'
 };
-exports.doublePad = doublePad;
 var orderedSizes = ['xlarge', 'large', 'medium', 'small', 'xsmall', 'xxsmall', 'hair'];
-var showInUnits = function showInUnits(content, maxValue) {
+var showInUnits = exports.showInUnits = function showInUnits(content, maxValue) {
   var divideBy;
   var unit;
   var newContent = content;
@@ -64,15 +60,13 @@ var showInUnits = function showInUnits(content, maxValue) {
   if (unit) newContent = "" + newContent + unit;
   return newContent;
 };
-exports.showInUnits = showInUnits;
-var largestSize = function largestSize(size1, size2) {
+var largestSize = exports.largestSize = function largestSize(size1, size2) {
   if (size1 && !size2) return size1;
   if (size2 && !size1) return size2;
   if (orderedSizes.indexOf(size1) < orderedSizes.indexOf(size2)) return size1;
   return size2;
 };
-exports.largestSize = largestSize;
-var createDateFormat = function createDateFormat(firstValue, lastValue, full) {
+var createDateFormat = exports.createDateFormat = function createDateFormat(firstValue, lastValue, full) {
   var dateFormat;
   var startDate = new Date(firstValue);
   var endDate = new Date(lastValue);
@@ -122,12 +116,9 @@ var createDateFormat = function createDateFormat(firstValue, lastValue, full) {
   }
   return dateFormat;
 };
-exports.createDateFormat = createDateFormat;
-var minimum = function minimum(value1, value2) {
+var minimum = exports.minimum = function minimum(value1, value2) {
   return value1 !== undefined ? Math.min(value1, value2) : value2;
 };
-exports.minimum = minimum;
-var maximum = function maximum(value1, value2) {
+var maximum = exports.maximum = function maximum(value1, value2) {
   return value1 !== undefined ? Math.max(value1, value2) : value2;
 };
-exports.maximum = maximum;

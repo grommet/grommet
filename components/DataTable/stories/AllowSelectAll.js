@@ -71,7 +71,7 @@ var columns = [{
   property: 'paid',
   header: 'Paid'
 }];
-var AllowSelectAll = function AllowSelectAll() {
+var AllowSelectAll = exports.AllowSelectAll = function AllowSelectAll() {
   var _React$useState = _react["default"].useState(true),
     allowSelectAll = _React$useState[0],
     setAllowSelectAll = _React$useState[1];
@@ -99,14 +99,12 @@ var AllowSelectAll = function AllowSelectAll() {
     allowSelectAll: allowSelectAll
   }));
 };
-exports.AllowSelectAll = AllowSelectAll;
 AllowSelectAll.storyName = 'Allow Select All';
 AllowSelectAll.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Allow Select All'
 };
-exports["default"] = _default;

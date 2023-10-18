@@ -18,8 +18,8 @@ var _StyledCalendar = require("./StyledCalendar");
 var _utils = require("./utils");
 var _dates = require("../../utils/dates");
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 var headingPadMap = {
@@ -145,7 +145,7 @@ var disabledCalendarNextMonthButton = function disabledCalendarNextMonthButton(d
   var firstBound = new Date(bounds[0]);
   return !(0, _utils.sameDayOrAfter)(firstBound, reference) && !(0, _utils.betweenDates)(date, bounds);
 };
-var getOutputFormat = function getOutputFormat(dates) {
+var getOutputFormat = exports.getOutputFormat = function getOutputFormat(dates) {
   if (typeof dates === 'string' && (dates == null ? void 0 : dates.indexOf('T')) === -1) {
     return 'no timezone';
   }
@@ -154,7 +154,6 @@ var getOutputFormat = function getOutputFormat(dates) {
   }
   return 'date timezone';
 };
-exports.getOutputFormat = getOutputFormat;
 var millisecondsPerYear = 31557600000;
 var CalendarDayButton = function CalendarDayButton(props) {
   return /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
@@ -206,7 +205,7 @@ var CalendarCustomDay = function CalendarCustomDay(_ref2) {
     fill: fill
   }, buttonProps), children));
 };
-var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
+var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var activeDateProp = _ref3.activeDate,
     _ref3$animate = _ref3.animate,
     animate = _ref3$animate === void 0 ? true : _ref3$animate,
@@ -816,6 +815,5 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     fillContainer: fill
   }, weeks)))));
 });
-exports.Calendar = Calendar;
 Calendar.displayName = 'Calendar';
 Calendar.propTypes = _propTypes.CalendarPropTypes;

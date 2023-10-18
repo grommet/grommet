@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 // When the first day of the month is Sunday, and the request of firstDayOfWeek
 // is Monday, we are verifing we are not missing a week, issue 3253.
-var SundayFirstDayCalendar = function SundayFirstDayCalendar() {
+var SundayFirstDayCalendar = exports.SundayFirstDayCalendar = function SundayFirstDayCalendar() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -22,9 +22,8 @@ var SundayFirstDayCalendar = function SundayFirstDayCalendar() {
     // </Grommet>
   );
 };
-exports.SundayFirstDayCalendar = SundayFirstDayCalendar;
+
 SundayFirstDayCalendar.storyName = '1st on Sunday';
-var _default = {
+var _default = exports["default"] = {
   title: "Visualizations/Calendar/1st on Sunday"
 };
-exports["default"] = _default;

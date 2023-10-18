@@ -10,7 +10,7 @@ var data = [];
 for (var i = 0; i < 95; i += 1) {
   data.push("item " + (i + 1));
 }
-var Paginated = function Paginated() {
+var Paginated = exports.Paginated = function Paginated() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     pad: "large",
     columns: [['medium', 'large']],
@@ -24,8 +24,6 @@ var Paginated = function Paginated() {
     paginate: true
   }));
 };
-exports.Paginated = Paginated;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Cards/Paginated'
 };
-exports["default"] = _default;

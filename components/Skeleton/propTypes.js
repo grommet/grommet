@@ -17,5 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     width: _generalPropTypes.widthPropType
   });
 }
-var SkeletonPropTypes = PropType;
-exports.SkeletonPropTypes = SkeletonPropTypes;
+var SkeletonPropTypes = exports.SkeletonPropTypes = PropType;

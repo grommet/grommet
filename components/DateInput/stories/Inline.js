@@ -5,7 +5,7 @@ exports["default"] = exports.Inline = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Inline = function Inline() {
+var Inline = exports.Inline = function Inline() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -24,8 +24,6 @@ var Inline = function Inline() {
     onChange: onChange
   }));
 };
-exports.Inline = Inline;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/DateInput/Inline'
 };
-exports["default"] = _default;

@@ -134,7 +134,7 @@ var columnsDefault = [{
   header: 'Paid',
   align: 'end'
 }];
-var ColumnSize = function ColumnSize() {
+var ColumnSize = exports.ColumnSize = function ColumnSize() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -199,9 +199,8 @@ var ColumnSize = function ColumnSize() {
     // </Grommet>
   );
 };
-exports.ColumnSize = ColumnSize;
+
 ColumnSize.storyName = 'Column sizes';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Column sizes'
 };
-exports["default"] = _default;

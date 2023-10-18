@@ -14,7 +14,7 @@ for (var i = 0; i < 7; i += 1) {
     over: Math.floor(Math.abs(Math.sin(i / 2.0) * 50))
   });
 }
-var Offset = function Offset() {
+var Offset = exports.Offset = function Offset() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -69,12 +69,11 @@ var Offset = function Offset() {
     // </Grommet>
   );
 };
-exports.Offset = Offset;
+
 Offset.storyName = 'Offset';
 Offset.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Offset'
 };
-exports["default"] = _default;

@@ -22,5 +22,4 @@ if (process.env.NODE_ENV !== 'production') {
     time: _propTypes["default"].number
   };
 }
-var NotificationType = PropType;
-exports.NotificationType = NotificationType;
+var NotificationType = exports.NotificationType = PropType;

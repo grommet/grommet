@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 exports.setHoursWithOffset = void 0;
-var setHoursWithOffset = function setHoursWithOffset(date) {
+var setHoursWithOffset = exports.setHoursWithOffset = function setHoursWithOffset(date) {
   var newDate = new Date(date);
   if ((date == null ? void 0 : date.indexOf('T')) === -1) {
     var offset = newDate.getTimezoneOffset();
@@ -11,4 +11,3 @@ var setHoursWithOffset = function setHoursWithOffset(date) {
   }
   return newDate;
 };
-exports.setHoursWithOffset = setHoursWithOffset;

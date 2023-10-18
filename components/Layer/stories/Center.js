@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var CenterLayer = function CenterLayer() {
+var CenterLayer = exports.CenterLayer = function CenterLayer() {
   var _React$useState = _react["default"].useState(),
     open = _React$useState[0],
     setOpen = _React$useState[1];
@@ -102,7 +102,7 @@ var CenterLayer = function CenterLayer() {
     // </Grommet>
   );
 };
-exports.CenterLayer = CenterLayer;
+
 CenterLayer.storyName = 'Center';
 CenterLayer.parameters = {
   chromatic: {
@@ -117,7 +117,6 @@ CenterLayer.args = {
     }
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Layer/Center'
 };
-exports["default"] = _default;

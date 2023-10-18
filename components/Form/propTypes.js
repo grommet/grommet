@@ -22,5 +22,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: _propTypes["default"].shape({})
   };
 }
-var FormPropTypes = PropType;
-exports.FormPropTypes = FormPropTypes;
+var FormPropTypes = exports.FormPropTypes = PropType;

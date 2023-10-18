@@ -12,7 +12,7 @@ var values = [{
 }, {
   value: [30, 15]
 }];
-var AnimatedChart = function AnimatedChart() {
+var AnimatedChart = exports.AnimatedChart = function AnimatedChart() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -37,14 +37,13 @@ var AnimatedChart = function AnimatedChart() {
     // </Grommet>
   );
 };
-exports.AnimatedChart = AnimatedChart;
+
 AnimatedChart.storyName = 'Animate';
 AnimatedChart.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Animate'
 };
-exports["default"] = _default;

@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-var Fill = function Fill(props) {
+var Fill = exports.Fill = function Fill(props) {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium",
     justify: "center",
@@ -79,8 +79,6 @@ var Fill = function Fill(props) {
     onClick: function onClick() {}
   }, props))));
 };
-exports.Fill = Fill;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Button/Fill'
 };
-exports["default"] = _default;

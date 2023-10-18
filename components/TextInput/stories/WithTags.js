@@ -110,7 +110,7 @@ var TagInput = function TagInput(_ref2) {
     }
   })))));
 };
-var WithTags = function WithTags() {
+var WithTags = exports.WithTags = function WithTags() {
   var _React$useState2 = _react["default"].useState(['foo', 'sony']),
     selectedTags = _React$useState2[0],
     setSelectedTags = _React$useState2[1];
@@ -153,9 +153,8 @@ var WithTags = function WithTags() {
     // </Grommet>
   );
 };
-exports.WithTags = WithTags;
+
 WithTags.storyName = 'With tags';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/TextInput/With tags'
 };
-exports["default"] = _default;

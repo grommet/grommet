@@ -37,5 +37,4 @@ var makeFormatBytes = function makeFormatBytes(OS) {
     }
   };
 };
-var formatBytes = makeFormatBytes(getCurrentOS());
-exports.formatBytes = formatBytes;
+var formatBytes = exports.formatBytes = makeFormatBytes(getCurrentOS());

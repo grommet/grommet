@@ -49,7 +49,7 @@ var customTheme = {
     }
   }
 };
-var Custom = function Custom() {
+var Custom = exports.Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -80,8 +80,6 @@ var Custom = function Custom() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, c.footer));
   }))))));
 };
-exports.Custom = Custom;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Table/Custom Themed/Custom'
 };
-exports["default"] = _default;

@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // Styling a div directly rather than just using
 // a Box since Box itself will react to a SkeletonContext
 // and we don't want that here.
-var StyledSkeleton = _styledComponents["default"].div.withConfig({
+var StyledSkeleton = exports.StyledSkeleton = _styledComponents["default"].div.withConfig({
   displayName: "StyledSkeleton",
   componentId: "sc-1omqm6u-0"
 })(["display:flex;box-sizing:border-box;", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -23,4 +23,3 @@ var StyledSkeleton = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.round && (0, _utils.roundStyle)(props.round, props.responsive, props.theme);
 });
-exports.StyledSkeleton = StyledSkeleton;

@@ -13,5 +13,4 @@ if (process.env.NODE_ENV !== 'production') {
     })
   };
 }
-var SkipLinksPropTypes = PropType;
-exports.SkipLinksPropTypes = SkipLinksPropTypes;
+var SkipLinksPropTypes = exports.SkipLinksPropTypes = PropType;

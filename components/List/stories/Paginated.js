@@ -12,7 +12,7 @@ for (var i = 0; i < 95; i += 1) {
     entry: "entry-" + (i + 1)
   });
 }
-var Paginated = function Paginated() {
+var Paginated = exports.Paginated = function Paginated() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
@@ -34,8 +34,6 @@ var Paginated = function Paginated() {
     paginate: true
   }));
 };
-exports.Paginated = Paginated;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Paginated'
 };
-exports["default"] = _default;

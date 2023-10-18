@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _DataSort = require("../DataSort");
 var _data = require("../../DataTable/stories/data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Drop = function Drop() {
+var Drop = exports.Drop = function Drop() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -31,11 +31,10 @@ var Drop = function Drop() {
     // </Grommet>
   );
 };
-exports.Drop = Drop;
+
 Drop.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Data/DataSort/Drop'
 };
-exports["default"] = _default;

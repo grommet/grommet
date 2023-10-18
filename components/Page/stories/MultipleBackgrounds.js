@@ -5,7 +5,7 @@ exports["default"] = exports.MultipleBackgrounds = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var MultipleBackgrounds = function MultipleBackgrounds() {
+var MultipleBackgrounds = exports.MultipleBackgrounds = function MultipleBackgrounds() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -62,9 +62,8 @@ var MultipleBackgrounds = function MultipleBackgrounds() {
     // </Grommet>
   );
 };
-exports.MultipleBackgrounds = MultipleBackgrounds;
+
 MultipleBackgrounds.storyName = 'Multiple backgrounds';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Page/Multiple backgrounds'
 };
-exports["default"] = _default;

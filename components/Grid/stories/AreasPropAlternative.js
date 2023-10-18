@@ -5,7 +5,7 @@ exports["default"] = exports.GridAreasAlternative = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var GridAreasAlternative = function GridAreasAlternative() {
+var GridAreasAlternative = exports.GridAreasAlternative = function GridAreasAlternative() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -31,12 +31,11 @@ var GridAreasAlternative = function GridAreasAlternative() {
     // </Grommet>
   );
 };
-exports.GridAreasAlternative = GridAreasAlternative;
+
 GridAreasAlternative.args = {
   full: true
 };
 GridAreasAlternative.storyName = 'Areas prop alternatives';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Grid/Areas prop alternatives'
 };
-exports["default"] = _default;

@@ -19,7 +19,7 @@ var KEYS = {
   188: 'onComma',
   16: 'onShift'
 };
-var Keyboard = function Keyboard(_ref) {
+var Keyboard = exports.Keyboard = function Keyboard(_ref) {
   var capture = _ref.capture,
     target = _ref.target,
     children = _ref.children,
@@ -52,5 +52,4 @@ var Keyboard = function Keyboard(_ref) {
     onKeyDown: onKeyDownHandler
   });
 };
-exports.Keyboard = Keyboard;
 Keyboard.propTypes = _propTypes.KeyboardPropTypes;

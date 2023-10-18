@@ -59,11 +59,9 @@ var WeightAnchor = function WeightAnchor() {
     weight: "unset"
   }));
 };
-var Weight = function Weight() {
+var Weight = exports.Weight = function Weight() {
   return /*#__PURE__*/_react["default"].createElement(WeightAnchor, null);
 };
-exports.Weight = Weight;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Anchor/Weight'
 };
-exports["default"] = _default;

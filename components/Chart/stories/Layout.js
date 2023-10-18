@@ -12,7 +12,7 @@ var values = Array(14).fill(0).map(function (_, index) {
   value += delta % 2 ? delta : -delta;
   return [index, value];
 });
-var Layout = function Layout() {
+var Layout = exports.Layout = function Layout() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -60,8 +60,6 @@ var Layout = function Layout() {
     // </Grommet>
   );
 };
-exports.Layout = Layout;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Layout'
 };
-exports["default"] = _default;

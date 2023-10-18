@@ -27,7 +27,7 @@ var dummyOptions = Array(2000).fill().map(function (_, i) {
     sensitivity: 'base'
   });
 });
-var ManyOptions = function ManyOptions() {
+var ManyOptions = exports.ManyOptions = function ManyOptions() {
   var _React$useState = _react["default"].useState([]),
     selected = _React$useState[0],
     setSelected = _React$useState[1];
@@ -79,7 +79,7 @@ var ManyOptions = function ManyOptions() {
     // </Grommet>
   );
 };
-exports.ManyOptions = ManyOptions;
+
 ManyOptions.storyName = 'Many options';
 ManyOptions.parameters = {
   chromatic: {
@@ -89,7 +89,6 @@ ManyOptions.parameters = {
 ManyOptions.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Select/Many options'
 };
-exports["default"] = _default;

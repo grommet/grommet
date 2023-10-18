@@ -14,5 +14,4 @@ if (process.env.NODE_ENV !== 'production') {
     }))]).isRequired
   };
 }
-var DataTableColumnsPropTypes = PropType;
-exports.DataTableColumnsPropTypes = DataTableColumnsPropTypes;
+var DataTableColumnsPropTypes = exports.DataTableColumnsPropTypes = PropType;

@@ -5,7 +5,7 @@ exports["default"] = exports.Multiple = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Multiple = function Multiple() {
+var Multiple = exports.Multiple = function Multiple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -39,13 +39,12 @@ var Multiple = function Multiple() {
     // </Grommet>
   );
 };
-exports.Multiple = Multiple;
+
 Multiple.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Accordion/Multiple'
 };
-exports["default"] = _default;

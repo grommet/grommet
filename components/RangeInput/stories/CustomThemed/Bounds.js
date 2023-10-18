@@ -21,7 +21,7 @@ var rangeInputTheme = {
     }
   }
 };
-var Bounds = function Bounds() {
+var Bounds = exports.Bounds = function Bounds() {
   var _React$useState = _react["default"].useState(3),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -77,8 +77,6 @@ var Bounds = function Bounds() {
     }
   })));
 };
-exports.Bounds = Bounds;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/RangeInput/Custom Themed/Bounds'
 };
-exports["default"] = _default;

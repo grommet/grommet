@@ -22,5 +22,4 @@ if (process.env.NODE_ENV !== 'production') {
     indeterminate: _propTypes["default"].bool
   };
 }
-var CheckBoxPropTypes = PropType;
-exports.CheckBoxPropTypes = CheckBoxPropTypes;
+var CheckBoxPropTypes = exports.CheckBoxPropTypes = PropType;

@@ -33,7 +33,7 @@ var placeProps = function placeProps(name, color, showDrop) {
     }
   } : {});
 };
-var Places = function Places() {
+var Places = exports.Places = function Places() {
   var _React$useState = _react["default"].useState(true),
     showDrops = _React$useState[0],
     setShowDrops = _React$useState[1];
@@ -66,8 +66,6 @@ var Places = function Places() {
     }, placeProps('Ushuaia', 'graph-2', showDrops))]
   }));
 };
-exports.Places = Places;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/WorldMap/Places'
 };
-exports["default"] = _default;

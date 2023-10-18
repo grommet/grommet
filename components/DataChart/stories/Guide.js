@@ -13,7 +13,7 @@ for (var i = 1; i < 8; i += 1) {
     percent: Math.round(Math.abs(v * 100))
   });
 }
-var Guide = function Guide() {
+var Guide = exports.Guide = function Guide() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -55,8 +55,6 @@ var Guide = function Guide() {
     // </Grommet>
   );
 };
-exports.Guide = Guide;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Guide'
 };
-exports["default"] = _default;

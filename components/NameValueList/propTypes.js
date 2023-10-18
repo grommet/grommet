@@ -23,5 +23,4 @@ if (process.env.NODE_ENV !== 'production') {
     })
   };
 }
-var NameValueListType = PropType;
-exports.NameValueListType = NameValueListType;
+var NameValueListType = exports.NameValueListType = PropType;

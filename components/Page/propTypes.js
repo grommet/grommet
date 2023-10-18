@@ -10,5 +10,4 @@ if (process.env.NODE_ENV !== 'production') {
     kind: _propTypes["default"].string
   };
 }
-var PagePropTypes = PropType;
-exports.PagePropTypes = PagePropTypes;
+var PagePropTypes = exports.PagePropTypes = PropType;

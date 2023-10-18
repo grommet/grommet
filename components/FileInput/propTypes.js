@@ -26,5 +26,4 @@ if (process.env.NODE_ENV !== 'production') {
     renderFile: _propTypes["default"].func
   };
 }
-var FileInputPropTypes = PropType;
-exports.FileInputPropTypes = FileInputPropTypes;
+var FileInputPropTypes = exports.FileInputPropTypes = PropType;

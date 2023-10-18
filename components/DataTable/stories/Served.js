@@ -8,7 +8,7 @@ var _data = require("./data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-var ServedDataTable = function ServedDataTable() {
+var ServedDataTable = exports.ServedDataTable = function ServedDataTable() {
   var _React$useState = _react["default"].useState(_data.DATA),
     data2 = _React$useState[0],
     setData2 = _React$useState[1];
@@ -58,9 +58,8 @@ var ServedDataTable = function ServedDataTable() {
     // </Grommet>
   );
 };
-exports.ServedDataTable = ServedDataTable;
+
 ServedDataTable.storyName = 'Served';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Served'
 };
-exports["default"] = _default;

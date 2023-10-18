@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var OnClickBox = function OnClickBox() {
+var OnClickBox = exports.OnClickBox = function OnClickBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -36,9 +36,8 @@ var OnClickBox = function OnClickBox() {
     // </Grommet>
   );
 };
-exports.OnClickBox = OnClickBox;
+
 OnClickBox.storyName = 'onClick';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/onClick'
 };
-exports["default"] = _default;

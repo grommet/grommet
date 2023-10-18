@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-var GridInfiniteScroll = function GridInfiniteScroll() {
+var GridInfiniteScroll = exports.GridInfiniteScroll = function GridInfiniteScroll() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -32,9 +32,8 @@ var GridInfiniteScroll = function GridInfiniteScroll() {
     // </Grommet>
   );
 };
-exports.GridInfiniteScroll = GridInfiniteScroll;
+
 GridInfiniteScroll.storyName = 'Grid';
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Grid'
 };
-exports["default"] = _default;

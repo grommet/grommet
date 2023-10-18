@@ -5,7 +5,7 @@ exports["default"] = exports.Labelled = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Labelled = function Labelled() {
+var Labelled = exports.Labelled = function Labelled() {
   var meterValue = 30;
   return (
     /*#__PURE__*/
@@ -39,8 +39,6 @@ var Labelled = function Labelled() {
     // </Grommet>
   );
 };
-exports.Labelled = Labelled;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Meter/Labelled'
 };
-exports["default"] = _default;

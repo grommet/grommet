@@ -22,7 +22,7 @@ var data = [{
   city: 'San Francisco',
   state: 'California'
 }];
-var Children = function Children() {
+var Children = exports.Children = function Children() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     pad: "large",
     columns: [['medium', 'large']],
@@ -42,8 +42,6 @@ var Children = function Children() {
     }, datum.city)), /*#__PURE__*/_react["default"].createElement(_grommet.CardFooter, null, datum.state));
   }));
 };
-exports.Children = Children;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Cards/Children'
 };
-exports["default"] = _default;

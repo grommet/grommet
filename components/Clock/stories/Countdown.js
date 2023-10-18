@@ -5,7 +5,7 @@ exports["default"] = exports.Countdown = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Countdown = function Countdown() {
+var Countdown = exports.Countdown = function Countdown() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -22,13 +22,12 @@ var Countdown = function Countdown() {
     // </Grommet>
   );
 };
-exports.Countdown = Countdown;
+
 Countdown.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Clock/Countdown'
 };
-exports["default"] = _default;

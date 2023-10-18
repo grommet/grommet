@@ -21,5 +21,4 @@ if (process.env.NODE_ENV !== 'production') {
     })])
   };
 }
-var PageContentPropTypes = PropType;
-exports.PageContentPropTypes = PageContentPropTypes;
+var PageContentPropTypes = exports.PageContentPropTypes = PropType;

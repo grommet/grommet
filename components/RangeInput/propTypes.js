@@ -23,5 +23,4 @@ if (process.env.NODE_ENV !== 'production') {
     value: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string])
   };
 }
-var RangeInputPropTypes = PropType;
-exports.RangeInputPropTypes = RangeInputPropTypes;
+var RangeInputPropTypes = exports.RangeInputPropTypes = PropType;

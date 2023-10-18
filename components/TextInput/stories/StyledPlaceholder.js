@@ -5,7 +5,7 @@ exports["default"] = exports.StyledPlaceholder = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var StyledPlaceholder = function StyledPlaceholder() {
+var StyledPlaceholder = exports.StyledPlaceholder = function StyledPlaceholder() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -18,9 +18,8 @@ var StyledPlaceholder = function StyledPlaceholder() {
     // </Grommet>
   );
 };
-exports.StyledPlaceholder = StyledPlaceholder;
+
 StyledPlaceholder.storyName = 'Styled placeholder';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/TextInput/Styled placeholder'
 };
-exports["default"] = _default;

@@ -18,7 +18,7 @@ var customThemeRangeInput = {
     }
   }
 };
-var Disabled = function Disabled() {
+var Disabled = exports.Disabled = function Disabled() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customThemeRangeInput
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -39,8 +39,6 @@ var Disabled = function Disabled() {
     a11yTitle: "Select range value"
   }))));
 };
-exports.Disabled = Disabled;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/RangeInput/Custom Themed/Disabled'
 };
-exports["default"] = _default;

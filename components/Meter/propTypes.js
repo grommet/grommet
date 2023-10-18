@@ -33,5 +33,4 @@ if (process.env.NODE_ENV !== 'production') {
     }))
   });
 }
-var MeterPropTypes = PropType;
-exports.MeterPropTypes = MeterPropTypes;
+var MeterPropTypes = exports.MeterPropTypes = PropType;

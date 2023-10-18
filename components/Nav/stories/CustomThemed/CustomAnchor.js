@@ -60,12 +60,10 @@ var CustomAnchorNav = function CustomAnchorNav() {
     });
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, "Place main content here"))));
 };
-var CustomAnchor = function CustomAnchor() {
+var CustomAnchor = exports.CustomAnchor = function CustomAnchor() {
   return /*#__PURE__*/_react["default"].createElement(CustomAnchorNav, null);
 };
-exports.CustomAnchor = CustomAnchor;
 CustomAnchor.storyName = 'Custom Anchor';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Nav/Custom Themed/Custom Anchor'
 };
-exports["default"] = _default;

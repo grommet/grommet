@@ -20,5 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     title: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element])
   });
 }
-var PageHeaderPropTypes = PropType;
-exports.PageHeaderPropTypes = PageHeaderPropTypes;
+var PageHeaderPropTypes = exports.PageHeaderPropTypes = PropType;

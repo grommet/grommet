@@ -21,7 +21,7 @@ var override = {
 };
 var theme = (0, _utils.deepMerge)(_themes.grommet, override);
 var clockSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
-var Digital = function Digital() {
+var Digital = exports.Digital = function Digital() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -51,13 +51,11 @@ var Digital = function Digital() {
     size: "customSize"
   }))));
 };
-exports.Digital = Digital;
 Digital.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Clock/Custom Themed/Digital'
 };
-exports["default"] = _default;

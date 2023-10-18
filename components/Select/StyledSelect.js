@@ -8,7 +8,7 @@ var _DropButton = require("../DropButton");
 var _TextInput = require("../TextInput");
 var _utils = require("../../utils");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var StyledContainer = _styledComponents["default"].div.withConfig({
+var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"
 })(["@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";", ";"], function (props) {
@@ -18,18 +18,15 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
 });
 
 // position relative is so scroll can be managed correctly
-exports.StyledContainer = StyledContainer;
-var OptionsContainer = _styledComponents["default"].div.withConfig({
+var OptionsContainer = exports.OptionsContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
 })(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
-exports.OptionsContainer = OptionsContainer;
-var HiddenInput = _styledComponents["default"].input.withConfig({
+var HiddenInput = exports.HiddenInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledSelect__HiddenInput",
   componentId: "sc-znp66n-2"
 })(["display:none;"]);
-exports.HiddenInput = HiddenInput;
-var SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig({
+var SelectOption = exports.SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledSelect__SelectOption",
   componentId: "sc-znp66n-3"
 })(["", " ", " &:focus{", "}display:block;width:100%;", ";"], function (props) {
@@ -41,15 +38,13 @@ var SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig(
 }, function (props) {
   return props["aria-disabled"] && "cursor: default";
 });
-exports.SelectOption = SelectOption;
-var SelectTextInput = (0, _styledComponents["default"])(_TextInput.TextInput).withConfig({
+var SelectTextInput = exports.SelectTextInput = (0, _styledComponents["default"])(_TextInput.TextInput).withConfig({
   displayName: "StyledSelect__SelectTextInput",
   componentId: "sc-znp66n-4"
 })(["cursor:", ";"], function (props) {
   return props.defaultCursor ? 'default' : 'pointer';
 });
-exports.SelectTextInput = SelectTextInput;
-var StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropButton).withConfig({
+var StyledSelectDropButton = exports.StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropButton).withConfig({
   displayName: "StyledSelect__StyledSelectDropButton",
   componentId: "sc-znp66n-5"
 })(["", ";", ";", ";"], function (props) {
@@ -61,4 +56,3 @@ var StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropB
   var _props$theme$select2;
   return props.open && ((_props$theme$select2 = props.theme.select) == null || (_props$theme$select2 = _props$theme$select2.control) == null ? void 0 : _props$theme$select2.open);
 });
-exports.StyledSelectDropButton = StyledSelectDropButton;

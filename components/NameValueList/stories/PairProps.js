@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _data = require("./data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var PairProps = function PairProps() {
+var PairProps = exports.PairProps = function PairProps() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -32,8 +32,6 @@ var PairProps = function PairProps() {
     // </Grommet>
   );
 };
-exports.PairProps = PairProps;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/NameValueList/Pair Props'
 };
-exports["default"] = _default;

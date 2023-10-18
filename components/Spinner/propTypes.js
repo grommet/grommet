@@ -18,5 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     })])
   };
 }
-var SpinnerPropTypes = PropType;
-exports.SpinnerPropTypes = SpinnerPropTypes;
+var SpinnerPropTypes = exports.SpinnerPropTypes = PropType;

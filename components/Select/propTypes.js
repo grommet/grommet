@@ -6,7 +6,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _generalPropTypes = require("../../utils/general-prop-types");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-var genericSelectProps = _extends({}, _generalPropTypes.genericProps, {
+var genericSelectProps = exports.genericSelectProps = _extends({}, _generalPropTypes.genericProps, {
   children: _propTypes["default"].func,
   disabled: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string, _propTypes["default"].object]))]),
   disabledKey: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].func]),
@@ -45,7 +45,6 @@ var genericSelectProps = _extends({}, _generalPropTypes.genericProps, {
     reduce: _propTypes["default"].bool
   })])
 });
-exports.genericSelectProps = genericSelectProps;
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = _extends({}, genericSelectProps, {
@@ -62,5 +61,4 @@ if (process.env.NODE_ENV !== 'production') {
     _propTypes["default"].object, _propTypes["default"].number, _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].object, _propTypes["default"].number]))])
   });
 }
-var SelectPropTypes = PropType;
-exports.SelectPropTypes = SelectPropTypes;
+var SelectPropTypes = exports.SelectPropTypes = PropType;

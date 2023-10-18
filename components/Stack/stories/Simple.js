@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -30,8 +30,6 @@ var Simple = function Simple() {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Stack/Simple'
 };
-exports["default"] = _default;

@@ -39,14 +39,12 @@ var SkeletonExample = function SkeletonExample() {
     height: "small"
   }));
 };
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "medium",
     pad: "medium"
   }, /*#__PURE__*/_react["default"].createElement(HeadingExample, null), /*#__PURE__*/_react["default"].createElement(TextExample, null), /*#__PURE__*/_react["default"].createElement(ParagraphExample, null), /*#__PURE__*/_react["default"].createElement(SkeletonExample, null));
 };
-exports.Simple = Simple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Skeleton/Simple'
 };
-exports["default"] = _default;

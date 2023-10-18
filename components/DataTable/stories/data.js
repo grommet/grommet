@@ -11,7 +11,7 @@ var amountFormatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
   minimumFractionDigits: 2
 });
-var columns = [{
+var columns = exports.columns = [{
   property: 'name',
   header: /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Name with extra"),
   primary: true,
@@ -55,18 +55,14 @@ var columns = [{
     aggregate: true
   }
 }];
-exports.columns = columns;
-var groupColumns = [].concat(columns);
-exports.groupColumns = groupColumns;
+var groupColumns = exports.groupColumns = [].concat(columns);
 var first = groupColumns[0];
 groupColumns[0] = _extends({}, groupColumns[1]);
 groupColumns[1] = _extends({}, first);
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
-var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
-exports.locations = locations;
-var data = [];
-exports.data = data;
+var locations = exports.locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
+var data = exports.data = [];
 for (var i = 0; i < 40; i += 1) {
   data.push({
     name: "Name " + (i + 1),
@@ -76,7 +72,7 @@ for (var i = 0; i < 40; i += 1) {
     paid: (i + 1) * 17 % 1000
   });
 }
-var DATA = [{
+var DATA = exports.DATA = [{
   name: 'Alan',
   location: '',
   date: '',
@@ -125,8 +121,7 @@ var DATA = [{
   percent: 10,
   paid: 2345
 }];
-exports.DATA = DATA;
-var storageData = [{
+var storageData = exports.storageData = [{
   id: 'mjbpiclthh8y',
   poolName: 'Asup-array01-lvs',
   arrays: 'asup-array01-lvs',
@@ -225,8 +220,7 @@ var storageData = [{
     value: 333.2
   }]
 }];
-exports.storageData = storageData;
-var storageColumns = [{
+var storageColumns = exports.storageColumns = [{
   property: 'poolName',
   header: 'Pool Name',
   render: function render(_ref2) {
@@ -322,4 +316,3 @@ var storageColumns = [{
     }, savings[1] && "" + savings[1].value);
   }
 }];
-exports.storageColumns = storageColumns;

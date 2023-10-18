@@ -53,11 +53,9 @@ var StatusNotification = function StatusNotification() {
     message: "This is an example of message text"
   })));
 };
-var Status = function Status() {
+var Status = exports.Status = function Status() {
   return /*#__PURE__*/_react["default"].createElement(StatusNotification, null);
 };
-exports.Status = Status;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Notification/Status'
 };
-exports["default"] = _default;

@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 /* eslint-disable react/no-array-index-key */
 
 var values = [20, 40, 60, 80, 100];
-var MeterInTable = function MeterInTable() {
+var MeterInTable = exports.MeterInTable = function MeterInTable() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -36,9 +36,8 @@ var MeterInTable = function MeterInTable() {
     // </Grommet>
   );
 };
-exports.MeterInTable = MeterInTable;
+
 MeterInTable.storyName = 'Meter inside table';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Table/Meter inside table'
 };
-exports["default"] = _default;

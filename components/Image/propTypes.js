@@ -15,5 +15,4 @@ if (process.env.NODE_ENV !== 'production') {
     opacity: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['weak', 'medium', 'strong']), _propTypes["default"].string, _propTypes["default"].bool])
   });
 }
-var ImagePropTypes = PropType;
-exports.ImagePropTypes = ImagePropTypes;
+var ImagePropTypes = exports.ImagePropTypes = PropType;

@@ -5,7 +5,7 @@ exports["default"] = exports.ReverseBar = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var ReverseBar = function ReverseBar() {
+var ReverseBar = exports.ReverseBar = function ReverseBar() {
   var value = 30;
   return (
     /*#__PURE__*/
@@ -22,8 +22,6 @@ var ReverseBar = function ReverseBar() {
     // </Grommet>
   );
 };
-exports.ReverseBar = ReverseBar;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Meter/ReverseBar'
 };
-exports["default"] = _default;

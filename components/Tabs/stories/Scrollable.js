@@ -39,14 +39,12 @@ var ScrollableTabs = function ScrollableTabs() {
   );
 };
 
-var Scrollable = function Scrollable() {
+var Scrollable = exports.Scrollable = function Scrollable() {
   return /*#__PURE__*/_react["default"].createElement(ScrollableTabs, null);
 };
-exports.Scrollable = Scrollable;
 Scrollable.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Tabs/Scrollable'
 };
-exports["default"] = _default;

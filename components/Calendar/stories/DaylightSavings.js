@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).
-var DSTCalendar = function DSTCalendar() {
+var DSTCalendar = exports.DSTCalendar = function DSTCalendar() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -64,9 +64,8 @@ var DSTCalendar = function DSTCalendar() {
     // </Grommet>
   );
 };
-exports.DSTCalendar = DSTCalendar;
+
 DSTCalendar.storyName = 'Daylight savings time';
-var _default = {
+var _default = exports["default"] = {
   title: "Visualizations/Calendar/Daylight savings time"
 };
-exports["default"] = _default;

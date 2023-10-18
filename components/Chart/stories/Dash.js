@@ -5,7 +5,7 @@ exports["default"] = exports.Dash = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Dash = function Dash() {
+var Dash = exports.Dash = function Dash() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -42,8 +42,6 @@ var Dash = function Dash() {
     // </Grommet>
   );
 };
-exports.Dash = Dash;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Dash'
 };
-exports["default"] = _default;

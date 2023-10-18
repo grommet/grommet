@@ -19,7 +19,7 @@ var customMessages = {
     }
   }
 };
-var Messages = function Messages() {
+var Messages = exports.Messages = function Messages() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     messages: customMessages
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
@@ -56,8 +56,6 @@ var Messages = function Messages() {
     "aria-label": "file input"
   })))));
 };
-exports.Messages = Messages;
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/Grommet/Messages'
 };
-exports["default"] = _default;

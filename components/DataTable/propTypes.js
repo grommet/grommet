@@ -111,5 +111,4 @@ if (process.env.NODE_ENV !== 'production') {
     })])
   });
 }
-var DataTablePropTypes = PropType;
-exports.DataTablePropTypes = DataTablePropTypes;
+var DataTablePropTypes = exports.DataTablePropTypes = PropType;

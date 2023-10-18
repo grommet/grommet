@@ -29,5 +29,4 @@ if (process.env.NODE_ENV !== 'production') {
     })).isRequired
   };
 }
-var DiagramPropTypes = PropType;
-exports.DiagramPropTypes = DiagramPropTypes;
+var DiagramPropTypes = exports.DiagramPropTypes = PropType;

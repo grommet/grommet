@@ -13,7 +13,7 @@ for (var i = 1; i < 8; i += 1) {
     percent: Math.abs(v * 100)
   });
 }
-var Detail = function Detail() {
+var Detail = exports.Detail = function Detail() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -46,8 +46,6 @@ var Detail = function Detail() {
     // </Grommet>
   );
 };
-exports.Detail = Detail;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Detail'
 };
-exports["default"] = _default;

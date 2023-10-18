@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Multiple = function Multiple() {
+var Multiple = exports.Multiple = function Multiple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -69,8 +69,6 @@ var Multiple = function Multiple() {
     onClick: function onClick() {}
   })));
 };
-exports.Multiple = Multiple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Button/Multiple'
 };
-exports["default"] = _default;

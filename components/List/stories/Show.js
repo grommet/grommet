@@ -12,7 +12,7 @@ for (var i = 0; i < 95; i += 1) {
     entry: "entry-" + (i + 1)
   });
 }
-var Show = function Show() {
+var Show = exports.Show = function Show() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -34,8 +34,6 @@ var Show = function Show() {
     show: 30
   })));
 };
-exports.Show = Show;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Show'
 };
-exports["default"] = _default;

@@ -76,7 +76,7 @@ var DATA = [{
   percent: 10,
   paid: 2345
 }];
-var Sort = function Sort() {
+var Sort = exports.Sort = function Sort() {
   var _React$useState = _react["default"].useState({
       property: 'name',
       direction: 'desc'
@@ -104,8 +104,6 @@ var Sort = function Sort() {
     // </Grommet>
   );
 };
-exports.Sort = Sort;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Sort'
 };
-exports["default"] = _default;

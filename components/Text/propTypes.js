@@ -35,5 +35,4 @@ if (process.env.NODE_ENV !== 'production') {
     wordBreak: _propTypes["default"].oneOf(['normal', 'break-all', 'keep-all', 'break-word'])
   });
 }
-var TextPropTypes = PropType;
-exports.TextPropTypes = TextPropTypes;
+var TextPropTypes = exports.TextPropTypes = PropType;

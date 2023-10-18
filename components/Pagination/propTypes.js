@@ -18,5 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     step: _propTypes["default"].number
   });
 }
-var PaginationPropTypes = PropType;
-exports.PaginationPropTypes = PaginationPropTypes;
+var PaginationPropTypes = exports.PaginationPropTypes = PropType;

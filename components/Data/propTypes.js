@@ -25,5 +25,4 @@ if (process.env.NODE_ENV !== 'production') {
     view: _propTypes["default"].oneOfType([_propTypes["default"].string, viewType])
   };
 }
-var DataPropTypes = PropType;
-exports.DataPropTypes = DataPropTypes;
+var DataPropTypes = exports.DataPropTypes = PropType;

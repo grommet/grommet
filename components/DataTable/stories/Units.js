@@ -69,7 +69,7 @@ var sortableColumns = [{
   align: 'end',
   units: 'TiB'
 }];
-var UnitsDataTable = function UnitsDataTable() {
+var UnitsDataTable = exports.UnitsDataTable = function UnitsDataTable() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -92,9 +92,8 @@ var UnitsDataTable = function UnitsDataTable() {
     // </Grommet>
   );
 };
-exports.UnitsDataTable = UnitsDataTable;
+
 UnitsDataTable.storyName = 'Units';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Units'
 };
-exports["default"] = _default;

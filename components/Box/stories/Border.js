@@ -5,7 +5,7 @@ exports["default"] = exports.BorderBox = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var BorderBox = function BorderBox() {
+var BorderBox = exports.BorderBox = function BorderBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -116,9 +116,8 @@ var BorderBox = function BorderBox() {
     // </Grommet>
   );
 };
-exports.BorderBox = BorderBox;
+
 BorderBox.storyName = 'Border';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/Border'
 };
-exports["default"] = _default;

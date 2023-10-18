@@ -101,11 +101,9 @@ var CustomTabs = function CustomTabs() {
     title: "Simple Tab"
   }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
-var Custom = function Custom() {
+var Custom = exports.Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(CustomTabs, null);
 };
-exports.Custom = Custom;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Tabs/Custom Themed/Custom'
 };
-exports["default"] = _default;

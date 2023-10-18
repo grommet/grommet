@@ -50,7 +50,7 @@ var contents = [{
     color: "orange"
   }, "label"))
 }];
-var Kind = function Kind() {
+var Kind = exports.Kind = function Kind() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     gap: "large"
@@ -94,8 +94,6 @@ var Kind = function Kind() {
     }));
   })));
 };
-exports.Kind = Kind;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Button/Kind'
 };
-exports["default"] = _default;

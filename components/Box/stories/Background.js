@@ -5,7 +5,7 @@ exports["default"] = exports.BackgroundBox = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var BackgroundBox = function BackgroundBox() {
+var BackgroundBox = exports.BackgroundBox = function BackgroundBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -103,9 +103,8 @@ var BackgroundBox = function BackgroundBox() {
     // </Grommet>
   );
 };
-exports.BackgroundBox = BackgroundBox;
+
 BackgroundBox.storyName = 'Background';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Box/Background'
 };
-exports["default"] = _default;

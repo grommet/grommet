@@ -48,5 +48,4 @@ if (process.env.NODE_ENV !== 'production') {
     width: _generalPropTypes.widthPropType
   };
 }
-var TextInputPropTypes = PropType;
-exports.TextInputPropTypes = TextInputPropTypes;
+var TextInputPropTypes = exports.TextInputPropTypes = PropType;

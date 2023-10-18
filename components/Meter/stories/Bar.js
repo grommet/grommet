@@ -5,7 +5,7 @@ exports["default"] = exports.Bar = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Bar = function Bar() {
+var Bar = exports.Bar = function Bar() {
   var value = 30;
   return (
     /*#__PURE__*/
@@ -21,8 +21,6 @@ var Bar = function Bar() {
     // </Grommet>
   );
 };
-exports.Bar = Bar;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Meter/Bar'
 };
-exports["default"] = _default;

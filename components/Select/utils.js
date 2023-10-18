@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
 var _react = require("react");
 var _utils = require("../../utils");
-var applyKey = function applyKey(option, key) {
+var applyKey = exports.applyKey = function applyKey(option, key) {
   if (option === undefined || option === null) return undefined;
   if (typeof key === 'object') return applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
@@ -12,16 +12,13 @@ var applyKey = function applyKey(option, key) {
   if (typeof option === 'object' && Object.keys(option)) return option[Object.keys(option)[0]];
   return option;
 };
-exports.applyKey = applyKey;
-var getOptionLabel = function getOptionLabel(index, options, labelKey) {
+var getOptionLabel = exports.getOptionLabel = function getOptionLabel(index, options, labelKey) {
   return applyKey(options[index], labelKey);
 };
-exports.getOptionLabel = getOptionLabel;
-var getOptionValue = function getOptionValue(index, options, valueKey) {
+var getOptionValue = exports.getOptionValue = function getOptionValue(index, options, valueKey) {
   return applyKey(options[index], valueKey);
 };
-exports.getOptionValue = getOptionValue;
-var getOptionIndex = function getOptionIndex(options, i, valueKey) {
+var getOptionIndex = exports.getOptionIndex = function getOptionIndex(options, i, valueKey) {
   if (options) {
     if (typeof i === 'object') return options.findIndex(function (x) {
       return applyKey(x, valueKey) === applyKey(i, valueKey);
@@ -30,8 +27,7 @@ var getOptionIndex = function getOptionIndex(options, i, valueKey) {
   }
   return undefined;
 };
-exports.getOptionIndex = getOptionIndex;
-var arrayIncludes = function arrayIncludes(arr, i, valueKey) {
+var arrayIncludes = exports.arrayIncludes = function arrayIncludes(arr, i, valueKey) {
   if (arr) {
     if (typeof i === 'object') return arr.some(function (x) {
       return applyKey(x, valueKey) === applyKey(i, valueKey);
@@ -40,8 +36,7 @@ var arrayIncludes = function arrayIncludes(arr, i, valueKey) {
   }
   return undefined;
 };
-exports.arrayIncludes = arrayIncludes;
-var useDisabled = function useDisabled(disabled, disabledKey, options, valueKey) {
+var useDisabled = exports.useDisabled = function useDisabled(disabled, disabledKey, options, valueKey) {
   return (0, _react.useCallback)(function (index) {
     var option = options[index];
     var result;
@@ -58,15 +53,13 @@ var useDisabled = function useDisabled(disabled, disabledKey, options, valueKey)
     return result;
   }, [disabled, disabledKey, options, valueKey]);
 };
-exports.useDisabled = useDisabled;
-var getNormalizedValue = function getNormalizedValue(value, valueKey) {
+var getNormalizedValue = exports.getNormalizedValue = function getNormalizedValue(value, valueKey) {
   if (Array.isArray(value)) return value.map(function (v) {
     return valueKey && valueKey.reduce ? v : applyKey(v, valueKey);
   });
   return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
 };
-exports.getNormalizedValue = getNormalizedValue;
-var changeEvent = function changeEvent(inputRef, nextValue) {
+var changeEvent = exports.changeEvent = function changeEvent(inputRef, nextValue) {
   // Calling set value function directly on input because React library
   // overrides setter `event.target.value =` and loses original event
   // target fidelity.
@@ -78,8 +71,7 @@ var changeEvent = function changeEvent(inputRef, nextValue) {
   });
   inputRef.current.dispatchEvent(event);
 };
-exports.changeEvent = changeEvent;
-var getSelectIcon = function getSelectIcon(icon, theme, open) {
+var getSelectIcon = exports.getSelectIcon = function getSelectIcon(icon, theme, open) {
   var SelectIcon;
   switch (icon) {
     case false:
@@ -97,14 +89,11 @@ var getSelectIcon = function getSelectIcon(icon, theme, open) {
 // if labelKey is a function and valueLabel is not defined
 // we should use the labelKey function to display the
 // selected value
-exports.getSelectIcon = getSelectIcon;
-var getDisplayLabelKey = function getDisplayLabelKey(labelKey, allOptions, optionIndexesInValue, selectValue) {
+var getDisplayLabelKey = exports.getDisplayLabelKey = function getDisplayLabelKey(labelKey, allOptions, optionIndexesInValue, selectValue) {
   var optionLabelKey = applyKey(allOptions[optionIndexesInValue[0]], labelKey);
   if (!selectValue && optionIndexesInValue.length === 1 && typeof optionLabelKey === 'object') return optionLabelKey;
   return undefined;
 };
-exports.getDisplayLabelKey = getDisplayLabelKey;
-var getIconColor = function getIconColor(theme) {
+var getIconColor = exports.getIconColor = function getIconColor(theme) {
   return (0, _utils.normalizeColor)(theme.select.icons.color || 'control', theme);
 };
-exports.getIconColor = getIconColor;

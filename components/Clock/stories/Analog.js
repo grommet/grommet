@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'huge'];
-var Analog = function Analog() {
+var Analog = exports.Analog = function Analog() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -29,13 +29,12 @@ var Analog = function Analog() {
     // </Grommet>
   );
 };
-exports.Analog = Analog;
+
 Analog.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Clock/Analog'
 };
-exports["default"] = _default;

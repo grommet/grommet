@@ -17,5 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     valueKey: _propTypes["default"].string
   };
 }
-var CheckBoxGroupPropTypes = PropType;
-exports.CheckBoxGroupPropTypes = CheckBoxGroupPropTypes;
+var CheckBoxGroupPropTypes = exports.CheckBoxGroupPropTypes = PropType;

@@ -15,5 +15,4 @@ if (process.env.NODE_ENV !== 'production') {
     interactiveChild: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].oneOf(['first', 'last'])])
   });
 }
-var StackPropTypes = PropType;
-exports.StackPropTypes = StackPropTypes;
+var StackPropTypes = exports.StackPropTypes = PropType;

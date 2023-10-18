@@ -8,7 +8,7 @@ var _Button = require("../../Button");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var DATE = '2020-07-02T00:00:00-08:00';
 var DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
-var ResetDateWithString = function ResetDateWithString() {
+var ResetDateWithString = exports.ResetDateWithString = function ResetDateWithString() {
   var _React$useState = _react["default"].useState(DATE),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -34,8 +34,7 @@ var ResetDateWithString = function ResetDateWithString() {
     type: "button"
   }));
 };
-exports.ResetDateWithString = ResetDateWithString;
-var ResetDateWithArray = function ResetDateWithArray() {
+var ResetDateWithArray = exports.ResetDateWithArray = function ResetDateWithArray() {
   var _React$useState2 = _react["default"].useState(DATES),
     value = _React$useState2[0],
     setValue = _React$useState2[1];
@@ -61,10 +60,8 @@ var ResetDateWithArray = function ResetDateWithArray() {
     type: "button"
   }));
 };
-exports.ResetDateWithArray = ResetDateWithArray;
 ResetDateWithString.storyName = 'Reset date with string';
 ResetDateWithArray.storyName = 'Reset date with array';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/DateInput/Reset date'
 };
-exports["default"] = _default;

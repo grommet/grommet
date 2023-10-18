@@ -27,7 +27,7 @@ var Option = function Option(_ref) {
     onChange: function onChange() {}
   }), value);
 };
-var LazyLoadingOptions = function LazyLoadingOptions() {
+var LazyLoadingOptions = exports.LazyLoadingOptions = function LazyLoadingOptions() {
   var _React$useState = _react["default"].useState([]),
     selected = _React$useState[0],
     setSelected = _React$useState[1];
@@ -87,14 +87,13 @@ var LazyLoadingOptions = function LazyLoadingOptions() {
     // </Grommet>
   );
 };
-exports.LazyLoadingOptions = LazyLoadingOptions;
+
 LazyLoadingOptions.storyName = 'Lazy loading options';
 LazyLoadingOptions.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Select/Lazy loading options'
 };
-exports["default"] = _default;

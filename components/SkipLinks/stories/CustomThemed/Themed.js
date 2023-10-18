@@ -31,7 +31,7 @@ var theme = {
     }
   }
 };
-var Themed = function Themed() {
+var Themed = exports.Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinks, {
@@ -109,13 +109,11 @@ var Themed = function Themed() {
     label: "Interactive Element"
   }), contentFiller))));
 };
-exports.Themed = Themed;
 Themed.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/SkipLinks/Custom Themed/Themed'
 };
-exports["default"] = _default;

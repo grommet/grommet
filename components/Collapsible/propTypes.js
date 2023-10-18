@@ -11,5 +11,4 @@ if (process.env.NODE_ENV !== 'production') {
     direction: _propTypes["default"].oneOf(['horizontal', 'vertical'])
   };
 }
-var CollapsiblePropTypes = PropType;
-exports.CollapsiblePropTypes = CollapsiblePropTypes;
+var CollapsiblePropTypes = exports.CollapsiblePropTypes = PropType;

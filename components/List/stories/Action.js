@@ -12,7 +12,7 @@ for (var i = 0; i < 40; i += 1) {
     entry: "entry-" + (i + 1)
   });
 }
-var Action = function Action() {
+var Action = exports.Action = function Action() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
@@ -33,8 +33,6 @@ var Action = function Action() {
     }
   }));
 };
-exports.Action = Action;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/List/Action'
 };
-exports["default"] = _default;

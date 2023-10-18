@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var allItems = Array(240).fill().map(function (_, i) {
   return i + 1;
 });
-var Height = function Height() {
+var Height = exports.Height = function Height() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -29,14 +29,13 @@ var Height = function Height() {
     // </Grommet>
   );
 };
-exports.Height = Height;
+
 Height.storyName = 'Variable item height';
 Height.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Variable item height'
 };
-exports["default"] = _default;

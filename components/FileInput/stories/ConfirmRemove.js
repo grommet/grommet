@@ -5,7 +5,7 @@ exports["default"] = exports.ConfirmRemove = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var ConfirmRemove = function ConfirmRemove() {
+var ConfirmRemove = exports.ConfirmRemove = function ConfirmRemove() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
@@ -62,13 +62,11 @@ var ConfirmRemove = function ConfirmRemove() {
     type: "submit"
   }))));
 };
-exports.ConfirmRemove = ConfirmRemove;
 ConfirmRemove.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/FileInput/Confirm Remove'
 };
-exports["default"] = _default;

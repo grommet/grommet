@@ -17,5 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     onChange: _propTypes["default"].func
   };
 }
-var RadioButtonPropTypes = PropType;
-exports.RadioButtonPropTypes = RadioButtonPropTypes;
+var RadioButtonPropTypes = exports.RadioButtonPropTypes = PropType;

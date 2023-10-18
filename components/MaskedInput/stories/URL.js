@@ -5,7 +5,7 @@ exports["default"] = exports.UrlMaskedInput = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var UrlMaskedInput = function UrlMaskedInput() {
+var UrlMaskedInput = exports.UrlMaskedInput = function UrlMaskedInput() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -35,7 +35,7 @@ var UrlMaskedInput = function UrlMaskedInput() {
     // </Grommet>
   );
 };
-exports.UrlMaskedInput = UrlMaskedInput;
+
 UrlMaskedInput.storyName = 'URL';
 UrlMaskedInput.parameters = {
   chromatic: {
@@ -45,7 +45,6 @@ UrlMaskedInput.parameters = {
 UrlMaskedInput.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/URL'
 };
-exports["default"] = _default;

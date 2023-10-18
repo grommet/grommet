@@ -5,7 +5,7 @@ exports["default"] = exports.Opacity = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Opacity = function Opacity() {
+var Opacity = exports.Opacity = function Opacity() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -46,8 +46,6 @@ var Opacity = function Opacity() {
     // </Grommet>
   );
 };
-exports.Opacity = Opacity;
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Image/Opacity'
 };
-exports["default"] = _default;

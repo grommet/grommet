@@ -53,7 +53,7 @@ var customTheme = {
     }
   }
 };
-var Custom = function Custom() {
+var Custom = exports.Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: customTheme
@@ -90,8 +90,6 @@ var Custom = function Custom() {
     }
   }))));
 };
-exports.Custom = Custom;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/FileInput/Custom Themed/Custom'
 };
-exports["default"] = _default;

@@ -5,7 +5,7 @@ exports["default"] = exports.Time = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Time = function Time() {
+var Time = exports.Time = function Time() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -53,11 +53,10 @@ var Time = function Time() {
     // </Grommet>
   );
 };
-exports.Time = Time;
+
 Time.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Time'
 };
-exports["default"] = _default;

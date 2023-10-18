@@ -17,5 +17,4 @@ if (process.env.NODE_ENV !== 'production') {
     sortSelectedOnClose: _propTypes["default"].bool
   });
 }
-var SelectMultiplePropTypes = PropType;
-exports.SelectMultiplePropTypes = SelectMultiplePropTypes;
+var SelectMultiplePropTypes = exports.SelectMultiplePropTypes = PropType;

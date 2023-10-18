@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Plain = function Plain() {
+var Plain = exports.Plain = function Plain() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     gap: "large"
@@ -43,8 +43,6 @@ var Plain = function Plain() {
     gap: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Kind"))))));
 };
-exports.Plain = Plain;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Button/Custom Themed/Plain'
 };
-exports["default"] = _default;

@@ -5,7 +5,7 @@ exports["default"] = exports.SelectPlace = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var SelectPlace = function SelectPlace() {
+var SelectPlace = exports.SelectPlace = function SelectPlace() {
   var _React$useState = _react["default"].useState(),
     places = _React$useState[0],
     setPlaces = _React$useState[1];
@@ -24,14 +24,12 @@ var SelectPlace = function SelectPlace() {
     places: places
   }));
 };
-exports.SelectPlace = SelectPlace;
 SelectPlace.storyName = 'Select place';
 SelectPlace.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/WorldMap/Select place'
 };
-exports["default"] = _default;

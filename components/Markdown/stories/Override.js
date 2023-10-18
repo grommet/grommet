@@ -11,7 +11,7 @@ var StyledPre = _styledComponents["default"].pre.withConfig({
   displayName: "Override__StyledPre",
   componentId: "sc-13lo9xg-0"
 })(["background-color:#ffca58;"]);
-var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
+var ComponentOverrideMarkdown = exports.ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -27,9 +27,8 @@ var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
     // </Grommet>
   );
 };
-exports.ComponentOverrideMarkdown = ComponentOverrideMarkdown;
+
 ComponentOverrideMarkdown.storyName = 'Component override markdown';
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Markdown/Component override markdown'
 };
-exports["default"] = _default;

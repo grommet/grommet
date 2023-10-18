@@ -5,7 +5,7 @@ exports["default"] = exports.HelpAndError = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var HelpAndError = function HelpAndError() {
+var HelpAndError = exports.HelpAndError = function HelpAndError() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -46,9 +46,8 @@ var HelpAndError = function HelpAndError() {
     // </Grommet>
   );
 };
-exports.HelpAndError = HelpAndError;
+
 HelpAndError.storyName = 'Help and error';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Help and error'
 };
-exports["default"] = _default;

@@ -9,7 +9,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
-var StyledDataTable = function StyledDataTable() {
+var StyledDataTable = exports.StyledDataTable = function StyledDataTable() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -57,9 +57,8 @@ var StyledDataTable = function StyledDataTable() {
     // </Grommet>
   );
 };
-exports.StyledDataTable = StyledDataTable;
+
 StyledDataTable.storyName = 'Styled';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Styled'
 };
-exports["default"] = _default;

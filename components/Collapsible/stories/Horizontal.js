@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Horizontal = function Horizontal() {
+var Horizontal = exports.Horizontal = function Horizontal() {
   var _React$useState = _react["default"].useState(),
     openNotification = _React$useState[0],
     setOpenNotification = _React$useState[1];
@@ -63,7 +63,7 @@ var Horizontal = function Horizontal() {
     // </Grommet>
   );
 };
-exports.Horizontal = Horizontal;
+
 Horizontal.args = {
   full: true
 };
@@ -72,7 +72,6 @@ Horizontal.parameters = {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/Collapsible/Horizontal'
 };
-exports["default"] = _default;

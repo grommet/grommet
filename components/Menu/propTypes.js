@@ -37,5 +37,4 @@ if (process.env.NODE_ENV !== 'production') {
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['small', 'medium', 'large', 'xlarge']), _propTypes["default"].string])
   });
 }
-var MenuPropTypes = PropType;
-exports.MenuPropTypes = MenuPropTypes;
+var MenuPropTypes = exports.MenuPropTypes = PropType;

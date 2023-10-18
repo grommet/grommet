@@ -49,5 +49,4 @@ if (process.env.NODE_ENV !== 'production') {
     type: _propTypes["default"].oneOf(['button', 'reset', 'submit'])
   });
 }
-var ButtonPropTypes = PropType;
-exports.ButtonPropTypes = ButtonPropTypes;
+var ButtonPropTypes = exports.ButtonPropTypes = PropType;

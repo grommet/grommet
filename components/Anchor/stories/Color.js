@@ -40,11 +40,9 @@ var ColorAnchor = function ColorAnchor() {
     href: "#"
   })));
 };
-var Color = function Color() {
+var Color = exports.Color = function Color() {
   return /*#__PURE__*/_react["default"].createElement(ColorAnchor, null);
 };
-exports.Color = Color;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Anchor/Color'
 };
-exports["default"] = _default;

@@ -14,7 +14,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var RequiredLabel = function RequiredLabel() {
+var RequiredLabel = exports.RequiredLabel = function RequiredLabel() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -57,9 +57,7 @@ var RequiredLabel = function RequiredLabel() {
     color: "status-critical"
   }, "* Required Field"))));
 };
-exports.RequiredLabel = RequiredLabel;
 RequiredLabel.storyName = 'Required label';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Custom Themed/Required label'
 };
-exports["default"] = _default;

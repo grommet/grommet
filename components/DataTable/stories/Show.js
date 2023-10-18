@@ -274,7 +274,7 @@ var DATA = [{
   percent: 40,
   paid: 2345
 }];
-var Show = function Show() {
+var Show = exports.Show = function Show() {
   var step = 10;
   return (
     /*#__PURE__*/
@@ -299,8 +299,6 @@ var Show = function Show() {
     // </Grommet>
   );
 };
-exports.Show = Show;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Show'
 };
-exports["default"] = _default;

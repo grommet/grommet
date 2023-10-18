@@ -20,8 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
     play: _propTypes["default"].number
   });
 }
-var CarouselPropTypes = CarouselPropType;
-exports.CarouselPropTypes = CarouselPropTypes;
+var CarouselPropTypes = exports.CarouselPropTypes = CarouselPropType;
 var CarouselChildPropType;
 if (process.env.NODE_ENV !== 'production') {
   CarouselChildPropType = {
@@ -33,5 +32,4 @@ if (process.env.NODE_ENV !== 'production') {
     direction: _propTypes["default"].oneOf(['left', 'right'])
   };
 }
-var CarouselChildPropTypes = CarouselChildPropType;
-exports.CarouselChildPropTypes = CarouselChildPropTypes;
+var CarouselChildPropTypes = exports.CarouselChildPropTypes = CarouselChildPropType;

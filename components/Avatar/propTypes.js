@@ -11,5 +11,4 @@ if (process.env.NODE_ENV !== 'production') {
     src: _propTypes["default"].string
   };
 }
-var AvatarPropTypes = PropType;
-exports.AvatarPropTypes = AvatarPropTypes;
+var AvatarPropTypes = exports.AvatarPropTypes = PropType;

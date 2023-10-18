@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.strokeProps = exports.defaultColor = void 0;
 var _utils = require("../../utils");
-var strokeProps = function strokeProps(color, theme) {
+var strokeProps = exports.strokeProps = function strokeProps(color, theme) {
   var result = {};
   if (color) {
     if (typeof color === 'object') {
@@ -17,9 +17,8 @@ var strokeProps = function strokeProps(color, theme) {
   }
   return result;
 };
-exports.strokeProps = strokeProps;
 var neutralExp = /^neutral-\d+/;
-var defaultColor = function defaultColor(index, theme, valuesLength) {
+var defaultColor = exports.defaultColor = function defaultColor(index, theme, valuesLength) {
   if (index === valuesLength - 1 && theme.meter.color) {
     return theme.meter.color;
   }
@@ -41,4 +40,3 @@ var defaultColor = function defaultColor(index, theme, valuesLength) {
   });
   return neutralColors[colorIndex % neutralColors.length];
 };
-exports.defaultColor = defaultColor;

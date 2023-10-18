@@ -42,12 +42,10 @@ var IconItemsMenu = function IconItemsMenu() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormDown, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Menu with Icon on the left"))));
 };
-var ItemWithIcon = function ItemWithIcon() {
+var ItemWithIcon = exports.ItemWithIcon = function ItemWithIcon() {
   return /*#__PURE__*/_react["default"].createElement(IconItemsMenu, null);
 };
-exports.ItemWithIcon = ItemWithIcon;
 ItemWithIcon.storyName = 'Item with icon';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Menu/Item with icon'
 };
-exports["default"] = _default;

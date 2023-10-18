@@ -5,7 +5,7 @@ exports["default"] = exports.Continents = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Continents = function Continents() {
+var Continents = exports.Continents = function Continents() {
   var _React$useState = _react["default"].useState(),
     active = _React$useState[0],
     setActive = _React$useState[1];
@@ -24,8 +24,6 @@ var Continents = function Continents() {
     margin: "large"
   }, "Africa"));
 };
-exports.Continents = Continents;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/WorldMap/Continents'
 };
-exports["default"] = _default;

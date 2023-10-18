@@ -24,7 +24,7 @@ var customTheme = {
     }
   }
 };
-var CustomCarousel = function CustomCarousel(_ref) {
+var CustomCarousel = exports.CustomCarousel = function CustomCarousel(_ref) {
   var controls = _ref.controls,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -51,9 +51,7 @@ var CustomCarousel = function CustomCarousel(_ref) {
     size: "xlarge"
   })))));
 };
-exports.CustomCarousel = CustomCarousel;
 CustomCarousel.storyName = 'Custom controls';
-var _default = {
+var _default = exports["default"] = {
   title: "Media/Carousel/Custom Themed/Custom controls"
 };
-exports["default"] = _default;

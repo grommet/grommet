@@ -10,5 +10,4 @@ if (process.env.NODE_ENV !== 'production') {
     children: _propTypes["default"].func
   };
 }
-var ResponsiveContextPropTypes = PropType;
-exports.ResponsiveContextPropTypes = ResponsiveContextPropTypes;
+var ResponsiveContextPropTypes = exports.ResponsiveContextPropTypes = PropType;

@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 // Always should store amount in cents to avoid precision errors
-var data = [{
+var data = exports.data = [{
   id: 1,
   name: 'Eric',
   email: 'eric@local',
@@ -27,7 +27,6 @@ var data = [{
   email: 'shimisun@local',
   amount: 5752
 }];
-exports.data = data;
 var TOTAL = 0;
 data.forEach(function (datum) {
   TOTAL += datum.amount;
@@ -37,7 +36,7 @@ var amountFormatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
   minimumFractionDigits: 2
 });
-var columns = [{
+var columns = exports.columns = [{
   property: 'name',
   label: 'Name',
   dataScope: 'row',
@@ -59,4 +58,3 @@ var columns = [{
     return amountFormatter.format(datum.amount / 100);
   }
 }];
-exports.columns = columns;

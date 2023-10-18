@@ -35,7 +35,7 @@ var FooterContent = function FooterContent() {
     })));
   }));
 };
-var Sitemap = function Sitemap() {
+var Sitemap = exports.Sitemap = function Sitemap() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -69,8 +69,6 @@ var Sitemap = function Sitemap() {
     // </Grommet>
   );
 };
-exports.Sitemap = Sitemap;
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Footer/Sitemap'
 };
-exports["default"] = _default;

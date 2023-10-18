@@ -5,7 +5,7 @@ exports["default"] = exports.Format = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Format = function Format() {
+var Format = exports.Format = function Format() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -39,8 +39,6 @@ var Format = function Format() {
     onChange: onChange
   })));
 };
-exports.Format = Format;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/DateInput/Format'
 };
-exports["default"] = _default;

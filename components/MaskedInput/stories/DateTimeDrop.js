@@ -68,7 +68,7 @@ var DropContent = function DropContent(_ref) {
     onClick: close
   }))));
 };
-var DateTimeDropButton = function DateTimeDropButton() {
+var DateTimeDropButton = exports.DateTimeDropButton = function DateTimeDropButton() {
   var _React$useState3 = _react["default"].useState(),
     date = _React$useState3[0],
     setDate = _React$useState3[1];
@@ -117,9 +117,8 @@ var DateTimeDropButton = function DateTimeDropButton() {
     // </Grommet>
   );
 };
-exports.DateTimeDropButton = DateTimeDropButton;
+
 DateTimeDropButton.storyName = 'Date time drop';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/MaskedInput/Date time drop'
 };
-exports["default"] = _default;

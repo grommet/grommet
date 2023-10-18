@@ -36,11 +36,9 @@ var SimpleNav = function SimpleNav() {
   );
 };
 
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleNav, null);
 };
-exports.Simple = Simple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Nav/Simple'
 };
-exports["default"] = _default;

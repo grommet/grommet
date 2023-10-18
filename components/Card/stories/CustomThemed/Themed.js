@@ -99,7 +99,7 @@ var Identifier = function Identifier(_ref) {
     size: size
   }, subTitle)));
 };
-var Themed = function Themed() {
+var Themed = exports.Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
     full: true
@@ -134,8 +134,6 @@ var Themed = function Themed() {
     }, value.message)));
   }))));
 };
-exports.Themed = Themed;
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Card/Custom Themed/Themed'
 };
-exports["default"] = _default;

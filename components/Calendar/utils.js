@@ -6,7 +6,7 @@ exports.withinDates = exports.subtractMonths = exports.subtractDays = exports.st
 // Just what's needed to avoid having to include a dependency like momentjs.
 
 var DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
-var addDays = function addDays(date, days) {
+var addDays = exports.addDays = function addDays(date, days) {
   var result = new Date(date.getTime() + DAY_MILLISECONDS * days);
   // Deal with crossing the daylight savings time boundary,
   // where adding a day's worth when the time is midnight results in
@@ -24,12 +24,10 @@ var addDays = function addDays(date, days) {
   result.setHours(result.getHours() - hourDelta);
   return result;
 };
-exports.addDays = addDays;
-var subtractDays = function subtractDays(date, days) {
+var subtractDays = exports.subtractDays = function subtractDays(date, days) {
   return addDays(date, -days);
 };
-exports.subtractDays = subtractDays;
-var addMonths = function addMonths(date, months) {
+var addMonths = exports.addMonths = function addMonths(date, months) {
   var result = new Date(date);
   var years = Math.floor((date.getMonth() + months) / 12);
   result.setFullYear(date.getFullYear() + years);
@@ -37,44 +35,36 @@ var addMonths = function addMonths(date, months) {
   result.setMonth(targetMonth < 0 ? 12 + targetMonth : targetMonth);
   return result;
 };
-exports.addMonths = addMonths;
-var subtractMonths = function subtractMonths(date, months) {
+var subtractMonths = exports.subtractMonths = function subtractMonths(date, months) {
   return addMonths(date, -months);
 };
-exports.subtractMonths = subtractMonths;
-var startOfMonth = function startOfMonth(date) {
+var startOfMonth = exports.startOfMonth = function startOfMonth(date) {
   var result = new Date(date);
   result.setDate(1);
   return result;
 };
-exports.startOfMonth = startOfMonth;
-var endOfMonth = function endOfMonth(date) {
+var endOfMonth = exports.endOfMonth = function endOfMonth(date) {
   var result = addMonths(date, 1);
   result.setDate(0);
   return result;
 };
-exports.endOfMonth = endOfMonth;
-var sameDay = function sameDay(date1, date2) {
+var sameDay = exports.sameDay = function sameDay(date1, date2) {
   return date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate();
 };
-exports.sameDay = sameDay;
-var sameDayOrAfter = function sameDayOrAfter(date1, date2) {
+var sameDayOrAfter = exports.sameDayOrAfter = function sameDayOrAfter(date1, date2) {
   return date1.getFullYear() > date2.getFullYear() || date1.getFullYear() === date2.getFullYear() && (date1.getMonth() > date2.getMonth() || date1.getMonth() === date2.getMonth() && date1.getDate() >= date2.getDate());
 };
-exports.sameDayOrAfter = sameDayOrAfter;
-var sameDayOrBefore = function sameDayOrBefore(date1, date2) {
+var sameDayOrBefore = exports.sameDayOrBefore = function sameDayOrBefore(date1, date2) {
   return date1.getFullYear() < date2.getFullYear() || date1.getFullYear() === date2.getFullYear() && (date1.getMonth() < date2.getMonth() || date1.getMonth() === date2.getMonth() && date1.getDate() <= date2.getDate());
 };
-exports.sameDayOrBefore = sameDayOrBefore;
-var daysApart = function daysApart(date1, date2) {
+var daysApart = exports.daysApart = function daysApart(date1, date2) {
   return Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
 };
 
 // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise
-exports.daysApart = daysApart;
-var betweenDates = function betweenDates(date, dates) {
+var betweenDates = exports.betweenDates = function betweenDates(date, dates) {
   var result;
   if (dates) {
     var _ref = Array.isArray(dates) ? dates.map(function (d) {
@@ -97,8 +87,7 @@ var betweenDates = function betweenDates(date, dates) {
 // checks whether the supplied date matches any string or is between
 // any dates in arrays.
 // returns 2 if exact match, 1 if between, undefined otherwise
-exports.betweenDates = betweenDates;
-var withinDates = function withinDates(date, dates) {
+var withinDates = exports.withinDates = function withinDates(date, dates) {
   var result;
   if (dates) {
     if (Array.isArray(dates)) {
@@ -118,8 +107,7 @@ var withinDates = function withinDates(date, dates) {
   }
   return result;
 };
-exports.withinDates = withinDates;
-var handleOffset = function handleOffset(date) {
+var handleOffset = exports.handleOffset = function handleOffset(date) {
   var normalizedDate = new Date(date);
   var offset = normalizedDate.getTimezoneOffset();
   var hour = normalizedDate.getHours();
@@ -127,4 +115,3 @@ var handleOffset = function handleOffset(date) {
   normalizedDate.setHours(hour, offset < 0 ? -offset : offset);
   return normalizedDate;
 };
-exports.handleOffset = handleOffset;

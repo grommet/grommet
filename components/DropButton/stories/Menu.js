@@ -44,10 +44,9 @@ var MenuDropButton = function MenuDropButton() {
     flex: true
   }), /*#__PURE__*/_react["default"].createElement(GremlinDropButton, null)));
 };
-var Menu = function Menu() {
+var Menu = exports.Menu = function Menu() {
   return /*#__PURE__*/_react["default"].createElement(MenuDropButton, null);
 };
-exports.Menu = Menu;
 Menu.parameters = {
   chromatic: {
     disable: true
@@ -56,7 +55,6 @@ Menu.parameters = {
 Menu.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/DropButton/Menu'
 };
-exports["default"] = _default;

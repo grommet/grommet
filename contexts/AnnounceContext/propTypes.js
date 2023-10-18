@@ -10,5 +10,4 @@ if (process.env.NODE_ENV !== 'production') {
     children: _propTypes["default"].func
   };
 }
-var AnnounceContextPropTypes = PropType;
-exports.AnnounceContextPropTypes = AnnounceContextPropTypes;
+var AnnounceContextPropTypes = exports.AnnounceContextPropTypes = PropType;

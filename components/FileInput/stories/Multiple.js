@@ -5,7 +5,7 @@ exports["default"] = exports.Multiple = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Multiple = function Multiple() {
+var Multiple = exports.Multiple = function Multiple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
@@ -29,8 +29,6 @@ var Multiple = function Multiple() {
     }
   })));
 };
-exports.Multiple = Multiple;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/FileInput/Multiple'
 };
-exports["default"] = _default;

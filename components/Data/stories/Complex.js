@@ -103,7 +103,7 @@ var columns = [{
     });
   }
 }];
-var Complex = function Complex() {
+var Complex = exports.Complex = function Complex() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -131,11 +131,10 @@ var Complex = function Complex() {
     // </Grommet>
   );
 };
-exports.Complex = Complex;
+
 Complex.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Data/Data/Complex'
 };
-exports["default"] = _default;

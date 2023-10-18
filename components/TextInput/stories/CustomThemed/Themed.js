@@ -40,7 +40,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-var Themed = function Themed() {
+var Themed = exports.Themed = function Themed() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -73,8 +73,6 @@ var Themed = function Themed() {
     "aria-label": "Input Text"
   }))));
 };
-exports.Themed = Themed;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/TextInput/Custom Themed/Themed'
 };
-exports["default"] = _default;

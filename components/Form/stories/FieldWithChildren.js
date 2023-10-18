@@ -22,7 +22,7 @@ var passwordRulesStrong = [{
   message: 'At least 8 characters',
   status: 'error'
 }];
-var FieldWithChildren = function FieldWithChildren() {
+var FieldWithChildren = exports.FieldWithChildren = function FieldWithChildren() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -141,12 +141,11 @@ var FieldWithChildren = function FieldWithChildren() {
     // </Grommet>
   );
 };
-exports.FieldWithChildren = FieldWithChildren;
+
 FieldWithChildren.storyName = 'Field with children';
 FieldWithChildren.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Field with children'
 };
-exports["default"] = _default;

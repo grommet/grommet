@@ -37,7 +37,7 @@ var FooterContent = function FooterContent() {
     })));
   });
 };
-var DoubleFooter = function DoubleFooter() {
+var DoubleFooter = exports.DoubleFooter = function DoubleFooter() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -79,9 +79,8 @@ var DoubleFooter = function DoubleFooter() {
     // </Grommet>
   );
 };
-exports.DoubleFooter = DoubleFooter;
+
 DoubleFooter.storyName = 'Double footer';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Footer/Double footer'
 };
-exports["default"] = _default;

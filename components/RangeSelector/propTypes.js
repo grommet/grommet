@@ -27,5 +27,4 @@ if (process.env.NODE_ENV !== 'production') {
     values: _propTypes["default"].arrayOf(_propTypes["default"].number)
   };
 }
-var RangeSelectorPropTypes = PropType;
-exports.RangeSelectorPropTypes = RangeSelectorPropTypes;
+var RangeSelectorPropTypes = exports.RangeSelectorPropTypes = PropType;

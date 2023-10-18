@@ -5,7 +5,7 @@ exports["default"] = exports.FixedSizesBox = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var FixedSizesBox = function FixedSizesBox() {
+var FixedSizesBox = exports.FixedSizesBox = function FixedSizesBox() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -51,9 +51,8 @@ var FixedSizesBox = function FixedSizesBox() {
     // </Grommet>
   );
 };
-exports.FixedSizesBox = FixedSizesBox;
+
 FixedSizesBox.storyName = 'Fixed sizes';
-var _default = {
+var _default = exports["default"] = {
   title: "Layout/Box/Fixed sizes"
 };
-exports["default"] = _default;

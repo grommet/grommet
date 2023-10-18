@@ -12,5 +12,4 @@ if (process.env.NODE_ENV !== 'production') {
     layer: _propTypes["default"].bool
   };
 }
-var DataFiltersPropTypes = PropType;
-exports.DataFiltersPropTypes = DataFiltersPropTypes;
+var DataFiltersPropTypes = exports.DataFiltersPropTypes = PropType;

@@ -45,7 +45,7 @@ var customTheme = {
     margin: 'none'
   }
 };
-var Custom = function Custom() {
+var Custom = exports.Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: (0, _utils.deepMerge)(_themes.grommet, customTheme)
@@ -136,8 +136,6 @@ var Custom = function Custom() {
     primary: true
   }))))));
 };
-exports.Custom = Custom;
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/Form/Custom Themed/Custom'
 };
-exports["default"] = _default;

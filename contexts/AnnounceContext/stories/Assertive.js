@@ -49,15 +49,13 @@ var AnnounceContextComponent = function AnnounceContextComponent(props) {
     }, props));
   })));
 };
-var Assertive = function Assertive() {
+var Assertive = exports.Assertive = function Assertive() {
   return /*#__PURE__*/_react["default"].createElement(AnnounceContextComponent, {
     message: "Turn on Accessibility feature to listen to this announcement. This will soon disappear",
     mode: "assertive",
     role: "alert"
   });
 };
-exports.Assertive = Assertive;
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/AnnounceContext/Assertive'
 };
-exports["default"] = _default;

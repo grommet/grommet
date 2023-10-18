@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _DataFilters = require("../DataFilters");
 var _data = require("../../DataTable/stories/data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Layer = function Layer() {
+var Layer = exports.Layer = function Layer() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -36,11 +36,10 @@ var Layer = function Layer() {
     // </Grommet>
   );
 };
-exports.Layer = Layer;
+
 Layer.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Data/DataFilters/Layer'
 };
-exports["default"] = _default;

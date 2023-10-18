@@ -14,7 +14,7 @@ groupColumns[0] = _extends({}, groupColumns[1]);
 groupColumns[1] = _extends({}, first);
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
-var GroupedOnSelectDataTable = function GroupedOnSelectDataTable() {
+var GroupedOnSelectDataTable = exports.GroupedOnSelectDataTable = function GroupedOnSelectDataTable() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -32,9 +32,8 @@ var GroupedOnSelectDataTable = function GroupedOnSelectDataTable() {
     // </Grommet>
   );
 };
-exports.GroupedOnSelectDataTable = GroupedOnSelectDataTable;
+
 GroupedOnSelectDataTable.storyName = 'Grouped and onSelect';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Grouped and onSelect'
 };
-exports["default"] = _default;

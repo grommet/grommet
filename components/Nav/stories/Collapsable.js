@@ -47,11 +47,9 @@ var CollapsableNav = function CollapsableNav() {
   );
 };
 
-var Collapsable = function Collapsable() {
+var Collapsable = exports.Collapsable = function Collapsable() {
   return /*#__PURE__*/_react["default"].createElement(CollapsableNav, null);
 };
-exports.Collapsable = Collapsable;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Nav/Collapsable'
 };
-exports["default"] = _default;

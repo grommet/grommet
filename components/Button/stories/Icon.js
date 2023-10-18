@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Icon = function Icon() {
+var Icon = exports.Icon = function Icon() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -66,9 +66,7 @@ var Icon = function Icon() {
     onClick: function onClick() {}
   }))));
 };
-exports.Icon = Icon;
 Icon.storyName = 'Icon plain';
-var _default = {
+var _default = exports["default"] = {
   title: "Controls/Button/Icon plain"
 };
-exports["default"] = _default;

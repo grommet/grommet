@@ -80,7 +80,7 @@ var MainNavigation = function MainNavigation() {
     label: "Configure"
   }));
 };
-var Labels = function Labels() {
+var Labels = exports.Labels = function Labels() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -104,11 +104,10 @@ var Labels = function Labels() {
     // </Grommet>
   );
 };
-exports.Labels = Labels;
+
 Labels.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Sidebar/Labels'
 };
-exports["default"] = _default;

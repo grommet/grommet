@@ -5,7 +5,7 @@ exports.normalizeColor = exports.getRGBArray = exports.getRGBA = exports.colorIs
 // Returns the specific color that should be used according to the theme.
 // If 'dark' is supplied, it takes precedence over 'theme.dark'.
 // Can return undefined.
-var normalizeColor = function normalizeColor(color, theme, dark) {
+var normalizeColor = exports.normalizeColor = function normalizeColor(color, theme, dark) {
   var colorSpec = theme.global && theme.global.colors[color] !== undefined ? theme.global.colors[color] : color;
   // If the color has a light or dark object, use that
   var result = colorSpec;
@@ -22,7 +22,6 @@ var normalizeColor = function normalizeColor(color, theme, dark) {
   }
   return result;
 };
-exports.normalizeColor = normalizeColor;
 var parseHexToRGB = function parseHexToRGB(color) {
   return color.length < 7 // 7 is what's needed for '#RRGGBB'
   ? color.match(/[A-Za-z0-9]{1}/g).map(function (v) {
@@ -73,11 +72,10 @@ var rgbExp = /^rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?\)/;
 var rgbaExp = /^rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([.0-9]*)\s?\)/;
 // e.g. hsl(240, 60%, 50%)
 var hslExp = /^hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
-var canExtractRGBArray = function canExtractRGBArray(color) {
+var canExtractRGBArray = exports.canExtractRGBArray = function canExtractRGBArray(color) {
   return hexExp.test(color) || rgbExp.test(color) || rgbaExp.test(color) || hslExp.test(color);
 };
-exports.canExtractRGBArray = canExtractRGBArray;
-var getRGBArray = function getRGBArray(color) {
+var getRGBArray = exports.getRGBArray = function getRGBArray(color) {
   if (hexExp.test(color)) {
     var _parseHexToRGB = parseHexToRGB(color),
       red = _parseHexToRGB[0],
@@ -110,8 +108,7 @@ var getRGBArray = function getRGBArray(color) {
   }
   return color;
 };
-exports.getRGBArray = getRGBArray;
-var colorIsDark = function colorIsDark(color) {
+var colorIsDark = exports.colorIsDark = function colorIsDark(color) {
   if (color && canExtractRGBArray(color)) {
     var _getRGBArray = getRGBArray(color),
       red = _getRGBArray[0],
@@ -127,8 +124,7 @@ var colorIsDark = function colorIsDark(color) {
   }
   return undefined;
 };
-exports.colorIsDark = colorIsDark;
-var getRGBA = function getRGBA(color, opacity) {
+var getRGBA = exports.getRGBA = function getRGBA(color, opacity) {
   if (color && canExtractRGBArray(color)) {
     var _getRGBArray2 = getRGBArray(color),
       red = _getRGBArray2[0],
@@ -147,4 +143,3 @@ var getRGBA = function getRGBA(color, opacity) {
   }
   return undefined;
 };
-exports.getRGBA = getRGBA;

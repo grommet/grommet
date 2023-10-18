@@ -47,7 +47,7 @@ colorArray(neutralColors, 'neutral');
 Object.keys(statusColors).forEach(function (color) {
   colors["status-" + color] = statusColors[color];
 });
-var dark = (0, _object.deepFreeze)({
+var dark = exports.dark = (0, _object.deepFreeze)({
   global: {
     colors: colors,
     drop: {
@@ -78,4 +78,3 @@ var dark = (0, _object.deepFreeze)({
     }
   }
 });
-exports.dark = dark;

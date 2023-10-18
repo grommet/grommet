@@ -20,5 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     })
   });
 }
-var AccordionPropTypes = PropType;
-exports.AccordionPropTypes = AccordionPropTypes;
+var AccordionPropTypes = exports.AccordionPropTypes = PropType;

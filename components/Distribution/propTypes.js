@@ -18,5 +18,4 @@ if (process.env.NODE_ENV !== 'production') {
     })).isRequired
   });
 }
-var DistributionPropTypes = PropType;
-exports.DistributionPropTypes = DistributionPropTypes;
+var DistributionPropTypes = exports.DistributionPropTypes = PropType;

@@ -5,7 +5,7 @@ exports["default"] = exports.RangeFormat = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var RangeFormat = function RangeFormat() {
+var RangeFormat = exports.RangeFormat = function RangeFormat() {
   var _React$useState = _react["default"].useState(['2020-07-31T15:24:26.256Z', '2020-08-07T15:24:26.256Z']),
     value = _React$useState[0],
     setValue = _React$useState[1];
@@ -26,9 +26,7 @@ var RangeFormat = function RangeFormat() {
     onChange: onChange
   })));
 };
-exports.RangeFormat = RangeFormat;
 RangeFormat.storyName = 'Range format';
-var _default = {
+var _default = exports["default"] = {
   title: 'Input/DateInput/Range format'
 };
-exports["default"] = _default;

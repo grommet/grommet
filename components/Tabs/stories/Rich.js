@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var TabsWithIcons = function TabsWithIcons() {
+var TabsWithIcons = exports.TabsWithIcons = function TabsWithIcons() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -38,9 +38,8 @@ var TabsWithIcons = function TabsWithIcons() {
     // </Grommet>
   );
 };
-exports.TabsWithIcons = TabsWithIcons;
+
 TabsWithIcons.storyName = 'Tabs with icons';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Tabs/Tabs with icons'
 };
-exports["default"] = _default;

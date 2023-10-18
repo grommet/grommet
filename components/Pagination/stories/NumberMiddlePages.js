@@ -5,7 +5,7 @@ exports["default"] = exports.NumberMiddlePages = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var NumberMiddlePages = function NumberMiddlePages() {
+var NumberMiddlePages = exports.NumberMiddlePages = function NumberMiddlePages() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -25,9 +25,8 @@ var NumberMiddlePages = function NumberMiddlePages() {
     // </Grommet>
   );
 };
-exports.NumberMiddlePages = NumberMiddlePages;
+
 NumberMiddlePages.storyName = 'Number middle pages';
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Pagination/Number middle pages'
 };
-exports["default"] = _default;

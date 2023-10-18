@@ -13,7 +13,5 @@ var _react = require("react");
  * @see https://medium.com/@alexandereardon/uselayouteffect-and-ssr-192986cdcf7a
  * @see https://github.com/grommet/grommet/issues/4765
  */
-var useLayoutEffect = typeof window !== 'undefined' ? _react.useLayoutEffect : _react.useEffect;
-exports.useLayoutEffect = useLayoutEffect;
-var _default = useLayoutEffect;
-exports["default"] = _default;
+var useLayoutEffect = exports.useLayoutEffect = typeof window !== 'undefined' ? _react.useLayoutEffect : _react.useEffect;
+var _default = exports["default"] = useLayoutEffect;

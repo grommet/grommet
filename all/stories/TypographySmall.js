@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
-var Small = function Small() {
+var Small = exports.Small = function Small() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -33,8 +33,6 @@ var Small = function Small() {
     size: "small"
   }, "Paragraph - Small", paragraphFiller))));
 };
-exports.Small = Small;
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Typography/Small'
 };
-exports["default"] = _default;

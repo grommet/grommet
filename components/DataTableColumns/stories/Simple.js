@@ -16,7 +16,7 @@ var options = _data.columns.map(function (_ref) {
     label: property === 'name' ? 'Name' : header
   };
 });
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -42,11 +42,10 @@ var Simple = function Simple() {
     // </Grommet>
   );
 };
-exports.Simple = Simple;
+
 Simple.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Data/DataTableColumns/Simple'
 };
-exports["default"] = _default;

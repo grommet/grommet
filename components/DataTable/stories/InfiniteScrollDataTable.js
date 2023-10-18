@@ -274,7 +274,7 @@ var DATA = [{
   percent: 40,
   paid: 2345
 }];
-var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
+var InfiniteScrollDataTable = exports.InfiniteScrollDataTable = function InfiniteScrollDataTable() {
   var step = 10;
   var load = function load() {
     console.log("InfiniteScroll fires onMore after loading " + step + " items");
@@ -301,9 +301,8 @@ var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
     // </Grommet>
   );
 };
-exports.InfiniteScrollDataTable = InfiniteScrollDataTable;
+
 InfiniteScrollDataTable.storyName = 'Infinite Scroll';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Infinite Scroll'
 };
-exports["default"] = _default;

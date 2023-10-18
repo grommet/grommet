@@ -24,5 +24,4 @@ if (process.env.NODE_ENV !== 'production') {
     align: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['left', 'right', 'center', 'justify', 'inherit', 'start', 'end']), _propTypes["default"].string])
   };
 }
-var TableCellPropTypes = PropType;
-exports.TableCellPropTypes = TableCellPropTypes;
+var TableCellPropTypes = exports.TableCellPropTypes = PropType;

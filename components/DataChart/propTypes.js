@@ -88,5 +88,4 @@ if (process.env.NODE_ENV !== 'production') {
     })])
   });
 }
-var DataChartPropTypes = PropType;
-exports.DataChartPropTypes = DataChartPropTypes;
+var DataChartPropTypes = exports.DataChartPropTypes = PropType;

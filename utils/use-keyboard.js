@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.useKeyboard = exports["default"] = void 0;
 var _react = require("react");
-var useKeyboard = function useKeyboard() {
+var useKeyboard = exports.useKeyboard = function useKeyboard() {
   var _useState = (0, _react.useState)(),
     usingKeyboard = _useState[0],
     setUsingKeyboard = _useState[1];
@@ -23,6 +23,4 @@ var useKeyboard = function useKeyboard() {
   }, []);
   return usingKeyboard;
 };
-exports.useKeyboard = useKeyboard;
-var _default = useKeyboard;
-exports["default"] = _default;
+var _default = exports["default"] = useKeyboard;

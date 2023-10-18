@@ -156,7 +156,7 @@ var Responsive = function Responsive(_ref) {
     }), children);
   });
 };
-var ResponsiveGrid = function ResponsiveGrid() {
+var ResponsiveGrid = exports.ResponsiveGrid = function ResponsiveGrid() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
@@ -189,9 +189,7 @@ var ResponsiveGrid = function ResponsiveGrid() {
     rows: "xsmall"
   }, listAnimalsBoxes)));
 };
-exports.ResponsiveGrid = ResponsiveGrid;
 ResponsiveGrid.storyName = 'Responsive grid';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Grid/Custom Themed/Responsive grid'
 };
-exports["default"] = _default;

@@ -13,7 +13,7 @@ var customTheme = {
     }
   }
 };
-var Theme = function Theme() {
+var Theme = exports.Theme = function Theme() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -24,8 +24,6 @@ var Theme = function Theme() {
     color: "custom"
   })));
 };
-exports.Theme = Theme;
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/Grommet/Theme'
 };
-exports["default"] = _default;

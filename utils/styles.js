@@ -7,7 +7,7 @@ var _background = require("./background");
 var _colors = require("./colors");
 var _responsive = require("./responsive");
 var _mixins = require("./mixins");
-var baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " ", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
+var baseStyle = exports.baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " ", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
   return props.theme.global.font.family;
 }, function (props) {
   return props.theme.global.font.size;
@@ -20,16 +20,14 @@ var baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";lin
 }, function (props) {
   return !props.plain && (0, _background.backgroundStyle)(props.theme.baseBackground, props.theme);
 });
-exports.baseStyle = baseStyle;
-var controlBorderStyle = (0, _styledComponents.css)(["border:", " solid ", ";border-radius:", ";"], function (props) {
+var controlBorderStyle = exports.controlBorderStyle = (0, _styledComponents.css)(["border:", " solid ", ";border-radius:", ";"], function (props) {
   return props.theme.global.control.border.width;
 }, function (props) {
   return (0, _colors.normalizeColor)(props.theme.global.control.border.color || 'border', props.theme);
 }, function (props) {
   return props.theme.global.control.border.radius;
 });
-exports.controlBorderStyle = controlBorderStyle;
-var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint, theme) {
+var edgeStyle = exports.edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint, theme) {
   var breakpoint = responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
   if (typeof data === 'string') {
     return (0, _styledComponents.css)(["", ":", ";", ";"], kind, theme.global.edgeSize[data] || data, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n        " + kind + ": " + (breakpoint.edgeSize[data] || data) + ";\n      ") : '');
@@ -79,8 +77,7 @@ var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint,
   }
   return result;
 };
-exports.edgeStyle = edgeStyle;
-var fillStyle = function fillStyle(fillProp) {
+var fillStyle = exports.fillStyle = function fillStyle(fillProp) {
   if (fillProp === 'horizontal') {
     return 'width: 100%;';
   }
@@ -92,7 +89,6 @@ var fillStyle = function fillStyle(fillProp) {
   }
   return undefined;
 };
-exports.fillStyle = fillStyle;
 var focusStyles = function focusStyles(props, _temp) {
   var _ref = _temp === void 0 ? {} : _temp,
     forceOutline = _ref.forceOutline,
@@ -160,7 +156,7 @@ var unfocusStyles = function unfocusStyles(props, _temp2) {
 };
 
 // focus also supports clickable elements inside svg
-var focusStyle = function focusStyle(_temp3) {
+var focusStyle = exports.focusStyle = function focusStyle(_temp3) {
   var _ref3 = _temp3 === void 0 ? {} : _temp3,
     forceOutline = _ref3.forceOutline,
     justBorder = _ref3.justBorder,
@@ -181,8 +177,7 @@ var focusStyle = function focusStyle(_temp3) {
 // this function can be used to reset focus styles which is
 // applicable when turning the focus ring off when using the mouse
 // see https://nelo.is/writing/styling-better-focus-states/
-exports.focusStyle = focusStyle;
-var unfocusStyle = function unfocusStyle(_temp4) {
+var unfocusStyle = exports.unfocusStyle = function unfocusStyle(_temp4) {
   var _ref4 = _temp4 === void 0 ? {} : _temp4,
     forceOutline = _ref4.forceOutline,
     justBorder = _ref4.justBorder,
@@ -203,11 +198,10 @@ var unfocusStyle = function unfocusStyle(_temp4) {
 // placeholder was not. Because we're now placing the subtraction into the
 // theme itself, we have to add back in the border width here.
 // This is used for placeholder/icon in TextInput and MaskedInput.
-exports.unfocusStyle = unfocusStyle;
 var adjustPad = function adjustPad(props, value) {
   return (0, _mixins.parseMetricToNum)((props.theme.global.edgeSize[value] || value) + "px") + (0, _mixins.parseMetricToNum)(props.theme.global.control.border.width + "px") + "px";
 };
-var getInputPadBySide = function getInputPadBySide(props, side) {
+var getInputPadBySide = exports.getInputPadBySide = function getInputPadBySide(props, side) {
   if (typeof props.theme.global.input.padding !== 'object') {
     var _adjustedPad = adjustPad(props, props.theme.global.input.padding);
     return _adjustedPad;
@@ -221,7 +215,6 @@ var getInputPadBySide = function getInputPadBySide(props, side) {
   var adjustedPad = adjustPad(props, pad);
   return adjustedPad;
 };
-exports.getInputPadBySide = getInputPadBySide;
 var placeholderColor = (0, _styledComponents.css)(["color:", ";"], function (props) {
   return (0, _colors.normalizeColor)(props.theme.global.colors.placeholder, props.theme);
 });
@@ -233,7 +226,7 @@ var inputSizeStyle = function inputSizeStyle(props) {
   }
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
-var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;width:100%;", " ", " ", " margin:0;", " &:focus{", ";}", " ", "::-webkit-search-decoration{-webkit-appearance:none;}&::-moz-focus-inner{border:none;outline:none;}&:-moz-placeholder,&::-moz-placeholder{opacity:1;}", ""], function (props) {
+var inputStyle = exports.inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;width:100%;", " ", " ", " margin:0;", " &:focus{", ";}", " ", "::-webkit-search-decoration{-webkit-appearance:none;}&::-moz-focus-inner{border:none;outline:none;}&:-moz-placeholder,&::-moz-placeholder{opacity:1;}", ""], function (props) {
   var _props$theme$text$pro;
   return "font-size: " + (props.theme.global.input.font.size ? ((_props$theme$text$pro = props.theme.text[props.theme.global.input.font.size]) == null ? void 0 : _props$theme$text$pro.size) || props.theme.global.input.font.size : 'inherit') + ";";
 }, function (props) {
@@ -261,20 +254,17 @@ var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-fa
 // When theme.icon.matchSize is true, the space for the
 // icon should equal the icon dimension + 12px (edgeSize.medium)
 // to ensure there is reasonable space between the icon and value or placeholder
-exports.inputStyle = inputStyle;
-var inputPadForIcon = (0, _styledComponents.css)(["", ""], function (props) {
+var inputPadForIcon = exports.inputPadForIcon = (0, _styledComponents.css)(["", ""], function (props) {
   var _props$theme, _props$theme$icon;
   var pad = (_props$theme = props.theme) != null && (_props$theme = _props$theme.icon) != null && _props$theme.matchSize ? (0, _mixins.parseMetricToNum)((_props$theme$icon = props.theme.icon) == null || (_props$theme$icon = _props$theme$icon.size) == null ? void 0 : _props$theme$icon[(props == null ? void 0 : props.size) || 'medium']) + (0, _mixins.parseMetricToNum)(props.theme.global.edgeSize.medium) + "px" : props.theme.global.edgeSize.large;
   return props.reverse ? "padding-right: " + pad + ";" : "padding-left: " + pad + ";";
 });
-exports.inputPadForIcon = inputPadForIcon;
-var overflowStyle = function overflowStyle(overflowProp) {
+var overflowStyle = exports.overflowStyle = function overflowStyle(overflowProp) {
   if (typeof overflowProp === 'string') {
     return (0, _styledComponents.css)(["overflow:", ";"], overflowProp);
   }
   return (0, _styledComponents.css)(["", " ", ";"], overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";");
 };
-exports.overflowStyle = overflowStyle;
 var ALIGN_SELF_MAP = {
   center: 'center',
   end: 'flex-end',
@@ -282,29 +272,25 @@ var ALIGN_SELF_MAP = {
   stretch: 'stretch',
   baseline: 'baseline'
 };
-var genericStyles = (0, _styledComponents.css)(["", " ", " ", ""], function (props) {
+var genericStyles = exports.genericStyles = (0, _styledComponents.css)(["", " ", " ", ""], function (props) {
   return props.alignSelf && "align-self: " + ALIGN_SELF_MAP[props.alignSelf] + ";";
 }, function (props) {
   return props.gridArea && "grid-area: " + props.gridArea + ";";
 }, function (props) {
   return props.margin && props.theme.global && edgeStyle('margin', props.margin, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 });
-exports.genericStyles = genericStyles;
-var disabledStyle = function disabledStyle(componentStyle) {
+var disabledStyle = exports.disabledStyle = function disabledStyle(componentStyle) {
   return (0, _styledComponents.css)(["opacity:", ";cursor:default;"], function (props) {
     return componentStyle || props.theme.global.control.disabled.opacity;
   });
 };
-exports.disabledStyle = disabledStyle;
-var sizeStyle = function sizeStyle(name, value, theme) {
+var sizeStyle = exports.sizeStyle = function sizeStyle(name, value, theme) {
   return (0, _styledComponents.css)(["", ":", ";"], name, theme.global.size[value] || value);
 };
-exports.sizeStyle = sizeStyle;
-var plainInputStyle = (0, _styledComponents.css)(["outline:none;border:none;"]);
+var plainInputStyle = exports.plainInputStyle = (0, _styledComponents.css)(["outline:none;border:none;"]);
 
 // CSS for this sub-object in the theme
-exports.plainInputStyle = plainInputStyle;
-var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
+var kindPartStyles = exports.kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
   var styles = [];
   if (obj.padding || obj.pad) {
     // button uses `padding` but other components use Grommet `pad`
@@ -336,11 +322,10 @@ var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
   if (obj.extend) styles.push(obj.extend);
   return styles;
 };
-exports.kindPartStyles = kindPartStyles;
 var ROUND_MAP = {
   full: '100%'
 };
-var roundStyle = function roundStyle(data, responsive, theme) {
+var roundStyle = exports.roundStyle = function roundStyle(data, responsive, theme) {
   var breakpoint = (0, _responsive.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
   var styles = [];
   if (typeof data === 'object') {
@@ -387,17 +372,15 @@ var roundStyle = function roundStyle(data, responsive, theme) {
   }
   return styles;
 };
-exports.roundStyle = roundStyle;
 var TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',
   justify: 'justify',
   start: 'left'
 };
-var textAlignStyle = (0, _styledComponents.css)(["text-align:", ";"], function (props) {
+var textAlignStyle = exports.textAlignStyle = (0, _styledComponents.css)(["text-align:", ";"], function (props) {
   return TEXT_ALIGN_MAP[props.textAlign];
 });
-exports.textAlignStyle = textAlignStyle;
 var ALIGN_ITEMS_MAP = {
   baseline: 'baseline',
   center: 'center',
@@ -405,11 +388,10 @@ var ALIGN_ITEMS_MAP = {
   start: 'flex-start',
   stretch: 'stretch'
 };
-var alignStyle = (0, _styledComponents.css)(["align-items:", ";"], function (props) {
+var alignStyle = exports.alignStyle = (0, _styledComponents.css)(["align-items:", ";"], function (props) {
   var _ALIGN_ITEMS_MAP$prop;
   return (_ALIGN_ITEMS_MAP$prop = ALIGN_ITEMS_MAP[props.align]) != null ? _ALIGN_ITEMS_MAP$prop : props.align;
 });
-exports.alignStyle = alignStyle;
 var ALIGN_CONTENT_MAP = {
   around: 'space-around',
   baseline: 'baseline',
@@ -420,11 +402,10 @@ var ALIGN_CONTENT_MAP = {
   start: 'flex-start',
   stretch: 'stretch'
 };
-var alignContentStyle = (0, _styledComponents.css)(["align-content:", ";"], function (props) {
+var alignContentStyle = exports.alignContentStyle = (0, _styledComponents.css)(["align-content:", ";"], function (props) {
   var _ALIGN_CONTENT_MAP$pr;
   return (_ALIGN_CONTENT_MAP$pr = ALIGN_CONTENT_MAP[props.alignContent]) != null ? _ALIGN_CONTENT_MAP$pr : props.alignContent;
 });
-exports.alignContentStyle = alignContentStyle;
 var getSize = function getSize(theme, size) {
   return theme.global.size[size] || size;
 };
@@ -438,10 +419,9 @@ var widthObjectStyle = function widthObjectStyle(width, theme) {
 var widthStringStyle = function widthStringStyle(width, theme) {
   return (0, _styledComponents.css)(["width:", ";"], getSize(theme, width));
 };
-var widthStyle = function widthStyle(width, theme) {
+var widthStyle = exports.widthStyle = function widthStyle(width, theme) {
   return typeof width === 'object' ? widthObjectStyle(width, theme) : widthStringStyle(width, theme);
 };
-exports.widthStyle = widthStyle;
 var heightObjectStyle = function heightObjectStyle(height, theme) {
   var result = [];
   if (height.max) result.push((0, _styledComponents.css)(["max-height:", ";"], getSize(theme, height.max)));
@@ -454,7 +434,6 @@ var heightObjectStyle = function heightObjectStyle(height, theme) {
 var heightStringStyle = function heightStringStyle(height, theme) {
   return (0, _styledComponents.css)(["height:", ";"], getSize(theme, height));
 };
-var heightStyle = function heightStyle(height, theme) {
+var heightStyle = exports.heightStyle = function heightStyle(height, theme) {
   return typeof height === 'object' ? heightObjectStyle(height, theme) : heightStringStyle(height, theme);
 };
-exports.heightStyle = heightStyle;

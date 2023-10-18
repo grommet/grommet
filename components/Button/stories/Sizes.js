@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Sizes = function Sizes() {
+var Sizes = exports.Sizes = function Sizes() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -87,8 +87,6 @@ var Sizes = function Sizes() {
     primary: true
   }))));
 };
-exports.Sizes = Sizes;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Button/Sizes'
 };
-exports["default"] = _default;

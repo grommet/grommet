@@ -5,7 +5,7 @@ exports["default"] = exports.Fallback = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Fallback = function Fallback() {
+var Fallback = exports.Fallback = function Fallback() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -18,8 +18,6 @@ var Fallback = function Fallback() {
     // </Grommet>
   );
 };
-exports.Fallback = Fallback;
-var _default = {
+var _default = exports["default"] = {
   title: 'Media/Image/Fallback'
 };
-exports["default"] = _default;

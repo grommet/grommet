@@ -42,7 +42,7 @@ var values = [{
   thickness: 'large',
   color: 'status-warning'
 }];
-var ValueStyleChart = function ValueStyleChart() {
+var ValueStyleChart = exports.ValueStyleChart = function ValueStyleChart() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -62,9 +62,8 @@ var ValueStyleChart = function ValueStyleChart() {
     // </Grommet>
   );
 };
-exports.ValueStyleChart = ValueStyleChart;
+
 ValueStyleChart.storyName = 'Value style';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Chart/Value style'
 };
-exports["default"] = _default;

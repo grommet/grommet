@@ -31,5 +31,4 @@ var dataSet = {
     return data;
   }
 };
-var generateData = dataSet.generateData;
-exports.generateData = generateData;
+var generateData = exports.generateData = dataSet.generateData;

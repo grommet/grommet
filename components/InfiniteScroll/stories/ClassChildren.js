@@ -21,7 +21,7 @@ var MyItem = function MyItem(_ref) {
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, item));
 };
-var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
+var ClassChildrenInfiniteScroll = exports.ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -37,9 +37,8 @@ var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
     // </Grommet>
   );
 };
-exports.ClassChildrenInfiniteScroll = ClassChildrenInfiniteScroll;
+
 ClassChildrenInfiniteScroll.storyName = 'Class children';
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Class children'
 };
-exports["default"] = _default;

@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 exports.normalizeValues = exports.normalizeBounds = exports.calcMinMax = exports.areNormalizedValuesEquals = exports.areNormalizedBoundsEquals = void 0;
-var normalizeValues = function normalizeValues(values) {
+var normalizeValues = exports.normalizeValues = function normalizeValues(values) {
   return (values || []).map(function (value, index) {
     if (value === undefined) return {
       value: [index, undefined]
@@ -16,8 +16,7 @@ var normalizeValues = function normalizeValues(values) {
     };
   });
 };
-exports.normalizeValues = normalizeValues;
-var calcMinMax = function calcMinMax(values, direction) {
+var calcMinMax = exports.calcMinMax = function calcMinMax(values, direction) {
   var _ref, _ref2, _ref3, _ref4;
   if (values === void 0) {
     values = [];
@@ -74,8 +73,7 @@ var calcMinMax = function calcMinMax(values, direction) {
     }
   };
 };
-exports.calcMinMax = calcMinMax;
-var normalizeBounds = function normalizeBounds(boundsProp, values, direction) {
+var normalizeBounds = exports.normalizeBounds = function normalizeBounds(boundsProp, values, direction) {
   var result;
   if (Array.isArray(boundsProp)) result = {
     x: {
@@ -89,8 +87,7 @@ var normalizeBounds = function normalizeBounds(boundsProp, values, direction) {
   };else if (typeof boundsProp === 'object') result = boundsProp;else result = calcMinMax(values, direction);
   return result;
 };
-exports.normalizeBounds = normalizeBounds;
-var areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valuesY) {
+var areNormalizedValuesEquals = exports.areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valuesY) {
   console.warn("This function will be removed in the upcoming releases.\nPlease get in touch with us if you have concerns.");
   if (!valuesX || !valuesY) return false;
   if (valuesX.length !== valuesY.length) return false;
@@ -102,8 +99,7 @@ var areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valu
     });
   });
 };
-exports.areNormalizedValuesEquals = areNormalizedValuesEquals;
-var areNormalizedBoundsEquals = function areNormalizedBoundsEquals(boundsX, boundsY) {
+var areNormalizedBoundsEquals = exports.areNormalizedBoundsEquals = function areNormalizedBoundsEquals(boundsX, boundsY) {
   console.warn("This function will be removed in the upcoming releases.\nPlease get in touch with us if you have concerns.");
   if (!boundsX || !boundsY) return false;
   if (boundsX.length !== boundsY.length || !(boundsX.length > 0)) return false;
@@ -113,4 +109,3 @@ var areNormalizedBoundsEquals = function areNormalizedBoundsEquals(boundsX, boun
     });
   });
 };
-exports.areNormalizedBoundsEquals = areNormalizedBoundsEquals;

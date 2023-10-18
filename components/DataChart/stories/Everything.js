@@ -18,7 +18,7 @@ for (var i = 0; i < 13; i += 1) {
     growth: i
   });
 }
-var Everything = function Everything() {
+var Everything = exports.Everything = function Everything() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -94,8 +94,6 @@ var Everything = function Everything() {
     // </Grommet>
   );
 };
-exports.Everything = Everything;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Everything'
 };
-exports["default"] = _default;

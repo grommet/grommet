@@ -20,5 +20,4 @@ if (process.env.NODE_ENV !== 'production') {
     onActive: _propTypes["default"].func
   });
 }
-var TabsPropTypes = PropType;
-exports.TabsPropTypes = TabsPropTypes;
+var TabsPropTypes = exports.TabsPropTypes = PropType;

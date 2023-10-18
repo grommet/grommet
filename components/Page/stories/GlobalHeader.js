@@ -5,7 +5,7 @@ exports["default"] = exports.GlobalHeaderFooter = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var GlobalHeaderFooter = function GlobalHeaderFooter() {
+var GlobalHeaderFooter = exports.GlobalHeaderFooter = function GlobalHeaderFooter() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -34,9 +34,8 @@ var GlobalHeaderFooter = function GlobalHeaderFooter() {
     // </Grommet>
   );
 };
-exports.GlobalHeaderFooter = GlobalHeaderFooter;
+
 GlobalHeaderFooter.storyName = 'Global Header and Footer';
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Page/Global Header and Footer'
 };
-exports["default"] = _default;

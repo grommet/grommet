@@ -76,11 +76,9 @@ var CustomAccordion = function CustomAccordion(_ref) {
     size: "small"
   }, "Important Info"))))));
 };
-var Custom = function Custom() {
+var Custom = exports.Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(CustomAccordion, null);
 };
-exports.Custom = Custom;
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Accordion/Custom Themed/Custom'
 };
-exports["default"] = _default;

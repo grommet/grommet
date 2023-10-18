@@ -31,16 +31,14 @@ var SimpleMenu = function SimpleMenu() {
     }]
   }));
 };
-var Simple = function Simple() {
+var Simple = exports.Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleMenu, null);
 };
-exports.Simple = Simple;
 Simple.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Controls/Menu/Simple'
 };
-exports["default"] = _default;

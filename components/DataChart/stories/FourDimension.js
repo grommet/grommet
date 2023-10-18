@@ -15,7 +15,7 @@ for (var i = 1; i < 32; i += 1) {
     effort: i % 16
   });
 }
-var FourDimensionDataChart = function FourDimensionDataChart() {
+var FourDimensionDataChart = exports.FourDimensionDataChart = function FourDimensionDataChart() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -59,9 +59,8 @@ var FourDimensionDataChart = function FourDimensionDataChart() {
     // </Grommet>
   );
 };
-exports.FourDimensionDataChart = FourDimensionDataChart;
+
 FourDimensionDataChart.storyName = 'Four dimensions';
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Four dimensions'
 };
-exports["default"] = _default;

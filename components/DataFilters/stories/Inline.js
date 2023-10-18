@@ -7,7 +7,7 @@ var _grommet = require("grommet");
 var _DataFilters = require("../DataFilters");
 var _data = require("../../DataTable/stories/data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Inline = function Inline() {
+var Inline = exports.Inline = function Inline() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -45,11 +45,10 @@ var Inline = function Inline() {
     // </Grommet>
   );
 };
-exports.Inline = Inline;
+
 Inline.args = {
   full: true
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Data/DataFilters/Inline'
 };
-exports["default"] = _default;

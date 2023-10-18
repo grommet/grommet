@@ -11,7 +11,7 @@ var FavoriteFilled = (0, _styledComponents["default"])(_grommetIcons.Favorite).w
   displayName: "ChildrenSpinner__FavoriteFilled",
   componentId: "sc-o9wy2d-0"
 })(["path[fill='none']{fill:red;}"]);
-var Children = function Children() {
+var Children = exports.Children = function Children() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -49,8 +49,6 @@ var Children = function Children() {
     }
   }, " Loading with LOVE..."))));
 };
-exports.Children = Children;
-var _default = {
+var _default = exports["default"] = {
   title: 'Visualizations/Spinner/Children'
 };
-exports["default"] = _default;

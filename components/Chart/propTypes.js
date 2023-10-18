@@ -59,5 +59,4 @@ if (process.env.NODE_ENV !== 'production') {
     })]))
   });
 }
-var ChartPropTypes = PropType;
-exports.ChartPropTypes = ChartPropTypes;
+var ChartPropTypes = exports.ChartPropTypes = PropType;

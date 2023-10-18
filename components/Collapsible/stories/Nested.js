@@ -30,7 +30,7 @@ var MenuButton = function MenuButton(_ref) {
     size: "small"
   }, label)));
 };
-var Nested = function Nested() {
+var Nested = exports.Nested = function Nested() {
   var _React$useState = _react["default"].useState(false),
     openMenu1 = _React$useState[0],
     setOpenMenu1 = _React$useState[1];
@@ -119,13 +119,12 @@ var Nested = function Nested() {
     // </Grommet>
   );
 };
-exports.Nested = Nested;
+
 Nested.parameters = {
   chromatic: {
     disable: true
   }
 };
-var _default = {
+var _default = exports["default"] = {
   title: 'Utilities/Collapsible/Nested'
 };
-exports["default"] = _default;

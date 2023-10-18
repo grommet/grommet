@@ -31,7 +31,7 @@ var Media = function Media() {
     })
   }));
 };
-var Social = function Social() {
+var Social = exports.Social = function Social() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -67,8 +67,6 @@ var Social = function Social() {
     // </Grommet>
   );
 };
-exports.Social = Social;
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/Footer/Social'
 };
-exports["default"] = _default;

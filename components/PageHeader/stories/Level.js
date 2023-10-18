@@ -5,7 +5,7 @@ exports["default"] = exports.Level = void 0;
 var _grommet = require("grommet");
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var Level = function Level() {
+var Level = exports.Level = function Level() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Page, null, /*#__PURE__*/_react["default"].createElement(_grommet.PageContent, null, /*#__PURE__*/_react["default"].createElement(_grommet.PageHeader, {
     title: "Welcome to Your App",
     subtitle: "In this example, we showcase different levels of page headers  using the `level` prop. Page headers help provide hierarchy  and structure to your application's content.",
@@ -29,8 +29,6 @@ var Level = function Level() {
     level: 3
   })));
 };
-exports.Level = Level;
-var _default = {
+var _default = exports["default"] = {
   title: 'Layout/PageHeader/Level'
 };
-exports["default"] = _default;

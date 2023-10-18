@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 
 /* eslint-disable max-len */
-var WordBreak = function WordBreak() {
+var WordBreak = exports.WordBreak = function WordBreak() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, wordBreakValues.map(function (value) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: value,
@@ -22,9 +22,7 @@ var WordBreak = function WordBreak() {
   }));
 };
 /* eslint-enable max-len */
-exports.WordBreak = WordBreak;
 WordBreak.storyName = 'Word break';
-var _default = {
+var _default = exports["default"] = {
   title: 'Type/Text/Word break'
 };
-exports["default"] = _default;

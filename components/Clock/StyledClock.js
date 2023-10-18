@@ -5,9 +5,9 @@ exports.StyledSecond = exports.StyledMinute = exports.StyledHour = exports.Style
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-var StyledHour = _styledComponents["default"].line.withConfig({
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+var StyledHour = exports.StyledHour = _styledComponents["default"].line.withConfig({
   displayName: "StyledClock__StyledHour",
   componentId: "sc-y4xw8s-0"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -15,10 +15,9 @@ var StyledHour = _styledComponents["default"].line.withConfig({
 }, function (props) {
   return (0, _utils.normalizeColor)(props.theme.clock.analog.hour.color, props.theme);
 });
-exports.StyledHour = StyledHour;
 StyledHour.defaultProps = {};
 Object.setPrototypeOf(StyledHour.defaultProps, _defaultProps.defaultProps);
-var StyledMinute = _styledComponents["default"].line.withConfig({
+var StyledMinute = exports.StyledMinute = _styledComponents["default"].line.withConfig({
   displayName: "StyledClock__StyledMinute",
   componentId: "sc-y4xw8s-1"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -26,10 +25,9 @@ var StyledMinute = _styledComponents["default"].line.withConfig({
 }, function (props) {
   return (0, _utils.normalizeColor)(props.theme.clock.analog.minute.color, props.theme);
 });
-exports.StyledMinute = StyledMinute;
 StyledMinute.defaultProps = {};
 Object.setPrototypeOf(StyledMinute.defaultProps, _defaultProps.defaultProps);
-var StyledSecond = _styledComponents["default"].line.withConfig({
+var StyledSecond = exports.StyledSecond = _styledComponents["default"].line.withConfig({
   displayName: "StyledClock__StyledSecond",
   componentId: "sc-y4xw8s-2"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -37,10 +35,9 @@ var StyledSecond = _styledComponents["default"].line.withConfig({
 }, function (props) {
   return (0, _utils.normalizeColor)(props.theme.clock.analog.second.color, props.theme);
 });
-exports.StyledSecond = StyledSecond;
 StyledSecond.defaultProps = {};
 Object.setPrototypeOf(StyledSecond.defaultProps, _defaultProps.defaultProps);
-var StyledAnalog = _styledComponents["default"].svg.withConfig({
+var StyledAnalog = exports.StyledAnalog = _styledComponents["default"].svg.withConfig({
   displayName: "StyledClock__StyledAnalog",
   componentId: "sc-y4xw8s-3"
 })(["width:", ";height:", ";", " ", ";"], function (props) {
@@ -50,7 +47,6 @@ var StyledAnalog = _styledComponents["default"].svg.withConfig({
 }, _utils.genericStyles, function (props) {
   return props.theme.clock.analog && props.theme.clock.analog.extend;
 });
-exports.StyledAnalog = StyledAnalog;
 StyledAnalog.defaultProps = {};
 Object.setPrototypeOf(StyledAnalog.defaultProps, _defaultProps.defaultProps);
 var sizeStyle = function sizeStyle(props) {
@@ -59,34 +55,31 @@ var sizeStyle = function sizeStyle(props) {
   var data = props.theme.clock.digital.text[size] || {};
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size || props.theme.clock.digital.text.medium.size, data.height || props.theme.clock.digital.text.medium.height);
 };
-var StyledDigitalDigit = _styledComponents["default"].div.withConfig({
+var StyledDigitalDigit = exports.StyledDigitalDigit = _styledComponents["default"].div.withConfig({
   displayName: "StyledClock__StyledDigitalDigit",
   componentId: "sc-y4xw8s-4"
 })(["position:relative;width:0.8em;text-align:center;overflow:hidden;", ";"], function (props) {
   return sizeStyle(props);
 });
-exports.StyledDigitalDigit = StyledDigitalDigit;
 StyledDigitalDigit.defaultProps = {};
 Object.setPrototypeOf(StyledDigitalDigit.defaultProps, _defaultProps.defaultProps);
 var previousUp = (0, _styledComponents.keyframes)(["0%{transform:translateY(0);}100%{transform:translateY(-100%);}"]);
 var previousDown = (0, _styledComponents.keyframes)(["0%{transform:translateY(0);}100%{transform:translateY(100%);}"]);
-var StyledDigitalPrevious = _styledComponents["default"].div.withConfig({
+var StyledDigitalPrevious = exports.StyledDigitalPrevious = _styledComponents["default"].div.withConfig({
   displayName: "StyledClock__StyledDigitalPrevious",
   componentId: "sc-y4xw8s-5"
 })(["position:absolute;top:0;left:0;width:0.8em;text-align:center;animation:", " 0.5s forwards;"], function (props) {
   return props.direction === 'down' ? previousDown : previousUp;
 });
-exports.StyledDigitalPrevious = StyledDigitalPrevious;
 StyledDigitalPrevious.defaultProps = {};
 Object.setPrototypeOf(StyledDigitalPrevious.defaultProps, _defaultProps.defaultProps);
 var nextUp = (0, _styledComponents.keyframes)(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]);
 var nextDown = (0, _styledComponents.keyframes)(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]);
-var StyledDigitalNext = _styledComponents["default"].div.withConfig({
+var StyledDigitalNext = exports.StyledDigitalNext = _styledComponents["default"].div.withConfig({
   displayName: "StyledClock__StyledDigitalNext",
   componentId: "sc-y4xw8s-6"
 })(["position:absolute;top:0;left:0;width:0.8em;text-align:center;animation:", " 0.5s forwards;"], function (props) {
   return props.direction === 'down' ? nextDown : nextUp;
 });
-exports.StyledDigitalNext = StyledDigitalNext;
 StyledDigitalNext.defaultProps = {};
 Object.setPrototypeOf(StyledDigitalNext.defaultProps, _defaultProps.defaultProps);
