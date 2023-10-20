@@ -25,7 +25,7 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -36,18 +36,18 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -63,7 +63,7 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -103,16 +103,11 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
 
 exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
@@ -125,7 +120,6 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -136,7 +130,7 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -150,18 +144,18 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -170,29 +164,29 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -239,7 +233,7 @@ exports[`MaskedInput basic 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -248,18 +242,18 @@ exports[`MaskedInput basic 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -275,7 +269,7 @@ exports[`MaskedInput basic 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -314,8 +308,6 @@ exports[`MaskedInput basic 1`] = `
 exports[`MaskedInput custom theme 1`] = `
 .c3 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -370,7 +362,7 @@ exports[`MaskedInput custom theme 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -380,18 +372,18 @@ exports[`MaskedInput custom theme 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -407,7 +399,7 @@ exports[`MaskedInput custom theme 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -433,17 +425,9 @@ exports[`MaskedInput custom theme 1`] = `
 
 .c2 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -507,7 +491,7 @@ exports[`MaskedInput custom theme input font size 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -516,18 +500,18 @@ exports[`MaskedInput custom theme input font size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -543,7 +527,7 @@ exports[`MaskedInput custom theme input font size 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -601,7 +585,7 @@ exports[`MaskedInput disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   opacity: 0.3;
   cursor: default;
@@ -612,18 +596,18 @@ exports[`MaskedInput disabled 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -639,7 +623,7 @@ exports[`MaskedInput disabled 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -701,7 +685,7 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   margin: 0;
   font-size: 18px;
   line-height: 24px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -710,18 +694,18 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -737,7 +721,7 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -800,7 +784,7 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -811,18 +795,18 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -838,7 +822,7 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -878,64 +862,42 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
 
 exports[`MaskedInput event target props are available option via mouse 2`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
@@ -958,12 +920,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -972,7 +930,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -986,7 +943,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -995,18 +952,18 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1015,18 +972,18 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1034,14 +991,14 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -1050,13 +1007,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -1110,14 +1061,14 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
   aria-hidden="true"
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 hFqKLz"
+      class="StyledMaskedInput-sc-99vkfa-0 doKLeq"
       data-g-tabindex="none"
       data-testid="test-input"
       id="item"
@@ -1133,8 +1084,6 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 exports[`MaskedInput icon 1`] = `
 .c3 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1187,7 +1136,7 @@ exports[`MaskedInput icon 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -1197,18 +1146,18 @@ exports[`MaskedInput icon 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1224,7 +1173,7 @@ exports[`MaskedInput icon 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1245,17 +1194,9 @@ exports[`MaskedInput icon 1`] = `
 
 .c2 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -1297,8 +1238,6 @@ exports[`MaskedInput icon 1`] = `
 exports[`MaskedInput icon reverse 1`] = `
 .c3 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1351,7 +1290,7 @@ exports[`MaskedInput icon reverse 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-right: 48px;
 }
@@ -1361,18 +1300,18 @@ exports[`MaskedInput icon reverse 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1388,7 +1327,7 @@ exports[`MaskedInput icon reverse 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1409,17 +1348,9 @@ exports[`MaskedInput icon reverse 1`] = `
 
 .c2 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   right: 12px;
@@ -1481,7 +1412,7 @@ exports[`MaskedInput mask 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -1490,18 +1421,18 @@ exports[`MaskedInput mask 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1517,7 +1448,7 @@ exports[`MaskedInput mask 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1557,64 +1488,42 @@ exports[`MaskedInput mask 1`] = `
 
 exports[`MaskedInput mask 2`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
@@ -1637,12 +1546,8 @@ exports[`MaskedInput mask 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -1651,7 +1556,6 @@ exports[`MaskedInput mask 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1665,7 +1569,7 @@ exports[`MaskedInput mask 2`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -1674,18 +1578,18 @@ exports[`MaskedInput mask 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1694,18 +1598,18 @@ exports[`MaskedInput mask 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1713,14 +1617,14 @@ exports[`MaskedInput mask 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -1729,13 +1633,7 @@ exports[`MaskedInput mask 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -1809,7 +1707,7 @@ exports[`MaskedInput mask with long fixed 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -1818,18 +1716,18 @@ exports[`MaskedInput mask with long fixed 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1845,7 +1743,7 @@ exports[`MaskedInput mask with long fixed 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1909,7 +1807,7 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -1918,18 +1816,18 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1945,7 +1843,7 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1971,7 +1869,7 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -1980,18 +1878,18 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2007,7 +1905,7 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2035,7 +1933,7 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -2044,18 +1942,18 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2071,7 +1969,7 @@ exports[`MaskedInput match icon size to size prop when theme.icon.matchSize is t
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2150,7 +2048,7 @@ exports[`MaskedInput next and previous without options 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -2159,18 +2057,18 @@ exports[`MaskedInput next and previous without options 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2186,7 +2084,7 @@ exports[`MaskedInput next and previous without options 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2226,14 +2124,14 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 duIeri"
+      class="StyledMaskedInput-sc-99vkfa-0 kfMiYj"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2267,7 +2165,7 @@ exports[`MaskedInput option via keyboard 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -2276,18 +2174,18 @@ exports[`MaskedInput option via keyboard 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2303,7 +2201,7 @@ exports[`MaskedInput option via keyboard 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2366,7 +2264,7 @@ exports[`MaskedInput option via mouse 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2377,18 +2275,18 @@ exports[`MaskedInput option via mouse 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2404,7 +2302,7 @@ exports[`MaskedInput option via mouse 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2444,64 +2342,42 @@ exports[`MaskedInput option via mouse 1`] = `
 
 exports[`MaskedInput option via mouse 2`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
@@ -2524,12 +2400,8 @@ exports[`MaskedInput option via mouse 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -2538,7 +2410,6 @@ exports[`MaskedInput option via mouse 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2552,7 +2423,7 @@ exports[`MaskedInput option via mouse 2`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -2561,18 +2432,18 @@ exports[`MaskedInput option via mouse 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2581,18 +2452,18 @@ exports[`MaskedInput option via mouse 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2600,14 +2471,14 @@ exports[`MaskedInput option via mouse 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -2616,13 +2487,7 @@ exports[`MaskedInput option via mouse 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -2676,14 +2541,14 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 exports[`MaskedInput option via mouse 4`] = `
 <div
   aria-hidden="true"
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 hFqKLz"
+      class="StyledMaskedInput-sc-99vkfa-0 doKLeq"
       data-g-tabindex="none"
       data-testid="test-input"
       id="item"
@@ -2719,7 +2584,7 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -2728,18 +2593,18 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2755,7 +2620,7 @@ exports[`MaskedInput renders a11yTitle and aria-label 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2830,7 +2695,7 @@ HTMLCollection [
   margin: 0;
   font-size: 12px;
   line-height: 18px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -2839,18 +2704,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2866,7 +2731,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2894,7 +2759,7 @@ HTMLCollection [
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -2903,18 +2768,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2930,7 +2795,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2958,7 +2823,7 @@ HTMLCollection [
   margin: 0;
   font-size: 18px;
   line-height: 24px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -2967,18 +2832,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2994,7 +2859,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3022,7 +2887,7 @@ HTMLCollection [
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3031,18 +2896,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3058,7 +2923,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3086,7 +2951,7 @@ HTMLCollection [
   margin: 0;
   font-size: 26px;
   line-height: 32px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3095,18 +2960,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c6:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3122,7 +2987,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3150,7 +3015,7 @@ HTMLCollection [
   margin: 0;
   font-size: 34px;
   line-height: 40px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3159,18 +3024,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3186,7 +3051,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3214,7 +3079,7 @@ HTMLCollection [
   margin: 0;
   font-size: 42px;
   line-height: 48px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3223,18 +3088,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3250,7 +3115,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c8::-webkit-search-decoration {
+.c8 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3278,7 +3143,7 @@ HTMLCollection [
   margin: 0;
   font-size: 54px;
   line-height: 60px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3287,18 +3152,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3314,7 +3179,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c9::-webkit-search-decoration {
+.c9 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3342,7 +3207,7 @@ HTMLCollection [
   margin: 0;
   font-size: 70px;
   line-height: 76px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3351,18 +3216,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3378,7 +3243,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c10::-webkit-search-decoration {
+.c10 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3406,7 +3271,7 @@ HTMLCollection [
   margin: 0;
   font-size: 90px;
   line-height: 96px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3415,18 +3280,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c11:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3442,7 +3307,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c11::-webkit-search-decoration {
+.c11 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3469,7 +3334,7 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 16px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3478,18 +3343,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3505,7 +3370,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c12::-webkit-search-decoration {
+.c12 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3532,7 +3397,7 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 1rem;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3541,18 +3406,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus > circle,
-.c13:focus > ellipse,
-.c13:focus > line,
-.c13:focus > path,
-.c13:focus > polygon,
-.c13:focus > polyline,
-.c13:focus > rect {
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus::-moz-focus-inner {
+.c13:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3568,7 +3433,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c13::-webkit-search-decoration {
+.c13 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3595,7 +3460,7 @@ HTMLCollection [
   font-weight: 600;
   margin: 0;
   font-size: 100%;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -3604,18 +3469,18 @@ HTMLCollection [
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus::-moz-focus-inner {
+.c14:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3631,7 +3496,7 @@ HTMLCollection [
   color: #AAAAAA;
 }
 
-.c14::-webkit-search-decoration {
+.c14 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3820,7 +3685,7 @@ exports[`MaskedInput textAlign end 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   text-align: right;
 }
@@ -3830,18 +3695,18 @@ exports[`MaskedInput textAlign end 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3857,7 +3722,7 @@ exports[`MaskedInput textAlign end 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3917,7 +3782,7 @@ exports[`MaskedInput with no mask 1`] = `
   margin: 0;
   font-size: 22px;
   line-height: 28px;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3928,18 +3793,18 @@ exports[`MaskedInput with no mask 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3955,7 +3820,7 @@ exports[`MaskedInput with no mask 1`] = `
   color: #AAAAAA;
 }
 
-.c2::-webkit-search-decoration {
+.c2 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
