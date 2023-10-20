@@ -85,7 +85,7 @@ exports[`Markdown renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -110,7 +110,7 @@ exports[`Markdown renders 1`] = `
   width: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -118,7 +118,7 @@ exports[`Markdown renders 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     font-size: 26px;
     line-height: 32px;
@@ -126,7 +126,7 @@ exports[`Markdown renders 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     font-size: 18px;
     line-height: 24px;
@@ -134,7 +134,7 @@ exports[`Markdown renders 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 16px;
     line-height: 22px;
@@ -362,7 +362,6 @@ exports[`wrapper 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   height: 12px;
 }
@@ -389,7 +388,7 @@ exports[`wrapper 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -414,7 +413,7 @@ exports[`wrapper 1`] = `
   width: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     font-size: 34px;
     line-height: 40px;
@@ -422,7 +421,7 @@ exports[`wrapper 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 26px;
     line-height: 32px;
@@ -430,7 +429,7 @@ exports[`wrapper 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     font-size: 18px;
     line-height: 24px;
@@ -438,7 +437,7 @@ exports[`wrapper 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c7 {
     font-size: 16px;
     line-height: 22px;
@@ -446,7 +445,7 @@ exports[`wrapper 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     height: 6px;
   }

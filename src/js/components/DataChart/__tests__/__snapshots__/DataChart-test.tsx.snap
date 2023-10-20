@@ -26,10 +26,9 @@ exports[`DataChart areas 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -72,6 +71,7 @@ exports[`DataChart areas 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -96,8 +96,8 @@ exports[`DataChart areas 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -109,15 +109,11 @@ exports[`DataChart areas 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -139,21 +135,19 @@ exports[`DataChart areas 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -281,10 +275,9 @@ exports[`DataChart axis 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -327,6 +320,7 @@ exports[`DataChart axis 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -349,8 +343,8 @@ exports[`DataChart axis 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -362,15 +356,11 @@ exports[`DataChart axis 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -384,16 +374,14 @@ exports[`DataChart axis 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -799,10 +787,9 @@ exports[`DataChart axis x granularity 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -890,15 +877,11 @@ exports[`DataChart axis x granularity 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -912,16 +895,14 @@ exports[`DataChart axis x granularity 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -2346,10 +2327,9 @@ exports[`DataChart bars 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -2392,6 +2372,7 @@ exports[`DataChart bars 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -2416,8 +2397,8 @@ exports[`DataChart bars 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -2429,15 +2410,11 @@ exports[`DataChart bars 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -2459,21 +2436,19 @@ exports[`DataChart bars 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -2622,10 +2597,9 @@ exports[`DataChart bars colors 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -2668,6 +2642,7 @@ exports[`DataChart bars colors 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -2692,8 +2667,8 @@ exports[`DataChart bars colors 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -2705,15 +2680,11 @@ exports[`DataChart bars colors 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -2735,21 +2706,19 @@ exports[`DataChart bars colors 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -2898,10 +2867,9 @@ exports[`DataChart bars empty 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -2923,21 +2891,18 @@ exports[`DataChart bars empty 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 48px;
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -2946,21 +2911,19 @@ exports[`DataChart bars empty 1`] = `
   grid-area: charts;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -3012,10 +2975,9 @@ exports[`DataChart bars invalid 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -3058,6 +3020,7 @@ exports[`DataChart bars invalid 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -3082,8 +3045,8 @@ exports[`DataChart bars invalid 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -3095,15 +3058,11 @@ exports[`DataChart bars invalid 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -3125,21 +3084,19 @@ exports[`DataChart bars invalid 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -3291,10 +3248,9 @@ exports[`DataChart bounds align 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -3337,6 +3293,7 @@ exports[`DataChart bounds align 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -3359,8 +3316,8 @@ exports[`DataChart bounds align 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -3372,15 +3329,11 @@ exports[`DataChart bounds align 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -3394,16 +3347,14 @@ exports[`DataChart bounds align 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -3513,10 +3464,9 @@ exports[`DataChart bounds explicit 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -3559,6 +3509,7 @@ exports[`DataChart bounds explicit 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -3581,8 +3532,8 @@ exports[`DataChart bounds explicit 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -3594,15 +3545,11 @@ exports[`DataChart bounds explicit 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -3616,16 +3563,14 @@ exports[`DataChart bounds explicit 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -3735,10 +3680,9 @@ exports[`DataChart dates 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -3781,6 +3725,7 @@ exports[`DataChart dates 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -3803,8 +3748,8 @@ exports[`DataChart dates 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -3825,6 +3770,7 @@ exports[`DataChart dates 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
@@ -3837,7 +3783,7 @@ exports[`DataChart dates 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-left: solid 1px rgba(0, 0, 0, 0.33);
+  border-left: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3861,12 +3807,11 @@ exports[`DataChart dates 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -3877,7 +3822,7 @@ exports[`DataChart dates 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3892,15 +3837,11 @@ exports[`DataChart dates 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -3922,29 +3863,27 @@ exports[`DataChart dates 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c9 {
-    border-left: solid 1px rgba(0, 0, 0, 0.33);
+    border-left: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c11 {
-    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-top: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -4682,10 +4621,9 @@ exports[`DataChart default 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -4728,6 +4666,7 @@ exports[`DataChart default 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -4750,8 +4689,8 @@ exports[`DataChart default 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -4763,15 +4702,11 @@ exports[`DataChart default 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -4785,16 +4720,14 @@ exports[`DataChart default 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -4904,10 +4837,9 @@ exports[`DataChart detail 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -4950,6 +4882,7 @@ exports[`DataChart detail 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -4972,8 +4905,8 @@ exports[`DataChart detail 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -4994,6 +4927,7 @@ exports[`DataChart detail 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0px;
 }
@@ -5039,15 +4973,11 @@ exports[`DataChart detail 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -5074,18 +5004,18 @@ exports[`DataChart detail 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5094,31 +5024,29 @@ exports[`DataChart detail 1`] = `
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -5324,10 +5252,9 @@ exports[`DataChart detail pad + thickness 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -5370,6 +5297,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -5392,8 +5320,8 @@ exports[`DataChart detail pad + thickness 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -5414,6 +5342,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0px;
 }
@@ -5467,10 +5396,9 @@ exports[`DataChart detail pad + thickness 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: -48px;
   padding-inline-start: -48px;
-  -webkit-padding-end: -48px;
   padding-inline-end: -48px;
 }
 
@@ -5506,6 +5434,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -5545,6 +5474,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: -36px;
   padding-right: -36px;
@@ -5567,10 +5497,9 @@ exports[`DataChart detail pad + thickness 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: -36px;
   padding-inline-start: -36px;
-  -webkit-padding-end: -36px;
   padding-inline-end: -36px;
 }
 
@@ -5590,6 +5519,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: -36px;
   padding-right: -36px;
@@ -5613,6 +5543,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: -48px;
   padding-right: -48px;
@@ -5635,10 +5566,9 @@ exports[`DataChart detail pad + thickness 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 72px;
   padding-inline-start: 72px;
-  -webkit-padding-end: 72px;
   padding-inline-end: 72px;
 }
 
@@ -5679,6 +5609,7 @@ exports[`DataChart detail pad + thickness 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 72px;
   padding-right: 72px;
@@ -5712,15 +5643,11 @@ exports[`DataChart detail pad + thickness 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -5747,18 +5674,18 @@ exports[`DataChart detail pad + thickness 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5767,80 +5694,72 @@ exports[`DataChart detail pad + thickness 1`] = `
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c14 {
-    -webkit-padding-start: -48px;
     padding-inline-start: -48px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c14 {
-    -webkit-padding-end: -48px;
     padding-inline-end: -48px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c16 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c19 {
-    -webkit-padding-start: -36px;
     padding-inline-start: -36px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c19 {
-    -webkit-padding-end: -36px;
     padding-inline-end: -36px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c22 {
-    -webkit-padding-start: 72px;
     padding-inline-start: 72px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c22 {
-    -webkit-padding-end: 72px;
     padding-inline-end: 72px;
   }
 }
@@ -6357,10 +6276,9 @@ exports[`DataChart gap 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -6403,6 +6321,7 @@ exports[`DataChart gap 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -6425,8 +6344,8 @@ exports[`DataChart gap 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -6438,41 +6357,29 @@ exports[`DataChart gap 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
 .c9 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 24px 24px;
   grid-gap: 24px 24px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
 .c10 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 48px 48px;
   grid-gap: 48px 48px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -6486,16 +6393,14 @@ exports[`DataChart gap 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -6751,10 +6656,9 @@ exports[`DataChart guide 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -6797,6 +6701,7 @@ exports[`DataChart guide 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -6819,8 +6724,8 @@ exports[`DataChart guide 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -6841,6 +6746,7 @@ exports[`DataChart guide 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
@@ -6853,7 +6759,7 @@ exports[`DataChart guide 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-left: solid 1px rgba(0, 0, 0, 0.33);
+  border-left: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6877,12 +6783,11 @@ exports[`DataChart guide 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -6893,7 +6798,7 @@ exports[`DataChart guide 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6908,15 +6813,11 @@ exports[`DataChart guide 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -6938,29 +6839,27 @@ exports[`DataChart guide 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c9 {
-    border-left: solid 1px rgba(0, 0, 0, 0.33);
+    border-left: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c11 {
-    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-top: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -7353,6 +7252,7 @@ exports[`DataChart horizontal 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
@@ -7397,6 +7297,7 @@ exports[`DataChart horizontal 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -7421,8 +7322,8 @@ exports[`DataChart horizontal 1`] = `
   -ms-flex-preferred-size: 96px;
   flex-basis: 96px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -7443,6 +7344,7 @@ exports[`DataChart horizontal 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 48px;
 }
@@ -7454,7 +7356,7 @@ exports[`DataChart horizontal 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-left: solid 1px rgba(0, 0, 0, 0.33);
+  border-left: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7478,6 +7380,7 @@ exports[`DataChart horizontal 1`] = `
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 48px;
 }
@@ -7489,7 +7392,7 @@ exports[`DataChart horizontal 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7504,15 +7407,11 @@ exports[`DataChart horizontal 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -7534,34 +7433,34 @@ exports[`DataChart horizontal 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-bottom: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c9 {
-    border-left: solid 1px rgba(0, 0, 0, 0.33);
+    border-left: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c11 {
-    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-top: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -7735,10 +7634,9 @@ exports[`DataChart legend 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -7781,6 +7679,7 @@ exports[`DataChart legend 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -7803,8 +7702,8 @@ exports[`DataChart legend 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -7822,7 +7721,6 @@ exports[`DataChart legend 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -7856,7 +7754,6 @@ exports[`DataChart legend 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 6px;
 }
@@ -7873,15 +7770,11 @@ exports[`DataChart legend 1`] = `
 }
 
 .c2 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -7895,41 +7788,39 @@ exports[`DataChart legend 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c10 {
     margin-top: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c12 {
     width: 3px;
   }
@@ -8145,10 +8036,9 @@ exports[`DataChart lines 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -8191,6 +8081,7 @@ exports[`DataChart lines 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -8215,8 +8106,8 @@ exports[`DataChart lines 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -8228,15 +8119,11 @@ exports[`DataChart lines 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -8258,21 +8145,19 @@ exports[`DataChart lines 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -8403,10 +8288,9 @@ exports[`DataChart negative values 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -8449,6 +8333,7 @@ exports[`DataChart negative values 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -8471,8 +8356,8 @@ exports[`DataChart negative values 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -8484,15 +8369,11 @@ exports[`DataChart negative values 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -8506,16 +8387,14 @@ exports[`DataChart negative values 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -8876,10 +8755,9 @@ exports[`DataChart nothing 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -8922,6 +8800,7 @@ exports[`DataChart nothing 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -8944,8 +8823,8 @@ exports[`DataChart nothing 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -8957,15 +8836,11 @@ exports[`DataChart nothing 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -8979,16 +8854,14 @@ exports[`DataChart nothing 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -9133,10 +9006,9 @@ exports[`DataChart offset 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 48px;
   padding-inline-end: 48px;
 }
 
@@ -9179,6 +9051,7 @@ exports[`DataChart offset 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -9201,8 +9074,8 @@ exports[`DataChart offset 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -9214,15 +9087,11 @@ exports[`DataChart offset 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -9236,16 +9105,14 @@ exports[`DataChart offset 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 48px;
     padding-inline-end: 48px;
   }
 }
@@ -9357,10 +9224,9 @@ exports[`DataChart offset gap 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 48px;
   padding-inline-end: 48px;
 }
 
@@ -9403,6 +9269,7 @@ exports[`DataChart offset gap 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -9425,8 +9292,8 @@ exports[`DataChart offset gap 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -9438,15 +9305,11 @@ exports[`DataChart offset gap 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -9460,16 +9323,14 @@ exports[`DataChart offset gap 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 48px;
     padding-inline-end: 48px;
   }
 }
@@ -9581,10 +9442,9 @@ exports[`DataChart pad 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: -48px;
   padding-inline-start: -48px;
-  -webkit-padding-end: -48px;
   padding-inline-end: -48px;
 }
 
@@ -9620,6 +9480,7 @@ exports[`DataChart pad 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -9661,6 +9522,7 @@ exports[`DataChart pad 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -9684,6 +9546,7 @@ exports[`DataChart pad 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -9696,15 +9559,11 @@ exports[`DataChart pad 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -9718,35 +9577,33 @@ exports[`DataChart pad 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: -48px;
     padding-inline-start: -48px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: -48px;
     padding-inline-end: -48px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding-top: 12px;
     padding-bottom: 12px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c10 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -10004,10 +9861,9 @@ exports[`DataChart placeholder node 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -10050,6 +9906,7 @@ exports[`DataChart placeholder node 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -10072,8 +9929,8 @@ exports[`DataChart placeholder node 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -10099,8 +9956,8 @@ exports[`DataChart placeholder node 1`] = `
   width: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -10116,15 +9973,11 @@ exports[`DataChart placeholder node 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -10146,16 +9999,14 @@ exports[`DataChart placeholder node 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -10261,10 +10112,9 @@ exports[`DataChart placeholder text 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -10307,6 +10157,7 @@ exports[`DataChart placeholder text 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -10329,8 +10180,8 @@ exports[`DataChart placeholder text 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -10348,7 +10199,7 @@ exports[`DataChart placeholder text 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255,255,255,0.8);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -10357,8 +10208,8 @@ exports[`DataChart placeholder text 1`] = `
   flex-direction: column;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -10375,15 +10226,11 @@ exports[`DataChart placeholder text 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -10405,21 +10252,19 @@ exports[`DataChart placeholder text 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c10 {
     margin-left: 24px;
     margin-right: 24px;
@@ -10527,10 +10372,9 @@ exports[`DataChart single 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -10573,6 +10417,7 @@ exports[`DataChart single 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -10595,8 +10440,8 @@ exports[`DataChart single 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -10608,15 +10453,11 @@ exports[`DataChart single 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -10630,16 +10471,14 @@ exports[`DataChart single 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -10736,10 +10575,9 @@ exports[`DataChart size 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -10782,6 +10620,7 @@ exports[`DataChart size 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -10804,8 +10643,8 @@ exports[`DataChart size 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -10817,44 +10656,32 @@ exports[`DataChart size 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto 1fr;
   grid-template-columns: auto 1fr;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: 1fr auto;
   grid-template-rows: 1fr auto;
 }
 
 .c9 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   width: 100%;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto 1fr;
   grid-template-columns: auto 1fr;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
 .c11 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -10906,16 +10733,14 @@ exports[`DataChart size 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
@@ -11171,10 +10996,9 @@ exports[`DataChart type 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
-  -webkit-padding-end: 0px;
   padding-inline-end: 0px;
 }
 
@@ -11217,6 +11041,7 @@ exports[`DataChart type 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -11239,8 +11064,8 @@ exports[`DataChart type 1`] = `
   -ms-flex-preferred-size: 1px;
   flex-basis: 1px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -11263,6 +11088,7 @@ exports[`DataChart type 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -11275,15 +11101,11 @@ exports[`DataChart type 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   grid-template-areas: "yAxis charts" ". xAxis";
-  -ms-grid-columns: auto auto;
   grid-template-columns: auto auto;
-  -ms-grid-gap: 12px 12px;
   grid-gap: 12px 12px;
-  -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
 }
 
@@ -11297,21 +11119,19 @@ exports[`DataChart type 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
-    -webkit-padding-end: 0px;
     padding-inline-end: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding-top: 24px;
     padding-bottom: 24px;

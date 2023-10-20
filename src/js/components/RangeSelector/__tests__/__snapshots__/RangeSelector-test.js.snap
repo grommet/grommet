@@ -57,7 +57,6 @@ exports[`RangeSelector basic 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -69,8 +68,8 @@ exports[`RangeSelector basic 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -95,8 +94,8 @@ exports[`RangeSelector basic 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -126,7 +125,7 @@ exports[`RangeSelector basic 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -262,7 +261,6 @@ exports[`RangeSelector color 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -274,8 +272,8 @@ exports[`RangeSelector color 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -300,8 +298,8 @@ exports[`RangeSelector color 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -331,7 +329,7 @@ exports[`RangeSelector color 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(111, 255, 176, 0.4);
+  background-color: rgba(111,255,176,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -467,7 +465,6 @@ exports[`RangeSelector direction 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -479,8 +476,8 @@ exports[`RangeSelector direction 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -505,8 +502,8 @@ exports[`RangeSelector direction 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -536,7 +533,7 @@ exports[`RangeSelector direction 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -593,7 +590,6 @@ exports[`RangeSelector direction 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -605,8 +601,8 @@ exports[`RangeSelector direction 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -631,8 +627,8 @@ exports[`RangeSelector direction 1`] = `
   flex-basis: 100%;
   width: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -643,7 +639,7 @@ exports[`RangeSelector direction 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -834,7 +830,6 @@ exports[`RangeSelector handle keyboard 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -846,8 +841,8 @@ exports[`RangeSelector handle keyboard 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -872,8 +867,8 @@ exports[`RangeSelector handle keyboard 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -903,7 +898,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1039,7 +1034,6 @@ exports[`RangeSelector handle mouse 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1051,8 +1045,8 @@ exports[`RangeSelector handle mouse 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -1077,8 +1071,8 @@ exports[`RangeSelector handle mouse 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1108,7 +1102,7 @@ exports[`RangeSelector handle mouse 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1244,7 +1238,6 @@ exports[`RangeSelector handle touch gestures 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1256,8 +1249,8 @@ exports[`RangeSelector handle touch gestures 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -1282,8 +1275,8 @@ exports[`RangeSelector handle touch gestures 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1313,7 +1306,7 @@ exports[`RangeSelector handle touch gestures 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1431,7 +1424,7 @@ exports[`RangeSelector invert 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(218, 218, 218, 0.4);
+  background-color: rgba(218,218,218,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1451,7 +1444,6 @@ exports[`RangeSelector invert 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1463,8 +1455,8 @@ exports[`RangeSelector invert 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -1489,8 +1481,8 @@ exports[`RangeSelector invert 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1536,7 +1528,7 @@ exports[`RangeSelector invert 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1747,7 +1739,6 @@ exports[`RangeSelector label 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1759,8 +1750,8 @@ exports[`RangeSelector label 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -1785,8 +1776,8 @@ exports[`RangeSelector label 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1816,7 +1807,7 @@ exports[`RangeSelector label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2054,7 +2045,6 @@ exports[`RangeSelector max 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2066,8 +2056,8 @@ exports[`RangeSelector max 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -2092,8 +2082,8 @@ exports[`RangeSelector max 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2123,7 +2113,7 @@ exports[`RangeSelector max 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2259,7 +2249,6 @@ exports[`RangeSelector min 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2271,8 +2260,8 @@ exports[`RangeSelector min 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -2297,8 +2286,8 @@ exports[`RangeSelector min 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2328,7 +2317,7 @@ exports[`RangeSelector min 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2464,7 +2453,6 @@ exports[`RangeSelector opacity 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2476,8 +2464,8 @@ exports[`RangeSelector opacity 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -2502,8 +2490,8 @@ exports[`RangeSelector opacity 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2533,7 +2521,7 @@ exports[`RangeSelector opacity 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.1);
+  background-color: rgba(125,76,219,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2550,7 +2538,7 @@ exports[`RangeSelector opacity 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2568,7 +2556,7 @@ exports[`RangeSelector opacity 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.8);
+  background-color: rgba(125,76,219,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2815,7 +2803,6 @@ exports[`RangeSelector round 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2827,8 +2814,8 @@ exports[`RangeSelector round 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -2853,8 +2840,8 @@ exports[`RangeSelector round 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2884,7 +2871,7 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2920,7 +2907,7 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2956,7 +2943,7 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2992,7 +2979,7 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3028,7 +3015,7 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3047,49 +3034,49 @@ exports[`RangeSelector round 1`] = `
   user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c7 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c9 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c10 {
     border-radius: 12px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c11 {
     border-radius: 12px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c12 {
     border-radius: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c13 {
     border-radius: 24px;
   }
@@ -3433,7 +3420,6 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3445,8 +3431,8 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -3471,8 +3457,8 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -3502,7 +3488,7 @@ exports[`RangeSelector should not have accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3638,7 +3624,6 @@ exports[`RangeSelector size 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3650,8 +3635,8 @@ exports[`RangeSelector size 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -3676,8 +3661,8 @@ exports[`RangeSelector size 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -3707,7 +3692,7 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3741,7 +3726,7 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3775,7 +3760,7 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3809,7 +3794,7 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3843,7 +3828,7 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3877,7 +3862,7 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -3897,7 +3882,6 @@ exports[`RangeSelector size 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   min-width: 0;
   min-height: 0;
@@ -3916,9 +3900,8 @@ exports[`RangeSelector size 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -4383,7 +4366,6 @@ exports[`RangeSelector step renders correct values 1`] = `
   max-width: 100%;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4395,8 +4377,8 @@ exports[`RangeSelector step renders correct values 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: visible;
 }
@@ -4421,8 +4403,8 @@ exports[`RangeSelector step renders correct values 1`] = `
   flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -4452,7 +4434,7 @@ exports[`RangeSelector step renders correct values 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(125, 76, 219, 0.4);
+  background-color: rgba(125,76,219,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;

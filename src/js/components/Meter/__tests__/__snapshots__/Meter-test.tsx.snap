@@ -486,7 +486,6 @@ exports[`Meter reverse 1`] = `
   max-width: 100%;
   overflow: hidden;
   -webkit-transform: scale(-1,1);
-  -moz-transform: scale(-1,1);
   -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }
@@ -540,7 +539,6 @@ exports[`Meter reverse circle 1`] = `
   max-width: 100%;
   overflow: hidden;
   -webkit-transform: scale(-1,1);
-  -moz-transform: scale(-1,1);
   -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }
@@ -715,7 +713,6 @@ exports[`Meter rtl theme 1`] = `
   max-width: 100%;
   overflow: hidden;
   -webkit-transform: scale(-1,1);
-  -moz-transform: scale(-1,1);
   -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }

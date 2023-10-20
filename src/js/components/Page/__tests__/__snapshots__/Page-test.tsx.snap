@@ -36,7 +36,7 @@ exports[`Page background fill 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(242, 242, 242, 1);
+  background-color: rgba(242,242,242,1);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -54,7 +54,6 @@ exports[`Page background fill 1`] = `
   max-width: 100%;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   min-width: 0;
   min-height: 0;
@@ -74,18 +73,18 @@ exports[`Page background fill 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 24px;
     padding-right: 24px;
@@ -152,7 +151,6 @@ exports[`Page custom theme 1`] = `
   max-width: 100%;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   min-width: 0;
   min-height: 0;
@@ -172,11 +170,11 @@ exports[`Page custom theme 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 24px;
     padding-right: 24px;
@@ -239,7 +237,6 @@ exports[`Page default kind 1`] = `
   max-width: 100%;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   min-width: 0;
   min-height: 0;
@@ -259,11 +256,11 @@ exports[`Page default kind 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 24px;
     padding-right: 24px;
@@ -345,11 +342,11 @@ exports[`Page full 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 24px;
     padding-right: 24px;
@@ -412,7 +409,6 @@ exports[`Page narrow 1`] = `
   max-width: 100%;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   min-width: 0;
   min-height: 0;
@@ -432,11 +428,11 @@ exports[`Page narrow 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 24px;
     padding-right: 24px;

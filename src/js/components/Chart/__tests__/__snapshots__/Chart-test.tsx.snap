@@ -17,6 +17,8 @@ exports[`Chart animate 1`] = `
   overflow: visible;
   -webkit-animation: eOzisH 1s forwards;
   animation: eOzisH 1s forwards;
+  -webkit-transform-origin: center bottom 0;
+  -ms-transform-origin: center bottom 0;
   transform-origin: center bottom 0;
 }
 

@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useMemo, useState } from 'react';
-import { createGlobalStyle, StyleSheetManager } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import {
   ContainerTargetContext,
@@ -150,26 +150,24 @@ const Grommet = forwardRef((props, ref) => {
   }, [grommetRef]);
 
   return (
-    <StyleSheetManager enableVendorPrefixes>
-      <ThemeContext.Provider value={theme}>
-        <ResponsiveContext.Provider value={responsive}>
-          <RootsContext.Provider value={roots}>
-            <ContainerTargetContext.Provider value={containerTarget}>
-              <OptionsContext.Provider value={options}>
-                <MessageContext.Provider value={messages}>
-                  <AnalyticsProvider onAnalytics={onAnalytics}>
-                    <StyledGrommet full={full} {...rest} ref={grommetRef}>
-                      {children}
-                    </StyledGrommet>
-                    {full && <FullGlobalStyle />}
-                  </AnalyticsProvider>
-                </MessageContext.Provider>
-              </OptionsContext.Provider>
-            </ContainerTargetContext.Provider>
-          </RootsContext.Provider>
-        </ResponsiveContext.Provider>
-      </ThemeContext.Provider>
-    </StyleSheetManager>
+    <ThemeContext.Provider value={theme}>
+      <ResponsiveContext.Provider value={responsive}>
+        <RootsContext.Provider value={roots}>
+          <ContainerTargetContext.Provider value={containerTarget}>
+            <OptionsContext.Provider value={options}>
+              <MessageContext.Provider value={messages}>
+                <AnalyticsProvider onAnalytics={onAnalytics}>
+                  <StyledGrommet full={full} {...rest} ref={grommetRef}>
+                    {children}
+                  </StyledGrommet>
+                  {full && <FullGlobalStyle />}
+                </AnalyticsProvider>
+              </MessageContext.Provider>
+            </OptionsContext.Provider>
+          </ContainerTargetContext.Provider>
+        </RootsContext.Provider>
+      </ResponsiveContext.Provider>
+    </ThemeContext.Provider>
   );
 });
 

@@ -32,7 +32,6 @@ exports[`Spinner border renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -61,7 +60,6 @@ exports[`Spinner border renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -91,7 +89,6 @@ exports[`Spinner border renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -122,7 +119,6 @@ exports[`Spinner border renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -151,95 +147,94 @@ exports[`Spinner border renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
   animation: gCPKsF 1s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border: dotted 4px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-top: inset 6px #7D4CDB;
     border-bottom: inset 6px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border: solid 4px transparent;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-top: solid 4px #7D4CDB;
     border-bottom: solid 4px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border: solid 4px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-right: solid 4px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-top: solid 4px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-left: solid 4px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-top: solid 4px #7D4CDB;
     border-bottom: solid 4px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
   }
@@ -298,7 +293,6 @@ exports[`Spinner round renders 1`] = `
   flex: 0 0 auto;
   padding: 12px;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -327,7 +321,6 @@ exports[`Spinner round renders 1`] = `
   padding: 12px;
   border-radius: 12px;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -356,7 +349,6 @@ exports[`Spinner round renders 1`] = `
   padding: 12px;
   border-radius: 24px;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -385,98 +377,97 @@ exports[`Spinner round renders 1`] = `
   padding: 12px;
   border-radius: 48px;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
   animation: gCPKsF 1s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-top: solid 1px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-top: solid 1px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-top: solid 1px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 12px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-top: solid 1px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-radius: 24px;
   }
@@ -533,26 +524,25 @@ exports[`Spinner should have no accessibility violations 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
   animation: gCPKsF 1s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-top: solid 1px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
@@ -600,7 +590,6 @@ exports[`Spinner size renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -629,7 +618,6 @@ exports[`Spinner size renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -658,7 +646,6 @@ exports[`Spinner size renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -687,7 +674,6 @@ exports[`Spinner size renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -716,98 +702,97 @@ exports[`Spinner size renders 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
   animation: gCPKsF 1s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-top: solid 1px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 2px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-top: solid 2px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border: solid 4px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-top: solid 4px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border: solid 6px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-top: solid 6px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border: solid 12px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-top: solid 12px #7D4CDB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
   }
@@ -867,7 +852,6 @@ exports[`Spinner size renders 2`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -896,7 +880,6 @@ exports[`Spinner size renders 2`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -925,7 +908,6 @@ exports[`Spinner size renders 2`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -954,7 +936,6 @@ exports[`Spinner size renders 2`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
@@ -983,98 +964,97 @@ exports[`Spinner size renders 2`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
   animation: gCPKsF 1s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-top: solid 1px #6FFFB0;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-top: solid 1px #00873D;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-top: solid 1px #3D138D;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-top: solid 1px #00739D;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border: solid 1px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-top: solid 1px #A2423D;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
   }
@@ -1133,20 +1113,19 @@ exports[`Spinner spinner changes according to theme 1`] = `
   padding: 48px;
   border-radius: 24px;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gNoyFE 0.9s 0s infinite linear;
   animation: gNoyFE 0.9s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 12px;
   }
@@ -1196,38 +1175,37 @@ exports[`Spinner spinner color renders over theme settings 1`] = `
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gCPKsF 1s 0s infinite linear;
   animation: gCPKsF 1s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border: solid 4px #33333310;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-right: solid 4px #1479FB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-top: solid 4px #1479FB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-left: solid 4px #1479FB;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
@@ -1309,20 +1287,19 @@ exports[`Spinner spinner icon changes according to theme 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 12px;
   border-radius: 100%;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-animation: gNoyFE 0.9s 0s infinite linear;
   animation: gNoyFE 0.9s 0s infinite linear;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }

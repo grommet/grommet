@@ -106,18 +106,18 @@ exports[`Anchor focus renders 1`] = `
   text-decoration: underline;
 }
 
-.c1 >circle,
-.c1 >ellipse,
-.c1 >line,
-.c1 >path,
-.c1 >polygon,
-.c1 >polyline,
-.c1 >rect {
+.c1 > circle,
+.c1 > ellipse,
+.c1 > line,
+.c1 > path,
+.c1 > polygon,
+.c1 > polyline,
+.c1 > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1 ::-moz-focus-inner {
+.c1::-moz-focus-inner {
   border: 0;
 }
 
@@ -168,7 +168,6 @@ exports[`Anchor gap renders 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 6px;
 }
@@ -179,7 +178,6 @@ exports[`Anchor gap renders 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -190,7 +188,6 @@ exports[`Anchor gap renders 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 24px;
 }
@@ -201,7 +198,6 @@ exports[`Anchor gap renders 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 48px;
 }
@@ -212,7 +208,6 @@ exports[`Anchor gap renders 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 5px;
 }
@@ -361,7 +356,6 @@ exports[`Anchor icon label renders 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -651,7 +645,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -1073,7 +1066,6 @@ exports[`Anchor renders size specific theming 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -1550,7 +1542,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   width: 12px;
 }

@@ -68,6 +68,7 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -92,6 +93,7 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 24px;
   padding-right: 24px;
@@ -148,18 +150,18 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -168,18 +170,18 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -206,18 +208,18 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus ::-moz-focus-inner {
+.c14:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -226,18 +228,18 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -263,6 +265,7 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -278,8 +281,8 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -296,8 +299,8 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -313,8 +316,8 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -337,7 +340,7 @@ exports[`Calendar Keyboard events heading text font size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
@@ -1309,6 +1312,7 @@ exports[`Calendar change months 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -1333,6 +1337,7 @@ exports[`Calendar change months 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -1384,18 +1389,18 @@ exports[`Calendar change months 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1404,18 +1409,18 @@ exports[`Calendar change months 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1442,18 +1447,18 @@ exports[`Calendar change months 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1462,18 +1467,18 @@ exports[`Calendar change months 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1508,6 +1513,7 @@ exports[`Calendar change months 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -1523,8 +1529,8 @@ exports[`Calendar change months 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1541,8 +1547,8 @@ exports[`Calendar change months 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1562,20 +1568,20 @@ exports[`Calendar change months 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -2407,37 +2413,37 @@ exports[`Calendar change months 1`] = `
 
 exports[`Calendar change months 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledCalendar-sc-1y4xhmp-0 jCINAP"
+    class="StyledCalendar-sc-1y4xhmp-0 jusUVl"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 faWFoE"
+      class="StyledBox-sc-13pk1d4-0 kqmDKi"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bqbJY"
+        class="StyledBox-sc-13pk1d4-0 jXUMNe"
       >
         <header
-          class="StyledBox-sc-13pk1d4-0 ilVuPs"
+          class="StyledBox-sc-13pk1d4-0 caPdIq"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 jZpvge"
+            class="StyledHeading-sc-1rdh4aw-0 emHnav"
           >
             January 2020
           </h3>
         </header>
         <div
-          class="StyledBox-sc-13pk1d4-0 nAZRd"
+          class="StyledBox-sc-13pk1d4-0 oYIiH"
         >
           <button
             aria-label="Go to December 2019"
-            class="StyledButton-sc-323bzc-0 eVODWe"
+            class="StyledButton-sc-323bzc-0 hZNOgI"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 eDHVbi"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -2450,12 +2456,12 @@ exports[`Calendar change months 2`] = `
           </button>
           <button
             aria-label="Go to February 2020"
-            class="StyledButton-sc-323bzc-0 eVODWe"
+            class="StyledButton-sc-323bzc-0 hZNOgI"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 eDHVbi"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -2470,131 +2476,131 @@ exports[`Calendar change months 2`] = `
       </div>
       <div
         aria-label="January 2020; Currently selected January 15, 2020;"
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 kjyati"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 kBvSUg"
         role="grid"
         tabindex="0"
       >
         <div
-          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 dFpTiq"
+          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iwjYIY"
         >
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Dec 29 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   29
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Dec 30 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   30
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Dec 31 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   31
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 01 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   1
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 02 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   2
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 03 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   3
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 04 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   4
                 </div>
@@ -2602,123 +2608,123 @@ exports[`Calendar change months 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 05 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   5
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 06 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   6
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 07 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   7
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 08 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   8
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 09 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   9
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 10 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   10
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 11 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   11
                 </div>
@@ -2748,18 +2754,18 @@ exports[`Calendar change months 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -2768,18 +2774,18 @@ exports[`Calendar change months 2`] = `
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2790,6 +2796,7 @@ exports[`Calendar change months 2`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -2805,8 +2812,8 @@ exports[`Calendar change months 2`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2822,8 +2829,8 @@ exports[`Calendar change months 2`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2836,15 +2843,15 @@ exports[`Calendar change months 2`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
@@ -2995,18 +3002,18 @@ exports[`Calendar change months 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3015,18 +3022,18 @@ exports[`Calendar change months 2`] = `
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3037,6 +3044,7 @@ exports[`Calendar change months 2`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -3052,8 +3060,8 @@ exports[`Calendar change months 2`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3063,15 +3071,15 @@ exports[`Calendar change months 2`] = `
   height: 54.857142857142854px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
@@ -3222,18 +3230,18 @@ exports[`Calendar change months 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3242,18 +3250,18 @@ exports[`Calendar change months 2`] = `
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3264,6 +3272,7 @@ exports[`Calendar change months 2`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -3279,8 +3288,8 @@ exports[`Calendar change months 2`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3297,8 +3306,8 @@ exports[`Calendar change months 2`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3308,15 +3317,15 @@ exports[`Calendar change months 2`] = `
   height: 54.857142857142854px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
@@ -3467,18 +3476,18 @@ exports[`Calendar change months 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus ::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3487,18 +3496,18 @@ exports[`Calendar change months 2`] = `
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3509,6 +3518,7 @@ exports[`Calendar change months 2`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -3524,8 +3534,8 @@ exports[`Calendar change months 2`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3536,15 +3546,15 @@ exports[`Calendar change months 2`] = `
   opacity: 0.5;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
@@ -3748,6 +3758,7 @@ exports[`Calendar children 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -3772,6 +3783,7 @@ exports[`Calendar children 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -3837,18 +3849,18 @@ exports[`Calendar children 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3857,18 +3869,18 @@ exports[`Calendar children 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3912,6 +3924,7 @@ exports[`Calendar children 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -3935,20 +3948,20 @@ exports[`Calendar children 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -4551,6 +4564,7 @@ exports[`Calendar date 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -4575,6 +4589,7 @@ exports[`Calendar date 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -4626,18 +4641,18 @@ exports[`Calendar date 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4646,18 +4661,18 @@ exports[`Calendar date 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4684,18 +4699,18 @@ exports[`Calendar date 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -4704,18 +4719,18 @@ exports[`Calendar date 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4750,6 +4765,7 @@ exports[`Calendar date 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -4765,8 +4781,8 @@ exports[`Calendar date 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4783,8 +4799,8 @@ exports[`Calendar date 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4800,8 +4816,8 @@ exports[`Calendar date 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4824,20 +4840,20 @@ exports[`Calendar date 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -5734,6 +5750,7 @@ exports[`Calendar dates 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -5758,6 +5775,7 @@ exports[`Calendar dates 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -5809,18 +5827,18 @@ exports[`Calendar dates 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5829,18 +5847,18 @@ exports[`Calendar dates 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5867,18 +5885,18 @@ exports[`Calendar dates 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -5887,18 +5905,18 @@ exports[`Calendar dates 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -5933,6 +5951,7 @@ exports[`Calendar dates 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -5948,8 +5967,8 @@ exports[`Calendar dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -5966,8 +5985,8 @@ exports[`Calendar dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -5983,8 +6002,8 @@ exports[`Calendar dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -6003,8 +6022,8 @@ exports[`Calendar dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -6012,7 +6031,7 @@ exports[`Calendar dates 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: rgba(125, 76, 219, 0.1);
+  background-color: rgba(125,76,219,0.1);
 }
 
 .c0 {
@@ -6025,20 +6044,20 @@ exports[`Calendar dates 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -6935,6 +6954,7 @@ exports[`Calendar daysOfWeek 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -6959,6 +6979,7 @@ exports[`Calendar daysOfWeek 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -7010,18 +7031,18 @@ exports[`Calendar daysOfWeek 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -7030,18 +7051,18 @@ exports[`Calendar daysOfWeek 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7068,18 +7089,18 @@ exports[`Calendar daysOfWeek 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus ::-moz-focus-inner {
+.c14:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -7088,18 +7109,18 @@ exports[`Calendar daysOfWeek 1`] = `
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7134,6 +7155,7 @@ exports[`Calendar daysOfWeek 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -7149,8 +7171,8 @@ exports[`Calendar daysOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -7167,8 +7189,8 @@ exports[`Calendar daysOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -7184,8 +7206,8 @@ exports[`Calendar daysOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -7204,8 +7226,8 @@ exports[`Calendar daysOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -7213,7 +7235,7 @@ exports[`Calendar daysOfWeek 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: rgba(125, 76, 219, 0.1);
+  background-color: rgba(125,76,219,0.1);
 }
 
 .c0 {
@@ -7226,20 +7248,20 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -8212,6 +8234,7 @@ exports[`Calendar disabled 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -8236,6 +8259,7 @@ exports[`Calendar disabled 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -8287,18 +8311,18 @@ exports[`Calendar disabled 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -8307,18 +8331,18 @@ exports[`Calendar disabled 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8345,18 +8369,18 @@ exports[`Calendar disabled 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -8365,18 +8389,18 @@ exports[`Calendar disabled 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8405,18 +8429,18 @@ exports[`Calendar disabled 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus >circle,
-.c17:focus >ellipse,
-.c17:focus >line,
-.c17:focus >path,
-.c17:focus >polygon,
-.c17:focus >polyline,
-.c17:focus >rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus ::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -8425,18 +8449,18 @@ exports[`Calendar disabled 1`] = `
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) >circle,
-.c17:focus:not(:focus-visible) >ellipse,
-.c17:focus:not(:focus-visible) >line,
-.c17:focus:not(:focus-visible) >path,
-.c17:focus:not(:focus-visible) >polygon,
-.c17:focus:not(:focus-visible) >polyline,
-.c17:focus:not(:focus-visible) >rect {
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -8471,6 +8495,7 @@ exports[`Calendar disabled 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -8486,8 +8511,8 @@ exports[`Calendar disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -8504,8 +8529,8 @@ exports[`Calendar disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -8521,8 +8546,8 @@ exports[`Calendar disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -8545,20 +8570,20 @@ exports[`Calendar disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -9459,6 +9484,7 @@ exports[`Calendar fill 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -9483,6 +9509,7 @@ exports[`Calendar fill 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -9534,18 +9561,18 @@ exports[`Calendar fill 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -9554,18 +9581,18 @@ exports[`Calendar fill 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9598,18 +9625,18 @@ exports[`Calendar fill 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -9618,18 +9645,18 @@ exports[`Calendar fill 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -9673,6 +9700,7 @@ exports[`Calendar fill 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -9692,8 +9720,8 @@ exports[`Calendar fill 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -9710,8 +9738,8 @@ exports[`Calendar fill 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -9727,8 +9755,8 @@ exports[`Calendar fill 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -9751,20 +9779,20 @@ exports[`Calendar fill 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -10661,6 +10689,7 @@ exports[`Calendar first day sunday week monday 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -10685,6 +10714,7 @@ exports[`Calendar first day sunday week monday 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -10736,18 +10766,18 @@ exports[`Calendar first day sunday week monday 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -10756,18 +10786,18 @@ exports[`Calendar first day sunday week monday 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -10794,18 +10824,18 @@ exports[`Calendar first day sunday week monday 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -10814,18 +10844,18 @@ exports[`Calendar first day sunday week monday 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -10860,6 +10890,7 @@ exports[`Calendar first day sunday week monday 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -10875,8 +10906,8 @@ exports[`Calendar first day sunday week monday 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -10893,8 +10924,8 @@ exports[`Calendar first day sunday week monday 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -10913,8 +10944,8 @@ exports[`Calendar first day sunday week monday 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -10934,20 +10965,20 @@ exports[`Calendar first day sunday week monday 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -11844,6 +11875,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -11868,6 +11900,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -11919,18 +11952,18 @@ exports[`Calendar firstDayOfWeek 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -11939,18 +11972,18 @@ exports[`Calendar firstDayOfWeek 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -11977,18 +12010,18 @@ exports[`Calendar firstDayOfWeek 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -11997,18 +12030,18 @@ exports[`Calendar firstDayOfWeek 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -12043,6 +12076,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -12058,8 +12092,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -12076,8 +12110,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -12093,8 +12127,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -12117,20 +12151,20 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -13843,6 +13877,7 @@ exports[`Calendar header 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -13874,18 +13909,18 @@ exports[`Calendar header 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus ::-moz-focus-inner {
+.c4:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -13894,18 +13929,18 @@ exports[`Calendar header 1`] = `
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -13934,18 +13969,18 @@ exports[`Calendar header 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -13954,18 +13989,18 @@ exports[`Calendar header 1`] = `
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -13991,6 +14026,7 @@ exports[`Calendar header 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -14006,8 +14042,8 @@ exports[`Calendar header 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -14024,8 +14060,8 @@ exports[`Calendar header 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -14041,8 +14077,8 @@ exports[`Calendar header 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -14996,6 +15032,7 @@ exports[`Calendar reference 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -15020,6 +15057,7 @@ exports[`Calendar reference 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -15071,18 +15109,18 @@ exports[`Calendar reference 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -15091,18 +15129,18 @@ exports[`Calendar reference 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -15129,18 +15167,18 @@ exports[`Calendar reference 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -15149,18 +15187,18 @@ exports[`Calendar reference 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -15195,6 +15233,7 @@ exports[`Calendar reference 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -15210,8 +15249,8 @@ exports[`Calendar reference 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -15228,8 +15267,8 @@ exports[`Calendar reference 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -15249,20 +15288,20 @@ exports[`Calendar reference 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -16159,6 +16198,7 @@ exports[`Calendar select date 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -16183,6 +16223,7 @@ exports[`Calendar select date 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -16234,18 +16275,18 @@ exports[`Calendar select date 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -16254,18 +16295,18 @@ exports[`Calendar select date 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -16292,18 +16333,18 @@ exports[`Calendar select date 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -16312,18 +16353,18 @@ exports[`Calendar select date 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -16358,6 +16399,7 @@ exports[`Calendar select date 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -16373,8 +16415,8 @@ exports[`Calendar select date 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -16391,8 +16433,8 @@ exports[`Calendar select date 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -16408,8 +16450,8 @@ exports[`Calendar select date 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -16432,20 +16474,20 @@ exports[`Calendar select date 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -17277,37 +17319,37 @@ exports[`Calendar select date 1`] = `
 
 exports[`Calendar select date 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledCalendar-sc-1y4xhmp-0 jCINAP"
+    class="StyledCalendar-sc-1y4xhmp-0 jusUVl"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 faWFoE"
+      class="StyledBox-sc-13pk1d4-0 kqmDKi"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bqbJY"
+        class="StyledBox-sc-13pk1d4-0 jXUMNe"
       >
         <header
-          class="StyledBox-sc-13pk1d4-0 ilVuPs"
+          class="StyledBox-sc-13pk1d4-0 caPdIq"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 jZpvge"
+            class="StyledHeading-sc-1rdh4aw-0 emHnav"
           >
             January 2020
           </h3>
         </header>
         <div
-          class="StyledBox-sc-13pk1d4-0 nAZRd"
+          class="StyledBox-sc-13pk1d4-0 oYIiH"
         >
           <button
             aria-label="Go to December 2019"
-            class="StyledButton-sc-323bzc-0 eVODWe"
+            class="StyledButton-sc-323bzc-0 hZNOgI"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 eDHVbi"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -17320,12 +17362,12 @@ exports[`Calendar select date 2`] = `
           </button>
           <button
             aria-label="Go to February 2020"
-            class="StyledButton-sc-323bzc-0 eVODWe"
+            class="StyledButton-sc-323bzc-0 hZNOgI"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 eDHVbi"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -17340,131 +17382,131 @@ exports[`Calendar select date 2`] = `
       </div>
       <div
         aria-label="January 2020; Currently selected January 15, 2020;"
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iSDypT"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 dNQByt"
         role="grid"
         tabindex="0"
       >
         <div
-          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 dFpTiq"
+          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iwjYIY"
         >
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Dec 29 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   29
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Dec 30 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   30
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Dec 31 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   31
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 01 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   1
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 02 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   2
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 03 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   3
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 04 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   4
                 </div>
@@ -17472,123 +17514,123 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 05 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   5
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 06 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   6
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 07 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   7
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 08 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   8
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 09 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   9
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 10 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   10
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 11 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   11
                 </div>
@@ -17596,123 +17638,123 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 12 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   12
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 13 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   13
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 14 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   14
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 15 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQmeuV"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 iDyxzT"
                 >
                   15
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 16 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   16
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 17 2020"
-                class="StyledButton-sc-323bzc-0 ejOydg"
+                class="StyledButton-sc-323bzc-0 kXFVHi"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   17
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 18 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   18
                 </div>
@@ -17720,123 +17762,123 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 19 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   19
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 20 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   20
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 21 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   21
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 22 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   22
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 23 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   23
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 24 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   24
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 25 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   25
                 </div>
@@ -17844,123 +17886,123 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 26 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   26
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 27 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   27
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 28 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   28
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 29 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   29
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 30 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   30
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 31 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   31
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Feb 01 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   1
                 </div>
@@ -17968,123 +18010,123 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Feb 02 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   2
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Feb 03 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   3
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Feb 04 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   4
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Feb 05 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   5
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Feb 06 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   6
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Feb 07 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   7
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Feb 08 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   8
                 </div>
@@ -18165,6 +18207,7 @@ exports[`Calendar select dates 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -18189,6 +18232,7 @@ exports[`Calendar select dates 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -18240,18 +18284,18 @@ exports[`Calendar select dates 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -18260,18 +18304,18 @@ exports[`Calendar select dates 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -18298,18 +18342,18 @@ exports[`Calendar select dates 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -18318,18 +18362,18 @@ exports[`Calendar select dates 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -18364,6 +18408,7 @@ exports[`Calendar select dates 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -18379,8 +18424,8 @@ exports[`Calendar select dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -18397,8 +18442,8 @@ exports[`Calendar select dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -18414,8 +18459,8 @@ exports[`Calendar select dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -18434,8 +18479,8 @@ exports[`Calendar select dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -18443,7 +18488,7 @@ exports[`Calendar select dates 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: rgba(125, 76, 219, 0.1);
+  background-color: rgba(125,76,219,0.1);
 }
 
 .c0 {
@@ -18456,20 +18501,20 @@ exports[`Calendar select dates 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -19301,37 +19346,37 @@ exports[`Calendar select dates 1`] = `
 
 exports[`Calendar select dates 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledCalendar-sc-1y4xhmp-0 jCINAP"
+    class="StyledCalendar-sc-1y4xhmp-0 jusUVl"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 faWFoE"
+      class="StyledBox-sc-13pk1d4-0 kqmDKi"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bqbJY"
+        class="StyledBox-sc-13pk1d4-0 jXUMNe"
       >
         <header
-          class="StyledBox-sc-13pk1d4-0 ilVuPs"
+          class="StyledBox-sc-13pk1d4-0 caPdIq"
         >
           <h3
-            class="StyledHeading-sc-1rdh4aw-0 jZpvge"
+            class="StyledHeading-sc-1rdh4aw-0 emHnav"
           >
             January 2020
           </h3>
         </header>
         <div
-          class="StyledBox-sc-13pk1d4-0 nAZRd"
+          class="StyledBox-sc-13pk1d4-0 oYIiH"
         >
           <button
             aria-label="Go to December 2019"
-            class="StyledButton-sc-323bzc-0 eVODWe"
+            class="StyledButton-sc-323bzc-0 hZNOgI"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 eDHVbi"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -19344,12 +19389,12 @@ exports[`Calendar select dates 2`] = `
           </button>
           <button
             aria-label="Go to February 2020"
-            class="StyledButton-sc-323bzc-0 eVODWe"
+            class="StyledButton-sc-323bzc-0 hZNOgI"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 eDHVbi"
+              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
               viewBox="0 0 24 24"
             >
               <path
@@ -19364,131 +19409,131 @@ exports[`Calendar select dates 2`] = `
       </div>
       <div
         aria-label="January 2020; Currently selected January 12, 2020,January 8, 2020 through January 10, 2020"
-        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iSDypT"
+        class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 dNQByt"
         role="grid"
         tabindex="0"
       >
         <div
-          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 dFpTiq"
+          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 iwjYIY"
         >
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Dec 29 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   29
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Dec 30 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   30
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Dec 31 2019"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   31
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 01 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   1
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 02 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   2
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 03 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   3
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 04 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   4
                 </div>
@@ -19496,123 +19541,123 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 05 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   5
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 06 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   6
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 07 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   7
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 08 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQmeuV"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 iDyxzT"
                 >
                   8
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 09 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 keQcNW"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 ivSEHE"
                 >
                   9
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 10 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQmeuV"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 iDyxzT"
                 >
                   10
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 11 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   11
                 </div>
@@ -19620,123 +19665,123 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 12 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 gQmeuV"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 iDyxzT"
                 >
                   12
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 13 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   13
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 14 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   14
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 15 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   15
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 16 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   16
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 17 2020"
-                class="StyledButton-sc-323bzc-0 ejOydg"
+                class="StyledButton-sc-323bzc-0 kXFVHi"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   17
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 18 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   18
                 </div>
@@ -19744,123 +19789,123 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 19 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   19
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 20 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   20
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 21 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   21
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 22 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   22
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 23 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   23
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 24 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   24
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Jan 25 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   25
                 </div>
@@ -19868,123 +19913,123 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Jan 26 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   26
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Jan 27 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   27
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Jan 28 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   28
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Jan 29 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   29
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Jan 30 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   30
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Jan 31 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 hrrgbM"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 esOYBy"
                 >
                   31
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Feb 01 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   1
                 </div>
@@ -19992,123 +20037,123 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 kgBwgP"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cJWzEM"
             role="row"
           >
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sun Feb 02 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   2
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Mon Feb 03 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   3
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Tue Feb 04 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   4
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Wed Feb 05 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   5
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Thu Feb 06 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   6
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Fri Feb 07 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   7
                 </div>
               </button>
             </div>
             <div
-              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 cIgziT"
+              class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 gArtes"
               role="gridcell"
             >
               <button
                 aria-label="Sat Feb 08 2020"
-                class="StyledButton-sc-323bzc-0 dBXNXE"
+                class="StyledButton-sc-323bzc-0 dkczdG"
                 tabindex="-1"
                 type="button"
               >
                 <div
-                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 irgvuj"
+                  class="StyledCalendar__StyledDay-sc-1y4xhmp-5 huLVsV"
                 >
                   8
                 </div>
@@ -20189,6 +20234,7 @@ exports[`Calendar showAdjacentDays 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -20213,6 +20259,7 @@ exports[`Calendar showAdjacentDays 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -20264,18 +20311,18 @@ exports[`Calendar showAdjacentDays 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -20284,18 +20331,18 @@ exports[`Calendar showAdjacentDays 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -20322,18 +20369,18 @@ exports[`Calendar showAdjacentDays 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -20342,18 +20389,18 @@ exports[`Calendar showAdjacentDays 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -20388,6 +20435,7 @@ exports[`Calendar showAdjacentDays 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -20403,8 +20451,8 @@ exports[`Calendar showAdjacentDays 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -20421,8 +20469,8 @@ exports[`Calendar showAdjacentDays 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -20438,8 +20486,8 @@ exports[`Calendar showAdjacentDays 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -20462,20 +20510,20 @@ exports[`Calendar showAdjacentDays 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
@@ -22856,6 +22904,7 @@ exports[`Calendar size 1`] = `
   flex-direction: row;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -22880,6 +22929,7 @@ exports[`Calendar size 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 6px;
   padding-right: 6px;
@@ -22927,6 +22977,7 @@ exports[`Calendar size 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
@@ -22953,6 +23004,7 @@ exports[`Calendar size 1`] = `
   flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 24px;
   padding-right: 24px;
@@ -22983,18 +23035,18 @@ exports[`Calendar size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -23003,18 +23055,18 @@ exports[`Calendar size 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -23041,18 +23093,18 @@ exports[`Calendar size 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -23061,18 +23113,18 @@ exports[`Calendar size 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -23147,6 +23199,7 @@ exports[`Calendar size 1`] = `
   display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -23162,8 +23215,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23180,8 +23233,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23197,8 +23250,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23217,8 +23270,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23235,8 +23288,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23252,8 +23305,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23272,8 +23325,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23290,8 +23343,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23307,8 +23360,8 @@ exports[`Calendar size 1`] = `
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -23331,34 +23384,34 @@ exports[`Calendar size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 3px;
     padding-right: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c18 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c25 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 16px;
     line-height: 22px;
@@ -23366,13 +23419,13 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c19 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c19 {
     font-size: 18px;
     line-height: 24px;
@@ -23380,13 +23433,13 @@ exports[`Calendar size 1`] = `
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c26 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c26 {
     font-size: 18px;
     line-height: 24px;

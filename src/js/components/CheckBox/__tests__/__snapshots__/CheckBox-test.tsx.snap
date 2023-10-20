@@ -28,8 +28,8 @@ exports[`CheckBox checked renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -53,8 +53,8 @@ exports[`CheckBox checked renders 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -85,8 +85,8 @@ exports[`CheckBox checked renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -99,7 +99,7 @@ exports[`CheckBox checked renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -110,7 +110,7 @@ exports[`CheckBox checked renders 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border: solid 2px #7D4CDB;
   }
@@ -178,8 +178,8 @@ exports[`CheckBox controlled 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -203,8 +203,8 @@ exports[`CheckBox controlled 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -239,8 +239,8 @@ exports[`CheckBox controlled 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -253,7 +253,7 @@ exports[`CheckBox controlled 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -264,13 +264,13 @@ exports[`CheckBox controlled 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border: solid 2px #7D4CDB;
   }
@@ -315,25 +315,25 @@ exports[`CheckBox controlled 1`] = `
 
 exports[`CheckBox controlled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 fOjqDb"
     label="test-label"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
+      class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 birQfD"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
+        class="StyledBox-sc-13pk1d4-0 fRMvyw StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
       >
         <svg
-          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 WheCn"
+          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 cAKqJx"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -380,8 +380,8 @@ exports[`CheckBox custom theme 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -396,7 +396,7 @@ exports[`CheckBox custom theme 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -405,8 +405,8 @@ exports[`CheckBox custom theme 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -437,8 +437,8 @@ exports[`CheckBox custom theme 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -451,7 +451,7 @@ exports[`CheckBox custom theme 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -462,15 +462,15 @@ exports[`CheckBox custom theme 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -527,8 +527,8 @@ exports[`CheckBox defaultChecked 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -552,8 +552,8 @@ exports[`CheckBox defaultChecked 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -584,8 +584,8 @@ exports[`CheckBox defaultChecked 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -598,7 +598,7 @@ exports[`CheckBox defaultChecked 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -609,7 +609,7 @@ exports[`CheckBox defaultChecked 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border: solid 2px #7D4CDB;
   }
@@ -676,8 +676,8 @@ exports[`CheckBox disabled renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -692,7 +692,7 @@ exports[`CheckBox disabled renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -701,8 +701,8 @@ exports[`CheckBox disabled renders 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -727,8 +727,8 @@ exports[`CheckBox disabled renders 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -760,8 +760,8 @@ exports[`CheckBox disabled renders 1`] = `
   cursor: default;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -773,7 +773,7 @@ exports[`CheckBox disabled renders 1`] = `
   margin: 0;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -784,13 +784,13 @@ exports[`CheckBox disabled renders 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     border: solid 2px #7D4CDB;
   }
@@ -885,8 +885,8 @@ exports[`CheckBox indeterminate renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -901,7 +901,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -910,8 +910,8 @@ exports[`CheckBox indeterminate renders 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -934,8 +934,8 @@ exports[`CheckBox indeterminate renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -965,8 +965,8 @@ exports[`CheckBox indeterminate renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -992,8 +992,8 @@ exports[`CheckBox indeterminate renders 1`] = `
   cursor: pointer;
 }
 
-.c7:hover input:not([disabled])+div,
-.c7:hover input:not([disabled])+span {
+.c7:hover input:not([disabled]) + div,
+.c7:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1006,7 +1006,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1017,13 +1017,13 @@ exports[`CheckBox indeterminate renders 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin-right: 6px;
   }
@@ -1120,8 +1120,8 @@ exports[`CheckBox label renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1136,7 +1136,7 @@ exports[`CheckBox label renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1145,8 +1145,8 @@ exports[`CheckBox label renders 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -1173,8 +1173,8 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1196,8 +1196,8 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c6:hover input:not([disabled])+div,
-.c6:hover input:not([disabled])+span {
+.c6:hover input:not([disabled]) + div,
+.c6:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1210,7 +1210,7 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1221,15 +1221,15 @@ exports[`CheckBox label renders 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -1306,8 +1306,8 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1322,7 +1322,7 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1331,8 +1331,8 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -1359,8 +1359,8 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1373,7 +1373,7 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1384,15 +1384,15 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -1449,8 +1449,8 @@ exports[`CheckBox renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1465,7 +1465,7 @@ exports[`CheckBox renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1474,8 +1474,8 @@ exports[`CheckBox renders 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -1498,8 +1498,8 @@ exports[`CheckBox renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1512,7 +1512,7 @@ exports[`CheckBox renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1523,9 +1523,9 @@ exports[`CheckBox renders 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -1596,8 +1596,8 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1612,7 +1612,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1621,8 +1621,8 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -1645,8 +1645,8 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1659,7 +1659,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1670,9 +1670,9 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -1743,8 +1743,8 @@ exports[`CheckBox renders custom checked icon 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1768,8 +1768,8 @@ exports[`CheckBox renders custom checked icon 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -1796,8 +1796,8 @@ exports[`CheckBox renders custom checked icon 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1810,7 +1810,7 @@ exports[`CheckBox renders custom checked icon 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1821,13 +1821,13 @@ exports[`CheckBox renders custom checked icon 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border: solid 2px #7D4CDB;
   }
@@ -1892,8 +1892,8 @@ exports[`CheckBox reverse renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1908,7 +1908,7 @@ exports[`CheckBox reverse renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1917,8 +1917,8 @@ exports[`CheckBox reverse renders 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -1945,8 +1945,8 @@ exports[`CheckBox reverse renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1959,7 +1959,7 @@ exports[`CheckBox reverse renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1970,15 +1970,15 @@ exports[`CheckBox reverse renders 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin-left: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -2036,8 +2036,8 @@ exports[`CheckBox reverse toggle fill 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2059,8 +2059,8 @@ exports[`CheckBox reverse toggle fill 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2088,12 +2088,13 @@ exports[`CheckBox reverse toggle fill 1`] = `
   flex: 1 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -2106,7 +2107,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -2118,7 +2119,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
   width: 48px;
   height: 24px;
   border: 2px solid;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0,0,0,0.15);
   border-radius: 24px;
   background-color: transparent;
 }
@@ -2143,13 +2144,13 @@ exports[`CheckBox reverse toggle fill 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin-left: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-right: 6px;
   }
@@ -2235,8 +2236,8 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2251,7 +2252,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0, 0, 0, 0.15);
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2260,8 +2261,8 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -2284,8 +2285,8 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -2298,7 +2299,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -2309,9 +2310,9 @@ exports[`CheckBox should not have accessibility violations 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
-    border: solid 2px rgba(0, 0, 0, 0.15);
+    border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -2365,8 +2366,8 @@ exports[`CheckBox toggle renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2388,8 +2389,8 @@ exports[`CheckBox toggle renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -2411,8 +2412,8 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled])+div,
-.c1:hover input:not([disabled])+span {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -2438,8 +2439,8 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c7:hover input:not([disabled])+div,
-.c7:hover input:not([disabled])+span {
+.c7:hover input:not([disabled]) + div,
+.c7:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -2452,7 +2453,7 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c4:checked+span>span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -2464,7 +2465,7 @@ exports[`CheckBox toggle renders 1`] = `
   width: 48px;
   height: 24px;
   border: 2px solid;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0,0,0,0.15);
   border-radius: 24px;
   background-color: transparent;
 }
@@ -2489,7 +2490,7 @@ exports[`CheckBox toggle renders 1`] = `
   flex-shrink: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin-right: 6px;
   }

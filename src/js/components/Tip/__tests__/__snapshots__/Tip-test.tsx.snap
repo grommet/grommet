@@ -39,7 +39,7 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   padding-top: 6px;
   padding-bottom: 6px;
   border-radius: 12px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c1 {
@@ -57,6 +57,8 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   background: none;
   margin: 0px;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
   -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
@@ -64,33 +66,33 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-radius: 6px;
   }
@@ -145,8 +147,11 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -155,18 +160,18 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus >circle,
-.c1:focus >ellipse,
-.c1:focus >line,
-.c1:focus >path,
-.c1:focus >polygon,
-.c1:focus >polyline,
-.c1:focus >rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus ::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -175,18 +180,18 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) >circle,
-.c1:focus:not(:focus-visible) >ellipse,
-.c1:focus:not(:focus-visible) >line,
-.c1:focus:not(:focus-visible) >path,
-.c1:focus:not(:focus-visible) >polygon,
-.c1:focus:not(:focus-visible) >polyline,
-.c1:focus:not(:focus-visible) >rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -214,10 +219,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="StyledButton-sc-323bzc-0 exdxTi"
+    class="StyledButton-sc-323bzc-0 dvoKHE"
     type="button"
   >
     Test Events
@@ -264,7 +269,7 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   padding-top: 6px;
   padding-bottom: 6px;
   border-radius: 12px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c3 {
@@ -296,6 +301,8 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   background: none;
   margin: 0px;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
   -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
@@ -303,33 +310,33 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-radius: 6px;
   }
@@ -402,6 +409,8 @@ exports[`Tip plain 1`] = `
   background: none;
   margin: 0px;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
   -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
@@ -409,7 +418,7 @@ exports[`Tip plain 1`] = `
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
     margin: 0px;
   }
@@ -519,7 +528,7 @@ exports[`Tip themed 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.40);
+  box-shadow: 0px 8px 16px rgba(255,255,255,0.40);
 }
 
 .c2 {
@@ -542,7 +551,7 @@ exports[`Tip themed 1`] = `
   padding-top: 6px;
   padding-bottom: 6px;
   border-radius: 12px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.40);
+  box-shadow: 0px 4px 4px rgba(255,255,255,0.40);
 }
 
 .c1 {
@@ -561,6 +570,8 @@ exports[`Tip themed 1`] = `
   color: #f8f8f8;
   margin: 21px;
   opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
   transform-origin: top left;
   -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
@@ -568,33 +579,33 @@ exports[`Tip themed 1`] = `
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
     margin: 21px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     border-radius: 6px;
   }

@@ -43,13 +43,10 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
-  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
-  -ms-grid-gap: 24px 48px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
 
@@ -60,17 +57,17 @@ exports[`NameValuePair should render name when name is JSX Element 1`] = `
   color: #444444;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
@@ -166,13 +163,10 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
-  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
-  -ms-grid-gap: 24px 48px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
 
@@ -191,11 +185,11 @@ exports[`NameValuePair should render name when name is typeof string 1`] = `
   font-weight: bold;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
@@ -280,13 +274,10 @@ exports[`NameValuePair should render value when provided as child of type
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  -ms-grid-columns: repeat( auto-fit,minmax(auto, 96px) );
-  grid-template-columns: repeat( auto-fit,minmax(auto, 96px) );
-  -ms-grid-gap: 24px 48px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,96px) );
   grid-gap: 24px 48px;
 }
 
@@ -305,11 +296,11 @@ exports[`NameValuePair should render value when provided as child of type
   font-weight: bold;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
@@ -418,13 +409,10 @@ exports[`NameValuePair should render value when provided as child of type JSX El
 }
 
 .c1 {
-  display: -ms-grid;
   display: grid;
   box-sizing: border-box;
   margin: 0px;
-  -ms-grid-columns: repeat( auto-fit,minmax(auto, 384px) );
-  grid-template-columns: repeat( auto-fit,minmax(auto, 384px) );
-  -ms-grid-gap: 24px 48px;
+  grid-template-columns: repeat( auto-fit,minmax(auto,384px) );
   grid-gap: 24px 48px;
 }
 
@@ -443,17 +431,17 @@ exports[`NameValuePair should render value when provided as child of type JSX El
   font-weight: bold;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }

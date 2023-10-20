@@ -135,25 +135,25 @@ exports[`Notification custom theme 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 12px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
@@ -253,7 +253,7 @@ exports[`Notification global 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(204,204,204,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -348,27 +348,27 @@ exports[`Notification global 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
   }
@@ -474,7 +474,7 @@ exports[`Notification multi actions 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(204,204,204,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -586,27 +586,27 @@ exports[`Notification multi actions 1`] = `
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
   }
@@ -729,7 +729,7 @@ exports[`Notification position bottom 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -843,7 +843,6 @@ exports[`Notification position bottom 1`] = `
   bottom: 24px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
-  -moz-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
   -webkit-animation: fdqiZe 0.2s ease-in-out forwards;
@@ -864,27 +863,27 @@ exports[`Notification position bottom 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -957,24 +956,24 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -1031,7 +1030,7 @@ exports[`Notification position bottom-left 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -1145,7 +1144,6 @@ exports[`Notification position bottom-left 1`] = `
   bottom: 24px;
   left: 24px;
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
   -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
@@ -1166,27 +1164,27 @@ exports[`Notification position bottom-left 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -1259,24 +1257,24 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -1333,7 +1331,7 @@ exports[`Notification position bottom-right 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -1447,7 +1445,6 @@ exports[`Notification position bottom-right 1`] = `
   bottom: 24px;
   right: 24px;
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
   -webkit-animation: cQwfQi 0.2s ease-in-out forwards;
@@ -1468,27 +1465,27 @@ exports[`Notification position bottom-right 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -1561,24 +1558,24 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -1635,7 +1632,7 @@ exports[`Notification position center 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -1749,7 +1746,6 @@ exports[`Notification position center 1`] = `
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
@@ -1770,27 +1766,27 @@ exports[`Notification position center 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -1863,24 +1859,24 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -1937,7 +1933,7 @@ exports[`Notification position end 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -2051,7 +2047,6 @@ exports[`Notification position end 1`] = `
   inset-inline-end: 24px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
   -webkit-animation: drjPPC 0.2s ease-in-out forwards;
@@ -2072,27 +2067,27 @@ exports[`Notification position end 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -2165,24 +2160,24 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -2239,7 +2234,7 @@ exports[`Notification position left 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -2353,7 +2348,6 @@ exports[`Notification position left 1`] = `
   left: 24px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
   -webkit-animation: kPYden 0.2s ease-in-out forwards;
@@ -2374,27 +2368,27 @@ exports[`Notification position left 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -2467,24 +2461,24 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -2541,7 +2535,7 @@ exports[`Notification position right 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -2655,7 +2649,6 @@ exports[`Notification position right 1`] = `
   right: 24px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
   -webkit-animation: drjPPC 0.2s ease-in-out forwards;
@@ -2676,27 +2669,27 @@ exports[`Notification position right 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -2769,24 +2762,24 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -2843,7 +2836,7 @@ exports[`Notification position start 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -2957,7 +2950,6 @@ exports[`Notification position start 1`] = `
   inset-inline-start: 24px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
-  -moz-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
   -webkit-animation: kPYden 0.2s ease-in-out forwards;
@@ -2978,27 +2970,27 @@ exports[`Notification position start 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -3071,24 +3063,24 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -3145,7 +3137,7 @@ exports[`Notification position top 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -3259,7 +3251,6 @@ exports[`Notification position top 1`] = `
   top: 24px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
-  -moz-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
   -webkit-animation: hnDkLj 0.2s ease-in-out forwards;
@@ -3280,27 +3271,27 @@ exports[`Notification position top 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -3373,24 +3364,24 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -3447,7 +3438,7 @@ exports[`Notification position top-left 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -3561,7 +3552,6 @@ exports[`Notification position top-left 1`] = `
   top: 24px;
   left: 24px;
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
   -webkit-animation: ffftsv 0.2s ease-in-out forwards;
@@ -3582,27 +3572,27 @@ exports[`Notification position top-left 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -3675,24 +3665,24 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -3749,7 +3739,7 @@ exports[`Notification position top-right 1`] = `
   flex-direction: row;
   width: 384px;
   border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
 .c4 {
@@ -3863,7 +3853,6 @@ exports[`Notification position top-right 1`] = `
   top: 24px;
   right: 24px;
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
   -webkit-animation: ffftsv 0.2s ease-in-out forwards;
@@ -3884,27 +3873,27 @@ exports[`Notification position top-right 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-right: 6px;
   }
@@ -3977,24 +3966,24 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gLISVr {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dlJqTi {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ioaWAM {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -4043,7 +4032,7 @@ exports[`Notification should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(204,204,204,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4121,27 +4110,27 @@ exports[`Notification should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
   }
@@ -4202,19 +4191,19 @@ exports[`Notification should have no accessibility violations for toast 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
 
 }
 
@@ -4267,7 +4256,7 @@ exports[`Notification should render custom icon 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(204,204,204,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4358,27 +4347,27 @@ exports[`Notification should render custom icon 1`] = `
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
   }
@@ -4475,7 +4464,7 @@ exports[`Notification should render custom template inside notification 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(204,204,204,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4558,27 +4547,27 @@ exports[`Notification should render custom template inside notification 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
   }
@@ -4676,7 +4665,7 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.1);
+  background-color: rgba(204,204,204,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4767,27 +4756,27 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
   max-width: 432px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
   }
@@ -4954,7 +4943,7 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(0, 199, 129, 0.1);
+  background-color: rgba(0,199,129,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5023,7 +5012,7 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(255, 170, 21, 0.1);
+  background-color: rgba(255,170,21,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5039,7 +5028,7 @@ exports[`Notification status 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(255, 64, 64, 0.1);
+  background-color: rgba(255,64,64,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5081,39 +5070,39 @@ exports[`Notification status 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c10 {
     border-radius: 0px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c12 {
     border-radius: 0px;
   }

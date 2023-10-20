@@ -18,7 +18,7 @@ exports[`Card Themed 1`] = `
   width: 192px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
 }
 
 .c2 {
@@ -41,8 +41,8 @@ exports[`Card Themed 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
@@ -90,6 +90,7 @@ exports[`Card Themed 1`] = `
   flex: 0 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-left: 24px;
   padding-right: 24px;
@@ -98,7 +99,7 @@ exports[`Card Themed 1`] = `
 }
 
 .c0 {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -108,32 +109,32 @@ exports[`Card Themed 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -180,7 +181,7 @@ exports[`Card all 1`] = `
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
@@ -204,6 +205,7 @@ exports[`Card all 1`] = `
   flex: 0 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -234,7 +236,7 @@ exports[`Card all 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
   }
@@ -280,7 +282,7 @@ exports[`Card children 1`] = `
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
@@ -312,7 +314,7 @@ exports[`Card children 1`] = `
   line-height: 24px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
   }
@@ -352,7 +354,7 @@ exports[`Card footer 1`] = `
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
@@ -376,6 +378,7 @@ exports[`Card footer 1`] = `
   flex: 0 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -389,7 +392,7 @@ exports[`Card footer 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
   }
@@ -425,7 +428,7 @@ exports[`Card header 1`] = `
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c2 {
@@ -449,6 +452,7 @@ exports[`Card header 1`] = `
   flex: 0 0 auto;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -462,7 +466,7 @@ exports[`Card header 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
   }
@@ -498,7 +502,7 @@ exports[`Card renders 1`] = `
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c0 {
@@ -511,7 +515,7 @@ exports[`Card renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border-radius: 6px;
   }

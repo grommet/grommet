@@ -20,8 +20,8 @@ exports[`Avatar a11yTitle renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -118,8 +118,8 @@ exports[`Avatar icon renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -177,8 +177,8 @@ exports[`Avatar renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -227,8 +227,8 @@ exports[`Avatar round renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: hidden;
 }
@@ -252,8 +252,8 @@ exports[`Avatar round renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 6px;
   overflow: hidden;
@@ -278,8 +278,8 @@ exports[`Avatar round renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 12px;
   overflow: hidden;
@@ -304,8 +304,8 @@ exports[`Avatar round renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 24px;
   overflow: hidden;
@@ -330,8 +330,8 @@ exports[`Avatar round renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 48px;
   overflow: hidden;
@@ -356,8 +356,8 @@ exports[`Avatar round renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -381,25 +381,25 @@ exports[`Avatar round renders 1`] = `
   object-fit: contain;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-radius: 3px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-radius: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-radius: 12px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c6 {
     border-radius: 24px;
   }
@@ -491,8 +491,8 @@ exports[`Avatar size 1`] = `
   height: 18px;
   width: 18px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -517,8 +517,8 @@ exports[`Avatar size 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -543,8 +543,8 @@ exports[`Avatar size 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -569,8 +569,8 @@ exports[`Avatar size 1`] = `
   height: 72px;
   width: 72px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -595,8 +595,8 @@ exports[`Avatar size 1`] = `
   height: 96px;
   width: 96px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -621,8 +621,8 @@ exports[`Avatar size 1`] = `
   height: 120px;
   width: 120px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -647,8 +647,8 @@ exports[`Avatar size 1`] = `
   height: 144px;
   width: 144px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -673,8 +673,8 @@ exports[`Avatar size 1`] = `
   height: 168px;
   width: 168px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -699,8 +699,8 @@ exports[`Avatar size 1`] = `
   height: 192px;
   width: 192px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -719,7 +719,6 @@ exports[`Avatar size 1`] = `
 .c11 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 18px;
   line-height: 24px;
@@ -728,7 +727,6 @@ exports[`Avatar size 1`] = `
 .c12 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 22px;
   line-height: 28px;
@@ -737,7 +735,6 @@ exports[`Avatar size 1`] = `
 .c13 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 26px;
   line-height: 32px;
@@ -746,7 +743,6 @@ exports[`Avatar size 1`] = `
 .c14 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 34px;
   line-height: 40px;
@@ -755,7 +751,6 @@ exports[`Avatar size 1`] = `
 .c15 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 42px;
   line-height: 48px;
@@ -764,7 +759,6 @@ exports[`Avatar size 1`] = `
 .c16 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 54px;
   line-height: 60px;
@@ -773,7 +767,6 @@ exports[`Avatar size 1`] = `
 .c17 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 70px;
   line-height: 76px;
@@ -782,7 +775,6 @@ exports[`Avatar size 1`] = `
 .c18 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 90px;
   line-height: 96px;
@@ -1012,8 +1004,8 @@ exports[`Avatar stack renders 1`] = `
   height: 18px;
   width: 18px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -1053,8 +1045,8 @@ exports[`Avatar stack renders 1`] = `
   height: 42px;
   width: 42px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -1093,7 +1085,7 @@ exports[`Avatar stack renders 1`] = `
   object-fit: contain;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 2px;
   }
@@ -1173,8 +1165,8 @@ exports[`Avatar text renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -1201,8 +1193,8 @@ exports[`Avatar text renders 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -1221,7 +1213,6 @@ exports[`Avatar text renders 1`] = `
 .c2 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 26px;
   line-height: 32px;
@@ -1285,8 +1276,8 @@ exports[`Avatar text size changes according to theme 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -1311,8 +1302,8 @@ exports[`Avatar text size changes according to theme 1`] = `
   height: 24px;
   width: 24px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -1337,8 +1328,8 @@ exports[`Avatar text size changes according to theme 1`] = `
   height: 72px;
   width: 72px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -1363,8 +1354,8 @@ exports[`Avatar text size changes according to theme 1`] = `
   height: 50px;
   width: 50px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -1383,7 +1374,6 @@ exports[`Avatar text size changes according to theme 1`] = `
 .c3 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 22px;
   line-height: 28px;
@@ -1392,7 +1382,6 @@ exports[`Avatar text size changes according to theme 1`] = `
 .c5 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 30px;
   line-height: normal;
@@ -1401,7 +1390,6 @@ exports[`Avatar text size changes according to theme 1`] = `
 .c7 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 14px;
   line-height: 20px;
@@ -1410,7 +1398,6 @@ exports[`Avatar text size changes according to theme 1`] = `
 .c9 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 10px;
   line-height: normal;

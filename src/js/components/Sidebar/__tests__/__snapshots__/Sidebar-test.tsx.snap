@@ -46,8 +46,8 @@ exports[`Sidebar all 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -76,7 +76,6 @@ exports[`Sidebar all 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   height: 48px;
 }
@@ -84,7 +83,6 @@ exports[`Sidebar all 1`] = `
 .c6 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   font-size: 22px;
   line-height: 28px;
@@ -100,13 +98,13 @@ exports[`Sidebar all 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     height: 24px;
   }
@@ -213,8 +211,8 @@ exports[`Sidebar children 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -230,7 +228,7 @@ exports[`Sidebar children 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
@@ -322,8 +320,8 @@ exports[`Sidebar footer 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -335,7 +333,6 @@ exports[`Sidebar footer 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   height: 48px;
 }
@@ -350,13 +347,13 @@ exports[`Sidebar footer 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
     height: 24px;
   }
@@ -432,8 +429,8 @@ exports[`Sidebar header 1`] = `
   height: 48px;
   width: 48px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
   -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
   overflow: hidden;
@@ -462,7 +459,6 @@ exports[`Sidebar header 1`] = `
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   height: 48px;
 }
@@ -477,13 +473,13 @@ exports[`Sidebar header 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c4 {
     height: 24px;
   }
@@ -559,7 +555,7 @@ exports[`Sidebar renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
