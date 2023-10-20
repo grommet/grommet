@@ -27,6 +27,9 @@ export var RenderedList = function RenderedList() {
         size: "small",
         color: "dark-4"
       }, item.location);
+    },
+    itemKey: function itemKey(item) {
+      return item.entry;
     }
   }));
 };
