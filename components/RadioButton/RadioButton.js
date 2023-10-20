@@ -15,6 +15,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _theme$radioButton$ba;
   var a11yTitle = _ref.a11yTitle,
     checked = _ref.checked,
     children = _ref.children,
@@ -33,8 +34,13 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
   var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonLabel, null, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = (0, _utils.normalizeColor)(theme.radioButton.border.color, theme);
+  var backgroundColor = (0, _utils.normalizeColor)((_theme$radioButton$ba = theme.radioButton.background) == null ? void 0 : _theme$radioButton$ba.color, theme);
   if (checked) {
+    var _theme$radioButton$ch;
     borderColor = (0, _utils.normalizeColor)(theme.radioButton.color || 'control', theme);
+    if ((_theme$radioButton$ch = theme.radioButton.check) != null && (_theme$radioButton$ch = _theme$radioButton$ch.background) != null && _theme$radioButton$ch.color) {
+      backgroundColor = (0, _utils.normalizeColor)(theme.radioButton.check.background.color, theme);
+    }
   }
   return /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonContainer, _extends({}, (0, _utils.removeUndefined)({
     htmlFor: id,
@@ -87,6 +93,7 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
       size: theme.radioButton.border.width,
       color: borderColor
     },
+    backgroundColor: backgroundColor,
     round: theme.radioButton.check.radius
   }, checked && (Icon ? /*#__PURE__*/_react["default"].createElement(Icon, {
     theme: theme,

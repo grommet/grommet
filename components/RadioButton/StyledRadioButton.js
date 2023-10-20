@@ -60,8 +60,7 @@ var StyledRadioButtonBox = exports.StyledRadioButtonBox = _styledComponents["def
   displayName: "StyledRadioButton__StyledRadioButtonBox",
   componentId: "sc-g1f6ld-4"
 })(["background-color:", ";", ";", ";"], function (props) {
-  var _props$theme$radioBut;
-  return (0, _utils.normalizeColor)((_props$theme$radioBut = props.theme.radioButton.check.background) == null ? void 0 : _props$theme$radioBut.color, props.theme);
+  return props.backgroundColor;
 }, function (props) {
   return props.focus && (0, _utils.focusStyle)();
 }, function (props) {

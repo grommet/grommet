@@ -9,6 +9,7 @@ import { normalizeColor, removeUndefined } from '../../utils';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonLabel, StyledRadioButtonBox } from './StyledRadioButton';
 import { RadioButtonPropTypes } from './propTypes';
 var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$radioButton$ba;
   var a11yTitle = _ref.a11yTitle,
     checked = _ref.checked,
     children = _ref.children,
@@ -27,8 +28,13 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/React.createElement(StyledRadioButtonLabel, null, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = normalizeColor(theme.radioButton.border.color, theme);
+  var backgroundColor = normalizeColor((_theme$radioButton$ba = theme.radioButton.background) == null ? void 0 : _theme$radioButton$ba.color, theme);
   if (checked) {
+    var _theme$radioButton$ch;
     borderColor = normalizeColor(theme.radioButton.color || 'control', theme);
+    if ((_theme$radioButton$ch = theme.radioButton.check) != null && (_theme$radioButton$ch = _theme$radioButton$ch.background) != null && _theme$radioButton$ch.color) {
+      backgroundColor = normalizeColor(theme.radioButton.check.background.color, theme);
+    }
   }
   return /*#__PURE__*/React.createElement(StyledRadioButtonContainer, _extends({}, removeUndefined({
     htmlFor: id,
@@ -81,6 +87,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
       size: theme.radioButton.border.width,
       color: borderColor
     },
+    backgroundColor: backgroundColor,
     round: theme.radioButton.check.radius
   }, checked && (Icon ? /*#__PURE__*/React.createElement(Icon, {
     theme: theme,

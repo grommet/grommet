@@ -1756,6 +1756,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         },
         width: '2px'
       },
+      // background: {
+      //   color: undefined,
+      // },
       check: {
         radius: '100%'
         // background: {
