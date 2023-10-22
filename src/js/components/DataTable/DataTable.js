@@ -419,7 +419,7 @@ const DataTable = ({
   const bodyContent = groups ? (
     <GroupedBody
       ref={bodyRef}
-      cellProps={cellProps.body}
+      cellProps={{ body: cellProps.body, groupHeader: cellProps.groupHeader }}
       columns={columns}
       disabled={disabled}
       groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
