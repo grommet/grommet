@@ -157,7 +157,7 @@ export const makeNodeFocusable = (node) => {
   }
 };
 
-const autoFocusingTags = /(a|area|input|select|textarea|button|iframe)$/;
+const autoFocusingTags = /(a|area|input|select|textarea|button|iframe)(?![\w-])$/;
 
 export const makeNodeUnfocusable = (node) => {
   // do not touch aria live containers so that announcements work
