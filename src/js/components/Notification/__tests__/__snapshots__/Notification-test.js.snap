@@ -18,20 +18,20 @@ exports[`Notification custom theme 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -228,20 +228,20 @@ exports[`Notification global 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -449,20 +449,20 @@ exports[`Notification multi actions 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -711,20 +711,20 @@ exports[`Notification position bottom 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -972,24 +972,24 @@ exports[`Notification position bottom 1`] = `
 
 exports[`Notification position bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -1012,20 +1012,20 @@ exports[`Notification position bottom-left 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1273,24 +1273,24 @@ exports[`Notification position bottom-left 1`] = `
 
 exports[`Notification position bottom-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -1313,20 +1313,20 @@ exports[`Notification position bottom-right 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1574,24 +1574,24 @@ exports[`Notification position bottom-right 1`] = `
 
 exports[`Notification position bottom-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -1614,20 +1614,20 @@ exports[`Notification position center 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1875,24 +1875,24 @@ exports[`Notification position center 1`] = `
 
 exports[`Notification position center 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -1915,20 +1915,20 @@ exports[`Notification position end 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2176,24 +2176,24 @@ exports[`Notification position end 1`] = `
 
 exports[`Notification position end 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -2216,20 +2216,20 @@ exports[`Notification position left 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2477,24 +2477,24 @@ exports[`Notification position left 1`] = `
 
 exports[`Notification position left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -2517,20 +2517,20 @@ exports[`Notification position right 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2778,24 +2778,24 @@ exports[`Notification position right 1`] = `
 
 exports[`Notification position right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -2818,20 +2818,20 @@ exports[`Notification position start 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3079,24 +3079,24 @@ exports[`Notification position start 1`] = `
 
 exports[`Notification position start 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -3119,20 +3119,20 @@ exports[`Notification position top 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3380,24 +3380,24 @@ exports[`Notification position top 1`] = `
 
 exports[`Notification position top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -3420,20 +3420,20 @@ exports[`Notification position top-left 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3681,24 +3681,24 @@ exports[`Notification position top-left 1`] = `
 
 exports[`Notification position top-left 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -3721,20 +3721,20 @@ exports[`Notification position top-right 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3982,24 +3982,24 @@ exports[`Notification position top-right 1`] = `
 
 exports[`Notification position top-right 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gAStDO {
+  .dUFna-d {
     border-radius: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cFsGcf {
+  .bkJxIQ {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dTYZxt {
+  .bMhGbS {
     padding-right: 6px;
   }
 }"
@@ -4023,20 +4023,20 @@ exports[`Notification should have no accessibility violations 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4247,20 +4247,20 @@ exports[`Notification should render custom icon 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4455,20 +4455,20 @@ exports[`Notification should render custom template inside notification 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4656,20 +4656,20 @@ exports[`Notification should render the default icon if no icon is passed 1`] = 
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4866,20 +4866,20 @@ exports[`Notification status 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4900,20 +4900,20 @@ exports[`Notification status 1`] = `
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c11 *[fill-rule],
 .c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -4934,20 +4934,20 @@ exports[`Notification status 1`] = `
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill="none"] {
+.c13 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*="#"],
-.c13 *[STROKE*="#"] {
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
 .c13 *[fill-rule],
 .c13 *[FILL-RULE],
-.c13 *[fill*="#"],
-.c13 *[FILL*="#"] {
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }

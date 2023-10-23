@@ -1511,6 +1511,23 @@ exports[`Box border 1`] = `
       two
     </div>
   </div>
+  <div
+    class="c4"
+  >
+    <div
+      class="c17"
+    >
+      one
+    </div>
+    <div
+      class="c18"
+    />
+    <div
+      class="c17"
+    >
+      two
+    </div>
+  </div>
 </div>
 `;
 
@@ -1739,7 +1756,8 @@ exports[`Box hoverIndicator 1`] = `
 }
 
 .c3:hover {
-  background: #33333310;
+  background-color: #33333310;
+  color: #000000;
 }
 
 .c4 {

@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-import { FormUp } from 'grommet-icons/icons/FormUp';
 
 import { setFocusWithoutScroll } from '../../utils';
 
@@ -46,6 +45,7 @@ const SelectMultipleContainer = forwardRef(
       dropHeight,
       emptySearchMessage = 'No matches found',
       help,
+      icon,
       id,
       labelKey,
       limit,
@@ -111,7 +111,7 @@ const SelectMultipleContainer = forwardRef(
 
     useEffect(() => {
       const optionsNode = optionsRef.current;
-      if (optionsNode.children) {
+      if (optionsNode?.children) {
         const optionNode = optionsNode.children[activeIndex];
         if (optionNode) optionNode.focus();
       }
@@ -185,7 +185,7 @@ const SelectMultipleContainer = forwardRef(
       (event) => {
         event.preventDefault();
         const nextActiveIndex = activeIndex + 1;
-        if (nextActiveIndex !== options.length) {
+        if (nextActiveIndex !== options?.length) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
@@ -255,7 +255,7 @@ const SelectMultipleContainer = forwardRef(
         if (
           !isDisabled(activeIndex) &&
           activeIndex >= 0 &&
-          activeIndex < options.length
+          activeIndex < options?.length
         ) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
@@ -299,7 +299,7 @@ const SelectMultipleContainer = forwardRef(
         if (value.length === limit) {
           const newDisabled = [...disabledProp];
           // disable everything that is not selected
-          for (let i = 0; i < options.length; i += 1) {
+          for (let i = 0; i < options?.length; i += 1) {
             if (!isSelected(i) && !originallyDisabled(i)) {
               newDisabled.push(options[i]);
             }
@@ -354,15 +354,26 @@ const SelectMultipleContainer = forwardRef(
       />
     );
 
+    let helpContent;
+    if (help) {
+      if (typeof help === 'string')
+        helpContent = (
+          <Box flex={false} pad="xsmall">
+            <Text size="small">{help}</Text>
+          </Box>
+        );
+      else helpContent = <Box flex={false}>{help}</Box>;
+    }
+
     if (showSelectedInline)
       summaryContent = (
         <Box direction="row" justify="between" flex={false}>
           {summaryContent}
-          <Button onClick={onClose} a11yTitle="Close Select">
-            <Box fill alignSelf="start" pad={{ right: 'small', top: 'small' }}>
-              <FormUp />
-            </Box>
-          </Button>
+          <Box>
+            <Button fill="vertical" onClick={onClose} a11yTitle="Close Select">
+              {icon}
+            </Button>
+          </Box>
         </Box>
       );
 
@@ -408,16 +419,16 @@ const SelectMultipleContainer = forwardRef(
               </Keyboard>
             </Box>
           )}
-          <Box flex={false}>{help}</Box>
-          <OptionsContainer
-            role="listbox"
-            tabIndex="0"
-            ref={optionsRef}
-            aria-multiselectable
-            onMouseMove={() => setKeyboardNavigation(false)}
-            aria-activedescendant={optionsRef?.current?.children[activeIndex]}
-          >
-            {options.length > 0 ? (
+          {helpContent}
+          {options?.length > 0 ? (
+            <OptionsContainer
+              role="listbox"
+              tabIndex="0"
+              ref={optionsRef}
+              aria-multiselectable
+              onMouseMove={() => setKeyboardNavigation(false)}
+              aria-activedescendant={optionsRef?.current?.children[activeIndex]}
+            >
               <InfiniteScroll
                 items={options}
                 step={theme.select.step}
@@ -566,14 +577,14 @@ const SelectMultipleContainer = forwardRef(
                   );
                 }}
               </InfiniteScroll>
-            ) : (
-              <EmptySearchOption
-                emptySearchMessage={emptySearchMessage}
-                selectOptionsStyle={selectOptionsStyle}
-                theme={theme}
-              />
-            )}
-          </OptionsContainer>
+            </OptionsContainer>
+          ) : (
+            <EmptySearchOption
+              emptySearchMessage={emptySearchMessage}
+              selectOptionsStyle={selectOptionsStyle}
+              theme={theme}
+            />
+          )}
           {usingKeyboard && showA11yLimit && (
             <Box
               height="0px"

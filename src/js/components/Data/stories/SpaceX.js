@@ -227,5 +227,5 @@ SpaceX.args = {
 };
 
 export default {
-  title: 'Layout/Data/SpaceX',
+  title: 'Data/Data/SpaceX',
 };

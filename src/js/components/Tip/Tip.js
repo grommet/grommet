@@ -15,6 +15,7 @@ import { TipPropTypes } from './propTypes';
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
   const [over, setOver] = useState(false);
+  const [tooltipOver, setTooltipOver] = useState(false);
   const usingKeyboard = useKeyboard();
 
   const componentRef = useForwardedRef(tipRef);
@@ -68,13 +69,15 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
 
   return [
     clonedChild,
-    over && (
+    (over || tooltipOver) && (
       <Drop
         target={componentRef.current}
         trapFocus={false}
         key="tip-drop"
         {...theme.tip.drop}
         {...dropProps}
+        onMouseEnter={() => setTooltipOver(true)}
+        onMouseLeave={() => setTooltipOver(false)}
       >
         {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
       </Drop>

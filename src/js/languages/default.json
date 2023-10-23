@@ -1,4 +1,8 @@
 {
+  "button": {
+    "busy": "button is in a busy state",
+    "success": "button action succeeded"
+  },
   "calendar": {
     "previousMove": "Moved to {date}",
     "previous": "Go to {date}",
@@ -18,20 +22,26 @@
   "dataFilters": {
     "clear": "Clear filters",
     "heading": "Filters",
-    "open": "Open filters"
+    "open": "Open filters",
+    "openSet": {
+      "singular": "Open filters, {number} filter applied",
+      "plural": "Open filters, {number} filters applied"
+    }
   },
   "dataForm": {
     "reset": "Undo changes",
     "submit": "Apply filters"
   },
   "dataSearch": {
-    "label": "Search data"
+    "label": "Search",
+    "open": "Open search"
   },
   "dataSort": {
     "ascending": "Ascending",
     "by": "Sort by",
     "descending": "Descending",
-    "direction": "Sort direction"
+    "direction": "Sort direction",
+    "open": "Open sort"
   },
   "dataSummary": {
     "filtered": "{filteredTotal} results of {total} items",
@@ -41,21 +51,29 @@
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",
-    "select": "Select columns"
+    "select": "Select columns",
+    "tip": "Manage columns"
+  },
+  "dataTableGroupBy": {
+    "clear": "Clear group",
+    "label": "Group by"
+  },
+  "dataView": {
+    "label": "View"
   },
   "fileInput": {
     "browse": "browse",
     "dropPrompt": "Drop file here or",
     "dropPromptMultiple": "Drop files here or",
     "files": "files",
+    "maxFile": "Attach a maximum of {max} files only.",
     "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize}.",
     "maxSizeMultiple": {
       "singular": "One file is too large. Select files which are no larger than {maxSize}.",
       "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
     },
     "remove": "remove",
-    "removeAll": "remove all",
-    "maxFile": "Attach a maximum of {max} files only."
+    "removeAll": "remove all"
   },
   "form": {
     "invalid": "invalid",
@@ -86,9 +104,10 @@
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
   },
   "video": {
+    "audioDescriptions": "video audio description",
     "captions": "closed captions",
     "closeMenu": "close menu",
-    "audioDescriptions": "video audio description",
+    "description": "video audio description",
     "fullScreen": "full screen",
     "progressMeter": "video progress",
     "scrubber": "scrubber",
@@ -96,7 +115,6 @@
     "pauseButton": "pause",
     "playButton": "play",
     "volumeDown": "volume down",
-    "volumeUp": "volume up",
-    "description": "video audio description"
+    "volumeUp": "volume up"
   }
 }

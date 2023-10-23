@@ -36,14 +36,26 @@ const StyledAnchor = styled.a.withConfig({
   box-sizing: border-box;
   ${(props) => sizeStyle(props)}
   color: ${(props) =>
-    normalizeColor(props.colorProp || props.theme.anchor.color, props.theme)};
+    normalizeColor(
+      props.colorProp ||
+        props.theme.anchor?.size?.[props.size]?.color ||
+        props.theme.anchor.color,
+      props.theme,
+    )};
   ${(props) =>
     props.weight
       ? `font-weight: ${props.weight};`
-      : props.theme.anchor.fontWeight &&
-        `font-weight: ${props.theme.anchor.fontWeight};`}
+      : (props.theme.anchor?.size?.[props.size]?.fontWeight ||
+          props.theme.anchor.fontWeight) &&
+        `font-weight: ${
+          props.theme.anchor?.size?.[props.size]?.fontWeight ||
+          props.theme.anchor.fontWeight
+        };`}
   text-decoration: ${(props) =>
-    props.hasIcon ? 'none' : props.theme.anchor.textDecoration};
+    props.hasIcon
+      ? 'none'
+      : props.theme.anchor?.size?.[props.size]?.textDecoration ||
+        props.theme.anchor.textDecoration};
   cursor: pointer;
   ${genericStyles}
 

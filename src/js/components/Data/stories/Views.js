@@ -44,5 +44,5 @@ Views.args = {
 };
 
 export default {
-  title: 'Layout/Data/Views',
+  title: 'Data/Data/Views',
 };

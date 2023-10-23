@@ -7,15 +7,12 @@ import {
   plainInputStyle,
   textAlignStyle,
 } from '../../utils';
+import { inputPadForIcon } from '../../utils/styles';
 
 export const StyledMaskedInput = styled.input`
   ${inputStyle}
   ${(props) => props.plain && plainInputStyle}
-  ${(props) =>
-    props.icon &&
-    (props.reverse
-      ? `padding-right: ${props.theme.global.edgeSize.large};`
-      : `padding-left: ${props.theme.global.edgeSize.large};`)}
+  ${(props) => props.icon && inputPadForIcon}
   ${(props) =>
     props.disabled &&
     disabledStyle(

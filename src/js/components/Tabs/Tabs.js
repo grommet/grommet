@@ -204,7 +204,7 @@ const Tabs = forwardRef(
       if (
         overflow &&
         tabRefs &&
-        tabRefs[activeIndex].current &&
+        tabRefs[activeIndex]?.current &&
         !isVisible(activeIndex)
       )
         scrollTo(activeIndex, true);
@@ -331,6 +331,7 @@ const Tabs = forwardRef(
         background={theme.tabs.background}
       >
         <Box
+          alignSelf={alignControls || theme.tabs.header?.alignSelf}
           role="tablist"
           flex={false}
           direction={overflow ? 'row' : 'column'}
@@ -360,7 +361,6 @@ const Tabs = forwardRef(
             as={Box}
             direction="row"
             justify={overflow ? 'start' : justify}
-            alignSelf={alignControls}
             flex={!!overflow}
             wrap={false}
             overflow={overflow ? 'hidden' : 'visible'}

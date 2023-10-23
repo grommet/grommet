@@ -8,11 +8,15 @@ import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 
-const sizeStyle = (size, feature, theme) => {
+const sizeStyle = (size, feature, theme, breakpoint) => {
   const style = {
     ...theme.pageHeader[feature],
     ...((size && theme.pageHeader.size[size]?.[feature]) ??
       theme.pageHeader[feature]),
+    ...((!size || size === 'medium') &&
+      feature === 'subtitle' &&
+      theme.global.breakpoints[breakpoint]?.value <=
+        theme.global.breakpoints.small?.value && { size: 'medium' }),
   };
 
   return style;
@@ -28,6 +32,7 @@ const PageHeader = forwardRef(
       size,
       subtitle,
       title,
+      level,
       ...rest
     },
     ref,
@@ -72,14 +77,16 @@ const PageHeader = forwardRef(
           </Box>
           <Box gridArea="title">
             {typeof title === 'string' ? (
-              <Heading {...sizeStyle(size, 'title', theme)}>{title}</Heading>
+              <Heading {...sizeStyle(size, 'title', theme)} level={level}>
+                {title}
+              </Heading>
             ) : (
               title
             )}
           </Box>
           <Box gridArea="subtitle">
             {typeof subtitle === 'string' ? (
-              <Paragraph {...sizeStyle(size, 'subtitle', theme)}>
+              <Paragraph {...sizeStyle(size, 'subtitle', theme, breakpoint)}>
                 {subtitle}
               </Paragraph>
             ) : (

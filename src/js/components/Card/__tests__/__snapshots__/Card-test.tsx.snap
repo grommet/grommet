@@ -78,7 +78,8 @@ exports[`Card Themed 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF27;
+  background-color: #FFFFFF27;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;

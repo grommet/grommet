@@ -17,7 +17,7 @@ const normalizeView = (viewProp, views) =>
 
 export const Data = ({
   children,
-  data: dataProp,
+  data: dataProp = [],
   defaultView = defaultDefaultView,
   filteredTotal,
   id = 'data',

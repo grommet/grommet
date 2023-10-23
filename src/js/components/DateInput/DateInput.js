@@ -74,7 +74,9 @@ const DateInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
-      (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
+      (theme.icon?.matchSize && rest.size) ||
+      theme.dateInput.icon?.size ||
+      'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
@@ -147,6 +149,23 @@ Use the icon prop instead.`,
       }
     }, [range, schema, textValue, reference, value]);
 
+    // textValue of MaskedInput is controlled.
+    // for uncontrolled forms, ensure the reset event
+    // resets the textValue
+    useEffect(() => {
+      const form = ref?.current?.form;
+      const handleFormReset = (e) => {
+        if (schema && ref.current && e.target.contains(ref.current)) {
+          setTextValue('');
+        }
+      };
+      // place the listener on the form directly. if listener is on window,
+      // the event could get blocked if caller has e.stopPropagation(), etc. in
+      // their form onReset
+      form?.addEventListener('reset', handleFormReset);
+      return () => form?.removeEventListener('reset', handleFormReset);
+    }, [schema, ref]);
+
     // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
 
@@ -184,7 +203,8 @@ Use the icon prop instead.`,
                 if (range && Array.isArray(nextValue))
                   [normalizedValue] = nextValue;
                 // clicking an edge date removes it
-                else if (range) normalizedValue = [nextValue, nextValue];
+                else if (range && nextValue)
+                  normalizedValue = [nextValue, nextValue];
                 else normalizedValue = nextValue;
 
                 if (schema) setTextValue(valueToText(normalizedValue, schema));

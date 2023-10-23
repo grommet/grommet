@@ -26,10 +26,10 @@ const layerProps = {
 export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   const {
     clearFilters,
-    data,
     id: dataId,
     messages,
     properties,
+    unfilteredData,
     view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
@@ -49,7 +49,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   );
 
   const clearControl = badge && (
-    <Box flex={false}>
+    <Box flex={false} margin={{ start: 'small' }}>
       <Button
         label={format({
           id: 'dataFilters.clear',
@@ -63,30 +63,29 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
     </Box>
   );
 
-  let filters;
+  let content = children;
   if (Children.count(children) === 0) {
     let filtersFor;
-    if (!properties && data && data.length)
+    if (!properties && unfilteredData && unfilteredData.length)
       // build from a piece of data, ignore object values
-      filtersFor = Object.keys(data[0]).filter(
-        (k) => typeof data[0][k] !== 'object',
+      filtersFor = Object.keys(unfilteredData[0]).filter(
+        (k) => typeof unfilteredData[0][k] !== 'object',
       );
     else if (Array.isArray(properties)) filtersFor = properties;
     else if (typeof properties === 'object')
       filtersFor = Object.keys(properties);
     else filtersFor = [];
-    filters = filtersFor.map((property) => (
+    content = filtersFor.map((property) => (
       <DataFilter key={property} property={property} />
     ));
     if (view?.sort) {
-      filters.push(<DataSort key="_sort" />);
+      content.push(<DataSort key="_sort" />);
     }
   }
 
-  const content = (
+  content = (
     <DataForm
       pad={controlled ? 'medium' : undefined}
-      gap="small"
       onDone={() => setShowContent(false)}
       onTouched={
         controlled
@@ -100,9 +99,9 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
               }))
           : undefined
       }
-      {...(!controlled ? rest : {})}
+      {...(!controlled ? rest : { fill: 'vertical' })}
     >
-      {!drop && (
+      {layer && (
         <Header>
           <Heading margin="none" level={2} size="small">
             {heading ||
@@ -112,32 +111,34 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
               })}
           </Heading>
           {!controlled && clearControl}
-          {layer && (
-            <Button
-              icon={<FormClose />}
-              hoverIndicator
-              onClick={() => setShowContent(undefined)}
-            />
-          )}
+          <Button
+            icon={<FormClose />}
+            hoverIndicator
+            onClick={() => setShowContent(undefined)}
+          />
         </Header>
       )}
-      {filters}
-      {children}
+      {content}
     </DataForm>
   );
 
   if (!controlled) return content;
 
-  // drop
+  const tip = format({
+    id: badge
+      ? `dataFilters.openSet.${badge === 1 ? 'singular' : 'plural'}`
+      : 'dataFilters.open',
+    messages: messages?.dataFilters,
+    values: { number: badge },
+  });
+
   let control;
   if (drop) {
     control = (
       <DropButton
         id={`${dataId}--filters-control`}
-        aria-label={format({
-          id: 'dataFilters.open',
-          messages: messages?.dataFilters,
-        })}
+        tip={tip}
+        aria-label={tip}
         kind="toolbar"
         icon={<Filter />}
         hoverIndicator
@@ -153,10 +154,8 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
     control = (
       <Button
         id={`${dataId}--filters-control`}
-        aria-label={format({
-          id: 'dataFilters.open',
-          messages: messages?.dataFilters,
-        })}
+        tip={tip}
+        aria-label={tip}
         kind="toolbar"
         hoverIndicator
         icon={<Filter />}
@@ -167,7 +166,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   }
 
   return (
-    <Box flex={false} direction="row" gap="small" {...rest}>
+    <Box flex={false} direction="row" {...rest}>
       {control}
       {clearControl}
       {layer && showContent && (

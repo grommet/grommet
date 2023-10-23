@@ -19,7 +19,7 @@ export const set = (obj, path, value) => {
 
 // get the value for the property in the datum object
 export const datumValue = (datum, property) => {
-  if (!property) return undefined;
+  if (!property || !datum) return undefined;
   const parts = property.split('.');
   if (parts.length === 1) return datum[property];
   if (!datum[parts[0]]) return undefined;
@@ -29,16 +29,23 @@ export const datumValue = (datum, property) => {
 // get the primary property name
 export const normalizePrimaryProperty = (columns, primaryKey) => {
   let result;
-  columns.forEach((column) => {
-    // remember the first key property
-    if (column.primary && !result) {
-      result = column.property;
-    }
-  });
-  if (!result) {
-    if (primaryKey === false) result = undefined;
-    else if (primaryKey) result = primaryKey;
-    else if (columns.length > 0) result = columns[0].property;
+  if (typeof primaryKey === 'string' || typeof primaryKey === 'boolean') {
+    result = primaryKey;
+  } else if (primaryKey === null) {
+    console.warn(
+      'null is not a supported value for primaryKey. See supported values: https://v2.grommet.io/datatable#primaryKey',
+    );
+  }
+  if (result === undefined) {
+    columns.forEach((column) => {
+      // remember the first key property
+      if (column.primary && !result) {
+        result = column.property;
+      }
+    });
+  }
+  if (result === undefined && columns.length > 0) {
+    result = columns[0].property;
   }
   return result;
 };
@@ -222,7 +229,7 @@ export const buildGroupState = (groups, groupBy) => {
   const result = {};
   if (groups) {
     groups.forEach(({ key }) => {
-      if (key) result[key] = { expanded: false };
+      if (key !== undefined) result[key] = { expanded: false };
     });
   }
   if (groupBy && groupBy.expand) {

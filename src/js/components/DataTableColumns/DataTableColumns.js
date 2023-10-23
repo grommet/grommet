@@ -76,7 +76,7 @@ const Content = ({ drop, options, ...rest }) => {
       if (nextSearch) {
         const lowerSearch = nextSearch.toLowerCase();
         nextFilteredOptions = options.filter((o) =>
-          (o.property ?? o.label ?? o)?.toLowerCase().includes(lowerSearch),
+          (o.label ?? o.property ?? o)?.toLowerCase().includes(lowerSearch),
         );
       }
       setSearch(nextSearch);
@@ -151,6 +151,11 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
 
+  const tip = format({
+    id: 'dataTableColumns.tip',
+    messages: messages?.dataTableColumns,
+  });
+
   let content = <Content drop={drop} options={options} />;
   if (noForm)
     content = (
@@ -170,6 +175,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
       })}
       kind="toolbar"
       icon={<Splits />}
+      tip={tip}
       dropProps={dropProps}
       dropContent={content}
       open={showContent}

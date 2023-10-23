@@ -389,6 +389,393 @@ exports[`Anchor is clickable 1`] = `
 </div>
 `;
 
+exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true 1`] = `
+<DocumentFragment>
+  .c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: NaNpx;
+  height: NaNpx;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 96px;
+  height: 96px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 18px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c4:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c6:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: 22px;
+  line-height: 28px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10 {
+  box-sizing: border-box;
+  font-size: 26px;
+  line-height: 32px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c10:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
+<div
+    class="c0"
+  >
+    <a
+      class="c1"
+    >
+      <span
+        class="c2"
+        direction="row"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        Label
+      </span>
+    </a>
+    <a
+      class="c4"
+    >
+      <span
+        class="c2"
+        direction="row"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        Label
+      </span>
+    </a>
+    <a
+      class="c6"
+    >
+      <span
+        class="c2"
+        direction="row"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c7"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        Label
+      </span>
+    </a>
+    <a
+      class="c8"
+    >
+      <span
+        class="c2"
+        direction="row"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        Label
+      </span>
+    </a>
+    <a
+      class="c10"
+    >
+      <span
+        class="c2"
+        direction="row"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c11"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        Label
+      </span>
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Anchor renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -502,6 +889,515 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
     </a>
   </div>
 </div>
+`;
+
+exports[`Anchor renders size specific theming 1`] = `
+<DocumentFragment>
+  .c18 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c18 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c18 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c19 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c19 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c19 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c19 *[stroke*='#'],
+.c19 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c19 *[fill-rule],
+.c19 *[FILL-RULE],
+.c19 *[fill*='#'],
+.c19 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c2:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c5:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c7:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  box-sizing: border-box;
+  font-size: 22px;
+  line-height: 28px;
+  color: #7D4CDB;
+  font-weight: 500;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c9:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c11 {
+  box-sizing: border-box;
+  font-size: 26px;
+  line-height: 32px;
+  color: #7D4CDB;
+  font-weight: 500;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c11:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c13 {
+  box-sizing: border-box;
+  font-size: 34px;
+  line-height: 40px;
+  color: #7D4CDB;
+  font-weight: 500;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c13:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c16 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.c16:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c17 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #000000;
+  font-weight: 700;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c17:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
+.c15 {
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 336px;
+}
+
+.c4 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c10 {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.c12 {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.c14 {
+  font-size: 34px;
+  line-height: 40px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <a
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          xsmall
+        </span>
+      </a>
+      <span
+        class="c4"
+      >
+        Anchor should inherit 
+        <a
+          class="c2"
+        >
+          <span
+            class="c3"
+          >
+            xsmall
+          </span>
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c5"
+      >
+        <span
+          class="c3"
+        >
+          small
+        </span>
+      </a>
+      <span
+        class="c6"
+      >
+        Anchor should inherit 
+        <a
+          class="c5"
+        >
+          <span
+            class="c3"
+          >
+            small
+          </span>
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c7"
+      >
+        <span
+          class="c3"
+        >
+          medium
+        </span>
+      </a>
+      <span
+        class="c8"
+      >
+        Anchor should inherit 
+        <a
+          class="c7"
+        >
+          <span
+            class="c3"
+          >
+            medium
+          </span>
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c9"
+      >
+        <span
+          class="c3"
+        >
+          large
+        </span>
+      </a>
+      <span
+        class="c10"
+      >
+        Anchor should inherit 
+        <a
+          class="c9"
+        >
+          <span
+            class="c3"
+          >
+            large
+          </span>
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c11"
+      >
+        <span
+          class="c3"
+        >
+          xlarge
+        </span>
+      </a>
+      <span
+        class="c12"
+      >
+        Anchor should inherit 
+        <a
+          class="c11"
+        >
+          <span
+            class="c3"
+          >
+            xlarge
+          </span>
+        </a>
+         from text.
+      </span>
+    </div>
+    <div
+      class="c1"
+    >
+      <a
+        class="c13"
+      >
+        <span
+          class="c3"
+        >
+          xxlarge
+        </span>
+      </a>
+      <span
+        class="c14"
+      >
+        Anchor should inherit 
+        <a
+          class="c13"
+        >
+          <span
+            class="c3"
+          >
+            xxlarge
+          </span>
+        </a>
+         from text.
+      </span>
+    </div>
+    <p
+      class="c15"
+    >
+      Anchor should inherit 
+      <a
+        class="c5"
+      >
+        <span
+          class="c3"
+        >
+          small
+        </span>
+      </a>
+       from Paragraph.
+    </p>
+    <a
+      class="c16"
+    >
+      <span
+        class="c3"
+      >
+        Default anchor with no size prop should receive medium
+      </span>
+    </a>
+    <a
+      class="c17"
+    >
+      <span
+        class="c3"
+        direction="row"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c18"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        Anchor with icon
+      </span>
+    </a>
+    <a
+      class="c9"
+    >
+      <span
+        class="c3"
+        direction="row"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c19"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        Large anchor with icon should receive color on icon
+      </span>
+    </a>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Anchor renders tag 1`] = `

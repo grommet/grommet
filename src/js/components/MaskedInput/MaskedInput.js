@@ -15,7 +15,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { sizeStyle, useForwardedRef } from '../../utils';
+import { sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
 
 import {
   StyledMaskedInput,
@@ -185,6 +185,7 @@ const MaskedInput = forwardRef(
     const [value, setValue] = formContext.useFormInput({
       name,
       value: valueProp,
+      initialValue: '',
     });
 
     const valueParts = useMemo(() => parseValue(mask, value), [mask, value]);
@@ -366,11 +367,13 @@ const MaskedInput = forwardRef(
     const renderPlaceholder = () =>
       mask.map((item) => item.placeholder || item.fixed).join('');
 
+    const maskedInputIcon = useSizedIcon(icon, rest.size, theme);
+
     return (
       <StyledMaskedInputContainer plain={plain}>
-        {icon && (
+        {maskedInputIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
-            {icon}
+            {maskedInputIcon}
           </StyledIcon>
         )}
         <Keyboard
