@@ -51,9 +51,10 @@
   "peerDependencies": {
     "react": "^16.6.1 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.6.1 || ^17.0.0 || ^18.0.0",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0 || ^6.0.0"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.1",
     "grommet-icons": "^4.10.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^7.2.0",
@@ -136,7 +137,7 @@
     "require-reload": "^0.2.2",
     "simple-git": "^3.19.1",
     "storybook": "7.0.20",
-    "styled-components": "5.3.9",
+    "styled-components": "^6.0.0",
     "tarball-extract": "^0.0.6",
     "testcafe": "^3.3.0",
     "testcafe-react-selectors": "^5.0.3",
@@ -189,6 +190,9 @@
         "statements": 86.6
       }
     },
+    "moduleNameMapper": {
+      "^styled-components": "styled-components/dist/styled-components.browser.cjs.js"
+    },
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"
     ],
@@ -205,7 +209,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "161 kB"
+      "maxSize": "164 kB"
     }
   ],
   "keywords": [

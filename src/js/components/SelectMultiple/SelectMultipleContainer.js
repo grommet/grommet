@@ -388,7 +388,6 @@ const SelectMultipleContainer = forwardRef(
       >
         <StyledContainer
           ref={ref}
-          as={Box}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
           a11yTitle="Select dropdown"

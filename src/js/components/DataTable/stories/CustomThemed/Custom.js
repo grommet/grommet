@@ -31,7 +31,7 @@ const customTheme = {
             sort &&
             sort.property !== column &&
             `
-              :hover {
+              &:hover {
                 svg {
                   opacity: 100%;
                 }

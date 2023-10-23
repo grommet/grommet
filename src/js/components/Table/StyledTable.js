@@ -5,6 +5,7 @@ import {
   borderStyle,
   edgeStyle,
   genericStyles,
+  styledComponentsConfig,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -39,7 +40,7 @@ const sizeStyle = css`
   overflow: hidden;
 `;
 
-const StyledTableCell = styled.td`
+const StyledTableCell = styled.td.withConfig(styledComponentsConfig)`
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -67,34 +68,36 @@ const StyledTableCell = styled.td`
 StyledTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledTableCell.defaultProps, defaultProps);
 
-const StyledTableDataCaption = styled.caption`
+const StyledTableDataCaption = styled.caption.withConfig(
+  styledComponentsConfig,
+)`
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
 
 StyledTableDataCaption.defaultProps = {};
 Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
 
-const StyledTableRow = styled.tr``;
+const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)``;
 
 StyledTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledTableRow.defaultProps, defaultProps);
 
-const StyledTableBody = styled.tbody``;
+const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)``;
 
 StyledTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledTableBody.defaultProps, defaultProps);
 
-const StyledTableHeader = styled.thead``;
+const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)``;
 
 StyledTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledTableHeader.defaultProps, defaultProps);
 
-const StyledTableFooter = styled.tfoot``;
+const StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig)``;
 
 StyledTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledTableFooter.defaultProps, defaultProps);
 
-const StyledTable = styled.table`
+const StyledTable = styled.table.withConfig(styledComponentsConfig)`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;

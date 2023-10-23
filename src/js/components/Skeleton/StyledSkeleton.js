@@ -7,12 +7,13 @@ import {
   heightStyle,
   roundStyle,
   widthStyle,
+  styledComponentsConfig,
 } from '../../utils';
 
 // Styling a div directly rather than just using
 // a Box since Box itself will react to a SkeletonContext
 // and we don't want that here.
-export const StyledSkeleton = styled.div`
+export const StyledSkeleton = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   box-sizing: border-box;
 

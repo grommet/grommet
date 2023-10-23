@@ -13,46 +13,31 @@ exports[`Form accessibility Box with TextInput in Form should
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -68,7 +53,7 @@ exports[`Form accessibility Box with TextInput in Form should
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
 }
 
@@ -77,18 +62,18 @@ exports[`Form accessibility Box with TextInput in Form should
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -104,7 +89,7 @@ exports[`Form accessibility Box with TextInput in Form should
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -123,15 +108,15 @@ exports[`Form accessibility Box with TextInput in Form should
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -155,7 +140,6 @@ exports[`Form accessibility Box with TextInput in Form should
               aria-label="test"
               autocomplete="off"
               class="c5"
-              value=""
             />
           </div>
         </div>
@@ -177,109 +161,64 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-.c3:hover input:not([disabled]) + div,
-.c3:hover input:not([disabled]) + span {
+.c3:hover input:not([disabled])+div,
+.c3:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -292,44 +231,42 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   cursor: pointer;
 }
 
-.c6:checked + span > span {
+.c6:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c5 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -381,32 +318,22 @@ exports[`Form accessibility FormField with an explicit TextInput child
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -422,7 +349,7 @@ exports[`Form accessibility FormField with an explicit TextInput child
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -440,7 +367,7 @@ exports[`Form accessibility FormField with an explicit TextInput child
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -459,15 +386,15 @@ exports[`Form accessibility FormField with an explicit TextInput child
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -488,7 +415,6 @@ exports[`Form accessibility FormField with an explicit TextInput child
             aria-label="test"
             autocomplete="off"
             class="c4"
-            value=""
           />
         </div>
       </div>
@@ -500,8 +426,6 @@ exports[`Form accessibility FormField with an explicit TextInput child
 exports[`Form accessibility Select in Form should have no accessibility violations 1`] = `
 .c10 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -543,80 +467,47 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -624,11 +515,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -637,7 +524,6 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -655,18 +541,18 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -682,7 +568,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -700,7 +586,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -723,19 +609,19 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   cursor: pointer;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     margin-left: 6px;
     margin-right: 6px;
@@ -817,32 +703,22 @@ exports[`Form accessibility TextInput in Form should have
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -858,7 +734,7 @@ exports[`Form accessibility TextInput in Form should have
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -876,7 +752,7 @@ exports[`Form accessibility TextInput in Form should have
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -895,15 +771,15 @@ exports[`Form accessibility TextInput in Form should have
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -924,7 +800,6 @@ exports[`Form accessibility TextInput in Form should have
             aria-label="test"
             autocomplete="off"
             class="c4"
-            value=""
           />
         </div>
       </div>
@@ -945,124 +820,74 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-.c6:hover input:not([disabled]) + div,
-.c6:hover input:not([disabled]) + span {
+.c6:hover input:not([disabled])+div,
+.c6:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1075,14 +900,12 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   cursor: pointer;
 }
 
-.c9:checked + span > span {
+.c9:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c8 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
@@ -1091,7 +914,6 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1106,11 +928,8 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1123,18 +942,18 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c11:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1143,18 +962,18 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1170,7 +989,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1188,7 +1007,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1207,39 +1026,39 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1261,7 +1080,6 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
             class="c4"
             name="name"
             placeholder="test name"
-            value=""
           />
         </div>
       </div>
@@ -1306,48 +1124,47 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
 
 exports[`Form uncontrolled dynamicly removed fields should be removed from form value 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
             name="name"
             placeholder="test name"
-            value=""
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               name="toggle"
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 gPKPHc StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             />
           </div>
           <span>
@@ -1357,7 +1174,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="submit"
     >
       Submit
@@ -1379,124 +1196,74 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-.c6:hover input:not([disabled]) + div,
-.c6:hover input:not([disabled]) + span {
+.c6:hover input:not([disabled])+div,
+.c6:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1509,14 +1276,12 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   cursor: pointer;
 }
 
-.c9:checked + span > span {
+.c9:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c8 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
@@ -1525,7 +1290,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1540,11 +1304,8 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1557,18 +1318,18 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c11:focus >circle,
+.c11:focus >ellipse,
+.c11:focus >line,
+.c11:focus >path,
+.c11:focus >polygon,
+.c11:focus >polyline,
+.c11:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c11:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1577,18 +1338,18 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c11:focus:not(:focus-visible) >circle,
+.c11:focus:not(:focus-visible) >ellipse,
+.c11:focus:not(:focus-visible) >line,
+.c11:focus:not(:focus-visible) >path,
+.c11:focus:not(:focus-visible) >polygon,
+.c11:focus:not(:focus-visible) >polyline,
+.c11:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c11:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1604,7 +1365,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1622,7 +1383,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1641,39 +1402,39 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -1695,7 +1456,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
             class="c4"
             name="name"
             placeholder="test name"
-            value=""
           />
         </div>
       </div>
@@ -1741,48 +1501,47 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 exports[`Form uncontrolled dynamicly removed fields using blur validation
   don't keep validation errors 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
             name="name"
             placeholder="test name"
-            value=""
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               name="toggle"
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 fRMvyw StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="StyledBox-sc-13pk1d4-0 jekrCO StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             >
               .c0 {
   box-sizing: border-box;
@@ -1792,31 +1551,31 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   height: 24px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -1839,32 +1598,22 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1880,7 +1629,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1898,7 +1647,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1917,35 +1666,35 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c0 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -1963,13 +1712,12 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
             class="c3"
             name="mood"
             placeholder="test mood"
-            value=""
           />
         </div>
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="submit"
     >
       Submit
@@ -1981,48 +1729,47 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
 exports[`Form uncontrolled dynamicly removed fields using blur validation
   don't keep validation errors 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
             name="name"
             placeholder="test name"
-            value=""
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1 fdkHPz"
+        class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1 bKZzYl"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hhVOvb"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iZdzGC"
           label="toggle"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               name="toggle"
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 gPKPHc StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             />
           </div>
           <span>
@@ -2032,7 +1779,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="submit"
     >
       Submit
@@ -2071,32 +1818,22 @@ exports[`Form uncontrolled errors 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   border-bottom: solid 1px #FF4040;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2122,7 +1859,7 @@ exports[`Form uncontrolled errors 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2140,7 +1877,7 @@ exports[`Form uncontrolled errors 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2159,13 +1896,13 @@ exports[`Form uncontrolled errors 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     border-bottom: solid 1px #FF4040;
   }
@@ -2189,7 +1926,6 @@ exports[`Form uncontrolled errors 1`] = `
             autocomplete="off"
             class="c4"
             name="test"
-            value=""
           />
         </div>
       </div>
@@ -2215,32 +1951,22 @@ exports[`Form uncontrolled infos 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2266,7 +1992,7 @@ exports[`Form uncontrolled infos 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2284,7 +2010,7 @@ exports[`Form uncontrolled infos 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2303,15 +2029,15 @@ exports[`Form uncontrolled infos 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2332,7 +2058,6 @@ exports[`Form uncontrolled infos 1`] = `
             autocomplete="off"
             class="c4"
             name="test"
-            value=""
           />
         </div>
       </div>
@@ -2357,15 +2082,15 @@ exports[`Form uncontrolled regexp validation 1`] = `
   color: #FF4040;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -2388,11 +2113,11 @@ exports[`Form uncontrolled regexp validation with status 1`] = `
   color: #FF4040;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -2411,11 +2136,11 @@ exports[`Form uncontrolled regexp validation with status 1`] = `
   color: #666666;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -2438,15 +2163,15 @@ exports[`Form uncontrolled required validation 1`] = `
   color: #FF4040;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -2460,8 +2185,6 @@ exports[`Form uncontrolled required validation 1`] = `
 exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] = `
 .c11 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2503,80 +2226,47 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2584,169 +2274,100 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   border: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 100%;
 }
 
 .c24 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   height: 12px;
 }
@@ -2760,29 +2381,16 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-.c13:hover input:not([disabled]) + div,
-.c13:hover input:not([disabled]) + span {
+.c13:hover input:not([disabled])+div,
+.c13:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2795,41 +2403,26 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   cursor: pointer;
 }
 
-.c16:checked + span > span {
+.c16:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c15 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
 .c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-.c20:hover input:not([disabled]) + div,
-.c20:hover input:not([disabled]) + span {
+.c20:hover input:not([disabled])+div,
+.c20:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -2863,7 +2456,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2881,18 +2473,18 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) >circle,
+.c4:focus:not(:focus-visible) >ellipse,
+.c4:focus:not(:focus-visible) >line,
+.c4:focus:not(:focus-visible) >path,
+.c4:focus:not(:focus-visible) >polygon,
+.c4:focus:not(:focus-visible) >polyline,
+.c4:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2901,7 +2493,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2916,11 +2507,8 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2933,18 +2521,18 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c27:focus > circle,
-.c27:focus > ellipse,
-.c27:focus > line,
-.c27:focus > path,
-.c27:focus > polygon,
-.c27:focus > polyline,
-.c27:focus > rect {
+.c27:focus >circle,
+.c27:focus >ellipse,
+.c27:focus >line,
+.c27:focus >path,
+.c27:focus >polygon,
+.c27:focus >polyline,
+.c27:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c27:focus::-moz-focus-inner {
+.c27:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2953,18 +2541,18 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   box-shadow: none;
 }
 
-.c27:focus:not(:focus-visible) > circle,
-.c27:focus:not(:focus-visible) > ellipse,
-.c27:focus:not(:focus-visible) > line,
-.c27:focus:not(:focus-visible) > path,
-.c27:focus:not(:focus-visible) > polygon,
-.c27:focus:not(:focus-visible) > polyline,
-.c27:focus:not(:focus-visible) > rect {
+.c27:focus:not(:focus-visible) >circle,
+.c27:focus:not(:focus-visible) >ellipse,
+.c27:focus:not(:focus-visible) >line,
+.c27:focus:not(:focus-visible) >path,
+.c27:focus:not(:focus-visible) >polygon,
+.c27:focus:not(:focus-visible) >polyline,
+.c27:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c27:focus:not(:focus-visible)::-moz-focus-inner {
+.c27:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2980,7 +2568,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2998,7 +2586,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   color: #AAAAAA;
 }
 
-.c8::-webkit-search-decoration {
+.c8 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3021,76 +2609,76 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   cursor: pointer;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c12 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c12 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c14 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c21 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c23 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c17 {
     border: solid 2px #7D4CDB;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c25 {
     border: solid 2px #7D4CDB;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c24 {
     height: 6px;
   }
@@ -3343,41 +2931,41 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 
 exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <label
-        class="StyledText-sc-1sadyjn-0 esfeug"
+        class="StyledText-sc-1sadyjn-0 ibFUY"
         for="test-select"
       >
         Select Size
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <button
           aria-expanded="false"
           aria-haspopup="listbox"
           aria-label="test select"
-          class="StyledButton-sc-323bzc-0 uLElv StyledSelect__StyledSelectDropButton-sc-znp66n-5 eUyixX"
+          class="StyledButton-sc-323bzc-0 gnggmV StyledSelect__StyledSelectDropButton-sc-znp66n-5 kiCOVg"
           id="test-select"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jXUMNe"
+            class="StyledBox-sc-13pk1d4-0 bqbJY"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 djHtJk"
+              class="StyledBox-sc-13pk1d4-0 pvKre"
             >
               <div
-                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+                  class="StyledTextInput-sc-1x30a0s-0 caEEsY StyledSelect__SelectTextInput-sc-znp66n-4 jPYOxt"
                   id="test-select__input"
                   name="test-select"
                   placeholder="test select"
@@ -3389,12 +2977,12 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               </div>
             </div>
             <div
-              class="StyledBox-sc-13pk1d4-0 gnAxhJ"
+              class="StyledBox-sc-13pk1d4-0 cftizD"
               style="min-width: auto;"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-sc-ofa7kd-0 jtseoQ"
+                class="StyledIcon-sc-ofa7kd-0 csYGBW"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -3410,33 +2998,33 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <label
-        class="StyledText-sc-1sadyjn-0 esfeug"
+        class="StyledText-sc-1sadyjn-0 ibFUY"
         for="test-checkbox"
       >
         CheckBox
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
           for="test-checkbox"
           label="test-checkbox"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
+            class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
           >
             <input
-              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+              class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 hReRtJ"
               id="test-checkbox"
               name="test-checkbox"
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 gPKPHc StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="StyledBox-sc-13pk1d4-0 fwNyOi StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 jFFQzL"
             />
           </div>
           <span>
@@ -3446,31 +3034,31 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <label
-        class="StyledText-sc-1sadyjn-0 esfeug"
+        class="StyledText-sc-1sadyjn-0 ibFUY"
         for="test-radiobuttongroup"
       >
         RadioButtonGroup
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kqmDKi"
+          class="StyledBox-sc-13pk1d4-0 faWFoE"
           id="test-radiobuttongroup"
           role="radiogroup"
         >
           <label
-            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 hwlEbV"
+            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 cQtooq"
             for="test-radiobuttongroup-one"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iuoTxe StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+              class="StyledBox-sc-13pk1d4-0 hNesJs StyledRadioButton-sc-g1f6ld-5 dLoTNH"
             >
               <input
-                class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fHUYwn"
+                class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fNcwFS"
                 id="test-radiobuttongroup-one"
                 name="test-radiobuttongroup"
                 tabindex="0"
@@ -3478,7 +3066,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="one"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 bKYcZs StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+                class="StyledBox-sc-13pk1d4-0 bVQzZu StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
               />
             </div>
             <span
@@ -3488,17 +3076,17 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             </span>
           </label>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 biJsVL"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eobCJW"
           />
           <label
-            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 hwlEbV"
+            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 cQtooq"
             for="test-radiobuttongroup-two"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iuoTxe StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+              class="StyledBox-sc-13pk1d4-0 hNesJs StyledRadioButton-sc-g1f6ld-5 dLoTNH"
             >
               <input
-                class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fHUYwn"
+                class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fNcwFS"
                 id="test-radiobuttongroup-two"
                 name="test-radiobuttongroup"
                 tabindex="-1"
@@ -3506,7 +3094,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="two"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 bKYcZs StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+                class="StyledBox-sc-13pk1d4-0 bVQzZu StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
               />
             </div>
             <span
@@ -3516,17 +3104,17 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
             </span>
           </label>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 biJsVL"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eobCJW"
           />
           <label
-            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 hwlEbV"
+            class="StyledRadioButton__StyledRadioButtonContainer-sc-g1f6ld-0 cQtooq"
             for="test-radiobuttongroup-three"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iuoTxe StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+              class="StyledBox-sc-13pk1d4-0 hNesJs StyledRadioButton-sc-g1f6ld-5 dLoTNH"
             >
               <input
-                class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fHUYwn"
+                class="StyledRadioButton__StyledRadioButtonInput-sc-g1f6ld-1 fNcwFS"
                 id="test-radiobuttongroup-three"
                 name="test-radiobuttongroup"
                 tabindex="-1"
@@ -3534,7 +3122,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="three"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 bKYcZs StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+                class="StyledBox-sc-13pk1d4-0 bVQzZu StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 epTtXv"
               />
             </div>
             <span
@@ -3547,7 +3135,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="reset"
     >
       Reset
@@ -3568,32 +3156,22 @@ exports[`Form uncontrolled uncontrolled 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -3602,7 +3180,6 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3617,11 +3194,8 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -3634,18 +3208,18 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3654,18 +3228,18 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3681,7 +3255,7 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3699,7 +3273,7 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3718,15 +3292,15 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -3748,7 +3322,6 @@ exports[`Form uncontrolled uncontrolled 1`] = `
             class="c4"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
@@ -3765,30 +3338,29 @@ exports[`Form uncontrolled uncontrolled 1`] = `
 
 exports[`Form uncontrolled uncontrolled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="submit"
     >
       Submit
@@ -3799,30 +3371,29 @@ exports[`Form uncontrolled uncontrolled 2`] = `
 
 exports[`Form uncontrolled uncontrolled 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="submit"
     >
       Submit
@@ -3843,32 +3414,22 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -3877,7 +3438,6 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3892,11 +3452,8 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -3909,18 +3466,18 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3929,18 +3486,18 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3956,7 +3513,7 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3974,7 +3531,7 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3993,15 +3550,15 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -4023,7 +3580,6 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
             class="c4"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
@@ -4040,24 +3596,23 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
 
 exports[`Form uncontrolled uncontrolled onValidate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dtvauj FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
@@ -4071,15 +3626,15 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
   color: #FF4040;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -4090,7 +3645,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="submit"
     >
       Submit
@@ -4111,32 +3666,22 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -4145,7 +3690,6 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4160,11 +3704,8 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4177,18 +3718,18 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4197,18 +3738,18 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4224,7 +3765,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4242,7 +3783,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4261,15 +3802,15 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -4291,7 +3832,6 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
             class="c4"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
@@ -4308,24 +3848,23 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
 
 exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dtvauj FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
@@ -4339,15 +3878,15 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
   color: #FF4040;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -4358,7 +3897,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="submit"
     >
       Submit
@@ -4379,32 +3918,22 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -4413,7 +3942,6 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4428,11 +3956,8 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4445,18 +3970,18 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4465,18 +3990,18 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4492,7 +4017,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4510,7 +4035,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4529,15 +4054,15 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -4559,7 +4084,6 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
             class="c4"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
@@ -4576,24 +4100,23 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
 
 exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <form>
     <div
-      class="StyledBox-sc-13pk1d4-0 jstWSP FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+      class="StyledBox-sc-13pk1d4-0 jcqHbt FormField__FormFieldBox-sc-m9hood-0 eLFnDG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
+        class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
@@ -4607,11 +4130,11 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
   color: #666666;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -4622,7 +4145,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
       </span>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 bDRsFi"
+      class="StyledButton-sc-323bzc-0 icpPTg"
       type="submit"
     >
       Submit
@@ -4643,32 +4166,22 @@ exports[`Form uncontrolled update 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -4677,7 +4190,6 @@ exports[`Form uncontrolled update 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4692,11 +4204,8 @@ exports[`Form uncontrolled update 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -4709,18 +4218,18 @@ exports[`Form uncontrolled update 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4729,18 +4238,18 @@ exports[`Form uncontrolled update 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4756,7 +4265,7 @@ exports[`Form uncontrolled update 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -4774,7 +4283,7 @@ exports[`Form uncontrolled update 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4793,15 +4302,15 @@ exports[`Form uncontrolled update 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -4823,7 +4332,6 @@ exports[`Form uncontrolled update 1`] = `
             class="c4"
             name="test"
             placeholder="test input"
-            value=""
           />
         </div>
       </div>
@@ -4842,7 +4350,6 @@ exports[`Form uncontrolled update 1`] = `
             class="c4"
             name="test2"
             placeholder="test-2 input"
-            value=""
           />
         </div>
       </div>
@@ -4868,15 +4375,15 @@ exports[`Form uncontrolled validate 1`] = `
   color: #FF4040;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -4893,23 +4400,23 @@ exports[`Form uncontrolled validate 2`] = `
   line-height: 24px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -4931,23 +4438,23 @@ exports[`Form uncontrolled validate 3`] = `
   color: #FF4040;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -4969,23 +4476,23 @@ exports[`Form uncontrolled validate 4`] = `
   color: #666666;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -5008,32 +4515,22 @@ exports[`Form uncontrolled with field 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -5049,7 +4546,7 @@ exports[`Form uncontrolled with field 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -5067,7 +4564,7 @@ exports[`Form uncontrolled with field 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5086,15 +4583,15 @@ exports[`Form uncontrolled with field 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -5115,7 +4612,6 @@ exports[`Form uncontrolled with field 1`] = `
             autocomplete="off"
             class="c4"
             name="test"
-            value=""
           />
         </div>
       </div>

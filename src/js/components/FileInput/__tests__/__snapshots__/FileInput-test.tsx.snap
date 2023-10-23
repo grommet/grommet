@@ -12,51 +12,27 @@ exports[`FileInput accept 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -66,17 +42,13 @@ exports[`FileInput accept 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -101,7 +73,7 @@ exports[`FileInput accept 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -121,7 +93,7 @@ exports[`FileInput accept 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -151,24 +123,24 @@ exports[`FileInput accept 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -215,53 +187,29 @@ exports[`FileInput background 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.06274509803921569);
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
   color: #444444;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -271,17 +219,13 @@ exports[`FileInput background 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -306,7 +250,7 @@ exports[`FileInput background 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -326,7 +270,7 @@ exports[`FileInput background 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -356,24 +300,24 @@ exports[`FileInput background 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -419,51 +363,27 @@ exports[`FileInput basic 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -473,17 +393,13 @@ exports[`FileInput basic 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -508,7 +424,7 @@ exports[`FileInput basic 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -528,7 +444,7 @@ exports[`FileInput basic 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -558,24 +474,24 @@ exports[`FileInput basic 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -621,51 +537,27 @@ exports[`FileInput border 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   border: dashed 12px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -675,17 +567,13 @@ exports[`FileInput border 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -710,7 +598,7 @@ exports[`FileInput border 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -730,7 +618,7 @@ exports[`FileInput border 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -760,22 +648,22 @@ exports[`FileInput border 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     border: dashed 6px #7D4CDB;
   }
@@ -823,51 +711,27 @@ exports[`FileInput custom theme input font size 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -877,17 +741,13 @@ exports[`FileInput custom theme input font size 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -912,7 +772,7 @@ exports[`FileInput custom theme input font size 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -932,7 +792,7 @@ exports[`FileInput custom theme input font size 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -962,24 +822,24 @@ exports[`FileInput custom theme input font size 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1024,51 +884,27 @@ exports[`FileInput disabled 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -1078,17 +914,13 @@ exports[`FileInput disabled 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1113,7 +945,7 @@ exports[`FileInput disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1132,7 +964,7 @@ exports[`FileInput disabled 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1164,24 +996,24 @@ exports[`FileInput disabled 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1229,52 +1061,28 @@ exports[`FileInput margin 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -1284,17 +1092,13 @@ exports[`FileInput margin 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1319,7 +1123,7 @@ exports[`FileInput margin 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1339,7 +1143,7 @@ exports[`FileInput margin 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1369,30 +1173,30 @@ exports[`FileInput margin 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1438,51 +1242,27 @@ exports[`FileInput maxSize 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -1492,17 +1272,13 @@ exports[`FileInput maxSize 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1527,7 +1303,7 @@ exports[`FileInput maxSize 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1547,7 +1323,7 @@ exports[`FileInput maxSize 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1577,24 +1353,24 @@ exports[`FileInput maxSize 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1640,51 +1416,27 @@ exports[`FileInput messages 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -1694,17 +1446,13 @@ exports[`FileInput messages 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1729,7 +1477,7 @@ exports[`FileInput messages 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1749,7 +1497,7 @@ exports[`FileInput messages 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1779,24 +1527,24 @@ exports[`FileInput messages 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1842,51 +1590,27 @@ exports[`FileInput multiple 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -1896,17 +1620,13 @@ exports[`FileInput multiple 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1931,7 +1651,7 @@ exports[`FileInput multiple 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1951,7 +1671,7 @@ exports[`FileInput multiple 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1981,24 +1701,24 @@ exports[`FileInput multiple 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2045,51 +1765,27 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -2099,17 +1795,13 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2134,7 +1826,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -2154,7 +1846,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2184,24 +1876,24 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2248,51 +1940,27 @@ exports[`FileInput multiple max 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -2302,17 +1970,13 @@ exports[`FileInput multiple max 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2337,7 +2001,7 @@ exports[`FileInput multiple max 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -2357,7 +2021,7 @@ exports[`FileInput multiple max 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2387,24 +2051,24 @@ exports[`FileInput multiple max 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2451,52 +2115,28 @@ exports[`FileInput pad 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0,0,0,0.33);
+  border: dashed 2px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   padding: 12px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -2506,17 +2146,13 @@ exports[`FileInput pad 1`] = `
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2541,7 +2177,7 @@ exports[`FileInput pad 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -2561,7 +2197,7 @@ exports[`FileInput pad 1`] = `
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c3 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2591,28 +2227,28 @@ exports[`FileInput pad 1`] = `
   box-shadow: none;
 }
 
-.c2 > circle,
-.c2 > ellipse,
-.c2 > line,
-.c2 > path,
-.c2 > polygon,
-.c2 > polyline,
-.c2 > rect {
+.c2 >circle,
+.c2 >ellipse,
+.c2 >line,
+.c2 >path,
+.c2 >polygon,
+.c2 >polyline,
+.c2 >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2::-moz-focus-inner {
+.c2 ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: dashed 2px rgba(0,0,0,0.33);
+    border: dashed 2px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     padding: 6px;
   }

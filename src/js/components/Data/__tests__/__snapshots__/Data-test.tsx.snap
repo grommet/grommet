@@ -3,8 +3,6 @@
 exports[`Data controlled search 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -46,97 +44,55 @@ exports[`Data controlled search 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -159,7 +115,6 @@ exports[`Data controlled search 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -175,7 +130,7 @@ exports[`Data controlled search 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -184,18 +139,18 @@ exports[`Data controlled search 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -204,18 +159,18 @@ exports[`Data controlled search 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -235,7 +190,7 @@ exports[`Data controlled search 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -245,18 +200,18 @@ exports[`Data controlled search 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -272,7 +227,7 @@ exports[`Data controlled search 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -293,17 +248,9 @@ exports[`Data controlled search 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -315,7 +262,7 @@ exports[`Data controlled search 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -354,13 +301,12 @@ exports[`Data controlled search 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -539,27 +485,27 @@ exports[`Data controlled search 1`] = `
 
 exports[`Data controlled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fHIHJf"
+    class="StyledBox-sc-13pk1d4-0 iFllAh"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fnEswI"
+      class="StyledBox-sc-13pk1d4-0 epSpkC"
     >
       <form
-        class="DataForm__MaxForm-sc-v64e1r-1 gzNuLh"
+        class="DataForm__MaxForm-sc-v64e1r-1 famPW"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <div
-            class="StyledTextInput__StyledIcon-sc-1x30a0s-3 iQFXNb"
+            class="StyledTextInput__StyledIcon-sc-1x30a0s-3 elceAQ"
           >
             <svg
               aria-label="Search"
-              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
+              class="StyledIcon-sc-ofa7kd-0 eDHVbi"
               viewBox="0 0 24 24"
             >
               <path
@@ -573,7 +519,7 @@ exports[`Data controlled search 2`] = `
           <input
             aria-label="Search"
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 hLtcCB"
+            class="StyledTextInput-sc-1x30a0s-0 eJThxT"
             id="data--search"
             name="_search"
             type="search"
@@ -582,17 +528,17 @@ exports[`Data controlled search 2`] = `
         </div>
       </form>
       <div
-        class="StyledBox-sc-13pk1d4-0 imzrdH"
+        class="StyledBox-sc-13pk1d4-0 jwCJcl"
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 ckELTg"
+          class="StyledButton-sc-323bzc-0 iByZPW"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
+            class="StyledIcon-sc-ofa7kd-0 eDHVbi"
             viewBox="0 0 24 24"
           >
             <path
@@ -606,44 +552,44 @@ exports[`Data controlled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 bCiEBA"
+      class="StyledText-sc-1sadyjn-0 gqQavw"
     >
       4 results of undefined items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA"
+      class="StyledTable-sc-1m3u5g-6 jbRAXE StyledDataTable-sc-xrlyjm-0 xBOSe"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fPyVwH"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYqncX StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGgSpA StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 eeCUpo"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 hUEhgO"
+              class="StyledBox-sc-13pk1d4-0 cNZdZY"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 hMSZLr"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fPyVwH"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cDQVve StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 eeCUpo"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 kqmDKi"
+              class="StyledBox-sc-13pk1d4-0 faWFoE"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hUfGMB"
+                class="StyledText-sc-1sadyjn-0 jDeaxZ"
               >
                 aa
               </span>
@@ -651,17 +597,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fPyVwH"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cDQVve StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 eeCUpo"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 kqmDKi"
+              class="StyledBox-sc-13pk1d4-0 faWFoE"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hUfGMB"
+                class="StyledText-sc-1sadyjn-0 jDeaxZ"
               >
                 bb
               </span>
@@ -669,17 +615,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fPyVwH"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cDQVve StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 eeCUpo"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 kqmDKi"
+              class="StyledBox-sc-13pk1d4-0 faWFoE"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hUfGMB"
+                class="StyledText-sc-1sadyjn-0 jDeaxZ"
               >
                 cc
               </span>
@@ -687,17 +633,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fPyVwH"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cDQVve StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 eeCUpo"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 kqmDKi"
+              class="StyledBox-sc-13pk1d4-0 faWFoE"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hUfGMB"
+                class="StyledText-sc-1sadyjn-0 jDeaxZ"
               >
                 dd
               </span>
@@ -713,8 +659,6 @@ exports[`Data controlled search 2`] = `
 exports[`Data messages 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -756,97 +700,55 @@ exports[`Data messages 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -874,7 +776,6 @@ exports[`Data messages 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -890,7 +791,7 @@ exports[`Data messages 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -899,18 +800,18 @@ exports[`Data messages 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -919,18 +820,18 @@ exports[`Data messages 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -950,7 +851,7 @@ exports[`Data messages 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -960,18 +861,18 @@ exports[`Data messages 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -987,7 +888,7 @@ exports[`Data messages 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1008,17 +909,9 @@ exports[`Data messages 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -1030,7 +923,7 @@ exports[`Data messages 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1069,13 +962,12 @@ exports[`Data messages 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -1312,122 +1204,71 @@ exports[`Data onView 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -1448,7 +1289,6 @@ exports[`Data onView 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1463,11 +1303,8 @@ exports[`Data onView 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1480,18 +1317,18 @@ exports[`Data onView 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c6:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1500,18 +1337,18 @@ exports[`Data onView 1`] = `
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) > circle,
-.c6:focus:not(:focus-visible) > ellipse,
-.c6:focus:not(:focus-visible) > line,
-.c6:focus:not(:focus-visible) > path,
-.c6:focus:not(:focus-visible) > polygon,
-.c6:focus:not(:focus-visible) > polyline,
-.c6:focus:not(:focus-visible) > rect {
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible)::-moz-focus-inner {
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1520,7 +1357,6 @@ exports[`Data onView 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1534,11 +1370,8 @@ exports[`Data onView 1`] = `
   line-height: 24px;
   opacity: 0.3;
   cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1547,18 +1380,18 @@ exports[`Data onView 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1567,18 +1400,18 @@ exports[`Data onView 1`] = `
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1596,7 +1429,7 @@ exports[`Data onView 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1635,13 +1468,13 @@ exports[`Data onView 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-top: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     width: 6px;
   }
@@ -1950,8 +1783,6 @@ exports[`Data onView 1`] = `
 exports[`Data pagination 1`] = `
 .c14 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1993,83 +1824,49 @@ exports[`Data pagination 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 0px;
 }
 
 .c15 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 3px;
 }
@@ -2085,7 +1882,6 @@ exports[`Data pagination 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2098,33 +1894,23 @@ exports[`Data pagination 1`] = `
   line-height: 0;
   color: #000000;
   text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
   height: 100%;
   max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
-.c12 > svg {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.c12 >svg {
   display: flex;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
 
 .c12:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
 .c12:focus {
@@ -2132,18 +1918,18 @@ exports[`Data pagination 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2152,18 +1938,18 @@ exports[`Data pagination 1`] = `
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2172,7 +1958,6 @@ exports[`Data pagination 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2185,22 +1970,17 @@ exports[`Data pagination 1`] = `
   line-height: 24px;
   color: #000000;
   text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
   height: 100%;
   max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
 .c16:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
 .c16:focus {
@@ -2208,18 +1988,18 @@ exports[`Data pagination 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c16:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2228,18 +2008,18 @@ exports[`Data pagination 1`] = `
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2249,7 +2029,7 @@ exports[`Data pagination 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2293,41 +2073,32 @@ exports[`Data pagination 1`] = `
   line-height: 0;
 }
 
-.c13 > svg {
+.c13 >svg {
   margin: 0 auto;
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   max-width: 100%;
   height: 36px;
   min-width: 36px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c15 {
     width: 2px;
   }
@@ -2481,8 +2252,6 @@ exports[`Data pagination 1`] = `
 exports[`Data pagination step 1`] = `
 .c14 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2524,83 +2293,49 @@ exports[`Data pagination step 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 0px;
 }
 
 .c15 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 3px;
 }
@@ -2616,7 +2351,6 @@ exports[`Data pagination step 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2629,33 +2363,23 @@ exports[`Data pagination step 1`] = `
   line-height: 0;
   color: #000000;
   text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
   height: 100%;
   max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
-.c12 > svg {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.c12 >svg {
   display: flex;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
 
 .c12:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
 .c12:focus {
@@ -2663,18 +2387,18 @@ exports[`Data pagination step 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2683,18 +2407,18 @@ exports[`Data pagination step 1`] = `
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2703,7 +2427,6 @@ exports[`Data pagination step 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2716,22 +2439,17 @@ exports[`Data pagination step 1`] = `
   line-height: 24px;
   color: #000000;
   text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
   height: 100%;
   max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
 }
 
 .c16:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
 }
 
 .c16:focus {
@@ -2739,18 +2457,18 @@ exports[`Data pagination step 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c16:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2759,18 +2477,18 @@ exports[`Data pagination step 1`] = `
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible) > circle,
-.c16:focus:not(:focus-visible) > ellipse,
-.c16:focus:not(:focus-visible) > line,
-.c16:focus:not(:focus-visible) > path,
-.c16:focus:not(:focus-visible) > polygon,
-.c16:focus:not(:focus-visible) > polyline,
-.c16:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c16:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2780,7 +2498,7 @@ exports[`Data pagination step 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2824,41 +2542,32 @@ exports[`Data pagination step 1`] = `
   line-height: 0;
 }
 
-.c13 > svg {
+.c13 >svg {
   margin: 0 auto;
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   max-width: 100%;
   height: 36px;
   min-width: 36px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c15 {
     width: 2px;
   }
@@ -3013,8 +2722,6 @@ exports[`Data properties when property is an array 1`] = `
 <DocumentFragment>
   .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3056,97 +2763,55 @@ exports[`Data properties when property is an array 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -3174,7 +2839,6 @@ exports[`Data properties when property is an array 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3190,7 +2854,7 @@ exports[`Data properties when property is an array 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -3199,18 +2863,18 @@ exports[`Data properties when property is an array 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3219,18 +2883,18 @@ exports[`Data properties when property is an array 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3250,7 +2914,7 @@ exports[`Data properties when property is an array 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -3260,18 +2924,18 @@ exports[`Data properties when property is an array 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3287,7 +2951,7 @@ exports[`Data properties when property is an array 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3308,17 +2972,9 @@ exports[`Data properties when property is an array 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -3330,7 +2986,7 @@ exports[`Data properties when property is an array 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -3369,13 +3025,12 @@ exports[`Data properties when property is an array 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -3676,8 +3331,6 @@ exports[`Data properties when property is an array 1`] = `
 exports[`Data properties when property is an array 2`] = `
 .c1 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3713,7 +3366,6 @@ exports[`Data properties when property is an array 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3729,7 +3381,7 @@ exports[`Data properties when property is an array 2`] = `
 }
 
 .c0:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -3738,18 +3390,18 @@ exports[`Data properties when property is an array 2`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+.c0:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3758,94 +3410,94 @@ exports[`Data properties when property is an array 2`] = `
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -3894,19 +3546,12 @@ exports[`Data renders 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -3923,8 +3568,6 @@ exports[`Data renders 1`] = `
 exports[`Data toolbar 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3966,97 +3609,55 @@ exports[`Data toolbar 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -4084,7 +3685,6 @@ exports[`Data toolbar 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4100,7 +3700,7 @@ exports[`Data toolbar 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -4109,18 +3709,18 @@ exports[`Data toolbar 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4129,18 +3729,18 @@ exports[`Data toolbar 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4160,7 +3760,7 @@ exports[`Data toolbar 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -4170,18 +3770,18 @@ exports[`Data toolbar 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4197,7 +3797,7 @@ exports[`Data toolbar 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -4218,17 +3818,9 @@ exports[`Data toolbar 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -4240,7 +3832,7 @@ exports[`Data toolbar 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -4279,13 +3871,12 @@ exports[`Data toolbar 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -4513,8 +4104,6 @@ exports[`Data toolbar 1`] = `
 exports[`Data toolbar filters 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4556,97 +4145,55 @@ exports[`Data toolbar filters 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -4669,7 +4216,6 @@ exports[`Data toolbar filters 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4685,7 +4231,7 @@ exports[`Data toolbar filters 1`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -4694,18 +4240,18 @@ exports[`Data toolbar filters 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4714,18 +4260,18 @@ exports[`Data toolbar filters 1`] = `
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c4:focus:not(:focus-visible) >circle,
+.c4:focus:not(:focus-visible) >ellipse,
+.c4:focus:not(:focus-visible) >line,
+.c4:focus:not(:focus-visible) >path,
+.c4:focus:not(:focus-visible) >polygon,
+.c4:focus:not(:focus-visible) >polyline,
+.c4:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c4:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4735,7 +4281,7 @@ exports[`Data toolbar filters 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -4774,13 +4320,12 @@ exports[`Data toolbar filters 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -4927,8 +4472,6 @@ exports[`Data toolbar filters 1`] = `
 exports[`Data toolbar search 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4970,80 +4513,45 @@ exports[`Data toolbar search 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -5077,7 +4585,7 @@ exports[`Data toolbar search 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -5087,18 +4595,18 @@ exports[`Data toolbar search 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5114,7 +4622,7 @@ exports[`Data toolbar search 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5135,17 +4643,9 @@ exports[`Data toolbar search 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -5157,7 +4657,7 @@ exports[`Data toolbar search 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -5196,13 +4696,12 @@ exports[`Data toolbar search 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -5359,8 +4858,6 @@ exports[`Data toolbar search 1`] = `
 exports[`Data uncontrolled search 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -5402,97 +4899,55 @@ exports[`Data uncontrolled search 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -5515,7 +4970,6 @@ exports[`Data uncontrolled search 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5531,7 +4985,7 @@ exports[`Data uncontrolled search 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -5540,18 +4994,18 @@ exports[`Data uncontrolled search 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5560,18 +5014,18 @@ exports[`Data uncontrolled search 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5591,7 +5045,7 @@ exports[`Data uncontrolled search 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -5601,18 +5055,18 @@ exports[`Data uncontrolled search 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5628,7 +5082,7 @@ exports[`Data uncontrolled search 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -5649,17 +5103,9 @@ exports[`Data uncontrolled search 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -5671,7 +5117,7 @@ exports[`Data uncontrolled search 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -5710,13 +5156,12 @@ exports[`Data uncontrolled search 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -5895,27 +5340,27 @@ exports[`Data uncontrolled search 1`] = `
 
 exports[`Data uncontrolled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fHIHJf"
+    class="StyledBox-sc-13pk1d4-0 iFllAh"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fnEswI"
+      class="StyledBox-sc-13pk1d4-0 epSpkC"
     >
       <form
-        class="DataForm__MaxForm-sc-v64e1r-1 gzNuLh"
+        class="DataForm__MaxForm-sc-v64e1r-1 famPW"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
         >
           <div
-            class="StyledTextInput__StyledIcon-sc-1x30a0s-3 iQFXNb"
+            class="StyledTextInput__StyledIcon-sc-1x30a0s-3 elceAQ"
           >
             <svg
               aria-label="Search"
-              class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
+              class="StyledIcon-sc-ofa7kd-0 eDHVbi"
               viewBox="0 0 24 24"
             >
               <path
@@ -5929,7 +5374,7 @@ exports[`Data uncontrolled search 2`] = `
           <input
             aria-label="Search"
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 hLtcCB"
+            class="StyledTextInput-sc-1x30a0s-0 eJThxT"
             id="data--search"
             name="_search"
             type="search"
@@ -5938,17 +5383,17 @@ exports[`Data uncontrolled search 2`] = `
         </div>
       </form>
       <div
-        class="StyledBox-sc-13pk1d4-0 imzrdH"
+        class="StyledBox-sc-13pk1d4-0 jwCJcl"
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 ckELTg"
+          class="StyledButton-sc-323bzc-0 iByZPW"
           id="data--filters-control"
           type="button"
         >
           <svg
             aria-label="Filter"
-            class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
+            class="StyledIcon-sc-ofa7kd-0 eDHVbi"
             viewBox="0 0 24 24"
           >
             <path
@@ -5962,44 +5407,44 @@ exports[`Data uncontrolled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 bCiEBA"
+      class="StyledText-sc-1sadyjn-0 gqQavw"
     >
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA"
+      class="StyledTable-sc-1m3u5g-6 jbRAXE StyledDataTable-sc-xrlyjm-0 xBOSe"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fPyVwH"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYqncX StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iGgSpA StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 eeCUpo"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 hUEhgO"
+              class="StyledBox-sc-13pk1d4-0 cNZdZY"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 hMSZLr"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 fPyVwH"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cDQVve StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 eeCUpo"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 kqmDKi"
+              class="StyledBox-sc-13pk1d4-0 faWFoE"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hUfGMB"
+                class="StyledText-sc-1sadyjn-0 jDeaxZ"
               >
                 aa
               </span>
@@ -6024,54 +5469,32 @@ exports[`Data view 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -6092,7 +5515,7 @@ exports[`Data view 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -6289,8 +5712,6 @@ exports[`Data view 1`] = `
 exports[`Data view all 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -6332,97 +5753,55 @@ exports[`Data view all 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -6450,7 +5829,6 @@ exports[`Data view all 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6466,7 +5844,7 @@ exports[`Data view all 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -6475,18 +5853,18 @@ exports[`Data view all 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6495,18 +5873,18 @@ exports[`Data view all 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6526,7 +5904,7 @@ exports[`Data view all 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -6536,18 +5914,18 @@ exports[`Data view all 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6563,7 +5941,7 @@ exports[`Data view all 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -6584,17 +5962,9 @@ exports[`Data view all 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -6606,7 +5976,7 @@ exports[`Data view all 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -6645,13 +6015,12 @@ exports[`Data view all 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -6798,8 +6167,6 @@ exports[`Data view all 1`] = `
 exports[`Data view property option 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -6841,97 +6208,55 @@ exports[`Data view property option 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -6959,7 +6284,6 @@ exports[`Data view property option 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6975,7 +6299,7 @@ exports[`Data view property option 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -6984,18 +6308,18 @@ exports[`Data view property option 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7004,18 +6328,18 @@ exports[`Data view property option 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7035,7 +6359,7 @@ exports[`Data view property option 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -7045,18 +6369,18 @@ exports[`Data view property option 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7072,7 +6396,7 @@ exports[`Data view property option 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -7093,17 +6417,9 @@ exports[`Data view property option 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -7115,7 +6431,7 @@ exports[`Data view property option 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -7154,13 +6470,12 @@ exports[`Data view property option 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -7307,8 +6622,6 @@ exports[`Data view property option 1`] = `
 exports[`Data view property range 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -7350,97 +6663,55 @@ exports[`Data view property range 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -7468,7 +6739,6 @@ exports[`Data view property range 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -7484,7 +6754,7 @@ exports[`Data view property range 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -7493,18 +6763,18 @@ exports[`Data view property range 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7513,18 +6783,18 @@ exports[`Data view property range 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7544,7 +6814,7 @@ exports[`Data view property range 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -7554,18 +6824,18 @@ exports[`Data view property range 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7581,7 +6851,7 @@ exports[`Data view property range 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -7602,17 +6872,9 @@ exports[`Data view property range 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -7624,7 +6886,7 @@ exports[`Data view property range 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -7663,13 +6925,12 @@ exports[`Data view property range 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -7837,8 +7098,6 @@ exports[`Data view property range 1`] = `
 exports[`Data view search 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -7880,97 +7139,55 @@ exports[`Data view search 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -7998,7 +7215,6 @@ exports[`Data view search 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -8014,7 +7230,7 @@ exports[`Data view search 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -8023,18 +7239,18 @@ exports[`Data view search 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -8043,18 +7259,18 @@ exports[`Data view search 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -8074,7 +7290,7 @@ exports[`Data view search 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -8084,18 +7300,18 @@ exports[`Data view search 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -8111,7 +7327,7 @@ exports[`Data view search 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -8132,17 +7348,9 @@ exports[`Data view search 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -8154,7 +7362,7 @@ exports[`Data view search 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -8193,13 +7401,12 @@ exports[`Data view search 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
@@ -8346,8 +7553,6 @@ exports[`Data view search 1`] = `
 exports[`Data view sort 1`] = `
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -8389,97 +7594,55 @@ exports[`Data view sort 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -8507,7 +7670,6 @@ exports[`Data view sort 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -8523,7 +7685,7 @@ exports[`Data view sort 1`] = `
 }
 
 .c9:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -8532,18 +7694,18 @@ exports[`Data view sort 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c9:focus >circle,
+.c9:focus >ellipse,
+.c9:focus >line,
+.c9:focus >path,
+.c9:focus >polygon,
+.c9:focus >polyline,
+.c9:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c9:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -8552,18 +7714,18 @@ exports[`Data view sort 1`] = `
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) >circle,
+.c9:focus:not(:focus-visible) >ellipse,
+.c9:focus:not(:focus-visible) >line,
+.c9:focus:not(:focus-visible) >path,
+.c9:focus:not(:focus-visible) >polygon,
+.c9:focus:not(:focus-visible) >polyline,
+.c9:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -8583,7 +7745,7 @@ exports[`Data view sort 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -8593,18 +7755,18 @@ exports[`Data view sort 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -8620,7 +7782,7 @@ exports[`Data view sort 1`] = `
   color: #AAAAAA;
 }
 
-.c7::-webkit-search-decoration {
+.c7 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -8641,17 +7803,9 @@ exports[`Data view sort 1`] = `
 
 .c5 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -8663,7 +7817,7 @@ exports[`Data view sort 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -8702,13 +7856,12 @@ exports[`Data view sort 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
