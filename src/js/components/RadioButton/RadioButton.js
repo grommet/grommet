@@ -42,8 +42,20 @@ const RadioButton = forwardRef(
 
     const Icon = theme.radioButton.icons.circle;
     let borderColor = normalizeColor(theme.radioButton.border.color, theme);
+    let backgroundColor = normalizeColor(
+      theme.radioButton.background?.color,
+      theme,
+    );
+
     if (checked) {
       borderColor = normalizeColor(theme.radioButton.color || 'control', theme);
+
+      if (theme.radioButton.check?.background?.color) {
+        backgroundColor = normalizeColor(
+          theme.radioButton.check.background.color,
+          theme,
+        );
+      }
     }
 
     return (
@@ -93,6 +105,7 @@ const RadioButton = forwardRef(
                 size: theme.radioButton.border.width,
                 color: borderColor,
               }}
+              backgroundColor={backgroundColor}
               round={theme.radioButton.check.radius}
             >
               {checked &&
