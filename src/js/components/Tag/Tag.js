@@ -13,7 +13,7 @@ import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 const Tag = forwardRef(
   ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const RemoveIcon = theme.tag.icons.remove || FormClose;
+    const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
     const containerProps = {
       ref,
