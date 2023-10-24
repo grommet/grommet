@@ -5,6 +5,7 @@ import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
+// ensure only valid DOM properties are forwarded to the DOM
 export const styledComponentsConfig = {
   shouldForwardProp: isPropValid,
 };
