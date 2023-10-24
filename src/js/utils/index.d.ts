@@ -77,13 +77,7 @@ export type BoxSideType =
   | 'vertical'
   | 'all'
   | 'between';
-export type BoxSizeType =
-  | 'xsmall'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'xlarge'
-  | string;
+export type BoxSizeType = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
 export type BoxStyleType =
   | 'solid'
   | 'dashed'
