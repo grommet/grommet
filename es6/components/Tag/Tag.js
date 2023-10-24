@@ -10,7 +10,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4;
+  var _theme$tag$icons, _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4;
   var name = _ref.name,
     value = _ref.value,
     size = _ref.size,
@@ -18,6 +18,7 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onClick = _ref.onClick,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
+  var RemoveIcon = ((_theme$tag$icons = theme.tag.icons) == null ? void 0 : _theme$tag$icons.remove) || FormClose;
   var containerProps = _extends({
     ref: ref,
     align: 'center',
@@ -53,7 +54,7 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     plain: true,
     hoverIndicator: true,
     focusIndicator: true,
-    icon: /*#__PURE__*/React.createElement(FormClose, (_theme$tag$size3 = theme.tag.size) == null || (_theme$tag$size3 = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3.icon),
+    icon: /*#__PURE__*/React.createElement(RemoveIcon, (_theme$tag$size3 = theme.tag.size) == null || (_theme$tag$size3 = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3.icon),
     round: ((_theme$tag$size4 = theme.tag.size) == null || (_theme$tag$size4 = _theme$tag$size4[size]) == null ? void 0 : _theme$tag$size4.round) || theme.tag.round
   }, theme.tag.remove))) : /*#__PURE__*/React.createElement(StyledTagButton, _extends({
     flex: false,

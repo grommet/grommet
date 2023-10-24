@@ -2089,6 +2089,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       },
       value: {
         weight: 600
+      },
+      icons: {
+        remove: _FormClose.FormClose
       }
     },
     text: {
