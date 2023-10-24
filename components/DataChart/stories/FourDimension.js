@@ -1,0 +1,66 @@
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = exports.FourDimensionDataChart = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _grommet = require("grommet");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var data = [];
+for (var i = 1; i < 32; i += 1) {
+  data.push({
+    name: "Name " + i,
+    strength: Math.sin(i / 2.0) * 4,
+    risk: Math.cos(i / 2.0) * 4,
+    cost: Math.abs(Math.cosh(i / 2.0) * 16) % 96,
+    effort: i % 16
+  });
+}
+var FourDimensionDataChart = exports.FourDimensionDataChart = function FourDimensionDataChart() {
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={grommet}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.DataChart, {
+      data: data,
+      series: ['name', 'strength', 'risk', 'cost', 'effort'],
+      chart: {
+        type: 'point',
+        point: 'circle',
+        property: {
+          x: 'strength',
+          y: 'risk',
+          thickness: 'cost',
+          // Want a way to take two color values and automatically generate
+          // transformation
+          color: {
+            property: 'effort',
+            transform: function transform(v) {
+              return "#" + (16 - v).toString(16) + "0" + (4 + v).toString(16) + "0" + (4 + v).toString(16) + "0";
+            }
+          }
+        },
+        opacity: 'strong'
+      },
+      axis: {
+        x: {
+          granularity: 'medium'
+        },
+        y: {
+          granularity: 'medium'
+        }
+      },
+      guide: true,
+      legend: true
+    }))
+    // </Grommet>
+  );
+};
+
+FourDimensionDataChart.storyName = 'Four dimensions';
+var _default = exports["default"] = {
+  title: 'Visualizations/DataChart/Four dimensions'
+};

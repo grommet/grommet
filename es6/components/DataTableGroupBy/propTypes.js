@@ -1,0 +1,11 @@
+import PropTypes from 'prop-types';
+var PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    options: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string,
+      property: PropTypes.string
+    }))])
+  };
+}
+export var DataTableGroupByPropTypes = PropType;

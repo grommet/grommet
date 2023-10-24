@@ -1,0 +1,63 @@
+var _excluded = ["direction"];
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+import React, { useState } from 'react';
+import { Box, RangeSelector, Stack, Text } from 'grommet';
+var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
+  var _ref$direction = _ref.direction,
+    direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useState = useState([12, 16]),
+    range = _useState[0],
+    setRange = _useState[1];
+  var onChange = function onChange(values) {
+    setRange(values);
+  };
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Stack, null, /*#__PURE__*/React.createElement(Box, {
+      direction: direction === 'vertical' ? 'column' : 'row',
+      justify: "between"
+    }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
+      return /*#__PURE__*/React.createElement(Box, {
+        key: value,
+        width: "xxsmall",
+        height: "xxsmall",
+        align: "center",
+        pad: "small",
+        border: false
+      }, /*#__PURE__*/React.createElement(Text, {
+        style: {
+          fontFamily: 'monospace'
+        }
+      }, value));
+    })), /*#__PURE__*/React.createElement(RangeSelector, _extends({
+      direction: direction,
+      min: 10,
+      max: 20,
+      size: "full",
+      values: range,
+      onChange: onChange
+    }, rest))))
+    // </Grommet>
+  );
+};
+
+export var Step = function Step() {
+  return /*#__PURE__*/React.createElement(SimpleRangeSelector, {
+    step: 2
+  });
+};
+Step.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
+export default {
+  title: 'Input/RangeSelector/Step'
+};

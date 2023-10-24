@@ -1,0 +1,13 @@
+import React from 'react';
+import { Box, Spinner, Text } from 'grommet';
+export var Simple = function Simple() {
+  return /*#__PURE__*/React.createElement(Box, {
+    align: "center",
+    direction: "row",
+    gap: "small",
+    pad: "small"
+  }, /*#__PURE__*/React.createElement(Spinner, null), /*#__PURE__*/React.createElement(Text, null, "Loading..."));
+};
+export default {
+  title: 'Visualizations/Spinner/Simple'
+};

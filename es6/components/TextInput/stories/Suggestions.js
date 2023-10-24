@@ -1,0 +1,56 @@
+import React from 'react';
+import { Box, TextInput } from 'grommet';
+var allSuggestions = Array(100).fill().map(function (_, i) {
+  return i + 1 + " suggestion";
+});
+export var Suggestions = function Suggestions() {
+  var _React$useState = React.useState(allSuggestions),
+    suggestions = _React$useState[0],
+    setSuggestions = _React$useState[1];
+  var _React$useState2 = React.useState(''),
+    value = _React$useState2[0],
+    setValue = _React$useState2[1];
+  var onChange = function onChange(event) {
+    var nextValue = event.target.value;
+    setValue(nextValue);
+    if (!nextValue) setSuggestions(allSuggestions);else {
+      var regexp = new RegExp("^" + nextValue);
+      setSuggestions(allSuggestions.filter(function (s) {
+        return regexp.test(s);
+      }));
+    }
+  };
+  var onSuggestionSelect = function onSuggestionSelect(event) {
+    setValue(event.suggestion);
+  };
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, /*#__PURE__*/React.createElement(Box, {
+      width: "medium"
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "grommet-text-combobox",
+      value: value,
+      onChange: onChange,
+      onSuggestionSelect: onSuggestionSelect,
+      suggestions: suggestions,
+      "aria-label": "Input Text"
+    })))
+    // </Grommet>
+  );
+};
+
+Suggestions.parameters = {
+  chromatic: {
+    disable: true
+  }
+};
+export default {
+  title: 'Input/TextInput/Suggestions'
+};

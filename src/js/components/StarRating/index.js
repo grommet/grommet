@@ -1,1 +1,0 @@
-export { StarRating } from './StarRating';

@@ -1,0 +1,1 @@
+export { RoutedAnchor } from './RoutedAnchor';

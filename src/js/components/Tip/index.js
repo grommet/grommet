@@ -1,1 +1,0 @@
-export { Tip } from './Tip';

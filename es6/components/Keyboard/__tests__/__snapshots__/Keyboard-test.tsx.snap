@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keyboard change onKeyDown 1`] = `
+<span>
+  hi
+</span>
+`;
+
+exports[`Keyboard change onKeyDown 2`] = `
+<span>
+  hi
+</span>
+`;
+
+exports[`Keyboard onDown 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <span>
+    hi
+  </span>
+</div>
+`;
+
+exports[`Keyboard onKeyDown 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <span>
+    hi
+  </span>
+</div>
+`;
