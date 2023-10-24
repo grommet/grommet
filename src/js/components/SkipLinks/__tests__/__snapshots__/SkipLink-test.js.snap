@@ -22,7 +22,6 @@ exports[`SkipLink basic 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c0 {
@@ -105,7 +104,7 @@ exports[`SkipLink basic 2`] = `
       tabindex="-1"
     >
       <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
+        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 lnGxrN"
       />
     </a>
     Main Content
@@ -122,7 +121,7 @@ exports[`SkipLink basic 2`] = `
       tabindex="-1"
     >
       <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
+        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 lnGxrN"
       />
     </a>
     <input
@@ -145,7 +144,7 @@ exports[`SkipLink basic 3`] = `
       tabindex="-1"
     >
       <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
+        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 lnGxrN"
       />
     </a>
     Main Content
@@ -162,7 +161,7 @@ exports[`SkipLink basic 3`] = `
       tabindex="-1"
     >
       <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
+        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 lnGxrN"
       />
     </a>
     <input
@@ -195,7 +194,6 @@ exports[`SkipLink should allow for single skip link 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c0 {
@@ -264,7 +262,7 @@ exports[`SkipLink should allow for single skip link 2`] = `
       tabindex="-1"
     >
       <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
+        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 lnGxrN"
       />
     </a>
     Main Content
@@ -294,7 +292,7 @@ exports[`SkipLink should allow for single skip link 3`] = `
       tabindex="-1"
     >
       <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
+        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 lnGxrN"
       />
     </a>
     Main Content

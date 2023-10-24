@@ -85,7 +85,6 @@ exports[`FileInput accept 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -302,7 +301,6 @@ exports[`FileInput background 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -516,7 +514,6 @@ exports[`FileInput basic 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -730,7 +727,6 @@ exports[`FileInput border 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -944,7 +940,6 @@ exports[`FileInput custom theme input font size 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1157,7 +1152,6 @@ exports[`FileInput disabled 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1375,7 +1369,6 @@ exports[`FileInput margin 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1595,7 +1588,6 @@ exports[`FileInput maxSize 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1809,7 +1801,6 @@ exports[`FileInput messages 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -2023,7 +2014,6 @@ exports[`FileInput multiple 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -2238,7 +2228,6 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -2453,7 +2442,6 @@ exports[`FileInput multiple max 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -2669,7 +2657,6 @@ exports[`FileInput pad 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {

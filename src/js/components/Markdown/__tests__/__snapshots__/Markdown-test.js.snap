@@ -84,7 +84,6 @@ exports[`Markdown renders 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c9 {
@@ -399,7 +398,6 @@ exports[`wrapper 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c11 {

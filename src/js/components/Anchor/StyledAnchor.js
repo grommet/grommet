@@ -87,7 +87,6 @@ Object.setPrototypeOf(StyledAnchor.defaultProps, defaultProps);
 
 const InlineBox = styled(Box)`
   display: inline-flex;
-  vertical-align: bottom;
 `;
 
 export { StyledAnchor, InlineBox };

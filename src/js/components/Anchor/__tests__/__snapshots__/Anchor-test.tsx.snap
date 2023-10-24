@@ -32,7 +32,6 @@ exports[`Anchor blur renders 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div
@@ -82,7 +81,6 @@ exports[`Anchor disabled renders 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div>
@@ -150,7 +148,6 @@ exports[`Anchor focus renders 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div
@@ -180,6 +177,74 @@ exports[`Anchor gap renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c6 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 48px;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 5px;
+}
+
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -196,14 +261,6 @@ exports[`Anchor gap renders 1`] = `
   text-decoration: underline;
 }
 
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
 <div>
   <div
     class="c0"
@@ -214,10 +271,12 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c3"
         />
         Theme Gap
       </span>
@@ -228,10 +287,12 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c4"
         />
         Small Gap
       </span>
@@ -242,10 +303,12 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c5"
         />
         Medium Gap
       </span>
@@ -256,10 +319,12 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c6"
         />
         Large Gap
       </span>
@@ -270,10 +335,12 @@ exports[`Anchor gap renders 1`] = `
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c7"
         />
         5px Gap
       </span>
@@ -293,6 +360,34 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -309,14 +404,6 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: underline;
 }
 
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
 <div>
   <div
     class="c0"
@@ -326,10 +413,12 @@ exports[`Anchor icon label renders 1`] = `
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           color="#7D4CDB"
+        />
+        <span
+          class="c3"
         />
         Test
       </span>
@@ -370,7 +459,6 @@ exports[`Anchor is clickable 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div
@@ -425,7 +513,7 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: none;
 }
 
-.c5 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -436,30 +524,30 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c7 {
+.c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -470,30 +558,30 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: #7D4CDB;
 }
 
-.c7 g {
+.c8 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -504,30 +592,30 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c11 {
+.c12 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -538,25 +626,25 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   stroke: #7D4CDB;
 }
 
-.c11 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -569,6 +657,34 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c1 {
@@ -587,7 +703,7 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   text-decoration: underline;
 }
 
-.c4 {
+.c5 {
   box-sizing: border-box;
   font-size: 14px;
   line-height: 20px;
@@ -598,12 +714,12 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   cursor: pointer;
 }
 
-.c4:hover {
+.c5:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c6 {
+.c7 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -614,12 +730,12 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   cursor: pointer;
 }
 
-.c6:hover {
+.c7:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c8 {
+.c9 {
   box-sizing: border-box;
   font-size: 22px;
   line-height: 28px;
@@ -630,12 +746,12 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   cursor: pointer;
 }
 
-.c8:hover {
+.c9:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c10 {
+.c11 {
   box-sizing: border-box;
   font-size: 26px;
   line-height: 32px;
@@ -646,17 +762,9 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   cursor: pointer;
 }
 
-.c10:hover {
+.c11:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div
@@ -667,7 +775,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           aria-label="LinkNext"
@@ -681,19 +788,21 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c4"
+        />
         Label
       </span>
     </a>
     <a
-      class="c4"
+      class="c5"
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           aria-label="LinkNext"
-          class="c5"
+          class="c6"
           viewBox="0 0 24 24"
         >
           <path
@@ -703,19 +812,21 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c4"
+        />
         Label
       </span>
     </a>
     <a
-      class="c6"
+      class="c7"
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           aria-label="LinkNext"
-          class="c7"
+          class="c8"
           viewBox="0 0 24 24"
         >
           <path
@@ -725,19 +836,21 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c4"
+        />
         Label
       </span>
     </a>
     <a
-      class="c8"
+      class="c9"
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           aria-label="LinkNext"
-          class="c9"
+          class="c10"
           viewBox="0 0 24 24"
         >
           <path
@@ -747,19 +860,21 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c4"
+        />
         Label
       </span>
     </a>
     <a
-      class="c10"
+      class="c11"
     >
       <span
         class="c2"
-        direction="row"
       >
         <svg
           aria-label="LinkNext"
-          class="c11"
+          class="c12"
           viewBox="0 0 24 24"
         >
           <path
@@ -769,6 +884,9 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c4"
+        />
         Label
       </span>
     </a>
@@ -808,7 +926,6 @@ exports[`Anchor renders 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div>
@@ -858,7 +975,6 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div>
@@ -893,7 +1009,7 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
 
 exports[`Anchor renders size specific theming 1`] = `
 <DocumentFragment>
-  .c18 {
+  .c19 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -902,40 +1018,6 @@ exports[`Anchor renders size specific theming 1`] = `
   height: 24px;
   fill: #000000;
   stroke: #000000;
-}
-
-.c18 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c18 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c19 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
 }
 
 .c19 g {
@@ -957,6 +1039,40 @@ exports[`Anchor renders size specific theming 1`] = `
 .c19 *[FILL-RULE],
 .c19 *[fill*='#'],
 .c19 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c21 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c21 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c21 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c21 *[stroke*='#'],
+.c21 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c21 *[fill-rule],
+.c21 *[FILL-RULE],
+.c21 *[fill*='#'],
+.c21 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -983,6 +1099,34 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c20 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c2 {
@@ -1118,7 +1262,6 @@ exports[`Anchor renders size specific theming 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c15 {
@@ -1356,30 +1499,7 @@ exports[`Anchor renders size specific theming 1`] = `
       class="c17"
     >
       <span
-        class="c3"
-        direction="row"
-      >
-        <svg
-          aria-label="LinkNext"
-          class="c18"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M2 12h20m-9-9 9 9-9 9"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-        Anchor with icon
-      </span>
-    </a>
-    <a
-      class="c9"
-    >
-      <span
-        class="c3"
-        direction="row"
+        class="c18"
       >
         <svg
           aria-label="LinkNext"
@@ -1393,6 +1513,33 @@ exports[`Anchor renders size specific theming 1`] = `
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c20"
+        />
+        Anchor with icon
+      </span>
+    </a>
+    <a
+      class="c9"
+    >
+      <span
+        class="c18"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c21"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <span
+          class="c20"
+        />
         Large anchor with icon should receive color on icon
       </span>
     </a>
@@ -1432,7 +1579,6 @@ exports[`Anchor renders tag 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div>
@@ -1485,7 +1631,6 @@ exports[`Anchor renders with children 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div
@@ -1515,6 +1660,34 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1531,14 +1704,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   text-decoration: underline;
 }
 
-.c2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
 <div>
   <div
     class="c0"
@@ -1548,9 +1713,11 @@ exports[`Anchor reverse icon label renders 1`] = `
     >
       <span
         class="c2"
-        direction="row"
       >
         Test
+        <span
+          class="c3"
+        />
         <svg
           color="#7D4CDB"
         />
@@ -1592,7 +1759,6 @@ exports[`Anchor should have no accessibility violations 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div>
@@ -1659,7 +1825,6 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div
@@ -1805,7 +1970,6 @@ exports[`Anchor size renders 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div>
@@ -1898,7 +2062,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div
@@ -1951,7 +2114,6 @@ exports[`Anchor warns about invalid label render 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div
@@ -2130,7 +2292,6 @@ exports[`Anchor weight renders 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 <div>

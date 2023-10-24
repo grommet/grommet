@@ -22,7 +22,6 @@ exports[`Grommet ThemeContext theme 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c0 {
@@ -88,7 +87,7 @@ exports[`Grommet custom theme 1`] = `
   stroke: none;
 }
 
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -99,30 +98,30 @@ exports[`Grommet custom theme 1`] = `
   stroke: #cc6633;
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c7 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c9 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -133,25 +132,25 @@ exports[`Grommet custom theme 1`] = `
   stroke: #6FFFB0;
 }
 
-.c9 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c10 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -170,7 +169,25 @@ exports[`Grommet custom theme 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -184,6 +201,16 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
 }
 
 .c2 {
@@ -202,7 +229,7 @@ exports[`Grommet custom theme 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -213,12 +240,12 @@ exports[`Grommet custom theme 1`] = `
   cursor: pointer;
 }
 
-.c5:hover {
+.c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c8 {
+.c9 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -229,20 +256,12 @@ exports[`Grommet custom theme 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c9:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c12 {
   box-sizing: border-box;
   font-size: 22px;
   font-family: inherit;
@@ -259,65 +278,65 @@ exports[`Grommet custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c11:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c12:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11::-webkit-input-placeholder {
+.c12::-webkit-input-placeholder {
   color: #cc6633;
 }
 
-.c11::-moz-placeholder {
+.c12::-moz-placeholder {
   color: #cc6633;
 }
 
-.c11:-ms-input-placeholder {
+.c12:-ms-input-placeholder {
   color: #cc6633;
 }
 
-.c11::-webkit-search-decoration {
+.c12::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c11::-moz-focus-inner {
+.c12::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c11:-moz-placeholder,
-.c11::-moz-placeholder {
+.c12:-moz-placeholder,
+.c12::-moz-placeholder {
   opacity: 1;
 }
 
-.c11::-webkit-input-placeholder {
+.c12::-webkit-input-placeholder {
   font-weight: normal;
 }
 
-.c11::-moz-placeholder {
+.c12::-moz-placeholder {
   font-weight: normal;
 }
 
-.c11:-ms-input-placeholder {
+.c12:-ms-input-placeholder {
   font-weight: normal;
 }
 
-.c10 {
+.c11 {
   position: relative;
   width: 100%;
 }
@@ -343,7 +362,6 @@ exports[`Grommet custom theme 1`] = `
     >
       <span
         class="c3"
-        direction="row"
       >
         <svg
           aria-label="Add"
@@ -357,19 +375,21 @@ exports[`Grommet custom theme 1`] = `
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c5"
+        />
         Add
       </span>
     </a>
     <a
-      class="c5"
+      class="c6"
     >
       <span
         class="c3"
-        direction="row"
       >
         <svg
           aria-label="Add"
-          class="c6"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <path
@@ -379,23 +399,25 @@ exports[`Grommet custom theme 1`] = `
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c5"
+        />
         Add
       </span>
     </a>
   </div>
   <div
-    class="c7"
+    class="c8"
   >
     <a
-      class="c8"
+      class="c9"
     >
       <span
         class="c3"
-        direction="row"
       >
         <svg
           aria-label="Add"
-          class="c9"
+          class="c10"
           viewBox="0 0 24 24"
         >
           <path
@@ -405,19 +427,21 @@ exports[`Grommet custom theme 1`] = `
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c5"
+        />
         Add
       </span>
     </a>
     <a
-      class="c5"
+      class="c6"
     >
       <span
         class="c3"
-        direction="row"
       >
         <svg
           aria-label="Add"
-          class="c6"
+          class="c7"
           viewBox="0 0 24 24"
         >
           <path
@@ -427,6 +451,9 @@ exports[`Grommet custom theme 1`] = `
             stroke-width="2"
           />
         </svg>
+        <span
+          class="c5"
+        />
         Add
       </span>
     </a>
@@ -435,11 +462,11 @@ exports[`Grommet custom theme 1`] = `
     class="c1"
   >
     <div
-      class="c10"
+      class="c11"
     >
       <input
         autocomplete="off"
-        class="c11"
+        class="c12"
         placeholder="Placeholder"
         value="Value"
       />
