@@ -538,7 +538,7 @@ exports[`Button badge should apply background 1`] = `
       style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
         style="min-height: 24px; min-width: 24px;"
       >
         <span
@@ -703,7 +703,7 @@ exports[`Button badge should be offset from top-right corner 1`] = `
       style="top: 0px; right: 0px; transform: translate(25%, -25%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
         style="min-height: 12px; min-width: 12px;"
       />
     </div>
@@ -869,7 +869,7 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
       style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
         style="min-height: 24px; min-width: 24px;"
       >
         <span
@@ -1041,7 +1041,7 @@ exports[`Button badge should display number content 1`] = `
       style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
     >
       <div
-        class="c5 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
+        class="c5 Badge__StyledBadgeContainer-sc-1es4ws1-0"
         style="min-height: 24px; min-width: 24px;"
       >
         <span
@@ -1428,7 +1428,7 @@ exports[`Button badge should render relative to contents when button has no
         style="top: 0px; right: 0px; transform: translate(25%, -25%); transform-origin: 100% 0%;"
       >
         <div
-          class="c6 Badge__StyledBadgeContainer-sc-1b2f7y3-0"
+          class="c6 Badge__StyledBadgeContainer-sc-1es4ws1-0"
           style="min-height: 12px; min-width: 12px;"
         />
       </div>

@@ -675,10 +675,10 @@ exports[`DataFilters renders 1`] = `
                   name
                 </label>
                 <div
-                  class="c12 FormField__FormFieldContentBox-sc-3538nd-1"
+                  class="c12 FormField__FormFieldContentBox-sc-m9hood-1"
                 >
                   <div
-                    class="c13 StyledCheckBoxGroup-sc-ajgvp2-0"
+                    class="c13 StyledCheckBoxGroup-sc-2nhc5d-0"
                     id="data-name"
                     role="group"
                   >

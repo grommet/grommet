@@ -155,7 +155,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="StyledButton-sc-zqivih-0 ekFJPc"
+  class="StyledButton-sc-323bzc-0 hZNOgI"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
@@ -178,53 +178,53 @@ exports[`DataSort drop 2`] = `
 
 exports[`DataSort drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .lnGyJa {
+  .jstWSP {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eBSfgQ {
+  .bnAVOh {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .bCIdDg {
+  .gnAxhJ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bDTNRx {
+  .gkHEjs {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .bDTNRx {
+  .gkHEjs {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cUQwev {
+  .iuoTxe {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eGTfSl {
+  .bKYcZs {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .kzSbIL {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iedZbW {
+  .biJsVL {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .jGAsvW {
+  .EuOQj {
     width: 6px;
   }
 }"
@@ -908,7 +908,7 @@ exports[`DataSort renders 1`] = `
                 Sort by
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-3538nd-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <button
                   aria-expanded="false"
@@ -970,7 +970,7 @@ exports[`DataSort renders 1`] = `
                 Sort direction
               </label>
               <div
-                class="c16 FormField__FormFieldContentBox-sc-3538nd-1"
+                class="c16 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c17"
@@ -995,7 +995,7 @@ exports[`DataSort renders 1`] = `
                       />
                     </div>
                     <span
-                      class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
+                      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
                     >
                       Ascending
                     </span>
@@ -1021,7 +1021,7 @@ exports[`DataSort renders 1`] = `
                       />
                     </div>
                     <span
-                      class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
+                      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
                     >
                       Descending
                     </span>
@@ -1504,7 +1504,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort by
         </label>
         <div
-          class="c5 FormField__FormFieldContentBox-sc-3538nd-1"
+          class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <button
             aria-expanded="false"
@@ -1566,7 +1566,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort direction
         </label>
         <div
-          class="c14 FormField__FormFieldContentBox-sc-3538nd-1"
+          class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="c15"
@@ -1591,7 +1591,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                 />
               </div>
               <span
-                class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
+                class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
               >
                 Ascending
               </span>
@@ -1617,7 +1617,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                 />
               </div>
               <span
-                class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
+                class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
               >
                 Descending
               </span>

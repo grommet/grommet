@@ -155,7 +155,7 @@ exports[`DataSearch drop 1`] = `
 exports[`DataSearch drop 2`] = `
 <button
   aria-label="Open search"
-  class="StyledButton-sc-zqivih-0 ekFJPc"
+  class="StyledButton-sc-323bzc-0 hZNOgI"
   data-g-tabindex="none"
   id="test-data--search-control"
   tabindex="-1"
@@ -178,22 +178,22 @@ exports[`DataSearch drop 2`] = `
 
 exports[`DataSearch drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .lnGyJa {
+  .jstWSP {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eBSfgQ {
+  .bnAVOh {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .kzSbIL {
+  .dypTlm {
     margin-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .jGAsvW {
+  .EuOQj {
     width: 6px;
   }
 }"
@@ -811,7 +811,7 @@ exports[`DataSearch renders 1`] = `
                 Search
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-3538nd-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c8"

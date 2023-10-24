@@ -1101,7 +1101,7 @@ exports[`RadioButton label 1`] = `
       />
     </div>
     <span
-      class="StyledRadioButton__StyledRadioButtonLabel-sc-14hk0v1-2"
+      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
     >
       test label
     </span>
@@ -1378,7 +1378,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
         class="c4 "
       >
         <svg
-          as=".StyledRadioButton__StyledRadioButtonIcon-sc-14hk0v1-3"
+          as=".StyledRadioButton__StyledRadioButtonIcon-sc-g1f6ld-3"
           data-testid="custom-radioButton-icon"
           theme="[object Object]"
         />

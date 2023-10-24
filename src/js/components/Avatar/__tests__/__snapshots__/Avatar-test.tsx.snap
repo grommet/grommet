@@ -50,7 +50,7 @@ exports[`Avatar a11yTitle renders 1`] = `
 >
   <div
     aria-label="testing for a11ytitle"
-    class="c1 StyledAvatar-sc-vvjiqb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -139,7 +139,7 @@ exports[`Avatar icon renders 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-vvjiqb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
   >
     <svg
       aria-label="Favorite"
@@ -198,10 +198,10 @@ exports[`Avatar renders 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-vvjiqb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    class="c1 StyledAvatar-sc-vvjiqb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
     id="test id"
   />
 </div>
@@ -409,7 +409,7 @@ exports[`Avatar round renders 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-vvjiqb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -419,7 +419,7 @@ exports[`Avatar round renders 1`] = `
     />
   </div>
   <div
-    class="c3 StyledAvatar-sc-vvjiqb-1"
+    class="c3 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -429,7 +429,7 @@ exports[`Avatar round renders 1`] = `
     />
   </div>
   <div
-    class="c4 StyledAvatar-sc-vvjiqb-1"
+    class="c4 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -439,7 +439,7 @@ exports[`Avatar round renders 1`] = `
     />
   </div>
   <div
-    class="c5 StyledAvatar-sc-vvjiqb-1"
+    class="c5 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -449,7 +449,7 @@ exports[`Avatar round renders 1`] = `
     />
   </div>
   <div
-    class="c6 StyledAvatar-sc-vvjiqb-1"
+    class="c6 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -459,7 +459,7 @@ exports[`Avatar round renders 1`] = `
     />
   </div>
   <div
-    class="c7 StyledAvatar-sc-vvjiqb-1"
+    class="c7 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -792,7 +792,7 @@ exports[`Avatar size 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-vvjiqb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -802,7 +802,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c3 StyledAvatar-sc-vvjiqb-1"
+    class="c3 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -812,7 +812,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c4 StyledAvatar-sc-vvjiqb-1"
+    class="c4 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -822,7 +822,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c5 StyledAvatar-sc-vvjiqb-1"
+    class="c5 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -832,7 +832,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c6 StyledAvatar-sc-vvjiqb-1"
+    class="c6 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -842,7 +842,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c7 StyledAvatar-sc-vvjiqb-1"
+    class="c7 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -852,7 +852,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c8 StyledAvatar-sc-vvjiqb-1"
+    class="c8 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -862,7 +862,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c9 StyledAvatar-sc-vvjiqb-1"
+    class="c9 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -872,7 +872,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c10 StyledAvatar-sc-vvjiqb-1"
+    class="c10 StyledAvatar-sc-1suyamb-1"
     role="figure"
   >
     <img
@@ -882,7 +882,7 @@ exports[`Avatar size 1`] = `
     />
   </div>
   <div
-    class="c3 StyledAvatar-sc-vvjiqb-1"
+    class="c3 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c11 "
@@ -891,7 +891,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c4 StyledAvatar-sc-vvjiqb-1"
+    class="c4 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c12 "
@@ -900,7 +900,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c5 StyledAvatar-sc-vvjiqb-1"
+    class="c5 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c13 "
@@ -909,7 +909,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c6 StyledAvatar-sc-vvjiqb-1"
+    class="c6 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c14 "
@@ -918,7 +918,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c7 StyledAvatar-sc-vvjiqb-1"
+    class="c7 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c15 "
@@ -927,7 +927,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c8 StyledAvatar-sc-vvjiqb-1"
+    class="c8 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c16 "
@@ -936,7 +936,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c9 StyledAvatar-sc-vvjiqb-1"
+    class="c9 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c17 "
@@ -945,7 +945,7 @@ exports[`Avatar size 1`] = `
     </span>
   </div>
   <div
-    class="c10 StyledAvatar-sc-vvjiqb-1"
+    class="c10 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c18 "
@@ -1107,7 +1107,7 @@ exports[`Avatar stack renders 1`] = `
           class="c4"
         >
           <div
-            class="c5 StyledAvatar-sc-vvjiqb-1"
+            class="c5 StyledAvatar-sc-1suyamb-1"
             role="figure"
           >
             <img
@@ -1129,7 +1129,7 @@ exports[`Avatar stack renders 1`] = `
       class="c8"
     >
       <div
-        class="c9 StyledAvatar-sc-vvjiqb-1"
+        class="c9 StyledAvatar-sc-1suyamb-1"
         role="figure"
       >
         <img
@@ -1222,7 +1222,7 @@ exports[`Avatar text renders 1`] = `
   class="c0"
 >
   <div
-    class="c1 StyledAvatar-sc-vvjiqb-1"
+    class="c1 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c2"
@@ -1231,7 +1231,7 @@ exports[`Avatar text renders 1`] = `
     </span>
   </div>
   <div
-    class="c3 StyledAvatar-sc-vvjiqb-1"
+    class="c3 StyledAvatar-sc-1suyamb-1"
   >
     <span
       class="c2"
@@ -1410,7 +1410,7 @@ exports[`Avatar text size changes according to theme 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledAvatar-sc-vvjiqb-1"
+      class="c2 StyledAvatar-sc-1suyamb-1"
     >
       <span
         class="c3 "
@@ -1419,7 +1419,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       </span>
     </div>
     <div
-      class="c4 StyledAvatar-sc-vvjiqb-1"
+      class="c4 StyledAvatar-sc-1suyamb-1"
     >
       <span
         class="c5 "
@@ -1428,7 +1428,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       </span>
     </div>
     <div
-      class="c6 StyledAvatar-sc-vvjiqb-1"
+      class="c6 StyledAvatar-sc-1suyamb-1"
     >
       <span
         class="c7 "
@@ -1437,7 +1437,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       </span>
     </div>
     <div
-      class="c8 StyledAvatar-sc-vvjiqb-1"
+      class="c8 StyledAvatar-sc-1suyamb-1"
     >
       <span
         class="c9 "
