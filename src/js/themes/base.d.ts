@@ -1315,6 +1315,9 @@ export interface ThemeType {
     container?: {
       extend?: ExtendType;
     };
+    background?: {
+      color?: ColorType;
+    };
     border?: {
       color?: ColorType;
       width?: string;

@@ -1581,6 +1581,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         width: '2px',
       },
+      // background: {
+      //   color: undefined,
+      // },
       check: {
         radius: '100%',
         // background: {
