@@ -57,6 +57,7 @@ export const ControlledDataTable = () => {
           ...controlledColumns,
         ].map((col) => ({ ...col }))}
         data={DATA}
+        verticalAlign="top"
         sortable
         rowDetails={(row) => {
           if (row.name === 'Alan') {

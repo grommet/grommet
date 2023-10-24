@@ -2,7 +2,6 @@
 import React, { forwardRef, memo, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import { useKeyboard } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -14,6 +13,7 @@ import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue, normalizeRowCellProps } from './buildState';
 import { defaultProps } from '../../default-props';
+import { useKeyboard } from '../../utils';
 
 const Row = memo(
   ({
@@ -192,11 +192,10 @@ const Body = forwardRef(
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
-    // Determine if using a keyboard to cover focus behavior
-    const usingKeyboard = useKeyboard();
+    const keyboardRowNavigatable = useKeyboard() && onClickRow;
 
     const onFocusActive =
-      active ?? lastActive ?? (usingKeyboard ? 0 : undefined);
+      active ?? lastActive ?? (keyboardRowNavigatable ? 0 : undefined);
 
     const activePrimaryValue =
       active >= 0 ? datumValue(data[active], primaryProperty) : undefined;
