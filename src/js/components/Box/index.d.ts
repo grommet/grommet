@@ -52,7 +52,7 @@ export interface BoxProps {
     | 'evenly'
     | 'start'
     | 'stretch';
-  onClick?: (...args: any[]) => any;
+  onClick?: (event: React.MouseEvent) => void;
   overflow?:
     | 'auto'
     | 'hidden'
