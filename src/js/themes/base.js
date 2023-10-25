@@ -1868,6 +1868,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       value: {
         weight: 600,
       },
+      icons: {
+        remove: FormClose,
+      },
     },
     text: {
       font: {

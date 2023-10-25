@@ -1,6 +1,5 @@
 import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-
 import { FormClose } from 'grommet-icons/icons/FormClose';
 
 import { defaultProps } from '../../default-props';
@@ -14,6 +13,7 @@ import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 const Tag = forwardRef(
   ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
     const containerProps = {
       ref,
@@ -63,7 +63,7 @@ const Tag = forwardRef(
             plain
             hoverIndicator
             focusIndicator
-            icon={<FormClose {...theme.tag.size?.[size]?.icon} />}
+            icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
             round={theme.tag.size?.[size]?.round || theme.tag.round}
             {...theme.tag.remove}
           />
