@@ -166,7 +166,7 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
 
   // Determine if using a keyboard to cover focus behavior
   var usingKeyboard = (0, _utils.useKeyboard)();
-  var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard ? 0 : undefined;
+  var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard && onClickRow ? 0 : undefined;
   var activePrimaryValue = active >= 0 ? (0, _buildState.datumValue)(data[active], primaryProperty) : undefined;
   var selectRow = function selectRow() {
     if (activePrimaryValue !== undefined) {
