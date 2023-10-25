@@ -236,13 +236,11 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   if (connectionPoints) {
     // addedMarkerElmentIds - To track the marker elements are added
     // with their id's based on open and closed arrows and their
-    // color. For eg:
-    // There can be a open arrow with blue color -
-    // __grommet__openArrowStart__blue__${fromTarget}
-    // And there can be a closed arrow with pink color -
-    // __grommet__openArrowEnd__pink__${toTarget}
+    // fromtTarget, toTarget id. For eg:
+    // __grommet__openArrowStart__${fromTarget}
+    // __grommet__openArrowEnd__${toTarget}
     // So, instead of creating multiple arrows of the same color, we
-    // will be leveraging one arrow based on open, close and it's color.
+    // will be leveraging one arrow based on open, close and it's id.
     const addedMarkerElmentIds = {};
     paths = connections.map(
       (
@@ -289,129 +287,81 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
 
           if (typeof endpoint === 'object' && endpoint?.from === 'arrow') {
             // eslint-disable-next-line max-len
-            cleanedRest.markerStart = `url("#__grommet__openArrowStart__${normalizeColor(
-              colorName,
-              theme,
-            )}__${connectionRest.fromTarget}")`;
+            cleanedRest.markerStart = `url("#__grommet__openArrowStart__${connectionRest.fromTarget}")`;
 
             if (
               !addedMarkerElmentIds[
                 /* eslint-disable max-len */
-                `__grommet__openArrowStart__${normalizeColor(
-                  colorName,
-                  theme,
-                )}__${connectionRest.fromTarget}`
+                `__grommet__openArrowStart__${connectionRest.fromTarget}`
               ]
             ) {
               addedMarkerElmentIds[
                 /* eslint-disable max-len */
-                `__grommet__openArrowStart__${normalizeColor(
-                  colorName,
-                  theme,
-                )}__${connectionRest.fromTarget}`
+                `__grommet__openArrowStart__${connectionRest.fromTarget}`
               ] = true;
               markerElements.push(
                 openArrow(
                   normalizeColor(colorName, theme),
-                  `__grommet__openArrowStart__${normalizeColor(
-                    colorName,
-                    theme,
-                  )}__${connectionRest.fromTarget}`,
+                  `__grommet__openArrowStart__${connectionRest.fromTarget}`,
                   'auto-start-reverse',
                 ),
               );
             }
           } else if (typeof endpoint === 'object' && endpoint?.to === 'arrow') {
             // eslint-disable-next-line max-len
-            cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${normalizeColor(
-              colorName,
-              theme,
-            )}__${connectionRest.toTarget}")`;
+            cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${connectionRest.toTarget}")`;
 
             if (
               !addedMarkerElmentIds[
                 /* eslint-disable max-len */
-                `__grommet__openArrowEnd__${normalizeColor(
-                  colorName,
-                  theme,
-                )}__${connectionRest.toTarget}`
+                `__grommet__openArrowEnd__${connectionRest.toTarget}`
               ]
             ) {
               addedMarkerElmentIds[
                 /* eslint-disable max-len */
-                `__grommet__openArrowEnd__${normalizeColor(
-                  colorName,
-                  theme,
-                )}__${connectionRest.toTarget}`
+                `__grommet__openArrowEnd__${connectionRest.toTarget}`
               ] = true;
               markerElements.push(
                 openArrow(
                   normalizeColor(colorName, theme),
-                  `__grommet__openArrowEnd__${normalizeColor(
-                    colorName,
-                    theme,
-                  )}__${connectionRest.toTarget}`,
+                  `__grommet__openArrowEnd__${connectionRest.toTarget}`,
                 ),
               );
             }
           } else if (typeof endpoint === 'string' && endpoint === 'arrow') {
             // eslint-disable-next-line max-len
-            cleanedRest.markerStart = `url("#__grommet__openArrowStart__${normalizeColor(
-              colorName,
-              theme,
-            )}__${connectionRest.fromTarget}")`;
+            cleanedRest.markerStart = `url("#__grommet__openArrowStart__${connectionRest.fromTarget}")`;
             // eslint-disable-next-line max-len
-            cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${normalizeColor(
-              colorName,
-              theme,
-            )}__${connectionRest.toTarget}")`;
+            cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${connectionRest.toTarget}")`;
 
             if (
               !addedMarkerElmentIds[
                 /* eslint-disable max-len */
-                `__grommet__openArrowStart__${normalizeColor(
-                  colorName,
-                  theme,
-                )}__${connectionRest.fromTarget}`
+                `__grommet__openArrowStart__${connectionRest.fromTarget}`
               ] &&
               !addedMarkerElmentIds[
                 /* eslint-disable max-len */
-                `__grommet__openArrowEnd__${normalizeColor(
-                  colorName,
-                  theme,
-                )}__${connectionRest.toTarget}`
+                `__grommet__openArrowEnd__${connectionRest.toTarget}`
               ]
             ) {
               addedMarkerElmentIds[
                 /* eslint-disable max-len */
-                `__grommet__openArrowStart__${normalizeColor(
-                  colorName,
-                  theme,
-                )}__${connectionRest.fromTarget}`
+                `__grommet__openArrowStart__${connectionRest.fromTarget}`
               ] = true;
               addedMarkerElmentIds[
                 /* eslint-disable max-len */
-                `__grommet__openArrowEnd__${normalizeColor(
-                  colorName,
-                  theme,
-                )}__${connectionRest.toTarget}`
+                `__grommet__openArrowEnd__${connectionRest.toTarget}`
               ] = true;
               markerElements.push(
                 <>
                   {openArrow(
                     normalizeColor(colorName, theme),
-                    `__grommet__openArrowStart__${normalizeColor(
-                      colorName,
-                      theme,
-                    )}__${connectionRest.fromTarget}`,
+                    `__grommet__openArrowStart__${connectionRest.fromTarget}`,
                     'auto-start-reverse',
                   )}
                   {openArrow(
                     normalizeColor(colorName, theme),
-                    `__grommet__openArrowEnd__${normalizeColor(
-                      colorName,
-                      theme,
-                    )}__${connectionRest.toTarget}`,
+                    `__grommet__openArrowEnd__${connectionRest.toTarget}`,
                   )}
                 </>,
               );
