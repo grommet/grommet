@@ -461,7 +461,7 @@ exports[`Diagram endpoint - arrow 1`] = `
         viewBox="0 0 0 0"
       >
         <marker
-          id="__grommet__openArrowStart__#6FFFB0__1"
+          id="__grommet__openArrowStart__1"
           markerHeight="9"
           markerWidth="7"
           orient="auto-start-reverse"
@@ -475,7 +475,7 @@ exports[`Diagram endpoint - arrow 1`] = `
           />
         </marker>
         <marker
-          id="__grommet__openArrowEnd__#6FFFB0__2"
+          id="__grommet__openArrowEnd__2"
           markerHeight="9"
           markerWidth="7"
           orient="auto"
@@ -492,8 +492,8 @@ exports[`Diagram endpoint - arrow 1`] = `
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
-            marker-end="url("#__grommet__openArrowEnd__#6FFFB0__2")"
-            marker-start="url("#__grommet__openArrowStart__#6FFFB0__1")"
+            marker-end="url("#__grommet__openArrowEnd__2")"
+            marker-start="url("#__grommet__openArrowStart__1")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -502,7 +502,7 @@ exports[`Diagram endpoint - arrow 1`] = `
           <path
             d="M -10,0 Q -5,0 -5,0 T 0,0"
             fill="none"
-            marker-start="url("#__grommet__openArrowStart__#6FFFB0__1")"
+            marker-start="url("#__grommet__openArrowStart__1")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
@@ -511,7 +511,7 @@ exports[`Diagram endpoint - arrow 1`] = `
           <path
             d="M 0,0 Q 0,5 0,5 T 0,10"
             fill="none"
-            marker-end="url("#__grommet__openArrowEnd__#6FFFB0__2")"
+            marker-end="url("#__grommet__openArrowEnd__2")"
             stroke="#6FFFB0"
             stroke-linecap="butt"
             stroke-linejoin="miter"
