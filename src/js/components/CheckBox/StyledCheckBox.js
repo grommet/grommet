@@ -64,6 +64,7 @@ const StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig)`
       ? props.theme.checkBox.label.align
       : undefined};
   user-select: none;
+  -webkit-user-select: none;
   ${(props) => (props.fillProp ? fillStyle() : 'width: fit-content;')}
   ${(props) =>
     (props.pad || props.theme.checkBox.pad) &&

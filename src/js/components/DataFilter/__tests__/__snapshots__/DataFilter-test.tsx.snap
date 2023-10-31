@@ -554,6 +554,7 @@ exports[`DataFilter noForm 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -1117,6 +1118,7 @@ exports[`DataFilter options 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -2860,6 +2862,7 @@ exports[`DataFilter renders 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -4157,6 +4160,7 @@ exports[`DataFilter select multiple options search 2`] = `
   display: flex;
   flex-direction: row;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   padding: 6px;
   cursor: pointer;

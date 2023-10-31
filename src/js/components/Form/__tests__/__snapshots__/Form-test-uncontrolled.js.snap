@@ -213,6 +213,7 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -882,6 +883,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -1152,7 +1154,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 djYUNh"
           label="toggle"
         >
           <div
@@ -1258,6 +1260,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -1529,7 +1532,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 djYUNh"
           label="toggle"
         >
           <div
@@ -1757,7 +1760,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1 bKZzYl"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iZdzGC"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bFKiSL"
           label="toggle"
         >
           <div
@@ -2385,6 +2388,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -3010,7 +3014,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         class="StyledBox-sc-13pk1d4-0 fuemCy FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 EKqlo"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 djYUNh"
           for="test-checkbox"
           label="test-checkbox"
         >

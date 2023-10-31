@@ -3555,6 +3555,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   display: flex;
   flex-direction: row;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   padding: 6px;
   cursor: pointer;
@@ -4726,6 +4727,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   display: flex;
   flex-direction: row;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   padding: 6px;
   opacity: 0.5;
@@ -5223,6 +5225,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   display: flex;
   flex-direction: row;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   padding: 6px;
   cursor: pointer;
