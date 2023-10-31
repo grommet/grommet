@@ -117,6 +117,7 @@ jobs:
             git config --global user.email "grommet@hpe.com"
             yarn release-stable
   release-styled-components-beta-stable:
+  # needed for styled components beta pre-release
     <<: *defaults
     steps:
       - attach_workspace:
