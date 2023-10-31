@@ -290,6 +290,7 @@ exports[`DataFilters clear 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -1441,6 +1442,7 @@ exports[`DataFilters layer 2`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -2141,6 +2143,7 @@ exports[`DataFilters properties array 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -2603,6 +2606,7 @@ exports[`DataFilters properties object 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -3065,6 +3069,7 @@ exports[`DataFilters renders 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -3559,6 +3564,7 @@ exports[`DataFilters should display all filter options regardless of result set 
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
@@ -4299,6 +4305,7 @@ exports[`DataFilters sub objects 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }

@@ -44,7 +44,7 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, _defaultProps.defaultProp
 var StyledCheckBoxContainer = exports.StyledCheckBoxContainer = _styledComponents["default"].label.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["display:flex;flex-direction:row;align-items:", ";user-select:none;", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:", ";user-select:none;-webkit-user-select:none;", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return typeof props.label === 'string' ? props.theme.checkBox.label.align : undefined;
 }, function (props) {
   return props.fillProp ? fillStyle() : 'width: fit-content;';

@@ -160,7 +160,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
   // Determine if using a keyboard to cover focus behavior
   var usingKeyboard = useKeyboard();
-  var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard ? 0 : undefined;
+  var onFocusActive = (_ref3 = active != null ? active : lastActive) != null ? _ref3 : usingKeyboard && onClickRow ? 0 : undefined;
   var activePrimaryValue = active >= 0 ? datumValue(data[active], primaryProperty) : undefined;
   var selectRow = function selectRow() {
     if (activePrimaryValue !== undefined) {
