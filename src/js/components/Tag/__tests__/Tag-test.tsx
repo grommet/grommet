@@ -90,4 +90,29 @@ describe('Tag', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('renders custom remove icon', () => {
+    const CustomRemoveIcon = () => <svg data-testid="custom-remove-icon" />;
+    const customTheme = {
+      tag: {
+        icons: {
+          remove: CustomRemoveIcon,
+        },
+      },
+    };
+
+    const { container, getByTestId } = render(
+      <Grommet theme={customTheme}>
+        <Tag value="Value" onRemove={jest.fn()} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('custom-remove-icon')).toBeDefined();
+  });
+
+  test('renders default remove icon', () => {
+    const { container } = render(<Tag value="Value" onRemove={jest.fn()} />);
+    expect(container).toMatchSnapshot();
+    expect(screen.getByLabelText('FormClose')).toBeDefined();
+  });
 });
