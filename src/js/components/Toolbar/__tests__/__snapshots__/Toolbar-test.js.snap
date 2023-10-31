@@ -313,6 +313,7 @@ exports[`DataFilters renders 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }

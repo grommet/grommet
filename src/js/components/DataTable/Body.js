@@ -196,7 +196,7 @@ const Body = forwardRef(
     const usingKeyboard = useKeyboard();
 
     const onFocusActive =
-      active ?? lastActive ?? (usingKeyboard ? 0 : undefined);
+      active ?? lastActive ?? (usingKeyboard && onClickRow ? 0 : undefined);
 
     const activePrimaryValue =
       active >= 0 ? datumValue(data[active], primaryProperty) : undefined;

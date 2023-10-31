@@ -176,6 +176,7 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -194,6 +195,7 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   flex-direction: row;
   align-items: center;
   user-select: none;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
