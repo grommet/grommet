@@ -672,6 +672,14 @@ const Form = forwardRef(
           // if the validation fails. And, we assume a javascript action handler
           // otherwise.
           event.preventDefault();
+          // Prevent any "outer" forms from receiving the event too.
+          // Nesting forms is not recommended in HTML. However, with React
+          // portals, if the portal (such as Grommet's Layer) contains a form
+          // and is nested within another form in the React tree, the event
+          // bubbles up to the "outer" form even though in the DOM the portal
+          // doesn't render as child of the "outer" form.
+          // https://legacy.reactjs.org/docs/portals.html#event-bubbling-through-portals
+          event.stopPropagation();
           setPendingValidation(undefined);
           // adding validateOn: "submit" prop to the undefined validateOn fields
           // as we want to trigger "submit" validation once form is submitted
