@@ -219,7 +219,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         disabled: {
           opacity: 0.3,
-          cursor: 'default',
+          // cursor: 'default',
         },
       },
       // The time to wait after the user stopped typing, measured in ms.

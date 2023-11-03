@@ -5,7 +5,7 @@ import { defaultProps } from '../../default-props';
 
 const disabledStyle = (theme) => `
   opacity: 0.3;
-  cursor: ${theme.global.control.disabled.cursor || 'default'};
+  cursor: ${theme.global.control?.disabled?.cursor || 'default'};
   text-decoration: none;
 `;
 

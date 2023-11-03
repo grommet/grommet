@@ -12,7 +12,9 @@ const StyledFileInput = styled.input`
   opacity: 0;
   border: none;
   cursor: ${(props) =>
-    props.disabled ? props.theme.global.control.disabled.cursor : 'pointer'};
+    props.disabled && props.theme.global.control.disabled.cursor
+      ? props.theme.global.control.disabled.cursor
+      : 'pointer'};
 
   ${(props) =>
     props.rightOffset &&

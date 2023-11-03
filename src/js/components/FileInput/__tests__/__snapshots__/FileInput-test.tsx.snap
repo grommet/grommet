@@ -1117,7 +1117,7 @@ exports[`FileInput disabled 1`] = `
   font-size: 0;
   opacity: 0;
   border: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 .c3::-webkit-input-placeholder {
@@ -1149,10 +1149,6 @@ exports[`FileInput disabled 1`] = `
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c3::-webkit-file-upload-button {
-  cursor: default;
 }
 
 .c2 {

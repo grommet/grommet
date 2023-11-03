@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Anchor, Box, Grommet } from 'grommet';
 
-export const Disabled = () => (
+export const CustomDisabledCursor = () => (
   <Grommet
     theme={{ global: { control: { disabled: { cursor: 'not-allowed' } } } }}
   >
@@ -12,10 +12,10 @@ export const Disabled = () => (
   </Grommet>
 );
 
-Disabled.parameters = {
+CustomDisabledCursor.parameters = {
   chromatic: { disable: true },
 };
 
 export default {
-  title: 'Controls/Anchor/Disabled',
+  title: 'Controls/Anchor/Custom Theme/Custom Disabled Cursor',
 };

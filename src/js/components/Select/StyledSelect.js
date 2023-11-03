@@ -40,7 +40,7 @@ export const HiddenInput = styled.input`
 export const SelectOption = styled(Button)`
   ${(props) => props.selected && props.textComponent && selectedStyle}
   // applies theme.global.hover.background to the active
-    // option for mouse and keyboard interactions
+  // option for mouse and keyboard interactions
   ${(props) =>
     props.active &&
     getHoverIndicatorStyle(

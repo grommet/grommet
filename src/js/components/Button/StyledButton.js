@@ -162,7 +162,7 @@ const activeButtonStyle = (props) => css`
 
 const disabledButtonStyle = (props) => css`
   ${disabledStyle(props.theme.button.disabled.opacity)}
-  ${props.theme.global.input.disabled && props.theme.global.input.disabled}
+  ${props.theme.global.input.disabled}
   ${!props.plain &&
   props.theme.button.disabled.border &&
   props.theme.button.disabled.border.color &&

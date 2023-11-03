@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Button, Grommet } from 'grommet';
 
-export const Disabled = () => (
+export const CustomDisabledCursor = () => (
   <Grommet
     theme={{ global: { control: { disabled: { cursor: 'not-allowed' } } } }}
   >
@@ -12,6 +12,8 @@ export const Disabled = () => (
   </Grommet>
 );
 
+CustomDisabledCursor.storyName = 'Custom disabled cursor';
+
 export default {
-  title: 'Controls/Button/Disabled',
+  title: 'Controls/Button/Custom Themed/Custom disabled cursor',
 };
