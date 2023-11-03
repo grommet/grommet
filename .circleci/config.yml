@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.3
+  browser-tools: circleci/browser-tools@1.4.4
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
@@ -89,7 +89,13 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      - browser-tools/install-chrome
+      - run: sudo apt-get update
+      - browser-tools/install-chrome:
+          replace-existing: true
+          chrome-version: 116.0.5845.96
+          # temporary solution until
+          # https://github.com/CircleCI-Public/browser-tools-orb/issues/90
+          # is fixed. Once fixed remove chrome-version.
       - browser-tools/install-chromedriver
       - run:
           name: Start project
@@ -110,6 +116,16 @@ jobs:
             git config --global user.name "Grommet Community Bot"
             git config --global user.email "grommet@hpe.com"
             yarn release-stable
+  release-styled-components-beta-stable:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          command: |
+            git config --global user.name "Grommet Community Bot"
+            git config --global user.email "grommet@hpe.com"
+            yarn release-styled-components-beta-stable
   publish:
     <<: *defaults
     steps:
@@ -187,6 +203,16 @@ workflows:
             branches:
               only:
                 - master
+      - release-styled-components-beta-stable:
+          requires:
+            - jest
+            - chromatic
+            - lint
+            - build
+          filters:
+            branches:
+              only:
+                - styled-components-beta
       - publish:
           requires:
             - jest

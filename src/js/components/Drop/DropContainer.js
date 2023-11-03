@@ -14,6 +14,7 @@ import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
+import { OptionsContext } from '../../contexts/OptionsContext';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -23,6 +24,36 @@ const preventLayerClose = (event) => {
   if (key === 27) {
     event.stopPropagation();
   }
+};
+
+// Gets the closest ancestor positioned element
+const getParentNode = (element) => element.offsetParent ?? element.parentNode;
+
+// return the containing block
+const getContainingBlock = (element) => {
+  let currentNode = getParentNode(element);
+  while (
+    currentNode instanceof window.HTMLElement &&
+    !['html', 'body'].includes(currentNode.nodeName.toLowerCase())
+  ) {
+    const css = window.getComputedStyle(currentNode);
+    // This is non-exhaustive but covers the most common CSS properties that
+    // create a containing block.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#identifying_the_containing_block
+    if (
+      (css.transform ? css.transform !== 'none' : false) ||
+      (css.perspective ? css.perspective !== 'none' : false) ||
+      (css.backdropFilter ? css.backdropFilter !== 'none' : false) ||
+      css.contain === 'paint' ||
+      ['transform', 'perspective'].includes(css.willChange) ||
+      css.willChange === 'filter' ||
+      (css.filter ? css.filter !== 'none' : false)
+    ) {
+      return currentNode;
+    }
+    currentNode = currentNode?.parentNode;
+  }
+  return null;
 };
 
 const defaultAlign = { top: 'top', left: 'left' };
@@ -53,6 +84,8 @@ const DropContainer = forwardRef(
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    // dropOptions was created to preserve backwards compatibility
+    const { drop: dropOptions } = useContext(OptionsContext);
     const portalContext = useContext(PortalContext);
     const portalId = useMemo(() => portalContext.length, [portalContext]);
     const nextPortalContext = useMemo(
@@ -97,6 +130,8 @@ const DropContainer = forwardRef(
     }, [onClickOutside, containerTarget, portalContext]);
 
     useEffect(() => {
+      const target = dropTarget?.current || dropTarget;
+
       const notifyAlign = () => {
         const styleCurrent = dropRef?.current?.style;
         const alignControl = styleCurrent?.top !== '' ? 'top' : 'bottom';
@@ -110,7 +145,6 @@ const DropContainer = forwardRef(
       const place = (preserveHeight) => {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
-        const target = dropTarget?.current || dropTarget;
         const container = dropRef.current;
         if (container && target) {
           // clear prior styling
@@ -163,10 +197,10 @@ const DropContainer = forwardRef(
           let bottom;
           let maxHeight = containerRect.height;
 
-          /* If responsive is true and the Drop doesn't have enough room 
-            to be fully visible and there is more room in the other 
-            direction, change the Drop to display above/below. If there is 
-            less room in the other direction leave the Drop in its current 
+          /* If responsive is true and the Drop doesn't have enough room
+            to be fully visible and there is more room in the other
+            direction, change the Drop to display above/below. If there is
+            less room in the other direction leave the Drop in its current
             position. */
           if (
             responsive &&
@@ -202,7 +236,29 @@ const DropContainer = forwardRef(
             top =
               targetRect.top + targetRect.height / 2 - containerRect.height / 2;
           }
-          container.style.left = `${left}px`;
+
+          let containingBlock;
+          let containingBlockRect;
+          // dropOptions was created to preserve backwards compatibility
+          if (dropOptions?.checkContainingBlock) {
+            // return the containing block for absolute elements or `null`
+            // for fixed elements
+            containingBlock = getContainingBlock(container);
+            containingBlockRect = containingBlock?.getBoundingClientRect();
+          }
+
+          // compute viewport offsets
+          const viewportOffsetLeft = containingBlockRect?.left ?? 0;
+          const viewportOffsetTop = containingBlockRect?.top ?? 0;
+          const viewportOffsetBottom =
+            containingBlockRect?.bottom ?? windowHeight;
+
+          const containerOffsetLeft = containingBlock?.scrollLeft ?? 0;
+          const containerOffsetTop = containingBlock?.scrollTop ?? 0;
+
+          container.style.left = `${left - viewportOffsetLeft +
+            containerOffsetLeft}px`;
+
           if (stretch) {
             // offset width by 0.1 to avoid a bug in ie11 that
             // unnecessarily wraps the text if width is the same
@@ -212,10 +268,12 @@ const DropContainer = forwardRef(
           // the (position:absolute + scrollTop)
           // is presenting issues with desktop scroll flickering
           if (top !== '') {
-            container.style.top = `${top}px`;
+            container.style.top = `${top - viewportOffsetTop +
+              containerOffsetTop}px`;
           }
           if (bottom !== '') {
-            container.style.bottom = `${windowHeight - bottom}px`;
+            container.style.bottom = `${viewportOffsetBottom - bottom -
+              containerOffsetTop}px`;
           }
           if (!preserveHeight) {
             if (theme.drop && theme.drop.maxHeight) {
@@ -233,7 +291,7 @@ const DropContainer = forwardRef(
       let scrollParents;
 
       const addScrollListeners = () => {
-        scrollParents = findScrollParents(dropTarget);
+        scrollParents = findScrollParents(target);
         scrollParents.forEach((scrollParent) =>
           scrollParent.addEventListener('scroll', place),
         );
@@ -273,6 +331,7 @@ const DropContainer = forwardRef(
       stretch,
       theme.drop,
       dropRef,
+      dropOptions,
     ]);
 
     useEffect(() => {
