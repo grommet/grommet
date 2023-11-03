@@ -1265,10 +1265,9 @@ describe('Form controlled', () => {
   });
 
   test(`ensure onSubmit of form in Layer does not submit 
-  outer form`, async () => {
+  outer form`, () => {
     const onSubmit = jest.fn();
     const onSubmitLayerForm = jest.fn();
-    const user = userEvent.setup();
 
     const Test = () => (
       <Form onSubmit={onSubmit}>
@@ -1294,12 +1293,12 @@ describe('Form controlled', () => {
     );
 
     const input = screen.getByLabelText('Label 2');
-    await user.type(input, 'test');
+    fireEvent.change(input, { target: { value: 'test' } });
 
     const submitButton = screen.getByRole('button', {
       name: 'Submit layer form',
     });
-    await user.click(submitButton);
+    fireEvent.click(submitButton);
 
     expect(onSubmitLayerForm).toBeCalledWith(
       expect.objectContaining({
