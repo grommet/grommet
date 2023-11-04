@@ -22,7 +22,7 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
 
   const delay = () =>
     new Promise((resolve) => {
-      setTimeout(() => resolve(), 300);
+      setTimeout(() => resolve(), 500);
     });
 
   // Three use case for children
