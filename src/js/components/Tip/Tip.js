@@ -20,6 +20,11 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
 
   const componentRef = useForwardedRef(tipRef);
 
+  const delay = () =>
+    new Promise((resolve) => {
+      setTimeout(() => resolve(), 300);
+    });
+
   // Three use case for children
   // 1. Tip has a single child + it is a React Element => Great!
   // 2. Tip has a single child +  not React Element =>
@@ -36,7 +41,8 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
       setOver(true);
       if (child.props?.onMouseEnter) child.props.onMouseEnter(event);
     },
-    onMouseLeave: (event) => {
+    onMouseLeave: async (event) => {
+      await delay();
       setOver(false);
       if (child.props?.onMouseLeave) child.props.onMouseLeave(event);
     },
@@ -44,8 +50,11 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
       if (usingKeyboard) setOver(true);
       if (child.props?.onFocus) child.props.onFocus(event);
     },
-    onBlur: (event) => {
-      if (usingKeyboard) setOver(false);
+    onBlur: async (event) => {
+      if (usingKeyboard) {
+        await delay();
+        setOver(false);
+      }
       if (child.props?.onBlur) child.props.onBlur(event);
     },
     key: 'tip-child',
