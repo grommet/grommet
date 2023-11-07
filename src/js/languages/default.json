@@ -104,7 +104,7 @@
     "dropDown": "Open Drop",
     "searchFilter": "Search to filter options",
     "optionSelected": "{optionLabel} selected",
-    "optionNotSelected": "{optionLabel} not selected}",
+    "optionNotSelected": "{optionLabel} not selected",
     "selectedOptions": "Selected Options"
   },
   "skipLinks": {
