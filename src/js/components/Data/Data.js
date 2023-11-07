@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
+import { AnnounceContext } from '../../contexts';
 import { Box } from '../Box';
 import { DataFilters } from '../DataFilters';
 import { DataSearch } from '../DataSearch';
@@ -7,6 +8,7 @@ import { DataView } from '../DataView';
 import { Toolbar } from '../Toolbar';
 import { DataContext } from '../../contexts/DataContext';
 import { DataPropTypes } from './propTypes';
+import { MessageContext } from '../../contexts/MessageContext';
 import { filter } from './filter';
 
 const defaultDefaultView = { search: '' };
@@ -50,6 +52,33 @@ export const Data = ({
       };
     return filter(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
+
+  const announce = useContext(AnnounceContext);
+  const { format } = useContext(MessageContext);
+  useEffect(() => {
+    let messageId;
+    if (result.total !== result.filteredTotal) {
+      if (result.filteredTotal === 1) messageId = 'dataSummary.filteredSingle';
+      else messageId = 'dataSummary.filtered';
+    } else messageId = 'dataSummary.total';
+
+    announce(
+      format({
+        id: messageId,
+        messages: messages?.dataSummary,
+        values: {
+          filteredTotal: result.filteredTotal,
+          total: result.total,
+        },
+      }),
+    );
+  }, [
+    announce,
+    format,
+    messages?.dataSummary,
+    result.filteredTotal,
+    result.total,
+  ]);
 
   // what we use for DataContext value
   const contextValue = useMemo(() => {
