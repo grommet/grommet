@@ -230,7 +230,9 @@ const normalizeValue = (nextValue, prevValue, views) => {
 };
 
 // 300ms was chosen empirically as a reasonable default
-const debounce = (func, timeout = 300) => {
+const DEBOUNCE_TIMEOUT = 300;
+
+const debounce = (func, timeout = DEBOUNCE_TIMEOUT) => {
   let timer;
   return (...args) => {
     clearTimeout(timer);

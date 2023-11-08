@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
 
@@ -9,6 +9,12 @@ import { DataTable } from '../../DataTable';
 import { Pagination } from '../../Pagination';
 import { Data } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
+
+const DEBOUNCE_TIMEOUT = 300;
+
+// asserts that AnnounceContext aria-live region and visible DataSummary each have this text
+const expectDataSummary = (message: string) =>
+  expect(screen.getAllByText(message)).toHaveLength(2);
 
 const data = [
   {
@@ -44,7 +50,7 @@ describe('Data', () => {
   });
 
   test('toolbar', () => {
-    const { getByText, container } = render(
+    const { container } = render(
       <Grommet>
         <Data
           data={data}
@@ -59,7 +65,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -100,7 +106,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
@@ -125,7 +131,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -150,13 +156,13 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('view sort', () => {
-    const { getByText, container } = render(
+    const { container } = render(
       <Grommet>
         <Data
           data={data}
@@ -174,7 +180,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -199,7 +205,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -225,12 +231,13 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 things')).toBeTruthy();
+    expectDataSummary('4 things');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('uncontrolled search', () => {
+    jest.useFakeTimers();
     const { getByRole, getByText, queryByText, container } = render(
       <Grommet>
         <Data
@@ -245,19 +252,23 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.change(getByRole('searchbox'), {
       target: { value: 'a' },
     });
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expectDataSummary('1 result of 4 items');
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('controlled search', () => {
+    jest.useFakeTimers();
     const onView = jest.fn();
     const { getByRole, getByText, container } = render(
       <Grommet>
@@ -282,6 +293,10 @@ describe('Data', () => {
     });
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
     expect(onView).toHaveBeenNthCalledWith(
       1,
       expect.objectContaining({
