@@ -1,6 +1,5 @@
 import React from 'react';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -399,9 +398,7 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('properties when property is an array', async () => {
-    const user = userEvent.setup();
-
+  test('properties when property is an array', () => {
     const { asFragment } = render(
       <Grommet>
         <Data
@@ -439,7 +436,7 @@ describe('Data', () => {
     expect(asFragment()).toMatchSnapshot();
     const filtersButton = screen.getByRole('button', { name: 'Open filters' });
     expect(filtersButton).toBeTruthy();
-    await user.click(filtersButton);
+    fireEvent.click(filtersButton);
     expect(screen.getByRole('button', { name: 'Apply filters' })).toBeTruthy();
     expectPortal('data--filters-control').toMatchSnapshot();
   });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
 import { Data } from '../../Data';
@@ -255,8 +255,7 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should allow filtering on multiple sub-properties from same parent property', async () => {
-    const user = userEvent.setup();
+  test('should allow filtering on multiple sub-properties from same parent property', () => {
     const { asFragment } = render(
       <Grommet>
         <Data
@@ -285,27 +284,27 @@ describe('DataFilter', () => {
 
     const filterButton = getByRole('button', { name: 'Open filters' });
     expect(filterButton).toBeTruthy();
-    await user.click(filterButton);
+    fireEvent.click(filterButton);
 
     // open SelectMultiple
     const selectInput = getByRole('button', { name: /Open Drop/i });
     expect(selectInput).toBeTruthy();
-    await user.click(selectInput);
+    fireEvent.click(selectInput);
 
     // click the first option 'ZZ'
-    await user.click(getByRole('option', { name: /ZZ/i }));
+    fireEvent.click(getByRole('option', { name: /ZZ/i }));
 
     // close SelectMultiple
-    await user.click(getByRole('button', { name: /Close Select/i }));
+    fireEvent.click(getByRole('button', { name: /Close Select/i }));
 
     const checkBox = getByLabelText(1);
 
-    await user.click(checkBox);
+    fireEvent.click(checkBox);
 
     // click Apply Filters button
     const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
     expect(applyFiltersButton).toBeTruthy();
-    await user.click(applyFiltersButton);
+    fireEvent.click(applyFiltersButton);
 
     const updatedFilterButton = getByRole('button', {
       name: 'Open filters, 2 filters applied',
