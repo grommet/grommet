@@ -97,7 +97,7 @@
     "selectAllTitle": "Select All",
     "selectedMultipleNonTotal": "{selectedCount} selected",
     "selectedMultiple": "{selectedCount} of {totalCount} selected",
-    "onMore": "+ {showMoreCount} more",
+    "onMore": "+ {showMoreCount} more options",
     "clearAll": "{selectedCount} options selected. Clear all?",
     "selectAll": "Select all ${totalCount} options",
     "selectDropDown": "Select dropdown",
