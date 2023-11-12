@@ -53,7 +53,7 @@ const Text = forwardRef(
         window.removeEventListener('resize', updateTip);
         window.removeEventListener('pagechange', updateTip);
       };
-    }, [textRef, truncate]);
+    }, [textRef, children, truncate]);
 
     if (skeleton) {
       return (
