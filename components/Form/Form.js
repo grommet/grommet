@@ -614,48 +614,58 @@ var Form = exports.Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
       // if the validation fails. And, we assume a javascript action handler
       // otherwise.
       event.preventDefault();
-      setPendingValidation(undefined);
-      // adding validateOn: "submit" prop to the undefined validateOn fields
-      // as we want to trigger "submit" validation once form is submitted
-      var newValidationRulesRef = Object.keys(validationRulesRef.current).reduce(function (acc, key) {
-        acc[key] = validationRulesRef.current[key];
-        if (!acc[key].validateOn) {
-          acc[key] = _extends({}, validationRulesRef.current[key], {
-            validateOn: 'submit'
-          });
-        }
-        return acc;
-      }, {});
-      var _validateForm2 = validateForm(Object.entries(newValidationRulesRef), value, format, messages, true),
-        nextErrors = _validateForm2[0],
-        nextInfos = _validateForm2[1];
-      setValidationResults(function () {
-        var nextValidationResults = {
-          errors: nextErrors,
-          infos: nextInfos,
-          // Show form's validity when clicking on Submit
-          valid: buildValid(nextErrors)
-        };
-        if (onValidate) onValidate(nextValidationResults);
-        validationResultsRef.current = nextValidationResults;
-        updateAnalytics();
-        return nextValidationResults;
-      });
-      if (Object.keys(nextErrors).length === 0 && _onSubmit) {
-        event.persist(); // extract from React's synthetic event pool
-        var adjustedEvent = event;
-        adjustedEvent.value = value;
-        adjustedEvent.touched = touched;
-        _onSubmit(adjustedEvent);
-        sendAnalytics({
-          type: 'formSubmit',
-          element: formRef.current,
-          data: adjustedEvent,
-          errors: analyticsRef.current.errors,
-          elapsed: new Date().getTime() - analyticsRef.current.start.getTime()
+      // Prevent any "outer" forms from performing `onSubmit`.
+      // Nesting forms is not recommended in HTML. However, with React
+      // portals, if the portal (such as Grommet's Layer) contains a form
+      // and is nested within another form in the React tree, the event
+      // bubbles up to the "outer" form even though in the DOM the portal
+      // doesn't render as child of the "outer" form.
+      // https://legacy.reactjs.org/docs/portals.html#event-bubbling-through-portals
+      if (formRef.current && event.target === formRef.current) {
+        setPendingValidation(undefined);
+        // adding validateOn: "submit" prop to the undefined validateOn
+        // fields as we want to trigger "submit" validation once form
+        // is submitted
+        var newValidationRulesRef = Object.keys(validationRulesRef.current).reduce(function (acc, key) {
+          acc[key] = validationRulesRef.current[key];
+          if (!acc[key].validateOn) {
+            acc[key] = _extends({}, validationRulesRef.current[key], {
+              validateOn: 'submit'
+            });
+          }
+          return acc;
+        }, {});
+        var _validateForm2 = validateForm(Object.entries(newValidationRulesRef), value, format, messages, true),
+          nextErrors = _validateForm2[0],
+          nextInfos = _validateForm2[1];
+        setValidationResults(function () {
+          var nextValidationResults = {
+            errors: nextErrors,
+            infos: nextInfos,
+            // Show form's validity when clicking on Submit
+            valid: buildValid(nextErrors)
+          };
+          if (onValidate) onValidate(nextValidationResults);
+          validationResultsRef.current = nextValidationResults;
+          updateAnalytics();
+          return nextValidationResults;
         });
-        analyticsRef.current.errors = {};
-        analyticsRef.current.submitted = true;
+        if (Object.keys(nextErrors).length === 0 && _onSubmit) {
+          event.persist(); // extract from React's synthetic event pool
+          var adjustedEvent = event;
+          adjustedEvent.value = value;
+          adjustedEvent.touched = touched;
+          _onSubmit(adjustedEvent);
+          sendAnalytics({
+            type: 'formSubmit',
+            element: formRef.current,
+            data: adjustedEvent,
+            errors: analyticsRef.current.errors,
+            elapsed: new Date().getTime() - analyticsRef.current.start.getTime()
+          });
+          analyticsRef.current.errors = {};
+          analyticsRef.current.submitted = true;
+        }
       }
     }
   }), /*#__PURE__*/_react["default"].createElement(_FormContext.FormContext.Provider, {
