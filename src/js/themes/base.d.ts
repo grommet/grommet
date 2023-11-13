@@ -1315,6 +1315,9 @@ export interface ThemeType {
     container?: {
       extend?: ExtendType;
     };
+    background?: {
+      color?: ColorType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
@@ -1617,6 +1620,9 @@ export interface ThemeType {
       };
     };
     value?: TextProps;
+    icons?: {
+      remove?: React.ReactNode | Icon;
+    };
   };
   text?: {
     extend?: ExtendType;
