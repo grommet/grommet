@@ -11,6 +11,7 @@ import { DataFilterPropTypes } from './propTypes';
 // empirical constants for when we change inputs
 const maxCheckBoxGroupOptions = 4;
 const minSelectSearchOptions = 10;
+const defaultRangeSteps = 20;
 
 const getValueAt = (valueObject, pathArg) => {
   if (valueObject === undefined) return undefined;
@@ -133,7 +134,7 @@ export const DataFilter = ({
             rangeProp?.step ||
             // from range in Data `properties`
             properties?.[property]?.range?.step ||
-            (range[1] - range[0]) / 20
+            (range[1] - range[0]) / defaultRangeSteps
           }
           size="full"
           round="small"
