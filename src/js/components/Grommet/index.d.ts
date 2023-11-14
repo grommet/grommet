@@ -120,7 +120,6 @@ export interface GrommetProps {
         selectedMultipleNonTotal?: string;
         selectedMultiple?: string;
         onMore?: string;
-        //accessability
         clearAll?: string;
         selectAll?: string;
         selectDropDown?: string;
