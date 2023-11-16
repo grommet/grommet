@@ -58,8 +58,9 @@ export interface DataProps {
           )[];
           // DataFilter range
           range?: {
-            max: number;
-            min: number;
+            max?: number;
+            min?: number;
+            step?: number;
           };
           // for internal filtering only, should searching evaluate this property
           search?: boolean;
