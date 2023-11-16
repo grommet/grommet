@@ -6,7 +6,12 @@ if (process.env.NODE_ENV !== 'production') {
       label: PropTypes.string,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
     })])),
-    property: PropTypes.string
+    property: PropTypes.string,
+    range: PropTypes.shape({
+      max: PropTypes.number,
+      min: PropTypes.number,
+      step: PropTypes.number
+    })
   };
 }
 export var DataFilterPropTypes = PropType;

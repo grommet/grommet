@@ -19,6 +19,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 // empirical constants for when we change inputs
 var maxCheckBoxGroupOptions = 4;
 var minSelectSearchOptions = 10;
+var defaultRangeSteps = 20;
 var getValueAt = function getValueAt(valueObject, pathArg) {
   if (valueObject === undefined) return undefined;
   var path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
@@ -30,7 +31,15 @@ var generateOptions = function generateOptions(data, property) {
     return getValueAt(d, property);
   }))).filter(function (v) {
     return v !== undefined && v !== '';
-  }).sort();
+  })
+  // ensure number values are sorted appropriately
+  // [132, 15, 100] --> [15, 100, 132]
+  // empty sort() would result in [100, 132, 15]
+  .sort(function (a, b) {
+    if (typeof a === 'number' && typeof b === 'number') return a - b;
+    if (typeof a === 'string' && typeof b === 'string' || typeof a === 'boolean' && typeof b === 'boolean') return a < b ? -1 : 1;
+    return 0;
+  });
 };
 var alignMax = function alignMax(value, interval) {
   if (value > 0) return value - value % interval + interval;
@@ -50,7 +59,7 @@ var booleanOptions = [{
   value: false
 }];
 var DataFilter = exports.DataFilter = function DataFilter(_ref) {
-  var _properties$property3;
+  var _properties$property4;
   var children = _ref.children,
     optionsProp = _ref.options,
     property = _ref.property,
@@ -73,7 +82,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
       var optionsIn = optionsProp || (properties == null || (_properties$property = properties[property]) == null ? void 0 : _properties$property.options);
       var rangeIn = rangeProp || (properties == null || (_properties$property2 = properties[property]) == null ? void 0 : _properties$property2.range);
       if (optionsIn) return [optionsIn, undefined];
-      if (rangeIn) return [undefined, [rangeIn.min, rangeIn.max]];
+      if (rangeIn && 'min' in rangeIn && 'max' in rangeIn) return [undefined, [rangeIn.min, rangeIn.max]];
 
       // generate options from all values for property
       var uniqueValues = generateOptions(unfilteredData || data, property);
@@ -110,6 +119,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
   var content = children;
   if (!content) {
     if (range) {
+      var _properties$property3;
       content = /*#__PURE__*/_react["default"].createElement(_RangeSelector.RangeSelector, {
         id: id,
         name: property + "._range",
@@ -117,7 +127,10 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
         label: true,
         min: range[0],
         max: range[1],
-        step: (range[1] - range[0]) / 20,
+        step:
+        // from `range` on DataFilter
+        (rangeProp == null ? void 0 : rangeProp.step) || ( // from range in Data `properties`
+        properties == null || (_properties$property3 = properties[property]) == null || (_properties$property3 = _properties$property3.range) == null ? void 0 : _properties$property3.step) || (range[1] - range[0]) / defaultRangeSteps,
         size: "full",
         round: "small"
       });
@@ -158,7 +171,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
     }, content);else content = /*#__PURE__*/_react["default"].createElement(_FormField.FormField, _extends({
     htmlFor: id,
     name: property,
-    label: (properties == null || (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property
+    label: (properties == null || (_properties$property4 = properties[property]) == null ? void 0 : _properties$property4.label) || property
   }, rest), content);
   return content;
 };
