@@ -527,7 +527,7 @@ const DataChart = forwardRef(
       series.forEach(({ property, render }) => {
         if (
           !render &&
-          data.length > 1 &&
+          data.length >= 1 &&
           typeof data[0][property] === 'string'
         ) {
           result[property] = createDateFormat(
@@ -547,7 +547,8 @@ const DataChart = forwardRef(
         if (!property || (!horizontal && y) || (horizontal && !y)) {
           if (render) return render(value);
         } else {
-          const datum = data[axisValue];
+          // const datum = data[axisValue];
+          const datum = data[0];
           value = datum[property];
           if (render) return render(value, datum, property);
         }

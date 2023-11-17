@@ -78,7 +78,13 @@ export const createDateFormat = (firstValue, lastValue, full) => {
   ) {
     const delta = Math.abs(endDate - startDate);
     let options;
-    if (delta < 60000)
+    if (delta === 0)
+      // equal 0 - single data point
+      options = {
+        month: full ? 'short' : 'numeric',
+        day: 'numeric',
+      };
+    else if (delta < 60000)
       // less than 1 minute
       options = full
         ? {
@@ -96,7 +102,7 @@ export const createDateFormat = (firstValue, lastValue, full) => {
     else if (delta < 86400000)
       // less than 1 day
       options = { hour: 'numeric' };
-    else if (delta < 2592000000)
+    else if (delta < 2592000000 || delta === 0)
       // less than 30 days
       options = {
         month: full ? 'short' : 'numeric',
