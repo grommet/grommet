@@ -12,7 +12,6 @@
 
 - [ ] `screen` is used for querying.
 - [ ] The correct query is used. (Refer to [this list of queries](https://testing-library.com/docs/queries/about/#priority))
-- [ ] `userEvent` is used in place of `fireEvent`.
 - [ ] `asFragment()` is used for snapshot testing.
 
 #### Any background context you want to provide?
