@@ -1,13 +1,15 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
+import '@testing-library/jest-dom';
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
+import { DataTable } from '../../DataTable';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 const data = [
@@ -268,6 +270,30 @@ describe('DataFilter', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('range inclusive', () => {
+    const { getByRole, container } = render(
+      <Grommet>
+        <Data data={[{ age: 1 }, { age: 2 }, { age: 3 }, { age: 4 }]}>
+          <DataFilters>
+            <DataFilter range={{ min: 1, max: 4, step: 1 }} property="age" />
+          </DataFilters>
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    act(() => {
+      lowerBound.focus();
+    });
+    fireEvent.keyDown(lowerBound, { key: 'Right', keyCode: 39 });
+    const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
+    fireEvent.click(applyFiltersButton);
+
+    expect(screen.queryByText('1')).not.toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
 
