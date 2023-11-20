@@ -1141,10 +1141,6 @@ exports[`SelectMultiple disabled option 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
@@ -1484,10 +1480,6 @@ exports[`SelectMultiple empty options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -1877,10 +1869,6 @@ exports[`SelectMultiple keyboard interactions 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   aria-hidden="true"
   class="c0"
@@ -2175,10 +2163,6 @@ exports[`SelectMultiple limit 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -3136,10 +3120,6 @@ exports[`SelectMultiple select all and clear 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
@@ -4146,10 +4126,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   class="c0"
 >
@@ -4708,10 +4684,6 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   class="c0"
 >
@@ -4921,10 +4893,6 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 

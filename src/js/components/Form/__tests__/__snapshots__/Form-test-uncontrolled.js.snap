@@ -3100,10 +3100,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
 
 }
 
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 <div
   class="c0"
 >
