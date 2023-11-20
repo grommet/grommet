@@ -51,12 +51,17 @@ export const Data = ({
     return filter(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
 
+  // used by DataFilters to determine if badge should appear on Filter button
+  const [filtersCleared, setFiltersCleared] = useState(true);
+
   // what we use for DataContext value
   const contextValue = useMemo(() => {
     const value = {
       id,
       messages,
       properties,
+      filtersCleared,
+      setFiltersCleared,
       updateOn,
       view,
       views,
@@ -65,6 +70,7 @@ export const Data = ({
 
     value.clearFilters = () => {
       const nextView = defaultView;
+      setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
     };
@@ -87,6 +93,7 @@ export const Data = ({
     defaultView,
     id,
     messages,
+    filtersCleared,
     onView,
     properties,
     result,

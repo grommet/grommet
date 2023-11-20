@@ -5,6 +5,8 @@ export interface DataFiltersProps {
   drop?: boolean;
   heading?: string | React.ReactNode;
   layer?: boolean;
+  showClearFilters?: boolean;
+  updateOn?: 'change' | 'submit';
 }
 
 type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick'>;

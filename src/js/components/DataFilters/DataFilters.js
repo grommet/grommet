@@ -1,8 +1,15 @@
-import React, { Children, useContext, useMemo, useState } from 'react';
+import React, {
+  Children,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { DataClearFilters } from '../DataClearFilters';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data/DataForm';
 import { DataSort } from '../DataSort';
@@ -23,13 +30,23 @@ const layerProps = {
   position: 'right',
 };
 
-export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
+const defaultTouched = {};
+export const DataFilters = ({
+  drop,
+  children,
+  showClearFilters = true,
+  heading,
+  layer,
+  updateOn,
+  ...rest
+}) => {
   const {
-    clearFilters,
     id: dataId,
     messages,
     properties,
     unfilteredData,
+    filtersCleared,
+    setFiltersCleared,
     view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
@@ -37,10 +54,27 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
   // touched is a map of form field name to its value, it only has fields that
   // were changed as part of the DataForm here. This is so we can track based
   // on what's inside DataFilters as opposed to trying to track from the view
-  // object.
-  const [touched, setTouched] = useState({});
+  // object, since touched is used as logic for whether to show badge or not
+  const [touched, setTouched] = useState(defaultTouched);
+
+  // if filters have been applied by this DataFilters, update
+  // the DataContext that filters are not in a "cleared" state
+  useEffect(() => {
+    setFiltersCleared(!Object.keys(touched).length);
+  }, [touched, setFiltersCleared]);
+
+  // if filters have been cleared via clearFilters in DataContext,
+  // reset touched to default state so badge is removed
+  useEffect(() => {
+    if (filtersCleared) {
+      setTouched(defaultTouched);
+    }
+  }, [filtersCleared]);
   const controlled = useMemo(() => drop || layer, [drop, layer]);
-  // generate the badge value based on touched fields that have a value
+
+  // generate the badge value based on touched fields that have a value.
+  // only show the badge based off of what's included in this DataFilters
+  // since multiple DataFilters may exist
   const badge = useMemo(
     () =>
       (controlled && Object.keys(touched).filter((k) => touched[k]).length) ||
@@ -48,18 +82,9 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
     [controlled, touched],
   );
 
-  const clearControl = badge && (
+  const clearControl = badge && showClearFilters && (
     <Box flex={false} margin={{ start: 'small' }}>
-      <Button
-        label={format({
-          id: 'dataFilters.clear',
-          messages: messages?.dataFilters,
-        })}
-        onClick={() => {
-          setTouched({});
-          clearFilters();
-        }}
-      />
+      <DataClearFilters />
     </Box>
   );
 
@@ -99,6 +124,7 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
               }))
           : undefined
       }
+      updateOn={updateOn}
       {...(!controlled ? rest : { fill: 'vertical' })}
     >
       {layer && (
