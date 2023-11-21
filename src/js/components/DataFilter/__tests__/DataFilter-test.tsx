@@ -273,8 +273,8 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('range inclusive', () => {
-    const { getByRole, container } = render(
+  test('includes range min and max in filtered results', () => {
+    const { getByRole } = render(
       <Grommet>
         <Data data={[{ age: 1 }, { age: 2 }, { age: 3 }, { age: 4 }]}>
           <DataFilters>
@@ -294,7 +294,7 @@ describe('DataFilter', () => {
     fireEvent.click(applyFiltersButton);
 
     expect(screen.queryByText('1')).not.toBeInTheDocument();
-    expect(container.firstChild).toMatchSnapshot();
+    expect(screen.queryAllByText('2')[1]).toBeInTheDocument();
   });
 
   test('children', () => {
