@@ -60,3 +60,17 @@ describe('DataSearch', () => {
     expectPortal('test-data--search-control').toMatchSnapshot();
   });
 });
+
+test('enter', () => {
+  jest.useFakeTimers();
+
+  const { container } = render(
+    <Grommet>
+      <Data id="test-data" data={data}>
+        <DataSearch updateOn='submit' />
+      </Data>
+    </Grommet>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
