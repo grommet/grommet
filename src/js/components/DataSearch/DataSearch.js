@@ -16,7 +16,13 @@ const dropProps = {
   align: { top: 'bottom', left: 'left' },
 };
 
-export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
+export const DataSearch = ({
+  drop,
+  id: idProp,
+  responsive,
+  updateOn,
+  ...rest
+}) => {
   const { id: dataId, messages, addToolbarKey } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
   const { format } = useContext(MessageContext);
@@ -46,7 +52,7 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
   if (noForm)
     // likely in Toolbar
     content = (
-      <DataForm footer={false} updateOn="change">
+      <DataForm footer={false} updateOn={updateOn || 'change'}>
         {content}
       </DataForm>
     );
