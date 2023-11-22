@@ -126,7 +126,13 @@ export const DataFilter = ({
           id={id}
           name={`${property}._range`}
           defaultValues={range}
-          label
+          label={(number) =>
+            // undefined allows user's browser locale to define format
+            Intl.NumberFormat(undefined, {
+              notation: 'compact',
+              compactDisplay: 'short',
+            }).format(number)
+          }
           min={range[0]}
           max={range[1]}
           step={

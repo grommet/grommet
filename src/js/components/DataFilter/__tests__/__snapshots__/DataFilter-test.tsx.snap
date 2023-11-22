@@ -966,7 +966,7 @@ exports[`DataFilter noForm 1`] = `
             class="c12"
             style="width: 0px;"
           >
-            2.0999999999999996
+            2.1
           </span>
           <div
             class="c13 c14"
@@ -1027,7 +1027,7 @@ exports[`DataFilter noForm 1`] = `
             class="c20"
             style="width: 0px;"
           >
-            4.8999999999999995
+            4.9
           </span>
         </div>
       </form>
@@ -3830,7 +3830,7 @@ exports[`DataFilter renders 1`] = `
                     class="c16"
                     style="width: 0px;"
                   >
-                    2.0999999999999996
+                    2.1
                   </span>
                   <div
                     class="c17 c18"
@@ -3891,7 +3891,7 @@ exports[`DataFilter renders 1`] = `
                     class="c24"
                     style="width: 0px;"
                   >
-                    4.8999999999999995
+                    4.9
                   </span>
                 </div>
               </div>
