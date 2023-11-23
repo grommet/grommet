@@ -2529,6 +2529,12 @@ exports[`Components loads 1`] = `
         },
         "tag": {
           "border": true,
+          "icons": {
+            "remove": {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
           "pad": {
             "horizontal": "small",
             "vertical": "xsmall",
@@ -4524,6 +4530,12 @@ exports[`Components loads 1`] = `
         },
         "tag": {
           "border": true,
+          "icons": {
+            "remove": {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
           "pad": {
             "horizontal": "small",
             "vertical": "xsmall",

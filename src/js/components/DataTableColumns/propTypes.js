@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.arrayOf(
         PropTypes.shape({
+          disabled: PropTypes.bool,
           label: PropTypes.string,
           property: PropTypes.string,
         }),

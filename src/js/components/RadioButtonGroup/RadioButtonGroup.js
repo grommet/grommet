@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useRef, useState } from 'react';
 
 import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
@@ -67,14 +61,6 @@ const RadioButtonGroup = forwardRef(
       });
       return result;
     }, [options, value]);
-
-    useEffect(() => {
-      // if tab comes back to RadioButtonGroup when there still is no selection,
-      // we want focus to be on the first RadioButton
-      if (focus && !valueIndex) {
-        optionRefs.current[0].focus();
-      }
-    }, [focus, valueIndex]);
 
     const onNext = () => {
       if (valueIndex !== undefined && valueIndex < options.length - 1) {

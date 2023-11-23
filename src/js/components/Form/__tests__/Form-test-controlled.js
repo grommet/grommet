@@ -12,6 +12,7 @@ import { TextInput } from '../../TextInput';
 import { CheckBox } from '../../CheckBox';
 import { Box } from '../../Box';
 import { Select } from '../../Select';
+import { Layer } from '../../Layer';
 import { ThumbsRating } from '../../ThumbsRating';
 
 describe('Form controlled', () => {
@@ -1261,5 +1262,49 @@ describe('Form controlled', () => {
 
     fireEvent.click(getByText('Submit_Button'));
     expect(screen.queryAllByText('invalid')).toHaveLength(3);
+  });
+
+  test(`ensure onSubmit of form in Layer does not submit 
+  outer form`, () => {
+    const onSubmit = jest.fn();
+    const onSubmitLayerForm = jest.fn();
+
+    const Test = () => (
+      <Form onSubmit={onSubmit}>
+        <FormField label="Label 1" htmlFor="input-1" name="input-1">
+          <TextInput id="input-1" name="input-1" />
+        </FormField>
+        <Layer animate={false}>
+          <Form onSubmit={onSubmitLayerForm}>
+            <FormField label="Label 2" htmlFor="input-2" name="input-2">
+              <TextInput id="input-2" name="input-2" />
+              <Button type="submit" primary label="Submit layer form" />
+            </FormField>
+          </Form>
+        </Layer>
+        <Button type="submit" primary label="Submit Button" />
+      </Form>
+    );
+
+    render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Label 2');
+    fireEvent.change(input, { target: { value: 'test' } });
+
+    const submitButton = screen.getByRole('button', {
+      name: 'Submit layer form',
+    });
+    fireEvent.click(submitButton);
+
+    expect(onSubmitLayerForm).toBeCalledWith(
+      expect.objectContaining({
+        value: { 'input-2': 'test' },
+      }),
+    );
+    expect(onSubmit).toBeCalledTimes(0);
   });
 });
