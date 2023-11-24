@@ -63,8 +63,10 @@ const RangeSelector = forwardRef(
 
     const change = useCallback(
       (nextValues) => {
-        setValues(nextValues);
-        if (onChange) onChange(nextValues);
+        const newRange = nextValues.map((n) => Number(Number(n).toFixed(2)));
+
+        setValues(newRange);
+        if (onChange) onChange(newRange);
       },
       [onChange, setValues],
     );
