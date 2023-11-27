@@ -53,6 +53,15 @@ const booleanOptions = [
   { label: 'false', value: false },
 ];
 
+const getLengthDecimalPoints = (number) => {
+  if (Number.isInteger(number)) {
+    return 0;
+  }
+
+  const arr = number.toString().split('.');
+  return arr[1].length;
+};
+
 export const DataFilter = ({
   children,
   options: optionsProp,
@@ -121,27 +130,30 @@ export const DataFilter = ({
   let content = children;
   if (!content) {
     if (range) {
+      const step =
+        // from `range` on DataFilter
+        rangeProp?.step ||
+        // from range in Data `properties`
+        properties?.[property]?.range?.step ||
+        (range[1] - range[0]) / defaultRangeSteps;
+
+      const maximumFractionDigits = getLengthDecimalPoints(step);
+
       content = (
         <RangeSelector
           id={id}
           name={`${property}._range`}
           defaultValues={range}
+          // align granularity of label to the step
           label={(number) =>
             // undefined allows user's browser locale to define format
             Intl.NumberFormat(undefined, {
-              notation: 'compact',
-              compactDisplay: 'short',
+              maximumFractionDigits,
             }).format(number)
           }
           min={range[0]}
           max={range[1]}
-          step={
-            // from `range` on DataFilter
-            rangeProp?.step ||
-            // from range in Data `properties`
-            properties?.[property]?.range?.step ||
-            (range[1] - range[0]) / defaultRangeSteps
-          }
+          step={step}
           size="full"
           round="small"
         />
