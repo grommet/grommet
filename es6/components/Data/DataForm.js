@@ -276,7 +276,7 @@ export var DataForm = function DataForm(_ref) {
     }, content)), footer !== false && updateOn === 'submit' && /*#__PURE__*/React.createElement(Footer, {
       flex: false,
       margin: {
-        top: 'small'
+        top: 'medium'
       },
       pad: {
         horizontal: pad,

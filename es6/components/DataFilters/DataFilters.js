@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { Children, useContext, useMemo, useState } from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
-import { FormClose } from 'grommet-icons/icons/FormClose';
+import { Close } from 'grommet-icons/icons/Close';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataFilter } from '../DataFilter';
@@ -114,13 +114,12 @@ export var DataFilters = function DataFilters(_ref) {
     fill: 'vertical'
   }), layer && /*#__PURE__*/React.createElement(Header, null, /*#__PURE__*/React.createElement(Heading, {
     margin: "none",
-    level: 2,
-    size: "small"
+    level: 2
   }, heading || format({
     id: 'dataFilters.heading',
     messages: messages == null ? void 0 : messages.dataFilters
   })), !controlled && clearControl, /*#__PURE__*/React.createElement(Button, {
-    icon: /*#__PURE__*/React.createElement(FormClose, null),
+    icon: /*#__PURE__*/React.createElement(Close, null),
     hoverIndicator: true,
     onClick: function onClick() {
       return setShowContent(undefined);

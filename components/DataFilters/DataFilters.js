@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports.DataFilters = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Filter = require("grommet-icons/icons/Filter");
-var _FormClose = require("grommet-icons/icons/FormClose");
+var _Close = require("grommet-icons/icons/Close");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _DataFilter = require("../DataFilter");
@@ -120,13 +120,12 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
     fill: 'vertical'
   }), layer && /*#__PURE__*/_react["default"].createElement(_Header.Header, null, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
     margin: "none",
-    level: 2,
-    size: "small"
+    level: 2
   }, heading || format({
     id: 'dataFilters.heading',
     messages: messages == null ? void 0 : messages.dataFilters
   })), !controlled && clearControl, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    icon: /*#__PURE__*/_react["default"].createElement(_FormClose.FormClose, null),
+    icon: /*#__PURE__*/_react["default"].createElement(_Close.Close, null),
     hoverIndicator: true,
     onClick: function onClick() {
       return setShowContent(undefined);
