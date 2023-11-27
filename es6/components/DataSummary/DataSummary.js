@@ -18,7 +18,13 @@ export var DataSummary = function DataSummary(_ref) {
   var messageId;
   if (total !== filteredTotal) {
     if (filteredTotal === 1) messageId = 'dataSummary.filteredSingle';else messageId = 'dataSummary.filtered';
-  } else messageId = 'dataSummary.total';
+  } else if (total === 1) messageId = 'dataSummary.totalSingle';else messageId = 'dataSummary.total';
+
+  // helps account for cases like 0 results of 1 item
+  var items = format({
+    id: total === 1 ? 'dataSummary.itemsSingle' : 'dataSummary.items',
+    messages: messages || (dataMessages == null ? void 0 : dataMessages.dataSummary)
+  });
   return /*#__PURE__*/React.createElement(Text, _extends({
     margin: {
       vertical: 'xsmall'
@@ -28,7 +34,8 @@ export var DataSummary = function DataSummary(_ref) {
     messages: messages || (dataMessages == null ? void 0 : dataMessages.dataSummary),
     values: {
       filteredTotal: filteredTotal,
-      total: total
+      total: total,
+      items: items
     }
   }));
 };
