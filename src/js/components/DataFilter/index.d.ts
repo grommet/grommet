@@ -12,8 +12,9 @@ export interface DataFilterProps {
   )[];
   property: string;
   range?: {
-    max: number;
-    min: number;
+    max?: number;
+    min?: number;
+    step?: number;
   };
 }
 
