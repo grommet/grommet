@@ -376,7 +376,7 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -571,7 +571,7 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
 
 @media only screen and (max-width:768px) {
   .c6 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -695,7 +695,7 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -890,7 +890,7 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
 
 @media only screen and (max-width:768px) {
   .c6 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
