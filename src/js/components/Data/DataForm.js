@@ -183,10 +183,7 @@ const resetPage = (nextFormValue, prevFormValue) => {
 const transformTouched = (touched, value) => {
   const result = {};
   Object.keys(touched).forEach((key) => {
-    // special case _range fields
-    const parts = key.split('.');
-    if (parts[1] === formRangeKey) result[key] = value[parts[0]];
-    else result[key] = flatten(value, { full: true })[key];
+    result[key] = flatten(value, { full: true })[key];
   });
   return result;
 };
