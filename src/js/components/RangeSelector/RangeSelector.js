@@ -63,10 +63,12 @@ const RangeSelector = forwardRef(
 
     const change = useCallback(
       (nextValues) => {
-        setValues(nextValues);
+        if (nextValues[0] === min && nextValues[1] === max)
+          setValues(undefined);
+        else setValues(nextValues);
         if (onChange) onChange(nextValues);
       },
-      [onChange, setValues],
+      [onChange, setValues, min, max],
     );
 
     const valueForMouseCoord = useCallback(
