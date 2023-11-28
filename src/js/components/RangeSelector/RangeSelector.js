@@ -63,9 +63,7 @@ const RangeSelector = forwardRef(
 
     const change = useCallback(
       (nextValues) => {
-        if (nextValues[0] === min && nextValues[1] === max)
-          setValues(undefined);
-        else setValues(nextValues);
+        setValues(nextValues);
         if (onChange) onChange(nextValues);
       },
       [onChange, setValues],
