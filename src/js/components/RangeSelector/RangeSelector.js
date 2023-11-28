@@ -63,12 +63,22 @@ const RangeSelector = forwardRef(
 
     const change = useCallback(
       (nextValues) => {
-        const newRange = nextValues.map((n) => Number(Number(n).toFixed(2)));
+        const decimalCount = (n) => {
+          const numberAsString = n.toString();
+          if (!numberAsString.includes('.')) return 0;
+
+          const [, decimalPlaces] = numberAsString.split('.');
+          return decimalPlaces.length;
+        };
+
+        const newRange = nextValues.map((n) => (
+          Number(Number(n).toFixed(decimalCount(step)))
+        ));
 
         setValues(newRange);
         if (onChange) onChange(newRange);
       },
-      [onChange, setValues],
+      [onChange, setValues, step],
     );
 
     const valueForMouseCoord = useCallback(

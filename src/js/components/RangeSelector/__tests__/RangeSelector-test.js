@@ -168,36 +168,40 @@ describe('RangeSelector', () => {
     expect(values).toStrictEqual([0, 81]);
   });
 
-  test('step renders correct values with float step', () => {
-    let values;
-    const setValues = (newValues) => {
-      values = newValues;
-    };
-    const onChange = jest.fn((nextValues) => setValues(nextValues));
-    const { container, getByLabelText } = render(
-      <Grommet>
-        <RangeSelector values={[20, 30]} step={0.15} onChange={onChange} />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
+  const steps = [0.15, 0.156];
 
-    const lowerControl = getByLabelText('Lower Bounds');
-    fireEvent.keyDown(lowerControl, { key: 'Left', keyCode: 37 });
-    expect(onChange).toHaveBeenCalled();
-    expect(values).toStrictEqual([19.85, 30]);
-
-    fireEvent.keyDown(lowerControl, { key: 'Right', keyCode: 39 });
-    expect(onChange).toHaveBeenCalled();
-    expect(values).toStrictEqual([20.15, 30]);
-
-    const upperControl = getByLabelText('Upper Bounds');
-    fireEvent.keyDown(upperControl, { key: 'Right', keyCode: 39 });
-    expect(onChange).toHaveBeenCalled();
-    expect(values).toStrictEqual([20, 30.15]);
-
-    fireEvent.keyDown(upperControl, { key: 'Left', keyCode: 37 });
-    expect(onChange).toHaveBeenCalled();
-    expect(values).toStrictEqual([20, 29.85]);
+  steps.forEach((step) => {
+    test(`step renders correct values with float step [${step}]`, () => {
+      let values;
+      const setValues = (newValues) => {
+        values = newValues;
+      };
+      const onChange = jest.fn((nextValues) => setValues(nextValues));
+      const { container, getByLabelText } = render(
+        <Grommet>
+          <RangeSelector values={[20, 30]} step={step} onChange={onChange} />
+        </Grommet>,
+      );
+      expect(container.firstChild).toMatchSnapshot();
+  
+      const lowerControl = getByLabelText('Lower Bounds');
+      fireEvent.keyDown(lowerControl, { key: 'Left', keyCode: 37 });
+      expect(onChange).toHaveBeenCalled();
+      expect(values).toStrictEqual([20 - step, 30]);
+  
+      fireEvent.keyDown(lowerControl, { key: 'Right', keyCode: 39 });
+      expect(onChange).toHaveBeenCalled();
+      expect(values).toStrictEqual([20 + step, 30]);
+  
+      const upperControl = getByLabelText('Upper Bounds');
+      fireEvent.keyDown(upperControl, { key: 'Right', keyCode: 39 });
+      expect(onChange).toHaveBeenCalled();
+      expect(values).toStrictEqual([20, 30 + step]);
+  
+      fireEvent.keyDown(upperControl, { key: 'Left', keyCode: 37 });
+      expect(onChange).toHaveBeenCalled();
+      expect(values).toStrictEqual([20, 30 - step]);
+    });
   });
 
   test('handle keyboard', () => {
