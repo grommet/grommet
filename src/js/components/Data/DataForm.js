@@ -294,7 +294,7 @@ export const DataForm = ({
         {footer !== false && updateOn === 'submit' && (
           <Footer
             flex={false}
-            margin={{ top: 'small' }}
+            margin={{ top: 'medium' }}
             pad={{ horizontal: pad, bottom: pad }}
             gap="small"
           >
