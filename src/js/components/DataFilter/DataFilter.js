@@ -118,12 +118,17 @@ export const DataFilter = ({
 
   const id = `${dataId}-${property}`;
 
+  // only add aria-label for no form examples
+  const ariaLabel = noForm
+    ? `${properties?.[property]?.label || property}`
+    : null;
+
   let content = children;
   if (!content) {
     if (range) {
       content = (
         <RangeSelector
-          aria-label={property}
+          aria-label={ariaLabel}
           id={id}
           name={`${property}._range`}
           defaultValues={range}
@@ -146,7 +151,7 @@ export const DataFilter = ({
         // special case boolean properties
         content = (
           <CheckBoxGroup
-            aria-label={property}
+            aria-label={ariaLabel}
             id={id}
             name={property}
             options={booleanOptions}
@@ -155,7 +160,7 @@ export const DataFilter = ({
       } else if (options.length <= maxCheckBoxGroupOptions) {
         content = (
           <CheckBoxGroup
-            aria-label={property}
+            aria-label={ariaLabel}
             id={id}
             name={property}
             options={options}
