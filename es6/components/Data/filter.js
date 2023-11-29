@@ -44,7 +44,7 @@ export var filter = function filter(data, view, properties) {
         var value = datumValue(datum, property);
 
         // range case
-        if (typeof (filterValue == null ? void 0 : filterValue.min) === 'number' || typeof (filterValue == null ? void 0 : filterValue.max) === 'number') return typeof value !== 'number' || value <= filterValue.min || value >= filterValue.max;
+        if (typeof (filterValue == null ? void 0 : filterValue.min) === 'number' || typeof (filterValue == null ? void 0 : filterValue.max) === 'number') return typeof value !== 'number' || value < filterValue.min || value > filterValue.max;
 
         // options case
         if (Array.isArray(filterValue)) {
