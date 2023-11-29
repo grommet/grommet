@@ -123,6 +123,7 @@ export const DataFilter = ({
     if (range) {
       content = (
         <RangeSelector
+          aria-label={property}
           id={id}
           name={`${property}._range`}
           defaultValues={range}
@@ -144,10 +145,22 @@ export const DataFilter = ({
       if (options.length === 2 && options[1] === true && options[0] === false) {
         // special case boolean properties
         content = (
-          <CheckBoxGroup id={id} name={property} options={booleanOptions} />
+          <CheckBoxGroup
+            aria-label={property}
+            id={id}
+            name={property}
+            options={booleanOptions}
+          />
         );
       } else if (options.length <= maxCheckBoxGroupOptions) {
-        content = <CheckBoxGroup id={id} name={property} options={options} />;
+        content = (
+          <CheckBoxGroup
+            aria-label={property}
+            id={id}
+            name={property}
+            options={options}
+          />
+        );
       } else {
         content = (
           <SelectMultiple

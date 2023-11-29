@@ -678,6 +678,7 @@ exports[`DataFilters renders 1`] = `
                   class="c12 FormField__FormFieldContentBox-sc-m9hood-1"
                 >
                   <div
+                    aria-label="name"
                     class="c13 StyledCheckBoxGroup-sc-2nhc5d-0"
                     id="data-name"
                     role="group"
