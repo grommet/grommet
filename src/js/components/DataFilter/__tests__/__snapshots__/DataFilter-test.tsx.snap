@@ -1523,7 +1523,6 @@ exports[`DataFilter options 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="name"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
@@ -1607,7 +1606,6 @@ exports[`DataFilter options 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="enabled"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-enabled"
                   role="group"
@@ -1669,7 +1667,6 @@ exports[`DataFilter options 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="type.name"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-type.name"
                   role="group"
@@ -2279,7 +2276,6 @@ exports[`DataFilter range Data 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="rating"
                   class="c8"
                   id="data-rating"
                 >
@@ -2914,7 +2910,6 @@ exports[`DataFilter range prop 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="rating"
                   class="c8"
                   id="data-rating"
                 >
@@ -3687,7 +3682,6 @@ exports[`DataFilter renders 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="name"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
@@ -3771,7 +3765,6 @@ exports[`DataFilter renders 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="enabled"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-enabled"
                   role="group"
@@ -3833,7 +3826,6 @@ exports[`DataFilter renders 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="rating"
                   class="c15"
                   id="data-rating"
                 >

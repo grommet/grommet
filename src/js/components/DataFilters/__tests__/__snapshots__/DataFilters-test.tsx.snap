@@ -524,7 +524,6 @@ exports[`DataFilters clear 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="name"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
@@ -2044,7 +2043,6 @@ exports[`DataFilters layer 2`] = `
                 class="c15 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="name"
                   class="c16 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="test-data-name"
                   role="group"
@@ -2650,7 +2648,6 @@ exports[`DataFilters properties array 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="name"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
@@ -3213,7 +3210,6 @@ exports[`DataFilters properties object 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="name"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
@@ -3776,7 +3772,6 @@ exports[`DataFilters renders 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="name"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
@@ -4436,7 +4431,6 @@ exports[`DataFilters should display all filter options regardless of result set 
                   class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
                 >
                   <div
-                    aria-label="name"
                     class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                     id="data-name"
                     role="group"
@@ -4498,7 +4492,6 @@ exports[`DataFilters should display all filter options regardless of result set 
                   class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
                 >
                   <div
-                    aria-label="color"
                     class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                     id="data-color"
                     role="group"
@@ -5379,7 +5372,6 @@ exports[`DataFilters sub objects 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="location.city"
                   class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-location.city"
                   role="group"
@@ -5453,7 +5445,6 @@ exports[`DataFilters sub objects 1`] = `
                 class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  aria-label="location.lat"
                   class="c17"
                   id="data-location.lat"
                 >
