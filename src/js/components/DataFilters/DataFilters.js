@@ -34,7 +34,7 @@ const defaultTouched = {};
 export const DataFilters = ({
   drop,
   children,
-  showClearFilters = true,
+  clearFilters = true,
   heading,
   layer,
   updateOn,
@@ -82,7 +82,7 @@ export const DataFilters = ({
     [controlled, touched],
   );
 
-  const clearControl = badge && showClearFilters && (
+  const clearControl = badge && clearFilters && (
     <Box flex={false} margin={{ start: 'small' }}>
       <DataClearFilters />
     </Box>

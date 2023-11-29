@@ -5,7 +5,7 @@ export interface DataFiltersProps {
   drop?: boolean;
   heading?: string | React.ReactNode;
   layer?: boolean;
-  showClearFilters?: boolean;
+  clearFilters?: boolean;
   updateOn?: 'change' | 'submit';
 }
 

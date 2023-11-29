@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
     drop: PropTypes.bool,
     heading: PropTypes.string,
     layer: PropTypes.bool,
-    showClearFilters: PropTypes.bool,
+    clearFilters: PropTypes.bool,
     updateOn: PropTypes.oneOf(['change', 'submit']),
   };
 }
