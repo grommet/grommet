@@ -121,7 +121,7 @@ export const DataFilter = ({
   // only add aria-label for no form examples
   const ariaLabel = noForm
     ? `${properties?.[property]?.label || property}`
-    : null;
+    : undefined;
 
   let content = children;
   if (!content) {
