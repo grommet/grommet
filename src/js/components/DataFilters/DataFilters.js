@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
-import { FormClose } from 'grommet-icons/icons/FormClose';
+import { Close } from 'grommet-icons/icons/Close';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataClearFilters } from '../DataClearFilters';
@@ -129,7 +129,7 @@ export const DataFilters = ({
     >
       {layer && (
         <Header>
-          <Heading margin="none" level={2} size="small">
+          <Heading margin="none" level={2}>
             {heading ||
               format({
                 id: 'dataFilters.heading',
@@ -138,7 +138,7 @@ export const DataFilters = ({
           </Heading>
           {!controlled && clearControl}
           <Button
-            icon={<FormClose />}
+            icon={<Close />}
             hoverIndicator
             onClick={() => setShowContent(undefined)}
           />
