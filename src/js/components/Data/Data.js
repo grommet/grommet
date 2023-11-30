@@ -55,7 +55,8 @@ export const Data = ({
 
   const announce = useContext(AnnounceContext);
   const { format } = useContext(MessageContext);
-  // Announce to screen readers when search or filters are applied and affect the underlying result set
+  // Announce to screen readers when search or filters are
+  // applied and affect the underlying result set
   useEffect(() => {
     let messageId;
     if (result.total !== result.filteredTotal) {
