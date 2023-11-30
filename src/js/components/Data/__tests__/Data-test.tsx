@@ -238,7 +238,6 @@ describe('Data', () => {
           properties={{ name: { label: 'Name' } }}
           view={{ search: '', properties: {} }}
           toolbar
-          updateOn="change"
         >
           <DataTable />
         </Data>
@@ -266,7 +265,6 @@ describe('Data', () => {
           properties={{ name: { label: 'Name' } }}
           view={{ search: '', properties: {} }}
           toolbar
-          updateOn="change"
           onView={onView}
         >
           <DataTable />

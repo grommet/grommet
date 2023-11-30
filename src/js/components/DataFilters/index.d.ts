@@ -6,6 +6,7 @@ export interface DataFiltersProps {
   heading?: string | React.ReactNode;
   layer?: boolean;
   clearFilters?: boolean;
+  // when view changes should be delivered
   updateOn?: 'change' | 'submit';
 }
 

@@ -26,7 +26,6 @@ export const Data = ({
   properties,
   toolbar,
   total,
-  updateOn = 'submit',
   view: viewProp,
   views,
   ...rest
@@ -62,7 +61,6 @@ export const Data = ({
       properties,
       filtersCleared,
       setFiltersCleared,
-      updateOn,
       view,
       views,
       ...result,
@@ -98,7 +96,6 @@ export const Data = ({
     properties,
     result,
     toolbarKeys,
-    updateOn,
     view,
     views,
   ]);
