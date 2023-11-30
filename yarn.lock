@@ -12620,7 +12620,7 @@ testcafe-selector-generator@^0.1.0:
   resolved "https://registry.yarnpkg.com/testcafe-selector-generator/-/testcafe-selector-generator-0.1.0.tgz#852c86f71565e5d9320da625c2260d040cbed786"
   integrity sha512-MTw+RigHsEYmFgzUFNErDxui1nTYUk6nm2bmfacQiKPdhJ9AHW/wue4J/l44mhN8x3E8NgOUkHHOI+1TDFXiLQ==
 
-testcafe@^3.4.0:
+testcafe@^3.3.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/testcafe/-/testcafe-3.4.0.tgz#f4e8669c8e64b0f9f5193f2fc921b4dc4c609cc6"
   integrity sha512-HOGTt4FPm7oqRiE6lmGWcJghze7HoEIUFi0uyYSiNHG+wn7DGDfchXWfKenmzwVijfWNUR1hZhG+pPd30ayXGw==
