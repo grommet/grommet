@@ -169,6 +169,7 @@ export const DataFilter = ({
       } else {
         content = (
           <SelectMultiple
+            aria-label={ariaLabel}
             id={id}
             name={property}
             showSelectedInline
