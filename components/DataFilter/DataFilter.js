@@ -59,7 +59,7 @@ var booleanOptions = [{
   value: false
 }];
 var DataFilter = exports.DataFilter = function DataFilter(_ref) {
-  var _properties$property4;
+  var _properties$property3, _properties$property5;
   var children = _ref.children,
     optionsProp = _ref.options,
     property = _ref.property,
@@ -116,11 +116,15 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
     });
   }, [options, searchText]);
   var id = dataId + "-" + property;
+
+  // only add aria-label for no form examples
+  var ariaLabel = noForm ? "" + ((properties == null || (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property) : undefined;
   var content = children;
   if (!content) {
     if (range) {
-      var _properties$property3;
+      var _properties$property4;
       content = /*#__PURE__*/_react["default"].createElement(_RangeSelector.RangeSelector, {
+        "aria-label": ariaLabel,
         id: id,
         name: property + "._range",
         defaultValues: range,
@@ -130,7 +134,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
         step:
         // from `range` on DataFilter
         (rangeProp == null ? void 0 : rangeProp.step) || ( // from range in Data `properties`
-        properties == null || (_properties$property3 = properties[property]) == null || (_properties$property3 = _properties$property3.range) == null ? void 0 : _properties$property3.step) || (range[1] - range[0]) / defaultRangeSteps,
+        properties == null || (_properties$property4 = properties[property]) == null || (_properties$property4 = _properties$property4.range) == null ? void 0 : _properties$property4.step) || (range[1] - range[0]) / defaultRangeSteps,
         size: "full",
         round: "small"
       });
@@ -138,18 +142,21 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
       if (options.length === 2 && options[1] === true && options[0] === false) {
         // special case boolean properties
         content = /*#__PURE__*/_react["default"].createElement(_CheckBoxGroup.CheckBoxGroup, {
+          "aria-label": ariaLabel,
           id: id,
           name: property,
           options: booleanOptions
         });
       } else if (options.length <= maxCheckBoxGroupOptions) {
         content = /*#__PURE__*/_react["default"].createElement(_CheckBoxGroup.CheckBoxGroup, {
+          "aria-label": ariaLabel,
           id: id,
           name: property,
           options: options
         });
       } else {
         content = /*#__PURE__*/_react["default"].createElement(_SelectMultiple.SelectMultiple, {
+          "aria-label": ariaLabel,
           id: id,
           name: property,
           showSelectedInline: true,
@@ -171,7 +178,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
     }, content);else content = /*#__PURE__*/_react["default"].createElement(_FormField.FormField, _extends({
     htmlFor: id,
     name: property,
-    label: (properties == null || (_properties$property4 = properties[property]) == null ? void 0 : _properties$property4.label) || property
+    label: (properties == null || (_properties$property5 = properties[property]) == null ? void 0 : _properties$property5.label) || property
   }, rest), content);
   return content;
 };

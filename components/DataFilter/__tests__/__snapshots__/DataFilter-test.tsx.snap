@@ -835,6 +835,7 @@ exports[`DataFilter noForm 1`] = `
         class="c3"
       >
         <div
+          aria-label="name"
           class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
           id="data-name"
           role="group"
@@ -908,6 +909,7 @@ exports[`DataFilter noForm 1`] = `
         class="c3"
       >
         <div
+          aria-label="enabled"
           class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
           id="data-enabled"
           role="group"
@@ -959,6 +961,7 @@ exports[`DataFilter noForm 1`] = `
         class="c3"
       >
         <div
+          aria-label="rating"
           class="c11"
           id="data-rating"
         >
