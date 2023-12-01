@@ -1,7 +1,8 @@
 var _excluded = ["children", "data", "defaultView", "filteredTotal", "id", "messages", "onView", "properties", "toolbar", "total", "updateOn", "view", "views"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
+import { AnnounceContext } from '../../contexts';
 import { Box } from '../Box';
 import { DataFilters } from '../DataFilters';
 import { DataSearch } from '../DataSearch';
@@ -10,6 +11,7 @@ import { DataView } from '../DataView';
 import { Toolbar } from '../Toolbar';
 import { DataContext } from '../../contexts/DataContext';
 import { DataPropTypes } from './propTypes';
+import { MessageContext } from '../../contexts/MessageContext';
 import { filter } from './filter';
 var defaultDefaultView = {
   search: ''
@@ -58,6 +60,32 @@ export var Data = function Data(_ref) {
       };
     return filter(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
+  var announce = useContext(AnnounceContext);
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
+  // Announce to screen readers when search or filters are
+  // applied and affect the underlying result set
+  useEffect(function () {
+    var messageId;
+    if (result.total !== result.filteredTotal) {
+      if (result.filteredTotal === 1) messageId = 'dataSummary.filteredSingle';else messageId = 'dataSummary.filtered';
+    } else if (result.total === 1) messageId = 'dataSummary.totalSingle';else messageId = 'dataSummary.total';
+
+    // helps account for cases like 0 results of 1 item
+    var items = format({
+      id: result.total === 1 ? 'dataSummary.itemsSingle' : 'dataSummary.items',
+      messages: messages == null ? void 0 : messages.dataSummary
+    });
+    announce(format({
+      id: messageId,
+      messages: messages == null ? void 0 : messages.dataSummary,
+      values: {
+        filteredTotal: result.filteredTotal,
+        total: result.total,
+        items: items
+      }
+    }));
+  }, [announce, format, messages == null ? void 0 : messages.dataSummary, result.filteredTotal, result.total]);
 
   // what we use for DataContext value
   var contextValue = useMemo(function () {

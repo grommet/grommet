@@ -3,6 +3,7 @@
 exports.__esModule = true;
 exports.Data = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _contexts = require("../../contexts");
 var _Box = require("../Box");
 var _DataFilters = require("../DataFilters");
 var _DataSearch = require("../DataSearch");
@@ -11,6 +12,7 @@ var _DataView = require("../DataView");
 var _Toolbar = require("../Toolbar");
 var _DataContext = require("../../contexts/DataContext");
 var _propTypes = require("./propTypes");
+var _MessageContext = require("../../contexts/MessageContext");
 var _filter = require("./filter");
 var _excluded = ["children", "data", "defaultView", "filteredTotal", "id", "messages", "onView", "properties", "toolbar", "total", "updateOn", "view", "views"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -64,6 +66,32 @@ var Data = exports.Data = function Data(_ref) {
       };
     return (0, _filter.filter)(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
+  var announce = (0, _react.useContext)(_contexts.AnnounceContext);
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
+  // Announce to screen readers when search or filters are
+  // applied and affect the underlying result set
+  (0, _react.useEffect)(function () {
+    var messageId;
+    if (result.total !== result.filteredTotal) {
+      if (result.filteredTotal === 1) messageId = 'dataSummary.filteredSingle';else messageId = 'dataSummary.filtered';
+    } else if (result.total === 1) messageId = 'dataSummary.totalSingle';else messageId = 'dataSummary.total';
+
+    // helps account for cases like 0 results of 1 item
+    var items = format({
+      id: result.total === 1 ? 'dataSummary.itemsSingle' : 'dataSummary.items',
+      messages: messages == null ? void 0 : messages.dataSummary
+    });
+    announce(format({
+      id: messageId,
+      messages: messages == null ? void 0 : messages.dataSummary,
+      values: {
+        filteredTotal: result.filteredTotal,
+        total: result.total,
+        items: items
+      }
+    }));
+  }, [announce, format, messages == null ? void 0 : messages.dataSummary, result.filteredTotal, result.total]);
 
   // what we use for DataContext value
   var contextValue = (0, _react.useMemo)(function () {

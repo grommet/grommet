@@ -208,6 +208,27 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
   }
   return result;
 };
+
+// 300ms was chosen empirically as a reasonable default
+var DEBOUNCE_TIMEOUT = 300;
+var debounce = function debounce(func, timeout) {
+  if (timeout === void 0) {
+    timeout = DEBOUNCE_TIMEOUT;
+  }
+  var timer;
+  return function () {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      func.apply(void 0, args);
+    }, timeout);
+  };
+};
+var debounceSearch = debounce(function (onView, nextValue, views) {
+  return onView(formValueToView(nextValue, views));
+});
 export var DataForm = function DataForm(_ref) {
   var children = _ref.children,
     footer = _ref.footer,
@@ -250,7 +271,12 @@ export var DataForm = function DataForm(_ref) {
     setChanged(true);
     if (updateOn === 'change') {
       if (onTouched) onTouched(transformTouched(touched, nextValue));
-      onView(formValueToView(nextValue, views));
+      // debounce search
+      if (touched[formSearchKey]) {
+        debounceSearch(onView, nextValue, views);
+      } else {
+        onView(formValueToView(nextValue, views));
+      }
     }
   }, [formValue, onTouched, onView, updateOn, views]);
   var onReset = useCallback(function () {
