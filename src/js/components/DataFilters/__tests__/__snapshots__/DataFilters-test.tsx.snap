@@ -178,7 +178,7 @@ exports[`DataFilters clear 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -476,7 +476,7 @@ exports[`DataFilters clear 1`] = `
 
 @media only screen and (max-width:768px) {
   .c17 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -843,8 +843,8 @@ exports[`DataFilters drop 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1429,7 +1429,7 @@ exports[`DataFilters layer 2`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1752,9 +1752,9 @@ exports[`DataFilters layer 2`] = `
 
 .c9 {
   margin: 0px;
-  font-size: 26px;
-  line-height: 32px;
-  max-width: 624px;
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
   font-weight: 600;
   overflow-wrap: break-word;
 }
@@ -1891,7 +1891,7 @@ exports[`DataFilters layer 2`] = `
 
 @media only screen and (max-width:768px) {
   .c23 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -1938,9 +1938,9 @@ exports[`DataFilters layer 2`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
   }
 }
 
@@ -2017,12 +2017,12 @@ exports[`DataFilters layer 2`] = `
                 type="button"
               >
                 <svg
-                  aria-label="FormClose"
+                  aria-label="Close"
                   class="c12"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m7 7 10 10M7 17 17 7"
+                    d="m3 3 18 18M3 21 21 3"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -2148,8 +2148,8 @@ exports[`DataFilters layer 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2316,7 +2316,7 @@ exports[`DataFilters properties array 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2600,7 +2600,7 @@ exports[`DataFilters properties array 1`] = `
 
 @media only screen and (max-width:768px) {
   .c15 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -2878,7 +2878,7 @@ exports[`DataFilters properties object 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3162,7 +3162,7 @@ exports[`DataFilters properties object 1`] = `
 
 @media only screen and (max-width:768px) {
   .c15 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -3440,7 +3440,7 @@ exports[`DataFilters renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3724,7 +3724,7 @@ exports[`DataFilters renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c15 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -4003,7 +4003,7 @@ exports[`DataFilters should display all filter options regardless of result set 
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4342,7 +4342,7 @@ exports[`DataFilters should display all filter options regardless of result set 
 
 @media only screen and (max-width:768px) {
   .c15 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -4915,7 +4915,7 @@ exports[`DataFilters sub objects 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5324,7 +5324,7 @@ exports[`DataFilters sub objects 1`] = `
 
 @media only screen and (max-width:768px) {
   .c27 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 

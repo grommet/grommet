@@ -1,13 +1,15 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
+import '@testing-library/jest-dom';
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
+import { DataTable } from '../../DataTable';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 const data = [
@@ -18,6 +20,7 @@ const data = [
     type: { name: 'ZZ', id: 1 },
     blank: '',
     zero: 0,
+    total: 4,
   },
   {
     name: 'bb',
@@ -26,8 +29,9 @@ const data = [
     type: { name: 'YY', id: 2 },
     blank: '',
     zero: 0,
+    total: 200,
   },
-  { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0 },
+  { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0, total: 35 },
 ];
 
 describe('DataFilter', () => {
@@ -201,6 +205,52 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('range prop step', async () => {
+    render(
+      <Grommet>
+        <Data data={data}>
+          <DataFilters>
+            <DataFilter
+              property="total"
+              range={{ step: 15, min: 0, max: 250 }}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    fireEvent.mouseDown(lowerBound);
+    fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
+    fireEvent.mouseUp(lowerBound);
+    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
+  });
+
+  test('range step Data', () => {
+    render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            total: {
+              label: 'Total',
+            },
+          }}
+        >
+          <DataFilters>
+            <DataFilter property="total" range={{ step: 15 }} />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    fireEvent.mouseDown(lowerBound);
+    fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
+    fireEvent.mouseUp(lowerBound);
+    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
+  });
+
   test('range Data', () => {
     const { container } = render(
       <Grommet>
@@ -221,6 +271,30 @@ describe('DataFilter', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('includes range min and max in filtered results', () => {
+    const { getByRole } = render(
+      <Grommet>
+        <Data data={[{ age: 1 }, { age: 2 }, { age: 3 }, { age: 4 }]}>
+          <DataFilters>
+            <DataFilter range={{ min: 1, max: 4, step: 1 }} property="age" />
+          </DataFilters>
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    act(() => {
+      lowerBound.focus();
+    });
+    fireEvent.keyDown(lowerBound, { key: 'Right', keyCode: 39 });
+    const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
+    fireEvent.click(applyFiltersButton);
+
+    expect(screen.queryByText('1')).not.toBeInTheDocument();
+    expect(screen.queryAllByText('2')[1]).toBeInTheDocument();
   });
 
   test('children', () => {

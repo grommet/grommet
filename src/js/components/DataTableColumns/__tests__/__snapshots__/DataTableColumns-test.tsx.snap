@@ -411,8 +411,8 @@ exports[`DataTableColumns remove column 2`] = `
 
 exports[`DataTableColumns remove column 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -567,7 +567,7 @@ exports[`DataTableColumns renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -906,7 +906,7 @@ exports[`DataTableColumns renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -1473,8 +1473,8 @@ exports[`DataTableColumns search 2`] = `
 
 exports[`DataTableColumns search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1563,8 +1563,8 @@ exports[`DataTableColumns search 4`] = `
 
 exports[`DataTableColumns search 5`] = `
 "@media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
