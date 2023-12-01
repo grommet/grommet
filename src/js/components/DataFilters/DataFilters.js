@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { Close } from 'grommet-icons/icons/Close';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataClearFilters } from '../DataClearFilters';
@@ -50,6 +51,7 @@ export const DataFilters = ({
     view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
+  const theme = useContext(ThemeContext);
   const [showContent, setShowContent] = useState();
   // touched is a map of form field name to its value, it only has fields that
   // were changed as part of the DataForm here. This is so we can track based
@@ -165,7 +167,7 @@ export const DataFilters = ({
         id={`${dataId}--filters-control`}
         tip={tip}
         aria-label={tip}
-        kind="toolbar"
+        kind={theme.data.button?.kind}
         icon={<Filter />}
         hoverIndicator
         dropProps={dropProps}
@@ -182,7 +184,7 @@ export const DataFilters = ({
         id={`${dataId}--filters-control`}
         tip={tip}
         aria-label={tip}
-        kind="toolbar"
+        kind={theme.data.button?.kind}
         hoverIndicator
         icon={<Filter />}
         badge={badge}

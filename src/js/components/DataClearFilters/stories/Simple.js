@@ -54,7 +54,7 @@ const DataToolbar = () => {
           />
         </DataFilter>
       </DataFilters>
-      {filteredTotal !== total ? <DataClearFilters kind="toolbar" /> : null}
+      {filteredTotal !== total ? <DataClearFilters /> : null}
     </Toolbar>
   );
 };
