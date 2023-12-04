@@ -460,9 +460,19 @@ const Form = forwardRef(
             componentValue !== undefined && // input driving
             componentValue !== formValue // don't already have it
           ) {
-            setValueState((prevValue) =>
-              setFieldValue(name, componentValue, prevValue),
-            );
+            // Check if componentValue is an array
+            if (Array.isArray(componentValue) && Array.isArray(formValue)) {
+              // Compare string representations of arrays
+              if (componentValue.toString() !== formValue.toString()) {
+                setValueState((prevValue) =>
+                  setFieldValue(name, componentValue, prevValue),
+                );
+              }
+            } else {
+              setValueState((prevValue) =>
+                setFieldValue(name, componentValue, prevValue),
+              );
+            }
             // don't onChange on programmatic changes
           }
         }, [componentValue, formValue, name]);
