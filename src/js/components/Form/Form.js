@@ -460,7 +460,7 @@ const Form = forwardRef(
             componentValue !== undefined && // input driving
             componentValue !== formValue // don't already have it
           ) {
-            // Check if componentValue is an array
+            // Check if componentValue & formValue are arrays
             if (Array.isArray(componentValue) && Array.isArray(formValue)) {
               // Compare string representations of arrays
               if (componentValue.toString() !== formValue.toString()) {
