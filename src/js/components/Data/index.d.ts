@@ -45,6 +45,7 @@ export interface DataProps {
     | string[]
     | {
         [key: string]: {
+          filterable?: boolean;
           // for DataTable column header, DataFilter label, DataTableColumns label
           label?: string | React.ReactNode;
           // DataFilter options
@@ -63,7 +64,8 @@ export interface DataProps {
             step?: number;
           };
           // for internal filtering only, should searching evaluate this property
-          search?: boolean;
+          searchable?: boolean;
+          sortable?: boolean;
         };
       };
 

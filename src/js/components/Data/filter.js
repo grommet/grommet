@@ -18,7 +18,7 @@ export const filter = (data, view, properties) => {
   if (searchExp && properties) {
     // if we know where we want to search, look there
     searchProperties = Object.keys(properties).filter(
-      (k) => properties[k].search,
+      (k) => !(properties[k]?.searchable === false),
     );
     // if none specified, look in all defined properties
     if (searchProperties.length === 0)

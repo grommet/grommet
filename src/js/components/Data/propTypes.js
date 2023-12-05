@@ -20,7 +20,22 @@ if (process.env.NODE_ENV !== 'production') {
     onView: PropTypes.func,
     properties: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
-      PropTypes.shape({}),
+      PropTypes.objectOf(
+        PropTypes.shape({
+          filterable: PropTypes.bool,
+          label: PropTypes.string,
+          options: PropTypes.arrayOf(
+            PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
+          ),
+          range: PropTypes.shape({
+            max: PropTypes.number,
+            min: PropTypes.number,
+            step: PropTypes.number,
+          }),
+          searchable: PropTypes.bool,
+          sortable: PropTypes.bool,
+        }),
+      ),
     ]),
     toolbar: PropTypes.oneOfType([
       PropTypes.bool,

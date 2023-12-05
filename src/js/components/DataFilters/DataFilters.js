@@ -72,9 +72,11 @@ export const DataFilters = ({ drop, children, heading, layer, ...rest }) => {
         (k) => typeof unfilteredData[0][k] !== 'object',
       );
     else if (Array.isArray(properties)) filtersFor = properties;
-    else if (typeof properties === 'object')
-      filtersFor = Object.keys(properties);
-    else filtersFor = [];
+    else if (typeof properties === 'object') {
+      filtersFor = Object.keys(properties).filter(
+        (property) => !(properties[property]?.filterable === false),
+      );
+    } else filtersFor = [];
     content = filtersFor.map((property) => (
       <DataFilter key={property} property={property} />
     ));

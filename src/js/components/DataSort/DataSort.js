@@ -22,7 +22,12 @@ const Content = ({ options: optionsArg }) => {
   const options = useMemo(
     () =>
       optionsArg ||
-      (properties && Object.keys(properties).sort()) ||
+      (properties &&
+        Object.keys(properties)
+          .sort()
+          .filter(
+            (property) => !(properties?.[property]?.sortable === false),
+          )) ||
       (data.length > 0 && Object.keys(data[0]).sort()) ||
       data,
     [data, optionsArg, properties],
