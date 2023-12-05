@@ -62,7 +62,6 @@ var ValueStyleChart = exports.ValueStyleChart = function ValueStyleChart() {
     // </Grommet>
   );
 };
-
 ValueStyleChart.storyName = 'Value style';
 var _default = exports["default"] = {
   title: 'Visualizations/Chart/Value style'

@@ -56,7 +56,6 @@ export var ShowAdjacent = function ShowAdjacent() {
     // </Grommet>
   );
 };
-
 ShowAdjacent.storyName = 'Show adjacent days';
 export default {
   title: "Visualizations/Calendar/Show adjacent days"

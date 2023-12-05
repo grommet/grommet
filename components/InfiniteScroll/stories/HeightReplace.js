@@ -30,7 +30,6 @@ var HeightReplace = exports.HeightReplace = function HeightReplace() {
     // </Grommet>
   );
 };
-
 HeightReplace.storyName = 'Variable item height with replace';
 HeightReplace.parameters = {
   chromatic: {

@@ -25,7 +25,6 @@ var SizedDataTable = exports.SizedDataTable = function SizedDataTable() {
     // </Grommet>
   );
 };
-
 SizedDataTable.storyName = 'Sized';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Sized'

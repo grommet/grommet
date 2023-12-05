@@ -20,7 +20,6 @@ for (var i = 1; i <= 7; i += 1) {
     amount: i * 111111 // make yAxis prefix '$'
   });
 }
-
 export var Axis = function Axis() {
   return (
     /*#__PURE__*/
@@ -51,7 +50,6 @@ export var Axis = function Axis() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Axis'
 };

@@ -28,7 +28,6 @@ export var NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
     // </Grommet>
   );
 };
-
 NoPrimaryKeyDataTable.storyName = 'No primary';
 export default {
   title: 'Visualizations/DataTable/No primary'

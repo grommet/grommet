@@ -26,7 +26,6 @@ export var CustomName = function CustomName() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/NameValueList/Custom Name'
 };

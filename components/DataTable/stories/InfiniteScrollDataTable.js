@@ -301,7 +301,6 @@ var InfiniteScrollDataTable = exports.InfiniteScrollDataTable = function Infinit
     // </Grommet>
   );
 };
-
 InfiniteScrollDataTable.storyName = 'Infinite Scroll';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Infinite Scroll'

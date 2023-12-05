@@ -36,7 +36,6 @@ var MeterInTable = exports.MeterInTable = function MeterInTable() {
     // </Grommet>
   );
 };
-
 MeterInTable.storyName = 'Meter inside table';
 var _default = exports["default"] = {
   title: 'Visualizations/Table/Meter inside table'

@@ -17,7 +17,6 @@ export var GradientColorBox = function GradientColorBox() {
     // </Grommet>
   );
 };
-
 GradientColorBox.storyName = 'Gradient';
 export default {
   title: 'Layout/Box/Gradient'

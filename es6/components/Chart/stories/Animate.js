@@ -32,7 +32,6 @@ export var AnimatedChart = function AnimatedChart() {
     // </Grommet>
   );
 };
-
 AnimatedChart.storyName = 'Animate';
 AnimatedChart.parameters = {
   chromatic: {

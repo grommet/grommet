@@ -50,7 +50,6 @@ export var Guide = function Guide() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Guide'
 };

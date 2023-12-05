@@ -41,7 +41,6 @@ export var Align = function Align() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/NameValueList/Align'
 };

@@ -143,7 +143,6 @@ var ScanChart = function ScanChart() {
     // </Grommet>
   );
 };
-
 export var Scan = function Scan() {
   return /*#__PURE__*/React.createElement(ScanChart, null);
 };

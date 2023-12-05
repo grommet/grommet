@@ -46,7 +46,6 @@ export var Layout = function Layout() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/NameValueList/Layout'
 };

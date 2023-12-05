@@ -34,7 +34,6 @@ var Percentages = exports.Percentages = function Percentages() {
     // </Grommet>
   );
 };
-
 Percentages.args = {
   full: true
 };

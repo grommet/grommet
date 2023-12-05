@@ -38,7 +38,6 @@ var Disabled = exports.Disabled = function Disabled() {
     // </Grommet>
   );
 };
-
 Disabled.args = {
   full: true
 };

@@ -55,7 +55,6 @@ var SimpleBox = exports.SimpleBox = function SimpleBox() {
     // </Grommet>
   );
 };
-
 SimpleBox.storyName = 'Simple';
 var _default = exports["default"] = {
   title: 'Layout/Box/Simple'

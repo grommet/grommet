@@ -41,7 +41,6 @@ export var Opacity = function Opacity() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Media/Image/Opacity'
 };

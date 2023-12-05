@@ -199,7 +199,6 @@ var ColumnSize = exports.ColumnSize = function ColumnSize() {
     // </Grommet>
   );
 };
-
 ColumnSize.storyName = 'Column sizes';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Column sizes'

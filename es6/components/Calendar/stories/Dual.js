@@ -110,7 +110,6 @@ export var Dual = function Dual() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Calendar/Dual'
 };

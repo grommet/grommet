@@ -107,7 +107,6 @@ export var StarWars = function StarWars() {
     // </Grommet>
   );
 };
-
 StarWars.parameters = {
   chromatic: {
     disable: true

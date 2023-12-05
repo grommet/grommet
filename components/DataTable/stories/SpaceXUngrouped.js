@@ -138,7 +138,6 @@ var SpaceXUngrouped = exports.SpaceXUngrouped = function SpaceXUngrouped() {
     // </Grommet>
   );
 };
-
 SpaceXUngrouped.storyName = 'SpaceX Ungrouped';
 SpaceXUngrouped.parameters = {
   chromatic: {

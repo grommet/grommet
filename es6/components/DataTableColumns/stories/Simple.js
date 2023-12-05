@@ -38,7 +38,6 @@ export var Simple = function Simple() {
     // </Grommet>
   );
 };
-
 Simple.args = {
   full: true
 };

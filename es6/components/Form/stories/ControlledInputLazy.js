@@ -169,7 +169,6 @@ export var ControlledInputLazy = function ControlledInputLazy() {
     // </Grommet>
   );
 };
-
 ControlledInputLazy.storyName = 'Controlled input lazy';
 ControlledInputLazy.args = {
   full: true

@@ -59,7 +59,6 @@ export var DateMaskedInput = function DateMaskedInput() {
     // </Grommet>
   );
 };
-
 DateMaskedInput.storyName = 'Date';
 DateMaskedInput.parameters = {
   chromatic: {

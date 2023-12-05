@@ -128,7 +128,6 @@ var Controlled = exports.Controlled = function Controlled() {
     // </Grommet>
   );
 };
-
 Controlled.args = {
   full: true
 };

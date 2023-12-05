@@ -26,7 +26,6 @@ export var Drop = function Drop() {
     // </Grommet>
   );
 };
-
 Drop.args = {
   full: true
 };

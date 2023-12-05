@@ -57,7 +57,6 @@ export var MultipleBackgrounds = function MultipleBackgrounds() {
     // </Grommet>
   );
 };
-
 MultipleBackgrounds.storyName = 'Multiple backgrounds';
 export default {
   title: 'Layout/Page/Multiple backgrounds'

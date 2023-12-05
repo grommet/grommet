@@ -31,7 +31,6 @@ export var Placeholder = function Placeholder() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Placeholder'
 };

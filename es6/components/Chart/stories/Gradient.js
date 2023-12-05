@@ -53,7 +53,6 @@ export var GradientCharts = function GradientCharts() {
     // </Grommet>
   );
 };
-
 GradientCharts.storyName = 'Gradient';
 export default {
   title: 'Visualizations/Chart/Gradient'

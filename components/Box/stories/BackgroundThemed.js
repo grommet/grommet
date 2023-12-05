@@ -40,7 +40,6 @@ var BackgroundThemed = exports.BackgroundThemed = function BackgroundThemed() {
     // </Grommet>
   );
 };
-
 BackgroundThemed.storyName = 'Background from theme';
 var _default = exports["default"] = {
   title: 'Layout/Box/Background from theme'

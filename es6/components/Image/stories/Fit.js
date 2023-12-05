@@ -26,7 +26,6 @@ export var Fit = function Fit() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Media/Image/Fit'
 };

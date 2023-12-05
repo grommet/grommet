@@ -41,7 +41,6 @@ export var Password = function Password() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Input/TextInput/Password'
 };

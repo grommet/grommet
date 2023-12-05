@@ -32,7 +32,6 @@ var Responsive = exports.Responsive = function Responsive() {
     // </Grommet>
   );
 };
-
 Responsive.args = {
   full: true
 };

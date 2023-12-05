@@ -71,7 +71,6 @@ export var CustomValue = function CustomValue() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/NameValueList/Custom Value'
 };

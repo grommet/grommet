@@ -95,7 +95,6 @@ var focusStyles = function focusStyles(props, _temp) {
     if (color) return "outline: 2px solid " + color + ";";
     return ''; // native
   }
-
   if (focus.outline && (!focus.border || !justBorder)) {
     if (typeof focus.outline === 'object') {
       var _color = normalizeColor(focus.outline.color || 'focus', props.theme);
@@ -121,7 +120,6 @@ var focusStyles = function focusStyles(props, _temp) {
   }
   return ''; // defensive
 };
-
 var unfocusStyles = function unfocusStyles(props, _temp2) {
   var _ref2 = _temp2 === void 0 ? {} : _temp2,
     forceOutline = _ref2.forceOutline,
@@ -132,7 +130,6 @@ var unfocusStyles = function unfocusStyles(props, _temp2) {
     if (color) return "outline: none;";
     return ''; // native
   }
-
   if (focus.outline && (!focus.border || !justBorder)) {
     if (typeof focus.outline === 'object') {
       return "\n        outline-offset: 0px;\n        outline: none;\n      ";

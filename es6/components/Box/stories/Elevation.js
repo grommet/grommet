@@ -29,7 +29,6 @@ export var ElevationBox = function ElevationBox() {
     // </Grommet>
   );
 };
-
 ElevationBox.storyName = 'Elevation';
 export default {
   title: 'Layout/Box/Elevation'

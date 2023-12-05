@@ -85,7 +85,6 @@ export var ValidateOnBlur = function ValidateOnBlur() {
     // </Grommet>
   );
 };
-
 ValidateOnBlur.storyName = 'Validate on blur';
 ValidateOnBlur.args = {
   full: true

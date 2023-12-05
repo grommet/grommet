@@ -51,7 +51,6 @@ var ActiveDate = exports.ActiveDate = function ActiveDate() {
     // </Grommet>
   );
 };
-
 ActiveDate.storyName = 'Active date';
 var _default = exports["default"] = {
   title: "Visualizations/Calendar/Active date"

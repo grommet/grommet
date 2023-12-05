@@ -41,7 +41,6 @@ export var Detail = function Detail() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Detail'
 };

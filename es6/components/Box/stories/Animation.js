@@ -25,7 +25,6 @@ export var Animation = function Animation() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Layout/Box/Animation'
 };

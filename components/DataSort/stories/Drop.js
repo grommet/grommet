@@ -31,7 +31,6 @@ var Drop = exports.Drop = function Drop() {
     // </Grommet>
   );
 };
-
 Drop.args = {
   full: true
 };

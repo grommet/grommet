@@ -66,7 +66,6 @@ export var SolicitedFeedback = function SolicitedFeedback() {
     // </Grommet>
   );
 };
-
 SolicitedFeedback.storyName = 'Solicited feedback';
 export default {
   title: 'Input/Form/Solicited feedback'

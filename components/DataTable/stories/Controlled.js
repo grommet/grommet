@@ -71,7 +71,6 @@ var ControlledDataTable = exports.ControlledDataTable = function ControlledDataT
     // </Grommet>
   );
 };
-
 ControlledDataTable.storyName = 'Controlled';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Controlled'

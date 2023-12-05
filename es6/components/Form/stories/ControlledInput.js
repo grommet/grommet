@@ -160,7 +160,6 @@ export var ControlledInput = function ControlledInput() {
     // </Grommet>
   );
 };
-
 ControlledInput.storyName = 'Controlled input';
 ControlledInput.parameters = {
   // chromatic disabled because snapshot is the same as ControlledInputLazy

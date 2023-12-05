@@ -34,7 +34,6 @@ export var Placeholder = function Placeholder() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataTable/Placeholder'
 };

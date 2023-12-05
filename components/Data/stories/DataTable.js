@@ -40,7 +40,6 @@ var Table = exports.Table = function Table() {
     // </Grommet>
   );
 };
-
 Table.storyName = 'DataTable';
 Table.args = {
   full: true

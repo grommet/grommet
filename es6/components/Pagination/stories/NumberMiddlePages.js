@@ -20,7 +20,6 @@ export var NumberMiddlePages = function NumberMiddlePages() {
     // </Grommet>
   );
 };
-
 NumberMiddlePages.storyName = 'Number middle pages';
 export default {
   title: 'Controls/Pagination/Number middle pages'

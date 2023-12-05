@@ -25,7 +25,6 @@ export var TunableDataTable = function TunableDataTable() {
     // </Grommet>
   );
 };
-
 TunableDataTable.storyName = 'Tunable';
 export default {
   title: 'Visualizations/DataTable/Tunable'

@@ -83,7 +83,6 @@ export var BorderGrid = function BorderGrid() {
     // </Grommet>
   );
 };
-
 BorderGrid.storyName = 'Border';
 export default {
   title: 'Layout/Grid/Border'

@@ -60,7 +60,6 @@ export var MultipleValues = function MultipleValues() {
     // </Grommet>
   );
 };
-
 MultipleValues.storyName = 'Vertical Bar Multiple';
 export default {
   title: 'Visualizations/Meter/Vertical Bar Multiple'

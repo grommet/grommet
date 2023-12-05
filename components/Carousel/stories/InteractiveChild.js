@@ -60,7 +60,6 @@ var InteractiveSlides = exports.InteractiveSlides = function InteractiveSlides()
     // </Grommet>
   );
 };
-
 InteractiveSlides.storyName = 'Interactive slides';
 var _default = exports["default"] = {
   title: 'Media/Carousel/Interactive slides'

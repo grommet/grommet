@@ -57,7 +57,6 @@ export var Horizontal = function Horizontal() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Chart/Horizontal'
 };

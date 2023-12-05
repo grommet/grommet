@@ -92,7 +92,6 @@ var UnitsDataTable = exports.UnitsDataTable = function UnitsDataTable() {
     // </Grommet>
   );
 };
-
 UnitsDataTable.storyName = 'Units';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Units'

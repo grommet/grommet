@@ -44,7 +44,6 @@ export var ThinStory = function ThinStory() {
     // </Grommet>
   );
 };
-
 ThinStory.storyName = 'Thin';
 export default {
   title: 'Input/RangeSelector/Thin'

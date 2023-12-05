@@ -30,7 +30,6 @@ var customTheme = deepMerge(grommet, {
     icon: {
       size: '15px' // affects the size of the inner circle
     },
-
     check: {
       radius: '20%'
     }

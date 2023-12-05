@@ -27,7 +27,6 @@ export var Responsive = function Responsive() {
     // </Grommet>
   );
 };
-
 Responsive.args = {
   full: true
 };

@@ -16,7 +16,6 @@ export var Bar = function Bar() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Meter/Bar'
 };

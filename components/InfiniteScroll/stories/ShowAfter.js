@@ -29,7 +29,6 @@ var Example = function Example(props) {
     // </Grommet>
   );
 };
-
 var ShowAfter = exports.ShowAfter = function ShowAfter() {
   return /*#__PURE__*/_react["default"].createElement(Example, {
     replace: true,

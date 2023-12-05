@@ -38,7 +38,6 @@ var ScrollableTabs = function ScrollableTabs() {
     // </Grommet>
   );
 };
-
 var Scrollable = exports.Scrollable = function Scrollable() {
   return /*#__PURE__*/_react["default"].createElement(ScrollableTabs, null);
 };

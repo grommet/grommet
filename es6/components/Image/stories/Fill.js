@@ -22,7 +22,6 @@ export var Fill = function Fill() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Media/Image/Fill'
 };

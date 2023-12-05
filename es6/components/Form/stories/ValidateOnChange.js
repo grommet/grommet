@@ -91,7 +91,6 @@ export var ValidateOnChange = function ValidateOnChange() {
     // </Grommet>
   );
 };
-
 ValidateOnChange.storyName = 'Validate on change';
 ValidateOnChange.args = {
   full: true

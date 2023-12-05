@@ -141,7 +141,6 @@ var ZoomChart = function ZoomChart(_ref) {
     // </Grommet>
   );
 };
-
 export var Zoom = function Zoom() {
   return /*#__PURE__*/React.createElement(ZoomChart, {
     data: generateData(1000, 100),

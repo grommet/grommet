@@ -136,7 +136,6 @@ var ControlledLazy = exports.ControlledLazy = function ControlledLazy() {
     // </Grommet>
   );
 };
-
 ControlledLazy.storyName = 'Controlled lazy';
 ControlledLazy.parameters = {
   // chromatic disabled because snapshot is the same as Controlled

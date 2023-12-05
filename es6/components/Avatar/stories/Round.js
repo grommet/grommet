@@ -38,7 +38,6 @@ export var Round = function Round() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Avatar/Round'
 };

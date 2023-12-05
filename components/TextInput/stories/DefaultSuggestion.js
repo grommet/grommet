@@ -41,7 +41,6 @@ var DefaultSuggestion = exports.DefaultSuggestion = function DefaultSuggestion()
     // </Grommet>
   );
 };
-
 DefaultSuggestion.storyName = 'Default suggestion';
 DefaultSuggestion.parameters = {
   chromatic: {

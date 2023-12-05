@@ -23,7 +23,6 @@ export var Pie = function Pie() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Meter/Pie'
 };

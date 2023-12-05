@@ -24,7 +24,6 @@ var Example = function Example(props) {
     // </Grommet>
   );
 };
-
 export var ShowBefore = function ShowBefore() {
   return /*#__PURE__*/React.createElement(Example, {
     replace: true,

@@ -142,7 +142,6 @@ export var ArrayOfFormFields = function ArrayOfFormFields() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Input/Form/Array Of Form Fields'
 };

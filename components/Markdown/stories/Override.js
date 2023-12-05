@@ -27,7 +27,6 @@ var ComponentOverrideMarkdown = exports.ComponentOverrideMarkdown = function Com
     // </Grommet>
   );
 };
-
 ComponentOverrideMarkdown.storyName = 'Component override markdown';
 var _default = exports["default"] = {
   title: 'Type/Markdown/Component override markdown'

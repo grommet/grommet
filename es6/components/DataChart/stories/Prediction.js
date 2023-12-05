@@ -140,7 +140,6 @@ export var Prediction = function Prediction() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Prediction'
 };

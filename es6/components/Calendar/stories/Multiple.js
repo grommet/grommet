@@ -30,7 +30,6 @@ export var Multiple = function Multiple() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Calendar/Multiple'
 };

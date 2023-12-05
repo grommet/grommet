@@ -81,7 +81,6 @@ var ObjectOptions = exports.ObjectOptions = function ObjectOptions() {
     // </Grommet>
   );
 };
-
 ObjectOptions.storyName = 'Object options';
 ObjectOptions.parameters = {
   chromatic: {

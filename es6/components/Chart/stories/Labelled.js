@@ -51,7 +51,6 @@ export var LabelledCharts = function LabelledCharts() {
     // </Grommet>
   );
 };
-
 LabelledCharts.storyName = 'Labelled';
 export default {
   title: 'Visualizations/Chart/Labelled'

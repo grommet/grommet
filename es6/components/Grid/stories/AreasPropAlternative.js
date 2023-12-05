@@ -26,7 +26,6 @@ export var GridAreasAlternative = function GridAreasAlternative() {
     // </Grommet>
   );
 };
-
 GridAreasAlternative.args = {
   full: true
 };

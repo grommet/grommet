@@ -36,7 +36,6 @@ export var TabsWithIcons = function TabsWithIcons() {
     // </Grommet>
   );
 };
-
 TabsWithIcons.storyName = 'Tabs with icons';
 export default {
   title: 'Controls/Tabs/Tabs with icons'

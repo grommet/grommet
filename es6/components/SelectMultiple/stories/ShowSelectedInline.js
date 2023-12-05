@@ -46,7 +46,6 @@ export var ShowSelectedInline = function ShowSelectedInline() {
     // </Grommet>
   );
 };
-
 ShowSelectedInline.storyName = 'showSelectedInline';
 ShowSelectedInline.parameters = {
   chromatic: {

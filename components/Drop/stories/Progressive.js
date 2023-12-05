@@ -77,7 +77,6 @@ var ProgressiveDrop = function ProgressiveDrop() {
     // </Grommet>
   );
 };
-
 var Progressive = exports.Progressive = function Progressive() {
   return /*#__PURE__*/_react["default"].createElement(ProgressiveDrop, null);
 };

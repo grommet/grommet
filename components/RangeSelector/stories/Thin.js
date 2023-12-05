@@ -50,7 +50,6 @@ var ThinStory = exports.ThinStory = function ThinStory() {
     // </Grommet>
   );
 };
-
 ThinStory.storyName = 'Thin';
 var _default = exports["default"] = {
   title: 'Input/RangeSelector/Thin'

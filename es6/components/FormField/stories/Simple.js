@@ -30,7 +30,6 @@ export var Simple = function Simple() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Input/FormField/Simple'
 };

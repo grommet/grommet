@@ -49,7 +49,6 @@ export var CustomHeaderCalendar = function CustomHeaderCalendar() {
     // </Grommet>
   );
 };
-
 CustomHeaderCalendar.storyName = 'Header';
 export default {
   title: 'Visualizations/Calendar/Header'

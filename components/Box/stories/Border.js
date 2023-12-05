@@ -116,7 +116,6 @@ var BorderBox = exports.BorderBox = function BorderBox() {
     // </Grommet>
   );
 };
-
 BorderBox.storyName = 'Border';
 var _default = exports["default"] = {
   title: 'Layout/Box/Border'

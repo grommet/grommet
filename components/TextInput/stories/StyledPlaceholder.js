@@ -18,7 +18,6 @@ var StyledPlaceholder = exports.StyledPlaceholder = function StyledPlaceholder()
     // </Grommet>
   );
 };
-
 StyledPlaceholder.storyName = 'Styled placeholder';
 var _default = exports["default"] = {
   title: 'Input/TextInput/Styled placeholder'

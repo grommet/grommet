@@ -246,7 +246,6 @@ var SpaceX = exports.SpaceX = function SpaceX() {
     // </Grommet>
   );
 };
-
 SpaceX.storyName = 'SpaceX';
 SpaceX.args = {
   full: true

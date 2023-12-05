@@ -86,7 +86,6 @@ var MultipleDrop = function MultipleDrop() {
     // </Grommet>
   );
 };
-
 var Multiple = exports.Multiple = function Multiple() {
   return /*#__PURE__*/_react["default"].createElement(MultipleDrop, null);
 };

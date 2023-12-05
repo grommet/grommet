@@ -59,7 +59,6 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
     // </Grommet>
   );
 };
-
 var Header = exports.Header = function Header() {
   return /*#__PURE__*/_react["default"].createElement(CustomHeaderAccordion, null);
 };

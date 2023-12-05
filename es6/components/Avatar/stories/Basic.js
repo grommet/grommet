@@ -27,7 +27,6 @@ export var Basic = function Basic() {
     // </Grommed>
   );
 };
-
 export default {
   title: 'Visualizations/Avatar/Basic'
 };

@@ -23,7 +23,6 @@ var Resize = function Resize(props) {
     // </Grommet>
   );
 };
-
 export var NonResizable = function NonResizable() {
   return /*#__PURE__*/React.createElement(Resize, {
     resize: false

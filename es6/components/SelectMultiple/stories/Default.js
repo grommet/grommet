@@ -46,7 +46,6 @@ export var Default = function Default() {
     // </Grommet>
   );
 };
-
 Default.parameters = {
   chromatic: {
     disable: true

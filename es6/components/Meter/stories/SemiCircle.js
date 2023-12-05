@@ -17,7 +17,6 @@ export var SemiCircle = function SemiCircle() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Meter/Semi Circle'
 };

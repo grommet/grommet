@@ -25,7 +25,6 @@ export var Background = function Background() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Layout/Page/Background'
 };

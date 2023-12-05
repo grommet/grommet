@@ -63,7 +63,6 @@ var Horizontal = exports.Horizontal = function Horizontal() {
     // </Grommet>
   );
 };
-
 Horizontal.args = {
   full: true
 };

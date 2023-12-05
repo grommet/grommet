@@ -155,7 +155,6 @@ export var ControlVariations = function ControlVariations() {
     // </Grommet>
   );
 };
-
 ControlVariations.storyName = 'Control variations';
 export default {
   title: 'Media/Carousel/Control variations'

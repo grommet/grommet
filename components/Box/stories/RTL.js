@@ -39,7 +39,6 @@ var RTLBox = exports.RTLBox = function RTLBox() {
     // </Grommet>
   );
 };
-
 RTLBox.storyName = 'RTL';
 RTLBox.args = {
   dir: 'rtl'

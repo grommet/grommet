@@ -51,7 +51,6 @@ var ScrollBodyLayer = exports.ScrollBodyLayer = function ScrollBodyLayer() {
     // </Grommet>
   );
 };
-
 ScrollBodyLayer.storyName = 'Fixed header, scroll body';
 var _default = exports["default"] = {
   title: 'Layout/Layer/Fixed header, scroll body'

@@ -55,7 +55,6 @@ export var Multi = function Multi() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Media/Carousel/Multi'
 };

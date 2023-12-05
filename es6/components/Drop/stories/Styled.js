@@ -52,7 +52,6 @@ var StyledDrop = function StyledDrop() {
     // </Grommet>
   );
 };
-
 export var Styled = function Styled() {
   return /*#__PURE__*/React.createElement(StyledDrop, null);
 };

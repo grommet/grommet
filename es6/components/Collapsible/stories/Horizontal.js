@@ -58,7 +58,6 @@ export var Horizontal = function Horizontal() {
     // </Grommet>
   );
 };
-
 Horizontal.args = {
   full: true
 };

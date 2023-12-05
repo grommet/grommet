@@ -30,7 +30,6 @@ export var MeterInTable = function MeterInTable() {
     // </Grommet>
   );
 };
-
 MeterInTable.storyName = 'Meter inside table';
 export default {
   title: 'Visualizations/Table/Meter inside table'

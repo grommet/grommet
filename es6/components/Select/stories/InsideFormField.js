@@ -47,7 +47,6 @@ export var InsideFormField = function InsideFormField() {
     // </Grommet>
   );
 };
-
 InsideFormField.storyName = 'Inside a FormField';
 export default {
   title: 'Input/Select/Inside a FormField'

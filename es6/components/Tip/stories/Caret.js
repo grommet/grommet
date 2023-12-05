@@ -58,7 +58,6 @@ export var Caret = function Caret() {
     // </Grommet>
   );
 };
-
 Caret.args = {
   full: true
 };

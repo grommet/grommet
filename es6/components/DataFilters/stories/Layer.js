@@ -31,7 +31,6 @@ export var Layer = function Layer() {
     // </Grommet>
   );
 };
-
 Layer.args = {
   full: true
 };

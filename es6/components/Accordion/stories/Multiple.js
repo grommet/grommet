@@ -34,7 +34,6 @@ export var Multiple = function Multiple() {
     // </Grommet>
   );
 };
-
 Multiple.parameters = {
   chromatic: {
     disable: true

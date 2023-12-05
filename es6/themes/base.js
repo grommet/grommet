@@ -158,7 +158,6 @@ export var generate = function generate(baseSpacing, scale) {
         // 12
         xlarge: baseSpacing + "px" // 24
       },
-
       breakpoints: {
         small: {
           value: baseSpacing * 32,
@@ -172,7 +171,6 @@ export var generate = function generate(baseSpacing, scale) {
             // 6
             xlarge: baseSpacing / 2 + "px" // 12
           },
-
           edgeSize: {
             none: '0px',
             hair: '1px',
@@ -188,7 +186,6 @@ export var generate = function generate(baseSpacing, scale) {
             // 24
             xlarge: baseSpacing * 2 + "px" // 48
           },
-
           size: {
             xxsmall: baseSpacing + "px",
             // 24
@@ -208,10 +205,8 @@ export var generate = function generate(baseSpacing, scale) {
         medium: {
           value: baseSpacing * 64 // 1536
         },
-
         large: {} // anything above 'medium'
       },
-
       // Breakpoints used at Server Side Rendering for the initial rendering
       // These values correspond to the theme breakpoints
       deviceBreakpoints: {
@@ -323,7 +318,6 @@ export var generate = function generate(baseSpacing, scale) {
         // deprecate in v3
         // weight: undefined,
       },
-
       opacity: {
         strong: 0.8,
         medium: 0.4,
@@ -372,7 +366,6 @@ export var generate = function generate(baseSpacing, scale) {
         level: '4' // level ranges from 1-6
         // margin: undefined
       },
-
       hover: {
         // background: undefined,
         color: {
@@ -393,7 +386,6 @@ export var generate = function generate(baseSpacing, scale) {
         // color: { dark: undefined, light: undefined },
       }
     },
-
     anchor: {
       textDecoration: 'none',
       fontWeight: 600,
@@ -416,7 +408,6 @@ export var generate = function generate(baseSpacing, scale) {
       // },
       // extend: undefined,
     },
-
     avatar: {
       // extend: undefined,
       size: {
@@ -438,7 +429,6 @@ export var generate = function generate(baseSpacing, scale) {
         // 168px
         '5xl': baseSpacing * 8 + "px" // 192px
       },
-
       text: {
         size: {
           xsmall: 'small',
@@ -463,12 +453,10 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined
       }
     },
-
     box: {
       responsiveBreakpoint: 'small' // when we switch rows to columns
       // extend: undefined,
     },
-
     button: {
       badge: {
         // align: undefined,,
@@ -477,18 +465,15 @@ export var generate = function generate(baseSpacing, scale) {
           // pad: undefined,
           // extend: undefined,
         },
-
         size: {
           medium: baseSpacing + "px" // 24px
         },
-
         text: {
           size: {
             medium: 'small' // 14px
           }
         }
       },
-
       gap: 'small',
       size: {
         small: {
@@ -504,12 +489,10 @@ export var generate = function generate(baseSpacing, scale) {
           //   pad: undefined,
           // },
         },
-
         medium: {
           border: {
             radius: baseSpacing * 0.75 + "px" // 18px
           },
-
           pad: {
             vertical: baseSpacing / 4 - borderWidth + "px",
             // 4px
@@ -519,12 +502,10 @@ export var generate = function generate(baseSpacing, scale) {
           //   pad: undefined,
           // },
         },
-
         large: {
           border: {
             radius: baseSpacing + "px" // 24px
           },
-
           pad: {
             vertical: baseSpacing / 4 + borderWidth + "px",
             // 8px
@@ -535,7 +516,6 @@ export var generate = function generate(baseSpacing, scale) {
           // },
         }
       },
-
       border: {
         // color: { dark: undefined, light: undefined }
         width: borderWidth + "px",
@@ -615,7 +595,6 @@ export var generate = function generate(baseSpacing, scale) {
         //   primary: {},
         //   secondary: {},
       },
-
       disabled: {
         //   background: undefined,
         //   border: undefined,
@@ -626,7 +605,6 @@ export var generate = function generate(baseSpacing, scale) {
         //   primary: {},
         //   secondary: {},
       },
-
       // hover: {
       //   background: undefined,
       //   border: undefined,
@@ -686,14 +664,12 @@ export var generate = function generate(baseSpacing, scale) {
         level: '4'
       } // level ranges from 1-6
     },
-
     card: {
       container: {
         round: 'small',
         elevation: 'small'
         // extend: undefined,
       },
-
       // hover: {
       //   container: {
       //     elevation: undefined,
@@ -710,7 +686,6 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
       }
     },
-
     carousel: {
       icons: {
         current: Subtract,
@@ -718,7 +693,6 @@ export var generate = function generate(baseSpacing, scale) {
         previous: Previous
         // color: { dark: undefined, light: undefined },
       },
-
       animation: {
         duration: 1000
       },
@@ -732,7 +706,6 @@ export var generate = function generate(baseSpacing, scale) {
       color: 'graph-0'
       // extend: undefined,
     },
-
     checkBox: {
       border: {
         color: {
@@ -762,7 +735,6 @@ export var generate = function generate(baseSpacing, scale) {
         // background: undefined,
         // extend: undefined,
       },
-
       icon: {
         // size: undefined,
         // extend: undefined,
@@ -787,7 +759,6 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
       }
     },
-
     checkBoxGroup: {
       // container: {
       //   // any box props
@@ -834,7 +805,6 @@ export var generate = function generate(baseSpacing, scale) {
           huge: baseSpacing * 12 + "px" // kept for backwards compatibility
         }
       },
-
       digital: {
         text: {
           xsmall: {
@@ -876,7 +846,6 @@ export var generate = function generate(baseSpacing, scale) {
       //   size: undefined,
       // },
     },
-
     dataTable: {
       // body: {
       //   extend: undefined,
@@ -892,7 +861,6 @@ export var generate = function generate(baseSpacing, scale) {
           }
           //  extend: undefined,
         },
-
         footer: {
           background: {
             opacity: 'strong'
@@ -900,13 +868,11 @@ export var generate = function generate(baseSpacing, scale) {
           //  extend: undefined,
         }
       },
-
       container: {
         // any box props
         gap: 'xsmall'
         // extend: undefined,
       },
-
       groupHeader: {
         background: {
           dark: 'dark-2',
@@ -956,7 +922,6 @@ export var generate = function generate(baseSpacing, scale) {
         expand: FormDown
         // sortable: undefined,
       },
-
       primary: {
         weight: 'bold'
       },
@@ -974,7 +939,6 @@ export var generate = function generate(baseSpacing, scale) {
         // },
       }
     },
-
     diagram: {
       // extend: undefined,
       line: {
@@ -999,14 +963,12 @@ export var generate = function generate(baseSpacing, scale) {
         }
         // extend: undefined,
       },
-
       hover: {
         border: {
           color: 'brand'
         }
         // extend: undefined,
       },
-
       icons: {
         remove: FormClose
       },
@@ -1015,14 +977,12 @@ export var generate = function generate(baseSpacing, scale) {
         margin: 'small'
         // extend: undefined,
       },
-
       message: {
         margin: 'small'
         // extend: undefined,
       }
       // extend: undefined,
     },
-
     formField: {
       border: {
         color: 'border',
@@ -1054,7 +1014,6 @@ export var generate = function generate(baseSpacing, scale) {
         //   color: undefined,
         // },
       },
-
       // focus: {
       //   background: {
       //     color: undefined,
@@ -1073,7 +1032,6 @@ export var generate = function generate(baseSpacing, scale) {
         // container: {}, // any Box props
         // icon: undefined,
       },
-
       // extend: undefined,
       help: {
         color: 'dark-3',
@@ -1090,7 +1048,6 @@ export var generate = function generate(baseSpacing, scale) {
         // container: {}, // any Box props
         // icon: undefined,
       },
-
       label: {
         margin: {
           vertical: 'xsmall',
@@ -1098,7 +1055,6 @@ export var generate = function generate(baseSpacing, scale) {
         }
         // requiredIndicator: undefined,
       },
-
       margin: {
         bottom: 'small'
       },
@@ -1207,7 +1163,6 @@ export var generate = function generate(baseSpacing, scale) {
         radius: '4px'
         // intelligentRounding: undefined,
       },
-
       container: {
         // elevation: undefined,
         zIndex: '20'
@@ -1217,7 +1172,6 @@ export var generate = function generate(baseSpacing, scale) {
         background: 'rgba(0, 0, 0, 0.5)'
         // backdropFilter: undefined,
       },
-
       responsiveBreakpoint: 'small',
       // when Layer takes over the full screen
       zIndex: '20'
@@ -1228,7 +1182,6 @@ export var generate = function generate(baseSpacing, scale) {
         gap: 'xsmall'
         // extend: undefined,
       },
-
       item: {
         // background: undefined,
         border: 'horizontal',
@@ -1249,7 +1202,6 @@ export var generate = function generate(baseSpacing, scale) {
         }
         // extend: undefined,
       },
-
       icons: {
         down: FormDown,
         up: FormUp,
@@ -1257,7 +1209,6 @@ export var generate = function generate(baseSpacing, scale) {
       }
       // extend: undefined,
     },
-
     maskedInput: {
       // container: {
       //   extend: undefined,
@@ -1276,7 +1227,6 @@ export var generate = function generate(baseSpacing, scale) {
         }
         // any drop props
       },
-
       group: {
         container: {
           pad: {
@@ -1297,13 +1247,11 @@ export var generate = function generate(baseSpacing, scale) {
         // color: { dark: undefined, light: undefined },
       }
     },
-
     meter: {
       color: 'graph-0'
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
-
     nameValueList: {
       gap: {
         column: 'large',
@@ -1467,7 +1415,6 @@ export var generate = function generate(baseSpacing, scale) {
         // toast: {},
       }
     },
-
     page: {
       wide: {
         alignSelf: 'center',
@@ -1563,7 +1510,6 @@ export var generate = function generate(baseSpacing, scale) {
         rows: ['auto']
         // gap: undefined,
       },
-
       subtitle: {
         // any paragraph props
         margin: 'none'
@@ -1763,7 +1709,6 @@ export var generate = function generate(baseSpacing, scale) {
         // color: { dark: undefined, light: undefined },
         // extend: undefined,
       },
-
       // color: undefined,
       hover: {
         // background: {
@@ -1805,7 +1750,6 @@ export var generate = function generate(baseSpacing, scale) {
         //     color: undefined,
         //   },
       },
-
       // extend: undefined
       track: {
         height: '4px',
@@ -1821,7 +1765,6 @@ export var generate = function generate(baseSpacing, scale) {
         // },
         // extend: undefined
       },
-
       thumb: {
         // color: { dark: undefined, light: undefined },
         // extend: undefined
@@ -1837,7 +1780,6 @@ export var generate = function generate(baseSpacing, scale) {
       //   type: undefined,
       // },
     },
-
     select: {
       // background: undefined,
       clear: {
@@ -1850,7 +1792,6 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'text-weak'
         } // any text props
       },
-
       container: {
         // extend: undefined,
       },
@@ -1870,7 +1811,6 @@ export var generate = function generate(baseSpacing, scale) {
         down: FormDown
         // up: undefined
       },
-
       options: {
         container: {
           align: 'start',
@@ -1915,7 +1855,6 @@ export var generate = function generate(baseSpacing, scale) {
         color: 'text'
         // background: undefined,
       },
-
       // background: undefined,
       border: {
         side: 'bottom',
@@ -1941,7 +1880,6 @@ export var generate = function generate(baseSpacing, scale) {
           // extend: undefined,
         }
       },
-
       color: 'control',
       // disabled: {
       //   color: undefined,
@@ -1999,7 +1937,6 @@ export var generate = function generate(baseSpacing, scale) {
         // background: undefined,
         // extend: undefined,
       },
-
       body: {
         align: 'start',
         pad: {
@@ -2010,7 +1947,6 @@ export var generate = function generate(baseSpacing, scale) {
         // border: undefined,
         // extend: undefined,
       },
-
       // row: {
       //   hover: {
       //     background: undefined,
@@ -2029,7 +1965,6 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
       }
     },
-
     tag: {
       // background: undefined,
       border: true,
@@ -2168,14 +2103,12 @@ export var generate = function generate(baseSpacing, scale) {
         description: AssistListening
         // color: { dark: undefined, light: undefined },
       },
-
       scrubber: {
         color: 'light-4',
         interval: 10
         // track: { color: undefined }
       }
     },
-
     worldMap: {
       color: 'light-3',
       continent: {

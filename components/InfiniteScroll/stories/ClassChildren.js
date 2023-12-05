@@ -37,7 +37,6 @@ var ClassChildrenInfiniteScroll = exports.ClassChildrenInfiniteScroll = function
     // </Grommet>
   );
 };
-
 ClassChildrenInfiniteScroll.storyName = 'Class children';
 var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Class children'

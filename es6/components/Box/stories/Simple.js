@@ -51,7 +51,6 @@ export var SimpleBox = function SimpleBox() {
     // </Grommet>
   );
 };
-
 SimpleBox.storyName = 'Simple';
 export default {
   title: 'Layout/Box/Simple'

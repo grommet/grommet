@@ -47,7 +47,6 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
     // </Grommet>
   );
 };
-
 export var Vertical = function Vertical() {
   return /*#__PURE__*/React.createElement(SimpleRangeSelector, {
     direction: "vertical"

@@ -35,7 +35,6 @@ var Default = exports.Default = function Default(props) {
     // </Grommet>
   );
 };
-
 Default.parameters = {
   chromatic: {
     disable: true

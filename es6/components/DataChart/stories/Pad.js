@@ -35,7 +35,6 @@ export var Pad = function Pad() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Pad'
 };

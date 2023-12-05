@@ -55,7 +55,6 @@ var SidebarNav = function SidebarNav() {
     // </Grommet>
   );
 };
-
 var Sidebar = exports.Sidebar = function Sidebar() {
   return /*#__PURE__*/_react["default"].createElement(SidebarNav, null);
 };

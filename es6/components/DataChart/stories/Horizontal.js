@@ -51,7 +51,6 @@ export var Horizontal = function Horizontal() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Horizontal'
 };

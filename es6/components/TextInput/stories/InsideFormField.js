@@ -67,7 +67,6 @@ export var InsideFormField = function InsideFormField(props) {
     // </Grommet>
   );
 };
-
 InsideFormField.storyName = 'Inside a FormField';
 export default {
   title: 'Input/TextInput/Inside a FormField'

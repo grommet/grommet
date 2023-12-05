@@ -45,7 +45,6 @@ export var MaskedInputForm = function MaskedInputForm() {
     // </Grommet>
   );
 };
-
 MaskedInputForm.storyName = 'Form';
 export default {
   title: 'Input/MaskedInput/Form'

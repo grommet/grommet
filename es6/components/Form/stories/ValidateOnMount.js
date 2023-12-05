@@ -80,7 +80,6 @@ export var ValidateOnMount = function ValidateOnMount() {
     // </Grommet>
   );
 };
-
 ValidateOnMount.storyName = 'Validate on mount';
 ValidateOnMount.args = {
   full: true

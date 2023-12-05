@@ -29,7 +29,6 @@ export var GlobalHeaderFooter = function GlobalHeaderFooter() {
     // </Grommet>
   );
 };
-
 GlobalHeaderFooter.storyName = 'Global Header and Footer';
 export default {
   title: 'Layout/Page/Global Header and Footer'

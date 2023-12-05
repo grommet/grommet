@@ -30,7 +30,6 @@ var SimpleNav = function SimpleNav() {
     // </Grommet>
   );
 };
-
 export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleNav, null);
 };

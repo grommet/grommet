@@ -102,7 +102,6 @@ var CenterLayer = exports.CenterLayer = function CenterLayer() {
     // </Grommet>
   );
 };
-
 CenterLayer.storyName = 'Center';
 CenterLayer.parameters = {
   chromatic: {

@@ -63,7 +63,6 @@ var StackedBars = exports.StackedBars = function StackedBars() {
     // </Grommet>
   );
 };
-
 StackedBars.storyName = 'Stacked bars';
 var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Stacked bars'

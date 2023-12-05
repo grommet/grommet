@@ -55,7 +55,6 @@ export var ServedDataTable = function ServedDataTable() {
     // </Grommet>
   );
 };
-
 ServedDataTable.storyName = 'Served';
 export default {
   title: 'Visualizations/DataTable/Served'

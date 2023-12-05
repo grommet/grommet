@@ -65,7 +65,6 @@ export var DynamicFields = function DynamicFields() {
     // </Grommet>
   );
 };
-
 DynamicFields.storyName = 'Dynamic fields';
 DynamicFields.args = {
   full: true

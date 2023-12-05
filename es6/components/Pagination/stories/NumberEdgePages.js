@@ -20,7 +20,6 @@ export var NumberEdgePages = function NumberEdgePages() {
     // </Grommet>
   );
 };
-
 NumberEdgePages.storyName = 'Number edge pages';
 export default {
   title: 'Controls/Pagination/Number edge pages'

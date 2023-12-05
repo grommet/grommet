@@ -37,7 +37,6 @@ var InlineDrop = function InlineDrop() {
     // </Grommet>
   );
 };
-
 export var Inline = function Inline() {
   return /*#__PURE__*/React.createElement(InlineDrop, null);
 };

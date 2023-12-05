@@ -29,7 +29,6 @@ var Resize = function Resize(props) {
     // </Grommet>
   );
 };
-
 var Simple = exports.Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(Resize, {
     resize: true

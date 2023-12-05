@@ -100,7 +100,6 @@ export var Inline = function Inline() {
     // </Grommet>
   );
 };
-
 Inline.args = {
   full: true
 };

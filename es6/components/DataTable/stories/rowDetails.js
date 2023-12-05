@@ -74,7 +74,6 @@ export var ControlledDataTable = function ControlledDataTable() {
     // </Grommet>
   );
 };
-
 ControlledDataTable.storyName = 'rowDetails';
 export default {
   title: 'Visualizations/DataTable/rowDetails'

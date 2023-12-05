@@ -15,7 +15,6 @@ export var Range = function Range() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Calendar/Range'
 };

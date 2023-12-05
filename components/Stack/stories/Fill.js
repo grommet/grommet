@@ -19,7 +19,6 @@ var Fill = exports.Fill = function Fill() {
     // </Grommet>
   );
 };
-
 Fill.args = {
   full: true
 };

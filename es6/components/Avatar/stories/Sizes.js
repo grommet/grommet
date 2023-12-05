@@ -83,7 +83,6 @@ export var Sizes = function Sizes() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Avatar/Sizes'
 };

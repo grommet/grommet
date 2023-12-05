@@ -41,7 +41,6 @@ export var Views = function Views() {
     // </Grommet>
   );
 };
-
 Views.args = {
   full: true
 };

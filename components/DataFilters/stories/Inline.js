@@ -45,7 +45,6 @@ var Inline = exports.Inline = function Inline() {
     // </Grommet>
   );
 };
-
 Inline.args = {
   full: true
 };

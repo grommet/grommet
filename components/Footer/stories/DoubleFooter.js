@@ -79,7 +79,6 @@ var DoubleFooter = exports.DoubleFooter = function DoubleFooter() {
     // </Grommet>
   );
 };
-
 DoubleFooter.storyName = 'Double footer';
 var _default = exports["default"] = {
   title: 'Layout/Footer/Double footer'

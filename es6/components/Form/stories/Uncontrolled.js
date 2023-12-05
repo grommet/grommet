@@ -112,7 +112,6 @@ export var Uncontrolled = function Uncontrolled() {
     // </Grommet>
   );
 };
-
 Uncontrolled.args = {
   full: true
 };

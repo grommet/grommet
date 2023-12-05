@@ -29,7 +29,6 @@ export var Percentages = function Percentages() {
     // </Grommet>
   );
 };
-
 Percentages.args = {
   full: true
 };

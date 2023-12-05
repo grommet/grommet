@@ -40,7 +40,6 @@ var Simple = exports.Simple = function Simple() {
     // </Grommet>
   );
 };
-
 Simple.args = {
   full: true
 };

@@ -32,7 +32,6 @@ export var ControlledGroupedDataTable = function ControlledGroupedDataTable() {
     // </Grommet>
   );
 };
-
 ControlledGroupedDataTable.storyName = 'Controlled grouped';
 export default {
   title: 'Visualizations/DataTable/Controlled grouped'

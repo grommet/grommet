@@ -59,7 +59,6 @@ export var PaginatedGrid = function PaginatedGrid() {
     // </Grommet>
   );
 };
-
 PaginatedGrid.storyName = 'Grid';
 PaginatedGrid.args = {
   full: true

@@ -72,7 +72,6 @@ export var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
     // </Grommet>
   );
 };
-
 IPv4RangeMaskedInput.storyName = 'IPv4 range';
 IPv4RangeMaskedInput.args = {
   full: true

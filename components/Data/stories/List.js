@@ -34,7 +34,6 @@ var Example = exports.Example = function Example() {
     // </Grommet>
   );
 };
-
 Example.storyName = 'List';
 Example.args = {
   full: true

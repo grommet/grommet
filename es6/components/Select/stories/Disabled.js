@@ -32,7 +32,6 @@ export var Disabled = function Disabled() {
     // </Grommet>
   );
 };
-
 Disabled.args = {
   full: true
 };

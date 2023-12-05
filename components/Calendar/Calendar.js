@@ -384,7 +384,6 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
         setAnimating(false);
       }, 400 // Empirically determined.
       );
-
       return function () {
         return clearTimeout(timer);
       };

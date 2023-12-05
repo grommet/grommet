@@ -72,7 +72,6 @@ var getBounds = function getBounds(bounds, margin, theme, position) {
     // 'top-left': getMargin(margin, theme, 'top-left'),
   };
 };
-
 var KEYFRAMES = {
   center: {
     vertical: (0, _styledComponents.keyframes)(["0%{transform:translateX(-50%) scale(0.8);}100%{transform:translateX(-50%) scale(1);}"]),

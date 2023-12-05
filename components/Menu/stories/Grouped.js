@@ -35,7 +35,6 @@ var Grouped = exports.Grouped = function Grouped() {
     // </Grommet>
   );
 };
-
 Grouped.parameters = {
   chromatic: {
     disable: true

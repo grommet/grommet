@@ -50,7 +50,6 @@ var Suggestions = exports.Suggestions = function Suggestions() {
     // </Grommet>
   );
 };
-
 Suggestions.parameters = {
   chromatic: {
     disable: true

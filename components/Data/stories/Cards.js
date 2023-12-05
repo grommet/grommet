@@ -40,7 +40,6 @@ var Example = exports.Example = function Example() {
     // </Grommet>
   );
 };
-
 Example.storyName = 'Cards';
 Example.args = {
   full: true

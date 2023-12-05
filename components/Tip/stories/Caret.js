@@ -63,7 +63,6 @@ var Caret = exports.Caret = function Caret() {
     // </Grommet>
   );
 };
-
 Caret.args = {
   full: true
 };

@@ -41,7 +41,6 @@ export var Width = function Width() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/NameValueList/Width'
 };

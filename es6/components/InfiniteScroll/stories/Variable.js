@@ -24,7 +24,6 @@ export var Height = function Height() {
     // </Grommet>
   );
 };
-
 Height.storyName = 'Variable item height';
 Height.parameters = {
   chromatic: {

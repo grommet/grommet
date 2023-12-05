@@ -69,7 +69,6 @@ var Info = exports.Info = function Info() {
     // </Grommet>
   );
 };
-
 Info.parameters = {
   chromatic: {
     disable: true

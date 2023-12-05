@@ -50,7 +50,6 @@ var LongList = exports.LongList = function LongList() {
     // </Grommet>
   );
 };
-
 LongList.storyName = 'Long list';
 LongList.parameters = {
   chromatic: {

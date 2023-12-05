@@ -55,7 +55,6 @@ export var InteractiveSlides = function InteractiveSlides() {
     // </Grommet>
   );
 };
-
 InteractiveSlides.storyName = 'Interactive slides';
 export default {
   title: 'Media/Carousel/Interactive slides'

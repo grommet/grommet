@@ -53,7 +53,6 @@ var Controlled = exports.Controlled = function Controlled() {
     // </Grommet>
   );
 };
-
 Controlled.parameters = {
   chromatic: {
     disable: true

@@ -38,7 +38,6 @@ export var InsideFormField = function InsideFormField() {
     // </Grommet>
   );
 };
-
 InsideFormField.parameters = {
   chromatic: {
     disable: true

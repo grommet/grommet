@@ -30,7 +30,6 @@ var GuideDefault = exports.GuideDefault = function GuideDefault() {
     // </Grommet>
   );
 };
-
 GuideDefault.storyName = 'Guide default';
 var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Guide default'

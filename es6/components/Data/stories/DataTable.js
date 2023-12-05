@@ -35,7 +35,6 @@ export var Table = function Table() {
     // </Grommet>
   );
 };
-
 Table.storyName = 'DataTable';
 Table.args = {
   full: true

@@ -22,7 +22,6 @@ export var Size = function Size() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Controls/Pagination/Size'
 };

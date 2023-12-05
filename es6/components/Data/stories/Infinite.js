@@ -246,7 +246,6 @@ export var Table = function Table() {
     // </Grommet>
   );
 };
-
 Table.storyName = 'Infinite Scroll';
 Table.args = {
   full: true

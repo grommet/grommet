@@ -100,7 +100,6 @@ var getItemId = function getItemId(item, index, itemKey, primaryKey) {
   if (itemKey) return getValue(item, index, itemKey);
   return (_getValue = getValue(item, index)) != null ? _getValue : index; // do our best w/o *key properties
 };
-
 var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
