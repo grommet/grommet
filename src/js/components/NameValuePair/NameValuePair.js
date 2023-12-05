@@ -14,12 +14,15 @@ const NameValuePair = ({ children, name: nameProp }) => {
   const column =
     direction === 'column' ||
     direction === 'column-reverse' ||
-    size === 'small';
+    size === 'small' ||
+    size === 'xsmall';
 
   const Container = column ? Box : Fragment;
 
-  const nameAlign = size !== 'small' ? nameProps?.align : undefined;
-  const valueAlign = size !== 'small' ? valueProps?.align : undefined;
+  const nameAlign =
+    size !== 'small' && size !== 'xsmall' ? nameProps?.align : undefined;
+  const valueAlign =
+    size !== 'small' && size !== 'xsmall' ? valueProps?.align : undefined;
   // using margin to act as gap
   // <dl> elements must only directly contain
   // properly-ordered <dt> and <dd> groups
