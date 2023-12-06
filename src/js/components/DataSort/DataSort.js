@@ -86,7 +86,12 @@ export const DataSort = ({ drop, options, ...rest }) => {
 
   let content = <Content options={options} />;
 
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+  if (noForm)
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
 
   if (!drop) return content;
 

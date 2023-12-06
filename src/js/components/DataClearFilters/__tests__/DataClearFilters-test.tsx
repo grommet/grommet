@@ -5,6 +5,10 @@ import { Data } from '../../Data';
 import { Grommet } from '../../Grommet';
 import { DataClearFilters } from '..';
 
+// asserts that AnnounceContext aria-live region and visible DataSummary each have this text
+const expectDataSummary = (message: string) =>
+  expect(screen.getAllByText(message)).toHaveLength(2);
+
 const data = [
   {
     name: 'aa',
@@ -58,7 +62,7 @@ describe('DataClearFilters', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
-    expect(screen.getByText(`${data.length} items`)).toBeTruthy();
+    expectDataSummary(`${data.length} items`);
     expect(asFragment()).toMatchSnapshot();
   });
 
