@@ -8,6 +8,7 @@ var _Box = require("../Box");
 var _Text = require("../Text");
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 var _NameValueListContext = require("../NameValueList/NameValueListContext");
+var _responsive = require("../../utils/responsive");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -22,10 +23,10 @@ var NameValuePair = exports.NameValuePair = function NameValuePair(_ref) {
   var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var direction = pairProps == null ? void 0 : pairProps.direction;
-  var column = direction === 'column' || direction === 'column-reverse' || size === 'small';
+  var column = direction === 'column' || direction === 'column-reverse' || (0, _responsive.isSmall)(size);
   var Container = column ? _Box.Box : _react.Fragment;
-  var nameAlign = size !== 'small' ? nameProps == null ? void 0 : nameProps.align : undefined;
-  var valueAlign = size !== 'small' ? valueProps == null ? void 0 : valueProps.align : undefined;
+  var nameAlign = !(0, _responsive.isSmall)(size) ? nameProps == null ? void 0 : nameProps.align : undefined;
+  var valueAlign = !(0, _responsive.isSmall)(size) ? valueProps == null ? void 0 : valueProps.align : undefined;
   // using margin to act as gap
   // <dl> elements must only directly contain
   // properly-ordered <dt> and <dd> groups

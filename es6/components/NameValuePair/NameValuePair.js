@@ -5,6 +5,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
+import { isSmall } from '../../utils/responsive';
 var NameValuePair = function NameValuePair(_ref) {
   var _theme$nameValuePair;
   var children = _ref.children,
@@ -16,10 +17,10 @@ var NameValuePair = function NameValuePair(_ref) {
   var size = useContext(ResponsiveContext);
   var theme = useContext(ThemeContext);
   var direction = pairProps == null ? void 0 : pairProps.direction;
-  var column = direction === 'column' || direction === 'column-reverse' || size === 'small';
+  var column = direction === 'column' || direction === 'column-reverse' || isSmall(size);
   var Container = column ? Box : Fragment;
-  var nameAlign = size !== 'small' ? nameProps == null ? void 0 : nameProps.align : undefined;
-  var valueAlign = size !== 'small' ? valueProps == null ? void 0 : valueProps.align : undefined;
+  var nameAlign = !isSmall(size) ? nameProps == null ? void 0 : nameProps.align : undefined;
+  var valueAlign = !isSmall(size) ? valueProps == null ? void 0 : valueProps.align : undefined;
   // using margin to act as gap
   // <dl> elements must only directly contain
   // properly-ordered <dt> and <dd> groups

@@ -15,6 +15,7 @@ var _TextInput = require("../TextInput");
 var _MessageContext = require("../../contexts/MessageContext");
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 var _propTypes = require("./propTypes");
+var _responsive = require("../../utils/responsive");
 var _excluded = ["drop", "id", "responsive"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -70,7 +71,7 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
       messages: messages == null ? void 0 : messages.dataSearch
     })
   }, content);
-  if (!drop && (!responsive || size !== 'small' && size !== 'xsmall')) return content;
+  if (!drop && (!responsive || !(0, _responsive.isSmall)(size))) return content;
   var control = /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, _extends({
     id: dataId + "--search-control",
     "aria-label": format({

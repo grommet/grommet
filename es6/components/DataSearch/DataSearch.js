@@ -14,6 +14,7 @@ import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
+import { isSmall } from '../../utils/responsive';
 var dropProps = {
   align: {
     top: 'bottom',
@@ -64,7 +65,7 @@ export var DataSearch = function DataSearch(_ref) {
       messages: messages == null ? void 0 : messages.dataSearch
     })
   }, content);
-  if (!drop && (!responsive || size !== 'small' && size !== 'xsmall')) return content;
+  if (!drop && (!responsive || !isSmall(size))) return content;
   var control = /*#__PURE__*/React.createElement(DropButton, _extends({
     id: dataId + "--search-control",
     "aria-label": format({
