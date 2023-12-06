@@ -7,6 +7,10 @@ import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
 import { DataSummary } from '..';
 
+// asserts that AnnounceContext aria-live region and visible DataSummary each have this text
+const expectDataSummary = (message: string) =>
+  expect(screen.getAllByText(message)).toHaveLength(2);
+
 const data = [{ name: 'a' }, { name: 'b' }];
 
 describe('DataSummary', () => {
@@ -35,7 +39,7 @@ describe('DataSummary', () => {
       </Grommet>,
     );
 
-    expect(screen.getByText('1 item')).toBeTruthy();
+    expectDataSummary('1 item');
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -57,7 +61,7 @@ describe('DataSummary', () => {
       </Grommet>,
     );
 
-    expect(screen.getByText('0 results of 1 item')).toBeTruthy();
+    expectDataSummary('0 results of 1 item');
     expect(asFragment()).toMatchSnapshot();
   });
 });

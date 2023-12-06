@@ -835,6 +835,7 @@ exports[`DataFilter noForm 1`] = `
         class="c3"
       >
         <div
+          aria-label="name"
           class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
           id="data-name"
           role="group"
@@ -908,6 +909,7 @@ exports[`DataFilter noForm 1`] = `
         class="c3"
       >
         <div
+          aria-label="enabled"
           class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
           id="data-enabled"
           role="group"
@@ -959,6 +961,7 @@ exports[`DataFilter noForm 1`] = `
         class="c3"
       >
         <div
+          aria-label="rating"
           class="c11"
           id="data-rating"
         >
@@ -5887,6 +5890,11 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
   padding: 12px;
 }
 
+.c3:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
 .c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -6067,26 +6075,6 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     border-radius: 12px;
   }
@@ -6103,10 +6091,6 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
 
