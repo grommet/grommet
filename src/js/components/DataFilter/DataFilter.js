@@ -74,9 +74,6 @@ const booleanOptions = [
   { label: 'false', value: false },
 ];
 
-const numberToPrecision = (number, precision = 1) =>
-  Number.parseFloat(number.toPrecision(precision));
-
 export const DataFilter = ({
   children,
   options: optionsProp,
@@ -111,7 +108,7 @@ export const DataFilter = ({
       return [uniqueValues, undefined];
     // all values are numeric, treat as range
     const delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
-    const interval = numberToPrecision(delta / 3);
+    const interval = Number.parseFloat((delta / 3).toPrecision(1));
     let min = uniqueValues[0];
     let max = uniqueValues[uniqueValues.length - 1];
     // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
