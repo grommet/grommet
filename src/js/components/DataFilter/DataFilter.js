@@ -7,6 +7,7 @@ import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
+import { getDecimalCount } from '../RangeSelector/RangeSelector';
 
 // empirical constants for when we change inputs
 const maxCheckBoxGroupOptions = 4;
@@ -53,14 +54,8 @@ const booleanOptions = [
   { label: 'false', value: false },
 ];
 
-const getLengthDecimalPoints = (number) => {
-  if (Number.isInteger(number)) {
-    return 0;
-  }
-
-  const arr = number.toString().split('.');
-  return arr[1].length;
-};
+const numberToPrecision = (number, precision = 1) =>
+  Number.parseFloat(number.toPrecision(precision));
 
 export const DataFilter = ({
   children,
@@ -95,11 +90,18 @@ export const DataFilter = ({
     if (uniqueValues.some((v) => v !== undefined && typeof v !== 'number'))
       return [uniqueValues, undefined];
     // all values are numeric, treat as range
-    // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
     const delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
-    const interval = Number.parseFloat((delta / 3).toPrecision(1));
-    const min = alignMin(uniqueValues[0], interval);
-    const max = alignMax(uniqueValues[uniqueValues.length - 1], interval);
+    const interval = numberToPrecision(delta / 3);
+    let min = uniqueValues[0];
+    let max = uniqueValues[uniqueValues.length - 1];
+    // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
+    if (getDecimalCount(min) > 0 || getDecimalCount(max) > 0) {
+      // capping to precision of 3 is a reasonable default to avoid
+      // excessive decimal points
+      min = numberToPrecision(alignMin(min, interval), 3);
+      max = numberToPrecision(alignMax(max, interval), 3);
+    }
+
     return [undefined, [min, max]];
   }, [
     children,
@@ -130,27 +132,38 @@ export const DataFilter = ({
   let content = children;
   if (!content) {
     if (range) {
-      const step =
-        // from `range` on DataFilter
+      let step = // from `range` on DataFilter
         rangeProp?.step ||
         // from range in Data `properties`
-        properties?.[property]?.range?.step ||
-        (range[1] - range[0]) / defaultRangeSteps;
+        properties?.[property]?.range?.step;
 
-      const maximumFractionDigits = getLengthDecimalPoints(step);
+      if (!step) {
+        // avoid floating point issues where 4.4 - 2 returns 2.4000000000000004
+        // and instead return 2.4 by doing calculations in integers then
+        // restore order of magnitude
+        const multiplicationFactor =
+          10 ** Math.max(getDecimalCount(range[1]), getDecimalCount(range[0]));
+        const delta =
+          (range[1] * multiplicationFactor - range[0] * multiplicationFactor) /
+          multiplicationFactor;
+        // avoid floating point issues where
+        // 0.012 / 20 returns 0.0006000000000000001
+        // and instead return 0.0006
+        // or 2.8 / 20 returns 0.13999999999999999
+        // and istead return 0.14
+        const decimalCount = getDecimalCount(delta);
+        if (decimalCount) {
+          const multiplier = 10 ** decimalCount;
+          step = (multiplier * delta) / (multiplier * defaultRangeSteps);
+        } else step = delta / defaultRangeSteps;
+      }
 
       content = (
         <RangeSelector
           id={id}
           name={`${property}._range`}
           defaultValues={range}
-          // align granularity of label to the step
-          label={(number) =>
-            // undefined allows user's browser locale to define format
-            Intl.NumberFormat(undefined, {
-              maximumFractionDigits,
-            }).format(number)
-          }
+          label
           min={range[0]}
           max={range[1]}
           step={step}

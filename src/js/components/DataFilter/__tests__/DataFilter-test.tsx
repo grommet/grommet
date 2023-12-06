@@ -246,7 +246,7 @@ describe('DataFilter', () => {
     fireEvent.mouseDown(lowerBound);
     fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
     fireEvent.mouseUp(lowerBound);
-    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
+    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('49');
   });
 
   test('range Data', () => {
