@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Box } from '../Box';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { ToolbarPropTypes } from './propTypes';
+import { isSmall } from '../../utils/responsive';
 
 const defaultLayoutProps = {
   direction: 'row',
@@ -18,10 +19,7 @@ const smallLayoutProps = {
 
 export const Toolbar = ({ children, ...rest }) => {
   const size = useContext(ResponsiveContext);
-  const layoutProps =
-    size === 'small' || size === 'xsmall'
-      ? smallLayoutProps
-      : defaultLayoutProps;
+  const layoutProps = isSmall(size) ? smallLayoutProps : defaultLayoutProps;
   return (
     <Box flex={false} cssGap {...layoutProps} {...rest}>
       {children}
