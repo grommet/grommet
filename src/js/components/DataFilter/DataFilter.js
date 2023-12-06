@@ -37,15 +37,35 @@ const generateOptions = (data, property) =>
       return 0;
     });
 
+// ensure floating point calculations are in integers
 const alignMax = (value, interval) => {
-  if (value > 0) return value - (value % interval) + interval;
-  if (value < 0) return value + (value % interval);
+  const multiplier =
+    10 ** Math.max(getDecimalCount(value), getDecimalCount(interval));
+  const integerValue = value * multiplier;
+  const integerInterval = interval * multiplier;
+  if (value > 0)
+    return (
+      (integerValue - (integerValue % integerInterval) + integerInterval) /
+      multiplier
+    );
+  if (value < 0)
+    return (integerValue + (integerValue % integerInterval)) / multiplier;
   return value;
 };
 
+// ensure floating point calculations are in integers
 const alignMin = (value, interval) => {
-  if (value > 0) return value - (value % interval);
-  if (value < 0) return value - (value % interval) - interval;
+  const multiplier =
+    10 ** Math.max(getDecimalCount(value), getDecimalCount(interval));
+  const integerValue = value * multiplier;
+  const integerInterval = interval * multiplier;
+  if (value > 0)
+    return (integerValue - (integerValue % integerInterval)) / multiplier;
+  if (value < 0)
+    return (
+      (integerValue - (integerValue % integerInterval) - integerInterval) /
+      multiplier
+    );
   return value;
 };
 
@@ -96,10 +116,8 @@ export const DataFilter = ({
     let max = uniqueValues[uniqueValues.length - 1];
     // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
     if (getDecimalCount(min) > 0 || getDecimalCount(max) > 0) {
-      // capping to precision of 3 is a reasonable default to avoid
-      // excessive decimal points
-      min = numberToPrecision(alignMin(min, interval), 3);
-      max = numberToPrecision(alignMax(max, interval), 3);
+      min = alignMin(min, interval);
+      max = alignMax(max, interval);
     }
 
     return [undefined, [min, max]];
