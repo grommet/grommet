@@ -18,20 +18,20 @@ exports[`Select 0 value 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -655,7 +655,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 exports[`Select Clear option renders - bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -918,7 +918,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1173,7 +1173,7 @@ exports[`Select Clear option renders custom label 1`] = `
 
 exports[`Select Clear option renders custom label 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1565,7 +1565,7 @@ exports[`Select Clear option renders- top 1`] = `
 
 exports[`Select Clear option renders- top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1589,20 +1589,20 @@ exports[`Select Search timeout 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1984,20 +1984,20 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2384,20 +2384,20 @@ exports[`Select basic 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2652,20 +2652,20 @@ exports[`Select complex options and children 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2908,22 +2908,22 @@ exports[`Select complex options and children 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 cUEMKZ StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jXUMNe"
+    class="StyledBox-sc-13pk1d4-0 kOZkFt"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 djHtJk"
+      class="StyledBox-sc-13pk1d4-0 iPozMX"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2934,12 +2934,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gnAxhJ"
+      class="StyledBox-sc-13pk1d4-0 cOTiXC"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 jtseoQ"
+        class="StyledIcon-sc-ofa7kd-0 eTQGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -3159,7 +3159,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3183,20 +3183,20 @@ exports[`Select dark 1`] = `
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c10 *[fill-rule],
 .c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3493,20 +3493,20 @@ exports[`Select default value 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4143,7 +4143,7 @@ exports[`Select default value clear 1`] = `
 
 exports[`Select default value clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4167,20 +4167,20 @@ exports[`Select default value object options 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4449,20 +4449,20 @@ exports[`Select disabled 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4708,23 +4708,23 @@ exports[`Select disabled 2`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dDqEVs StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 cJzNzT StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jXUMNe"
+    class="StyledBox-sc-13pk1d4-0 kOZkFt"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 djHtJk"
+      class="StyledBox-sc-13pk1d4-0 iPozMX"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 fLRsZH"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4735,12 +4735,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gnAxhJ"
+      class="StyledBox-sc-13pk1d4-0 cOTiXC"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 jtseoQ"
+        class="StyledIcon-sc-ofa7kd-0 eTQGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -4772,20 +4772,20 @@ exports[`Select disabled key 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5333,7 +5333,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5636,7 +5636,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5753,20 +5753,20 @@ exports[`Select keyboard navigation timeout 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6543,20 +6543,20 @@ exports[`Select modifies select control style on open 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6828,20 +6828,20 @@ exports[`Select null value 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7098,20 +7098,20 @@ exports[`Select onChange with valueKey object 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7612,7 +7612,7 @@ exports[`Select onChange with valueKey object 2`] = `
 
 exports[`Select onChange with valueKey object 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -7637,20 +7637,20 @@ exports[`Select onChange with valueKey object 4`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7932,20 +7932,20 @@ exports[`Select onChange with valueKey string 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8445,7 +8445,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8470,20 +8470,20 @@ exports[`Select onChange with valueKey string 4`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8765,20 +8765,20 @@ exports[`Select onChange with valueLabel 1`] = `
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill='none'] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -9225,7 +9225,7 @@ exports[`Select onChange with valueLabel 2`] = `
 
 exports[`Select onChange with valueLabel 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9250,20 +9250,20 @@ exports[`Select onChange without labelKey 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -9764,7 +9764,7 @@ exports[`Select onChange without labelKey 2`] = `
 
 exports[`Select onChange without labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9789,20 +9789,20 @@ exports[`Select onChange without labelKey 4`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -10084,20 +10084,20 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -10597,7 +10597,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 
 exports[`Select onChange without labelKey or valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -10622,20 +10622,20 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -10917,20 +10917,20 @@ exports[`Select onChange without valueKey 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -11430,7 +11430,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -11455,20 +11455,20 @@ exports[`Select onChange without valueKey 4`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -11750,20 +11750,20 @@ exports[`Select prop: onClose 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -12030,20 +12030,20 @@ exports[`Select prop: onClose 2`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -12315,20 +12315,20 @@ exports[`Select prop: onOpen 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -12571,22 +12571,22 @@ exports[`Select prop: onOpen 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 cUEMKZ StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jXUMNe"
+    class="StyledBox-sc-13pk1d4-0 kOZkFt"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 djHtJk"
+      class="StyledBox-sc-13pk1d4-0 iPozMX"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -12597,12 +12597,12 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 gnAxhJ"
+      class="StyledBox-sc-13pk1d4-0 cOTiXC"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 jtseoQ"
+        class="StyledIcon-sc-ofa7kd-0 eTQGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -12865,7 +12865,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12874,7 +12874,7 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
-  class="StyledSelect__OptionsContainer-sc-znp66n-1 dhMlGQ"
+  class="StyledSelect__OptionsContainer-sc-znp66n-1 elhWoD"
   role="listbox"
   tabindex="-1"
 >
@@ -12882,16 +12882,16 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+    class="StyledButton-sc-323bzc-0 jmGAgM StyledSelect__SelectOption-sc-znp66n-3 lmVeAf"
     role="option"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fDyjq"
+      class="StyledBox-sc-13pk1d4-0 dvWSTN"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 iqSVxz"
+        class="StyledText-sc-1sadyjn-0 dJnVGQ"
       >
         one
       </span>
@@ -12901,23 +12901,23 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+    class="StyledButton-sc-323bzc-0 jmGAgM StyledSelect__SelectOption-sc-znp66n-3 lmVeAf"
     role="option"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 fDyjq"
+      class="StyledBox-sc-13pk1d4-0 dvWSTN"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 iqSVxz"
+        class="StyledText-sc-1sadyjn-0 dJnVGQ"
       >
         two
       </span>
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 iTIGpl"
+    class="StyledBox-sc-13pk1d4-0 bjATWi"
   />
 </div>
 `;
@@ -12939,20 +12939,20 @@ exports[`Select renders custom icon 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -13206,20 +13206,20 @@ exports[`Select renders custom up and down icons 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -13471,27 +13471,27 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+    class="StyledButton-sc-323bzc-0 cUEMKZ StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 djHtJk"
+        class="StyledBox-sc-13pk1d4-0 iPozMX"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -13501,7 +13501,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 gnAxhJ"
+        class="StyledBox-sc-13pk1d4-0 cOTiXC"
         style="min-width: auto;"
       >
         .c0 {
@@ -13520,20 +13520,20 @@ exports[`Select renders custom up and down icons 2`] = `
   stroke: inherit;
 }
 
-.c0 *:not([stroke])[fill='none'] {
+.c0 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c0 *[stroke*='#'],
-.c0 *[STROKE*='#'] {
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c0 *[fill-rule],
 .c0 *[FILL-RULE],
-.c0 *[fill*='#'],
-.c0 *[FILL*='#'] {
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -13589,20 +13589,20 @@ exports[`Select renders default icon 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -13954,20 +13954,20 @@ exports[`Select renders styled select options backwards compatible with legacy
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -14239,20 +14239,20 @@ exports[`Select renders styled select options combining select.options.box &&
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -14522,20 +14522,20 @@ exports[`Select renders styled select options using select.options.container 1`]
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -14995,20 +14995,20 @@ exports[`Select search 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -15646,7 +15646,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -15656,7 +15656,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value=""
 />
@@ -15665,7 +15665,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value="o"
 />
@@ -15688,20 +15688,20 @@ exports[`Select search and select 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -16294,7 +16294,7 @@ exports[`Select search and select 2`] = `
 
 exports[`Select search and select 3`] = `
 "@media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .cOTiXC {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -16304,7 +16304,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value=""
 />
@@ -16313,7 +16313,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 mxlXI"
   type="search"
   value="t"
 />
@@ -16336,20 +16336,20 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -16604,20 +16604,20 @@ exports[`Select select an option 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -16872,20 +16872,20 @@ exports[`Select select an option with complex options 1`] = `
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c5 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c5 *[fill-rule],
 .c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -17082,20 +17082,20 @@ exports[`Select select an option with enter 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -17350,20 +17350,20 @@ exports[`Select select an option with keypress 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -17618,20 +17618,20 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -17886,20 +17886,20 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -18153,28 +18153,28 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 
 exports[`Select select option by typing should not break if caller passes JSX 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 ioQEen"
 >
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+    class="StyledButton-sc-323bzc-0 cUEMKZ StyledSelect__StyledSelectDropButton-sc-znp66n-5 iCxWAc"
     id="test-select"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jXUMNe"
+      class="StyledBox-sc-13pk1d4-0 kOZkFt"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 djHtJk"
+        class="StyledBox-sc-13pk1d4-0 iPozMX"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 edcgVv"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+            class="StyledTextInput-sc-1x30a0s-0 kHQyrJ StyledSelect__SelectTextInput-sc-znp66n-4 HENwL"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -18185,12 +18185,12 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 gnAxhJ"
+        class="StyledBox-sc-13pk1d4-0 cOTiXC"
         style="min-width: auto;"
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 jtseoQ"
+          class="StyledIcon-sc-ofa7kd-0 eTQGBW"
           viewBox="0 0 24 24"
         >
           <path
@@ -18223,20 +18223,20 @@ exports[`Select selected 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -18505,20 +18505,20 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -18831,20 +18831,20 @@ exports[`Select should not have accessibility violations 1`] = `
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c9 *[fill-rule],
 .c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -19111,20 +19111,20 @@ exports[`Select size 1`] = `
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c8 *[fill-rule],
 .c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -19629,20 +19629,20 @@ exports[`Select valueLabel with value=0 1`] = `
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill='none'] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }

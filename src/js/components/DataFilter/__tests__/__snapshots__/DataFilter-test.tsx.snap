@@ -3947,20 +3947,20 @@ exports[`DataFilter select multiple options 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4392,20 +4392,20 @@ exports[`DataFilter select multiple options search 1`] = `
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill='none'] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*='#'],
-.c4 *[STROKE*='#'] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c4 *[fill-rule],
 .c4 *[FILL-RULE],
-.c4 *[fill*='#'],
-.c4 *[FILL*='#'] {
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4571,20 +4571,20 @@ exports[`DataFilter select multiple options search 2`] = `
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c11 *[fill-rule],
 .c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5681,52 +5681,52 @@ exports[`DataFilter select multiple options search 2`] = `
 
 exports[`DataFilter select multiple options search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jstWSP {
+  .hftPdQ {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .zPnFT {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .zPnFT {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .vOYHH {
+  .bGaxyQ {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gPKPHc {
+  .dXyapD {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .dmBBcR {
+  .gaLlIu {
     border-radius: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iPXDvR {
+  .krAKRu {
     border-radius: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kYOLuO {
+  .oXyyh {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .biJsVL {
+  .drdMXk {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .EuOQj {
+  .ilMzAg {
     width: 6px;
   }
 }"
@@ -5750,20 +5750,20 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }

@@ -302,20 +302,20 @@ exports[`Tag onRemove 1`] = `
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill='none'] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c7 *[fill-rule],
 .c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -742,20 +742,20 @@ exports[`Tag renders default remove icon 1`] = `
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
 .c6 *[fill-rule],
 .c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
