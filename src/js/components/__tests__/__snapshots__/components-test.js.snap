@@ -1167,6 +1167,7 @@ exports[`Components loads 1`] = `
           "baseline": 500,
           "minSpeed": 200,
         },
+        "data": {},
         "dataTable": {
           "container": {
             "gap": "xsmall",
@@ -3168,6 +3169,7 @@ exports[`Components loads 1`] = `
           "baseline": 500,
           "minSpeed": 200,
         },
+        "data": {},
         "dataTable": {
           "container": {
             "gap": "xsmall",
