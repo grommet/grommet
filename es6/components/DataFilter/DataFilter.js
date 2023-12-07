@@ -10,6 +10,7 @@ import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
+import { getDecimalCount } from '../RangeSelector/RangeSelector';
 
 // empirical constants for when we change inputs
 var maxCheckBoxGroupOptions = 4;
@@ -36,14 +37,24 @@ var generateOptions = function generateOptions(data, property) {
     return 0;
   });
 };
+
+// ensure floating point calculations are in integers
 var alignMax = function alignMax(value, interval) {
-  if (value > 0) return value - value % interval + interval;
-  if (value < 0) return value + value % interval;
+  var multiplier = Math.pow(10, Math.max(getDecimalCount(value), getDecimalCount(interval)));
+  var integerValue = value * multiplier;
+  var integerInterval = interval * multiplier;
+  if (value > 0) return (integerValue - integerValue % integerInterval + integerInterval) / multiplier;
+  if (value < 0) return (integerValue + integerValue % integerInterval) / multiplier;
   return value;
 };
+
+// ensure floating point calculations are in integers
 var alignMin = function alignMin(value, interval) {
-  if (value > 0) return value - value % interval;
-  if (value < 0) return value - value % interval - interval;
+  var multiplier = Math.pow(10, Math.max(getDecimalCount(value), getDecimalCount(interval)));
+  var integerValue = value * multiplier;
+  var integerInterval = interval * multiplier;
+  if (value > 0) return (integerValue - integerValue % integerInterval) / multiplier;
+  if (value < 0) return (integerValue - integerValue % integerInterval - integerInterval) / multiplier;
   return value;
 };
 var booleanOptions = [{
@@ -88,11 +99,15 @@ export var DataFilter = function DataFilter(_ref) {
         return v !== undefined && typeof v !== 'number';
       })) return [uniqueValues, undefined];
       // all values are numeric, treat as range
-      // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
       var delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
       var interval = Number.parseFloat((delta / 3).toPrecision(1));
-      var min = alignMin(uniqueValues[0], interval);
-      var max = alignMax(uniqueValues[uniqueValues.length - 1], interval);
+      var min = uniqueValues[0];
+      var max = uniqueValues[uniqueValues.length - 1];
+      // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
+      if (getDecimalCount(min) > 0 || getDecimalCount(max) > 0) {
+        min = alignMin(min, interval);
+        max = alignMax(max, interval);
+      }
       return [undefined, [min, max]];
     }, [children, data, optionsProp, properties, property, rangeProp, unfilteredData]),
     options = _useMemo[0],
@@ -118,6 +133,27 @@ export var DataFilter = function DataFilter(_ref) {
   if (!content) {
     if (range) {
       var _properties$property4;
+      var step =
+      // from `range` on DataFilter
+      (rangeProp == null ? void 0 : rangeProp.step) || ( // from range in Data `properties`
+      properties == null || (_properties$property4 = properties[property]) == null || (_properties$property4 = _properties$property4.range) == null ? void 0 : _properties$property4.step);
+      if (!step) {
+        // avoid floating point issues where 4.4 - 2 returns 2.4000000000000004
+        // and instead return 2.4 by doing calculations in integers then
+        // restore order of magnitude
+        var multiplicationFactor = Math.pow(10, Math.max(getDecimalCount(range[1]), getDecimalCount(range[0])));
+        var delta = (range[1] * multiplicationFactor - range[0] * multiplicationFactor) / multiplicationFactor;
+        // avoid floating point issues where
+        // 0.012 / 20 returns 0.0006000000000000001
+        // and instead return 0.0006
+        // or 2.8 / 20 returns 0.13999999999999999
+        // and istead return 0.14
+        var decimalCount = getDecimalCount(delta);
+        if (decimalCount) {
+          var multiplier = Math.pow(10, decimalCount);
+          step = multiplier * delta / (multiplier * defaultRangeSteps);
+        } else step = delta / defaultRangeSteps;
+      }
       content = /*#__PURE__*/React.createElement(RangeSelector, {
         "aria-label": ariaLabel,
         id: id,
@@ -126,10 +162,7 @@ export var DataFilter = function DataFilter(_ref) {
         label: true,
         min: range[0],
         max: range[1],
-        step:
-        // from `range` on DataFilter
-        (rangeProp == null ? void 0 : rangeProp.step) || ( // from range in Data `properties`
-        properties == null || (_properties$property4 = properties[property]) == null || (_properties$property4 = _properties$property4.range) == null ? void 0 : _properties$property4.step) || (range[1] - range[0]) / defaultRangeSteps,
+        step: step,
         size: "full",
         round: "small"
       });

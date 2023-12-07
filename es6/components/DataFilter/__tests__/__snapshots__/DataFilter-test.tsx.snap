@@ -969,7 +969,7 @@ exports[`DataFilter noForm 1`] = `
             class="c12"
             style="width: 0px;"
           >
-            2.0999999999999996
+            2.1
           </span>
           <div
             class="c13 c14"
@@ -985,9 +985,9 @@ exports[`DataFilter noForm 1`] = `
             >
               <div
                 aria-label="Lower Bounds"
-                aria-valuemax="4.8999999999999995"
-                aria-valuemin="2.0999999999999996"
-                aria-valuenow="2.0999999999999996"
+                aria-valuemax="4.9"
+                aria-valuemin="2.1"
+                aria-valuenow="2.1"
                 class="c17"
                 role="slider"
                 style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
@@ -1000,7 +1000,7 @@ exports[`DataFilter noForm 1`] = `
             </div>
             <div
               class="c19"
-              style="flex: 3.8 0 0px; cursor: ew-resize;"
+              style="flex: 3.8000000000000003 0 0px; cursor: ew-resize;"
             />
             <div
               class="c16"
@@ -1008,9 +1008,9 @@ exports[`DataFilter noForm 1`] = `
             >
               <div
                 aria-label="Upper Bounds"
-                aria-valuemax="4.8999999999999995"
-                aria-valuemin="2.0999999999999996"
-                aria-valuenow="4.8999999999999995"
+                aria-valuemax="4.9"
+                aria-valuemin="2.1"
+                aria-valuenow="4.9"
                 class="c17"
                 role="slider"
                 style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
@@ -1030,7 +1030,7 @@ exports[`DataFilter noForm 1`] = `
             class="c20"
             style="width: 0px;"
           >
-            4.8999999999999995
+            4.9
           </span>
         </div>
       </form>
@@ -3833,7 +3833,7 @@ exports[`DataFilter renders 1`] = `
                     class="c16"
                     style="width: 0px;"
                   >
-                    2.0999999999999996
+                    2.1
                   </span>
                   <div
                     class="c17 c18"
@@ -3849,9 +3849,9 @@ exports[`DataFilter renders 1`] = `
                     >
                       <div
                         aria-label="Lower Bounds"
-                        aria-valuemax="4.8999999999999995"
-                        aria-valuemin="2.0999999999999996"
-                        aria-valuenow="2.0999999999999996"
+                        aria-valuemax="4.9"
+                        aria-valuemin="2.1"
+                        aria-valuenow="2.1"
                         class="c21"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
@@ -3864,7 +3864,7 @@ exports[`DataFilter renders 1`] = `
                     </div>
                     <div
                       class="c23"
-                      style="flex: 3.8 0 0px; cursor: ew-resize;"
+                      style="flex: 3.8000000000000003 0 0px; cursor: ew-resize;"
                     />
                     <div
                       class="c20"
@@ -3872,9 +3872,9 @@ exports[`DataFilter renders 1`] = `
                     >
                       <div
                         aria-label="Upper Bounds"
-                        aria-valuemax="4.8999999999999995"
-                        aria-valuemin="2.0999999999999996"
-                        aria-valuenow="4.8999999999999995"
+                        aria-valuemax="4.9"
+                        aria-valuemin="2.1"
+                        aria-valuenow="4.9"
                         class="c21"
                         role="slider"
                         style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
@@ -3894,7 +3894,7 @@ exports[`DataFilter renders 1`] = `
                     class="c24"
                     style="width: 0px;"
                   >
-                    4.8999999999999995
+                    4.9
                   </span>
                 </div>
               </div>

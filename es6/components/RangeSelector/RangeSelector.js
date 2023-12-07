@@ -15,6 +15,32 @@ var Container = styled(Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "sc-siof5p-0"
 })(["user-select:none;"]);
+export var getDecimalCount = function getDecimalCount(number) {
+  if (Number.isInteger(number)) {
+    return 0;
+  }
+  // handle small numbers (0.00000001) which javascript
+  // will turn into `e-`
+  if (Math.abs(number) < 1) {
+    var parts = number.toExponential().split('e-');
+    var _decimalPart = parts[0].split('.')[1] || '';
+    return _decimalPart.length + parseInt(parts[1], 10);
+  }
+  var decimalPart = number.toString().split('.')[1] || '';
+  return decimalPart.length;
+};
+
+// avoid floating point issues like 0.15 + 0.3 = 0.44999999999999996
+// and turn into 0.15 + 0.3 = 0.45
+export var valueToStepPrecision = function valueToStepPrecision(value, step, min) {
+  var nearestTrueStep = Math.round((value - min) / step) * step + min;
+  return Number(nearestTrueStep.toFixed(getDecimalCount(step)));
+};
+
+// ensure values are within min/max
+var clamp = function clamp(value, min, max) {
+  return Math.min(Math.max(min, value), max);
+};
 var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var color = _ref.color,
     _ref$defaultValues = _ref.defaultValues,
@@ -58,18 +84,31 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var labelWidthRef = useRef(0);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
-      // ensure values are within min/max
       value: valuesProp == null ? void 0 : valuesProp.map(function (n) {
-        return Math.min(max, Math.max(min, n));
+        return clamp(n, min, max);
       }),
       initialValue: defaultValues
     }),
     values = _formContext$useFormI[0],
     setValues = _formContext$useFormI[1];
   var change = useCallback(function (nextValues) {
-    setValues(nextValues);
-    if (onChange) onChange(nextValues);
-  }, [onChange, setValues]);
+    var nextMin = nextValues[0],
+      nextMax = nextValues[1];
+    // only adjust value to step precision if it's not the min/max
+    if (nextMin !== min && nextMin !== max) nextMin = valueToStepPrecision(nextValues[0], step, min);
+    if (nextMax !== min && nextMax !== max) nextMax = valueToStepPrecision(nextValues[1], step, min);
+
+    // ensure values are within min/max
+    nextMin = clamp(nextMin, min, max);
+    nextMax = clamp(nextMax, min, max);
+
+    // make sure this is only called if both of the values
+    // are actually distinct from the previous values
+    if (nextMin !== values[0] || nextMax !== values[1]) {
+      setValues([nextMin, nextMax]);
+      if (onChange) onChange([nextMin, nextMax]);
+    }
+  }, [onChange, setValues, step, max, min, values]);
   var valueForMouseCoord = useCallback(function (event) {
     var rect = containerRef.current.getBoundingClientRect();
     var value;
@@ -210,12 +249,14 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onTouchStart: function onTouchStart() {
       return setChanging('lower');
     },
-    onDecrease: lower - step >= min ? function () {
+    onDecrease: function onDecrease() {
       return change([lower - step, upper]);
-    } : undefined,
+    },
     onIncrease: lower + step <= upper ? function () {
       return change([lower + step, upper]);
-    } : undefined
+    } : function () {
+      return change([upper, upper]);
+    }
   }), /*#__PURE__*/React.createElement(Box, _extends({
     style: {
       flex: upper - lower + 1 + " 0 0",
@@ -257,10 +298,12 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     onDecrease: upper - step >= lower ? function () {
       return change([lower, upper - step]);
-    } : undefined,
-    onIncrease: upper + step <= max ? function () {
+    } : function () {
+      return change([lower, lower]);
+    },
+    onIncrease: function onIncrease() {
       return change([lower, upper + step]);
-    } : undefined
+    }
   }), /*#__PURE__*/React.createElement(Box, _extends({
     style: {
       flex: max - upper + " 0 0"
