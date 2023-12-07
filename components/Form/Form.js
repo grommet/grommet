@@ -425,9 +425,9 @@ var Form = exports.Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
       (0, _react.useEffect)(function () {
         if (name &&
         // we have somewhere to put this
-        componentValue !== undefined &&
+        componentValue !== undefined && (
         // input driving
-        componentValue !== formValue // don't already have it
+        Array.isArray(componentValue) && Array.isArray(formValue) ? componentValue.toString() !== formValue.toString() : componentValue !== formValue) // don't already have it
         ) {
           setValueState(function (prevValue) {
             return setFieldValue(name, componentValue, prevValue);

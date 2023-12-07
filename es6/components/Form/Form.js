@@ -419,9 +419,9 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       useEffect(function () {
         if (name &&
         // we have somewhere to put this
-        componentValue !== undefined &&
+        componentValue !== undefined && (
         // input driving
-        componentValue !== formValue // don't already have it
+        Array.isArray(componentValue) && Array.isArray(formValue) ? componentValue.toString() !== formValue.toString() : componentValue !== formValue) // don't already have it
         ) {
           setValueState(function (prevValue) {
             return setFieldValue(name, componentValue, prevValue);
