@@ -91,7 +91,6 @@ Grommet is produced using this great tool:
 [grommet]: https://grommet.io/
 [medium]: https://medium.com/grommet-io
 [npm]: https://www.npmjs.com/package/grommet
-[playground]: https://codesandbox.io/s/github/grommet/grommet-sandbox
 [prettier]: https://github.com/prettier/prettier
 [sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
 [sandbox]: https://codesandbox.io/p/sandbox/m7mml8l0zj?file=%2Findex.js
