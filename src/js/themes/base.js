@@ -1581,6 +1581,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         width: '2px',
       },
+      // background: {
+      //   color: undefined,
+      // },
       check: {
         radius: '100%',
         // background: {
@@ -1864,6 +1867,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       value: {
         weight: 600,
+      },
+      icons: {
+        remove: FormClose,
       },
     },
     text: {

@@ -1368,7 +1368,7 @@ exports[`Data onView 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1637,7 +1637,7 @@ exports[`Data onView 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -3829,30 +3829,6 @@ exports[`Data properties when property is an array 2`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -3860,9 +3836,7 @@ exports[`Data properties when property is an array 2`] = `
 <button
   aria-label="Open filters"
   class="c0"
-  data-g-tabindex="none"
   id="data--filters-control"
-  tabindex="-1"
   type="button"
 >
   <svg

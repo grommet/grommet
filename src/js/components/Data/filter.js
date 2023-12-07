@@ -55,8 +55,8 @@ export const filter = (data, view, properties) => {
         )
           return (
             typeof value !== 'number' ||
-            value <= filterValue.min ||
-            value >= filterValue.max
+            value < filterValue.min ||
+            value > filterValue.max
           );
 
         // options case

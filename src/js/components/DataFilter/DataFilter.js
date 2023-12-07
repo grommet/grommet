@@ -11,6 +11,7 @@ import { DataFilterPropTypes } from './propTypes';
 // empirical constants for when we change inputs
 const maxCheckBoxGroupOptions = 4;
 const minSelectSearchOptions = 10;
+const defaultRangeSteps = 20;
 
 const getValueAt = (valueObject, pathArg) => {
   if (valueObject === undefined) return undefined;
@@ -22,7 +23,18 @@ const getValueAt = (valueObject, pathArg) => {
 const generateOptions = (data, property) =>
   Array.from(new Set(data.map((d) => getValueAt(d, property))))
     .filter((v) => v !== undefined && v !== '')
-    .sort();
+    // ensure number values are sorted appropriately
+    // [132, 15, 100] --> [15, 100, 132]
+    // empty sort() would result in [100, 132, 15]
+    .sort((a, b) => {
+      if (typeof a === 'number' && typeof b === 'number') return a - b;
+      if (
+        (typeof a === 'string' && typeof b === 'string') ||
+        (typeof a === 'boolean' && typeof b === 'boolean')
+      )
+        return a < b ? -1 : 1;
+      return 0;
+    });
 
 const alignMax = (value, interval) => {
   if (value > 0) return value - (value % interval) + interval;
@@ -63,7 +75,8 @@ export const DataFilter = ({
     const optionsIn = optionsProp || properties?.[property]?.options;
     const rangeIn = rangeProp || properties?.[property]?.range;
     if (optionsIn) return [optionsIn, undefined];
-    if (rangeIn) return [undefined, [rangeIn.min, rangeIn.max]];
+    if (rangeIn && 'min' in rangeIn && 'max' in rangeIn)
+      return [undefined, [rangeIn.min, rangeIn.max]];
 
     // generate options from all values for property
     const uniqueValues = generateOptions(unfilteredData || data, property);
@@ -105,18 +118,30 @@ export const DataFilter = ({
 
   const id = `${dataId}-${property}`;
 
+  // only add aria-label for no form examples
+  const ariaLabel = noForm
+    ? `${properties?.[property]?.label || property}`
+    : undefined;
+
   let content = children;
   if (!content) {
     if (range) {
       content = (
         <RangeSelector
+          aria-label={ariaLabel}
           id={id}
           name={`${property}._range`}
           defaultValues={range}
           label
           min={range[0]}
           max={range[1]}
-          step={(range[1] - range[0]) / 20}
+          step={
+            // from `range` on DataFilter
+            rangeProp?.step ||
+            // from range in Data `properties`
+            properties?.[property]?.range?.step ||
+            (range[1] - range[0]) / defaultRangeSteps
+          }
           size="full"
           round="small"
         />
@@ -125,13 +150,26 @@ export const DataFilter = ({
       if (options.length === 2 && options[1] === true && options[0] === false) {
         // special case boolean properties
         content = (
-          <CheckBoxGroup id={id} name={property} options={booleanOptions} />
+          <CheckBoxGroup
+            aria-label={ariaLabel}
+            id={id}
+            name={property}
+            options={booleanOptions}
+          />
         );
       } else if (options.length <= maxCheckBoxGroupOptions) {
-        content = <CheckBoxGroup id={id} name={property} options={options} />;
+        content = (
+          <CheckBoxGroup
+            aria-label={ariaLabel}
+            id={id}
+            name={property}
+            options={options}
+          />
+        );
       } else {
         content = (
           <SelectMultiple
+            aria-label={ariaLabel}
             id={id}
             name={property}
             showSelectedInline

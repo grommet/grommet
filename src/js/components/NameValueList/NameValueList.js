@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from './NameValueListContext';
+import { isSmall } from '../../utils/responsive';
 
 const NameValueList = forwardRef(
   (
@@ -25,7 +26,7 @@ const NameValueList = forwardRef(
     let columns;
     const valueWidth = valueProps?.width || theme.nameValueList.value.width;
     const nameWidth = nameProps?.width || theme.nameValueList.name.width;
-    if (size === 'small' || layout === 'grid')
+    if (isSmall(size) || layout === 'grid')
       columns = {
         count: 'fit',
         size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth,
@@ -39,7 +40,7 @@ const NameValueList = forwardRef(
 
     let { gap } = theme.nameValueList;
     if (
-      (pairProps.direction === 'column' || size === 'small') &&
+      (pairProps.direction === 'column' || isSmall(size)) &&
       theme.nameValueList.pair?.column?.gap
     ) {
       gap = theme.nameValueList.pair.column.gap;

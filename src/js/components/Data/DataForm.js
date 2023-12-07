@@ -229,6 +229,23 @@ const normalizeValue = (nextValue, prevValue, views) => {
   return result;
 };
 
+// 300ms was chosen empirically as a reasonable default
+const DEBOUNCE_TIMEOUT = 300;
+
+const debounce = (func, timeout = DEBOUNCE_TIMEOUT) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func(...args);
+    }, timeout);
+  };
+};
+
+const debounceSearch = debounce((onView, nextValue, views) =>
+  onView(formValueToView(nextValue, views)),
+);
+
 export const DataForm = ({
   children,
   footer,
@@ -271,7 +288,12 @@ export const DataForm = ({
       setChanged(true);
       if (updateOn === 'change') {
         if (onTouched) onTouched(transformTouched(touched, nextValue));
-        onView(formValueToView(nextValue, views));
+        // debounce search
+        if (touched[formSearchKey]) {
+          debounceSearch(onView, nextValue, views);
+        } else {
+          onView(formValueToView(nextValue, views));
+        }
       }
     },
     [formValue, onTouched, onView, updateOn, views],
@@ -294,7 +316,7 @@ export const DataForm = ({
         {footer !== false && updateOn === 'submit' && (
           <Footer
             flex={false}
-            margin={{ top: 'small' }}
+            margin={{ top: 'medium' }}
             pad={{ horizontal: pad, bottom: pad }}
             gap="small"
           >
