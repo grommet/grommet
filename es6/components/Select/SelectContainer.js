@@ -79,7 +79,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     return clear && hasValue && showAtPosition;
   }, [clear, multiple, value]);
   var isDisabled = useDisabled(disabled, disabledKey, options, valueKey || labelKey);
-  var _useState = useState(usingKeyboard && !shouldShowClearButton('top') ? 0 : -1),
+  var _useState = useState(usingKeyboard && !shouldShowClearButton('top') && !onSearch ? 0 : -1),
     activeIndex = _useState[0],
     setActiveIndex = _useState[1];
   var _useState2 = useState(usingKeyboard),
@@ -104,7 +104,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       var clearButton = clearRef.current;
       if (onSearch) {
         var searchInput = searchRef.current;
-        if (searchInput && searchInput.focus) {
+        if (searchInput && searchInput.focus && !activeRef.current) {
           setFocusWithoutScroll(searchInput);
         }
       } else if (clear && clearButton && clearButton.focus && clear.position !== 'bottom') {
