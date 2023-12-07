@@ -21,7 +21,7 @@ Before opening an issue or pull request, please read the [Contributing] guide.
 
 You can install Grommet using either of the methods given below.
 
-**NOTE: You will need to install styled-components version 5 to be compatible with Grommet latest version**.
+**NOTE: Currently Grommet is only compatible with styled-components v5. We are actively working to add support for v6.**.
 
 For npm users:
 
