@@ -27,7 +27,7 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
   const id = idProp || `${dataId}--search`;
 
   useEffect(() => {
-    if (inDataForm) addToolbarKey('_search');
+    if (!inDataForm) addToolbarKey('_search');
   }, [addToolbarKey, inDataForm]);
 
   let content = skeleton ? null : (
