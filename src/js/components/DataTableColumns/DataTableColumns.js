@@ -4,6 +4,7 @@ import { Splits } from 'grommet-icons/icons/Splits';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormContext } from '../Form/FormContext';
 import { DropButton } from '../DropButton';
 import { List } from '../List';
@@ -147,7 +148,7 @@ const Content = ({ drop, options, ...rest }) => {
 
 export const DataTableColumns = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
 
@@ -157,7 +158,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   });
 
   let content = <Content drop={drop} options={options} />;
-  if (noForm)
+  if (!inDataForm)
     content = (
       <DataForm footer={false} updateOn="change">
         {content}

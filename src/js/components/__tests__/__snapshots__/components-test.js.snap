@@ -412,12 +412,10 @@ exports[`Components loads 1`] = `
     "_currentRenderer": null,
     "_currentRenderer2": null,
     "_currentValue": {
-      "noForm": true,
       "useFormField": [Function],
       "useFormInput": [Function],
     },
     "_currentValue2": {
-      "noForm": true,
       "useFormField": [Function],
       "useFormInput": [Function],
     },

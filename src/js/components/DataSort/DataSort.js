@@ -4,7 +4,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
@@ -78,13 +78,13 @@ const Content = ({ options: optionsArg }) => {
 
 export const DataSort = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
   const [showContent, setShowContent] = useState();
 
   let content = <Content options={options} />;
 
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+  if (!inDataForm) content = <DataForm footer={false}>{content}</DataForm>;
 
   if (!drop) return content;
 
