@@ -43,8 +43,9 @@ const DataToolbar = () => {
       <DataFilters updateOn="change">
         <DataFilter
           property="location"
-          // override theme margin to align with search + filter
+          // override HPE theme margin to align with search + filter
           contentProps={{ margin: { bottom: 'none', top: 'xsmall' } }}
+          // override Grommet theme margin to align with search + filter
           margin="none"
         >
           <SelectMultiple
