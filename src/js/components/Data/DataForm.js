@@ -258,17 +258,10 @@ export const DataForm = ({
   onDone,
   onTouched,
   pad,
-  updateOn: updateOnProp,
+  updateOn = 'submit',
   ...rest
 }) => {
-  const {
-    messages,
-    onView,
-    updateOn: updateOnData,
-    view,
-    views,
-  } = useContext(DataContext);
-  const updateOn = updateOnProp ?? updateOnData;
+  const { messages, onView, view, views } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
   const [changed, setChanged] = useState();

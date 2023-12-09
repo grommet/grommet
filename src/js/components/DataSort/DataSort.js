@@ -1,5 +1,6 @@
 import React, { useContext, useMemo, useState } from 'react';
 import { Descend } from 'grommet-icons/icons/Descend';
+import { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { DataForm } from '../Data/DataForm';
@@ -80,11 +81,17 @@ export const DataSort = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { noForm } = useContext(FormContext);
   const { format } = useContext(MessageContext);
+  const theme = useContext(ThemeContext);
   const [showContent, setShowContent] = useState();
 
   let content = <Content options={options} />;
 
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+  if (noForm)
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
 
   if (!drop) return content;
 
@@ -95,7 +102,7 @@ export const DataSort = ({ drop, options, ...rest }) => {
         id: 'dataSort.open',
         messages: messages?.dataSort,
       })}
-      kind="toolbar"
+      kind={theme.data.button?.kind}
       icon={<Descend />}
       dropProps={dropProps}
       dropContent={<Box pad="small">{content}</Box>}
