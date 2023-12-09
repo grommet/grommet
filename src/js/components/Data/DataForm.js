@@ -68,7 +68,7 @@ const flatten = (formValue, options) => {
       !Array.isArray(result[i]) &&
       (options?.full || !result[i][formRangeKey])
     ) {
-      const temp = flatten(result[i]);
+      const temp = flatten(result[i], options);
       Object.keys(temp).forEach((j) => {
         // Store temp in result
         // ignore empty arrays
@@ -188,12 +188,18 @@ const resetPage = (nextFormValue, prevFormValue) => {
 };
 
 const transformTouched = (touched, value) => {
+  // DataFilters expects values for keys touched to evaluate to falsey to 
+  // not cause a badge. However any property value that is set back to its
+  // default/initial value that isn't undefined/null/false/0 will cause a
+  // badge this is particulary true for a 'range' which will always have
+  // a value.
+  //
+  // Should this instead determine touched by comparing against
+  // initial/default values?
+  //  
   const result = {};
   Object.keys(touched).forEach((key) => {
-    // special case _range fields
-    const parts = key.split('.');
-    if (parts[1] === formRangeKey) result[key] = value[parts[0]];
-    else result[key] = flatten(value, { full: true })[key];
+    result[key] = flatten(value, { full: true })[key];
   });
   return result;
 };
