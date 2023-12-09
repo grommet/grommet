@@ -4,6 +4,7 @@ exports.__esModule = true;
 exports.DataSort = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Descend = require("grommet-icons/icons/Descend");
+var _styledComponents = require("styled-components");
 var _DataContext = require("../../contexts/DataContext");
 var _Box = require("../Box");
 var _DataForm = require("../Data/DataForm");
@@ -77,6 +78,7 @@ var Content = function Content(_ref) {
   }))];
 };
 var DataSort = exports.DataSort = function DataSort(_ref2) {
+  var _theme$data$button;
   var drop = _ref2.drop,
     options = _ref2.options,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
@@ -87,6 +89,7 @@ var DataSort = exports.DataSort = function DataSort(_ref2) {
     noForm = _useContext4.noForm;
   var _useContext5 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext5.format;
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var _useState = (0, _react.useState)(),
     showContent = _useState[0],
     setShowContent = _useState[1];
@@ -94,7 +97,8 @@ var DataSort = exports.DataSort = function DataSort(_ref2) {
     options: options
   });
   if (noForm) content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
-    footer: false
+    footer: false,
+    updateOn: "change"
   }, content);
   if (!drop) return content;
   var control = /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, _extends({
@@ -103,7 +107,7 @@ var DataSort = exports.DataSort = function DataSort(_ref2) {
       id: 'dataSort.open',
       messages: messages == null ? void 0 : messages.dataSort
     }),
-    kind: "toolbar",
+    kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
     icon: /*#__PURE__*/_react["default"].createElement(_Descend.Descend, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/_react["default"].createElement(_Box.Box, {

@@ -5,6 +5,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
@@ -174,6 +175,7 @@ var Content = function Content(_ref) {
   })))));
 };
 export var DataTableColumns = function DataTableColumns(_ref5) {
+  var _theme$data$button;
   var drop = _ref5.drop,
     options = _ref5.options,
     rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
@@ -184,6 +186,7 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
     noForm = _useContext5.noForm;
   var _useContext6 = useContext(MessageContext),
     format = _useContext6.format;
+  var theme = useContext(ThemeContext);
   var _useState3 = useState(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];
@@ -206,7 +209,7 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
       id: 'dataTableColumns.open',
       messages: messages == null ? void 0 : messages.dataTableColumns
     }),
-    kind: "toolbar",
+    kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
     icon: /*#__PURE__*/React.createElement(Splits, null),
     tip: tip,
     dropProps: dropProps,

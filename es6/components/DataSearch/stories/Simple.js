@@ -17,8 +17,7 @@ export var Simple = function Simple() {
     }), /*#__PURE__*/React.createElement(Paragraph, {
       color: "text-weak"
     }, "Note: Results are filtered as you type, checking all fields."), /*#__PURE__*/React.createElement(Data, {
-      data: DATA,
-      updateOn: "change"
+      data: DATA
     }, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(DataTable, {
       columns: columns
     })))

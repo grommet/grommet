@@ -22,8 +22,7 @@ var Responsive = exports.Responsive = function Responsive() {
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
       color: "text-weak"
     }, "Note: Results are filtered as you type, checking all fields."), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
-      data: _data.DATA,
-      updateOn: "change"
+      data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_DataSearch.DataSearch, {
       responsive: true
     }), /*#__PURE__*/_react["default"].createElement(_grommet.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {

@@ -16,8 +16,7 @@ export var Drop = function Drop() {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/React.createElement(Data, {
-      data: DATA,
-      updateOn: "change"
+      data: DATA
     }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSort, {
       drop: true
     })), /*#__PURE__*/React.createElement(DataTable, {

@@ -16,8 +16,7 @@ export var Simple = function Simple() {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/React.createElement(Data, {
-      data: DATA,
-      updateOn: "change"
+      data: DATA
     }, /*#__PURE__*/React.createElement(DataSort, null), /*#__PURE__*/React.createElement(DataTable, {
       columns: columns
     })))

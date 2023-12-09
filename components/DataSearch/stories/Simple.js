@@ -22,8 +22,7 @@ var Simple = exports.Simple = function Simple() {
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
       color: "text-weak"
     }, "Note: Results are filtered as you type, checking all fields."), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
-      data: _data.DATA,
-      updateOn: "change"
+      data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_DataSearch.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.columns
     })))

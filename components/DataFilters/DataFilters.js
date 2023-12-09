@@ -5,8 +5,10 @@ exports.DataFilters = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Filter = require("grommet-icons/icons/Filter");
 var _Close = require("grommet-icons/icons/Close");
+var _styledComponents = require("styled-components");
 var _Box = require("../Box");
 var _Button = require("../Button");
+var _DataClearFilters = require("../DataClearFilters");
 var _DataFilter = require("../DataFilter");
 var _DataForm = require("../Data/DataForm");
 var _DataSort = require("../DataSort");
@@ -17,7 +19,7 @@ var _Layer = require("../Layer");
 var _DataContext = require("../../contexts/DataContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _excluded = ["drop", "children", "heading", "layer"];
+var _excluded = ["drop", "children", "clearFilters", "heading", "layer", "updateOn"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -32,55 +34,69 @@ var layerProps = {
   full: 'vertical',
   position: 'right'
 };
+var defaultTouched = {};
 var DataFilters = exports.DataFilters = function DataFilters(_ref) {
   var drop = _ref.drop,
     children = _ref.children,
+    _ref$clearFilters = _ref.clearFilters,
+    clearFilters = _ref$clearFilters === void 0 ? true : _ref$clearFilters,
     heading = _ref.heading,
     layer = _ref.layer,
+    updateOn = _ref.updateOn,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
-    clearFilters = _useContext.clearFilters,
     dataId = _useContext.id,
     messages = _useContext.messages,
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData,
+    filtersCleared = _useContext.filtersCleared,
+    setFiltersCleared = _useContext.setFiltersCleared,
     view = _useContext.view;
   var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext2.format;
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var _useState = (0, _react.useState)(),
     showContent = _useState[0],
     setShowContent = _useState[1];
   // touched is a map of form field name to its value, it only has fields that
   // were changed as part of the DataForm here. This is so we can track based
   // on what's inside DataFilters as opposed to trying to track from the view
-  // object.
-  var _useState2 = (0, _react.useState)({}),
+  // object, since touched is used as logic for whether to show badge or not
+  var _useState2 = (0, _react.useState)(defaultTouched),
     touched = _useState2[0],
     setTouched = _useState2[1];
+
+  // if filters have been applied by this DataFilters, update
+  // the DataContext that filters are not in a "cleared" state
+  (0, _react.useEffect)(function () {
+    setFiltersCleared(!Object.keys(touched).length);
+  }, [touched, setFiltersCleared]);
+
+  // if filters have been cleared via clearFilters in DataContext,
+  // reset touched to default state so badge is removed
+  (0, _react.useEffect)(function () {
+    if (filtersCleared) {
+      setTouched(defaultTouched);
+    }
+  }, [filtersCleared]);
   var controlled = (0, _react.useMemo)(function () {
     return drop || layer;
   }, [drop, layer]);
-  // generate the badge value based on touched fields that have a value
+
+  // generate the badge value based on touched fields that have a value.
+  // only show the badge based off of what's included in this DataFilters
+  // since multiple DataFilters may exist
   var badge = (0, _react.useMemo)(function () {
     return controlled && Object.keys(touched).filter(function (k) {
       return touched[k];
     }).length || undefined;
   }, [controlled, touched]);
-  var clearControl = badge && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  var clearControl = badge && clearFilters && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: false,
     margin: {
       start: 'small'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    label: format({
-      id: 'dataFilters.clear',
-      messages: messages == null ? void 0 : messages.dataFilters
-    }),
-    onClick: function onClick() {
-      setTouched({});
-      clearFilters();
-    }
-  }));
+  }, /*#__PURE__*/_react["default"].createElement(_DataClearFilters.DataClearFilters, null));
   var content = children;
   if (_react.Children.count(children) === 0) {
     var filtersFor;
@@ -115,7 +131,8 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
           return _extends({}, prevTouched, currentTouched);
         })
       );
-    } : undefined
+    } : undefined,
+    updateOn: updateOn
   }, !controlled ? rest : {
     fill: 'vertical'
   }), layer && /*#__PURE__*/_react["default"].createElement(_Header.Header, null, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
@@ -141,11 +158,12 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
   });
   var control;
   if (drop) {
+    var _theme$data$button;
     control = /*#__PURE__*/_react["default"].createElement(_DropButton.DropButton, {
       id: dataId + "--filters-control",
       tip: tip,
       "aria-label": tip,
-      kind: "toolbar",
+      kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
       icon: /*#__PURE__*/_react["default"].createElement(_Filter.Filter, null),
       hoverIndicator: true,
       dropProps: dropProps,
@@ -160,11 +178,12 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
       }
     });
   } else if (layer) {
+    var _theme$data$button2;
     control = /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       id: dataId + "--filters-control",
       tip: tip,
       "aria-label": tip,
-      kind: "toolbar",
+      kind: (_theme$data$button2 = theme.data.button) == null ? void 0 : _theme$data$button2.kind,
       hoverIndicator: true,
       icon: /*#__PURE__*/_react["default"].createElement(_Filter.Filter, null),
       badge: badge,

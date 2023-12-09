@@ -45,8 +45,8 @@ describe('DataTableColumns', () => {
     const onView = jest.fn();
     const { container, getByRole, getByText } = render(
       <Grommet>
-        <Data id="test-data" data={data} updateOn="change" onView={onView}>
-          <DataFilters>
+        <Data id="test-data" data={data} onView={onView}>
+          <DataFilters updateOn="change">
             <DataTableColumns drop options={['name', 'size', 'age']} />
           </DataFilters>
           <DataTable
@@ -87,8 +87,8 @@ describe('DataTableColumns', () => {
     const onView = jest.fn();
     const { container, getByPlaceholderText, getByRole, getByText } = render(
       <Grommet>
-        <Data id="test-data" data={data} updateOn="change" onView={onView}>
-          <DataFilters>
+        <Data id="test-data" data={data} onView={onView}>
+          <DataFilters updateOn="change">
             <DataTableColumns drop options={['name', 'size']} />
           </DataFilters>
           <DataTable

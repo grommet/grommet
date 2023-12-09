@@ -21,7 +21,6 @@ if (process.env.NODE_ENV !== 'production') {
     properties: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].shape({})]),
     toolbar: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['search', 'filters'])]),
     total: _propTypes["default"].number,
-    updateOn: _propTypes["default"].oneOf(['change', 'submit']),
     view: _propTypes["default"].oneOfType([_propTypes["default"].string, viewType])
   };
 }

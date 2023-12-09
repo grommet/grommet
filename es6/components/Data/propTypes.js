@@ -16,7 +16,6 @@ if (process.env.NODE_ENV !== 'production') {
     properties: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.shape({})]),
     toolbar: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['search', 'filters'])]),
     total: PropTypes.number,
-    updateOn: PropTypes.oneOf(['change', 'submit']),
     view: PropTypes.oneOfType([PropTypes.string, viewType])
   };
 }

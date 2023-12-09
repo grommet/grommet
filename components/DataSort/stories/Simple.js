@@ -21,8 +21,7 @@ var Simple = exports.Simple = function Simple() {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
-      data: _data.DATA,
-      updateOn: "change"
+      data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_DataSort.DataSort, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.columns
     })))

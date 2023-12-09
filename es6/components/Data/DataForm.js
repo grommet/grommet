@@ -242,15 +242,14 @@ export var DataForm = function DataForm(_ref) {
     onDone = _ref.onDone,
     onTouched = _ref.onTouched,
     pad = _ref.pad,
-    updateOnProp = _ref.updateOn,
+    _ref$updateOn = _ref.updateOn,
+    updateOn = _ref$updateOn === void 0 ? 'submit' : _ref$updateOn,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
     messages = _useContext.messages,
     onView = _useContext.onView,
-    updateOnData = _useContext.updateOn,
     view = _useContext.view,
     views = _useContext.views;
-  var updateOn = updateOnProp != null ? updateOnProp : updateOnData;
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
   var _useState = useState(viewToFormValue(view)),

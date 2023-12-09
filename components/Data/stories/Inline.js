@@ -59,7 +59,8 @@ var Inline = exports.Inline = function Inline() {
     }));
   } else {
     sidebar = /*#__PURE__*/_react["default"].createElement(Filters, {
-      search: true
+      search: true,
+      updateOn: "change"
     });
   }
   return (
@@ -78,8 +79,7 @@ var Inline = exports.Inline = function Inline() {
           label: 'Date'
         }
       },
-      data: DATA,
-      updateOn: sidebar ? 'change' : undefined
+      data: DATA
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: {
         top: 'medium'

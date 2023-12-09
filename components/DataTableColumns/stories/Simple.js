@@ -30,8 +30,7 @@ var Simple = exports.Simple = function Simple() {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
-      data: _data.DATA,
-      updateOn: "change"
+      data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, null, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_DataTableColumns.DataTableColumns, {
       drop: true,
       options: options

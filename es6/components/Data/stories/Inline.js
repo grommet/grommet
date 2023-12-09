@@ -53,7 +53,8 @@ export var Inline = function Inline() {
     }));
   } else {
     sidebar = /*#__PURE__*/React.createElement(Filters, {
-      search: true
+      search: true,
+      updateOn: "change"
     });
   }
   return (
@@ -72,8 +73,7 @@ export var Inline = function Inline() {
           label: 'Date'
         }
       },
-      data: DATA,
-      updateOn: sidebar ? 'change' : undefined
+      data: DATA
     }, /*#__PURE__*/React.createElement(Box, {
       pad: {
         top: 'medium'

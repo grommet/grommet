@@ -1,4 +1,4 @@
-var _excluded = ["children", "data", "defaultView", "filteredTotal", "id", "messages", "onView", "properties", "toolbar", "total", "updateOn", "view", "views"];
+var _excluded = ["children", "data", "defaultView", "filteredTotal", "id", "messages", "onView", "properties", "toolbar", "total", "view", "views"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useContext, useEffect, useMemo, useState } from 'react';
@@ -35,8 +35,6 @@ export var Data = function Data(_ref) {
     properties = _ref.properties,
     toolbar = _ref.toolbar,
     total = _ref.total,
-    _ref$updateOn = _ref.updateOn,
-    updateOn = _ref$updateOn === void 0 ? 'submit' : _ref$updateOn,
     viewProp = _ref.view,
     views = _ref.views,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -60,6 +58,11 @@ export var Data = function Data(_ref) {
       };
     return filter(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
+
+  // used by DataFilters to determine if badge should appear on Filter button
+  var _useState3 = useState(true),
+    filtersCleared = _useState3[0],
+    setFiltersCleared = _useState3[1];
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
@@ -93,12 +96,14 @@ export var Data = function Data(_ref) {
       id: id,
       messages: messages,
       properties: properties,
-      updateOn: updateOn,
+      filtersCleared: filtersCleared,
+      setFiltersCleared: setFiltersCleared,
       view: view,
       views: views
     }, result);
     value.clearFilters = function () {
       var nextView = defaultView;
+      setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
     };
@@ -114,7 +119,7 @@ export var Data = function Data(_ref) {
     };
     value.toolbarKeys = toolbarKeys;
     return value;
-  }, [defaultView, id, messages, onView, properties, result, toolbarKeys, updateOn, view, views]);
+  }, [defaultView, id, messages, filtersCleared, onView, properties, result, toolbarKeys, view, views]);
   var toolbarContent;
   if (toolbar) {
     toolbarContent = [/*#__PURE__*/React.createElement(Toolbar, {

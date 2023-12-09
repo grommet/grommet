@@ -700,6 +700,11 @@ export interface ThemeType {
     minSpeed?: number;
     baseline?: number;
   };
+  data?: {
+    button?: {
+      kind?: string;
+    };
+  };
   dateInput?: {
     container?: {
       round?: RoundType;

@@ -14,7 +14,7 @@ var _DataContext = require("../../contexts/DataContext");
 var _propTypes = require("./propTypes");
 var _MessageContext = require("../../contexts/MessageContext");
 var _filter = require("./filter");
-var _excluded = ["children", "data", "defaultView", "filteredTotal", "id", "messages", "onView", "properties", "toolbar", "total", "updateOn", "view", "views"];
+var _excluded = ["children", "data", "defaultView", "filteredTotal", "id", "messages", "onView", "properties", "toolbar", "total", "view", "views"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -41,8 +41,6 @@ var Data = exports.Data = function Data(_ref) {
     properties = _ref.properties,
     toolbar = _ref.toolbar,
     total = _ref.total,
-    _ref$updateOn = _ref.updateOn,
-    updateOn = _ref$updateOn === void 0 ? 'submit' : _ref$updateOn,
     viewProp = _ref.view,
     views = _ref.views,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -66,6 +64,11 @@ var Data = exports.Data = function Data(_ref) {
       };
     return (0, _filter.filter)(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
+
+  // used by DataFilters to determine if badge should appear on Filter button
+  var _useState3 = (0, _react.useState)(true),
+    filtersCleared = _useState3[0],
+    setFiltersCleared = _useState3[1];
   var announce = (0, _react.useContext)(_contexts.AnnounceContext);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
@@ -99,12 +102,14 @@ var Data = exports.Data = function Data(_ref) {
       id: id,
       messages: messages,
       properties: properties,
-      updateOn: updateOn,
+      filtersCleared: filtersCleared,
+      setFiltersCleared: setFiltersCleared,
       view: view,
       views: views
     }, result);
     value.clearFilters = function () {
       var nextView = defaultView;
+      setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
     };
@@ -120,7 +125,7 @@ var Data = exports.Data = function Data(_ref) {
     };
     value.toolbarKeys = toolbarKeys;
     return value;
-  }, [defaultView, id, messages, onView, properties, result, toolbarKeys, updateOn, view, views]);
+  }, [defaultView, id, messages, filtersCleared, onView, properties, result, toolbarKeys, view, views]);
   var toolbarContent;
   if (toolbar) {
     toolbarContent = [/*#__PURE__*/_react["default"].createElement(_Toolbar.Toolbar, {

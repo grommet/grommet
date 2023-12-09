@@ -9,7 +9,9 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     drop: _propTypes["default"].bool,
     heading: _propTypes["default"].string,
-    layer: _propTypes["default"].bool
+    layer: _propTypes["default"].bool,
+    clearFilters: _propTypes["default"].bool,
+    updateOn: _propTypes["default"].oneOf(['change', 'submit'])
   };
 }
 var DataFiltersPropTypes = exports.DataFiltersPropTypes = PropType;

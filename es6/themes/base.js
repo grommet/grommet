@@ -838,6 +838,11 @@ export var generate = function generate(baseSpacing, scale) {
       minSpeed: 200,
       baseline: 500
     },
+    data: {
+      // button: {
+      //   kind: undefined,
+      // },
+    },
     dateInput: {
       container: {
         round: 'xxsmall'

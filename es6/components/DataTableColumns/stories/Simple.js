@@ -26,8 +26,7 @@ export var Simple = function Simple() {
       status: "info",
       message: "Data is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/React.createElement(Data, {
-      data: DATA,
-      updateOn: "change"
+      data: DATA
     }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataTableColumns, {
       drop: true,
       options: options

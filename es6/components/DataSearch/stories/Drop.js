@@ -17,8 +17,7 @@ export var Drop = function Drop() {
     }), /*#__PURE__*/React.createElement(Paragraph, {
       color: "text-weak"
     }, "Note: Results are filtered as you type, checking all fields."), /*#__PURE__*/React.createElement(Data, {
-      data: DATA,
-      updateOn: "change"
+      data: DATA
     }, /*#__PURE__*/React.createElement(DataSearch, {
       drop: true
     }), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(DataTable, {

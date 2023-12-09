@@ -3,6 +3,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useContext, useEffect, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
@@ -22,6 +23,7 @@ var dropProps = {
   }
 };
 export var DataSearch = function DataSearch(_ref) {
+  var _theme$data$button;
   var drop = _ref.drop,
     idProp = _ref.id,
     responsive = _ref.responsive,
@@ -34,6 +36,7 @@ export var DataSearch = function DataSearch(_ref) {
     noForm = _useContext2.noForm;
   var _useContext3 = useContext(MessageContext),
     format = _useContext3.format;
+  var theme = useContext(ThemeContext);
   var size = useContext(ResponsiveContext);
   var skeleton = useSkeleton();
   var _useState = useState(),
@@ -72,7 +75,7 @@ export var DataSearch = function DataSearch(_ref) {
       id: 'dataSearch.open',
       messages: messages == null ? void 0 : messages.dataSort
     }),
-    kind: "toolbar",
+    kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
     icon: /*#__PURE__*/React.createElement(Search, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/React.createElement(Box, {

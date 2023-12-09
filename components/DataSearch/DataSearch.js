@@ -4,6 +4,7 @@ exports.__esModule = true;
 exports.DataSearch = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Search = require("grommet-icons/icons/Search");
+var _styledComponents = require("styled-components");
 var _Box = require("../Box");
 var _DataContext = require("../../contexts/DataContext");
 var _DataForm = require("../Data/DataForm");
@@ -28,6 +29,7 @@ var dropProps = {
   }
 };
 var DataSearch = exports.DataSearch = function DataSearch(_ref) {
+  var _theme$data$button;
   var drop = _ref.drop,
     idProp = _ref.id,
     responsive = _ref.responsive,
@@ -40,6 +42,7 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
     noForm = _useContext2.noForm;
   var _useContext3 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext3.format;
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
   var skeleton = (0, _Skeleton.useSkeleton)();
   var _useState = (0, _react.useState)(),
@@ -78,7 +81,7 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
       id: 'dataSearch.open',
       messages: messages == null ? void 0 : messages.dataSort
     }),
-    kind: "toolbar",
+    kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
     icon: /*#__PURE__*/_react["default"].createElement(_Search.Search, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/_react["default"].createElement(_Box.Box, {
