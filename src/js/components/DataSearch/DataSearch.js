@@ -11,6 +11,7 @@ import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
+import { isSmall } from '../../utils/responsive';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -63,8 +64,7 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
       </FormField>
     );
 
-  if (!drop && (!responsive || (size !== 'small' && size !== 'xsmall')))
-    return content;
+  if (!drop && (!responsive || !isSmall(size))) return content;
 
   const control = (
     <DropButton

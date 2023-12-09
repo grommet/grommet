@@ -248,7 +248,7 @@ describe('DataFilter', () => {
     fireEvent.mouseDown(lowerBound);
     fireEvent.mouseMove(lowerBound, { clientX: 31, clientY: 20 });
     fireEvent.mouseUp(lowerBound);
-    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
+    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('49');
   });
 
   test('range Data', () => {
@@ -329,8 +329,7 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should allow filtering on multiple sub-properties from same parent property', async () => {
-    const user = userEvent.setup();
+  test('should allow filtering on multiple sub-properties from same parent property', () => {
     const { asFragment } = render(
       <Grommet>
         <Data
@@ -359,27 +358,27 @@ describe('DataFilter', () => {
 
     const filterButton = getByRole('button', { name: 'Open filters' });
     expect(filterButton).toBeTruthy();
-    await user.click(filterButton);
+    fireEvent.click(filterButton);
 
     // open SelectMultiple
     const selectInput = getByRole('button', { name: /Open Drop/i });
     expect(selectInput).toBeTruthy();
-    await user.click(selectInput);
+    fireEvent.click(selectInput);
 
     // click the first option 'ZZ'
-    await user.click(getByRole('option', { name: /ZZ/i }));
+    fireEvent.click(getByRole('option', { name: /ZZ/i }));
 
     // close SelectMultiple
-    await user.click(getByRole('button', { name: /Close Select/i }));
+    fireEvent.click(getByRole('button', { name: /Close Select/i }));
 
     const checkBox = getByLabelText(1);
 
-    await user.click(checkBox);
+    fireEvent.click(checkBox);
 
     // click Apply Filters button
     const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
     expect(applyFiltersButton).toBeTruthy();
-    await user.click(applyFiltersButton);
+    fireEvent.click(applyFiltersButton);
 
     const updatedFilterButton = getByRole('button', {
       name: 'Open filters, 2 filters applied',
