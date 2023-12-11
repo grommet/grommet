@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
@@ -20,7 +20,7 @@ const dropProps = {
 
 export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
   const { id: dataId, messages, addToolbarKey } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext);
   const size = useContext(ResponsiveContext);
@@ -29,8 +29,8 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
   const id = idProp || `${dataId}--search`;
 
   useEffect(() => {
-    if (noForm) addToolbarKey('_search');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_search');
+  }, [addToolbarKey, inDataForm]);
 
   let content = skeleton ? null : (
     <TextInput
@@ -46,7 +46,7 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
     />
   );
 
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = (
       <DataForm footer={false} updateOn="change">

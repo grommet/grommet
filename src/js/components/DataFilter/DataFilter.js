@@ -1,13 +1,13 @@
 import React, { useContext, useMemo, useState } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
-import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
 import { getDecimalCount } from '../RangeSelector/RangeSelector';
+import { DataFormContext } from '../../contexts/DataFormContext';
 
 // empirical constants for when we change inputs
 const maxCheckBoxGroupOptions = 4;
@@ -87,7 +87,7 @@ export const DataFilter = ({
     properties,
     unfilteredData,
   } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const [searchText, setSearchText] = useState('');
 
   const [options, range] = useMemo(() => {
@@ -145,7 +145,7 @@ export const DataFilter = ({
   const id = `${dataId}-${property}`;
 
   // only add aria-label for no form examples
-  const ariaLabel = noForm
+  const ariaLabel = !inDataForm
     ? `${properties?.[property]?.label || property}`
     : undefined;
 
@@ -234,7 +234,7 @@ export const DataFilter = ({
 
   if (!content) return null;
 
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = (
       <DataForm footer={false} updateOn="change">

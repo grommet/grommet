@@ -1,10 +1,17 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, {
+  useMemo,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
 const HideableButton = styled(Button)`
@@ -181,7 +188,7 @@ const resetPage = (nextFormValue, prevFormValue) => {
 };
 
 const transformTouched = (touched, value) => {
-  // DataFilters expects values for keys touched to evaluate to falsey to 
+  // DataFilters expects values for keys touched to evaluate to falsey to
   // not cause a badge. However any property value that is set back to its
   // default/initial value that isn't undefined/null/false/0 will cause a
   // badge this is particulary true for a 'range' which will always have
@@ -189,7 +196,7 @@ const transformTouched = (touched, value) => {
   //
   // Should this instead determine touched by comparing against
   // initial/default values?
-  //  
+  //
   const result = {};
   Object.keys(touched).forEach((key) => {
     result[key] = flatten(value, { full: true })[key];
@@ -265,6 +272,8 @@ export const DataForm = ({
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
   const [changed, setChanged] = useState();
+
+  const contextValue = useMemo(() => ({ inDataForm: true }), []);
 
   const onSubmit = useCallback(
     ({ value, touched }) => {
@@ -349,7 +358,9 @@ export const DataForm = ({
       onSubmit={updateOn === 'submit' ? onSubmit : undefined}
       onChange={onChange}
     >
-      {content}
+      <DataFormContext.Provider value={contextValue}>
+        {content}
+      </DataFormContext.Provider>
     </MaxForm>
   );
 };
