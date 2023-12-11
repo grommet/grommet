@@ -6,6 +6,8 @@ if (process.env.NODE_ENV !== 'production') {
     drop: PropTypes.bool,
     heading: PropTypes.string,
     layer: PropTypes.bool,
+    clearFilters: PropTypes.bool,
+    updateOn: PropTypes.oneOf(['change', 'submit']),
   };
 }
 export const DataFiltersPropTypes = PropType;

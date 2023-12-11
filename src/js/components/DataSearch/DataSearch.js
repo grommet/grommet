@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
@@ -21,6 +22,7 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
   const { id: dataId, messages, addToolbarKey } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
+  const theme = useContext(ThemeContext);
   const size = useContext(ResponsiveContext);
   const skeleton = useSkeleton();
   const [showContent, setShowContent] = useState();
@@ -73,7 +75,7 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
         id: 'dataSearch.open',
         messages: messages?.dataSort,
       })}
-      kind="toolbar"
+      kind={theme.data.button?.kind}
       icon={<Search />}
       dropProps={dropProps}
       dropContent={<Box pad="small">{content}</Box>}

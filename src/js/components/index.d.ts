@@ -11,6 +11,7 @@ export * from './CardFooter';
 export * from './CardHeader';
 export * from './Cards';
 export * from './Carousel';
+export * from './DataClearFilters';
 export * from './CheckBoxGroup';
 export * from './Chart';
 export * from './CheckBox';
