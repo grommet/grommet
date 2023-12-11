@@ -1,10 +1,17 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, {
+  useMemo,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
 const HideableButton = styled(Button)`
@@ -266,6 +273,8 @@ export const DataForm = ({
   const [formValue, setFormValue] = useState(viewToFormValue(view));
   const [changed, setChanged] = useState();
 
+  const contextValue = useMemo(() => ({ inDataForm: true }), []);
+
   const onSubmit = useCallback(
     ({ value, touched }) => {
       const nextValue = normalizeValue(value, formValue, views);
@@ -349,7 +358,9 @@ export const DataForm = ({
       onSubmit={updateOn === 'submit' ? onSubmit : undefined}
       onChange={onChange}
     >
-      {content}
+      <DataFormContext.Provider value={contextValue}>
+        {content}
+      </DataFormContext.Provider>
     </MaxForm>
   );
 };
