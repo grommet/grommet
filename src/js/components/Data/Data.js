@@ -145,7 +145,7 @@ export const Data = ({
       <Toolbar key="toolbar">
         {(toolbar === true || toolbar === 'search') && <DataSearch />}
         {(toolbar === true || toolbar === 'view') && <DataView />}
-        {(toolbar === true || toolbar === 'filters') && <DataFilters drop />}
+        {(toolbar === true || toolbar === 'filters') && <DataFilters layer />}
       </Toolbar>,
       <DataSummary key="summary" />,
     ];
