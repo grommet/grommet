@@ -5,7 +5,7 @@ exports.DataView = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _DataForm = require("../Data/DataForm");
 var _DataContext = require("../../contexts/DataContext");
-var _FormContext = require("../Form/FormContext");
+var _DataFormContext = require("../../contexts/DataFormContext");
 var _FormField = require("../FormField");
 var _RadioButtonGroup = require("../RadioButtonGroup");
 var _Select = require("../Select");
@@ -25,20 +25,20 @@ var DataView = exports.DataView = function DataView(_ref) {
     view = _useContext.view,
     views = _useContext.views,
     addToolbarKey = _useContext.addToolbarKey;
-  var _useContext2 = (0, _react.useContext)(_FormContext.FormContext),
-    noForm = _useContext2.noForm;
+  var _useContext2 = (0, _react.useContext)(_DataFormContext.DataFormContext),
+    inDataForm = _useContext2.inDataForm;
   var _useContext3 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext3.format;
   var id = idProp || dataId + "--view";
   (0, _react.useEffect)(function () {
-    if (noForm) addToolbarKey('_view');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_view');
+  }, [addToolbarKey, inDataForm]);
   if (!views) return null;
   var names = views.map(function (v) {
     return v.name;
   });
   var content;
-  if (!noForm && names.length < 7) {
+  if (inDataForm && names.length < 7) {
     content = /*#__PURE__*/_react["default"].createElement(_RadioButtonGroup.RadioButtonGroup, _extends({
       id: id,
       name: "_view",
@@ -50,12 +50,12 @@ var DataView = exports.DataView = function DataView(_ref) {
       id: id,
       name: "_view",
       showSelectedInline: true,
-      placeholder: noForm ? 'Select view' : undefined,
+      placeholder: !inDataForm ? 'Select view' : undefined,
       options: names,
       value: view == null ? void 0 : view.name
     }, rest));
   }
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
       footer: false,

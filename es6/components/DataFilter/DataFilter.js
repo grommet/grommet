@@ -4,13 +4,13 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useContext, useMemo, useState } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
-import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
 import { getDecimalCount } from '../RangeSelector/RangeSelector';
+import { DataFormContext } from '../../contexts/DataFormContext';
 
 // empirical constants for when we change inputs
 var maxCheckBoxGroupOptions = 4;
@@ -76,8 +76,8 @@ export var DataFilter = function DataFilter(_ref) {
     dataId = _useContext.id,
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData;
-  var _useContext2 = useContext(FormContext),
-    noForm = _useContext2.noForm;
+  var _useContext2 = useContext(DataFormContext),
+    inDataForm = _useContext2.inDataForm;
   var _useState = useState(''),
     searchText = _useState[0],
     setSearchText = _useState[1];
@@ -128,7 +128,7 @@ export var DataFilter = function DataFilter(_ref) {
   var id = dataId + "-" + property;
 
   // only add aria-label for no form examples
-  var ariaLabel = noForm ? "" + ((properties == null || (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property) : undefined;
+  var ariaLabel = !inDataForm ? "" + ((properties == null || (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property) : undefined;
   var content = children;
   if (!content) {
     if (range) {
@@ -198,7 +198,7 @@ export var DataFilter = function DataFilter(_ref) {
     }
   }
   if (!content) return null;
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = /*#__PURE__*/React.createElement(DataForm, {
       footer: false,

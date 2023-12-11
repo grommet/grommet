@@ -8,7 +8,7 @@ import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
@@ -32,8 +32,8 @@ export var DataSearch = function DataSearch(_ref) {
     dataId = _useContext.id,
     messages = _useContext.messages,
     addToolbarKey = _useContext.addToolbarKey;
-  var _useContext2 = useContext(FormContext),
-    noForm = _useContext2.noForm;
+  var _useContext2 = useContext(DataFormContext),
+    inDataForm = _useContext2.inDataForm;
   var _useContext3 = useContext(MessageContext),
     format = _useContext3.format;
   var theme = useContext(ThemeContext);
@@ -44,8 +44,8 @@ export var DataSearch = function DataSearch(_ref) {
     setShowContent = _useState[1];
   var id = idProp || dataId + "--search";
   useEffect(function () {
-    if (noForm) addToolbarKey('_search');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_search');
+  }, [addToolbarKey, inDataForm]);
   var content = skeleton ? null : /*#__PURE__*/React.createElement(TextInput, _extends({
     "aria-label": format({
       id: 'dataSearch.label',
@@ -56,7 +56,7 @@ export var DataSearch = function DataSearch(_ref) {
     icon: /*#__PURE__*/React.createElement(Search, null),
     type: "search"
   }, rest));
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = /*#__PURE__*/React.createElement(DataForm, {
       footer: false,

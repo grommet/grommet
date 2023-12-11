@@ -5,13 +5,13 @@ exports.DataFilter = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _DataContext = require("../../contexts/DataContext");
 var _DataForm = require("../Data/DataForm");
-var _FormContext = require("../Form/FormContext");
 var _FormField = require("../FormField");
 var _CheckBoxGroup = require("../CheckBoxGroup");
 var _RangeSelector = require("../RangeSelector");
 var _SelectMultiple = require("../SelectMultiple");
 var _propTypes = require("./propTypes");
 var _RangeSelector2 = require("../RangeSelector/RangeSelector");
+var _DataFormContext = require("../../contexts/DataFormContext");
 var _excluded = ["children", "options", "property", "range"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -81,8 +81,8 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
     dataId = _useContext.id,
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData;
-  var _useContext2 = (0, _react.useContext)(_FormContext.FormContext),
-    noForm = _useContext2.noForm;
+  var _useContext2 = (0, _react.useContext)(_DataFormContext.DataFormContext),
+    inDataForm = _useContext2.inDataForm;
   var _useState = (0, _react.useState)(''),
     searchText = _useState[0],
     setSearchText = _useState[1];
@@ -133,7 +133,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
   var id = dataId + "-" + property;
 
   // only add aria-label for no form examples
-  var ariaLabel = noForm ? "" + ((properties == null || (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property) : undefined;
+  var ariaLabel = !inDataForm ? "" + ((properties == null || (_properties$property3 = properties[property]) == null ? void 0 : _properties$property3.label) || property) : undefined;
   var content = children;
   if (!content) {
     if (range) {
@@ -203,7 +203,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
     }
   }
   if (!content) return null;
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
       footer: false,

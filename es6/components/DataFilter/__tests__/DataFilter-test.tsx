@@ -313,7 +313,7 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('noForm', () => {
+  test('!inDataForm', () => {
     const { container } = render(
       <Grommet>
         <Data data={data}>

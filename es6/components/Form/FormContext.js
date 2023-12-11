@@ -29,6 +29,5 @@ var useFormField = function useFormField(_ref2) {
 };
 export var FormContext = /*#__PURE__*/React.createContext({
   useFormField: useFormField,
-  useFormInput: useFormInput,
-  noForm: true
+  useFormInput: useFormInput
 });

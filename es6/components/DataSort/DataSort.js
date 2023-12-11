@@ -8,7 +8,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
@@ -79,8 +79,8 @@ export var DataSort = function DataSort(_ref2) {
   var _useContext3 = useContext(DataContext),
     dataId = _useContext3.id,
     messages = _useContext3.messages;
-  var _useContext4 = useContext(FormContext),
-    noForm = _useContext4.noForm;
+  var _useContext4 = useContext(DataFormContext),
+    inDataForm = _useContext4.inDataForm;
   var _useContext5 = useContext(MessageContext),
     format = _useContext5.format;
   var theme = useContext(ThemeContext);
@@ -90,7 +90,7 @@ export var DataSort = function DataSort(_ref2) {
   var content = /*#__PURE__*/React.createElement(Content, {
     options: options
   });
-  if (noForm) content = /*#__PURE__*/React.createElement(DataForm, {
+  if (!inDataForm) content = /*#__PURE__*/React.createElement(DataForm, {
     footer: false,
     updateOn: "change"
   }, content);

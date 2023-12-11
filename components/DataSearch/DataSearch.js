@@ -9,7 +9,7 @@ var _Box = require("../Box");
 var _DataContext = require("../../contexts/DataContext");
 var _DataForm = require("../Data/DataForm");
 var _DropButton = require("../DropButton");
-var _FormContext = require("../Form/FormContext");
+var _DataFormContext = require("../../contexts/DataFormContext");
 var _FormField = require("../FormField");
 var _Skeleton = require("../Skeleton");
 var _TextInput = require("../TextInput");
@@ -38,8 +38,8 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
     dataId = _useContext.id,
     messages = _useContext.messages,
     addToolbarKey = _useContext.addToolbarKey;
-  var _useContext2 = (0, _react.useContext)(_FormContext.FormContext),
-    noForm = _useContext2.noForm;
+  var _useContext2 = (0, _react.useContext)(_DataFormContext.DataFormContext),
+    inDataForm = _useContext2.inDataForm;
   var _useContext3 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext3.format;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
@@ -50,8 +50,8 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
     setShowContent = _useState[1];
   var id = idProp || dataId + "--search";
   (0, _react.useEffect)(function () {
-    if (noForm) addToolbarKey('_search');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_search');
+  }, [addToolbarKey, inDataForm]);
   var content = skeleton ? null : /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, _extends({
     "aria-label": format({
       id: 'dataSearch.label',
@@ -62,7 +62,7 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
     icon: /*#__PURE__*/_react["default"].createElement(_Search.Search, null),
     type: "search"
   }, rest));
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
       footer: false,

@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useContext, useEffect } from 'react';
 import { DataForm } from '../Data/DataForm';
 import { DataContext } from '../../contexts/DataContext';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { Select } from '../Select';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -18,20 +18,20 @@ export var DataTableGroupBy = function DataTableGroupBy(_ref) {
     messages = _useContext.messages,
     view = _useContext.view,
     addToolbarKey = _useContext.addToolbarKey;
-  var _useContext2 = useContext(FormContext),
-    noForm = _useContext2.noForm;
+  var _useContext2 = useContext(DataFormContext),
+    inDataForm = _useContext2.inDataForm;
   var _useContext3 = useContext(MessageContext),
     format = _useContext3.format;
   var id = idProp || dataId + "--groupby";
   useEffect(function () {
-    if (noForm) addToolbarKey('_groupBy');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_groupBy');
+  }, [addToolbarKey, inDataForm]);
   if (!options) return null;
   var content = /*#__PURE__*/React.createElement(Select, _extends({
     id: id,
     name: "_groupBy",
     showSelectedInline: true,
-    placeholder: noForm ? 'Group by' : undefined,
+    placeholder: !inDataForm ? 'Group by' : undefined,
     options: options,
     labelKey: "label",
     clear: view != null && view.groupBy ? {
@@ -43,7 +43,7 @@ export var DataTableGroupBy = function DataTableGroupBy(_ref) {
     } : undefined,
     value: view == null ? void 0 : view.groupBy
   }, rest));
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = /*#__PURE__*/React.createElement(DataForm, {
       footer: false,

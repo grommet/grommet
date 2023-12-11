@@ -9,6 +9,7 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormContext } from '../Form/FormContext';
 import { DropButton } from '../DropButton';
 import { List } from '../List';
@@ -182,8 +183,8 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
   var _useContext4 = useContext(DataContext),
     dataId = _useContext4.id,
     messages = _useContext4.messages;
-  var _useContext5 = useContext(FormContext),
-    noForm = _useContext5.noForm;
+  var _useContext5 = useContext(DataFormContext),
+    inDataForm = _useContext5.inDataForm;
   var _useContext6 = useContext(MessageContext),
     format = _useContext6.format;
   var theme = useContext(ThemeContext);
@@ -198,7 +199,7 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
     drop: drop,
     options: options
   });
-  if (noForm) content = /*#__PURE__*/React.createElement(DataForm, {
+  if (!inDataForm) content = /*#__PURE__*/React.createElement(DataForm, {
     footer: false,
     updateOn: "change"
   }, content);

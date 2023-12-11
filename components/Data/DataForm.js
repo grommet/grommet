@@ -9,6 +9,7 @@ var _Button = require("../Button");
 var _Footer = require("../Footer");
 var _Form = require("../Form");
 var _DataContext = require("../../contexts/DataContext");
+var _DataFormContext = require("../../contexts/DataFormContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _excluded = ["children", "footer", "onDone", "onTouched", "pad", "updateOn"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -172,7 +173,7 @@ var resetPage = function resetPage(nextFormValue, prevFormValue) {
     nextFormValue[formPageKey] = 1;
 };
 var transformTouched = function transformTouched(touched, value) {
-  // DataFilters expects values for keys touched to evaluate to falsey to 
+  // DataFilters expects values for keys touched to evaluate to falsey to
   // not cause a badge. However any property value that is set back to its
   // default/initial value that isn't undefined/null/false/0 will cause a
   // badge this is particulary true for a 'range' which will always have
@@ -180,7 +181,7 @@ var transformTouched = function transformTouched(touched, value) {
   //
   // Should this instead determine touched by comparing against
   // initial/default values?
-  //  
+  //
   var result = {};
   Object.keys(touched).forEach(function (key) {
     result[key] = flatten(value, {
@@ -265,6 +266,11 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
   var _useState2 = (0, _react.useState)(),
     changed = _useState2[0],
     setChanged = _useState2[1];
+  var contextValue = (0, _react.useMemo)(function () {
+    return {
+      inDataForm: true
+    };
+  }, []);
   var onSubmit = (0, _react.useCallback)(function (_ref2) {
     var value = _ref2.value,
       touched = _ref2.touched;
@@ -342,5 +348,7 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
     value: formValue,
     onSubmit: updateOn === 'submit' ? onSubmit : undefined,
     onChange: onChange
-  }), content);
+  }), /*#__PURE__*/_react["default"].createElement(_DataFormContext.DataFormContext.Provider, {
+    value: contextValue
+  }, content));
 };

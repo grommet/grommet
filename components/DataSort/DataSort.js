@@ -9,7 +9,7 @@ var _DataContext = require("../../contexts/DataContext");
 var _Box = require("../Box");
 var _DataForm = require("../Data/DataForm");
 var _DropButton = require("../DropButton");
-var _FormContext = require("../Form/FormContext");
+var _DataFormContext = require("../../contexts/DataFormContext");
 var _FormField = require("../FormField");
 var _RadioButtonGroup = require("../RadioButtonGroup");
 var _Select = require("../Select");
@@ -85,8 +85,8 @@ var DataSort = exports.DataSort = function DataSort(_ref2) {
   var _useContext3 = (0, _react.useContext)(_DataContext.DataContext),
     dataId = _useContext3.id,
     messages = _useContext3.messages;
-  var _useContext4 = (0, _react.useContext)(_FormContext.FormContext),
-    noForm = _useContext4.noForm;
+  var _useContext4 = (0, _react.useContext)(_DataFormContext.DataFormContext),
+    inDataForm = _useContext4.inDataForm;
   var _useContext5 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext5.format;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
@@ -96,7 +96,7 @@ var DataSort = exports.DataSort = function DataSort(_ref2) {
   var content = /*#__PURE__*/_react["default"].createElement(Content, {
     options: options
   });
-  if (noForm) content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
+  if (!inDataForm) content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
     footer: false,
     updateOn: "change"
   }, content);

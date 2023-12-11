@@ -1,13 +1,14 @@
 var _excluded = ["children", "footer", "onDone", "onTouched", "pad", "updateOn"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useMemo, useCallback, useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
 var HideableButton = styled(Button).withConfig({
   displayName: "DataForm__HideableButton",
@@ -165,7 +166,7 @@ var resetPage = function resetPage(nextFormValue, prevFormValue) {
     nextFormValue[formPageKey] = 1;
 };
 var transformTouched = function transformTouched(touched, value) {
-  // DataFilters expects values for keys touched to evaluate to falsey to 
+  // DataFilters expects values for keys touched to evaluate to falsey to
   // not cause a badge. However any property value that is set back to its
   // default/initial value that isn't undefined/null/false/0 will cause a
   // badge this is particulary true for a 'range' which will always have
@@ -173,7 +174,7 @@ var transformTouched = function transformTouched(touched, value) {
   //
   // Should this instead determine touched by comparing against
   // initial/default values?
-  //  
+  //
   var result = {};
   Object.keys(touched).forEach(function (key) {
     result[key] = flatten(value, {
@@ -258,6 +259,11 @@ export var DataForm = function DataForm(_ref) {
   var _useState2 = useState(),
     changed = _useState2[0],
     setChanged = _useState2[1];
+  var contextValue = useMemo(function () {
+    return {
+      inDataForm: true
+    };
+  }, []);
   var onSubmit = useCallback(function (_ref2) {
     var value = _ref2.value,
       touched = _ref2.touched;
@@ -335,5 +341,7 @@ export var DataForm = function DataForm(_ref) {
     value: formValue,
     onSubmit: updateOn === 'submit' ? onSubmit : undefined,
     onChange: onChange
-  }), content);
+  }), /*#__PURE__*/React.createElement(DataFormContext.Provider, {
+    value: contextValue
+  }, content));
 };
