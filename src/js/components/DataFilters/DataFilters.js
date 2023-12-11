@@ -101,7 +101,7 @@ export const DataFilters = ({
     else if (Array.isArray(properties)) filtersFor = properties;
     else if (typeof properties === 'object') {
       filtersFor = Object.keys(properties).filter(
-        (property) => !(properties[property]?.filterable === false),
+        (property) => !(properties[property]?.filter === false),
       );
     } else filtersFor = [];
     content = filtersFor.map((property) => (

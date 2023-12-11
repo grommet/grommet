@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.objectOf(
         PropTypes.shape({
-          filterable: PropTypes.bool,
+          filter: PropTypes.bool,
           label: PropTypes.string,
           options: PropTypes.arrayOf(
             PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
@@ -32,8 +32,8 @@ if (process.env.NODE_ENV !== 'production') {
             min: PropTypes.number,
             step: PropTypes.number,
           }),
-          searchable: PropTypes.bool,
-          sortable: PropTypes.bool,
+          search: PropTypes.bool,
+          sort: PropTypes.bool,
         }),
       ),
     ]),

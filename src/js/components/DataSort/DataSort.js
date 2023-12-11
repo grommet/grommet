@@ -26,9 +26,7 @@ const Content = ({ options: optionsArg }) => {
       (properties &&
         Object.keys(properties)
           .sort()
-          .filter(
-            (property) => !(properties?.[property]?.sortable === false),
-          )) ||
+          .filter((property) => !(properties?.[property]?.sort === false))) ||
       (data.length > 0 && Object.keys(data[0]).sort()) ||
       data,
     [data, optionsArg, properties],

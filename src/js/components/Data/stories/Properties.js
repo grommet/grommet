@@ -44,16 +44,16 @@ export const Properties = () => (
       updateOn="change"
       properties={{
         location: {
-          sortable: false,
+          sort: false,
           label: 'Location',
           options: ['Fort Collins', 'Palo Alto', 'Boise', 'San Francisco'],
         },
         name: {
-          filterable: false,
+          filter: false,
         },
         paid: {
-          searchable: false,
-          filterable: false,
+          search: false,
+          filter: false,
         },
       }}
       fill="horizontal"
