@@ -125,7 +125,7 @@ export var Data = function Data(_ref) {
     toolbarContent = [/*#__PURE__*/React.createElement(Toolbar, {
       key: "toolbar"
     }, (toolbar === true || toolbar === 'search') && /*#__PURE__*/React.createElement(DataSearch, null), (toolbar === true || toolbar === 'view') && /*#__PURE__*/React.createElement(DataView, null), (toolbar === true || toolbar === 'filters') && /*#__PURE__*/React.createElement(DataFilters, {
-      drop: true
+      layer: true
     })), /*#__PURE__*/React.createElement(DataSummary, {
       key: "summary"
     })];

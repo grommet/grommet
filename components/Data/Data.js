@@ -131,7 +131,7 @@ var Data = exports.Data = function Data(_ref) {
     toolbarContent = [/*#__PURE__*/_react["default"].createElement(_Toolbar.Toolbar, {
       key: "toolbar"
     }, (toolbar === true || toolbar === 'search') && /*#__PURE__*/_react["default"].createElement(_DataSearch.DataSearch, null), (toolbar === true || toolbar === 'view') && /*#__PURE__*/_react["default"].createElement(_DataView.DataView, null), (toolbar === true || toolbar === 'filters') && /*#__PURE__*/_react["default"].createElement(_DataFilters.DataFilters, {
-      drop: true
+      layer: true
     })), /*#__PURE__*/_react["default"].createElement(_DataSummary.DataSummary, {
       key: "summary"
     })];
