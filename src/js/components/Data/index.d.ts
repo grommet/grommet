@@ -35,8 +35,6 @@ export interface DataProps {
   defaultView?: View;
   view?: string | View;
   onView?: (view: View) => void;
-  // when view changes should be delivered
-  updateOn?: 'change' | 'submit';
 
   // whether to render a Toolbar
   toolbar?: boolean | 'search' | 'filters';

@@ -42,7 +42,6 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOf(['search', 'filters']),
     ]),
     total: PropTypes.number,
-    updateOn: PropTypes.oneOf(['change', 'submit']),
     view: PropTypes.oneOfType([PropTypes.string, viewType]),
   };
 }

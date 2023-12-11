@@ -28,7 +28,6 @@ export const Data = ({
   properties,
   toolbar,
   total,
-  updateOn = 'submit',
   view: viewProp,
   views,
   ...rest
@@ -52,6 +51,9 @@ export const Data = ({
       };
     return filter(dataProp, view, properties);
   }, [dataProp, filteredTotal, onView, properties, total, view]);
+
+  // used by DataFilters to determine if badge should appear on Filter button
+  const [filtersCleared, setFiltersCleared] = useState(true);
 
   const announce = useContext(AnnounceContext);
   const { format } = useContext(MessageContext);
@@ -96,7 +98,8 @@ export const Data = ({
       id,
       messages,
       properties,
-      updateOn,
+      filtersCleared,
+      setFiltersCleared,
       view,
       views,
       ...result,
@@ -104,6 +107,7 @@ export const Data = ({
 
     value.clearFilters = () => {
       const nextView = defaultView;
+      setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
     };
@@ -126,11 +130,11 @@ export const Data = ({
     defaultView,
     id,
     messages,
+    filtersCleared,
     onView,
     properties,
     result,
     toolbarKeys,
-    updateOn,
     view,
     views,
   ]);
