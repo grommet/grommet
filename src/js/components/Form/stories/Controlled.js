@@ -45,10 +45,16 @@ export const Controlled = () => {
           }
         >
           <FormField label="Name" htmlFor="name" name="name">
-            <TextInput id="name" name="name" suggestions={suggestions} />
+            <TextInput
+              aria-label="name"
+              id="name"
+              name="name"
+              suggestions={suggestions}
+            />
           </FormField>
           <FormField label="Email" htmlFor="email" name="email" required>
             <MaskedInput
+              aria-label="email"
               id="email"
               name="email"
               mask={[
@@ -61,10 +67,18 @@ export const Controlled = () => {
             />
           </FormField>
           <FormField name="subscribe">
-            <CheckBox name="subscribe" label="Subscribe?" />
+            <CheckBox
+              aria-label="subscribe"
+              name="subscribe"
+              label="Subscribe?"
+            />
           </FormField>
           <FormField name="ampm">
-            <RadioButtonGroup name="ampm" options={['morning', 'evening']} />
+            <RadioButtonGroup
+              aria-label="select your preferred time"
+              name="ampm"
+              options={['morning', 'evening']}
+            />
           </FormField>
           <FormField label="Size" htmlFor="size" name="size">
             <Select
@@ -75,15 +89,21 @@ export const Controlled = () => {
             />
           </FormField>
           <FormField label="Comments" htmlFor="comments" name="comments">
-            <TextArea id="comments" name="comments" />
+            <TextArea aria-label="comments" id="comments" name="comments" />
           </FormField>
           <FormField label="Age" htmlFor="age" name="age" pad>
-            <RangeInput id="age" name="age" min={15} max={75} />
+            <RangeInput
+              aria-label="age"
+              id="age"
+              name="age"
+              min={15}
+              max={75}
+            />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
-            <Button label="Cancel" />
-            <Button type="reset" label="Reset" />
-            <Button type="submit" label="Update" primary />
+            <Button aria-label="cancel" label="Cancel" />
+            <Button aria-label="reset" type="reset" label="Reset" />
+            <Button aria-label="submit" type="submit" label="Update" primary />
           </Box>
         </Form>
       </Box>
