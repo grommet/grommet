@@ -21,7 +21,7 @@ export const ControlledInput = () => {
   const [ampm, setAmpm] = useState('');
   const [size, setSize] = useState('');
   const [comments, setComments] = useState('');
-  const [age, setAge] = useState('');
+  const [age, setAge] = useState(0);
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
@@ -46,6 +46,7 @@ export const ControlledInput = () => {
             <TextInput
               id="name"
               name="name"
+              aria-label="name"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
@@ -54,6 +55,7 @@ export const ControlledInput = () => {
             <MaskedInput
               id="email"
               name="email"
+              aria-label="email"
               mask={[
                 { regexp: /^[\w\-_.]+$/, placeholder: 'example' },
                 { fixed: '@' },
@@ -69,6 +71,7 @@ export const ControlledInput = () => {
             <CheckBox
               name="subscribe"
               label="Subscribe?"
+              aria-label="subscribe"
               checked={subscribe}
               onChange={(event) => setSubscribe(event.target.checked)}
             />
@@ -76,6 +79,7 @@ export const ControlledInput = () => {
           <FormField name="ampm">
             <RadioButtonGroup
               name="ampm"
+              aria-label="select your preferred time"
               options={['morning', 'evening']}
               value={ampm}
               onChange={(event) => setAmpm(event.target.value)}
@@ -95,6 +99,7 @@ export const ControlledInput = () => {
             <TextArea
               id="comments"
               name="comments"
+              aria-label="comments"
               value={comments}
               onChange={(event) => setComments(event.target.value)}
             />
@@ -110,9 +115,9 @@ export const ControlledInput = () => {
             />
           </FormField>
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
-            <Button label="Cancel" />
-            <Button type="reset" label="Reset" />
-            <Button type="submit" label="Update" primary />
+            <Button aria-label="cancel" label="Cancel" />
+            <Button aria-label="reset" type="reset" label="Reset" />
+            <Button aria-label="submit" type="submit" label="Update" primary />
           </Box>
         </Form>
       </Box>
