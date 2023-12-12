@@ -39,7 +39,7 @@ const columns = [
 
 const Filters = ({ search, ...rest }) => (
   <DataFilters {...rest}>
-    {search && <DataSearch property="sub.name" />}
+    {search && <DataSearch />}
     <DataFilter property="size" />
     <DataTableGroupBy options={['size']} />
   </DataFilters>
