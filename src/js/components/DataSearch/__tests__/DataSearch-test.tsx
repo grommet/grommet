@@ -1,10 +1,12 @@
 import React from 'react';
 import { act, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
-
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
+import { DataSummary } from '../../DataSummary';
+import { DataTable } from '../../DataTable';
+
 import { DataSearch } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -61,16 +63,36 @@ describe('DataSearch', () => {
   });
 });
 
-test('enter', () => {
+test('enter', async () => {
   jest.useFakeTimers();
-
-  const { container } = render(
+  const { asFragment, getByTestId, getByText } = render(
     <Grommet>
-      <Data id="test-data" data={data}>
-        <DataSearch updateOn='submit' />
+      <Data data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]} updateOn="change">
+        <DataSearch data-testid="input_submit" updateOn="submit" />
+        <DataSummary />
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          
+        />
       </Data>
     </Grommet>,
   );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
+  const submitButton = getByTestId('input_submit');
+  expect(submitButton).toBeTruthy();
+  fireEvent.change(submitButton, { target: { value: 'one' } });
+  const event = new KeyboardEvent('keydown', { keyCode: 32 });
+  act(() => jest.advanceTimersByTime(200));
+  submitButton.dispatchEvent(event);
+  // make sure one is in the table
+  expect(getByText('one')).toBeTruthy();
+  // make sure two is not in the table
+  expect(getByText('two')).toBeNull();
+  // make sure the snapshot is correct
+  expect(asFragment()).toMatchSnapshot();
+}, 20000);

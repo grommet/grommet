@@ -24,7 +24,7 @@ export const ChangeOnEnter = () => (
       Note: Results are filtered as you type, checking all fields.
     </Paragraph>
     <Data data={DATA} updateOn="change">
-      <DataSearch responsive updateOn="submit" />
+      <DataSearch updateOn="submit" data-testid="new_button_examp" />
       <DataSummary />
       <DataTable columns={columns} />
     </Data>

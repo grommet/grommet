@@ -875,7 +875,8 @@ exports[`DataSearch renders 1`] = `
 `;
 
 exports[`enter 1`] = `
-.c5 {
+<DocumentFragment>
+  .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -924,6 +925,59 @@ exports[`enter 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c16 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -1026,46 +1080,204 @@ exports[`enter 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c9 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c13:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+}
+
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    id="test-data"
+    class="c0"
   >
-    <form
-      class="c2"
+    <div
+      class="c1"
+      id="data"
     >
-      <div
-        class="c3"
+      <form
+        class="c2"
       >
         <div
-          class="c4"
+          class="c3"
         >
-          <svg
-            aria-label="Search"
-            class="c5"
-            viewBox="0 0 24 24"
+          <div
+            class="c4"
           >
-            <path
-              d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
+            <svg
+              aria-label="Search"
+              class="c5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <input
+            aria-label="Search"
+            autocomplete="off"
+            class="c6"
+            data-testid="input_submit"
+            id="data--search"
+            name="_search"
+            type="search"
+            value="one"
+          />
         </div>
-        <input
-          aria-label="Search"
-          autocomplete="off"
-          class="c6"
-          id="test-data--search"
-          name="_search"
-          type="search"
-          value=""
-        />
-      </div>
-    </form>
+      </form>
+      <span
+        class="c7"
+      >
+        2 items
+      </span>
+      <table
+        class="c8 c9"
+      >
+        <thead
+          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        >
+          <tr
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          >
+            <th
+              class="c10 "
+              scope="col"
+            >
+              <div
+                class="c11"
+              >
+                <span
+                  class="c12"
+                >
+                  A
+                </span>
+              </div>
+            </th>
+            <th
+              class="c10 "
+              scope="col"
+            >
+              <div
+                class="c11"
+              >
+                <span
+                  class="c12"
+                >
+                  B
+                </span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
+        >
+          <tr
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          >
+            <th
+              class="c14 "
+              scope="row"
+            >
+              <div
+                class="c15"
+              >
+                <span
+                  class="c16"
+                >
+                  one
+                </span>
+              </div>
+            </th>
+            <td
+              class="c14 "
+            >
+              <div
+                class="c15"
+              >
+                <span
+                  class="c12"
+                >
+                  1
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          >
+            <th
+              class="c14 "
+              scope="row"
+            >
+              <div
+                class="c15"
+              >
+                <span
+                  class="c16"
+                >
+                  two
+                </span>
+              </div>
+            </th>
+            <td
+              class="c14 "
+            >
+              <div
+                class="c15"
+              >
+                <span
+                  class="c12"
+                >
+                  2
+                </span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
