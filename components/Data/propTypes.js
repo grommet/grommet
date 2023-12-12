@@ -18,7 +18,18 @@ if (process.env.NODE_ENV !== 'production') {
     data: _propTypes["default"].arrayOf(_propTypes["default"].shape({})),
     defaultView: viewType,
     onView: _propTypes["default"].func,
-    properties: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].shape({})]),
+    properties: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].objectOf(_propTypes["default"].shape({
+      filter: _propTypes["default"].bool,
+      label: _propTypes["default"].string,
+      options: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({})])),
+      range: _propTypes["default"].shape({
+        max: _propTypes["default"].number,
+        min: _propTypes["default"].number,
+        step: _propTypes["default"].number
+      }),
+      search: _propTypes["default"].bool,
+      sort: _propTypes["default"].bool
+    }))]),
     toolbar: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['search', 'filters'])]),
     total: _propTypes["default"].number,
     view: _propTypes["default"].oneOfType([_propTypes["default"].string, viewType])

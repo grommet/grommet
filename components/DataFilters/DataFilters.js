@@ -104,7 +104,12 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
       // build from a piece of data, ignore object values
       filtersFor = Object.keys(unfilteredData[0]).filter(function (k) {
         return typeof unfilteredData[0][k] !== 'object';
-      });else if (Array.isArray(properties)) filtersFor = properties;else if (typeof properties === 'object') filtersFor = Object.keys(properties);else filtersFor = [];
+      });else if (Array.isArray(properties)) filtersFor = properties;else if (typeof properties === 'object') {
+      filtersFor = Object.keys(properties).filter(function (property) {
+        var _properties$property;
+        return !(((_properties$property = properties[property]) == null ? void 0 : _properties$property.filter) === false);
+      });
+    } else filtersFor = [];
     content = filtersFor.map(function (property) {
       return /*#__PURE__*/_react["default"].createElement(_DataFilter.DataFilter, {
         key: property,

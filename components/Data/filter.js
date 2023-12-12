@@ -21,7 +21,8 @@ var filter = exports.filter = function filter(data, view, properties) {
   if (searchExp && properties) {
     // if we know where we want to search, look there
     searchProperties = Object.keys(properties).filter(function (k) {
-      return properties[k].search;
+      var _properties$k;
+      return !(((_properties$k = properties[k]) == null ? void 0 : _properties$k.search) === false);
     });
     // if none specified, look in all defined properties
     if (searchProperties.length === 0) searchProperties = Object.keys(properties);

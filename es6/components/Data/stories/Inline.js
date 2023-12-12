@@ -31,9 +31,7 @@ var columns = [{
 var Filters = function Filters(_ref) {
   var search = _ref.search,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  return /*#__PURE__*/React.createElement(DataFilters, rest, search && /*#__PURE__*/React.createElement(DataSearch, {
-    property: "sub.name"
-  }), /*#__PURE__*/React.createElement(DataFilter, {
+  return /*#__PURE__*/React.createElement(DataFilters, rest, search && /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilter, {
     property: "size"
   }), /*#__PURE__*/React.createElement(DataTableGroupBy, {
     options: ['size']

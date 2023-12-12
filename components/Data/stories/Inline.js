@@ -37,9 +37,7 @@ var columns = [{
 var Filters = function Filters(_ref) {
   var search = _ref.search,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  return /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, rest, search && /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, {
-    property: "sub.name"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, rest, search && /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
     property: "size"
   }), /*#__PURE__*/_react["default"].createElement(_grommet.DataTableGroupBy, {
     options: ['size']

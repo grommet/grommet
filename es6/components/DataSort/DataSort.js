@@ -30,7 +30,10 @@ var Content = function Content(_ref) {
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
   var options = useMemo(function () {
-    return optionsArg || properties && Object.keys(properties).sort() || data.length > 0 && Object.keys(data[0]).sort() || data;
+    return optionsArg || properties && Object.keys(properties).sort().filter(function (property) {
+      var _properties$property;
+      return !((properties == null || (_properties$property = properties[property]) == null ? void 0 : _properties$property.sort) === false);
+    }) || data.length > 0 && Object.keys(data[0]).sort() || data;
   }, [data, optionsArg, properties]);
   var directionOptions = [{
     label: format({
