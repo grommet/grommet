@@ -21,7 +21,7 @@ const defaultValue = {
   ampm: '',
   size: '',
   comments: '',
-  age: '',
+  age: 0,
 };
 
 const suggestions = ['Shimi', 'Eric'];
