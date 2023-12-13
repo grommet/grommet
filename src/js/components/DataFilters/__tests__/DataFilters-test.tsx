@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
@@ -199,5 +199,47 @@ describe('DataFilters', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sub objects with rangeSelector', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Data
+          data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
+          properties={{
+            'location.lat': { label: 'Latitude', range: { min: -90, max: 90 } },
+          }}
+        >
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+    const { getByRole } = screen;
+
+    // find open filters button and click open
+    const filterButton = getByRole('button', { name: 'Open filters' });
+    expect(filterButton).toBeTruthy();
+    fireEvent.click(filterButton);
+
+    // move rangeseletor
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    act(() => {
+      lowerBound.focus();
+    });
+    fireEvent.keyDown(lowerBound, { key: 'Right', keyCode: 39 });
+
+    // click Apply Filters button
+    const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
+    expect(applyFiltersButton).toBeTruthy();
+    fireEvent.click(applyFiltersButton);
+
+    // should be 1 filter applied
+    const updatedFilterButton = getByRole('button', {
+      name: 'Open filters, 1 filter applied',
+    });
+
+    expect(updatedFilterButton).toBeTruthy();
+    // snapshot on selected filter
+    expect(asFragment()).toMatchSnapshot();
   });
 });
