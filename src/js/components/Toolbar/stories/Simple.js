@@ -24,7 +24,7 @@ export const Simple = () => (
       <Data data={DATA}>
         <Toolbar>
           <DataSearch />
-          <DataFilters />
+          <DataFilters layer />
           <Box flex />
           <Button label="Create" primary />
         </Toolbar>
