@@ -39,7 +39,8 @@ export const StyledIcon = styled.div`
   justify: center;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none;
+  pointer-events: ${(props) => (props.maskIconClickable ? 'auto' : 'none')};
+  ${(props) => (props.maskIconClickable ? 'cursor: pointer;' : '')};
   ${(props) =>
     props.reverse
       ? `right: ${getInputPadBySide(props, 'right')};`
