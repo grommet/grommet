@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Button, DropButton, Notification, TextInput } from 'grommet';
-import { Search } from 'grommet-icons/icons/Search';
-import { Filter } from 'grommet-icons/icons/Filter';
+import { Box, Button, Data, DataFilters, DataSearch, Notification } from 'grommet';
 import { Toolbar } from '../Toolbar';
+import { DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
   return (
     /*#__PURE__*/
@@ -19,21 +18,16 @@ export var Simple = function Simple() {
       message: "Toolbar is in 'beta'. The API surface is subject to change."
     }), /*#__PURE__*/React.createElement(Box, {
       width: "large"
-    }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(Box, {
-      width: {
-        max: 'small'
-      }
-    }, /*#__PURE__*/React.createElement(TextInput, {
-      icon: /*#__PURE__*/React.createElement(Search, null)
-    })), /*#__PURE__*/React.createElement(DropButton, {
-      kind: "toolbar",
-      icon: /*#__PURE__*/React.createElement(Filter, null)
+    }, /*#__PURE__*/React.createElement(Data, {
+      data: DATA
+    }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilters, {
+      layer: true
     }), /*#__PURE__*/React.createElement(Box, {
       flex: true
     }), /*#__PURE__*/React.createElement(Button, {
       label: "Create",
       primary: true
-    }))))
+    })))))
     // </Grommet>
   );
 };
