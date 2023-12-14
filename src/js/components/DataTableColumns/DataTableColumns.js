@@ -1,9 +1,11 @@
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormContext } from '../Form/FormContext';
 import { DropButton } from '../DropButton';
 import { List } from '../List';
@@ -147,8 +149,9 @@ const Content = ({ drop, options, ...rest }) => {
 
 export const DataTableColumns = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
+  const theme = useContext(ThemeContext);
   const [showContent, setShowContent] = useState();
 
   const tip = format({
@@ -157,7 +160,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   });
 
   let content = <Content drop={drop} options={options} />;
-  if (noForm)
+  if (!inDataForm)
     content = (
       <DataForm footer={false} updateOn="change">
         {content}
@@ -173,7 +176,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
         id: 'dataTableColumns.open',
         messages: messages?.dataTableColumns,
       })}
-      kind="toolbar"
+      kind={theme.data.button?.kind}
       icon={<Splits />}
       tip={tip}
       dropProps={dropProps}
