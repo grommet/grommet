@@ -221,7 +221,7 @@ describe('DataFilters', () => {
     expect(filterButton).toBeTruthy();
     fireEvent.click(filterButton);
 
-    // move rangeseletor
+    // move rangeselector
     const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
     act(() => {
       lowerBound.focus();
