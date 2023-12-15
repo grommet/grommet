@@ -188,8 +188,8 @@ exports[`DataSearch drop 3`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -495,7 +495,7 @@ exports[`DataSearch renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -772,7 +772,7 @@ exports[`DataSearch renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c12 {
-    margin-top: 6px;
+    margin-top: 12px;
   }
 }
 

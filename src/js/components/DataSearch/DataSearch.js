@@ -1,16 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
+import { isSmall } from '../../utils/responsive';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -24,16 +26,17 @@ export const DataSearch = ({
   ...rest
 }) => {
   const { id: dataId, messages, addToolbarKey } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
+  const theme = useContext(ThemeContext);
   const size = useContext(ResponsiveContext);
   const skeleton = useSkeleton();
   const [showContent, setShowContent] = useState();
   const id = idProp || `${dataId}--search`;
 
   useEffect(() => {
-    if (noForm) addToolbarKey('_search');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_search');
+  }, [addToolbarKey, inDataForm]);
 
   let content = skeleton ? null : (
     <TextInput
@@ -49,7 +52,7 @@ export const DataSearch = ({
     />
   );
 
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = (
       <DataForm footer={false} updateOn={updateOn || 'change'}>
@@ -69,8 +72,7 @@ export const DataSearch = ({
       </FormField>
     );
 
-  if (!drop && (!responsive || (size !== 'small' && size !== 'xsmall')))
-    return content;
+  if (!drop && (!responsive || !isSmall(size))) return content;
 
   const control = (
     <DropButton
@@ -79,7 +81,7 @@ export const DataSearch = ({
         id: 'dataSearch.open',
         messages: messages?.dataSort,
       })}
-      kind="toolbar"
+      kind={theme.data.button?.kind}
       icon={<Search />}
       dropProps={dropProps}
       dropContent={<Box pad="small">{content}</Box>}

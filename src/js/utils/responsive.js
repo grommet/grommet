@@ -14,7 +14,7 @@ export const getBreakpoint = (viewportWidth, theme) => {
   // the last breakpoint on the sorted array should have
   // no windowWidth boundaries
   const lastBreakpoint = sortedBreakpoints[sortedBreakpoints.length - 1];
-  const result = sortedBreakpoints.find(name => {
+  const result = sortedBreakpoints.find((name) => {
     const breakpoint = theme.global.breakpoints[name];
     return !breakpoint.value || breakpoint.value >= viewportWidth
       ? name
@@ -35,3 +35,7 @@ export const getBreakpointStyle = (theme, breakpointSize) => {
   if (!breakpoint.size) breakpoint.size = theme.global.size;
   return breakpoint;
 };
+
+// for checks that look for a small screen size, flag for xsmall
+// as well since we use xsmall in the hpe theme
+export const isSmall = (size) => ['xsmall', 'small'].includes(size);

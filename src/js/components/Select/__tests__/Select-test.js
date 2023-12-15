@@ -14,6 +14,7 @@ import { Select } from '..';
 
 describe('Select', () => {
   window.scrollTo = jest.fn();
+  window.HTMLElement.prototype.scrollIntoView = jest.fn();
   beforeEach(createPortal);
 
   test('should not have accessibility violations', async () => {
@@ -1219,10 +1220,6 @@ describe('Select', () => {
 
   test('keyboard navigation timeout', () => {
     jest.useFakeTimers();
-    // scrollIntoView is not implemented in jsdom, so we need to mock.
-    // Select keyboard / keyboard nav timeout uses InfiniteScroll which
-    // has scrollIntoView as part of its implementation.
-    window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <Select
@@ -1592,5 +1589,76 @@ describe('Select', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('opens drop with click but focus option with keyboard', () => {
+    jest.useFakeTimers();
+    const onSearch = jest.fn();
+    const { getAllByRole, getByPlaceholderText } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          options={['one', 'two']}
+          onSearch={onSearch}
+          placeholder="test select"
+        />
+      </Grommet>,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.click(select);
+    // Wait for drop to appear and auto-focus search input
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+    const selectDrop = document.getElementById('test-select__select-drop');
+    fireEvent.keyDown(selectDrop, {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+    // Allow for auto-focus to take place (not expected by test)
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+    expect(getAllByRole('searchbox')[0]).not.toHaveFocus();
+    expect(getAllByRole('option')[0]).toHaveFocus();
+  });
+
+  test('opens drop and focus option with keyboard', () => {
+    jest.useFakeTimers();
+    const onSearch = jest.fn();
+    const { getAllByRole, getByPlaceholderText } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          options={['one', 'two']}
+          onSearch={onSearch}
+          placeholder="test select"
+        />
+      </Grommet>,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.keyDown(select, {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+    // Wait for drop to appear and auto-focus search input
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+    const selectDrop = document.getElementById('test-select__select-drop');
+    fireEvent.keyDown(selectDrop, {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+    // Allow for auto-focus to take place (not expected by test)
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+    expect(getAllByRole('searchbox')[0]).not.toHaveFocus();
+    expect(getAllByRole('option')[0]).toHaveFocus();
+  });
+
   window.scrollTo.mockRestore();
+  window.HTMLElement.prototype.scrollIntoView.mockRestore();
 });
