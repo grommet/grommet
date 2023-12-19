@@ -36,6 +36,9 @@ export const genericSelectProps = {
     PropTypes.elementType,
   ]),
   labelKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  messages: PropTypes.shape({
+    multiple: PropTypes.string,
+  }),
   name: PropTypes.string,
   onChange: PropTypes.func,
   onClose: PropTypes.func,
@@ -103,9 +106,6 @@ if (process.env.NODE_ENV !== 'production') {
         ]),
       ),
     ]),
-    messages: PropTypes.shape({
-      multiple: PropTypes.string,
-    }),
     multiple: PropTypes.bool,
     selected: PropTypes.oneOfType([
       PropTypes.number,
