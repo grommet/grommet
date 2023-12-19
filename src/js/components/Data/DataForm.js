@@ -1,10 +1,17 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, {
+  useMemo,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
 const HideableButton = styled(Button)`
@@ -61,7 +68,7 @@ const flatten = (formValue, options) => {
       !Array.isArray(result[i]) &&
       (options?.full || !result[i][formRangeKey])
     ) {
-      const temp = flatten(result[i]);
+      const temp = flatten(result[i], options);
       Object.keys(temp).forEach((j) => {
         // Store temp in result
         // ignore empty arrays
@@ -181,12 +188,18 @@ const resetPage = (nextFormValue, prevFormValue) => {
 };
 
 const transformTouched = (touched, value) => {
+  // DataFilters expects values for keys touched to evaluate to falsey to
+  // not cause a badge. However any property value that is set back to its
+  // default/initial value that isn't undefined/null/false/0 will cause a
+  // badge this is particulary true for a 'range' which will always have
+  // a value.
+  //
+  // Should this instead determine touched by comparing against
+  // initial/default values?
+  //
   const result = {};
   Object.keys(touched).forEach((key) => {
-    // special case _range fields
-    const parts = key.split('.');
-    if (parts[1] === formRangeKey) result[key] = value[parts[0]];
-    else result[key] = flatten(value, { full: true })[key];
+    result[key] = flatten(value, { full: true })[key];
   });
   return result;
 };
@@ -229,26 +242,38 @@ const normalizeValue = (nextValue, prevValue, views) => {
   return result;
 };
 
+// 300ms was chosen empirically as a reasonable default
+const DEBOUNCE_TIMEOUT = 300;
+
+const debounce = (func, timeout = DEBOUNCE_TIMEOUT) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func(...args);
+    }, timeout);
+  };
+};
+
+const debounceSearch = debounce((onView, nextValue, views) =>
+  onView(formValueToView(nextValue, views)),
+);
+
 export const DataForm = ({
   children,
   footer,
   onDone,
   onTouched,
   pad,
-  updateOn: updateOnProp,
+  updateOn = 'submit',
   ...rest
 }) => {
-  const {
-    messages,
-    onView,
-    updateOn: updateOnData,
-    view,
-    views,
-  } = useContext(DataContext);
-  const updateOn = updateOnProp ?? updateOnData;
+  const { messages, onView, view, views } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
   const [changed, setChanged] = useState();
+
+  const contextValue = useMemo(() => ({ inDataForm: true }), []);
 
   const onSubmit = useCallback(
     ({ value, touched }) => {
@@ -271,7 +296,12 @@ export const DataForm = ({
       setChanged(true);
       if (updateOn === 'change') {
         if (onTouched) onTouched(transformTouched(touched, nextValue));
-        onView(formValueToView(nextValue, views));
+        // debounce search
+        if (touched[formSearchKey]) {
+          debounceSearch(onView, nextValue, views);
+        } else {
+          onView(formValueToView(nextValue, views));
+        }
       }
     },
     [formValue, onTouched, onView, updateOn, views],
@@ -294,7 +324,7 @@ export const DataForm = ({
         {footer !== false && updateOn === 'submit' && (
           <Footer
             flex={false}
-            margin={{ top: 'small' }}
+            margin={{ top: 'medium' }}
             pad={{ horizontal: pad, bottom: pad }}
             gap="small"
           >
@@ -328,7 +358,9 @@ export const DataForm = ({
       onSubmit={updateOn === 'submit' ? onSubmit : undefined}
       onChange={onChange}
     >
-      {content}
+      <DataFormContext.Provider value={contextValue}>
+        {content}
+      </DataFormContext.Provider>
     </MaxForm>
   );
 };

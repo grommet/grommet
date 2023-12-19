@@ -27,7 +27,7 @@ export const Simple = () => (
       status="info"
       message="Data is in 'beta'. The API surface is subject to change."
     />
-    <Data data={DATA} updateOn="change">
+    <Data data={DATA}>
       <Toolbar>
         <DataSearch />
         <DataTableColumns drop options={options} />
