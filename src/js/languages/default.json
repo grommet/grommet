@@ -102,7 +102,7 @@
     "selectedMultiple": "{selectedCount} of {totalCount} selected",
     "onMore": "+ {showMoreCount} more options",
     "clearAll": "{selectedCount} options selected. Clear all?",
-    "selectAll": "Select all ${totalCount} options",
+    "selectAll": "Select all {totalCount} options",
     "selectDropDown": "Select dropdown",
     "dropDown": "Open Drop",
     "searchFilter": "Search to filter options",

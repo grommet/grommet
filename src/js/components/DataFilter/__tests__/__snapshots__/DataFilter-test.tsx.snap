@@ -5276,7 +5276,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c7"
         />
         <button
-          aria-label="Select all $10 options"
+          aria-label="Select all 10 options"
           class="c8"
           type="button"
         >
