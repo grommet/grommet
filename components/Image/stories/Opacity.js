@@ -14,34 +14,41 @@ var Opacity = exports.Opacity = function Opacity() {
       gap: "small",
       direction: "row"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "default image"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       opacity: "strong",
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "image strong opacity"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       gap: "small",
       direction: "row"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       opacity: "medium",
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "image medium opacity"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       opacity: "weak",
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "image with weak opacity"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       gap: "small",
       direction: "row"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       opacity: false,
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "image without opacity effect"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       opacity: true,
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "image with default opacity"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       gap: "small",
       direction: "row"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       opacity: "0.6",
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "image with 60% opacity"
     })))
     // </Grommet>
   );

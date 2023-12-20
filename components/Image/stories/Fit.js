@@ -19,14 +19,16 @@ var Fit = exports.Fit = function Fit() {
       border: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg",
-      fit: "contain"
+      fit: "contain",
+      alt: "fit contain image"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       height: "small",
       width: "small",
       border: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg",
-      fit: "cover"
+      fit: "cover",
+      alt: "fit cover image"
     })))
     // </Grommet>
   );

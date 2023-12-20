@@ -6,7 +6,8 @@ export var Simple = function Simple() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Image, {
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "simple image"
     })
     // </Grommet>
   );

@@ -17,7 +17,8 @@ export var Fill = function Fill() {
     }, /*#__PURE__*/React.createElement(Image, {
       fit: "cover",
       fill: true,
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "fill image"
     }))))
     // </Grommet>
   );
