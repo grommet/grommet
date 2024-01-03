@@ -138,4 +138,24 @@ describe('RangeInput', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('with 8-digit HEX color', () => {
+    const { container } = render(
+      <Grommet>
+        <RangeInput
+          color={[
+            { value: 3, color: '#FF0000', opacity: 0.5 },
+            { value: 4, color: '#FFFF00' },
+            { value: 6, color: '#00FF004A' },
+          ]}
+          min={1}
+          max={10}
+          step={1}
+          value={5}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
