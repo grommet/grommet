@@ -69,24 +69,20 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
     // CSS for this sub-object in the theme
     const partStyles = kindPartStyles(layoutProps.hover, theme);
     if (partStyles.length > 0)
-      styles.push(
-        css`
-          &:hover {
-            ${partStyles}
-          }
-        `,
-      );
+      styles.push(css`
+        &:hover {
+          ${partStyles}
+        }
+      `);
   }
 
   if (iconProps.color) {
-    styles.push(
-      css`
-        svg {
-          stroke: ${normalizeColor(iconProps.color, theme)};
-          fill: ${normalizeColor(iconProps.color, theme)};
-        }
-      `,
-    );
+    styles.push(css`
+      svg {
+        stroke: ${normalizeColor(iconProps.color, theme)};
+        fill: ${normalizeColor(iconProps.color, theme)};
+      }
+    `);
   }
 
   let align = 'center';
@@ -94,12 +90,10 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
   if (verticalAlign === 'top') align = 'start';
 
   if (verticalAlign) {
-    styles.push(
-      css`
-        display: inline-flex;
-        align-items: ${align};
-      `,
-    );
+    styles.push(css`
+      display: inline-flex;
+      align-items: ${align};
+    `);
   }
 
   return styles;
@@ -271,7 +265,9 @@ const Header = forwardRef(
                   indeterminate={
                     groupBy?.select
                       ? groupBy.select[''] === 'some'
-                      : totalSelected > 0 && totalSelected < data.length
+                      : totalSelected > 0 &&
+                        (totalSelected < data.length ||
+                          totalSelected > data.length)
                   }
                   onChange={onChangeSelection}
                   pad={cellProps.pad}
