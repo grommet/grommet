@@ -79,7 +79,7 @@ const trackColorStyle = (props) => {
     ? getBoundColor(props, 'lower')
     : getRGBA(
         normalizeColor(props.theme.global.colors.control, props.theme),
-        props.theme.rangeInput.track.opacity || 1,
+        props.theme.rangeInput.track.opacity,
       );
 
   if (
@@ -117,7 +117,7 @@ const trackColorStyle = (props) => {
       } else {
         result += `${getRGBA(
           normalizeColor(color, props.theme),
-          opacity || 1,
+          opacity,
         )} ${thumbPosition},`;
         result += `${upperTrackColor} ${thumbPosition}, ${upperTrackColor})`;
         break;
