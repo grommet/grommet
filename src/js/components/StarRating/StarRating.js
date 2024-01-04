@@ -5,7 +5,7 @@ import { StarOutline } from 'grommet-icons/icons/StarOutline';
 import { FormContext } from '../Form/FormContext';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 
-const StarRating = ({name, defaultValue, value:valueProp, ...rest }) => {
+const StarRating = ({ name, defaultValue, value: valueProp, ...rest }) => {
   const formContext = useContext(FormContext);
   const theme = useContext(ThemeContext);
   const [value, setValue] = formContext.useFormInput({
@@ -13,7 +13,7 @@ const StarRating = ({name, defaultValue, value:valueProp, ...rest }) => {
     value: valueProp,
     initialValue: defaultValue ?? 0,
   });
-  
+
   const options = [];
   for (let i = 1; i < 6; i += 1) {
     options.push(i);
@@ -24,7 +24,7 @@ const StarRating = ({name, defaultValue, value:valueProp, ...rest }) => {
       direction="row"
       options={options}
       onChange={(event) => {
-        setValue(event.target.value);
+        setValue(event.value);
       }}
       {...rest}
     >
