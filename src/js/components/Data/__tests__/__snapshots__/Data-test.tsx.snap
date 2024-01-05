@@ -174,11 +174,6 @@ exports[`Data controlled search 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -586,7 +581,7 @@ exports[`Data controlled search 2`] = `
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 ckELTg"
+          class="StyledButton-sc-323bzc-0 hZNOgI"
           id="data--filters-control"
           type="button"
         >
@@ -887,11 +882,6 @@ exports[`Data messages 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c9:focus {
@@ -3189,11 +3179,6 @@ exports[`Data properties when property is an array 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3728,11 +3713,6 @@ exports[`Data properties when property is an array 2`] = `
   padding: 12px;
 }
 
-.c0:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c0:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -4091,11 +4071,6 @@ exports[`Data toolbar 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c9:focus {
@@ -4676,11 +4651,6 @@ exports[`Data toolbar filters 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c4:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c4:focus {
@@ -5524,11 +5494,6 @@ exports[`Data uncontrolled search 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -5936,7 +5901,7 @@ exports[`Data uncontrolled search 2`] = `
       >
         <button
           aria-label="Open filters"
-          class="StyledButton-sc-323bzc-0 ckELTg"
+          class="StyledButton-sc-323bzc-0 hZNOgI"
           id="data--filters-control"
           type="button"
         >
@@ -6459,11 +6424,6 @@ exports[`Data view all 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -6968,11 +6928,6 @@ exports[`Data view property option 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -7475,11 +7430,6 @@ exports[`Data view property range 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c9:focus {
@@ -8007,11 +7957,6 @@ exports[`Data view search 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -8514,11 +8459,6 @@ exports[`Data view sort 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c9:focus {
