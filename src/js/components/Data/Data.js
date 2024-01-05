@@ -3,6 +3,7 @@ import { AnnounceContext } from '../../contexts';
 import { Box } from '../Box';
 import { DataFilters } from '../DataFilters';
 import { DataSearch } from '../DataSearch';
+import { DataSort } from '../DataSort';
 import { DataSummary } from '../DataSummary';
 import { DataView } from '../DataView';
 import { Toolbar } from '../Toolbar';
@@ -139,13 +140,22 @@ export const Data = ({
     views,
   ]);
 
+  const sortable = views?.find((v) => v.sort);
+
   let toolbarContent;
   if (toolbar) {
     toolbarContent = [
-      <Toolbar key="toolbar">
-        {(toolbar === true || toolbar === 'search') && <DataSearch />}
+      <Toolbar key="toolbar" gap="medium">
+        <Toolbar>
+          {(toolbar === true || toolbar === 'search') && <DataSearch />}
+          {(toolbar === true || toolbar === 'view') && sortable && (
+            // if views exists and a view contains a sort configuation,
+            // show by default to avoid layout shifts later
+            <DataSort drop />
+          )}
+          {(toolbar === true || toolbar === 'filters') && <DataFilters layer />}
+        </Toolbar>
         {(toolbar === true || toolbar === 'view') && <DataView />}
-        {(toolbar === true || toolbar === 'filters') && <DataFilters layer />}
       </Toolbar>,
       <DataSummary key="summary" />,
     ];
