@@ -153,6 +153,23 @@ const SelectMultiple = forwardRef(
     }, [optionsProp, search]);
 
     useEffect(() => {
+      if (search && optionsProp && optionsProp.length > 0) {
+        const additionalOptions = [...allOptions];
+        optionsProp.forEach((i) =>
+          additionalOptions.some((j) => {
+            if (typeof i === 'object')
+              return applyKey(i, valueKey) === applyKey(j, valueKey);
+            return i === j;
+          })
+            ? null
+            : additionalOptions.push(i),
+        );
+        if (allOptions.length !== additionalOptions.length)
+          setAllOptions(additionalOptions);
+      }
+    }, [allOptions, optionsProp, search, valueKey]);
+
+    useEffect(() => {
       if (sortSelectedOnClose) setOrderedOptions(optionsProp);
     }, [optionsProp, sortSelectedOnClose]);
 
