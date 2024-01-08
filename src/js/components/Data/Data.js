@@ -3,7 +3,6 @@ import { AnnounceContext } from '../../contexts';
 import { Box } from '../Box';
 import { DataFilters } from '../DataFilters';
 import { DataSearch } from '../DataSearch';
-import { DataSort } from '../DataSort';
 import { DataSummary } from '../DataSummary';
 import { DataView } from '../DataView';
 import { Toolbar } from '../Toolbar';
@@ -107,7 +106,9 @@ export const Data = ({
     };
 
     value.clearFilters = () => {
-      const nextView = defaultView;
+      const nextView = { ...view };
+      delete nextView.properties;
+      delete nextView.page;
       setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
@@ -128,7 +129,6 @@ export const Data = ({
 
     return value;
   }, [
-    defaultView,
     id,
     messages,
     filtersCleared,
@@ -140,19 +140,12 @@ export const Data = ({
     views,
   ]);
 
-  const sortable = views?.find((v) => v.sort);
-
   let toolbarContent;
   if (toolbar) {
     toolbarContent = [
       <Toolbar key="toolbar" gap="medium">
         <Toolbar>
           {(toolbar === true || toolbar === 'search') && <DataSearch />}
-          {(toolbar === true || toolbar === 'view') && sortable && (
-            // if views exists and a view contains a sort configuation,
-            // show by default to avoid layout shifts later
-            <DataSort drop />
-          )}
           {(toolbar === true || toolbar === 'filters') && <DataFilters layer />}
         </Toolbar>
         {(toolbar === true || toolbar === 'view') && <DataView />}
