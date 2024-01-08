@@ -155,14 +155,13 @@ const SelectMultiple = forwardRef(
     useEffect(() => {
       if (search && optionsProp && optionsProp.length > 0) {
         const additionalOptions = [...allOptions];
-        optionsProp.forEach((i) =>
-          additionalOptions.some((j) => {
-            if (typeof i === 'object')
-              return applyKey(i, valueKey) === applyKey(j, valueKey);
-            return i === j;
-          })
-            ? null
-            : additionalOptions.push(i),
+        optionsProp.forEach(
+          (i) =>
+            !additionalOptions.some((j) =>
+              typeof i === 'object'
+                ? applyKey(i, valueKey) === applyKey(j, valueKey)
+                : i === j,
+            ) && additionalOptions.push(i),
         );
         if (allOptions.length !== additionalOptions.length)
           setAllOptions(additionalOptions);
