@@ -86,6 +86,21 @@ const RangeSelector = forwardRef(
       initialValue: defaultValues,
     });
 
+    // for DataFilters, notify when RangeSelector has returned to its min/max
+    useEffect(() => {
+      // eslint-disable-next-line no-undef
+      const resetEvent = new CustomEvent('rangeselectorreset', {
+        // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail
+        detail: {
+          name,
+        },
+      });
+
+      if (values[0] === min && values[1] === max) {
+        window.dispatchEvent(resetEvent);
+      }
+    }, [min, max, values, name]);
+
     const change = useCallback(
       (nextValues) => {
         let [nextMin, nextMax] = nextValues;
