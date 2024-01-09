@@ -89,7 +89,7 @@ const RangeSelector = forwardRef(
     // for DataFilters, notify when RangeSelector has returned to its min/max
     useEffect(() => {
       // eslint-disable-next-line no-undef
-      const resetEvent = new CustomEvent('rangeselectorreset', {
+      const resetEvent = new CustomEvent('valuereset', {
         // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail
         detail: {
           name,

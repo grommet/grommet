@@ -80,10 +80,9 @@ export const DataFilters = ({
       }
     };
 
-    window.addEventListener('rangeselectorreset', updatePendingReset);
+    window.addEventListener('valuereset', updatePendingReset);
 
-    return () =>
-      window.removeEventListener('rangeselectorreset', updatePendingReset);
+    return () => window.removeEventListener('valuereset', updatePendingReset);
   }, [touched, view]);
 
   // if filters have been cleared via clearFilters in DataContext,
