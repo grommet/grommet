@@ -16,6 +16,7 @@ import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
+import { DataFiltersContext } from '../DataFilters/DataFiltersContext';
 
 const Container = styled(Box)`
   user-select: none;
@@ -86,20 +87,18 @@ const RangeSelector = forwardRef(
       initialValue: defaultValues,
     });
 
-    // for DataFilters, notify when RangeSelector has returned to its min/max
-    useEffect(() => {
-      // eslint-disable-next-line no-undef
-      const resetEvent = new CustomEvent('valuereset', {
-        // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail
-        detail: {
-          name,
-        },
-      });
-
-      if (values[0] === min && values[1] === max) {
-        window.dispatchEvent(resetEvent);
-      }
-    }, [min, max, values, name]);
+    // for DataFilters to know when RangeSelector is set to its min/max
+    const { pendingReset } = useContext(DataFiltersContext);
+    const updatePendingReset = useCallback(
+      (nextMin, nextMax) => {
+        if (nextMin === min && nextMax === max) {
+          pendingReset?.current.add(name);
+        } else if (pendingReset?.current?.has(name)) {
+          pendingReset?.current.delete(name);
+        }
+      },
+      [max, min, name, pendingReset],
+    );
 
     const change = useCallback(
       (nextValues) => {
@@ -117,11 +116,12 @@ const RangeSelector = forwardRef(
         // make sure this is only called if both of the values
         // are actually distinct from the previous values
         if (nextMin !== values[0] || nextMax !== values[1]) {
+          updatePendingReset(nextMin, nextMax);
           setValues([nextMin, nextMax]);
           if (onChange) onChange([nextMin, nextMax]);
         }
       },
-      [onChange, setValues, step, max, min, values],
+      [onChange, setValues, step, max, min, values, updatePendingReset],
     );
 
     const valueForMouseCoord = useCallback(

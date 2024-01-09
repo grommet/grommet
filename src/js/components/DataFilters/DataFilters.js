@@ -12,7 +12,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataClearFilters } from '../DataClearFilters';
 import { DataFilter } from '../DataFilter';
-import { DataForm, formRangeKey } from '../Data/DataForm';
+import { DataForm } from '../Data/DataForm';
 import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
@@ -21,6 +21,7 @@ import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
+import { DataFiltersContext } from './DataFiltersContext';
 
 const dropProps = {
   align: { top: 'bottom', right: 'right' },
@@ -53,6 +54,9 @@ export const DataFilters = ({
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext);
   const [showContent, setShowContent] = useState();
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, mark it to be removed from `touched`
+  // so it doesn't contribute to the badge count
   const pendingReset = React.useRef(new Set());
   // touched is a map of form field name to its value, it only has fields that
   // were changed as part of the DataForm here. This is so we can track based
@@ -65,25 +69,6 @@ export const DataFilters = ({
   useEffect(() => {
     setFiltersCleared(!Object.keys(touched).length);
   }, [touched, setFiltersCleared]);
-
-  // special case for range selectors which always have a value.
-  // when value returns to its min/max, mark it to be removed from `touched`
-  // so it doesn't contribute to the badge count
-  useEffect(() => {
-    const updatePendingReset = (e) => {
-      if (
-        touched[e.detail.name] ||
-        // when "view" sets a default range, consider it "pendingReset"
-        view?.properties?.[e.detail.name.split(`.${formRangeKey}`)[0]]
-      ) {
-        pendingReset?.current?.add(e.detail.name);
-      }
-    };
-
-    window.addEventListener('valuereset', updatePendingReset);
-
-    return () => window.removeEventListener('valuereset', updatePendingReset);
-  }, [touched, view]);
 
   // if filters have been cleared via clearFilters in DataContext,
   // reset touched to default state so badge is removed
@@ -132,56 +117,59 @@ export const DataFilters = ({
     }
   }
 
+  const contextValue = useMemo(() => ({ pendingReset }), []);
   content = (
-    <DataForm
-      pad={controlled ? 'medium' : undefined}
-      onDone={() => setShowContent(false)}
-      onTouched={
-        controlled
-          ? (currentTouched) =>
-              // we merge this with our prior state to handle the case where the
-              // user opens and closes the drop multiple times and we want to
-              // track both new changes and prior changes.
-              setTouched((prevTouched) => {
-                const nextTouched = {
-                  ...prevTouched,
-                  ...currentTouched,
-                };
+    <DataFiltersContext.Provider value={contextValue}>
+      <DataForm
+        pad={controlled ? 'medium' : undefined}
+        onDone={() => setShowContent(false)}
+        onTouched={
+          controlled
+            ? (currentTouched) =>
+                // we merge this with our prior state to handle the case
+                // where the user opens and closes the drop multiple times
+                // and we want to track both new changes and prior changes.
+                setTouched((prevTouched) => {
+                  const nextTouched = {
+                    ...prevTouched,
+                    ...currentTouched,
+                  };
 
-                // special case for when range selector returns to its min/max
-                Object.keys(nextTouched).forEach((key) => {
-                  if (pendingReset?.current?.has(key)) {
-                    delete nextTouched[key];
-                    pendingReset.current.delete(key);
-                  }
-                });
+                  // special case for when range selector returns to its min/max
+                  Object.keys(nextTouched).forEach((key) => {
+                    if (pendingReset?.current?.has(key)) {
+                      delete nextTouched[key];
+                      pendingReset.current.delete(key);
+                    }
+                  });
 
-                return nextTouched;
-              })
-          : undefined
-      }
-      updateOn={updateOn}
-      {...(!controlled ? rest : { fill: 'vertical' })}
-    >
-      {layer && (
-        <Header>
-          <Heading margin="none" level={2}>
-            {heading ||
-              format({
-                id: 'dataFilters.heading',
-                messages: messages?.dataFilters,
-              })}
-          </Heading>
-          {!controlled && clearControl}
-          <Button
-            icon={<Close />}
-            hoverIndicator
-            onClick={() => setShowContent(undefined)}
-          />
-        </Header>
-      )}
-      {content}
-    </DataForm>
+                  return nextTouched;
+                })
+            : undefined
+        }
+        updateOn={updateOn}
+        {...(!controlled ? rest : { fill: 'vertical' })}
+      >
+        {layer && (
+          <Header>
+            <Heading margin="none" level={2}>
+              {heading ||
+                format({
+                  id: 'dataFilters.heading',
+                  messages: messages?.dataFilters,
+                })}
+            </Heading>
+            {!controlled && clearControl}
+            <Button
+              icon={<Close />}
+              hoverIndicator
+              onClick={() => setShowContent(undefined)}
+            />
+          </Header>
+        )}
+        {content}
+      </DataForm>
+    </DataFiltersContext.Provider>
   );
 
   if (!controlled) return content;
