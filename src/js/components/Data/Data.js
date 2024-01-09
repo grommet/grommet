@@ -109,6 +109,10 @@ export const Data = ({
       const nextView = { ...view };
       delete nextView.properties;
       delete nextView.page;
+      // by clearing the properties from a view, it is no
+      // longer reflecting the view
+      delete nextView.name;
+      delete nextView.view;
       setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
