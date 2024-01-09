@@ -59,6 +59,12 @@ export const DataFilters = ({
   // object, since touched is used as logic for whether to show badge or not
   const [touched, setTouched] = useState(defaultTouched);
 
+  // when a view is applied, update touched to make sure a badge will appear
+  // based on the view configuration
+  useEffect(() => {
+    if (view?.properties) setTouched(view.properties);
+  }, [view]);
+
   // if filters have been applied by this DataFilters, update
   // the DataContext that filters are not in a "cleared" state
   useEffect(() => {

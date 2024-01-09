@@ -221,12 +221,14 @@ const normalizeValue = (nextValue, prevValue, views) => {
   // clear empty properties
   const result = clearEmpty(nextValue);
 
-  // if we have a view and something related to it changed, clear the view
+  // if we have a view and something changed, clear the view
   if (result[formViewNameKey]) {
     const view = views.find((v) => v.name === result[formViewNameKey]);
     const viewValue = viewToFormValue(view);
     clearEmpty(viewValue);
-    if (
+    if (Object.keys(viewValue).length !== Object.keys(result).length) {
+      delete result[formViewNameKey];
+    } else if (
       Object.keys(viewValue).some(
         (k) =>
           // allow mismatch between empty and set strings
