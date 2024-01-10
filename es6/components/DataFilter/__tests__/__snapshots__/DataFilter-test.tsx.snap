@@ -4464,11 +4464,6 @@ exports[`DataFilter select multiple options search 1`] = `
   padding: 12px;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -5888,11 +5883,6 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c3:focus {

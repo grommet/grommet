@@ -142,7 +142,6 @@ export var DataFilters = function DataFilters(_ref) {
     messages: messages == null ? void 0 : messages.dataFilters
   })), !controlled && clearControl, /*#__PURE__*/React.createElement(Button, {
     icon: /*#__PURE__*/React.createElement(Close, null),
-    hoverIndicator: true,
     onClick: function onClick() {
       return setShowContent(undefined);
     }
@@ -164,7 +163,6 @@ export var DataFilters = function DataFilters(_ref) {
       "aria-label": tip,
       kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
       icon: /*#__PURE__*/React.createElement(Filter, null),
-      hoverIndicator: true,
       dropProps: dropProps,
       dropContent: content,
       badge: badge,
@@ -183,7 +181,6 @@ export var DataFilters = function DataFilters(_ref) {
       tip: tip,
       "aria-label": tip,
       kind: (_theme$data$button2 = theme.data.button) == null ? void 0 : _theme$data$button2.kind,
-      hoverIndicator: true,
       icon: /*#__PURE__*/React.createElement(Filter, null),
       badge: badge,
       onClick: function onClick() {
