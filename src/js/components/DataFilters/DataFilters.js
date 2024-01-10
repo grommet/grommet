@@ -141,11 +141,7 @@ export const DataFilters = ({
               })}
           </Heading>
           {!controlled && clearControl}
-          <Button
-            icon={<Close />}
-            hoverIndicator
-            onClick={() => setShowContent(undefined)}
-          />
+          <Button icon={<Close />} onClick={() => setShowContent(undefined)} />
         </Header>
       )}
       {content}
@@ -171,7 +167,6 @@ export const DataFilters = ({
         aria-label={tip}
         kind={theme.data.button?.kind}
         icon={<Filter />}
-        hoverIndicator
         dropProps={dropProps}
         dropContent={content}
         badge={badge}
@@ -187,7 +182,6 @@ export const DataFilters = ({
         tip={tip}
         aria-label={tip}
         kind={theme.data.button?.kind}
-        hoverIndicator
         icon={<Filter />}
         badge={badge}
         onClick={() => setShowContent(true)}

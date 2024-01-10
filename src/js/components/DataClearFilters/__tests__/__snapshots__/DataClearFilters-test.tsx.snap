@@ -124,11 +124,6 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -670,11 +665,6 @@ exports[`DataClearFilters renders custom message 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c9:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c9:focus {
