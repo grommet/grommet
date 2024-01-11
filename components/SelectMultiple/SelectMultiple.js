@@ -148,6 +148,17 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     if (!search) setAllOptions(optionsProp);
   }, [optionsProp, search]);
   (0, _react.useEffect)(function () {
+    if (search && optionsProp && optionsProp.length > 0) {
+      var additionalOptions = [].concat(allOptions);
+      optionsProp.forEach(function (i) {
+        return !additionalOptions.some(function (j) {
+          return typeof i === 'object' ? (0, _utils2.applyKey)(i, valueKey) === (0, _utils2.applyKey)(j, valueKey) : i === j;
+        }) && additionalOptions.push(i);
+      });
+      if (allOptions.length !== additionalOptions.length) setAllOptions(additionalOptions);
+    }
+  }, [allOptions, optionsProp, search, valueKey]);
+  (0, _react.useEffect)(function () {
     if (sortSelectedOnClose) setOrderedOptions(optionsProp);
   }, [optionsProp, sortSelectedOnClose]);
 

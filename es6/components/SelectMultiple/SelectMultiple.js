@@ -142,6 +142,17 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (!search) setAllOptions(optionsProp);
   }, [optionsProp, search]);
   useEffect(function () {
+    if (search && optionsProp && optionsProp.length > 0) {
+      var additionalOptions = [].concat(allOptions);
+      optionsProp.forEach(function (i) {
+        return !additionalOptions.some(function (j) {
+          return typeof i === 'object' ? applyKey(i, valueKey) === applyKey(j, valueKey) : i === j;
+        }) && additionalOptions.push(i);
+      });
+      if (allOptions.length !== additionalOptions.length) setAllOptions(additionalOptions);
+    }
+  }, [allOptions, optionsProp, search, valueKey]);
+  useEffect(function () {
     if (sortSelectedOnClose) setOrderedOptions(optionsProp);
   }, [optionsProp, sortSelectedOnClose]);
 
