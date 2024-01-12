@@ -11,6 +11,7 @@ import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
+import { DataFiltersContext } from '../DataFilters/DataFiltersContext';
 var Container = styled(Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "sc-siof5p-0"
@@ -91,6 +92,18 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }),
     values = _formContext$useFormI[0],
     setValues = _formContext$useFormI[1];
+
+  // for DataFilters to know when RangeSelector is set to its min/max
+  var _useContext2 = useContext(DataFiltersContext),
+    pendingReset = _useContext2.pendingReset;
+  var updatePendingReset = useCallback(function (nextMin, nextMax) {
+    var _pendingReset$current;
+    if (nextMin === min && nextMax === max) {
+      pendingReset == null || pendingReset.current.add(name);
+    } else if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(name)) {
+      pendingReset == null || pendingReset.current["delete"](name);
+    }
+  }, [max, min, name, pendingReset]);
   var change = useCallback(function (nextValues) {
     var nextMin = nextValues[0],
       nextMax = nextValues[1];
@@ -105,10 +118,11 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // make sure this is only called if both of the values
     // are actually distinct from the previous values
     if (nextMin !== values[0] || nextMax !== values[1]) {
+      updatePendingReset(nextMin, nextMax);
       setValues([nextMin, nextMax]);
       if (onChange) onChange([nextMin, nextMax]);
     }
-  }, [onChange, setValues, step, max, min, values]);
+  }, [onChange, setValues, step, max, min, values, updatePendingReset]);
   var valueForMouseCoord = useCallback(function (event) {
     var rect = containerRef.current.getBoundingClientRect();
     var value;

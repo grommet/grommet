@@ -18,6 +18,7 @@ var _Layer = require("../Layer");
 var _DataContext = require("../../contexts/DataContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
+var _DataFiltersContext = require("./DataFiltersContext");
 var _excluded = ["drop", "children", "clearFilters", "heading", "layer", "updateOn"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -56,6 +57,10 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
   var _useState = (0, _react.useState)(),
     showContent = _useState[0],
     setShowContent = _useState[1];
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, mark it to be removed from `touched`
+  // so it doesn't contribute to the badge count
+  var pendingReset = _react["default"].useRef(new Set());
   // touched is a map of form field name to its value, it only has fields that
   // were changed as part of the DataForm here. This is so we can track based
   // on what's inside DataFilters as opposed to trying to track from the view
@@ -115,18 +120,35 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
       });
     });
   }
-  content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
+  var contextValue = (0, _react.useMemo)(function () {
+    return {
+      pendingReset: pendingReset
+    };
+  }, []);
+  content = /*#__PURE__*/_react["default"].createElement(_DataFiltersContext.DataFiltersContext.Provider, {
+    value: contextValue
+  }, /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
     pad: controlled ? 'medium' : undefined,
     onDone: function onDone() {
       return setShowContent(false);
     },
     onTouched: controlled ? function (currentTouched) {
       return (
-        // we merge this with our prior state to handle the case where the
-        // user opens and closes the drop multiple times and we want to
-        // track both new changes and prior changes.
+        // we merge this with our prior state to handle the case
+        // where the user opens and closes the drop multiple times
+        // and we want to track both new changes and prior changes.
         setTouched(function (prevTouched) {
-          return _extends({}, prevTouched, currentTouched);
+          var nextTouched = _extends({}, prevTouched, currentTouched);
+
+          // special case for when range selector returns to its min/max
+          Object.keys(nextTouched).forEach(function (key) {
+            var _pendingReset$current;
+            if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(key)) {
+              delete nextTouched[key];
+              pendingReset.current["delete"](key);
+            }
+          });
+          return nextTouched;
         })
       );
     } : undefined,
@@ -144,7 +166,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
     onClick: function onClick() {
       return setShowContent(undefined);
     }
-  })), content);
+  })), content));
   if (!controlled) return content;
   var tip = format({
     id: badge ? "dataFilters.openSet." + (badge === 1 ? 'singular' : 'plural') : 'dataFilters.open',

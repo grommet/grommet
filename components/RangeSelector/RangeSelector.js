@@ -12,6 +12,7 @@ var _Text = require("../Text");
 var _utils = require("../../utils");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
+var _DataFiltersContext = require("../DataFilters/DataFiltersContext");
 var _excluded = ["color", "defaultValues", "direction", "invert", "label", "max", "messages", "min", "name", "onChange", "opacity", "round", "size", "step", "values"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -97,6 +98,18 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
     }),
     values = _formContext$useFormI[0],
     setValues = _formContext$useFormI[1];
+
+  // for DataFilters to know when RangeSelector is set to its min/max
+  var _useContext2 = (0, _react.useContext)(_DataFiltersContext.DataFiltersContext),
+    pendingReset = _useContext2.pendingReset;
+  var updatePendingReset = (0, _react.useCallback)(function (nextMin, nextMax) {
+    var _pendingReset$current;
+    if (nextMin === min && nextMax === max) {
+      pendingReset == null || pendingReset.current.add(name);
+    } else if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(name)) {
+      pendingReset == null || pendingReset.current["delete"](name);
+    }
+  }, [max, min, name, pendingReset]);
   var change = (0, _react.useCallback)(function (nextValues) {
     var nextMin = nextValues[0],
       nextMax = nextValues[1];
@@ -111,10 +124,11 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
     // make sure this is only called if both of the values
     // are actually distinct from the previous values
     if (nextMin !== values[0] || nextMax !== values[1]) {
+      updatePendingReset(nextMin, nextMax);
       setValues([nextMin, nextMax]);
       if (onChange) onChange([nextMin, nextMax]);
     }
-  }, [onChange, setValues, step, max, min, values]);
+  }, [onChange, setValues, step, max, min, values, updatePendingReset]);
   var valueForMouseCoord = (0, _react.useCallback)(function (event) {
     var rect = containerRef.current.getBoundingClientRect();
     var value;

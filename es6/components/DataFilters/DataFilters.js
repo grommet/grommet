@@ -17,6 +17,7 @@ import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
+import { DataFiltersContext } from './DataFiltersContext';
 var dropProps = {
   align: {
     top: 'bottom',
@@ -50,6 +51,10 @@ export var DataFilters = function DataFilters(_ref) {
   var _useState = useState(),
     showContent = _useState[0],
     setShowContent = _useState[1];
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, mark it to be removed from `touched`
+  // so it doesn't contribute to the badge count
+  var pendingReset = React.useRef(new Set());
   // touched is a map of form field name to its value, it only has fields that
   // were changed as part of the DataForm here. This is so we can track based
   // on what's inside DataFilters as opposed to trying to track from the view
@@ -109,18 +114,35 @@ export var DataFilters = function DataFilters(_ref) {
       });
     });
   }
-  content = /*#__PURE__*/React.createElement(DataForm, _extends({
+  var contextValue = useMemo(function () {
+    return {
+      pendingReset: pendingReset
+    };
+  }, []);
+  content = /*#__PURE__*/React.createElement(DataFiltersContext.Provider, {
+    value: contextValue
+  }, /*#__PURE__*/React.createElement(DataForm, _extends({
     pad: controlled ? 'medium' : undefined,
     onDone: function onDone() {
       return setShowContent(false);
     },
     onTouched: controlled ? function (currentTouched) {
       return (
-        // we merge this with our prior state to handle the case where the
-        // user opens and closes the drop multiple times and we want to
-        // track both new changes and prior changes.
+        // we merge this with our prior state to handle the case
+        // where the user opens and closes the drop multiple times
+        // and we want to track both new changes and prior changes.
         setTouched(function (prevTouched) {
-          return _extends({}, prevTouched, currentTouched);
+          var nextTouched = _extends({}, prevTouched, currentTouched);
+
+          // special case for when range selector returns to its min/max
+          Object.keys(nextTouched).forEach(function (key) {
+            var _pendingReset$current;
+            if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(key)) {
+              delete nextTouched[key];
+              pendingReset.current["delete"](key);
+            }
+          });
+          return nextTouched;
         })
       );
     } : undefined,
@@ -138,7 +160,7 @@ export var DataFilters = function DataFilters(_ref) {
     onClick: function onClick() {
       return setShowContent(undefined);
     }
-  })), content);
+  })), content));
   if (!controlled) return content;
   var tip = format({
     id: badge ? "dataFilters.openSet." + (badge === 1 ? 'singular' : 'plural') : 'dataFilters.open',
