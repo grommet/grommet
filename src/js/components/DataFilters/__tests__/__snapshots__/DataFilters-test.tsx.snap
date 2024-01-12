@@ -207,16 +207,6 @@ exports[`DataFilters clear 1`] = `
   height: 12px;
 }
 
-.c19 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c6 {
   margin-left: 12px;
   margin-right: 12px;
@@ -296,77 +286,6 @@ exports[`DataFilters clear 1`] = `
 
 .c18:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c20 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c20:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c20:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c20:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c20:focus:not(:focus-visible) > circle,
-.c20:focus:not(:focus-visible) > ellipse,
-.c20:focus:not(:focus-visible) > line,
-.c20:focus:not(:focus-visible) > path,
-.c20:focus:not(:focus-visible) > polygon,
-.c20:focus:not(:focus-visible) > polyline,
-.c20:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c20:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c21 {
-  opacity: 0;
 }
 
 .c2 {
@@ -486,12 +405,6 @@ exports[`DataFilters clear 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c19 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -594,18 +507,6 @@ exports[`DataFilters clear 1`] = `
             type="submit"
           >
             Apply filters
-          </button>
-          <div
-            class="c19"
-          />
-          <button
-            aria-hidden="true"
-            class="c20 c21"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
           </button>
         </footer>
       </div>
@@ -850,11 +751,6 @@ exports[`DataFilters drop 3`] = `
 @media only screen and (max-width: 768px) {
   .biJsVL {
     height: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
   }
 }"
 `;
@@ -1471,16 +1367,6 @@ exports[`DataFilters layer 2`] = `
   height: 12px;
 }
 
-.c25 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c14 {
   margin-left: 12px;
   margin-right: 12px;
@@ -1625,77 +1511,6 @@ exports[`DataFilters layer 2`] = `
 
 .c24:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c26 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c26:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c26:focus > circle,
-.c26:focus > ellipse,
-.c26:focus > line,
-.c26:focus > path,
-.c26:focus > polygon,
-.c26:focus > polyline,
-.c26:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c26:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c26:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c26:focus:not(:focus-visible) > circle,
-.c26:focus:not(:focus-visible) > ellipse,
-.c26:focus:not(:focus-visible) > line,
-.c26:focus:not(:focus-visible) > path,
-.c26:focus:not(:focus-visible) > polygon,
-.c26:focus:not(:focus-visible) > polyline,
-.c26:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c26:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c27 {
-  opacity: 0;
 }
 
 .c4 {
@@ -1920,12 +1735,6 @@ exports[`DataFilters layer 2`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c25 {
-    width: 6px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -2102,18 +1911,6 @@ exports[`DataFilters layer 2`] = `
           >
             Apply filters
           </button>
-          <div
-            class="c25"
-          />
-          <button
-            aria-hidden="true"
-            class="c26 c27"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
         </footer>
       </div>
     </form>
@@ -2155,11 +1952,6 @@ exports[`DataFilters layer 3`] = `
 @media only screen and (max-width: 768px) {
   .biJsVL {
     height: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
   }
 }"
 `;
@@ -2345,16 +2137,6 @@ exports[`DataFilters properties array 1`] = `
   height: 12px;
 }
 
-.c17 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c6 {
   margin-left: 12px;
   margin-right: 12px;
@@ -2434,77 +2216,6 @@ exports[`DataFilters properties array 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) > circle,
-.c18:focus:not(:focus-visible) > ellipse,
-.c18:focus:not(:focus-visible) > line,
-.c18:focus:not(:focus-visible) > path,
-.c18:focus:not(:focus-visible) > polygon,
-.c18:focus:not(:focus-visible) > polyline,
-.c18:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
-  opacity: 0;
 }
 
 .c2 {
@@ -2610,12 +2321,6 @@ exports[`DataFilters properties array 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c17 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -2706,18 +2411,6 @@ exports[`DataFilters properties array 1`] = `
             type="submit"
           >
             Apply filters
-          </button>
-          <div
-            class="c17"
-          />
-          <button
-            aria-hidden="true"
-            class="c18 c19"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
           </button>
         </footer>
       </div>
@@ -2907,16 +2600,6 @@ exports[`DataFilters properties object 1`] = `
   height: 12px;
 }
 
-.c17 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c6 {
   margin-left: 12px;
   margin-right: 12px;
@@ -2996,77 +2679,6 @@ exports[`DataFilters properties object 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) > circle,
-.c18:focus:not(:focus-visible) > ellipse,
-.c18:focus:not(:focus-visible) > line,
-.c18:focus:not(:focus-visible) > path,
-.c18:focus:not(:focus-visible) > polygon,
-.c18:focus:not(:focus-visible) > polyline,
-.c18:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
-  opacity: 0;
 }
 
 .c2 {
@@ -3172,12 +2784,6 @@ exports[`DataFilters properties object 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c17 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -3268,18 +2874,6 @@ exports[`DataFilters properties object 1`] = `
             type="submit"
           >
             Apply filters
-          </button>
-          <div
-            class="c17"
-          />
-          <button
-            aria-hidden="true"
-            class="c18 c19"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
           </button>
         </footer>
       </div>
@@ -3469,16 +3063,6 @@ exports[`DataFilters renders 1`] = `
   height: 12px;
 }
 
-.c17 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c6 {
   margin-left: 12px;
   margin-right: 12px;
@@ -3558,77 +3142,6 @@ exports[`DataFilters renders 1`] = `
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) > circle,
-.c18:focus:not(:focus-visible) > ellipse,
-.c18:focus:not(:focus-visible) > line,
-.c18:focus:not(:focus-visible) > path,
-.c18:focus:not(:focus-visible) > polygon,
-.c18:focus:not(:focus-visible) > polyline,
-.c18:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
-  opacity: 0;
 }
 
 .c2 {
@@ -3734,12 +3247,6 @@ exports[`DataFilters renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c17 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -3830,18 +3337,6 @@ exports[`DataFilters renders 1`] = `
             type="submit"
           >
             Apply filters
-          </button>
-          <div
-            class="c17"
-          />
-          <button
-            aria-hidden="true"
-            class="c18 c19"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
           </button>
         </footer>
       </div>
@@ -4022,7 +3517,7 @@ exports[`DataFilters should display all filter options regardless of result set 
   justify-content: space-between;
 }
 
-.c21 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4045,7 +3540,7 @@ exports[`DataFilters should display all filter options regardless of result set 
   padding-bottom: 12px;
 }
 
-.c23 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4075,16 +3570,6 @@ exports[`DataFilters should display all filter options regardless of result set 
   -ms-flex-item-align: stretch;
   align-self: stretch;
   height: 12px;
-}
-
-.c17 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
 }
 
 .c6 {
@@ -4168,77 +3653,6 @@ exports[`DataFilters should display all filter options regardless of result set 
   border: 0;
 }
 
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) > circle,
-.c18:focus:not(:focus-visible) > ellipse,
-.c18:focus:not(:focus-visible) > line,
-.c18:focus:not(:focus-visible) > path,
-.c18:focus:not(:focus-visible) > polygon,
-.c18:focus:not(:focus-visible) > polyline,
-.c18:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c19 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
@@ -4300,13 +3714,13 @@ exports[`DataFilters should display all filter options regardless of result set 
   -webkit-font-smoothing: antialiased;
 }
 
-.c20 {
+.c17 {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c22:focus {
+.c19:focus {
   outline: none;
 }
 
@@ -4347,41 +3761,41 @@ exports[`DataFilters should display all filter options regardless of result set 
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c18 {
     border-top: solid 1px rgba(0,0,0,0.33);
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c18 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c18 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c23 {
+  .c20 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c23 {
+  .c20 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c23 {
+  .c20 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -4390,12 +3804,6 @@ exports[`DataFilters should display all filter options regardless of result set 
 @media only screen and (max-width:768px) {
   .c14 {
     height: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    width: 6px;
   }
 }
 
@@ -4551,32 +3959,20 @@ exports[`DataFilters should display all filter options regardless of result set 
             >
               Apply filters
             </button>
-            <div
-              class="c17"
-            />
-            <button
-              aria-hidden="true"
-              class="c18 c19"
-              disabled=""
-              tabindex="-1"
-              type="reset"
-            >
-              Undo changes
-            </button>
           </footer>
         </div>
       </form>
       <ul
-        class="c20"
+        class="c17"
         role="list"
       >
         <li
-          class="c21 c22"
+          class="c18 c19"
         >
           a
         </li>
         <li
-          class="c23 c22"
+          class="c20 c19"
         >
           b
         </li>
@@ -4934,7 +4330,7 @@ exports[`DataFilters sub objects 1`] = `
   justify-content: space-between;
 }
 
-.c35 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4965,16 +4361,6 @@ exports[`DataFilters sub objects 1`] = `
   height: 12px;
 }
 
-.c29 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c6 {
   margin-left: 12px;
   margin-right: 12px;
@@ -4999,12 +4385,12 @@ exports[`DataFilters sub objects 1`] = `
   line-height: 20px;
 }
 
-.c36 {
+.c33 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c39 {
+.c36 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -5082,77 +4468,6 @@ exports[`DataFilters sub objects 1`] = `
   border: 0;
 }
 
-.c30 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c30:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c30:focus > circle,
-.c30:focus > ellipse,
-.c30:focus > line,
-.c30:focus > path,
-.c30:focus > polygon,
-.c30:focus > polyline,
-.c30:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c30:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c30:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c30:focus:not(:focus-visible) > circle,
-.c30:focus:not(:focus-visible) > ellipse,
-.c30:focus:not(:focus-visible) > line,
-.c30:focus:not(:focus-visible) > path,
-.c30:focus:not(:focus-visible) > polygon,
-.c30:focus:not(:focus-visible) > polyline,
-.c30:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c30:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c31 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
@@ -5219,7 +4534,7 @@ exports[`DataFilters sub objects 1`] = `
   user-select: none;
 }
 
-.c34 {
+.c31 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5232,7 +4547,7 @@ exports[`DataFilters sub objects 1`] = `
   padding-bottom: 6px;
 }
 
-.c38 {
+.c35 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5244,23 +4559,23 @@ exports[`DataFilters sub objects 1`] = `
   padding-bottom: 6px;
 }
 
-.c32 {
+.c29 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c33 {
+.c30 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c37:focus {
+.c34:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c37:focus:not(:focus-visible) {
+.c34:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -5331,12 +4646,6 @@ exports[`DataFilters sub objects 1`] = `
 @media only screen and (max-width:768px) {
   .c15 {
     height: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c29 {
-    width: 6px;
   }
 }
 
@@ -5529,23 +4838,11 @@ exports[`DataFilters sub objects 1`] = `
           >
             Apply filters
           </button>
-          <div
-            class="c29"
-          />
-          <button
-            aria-hidden="true"
-            class="c30 c31"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
         </footer>
       </div>
     </form>
     <table
-      class="c32 c33"
+      class="c29 c30"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -5554,28 +4851,28 @@ exports[`DataFilters sub objects 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c34 "
+            class="c31 "
             scope="col"
           >
             <div
-              class="c35"
+              class="c32"
             >
               <span
-                class="c36"
+                class="c33"
               >
                 City
               </span>
             </div>
           </th>
           <th
-            class="c34 "
+            class="c31 "
             scope="col"
           >
             <div
-              class="c35"
+              class="c32"
             >
               <span
-                class="c36"
+                class="c33"
               >
                 Latitude
               </span>
@@ -5584,33 +4881,33 @@ exports[`DataFilters sub objects 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c37"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c34"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c38 "
+            class="c35 "
             scope="row"
           >
             <div
               class="c8"
             >
               <span
-                class="c39"
+                class="c36"
               >
                 Paris
               </span>
             </div>
           </th>
           <td
-            class="c38 "
+            class="c35 "
           >
             <div
               class="c8"
             >
               <span
-                class="c36"
+                class="c33"
               >
                 48
               </span>
@@ -5955,10 +5252,6 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
   .c10 {
     margin-inline-start: 6px;
   }
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 @media only screen and (max-width:768px) {

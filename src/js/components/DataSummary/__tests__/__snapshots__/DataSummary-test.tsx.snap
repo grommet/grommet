@@ -77,16 +77,6 @@ exports[`DataSummary renders 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   margin-top: 6px;
   margin-bottom: 6px;
@@ -166,77 +156,6 @@ exports[`DataSummary renders 1`] = `
   border: 0;
 }
 
-.c9 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
@@ -254,12 +173,6 @@ exports[`DataSummary renders 1`] = `
 @media only screen and (max-width:768px) {
   .c6 {
     margin-top: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
   }
 }
 
@@ -297,18 +210,6 @@ exports[`DataSummary renders 1`] = `
             type="submit"
           >
             Apply filters
-          </button>
-          <div
-            class="c8"
-          />
-          <button
-            aria-hidden="true"
-            class="c9 c10"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
           </button>
         </footer>
       </div>
@@ -395,16 +296,6 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   justify-content: space-between;
 }
 
-.c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   margin-top: 6px;
   margin-bottom: 6px;
@@ -484,77 +375,6 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   border: 0;
 }
 
-.c9 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
@@ -572,12 +392,6 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
 @media only screen and (max-width:768px) {
   .c6 {
     margin-top: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
   }
 }
 
@@ -615,18 +429,6 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
               type="submit"
             >
               Apply filters
-            </button>
-            <div
-              class="c8"
-            />
-            <button
-              aria-hidden="true"
-              class="c9 c10"
-              disabled=""
-              tabindex="-1"
-              type="reset"
-            >
-              Undo changes
             </button>
           </footer>
         </div>
@@ -714,16 +516,6 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   justify-content: space-between;
 }
 
-.c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c5 {
   margin-top: 6px;
   margin-bottom: 6px;
@@ -803,77 +595,6 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   border: 0;
 }
 
-.c9 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) > circle,
-.c9:focus:not(:focus-visible) > ellipse,
-.c9:focus:not(:focus-visible) > line,
-.c9:focus:not(:focus-visible) > path,
-.c9:focus:not(:focus-visible) > polygon,
-.c9:focus:not(:focus-visible) > polyline,
-.c9:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c10 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
@@ -891,12 +612,6 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
 @media only screen and (max-width:768px) {
   .c6 {
     margin-top: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    width: 6px;
   }
 }
 
@@ -934,18 +649,6 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
               type="submit"
             >
               Apply filters
-            </button>
-            <div
-              class="c8"
-            />
-            <button
-              aria-hidden="true"
-              class="c9 c10"
-              disabled=""
-              tabindex="-1"
-              type="reset"
-            >
-              Undo changes
             </button>
           </footer>
         </div>
