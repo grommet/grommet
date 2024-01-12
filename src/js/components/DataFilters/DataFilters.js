@@ -13,7 +13,6 @@ import { Button } from '../Button';
 import { DataClearFilters } from '../DataClearFilters';
 import { DataFilter } from '../DataFilter';
 import { DataForm } from '../Data/DataForm';
-import { DataSort } from '../DataSort';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -49,7 +48,6 @@ export const DataFilters = ({
     unfilteredData,
     filtersCleared,
     setFiltersCleared,
-    view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext);
@@ -112,9 +110,6 @@ export const DataFilters = ({
     content = filtersFor.map((property) => (
       <DataFilter key={property} property={property} />
     ));
-    if (view?.sort) {
-      content.push(<DataSort key="_sort" />);
-    }
   }
 
   const contextValue = useMemo(() => ({ pendingReset }), []);
@@ -162,7 +157,6 @@ export const DataFilters = ({
             {!controlled && clearControl}
             <Button
               icon={<Close />}
-              hoverIndicator
               onClick={() => setShowContent(undefined)}
             />
           </Header>
@@ -191,7 +185,6 @@ export const DataFilters = ({
         aria-label={tip}
         kind={theme.data.button?.kind}
         icon={<Filter />}
-        hoverIndicator
         dropProps={dropProps}
         dropContent={content}
         badge={badge}
@@ -207,7 +200,6 @@ export const DataFilters = ({
         tip={tip}
         aria-label={tip}
         kind={theme.data.button?.kind}
-        hoverIndicator
         icon={<Filter />}
         badge={badge}
         onClick={() => setShowContent(true)}
