@@ -102,7 +102,13 @@ export var Data = function Data(_ref) {
       views: views
     }, result);
     value.clearFilters = function () {
-      var nextView = defaultView;
+      var nextView = _extends({}, view);
+      delete nextView.properties;
+      delete nextView.page;
+      // by clearing the properties from a view, it is no
+      // longer reflecting the view
+      delete nextView.name;
+      delete nextView.view;
       setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
@@ -119,14 +125,15 @@ export var Data = function Data(_ref) {
     };
     value.toolbarKeys = toolbarKeys;
     return value;
-  }, [defaultView, id, messages, filtersCleared, onView, properties, result, toolbarKeys, view, views]);
+  }, [id, messages, filtersCleared, onView, properties, result, toolbarKeys, view, views]);
   var toolbarContent;
   if (toolbar) {
     toolbarContent = [/*#__PURE__*/React.createElement(Toolbar, {
-      key: "toolbar"
-    }, (toolbar === true || toolbar === 'search') && /*#__PURE__*/React.createElement(DataSearch, null), (toolbar === true || toolbar === 'view') && /*#__PURE__*/React.createElement(DataView, null), (toolbar === true || toolbar === 'filters') && /*#__PURE__*/React.createElement(DataFilters, {
+      key: "toolbar",
+      gap: "medium"
+    }, /*#__PURE__*/React.createElement(Toolbar, null, (toolbar === true || toolbar === 'search') && /*#__PURE__*/React.createElement(DataSearch, null), (toolbar === true || toolbar === 'filters') && /*#__PURE__*/React.createElement(DataFilters, {
       layer: true
-    })), /*#__PURE__*/React.createElement(DataSummary, {
+    })), (toolbar === true || toolbar === 'view') && /*#__PURE__*/React.createElement(DataView, null)), /*#__PURE__*/React.createElement(DataSummary, {
       key: "summary"
     })];
   }

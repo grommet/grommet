@@ -108,7 +108,13 @@ var Data = exports.Data = function Data(_ref) {
       views: views
     }, result);
     value.clearFilters = function () {
-      var nextView = defaultView;
+      var nextView = _extends({}, view);
+      delete nextView.properties;
+      delete nextView.page;
+      // by clearing the properties from a view, it is no
+      // longer reflecting the view
+      delete nextView.name;
+      delete nextView.view;
       setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
@@ -125,14 +131,15 @@ var Data = exports.Data = function Data(_ref) {
     };
     value.toolbarKeys = toolbarKeys;
     return value;
-  }, [defaultView, id, messages, filtersCleared, onView, properties, result, toolbarKeys, view, views]);
+  }, [id, messages, filtersCleared, onView, properties, result, toolbarKeys, view, views]);
   var toolbarContent;
   if (toolbar) {
     toolbarContent = [/*#__PURE__*/_react["default"].createElement(_Toolbar.Toolbar, {
-      key: "toolbar"
-    }, (toolbar === true || toolbar === 'search') && /*#__PURE__*/_react["default"].createElement(_DataSearch.DataSearch, null), (toolbar === true || toolbar === 'view') && /*#__PURE__*/_react["default"].createElement(_DataView.DataView, null), (toolbar === true || toolbar === 'filters') && /*#__PURE__*/_react["default"].createElement(_DataFilters.DataFilters, {
+      key: "toolbar",
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_Toolbar.Toolbar, null, (toolbar === true || toolbar === 'search') && /*#__PURE__*/_react["default"].createElement(_DataSearch.DataSearch, null), (toolbar === true || toolbar === 'filters') && /*#__PURE__*/_react["default"].createElement(_DataFilters.DataFilters, {
       layer: true
-    })), /*#__PURE__*/_react["default"].createElement(_DataSummary.DataSummary, {
+    })), (toolbar === true || toolbar === 'view') && /*#__PURE__*/_react["default"].createElement(_DataView.DataView, null)), /*#__PURE__*/_react["default"].createElement(_DataSummary.DataSummary, {
       key: "summary"
     })];
   }

@@ -11,7 +11,6 @@ var _Button = require("../Button");
 var _DataClearFilters = require("../DataClearFilters");
 var _DataFilter = require("../DataFilter");
 var _DataForm = require("../Data/DataForm");
-var _DataSort = require("../DataSort");
 var _DropButton = require("../DropButton");
 var _Header = require("../Header");
 var _Heading = require("../Heading");
@@ -50,8 +49,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData,
     filtersCleared = _useContext.filtersCleared,
-    setFiltersCleared = _useContext.setFiltersCleared,
-    view = _useContext.view;
+    setFiltersCleared = _useContext.setFiltersCleared;
   var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext2.format;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
@@ -116,11 +114,6 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
         property: property
       });
     });
-    if (view != null && view.sort) {
-      content.push( /*#__PURE__*/_react["default"].createElement(_DataSort.DataSort, {
-        key: "_sort"
-      }));
-    }
   }
   content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
     pad: controlled ? 'medium' : undefined,
