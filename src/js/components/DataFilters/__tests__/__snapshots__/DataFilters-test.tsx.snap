@@ -604,11 +604,6 @@ exports[`DataFilters drop 1`] = `
   padding: 12px;
 }
 
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c3:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -696,7 +691,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButton-sc-323bzc-0 ckELTg"
+  class="StyledButton-sc-323bzc-0 hZNOgI"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"
@@ -842,11 +837,6 @@ exports[`DataFilters drop badge 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c3:focus {
@@ -1020,11 +1010,6 @@ exports[`DataFilters layer 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c3:focus {
@@ -1394,11 +1379,6 @@ exports[`DataFilters layer 2`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c11:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c11:focus {
@@ -5076,11 +5056,6 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
-}
-
-.c3:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c3:focus {
