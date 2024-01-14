@@ -5742,7 +5742,7 @@ exports[`DataTable groupBy 0 value 1`] = `
   stroke: none;
 }
 
-.c16 {
+.c15 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5753,25 +5753,25 @@ exports[`DataTable groupBy 0 value 1`] = `
   stroke: #666666;
 }
 
-.c16 g {
+.c15 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c16 *:not([stroke])[fill='none'] {
+.c15 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c16 *[stroke*='#'],
-.c16 *[STROKE*='#'] {
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*='#'],
-.c16 *[FILL*='#'] {
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -5973,39 +5973,9 @@ exports[`DataTable groupBy 0 value 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c13 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c15 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: top;
-  text-align: start;
-}
-
-.c17 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6208,7 +6178,7 @@ exports[`DataTable groupBy 0 value 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c15"
+          class="c12"
         >
           <div
             class="c4"
@@ -6219,14 +6189,14 @@ exports[`DataTable groupBy 0 value 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="c16"
+                class="c15"
                 viewBox="0 0 24 24"
               />
             </div>
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -6239,7 +6209,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -6252,7 +6222,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -6269,7 +6239,7 @@ exports[`DataTable groupBy 0 value 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c15"
+          class="c12"
         >
           <div
             class="c4"
@@ -6280,14 +6250,14 @@ exports[`DataTable groupBy 0 value 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="c16"
+                class="c15"
                 viewBox="0 0 24 24"
               />
             </div>
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -6300,7 +6270,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -6313,7 +6283,7 @@ exports[`DataTable groupBy 0 value 1`] = `
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -6563,9 +6533,6 @@ exports[`DataTable groupBy 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c13 {
@@ -6574,9 +6541,6 @@ exports[`DataTable groupBy 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -6891,7 +6855,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 NpttR"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gbGTHA"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fYclLf"
@@ -6922,7 +6886,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           scope="row"
         >
           <div
@@ -6936,7 +6900,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kqmDKi"
@@ -6947,7 +6911,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 NpttR"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gbGTHA"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fYclLf"
@@ -6978,7 +6942,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           scope="row"
         >
           <div
@@ -6992,7 +6956,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kqmDKi"
@@ -7039,7 +7003,7 @@ exports[`DataTable groupBy expand 1`] = `
   stroke: none;
 }
 
-.c16 {
+.c15 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -7050,25 +7014,25 @@ exports[`DataTable groupBy expand 1`] = `
   stroke: #666666;
 }
 
-.c16 g {
+.c15 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c16 *:not([stroke])[fill='none'] {
+.c15 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c16 *[stroke*='#'],
-.c16 *[STROKE*='#'] {
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*='#'],
-.c16 *[FILL*='#'] {
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -7160,7 +7124,7 @@ exports[`DataTable groupBy expand 1`] = `
   flex-direction: column;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7288,9 +7252,6 @@ exports[`DataTable groupBy expand 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c13 {
@@ -7299,40 +7260,13 @@ exports[`DataTable groupBy expand 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c15 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: top;
-  text-align: start;
-}
-
-.c17 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c18 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7514,7 +7448,7 @@ exports[`DataTable groupBy expand 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c15"
+          class="c12"
         >
           <div
             class="c4"
@@ -7525,14 +7459,14 @@ exports[`DataTable groupBy expand 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="c16"
+                class="c15"
                 viewBox="0 0 24 24"
               />
             </div>
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -7545,7 +7479,7 @@ exports[`DataTable groupBy expand 1`] = `
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -7562,10 +7496,10 @@ exports[`DataTable groupBy expand 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c18"
+          class="c16"
         >
           <div
-            class="c19"
+            class="c17"
             style="height: 0px;"
           >
             <div
@@ -7573,14 +7507,14 @@ exports[`DataTable groupBy expand 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="c16"
+                class="c15"
                 viewBox="0 0 24 24"
               />
             </div>
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -7593,7 +7527,7 @@ exports[`DataTable groupBy expand 1`] = `
           </div>
         </td>
         <td
-          class="c17 "
+          class="c13 "
         >
           <div
             class="c14"
@@ -7905,9 +7839,6 @@ exports[`DataTable groupBy property 1`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c13 {
@@ -7916,9 +7847,6 @@ exports[`DataTable groupBy property 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -8233,7 +8161,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 NpttR"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gbGTHA"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fYclLf"
@@ -8264,7 +8192,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           scope="row"
         >
           <div
@@ -8278,7 +8206,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kqmDKi"
@@ -8289,7 +8217,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 NpttR"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gbGTHA"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fYclLf"
@@ -8320,7 +8248,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           scope="row"
         >
           <div
@@ -8334,7 +8262,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kqmDKi"
@@ -9042,6 +8970,18 @@ exports[`DataTable groupBy toggle 2`] = `
   border: 0;
 }
 
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .c1 {
   margin: 0;
   padding: 0;
@@ -9052,24 +8992,6 @@ exports[`DataTable groupBy toggle 2`] = `
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-}
-
-.c6 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
 }
 
 .c0:focus {
@@ -9483,7 +9405,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   stroke: none;
 }
 
-.c25 {
+.c24 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -9494,25 +9416,25 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   stroke: #666666;
 }
 
-.c25 g {
+.c24 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c25 *:not([stroke])[fill='none'] {
+.c24 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c25 *[stroke*='#'],
-.c25 *[STROKE*='#'] {
+.c24 *[stroke*='#'],
+.c24 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c25 *[fill-rule],
-.c25 *[FILL-RULE],
-.c25 *[fill*='#'],
-.c25 *[FILL*='#'] {
+.c24 *[fill-rule],
+.c24 *[FILL-RULE],
+.c24 *[fill*='#'],
+.c24 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -9670,7 +9592,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   flex-direction: column;
 }
 
-.c30 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9696,7 +9618,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   border-radius: 4px;
 }
 
-.c29 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9890,9 +9812,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c21 {
@@ -9903,9 +9822,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   width: 1px;
   overflow: hidden;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c22 {
@@ -9914,50 +9830,13 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c24 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  width: 48px;
-  max-width: 48px;
-  overflow: hidden;
-  vertical-align: top;
-  text-align: start;
-}
-
-.c26 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  width: 1px;
-  overflow: hidden;
-  text-align: start;
-}
-
-.c27 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c28 {
+.c25 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -10010,7 +9889,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
 }
 
 @media only screen and (max-width:768px) {
-  .c30 {
+  .c27 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -10224,7 +10103,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c24"
+          class="c20"
         >
           <div
             class="c4"
@@ -10235,14 +10114,14 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <svg
                 aria-hidden="true"
-                class="c25"
+                class="c24"
                 viewBox="0 0 24 24"
               />
             </div>
           </div>
         </td>
         <td
-          class="c26"
+          class="c21"
         >
           <div
             class="c9"
@@ -10268,7 +10147,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c27 "
+          class="c22 "
         >
           <div
             class="c23"
@@ -10281,7 +10160,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c27 "
+          class="c22 "
         >
           <div
             class="c23"
@@ -10298,10 +10177,10 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c28"
+          class="c25"
         >
           <div
-            class="c29"
+            class="c26"
             style="height: 0px;"
           >
             <div
@@ -10309,14 +10188,14 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
             >
               <svg
                 aria-hidden="true"
-                class="c25"
+                class="c24"
                 viewBox="0 0 24 24"
               />
             </div>
           </div>
         </td>
         <td
-          class="c26"
+          class="c21"
         >
           <div
             class="c9"
@@ -10335,7 +10214,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
                   type="checkbox"
                 />
                 <div
-                  class="c30 "
+                  class="c27 "
                 >
                   <svg
                     class="c15"
@@ -10353,7 +10232,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c27 "
+          class="c22 "
         >
           <div
             class="c23"
@@ -10366,7 +10245,7 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
           </div>
         </td>
         <td
-          class="c27 "
+          class="c22 "
         >
           <div
             class="c23"
@@ -10830,9 +10709,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c21 {
@@ -10843,9 +10719,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   width: 1px;
   overflow: hidden;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c22 {
@@ -10854,9 +10727,6 @@ exports[`DataTable onSelect + groupBy should render indeterminate checkbox on ta
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -11584,9 +11454,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c21 {
@@ -11597,9 +11464,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   width: 1px;
   overflow: hidden;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c23 {
@@ -11608,9 +11472,6 @@ exports[`DataTable onSelect + groupBy should select all items within a group 1`]
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -12310,9 +12171,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   overflow: hidden;
   vertical-align: top;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c20 {
@@ -12323,9 +12181,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   width: 1px;
   overflow: hidden;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c21 {
@@ -12334,9 +12189,6 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 1`
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
-  background-color: #F2F2F2;
-  color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -12794,7 +12646,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 NpttR"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gbGTHA"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fYclLf"
@@ -12825,7 +12677,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hGsKfY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jgBFZZ"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 dlUdOy"
@@ -12885,7 +12737,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           scope="row"
         >
           <div
@@ -12899,7 +12751,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kqmDKi"
@@ -12910,7 +12762,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 NpttR"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gbGTHA"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fYclLf"
@@ -12941,7 +12793,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hGsKfY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jgBFZZ"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 dlUdOy"
@@ -13001,7 +12853,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           scope="row"
         >
           <div
@@ -13015,7 +12867,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kqmDKi"
@@ -13134,7 +12986,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 NpttR"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gbGTHA"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fYclLf"
@@ -13165,7 +13017,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hGsKfY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jgBFZZ"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 dlUdOy"
@@ -13190,7 +13042,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           scope="row"
         >
           <div
@@ -13204,7 +13056,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kqmDKi"
@@ -13215,7 +13067,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 NpttR"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 gbGTHA"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 fYclLf"
@@ -13246,7 +13098,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hGsKfY"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jgBFZZ"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 dlUdOy"
@@ -13271,7 +13123,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           scope="row"
         >
           <div
@@ -13285,7 +13137,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fiyHEw StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kqmDKi"
@@ -21707,7 +21559,6 @@ exports[`DataTable rowProps on group header rows 1`] = `
   vertical-align: top;
   text-align: start;
   background: yellow;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
 }
 
 .c13 {
@@ -21717,7 +21568,6 @@ exports[`DataTable rowProps on group header rows 1`] = `
   text-align: inherit;
   text-align: start;
   background: yellow;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;

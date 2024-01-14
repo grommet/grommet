@@ -818,12 +818,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       groupHeader: {
-        background: {
-          dark: 'dark-2',
-          light: 'light-2',
-        },
-        border: { side: 'bottom', size: 'xsmall' },
-        pad: { horizontal: 'small', vertical: 'xsmall' },
+        // background: undefined,
+        // border: undefined,
+        // pad: undefined,
       },
       groupEnd: {
         border: { side: 'bottom', size: 'xsmall' },
