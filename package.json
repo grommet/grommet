@@ -47,7 +47,7 @@
     "test-e2e-ci": "testcafe chrome:headless e2e/tests -r xunit:/tmp/test-results/testcafe/results.xml",
     "build-storybook": "storybook build -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
-    "chromatic": "chromatic -t f1924d8a65df"
+    "chromatic": "chromatic -t chpt_7a9da5f0b29d9bf"
   },
   "peerDependencies": {
     "react": "^16.6.1 || ^17.0.0 || ^18.0.0",
