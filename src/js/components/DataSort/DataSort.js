@@ -110,7 +110,6 @@ export const DataSort = ({ drop, options, ...rest }) => {
       tip={tip}
       kind={theme.data.button?.kind}
       icon={<Descend />}
-      hoverIndicator
       dropProps={dropProps}
       dropContent={<Box pad="small">{content}</Box>}
       open={showContent}

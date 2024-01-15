@@ -72,11 +72,6 @@ exports[`DataSort drop 1`] = `
   padding: 12px;
 }
 
-.c2:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -160,7 +155,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="StyledButton-sc-323bzc-0 ckELTg"
+  class="StyledButton-sc-323bzc-0 hZNOgI"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
