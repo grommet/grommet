@@ -106,7 +106,13 @@ export const Data = ({
     };
 
     value.clearFilters = () => {
-      const nextView = defaultView;
+      const nextView = { ...view };
+      delete nextView.properties;
+      delete nextView.page;
+      // by clearing the properties from a view, it is no
+      // longer reflecting the view
+      delete nextView.name;
+      delete nextView.view;
       setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
@@ -127,7 +133,6 @@ export const Data = ({
 
     return value;
   }, [
-    defaultView,
     id,
     messages,
     filtersCleared,
@@ -142,10 +147,12 @@ export const Data = ({
   let toolbarContent;
   if (toolbar) {
     toolbarContent = [
-      <Toolbar key="toolbar">
-        {(toolbar === true || toolbar === 'search') && <DataSearch />}
+      <Toolbar key="toolbar" gap="medium">
+        <Toolbar>
+          {(toolbar === true || toolbar === 'search') && <DataSearch />}
+          {(toolbar === true || toolbar === 'filters') && <DataFilters layer />}
+        </Toolbar>
         {(toolbar === true || toolbar === 'view') && <DataView />}
-        {(toolbar === true || toolbar === 'filters') && <DataFilters layer />}
       </Toolbar>,
       <DataSummary key="summary" />,
     ];
