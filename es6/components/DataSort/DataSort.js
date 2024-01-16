@@ -98,12 +98,14 @@ export var DataSort = function DataSort(_ref2) {
     updateOn: "change"
   }, content);
   if (!drop) return content;
+  var tip = format({
+    id: 'dataSort.open',
+    messages: messages == null ? void 0 : messages.dataSort
+  });
   var control = /*#__PURE__*/React.createElement(DropButton, _extends({
     id: dataId + "--sort-control",
-    "aria-label": format({
-      id: 'dataSort.open',
-      messages: messages == null ? void 0 : messages.dataSort
-    }),
+    "aria-label": tip,
+    tip: tip,
     kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
     icon: /*#__PURE__*/React.createElement(Descend, null),
     dropProps: dropProps,
