@@ -14,23 +14,10 @@ import { DataContext } from '../../contexts/DataContext';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
-const HideableButton = styled(Button)`
-  ${(props) =>
-    props.disabled &&
-    `
-  opacity: 0;`}
-`;
-
 const MaxForm = styled(Form)`
   max-width: 100%;
   ${(props) => props.fill && 'max-height: 100%;'}
 `;
-
-const hideButtonProps = {
-  'aria-hidden': true,
-  disabled: true,
-  tabIndex: -1,
-};
 
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
@@ -273,7 +260,6 @@ export const DataForm = ({
   const { messages, onView, view, views } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
-  const [changed, setChanged] = useState();
 
   const contextValue = useMemo(() => ({ inDataForm: true }), []);
 
@@ -282,7 +268,6 @@ export const DataForm = ({
       const nextValue = normalizeValue(value, formValue, views);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
-      setChanged(false);
       if (onTouched) onTouched(transformTouched(touched, nextValue));
       onView(formValueToView(nextValue, views));
       if (onDone) onDone();
@@ -295,7 +280,6 @@ export const DataForm = ({
       const nextValue = normalizeValue(value, formValue, views);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
-      setChanged(true);
       if (updateOn === 'change') {
         if (onTouched) onTouched(transformTouched(touched, nextValue));
         // debounce search
@@ -308,11 +292,6 @@ export const DataForm = ({
     },
     [formValue, onTouched, onView, updateOn, views],
   );
-
-  const onReset = useCallback(() => {
-    setFormValue(viewToFormValue(view));
-    setChanged(false);
-  }, [view]);
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
 
@@ -337,15 +316,6 @@ export const DataForm = ({
               })}
               type="submit"
               primary
-            />
-            <HideableButton
-              label={format({
-                id: 'dataForm.reset',
-                messages: messages?.dataForm,
-              })}
-              type="reset"
-              onClick={onReset}
-              {...(!changed ? hideButtonProps : {})}
             />
           </Footer>
         )}
