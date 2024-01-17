@@ -9,6 +9,7 @@ import {
   DataFilters,
   DataSearch,
   DataSummary,
+  DataView,
   DataTable,
   SelectMultiple,
   Toolbar,
@@ -23,8 +24,21 @@ export const Simple = () => (
       data={DATA}
       total={DATA.length}
       properties={{
-        location: { label: 'Location' },
+        location: { label: 'Location', badge: false },
+        percent: { label: 'Percent' },
+        date: { label: 'date' },
+        name: { label: 'Name' },
       }}
+      views={[
+        { name: 'latest', sort: { property: 'date', direction: 'desc' } },
+        {
+          name: 'Bay Area behind',
+          properties: {
+            percent: { min: 0, max: 50 },
+            location: ['San Francisco'],
+          },
+        },
+      ]}
     >
       <DataToolbar />
       <DataSummary />
@@ -38,24 +52,32 @@ const DataToolbar = () => {
   const { filteredTotal, total } = useContext(DataContext);
 
   return (
-    <Toolbar align="end">
-      <DataSearch placeholder="Search" />
-      <DataFilters updateOn="change">
-        <DataFilter
-          property="location"
-          // override HPE theme margin to align with search + filter
-          contentProps={{ margin: { bottom: 'none', top: 'xsmall' } }}
-          // override Grommet theme margin to align with search + filter
-          margin="none"
-        >
-          <SelectMultiple
-            placeholder="Select location"
-            options={['Boise', 'Fort Collins', 'Palo Alto', 'San Francisco']}
-            name="location"
-          />
-        </DataFilter>
-      </DataFilters>
-      {filteredTotal !== total ? <DataClearFilters /> : null}
+    <Toolbar gap="medium" align="end">
+      <Toolbar align="end">
+        <DataSearch />
+        <DataFilters updateOn="change" clearFilters={false}>
+          <DataFilter
+            property="location"
+            // override HPE theme margin to align with search + filter
+            contentProps={{ margin: { bottom: 'none', top: 'xsmall' } }}
+            // override Grommet theme margin to align with search + filter
+            margin="none"
+          >
+            <SelectMultiple
+              placeholder="Select location"
+              options={['Boise', 'Fort Collins', 'Palo Alto', 'San Francisco']}
+              name="location"
+            />
+          </DataFilter>
+        </DataFilters>
+        <DataFilters layer clearFilters={false}>
+          <DataFilter property="name" />
+          <DataFilter property="percent" />
+          <DataFilter property="paid" />
+        </DataFilters>
+        {filteredTotal !== total ? <DataClearFilters /> : null}
+      </Toolbar>
+      <DataView />
     </Toolbar>
   );
 };

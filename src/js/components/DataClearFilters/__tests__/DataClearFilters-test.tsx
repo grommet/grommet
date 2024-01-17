@@ -4,6 +4,7 @@ import 'jest-styled-components';
 import { Data } from '../../Data';
 import { Grommet } from '../../Grommet';
 import { DataClearFilters } from '..';
+import { DataSummary } from '../../DataSummary';
 
 // asserts that AnnounceContext aria-live region and visible DataSummary each have this text
 const expectDataSummary = (message: string) =>
@@ -54,8 +55,8 @@ describe('DataClearFilters', () => {
               name: ['cc'],
             },
           }}
-          toolbar
         >
+          <DataSummary />
           <DataClearFilters />
         </Data>
       </Grommet>,
