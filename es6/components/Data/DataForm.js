@@ -10,23 +10,12 @@ import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
-var HideableButton = styled(Button).withConfig({
-  displayName: "DataForm__HideableButton",
-  componentId: "sc-v64e1r-0"
-})(["", ""], function (props) {
-  return props.disabled && "\n  opacity: 0;";
-});
 var MaxForm = styled(Form).withConfig({
   displayName: "DataForm__MaxForm",
-  componentId: "sc-v64e1r-1"
+  componentId: "sc-v64e1r-0"
 })(["max-width:100%;", ""], function (props) {
   return props.fill && 'max-height: 100%;';
 });
-var hideButtonProps = {
-  'aria-hidden': true,
-  disabled: true,
-  tabIndex: -1
-};
 
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
@@ -256,9 +245,6 @@ export var DataForm = function DataForm(_ref) {
   var _useState = useState(viewToFormValue(view)),
     formValue = _useState[0],
     setFormValue = _useState[1];
-  var _useState2 = useState(),
-    changed = _useState2[0],
-    setChanged = _useState2[1];
   var contextValue = useMemo(function () {
     return {
       inDataForm: true
@@ -270,7 +256,6 @@ export var DataForm = function DataForm(_ref) {
     var nextValue = normalizeValue(value, formValue, views);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
-    setChanged(false);
     if (onTouched) onTouched(transformTouched(touched, nextValue));
     onView(formValueToView(nextValue, views));
     if (onDone) onDone();
@@ -280,7 +265,6 @@ export var DataForm = function DataForm(_ref) {
     var nextValue = normalizeValue(value, formValue, views);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
-    setChanged(true);
     if (updateOn === 'change') {
       if (onTouched) onTouched(transformTouched(touched, nextValue));
       // debounce search
@@ -291,10 +275,6 @@ export var DataForm = function DataForm(_ref) {
       }
     }
   }, [formValue, onTouched, onView, updateOn, views]);
-  var onReset = useCallback(function () {
-    setFormValue(viewToFormValue(view));
-    setChanged(false);
-  }, [view]);
   useEffect(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);
@@ -328,14 +308,7 @@ export var DataForm = function DataForm(_ref) {
       }),
       type: "submit",
       primary: true
-    }), /*#__PURE__*/React.createElement(HideableButton, _extends({
-      label: format({
-        id: 'dataForm.reset',
-        messages: messages == null ? void 0 : messages.dataForm
-      }),
-      type: "reset",
-      onClick: onReset
-    }, !changed ? hideButtonProps : {}))));
+    })));
   }
   return /*#__PURE__*/React.createElement(MaxForm, _extends({}, rest, {
     value: formValue,

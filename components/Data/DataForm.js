@@ -17,23 +17,12 @@ function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return 
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-var HideableButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
-  displayName: "DataForm__HideableButton",
-  componentId: "sc-v64e1r-0"
-})(["", ""], function (props) {
-  return props.disabled && "\n  opacity: 0;";
-});
 var MaxForm = (0, _styledComponents["default"])(_Form.Form).withConfig({
   displayName: "DataForm__MaxForm",
-  componentId: "sc-v64e1r-1"
+  componentId: "sc-v64e1r-0"
 })(["max-width:100%;", ""], function (props) {
   return props.fill && 'max-height: 100%;';
 });
-var hideButtonProps = {
-  'aria-hidden': true,
-  disabled: true,
-  tabIndex: -1
-};
 
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
@@ -263,9 +252,6 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
   var _useState = (0, _react.useState)(viewToFormValue(view)),
     formValue = _useState[0],
     setFormValue = _useState[1];
-  var _useState2 = (0, _react.useState)(),
-    changed = _useState2[0],
-    setChanged = _useState2[1];
   var contextValue = (0, _react.useMemo)(function () {
     return {
       inDataForm: true
@@ -277,7 +263,6 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
     var nextValue = normalizeValue(value, formValue, views);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
-    setChanged(false);
     if (onTouched) onTouched(transformTouched(touched, nextValue));
     onView(formValueToView(nextValue, views));
     if (onDone) onDone();
@@ -287,7 +272,6 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
     var nextValue = normalizeValue(value, formValue, views);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
-    setChanged(true);
     if (updateOn === 'change') {
       if (onTouched) onTouched(transformTouched(touched, nextValue));
       // debounce search
@@ -298,10 +282,6 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
       }
     }
   }, [formValue, onTouched, onView, updateOn, views]);
-  var onReset = (0, _react.useCallback)(function () {
-    setFormValue(viewToFormValue(view));
-    setChanged(false);
-  }, [view]);
   (0, _react.useEffect)(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);
@@ -335,14 +315,7 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
       }),
       type: "submit",
       primary: true
-    }), /*#__PURE__*/_react["default"].createElement(HideableButton, _extends({
-      label: format({
-        id: 'dataForm.reset',
-        messages: messages == null ? void 0 : messages.dataForm
-      }),
-      type: "reset",
-      onClick: onReset
-    }, !changed ? hideButtonProps : {}))));
+    })));
   }
   return /*#__PURE__*/_react["default"].createElement(MaxForm, _extends({}, rest, {
     value: formValue,
