@@ -3,7 +3,7 @@ import { Search } from 'grommet-icons/icons/Search';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
-import { DataForm } from '../Data/DataForm';
+// import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
@@ -18,8 +18,29 @@ const dropProps = {
   align: { top: 'bottom', left: 'left' },
 };
 
+// 300ms was chosen empirically as a reasonable default
+const DEBOUNCE_TIMEOUT = 300;
+
+const debounce = (func, timeout = DEBOUNCE_TIMEOUT) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func(...args);
+    }, timeout);
+  };
+};
+
+const debounceSearch = debounce((onView, nextValue) => onView(nextValue));
+
 export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
-  const { id: dataId, messages, addToolbarKey } = useContext(DataContext);
+  const {
+    id: dataId,
+    messages,
+    addToolbarKey,
+    onView,
+    view,
+  } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext);
@@ -32,6 +53,10 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
     if (!inDataForm) addToolbarKey('_search');
   }, [addToolbarKey, inDataForm]);
 
+  const onChange = (e) => {
+    debounceSearch(onView, { ...view, search: e.target?.value });
+  };
+
   let content = skeleton ? null : (
     <TextInput
       aria-label={format({
@@ -42,18 +67,12 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
       name="_search"
       icon={<Search />}
       type="search"
+      onChange={onChange}
       {...rest}
     />
   );
 
-  if (!inDataForm)
-    // likely in Toolbar
-    content = (
-      <DataForm footer={false} updateOn="change">
-        {content}
-      </DataForm>
-    );
-  else
+  if (inDataForm)
     content = (
       <FormField
         htmlFor={id}
