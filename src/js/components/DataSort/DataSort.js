@@ -98,13 +98,16 @@ export const DataSort = ({ drop, options, ...rest }) => {
 
   if (!drop) return content;
 
+  const tip = format({
+    id: 'dataSort.open',
+    messages: messages?.dataSort,
+  });
+
   const control = (
     <DropButton
       id={`${dataId}--sort-control`}
-      aria-label={format({
-        id: 'dataSort.open',
-        messages: messages?.dataSort,
-      })}
+      aria-label={tip}
+      tip={tip}
       kind={theme.data.button?.kind}
       icon={<Descend />}
       dropProps={dropProps}

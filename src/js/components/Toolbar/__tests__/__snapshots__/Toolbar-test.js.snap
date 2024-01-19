@@ -242,16 +242,6 @@ exports[`DataFilters renders 1`] = `
   height: 12px;
 }
 
-.c22 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c11 {
   margin-left: 12px;
   margin-right: 12px;
@@ -331,77 +321,6 @@ exports[`DataFilters renders 1`] = `
 
 .c21:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c23 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c23:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus > circle,
-.c23:focus > ellipse,
-.c23:focus > line,
-.c23:focus > path,
-.c23:focus > polygon,
-.c23:focus > polyline,
-.c23:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c23:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c23:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible) > circle,
-.c23:focus:not(:focus-visible) > ellipse,
-.c23:focus:not(:focus-visible) > line,
-.c23:focus:not(:focus-visible) > path,
-.c23:focus:not(:focus-visible) > polygon,
-.c23:focus:not(:focus-visible) > polyline,
-.c23:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c23:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c24 {
-  opacity: 0;
 }
 
 .c3 {
@@ -604,12 +523,6 @@ exports[`DataFilters renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c22 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -736,18 +649,6 @@ exports[`DataFilters renders 1`] = `
               type="submit"
             >
               Apply filters
-            </button>
-            <div
-              class="c22"
-            />
-            <button
-              aria-hidden="true"
-              class="c23 c24"
-              disabled=""
-              tabindex="-1"
-              type="reset"
-            >
-              Undo changes
             </button>
           </footer>
         </div>
