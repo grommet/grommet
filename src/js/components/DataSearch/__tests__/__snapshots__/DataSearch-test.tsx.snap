@@ -195,7 +195,7 @@ exports[`DataSearch drop 3`] = `
 `;
 
 exports[`DataSearch no Data 1`] = `
-.c3 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -206,30 +206,44 @@ exports[`DataSearch no Data 1`] = `
   stroke: #666666;
 }
 
-.c3 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c3 *:not([stroke])[fill='none'] {
+.c4 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c3 *[stroke*='#'],
-.c3 *[STROKE*='#'] {
+.c4 *[stroke*='#'],
+.c4 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c3 *[fill-rule],
-.c3 *[FILL-RULE],
-.c3 *[fill*='#'],
-.c3 *[FILL*='#'] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*='#'],
+.c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c4 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -246,58 +260,58 @@ exports[`DataSearch no Data 1`] = `
   padding-left: 48px;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c4:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c4::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4:-moz-placeholder,
-.c4::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c1 {
+.c2 {
   position: relative;
   width: 100%;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -334,28 +348,32 @@ exports[`DataSearch no Data 1`] = `
     <div
       class="c2"
     >
-      <svg
-        aria-label="Search"
+      <div
         class="c3"
-        viewBox="0 0 24 24"
       >
-        <path
-          d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
+        <svg
+          aria-label="Search"
+          class="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <input
+        aria-label="Search"
+        autocomplete="off"
+        class="c5"
+        id="undefined--search"
+        name="_search"
+        type="search"
+        value=""
+      />
     </div>
-    <input
-      aria-label="Search"
-      autocomplete="off"
-      class="c4"
-      id="undefined--search"
-      name="_search"
-      type="search"
-      value=""
-    />
   </div>
 </div>
 `;

@@ -72,7 +72,10 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
     />
   );
 
-  if (inDataForm)
+  if (!inDataForm)
+    // likely in Toolbar
+    content = <Box>{content}</Box>;
+  else
     content = (
       <FormField
         htmlFor={id}
