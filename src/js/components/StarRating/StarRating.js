@@ -11,7 +11,7 @@ const StarRating = ({ name, defaultValue, value: valueProp, ...rest }) => {
   const [value, setValue] = formContext.useFormInput({
     name,
     value: valueProp,
-    initialValue: defaultValue,
+    initialValue: defaultValue ?? 0,
   });
 
   const options = [];
