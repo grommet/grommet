@@ -174,23 +174,6 @@ const resetPage = (nextFormValue, prevFormValue) => {
     nextFormValue[formPageKey] = 1;
 };
 
-const transformTouched = (touched, value) => {
-  // DataFilters expects values for keys touched to evaluate to falsey to
-  // not cause a badge. However any property value that is set back to its
-  // default/initial value that isn't undefined/null/false/0 will cause a
-  // badge this is particulary true for a 'range' which will always have
-  // a value.
-  //
-  // Should this instead determine touched by comparing against
-  // initial/default values?
-  //
-  const result = {};
-  Object.keys(touched).forEach((key) => {
-    result[key] = flatten(value, { full: true })[key];
-  });
-  return result;
-};
-
 // function shared by onSubmit and onChange to coordinate view
 // name changes
 const normalizeValue = (nextValue, prevValue, views) => {
@@ -252,7 +235,6 @@ export const DataForm = ({
   children,
   footer,
   onDone,
-  onTouched,
   pad,
   updateOn = 'submit',
   ...rest
@@ -264,15 +246,14 @@ export const DataForm = ({
   const contextValue = useMemo(() => ({ inDataForm: true }), []);
 
   const onSubmit = useCallback(
-    ({ value, touched }) => {
+    ({ value }) => {
       const nextValue = normalizeValue(value, formValue, views);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
-      if (onTouched) onTouched(transformTouched(touched, nextValue));
       onView(formValueToView(nextValue, views));
       if (onDone) onDone();
     },
-    [formValue, onDone, onTouched, onView, views],
+    [formValue, onDone, onView, views],
   );
 
   const onChange = useCallback(
@@ -281,7 +262,6 @@ export const DataForm = ({
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
       if (updateOn === 'change') {
-        if (onTouched) onTouched(transformTouched(touched, nextValue));
         // debounce search
         if (touched[formSearchKey]) {
           debounceSearch(onView, nextValue, views);
@@ -290,7 +270,7 @@ export const DataForm = ({
         }
       }
     },
-    [formValue, onTouched, onView, updateOn, views],
+    [formValue, onView, updateOn, views],
   );
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
