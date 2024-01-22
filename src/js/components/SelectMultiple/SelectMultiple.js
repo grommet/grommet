@@ -409,7 +409,7 @@ const SelectMultiple = forwardRef(
         a11yTitle ||
         placeholder ||
         format({
-          id: 'selectMultiple.dropDown',
+          id: 'selectMultiple.open',
           messages,
         })
       }. ${format({

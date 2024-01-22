@@ -122,7 +122,7 @@ if (process.env.NODE_ENV !== 'production') {
           clearAllA11y: PropTypes.string,
           selectAllA11y: PropTypes.string,
           selectDropDown: PropTypes.string,
-          dropDown: PropTypes.string,
+          open: PropTypes.string,
           searchFilter: PropTypes.string,
           optionSelected: PropTypes.string,
           optionNotSelected: PropTypes.string,
