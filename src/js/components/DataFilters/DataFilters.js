@@ -92,6 +92,7 @@ export const DataFilters = ({
           // special case for when range selector returns to its min/max
           // flat format needed because of how filter name is structured
           delete nextTouched[k];
+          delete view.properties[k];
           pendingReset.current.delete(`${k}.${formRangeKey}`);
         }
       });
