@@ -410,7 +410,7 @@ const SelectMultipleContainer = forwardRef(
               >
                 <SelectTextInput
                   a11yTitle={format({
-                    id: 'selectMultiple.searchFilter',
+                    id: 'selectMultiple.search',
                     messages,
                   })}
                   focusIndicator={!customSearchInput}
