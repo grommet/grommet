@@ -138,17 +138,17 @@ const SelectionSummary = ({
             a11yTitle={format({
               id: showSelectAll
                 ? 'selectMultiple.selectAll'
-                : 'selectMultiple.clearAll',
+                : 'selectMultiple.clearAllA11y',
               messages,
               values: {
-                selectedCount: value?.length,
-                totalCount: options.length,
+                selected: value?.length,
+                total: options.length,
               },
             })}
             label={format({
               id: showSelectAll
                 ? 'selectMultiple.selectAllTitle'
-                : 'selectMultiple.clearAllTitle',
+                : 'selectMultiple.clearAll',
               messages,
             })}
             onClick={(event) => summaryButtonClick(event)}

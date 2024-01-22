@@ -499,7 +499,7 @@ describe('SelectMultiple', () => {
               setValueMultiple(value);
             }}
             messages={{
-              clearAllTitle: 'Clear ALL',
+              clearAll: 'Clear ALL',
               summarizedValue: 'Multiple Selected',
               selectedMultipleNonTotal: '{selectedCount} SELECTED',
               selectedMultiple: '{selectedCount} of {totalCount} SELECTED',
