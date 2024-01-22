@@ -137,7 +137,7 @@ const SelectionSummary = ({
           <Button
             a11yTitle={format({
               id: showSelectAll
-                ? 'selectMultiple.selectAll'
+                ? 'selectMultiple.selectAllA11y'
                 : 'selectMultiple.clearAllA11y',
               messages,
               values: {
@@ -147,7 +147,7 @@ const SelectionSummary = ({
             })}
             label={format({
               id: showSelectAll
-                ? 'selectMultiple.selectAllTitle'
+                ? 'selectMultiple.selectAll'
                 : 'selectMultiple.clearAll',
               messages,
             })}

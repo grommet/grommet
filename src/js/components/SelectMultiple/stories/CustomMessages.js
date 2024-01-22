@@ -47,7 +47,7 @@ export const CustomMessages = () => {
         messages={{
           multiple: 'Multiple Selected',
           clearAll: 'Clear ALL!',
-          selectAllTitle: 'Select ALL!',
+          selectAll: 'Select ALL!',
           selectedMultipleNonTotal: '{selectedCount} SELECTED',
           summarizedValue: '{selected} of {total} SELECTED',
         }}

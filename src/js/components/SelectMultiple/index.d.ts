@@ -11,12 +11,12 @@ export interface SelectMultipleProps extends BasicSelectProps {
   messages?: {
     summarizedValue?: string;
     clearAll?: string;
-    selectAllTitle?: string;
+    selectAll?: string;
     selectedMultipleNonTotal?: string;
     selectedMultiple?: string;
     onMore?: string;
     clearAllA11y?: string;
-    selectAll?: string;
+    selectAllA11y?: string;
     selectDropDown?: string;
     dropDown?: string;
     searchFilter?: string;

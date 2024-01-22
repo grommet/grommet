@@ -503,7 +503,7 @@ describe('SelectMultiple', () => {
               summarizedValue: 'Multiple Selected',
               selectedMultipleNonTotal: '{selectedCount} SELECTED',
               selectedMultiple: '{selectedCount} of {totalCount} SELECTED',
-              selectAllTitle: 'Select ALL',
+              selectAll: 'Select ALL',
             }}
           />
         </Grommet>
