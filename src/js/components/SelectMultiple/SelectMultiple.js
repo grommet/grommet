@@ -484,8 +484,8 @@ const SelectMultiple = forwardRef(
                                   : 'selectMultiple.selectedMultipleTotal',
                                 messages,
                                 values: {
-                                  selectedCount: value?.length || 0,
-                                  totalCount: allOptions.length,
+                                  selected: value?.length || 0,
+                                  total: allOptions.length,
                                 },
                               })
                         }

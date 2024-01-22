@@ -13,7 +13,7 @@ export interface SelectMultipleProps extends BasicSelectProps {
     clearAll?: string;
     selectAll?: string;
     selected?: string;
-    selectedMultiple?: string;
+    selectedOfTotal?: string;
     onMore?: string;
     clearAllA11y?: string;
     selectAllA11y?: string;

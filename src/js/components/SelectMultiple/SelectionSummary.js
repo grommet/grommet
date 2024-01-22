@@ -77,12 +77,12 @@ const SelectionSummary = ({
     !value ||
     (search !== '' && search !== undefined)
       ? 'selectMultiple.selected'
-      : 'selectMultiple.selectedMultiple';
+      : 'selectMultiple.selectedOfTotal';
 
   const summaryText = format({
     id: messageId,
     messages,
-    values: { selectedCount: value?.length, totalCount: options.length },
+    values: { selected: value?.length, total: options.length },
   });
 
   const summaryButtonClick = (event) => {

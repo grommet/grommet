@@ -502,7 +502,7 @@ describe('SelectMultiple', () => {
               clearAll: 'Clear ALL',
               summarizedValue: 'Multiple Selected',
               selected: '{selected} SELECTED',
-              selectedMultiple: '{selectedCount} of {totalCount} SELECTED',
+              selectedOfTotal: '{selected} of {total} SELECTED',
               selectAll: 'Select ALL',
             }}
           />
