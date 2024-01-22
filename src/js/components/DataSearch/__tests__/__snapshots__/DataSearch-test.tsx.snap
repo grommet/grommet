@@ -191,11 +191,6 @@ exports[`DataSearch drop 3`] = `
   .kYOLuO {
     margin-top: 12px;
   }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
-  }
 }"
 `;
 
@@ -514,16 +509,6 @@ exports[`DataSearch renders 1`] = `
   justify-content: space-between;
 }
 
-.c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c6 {
   margin-left: 12px;
   margin-right: 12px;
@@ -603,77 +588,6 @@ exports[`DataSearch renders 1`] = `
 
 .c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c15 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus > circle,
-.c15:focus > ellipse,
-.c15:focus > line,
-.c15:focus > path,
-.c15:focus > polygon,
-.c15:focus > polyline,
-.c15:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) > circle,
-.c15:focus:not(:focus-visible) > ellipse,
-.c15:focus:not(:focus-visible) > line,
-.c15:focus:not(:focus-visible) > path,
-.c15:focus:not(:focus-visible) > polygon,
-.c15:focus:not(:focus-visible) > polyline,
-.c15:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c16 {
-  opacity: 0;
 }
 
 .c2 {
@@ -776,12 +690,6 @@ exports[`DataSearch renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c14 {
-    width: 6px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -854,18 +762,6 @@ exports[`DataSearch renders 1`] = `
             type="submit"
           >
             Apply filters
-          </button>
-          <div
-            class="c14"
-          />
-          <button
-            aria-hidden="true"
-            class="c15 c16"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
           </button>
         </footer>
       </div>
