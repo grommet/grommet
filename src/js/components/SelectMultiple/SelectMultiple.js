@@ -413,10 +413,10 @@ const SelectMultiple = forwardRef(
           messages,
         })
       }. ${format({
-        id: 'selectMultiple.selectedMultipleNonTotal',
+        id: 'selectMultiple.selected',
         values: {
-          selectedCount: value?.length || 0,
-          totalCount: allOptions.length,
+          selected: value?.length || 0,
+          total: allOptions.length,
         },
       })}`,
       'aria-expanded': Boolean(open),
@@ -480,7 +480,7 @@ const SelectMultiple = forwardRef(
                             ? placeholder || selectValue || displayLabelKey
                             : format({
                                 id: onMore
-                                  ? 'selectMultiple.selectedMultipleNonTotal'
+                                  ? 'selectMultiple.selected'
                                   : 'selectMultiple.selectedMultipleTotal',
                                 messages,
                                 values: {

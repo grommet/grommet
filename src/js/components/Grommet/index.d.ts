@@ -117,7 +117,7 @@ export interface GrommetProps {
         summarizedValue?: string;
         clearAll?: string;
         selectAll?: string;
-        selectedMultipleNonTotal?: string;
+        selected?: string;
         selectedMultiple?: string;
         onMore?: string;
         clearAllA11y?: string;

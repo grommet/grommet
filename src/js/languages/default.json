@@ -97,7 +97,7 @@
     "summarizedValue": "{selected} of {total} selected",
     "clearAll": "Clear All",
     "selectAll": "Select All",
-    "selectedMultipleNonTotal": "{selectedCount} selected",
+    "selected": "{selected} selected",
     "selectedMultiple": "{selectedCount} of {totalCount} selected",
     "onMore": "+ {showMoreCount} more options",
     "clearAllA11y": "{selectedCount} options selected. Clear all?",

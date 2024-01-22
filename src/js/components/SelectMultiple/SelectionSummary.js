@@ -76,7 +76,7 @@ const SelectionSummary = ({
     onMore ||
     !value ||
     (search !== '' && search !== undefined)
-      ? 'selectMultiple.selectedMultipleNonTotal'
+      ? 'selectMultiple.selected'
       : 'selectMultiple.selectedMultiple';
 
   const summaryText = format({

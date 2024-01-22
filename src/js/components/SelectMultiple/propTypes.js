@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
       multiple: PropTypes.string,
       clearAll: PropTypes.string,
       selectAll: PropTypes.string,
-      selectedMultipleNonTotal: PropTypes.string,
+      selected: PropTypes.string,
       selectedMultiple: PropTypes.string,
       onMore: PropTypes.string,
       clearAllA11y: PropTypes.string,
