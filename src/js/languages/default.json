@@ -94,7 +94,7 @@
     "selected": "; Selected: {currentSelectedValue}"
   },
   "selectMultiple": {
-    "multiple": "{selectedCount} of {totalCount} selected",
+    "summarizedValue": "{selected} of {total} selected",
     "clearAllTitle": "Clear All",
     "selectAllTitle": "Select All",
     "selectedMultipleNonTotal": "{selectedCount} selected",

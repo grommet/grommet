@@ -114,7 +114,7 @@ export interface GrommetProps {
         selected?: string;
       };
       selectMultiple?: {
-        multiple?: string;
+        summarizedValue?: string;
         clearAllTitle?: string;
         selectAllTitle?: string;
         selectedMultipleNonTotal?: string;

@@ -335,11 +335,11 @@ const SelectMultiple = forwardRef(
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
         return format({
-          id: 'selectMultiple.multiple',
+          id: 'selectMultiple.summarizedValue',
           messages,
           values: {
-            selectedCount: optionIndexesInValue.length,
-            totalCount: allOptions.length,
+            selected: optionIndexesInValue.length,
+            total: allOptions.length,
           },
         });
       }

@@ -49,7 +49,7 @@ export const CustomMessages = () => {
           clearAllTitle: 'Clear ALL!',
           selectAllTitle: 'Select ALL!',
           selectedMultipleNonTotal: '{selectedCount} SELECTED',
-          selectedMultiple: '{selectedCount} of {totalCount} SELECTED',
+          summarizedValue: '{selected} of {total} SELECTED',
         }}
       />
     </Box>

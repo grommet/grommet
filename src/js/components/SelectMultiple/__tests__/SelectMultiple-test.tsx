@@ -470,7 +470,7 @@ describe('SelectMultiple', () => {
 
     expectPortal('test-select__drop').toMatchSnapshot();
   });
-  
+
   test('should display custom messages', async () => {
     const user = userEvent.setup();
     const defaultOptions = [
@@ -500,7 +500,7 @@ describe('SelectMultiple', () => {
             }}
             messages={{
               clearAllTitle: 'Clear ALL',
-              multiple: 'Multiple Selected',
+              summarizedValue: 'Multiple Selected',
               selectedMultipleNonTotal: '{selectedCount} SELECTED',
               selectedMultiple: '{selectedCount} of {totalCount} SELECTED',
               selectAllTitle: 'Select ALL',
