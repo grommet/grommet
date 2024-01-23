@@ -222,11 +222,6 @@ exports[`DataSort drop 3`] = `
   .biJsVL {
     height: 6px;
   }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
-  }
 }"
 `;
 
@@ -515,16 +510,6 @@ exports[`DataSort renders 1`] = `
   height: 12px;
 }
 
-.c25 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c6 {
   margin-left: 12px;
   margin-right: 12px;
@@ -642,77 +627,6 @@ exports[`DataSort renders 1`] = `
 
 .c24:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
-}
-
-.c26 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c26:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c26:focus > circle,
-.c26:focus > ellipse,
-.c26:focus > line,
-.c26:focus > path,
-.c26:focus > polygon,
-.c26:focus > polyline,
-.c26:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c26:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c26:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c26:focus:not(:focus-visible) > circle,
-.c26:focus:not(:focus-visible) > ellipse,
-.c26:focus:not(:focus-visible) > line,
-.c26:focus:not(:focus-visible) > path,
-.c26:focus:not(:focus-visible) > polygon,
-.c26:focus:not(:focus-visible) > polyline,
-.c26:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c26:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c27 {
-  opacity: 0;
 }
 
 .c2 {
@@ -870,12 +784,6 @@ exports[`DataSort renders 1`] = `
 @media only screen and (max-width:768px) {
   .c22 {
     height: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c25 {
-    width: 6px;
   }
 }
 
@@ -1039,18 +947,6 @@ exports[`DataSort renders 1`] = `
             type="submit"
           >
             Apply filters
-          </button>
-          <div
-            class="c25"
-          />
-          <button
-            aria-hidden="true"
-            class="c26 c27"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
           </button>
         </footer>
       </div>
