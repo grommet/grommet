@@ -17,7 +17,6 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       clearAll: PropTypes.string,
       clearAllA11y: PropTypes.string,
-      multiple: PropTypes.string,
       onMore: PropTypes.string,
       open: PropTypes.string,
       optionNotSelected: PropTypes.string,
@@ -29,6 +28,7 @@ if (process.env.NODE_ENV !== 'production') {
       selected: PropTypes.string,
       selectedOfTotal: PropTypes.string,
       selectedOptions: PropTypes.string,
+      summarizedValue: PropTypes.string,
     }),
     value: PropTypes.arrayOf(
       PropTypes.oneOfType([
