@@ -114,20 +114,20 @@ export interface GrommetProps {
         selected?: string;
       };
       selectMultiple?: {
-        summarizedValue?: string;
         clearAll?: string;
-        selectAll?: string;
-        selected?: string;
-        selectedOfTotal?: string;
-        onMore?: string;
         clearAllA11y?: string;
+        onMore?: string;
+        open?: string;
+        optionNotSelected?: string;
+        optionSelected?: string;
+        search?: string;
+        selectAll?: string;
         selectAllA11y?: string;
         selectDropDown?: string;
-        open?: string;
-        search?: string;
-        optionSelected?: string;
-        optionNotSelected?: string;
+        selected?: string;
+        selectedOfTotal?: string;
         selectedOptions?: string;
+        summarizedValue?: string;
       };
       skipLinks?: {
         skipTo?: string;
