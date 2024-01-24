@@ -613,7 +613,7 @@ exports[`Data controlled search 2`] = `
               id="data--search"
               name="_search"
               type="search"
-              value=""
+              value="a"
             />
           </div>
         </div>
@@ -6074,7 +6074,7 @@ exports[`Data uncontrolled search 2`] = `
               id="data--search"
               name="_search"
               type="search"
-              value=""
+              value="a"
             />
           </div>
         </div>
@@ -6869,7 +6869,7 @@ exports[`Data view all 1`] = `
               id="data--search"
               name="_search"
               type="search"
-              value=""
+              value="a"
             />
           </div>
         </div>
@@ -8516,7 +8516,7 @@ exports[`Data view search 1`] = `
               id="data--search"
               name="_search"
               type="search"
-              value=""
+              value="a"
             />
           </div>
         </div>
