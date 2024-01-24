@@ -30,6 +30,8 @@ if (process.env.NODE_ENV !== 'production') {
       selectedOptions: PropTypes.string,
       summarizedValue: PropTypes.string,
     }),
+    showSelectedInline: PropTypes.bool,
+    sortSelectedOnClose: PropTypes.bool,
     value: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.string,
@@ -37,8 +39,6 @@ if (process.env.NODE_ENV !== 'production') {
         PropTypes.number,
       ]),
     ),
-    showSelectedInline: PropTypes.bool,
-    sortSelectedOnClose: PropTypes.bool,
   };
 }
 export const SelectMultiplePropTypes = PropType;
