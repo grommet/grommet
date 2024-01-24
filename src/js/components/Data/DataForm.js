@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 import styled from 'styled-components';
@@ -159,10 +160,16 @@ const formValueToView = (value, views) => {
 
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
-const clearEmpty = (formValue) => {
+const clearEmpty = (formValue, pendingReset) => {
   const value = formValue;
   Object.keys(value).forEach((k) => {
     if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+    // special case for when range selector returns to its min/max
+    // flat format needed because of how filter name is structured
+    if (pendingReset?.current?.has(`${k}.${formRangeKey}`)) {
+      delete value[k];
+      pendingReset.current.delete(`${k}.${formRangeKey}`);
+    }
   });
   return value;
 };
@@ -176,7 +183,7 @@ const resetPage = (nextFormValue, prevFormValue) => {
 
 // function shared by onSubmit and onChange to coordinate view
 // name changes
-const normalizeValue = (nextValue, prevValue, views) => {
+const normalizeValue = (nextValue, prevValue, views, pendingReset) => {
   if (
     nextValue[formViewNameKey] &&
     nextValue[formViewNameKey] !== prevValue[formViewNameKey]
@@ -189,13 +196,13 @@ const normalizeValue = (nextValue, prevValue, views) => {
   // something else changed
 
   // clear empty properties
-  const result = clearEmpty(nextValue);
+  const result = clearEmpty(nextValue, pendingReset);
 
   // if we have a view and something changed, clear the view
   if (result[formViewNameKey]) {
     const view = views.find((v) => v.name === result[formViewNameKey]);
     const viewValue = viewToFormValue(view);
-    clearEmpty(viewValue);
+    clearEmpty(viewValue, pendingReset);
     if (Object.keys(viewValue).length !== Object.keys(result).length) {
       delete result[formViewNameKey];
     } else if (
@@ -242,12 +249,15 @@ export const DataForm = ({
   const { messages, onView, view, views } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
-
-  const contextValue = useMemo(() => ({ inDataForm: true }), []);
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, remove it from view
+  // like other properties
+  const pendingReset = useRef(new Set());
+  const contextValue = useMemo(() => ({ inDataForm: true, pendingReset }), []);
 
   const onSubmit = useCallback(
     ({ value }) => {
-      const nextValue = normalizeValue(value, formValue, views);
+      const nextValue = normalizeValue(value, formValue, views, pendingReset);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
       onView(formValueToView(nextValue, views));
@@ -258,7 +268,7 @@ export const DataForm = ({
 
   const onChange = useCallback(
     (value, { touched }) => {
-      const nextValue = normalizeValue(value, formValue, views);
+      const nextValue = normalizeValue(value, formValue, views, pendingReset);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
       if (updateOn === 'change') {

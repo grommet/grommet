@@ -12,7 +12,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataClearFilters } from '../DataClearFilters';
 import { DataFilter } from '../DataFilter';
-import { DataForm, formRangeKey } from '../Data/DataForm';
+import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
@@ -20,7 +20,6 @@ import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
-import { DataFiltersContext } from './DataFiltersContext';
 
 const dropProps = {
   align: { top: 'bottom', right: 'right' },
@@ -53,10 +52,6 @@ export const DataFilters = ({
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext);
   const [showContent, setShowContent] = useState();
-  // special case for range selectors which always have a value.
-  // when value returns to its min/max, mark it to be removed from `touched`
-  // so it doesn't contribute to the badge count
-  const pendingReset = React.useRef(new Set());
   // touched is a map of property to its value based on if user interacts
   // with a filter or a view applies of set of filters
   const [touched, setTouched] = useState(defaultTouched);
@@ -88,12 +83,6 @@ export const DataFilters = ({
           (configured && properties && !properties?.[k])
         ) {
           delete nextTouched[k];
-        } else if (pendingReset?.current?.has(`${k}.${formRangeKey}`)) {
-          // special case for when range selector returns to its min/max
-          // flat format needed because of how filter name is structured
-          delete nextTouched[k];
-          delete view.properties[k];
-          pendingReset.current.delete(`${k}.${formRangeKey}`);
         }
       });
       setTouched(nextTouched);
@@ -135,34 +124,28 @@ export const DataFilters = ({
     ));
   }
 
-  const contextValue = useMemo(() => ({ pendingReset }), []);
   content = (
-    <DataFiltersContext.Provider value={contextValue}>
-      <DataForm
-        pad={controlled ? 'medium' : undefined}
-        onDone={() => setShowContent(false)}
-        updateOn={updateOn}
-        {...(!controlled ? rest : { fill: 'vertical' })}
-      >
-        {layer && (
-          <Header>
-            <Heading margin="none" level={2}>
-              {heading ||
-                format({
-                  id: 'dataFilters.heading',
-                  messages: messages?.dataFilters,
-                })}
-            </Heading>
-            {!controlled && clearControl}
-            <Button
-              icon={<Close />}
-              onClick={() => setShowContent(undefined)}
-            />
-          </Header>
-        )}
-        {content}
-      </DataForm>
-    </DataFiltersContext.Provider>
+    <DataForm
+      pad={controlled ? 'medium' : undefined}
+      onDone={() => setShowContent(false)}
+      updateOn={updateOn}
+      {...(!controlled ? rest : { fill: 'vertical' })}
+    >
+      {layer && (
+        <Header>
+          <Heading margin="none" level={2}>
+            {heading ||
+              format({
+                id: 'dataFilters.heading',
+                messages: messages?.dataFilters,
+              })}
+          </Heading>
+          {!controlled && clearControl}
+          <Button icon={<Close />} onClick={() => setShowContent(undefined)} />
+        </Header>
+      )}
+      {content}
+    </DataForm>
   );
 
   if (!controlled) return content;
