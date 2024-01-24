@@ -13,4 +13,5 @@ export * from './pagination';
 export * from './PortalContext';
 export * from './refs';
 export * from './responsive';
+export * from './use-debounce';
 export * from './use-keyboard';
