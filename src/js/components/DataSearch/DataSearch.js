@@ -12,7 +12,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
 import { isSmall } from '../../utils/responsive';
-import { useDebounce } from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -43,7 +43,7 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
     if (!inDataForm) addToolbarKey('_search');
   }, [addToolbarKey, inDataForm]);
 
-  useEffect(() => setValue(view?.search), [view.search]);
+  useEffect(() => setValue(view?.search), [view?.search]);
 
   const onChange = (e) => {
     setValue(e.target?.value);

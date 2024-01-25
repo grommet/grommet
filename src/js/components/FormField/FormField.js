@@ -13,8 +13,8 @@ import {
   shouldKeepFocus,
   withinDropPortal,
   PortalContext,
-  useDebounce,
 } from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';

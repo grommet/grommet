@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../default-props';
 
 export const useDebounce = (debounceDelay) => {
   const [func, setFunc] = useState();

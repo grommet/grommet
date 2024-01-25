@@ -13,7 +13,7 @@ import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
-import { useDebounce } from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
 
 const MaxForm = styled(Form)`
   max-width: 100%;
