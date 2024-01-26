@@ -440,7 +440,7 @@ describe('Data', () => {
     expectPortal('data--filters-control').toMatchSnapshot();
   });
 
-  test('should badge based on view', () => {
+  test('should include badge based on view', () => {
     render(
       <Grommet>
         <Data
