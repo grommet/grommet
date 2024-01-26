@@ -28,6 +28,7 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
     addToolbarKey,
     onView,
     view,
+    views,
   } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
@@ -46,8 +47,18 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
   useEffect(() => setValue(view?.search), [view?.search]);
 
   const onChange = (e) => {
+    const nextValue = { ...view, search: e.target?.value };
+
+    // If there's a named view in effect that has a search term
+    // we'll clear the named view (but leave it's other filters)
+    const currentView =
+      nextValue.view && views?.find((v) => v.name === nextValue.view);
+    if (currentView?.search) {
+      delete nextValue.view;
+      delete nextValue.name;
+    }
     setValue(e.target?.value);
-    debounce(() => () => onView({ ...view, search: e.target?.value }));
+    debounce(() => () => onView(nextValue));
   };
 
   let content = skeleton ? null : (
