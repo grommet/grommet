@@ -165,7 +165,9 @@ export const GroupedBody = forwardRef(
             } = row;
             const cellProps = normalizeRowCellProps(
               rowProps,
-              cellPropsProp,
+              context === 'groupHeader'
+                ? cellPropsProp.groupHeader
+                : cellPropsProp.body,
               primaryValue,
               index,
             );
