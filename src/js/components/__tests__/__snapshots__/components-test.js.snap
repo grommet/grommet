@@ -4939,6 +4939,7 @@ exports[`Components loads 1`] = `
       "a11yTitle": [Function],
       "alignSelf": [Function],
       "as": [Function],
+      "background": [Function],
       "gridArea": [Function],
       "margin": [Function],
       "name": [Function],
