@@ -4936,12 +4936,6 @@ exports[`Components loads 1`] = `
   "Tag": {
     "$$typeof": Symbol(react.forward_ref),
     "prototype": {
-      "a11yTitle": [Function],
-      "alignSelf": [Function],
-      "as": [Function],
-      "background": [Function],
-      "gridArea": [Function],
-      "margin": [Function],
       "name": [Function],
       "onClick": [Function],
       "onRemove": [Function],
