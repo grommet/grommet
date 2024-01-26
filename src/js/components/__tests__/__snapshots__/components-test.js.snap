@@ -1176,20 +1176,7 @@ exports[`Components loads 1`] = `
               "size": "xsmall",
             },
           },
-          "groupHeader": {
-            "background": {
-              "dark": "dark-2",
-              "light": "light-2",
-            },
-            "border": {
-              "side": "bottom",
-              "size": "xsmall",
-            },
-            "pad": {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
+          "groupHeader": {},
           "header": {
             "gap": "small",
             "units": {
@@ -3178,20 +3165,7 @@ exports[`Components loads 1`] = `
               "size": "xsmall",
             },
           },
-          "groupHeader": {
-            "background": {
-              "dark": "dark-2",
-              "light": "light-2",
-            },
-            "border": {
-              "side": "bottom",
-              "size": "xsmall",
-            },
-            "pad": {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
+          "groupHeader": {},
           "header": {
             "gap": "small",
             "units": {
