@@ -215,6 +215,10 @@ export var DataFilters = function DataFilters(_ref) {
     onEsc: function onEsc() {
       return setShowContent(undefined);
     }
-  }), content));
+  }), /*#__PURE__*/React.createElement(Box, {
+    width: {
+      min: 'medium'
+    }
+  }, content)));
 };
 DataFilters.propTypes = DataFiltersPropTypes;
