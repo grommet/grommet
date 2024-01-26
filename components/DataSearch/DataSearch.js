@@ -7,7 +7,6 @@ var _Search = require("grommet-icons/icons/Search");
 var _styledComponents = require("styled-components");
 var _Box = require("../Box");
 var _DataContext = require("../../contexts/DataContext");
-var _DataForm = require("../Data/DataForm");
 var _DropButton = require("../DropButton");
 var _DataFormContext = require("../../contexts/DataFormContext");
 var _FormField = require("../FormField");
@@ -17,6 +16,7 @@ var _MessageContext = require("../../contexts/MessageContext");
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 var _propTypes = require("./propTypes");
 var _responsive = require("../../utils/responsive");
+var _useDebounce = require("../../utils/use-debounce");
 var _excluded = ["drop", "id", "responsive"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -28,6 +28,9 @@ var dropProps = {
     left: 'left'
   }
 };
+
+// 300ms was chosen empirically as a reasonable default
+var DEBOUNCE_TIMEOUT = 300;
 var DataSearch = exports.DataSearch = function DataSearch(_ref) {
   var _theme$data$button;
   var drop = _ref.drop,
@@ -37,7 +40,10 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     dataId = _useContext.id,
     messages = _useContext.messages,
-    addToolbarKey = _useContext.addToolbarKey;
+    addToolbarKey = _useContext.addToolbarKey,
+    onView = _useContext.onView,
+    view = _useContext.view,
+    views = _useContext.views;
   var _useContext2 = (0, _react.useContext)(_DataFormContext.DataFormContext),
     inDataForm = _useContext2.inDataForm;
   var _useContext3 = (0, _react.useContext)(_MessageContext.MessageContext),
@@ -45,13 +51,42 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
   var skeleton = (0, _Skeleton.useSkeleton)();
+  var debounce = (0, _useDebounce.useDebounce)(DEBOUNCE_TIMEOUT);
   var _useState = (0, _react.useState)(),
     showContent = _useState[0],
     setShowContent = _useState[1];
+  var _useState2 = (0, _react.useState)(view == null ? void 0 : view.search),
+    value = _useState2[0],
+    setValue = _useState2[1];
   var id = idProp || dataId + "--search";
   (0, _react.useEffect)(function () {
     if (!inDataForm) addToolbarKey('_search');
   }, [addToolbarKey, inDataForm]);
+  (0, _react.useEffect)(function () {
+    return setValue(view == null ? void 0 : view.search);
+  }, [view == null ? void 0 : view.search]);
+  var onChange = function onChange(e) {
+    var _e$target, _e$target2;
+    var nextValue = _extends({}, view, {
+      search: (_e$target = e.target) == null ? void 0 : _e$target.value
+    });
+
+    // If there's a named view in effect that has a search term
+    // we'll clear the named view (but leave it's other filters)
+    var currentView = nextValue.view && (views == null ? void 0 : views.find(function (v) {
+      return v.name === nextValue.view;
+    }));
+    if (currentView != null && currentView.search) {
+      delete nextValue.view;
+      delete nextValue.name;
+    }
+    setValue((_e$target2 = e.target) == null ? void 0 : _e$target2.value);
+    debounce(function () {
+      return function () {
+        return onView(nextValue);
+      };
+    });
+  };
   var content = skeleton ? null : /*#__PURE__*/_react["default"].createElement(_TextInput.TextInput, _extends({
     "aria-label": format({
       id: 'dataSearch.label',
@@ -60,14 +95,14 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
     id: id,
     name: "_search",
     icon: /*#__PURE__*/_react["default"].createElement(_Search.Search, null),
-    type: "search"
+    type: "search",
+    value: value,
+    onChange: onChange
   }, rest));
   if (!inDataForm)
-    // likely in Toolbar
-    content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
-      footer: false,
-      updateOn: "change"
-    }, content);else content = /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
+    // likely in Toolbar.
+    // Wrap in Box to give it a reasonable width
+    content = /*#__PURE__*/_react["default"].createElement(_Box.Box, null, content);else content = /*#__PURE__*/_react["default"].createElement(_FormField.FormField, {
     htmlFor: id,
     label: format({
       id: 'dataSearch.label',

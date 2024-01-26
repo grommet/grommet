@@ -10,6 +10,7 @@ import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useDebounce } from '../../utils/use-debounce';
 var MaxForm = styled(Form).withConfig({
   displayName: "DataForm__MaxForm",
   componentId: "sc-v64e1r-0"
@@ -208,24 +209,6 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
 
 // 300ms was chosen empirically as a reasonable default
 var DEBOUNCE_TIMEOUT = 300;
-var debounce = function debounce(func, timeout) {
-  if (timeout === void 0) {
-    timeout = DEBOUNCE_TIMEOUT;
-  }
-  var timer;
-  return function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    clearTimeout(timer);
-    timer = setTimeout(function () {
-      func.apply(void 0, args);
-    }, timeout);
-  };
-};
-var debounceSearch = debounce(function (onView, nextValue, views) {
-  return onView(formValueToView(nextValue, views));
-});
 export var DataForm = function DataForm(_ref) {
   var children = _ref.children,
     footer = _ref.footer,
@@ -245,6 +228,7 @@ export var DataForm = function DataForm(_ref) {
   var _useState = useState(viewToFormValue(view)),
     formValue = _useState[0],
     setFormValue = _useState[1];
+  var debounce = useDebounce(DEBOUNCE_TIMEOUT);
   var contextValue = useMemo(function () {
     return {
       inDataForm: true
@@ -269,12 +253,16 @@ export var DataForm = function DataForm(_ref) {
       if (onTouched) onTouched(transformTouched(touched, nextValue));
       // debounce search
       if (touched[formSearchKey]) {
-        debounceSearch(onView, nextValue, views);
+        debounce(function () {
+          return function () {
+            return onView(formValueToView(nextValue, views));
+          };
+        });
       } else {
         onView(formValueToView(nextValue, views));
       }
     }
-  }, [formValue, onTouched, onView, updateOn, views]);
+  }, [debounce, formValue, onTouched, onView, updateOn, views]);
   useEffect(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);

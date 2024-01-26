@@ -11,6 +11,7 @@ var _Form = require("../Form");
 var _DataContext = require("../../contexts/DataContext");
 var _DataFormContext = require("../../contexts/DataFormContext");
 var _MessageContext = require("../../contexts/MessageContext");
+var _useDebounce = require("../../utils/use-debounce");
 var _excluded = ["children", "footer", "onDone", "onTouched", "pad", "updateOn"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -215,24 +216,6 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
 
 // 300ms was chosen empirically as a reasonable default
 var DEBOUNCE_TIMEOUT = 300;
-var debounce = function debounce(func, timeout) {
-  if (timeout === void 0) {
-    timeout = DEBOUNCE_TIMEOUT;
-  }
-  var timer;
-  return function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    clearTimeout(timer);
-    timer = setTimeout(function () {
-      func.apply(void 0, args);
-    }, timeout);
-  };
-};
-var debounceSearch = debounce(function (onView, nextValue, views) {
-  return onView(formValueToView(nextValue, views));
-});
 var DataForm = exports.DataForm = function DataForm(_ref) {
   var children = _ref.children,
     footer = _ref.footer,
@@ -252,6 +235,7 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
   var _useState = (0, _react.useState)(viewToFormValue(view)),
     formValue = _useState[0],
     setFormValue = _useState[1];
+  var debounce = (0, _useDebounce.useDebounce)(DEBOUNCE_TIMEOUT);
   var contextValue = (0, _react.useMemo)(function () {
     return {
       inDataForm: true
@@ -276,12 +260,16 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
       if (onTouched) onTouched(transformTouched(touched, nextValue));
       // debounce search
       if (touched[formSearchKey]) {
-        debounceSearch(onView, nextValue, views);
+        debounce(function () {
+          return function () {
+            return onView(formValueToView(nextValue, views));
+          };
+        });
       } else {
         onView(formValueToView(nextValue, views));
       }
     }
-  }, [formValue, onTouched, onView, updateOn, views]);
+  }, [debounce, formValue, onTouched, onView, updateOn, views]);
   (0, _react.useEffect)(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);

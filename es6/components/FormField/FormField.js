@@ -3,10 +3,11 @@ var _excluded = ["error", "info", "message", "type"],
   _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { Children, cloneElement, forwardRef, useContext, useState, useEffect } from 'react';
+import React, { Children, cloneElement, forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { containsFocus, shouldKeepFocus, withinDropPortal, PortalContext } from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -117,22 +118,6 @@ var Input = function Input(_ref2) {
     "aria-invalid": invalid || undefined
   }, rest, extraProps));
 };
-var useDebounce = function useDebounce() {
-  var _useState = useState(),
-    func = _useState[0],
-    setFunc = _useState[1];
-  var theme = useContext(ThemeContext) || defaultProps.theme;
-  useEffect(function () {
-    var timer;
-    if (func) timer = setTimeout(function () {
-      return func();
-    }, theme.global.debounceDelay);
-    return function () {
-      return clearTimeout(timer);
-    };
-  }, [func, theme.global.debounceDelay]);
-  return setFunc;
-};
 var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var children = _ref3.children,
     className = _ref3.className,
@@ -172,9 +157,9 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     contextOnBlur = _formContext$useFormF.onBlur,
     contextOnChange = _formContext$useFormF.onChange;
   var formKind = formContext.kind;
-  var _useState2 = useState(),
-    focus = _useState2[0],
-    setFocus = _useState2[1];
+  var _useState = useState(),
+    focus = _useState[0],
+    setFocus = _useState[1];
   var formFieldRef = useForwardedRef(ref);
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border;

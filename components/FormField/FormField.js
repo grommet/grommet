@@ -6,6 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
+var _useDebounce = require("../../utils/use-debounce");
 var _styles = require("../../utils/styles");
 var _mixins = require("../../utils/mixins");
 var _refs = require("../../utils/refs");
@@ -123,22 +124,6 @@ var Input = function Input(_ref2) {
     "aria-invalid": invalid || undefined
   }, rest, extraProps));
 };
-var useDebounce = function useDebounce() {
-  var _useState = (0, _react.useState)(),
-    func = _useState[0],
-    setFunc = _useState[1];
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-  (0, _react.useEffect)(function () {
-    var timer;
-    if (func) timer = setTimeout(function () {
-      return func();
-    }, theme.global.debounceDelay);
-    return function () {
-      return clearTimeout(timer);
-    };
-  }, [func, theme.global.debounceDelay]);
-  return setFunc;
-};
 var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var children = _ref3.children,
     className = _ref3.className,
@@ -178,13 +163,13 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     contextOnBlur = _formContext$useFormF.onBlur,
     contextOnChange = _formContext$useFormF.onChange;
   var formKind = formContext.kind;
-  var _useState2 = (0, _react.useState)(),
-    focus = _useState2[0],
-    setFocus = _useState2[1];
+  var _useState = (0, _react.useState)(),
+    focus = _useState[0],
+    setFocus = _useState[1];
   var formFieldRef = (0, _refs.useForwardedRef)(ref);
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border;
-  var debounce = useDebounce();
+  var debounce = (0, _useDebounce.useDebounce)();
   var portalContext = (0, _react.useContext)(_utils.PortalContext);
 
   // This is here for backwards compatibility. In case the child is a grommet
