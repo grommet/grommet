@@ -124,7 +124,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
       key = row.key,
       onChange = row.onChange,
       primaryValue = row.primaryValue;
-    var cellProps = normalizeRowCellProps(rowProps, cellPropsProp, primaryValue, index);
+    var cellProps = normalizeRowCellProps(rowProps, context === 'groupHeader' ? cellPropsProp.groupHeader : cellPropsProp.body, primaryValue, index);
     return /*#__PURE__*/React.createElement(StyledDataTableRow, {
       ref: rowRef,
       key: key,

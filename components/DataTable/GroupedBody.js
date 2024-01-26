@@ -130,7 +130,7 @@ var GroupedBody = exports.GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(func
       key = row.key,
       onChange = row.onChange,
       primaryValue = row.primaryValue;
-    var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, cellPropsProp, primaryValue, index);
+    var cellProps = (0, _buildState.normalizeRowCellProps)(rowProps, context === 'groupHeader' ? cellPropsProp.groupHeader : cellPropsProp.body, primaryValue, index);
     return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       ref: rowRef,
       key: key,

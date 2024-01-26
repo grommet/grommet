@@ -422,7 +422,10 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
   }
   var bodyContent = groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
     ref: bodyRef,
-    cellProps: cellProps.body,
+    cellProps: {
+      body: cellProps.body,
+      groupHeader: _extends({}, cellProps.body, cellProps.groupHeader)
+    },
     columns: columns,
     disabled: disabled,
     groupBy: typeof groupBy === 'string' ? {
