@@ -165,10 +165,16 @@ const clearEmpty = (formValue, pendingReset) => {
   Object.keys(value).forEach((k) => {
     if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
     // special case for when range selector returns to its min/max
-    // flat format needed because of how filter name is structured
-    if (pendingReset?.current?.has(`${k}.${formRangeKey}`)) {
-      delete value[k];
-      pendingReset.current.delete(`${k}.${formRangeKey}`);
+    // flat format with full: true needed to match filter name structure
+    // { a: b: { _range: [0, 100] } } ==> a.b._range: [0, 100]
+    if (typeof value[k] === 'object' && !Array.isArray(value[k])) {
+      const filterName = `${k}.${
+        Object.keys(flatten(value[k], { full: true }))[0]
+      }`;
+      if (pendingReset?.current?.has(filterName)) {
+        delete value[k];
+        pendingReset.current.delete(filterName);
+      }
     }
   });
   return value;
