@@ -253,7 +253,7 @@ export const normalizeRowProp = (name, rowProp, prop) => {
   return prop;
 };
 
-const tableContextNames = ['header', 'body', 'footer'];
+const tableContextNames = ['header', 'body', 'footer', 'groupHeader'];
 const cellPropertyNames = ['background', 'border', 'pad'];
 
 // Convert property specific cell props to context specific cell props.

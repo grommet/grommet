@@ -14,6 +14,7 @@ import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useDebounce } from '../../utils/use-debounce';
 
 const MaxForm = styled(Form)`
   max-width: 100%;
@@ -230,20 +231,6 @@ const normalizeValue = (nextValue, prevValue, views, pendingReset) => {
 // 300ms was chosen empirically as a reasonable default
 const DEBOUNCE_TIMEOUT = 300;
 
-const debounce = (func, timeout = DEBOUNCE_TIMEOUT) => {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func(...args);
-    }, timeout);
-  };
-};
-
-const debounceSearch = debounce((onView, nextValue, views) =>
-  onView(formValueToView(nextValue, views)),
-);
-
 export const DataForm = ({
   children,
   footer,
@@ -260,6 +247,7 @@ export const DataForm = ({
   // like other properties
   const pendingReset = useRef(new Set());
   const contextValue = useMemo(() => ({ inDataForm: true, pendingReset }), []);
+  const debounce = useDebounce(DEBOUNCE_TIMEOUT);
 
   const onSubmit = useCallback(
     ({ value }) => {
@@ -280,13 +268,13 @@ export const DataForm = ({
       if (updateOn === 'change') {
         // debounce search
         if (touched[formSearchKey]) {
-          debounceSearch(onView, nextValue, views);
+          debounce(() => () => onView(formValueToView(nextValue, views)));
         } else {
           onView(formValueToView(nextValue, views));
         }
       }
     },
-    [formValue, onView, updateOn, views],
+    [debounce, formValue, onView, updateOn, views],
   );
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
