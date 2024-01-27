@@ -3,7 +3,6 @@ import { Search } from 'grommet-icons/icons/Search';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
-// import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
@@ -13,6 +12,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
 import { isSmall } from '../../utils/responsive';
+import { useDebounce } from '../../utils/use-debounce';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -21,18 +21,6 @@ const dropProps = {
 // 300ms was chosen empirically as a reasonable default
 const DEBOUNCE_TIMEOUT = 300;
 
-const debounce = (func, timeout = DEBOUNCE_TIMEOUT) => {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func(...args);
-    }, timeout);
-  };
-};
-
-const debounceSearch = debounce((onView, nextValue) => onView(nextValue));
-
 export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
   const {
     id: dataId,
@@ -40,21 +28,37 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
     addToolbarKey,
     onView,
     view,
+    views,
   } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext);
   const size = useContext(ResponsiveContext);
   const skeleton = useSkeleton();
+  const debounce = useDebounce(DEBOUNCE_TIMEOUT);
   const [showContent, setShowContent] = useState();
+  const [value, setValue] = useState(view?.search);
   const id = idProp || `${dataId}--search`;
 
   useEffect(() => {
     if (!inDataForm) addToolbarKey('_search');
   }, [addToolbarKey, inDataForm]);
 
+  useEffect(() => setValue(view?.search), [view?.search]);
+
   const onChange = (e) => {
-    debounceSearch(onView, { ...view, search: e.target?.value });
+    const nextValue = { ...view, search: e.target?.value };
+
+    // If there's a named view in effect that has a search term
+    // we'll clear the named view (but leave it's other filters)
+    const currentView =
+      nextValue.view && views?.find((v) => v.name === nextValue.view);
+    if (currentView?.search) {
+      delete nextValue.view;
+      delete nextValue.name;
+    }
+    setValue(e.target?.value);
+    debounce(() => () => onView(nextValue));
   };
 
   let content = skeleton ? null : (
@@ -67,12 +71,17 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
       name="_search"
       icon={<Search />}
       type="search"
+      value={value}
       onChange={onChange}
       {...rest}
     />
   );
 
-  if (inDataForm)
+  if (!inDataForm)
+    // likely in Toolbar.
+    // Wrap in Box to give it a reasonable width
+    content = <Box>{content}</Box>;
+  else
     content = (
       <FormField
         htmlFor={id}

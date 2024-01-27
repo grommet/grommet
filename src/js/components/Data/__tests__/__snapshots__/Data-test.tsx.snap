@@ -62,7 +62,21 @@ exports[`Data controlled search 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -98,20 +112,6 @@ exports[`Data controlled search 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -241,7 +241,7 @@ exports[`Data controlled search 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -426,15 +426,6 @@ exports[`Data controlled search 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -496,7 +487,7 @@ exports[`Data controlled search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -514,7 +505,7 @@ exports[`Data controlled search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -532,7 +523,7 @@ exports[`Data controlled search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -550,7 +541,7 @@ exports[`Data controlled search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -581,7 +572,7 @@ exports[`Data controlled search 2`] = `
         class="StyledBox-sc-13pk1d4-0 fnEswI"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledBox-sc-13pk1d4-0 kqmDKi"
         >
           <div
             class="StyledTextInput__StyledIcon-sc-1x30a0s-3 iQFXNb"
@@ -599,15 +590,6 @@ exports[`Data controlled search 2`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 hLtcCB"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="StyledBox-sc-13pk1d4-0 imzrdH"
@@ -801,7 +783,21 @@ exports[`Data messages 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -837,20 +833,6 @@ exports[`Data messages 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -985,7 +967,7 @@ exports[`Data messages 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1170,15 +1152,6 @@ exports[`Data messages 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -1248,7 +1221,7 @@ exports[`Data messages 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -1261,7 +1234,7 @@ exports[`Data messages 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -1279,7 +1252,7 @@ exports[`Data messages 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -1292,7 +1265,7 @@ exports[`Data messages 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -1310,7 +1283,7 @@ exports[`Data messages 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -1323,7 +1296,7 @@ exports[`Data messages 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             />
           </td>
         </tr>
@@ -1335,7 +1308,7 @@ exports[`Data messages 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -1348,7 +1321,7 @@ exports[`Data messages 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             />
           </td>
         </tr>
@@ -3031,7 +3004,21 @@ exports[`Data properties when property is an array 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3067,20 +3054,6 @@ exports[`Data properties when property is an array 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -3215,7 +3188,7 @@ exports[`Data properties when property is an array 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -3400,15 +3373,6 @@ exports[`Data properties when property is an array 1`] = `
                 />
               </svg>
             </div>
-            <input
-              aria-label="Search"
-              autocomplete="off"
-              class="c7"
-              id="data--search"
-              name="_search"
-              type="search"
-              value=""
-            />
           </div>
           <div
             class="c8"
@@ -3504,7 +3468,7 @@ exports[`Data properties when property is an array 1`] = `
               scope="row"
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c19"
@@ -3517,7 +3481,7 @@ exports[`Data properties when property is an array 1`] = `
               class="c17 "
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c15"
@@ -3530,7 +3494,7 @@ exports[`Data properties when property is an array 1`] = `
               class="c17 "
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c15"
@@ -3548,7 +3512,7 @@ exports[`Data properties when property is an array 1`] = `
               scope="row"
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c19"
@@ -3561,7 +3525,7 @@ exports[`Data properties when property is an array 1`] = `
               class="c17 "
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c15"
@@ -3574,7 +3538,7 @@ exports[`Data properties when property is an array 1`] = `
               class="c17 "
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c15"
@@ -3592,7 +3556,7 @@ exports[`Data properties when property is an array 1`] = `
               scope="row"
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c19"
@@ -3605,14 +3569,14 @@ exports[`Data properties when property is an array 1`] = `
               class="c17 "
             >
               <div
-                class="c18"
+                class="c4"
               />
             </td>
             <td
               class="c17 "
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c15"
@@ -3630,7 +3594,7 @@ exports[`Data properties when property is an array 1`] = `
               scope="row"
             >
               <div
-                class="c18"
+                class="c4"
               >
                 <span
                   class="c19"
@@ -3643,14 +3607,14 @@ exports[`Data properties when property is an array 1`] = `
               class="c17 "
             >
               <div
-                class="c18"
+                class="c4"
               />
             </td>
             <td
               class="c17 "
             >
               <div
-                class="c18"
+                class="c4"
               />
             </td>
           </tr>
@@ -3963,7 +3927,21 @@ exports[`Data toolbar 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3999,20 +3977,6 @@ exports[`Data toolbar 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -4147,7 +4111,7 @@ exports[`Data toolbar 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -4332,15 +4296,6 @@ exports[`Data toolbar 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -4410,7 +4365,7 @@ exports[`Data toolbar 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -4423,7 +4378,7 @@ exports[`Data toolbar 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -4441,7 +4396,7 @@ exports[`Data toolbar 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -4454,7 +4409,7 @@ exports[`Data toolbar 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -4472,7 +4427,7 @@ exports[`Data toolbar 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -4485,7 +4440,7 @@ exports[`Data toolbar 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             />
           </td>
         </tr>
@@ -4497,7 +4452,7 @@ exports[`Data toolbar 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -4510,7 +4465,7 @@ exports[`Data toolbar 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             />
           </td>
         </tr>
@@ -5033,7 +4988,21 @@ exports[`Data toolbar search 1`] = `
   flex: 0 0 auto;
 }
 
-.c12 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5052,20 +5021,6 @@ exports[`Data toolbar search 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -5135,7 +5090,7 @@ exports[`Data toolbar search 1`] = `
   font-weight: bold;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -5320,15 +5275,6 @@ exports[`Data toolbar search 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
       </div>
     </div>
@@ -5367,7 +5313,7 @@ exports[`Data toolbar search 1`] = `
             scope="row"
           >
             <div
-              class="c15"
+              class="c4"
             >
               <span
                 class="c16"
@@ -5385,7 +5331,7 @@ exports[`Data toolbar search 1`] = `
             scope="row"
           >
             <div
-              class="c15"
+              class="c4"
             >
               <span
                 class="c16"
@@ -5403,7 +5349,7 @@ exports[`Data toolbar search 1`] = `
             scope="row"
           >
             <div
-              class="c15"
+              class="c4"
             >
               <span
                 class="c16"
@@ -5421,7 +5367,7 @@ exports[`Data toolbar search 1`] = `
             scope="row"
           >
             <div
-              class="c15"
+              class="c4"
             >
               <span
                 class="c16"
@@ -5499,7 +5445,21 @@ exports[`Data uncontrolled search 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5535,20 +5495,6 @@ exports[`Data uncontrolled search 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -5678,7 +5624,7 @@ exports[`Data uncontrolled search 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -5863,15 +5809,6 @@ exports[`Data uncontrolled search 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -5933,7 +5870,7 @@ exports[`Data uncontrolled search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -5951,7 +5888,7 @@ exports[`Data uncontrolled search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -5969,7 +5906,7 @@ exports[`Data uncontrolled search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -5987,7 +5924,7 @@ exports[`Data uncontrolled search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -6018,7 +5955,7 @@ exports[`Data uncontrolled search 2`] = `
         class="StyledBox-sc-13pk1d4-0 fnEswI"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledBox-sc-13pk1d4-0 kqmDKi"
         >
           <div
             class="StyledTextInput__StyledIcon-sc-1x30a0s-3 iQFXNb"
@@ -6036,15 +5973,6 @@ exports[`Data uncontrolled search 2`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 hLtcCB"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="StyledBox-sc-13pk1d4-0 imzrdH"
@@ -6458,7 +6386,21 @@ exports[`Data view all 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6494,20 +6436,6 @@ exports[`Data view all 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -6642,7 +6570,7 @@ exports[`Data view all 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -6827,15 +6755,6 @@ exports[`Data view all 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -6905,7 +6824,7 @@ exports[`Data view all 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -6918,7 +6837,7 @@ exports[`Data view all 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -6996,7 +6915,21 @@ exports[`Data view property option 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7032,20 +6965,6 @@ exports[`Data view property option 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -7180,7 +7099,7 @@ exports[`Data view property option 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -7365,15 +7284,6 @@ exports[`Data view property option 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -7443,7 +7353,7 @@ exports[`Data view property option 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -7456,7 +7366,7 @@ exports[`Data view property option 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -7534,7 +7444,21 @@ exports[`Data view property range 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7570,20 +7494,6 @@ exports[`Data view property range 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -7718,7 +7628,7 @@ exports[`Data view property range 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -7903,15 +7813,6 @@ exports[`Data view property range 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -7989,7 +7890,7 @@ exports[`Data view property range 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -8002,7 +7903,7 @@ exports[`Data view property range 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -8015,7 +7916,7 @@ exports[`Data view property range 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -8093,7 +7994,21 @@ exports[`Data view search 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8129,20 +8044,6 @@ exports[`Data view search 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -8277,7 +8178,7 @@ exports[`Data view search 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -8462,15 +8363,6 @@ exports[`Data view search 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -8540,7 +8432,7 @@ exports[`Data view search 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -8553,7 +8445,7 @@ exports[`Data view search 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -8631,7 +8523,21 @@ exports[`Data view sort 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8667,20 +8573,6 @@ exports[`Data view sort 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c2 {
@@ -8815,7 +8707,7 @@ exports[`Data view sort 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -9000,15 +8892,6 @@ exports[`Data view sort 1`] = `
               />
             </svg>
           </div>
-          <input
-            aria-label="Search"
-            autocomplete="off"
-            class="c7"
-            id="data--search"
-            name="_search"
-            type="search"
-            value=""
-          />
         </div>
         <div
           class="c8"
@@ -9078,7 +8961,7 @@ exports[`Data view sort 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -9091,7 +8974,7 @@ exports[`Data view sort 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -9109,7 +8992,7 @@ exports[`Data view sort 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -9122,7 +9005,7 @@ exports[`Data view sort 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c19"
@@ -9140,7 +9023,7 @@ exports[`Data view sort 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -9153,7 +9036,7 @@ exports[`Data view sort 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             />
           </td>
         </tr>
@@ -9165,7 +9048,7 @@ exports[`Data view sort 1`] = `
             scope="row"
           >
             <div
-              class="c17"
+              class="c4"
             >
               <span
                 class="c18"
@@ -9178,7 +9061,7 @@ exports[`Data view sort 1`] = `
             class="c16 "
           >
             <div
-              class="c17"
+              class="c4"
             />
           </td>
         </tr>
