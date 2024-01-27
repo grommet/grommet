@@ -519,7 +519,21 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -726,7 +740,7 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -876,15 +890,6 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
                 />
               </svg>
             </div>
-            <input
-              aria-label="Search"
-              autocomplete="off"
-              class="c7"
-              id="data--search"
-              name="_search"
-              type="search"
-              value=""
-            />
           </div>
           <div
             class="c8"
@@ -1096,7 +1101,21 @@ exports[`DataClearFilters renders custom message 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1303,7 +1322,7 @@ exports[`DataClearFilters renders custom message 1`] = `
   border: 0;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1453,15 +1472,6 @@ exports[`DataClearFilters renders custom message 1`] = `
                 />
               </svg>
             </div>
-            <input
-              aria-label="Search"
-              autocomplete="off"
-              class="c7"
-              id="data--search"
-              name="_search"
-              type="search"
-              value=""
-            />
           </div>
           <div
             class="c8"
