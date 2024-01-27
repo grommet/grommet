@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
-import { Data } from '../../Data';
+import { Data, View } from '../../Data';
 import { Grommet } from '../../Grommet';
 import { DataClearFilters } from '..';
 
@@ -30,6 +30,35 @@ const data = [
   },
   { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0, total: 35 },
 ];
+
+
+const defaultView: View = {
+  search: 'test search',
+  sort: {
+    direction: 'desc',
+    property: 'name',
+  },
+  properties: {
+    name: ['aa', 'bb'],
+  },
+  step: 3,
+};
+
+const Test = ({ onView }: { onView: (nextView: View) => void }) => {
+  const [view, setView] = React.useState(defaultView);
+  return (
+    <Data
+      data={data}
+      view={view}
+      onView={(nextView) => {
+        onView(nextView);
+        setView(nextView);
+      }}
+      properties={{ name: { options: ['aa', 'bb', 'cc'] } }}
+      toolbar
+    />
+  );
+};
 
 describe('DataClearFilters', () => {
   test('renders', () => {
@@ -84,6 +113,33 @@ describe('DataClearFilters', () => {
     );
 
     expect(screen.getByText('Remove all filters')).toBeTruthy();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('clear filters should not clear search, sort, or step', () => {
+    const onView = jest.fn();
+
+    const { asFragment } = render(
+      <Grommet>
+        <Test onView={onView} />
+      </Grommet>,
+    );
+
+    const openFiltersButton = screen.getByRole('button', {
+      name: 'Open filters',
+    });
+    fireEvent.click(openFiltersButton);
+
+    fireEvent.click(screen.getByText('aa'));
+    fireEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+
+    const clearFiltersButton = screen.getByRole('button', {
+      name: 'Clear filters',
+    });
+    fireEvent.click(clearFiltersButton);
+    const nextView = { ...defaultView };
+    delete nextView.properties;
+    expect(onView).toHaveBeenCalledWith(nextView);
     expect(asFragment()).toMatchSnapshot();
   });
 });
