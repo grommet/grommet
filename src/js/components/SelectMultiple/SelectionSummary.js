@@ -82,7 +82,7 @@ const SelectionSummary = ({
   const summaryText = format({
     id: messageId,
     messages,
-    values: { selected: value?.length, total: options.length },
+    values: { selected: value?.length || 0, total: options.length },
   });
 
   const summaryButtonClick = (event) => {
@@ -135,16 +135,23 @@ const SelectionSummary = ({
         0 &&
         (!onMore || (onMore && value?.length !== 0)) && (
           <Button
-            a11yTitle={format({
-              id: showSelectAll
-                ? 'selectMultiple.selectAllA11y'
-                : 'selectMultiple.clearAllA11y',
-              messages,
-              values: {
-                selected: value?.length,
-                total: options.length,
-              },
-            })}
+            a11yTitle={
+              showSelectAll
+                ? format({
+                    id: 'selectMultiple.selectAllA11y',
+                    messages,
+                    values: {
+                      total: options.length,
+                    },
+                  })
+                : format({
+                    id: 'selectMultiple.clearAllA11y',
+                    messages,
+                    values: {
+                      selected: value?.length || 0,
+                    },
+                  })
+            }
             label={format({
               id: showSelectAll
                 ? 'selectMultiple.selectAll'

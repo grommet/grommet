@@ -116,7 +116,6 @@ export interface GrommetProps {
       selectMultiple?: {
         clearAll?: string;
         clearAllA11y?: string;
-        onMore?: string;
         open?: string;
         optionNotSelected?: string;
         optionSelected?: string;
@@ -127,6 +126,7 @@ export interface GrommetProps {
         selected?: string;
         selectedOfTotal?: string;
         selectedOptions?: string;
+        showMore?: string;
         summarizedValue?: string;
       };
       skipLinks?: {

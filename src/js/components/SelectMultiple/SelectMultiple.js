@@ -293,10 +293,8 @@ const SelectMultiple = forwardRef(
       }
       return result;
     }, [
-      valueLabel,
-      value,
-      showSelectedInline,
       allOptions,
+      children,
       disabled,
       disabledKey,
       dropButtonRef,
@@ -304,9 +302,11 @@ const SelectMultiple = forwardRef(
       messages,
       onRequestOpen,
       onSelectChange,
+      showSelectedInline,
       theme,
+      value,
       valueKey,
-      children,
+      valueLabel,
     ]);
 
     const displayLabelKey = useMemo(
@@ -334,6 +334,10 @@ const SelectMultiple = forwardRef(
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
           return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
+        // keeping messages.multiple for backwards compatibility
+        if (messages?.multiple && !messages.summarizedValue) {
+          return format({ id: 'select.multiple', messages });
+        }
         return format({
           id: 'selectMultiple.summarizedValue',
           messages,
@@ -481,11 +485,13 @@ const SelectMultiple = forwardRef(
                             : format({
                                 id: onMore
                                   ? 'selectMultiple.selected'
-                                  : 'selectMultiple.selectedMultipleTotal',
+                                  : 'selectMultiple.selectedOfTotal',
                                 messages,
                                 values: {
                                   selected: value?.length || 0,
-                                  total: allOptions.length,
+                                  ...(!onMore
+                                    ? { total: allOptions.length }
+                                    : {}),
                                 },
                               })
                         }

@@ -96,8 +96,7 @@
   "selectMultiple": {
     "clearAll": "Clear All",
     "clearAllA11y": "{selected} options selected. Clear all?",
-    "onMore": "+ {showMoreCount} more options",
-    "open": "Open Drop",
+    "open": "Open drop",
     "optionNotSelected": "{optionLabel} not selected",
     "optionSelected": "{optionLabel} selected",
     "search": "Search to filter options",
@@ -105,9 +104,10 @@
     "selectAllA11y": "Select all {total} options",
     "selectDropDown": "Select dropdown",
     "selected": "{selected} selected",
-    "selectedOfTotal": "{selected} of {total} selected",
-    "selectedOptions": "Selected Options",
-    "summarizedValue": "{selected} of {total} selected"
+    "selectedOfTotal": "{selected} selected of {total}",
+    "selectedOptions": "Selected options",
+    "showMore": "+ {remaining} more",
+    "summarizedValue": "{selected} selected"
   },
   "skipLinks": {
     "skipTo": "Skip To:"

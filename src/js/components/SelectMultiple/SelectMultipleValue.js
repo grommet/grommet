@@ -175,17 +175,17 @@ const SelectMultipleValue = ({
       return undefined;
     },
     [
-      valueKey,
-      value,
-      labelKey,
       allOptions,
-      isDisabled,
-      theme.selectMultiple.maxInline,
       children,
+      dropButtonRef,
       format,
+      isDisabled,
+      labelKey,
       messages,
       onSelectChange,
-      dropButtonRef,
+      theme.selectMultiple.maxInline,
+      value,
+      valueKey,
     ],
   );
 
@@ -244,10 +244,10 @@ const SelectMultipleValue = ({
             onClick={onRequestOpen}
             size="small"
             label={format({
-              id: 'selectMultiple.onMore',
+              id: 'selectMultiple.showMore',
               messages,
               values: {
-                showMoreCount: value.length - theme.selectMultiple.maxInline,
+                remaining: value.length - theme.selectMultiple.maxInline,
               },
             })}
           />
