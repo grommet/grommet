@@ -4225,7 +4225,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
-            label="[object Object]"
           >
             <div
               class="c15 c16"
@@ -4271,7 +4270,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
-            label="[object Object]"
           >
             <div
               class="c15 c16"
@@ -4317,7 +4315,6 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
-            label="[object Object]"
           >
             <div
               class="c15 c16"
@@ -5490,7 +5487,6 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
           <label
             class="c14"
             disabled=""
-            label="[object Object]"
           >
             <div
               class="c15 c16"
@@ -6061,7 +6057,6 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
         >
           <label
             class="c14"
-            label="[object Object]"
           >
             <div
               class="c15 c16"

@@ -308,10 +308,6 @@ exports[`DataFilters clear 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -443,7 +439,6 @@ exports[`DataFilters clear 1`] = `
                 >
                   <label
                     class="c9"
-                    label="a"
                   >
                     <div
                       class="c10 c11"
@@ -477,7 +472,6 @@ exports[`DataFilters clear 1`] = `
                   />
                   <label
                     class="c9"
-                    label="b"
                   >
                     <div
                       class="c10 c11"
@@ -1521,10 +1515,6 @@ exports[`DataFilters layer 2`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1856,7 +1846,6 @@ exports[`DataFilters layer 2`] = `
                   >
                     <label
                       class="c18"
-                      label="a"
                     >
                       <div
                         class="c19 c20"
@@ -1878,7 +1867,6 @@ exports[`DataFilters layer 2`] = `
                     />
                     <label
                       class="c18"
-                      label="b"
                     >
                       <div
                         class="c19 c20"
@@ -2229,10 +2217,6 @@ exports[`DataFilters properties array 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2358,7 +2342,6 @@ exports[`DataFilters properties array 1`] = `
                 >
                   <label
                     class="c9"
-                    label="a"
                   >
                     <div
                       class="c10 c11"
@@ -2380,7 +2363,6 @@ exports[`DataFilters properties array 1`] = `
                   />
                   <label
                     class="c9"
-                    label="b"
                   >
                     <div
                       class="c10 c11"
@@ -2692,10 +2674,6 @@ exports[`DataFilters properties object 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2821,7 +2799,6 @@ exports[`DataFilters properties object 1`] = `
                 >
                   <label
                     class="c9"
-                    label="a"
                   >
                     <div
                       class="c10 c11"
@@ -2843,7 +2820,6 @@ exports[`DataFilters properties object 1`] = `
                   />
                   <label
                     class="c9"
-                    label="b"
                   >
                     <div
                       class="c10 c11"
@@ -3155,10 +3131,6 @@ exports[`DataFilters renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3284,7 +3256,6 @@ exports[`DataFilters renders 1`] = `
                 >
                   <label
                     class="c9"
-                    label="a"
                   >
                     <div
                       class="c10 c11"
@@ -3306,7 +3277,6 @@ exports[`DataFilters renders 1`] = `
                   />
                   <label
                     class="c9"
-                    label="b"
                   >
                     <div
                       class="c10 c11"
@@ -3664,10 +3634,6 @@ exports[`DataFilters should display all filter options regardless of result set 
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3844,7 +3810,6 @@ exports[`DataFilters should display all filter options regardless of result set 
                   >
                     <label
                       class="c9"
-                      label="a"
                     >
                       <div
                         class="c10 c11"
@@ -3866,7 +3831,6 @@ exports[`DataFilters should display all filter options regardless of result set 
                     />
                     <label
                       class="c9"
-                      label="b"
                     >
                       <div
                         class="c10 c11"
@@ -3905,7 +3869,6 @@ exports[`DataFilters should display all filter options regardless of result set 
                   >
                     <label
                       class="c9"
-                      label="blue"
                     >
                       <div
                         class="c10 c11"
@@ -3927,7 +3890,6 @@ exports[`DataFilters should display all filter options regardless of result set 
                     />
                     <label
                       class="c9"
-                      label="red"
                     >
                       <div
                         class="c10 c11"
@@ -4487,10 +4449,6 @@ exports[`DataFilters sub objects 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4686,7 +4644,6 @@ exports[`DataFilters sub objects 1`] = `
                 >
                   <label
                     class="c9"
-                    label="Paris"
                   >
                     <div
                       class="c10 c11"
@@ -4720,7 +4677,6 @@ exports[`DataFilters sub objects 1`] = `
                   />
                   <label
                     class="c9"
-                    label="Sydney"
                   >
                     <div
                       class="c10 c11"

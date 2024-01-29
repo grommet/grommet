@@ -264,10 +264,6 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -345,7 +341,6 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
       >
         <label
           class="c3"
-          label="test"
         >
           <div
             class="c4 c5"
@@ -1047,10 +1042,6 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1274,7 +1265,6 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       >
         <label
           class="c6"
-          label="toggle"
         >
           <div
             class="c7 c8"
@@ -1335,8 +1325,7 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
         class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
-          label="toggle"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dmspbK"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
@@ -1481,10 +1470,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1708,7 +1693,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       >
         <label
           class="c6"
-          label="toggle"
         >
           <div
             class="c7 c8"
@@ -1770,8 +1754,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
-          label="toggle"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dmspbK"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
@@ -2010,8 +1993,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1 fdkHPz"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hhVOvb"
-          label="toggle"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gOzbEM"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
@@ -2767,10 +2749,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3186,7 +3164,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
         <label
           class="c13"
           for="test-checkbox"
-          label="test-checkbox"
         >
           <div
             class="c14 c15"
@@ -3422,9 +3399,8 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         class="StyledBox-sc-13pk1d4-0 gkHEjs FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <label
-          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
+          class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dmspbK"
           for="test-checkbox"
-          label="test-checkbox"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
