@@ -218,7 +218,7 @@ export const DataFilters = ({
           onClickOutside={() => setShowContent(undefined)}
           onEsc={() => setShowContent(undefined)}
         >
-          {content}
+          <Box width={{ min: 'medium' }}>{content}</Box>
         </Layer>
       )}
     </Box>
