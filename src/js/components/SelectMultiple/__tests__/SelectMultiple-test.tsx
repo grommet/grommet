@@ -40,6 +40,41 @@ describe('SelectMultiple', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('additional options onSearch', async () => {
+    const TestOnSearch = () => {
+      const stringList = ['a', 'b', 'c', 'd'];
+      const [dropOptions, setDropOptions] = useState(stringList?.slice(0, 2));
+
+      return (
+        <SelectMultiple
+          id="test-select__drop"
+          onSearch={(searchText) => {
+            const regexp = new RegExp(searchText, 'i');
+            setDropOptions(stringList.filter((o) => o.match(regexp)));
+          }}
+          options={dropOptions}
+        />
+      );
+    };
+
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <TestOnSearch />
+      </Grommet>,
+    );
+    // open SelectMultiple
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // search for 'c'
+    const input = screen.getByRole('searchbox');
+    await user.type(input, 'c');
+    // select 'c'
+    await user.click(screen.getByRole('option', { name: /c/i }));
+    // expect option 'c' to be selected
+    expect(screen.queryByRole('option', { name: /c selected/ })).not.toBeNull();
+  });
+
   test('defaultValue', () => {
     const { container } = render(
       <Grommet>
