@@ -751,7 +751,7 @@ exports[`DataFilters drop 3`] = `
 `;
 
 exports[`DataFilters drop badge 1`] = `
-.c4 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -762,25 +762,25 @@ exports[`DataFilters drop badge 1`] = `
   stroke: #666666;
 }
 
-.c4 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*='#'],
-.c4 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*='#'],
-.c4 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -817,6 +817,74 @@ exports[`DataFilters drop badge 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-inline-start: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  position: relative;
+}
+
+.c5 {
+  position: relative;
+  display: block;
+}
+
+.c7 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c9 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  font-weight: normal;
 }
 
 .c3 {
@@ -879,6 +947,75 @@ exports[`DataFilters drop badge 1`] = `
   border: 0;
 }
 
+.c11 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c11:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c11:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -887,6 +1024,18 @@ exports[`DataFilters drop badge 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin-inline-start: 6px;
+  }
 }
 
 <div
@@ -900,24 +1049,57 @@ exports[`DataFilters drop badge 1`] = `
       class="c2"
     >
       <button
-        aria-label="Open filters"
+        aria-label="Open filters, 1 filter applied"
         class="c3"
         id="data--filters-control"
         type="button"
       >
-        <svg
-          aria-label="Filter"
+        <div
           class="c4"
-          viewBox="0 0 24 24"
         >
-          <path
-            d="m3 6 7 7v8h4v-8l7-7V3H3z"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
+          <div
+            class="c5"
+          >
+            <svg
+              aria-label="Filter"
+              class="c6"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div
+            class="c7"
+            style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
+          >
+            <div
+              class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+              style="min-height: 24px; min-width: 24px;"
+            >
+              <span
+                class="c9"
+              >
+                1
+              </span>
+            </div>
+          </div>
+        </div>
       </button>
+      <div
+        class="c10"
+      >
+        <button
+          class="c11"
+          type="button"
+        >
+          Clear filters
+        </button>
+      </div>
     </div>
   </div>
 </div>
