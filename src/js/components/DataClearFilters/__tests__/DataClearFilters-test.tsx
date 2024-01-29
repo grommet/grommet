@@ -32,7 +32,6 @@ const data = [
   { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0, total: 35 },
 ];
 
-
 const defaultView: View = {
   search: 'test search',
   sort: {
@@ -127,7 +126,7 @@ describe('DataClearFilters', () => {
     );
 
     const openFiltersButton = screen.getByRole('button', {
-      name: 'Open filters',
+      name: 'Open filters, 1 filter applied',
     });
     fireEvent.click(openFiltersButton);
 
