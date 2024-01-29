@@ -1,5 +1,11 @@
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import {
+  act,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Data } from '../../Data';
@@ -60,5 +66,22 @@ describe('DataSort', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should render tooltip', async () => {
+    render(
+      <Grommet>
+        <Data data={data}>
+          <DataSort drop />
+        </Data>
+      </Grommet>,
+    );
+
+    const sortButton = screen.getByRole('button', { name: 'Open sort' });
+    fireEvent.mouseOver(sortButton);
+
+    const tooltip = await waitFor(() => screen.getByText('Open sort'));
+
+    expect(tooltip).toBeTruthy();
   });
 });
