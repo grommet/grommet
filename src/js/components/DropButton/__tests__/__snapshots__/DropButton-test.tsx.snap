@@ -173,7 +173,7 @@ exports[`DropButton closed 1`] = `
 `;
 
 exports[`DropButton disabled 1`] = `
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -200,49 +200,49 @@ exports[`DropButton disabled 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c0:focus {
+cursor:default .c0:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
+cursor:default .c0:focus > circle,
+cursor:default .c1:focus > ellipse,
+cursor:default .c1:focus > line,
+cursor:default .c1:focus > path,
+cursor:default .c1:focus > polygon,
+cursor:default .c1:focus > polyline,
+cursor:default .c1:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c0:focus::-moz-focus-inner {
+cursor:default .c0:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c0:focus:not(:focus-visible) {
+.c1:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible) > circle,
-.c0:focus:not(:focus-visible) > ellipse,
-.c0:focus:not(:focus-visible) > line,
-.c0:focus:not(:focus-visible) > path,
-.c0:focus:not(:focus-visible) > polygon,
-.c0:focus:not(:focus-visible) > polyline,
-.c0:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) > circle,
+.c1:focus:not(:focus-visible) > ellipse,
+.c1:focus:not(:focus-visible) > line,
+.c1:focus:not(:focus-visible) > path,
+.c1:focus:not(:focus-visible) > polygon,
+.c1:focus:not(:focus-visible) > polyline,
+.c1:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c0:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   disabled=""
   type="button"
 >

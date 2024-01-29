@@ -132,7 +132,7 @@ exports[`DateInput basic 1`] = `
 
 exports[`DateInput buttonProps should pass props to Button
   when not inline and no format 1`] = `
-.c2 {
+.c3 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -143,25 +143,25 @@ exports[`DateInput buttonProps should pass props to Button
   stroke: #666666;
 }
 
-.c2 g {
+.c3 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c2 *[fill-rule],
-.c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -176,7 +176,7 @@ exports[`DateInput buttonProps should pass props to Button
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -198,43 +198,43 @@ exports[`DateInput buttonProps should pass props to Button
   padding: 12px;
 }
 
-.c1:focus {
+cursor:default .c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+cursor:default .c1:focus > circle,
+cursor:default .c2:focus > ellipse,
+cursor:default .c2:focus > line,
+cursor:default .c2:focus > path,
+cursor:default .c2:focus > polygon,
+cursor:default .c2:focus > polyline,
+cursor:default .c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+cursor:default .c1:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c1:focus:not(:focus-visible) {
+.c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) > circle,
+.c2:focus:not(:focus-visible) > ellipse,
+.c2:focus:not(:focus-visible) > line,
+.c2:focus:not(:focus-visible) > path,
+.c2:focus:not(:focus-visible) > polygon,
+.c2:focus:not(:focus-visible) > polyline,
+.c2:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -243,13 +243,13 @@ exports[`DateInput buttonProps should pass props to Button
 >
   <button
     aria-label="Open Drop"
-    class="c1"
+    class="c1 c2"
     disabled=""
     type="button"
   >
     <svg
       aria-label="Calendar"
-      class="c2"
+      class="c3"
       viewBox="0 0 24 24"
     >
       <path

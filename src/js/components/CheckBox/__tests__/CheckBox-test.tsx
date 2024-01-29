@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -216,6 +216,19 @@ describe('CheckBox', () => {
     );
     expect(getByLabelText(LABEL)).toBeTruthy();
     expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders custom cursor when disabled', async () => {
+    const { container } = render(
+      <Grommet
+        theme={{ global: { control: { disabled: { cursor: 'not-allowed' } } } }}
+      >
+        <CheckBox disabled />
+        <CheckBox disabled checked />
+      </Grommet>,
+    );
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -411,7 +411,7 @@ describe('SelectMultiple', () => {
     // search
     await user.type(screen.getByRole('searchbox', { name: /Search/ }), 'p');
     // select all
-    await user.click(screen.getByRole('button', { name: /Select all/ }));
+    await user.click(screen.getByRole('button', { name: /Select all.*/ }));
 
     expect(
       screen.queryByRole('option', { name: /Apple selected/ }),

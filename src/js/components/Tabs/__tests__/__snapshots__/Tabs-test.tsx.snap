@@ -3122,7 +3122,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3142,7 +3142,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3162,19 +3162,19 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c11 {
+.c12 {
   font-size: 18px;
   line-height: 24px;
   color: blue;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3192,47 +3192,47 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   text-align: inherit;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3252,47 +3252,47 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   cursor: default;
 }
 
-.c8:focus {
+cursor:default .c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+cursor:default .c4:focus > circle,
+cursor:default .c9:focus > ellipse,
+cursor:default .c9:focus > line,
+cursor:default .c9:focus > path,
+cursor:default .c9:focus > polygon,
+cursor:default .c9:focus > polyline,
+cursor:default .c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+cursor:default .c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -3300,15 +3300,15 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   margin-bottom: 3px;
 }
 
-.c6:hover {
+.c7:hover {
   color: #000000;
 }
 
-.c6:focus {
+.c7:focus {
   z-index: 1;
 }
 
-.c10 {
+.c11 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -3317,7 +3317,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   color: blue;
 }
 
-.c12 {
+.c13 {
   min-height: 0;
 }
 
@@ -3332,53 +3332,53 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     border-bottom: solid 2px green;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     padding-bottom: 3px;
   }
 }
@@ -3399,15 +3399,15 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c4"
+          class="c4 c5"
           role="tab"
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c6 c7"
           >
             <span
-              class="c7"
+              class="c8"
             >
               Enabled Tab
             </span>
@@ -3416,17 +3416,17 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c8"
+          class="c4 c9"
           disabled=""
           role="tab"
           type="button"
         >
           <div
-            class="c9 c10"
+            class="c10 c11"
             disabled=""
           >
             <span
-              class="c11"
+              class="c12"
             >
               Disabled Tab
             </span>
@@ -3436,7 +3436,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      class="c12"
+      class="c13"
       role="tabpanel"
     >
       This tab is enabled
@@ -4581,7 +4581,7 @@ exports[`Tabs should style as disabled 1`] = `
   overflow: visible;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4601,7 +4601,7 @@ exports[`Tabs should style as disabled 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4621,19 +4621,19 @@ exports[`Tabs should style as disabled 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c11 {
+.c12 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4651,47 +4651,47 @@ exports[`Tabs should style as disabled 1`] = `
   text-align: inherit;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4711,47 +4711,47 @@ exports[`Tabs should style as disabled 1`] = `
   cursor: default;
 }
 
-.c8:focus {
+cursor:default .c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+cursor:default .c4:focus > circle,
+cursor:default .c9:focus > ellipse,
+cursor:default .c9:focus > line,
+cursor:default .c9:focus > path,
+cursor:default .c9:focus > polygon,
+cursor:default .c9:focus > polyline,
+cursor:default .c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+cursor:default .c4:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c9:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c7 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -4759,15 +4759,15 @@ exports[`Tabs should style as disabled 1`] = `
   margin-bottom: 3px;
 }
 
-.c6:hover {
+.c7:hover {
   color: #000000;
 }
 
-.c6:focus {
+.c7:focus {
   z-index: 1;
 }
 
-.c10 {
+.c11 {
   white-space: nowrap;
   margin-left: 12px;
   margin-right: 12px;
@@ -4775,7 +4775,7 @@ exports[`Tabs should style as disabled 1`] = `
   margin-bottom: 3px;
 }
 
-.c12 {
+.c13 {
   min-height: 0;
 }
 
@@ -4790,53 +4790,53 @@ exports[`Tabs should style as disabled 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     border-bottom: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     padding-bottom: 3px;
   }
 }
@@ -4857,15 +4857,15 @@ exports[`Tabs should style as disabled 1`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c4"
+          class="c4 c5"
           role="tab"
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c6 c7"
           >
             <span
-              class="c7"
+              class="c8"
             >
               Enabled Tab
             </span>
@@ -4874,17 +4874,17 @@ exports[`Tabs should style as disabled 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c8"
+          class="c4 c9"
           disabled=""
           role="tab"
           type="button"
         >
           <div
-            class="c9 c10"
+            class="c10 c11"
             disabled=""
           >
             <span
-              class="c11"
+              class="c12"
             >
               Disabled Tab
             </span>
@@ -4894,7 +4894,7 @@ exports[`Tabs should style as disabled 1`] = `
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      class="c12"
+      class="c13"
       role="tabpanel"
     >
       This tab is enabled

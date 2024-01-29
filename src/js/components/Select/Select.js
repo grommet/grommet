@@ -3,10 +3,10 @@ import React, {
   isValidElement,
   useCallback,
   useContext,
-  useMemo,
-  useState,
-  useRef,
   useEffect,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -21,11 +21,11 @@ import { SelectContainer } from './SelectContainer';
 import { HiddenInput, StyledSelectDropButton } from './StyledSelect';
 import {
   applyKey,
-  getNormalizedValue,
   changeEvent,
-  getSelectIcon,
   getDisplayLabelKey,
   getIconColor,
+  getNormalizedValue,
+  getSelectIcon,
 } from './utils';
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';

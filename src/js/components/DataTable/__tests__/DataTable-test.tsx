@@ -552,7 +552,7 @@ describe('DataTable', () => {
             }
             return (
               <Box>
-                {row.a} : {row.b}{' '}
+                {row.a} :{row.b}
               </Box>
             );
           }}

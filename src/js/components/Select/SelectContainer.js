@@ -9,9 +9,9 @@ import React, {
 import styled, { ThemeContext } from 'styled-components';
 
 import {
-  setFocusWithoutScroll,
-  getHoverIndicatorStyle,
   containsFocus,
+  getHoverIndicatorStyle,
+  setFocusWithoutScroll,
 } from '../../utils';
 
 import { defaultProps } from '../../default-props';
@@ -24,11 +24,11 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
 import {
-  StyledContainer,
   OptionsContainer,
   SelectOption,
+  StyledContainer,
 } from './StyledSelect';
-import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
+import { applyKey, getOptionLabel, getOptionValue, useDisabled } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
 
 // ensure ClearButton receives visual indication of keyboard
@@ -365,6 +365,7 @@ const SelectContainer = forwardRef(
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <SelectTextInput
                 focusIndicator={!customSearchInput}
+                disabled={disabled}
                 size="small"
                 ref={searchRef}
                 type="search"

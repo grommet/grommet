@@ -7,6 +7,9 @@ import { ReactComponentElement } from 'react';
 import { Icon } from 'grommet-icons';
 
 import {
+  AlignContentType,
+  AlignSelfType,
+  AlignType,
   BackgroundType,
   BorderType,
   BreakpointBorderSize,
@@ -20,13 +23,10 @@ import {
   GraphColorsType,
   MarginType,
   OpacityType,
-  RoundType,
   PadType,
   PropsOf,
-  AlignContentType,
+  RoundType,
   SkeletonColorsType,
-  AlignSelfType,
-  AlignType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -346,7 +346,8 @@ export interface ThemeType {
         color?: ColorType;
       };
       disabled?: {
-        opacity: OpacityType;
+        opacity?: OpacityType;
+        cursor?: string;
       };
     };
     debounceDelay?: number;
