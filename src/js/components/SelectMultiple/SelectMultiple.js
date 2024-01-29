@@ -481,7 +481,7 @@ const SelectMultiple = forwardRef(
                             : format({
                                 id: onMore
                                   ? 'selectMultiple.selected'
-                                  : 'selectMultiple.selectedMultipleTotal',
+                                  : 'selectMultiple.selectedOfTotal',
                                 messages,
                                 values: {
                                   selected: value?.length || 0,

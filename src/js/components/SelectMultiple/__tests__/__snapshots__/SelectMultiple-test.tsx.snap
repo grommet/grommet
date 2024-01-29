@@ -5171,6 +5171,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              placeholder="3 of 3 selected"
               readonly=""
               tabindex="-1"
               type="text"
@@ -5732,6 +5733,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              placeholder="3 of 3 selected"
               readonly=""
               tabindex="-1"
               type="text"
@@ -6432,6 +6434,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              placeholder="1 of 3 selected"
               readonly=""
               tabindex="-1"
               type="text"
@@ -7004,6 +7007,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
             <input
               autocomplete="off"
               class="c7 c8"
+              placeholder="1 of 2 selected"
               readonly=""
               tabindex="-1"
               type="text"

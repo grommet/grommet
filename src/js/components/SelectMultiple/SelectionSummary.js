@@ -82,7 +82,7 @@ const SelectionSummary = ({
   const summaryText = format({
     id: messageId,
     messages,
-    values: { selected: value?.length, total: options.length },
+    values: { selected: value?.length || 0, total: options.length },
   });
 
   const summaryButtonClick = (event) => {
