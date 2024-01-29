@@ -20,7 +20,6 @@ import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
-import { DataFiltersContext } from './DataFiltersContext';
 
 const dropProps = {
   align: { top: 'bottom', right: 'right' },
@@ -48,18 +47,13 @@ export const DataFilters = ({
     unfilteredData,
     filtersCleared,
     setFiltersCleared,
+    view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext);
   const [showContent, setShowContent] = useState();
-  // special case for range selectors which always have a value.
-  // when value returns to its min/max, mark it to be removed from `touched`
-  // so it doesn't contribute to the badge count
-  const pendingReset = React.useRef(new Set());
-  // touched is a map of form field name to its value, it only has fields that
-  // were changed as part of the DataForm here. This is so we can track based
-  // on what's inside DataFilters as opposed to trying to track from the view
-  // object, since touched is used as logic for whether to show badge or not
+  // touched is a map of property to its value based on if user interacts
+  // with a filter or a view applies of set of filters
   const [touched, setTouched] = useState(defaultTouched);
 
   // if filters have been applied by this DataFilters, update
@@ -76,6 +70,24 @@ export const DataFilters = ({
     }
   }, [filtersCleared]);
   const controlled = useMemo(() => drop || layer, [drop, layer]);
+
+  const configured = Children.count(children) === 0;
+  useEffect(() => {
+    // when view changes via DataView or user interacting with filters,
+    // adjust badge to reflect that
+    if (controlled && view.properties) {
+      const nextTouched = { ...view.properties };
+      Object.keys(nextTouched).forEach((k) => {
+        if (
+          properties?.[k]?.badge === false ||
+          (configured && properties && !properties?.[k])
+        ) {
+          delete nextTouched[k];
+        }
+      });
+      setTouched(nextTouched);
+    }
+  }, [configured, controlled, properties, view]);
 
   // generate the badge value based on touched fields that have a value.
   // only show the badge based off of what's included in this DataFilters
@@ -112,58 +124,28 @@ export const DataFilters = ({
     ));
   }
 
-  const contextValue = useMemo(() => ({ pendingReset }), []);
   content = (
-    <DataFiltersContext.Provider value={contextValue}>
-      <DataForm
-        pad={controlled ? 'medium' : undefined}
-        onDone={() => setShowContent(false)}
-        onTouched={
-          controlled
-            ? (currentTouched) =>
-                // we merge this with our prior state to handle the case
-                // where the user opens and closes the drop multiple times
-                // and we want to track both new changes and prior changes.
-                setTouched((prevTouched) => {
-                  const nextTouched = {
-                    ...prevTouched,
-                    ...currentTouched,
-                  };
-
-                  // special case for when range selector returns to its min/max
-                  Object.keys(nextTouched).forEach((key) => {
-                    if (pendingReset?.current?.has(key)) {
-                      delete nextTouched[key];
-                      pendingReset.current.delete(key);
-                    }
-                  });
-
-                  return nextTouched;
-                })
-            : undefined
-        }
-        updateOn={updateOn}
-        {...(!controlled ? rest : { fill: 'vertical' })}
-      >
-        {layer && (
-          <Header>
-            <Heading margin="none" level={2}>
-              {heading ||
-                format({
-                  id: 'dataFilters.heading',
-                  messages: messages?.dataFilters,
-                })}
-            </Heading>
-            {!controlled && clearControl}
-            <Button
-              icon={<Close />}
-              onClick={() => setShowContent(undefined)}
-            />
-          </Header>
-        )}
-        {content}
-      </DataForm>
-    </DataFiltersContext.Provider>
+    <DataForm
+      pad={controlled ? 'medium' : undefined}
+      onDone={() => setShowContent(false)}
+      updateOn={updateOn}
+      {...(!controlled ? rest : { fill: 'vertical' })}
+    >
+      {layer && (
+        <Header>
+          <Heading margin="none" level={2}>
+            {heading ||
+              format({
+                id: 'dataFilters.heading',
+                messages: messages?.dataFilters,
+              })}
+          </Heading>
+          {!controlled && clearControl}
+          <Button icon={<Close />} onClick={() => setShowContent(undefined)} />
+        </Header>
+      )}
+      {content}
+    </DataForm>
   );
 
   if (!controlled) return content;
