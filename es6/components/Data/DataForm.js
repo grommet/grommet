@@ -1,7 +1,7 @@
-var _excluded = ["children", "footer", "onDone", "onTouched", "pad", "updateOn"];
+var _excluded = ["children", "footer", "onDone", "pad", "updateOn"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { useMemo, useCallback, useContext, useEffect, useState } from 'react';
+import React, { useMemo, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -141,10 +141,23 @@ var formValueToView = function formValueToView(value, views) {
 
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
-var clearEmpty = function clearEmpty(formValue) {
+var clearEmpty = function clearEmpty(formValue, pendingReset) {
   var value = formValue;
   Object.keys(value).forEach(function (k) {
     if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+    // special case for when range selector returns to its min/max
+    // flat format with full: true needed to match filter name structure
+    // { a: b: { _range: [0, 100] } } ==> a.b._range: [0, 100]
+    if (typeof value[k] === 'object' && !Array.isArray(value[k])) {
+      var _pendingReset$current;
+      var filterName = k + "." + Object.keys(flatten(value[k], {
+        full: true
+      }))[0];
+      if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(filterName)) {
+        delete value[k];
+        pendingReset.current["delete"](filterName);
+      }
+    }
   });
   return value;
 };
@@ -155,28 +168,10 @@ var resetPage = function resetPage(nextFormValue, prevFormValue) {
     // eslint-disable-next-line no-param-reassign
     nextFormValue[formPageKey] = 1;
 };
-var transformTouched = function transformTouched(touched, value) {
-  // DataFilters expects values for keys touched to evaluate to falsey to
-  // not cause a badge. However any property value that is set back to its
-  // default/initial value that isn't undefined/null/false/0 will cause a
-  // badge this is particulary true for a 'range' which will always have
-  // a value.
-  //
-  // Should this instead determine touched by comparing against
-  // initial/default values?
-  //
-  var result = {};
-  Object.keys(touched).forEach(function (key) {
-    result[key] = flatten(value, {
-      full: true
-    })[key];
-  });
-  return result;
-};
 
 // function shared by onSubmit and onChange to coordinate view
 // name changes
-var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
+var normalizeValue = function normalizeValue(nextValue, prevValue, views, pendingReset) {
   if (nextValue[formViewNameKey] && nextValue[formViewNameKey] !== prevValue[formViewNameKey]) {
     // view name changed, reset view contents from named view
     return viewToFormValue(views.find(function (v) {
@@ -186,16 +181,18 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
   // something else changed
 
   // clear empty properties
-  var result = clearEmpty(nextValue);
+  var result = clearEmpty(nextValue, pendingReset);
 
-  // if we have a view and something related to it changed, clear the view
+  // if we have a view and something changed, clear the view
   if (result[formViewNameKey]) {
     var view = views.find(function (v) {
       return v.name === result[formViewNameKey];
     });
     var viewValue = viewToFormValue(view);
-    clearEmpty(viewValue);
-    if (Object.keys(viewValue).some(function (k) {
+    clearEmpty(viewValue, pendingReset);
+    if (Object.keys(viewValue).length !== Object.keys(result).length) {
+      delete result[formViewNameKey];
+    } else if (Object.keys(viewValue).some(function (k) {
       return (
         // allow mismatch between empty and set strings
         viewValue[k] && result[k] && JSON.stringify(result[k]) !== JSON.stringify(viewValue[k])
@@ -213,7 +210,6 @@ export var DataForm = function DataForm(_ref) {
   var children = _ref.children,
     footer = _ref.footer,
     onDone = _ref.onDone,
-    onTouched = _ref.onTouched,
     pad = _ref.pad,
     _ref$updateOn = _ref.updateOn,
     updateOn = _ref$updateOn === void 0 ? 'submit' : _ref$updateOn,
@@ -228,29 +224,31 @@ export var DataForm = function DataForm(_ref) {
   var _useState = useState(viewToFormValue(view)),
     formValue = _useState[0],
     setFormValue = _useState[1];
-  var debounce = useDebounce(DEBOUNCE_TIMEOUT);
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, remove it from view
+  // like other properties
+  var pendingReset = useRef(new Set());
   var contextValue = useMemo(function () {
     return {
-      inDataForm: true
+      inDataForm: true,
+      pendingReset: pendingReset
     };
   }, []);
+  var debounce = useDebounce(DEBOUNCE_TIMEOUT);
   var onSubmit = useCallback(function (_ref2) {
-    var value = _ref2.value,
-      touched = _ref2.touched;
-    var nextValue = normalizeValue(value, formValue, views);
+    var value = _ref2.value;
+    var nextValue = normalizeValue(value, formValue, views, pendingReset);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
-    if (onTouched) onTouched(transformTouched(touched, nextValue));
     onView(formValueToView(nextValue, views));
     if (onDone) onDone();
-  }, [formValue, onDone, onTouched, onView, views]);
+  }, [formValue, onDone, onView, views]);
   var onChange = useCallback(function (value, _ref3) {
     var touched = _ref3.touched;
-    var nextValue = normalizeValue(value, formValue, views);
+    var nextValue = normalizeValue(value, formValue, views, pendingReset);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
     if (updateOn === 'change') {
-      if (onTouched) onTouched(transformTouched(touched, nextValue));
       // debounce search
       if (touched[formSearchKey]) {
         debounce(function () {
@@ -262,7 +260,7 @@ export var DataForm = function DataForm(_ref) {
         onView(formValueToView(nextValue, views));
       }
     }
-  }, [debounce, formValue, onTouched, onView, updateOn, views]);
+  }, [debounce, formValue, onView, updateOn, views]);
   useEffect(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);

@@ -19,6 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
     defaultView: viewType,
     onView: _propTypes["default"].func,
     properties: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].objectOf(_propTypes["default"].shape({
+      badge: _propTypes["default"].bool,
       filter: _propTypes["default"].bool,
       label: _propTypes["default"].string,
       options: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({})])),

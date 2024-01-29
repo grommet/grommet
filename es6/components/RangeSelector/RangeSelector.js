@@ -11,7 +11,7 @@ import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
-import { DataFiltersContext } from '../DataFilters/DataFiltersContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 var Container = styled(Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "sc-siof5p-0"
@@ -94,7 +94,7 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setValues = _formContext$useFormI[1];
 
   // for DataFilters to know when RangeSelector is set to its min/max
-  var _useContext2 = useContext(DataFiltersContext),
+  var _useContext2 = useContext(DataFormContext),
     pendingReset = _useContext2.pendingReset;
   var updatePendingReset = useCallback(function (nextMin, nextMax) {
     var _pendingReset$current;

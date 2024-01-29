@@ -12,7 +12,7 @@ var _DataContext = require("../../contexts/DataContext");
 var _DataFormContext = require("../../contexts/DataFormContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _useDebounce = require("../../utils/use-debounce");
-var _excluded = ["children", "footer", "onDone", "onTouched", "pad", "updateOn"];
+var _excluded = ["children", "footer", "onDone", "pad", "updateOn"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -148,10 +148,23 @@ var formValueToView = function formValueToView(value, views) {
 
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
-var clearEmpty = function clearEmpty(formValue) {
+var clearEmpty = function clearEmpty(formValue, pendingReset) {
   var value = formValue;
   Object.keys(value).forEach(function (k) {
     if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+    // special case for when range selector returns to its min/max
+    // flat format with full: true needed to match filter name structure
+    // { a: b: { _range: [0, 100] } } ==> a.b._range: [0, 100]
+    if (typeof value[k] === 'object' && !Array.isArray(value[k])) {
+      var _pendingReset$current;
+      var filterName = k + "." + Object.keys(flatten(value[k], {
+        full: true
+      }))[0];
+      if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(filterName)) {
+        delete value[k];
+        pendingReset.current["delete"](filterName);
+      }
+    }
   });
   return value;
 };
@@ -162,28 +175,10 @@ var resetPage = function resetPage(nextFormValue, prevFormValue) {
     // eslint-disable-next-line no-param-reassign
     nextFormValue[formPageKey] = 1;
 };
-var transformTouched = function transformTouched(touched, value) {
-  // DataFilters expects values for keys touched to evaluate to falsey to
-  // not cause a badge. However any property value that is set back to its
-  // default/initial value that isn't undefined/null/false/0 will cause a
-  // badge this is particulary true for a 'range' which will always have
-  // a value.
-  //
-  // Should this instead determine touched by comparing against
-  // initial/default values?
-  //
-  var result = {};
-  Object.keys(touched).forEach(function (key) {
-    result[key] = flatten(value, {
-      full: true
-    })[key];
-  });
-  return result;
-};
 
 // function shared by onSubmit and onChange to coordinate view
 // name changes
-var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
+var normalizeValue = function normalizeValue(nextValue, prevValue, views, pendingReset) {
   if (nextValue[formViewNameKey] && nextValue[formViewNameKey] !== prevValue[formViewNameKey]) {
     // view name changed, reset view contents from named view
     return viewToFormValue(views.find(function (v) {
@@ -193,16 +188,18 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
   // something else changed
 
   // clear empty properties
-  var result = clearEmpty(nextValue);
+  var result = clearEmpty(nextValue, pendingReset);
 
-  // if we have a view and something related to it changed, clear the view
+  // if we have a view and something changed, clear the view
   if (result[formViewNameKey]) {
     var view = views.find(function (v) {
       return v.name === result[formViewNameKey];
     });
     var viewValue = viewToFormValue(view);
-    clearEmpty(viewValue);
-    if (Object.keys(viewValue).some(function (k) {
+    clearEmpty(viewValue, pendingReset);
+    if (Object.keys(viewValue).length !== Object.keys(result).length) {
+      delete result[formViewNameKey];
+    } else if (Object.keys(viewValue).some(function (k) {
       return (
         // allow mismatch between empty and set strings
         viewValue[k] && result[k] && JSON.stringify(result[k]) !== JSON.stringify(viewValue[k])
@@ -220,7 +217,6 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
   var children = _ref.children,
     footer = _ref.footer,
     onDone = _ref.onDone,
-    onTouched = _ref.onTouched,
     pad = _ref.pad,
     _ref$updateOn = _ref.updateOn,
     updateOn = _ref$updateOn === void 0 ? 'submit' : _ref$updateOn,
@@ -235,29 +231,31 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
   var _useState = (0, _react.useState)(viewToFormValue(view)),
     formValue = _useState[0],
     setFormValue = _useState[1];
-  var debounce = (0, _useDebounce.useDebounce)(DEBOUNCE_TIMEOUT);
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, remove it from view
+  // like other properties
+  var pendingReset = (0, _react.useRef)(new Set());
   var contextValue = (0, _react.useMemo)(function () {
     return {
-      inDataForm: true
+      inDataForm: true,
+      pendingReset: pendingReset
     };
   }, []);
+  var debounce = (0, _useDebounce.useDebounce)(DEBOUNCE_TIMEOUT);
   var onSubmit = (0, _react.useCallback)(function (_ref2) {
-    var value = _ref2.value,
-      touched = _ref2.touched;
-    var nextValue = normalizeValue(value, formValue, views);
+    var value = _ref2.value;
+    var nextValue = normalizeValue(value, formValue, views, pendingReset);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
-    if (onTouched) onTouched(transformTouched(touched, nextValue));
     onView(formValueToView(nextValue, views));
     if (onDone) onDone();
-  }, [formValue, onDone, onTouched, onView, views]);
+  }, [formValue, onDone, onView, views]);
   var onChange = (0, _react.useCallback)(function (value, _ref3) {
     var touched = _ref3.touched;
-    var nextValue = normalizeValue(value, formValue, views);
+    var nextValue = normalizeValue(value, formValue, views, pendingReset);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
     if (updateOn === 'change') {
-      if (onTouched) onTouched(transformTouched(touched, nextValue));
       // debounce search
       if (touched[formSearchKey]) {
         debounce(function () {
@@ -269,7 +267,7 @@ var DataForm = exports.DataForm = function DataForm(_ref) {
         onView(formValueToView(nextValue, views));
       }
     }
-  }, [debounce, formValue, onTouched, onView, updateOn, views]);
+  }, [debounce, formValue, onView, updateOn, views]);
   (0, _react.useEffect)(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);

@@ -19,9 +19,35 @@ var Simple = exports.Simple = function Simple() {
       total: _data.DATA.length,
       properties: {
         location: {
-          label: 'Location'
+          label: 'Location',
+          badge: false
+        },
+        percent: {
+          label: 'Percent'
+        },
+        date: {
+          label: 'date'
+        },
+        name: {
+          label: 'Name'
         }
-      }
+      },
+      views: [{
+        name: 'latest',
+        sort: {
+          property: 'date',
+          direction: 'desc'
+        }
+      }, {
+        name: 'Bay Area behind',
+        properties: {
+          percent: {
+            min: 0,
+            max: 50
+          },
+          location: ['San Francisco']
+        }
+      }]
     }, /*#__PURE__*/_react["default"].createElement(DataToolbar, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.columns
     })))
@@ -33,11 +59,13 @@ var DataToolbar = function DataToolbar() {
     filteredTotal = _useContext.filteredTotal,
     total = _useContext.total;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, {
+    gap: "medium",
     align: "end"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, {
-    placeholder: "Search"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, {
-    updateOn: "change"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, {
+    align: "end"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, {
+    updateOn: "change",
+    clearFilters: false
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
     property: "location"
     // override HPE theme margin to align with search + filter
@@ -55,7 +83,16 @@ var DataToolbar = function DataToolbar() {
     placeholder: "Select location",
     options: ['Boise', 'Fort Collins', 'Palo Alto', 'San Francisco'],
     name: "location"
-  }))), filteredTotal !== total ? /*#__PURE__*/_react["default"].createElement(_grommet.DataClearFilters, null) : null);
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, {
+    layer: true,
+    clearFilters: false
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+    property: "name"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+    property: "percent"
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+    property: "paid"
+  })), filteredTotal !== total ? /*#__PURE__*/_react["default"].createElement(_grommet.DataClearFilters, null) : null), /*#__PURE__*/_react["default"].createElement(_grommet.DataView, null));
 };
 Simple.storyName = 'Simple';
 var _default = exports["default"] = {

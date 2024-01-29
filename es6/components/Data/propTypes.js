@@ -14,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
     defaultView: viewType,
     onView: PropTypes.func,
     properties: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.objectOf(PropTypes.shape({
+      badge: PropTypes.bool,
       filter: PropTypes.bool,
       label: PropTypes.string,
       options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})])),

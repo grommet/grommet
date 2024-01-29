@@ -18,7 +18,6 @@ var _Layer = require("../Layer");
 var _DataContext = require("../../contexts/DataContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _DataFiltersContext = require("./DataFiltersContext");
 var _excluded = ["drop", "children", "clearFilters", "heading", "layer", "updateOn"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -50,21 +49,16 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
     properties = _useContext.properties,
     unfilteredData = _useContext.unfilteredData,
     filtersCleared = _useContext.filtersCleared,
-    setFiltersCleared = _useContext.setFiltersCleared;
+    setFiltersCleared = _useContext.setFiltersCleared,
+    view = _useContext.view;
   var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext2.format;
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var _useState = (0, _react.useState)(),
     showContent = _useState[0],
     setShowContent = _useState[1];
-  // special case for range selectors which always have a value.
-  // when value returns to its min/max, mark it to be removed from `touched`
-  // so it doesn't contribute to the badge count
-  var pendingReset = _react["default"].useRef(new Set());
-  // touched is a map of form field name to its value, it only has fields that
-  // were changed as part of the DataForm here. This is so we can track based
-  // on what's inside DataFilters as opposed to trying to track from the view
-  // object, since touched is used as logic for whether to show badge or not
+  // touched is a map of property to its value based on if user interacts
+  // with a filter or a view applies of set of filters
   var _useState2 = (0, _react.useState)(defaultTouched),
     touched = _useState2[0],
     setTouched = _useState2[1];
@@ -85,6 +79,21 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
   var controlled = (0, _react.useMemo)(function () {
     return drop || layer;
   }, [drop, layer]);
+  var configured = _react.Children.count(children) === 0;
+  (0, _react.useEffect)(function () {
+    // when view changes via DataView or user interacting with filters,
+    // adjust badge to reflect that
+    if (controlled && view.properties) {
+      var nextTouched = _extends({}, view.properties);
+      Object.keys(nextTouched).forEach(function (k) {
+        var _properties$k;
+        if ((properties == null || (_properties$k = properties[k]) == null ? void 0 : _properties$k.badge) === false || configured && properties && !(properties != null && properties[k])) {
+          delete nextTouched[k];
+        }
+      });
+      setTouched(nextTouched);
+    }
+  }, [configured, controlled, properties, view]);
 
   // generate the badge value based on touched fields that have a value.
   // only show the badge based off of what's included in this DataFilters
@@ -120,38 +129,11 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
       });
     });
   }
-  var contextValue = (0, _react.useMemo)(function () {
-    return {
-      pendingReset: pendingReset
-    };
-  }, []);
-  content = /*#__PURE__*/_react["default"].createElement(_DataFiltersContext.DataFiltersContext.Provider, {
-    value: contextValue
-  }, /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
+  content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, _extends({
     pad: controlled ? 'medium' : undefined,
     onDone: function onDone() {
       return setShowContent(false);
     },
-    onTouched: controlled ? function (currentTouched) {
-      return (
-        // we merge this with our prior state to handle the case
-        // where the user opens and closes the drop multiple times
-        // and we want to track both new changes and prior changes.
-        setTouched(function (prevTouched) {
-          var nextTouched = _extends({}, prevTouched, currentTouched);
-
-          // special case for when range selector returns to its min/max
-          Object.keys(nextTouched).forEach(function (key) {
-            var _pendingReset$current;
-            if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(key)) {
-              delete nextTouched[key];
-              pendingReset.current["delete"](key);
-            }
-          });
-          return nextTouched;
-        })
-      );
-    } : undefined,
     updateOn: updateOn
   }, !controlled ? rest : {
     fill: 'vertical'
@@ -166,7 +148,7 @@ var DataFilters = exports.DataFilters = function DataFilters(_ref) {
     onClick: function onClick() {
       return setShowContent(undefined);
     }
-  })), content));
+  })), content);
   if (!controlled) return content;
   var tip = format({
     id: badge ? "dataFilters.openSet." + (badge === 1 ? 'singular' : 'plural') : 'dataFilters.open',

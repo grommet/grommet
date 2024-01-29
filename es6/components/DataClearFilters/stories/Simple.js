@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Box, Data, DataClearFilters, DataContext, DataFilter, DataFilters, DataSearch, DataSummary, DataTable, SelectMultiple, Toolbar } from 'grommet';
+import { Box, Data, DataClearFilters, DataContext, DataFilter, DataFilters, DataSearch, DataSummary, DataView, DataTable, SelectMultiple, Toolbar } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
   return (
@@ -13,9 +13,35 @@ export var Simple = function Simple() {
       total: DATA.length,
       properties: {
         location: {
-          label: 'Location'
+          label: 'Location',
+          badge: false
+        },
+        percent: {
+          label: 'Percent'
+        },
+        date: {
+          label: 'date'
+        },
+        name: {
+          label: 'Name'
         }
-      }
+      },
+      views: [{
+        name: 'latest',
+        sort: {
+          property: 'date',
+          direction: 'desc'
+        }
+      }, {
+        name: 'Bay Area behind',
+        properties: {
+          percent: {
+            min: 0,
+            max: 50
+          },
+          location: ['San Francisco']
+        }
+      }]
     }, /*#__PURE__*/React.createElement(DataToolbar, null), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(DataTable, {
       columns: columns
     })))
@@ -27,11 +53,13 @@ var DataToolbar = function DataToolbar() {
     filteredTotal = _useContext.filteredTotal,
     total = _useContext.total;
   return /*#__PURE__*/React.createElement(Toolbar, {
+    gap: "medium",
     align: "end"
-  }, /*#__PURE__*/React.createElement(DataSearch, {
-    placeholder: "Search"
-  }), /*#__PURE__*/React.createElement(DataFilters, {
-    updateOn: "change"
+  }, /*#__PURE__*/React.createElement(Toolbar, {
+    align: "end"
+  }, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilters, {
+    updateOn: "change",
+    clearFilters: false
   }, /*#__PURE__*/React.createElement(DataFilter, {
     property: "location"
     // override HPE theme margin to align with search + filter
@@ -49,7 +77,16 @@ var DataToolbar = function DataToolbar() {
     placeholder: "Select location",
     options: ['Boise', 'Fort Collins', 'Palo Alto', 'San Francisco'],
     name: "location"
-  }))), filteredTotal !== total ? /*#__PURE__*/React.createElement(DataClearFilters, null) : null);
+  }))), /*#__PURE__*/React.createElement(DataFilters, {
+    layer: true,
+    clearFilters: false
+  }, /*#__PURE__*/React.createElement(DataFilter, {
+    property: "name"
+  }), /*#__PURE__*/React.createElement(DataFilter, {
+    property: "percent"
+  }), /*#__PURE__*/React.createElement(DataFilter, {
+    property: "paid"
+  })), filteredTotal !== total ? /*#__PURE__*/React.createElement(DataClearFilters, null) : null), /*#__PURE__*/React.createElement(DataView, null));
 };
 Simple.storyName = 'Simple';
 export default {
