@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -12,6 +12,22 @@ import { Grommet } from '../..';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { SelectMultiple } from '..';
+
+const TestOnSearch = () => {
+  // const stringList = ['a', 'b', 'c', 'd'];
+  const [dropOptions, setDropOptions] = useState(['a', 'b']);
+
+  return (
+    <SelectMultiple
+      onSearch={() => {
+        // const regexp = new RegExp(searchText, 'i');
+        // setDropOptions(stringList.filter((o) => o.match(regexp)));
+        setDropOptions(['c']);
+      }}
+      options={dropOptions}
+    />
+  );
+};
 
 describe('SelectMultiple', () => {
   window.scrollTo = jest.fn();
@@ -38,41 +54,6 @@ describe('SelectMultiple', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
-  });
-
-  test('additional options onSearch', async () => {
-    const TestOnSearch = () => {
-      const stringList = ['a', 'b', 'c', 'd'];
-      const [dropOptions, setDropOptions] = useState(stringList?.slice(0, 2));
-
-      return (
-        <SelectMultiple
-          id="test-select__drop"
-          onSearch={(searchText) => {
-            const regexp = new RegExp(searchText, 'i');
-            setDropOptions(stringList.filter((o) => o.match(regexp)));
-          }}
-          options={dropOptions}
-        />
-      );
-    };
-
-    window.HTMLElement.prototype.scrollIntoView = jest.fn();
-    const user = userEvent.setup();
-    render(
-      <Grommet>
-        <TestOnSearch />
-      </Grommet>,
-    );
-    // open SelectMultiple
-    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    // search for 'c'
-    const input = screen.getByRole('searchbox');
-    await user.type(input, 'c');
-    // select 'c'
-    await user.click(screen.getByRole('option', { name: /c/i }));
-    // expect option 'c' to be selected
-    expect(screen.queryByRole('option', { name: /c selected/ })).not.toBeNull();
   });
 
   test('defaultValue', () => {
@@ -493,6 +474,7 @@ describe('SelectMultiple', () => {
   });
 
   test('empty options', async () => {
+    jest.useFakeTimers();
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const user = userEvent.setup();
     render(
@@ -504,5 +486,25 @@ describe('SelectMultiple', () => {
     await user.click(screen.getByRole('button', { name: /Open Drop/i }));
 
     expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('additional options onSearch', () => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    render(
+      <Grommet>
+        <TestOnSearch />
+      </Grommet>,
+    );
+    // open SelectMultiple
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // search for 'c'
+    fireEvent.change(screen.getByRole('searchbox'), {
+      target: { value: 'c' },
+    });
+    act(() => jest.advanceTimersByTime(200)); // wait for options to update
+    // select 'c'
+    fireEvent.click(screen.getByRole('option', { name: /c not selected/i }));
+    // expect option 'c' to be selected
+    expect(screen.queryByRole('option', { name: /c selected/ })).not.toBeNull();
   });
 });
