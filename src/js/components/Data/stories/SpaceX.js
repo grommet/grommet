@@ -5,11 +5,18 @@ import {
   DataTable,
   Data,
   Footer,
+  FormField,
+  Select,
+  CheckBox,
   Grid,
   Notification,
   Pagination,
   Text,
   Tip,
+  Toolbar,
+  DataSearch,
+  DataFilters,
+  DataSummary,
 } from 'grommet';
 
 import { StatusCritical } from 'grommet-icons';
@@ -143,6 +150,9 @@ export const SpaceX = () => {
   const [result, setResult] = useState({ data: [] });
   const [rockets, setRockets] = useState([]);
   const [view, setView] = useState(defaultView);
+  const [selected, setSelected] = useState([]);
+  const [showSelectedSummary, setShowSelectedSummary] = useState(false);
+  const [shortFormat, setShortFormat] = useState(false);
 
   useEffect(() => {
     fetchRockets().then((response) =>
@@ -189,6 +199,28 @@ export const SpaceX = () => {
         status="info"
         message="Data is in 'beta'. The API surface is subject to change."
       />
+      <Box align="start">
+        <FormField label="Default DataSummary format">
+          <Select
+            options={['X results of Y items', 'X of Y items']}
+            onChange={({ option }) =>
+              option === 'X results of Y items'
+                ? setShortFormat(false)
+                : setShortFormat(true)
+            }
+            defaultValue="X results of Y items"
+          />
+        </FormField>
+        <FormField>
+          <CheckBox
+            label="Show selected summary"
+            toggle
+            reverse
+            onClick={() => setShowSelectedSummary(!showSelectedSummary)}
+          />
+        </FormField>
+      </Box>
+
       <Box>
         <Data
           properties={{
@@ -201,11 +233,38 @@ export const SpaceX = () => {
           defaultView={defaultView}
           view={view}
           onView={setView}
-          toolbar
         >
-          <DataTable columns={columns} sortable />
+          <Toolbar>
+            <DataSearch />
+            <DataFilters layer />
+          </Toolbar>
+          {selected.length && showSelectedSummary ? (
+            <Text margin={{ vertical: 'xsmall' }}>
+              {selected.length} selected
+            </Text>
+          ) : (
+            <DataSummary
+              messages={
+                shortFormat
+                  ? {
+                      filtered: '{filteredTotal} of {total} items',
+                      filteredSingle: '{filteredTotal} of {total} items',
+                    }
+                  : undefined
+              }
+            />
+          )}
+          <DataTable
+            columns={columns}
+            sortable
+            onSelect={setSelected}
+            select={selected}
+          />
           {result.filteredTotal > view.step && (
-            <Footer>
+            <Footer
+              border="top"
+              pad={{ vertical: 'xsmall', horizontal: 'small' }}
+            >
               <Text>
                 Showing {pageBounds[0]}-{pageBounds[1]} of{' '}
                 {result.filteredTotal}

@@ -1,6 +1,21 @@
 import React, { useEffect, useState } from 'react';
 
-import { Box, DataTable, Data, Grid, Notification, Text, Tip } from 'grommet';
+import {
+  Box,
+  DataTable,
+  FormField,
+  CheckBox,
+  Select,
+  Toolbar,
+  DataFilters,
+  DataSearch,
+  DataSummary,
+  Data,
+  Grid,
+  Notification,
+  Text,
+  Tip,
+} from 'grommet';
 
 import { StatusCritical } from 'grommet-icons';
 
@@ -129,7 +144,9 @@ export const Table = () => {
   const [view, setView] = useState({ search: '' });
   const [sort, setSort] = useState({ property: 'name', direction: 'asc' });
   const [limit, setLimit] = useState(STEP);
-
+  const [selected, setSelected] = useState([]);
+  const [showSelectedSummary, setShowSelectedSummary] = useState(false);
+  const [shortFormat, setShortFormat] = useState(false);
   const search = view.search || '';
 
   useEffect(() => {
@@ -166,6 +183,27 @@ export const Table = () => {
         status="info"
         message="Data is in 'beta'. The API surface is subject to change."
       />
+      <Box align="start">
+        <FormField label="Default DataSummary format">
+          <Select
+            options={['X results of Y items', 'X of Y items']}
+            onChange={({ option }) =>
+              option === 'X results of Y items'
+                ? setShortFormat(false)
+                : setShortFormat(true)
+            }
+            defaultValue="X results of Y items"
+          />
+        </FormField>
+        <FormField>
+          <CheckBox
+            label="Show selected summary"
+            toggle
+            reverse
+            onClick={() => setShowSelectedSummary(!showSelectedSummary)}
+          />
+        </FormField>
+      </Box>
       <Box>
         <Data
           properties={{
@@ -176,13 +214,34 @@ export const Table = () => {
           total={numberItems}
           view={view}
           onView={(nextView) => setView(nextView)}
-          toolbar
         >
+          <Toolbar>
+            <DataSearch />
+            <DataFilters layer />
+          </Toolbar>
+          {selected.length && showSelectedSummary ? (
+            <Text margin={{ vertical: 'xsmall' }}>
+              {selected.length} selected
+            </Text>
+          ) : (
+            <DataSummary
+              messages={
+                shortFormat
+                  ? {
+                      filtered: '{filteredTotal} of {total} items',
+                      filteredSingle: '{filteredTotal} of {total} items',
+                    }
+                  : undefined
+              }
+            />
+          )}
           <DataTable
             columns={columns}
             sort={{ ...sort, external: true }}
             onSort={(opts) => setSort(opts)}
             step={STEP}
+            onSelect={setSelected}
+            select={selected}
             onMore={() => {
               if (limit < numberItems) {
                 setLimit(limit + STEP);

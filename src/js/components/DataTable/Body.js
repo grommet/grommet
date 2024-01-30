@@ -104,7 +104,7 @@ const Row = memo(
                       );
                     } else onSelect([...selected, primaryValue], datum);
                   }}
-                  pad={cellProps.pad}
+                  pad={console.log('hi', cellProps.pad) || cellProps.pad}
                 />
               ),
             }}

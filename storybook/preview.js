@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Root from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
-import { hpe } from 'grommet-theme-hpe';
+import { hpe as hpePublished } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
+import { deepMerge } from '../src/js/utils';
+
+const hpe = deepMerge(hpePublished, {
+  data: {
+    button: {
+      kind: 'toolbar',
+    },
+  },
+});
 
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
