@@ -4,6 +4,7 @@ import { TextInputProps } from '../TextInput/index';
 export interface DataSearchProps {
   drop?: boolean;
   responsive?: boolean;
+  updateOn?: string;
 }
 
 export interface DataSearchExtendedProps
