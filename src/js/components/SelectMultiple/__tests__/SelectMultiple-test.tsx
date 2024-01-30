@@ -14,16 +14,10 @@ import { Text } from '../../Text';
 import { SelectMultiple } from '..';
 
 const TestOnSearch = () => {
-  // const stringList = ['a', 'b', 'c', 'd'];
   const [dropOptions, setDropOptions] = useState(['a', 'b']);
-
   return (
     <SelectMultiple
-      onSearch={() => {
-        // const regexp = new RegExp(searchText, 'i');
-        // setDropOptions(stringList.filter((o) => o.match(regexp)));
-        setDropOptions(['c']);
-      }}
+      onSearch={() => setDropOptions(['c'])}
       options={dropOptions}
     />
   );
@@ -474,7 +468,6 @@ describe('SelectMultiple', () => {
   });
 
   test('empty options', async () => {
-    jest.useFakeTimers();
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const user = userEvent.setup();
     render(
@@ -489,6 +482,7 @@ describe('SelectMultiple', () => {
   });
 
   test('additional options onSearch', () => {
+    jest.useFakeTimers();
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     render(
       <Grommet>
