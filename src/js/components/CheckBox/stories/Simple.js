@@ -15,7 +15,7 @@ const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
 
 export const Simple = () => (
   <>
-    <SimpleCheckBox label="Reversed Checkbox" reverse />
+    <SimpleCheckBox label={<h3>Reversed Checkbox</h3>} reverse />
     <SimpleCheckBox label="Disabled Checkbox" checked disabled />
   </>
 );
