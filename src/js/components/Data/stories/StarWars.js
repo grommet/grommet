@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Data, Grid, List, Notification, Pagination } from 'grommet';
+import { Box, Data, Grid, List, Pagination } from 'grommet';
 
 // Uses the StarWars API for starships, see https://swapi.dev
 
@@ -57,10 +57,6 @@ export const StarWars = () => {
       justifyContent="center"
       gap="large"
     >
-      <Notification
-        status="info"
-        message="Data is in 'beta'. The API surface is subject to change."
-      />
       <Box skeleton={!result.data}>
         <Data
           data={result.data}

@@ -6,7 +6,6 @@ import {
   Data,
   Footer,
   Grid,
-  Notification,
   Pagination,
   Text,
   Tip,
@@ -185,10 +184,6 @@ export const SpaceX = () => {
       justifyContent="center"
       gap="large"
     >
-      <Notification
-        status="info"
-        message="Data is in 'beta'. The API surface is subject to change."
-      />
       <Box>
         <Data
           properties={{
