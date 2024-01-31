@@ -64,4 +64,13 @@ describe('StarRating', () => {
       }),
     );
   });
+
+  test('StarRating has default value', async () => {
+    const { container } = render(
+      <Grommet>
+        <StarRating name="test" defaultValue={3} />
+      </Grommet>,
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

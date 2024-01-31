@@ -7605,7 +7605,7 @@ exports[`Data view property range 1`] = `
   flex: 0 0 auto;
 }
 
-.c15 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7680,22 +7680,90 @@ exports[`Data view property range 1`] = `
   row-gap: 12px;
 }
 
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-inline-start: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
 .c11 {
+  position: relative;
+}
+
+.c12 {
+  position: relative;
+  display: block;
+}
+
+.c13 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c18 {
   margin-top: 6px;
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c25 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c19 {
+.c26 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c15 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  font-weight: normal;
 }
 
 .c10 {
@@ -7755,6 +7823,75 @@ exports[`Data view property range 1`] = `
 }
 
 .c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c17:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -7844,7 +7981,7 @@ exports[`Data view property range 1`] = `
   left: 12px;
 }
 
-.c14 {
+.c21 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7857,7 +7994,7 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c24 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7869,23 +8006,23 @@ exports[`Data view property range 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c19 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c13 {
+.c20 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c16:focus {
+.c23:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c16:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -7908,6 +8045,18 @@ exports[`Data view property range 1`] = `
   .c3 {
     -webkit-column-gap: 6px;
     column-gap: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    margin-inline-start: 6px;
   }
 }
 
@@ -7961,34 +8110,67 @@ exports[`Data view property range 1`] = `
           class="c9"
         >
           <button
-            aria-label="Open filters"
+            aria-label="Open filters, 1 filter applied"
             class="c10"
             id="data--filters-control"
             type="button"
           >
-            <svg
-              aria-label="Filter"
-              class="c7"
-              viewBox="0 0 24 24"
+            <div
+              class="c11"
             >
-              <path
-                d="m3 6 7 7v8h4v-8l7-7V3H3z"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
+              <div
+                class="c12"
+              >
+                <svg
+                  aria-label="Filter"
+                  class="c7"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div
+                class="c13"
+                style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
+              >
+                <div
+                  class="c14 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                  style="min-height: 24px; min-width: 24px;"
+                >
+                  <span
+                    class="c15"
+                  >
+                    1
+                  </span>
+                </div>
+              </div>
+            </div>
           </button>
+          <div
+            class="c16"
+          >
+            <button
+              class="c17"
+              type="button"
+            >
+              Clear filters
+            </button>
+          </div>
         </div>
       </div>
     </div>
     <span
-      class="c11"
+      class="c18"
     >
       1 result of 4 items
     </span>
     <table
-      class="c12 c13"
+      class="c19 c20"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -7997,72 +8179,72 @@ exports[`Data view property range 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c14 "
+            class="c21 "
             scope="col"
           >
             <div
-              class="c15"
+              class="c22"
             />
           </th>
           <th
-            class="c14 "
+            class="c21 "
             scope="col"
           >
             <div
-              class="c15"
+              class="c22"
             />
           </th>
           <th
-            class="c14 "
+            class="c21 "
             scope="col"
           >
             <div
-              class="c15"
+              class="c22"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c23"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c17 "
+            class="c24 "
             scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c18"
+                class="c25"
               >
                 bb
               </span>
             </div>
           </th>
           <td
-            class="c17 "
+            class="c24 "
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c26"
               >
                 YY
               </span>
             </div>
           </td>
           <td
-            class="c17 "
+            class="c24 "
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c26"
               >
                 4.3
               </span>
