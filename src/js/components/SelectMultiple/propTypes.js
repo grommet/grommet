@@ -26,7 +26,7 @@ if (process.env.NODE_ENV !== 'production') {
       search: PropTypes.string,
       selectAll: PropTypes.string,
       selectAllA11y: PropTypes.string,
-      selectDropDown: PropTypes.string,
+      selectDrop: PropTypes.string,
       selected: PropTypes.string,
       selectedOfTotal: PropTypes.string,
       selectedOptions: PropTypes.string,

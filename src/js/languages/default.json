@@ -102,7 +102,7 @@
     "search": "Search to filter options",
     "selectAll": "Select All",
     "selectAllA11y": "Select all {total} options",
-    "selectDropDown": "Select dropdown",
+    "selectDrop": "Select dropdown",
     "selected": "{selected} selected",
     "selectedOfTotal": "{selected} selected of {total}",
     "selectedOptions": "Selected options",

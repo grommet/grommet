@@ -30,9 +30,7 @@ export interface BasicSelectProps {
   id?: string;
   labelKey?: string | ((...args: any[]) => string | React.ReactNode);
   margin?: MarginType;
-  messages?: {
-    multiple?: string;
-  };
+  messages?: { multiple?: string };
   name?: string;
   onChange?: (...args: any[]) => void;
   onClose?: (...args: any[]) => any;

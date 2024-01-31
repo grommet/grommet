@@ -122,7 +122,7 @@ export interface GrommetProps {
         search?: string;
         selectAll?: string;
         selectAllA11y?: string;
-        selectDropDown?: string;
+        selectDrop?: string;
         selected?: string;
         selectedOfTotal?: string;
         selectedOptions?: string;
