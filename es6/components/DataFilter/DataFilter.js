@@ -17,7 +17,7 @@ var maxCheckBoxGroupOptions = 4;
 var minSelectSearchOptions = 10;
 var defaultRangeSteps = 20;
 var getValueAt = function getValueAt(valueObject, pathArg) {
-  if (valueObject === undefined) return undefined;
+  if (!pathArg || valueObject === undefined) return undefined;
   var path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
   if (path.length === 1) return valueObject[path];
   return getValueAt(valueObject[path.shift()], path);
