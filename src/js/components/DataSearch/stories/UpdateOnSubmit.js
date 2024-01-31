@@ -5,7 +5,7 @@ import { Data, DataSummary, DataTable, Grid, Paragraph } from 'grommet';
 import { DataSearch } from '../DataSearch';
 import { columns, DATA } from '../../DataTable/stories/data';
 
-export const ChangeOnEnter = () => (
+export const UpdateOnSubmit = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
@@ -21,10 +21,10 @@ export const ChangeOnEnter = () => (
   // </Grommet>
 );
 
-ChangeOnEnter.args = {
+UpdateOnSubmit.args = {
   full: true,
 };
 
 export default {
-  title: 'Data/DataSearch/ChangeOnEnter',
+  title: 'Data/DataSearch/UpdateOnSubmit',
 };
