@@ -3,12 +3,13 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { DataFilter } from '../../DataFilter';
 import { DataFilters } from '../../DataFilters';
 import { DataTable } from '../../DataTable';
 import { Pagination } from '../../Pagination';
+import { Toolbar } from '../../Toolbar';
 import { Data } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
-
 const DEBOUNCE_TIMEOUT = 300;
 
 // asserts that AnnounceContext aria-live region and visible DataSummary each have this text
@@ -437,5 +438,62 @@ describe('Data', () => {
     fireEvent.click(filtersButton);
     expect(screen.getByRole('button', { name: 'Apply filters' })).toBeTruthy();
     expectPortal('data--filters-control').toMatchSnapshot();
+  });
+
+  test('should include badge based on view', () => {
+    render(
+      <Grommet>
+        <Data
+          data={data}
+          view={{
+            properties: { rating: { min: 3, max: 5 }, enabled: [true] },
+          }}
+          toolbar="filters"
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    const filterButton = screen.getByRole('button', {
+      name: 'Open filters, 2 filters applied',
+    });
+
+    expect(filterButton).toBeTruthy();
+  });
+
+  test('should not include properties with badge: false in badge count', () => {
+    render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            name: {
+              badge: false,
+            },
+            enabled: {},
+            rating: {},
+          }}
+        >
+          <Toolbar>
+            <DataFilter property="name" />
+            <DataFilters layer>
+              <DataFilter property="enabled" />
+              <DataFilter property="rating" />
+            </DataFilters>
+          </Toolbar>
+        </Data>
+      </Grommet>,
+    );
+
+    const checkBox = screen.getByText('aa');
+    fireEvent.click(checkBox);
+
+    // no badge should be applied, so expect default tip
+    const filterButton = screen.getByRole('button', {
+      name: 'Open filters',
+    });
+
+    expect(filterButton).toBeTruthy();
   });
 });

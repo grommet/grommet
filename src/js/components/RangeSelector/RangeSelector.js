@@ -16,7 +16,7 @@ import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
-import { DataFiltersContext } from '../DataFilters/DataFiltersContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 
 const Container = styled(Box)`
   user-select: none;
@@ -88,7 +88,7 @@ const RangeSelector = forwardRef(
     });
 
     // for DataFilters to know when RangeSelector is set to its min/max
-    const { pendingReset } = useContext(DataFiltersContext);
+    const { pendingReset } = useContext(DataFormContext);
     const updatePendingReset = useCallback(
       (nextMin, nextMax) => {
         if (nextMin === min && nextMax === max) {
