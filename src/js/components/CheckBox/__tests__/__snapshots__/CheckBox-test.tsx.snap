@@ -225,6 +225,10 @@ exports[`CheckBox controlled 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -313,7 +317,7 @@ exports[`CheckBox controlled 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dmspbK"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
@@ -413,6 +417,10 @@ exports[`CheckBox custom theme 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -905,7 +913,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   border-radius: 4px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -959,6 +967,33 @@ exports[`CheckBox indeterminate renders 1`] = `
   border-color: #000000;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c7:hover input:not([disabled]) + div,
+.c7:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
 .c4 {
   opacity: 0;
   -moz-appearance: none;
@@ -986,7 +1021,7 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-right: 6px;
   }
 }
@@ -1021,10 +1056,10 @@ exports[`CheckBox indeterminate renders 1`] = `
     </div>
   </label>
   <label
-    class="c1"
+    class="c7"
   >
     <div
-      class="c7 c3"
+      class="c8 c3"
     >
       <input
         class="c4"
@@ -1120,6 +1155,10 @@ exports[`CheckBox label renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1132,6 +1171,29 @@ exports[`CheckBox label renders 1`] = `
 
 .c1:hover input:not([disabled]) + div,
 .c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c6:hover input:not([disabled]) + div,
+.c6:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -1189,7 +1251,7 @@ exports[`CheckBox label renders 1`] = `
     </span>
   </label>
   <label
-    class="c1"
+    class="c6"
   >
     <div
       class="c2 c3"
@@ -1277,6 +1339,10 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1709,6 +1775,10 @@ exports[`CheckBox renders custom checked icon 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1853,6 +1923,10 @@ exports[`CheckBox reverse renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1989,6 +2063,10 @@ exports[`CheckBox reverse toggle fill 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2282,7 +2360,7 @@ exports[`CheckBox toggle renders 1`] = `
   justify-content: center;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2325,6 +2403,33 @@ exports[`CheckBox toggle renders 1`] = `
 
 .c1:hover input:not([disabled]) + div,
 .c1:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c7:hover input:not([disabled]) + div,
+.c7:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -2375,7 +2480,7 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-right: 6px;
   }
 }
@@ -2423,10 +2528,10 @@ exports[`CheckBox toggle renders 1`] = `
     </div>
   </label>
   <label
-    class="c1"
+    class="c7"
   >
     <div
-      class="c7 c3"
+      class="c8 c3"
     >
       <input
         class="c4"
