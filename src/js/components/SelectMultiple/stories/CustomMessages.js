@@ -45,7 +45,6 @@ export const CustomMessages = () => {
           setValueMultiple(value);
         }}
         messages={{
-          multiple: 'Multiple Selected',
           clearAll: 'Clear ALL!',
           selectAll: 'Select ALL!',
           selected: '{selected} SELECTED',
