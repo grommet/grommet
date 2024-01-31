@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
       // "multiple" kept for backwards compatibility,
       // but summarizedValue should be used instead
       multiple: PropTypes.string,
-      onMore: PropTypes.string,
+      showMore: PropTypes.string,
       open: PropTypes.string,
       optionNotSelected: PropTypes.string,
       optionSelected: PropTypes.string,
