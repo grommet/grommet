@@ -256,6 +256,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
         disabledKey: disabledKey,
         dropButtonRef: dropButtonRef,
         labelKey: labelKey,
+        messages: messages,
         onRequestOpen: onRequestOpen,
         onSelectChange: onSelectChange,
         theme: theme,
@@ -264,7 +265,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }, children);
     }
     return result;
-  }, [valueKey, value, valueLabel, showSelectedInline, onRequestOpen, allOptions, children, labelKey, onSelectChange, disabled, disabledKey, dropButtonRef, theme]);
+  }, [allOptions, children, disabled, disabledKey, dropButtonRef, labelKey, messages, onRequestOpen, onSelectChange, showSelectedInline, theme, value, valueKey, valueLabel]);
   var displayLabelKey = useMemo(function () {
     return getDisplayLabelKey(labelKey, allOptions, optionIndexesInValue, selectValue);
   }, [labelKey, allOptions, optionIndexesInValue, selectValue]);
@@ -282,14 +283,24 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (!selectValue) {
       if (optionIndexesInValue.length === 0) return '';
       if (optionIndexesInValue.length === 1) return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
-      if (messages) return format({
-        id: 'select.multiple',
-        messages: messages
+      // keeping messages.multiple for backwards compatibility
+      if (messages != null && messages.multiple && !messages.summarizedValue) {
+        return format({
+          id: 'select.multiple',
+          messages: messages
+        });
+      }
+      return format({
+        id: 'selectMultiple.summarizedValue',
+        messages: messages,
+        values: {
+          selected: optionIndexesInValue.length,
+          total: allOptions.length
+        }
       });
-      return optionIndexesInValue.length + " selected";
     }
     return undefined;
-  }, [labelKey, messages, format, optionIndexesInValue, allOptions, selectValue]);
+  }, [selectValue, optionIndexesInValue, allOptions, labelKey, format, messages]);
   var iconColor = getIconColor(theme);
   var displaySelectIcon = SelectIcon && /*#__PURE__*/React.createElement(Box, {
     alignSelf: "center",
@@ -312,6 +323,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     id: id,
     labelKey: labelKey,
     limit: limit,
+    messages: messages,
     onChange: onSelectChange,
     onClose: onRequestClose,
     onKeyDown: onKeyDown,
@@ -330,7 +342,16 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, children);
   var dropButtonProps = {
     ref: dropButtonRef,
-    a11yTitle: (ariaLabel || a11yTitle || placeholder || 'Open Drop') + ". " + ((value == null ? void 0 : value.length) || 0) + " selected.",
+    a11yTitle: (ariaLabel || a11yTitle || placeholder || format({
+      id: 'selectMultiple.open',
+      messages: messages
+    })) + ". " + format({
+      id: 'selectMultiple.selected',
+      values: {
+        selected: (value == null ? void 0 : value.length) || 0,
+        total: allOptions.length
+      }
+    }),
     'aria-expanded': Boolean(open),
     'aria-haspopup': 'listbox',
     id: id,
@@ -386,7 +407,15 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     type: "text",
     placeholder:
     // eslint-disable-next-line no-nested-ternary
-    !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : onMore ? ((value == null ? void 0 : value.length) || '0') + " selected" : ((value == null ? void 0 : value.length) || '0') + " selected of " + allOptions.length,
+    !value || (value == null ? void 0 : value.length) === 0 ? placeholder || selectValue || displayLabelKey : format({
+      id: onMore ? 'selectMultiple.selected' : 'selectMultiple.selectedOfTotal',
+      messages: messages,
+      values: _extends({
+        selected: (value == null ? void 0 : value.length) || 0
+      }, !onMore ? {
+        total: allOptions.length
+      } : {})
+    }),
     plain: true,
     readOnly: true,
     value: "",

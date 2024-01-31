@@ -8,6 +8,7 @@ var _Button = require("../Button");
 var _CheckBox = require("../CheckBox");
 var _StyledSelect = require("../Select/StyledSelect");
 var _utils = require("../Select/utils");
+var _MessageContext = require("../../contexts/MessageContext");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleValue(_ref) {
@@ -17,6 +18,7 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
     disabledKey = _ref.disabledKey,
     dropButtonRef = _ref.dropButtonRef,
     labelKey = _ref.labelKey,
+    messages = _ref.messages,
     onRequestOpen = _ref.onRequestOpen,
     onSelectChange = _ref.onSelectChange,
     theme = _ref.theme,
@@ -25,6 +27,8 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
   var _useState = (0, _react.useState)(false),
     showA11yDiv = _useState[0],
     setShowA11yDiv = _useState[1];
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
   var isDisabled = (0, _utils.useDisabled)(disabled, disabledKey, allOptions, valueKey || labelKey);
   var visibleValue = (0, _react.useCallback)(function (i) {
     var optionValue = valueKey && valueKey.reduce ? (0, _utils.applyKey)(i, valueKey) : i;
@@ -44,7 +48,13 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
       }
       return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption, {
         role: "option",
-        a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected",
+        a11yTitle: format({
+          id: optionSelected ? 'selectMultiple.optionSelected' : 'selectMultiple.optionNotSelected',
+          messages: messages,
+          values: {
+            optionLabel: optionLabel
+          }
+        }),
         "aria-setsize": value.length,
         "aria-posinset": valueIndex + 1,
         "aria-selected": optionSelected,
@@ -100,7 +110,7 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
       }));
     }
     return undefined;
-  }, [valueKey, allOptions, children, dropButtonRef, isDisabled, labelKey, onSelectChange, value, theme.selectMultiple.maxInline]);
+  }, [allOptions, children, dropButtonRef, format, isDisabled, labelKey, messages, onSelectChange, theme.selectMultiple.maxInline, value, valueKey]);
 
   // After announcing set showA11yDiv to undefined so it won't
   // be read out again
@@ -115,7 +125,10 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
     width: "100%",
     role: "listbox",
     "aria-multiselectable": true,
-    a11yTitle: "Selected Options"
+    a11yTitle: format({
+      id: 'selectMultiple.selectedOptions',
+      messages: messages
+    })
   }, value && allOptions.filter(function (i) {
     return (0, _utils.arrayIncludes)(value, valueKey && valueKey.reduce ? (0, _utils.applyKey)(i, valueKey) : i, valueKey || labelKey);
   })
@@ -140,6 +153,12 @@ var SelectMultipleValue = exports.SelectMultipleValue = function SelectMultipleV
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     onClick: onRequestOpen,
     size: "small",
-    label: "+ " + (value.length - theme.selectMultiple.maxInline) + " more"
+    label: format({
+      id: 'selectMultiple.showMore',
+      messages: messages,
+      values: {
+        remaining: value.length - theme.selectMultiple.maxInline
+      }
+    })
   })));
 };

@@ -7,6 +7,7 @@ var _Box = require("../Box");
 var _Button = require("../Button");
 var _Text = require("../Text");
 var _utils = require("../Select/utils");
+var _MessageContext = require("../../contexts/MessageContext");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var SelectionSummary = exports.SelectionSummary = function SelectionSummary(_ref) {
@@ -17,6 +18,7 @@ var SelectionSummary = exports.SelectionSummary = function SelectionSummary(_ref
     isSelected = _ref.isSelected,
     labelKey = _ref.labelKey,
     limit = _ref.limit,
+    messages = _ref.messages,
     onChange = _ref.onChange,
     onMore = _ref.onMore,
     options = _ref.options,
@@ -25,6 +27,8 @@ var SelectionSummary = exports.SelectionSummary = function SelectionSummary(_ref
     showSelectedInline = _ref.showSelectedInline,
     value = _ref.value,
     valueKey = _ref.valueKey;
+  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext.format;
   var isDisabled = (0, _utils.useDisabled)(disabled, disabledKey, options, valueKey || labelKey);
   var selectedValuesDisabled = (0, _react.useCallback)(function () {
     var disabledSelected = 0;
@@ -42,7 +46,15 @@ var SelectionSummary = exports.SelectionSummary = function SelectionSummary(_ref
     });
   }, [options, value, valueKey, labelKey]);
   var showSelectAll = !!((value == null ? void 0 : value.length) === 0 || selectedValuesDisabled() || !value || selectedInSearch().length === 0);
-  var summaryText = (value == null ? void 0 : value.length) === 0 || onMore || !value || search !== '' && search !== undefined ? ((value == null ? void 0 : value.length) || 0) + " selected" : ((value == null ? void 0 : value.length) || 0) + " selected of " + options.length;
+  var messageId = (value == null ? void 0 : value.length) === 0 || onMore || !value || search !== '' && search !== undefined ? 'selectMultiple.selected' : 'selectMultiple.selectedOfTotal';
+  var summaryText = format({
+    id: messageId,
+    messages: messages,
+    values: {
+      selected: (value == null ? void 0 : value.length) || 0,
+      total: options.length
+    }
+  });
   var summaryButtonClick = function summaryButtonClick(event) {
     if (onChange) {
       var nextSelected = options.filter(function (i, index) {
@@ -87,8 +99,23 @@ var SelectionSummary = exports.SelectionSummary = function SelectionSummary(_ref
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
     size: "small"
   }, summaryText), (options.length && (!limit || !(!value || (value == null ? void 0 : value.length) === 0 && selectedValuesDisabled()))) > 0 && (!onMore || onMore && (value == null ? void 0 : value.length) !== 0) && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    a11yTitle: showSelectAll ? "Select all " + options.length + " options" : (value == null ? void 0 : value.length) + " options selected. Clear all?",
-    label: showSelectAll ? 'Select All' : 'Clear All',
+    a11yTitle: showSelectAll ? format({
+      id: 'selectMultiple.selectAllA11y',
+      messages: messages,
+      values: {
+        total: options.length
+      }
+    }) : format({
+      id: 'selectMultiple.clearAllA11y',
+      messages: messages,
+      values: {
+        selected: (value == null ? void 0 : value.length) || 0
+      }
+    }),
+    label: format({
+      id: showSelectAll ? 'selectMultiple.selectAll' : 'selectMultiple.clearAll',
+      messages: messages
+    }),
     onClick: function onClick(event) {
       return summaryButtonClick(event);
     },

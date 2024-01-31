@@ -1,8 +1,9 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { applyKey, getOptionValue, useDisabled, arrayIncludes } from '../Select/utils';
+import { MessageContext } from '../../contexts/MessageContext';
 var SelectionSummary = function SelectionSummary(_ref) {
   var allOptions = _ref.allOptions,
     clearRef = _ref.clearRef,
@@ -11,6 +12,7 @@ var SelectionSummary = function SelectionSummary(_ref) {
     isSelected = _ref.isSelected,
     labelKey = _ref.labelKey,
     limit = _ref.limit,
+    messages = _ref.messages,
     onChange = _ref.onChange,
     onMore = _ref.onMore,
     options = _ref.options,
@@ -19,6 +21,8 @@ var SelectionSummary = function SelectionSummary(_ref) {
     showSelectedInline = _ref.showSelectedInline,
     value = _ref.value,
     valueKey = _ref.valueKey;
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var isDisabled = useDisabled(disabled, disabledKey, options, valueKey || labelKey);
   var selectedValuesDisabled = useCallback(function () {
     var disabledSelected = 0;
@@ -36,7 +40,15 @@ var SelectionSummary = function SelectionSummary(_ref) {
     });
   }, [options, value, valueKey, labelKey]);
   var showSelectAll = !!((value == null ? void 0 : value.length) === 0 || selectedValuesDisabled() || !value || selectedInSearch().length === 0);
-  var summaryText = (value == null ? void 0 : value.length) === 0 || onMore || !value || search !== '' && search !== undefined ? ((value == null ? void 0 : value.length) || 0) + " selected" : ((value == null ? void 0 : value.length) || 0) + " selected of " + options.length;
+  var messageId = (value == null ? void 0 : value.length) === 0 || onMore || !value || search !== '' && search !== undefined ? 'selectMultiple.selected' : 'selectMultiple.selectedOfTotal';
+  var summaryText = format({
+    id: messageId,
+    messages: messages,
+    values: {
+      selected: (value == null ? void 0 : value.length) || 0,
+      total: options.length
+    }
+  });
   var summaryButtonClick = function summaryButtonClick(event) {
     if (onChange) {
       var nextSelected = options.filter(function (i, index) {
@@ -81,8 +93,23 @@ var SelectionSummary = function SelectionSummary(_ref) {
   }, /*#__PURE__*/React.createElement(Text, {
     size: "small"
   }, summaryText), (options.length && (!limit || !(!value || (value == null ? void 0 : value.length) === 0 && selectedValuesDisabled()))) > 0 && (!onMore || onMore && (value == null ? void 0 : value.length) !== 0) && /*#__PURE__*/React.createElement(Button, {
-    a11yTitle: showSelectAll ? "Select all " + options.length + " options" : (value == null ? void 0 : value.length) + " options selected. Clear all?",
-    label: showSelectAll ? 'Select All' : 'Clear All',
+    a11yTitle: showSelectAll ? format({
+      id: 'selectMultiple.selectAllA11y',
+      messages: messages,
+      values: {
+        total: options.length
+      }
+    }) : format({
+      id: 'selectMultiple.clearAllA11y',
+      messages: messages,
+      values: {
+        selected: (value == null ? void 0 : value.length) || 0
+      }
+    }),
+    label: format({
+      id: showSelectAll ? 'selectMultiple.selectAll' : 'selectMultiple.clearAll',
+      messages: messages
+    }),
     onClick: function onClick(event) {
       return summaryButtonClick(event);
     },
