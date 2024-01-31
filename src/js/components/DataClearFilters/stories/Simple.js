@@ -49,7 +49,7 @@ export const Simple = () => (
 );
 
 const DataToolbar = () => {
-  const { filteredTotal, total } = useContext(DataContext);
+  const { view } = useContext(DataContext);
 
   return (
     <Toolbar gap="medium" align="end">
@@ -75,7 +75,7 @@ const DataToolbar = () => {
           <DataFilter property="percent" />
           <DataFilter property="paid" />
         </DataFilters>
-        {filteredTotal !== total ? <DataClearFilters /> : null}
+        {view?.properties !== undefined ? <DataClearFilters /> : null}
       </Toolbar>
       <DataView />
     </Toolbar>
