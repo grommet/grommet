@@ -93,6 +93,22 @@
     "multiple": "multiple",
     "selected": "; Selected: {currentSelectedValue}"
   },
+  "selectMultiple": {
+    "clearAll": "Clear All",
+    "clearAllA11y": "{selected} options selected. Clear all?",
+    "open": "Open drop",
+    "optionNotSelected": "{optionLabel} not selected",
+    "optionSelected": "{optionLabel} selected",
+    "search": "Search to filter options",
+    "selectAll": "Select All",
+    "selectAllA11y": "Select all {total} options",
+    "selectDrop": "Select dropdown",
+    "selected": "{selected} selected",
+    "selectedOfTotal": "{selected} selected of {total}",
+    "selectedOptions": "Selected options",
+    "showMore": "+ {remaining} more",
+    "summarizedValue": "{selected} selected"
+  },
   "skipLinks": {
     "skipTo": "Skip To:"
   },
