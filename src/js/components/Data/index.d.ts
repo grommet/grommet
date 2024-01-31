@@ -43,6 +43,7 @@ export interface DataProps {
     | string[]
     | {
         [key: string]: {
+          badge?: boolean;
           filter?: boolean;
           // for DataTable column header, DataFilter label, DataTableColumns label
           label?: string | React.ReactNode;

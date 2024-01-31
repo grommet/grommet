@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 import styled from 'styled-components';
@@ -13,6 +14,7 @@ import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
 import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useDebounce } from '../../utils/use-debounce';
 
 const MaxForm = styled(Form)`
   max-width: 100%;
@@ -159,10 +161,22 @@ const formValueToView = (value, views) => {
 
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
-const clearEmpty = (formValue) => {
+const clearEmpty = (formValue, pendingReset) => {
   const value = formValue;
   Object.keys(value).forEach((k) => {
     if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+    // special case for when range selector returns to its min/max
+    // flat format with full: true needed to match filter name structure
+    // { a: b: { _range: [0, 100] } } ==> a.b._range: [0, 100]
+    if (typeof value[k] === 'object' && !Array.isArray(value[k])) {
+      const filterName = `${k}.${
+        Object.keys(flatten(value[k], { full: true }))[0]
+      }`;
+      if (pendingReset?.current?.has(filterName)) {
+        delete value[k];
+        pendingReset.current.delete(filterName);
+      }
+    }
   });
   return value;
 };
@@ -174,26 +188,9 @@ const resetPage = (nextFormValue, prevFormValue) => {
     nextFormValue[formPageKey] = 1;
 };
 
-const transformTouched = (touched, value) => {
-  // DataFilters expects values for keys touched to evaluate to falsey to
-  // not cause a badge. However any property value that is set back to its
-  // default/initial value that isn't undefined/null/false/0 will cause a
-  // badge this is particulary true for a 'range' which will always have
-  // a value.
-  //
-  // Should this instead determine touched by comparing against
-  // initial/default values?
-  //
-  const result = {};
-  Object.keys(touched).forEach((key) => {
-    result[key] = flatten(value, { full: true })[key];
-  });
-  return result;
-};
-
 // function shared by onSubmit and onChange to coordinate view
 // name changes
-const normalizeValue = (nextValue, prevValue, views) => {
+const normalizeValue = (nextValue, prevValue, views, pendingReset) => {
   if (
     nextValue[formViewNameKey] &&
     nextValue[formViewNameKey] !== prevValue[formViewNameKey]
@@ -206,14 +203,16 @@ const normalizeValue = (nextValue, prevValue, views) => {
   // something else changed
 
   // clear empty properties
-  const result = clearEmpty(nextValue);
+  const result = clearEmpty(nextValue, pendingReset);
 
-  // if we have a view and something related to it changed, clear the view
+  // if we have a view and something changed, clear the view
   if (result[formViewNameKey]) {
     const view = views.find((v) => v.name === result[formViewNameKey]);
     const viewValue = viewToFormValue(view);
-    clearEmpty(viewValue);
-    if (
+    clearEmpty(viewValue, pendingReset);
+    if (Object.keys(viewValue).length !== Object.keys(result).length) {
+      delete result[formViewNameKey];
+    } else if (
       Object.keys(viewValue).some(
         (k) =>
           // allow mismatch between empty and set strings
@@ -232,25 +231,10 @@ const normalizeValue = (nextValue, prevValue, views) => {
 // 300ms was chosen empirically as a reasonable default
 const DEBOUNCE_TIMEOUT = 300;
 
-const debounce = (func, timeout = DEBOUNCE_TIMEOUT) => {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func(...args);
-    }, timeout);
-  };
-};
-
-const debounceSearch = debounce((onView, nextValue, views) =>
-  onView(formValueToView(nextValue, views)),
-);
-
 export const DataForm = ({
   children,
   footer,
   onDone,
-  onTouched,
   pad,
   updateOn = 'submit',
   ...rest
@@ -258,37 +242,39 @@ export const DataForm = ({
   const { messages, onView, view, views } = useContext(DataContext);
   const { format } = useContext(MessageContext);
   const [formValue, setFormValue] = useState(viewToFormValue(view));
-
-  const contextValue = useMemo(() => ({ inDataForm: true }), []);
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, remove it from view
+  // like other properties
+  const pendingReset = useRef(new Set());
+  const contextValue = useMemo(() => ({ inDataForm: true, pendingReset }), []);
+  const debounce = useDebounce(DEBOUNCE_TIMEOUT);
 
   const onSubmit = useCallback(
-    ({ value, touched }) => {
-      const nextValue = normalizeValue(value, formValue, views);
+    ({ value }) => {
+      const nextValue = normalizeValue(value, formValue, views, pendingReset);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
-      if (onTouched) onTouched(transformTouched(touched, nextValue));
       onView(formValueToView(nextValue, views));
       if (onDone) onDone();
     },
-    [formValue, onDone, onTouched, onView, views],
+    [formValue, onDone, onView, views],
   );
 
   const onChange = useCallback(
     (value, { touched }) => {
-      const nextValue = normalizeValue(value, formValue, views);
+      const nextValue = normalizeValue(value, formValue, views, pendingReset);
       resetPage(nextValue, formValue);
       setFormValue(nextValue);
       if (updateOn === 'change') {
-        if (onTouched) onTouched(transformTouched(touched, nextValue));
         // debounce search
         if (touched[formSearchKey]) {
-          debounceSearch(onView, nextValue, views);
+          debounce(() => () => onView(formValueToView(nextValue, views)));
         } else {
           onView(formValueToView(nextValue, views));
         }
       }
     },
-    [formValue, onTouched, onView, updateOn, views],
+    [debounce, formValue, onView, updateOn, views],
   );
 
   useEffect(() => setFormValue(viewToFormValue(view)), [view]);
