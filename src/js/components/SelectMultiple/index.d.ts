@@ -12,7 +12,6 @@ export interface SelectMultipleProps extends BasicSelectProps {
     clearAll?: string;
     clearAllA11y?: string;
     multiple?: string; // kept for backwards compatibility, but summarizedValue should be used instead
-    showMore?: string;
     open?: string;
     optionNotSelected?: string;
     optionSelected?: string;
@@ -23,6 +22,7 @@ export interface SelectMultipleProps extends BasicSelectProps {
     selected?: string;
     selectedOfTotal?: string;
     selectedOptions?: string;
+    showMore?: string;
     summarizedValue?: string;
   };
 }
