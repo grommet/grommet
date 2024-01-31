@@ -30,6 +30,9 @@ export interface BasicSelectProps {
   id?: string;
   labelKey?: string | ((...args: any[]) => string | React.ReactNode);
   margin?: MarginType;
+  messages?: {
+    multiple?: string;
+  };
   name?: string;
   onChange?: (...args: any[]) => void;
   onClose?: (...args: any[]) => any;
@@ -54,9 +57,6 @@ export interface SelectProps extends BasicSelectProps {
   closeOnChange?: boolean;
   defaultValue?: string | number | object | (string | number | object)[];
   multiple?: boolean;
-  messages?: {
-    multiple?: string;
-  };
   selected?: number | number[];
   value?: string | JSX.Element | number | object | (string | number | object)[];
 }

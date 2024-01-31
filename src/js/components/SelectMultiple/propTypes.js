@@ -17,6 +17,9 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       clearAll: PropTypes.string,
       clearAllA11y: PropTypes.string,
+      // "multiple" kept for backwards compatibility,
+      // but summarizedValue should be used instead
+      multiple: PropTypes.string,
       onMore: PropTypes.string,
       open: PropTypes.string,
       optionNotSelected: PropTypes.string,
