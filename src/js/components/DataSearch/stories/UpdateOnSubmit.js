@@ -25,6 +25,8 @@ UpdateOnSubmit.args = {
   full: true,
 };
 
+UpdateOnSubmit.storyName = 'Update on submit';
+
 export default {
-  title: 'Data/DataSearch/UpdateOnSubmit',
+  title: 'Data/DataSearch/Update on submit',
 };
