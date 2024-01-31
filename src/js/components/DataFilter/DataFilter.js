@@ -15,8 +15,7 @@ const minSelectSearchOptions = 10;
 const defaultRangeSteps = 20;
 
 const getValueAt = (valueObject, pathArg) => {
-  if (!pathArg) return undefined;
-  if (valueObject === undefined) return undefined;
+  if (!pathArg || valueObject === undefined) return undefined;
   const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
   if (path.length === 1) return valueObject[path];
   return getValueAt(valueObject[path.shift()], path);
