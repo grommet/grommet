@@ -50,8 +50,7 @@ export var Simple = function Simple() {
 };
 var DataToolbar = function DataToolbar() {
   var _useContext = useContext(DataContext),
-    filteredTotal = _useContext.filteredTotal,
-    total = _useContext.total;
+    view = _useContext.view;
   return /*#__PURE__*/React.createElement(Toolbar, {
     gap: "medium",
     align: "end"
@@ -86,7 +85,7 @@ var DataToolbar = function DataToolbar() {
     property: "percent"
   }), /*#__PURE__*/React.createElement(DataFilter, {
     property: "paid"
-  })), filteredTotal !== total ? /*#__PURE__*/React.createElement(DataClearFilters, null) : null), /*#__PURE__*/React.createElement(DataView, null));
+  })), (view == null ? void 0 : view.properties) !== undefined ? /*#__PURE__*/React.createElement(DataClearFilters, null) : null), /*#__PURE__*/React.createElement(DataView, null));
 };
 Simple.storyName = 'Simple';
 export default {

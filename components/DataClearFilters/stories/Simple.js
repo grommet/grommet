@@ -56,8 +56,7 @@ var Simple = exports.Simple = function Simple() {
 };
 var DataToolbar = function DataToolbar() {
   var _useContext = (0, _react.useContext)(_grommet.DataContext),
-    filteredTotal = _useContext.filteredTotal,
-    total = _useContext.total;
+    view = _useContext.view;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, {
     gap: "medium",
     align: "end"
@@ -92,7 +91,7 @@ var DataToolbar = function DataToolbar() {
     property: "percent"
   }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
     property: "paid"
-  })), filteredTotal !== total ? /*#__PURE__*/_react["default"].createElement(_grommet.DataClearFilters, null) : null), /*#__PURE__*/_react["default"].createElement(_grommet.DataView, null));
+  })), (view == null ? void 0 : view.properties) !== undefined ? /*#__PURE__*/_react["default"].createElement(_grommet.DataClearFilters, null) : null), /*#__PURE__*/_react["default"].createElement(_grommet.DataView, null));
 };
 Simple.storyName = 'Simple';
 var _default = exports["default"] = {
