@@ -230,7 +230,17 @@ exports[`DataSearch no Data 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c5 {
@@ -332,7 +342,7 @@ exports[`DataSearch no Data 1`] = `
 <div
   class="c0"
 >
-  <form
+  <div
     class="c1"
   >
     <div
@@ -364,7 +374,7 @@ exports[`DataSearch no Data 1`] = `
         value=""
       />
     </div>
-  </form>
+  </div>
 </div>
 `;
 
