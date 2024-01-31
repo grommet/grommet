@@ -1,4 +1,4 @@
-var _excluded = ["drop", "id", "responsive"];
+var _excluded = ["drop", "id", "responsive", "updateOn"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useContext, useEffect, useState } from 'react';
@@ -11,6 +11,7 @@ import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
+import { Keyboard } from '../Keyboard';
 import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
@@ -30,6 +31,7 @@ export var DataSearch = function DataSearch(_ref) {
   var drop = _ref.drop,
     idProp = _ref.id,
     responsive = _ref.responsive,
+    updateOn = _ref.updateOn,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
     dataId = _useContext.id,
@@ -59,25 +61,30 @@ export var DataSearch = function DataSearch(_ref) {
   useEffect(function () {
     return setValue(view == null ? void 0 : view.search);
   }, [view == null ? void 0 : view.search]);
-  var onChange = function onChange(e) {
-    var _e$target, _e$target2;
-    var nextValue = _extends({}, view, {
+  var updateView = function updateView(e) {
+    var _e$target;
+    var nextView = _extends({}, view, {
       search: (_e$target = e.target) == null ? void 0 : _e$target.value
     });
 
     // If there's a named view in effect that has a search term
     // we'll clear the named view (but leave it's other filters)
-    var currentView = nextValue.view && (views == null ? void 0 : views.find(function (v) {
-      return v.name === nextValue.view;
+    var currentView = nextView.view && (views == null ? void 0 : views.find(function (v) {
+      return v.name === nextView.view;
     }));
     if (currentView != null && currentView.search) {
-      delete nextValue.view;
-      delete nextValue.name;
+      delete nextView.view;
+      delete nextView.name;
     }
+    onView(nextView);
+  };
+  var onChange = function onChange(e) {
+    var _e$target2, _e$target3;
     setValue((_e$target2 = e.target) == null ? void 0 : _e$target2.value);
-    debounce(function () {
+    // do the search if the input was cleared or update on change
+    if (updateOn !== 'submit' || ((_e$target3 = e.target) == null ? void 0 : _e$target3.value) === '') debounce(function () {
       return function () {
-        return onView(nextValue);
+        return updateView(e);
       };
     });
   };
@@ -93,6 +100,9 @@ export var DataSearch = function DataSearch(_ref) {
     value: value,
     onChange: onChange
   }, rest));
+  if (updateOn === 'submit') content = /*#__PURE__*/React.createElement(Keyboard, {
+    onEnter: updateView
+  }, content);
   if (!inDataForm)
     // likely in Toolbar.
     // Wrap in Box to give it a reasonable width

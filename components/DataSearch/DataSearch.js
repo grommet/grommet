@@ -12,12 +12,13 @@ var _DataFormContext = require("../../contexts/DataFormContext");
 var _FormField = require("../FormField");
 var _Skeleton = require("../Skeleton");
 var _TextInput = require("../TextInput");
+var _Keyboard = require("../Keyboard");
 var _MessageContext = require("../../contexts/MessageContext");
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 var _propTypes = require("./propTypes");
 var _responsive = require("../../utils/responsive");
 var _useDebounce = require("../../utils/use-debounce");
-var _excluded = ["drop", "id", "responsive"];
+var _excluded = ["drop", "id", "responsive", "updateOn"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -36,6 +37,7 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
   var drop = _ref.drop,
     idProp = _ref.id,
     responsive = _ref.responsive,
+    updateOn = _ref.updateOn,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     dataId = _useContext.id,
@@ -65,25 +67,30 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
   (0, _react.useEffect)(function () {
     return setValue(view == null ? void 0 : view.search);
   }, [view == null ? void 0 : view.search]);
-  var onChange = function onChange(e) {
-    var _e$target, _e$target2;
-    var nextValue = _extends({}, view, {
+  var updateView = function updateView(e) {
+    var _e$target;
+    var nextView = _extends({}, view, {
       search: (_e$target = e.target) == null ? void 0 : _e$target.value
     });
 
     // If there's a named view in effect that has a search term
     // we'll clear the named view (but leave it's other filters)
-    var currentView = nextValue.view && (views == null ? void 0 : views.find(function (v) {
-      return v.name === nextValue.view;
+    var currentView = nextView.view && (views == null ? void 0 : views.find(function (v) {
+      return v.name === nextView.view;
     }));
     if (currentView != null && currentView.search) {
-      delete nextValue.view;
-      delete nextValue.name;
+      delete nextView.view;
+      delete nextView.name;
     }
+    onView(nextView);
+  };
+  var onChange = function onChange(e) {
+    var _e$target2, _e$target3;
     setValue((_e$target2 = e.target) == null ? void 0 : _e$target2.value);
-    debounce(function () {
+    // do the search if the input was cleared or update on change
+    if (updateOn !== 'submit' || ((_e$target3 = e.target) == null ? void 0 : _e$target3.value) === '') debounce(function () {
       return function () {
-        return onView(nextValue);
+        return updateView(e);
       };
     });
   };
@@ -99,6 +106,9 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
     value: value,
     onChange: onChange
   }, rest));
+  if (updateOn === 'submit') content = /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+    onEnter: updateView
+  }, content);
   if (!inDataForm)
     // likely in Toolbar.
     // Wrap in Box to give it a reasonable width
