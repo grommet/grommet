@@ -25,6 +25,10 @@ UpdateOnSubmit.args = {
   full: true,
 };
 
+UpdateOnSubmit.parameters = {
+  chromatic: { disable: true },
+};
+
 UpdateOnSubmit.storyName = 'Update on submit';
 
 export default {
