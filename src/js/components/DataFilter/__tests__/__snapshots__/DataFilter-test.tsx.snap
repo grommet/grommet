@@ -4800,7 +4800,7 @@ exports[`DataFilter select multiple options search 2`] = `
         class="c13"
       >
         <input
-          aria-label="Search to filter options."
+          aria-label="Search to filter options"
           autocomplete="off"
           class="c14"
           type="search"
