@@ -411,13 +411,8 @@ exports[`DataTableColumns remove column 2`] = `
 
 exports[`DataTableColumns remove column 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 .hZNOgI {
@@ -567,7 +562,7 @@ exports[`DataTableColumns renders 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 12px;
+  margin-top: 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -586,7 +581,7 @@ exports[`DataTableColumns renders 1`] = `
   justify-content: space-between;
 }
 
-.c15 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -607,7 +602,7 @@ exports[`DataTableColumns renders 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -621,22 +616,12 @@ exports[`DataTableColumns renders 1`] = `
   flex-direction: column;
 }
 
-.c9 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c16 {
+.c13 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c20 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -774,82 +759,11 @@ exports[`DataTableColumns renders 1`] = `
   border: 0;
 }
 
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c10:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c11 {
-  opacity: 0;
-}
-
 .c2 {
   max-width: 100%;
 }
 
-.c14 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -862,7 +776,7 @@ exports[`DataTableColumns renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c18 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -874,23 +788,23 @@ exports[`DataTableColumns renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c9 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
 }
 
-.c13 {
+.c10 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-.c17:focus {
+.c14:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -906,13 +820,7 @@ exports[`DataTableColumns renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    width: 6px;
+    margin-top: 12px;
   }
 }
 
@@ -965,23 +873,11 @@ exports[`DataTableColumns renders 1`] = `
           >
             Apply filters
           </button>
-          <div
-            class="c9"
-          />
-          <button
-            aria-hidden="true"
-            class="c10 c11"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
-          </button>
         </footer>
       </div>
     </form>
     <table
-      class="c12 c13"
+      class="c9 c10"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
@@ -990,28 +886,28 @@ exports[`DataTableColumns renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c14 "
+            class="c11 "
             scope="col"
           >
             <div
-              class="c15"
+              class="c12"
             >
               <span
-                class="c16"
+                class="c13"
               >
                 Name
               </span>
             </div>
           </th>
           <th
-            class="c14 "
+            class="c11 "
             scope="col"
           >
             <div
-              class="c15"
+              class="c12"
             >
               <span
-                class="c16"
+                class="c13"
               >
                 Size
               </span>
@@ -1020,33 +916,33 @@ exports[`DataTableColumns renders 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
       >
         <tr
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c16"
             >
               <span
-                class="c20"
+                class="c17"
               >
                 a
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c15 "
           >
             <div
-              class="c19"
+              class="c16"
             >
               <span
-                class="c16"
+                class="c13"
               >
                 s
               </span>
@@ -1057,27 +953,27 @@ exports[`DataTableColumns renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
-            class="c18 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c19"
+              class="c16"
             >
               <span
-                class="c20"
+                class="c17"
               >
                 b
               </span>
             </div>
           </th>
           <td
-            class="c18 "
+            class="c15 "
           >
             <div
-              class="c19"
+              class="c16"
             >
               <span
-                class="c16"
+                class="c13"
               >
                 m
               </span>
@@ -1473,13 +1369,8 @@ exports[`DataTableColumns search 2`] = `
 
 exports[`DataTableColumns search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 .hZNOgI {
@@ -1563,13 +1454,8 @@ exports[`DataTableColumns search 4`] = `
 
 exports[`DataTableColumns search 5`] = `
 "@media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
+  .kYOLuO {
+    margin-top: 12px;
   }
 }
 .hZNOgI {

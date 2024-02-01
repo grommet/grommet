@@ -1,14 +1,20 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
+import { DataFilter } from '../../DataFilter';
 import { DataFilters } from '../../DataFilters';
 import { DataTable } from '../../DataTable';
 import { Pagination } from '../../Pagination';
+import { Toolbar } from '../../Toolbar';
 import { Data } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
+const DEBOUNCE_TIMEOUT = 300;
+
+// asserts that AnnounceContext aria-live region and visible DataSummary each have this text
+const expectDataSummary = (message: string) =>
+  expect(screen.getAllByText(message)).toHaveLength(2);
 
 const data = [
   {
@@ -44,7 +50,7 @@ describe('Data', () => {
   });
 
   test('toolbar', () => {
-    const { getByText, container } = render(
+    const { container } = render(
       <Grommet>
         <Data
           data={data}
@@ -59,7 +65,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -100,7 +106,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
@@ -125,7 +131,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -150,13 +156,13 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('view sort', () => {
-    const { getByText, container } = render(
+    const { container } = render(
       <Grommet>
         <Data
           data={data}
@@ -174,7 +180,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -199,7 +205,7 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    expectDataSummary('1 result of 4 items');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -225,12 +231,13 @@ describe('Data', () => {
       </Grommet>,
     );
 
-    expect(getByText('4 things')).toBeTruthy();
+    expectDataSummary('4 things');
     expect(getByText('aa')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('uncontrolled search', () => {
+    jest.useFakeTimers();
     const { getByRole, getByText, queryByText, container } = render(
       <Grommet>
         <Data
@@ -238,26 +245,29 @@ describe('Data', () => {
           properties={{ name: { label: 'Name' } }}
           view={{ search: '', properties: {} }}
           toolbar
-          updateOn="change"
         >
           <DataTable />
         </Data>
       </Grommet>,
     );
 
-    expect(getByText('4 items')).toBeTruthy();
+    expectDataSummary('4 items');
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.change(getByRole('searchbox'), {
       target: { value: 'a' },
     });
-    expect(getByText('1 result of 4 items')).toBeTruthy();
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expectDataSummary('1 result of 4 items');
     expect(queryByText('bb')).toBeFalsy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('controlled search', () => {
+    jest.useFakeTimers();
     const onView = jest.fn();
     const { getByRole, getByText, container } = render(
       <Grommet>
@@ -266,7 +276,6 @@ describe('Data', () => {
           properties={{ name: { label: 'Name' } }}
           view={{ search: '', properties: {} }}
           toolbar
-          updateOn="change"
           onView={onView}
         >
           <DataTable />
@@ -282,6 +291,10 @@ describe('Data', () => {
     });
     expect(getByText('bb')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
     expect(onView).toHaveBeenNthCalledWith(
       1,
       expect.objectContaining({
@@ -384,9 +397,7 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('properties when property is an array', async () => {
-    const user = userEvent.setup();
-
+  test('properties when property is an array', () => {
     const { asFragment } = render(
       <Grommet>
         <Data
@@ -424,8 +435,65 @@ describe('Data', () => {
     expect(asFragment()).toMatchSnapshot();
     const filtersButton = screen.getByRole('button', { name: 'Open filters' });
     expect(filtersButton).toBeTruthy();
-    await user.click(filtersButton);
+    fireEvent.click(filtersButton);
     expect(screen.getByRole('button', { name: 'Apply filters' })).toBeTruthy();
     expectPortal('data--filters-control').toMatchSnapshot();
+  });
+
+  test('should include badge based on view', () => {
+    render(
+      <Grommet>
+        <Data
+          data={data}
+          view={{
+            properties: { rating: { min: 3, max: 5 }, enabled: [true] },
+          }}
+          toolbar="filters"
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    const filterButton = screen.getByRole('button', {
+      name: 'Open filters, 2 filters applied',
+    });
+
+    expect(filterButton).toBeTruthy();
+  });
+
+  test('should not include properties with badge: false in badge count', () => {
+    render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            name: {
+              badge: false,
+            },
+            enabled: {},
+            rating: {},
+          }}
+        >
+          <Toolbar>
+            <DataFilter property="name" />
+            <DataFilters layer>
+              <DataFilter property="enabled" />
+              <DataFilter property="rating" />
+            </DataFilters>
+          </Toolbar>
+        </Data>
+      </Grommet>,
+    );
+
+    const checkBox = screen.getByText('aa');
+    fireEvent.click(checkBox);
+
+    // no badge should be applied, so expect default tip
+    const filterButton = screen.getByRole('button', {
+      name: 'Open filters',
+    });
+
+    expect(filterButton).toBeTruthy();
   });
 });

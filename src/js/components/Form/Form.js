@@ -491,7 +491,9 @@ const Form = forwardRef(
           if (
             name && // we have somewhere to put this
             componentValue !== undefined && // input driving
-            componentValue !== formValue // don't already have it
+            (Array.isArray(componentValue) && Array.isArray(formValue)
+              ? componentValue.toString() !== formValue.toString()
+              : componentValue !== formValue) // don't already have it
           ) {
             setValueState((prevValue) =>
               setFieldValue(name, componentValue, prevValue),

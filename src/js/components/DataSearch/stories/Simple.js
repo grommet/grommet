@@ -23,7 +23,7 @@ export const Simple = () => (
     <Paragraph color="text-weak">
       Note: Results are filtered as you type, checking all fields.
     </Paragraph>
-    <Data data={DATA} updateOn="change">
+    <Data data={DATA}>
       <DataSearch />
       <DataSummary />
       <DataTable columns={columns} />

@@ -1,12 +1,13 @@
 import React, { useContext, useMemo, useState } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
-import { FormContext } from '../Form/FormContext';
 import { FormField } from '../FormField';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { RangeSelector } from '../RangeSelector';
 import { SelectMultiple } from '../SelectMultiple';
 import { DataFilterPropTypes } from './propTypes';
+import { getDecimalCount } from '../RangeSelector/RangeSelector';
+import { DataFormContext } from '../../contexts/DataFormContext';
 
 // empirical constants for when we change inputs
 const maxCheckBoxGroupOptions = 4;
@@ -14,7 +15,7 @@ const minSelectSearchOptions = 10;
 const defaultRangeSteps = 20;
 
 const getValueAt = (valueObject, pathArg) => {
-  if (valueObject === undefined) return undefined;
+  if (!pathArg || valueObject === undefined) return undefined;
   const path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
   if (path.length === 1) return valueObject[path];
   return getValueAt(valueObject[path.shift()], path);
@@ -36,15 +37,35 @@ const generateOptions = (data, property) =>
       return 0;
     });
 
+// ensure floating point calculations are in integers
 const alignMax = (value, interval) => {
-  if (value > 0) return value - (value % interval) + interval;
-  if (value < 0) return value + (value % interval);
+  const multiplier =
+    10 ** Math.max(getDecimalCount(value), getDecimalCount(interval));
+  const integerValue = value * multiplier;
+  const integerInterval = interval * multiplier;
+  if (value > 0)
+    return (
+      (integerValue - (integerValue % integerInterval) + integerInterval) /
+      multiplier
+    );
+  if (value < 0)
+    return (integerValue + (integerValue % integerInterval)) / multiplier;
   return value;
 };
 
+// ensure floating point calculations are in integers
 const alignMin = (value, interval) => {
-  if (value > 0) return value - (value % interval);
-  if (value < 0) return value - (value % interval) - interval;
+  const multiplier =
+    10 ** Math.max(getDecimalCount(value), getDecimalCount(interval));
+  const integerValue = value * multiplier;
+  const integerInterval = interval * multiplier;
+  if (value > 0)
+    return (integerValue - (integerValue % integerInterval)) / multiplier;
+  if (value < 0)
+    return (
+      (integerValue - (integerValue % integerInterval) - integerInterval) /
+      multiplier
+    );
   return value;
 };
 
@@ -66,7 +87,7 @@ export const DataFilter = ({
     properties,
     unfilteredData,
   } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const [searchText, setSearchText] = useState('');
 
   const [options, range] = useMemo(() => {
@@ -86,11 +107,16 @@ export const DataFilter = ({
     if (uniqueValues.some((v) => v !== undefined && typeof v !== 'number'))
       return [uniqueValues, undefined];
     // all values are numeric, treat as range
-    // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
     const delta = uniqueValues[uniqueValues.length - 1] - uniqueValues[0];
     const interval = Number.parseFloat((delta / 3).toPrecision(1));
-    const min = alignMin(uniqueValues[0], interval);
-    const max = alignMax(uniqueValues[uniqueValues.length - 1], interval);
+    let min = uniqueValues[0];
+    let max = uniqueValues[uniqueValues.length - 1];
+    // normalize to make it friendler, so [1.3, 4.895] becomes [1, 5]
+    if (getDecimalCount(min) > 0 || getDecimalCount(max) > 0) {
+      min = alignMin(min, interval);
+      max = alignMax(max, interval);
+    }
+
     return [undefined, [min, max]];
   }, [
     children,
@@ -118,24 +144,50 @@ export const DataFilter = ({
 
   const id = `${dataId}-${property}`;
 
+  // only add aria-label for no form examples
+  const ariaLabel = !inDataForm
+    ? `${properties?.[property]?.label || property}`
+    : undefined;
+
   let content = children;
   if (!content) {
     if (range) {
+      let step = // from `range` on DataFilter
+        rangeProp?.step ||
+        // from range in Data `properties`
+        properties?.[property]?.range?.step;
+
+      if (!step) {
+        // avoid floating point issues where 4.4 - 2 returns 2.4000000000000004
+        // and instead return 2.4 by doing calculations in integers then
+        // restore order of magnitude
+        const multiplicationFactor =
+          10 ** Math.max(getDecimalCount(range[1]), getDecimalCount(range[0]));
+        const delta =
+          (range[1] * multiplicationFactor - range[0] * multiplicationFactor) /
+          multiplicationFactor;
+        // avoid floating point issues where
+        // 0.012 / 20 returns 0.0006000000000000001
+        // and instead return 0.0006
+        // or 2.8 / 20 returns 0.13999999999999999
+        // and istead return 0.14
+        const decimalCount = getDecimalCount(delta);
+        if (decimalCount) {
+          const multiplier = 10 ** decimalCount;
+          step = (multiplier * delta) / (multiplier * defaultRangeSteps);
+        } else step = delta / defaultRangeSteps;
+      }
+
       content = (
         <RangeSelector
+          aria-label={ariaLabel}
           id={id}
           name={`${property}._range`}
           defaultValues={range}
           label
           min={range[0]}
           max={range[1]}
-          step={
-            // from `range` on DataFilter
-            rangeProp?.step ||
-            // from range in Data `properties`
-            properties?.[property]?.range?.step ||
-            (range[1] - range[0]) / defaultRangeSteps
-          }
+          step={step}
           size="full"
           round="small"
         />
@@ -144,13 +196,26 @@ export const DataFilter = ({
       if (options.length === 2 && options[1] === true && options[0] === false) {
         // special case boolean properties
         content = (
-          <CheckBoxGroup id={id} name={property} options={booleanOptions} />
+          <CheckBoxGroup
+            aria-label={ariaLabel}
+            id={id}
+            name={property}
+            options={booleanOptions}
+          />
         );
       } else if (options.length <= maxCheckBoxGroupOptions) {
-        content = <CheckBoxGroup id={id} name={property} options={options} />;
+        content = (
+          <CheckBoxGroup
+            aria-label={ariaLabel}
+            id={id}
+            name={property}
+            options={options}
+          />
+        );
       } else {
         content = (
           <SelectMultiple
+            aria-label={ariaLabel}
             id={id}
             name={property}
             showSelectedInline
@@ -169,7 +234,7 @@ export const DataFilter = ({
 
   if (!content) return null;
 
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = (
       <DataForm footer={false} updateOn="change">
