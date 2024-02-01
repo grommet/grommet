@@ -414,7 +414,6 @@ exports[`DataFilter !inDataForm 1`] = `
         >
           <label
             class="c5"
-            label="aa"
           >
             <div
               class="c6 c7"
@@ -436,7 +435,6 @@ exports[`DataFilter !inDataForm 1`] = `
           />
           <label
             class="c5"
-            label="bb"
           >
             <div
               class="c6 c7"
@@ -458,7 +456,6 @@ exports[`DataFilter !inDataForm 1`] = `
           />
           <label
             class="c5"
-            label="cc"
           >
             <div
               class="c6 c7"
@@ -488,7 +485,6 @@ exports[`DataFilter !inDataForm 1`] = `
         >
           <label
             class="c5"
-            label="true"
           >
             <div
               class="c6 c7"
@@ -510,7 +506,6 @@ exports[`DataFilter !inDataForm 1`] = `
           />
           <label
             class="c5"
-            label="false"
           >
             <div
               class="c6 c7"
@@ -1343,7 +1338,6 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
-                    label="aa"
                   >
                     <div
                       class="c10 c11"
@@ -1365,7 +1359,6 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
-                    label="bb"
                   >
                     <div
                       class="c10 c11"
@@ -1387,7 +1380,6 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
-                    label="cc"
                   >
                     <div
                       class="c10 c11"
@@ -1426,7 +1418,6 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
-                    label="Enabled"
                   >
                     <div
                       class="c10 c11"
@@ -1448,7 +1439,6 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
-                    label="Disabled"
                   >
                     <div
                       class="c10 c11"
@@ -1487,7 +1477,6 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
-                    label="ZZ"
                   >
                     <div
                       class="c10 c11"
@@ -1509,7 +1498,6 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
-                    label="YY"
                   >
                     <div
                       class="c10 c11"
@@ -3205,7 +3193,6 @@ exports[`DataFilter renders 1`] = `
                 >
                   <label
                     class="c9"
-                    label="aa"
                   >
                     <div
                       class="c10 c11"
@@ -3227,7 +3214,6 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
-                    label="bb"
                   >
                     <div
                       class="c10 c11"
@@ -3249,7 +3235,6 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
-                    label="cc"
                   >
                     <div
                       class="c10 c11"
@@ -3288,7 +3273,6 @@ exports[`DataFilter renders 1`] = `
                 >
                   <label
                     class="c9"
-                    label="true"
                   >
                     <div
                       class="c10 c11"
@@ -3310,7 +3294,6 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
-                    label="false"
                   >
                     <div
                       class="c10 c11"
@@ -4844,7 +4827,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -4878,7 +4860,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -4912,7 +4893,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -4946,7 +4926,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -4980,7 +4959,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -5014,7 +4992,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -5048,7 +5025,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -5082,7 +5058,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -5116,7 +5091,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"
@@ -5150,7 +5124,6 @@ exports[`DataFilter select multiple options search 2`] = `
       >
         <label
           class="c18"
-          label="[object Object]"
         >
           <div
             class="c19 c20"

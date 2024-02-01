@@ -44,7 +44,7 @@ var StyledCheckBoxContainer = exports.StyledCheckBoxContainer = _styledComponent
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
 })(["display:flex;flex-direction:row;align-items:", ";user-select:none;", " ", " ", " ", " ", " ", " ", ""], function (props) {
-  return typeof props.label === 'string' ? props.theme.checkBox.label.align : undefined;
+  return typeof props.labelProp === 'string' ? props.theme.checkBox.label.align : undefined;
 }, function (props) {
   return props.fillProp ? fillStyle() : 'width: fit-content;';
 }, function (props) {
