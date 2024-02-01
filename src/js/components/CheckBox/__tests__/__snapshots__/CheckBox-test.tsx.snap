@@ -281,7 +281,6 @@ exports[`CheckBox controlled 1`] = `
 >
   <label
     class="c1"
-    label="test-label"
   >
     <div
       class="c2 c3"
@@ -319,7 +318,6 @@ exports[`CheckBox controlled 2`] = `
 >
   <label
     class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
-    label="test-label"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
@@ -479,7 +477,6 @@ exports[`CheckBox custom theme 1`] = `
 >
   <label
     class="c1"
-    label="test-label"
   >
     <div
       class="c2 c3"
@@ -1060,7 +1057,6 @@ exports[`CheckBox indeterminate renders 1`] = `
   </label>
   <label
     class="c7"
-    label="test label"
   >
     <div
       class="c8 c3"
@@ -1238,7 +1234,6 @@ exports[`CheckBox label renders 1`] = `
 >
   <label
     class="c1"
-    label="test label"
   >
     <div
       class="c2 c3"
@@ -1257,7 +1252,6 @@ exports[`CheckBox label renders 1`] = `
   </label>
   <label
     class="c6"
-    label="[object Object]"
   >
     <div
       class="c2 c3"
@@ -1401,7 +1395,6 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
 >
   <label
     class="c1"
-    label="test"
   >
     <div
       class="c2 c3"
@@ -1838,7 +1831,6 @@ exports[`CheckBox renders custom checked icon 1`] = `
 >
   <label
     class="c1"
-    label="test-label"
   >
     <div
       class="c2 c3"
@@ -1987,7 +1979,6 @@ exports[`CheckBox reverse renders 1`] = `
 >
   <label
     class="c1"
-    label="test label"
   >
     <span>
       test label
@@ -2161,7 +2152,6 @@ exports[`CheckBox reverse toggle fill 1`] = `
 >
   <label
     class="c1"
-    label="test label"
   >
     <span>
       test label
@@ -2184,7 +2174,6 @@ exports[`CheckBox reverse toggle fill 1`] = `
   </label>
   <label
     class="c1"
-    label="test label"
   >
     <div
       class="c7 c3"
@@ -2540,7 +2529,6 @@ exports[`CheckBox toggle renders 1`] = `
   </label>
   <label
     class="c7"
-    label="test label"
   >
     <div
       class="c8 c3"
