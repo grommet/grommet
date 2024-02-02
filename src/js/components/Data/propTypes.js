@@ -48,6 +48,7 @@ if (process.env.NODE_ENV !== 'production') {
         filteredSingle: PropTypes.string,
         items: PropTypes.string,
         itemsSingle: PropTypes.string,
+        selected: PropTypes.string,
         total: PropTypes.string,
         totalSingle: PropTypes.string,
       }),
