@@ -73,7 +73,7 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     total: PropTypes.number,
     view: PropTypes.oneOfType([PropTypes.string, viewType]),
-    views: PropTypes.arrayOf(PropTypes.viewType),
+    views: PropTypes.arrayOf(viewType),
   };
 }
 
