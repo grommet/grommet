@@ -97,6 +97,7 @@ export interface DataProps {
       filteredSingle?: string;
       items?: string;
       itemsSingle?: string;
+      selected?: string;
       total?: string;
       totalSingle?: string;
     };

@@ -55,6 +55,8 @@ export const Data = ({
   // used by DataFilters to determine if badge should appear on Filter button
   const [filtersCleared, setFiltersCleared] = useState(true);
 
+  const [selected, setSelected] = useState([]);
+
   const announce = useContext(AnnounceContext);
   const { format } = useContext(MessageContext);
   // Announce to screen readers when search or filters are
@@ -74,7 +76,7 @@ export const Data = ({
     });
 
     announce(
-      format({
+      `${format({
         id: messageId,
         messages: messages?.dataSummary,
         values: {
@@ -82,7 +84,17 @@ export const Data = ({
           total: result.total,
           items,
         },
-      }),
+      })}${
+        selected > 0
+          ? `, ${format({
+              id: 'dataSummary.selected',
+              messages: messages?.dataSummary,
+              values: {
+                selected,
+              },
+            })}`
+          : ''
+      }`,
     );
   }, [
     announce,
@@ -90,6 +102,7 @@ export const Data = ({
     messages?.dataSummary,
     result.filteredTotal,
     result.total,
+    selected,
   ]);
 
   // what we use for DataContext value
@@ -100,6 +113,8 @@ export const Data = ({
       properties,
       filtersCleared,
       setFiltersCleared,
+      selected,
+      setSelected,
       view,
       views,
       ...result,
@@ -139,6 +154,7 @@ export const Data = ({
     onView,
     properties,
     result,
+    selected,
     toolbarKeys,
     view,
     views,
