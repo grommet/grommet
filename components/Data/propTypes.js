@@ -48,6 +48,7 @@ if (process.env.NODE_ENV !== 'production') {
         filteredSingle: _propTypes["default"].string,
         items: _propTypes["default"].string,
         itemsSingle: _propTypes["default"].string,
+        selected: _propTypes["default"].string,
         total: _propTypes["default"].string,
         totalSingle: _propTypes["default"].string
       }),

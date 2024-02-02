@@ -69,6 +69,9 @@ var Data = exports.Data = function Data(_ref) {
   var _useState3 = (0, _react.useState)(true),
     filtersCleared = _useState3[0],
     setFiltersCleared = _useState3[1];
+  var _useState4 = (0, _react.useState)([]),
+    selected = _useState4[0],
+    setSelected = _useState4[1];
   var announce = (0, _react.useContext)(_contexts.AnnounceContext);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
@@ -85,7 +88,7 @@ var Data = exports.Data = function Data(_ref) {
       id: result.total === 1 ? 'dataSummary.itemsSingle' : 'dataSummary.items',
       messages: messages == null ? void 0 : messages.dataSummary
     });
-    announce(format({
+    announce("" + format({
       id: messageId,
       messages: messages == null ? void 0 : messages.dataSummary,
       values: {
@@ -93,8 +96,14 @@ var Data = exports.Data = function Data(_ref) {
         total: result.total,
         items: items
       }
-    }));
-  }, [announce, format, messages == null ? void 0 : messages.dataSummary, result.filteredTotal, result.total]);
+    }) + (selected > 0 ? ", " + format({
+      id: 'dataSummary.selected',
+      messages: messages == null ? void 0 : messages.dataSummary,
+      values: {
+        selected: selected
+      }
+    }) : ''));
+  }, [announce, format, messages == null ? void 0 : messages.dataSummary, result.filteredTotal, result.total, selected]);
 
   // what we use for DataContext value
   var contextValue = (0, _react.useMemo)(function () {
@@ -104,6 +113,8 @@ var Data = exports.Data = function Data(_ref) {
       properties: properties,
       filtersCleared: filtersCleared,
       setFiltersCleared: setFiltersCleared,
+      selected: selected,
+      setSelected: setSelected,
       view: view,
       views: views
     }, result);
@@ -131,7 +142,7 @@ var Data = exports.Data = function Data(_ref) {
     };
     value.toolbarKeys = toolbarKeys;
     return value;
-  }, [id, messages, filtersCleared, onView, properties, result, toolbarKeys, view, views]);
+  }, [id, messages, filtersCleared, onView, properties, result, selected, toolbarKeys, view, views]);
   var toolbarContent;
   if (toolbar) {
     toolbarContent = [/*#__PURE__*/_react["default"].createElement(_Toolbar.Toolbar, {

@@ -74,7 +74,11 @@ if (process.env.NODE_ENV !== 'production') {
         dataSummary: _propTypes["default"].shape({
           filtered: _propTypes["default"].string,
           filteredSingle: _propTypes["default"].string,
-          total: _propTypes["default"].string
+          items: _propTypes["default"].string,
+          itemsSingle: _propTypes["default"].string,
+          selected: _propTypes["default"].string,
+          total: _propTypes["default"].string,
+          totalSingle: _propTypes["default"].string
         }),
         dataTableColumns: _propTypes["default"].shape({
           open: _propTypes["default"].string,

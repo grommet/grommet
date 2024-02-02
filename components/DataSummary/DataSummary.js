@@ -20,6 +20,7 @@ var DataSummary = exports.DataSummary = function DataSummary(_ref) {
   var _useContext2 = (0, _react.useContext)(_DataContext.DataContext),
     filteredTotal = _useContext2.filteredTotal,
     dataMessages = _useContext2.messages,
+    selected = _useContext2.selected,
     total = _useContext2.total;
   var messageId;
   if (total !== filteredTotal) {
@@ -43,6 +44,16 @@ var DataSummary = exports.DataSummary = function DataSummary(_ref) {
       total: total,
       items: items
     }
-  }));
+  }), selected > 0 ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+    margin: {
+      horizontal: 'small'
+    }
+  }, "|"), /*#__PURE__*/_react["default"].createElement(_Text.Text, null, format({
+    id: 'dataSummary.selected',
+    messages: messages || (dataMessages == null ? void 0 : dataMessages.dataSummary),
+    values: {
+      selected: selected
+    }
+  }))) : undefined);
 };
 DataSummary.propTypes = _propTypes.DataSummaryPropTypes;

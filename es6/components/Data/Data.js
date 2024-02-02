@@ -63,6 +63,9 @@ export var Data = function Data(_ref) {
   var _useState3 = useState(true),
     filtersCleared = _useState3[0],
     setFiltersCleared = _useState3[1];
+  var _useState4 = useState([]),
+    selected = _useState4[0],
+    setSelected = _useState4[1];
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
@@ -79,7 +82,7 @@ export var Data = function Data(_ref) {
       id: result.total === 1 ? 'dataSummary.itemsSingle' : 'dataSummary.items',
       messages: messages == null ? void 0 : messages.dataSummary
     });
-    announce(format({
+    announce("" + format({
       id: messageId,
       messages: messages == null ? void 0 : messages.dataSummary,
       values: {
@@ -87,8 +90,14 @@ export var Data = function Data(_ref) {
         total: result.total,
         items: items
       }
-    }));
-  }, [announce, format, messages == null ? void 0 : messages.dataSummary, result.filteredTotal, result.total]);
+    }) + (selected > 0 ? ", " + format({
+      id: 'dataSummary.selected',
+      messages: messages == null ? void 0 : messages.dataSummary,
+      values: {
+        selected: selected
+      }
+    }) : ''));
+  }, [announce, format, messages == null ? void 0 : messages.dataSummary, result.filteredTotal, result.total, selected]);
 
   // what we use for DataContext value
   var contextValue = useMemo(function () {
@@ -98,6 +107,8 @@ export var Data = function Data(_ref) {
       properties: properties,
       filtersCleared: filtersCleared,
       setFiltersCleared: setFiltersCleared,
+      selected: selected,
+      setSelected: setSelected,
       view: view,
       views: views
     }, result);
@@ -125,7 +136,7 @@ export var Data = function Data(_ref) {
     };
     value.toolbarKeys = toolbarKeys;
     return value;
-  }, [id, messages, filtersCleared, onView, properties, result, toolbarKeys, view, views]);
+  }, [id, messages, filtersCleared, onView, properties, result, selected, toolbarKeys, view, views]);
   var toolbarContent;
   if (toolbar) {
     toolbarContent = [/*#__PURE__*/React.createElement(Toolbar, {
