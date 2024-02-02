@@ -50,7 +50,6 @@ if (process.env.NODE_ENV !== 'production') {
           }),
         }),
         dataForm: PropTypes.shape({
-          reset: PropTypes.string,
           submit: PropTypes.string,
         }),
         dataSearch: PropTypes.shape({

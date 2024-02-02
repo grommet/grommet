@@ -51,7 +51,6 @@ export interface GrommetProps {
         };
       };
       dataForm?: {
-        reset?: string;
         submit?: string;
       };
       dataSearch?: {
