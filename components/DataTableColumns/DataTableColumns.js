@@ -43,9 +43,9 @@ var tabsProps = {
 // options can either be an array of property names or an array of objects.
 // The form value always uses an array of property names.
 var optionsToValue = function optionsToValue(options) {
-  return options.map(function (o) {
+  return (options == null ? void 0 : options.map(function (o) {
     return typeof o === 'object' && o.property || o;
-  }) || [];
+  })) || [];
 };
 var optionProperty = function optionProperty(option) {
   return typeof option === 'object' ? option.property : option;
@@ -76,7 +76,8 @@ var alignOrder = function alignOrder(value, prevValue, options) {
 // from the DataForm rendered inside DataTableColumns.
 var Content = function Content(_ref) {
   var drop = _ref.drop,
-    options = _ref.options,
+    _ref$options = _ref.options,
+    options = _ref$options === void 0 ? [] : _ref$options,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     dataId = _useContext.id,
