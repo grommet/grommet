@@ -24,18 +24,24 @@ if (process.env.NODE_ENV !== 'production') {
         clear: PropTypes.string,
         heading: PropTypes.string,
         open: PropTypes.string,
+        openSet: PropTypes.shape({
+          singular: PropTypes.string,
+          plural: PropTypes.string,
+        }),
       }),
       dataForm: PropTypes.shape({
         submit: PropTypes.string,
       }),
       dataSearch: PropTypes.shape({
         label: PropTypes.string,
+        open: PropTypes.string,
       }),
       dataSort: PropTypes.shape({
         ascending: PropTypes.string,
         by: PropTypes.string,
         descending: PropTypes.string,
         direction: PropTypes.string,
+        open: PropTypes.string,
       }),
       dataSummary: PropTypes.shape({
         filtered: PropTypes.string,
@@ -45,6 +51,19 @@ if (process.env.NODE_ENV !== 'production') {
         total: PropTypes.string,
         totalSingle: PropTypes.string,
       }),
+      dataTableColumns: {
+        open: PropTypes.string,
+        order: PropTypes.string,
+        select: PropTypes.string,
+        tip: PropTypes.string,
+      },
+      dataTableGroupBy: {
+        clear: PropTypes.string,
+        label: PropTypes.string,
+      },
+      dataView: {
+        label: PropTypes.string,
+      },
     }),
     onView: PropTypes.func,
     properties: PropTypes.oneOfType([

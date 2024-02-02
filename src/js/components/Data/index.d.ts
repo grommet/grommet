@@ -16,7 +16,7 @@ export interface View {
   search?: string;
   sort?: {
     property: string;
-    direction: 'asc' | 'desc';
+    direction: string;
   };
   step?: number; // page size
 
@@ -73,18 +73,24 @@ export interface DataProps {
       clear?: string;
       heading?: string;
       open?: string;
+      openSet?: {
+        singular?: string;
+        plural?: string;
+      };
     };
     dataForm?: {
       submit?: string;
     };
     dataSearch?: {
       label?: string;
+      open?: string;
     };
     dataSort?: {
       ascending?: string;
       by?: string;
       descending?: string;
       direction?: string;
+      open?: string;
     };
     dataSummary?: {
       filtered?: string;
@@ -93,6 +99,19 @@ export interface DataProps {
       itemsSingle?: string;
       total?: string;
       totalSingle?: string;
+    };
+    dataTableColumns?: {
+      open?: string;
+      order?: string;
+      select?: string;
+      tip?: string;
+    };
+    dataTableGroupBy?: {
+      clear?: string;
+      label?: string;
+    };
+    dataView?: {
+      label?: string;
     };
   };
 
