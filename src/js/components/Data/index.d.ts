@@ -16,7 +16,7 @@ export interface View {
   search?: string;
   sort?: {
     property: string;
-    direction: string;
+    direction: 'asc' | 'desc';
   };
   step?: number; // page size
 
