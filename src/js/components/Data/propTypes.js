@@ -51,19 +51,19 @@ if (process.env.NODE_ENV !== 'production') {
         total: PropTypes.string,
         totalSingle: PropTypes.string,
       }),
-      dataTableColumns: {
+      dataTableColumns: PropTypes.shape({
         open: PropTypes.string,
         order: PropTypes.string,
         select: PropTypes.string,
         tip: PropTypes.string,
-      },
-      dataTableGroupBy: {
+      }),
+      dataTableGroupBy: PropTypes.shape({
         clear: PropTypes.string,
         label: PropTypes.string,
-      },
-      dataView: {
+      }),
+      dataView: PropTypes.shape({
         label: PropTypes.string,
-      },
+      }),
     }),
     onView: PropTypes.func,
     properties: PropTypes.oneOfType([
