@@ -8,7 +8,12 @@ export const Fill = () => (
   <Box align="start" gap="small">
     <Box height="small" width="small" border>
       <Anchor href="#">
-        <Image fit="cover" fill src="//v2.grommet.io/assets/IMG_4245.jpg" />
+        <Image
+          fit="cover"
+          fill
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+          alt="fill image"
+        />
       </Anchor>
     </Box>
   </Box>

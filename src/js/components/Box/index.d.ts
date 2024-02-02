@@ -52,7 +52,6 @@ export interface BoxProps {
     | 'evenly'
     | 'start'
     | 'stretch';
-  onClick?: (...args: any[]) => any;
   overflow?:
     | 'auto'
     | 'hidden'

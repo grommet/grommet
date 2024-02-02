@@ -39,7 +39,7 @@ const columns = [
 
 const Filters = ({ search, ...rest }) => (
   <DataFilters {...rest}>
-    {search && <DataSearch property="sub.name" />}
+    {search && <DataSearch />}
     <DataFilter property="size" />
     <DataTableGroupBy options={['size']} />
   </DataFilters>
@@ -58,7 +58,7 @@ export const Inline = () => {
       </Toolbar>
     );
   } else {
-    sidebar = <Filters search />;
+    sidebar = <Filters search updateOn="change" />;
   }
 
   return (
@@ -71,7 +71,6 @@ export const Inline = () => {
         date: { label: 'Date' },
       }}
       data={DATA}
-      updateOn={sidebar ? 'change' : undefined}
     >
       <Box pad={{ top: 'medium' }} align="center">
         <Notification

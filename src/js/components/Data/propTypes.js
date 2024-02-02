@@ -20,14 +20,29 @@ if (process.env.NODE_ENV !== 'production') {
     onView: PropTypes.func,
     properties: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
-      PropTypes.shape({}),
+      PropTypes.objectOf(
+        PropTypes.shape({
+          badge: PropTypes.bool,
+          filter: PropTypes.bool,
+          label: PropTypes.string,
+          options: PropTypes.arrayOf(
+            PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
+          ),
+          range: PropTypes.shape({
+            max: PropTypes.number,
+            min: PropTypes.number,
+            step: PropTypes.number,
+          }),
+          search: PropTypes.bool,
+          sort: PropTypes.bool,
+        }),
+      ),
     ]),
     toolbar: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['search', 'filters']),
     ]),
     total: PropTypes.number,
-    updateOn: PropTypes.oneOf(['change', 'submit']),
     view: PropTypes.oneOfType([PropTypes.string, viewType]),
   };
 }

@@ -286,6 +286,43 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "DataClearFilters": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "a11yTitle": [Function],
+      "active": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "badge": [Function],
+      "busy": [Function],
+      "children": [Function],
+      "color": [Function],
+      "disabled": [Function],
+      "fill": [Function],
+      "focusIndicator": [Function],
+      "gap": [Function],
+      "gridArea": [Function],
+      "hoverIndicator": [Function],
+      "href": [Function],
+      "icon": [Function],
+      "justify": [Function],
+      "label": [Function],
+      "margin": [Function],
+      "messages": [Function],
+      "onClick": [Function],
+      "pad": [Function],
+      "plain": [Function],
+      "primary": [Function],
+      "reverse": [Function],
+      "secondary": [Function],
+      "size": [Function],
+      "success": [Function],
+      "target": [Function],
+      "tip": [Function],
+      "type": [Function],
+    },
+    "render": [Function],
+  },
   "DataFilter": [Function],
   "DataFilters": [Function],
   "DataForm": [Function],
@@ -412,12 +449,10 @@ exports[`Components loads 1`] = `
     "_currentRenderer": null,
     "_currentRenderer2": null,
     "_currentValue": {
-      "noForm": true,
       "useFormField": [Function],
       "useFormInput": [Function],
     },
     "_currentValue2": {
-      "noForm": true,
       "useFormField": [Function],
       "useFormInput": [Function],
     },
@@ -1130,6 +1165,7 @@ exports[`Components loads 1`] = `
           "baseline": 500,
           "minSpeed": 200,
         },
+        "data": {},
         "dataTable": {
           "container": {
             "gap": "xsmall",
@@ -1140,20 +1176,7 @@ exports[`Components loads 1`] = `
               "size": "xsmall",
             },
           },
-          "groupHeader": {
-            "background": {
-              "dark": "dark-2",
-              "light": "light-2",
-            },
-            "border": {
-              "side": "bottom",
-              "size": "xsmall",
-            },
-            "pad": {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
+          "groupHeader": {},
           "header": {
             "gap": "small",
             "units": {
@@ -2529,6 +2552,12 @@ exports[`Components loads 1`] = `
         },
         "tag": {
           "border": true,
+          "icons": {
+            "remove": {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
           "pad": {
             "horizontal": "small",
             "vertical": "xsmall",
@@ -3125,6 +3154,7 @@ exports[`Components loads 1`] = `
           "baseline": 500,
           "minSpeed": 200,
         },
+        "data": {},
         "dataTable": {
           "container": {
             "gap": "xsmall",
@@ -3135,20 +3165,7 @@ exports[`Components loads 1`] = `
               "size": "xsmall",
             },
           },
-          "groupHeader": {
-            "background": {
-              "dark": "dark-2",
-              "light": "light-2",
-            },
-            "border": {
-              "side": "bottom",
-              "size": "xsmall",
-            },
-            "pad": {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
+          "groupHeader": {},
           "header": {
             "gap": "small",
             "units": {
@@ -4524,6 +4541,12 @@ exports[`Components loads 1`] = `
         },
         "tag": {
           "border": true,
+          "icons": {
+            "remove": {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
           "pad": {
             "horizontal": "small",
             "vertical": "xsmall",
@@ -4913,11 +4936,6 @@ exports[`Components loads 1`] = `
   "Tag": {
     "$$typeof": Symbol(react.forward_ref),
     "prototype": {
-      "a11yTitle": [Function],
-      "alignSelf": [Function],
-      "as": [Function],
-      "gridArea": [Function],
-      "margin": [Function],
       "name": [Function],
       "onClick": [Function],
       "onRemove": [Function],

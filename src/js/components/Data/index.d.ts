@@ -35,8 +35,6 @@ export interface DataProps {
   defaultView?: View;
   view?: string | View;
   onView?: (view: View) => void;
-  // when view changes should be delivered
-  updateOn?: 'change' | 'submit';
 
   // whether to render a Toolbar
   toolbar?: boolean | 'search' | 'filters';
@@ -45,6 +43,8 @@ export interface DataProps {
     | string[]
     | {
         [key: string]: {
+          badge?: boolean;
+          filter?: boolean;
           // for DataTable column header, DataFilter label, DataTableColumns label
           label?: string | React.ReactNode;
           // DataFilter options
@@ -58,11 +58,13 @@ export interface DataProps {
           )[];
           // DataFilter range
           range?: {
-            max: number;
-            min: number;
+            max?: number;
+            min?: number;
+            step?: number;
           };
           // for internal filtering only, should searching evaluate this property
           search?: boolean;
+          sort?: boolean;
         };
       };
 

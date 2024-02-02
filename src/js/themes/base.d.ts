@@ -700,6 +700,11 @@ export interface ThemeType {
     minSpeed?: number;
     baseline?: number;
   };
+  data?: {
+    button?: {
+      kind?: string;
+    };
+  };
   dateInput?: {
     container?: {
       round?: RoundType;
@@ -1620,6 +1625,9 @@ export interface ThemeType {
       };
     };
     value?: TextProps;
+    icons?: {
+      remove?: React.ReactNode | Icon;
+    };
   };
   text?: {
     extend?: ExtendType;
