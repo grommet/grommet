@@ -58,7 +58,6 @@ if (process.env.NODE_ENV !== 'production') {
           })
         }),
         dataForm: _propTypes["default"].shape({
-          reset: _propTypes["default"].string,
           submit: _propTypes["default"].string
         }),
         dataSearch: _propTypes["default"].shape({

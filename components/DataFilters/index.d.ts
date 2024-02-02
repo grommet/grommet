@@ -2,10 +2,10 @@ import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
 export interface DataFiltersProps {
+  clearFilters?: boolean;
   drop?: boolean;
   heading?: string | React.ReactNode;
   layer?: boolean;
-  clearFilters?: boolean;
   // when view changes should be delivered
   updateOn?: 'change' | 'submit';
 }

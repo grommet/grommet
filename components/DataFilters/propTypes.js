@@ -7,10 +7,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
+    clearFilters: _propTypes["default"].bool,
     drop: _propTypes["default"].bool,
     heading: _propTypes["default"].string,
     layer: _propTypes["default"].bool,
-    clearFilters: _propTypes["default"].bool,
     updateOn: _propTypes["default"].oneOf(['change', 'submit'])
   };
 }
