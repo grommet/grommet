@@ -37,7 +37,7 @@ export interface DataProps {
   onView?: (view: View) => void;
 
   // whether to render a Toolbar
-  toolbar?: boolean | 'search' | 'filters';
+  toolbar?: boolean | 'search' | 'filters' | 'view';
 
   properties?:
     | string[]
@@ -75,7 +75,6 @@ export interface DataProps {
       open?: string;
     };
     dataForm?: {
-      reset?: string;
       submit?: string;
     };
     dataSearch?: {
@@ -88,8 +87,12 @@ export interface DataProps {
       direction?: string;
     };
     dataSummary?: {
-      filteredTotal?: string;
+      filtered?: string;
+      filteredSingle?: string;
+      items?: string;
+      itemsSingle?: string;
       total?: string;
+      totalSingle?: string;
     };
   };
 

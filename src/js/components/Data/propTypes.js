@@ -17,6 +17,35 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     data: PropTypes.arrayOf(PropTypes.shape({})),
     defaultView: viewType,
+    filteredTotal: PropTypes.number,
+    id: PropTypes.string,
+    messages: PropTypes.shape({
+      dataFilters: PropTypes.shape({
+        clear: PropTypes.string,
+        heading: PropTypes.string,
+        open: PropTypes.string,
+      }),
+      dataForm: PropTypes.shape({
+        submit: PropTypes.string,
+      }),
+      dataSearch: PropTypes.shape({
+        label: PropTypes.string,
+      }),
+      dataSort: PropTypes.shape({
+        ascending: PropTypes.string,
+        by: PropTypes.string,
+        descending: PropTypes.string,
+        direction: PropTypes.string,
+      }),
+      dataSummary: PropTypes.shape({
+        filtered: PropTypes.string,
+        filteredSingle: PropTypes.string,
+        items: PropTypes.string,
+        itemsSingle: PropTypes.string,
+        total: PropTypes.string,
+        totalSingle: PropTypes.string,
+      }),
+    }),
     onView: PropTypes.func,
     properties: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
@@ -40,10 +69,11 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     toolbar: PropTypes.oneOfType([
       PropTypes.bool,
-      PropTypes.oneOf(['search', 'filters']),
+      PropTypes.oneOf(['search', 'filters', 'view']),
     ]),
     total: PropTypes.number,
     view: PropTypes.oneOfType([PropTypes.string, viewType]),
+    views: PropTypes.arrayOf(PropTypes.viewType),
   };
 }
 
