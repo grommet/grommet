@@ -213,10 +213,7 @@ var Table = exports.Table = function Table() {
       columns: [['small', 'large']],
       justifyContent: "center",
       gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       properties: {
         rocket: {
           label: 'Rocket',

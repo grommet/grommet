@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, DataFilters, DataFilter, DataSearch, DataSort, DataSummary, DataTable, Grid, Notification, Toolbar } from 'grommet';
+import { Box, DataFilters, DataFilter, DataSearch, DataSort, DataSummary, DataTable, Grid, Toolbar } from 'grommet';
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
 export var Table = function Table() {
@@ -17,10 +17,7 @@ export var Table = function Table() {
       justifyContent: "center",
       alignContent: "start",
       gap: "large"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Data, {
+    }, /*#__PURE__*/React.createElement(Data, {
       data: DATA
     }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilters, {
       drop: true

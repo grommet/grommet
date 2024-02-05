@@ -17,10 +17,7 @@ var Simple = exports.Simple = function Simple() {
       justify: "start",
       pad: "large",
       gap: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_DataSummary.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: _data.columns

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Data, DataFilter, DataSearch, DataSort, DataView, Notification } from 'grommet';
+import { Box, Data, DataFilter, DataSearch, DataSort, DataView } from 'grommet';
 import { DataFilters } from '../DataFilters';
 import { DATA } from '../../DataTable/stories/data';
 export var Inline = function Inline() {
@@ -12,10 +12,7 @@ export var Inline = function Inline() {
       justify: "start",
       pad: "large",
       gap: "medium"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Data, {
+    }, /*#__PURE__*/React.createElement(Data, {
       data: DATA,
       views: [{
         name: 'latest',

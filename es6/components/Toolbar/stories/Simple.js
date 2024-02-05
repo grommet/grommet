@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Data, DataFilters, DataSearch, Notification } from 'grommet';
+import { Box, Button, Data, DataFilters, DataSearch } from 'grommet';
 import { Toolbar } from '../Toolbar';
 import { DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
@@ -13,10 +13,7 @@ export var Simple = function Simple() {
       justify: "start",
       pad: "large",
       gap: "large"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Toolbar is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       width: "large"
     }, /*#__PURE__*/React.createElement(Data, {
       data: DATA

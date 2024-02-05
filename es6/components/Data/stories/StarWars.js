@@ -2,7 +2,7 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Data, Grid, List, Notification, Pagination } from 'grommet';
+import { Box, Data, Grid, List, Pagination } from 'grommet';
 
 // Uses the StarWars API for starships, see https://swapi.dev
 
@@ -88,10 +88,7 @@ export var StarWars = function StarWars() {
       columns: [['small', 'large']],
       justifyContent: "center",
       gap: "large"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(Box, {
       skeleton: !result.data
     }, /*#__PURE__*/React.createElement(Data, {
       data: result.data,

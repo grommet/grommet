@@ -1,7 +1,7 @@
 var _excluded = ["search"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useContext } from 'react';
-import { Box, DataFilters, DataFilter, DataSearch, DataSummary, DataTable, DataTableGroupBy, Grid, Heading, Notification, ResponsiveContext, Toolbar } from 'grommet';
+import { Box, DataFilters, DataFilter, DataSearch, DataSummary, DataTable, DataTableGroupBy, Grid, Heading, ResponsiveContext, Toolbar } from 'grommet';
 import { Data } from '../Data';
 var sizes = ['small', 'medium', 'large'];
 var DATA = [];
@@ -72,15 +72,7 @@ export var Inline = function Inline() {
         }
       },
       data: DATA
-    }, /*#__PURE__*/React.createElement(Box, {
-      pad: {
-        top: 'medium'
-      },
-      align: "center"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    })), /*#__PURE__*/React.createElement(Grid, {
+    }, /*#__PURE__*/React.createElement(Grid, {
       columns: sidebar ? ['auto', ['small', 'large']] : 'auto',
       gap: "large",
       pad: "large",

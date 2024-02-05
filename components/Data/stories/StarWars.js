@@ -93,10 +93,7 @@ var StarWars = exports.StarWars = function StarWars() {
       columns: [['small', 'large']],
       justifyContent: "center",
       gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       skeleton: !result.data
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: result.data,

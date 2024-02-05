@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, DataTable, DataFilters, DataSearch, DataSummary, Notification, Text, Toolbar } from 'grommet';
+import { Grid, DataTable, DataFilters, DataSearch, DataSummary, Text, Toolbar } from 'grommet';
 import { Data } from '../Data';
 var data = [{
   id: 1,
@@ -109,10 +109,7 @@ export var Complex = function Complex() {
       columns: [['small', 'large']],
       justifyContent: "center",
       gap: "large"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Data, {
+    }, /*#__PURE__*/React.createElement(Data, {
       data: data,
       properties: properties
     }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilters, {

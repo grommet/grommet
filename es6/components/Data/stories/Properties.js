@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Cards, Card, CardBody, CardFooter, Heading, Data, DataSort, DataSearch, DataFilters, Notification, Text, Toolbar } from 'grommet';
+import { Box, Cards, Card, CardBody, CardFooter, Heading, Data, DataSort, DataSearch, DataFilters, Text, Toolbar } from 'grommet';
 import { DATA } from '../../DataTable/stories/data';
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -17,11 +17,7 @@ export var Properties = function Properties() {
       justify: "start",
       pad: "xlarge",
       gap: "medium"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      fill: "horizontal",
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Data, {
+    }, /*#__PURE__*/React.createElement(Data, {
       data: DATA,
       updateOn: "change",
       properties: {

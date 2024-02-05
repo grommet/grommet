@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DataFilters, DataFilter, DataSearch, DataSummary, DataTable, Grid, Notification, Toolbar } from 'grommet';
+import { DataFilters, DataFilter, DataSearch, DataSummary, DataTable, Grid, Toolbar } from 'grommet';
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
 var defaultView = {
@@ -52,10 +52,7 @@ export var Controlled = function Controlled() {
       columns: [['small', 'large']],
       justifyContent: "center",
       gap: "large"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Data, {
+    }, /*#__PURE__*/React.createElement(Data, {
       data: data,
       total: DATA.length,
       view: view,

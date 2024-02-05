@@ -18,10 +18,7 @@ var Views = exports.Views = function Views() {
       columns: [['small', 'large']],
       justifyContent: "center",
       gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_Data.Data, {
+    }, /*#__PURE__*/_react["default"].createElement(_Data.Data, {
       data: _data.DATA,
       views: [{
         name: 'latest',

@@ -22,11 +22,7 @@ var Properties = exports.Properties = function Properties() {
       justify: "start",
       pad: "xlarge",
       gap: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      fill: "horizontal",
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA,
       updateOn: "change",
       properties: {

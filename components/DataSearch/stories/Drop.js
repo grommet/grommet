@@ -16,10 +16,7 @@ var Drop = exports.Drop = function Drop() {
       pad: "large",
       columns: ['large'],
       justifyContent: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
       color: "text-weak"
     }, "Note: Results are filtered as you type, checking all fields."), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA

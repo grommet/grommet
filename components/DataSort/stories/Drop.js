@@ -17,10 +17,7 @@ var Drop = exports.Drop = function Drop() {
       justify: "start",
       pad: "large",
       gap: "medium"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, null, /*#__PURE__*/_react["default"].createElement(_DataSort.DataSort, {
       drop: true

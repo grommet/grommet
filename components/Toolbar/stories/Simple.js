@@ -18,10 +18,7 @@ var Simple = exports.Simple = function Simple() {
       justify: "start",
       pad: "large",
       gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Toolbar is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       width: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA

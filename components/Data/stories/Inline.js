@@ -78,15 +78,7 @@ var Inline = exports.Inline = function Inline() {
         }
       },
       data: DATA
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      pad: {
-        top: 'medium'
-      },
-      align: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    })), /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
       columns: sidebar ? ['auto', ['small', 'large']] : 'auto',
       gap: "large",
       pad: "large",
