@@ -75,7 +75,10 @@ const DataToolbar = () => {
           <DataFilter property="percent" />
           <DataFilter property="paid" />
         </DataFilters>
-        {view?.properties !== undefined ? <DataClearFilters /> : null}
+        {view?.properties !== undefined &&
+        Object.keys(view?.properties).length !== 0 ? (
+          <DataClearFilters />
+        ) : null}
       </Toolbar>
       <DataView />
     </Toolbar>
