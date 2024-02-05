@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Data, DataTable, Notification, Toolbar } from 'grommet';
+import { Box, Data, DataTable, Toolbar } from 'grommet';
 
 import { DataTableGroupBy } from '../DataTableGroupBy';
 import { columns, DATA } from '../../DataTable/stories/data';
@@ -14,10 +14,6 @@ export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box align="center" justify="start" pad="large" gap="medium">
-    <Notification
-      status="info"
-      message="Data is in 'beta'. The API surface is subject to change."
-    />
     <Data data={DATA}>
       <Toolbar>
         <DataTableGroupBy options={options} />

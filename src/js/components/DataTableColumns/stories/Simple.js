@@ -6,7 +6,6 @@ import {
   DataSearch,
   DataSummary,
   DataTable,
-  Notification,
   Toolbar,
 } from 'grommet';
 
@@ -23,10 +22,6 @@ export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box align="center" justify="start" pad="large" gap="medium">
-    <Notification
-      status="info"
-      message="Data is in 'beta'. The API surface is subject to change."
-    />
     <Data data={DATA}>
       <Toolbar>
         <DataSearch />

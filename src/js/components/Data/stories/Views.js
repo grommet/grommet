@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid, DataTable, Notification } from 'grommet';
+import { Grid, DataTable } from 'grommet';
 
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
@@ -15,10 +15,6 @@ export const Views = () => (
     justifyContent="center"
     gap="large"
   >
-    <Notification
-      status="info"
-      message="Data is in 'beta'. The API surface is subject to change."
-    />
     <Data
       data={DATA}
       views={[
