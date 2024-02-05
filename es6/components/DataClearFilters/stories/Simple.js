@@ -85,7 +85,7 @@ var DataToolbar = function DataToolbar() {
     property: "percent"
   }), /*#__PURE__*/React.createElement(DataFilter, {
     property: "paid"
-  })), (view == null ? void 0 : view.properties) !== undefined ? /*#__PURE__*/React.createElement(DataClearFilters, null) : null), /*#__PURE__*/React.createElement(DataView, null));
+  })), (view == null ? void 0 : view.properties) !== undefined && Object.keys(view == null ? void 0 : view.properties).length !== 0 ? /*#__PURE__*/React.createElement(DataClearFilters, null) : null), /*#__PURE__*/React.createElement(DataView, null));
 };
 Simple.storyName = 'Simple';
 export default {
