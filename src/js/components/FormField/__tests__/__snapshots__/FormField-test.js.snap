@@ -357,7 +357,6 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
       >
         <label
           class="c4"
-          label="checkbox with pad"
         >
           <div
             class="c5 c6"
@@ -378,7 +377,6 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
     </div>
     <label
       class="c9"
-      label="checkbox without pad"
     >
       <div
         class="c5 c6"

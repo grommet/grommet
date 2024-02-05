@@ -597,7 +597,6 @@ exports[`DataFilters renders 1`] = `
                   >
                     <label
                       class="c14"
-                      label="a"
                     >
                       <div
                         class="c15 c16"
@@ -619,7 +618,6 @@ exports[`DataFilters renders 1`] = `
                     />
                     <label
                       class="c14"
-                      label="b"
                     >
                       <div
                         class="c15 c16"

@@ -8,6 +8,7 @@ import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { useSkeleton } from '../Skeleton';
 import { TextInput } from '../TextInput';
+import { Keyboard } from '../Keyboard';
 import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
@@ -21,7 +22,13 @@ const dropProps = {
 // 300ms was chosen empirically as a reasonable default
 const DEBOUNCE_TIMEOUT = 300;
 
-export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
+export const DataSearch = ({
+  drop,
+  id: idProp,
+  responsive,
+  updateOn,
+  ...rest
+}) => {
   const {
     id: dataId,
     messages,
@@ -46,19 +53,25 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
 
   useEffect(() => setValue(view?.search), [view?.search]);
 
-  const onChange = (e) => {
-    const nextValue = { ...view, search: e.target?.value };
+  const updateView = (e) => {
+    const nextView = { ...view, search: e.target?.value };
 
     // If there's a named view in effect that has a search term
     // we'll clear the named view (but leave it's other filters)
     const currentView =
-      nextValue.view && views?.find((v) => v.name === nextValue.view);
+      nextView.view && views?.find((v) => v.name === nextView.view);
     if (currentView?.search) {
-      delete nextValue.view;
-      delete nextValue.name;
+      delete nextView.view;
+      delete nextView.name;
     }
+    onView(nextView);
+  };
+
+  const onChange = (e) => {
     setValue(e.target?.value);
-    debounce(() => () => onView(nextValue));
+    // do the search if the input was cleared or update on change
+    if (updateOn !== 'submit' || e.target?.value === '')
+      debounce(() => () => updateView(e));
   };
 
   let content = skeleton ? null : (
@@ -76,6 +89,9 @@ export const DataSearch = ({ drop, id: idProp, responsive, ...rest }) => {
       {...rest}
     />
   );
+
+  if (updateOn === 'submit')
+    content = <Keyboard onEnter={updateView}>{content}</Keyboard>;
 
   if (!inDataForm)
     // likely in Toolbar.
