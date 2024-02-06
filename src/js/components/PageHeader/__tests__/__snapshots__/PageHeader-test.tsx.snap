@@ -128,6 +128,7 @@ exports[`PageHeader basic 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -457,6 +458,7 @@ exports[`PageHeader custom theme 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c12 {
@@ -771,6 +773,7 @@ exports[`PageHeader level - 1 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -1083,6 +1086,7 @@ exports[`PageHeader level - 1 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -1395,6 +1399,7 @@ exports[`PageHeader level - 2 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -1707,6 +1712,7 @@ exports[`PageHeader level - 2 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -2019,6 +2025,7 @@ exports[`PageHeader level - 3 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -2331,6 +2338,7 @@ exports[`PageHeader level - 3 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -2643,6 +2651,7 @@ exports[`PageHeader level - 4 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -2955,6 +2964,7 @@ exports[`PageHeader level - 4 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -3267,6 +3277,7 @@ exports[`PageHeader level - 5 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -3579,6 +3590,7 @@ exports[`PageHeader level - 5 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -3891,6 +3903,7 @@ exports[`PageHeader level - 6 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -4203,6 +4216,7 @@ exports[`PageHeader level - 6 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -4515,6 +4529,7 @@ exports[`PageHeader size - large 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -4827,6 +4842,7 @@ exports[`PageHeader size - medium 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
@@ -5139,6 +5155,7 @@ exports[`PageHeader size - small 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  vertical-align: bottom;
 }
 
 .c11 {
