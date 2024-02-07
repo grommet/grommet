@@ -527,7 +527,7 @@ const TextInput = forwardRef(
           />
         </Keyboard>
 
-        {drop}
+        {!readOnly && drop}
       </StyledTextInputContainer>
     );
   },

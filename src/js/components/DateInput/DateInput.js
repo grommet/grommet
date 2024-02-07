@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
+import { Copy as CopyIcon } from 'grommet-icons/icons/Copy';
 import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -20,6 +21,7 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
+import { Tip } from '../Tip';
 import { useForwardedRef, setHoursWithOffset } from '../../utils';
 import {
   formatToSchema,
@@ -63,6 +65,7 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       plain,
+      readOnly,
       reverse: reverseProp = false,
       value: valueArg,
       messages,
@@ -113,6 +116,8 @@ const DateInput = forwardRef(
     const [textValue, setTextValue] = useState(
       schema ? valueToText(value, schema) : undefined,
     );
+
+    const [tipContent, setTipContent] = useState('Copy to clipboard');
 
     // Setting the icon through `inputProps` is deprecated.
     // The `icon` prop should be used instead.
@@ -244,7 +249,28 @@ Use the icon prop instead.`,
       );
     }
 
-    const calendarButton = (
+    const readOnlyOnClick = () => {
+      navigator.clipboard.writeText(textValue);
+      setTipContent('Copied!');
+    };
+
+    const readOnlyOnBlur = () => {
+      if (tipContent === 'Copied!') setTipContent('Copy to clipboard');
+    };
+
+    const calendarButton = readOnly ? (
+      <Tip dropProps={{ align: { bottom: 'top' } }} content={tipContent}>
+        <Button
+          onClick={readOnlyOnClick}
+          plain
+          icon={<CopyIcon />}
+          margin={reverse ? { left: 'small' } : { right: 'small' }}
+          onBlur={readOnlyOnBlur}
+          onMouseOut={readOnlyOnBlur}
+          aria-label="copy to clipboard"
+        />
+      </Tip>
+    ) : (
       <Button
         onClick={open ? closeCalendar : openCalendar}
         plain
@@ -261,10 +287,10 @@ Use the icon prop instead.`,
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
-          onSpace={(event) => {
-            event.preventDefault();
-            openCalendar();
-          }}
+          // onSpace={(event) => {
+          //   event.preventDefault();
+          //   openCalendar();
+          // }}
         >
           <Box
             ref={containerRef}
@@ -275,6 +301,7 @@ Use the icon prop instead.`,
           >
             {reverse && calendarButton}
             <MaskedInput
+              readOnly={readOnly}
               ref={ref}
               id={id}
               name={name}
@@ -316,12 +343,12 @@ Use the icon prop instead.`,
                   onChange(adjustedEvent);
                 }
               }}
-              onFocus={(event) => {
-                announce(
-                  formatMessage({ id: 'dateInput.openCalendar', messages }),
-                );
-                if (onFocus) onFocus(event);
-              }}
+              // onFocus={(event) => {
+              //   announce(
+              //     formatMessage({ id: 'dateInput.openCalendar', messages }),
+              //   );
+              //   if (onFocus) onFocus(event);
+              // }}
             />
             {!reverse && calendarButton}
           </Box>
@@ -338,7 +365,7 @@ Use the icon prop instead.`,
       );
     }
 
-    if (open) {
+    if (open && !readOnly) {
       return [
         input,
         <Keyboard key="drop" onEsc={() => ref.current.focus()}>

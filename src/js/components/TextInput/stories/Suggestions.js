@@ -30,12 +30,14 @@ export const Suggestions = () => {
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <TextInput
+          placeholder="placeholder"
           id="grommet-text-combobox"
           value={value}
           onChange={onChange}
           onSuggestionSelect={onSuggestionSelect}
           suggestions={suggestions}
           aria-label="Input Text"
+          readOnly
         />
       </Box>
     </Box>
