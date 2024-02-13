@@ -1654,6 +1654,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         // extend: undefined
       },
+      // wheel: undefined
     },
     rangeSelector: {
       background: {

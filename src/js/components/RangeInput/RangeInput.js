@@ -40,7 +40,7 @@ const RangeInput = forwardRef(
     const formContext = useContext(FormContext);
     const [focus, setFocus] = useState(focusProp);
 
-    const isScrollEnabled = theme?.rangeInput?.wheel !== false;
+    const scrollEnabled = theme?.rangeInput?.wheel !== false;
 
     const [value, setValue] = formContext.useFormInput({
       name,
@@ -55,13 +55,17 @@ const RangeInput = forwardRef(
 
     useEffect(() => {
       const { x, y } = scroll;
-      if (x !== null && y !== null) {
-        const handleScrollTo = () => window.scrollTo(x, y);
+      const handleScrollTo = () => window.scrollTo(x, y);
+      if (x !== null && y !== null && scrollEnabled) {
         window.addEventListener('scroll', handleScrollTo);
-        return () => window.removeEventListener('scroll', handleScrollTo);
       }
-      return undefined;
-    }, [scroll]);
+      // there is no need to remove this event listener if scroll is disabled
+      // but we need to remove it if scroll is enabled and user switches to
+      // a theme with scroll disabled
+      return () => {
+        window.removeEventListener('scroll', handleScrollTo);
+      };
+    }, [scroll, scrollEnabled]);
 
     const setRangeInputValue = useCallback(
       (nextValue) => {
@@ -83,9 +87,6 @@ const RangeInput = forwardRef(
 
     const handleOnWheel = (event) => {
       const newValue = parseFloat(value);
-      if (!isScrollEnabled) {
-        return;
-      }
       if (event.deltaY < 0) {
         setRangeInputValue(newValue + step);
       } else {
@@ -95,9 +96,8 @@ const RangeInput = forwardRef(
     // This is to make sure scrollbar doesn't move
     // when user changes RangeInput value.
     const handleMouseOver = () =>
-      isScrollEnabled && setScroll({ x: window.scrollX, y: window.scrollY });
-    const handleMouseOut = () =>
-      isScrollEnabled && setScroll({ x: null, y: null });
+      setScroll({ x: window.scrollX, y: window.scrollY });
+    const handleMouseOut = () => setScroll({ x: null, y: null });
 
     return (
       <StyledRangeInput
@@ -124,9 +124,9 @@ const RangeInput = forwardRef(
           setValue(event.target.value);
           if (onChange) onChange(event);
         }}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-        onWheel={handleOnWheel}
+        onMouseOver={scrollEnabled ? handleMouseOver : undefined}
+        onMouseOut={scrollEnabled ? handleMouseOut : undefined}
+        onWheel={scrollEnabled ? handleOnWheel : undefined}
         step={step}
         type="range"
         min={min}
