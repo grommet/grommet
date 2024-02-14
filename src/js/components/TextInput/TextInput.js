@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
+import { Copy as CopyIcon } from 'grommet-icons/icons/Copy';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -17,6 +18,7 @@ import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
+import { Tip } from '../Tip';
 import { AnnounceContext } from '../../contexts';
 import {
   isNodeAfterScroll,
@@ -93,6 +95,7 @@ const TextInput = forwardRef(
       placeholder,
       plain,
       readOnly,
+      readOnlyCopy,
       reverse,
       suggestions,
       textAlign,
@@ -129,6 +132,25 @@ const TextInput = forwardRef(
     );
 
     const [suggestionsAtClose, setSuggestionsAtClose] = useState();
+    const [tipContent, setTipContent] = useState(
+      format({ id: 'input.readOnlyCopyValidation', messages }),
+    );
+
+    const copyOnClick = () => {
+      global.navigator.clipboard.writeText(value);
+      announce(
+        format({ id: 'input.readOnlyCopyValidation', messages }),
+        'assertive',
+      );
+      setTipContent(format({ id: 'input.readOnlyCopyValidation', messages }));
+    };
+
+    const copyOnBlur = () => {
+      if (
+        tipContent === format({ id: 'input.readOnlyCopyValidation', messages })
+      )
+        setTipContent(format({ id: 'input.readOnlyCopy', messages }));
+    };
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
@@ -444,12 +466,35 @@ const TextInput = forwardRef(
 
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
 
+    const CopyButton = (
+      <Tip dropProps={{ align: { bottom: 'top' } }} content={tipContent}>
+        <Button
+          onClick={copyOnClick}
+          plain
+          icon={<CopyIcon />}
+          margin={reverse ? { left: 'small' } : { right: 'small' }}
+          onBlur={copyOnBlur}
+          onMouseOut={copyOnBlur}
+          aria-label={`${format({
+            id: 'input.readOnlyCopy',
+            messages,
+          })} ${value}`}
+        />
+      </Tip>
+    );
+
     return (
-      <StyledTextInputContainer plain={plain}>
+      <StyledTextInputContainer
+        readOnlyCopy={readOnlyCopy}
+        plain={plain}
+        border={!plain}
+        round={theme.dateInput.container.round}
+      >
+        {reverse && readOnlyCopy === true && CopyButton}
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
-        {textInputIcon && (
+        {textInputIcon && !readOnlyCopy && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
@@ -477,6 +522,7 @@ const TextInput = forwardRef(
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}
+            readOnlyCopy={readOnlyCopy}
             onFocus={(event) => {
               // Don't do anything if we are acting like we already have
               // focus. This can happen when this input loses focus temporarily
@@ -526,7 +572,7 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-
+        {!reverse && readOnlyCopy === true && CopyButton}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );

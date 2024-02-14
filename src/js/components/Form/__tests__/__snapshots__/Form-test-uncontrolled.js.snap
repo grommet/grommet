@@ -1314,11 +1314,11 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
         class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq"
             name="name"
             placeholder="test name"
             value=""
@@ -1747,11 +1747,11 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq"
             name="name"
             placeholder="test name"
             value=""
@@ -1986,11 +1986,11 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq"
             name="name"
             placeholder="test name"
             value=""
@@ -3366,11 +3366,11 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               class="StyledBox-sc-13pk1d4-0 djHtJk"
             >
               <div
-                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+                  class="StyledTextInput-sc-1x30a0s-0 leywUq StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
                   id="test-select__input"
                   name="test-select"
                   placeholder="test select"
@@ -3767,11 +3767,11 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq"
             name="test"
             placeholder="test input"
             value=""
@@ -3801,11 +3801,11 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq"
             name="test"
             placeholder="test input"
             value=""
@@ -4042,11 +4042,11 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
         class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq"
             name="test"
             placeholder="test input"
             value=""
@@ -4310,11 +4310,11 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
         class="StyledBox-sc-13pk1d4-0 gpFtJl FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq"
             name="test"
             placeholder="test input"
             value=""
@@ -4578,11 +4578,11 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
         class="StyledBox-sc-13pk1d4-0 bnAVOh FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq"
             name="test"
             placeholder="test input"
             value=""

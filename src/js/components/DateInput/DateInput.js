@@ -7,7 +7,7 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { Copy as CopyIcon } from 'grommet-icons/icons/Copy';
 import { defaultProps } from '../../default-props';
@@ -23,6 +23,7 @@ import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { Tip } from '../Tip';
 import { useForwardedRef, setHoursWithOffset } from '../../utils';
+import { readOnlyStyle } from '../../utils/readOnly';
 import {
   formatToSchema,
   schemaToMask,
@@ -33,6 +34,10 @@ import {
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
+
+const StyledDateInputContainer = styled(Box)`
+  ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}};
+`;
 
 const getReference = (value) => {
   let adjustedDate;
@@ -66,6 +71,7 @@ const DateInput = forwardRef(
       onFocus,
       plain,
       readOnly,
+      readOnlyCopy,
       reverse: reverseProp = false,
       value: valueArg,
       messages,
@@ -249,25 +255,38 @@ Use the icon prop instead.`,
       );
     }
 
-    const readOnlyOnClick = () => {
-      navigator.clipboard.writeText(textValue);
-      setTipContent('Copied!');
+    const copyOnClick = () => {
+      global.navigator.clipboard.writeText(textValue);
+      announce(
+        formatMessage({ id: 'input.readOnlyCopyValidation', messages }),
+        'assertive',
+      );
+      setTipContent(
+        formatMessage({ id: 'input.readOnlyCopyValidation', messages }),
+      );
     };
 
-    const readOnlyOnBlur = () => {
-      if (tipContent === 'Copied!') setTipContent('Copy to clipboard');
+    const copyOnBlur = () => {
+      if (
+        tipContent ===
+        formatMessage({ id: 'input.readOnlyCopyValidation', messages })
+      )
+        setTipContent(formatMessage({ id: 'input.readOnlyCopy', messages }));
     };
 
-    const calendarButton = readOnly ? (
+    const calendarButton = readOnlyCopy ? (
       <Tip dropProps={{ align: { bottom: 'top' } }} content={tipContent}>
         <Button
-          onClick={readOnlyOnClick}
+          onClick={copyOnClick}
           plain
           icon={<CopyIcon />}
           margin={reverse ? { left: 'small' } : { right: 'small' }}
-          onBlur={readOnlyOnBlur}
-          onMouseOut={readOnlyOnBlur}
-          aria-label="copy to clipboard"
+          onBlur={copyOnBlur}
+          onMouseOut={copyOnBlur}
+          aria-label={`${formatMessage({
+            id: 'input.readOnlyCopy',
+            messages,
+          })} ${textValue}`}
         />
       </Tip>
     ) : (
@@ -287,19 +306,24 @@ Use the icon prop instead.`,
       >
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
-          // onSpace={(event) => {
-          //   event.preventDefault();
-          //   openCalendar();
-          // }}
+          onSpace={(event) => {
+            if (!readOnlyCopy) {
+              event.preventDefault();
+              if (!readOnly) openCalendar();
+            }
+          }}
         >
-          <Box
+          <StyledDateInputContainer
             ref={containerRef}
             border={!plain}
             round={theme.dateInput.container.round}
             direction="row"
+            readOnlyProp={readOnly}
             fill
           >
-            {reverse && calendarButton}
+            {reverse &&
+              (readOnly !== true || readOnlyCopy === true) &&
+              calendarButton}
             <MaskedInput
               readOnly={readOnly}
               ref={ref}
@@ -343,15 +367,19 @@ Use the icon prop instead.`,
                   onChange(adjustedEvent);
                 }
               }}
-              // onFocus={(event) => {
-              //   announce(
-              //     formatMessage({ id: 'dateInput.openCalendar', messages }),
-              //   );
-              //   if (onFocus) onFocus(event);
-              // }}
+              onFocus={(event) => {
+                if (!readOnly) {
+                  announce(
+                    formatMessage({ id: 'dateInput.openCalendar', messages }),
+                  );
+                }
+                if (onFocus) onFocus(event);
+              }}
             />
-            {!reverse && calendarButton}
-          </Box>
+            {!reverse &&
+              (readOnly !== true || readOnlyCopy === true) &&
+              calendarButton}
+          </StyledDateInputContainer>
         </Keyboard>
       </FormContext.Provider>
     );

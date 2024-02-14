@@ -2919,11 +2919,11 @@ exports[`Select complex options and children 2`] = `
       class="StyledBox-sc-13pk1d4-0 djHtJk"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 leywUq StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4720,11 +4720,11 @@ exports[`Select disabled 2`] = `
       class="StyledBox-sc-13pk1d4-0 djHtJk"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
+          class="StyledTextInput-sc-1x30a0s-0 leywUq StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -12582,11 +12582,11 @@ exports[`Select prop: onOpen 2`] = `
       class="StyledBox-sc-13pk1d4-0 djHtJk"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 leywUq StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -13487,11 +13487,11 @@ exports[`Select renders custom up and down icons 2`] = `
         class="StyledBox-sc-13pk1d4-0 djHtJk"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -15656,7 +15656,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 eAgAr"
   type="search"
   value=""
 />
@@ -15665,7 +15665,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 eAgAr"
   type="search"
   value="o"
 />
@@ -16304,7 +16304,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 eAgAr"
   type="search"
   value=""
 />
@@ -16313,7 +16313,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 eAgAr"
   type="search"
   value="t"
 />
@@ -18170,11 +18170,11 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         class="StyledBox-sc-13pk1d4-0 djHtJk"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+            class="StyledTextInput-sc-1x30a0s-0 leywUq StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
             id="test-select__input"
             placeholder="test select"
             readonly=""

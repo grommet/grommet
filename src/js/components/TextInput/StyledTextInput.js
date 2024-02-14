@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  controlBorderStyle,
   disabledStyle,
   getInputPadBySide,
   inputStyle,
@@ -11,6 +12,7 @@ import {
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { inputPadForIcon } from '../../utils/styles';
+import { readOnlyStyle } from '../../utils/readOnly';
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
@@ -23,6 +25,12 @@ const getPlainStyle = (plain) => {
 
 const StyledTextInput = styled.input`
   ${inputStyle}
+  ${(props) => props.readOnlyCopy && `border: none;`};
+  ${(props) =>
+    props.readOnly &&
+    !props.readOnlyCopy &&
+    !props.plain &&
+    readOnlyStyle(props.theme)}
   ${(props) => getPlainStyle(props.plain)}
   ${(props) => props.icon && inputPadForIcon}
   ${(props) =>
@@ -41,6 +49,18 @@ Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
 const StyledTextInputContainer = styled.div`
   position: relative;
   width: 100%;
+
+  ${(props) => props.readOnlyCopy && !props.plain && controlBorderStyle};
+
+  ${(props) =>
+    props.readOnlyCopy &&
+    `
+    box-sizing: border-box;
+    flex-direction: row;
+    display: flex;
+  `};
+
+  ${(props) => props.readOnlyCopy && !props.plain && readOnlyStyle(props.theme)}
 
   ${(props) =>
     props.theme.textInput &&

@@ -315,6 +315,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         // deprecate in v3
         // weight: undefined,
+        readOnly: {
+          // background: undefined,
+          // border: {
+          //  color: undefined,
+          // },
+        },
       },
       opacity: {
         strong: 0.8,

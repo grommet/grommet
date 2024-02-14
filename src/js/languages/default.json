@@ -82,6 +82,10 @@
     "invalid": "invalid",
     "required": "required"
   },
+  "input": {
+    "readOnlyCopy": "Copy to clipboard",
+    "readOnlyCopyValidation": "Copied"
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
