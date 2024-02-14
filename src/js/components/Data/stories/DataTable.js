@@ -8,47 +8,68 @@ import {
   DataSort,
   DataSummary,
   DataTable,
-  Grid,
+  DataTableColumns,
+  DataView,
   Toolbar,
 } from 'grommet';
 
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
 
-export const Table = () => (
+export const ComposedToolbar = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid
-    height={{ min: 'medium', height: '100%' }}
-    pad="large"
-    columns={[['small', 'large']]}
-    justifyContent="center"
-    alignContent="start"
-    gap="large"
-  >
-    <Data data={DATA}>
-      <Toolbar>
-        <DataSearch />
-        <DataFilters drop>
-          <DataFilter property="location" />
-          <DataSort />
-        </DataFilters>
+  <Box pad="large">
+    <Data
+      data={DATA}
+      properties={{
+        date: { filter: false },
+        location: { label: 'Location' },
+        name: { filter: false },
+        percent: { filter: false },
+        paid: { filter: false },
+      }}
+      views={[
+        {
+          name: 'My location',
+          properties: {
+            location: ['San Francisco'],
+          },
+        },
+      ]}
+    >
+      <Toolbar gap="medium">
+        <Toolbar>
+          <DataSearch />
+          <DataSort drop />
+          <DataFilters drop>
+            <DataFilter property="location" />
+          </DataFilters>
+        </Toolbar>
+        <DataView />
+        <DataTableColumns
+          options={columns.map((column) => ({
+            property: column.property,
+            label: column.header,
+          }))}
+          drop
+        />
       </Toolbar>
       <DataSummary />
-      <Box flex overflow="auto">
-        <DataTable columns={columns} />
+      <Box overflow="auto">
+        <DataTable alignSelf="start" columns={columns} sortable />
       </Box>
     </Data>
-  </Grid>
+  </Box>
   // </Grommet>
 );
 
-Table.storyName = 'DataTable';
+ComposedToolbar.storyName = 'Composed Toolbar';
 
-Table.args = {
+ComposedToolbar.args = {
   full: true,
 };
 
 export default {
-  title: 'Data/Data/DataTable',
+  title: 'Data/Data/Composed Toolbar',
 };
