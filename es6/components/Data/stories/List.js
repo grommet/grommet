@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataFilters, DataFilter, DataSearch, DataSummary, Grid, List, Toolbar } from 'grommet';
+import { Box, DataFilters, DataFilter, DataSearch, DataSummary, List, Toolbar } from 'grommet';
 import { Data } from '../Data';
 import { DATA } from '../../DataTable/stories/data';
 export var Example = function Example() {
@@ -7,12 +7,9 @@ export var Example = function Example() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Grid, {
-      flex: false,
+    React.createElement(Box, {
       pad: "large",
-      columns: [['small', 'medium']],
-      justifyContent: "center",
-      gap: "large"
+      width: "large"
     }, /*#__PURE__*/React.createElement(Data, {
       data: DATA
     }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataFilters, {

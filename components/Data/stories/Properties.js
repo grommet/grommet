@@ -5,6 +5,7 @@ exports["default"] = exports.Properties = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _data = require("../../DataTable/stories/data");
+var _DataSummary = require("../../DataSummary");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -17,18 +18,13 @@ var Properties = exports.Properties = function Properties() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     _react["default"].createElement(_grommet.Box, {
-      align: "center",
-      fill: "horizontal",
-      justify: "start",
-      pad: "xlarge",
-      gap: "medium"
+      pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA,
-      updateOn: "change",
       properties: {
         location: {
-          sort: false,
           label: 'Location',
+          sort: false,
           options: ['Fort Collins', 'Palo Alto', 'Boise', 'San Francisco']
         },
         name: {
@@ -36,17 +32,21 @@ var Properties = exports.Properties = function Properties() {
         },
         paid: {
           search: false,
-          filter: false
+          label: 'Paid'
+        },
+        percent: {
+          search: false,
+          label: 'Percent'
+        },
+        date: {
+          label: 'Date'
         }
-      },
-      fill: "horizontal"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      gap: "medium"
+      }
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, null, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataSort, {
       drop: true
     }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, {
-      drop: true
-    })), /*#__PURE__*/_react["default"].createElement(_grommet.Cards, {
+      layer: true
+    })), /*#__PURE__*/_react["default"].createElement(_DataSummary.DataSummary, null), /*#__PURE__*/_react["default"].createElement(_grommet.Cards, {
       size: "medium"
     }, function (item) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Card, {
@@ -54,10 +54,9 @@ var Properties = exports.Properties = function Properties() {
         pad: "small"
       }, /*#__PURE__*/_react["default"].createElement(_grommet.CardBody, null, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
         level: 2,
-        size: "small",
         margin: "none"
-      }, item.name), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, amountFormatter.format(item.paid / 100))), /*#__PURE__*/_react["default"].createElement(_grommet.CardFooter, null, item.location));
-    }))))
+      }, item.name), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, amountFormatter.format(item.paid / 100))), /*#__PURE__*/_react["default"].createElement(_grommet.CardFooter, null, item.location || '--'));
+    })))
     // </Grommet>
   );
 };

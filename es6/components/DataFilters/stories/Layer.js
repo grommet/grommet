@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Data, DataFilter } from 'grommet';
-import { DataFilters } from '../DataFilters';
+import { Box, Data, DataFilter, DataFilters } from 'grommet';
 import { DATA } from '../../DataTable/stories/data';
 export var Layer = function Layer() {
   return (

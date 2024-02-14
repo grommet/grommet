@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Data, DataTable, Toolbar } from 'grommet';
-import { DataSort } from '../DataSort';
+import { Box, Data, DataSort, DataTable, Toolbar } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
 export var Drop = function Drop() {
   return (

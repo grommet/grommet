@@ -210,9 +210,8 @@ export var SpaceX = function SpaceX() {
       flex: false,
       pad: "large",
       columns: [['small', 'large']],
-      justifyContent: "center",
-      gap: "large"
-    }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Data, {
+      justifyContent: "center"
+    }, /*#__PURE__*/React.createElement(Data, {
       properties: {
         rocket: {
           label: 'Rocket',
@@ -233,7 +232,12 @@ export var SpaceX = function SpaceX() {
     }, /*#__PURE__*/React.createElement(DataTable, {
       columns: columns,
       sortable: true
-    }), result.filteredTotal > view.step && /*#__PURE__*/React.createElement(Footer, null, /*#__PURE__*/React.createElement(Text, null, "Showing ", pageBounds[0], "-", pageBounds[1], " of", ' ', result.filteredTotal), /*#__PURE__*/React.createElement(Pagination, null)))))
+    }), result.filteredTotal > view.step && /*#__PURE__*/React.createElement(Footer, {
+      border: "top",
+      pad: {
+        vertical: 'xsmall'
+      }
+    }, /*#__PURE__*/React.createElement(Text, null, "Showing ", pageBounds[0], "-", pageBounds[1], " of ", result.filteredTotal), /*#__PURE__*/React.createElement(Pagination, null))))
     // </Grommet>
   );
 };

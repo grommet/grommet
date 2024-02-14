@@ -4,7 +4,6 @@ exports.__esModule = true;
 exports["default"] = exports.Views = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-var _Data = require("../Data");
 var _data = require("../../DataTable/stories/data");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var Views = exports.Views = function Views() {
@@ -12,13 +11,9 @@ var Views = exports.Views = function Views() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Grid, {
-      flex: false,
-      pad: "large",
-      columns: [['small', 'large']],
-      justifyContent: "center",
-      gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_Data.Data, {
+    _react["default"].createElement(_grommet.Box, {
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: _data.DATA,
       views: [{
         name: 'latest',
@@ -38,6 +33,7 @@ var Views = exports.Views = function Views() {
       }],
       toolbar: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      alignSelf: "start",
       columns: _data.columns
     })))
     // </Grommet>

@@ -1,21 +1,19 @@
 import React from 'react';
-import { Data, DataSummary, DataTable, Grid, Paragraph } from 'grommet';
-import { DataSearch } from '../DataSearch';
+import { Box, Data, DataSummary, DataTable, DataSearch, Paragraph, Toolbar } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Grid, {
-      pad: "large",
-      columns: ['large'],
-      justifyContent: "center"
+    React.createElement(Box, {
+      pad: "large"
     }, /*#__PURE__*/React.createElement(Paragraph, {
       color: "text-weak"
     }, "Note: Results are filtered as you type, checking all fields."), /*#__PURE__*/React.createElement(Data, {
       data: DATA
-    }, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(DataTable, {
+    }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null)), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(DataTable, {
+      alignSelf: "start",
       columns: columns
     })))
     // </Grommet>

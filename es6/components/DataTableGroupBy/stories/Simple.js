@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Data, DataTable, Toolbar } from 'grommet';
-import { DataTableGroupBy } from '../DataTableGroupBy';
+import { Box, Data, DataTable, DataTableGroupBy, Toolbar } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 // simplify option label for name property
@@ -29,7 +28,9 @@ export var Simple = function Simple() {
       data: DATA
     }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataTableGroupBy, {
       options: options
-    })), /*#__PURE__*/React.createElement(DataTable, null)))
+    })), /*#__PURE__*/React.createElement(DataTable, {
+      columns: columns
+    })))
     // </Grommet>
   );
 };

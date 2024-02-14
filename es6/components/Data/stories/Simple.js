@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, DataTable } from 'grommet';
+import { Box, DataTable } from 'grommet';
 import { Data } from '../Data';
 import { columns, DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
@@ -7,16 +7,13 @@ export var Simple = function Simple() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    React.createElement(Grid, {
-      flex: false,
-      pad: "large",
-      columns: [['small', 'large']],
-      justifyContent: "center",
-      gap: "large"
+    React.createElement(Box, {
+      pad: "large"
     }, /*#__PURE__*/React.createElement(Data, {
       data: DATA,
       toolbar: true
     }, /*#__PURE__*/React.createElement(DataTable, {
+      alignSelf: "start",
       columns: columns
     })))
     // </Grommet>

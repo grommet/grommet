@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Data } from 'grommet';
-import { DataFilter } from '../DataFilter';
+import { Box, Data, DataFilter } from 'grommet';
 import { DATA } from '../../DataTable/stories/data';
 export var Simple = function Simple() {
   return (

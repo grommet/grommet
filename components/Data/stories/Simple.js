@@ -12,16 +12,13 @@ var Simple = exports.Simple = function Simple() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Grid, {
-      flex: false,
-      pad: "large",
-      columns: [['small', 'large']],
-      justifyContent: "center",
-      gap: "large"
+    _react["default"].createElement(_grommet.Box, {
+      pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_Data.Data, {
       data: _data.DATA,
       toolbar: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
+      alignSelf: "start",
       columns: _data.columns
     })))
     // </Grommet>

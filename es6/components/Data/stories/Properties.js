@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Cards, Card, CardBody, CardFooter, Heading, Data, DataSort, DataSearch, DataFilters, Text, Toolbar } from 'grommet';
 import { DATA } from '../../DataTable/stories/data';
+import { DataSummary } from '../../DataSummary';
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
@@ -12,18 +13,13 @@ export var Properties = function Properties() {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
     React.createElement(Box, {
-      align: "center",
-      fill: "horizontal",
-      justify: "start",
-      pad: "xlarge",
-      gap: "medium"
+      pad: "large"
     }, /*#__PURE__*/React.createElement(Data, {
       data: DATA,
-      updateOn: "change",
       properties: {
         location: {
-          sort: false,
           label: 'Location',
+          sort: false,
           options: ['Fort Collins', 'Palo Alto', 'Boise', 'San Francisco']
         },
         name: {
@@ -31,17 +27,21 @@ export var Properties = function Properties() {
         },
         paid: {
           search: false,
-          filter: false
+          label: 'Paid'
+        },
+        percent: {
+          search: false,
+          label: 'Percent'
+        },
+        date: {
+          label: 'Date'
         }
-      },
-      fill: "horizontal"
-    }, /*#__PURE__*/React.createElement(Box, {
-      gap: "medium"
+      }
     }, /*#__PURE__*/React.createElement(Toolbar, null, /*#__PURE__*/React.createElement(DataSearch, null), /*#__PURE__*/React.createElement(DataSort, {
       drop: true
     }), /*#__PURE__*/React.createElement(DataFilters, {
-      drop: true
-    })), /*#__PURE__*/React.createElement(Cards, {
+      layer: true
+    })), /*#__PURE__*/React.createElement(DataSummary, null), /*#__PURE__*/React.createElement(Cards, {
       size: "medium"
     }, function (item) {
       return /*#__PURE__*/React.createElement(Card, {
@@ -49,10 +49,9 @@ export var Properties = function Properties() {
         pad: "small"
       }, /*#__PURE__*/React.createElement(CardBody, null, /*#__PURE__*/React.createElement(Heading, {
         level: 2,
-        size: "small",
         margin: "none"
-      }, item.name), /*#__PURE__*/React.createElement(Text, null, amountFormatter.format(item.paid / 100))), /*#__PURE__*/React.createElement(CardFooter, null, item.location));
-    }))))
+      }, item.name), /*#__PURE__*/React.createElement(Text, null, amountFormatter.format(item.paid / 100))), /*#__PURE__*/React.createElement(CardFooter, null, item.location || '--'));
+    })))
     // </Grommet>
   );
 };

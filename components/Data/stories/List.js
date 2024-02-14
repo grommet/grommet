@@ -12,12 +12,9 @@ var Example = exports.Example = function Example() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Grid, {
-      flex: false,
+    _react["default"].createElement(_grommet.Box, {
       pad: "large",
-      columns: [['small', 'medium']],
-      justifyContent: "center",
-      gap: "large"
+      width: "large"
     }, /*#__PURE__*/_react["default"].createElement(_Data.Data, {
       data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, null, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, {
