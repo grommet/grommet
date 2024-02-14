@@ -11,7 +11,6 @@ import {
   DataSort,
   DataSearch,
   DataFilters,
-  Notification,
   Text,
   Toolbar,
 } from 'grommet';
@@ -34,11 +33,6 @@ export const Properties = () => (
     pad="xlarge"
     gap="medium"
   >
-    <Notification
-      fill="horizontal"
-      status="info"
-      message="Data is in 'beta'. The API surface is subject to change."
-    />
     <Data
       data={DATA}
       updateOn="change"

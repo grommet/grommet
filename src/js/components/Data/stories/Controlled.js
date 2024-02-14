@@ -7,7 +7,6 @@ import {
   DataSummary,
   DataTable,
   Grid,
-  Notification,
   Toolbar,
 } from 'grommet';
 
@@ -67,10 +66,6 @@ export const Controlled = () => {
       justifyContent="center"
       gap="large"
     >
-      <Notification
-        status="info"
-        message="Data is in 'beta'. The API surface is subject to change."
-      />
       <Data
         data={data}
         total={DATA.length}

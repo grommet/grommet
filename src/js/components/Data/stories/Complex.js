@@ -6,7 +6,6 @@ import {
   DataFilters,
   DataSearch,
   DataSummary,
-  Notification,
   Text,
   Toolbar,
 } from 'grommet';
@@ -90,10 +89,6 @@ export const Complex = () => (
     justifyContent="center"
     gap="large"
   >
-    <Notification
-      status="info"
-      message="Data is in 'beta'. The API surface is subject to change."
-    />
     <Data data={data} properties={properties}>
       <Toolbar>
         <DataSearch />
