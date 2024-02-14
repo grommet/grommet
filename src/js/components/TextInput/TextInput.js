@@ -494,7 +494,7 @@ const TextInput = forwardRef(
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
-        {textInputIcon && !readOnlyCopy && (
+        {textInputIcon && !readOnly && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
@@ -510,7 +510,7 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={icon}
+            icon={readOnly ? undefined : icon}
             reverse={reverse}
             focus={focus}
             focusIndicator={focusIndicator}
