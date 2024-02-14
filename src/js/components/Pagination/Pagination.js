@@ -5,6 +5,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
+import { PaginationStep } from './PaginationStep';
 import { PaginationPropTypes } from './propTypes';
 
 const StyledPaginationContainer = styled(Box)`
@@ -33,13 +34,14 @@ const Pagination = forwardRef(
       page: pageProp,
       size,
       step: stepProp,
+      stepSelector,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const { onView, filteredTotal, view } = useContext(DataContext);
-    const step = stepProp || view?.step || 10;
+    const [step, setStep] = useState(stepProp || view?.step || 10);
     const total = numberItems ?? filteredTotal ?? 0;
     const page = pageProp || view?.page || 1;
 
@@ -199,29 +201,75 @@ const Pagination = forwardRef(
       ...navProps[control],
     }));
 
-    return (
-      <StyledPaginationContainer
-        flex={false}
-        {...theme.pagination.container}
-        {...rest}
-      >
-        <Nav
-          a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
-          ref={ref}
+    let content;
+
+    if (stepSelector) {
+      content = (
+        <Box
+          flex={false}
+          direction="row"
+          wrap
+          gap="small"
+          align="center"
+          justify="end"
+          stepSelectorLayoutProps
+          {...rest}
         >
-          <Box as="ul" {...theme.pagination.controls}>
-            {controls.map((control, index) => (
-              /* Using index as key (as opposed to a unique id) seems to
-               * help React prioritize rendering the updated controls as
-               * desired. Whereas, using a unique id resulted in rendering
-               * the active control with an undesired lag. */
-              // eslint-disable-next-line react/no-array-index-key
-              <PageControl key={index} size={size} {...control} />
-            ))}
-          </Box>
-        </Nav>
-      </StyledPaginationContainer>
-    );
+          <PaginationStep
+            options={stepSelector}
+            step={step}
+            onChange={({ value }) => setStep(value)}
+          />
+          <StyledPaginationContainer
+            flex={false}
+            wrap
+            {...theme.pagination.container}
+            {...rest}
+          >
+            <Nav
+              a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
+              ref={ref}
+            >
+              <Box as="ul" {...theme.pagination.controls}>
+                {controls.map((control, index) => (
+                  /* Using index as key (as opposed to a unique id) seems to
+                   * help React prioritize rendering the updated controls as
+                   * desired. Whereas, using a unique id resulted in rendering
+                   * the active control with an undesired lag. */
+                  // eslint-disable-next-line react/no-array-index-key
+                  <PageControl key={index} size={size} {...control} />
+                ))}
+              </Box>
+            </Nav>
+          </StyledPaginationContainer>
+        </Box>
+      );
+    } else
+      content = (
+        <StyledPaginationContainer
+          flex={false}
+          {...theme.pagination.container}
+          {...rest}
+        >
+          <Nav
+            a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
+            ref={ref}
+          >
+            <Box as="ul" {...theme.pagination.controls}>
+              {controls.map((control, index) => (
+                /* Using index as key (as opposed to a unique id) seems to
+                 * help React prioritize rendering the updated controls as
+                 * desired. Whereas, using a unique id resulted in rendering
+                 * the active control with an undesired lag. */
+                // eslint-disable-next-line react/no-array-index-key
+                <PageControl key={index} size={size} {...control} />
+              ))}
+            </Box>
+          </Nav>
+        </StyledPaginationContainer>
+      );
+
+    return content;
   },
 );
 
