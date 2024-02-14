@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {
+  Box,
   DataFilters,
   DataFilter,
   DataSearch,
   DataSummary,
-  Grid,
   List,
   Toolbar,
 } from 'grommet';
@@ -16,13 +16,7 @@ import { DATA } from '../../DataTable/stories/data';
 export const Example = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid
-    flex={false}
-    pad="large"
-    columns={[['small', 'medium']]}
-    justifyContent="center"
-    gap="large"
-  >
+  <Box pad="large" width="large">
     <Data data={DATA}>
       <Toolbar>
         <DataSearch />
@@ -33,7 +27,7 @@ export const Example = () => (
       <DataSummary />
       <List primaryKey="name" secondaryKey="location" />
     </Data>
-  </Grid>
+  </Box>
   // </Grommet>
 );
 
