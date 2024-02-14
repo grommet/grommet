@@ -64,7 +64,7 @@ const trackColorStyle = (props) => {
     else {
       defaultTrackColor = getRGBA(
         normalizeColor(props.theme.rangeInput.track.color, props.theme),
-        props.theme.rangeInput.track.opacity || 1,
+        props.theme.rangeInput.track.opacity,
       );
     }
 
@@ -79,7 +79,7 @@ const trackColorStyle = (props) => {
     ? getBoundColor(props, 'lower')
     : getRGBA(
         normalizeColor(props.theme.global.colors.control, props.theme),
-        props.theme.rangeInput.track.opacity || 1,
+        props.theme.rangeInput.track.opacity,
       );
 
   if (
@@ -105,19 +105,19 @@ const trackColorStyle = (props) => {
       const { value, color, opacity } = arrayOfTrackColors[index];
       result += `${getRGBA(
         normalizeColor(color, props.theme),
-        opacity || 1,
+        opacity,
       )} ${valuePercentage}%,`;
 
       if (props.value >= value) {
         valuePercentage = ((value - min) / (max - min)) * 100;
         result += `${getRGBA(
           normalizeColor(color, props.theme),
-          opacity || 1,
+          opacity,
         )} ${valuePercentage}%,`;
       } else {
         result += `${getRGBA(
           normalizeColor(color, props.theme),
-          opacity || 1,
+          opacity,
         )} ${thumbPosition},`;
         result += `${upperTrackColor} ${thumbPosition}, ${upperTrackColor})`;
         break;
