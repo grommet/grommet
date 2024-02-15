@@ -6,9 +6,9 @@ export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box align="start" pad="small" gap="medium">
-    <Box fill="horizontal">
+    <Box>
       <Text>Default</Text>
-      <Pagination numberItems={237} stepSelector={[10, 25, 50]} summary />
+      <Pagination numberItems={237} />
     </Box>
     <Box>
       <Text>Box Props</Text>
