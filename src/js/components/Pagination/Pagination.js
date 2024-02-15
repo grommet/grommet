@@ -22,12 +22,6 @@ const getPageIndices = (begin, end) => {
   return indices;
 };
 
-const ParentBox = ({ children }) => (
-  <Box align="center" direction="row-responsive" gap="small">
-    {children}
-  </Box>
-);
-
 const Pagination = forwardRef(
   (
     {
@@ -209,9 +203,12 @@ const Pagination = forwardRef(
       ...navProps[control],
     }));
 
-    let content = (
+    const paginationControls = (
       <StyledPaginationContainer
         flex={false}
+        // TO DO this is no longer the "outer container" when
+        // summary/stepSelector is used. is that okay?
+        // should it be?
         {...theme.pagination.container}
         {...rest}
       >
@@ -233,43 +230,41 @@ const Pagination = forwardRef(
       </StyledPaginationContainer>
     );
 
-    if (stepSelector && !summary) {
-      content = (
-        <ParentBox justify="end">
-          <PaginationStep
-            options={stepSelector}
-            step={step}
-            onChange={({ value }) => setStep(value)}
-          />
-          {content}
-        </ParentBox>
-      );
-    }
+    // for backwards compatibility
+    if (!summary && !stepSelector) return paginationControls;
 
-    if (summary && !stepSelector) {
-      content = (
-        <ParentBox>
+    return (
+      <Box
+        // TO DO, we should likely expose ability to theme this container
+        // and I'm wondering if theme.pagination.container should apply here
+        // when summary/stepSelector are present?
+        border="top" // theme?
+        pad={{ vertical: 'xsmall', horizontal: 'small' }} // theme?
+        direction="row"
+        align="center"
+        justify="between"
+        style={{ columnGap: '12px', rowGap: '6px' }}
+        wrap
+        // TO DO how would someone add rest to this entire container?
+      >
+        {summary ? (
           <PaginationSummary page={page} step={step} numberItems={total} />
-          {content}
-        </ParentBox>
-      );
-    }
-
-    if (summary && stepSelector) {
-      content = (
-        <ParentBox>
-          <PaginationSummary page={page} step={step} numberItems={total} />
-          <PaginationStep
-            options={stepSelector}
-            step={step}
-            onChange={({ value }) => setStep(value)}
-          />
-          {content}
-        </ParentBox>
-      );
-    }
-
-    return content;
+        ) : undefined}
+        {stepSelector ? (
+          <Box
+            flex={!summary ? 'grow' : undefined}
+            align={!summary ? 'end' : undefined}
+          >
+            <PaginationStep
+              options={Array.isArray(stepSelector) ? stepSelector : undefined}
+              step={step}
+              onChange={({ value }) => setStep(value)}
+            />
+          </Box>
+        ) : undefined}
+        {paginationControls}
+      </Box>
+    );
   },
 );
 
