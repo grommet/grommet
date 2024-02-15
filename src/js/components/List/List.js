@@ -366,7 +366,7 @@ const List = React.forwardRef(
                   content =
                     typeof primary === 'string' ||
                     typeof primary === 'number' ? (
-                      <Text key="p" weight="bold">
+                      <Text key="p" {...theme.list.primaryKey}>
                         {primary}
                       </Text>
                     ) : (

@@ -1076,6 +1076,7 @@ export interface ThemeType {
       pad?: PadType;
       extend?: ExtendType;
     };
+    primaryKey?: TextProps;
     icons?: {
       down?: React.ReactNode | Icon;
       up?: React.ReactNode | Icon;
