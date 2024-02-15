@@ -1769,6 +1769,7 @@ export var generate = function generate(baseSpacing, scale) {
         // color: { dark: undefined, light: undefined },
         // extend: undefined
       }
+      // wheel: undefined
     },
     rangeSelector: {
       background: {

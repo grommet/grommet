@@ -2,11 +2,14 @@ var _excluded = ["a11yTitle", "color", "focus", "focusIndicator", "name", "onCha
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { forwardRef, useContext, useState, useCallback, useEffect } from 'react';
+import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 import { RangeInputPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
 var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var _theme$rangeInput;
   var a11yTitle = _ref.a11yTitle,
     color = _ref.color,
     focusProp = _ref.focus,
@@ -24,10 +27,12 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$max = _ref.max,
     max = _ref$max === void 0 ? 100 : _ref$max,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
   var _useState = useState(focusProp),
     focus = _useState[0],
     setFocus = _useState[1];
+  var scrollEnabled = (theme == null || (_theme$rangeInput = theme.rangeInput) == null ? void 0 : _theme$rangeInput.wheel) !== false;
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
       value: valueProp
@@ -44,17 +49,19 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   useEffect(function () {
     var x = scroll.x,
       y = scroll.y;
-    if (x !== null && y !== null) {
-      var handleScrollTo = function handleScrollTo() {
-        return window.scrollTo(x, y);
-      };
+    var handleScrollTo = function handleScrollTo() {
+      return window.scrollTo(x, y);
+    };
+    if (x !== null && y !== null && scrollEnabled) {
       window.addEventListener('scroll', handleScrollTo);
-      return function () {
-        return window.removeEventListener('scroll', handleScrollTo);
-      };
     }
-    return undefined;
-  }, [scroll]);
+    // there is no need to remove this event listener if scroll is disabled
+    // but we need to remove it if scroll is enabled and user switches to
+    // a theme with scroll disabled
+    return function () {
+      window.removeEventListener('scroll', handleScrollTo);
+    };
+  }, [scroll, scrollEnabled]);
   var setRangeInputValue = useCallback(function (nextValue) {
     if (nextValue > max || nextValue < min) return;
     // Calling set value function directly on input because React library
@@ -114,9 +121,9 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setValue(event.target.value);
       if (_onChange) _onChange(event);
     },
-    onMouseOver: handleMouseOver,
-    onMouseOut: handleMouseOut,
-    onWheel: handleOnWheel,
+    onMouseOver: scrollEnabled ? handleMouseOver : undefined,
+    onMouseOut: scrollEnabled ? handleMouseOut : undefined,
+    onWheel: scrollEnabled ? handleOnWheel : undefined,
     step: step,
     type: "range",
     min: min,
