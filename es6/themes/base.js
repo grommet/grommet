@@ -1198,6 +1198,10 @@ export var generate = function generate(baseSpacing, scale) {
         }
         // extend: undefined,
       },
+      primaryKey: {
+        // any text props
+        weight: 'bold'
+      },
       icons: {
         down: FormDown,
         up: FormUp,

@@ -305,10 +305,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       } : undefined);
     } else if (primaryKey) {
       var primary = getValue(item, index, primaryKey);
-      content = typeof primary === 'string' || typeof primary === 'number' ? /*#__PURE__*/React.createElement(Text, {
-        key: "p",
-        weight: "bold"
-      }, primary) : primary;
+      content = typeof primary === 'string' || typeof primary === 'number' ? /*#__PURE__*/React.createElement(Text, _extends({
+        key: "p"
+      }, theme.list.primaryKey), primary) : primary;
       if (secondaryKey) {
         var secondary = getValue(item, index, secondaryKey);
         content = [content, typeof secondary === 'string' || typeof secondary === 'number' ? /*#__PURE__*/React.createElement(Text, {

@@ -1202,6 +1202,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         }
         // extend: undefined,
       },
+      primaryKey: {
+        // any text props
+        weight: 'bold'
+      },
       icons: {
         down: _FormDown.FormDown,
         up: _FormUp.FormUp,

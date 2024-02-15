@@ -311,10 +311,9 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       } : undefined);
     } else if (primaryKey) {
       var primary = getValue(item, index, primaryKey);
-      content = typeof primary === 'string' || typeof primary === 'number' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, {
-        key: "p",
-        weight: "bold"
-      }, primary) : primary;
+      content = typeof primary === 'string' || typeof primary === 'number' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
+        key: "p"
+      }, theme.list.primaryKey), primary) : primary;
       if (secondaryKey) {
         var secondary = getValue(item, index, secondaryKey);
         content = [content, typeof secondary === 'string' || typeof secondary === 'number' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, {
