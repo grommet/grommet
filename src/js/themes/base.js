@@ -1111,6 +1111,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
       },
+      primaryKey: {
+        // any text props
+        weight: 'bold',
+      },
       icons: {
         down: FormDown,
         up: FormUp,
