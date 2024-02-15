@@ -201,18 +201,38 @@ const Pagination = forwardRef(
       ...navProps[control],
     }));
 
-    let content;
+    let content = (
+      <StyledPaginationContainer
+        flex={false}
+        wrap
+        {...theme.pagination.container}
+        {...rest}
+      >
+        <Nav
+          a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
+          ref={ref}
+        >
+          <Box as="ul" {...theme.pagination.controls}>
+            {controls.map((control, index) => (
+              /* Using index as key (as opposed to a unique id) seems to
+               * help React prioritize rendering the updated controls as
+               * desired. Whereas, using a unique id resulted in rendering
+               * the active control with an undesired lag. */
+              // eslint-disable-next-line react/no-array-index-key
+              <PageControl key={index} size={size} {...control} />
+            ))}
+          </Box>
+        </Nav>
+      </StyledPaginationContainer>
+    );
 
     if (stepSelector) {
       content = (
         <Box
-          flex={false}
-          direction="row"
-          wrap
-          gap="small"
           align="center"
+          direction="row-responsive"
+          gap="small"
           justify="end"
-          stepSelectorLayoutProps
           {...rest}
         >
           <PaginationStep
@@ -220,54 +240,10 @@ const Pagination = forwardRef(
             step={step}
             onChange={({ value }) => setStep(value)}
           />
-          <StyledPaginationContainer
-            flex={false}
-            wrap
-            {...theme.pagination.container}
-            {...rest}
-          >
-            <Nav
-              a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
-              ref={ref}
-            >
-              <Box as="ul" {...theme.pagination.controls}>
-                {controls.map((control, index) => (
-                  /* Using index as key (as opposed to a unique id) seems to
-                   * help React prioritize rendering the updated controls as
-                   * desired. Whereas, using a unique id resulted in rendering
-                   * the active control with an undesired lag. */
-                  // eslint-disable-next-line react/no-array-index-key
-                  <PageControl key={index} size={size} {...control} />
-                ))}
-              </Box>
-            </Nav>
-          </StyledPaginationContainer>
+          {content}
         </Box>
       );
-    } else
-      content = (
-        <StyledPaginationContainer
-          flex={false}
-          {...theme.pagination.container}
-          {...rest}
-        >
-          <Nav
-            a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
-            ref={ref}
-          >
-            <Box as="ul" {...theme.pagination.controls}>
-              {controls.map((control, index) => (
-                /* Using index as key (as opposed to a unique id) seems to
-                 * help React prioritize rendering the updated controls as
-                 * desired. Whereas, using a unique id resulted in rendering
-                 * the active control with an undesired lag. */
-                // eslint-disable-next-line react/no-array-index-key
-                <PageControl key={index} size={size} {...control} />
-              ))}
-            </Box>
-          </Nav>
-        </StyledPaginationContainer>
-      );
+    }
 
     return content;
   },
