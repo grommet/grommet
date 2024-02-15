@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -11,6 +11,7 @@ import {
   arrayIncludes,
   getOptionIndex,
 } from '../Select/utils';
+import { MessageContext } from '../../contexts/MessageContext';
 
 const SelectMultipleValue = ({
   allOptions,
@@ -19,6 +20,7 @@ const SelectMultipleValue = ({
   disabledKey,
   dropButtonRef,
   labelKey,
+  messages,
   onRequestOpen,
   onSelectChange,
   theme,
@@ -26,6 +28,7 @@ const SelectMultipleValue = ({
   valueKey,
 }) => {
   const [showA11yDiv, setShowA11yDiv] = useState(false);
+  const { format } = useContext(MessageContext);
   const isDisabled = useDisabled(
     disabled,
     disabledKey,
@@ -68,11 +71,15 @@ const SelectMultipleValue = ({
         return (
           <SelectOption
             role="option"
-            a11yTitle={
-              optionSelected
-                ? `${optionLabel} selected`
-                : `${optionLabel} not selected`
-            }
+            a11yTitle={format({
+              id: optionSelected
+                ? 'selectMultiple.optionSelected'
+                : 'selectMultiple.optionNotSelected',
+              messages,
+              values: {
+                optionLabel,
+              },
+            })}
             aria-setsize={value.length}
             aria-posinset={valueIndex + 1}
             aria-selected={optionSelected}
@@ -168,15 +175,17 @@ const SelectMultipleValue = ({
       return undefined;
     },
     [
-      valueKey,
       allOptions,
       children,
       dropButtonRef,
+      format,
       isDisabled,
       labelKey,
+      messages,
       onSelectChange,
-      value,
       theme.selectMultiple.maxInline,
+      value,
+      valueKey,
     ],
   );
 
@@ -196,7 +205,10 @@ const SelectMultipleValue = ({
         width="100%"
         role="listbox"
         aria-multiselectable
-        a11yTitle="Selected Options"
+        a11yTitle={format({
+          id: 'selectMultiple.selectedOptions',
+          messages,
+        })}
       >
         {value &&
           allOptions
@@ -231,7 +243,13 @@ const SelectMultipleValue = ({
           <Button
             onClick={onRequestOpen}
             size="small"
-            label={`+ ${value.length - theme.selectMultiple.maxInline} more`}
+            label={format({
+              id: 'selectMultiple.showMore',
+              messages,
+              values: {
+                remaining: value.length - theme.selectMultiple.maxInline,
+              },
+            })}
           />
         </Box>
       )}

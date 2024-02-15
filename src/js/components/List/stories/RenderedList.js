@@ -32,6 +32,7 @@ export const RenderedList = () => (
           {item.location}
         </Text>
       )}
+      itemKey={(item) => (item.entry)}
     />
   </Box>
 );

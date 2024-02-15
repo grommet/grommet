@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -12,6 +12,16 @@ import { Grommet } from '../..';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { SelectMultiple } from '..';
+
+const TestOnSearch = () => {
+  const [dropOptions, setDropOptions] = useState(['a', 'b']);
+  return (
+    <SelectMultiple
+      onSearch={() => setDropOptions(['c'])}
+      options={dropOptions}
+    />
+  );
+};
 
 describe('SelectMultiple', () => {
   window.scrollTo = jest.fn();
@@ -469,5 +479,79 @@ describe('SelectMultiple', () => {
     await user.click(screen.getByRole('button', { name: /Open Drop/i }));
 
     expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('should display custom messages', async () => {
+    const user = userEvent.setup();
+    const defaultOptions = [
+      'Apple',
+      'Orange',
+      'Banana',
+      'Grape',
+      'Melon',
+      'Strawberry',
+      'Kiwi',
+      'Mango',
+      'Raspberry',
+      'Rhubarb',
+    ];
+    const Test = () => {
+      const [options, setOptions] = useState(defaultOptions);
+      const [valueMultiple, setValueMultiple] = useState([]);
+      return (
+        <Grommet>
+          <SelectMultiple
+            options={options}
+            value={valueMultiple}
+            placeholder="Select"
+            onClose={() => setOptions(defaultOptions)}
+            onChange={({ value }) => {
+              setValueMultiple(value);
+            }}
+            messages={{
+              clearAll: 'Clear ALL',
+              summarizedValue: 'Multiple Selected',
+              selected: '{selected} SELECTED',
+              selectedOfTotal: '{selected} of {total} SELECTED',
+              selectAll: 'Select ALL',
+            }}
+          />
+        </Grommet>
+      );
+    };
+    const { asFragment } = render(<Test />);
+
+    await user.click(screen.getByRole('button', { name: /Select/ }));
+    await user.click(screen.getByRole('option', { name: /Apple/i }));
+    await user.click(screen.getByRole('option', { name: /Banana/i }));
+    await user.click(screen.getByRole('option', { name: /Grape/i }));
+    expect(asFragment()).toMatchSnapshot();
+
+    await user.click(screen.getByRole('button', { name: /Clear ALL/i }));
+    expect(asFragment()).toMatchSnapshot();
+
+    await user.click(screen.getByRole('button', { name: /Select ALL/i }));
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('additional options onSearch', () => {
+    jest.useFakeTimers();
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    render(
+      <Grommet>
+        <TestOnSearch />
+      </Grommet>,
+    );
+    // open SelectMultiple
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // search for 'c'
+    fireEvent.change(screen.getByRole('searchbox'), {
+      target: { value: 'c' },
+    });
+    act(() => jest.advanceTimersByTime(200)); // wait for options to update
+    // select 'c'
+    fireEvent.click(screen.getByRole('option', { name: /c not selected/i }));
+    // expect option 'c' to be selected
+    expect(screen.queryByRole('option', { name: /c selected/ })).not.toBeNull();
   });
 });

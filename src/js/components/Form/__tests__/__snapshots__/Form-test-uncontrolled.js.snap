@@ -345,7 +345,6 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
       >
         <label
           class="c3"
-          label="test"
         >
           <div
             class="c4 c5"
@@ -1274,7 +1273,6 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       >
         <label
           class="c6"
-          label="toggle"
         >
           <div
             class="c7 c8"
@@ -1336,7 +1334,6 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
-          label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
@@ -1708,7 +1705,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       >
         <label
           class="c6"
-          label="toggle"
         >
           <div
             class="c7 c8"
@@ -1771,7 +1767,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
-          label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
@@ -2011,7 +2006,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 hhVOvb"
-          label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
@@ -3186,7 +3180,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
         <label
           class="c13"
           for="test-checkbox"
-          label="test-checkbox"
         >
           <div
             class="c14 c15"
@@ -3424,7 +3417,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
           for="test-checkbox"
-          label="test-checkbox"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"

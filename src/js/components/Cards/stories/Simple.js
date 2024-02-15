@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Notification } from 'grommet';
+import { Grid } from 'grommet';
 import { Cards } from '../Cards';
 
 const locations = [
@@ -17,10 +17,6 @@ export const Simple = () => (
     justifyContent="center"
     gap="large"
   >
-    <Notification
-      status="info"
-      message="Cards is in 'beta'. The API surface is subject to change."
-    />
     <Cards a11yTitle="Locations" data={locations} />
   </Grid>
 );

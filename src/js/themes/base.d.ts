@@ -700,6 +700,11 @@ export interface ThemeType {
     minSpeed?: number;
     baseline?: number;
   };
+  data?: {
+    button?: {
+      kind?: string;
+    };
+  };
   dateInput?: {
     container?: {
       round?: RoundType;
@@ -1071,6 +1076,7 @@ export interface ThemeType {
       pad?: PadType;
       extend?: ExtendType;
     };
+    primaryKey?: TextProps;
     icons?: {
       down?: React.ReactNode | Icon;
       up?: React.ReactNode | Icon;
@@ -1315,6 +1321,9 @@ export interface ThemeType {
     container?: {
       extend?: ExtendType;
     };
+    background?: {
+      color?: ColorType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
@@ -1407,6 +1416,7 @@ export interface ThemeType {
       color?: ColorType;
       extend?: ExtendType;
     };
+    wheel?: boolean;
     extend?: ExtendType;
   };
   rangeSelector?: {
@@ -1617,6 +1627,9 @@ export interface ThemeType {
       };
     };
     value?: TextProps;
+    icons?: {
+      remove?: React.ReactNode | Icon;
+    };
   };
   text?: {
     extend?: ExtendType;

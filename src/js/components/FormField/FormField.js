@@ -4,7 +4,6 @@ import React, {
   forwardRef,
   useContext,
   useState,
-  useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -15,6 +14,7 @@ import {
   withinDropPortal,
   PortalContext,
 } from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -156,19 +156,6 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
-const useDebounce = () => {
-  const [func, setFunc] = useState();
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-
-  useEffect(() => {
-    let timer;
-    if (func) timer = setTimeout(() => func(), theme.global.debounceDelay);
-    return () => clearTimeout(timer);
-  }, [func, theme.global.debounceDelay]);
-
-  return setFunc;
-};
-
 const FormField = forwardRef(
   (
     {
@@ -198,6 +185,7 @@ const FormField = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
+
     const {
       error,
       info,
