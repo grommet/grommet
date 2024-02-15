@@ -132,24 +132,26 @@ const TextInput = forwardRef(
     );
 
     const [suggestionsAtClose, setSuggestionsAtClose] = useState();
-    const [tipContent, setTipContent] = useState(
-      format({ id: 'input.readOnlyCopyValidation', messages }),
-    );
 
-    const copyOnClick = () => {
+    const readOnlyCopyValidation = format({
+      id: 'input.readOnlyCopy.validation',
+      messages,
+    });
+    const readOnlyCopyPrompt = format({
+      id: 'input.readOnlyCopy.prompt',
+      messages,
+    });
+
+    const [tip, setTip] = useState(readOnlyCopyPrompt);
+
+    const onClickCopy = () => {
       global.navigator.clipboard.writeText(value);
-      announce(
-        format({ id: 'input.readOnlyCopyValidation', messages }),
-        'assertive',
-      );
-      setTipContent(format({ id: 'input.readOnlyCopyValidation', messages }));
+      announce(readOnlyCopyValidation, 'assertive');
+      setTip(readOnlyCopyValidation);
     };
 
-    const copyOnBlur = () => {
-      if (
-        tipContent === format({ id: 'input.readOnlyCopyValidation', messages })
-      )
-        setTipContent(format({ id: 'input.readOnlyCopy', messages }));
+    const onBlurCopy = () => {
+      if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
     };
 
     const openDrop = useCallback(() => {
@@ -467,18 +469,15 @@ const TextInput = forwardRef(
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
 
     const CopyButton = (
-      <Tip dropProps={{ align: { bottom: 'top' } }} content={tipContent}>
+      <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
         <Button
-          onClick={copyOnClick}
+          onClick={onClickCopy}
           plain
           icon={<CopyIcon />}
           margin={reverse ? { left: 'small' } : { right: 'small' }}
-          onBlur={copyOnBlur}
-          onMouseOut={copyOnBlur}
-          aria-label={`${format({
-            id: 'input.readOnlyCopy',
-            messages,
-          })} ${value}`}
+          onBlur={onBlurCopy}
+          onMouseOut={onBlurCopy}
+          aria-label={`${readOnlyCopyPrompt} ${value}`}
         />
       </Tip>
     );
@@ -488,7 +487,6 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
-        round={theme.dateInput.container.round}
       >
         {reverse && readOnlyCopy === true && CopyButton}
         {showStyledPlaceholder && (
@@ -510,7 +508,7 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={readOnly ? undefined : icon}
+            icon={!readOnly && icon}
             reverse={reverse}
             focus={focus}
             focusIndicator={focusIndicator}
@@ -572,7 +570,7 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-        {!reverse && readOnlyCopy === true && CopyButton}
+        {!reverse && readOnlyCopy && CopyButton}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );

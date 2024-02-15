@@ -123,7 +123,16 @@ const DateInput = forwardRef(
       schema ? valueToText(value, schema) : undefined,
     );
 
-    const [tipContent, setTipContent] = useState('Copy to clipboard');
+    const readOnlyCopyValidation = formatMessage({
+      id: 'input.readOnlyCopy.validation',
+      messages,
+    });
+    const readOnlyCopyPrompt = formatMessage({
+      id: 'input.readOnlyCopy.prompt',
+      messages,
+    });
+
+    const [tip, setTip] = useState(readOnlyCopyPrompt);
 
     // Setting the icon through `inputProps` is deprecated.
     // The `icon` prop should be used instead.
@@ -255,38 +264,26 @@ Use the icon prop instead.`,
       );
     }
 
-    const copyOnClick = () => {
+    const onClickCopy = () => {
       global.navigator.clipboard.writeText(textValue);
-      announce(
-        formatMessage({ id: 'input.readOnlyCopyValidation', messages }),
-        'assertive',
-      );
-      setTipContent(
-        formatMessage({ id: 'input.readOnlyCopyValidation', messages }),
-      );
+      announce(readOnlyCopyValidation, 'assertive');
+      setTip(readOnlyCopyValidation);
     };
 
-    const copyOnBlur = () => {
-      if (
-        tipContent ===
-        formatMessage({ id: 'input.readOnlyCopyValidation', messages })
-      )
-        setTipContent(formatMessage({ id: 'input.readOnlyCopy', messages }));
+    const onBlurCopy = () => {
+      if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
     };
 
     const calendarButton = readOnlyCopy ? (
-      <Tip dropProps={{ align: { bottom: 'top' } }} content={tipContent}>
+      <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
         <Button
-          onClick={copyOnClick}
+          onClick={onClickCopy}
           plain
           icon={<CopyIcon />}
           margin={reverse ? { left: 'small' } : { right: 'small' }}
-          onBlur={copyOnBlur}
-          onMouseOut={copyOnBlur}
-          aria-label={`${formatMessage({
-            id: 'input.readOnlyCopy',
-            messages,
-          })} ${textValue}`}
+          onBlur={onBlurCopy}
+          onMouseOut={onBlurCopy}
+          aria-label={`${readOnlyCopyPrompt} ${textValue}`}
         />
       </Tip>
     ) : (
@@ -321,9 +318,7 @@ Use the icon prop instead.`,
             readOnlyProp={readOnly}
             fill
           >
-            {reverse &&
-              (readOnly !== true || readOnlyCopy === true) &&
-              calendarButton}
+            {reverse && (!readOnly || readOnlyCopy) && calendarButton}
             <MaskedInput
               readOnly={readOnly}
               ref={ref}
@@ -376,9 +371,7 @@ Use the icon prop instead.`,
                 if (onFocus) onFocus(event);
               }}
             />
-            {!reverse &&
-              (readOnly !== true || readOnlyCopy === true) &&
-              calendarButton}
+            {!reverse && (!readOnly || readOnlyCopy) && calendarButton}
           </StyledDateInputContainer>
         </Keyboard>
       </FormContext.Provider>

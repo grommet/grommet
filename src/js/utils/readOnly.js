@@ -11,7 +11,7 @@ export const readOnlyStyle = (theme) => {
   if (theme.global.input.readOnly?.background)
     styles.push(
       css`
-        background-color: ${theme.global.input.readOnly.background};
+        background: ${theme.global.input.readOnly.background};
       `,
     );
   return styles;

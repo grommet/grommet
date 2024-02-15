@@ -95,8 +95,10 @@
     }
   },
   "input": {
-    "readOnlyCopy": "Copy to clipboard",
-    "readOnlyCopyValidation": "Copied"
+    "readOnlyCopy": {
+      "prompt": "Copy to clipboard",
+      "validation": "Copied"
+    }
   },
   "menu": {
     "openMenu": "Open Menu",
