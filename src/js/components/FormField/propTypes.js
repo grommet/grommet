@@ -35,6 +35,10 @@ if (process.env.NODE_ENV !== 'production') {
             status: PropTypes.oneOf(['error', 'info']),
           }),
           PropTypes.func,
+          PropTypes.shape({
+            max: PropTypes.number,
+            threshold: PropTypes.number,
+          }),
         ]),
       ),
     ]),

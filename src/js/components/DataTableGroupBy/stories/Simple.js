@@ -1,8 +1,5 @@
 import React from 'react';
-
-import { Box, Data, DataTable, Toolbar } from 'grommet';
-
-import { DataTableGroupBy } from '../DataTableGroupBy';
+import { Box, Data, DataTable, DataTableGroupBy, Toolbar } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 // simplify option label for name property
@@ -18,7 +15,7 @@ export const Simple = () => (
       <Toolbar>
         <DataTableGroupBy options={options} />
       </Toolbar>
-      <DataTable />
+      <DataTable columns={columns} />
     </Data>
   </Box>
   // </Grommet>

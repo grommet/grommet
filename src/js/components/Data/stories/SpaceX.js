@@ -182,34 +182,30 @@ export const SpaceX = () => {
       pad="large"
       columns={[['small', 'large']]}
       justifyContent="center"
-      gap="large"
     >
-      <Box>
-        <Data
-          properties={{
-            rocket: { label: 'Rocket', options: rockets },
-            success: { label: 'Success', options: ['Successful', 'Failed'] },
-          }}
-          data={result.data}
-          total={total}
-          filteredTotal={result.filteredTotal}
-          defaultView={defaultView}
-          view={view}
-          onView={setView}
-          toolbar
-        >
-          <DataTable columns={columns} sortable />
-          {result.filteredTotal > view.step && (
-            <Footer>
-              <Text>
-                Showing {pageBounds[0]}-{pageBounds[1]} of{' '}
-                {result.filteredTotal}
-              </Text>
-              <Pagination />
-            </Footer>
-          )}
-        </Data>
-      </Box>
+      <Data
+        properties={{
+          rocket: { label: 'Rocket', options: rockets },
+          success: { label: 'Success', options: ['Successful', 'Failed'] },
+        }}
+        data={result.data}
+        total={total}
+        filteredTotal={result.filteredTotal}
+        defaultView={defaultView}
+        view={view}
+        onView={setView}
+        toolbar
+      >
+        <DataTable columns={columns} sortable />
+        {result.filteredTotal > view.step && (
+          <Footer border="top" pad={{ vertical: 'xsmall' }}>
+            <Text>
+              Showing {pageBounds[0]}-{pageBounds[1]} of {result.filteredTotal}
+            </Text>
+            <Pagination />
+          </Footer>
+        )}
+      </Data>
     </Grid>
     // </Grommet>
   );
