@@ -5,6 +5,7 @@ import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
+import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
 
 const StyledPaginationContainer = styled(Box)`
@@ -33,6 +34,7 @@ const Pagination = forwardRef(
       page: pageProp,
       size,
       step: stepProp,
+      summary,
       ...rest
     },
     ref,
@@ -199,7 +201,7 @@ const Pagination = forwardRef(
       ...navProps[control],
     }));
 
-    return (
+    let content = (
       <StyledPaginationContainer
         flex={false}
         {...theme.pagination.container}
@@ -222,6 +224,17 @@ const Pagination = forwardRef(
         </Nav>
       </StyledPaginationContainer>
     );
+
+    if (summary) {
+      content = (
+        <Box align="center" direction="row-responsive" gap="small" {...rest}>
+          <PaginationSummary page={page} step={step} numberItems={total} />
+          {content}
+        </Box>
+      );
+    }
+
+    return content;
   },
 );
 
