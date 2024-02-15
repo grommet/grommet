@@ -28,7 +28,7 @@ const tabsProps = {
 // options can either be an array of property names or an array of objects.
 // The form value always uses an array of property names.
 const optionsToValue = (options) =>
-  options.map((o) => (typeof o === 'object' && o.property) || o) || [];
+  options?.map((o) => (typeof o === 'object' && o.property) || o) || [];
 
 const optionProperty = (option) =>
   typeof option === 'object' ? option.property : option;
@@ -47,7 +47,7 @@ const alignOrder = (value, prevValue, options) =>
 
 // Content is a separate component since it might be getting its form context
 // from the DataForm rendered inside DataTableColumns.
-const Content = ({ drop, options, ...rest }) => {
+const Content = ({ drop, options = [], ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { useFormInput } = useContext(FormContext);
   const { format } = useContext(MessageContext);
