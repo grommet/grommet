@@ -7,7 +7,7 @@ export const Test = () => (
   <Box align="center" pad="large">
     <Data data={data} toolbar>
       <DataTable size="large" />
-      <Pagination stepSelector={[2, 5, 8]} summary />
+      <Pagination stepSelector summary />
     </Data>
   </Box>
 );

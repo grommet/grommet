@@ -59,6 +59,14 @@ const Pagination = forwardRef(
       Math.min(page, totalPages) || 1,
     );
 
+    // if type of stepSelector is boolean use default values otherwise use
+    // what user passed in
+    // maybe add more options for more than 500, 1000
+    let stepSelectorOptions;
+    if (typeof stepSelector !== 'boolean') {
+      stepSelectorOptions = stepSelector;
+    } else stepSelectorOptions = [10, 25, 50, 100];
+
     useEffect(() => {
       setActivePage(page);
       const pageEvent = new Event('pagechange');
@@ -237,7 +245,7 @@ const Pagination = forwardRef(
       content = (
         <ParentBox justify="end">
           <PaginationStep
-            options={stepSelector}
+            options={stepSelectorOptions}
             step={step}
             onChange={({ value }) => setStep(value)}
           />
@@ -260,7 +268,7 @@ const Pagination = forwardRef(
         <ParentBox>
           <PaginationSummary page={page} step={step} numberItems={total} />
           <PaginationStep
-            options={stepSelector}
+            options={stepSelectorOptions}
             step={step}
             onChange={({ value }) => setStep(value)}
           />
