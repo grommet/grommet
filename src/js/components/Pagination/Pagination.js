@@ -6,6 +6,7 @@ import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
 import { PaginationStep } from './PaginationStep';
+import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
 
 const StyledPaginationContainer = styled(Box)`
@@ -21,6 +22,12 @@ const getPageIndices = (begin, end) => {
   return indices;
 };
 
+const ParentBox = ({ children }) => (
+  <Box align="center" direction="row-responsive" gap="small">
+    {children}
+  </Box>
+);
+
 const Pagination = forwardRef(
   (
     {
@@ -35,6 +42,7 @@ const Pagination = forwardRef(
       size,
       step: stepProp,
       stepSelector,
+      summary,
       ...rest
     },
     ref,
@@ -204,7 +212,6 @@ const Pagination = forwardRef(
     let content = (
       <StyledPaginationContainer
         flex={false}
-        wrap
         {...theme.pagination.container}
         {...rest}
       >
@@ -226,22 +233,39 @@ const Pagination = forwardRef(
       </StyledPaginationContainer>
     );
 
-    if (stepSelector) {
+    if (stepSelector && !summary) {
       content = (
-        <Box
-          align="center"
-          direction="row-responsive"
-          gap="small"
-          justify="end"
-          {...rest}
-        >
+        <ParentBox justify="end">
           <PaginationStep
             options={stepSelector}
             step={step}
             onChange={({ value }) => setStep(value)}
           />
           {content}
-        </Box>
+        </ParentBox>
+      );
+    }
+
+    if (summary && !stepSelector) {
+      content = (
+        <ParentBox>
+          <PaginationSummary page={page} step={step} numberItems={total} />
+          {content}
+        </ParentBox>
+      );
+    }
+
+    if (summary && stepSelector) {
+      content = (
+        <ParentBox>
+          <PaginationSummary page={page} step={step} numberItems={total} />
+          <PaginationStep
+            options={stepSelector}
+            step={step}
+            onChange={({ value }) => setStep(value)}
+          />
+          {content}
+        </ParentBox>
       );
     }
 

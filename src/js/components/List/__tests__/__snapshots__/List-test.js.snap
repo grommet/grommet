@@ -4336,9 +4336,6 @@ exports[`List events should apply pagination styling 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .c8 {
@@ -5498,9 +5495,6 @@ exports[`List events should paginate 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .c8 {
@@ -6503,9 +6497,6 @@ exports[`List events should render correct num items per page (step) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .c8 {
@@ -7398,9 +7389,6 @@ exports[`List events should render new data when page changes 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .c8 {
@@ -11820,7 +11808,7 @@ exports[`List events should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jerLXD"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 iIrWqI Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 ljtiDv Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -12070,9 +12058,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .c8 {
@@ -13075,9 +13060,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .c8 {
