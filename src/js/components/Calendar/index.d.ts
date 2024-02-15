@@ -50,6 +50,7 @@ export interface CalendarProps {
   reference?: string;
   showAdjacentDays?: boolean | 'trim';
   size?: 'small' | 'medium' | 'large' | string;
+  simpleSelection?: boolean;
 }
 
 export interface CalendarExtendedProps
