@@ -111,6 +111,18 @@ if (process.env.NODE_ENV !== 'production') {
           invalid: _propTypes["default"].string,
           required: _propTypes["default"].string
         }),
+        formField: _propTypes["default"].shape({
+          maxCharacters: _propTypes["default"].shape({
+            remaining: _propTypes["default"].shape({
+              singular: _propTypes["default"].string,
+              plural: _propTypes["default"].string
+            }),
+            overLimit: _propTypes["default"].shape({
+              singular: _propTypes["default"].string,
+              plural: _propTypes["default"].string
+            })
+          })
+        }),
         menu: _propTypes["default"].shape({
           openMenu: _propTypes["default"].string,
           closeMenu: _propTypes["default"].string

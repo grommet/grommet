@@ -13,6 +13,7 @@ var defaultValidationResults = {
   errors: {},
   infos: {}
 };
+var defaultThreshold = 0.5;
 var stringToArray = function stringToArray(string) {
   var match = string == null ? void 0 : string.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
   if (match) {
@@ -72,6 +73,36 @@ var setFieldValue = function setFieldValue(name, componentValue, prevValue) {
   }
   return nextValue;
 };
+var validateCharacterCount = function validateCharacterCount(format, rule, value) {
+  var max = rule.max,
+    threshold = rule.threshold;
+  var getMessage = function getMessage() {
+    var charactersRemaining = function charactersRemaining(plural) {
+      return {
+        id: "formField.maxCharacters.remaining." + (plural ? 'plural' : 'singular'),
+        values: {
+          number: max - value.length
+        }
+      };
+    };
+    var charactersOverLimit = function charactersOverLimit(plural) {
+      return {
+        id: "formField.maxCharacters.overLimit." + (plural ? 'plural' : 'singular'),
+        values: {
+          number: value.length - max
+        }
+      };
+    };
+    if (max - value.length >= 0) {
+      return format(charactersRemaining(max - value.length > 1));
+    }
+    return format(charactersOverLimit(value.length - max > 1));
+  };
+  return value.length / max > (threshold != null ? threshold : defaultThreshold) ? {
+    status: max - value.length >= 0 ? 'info' : 'error',
+    message: getMessage()
+  } : undefined;
+};
 
 // Apply validation rule to field value and send correct messaging.
 var validate = function validate(rule, fieldValue, formValue, format, messages) {
@@ -91,6 +122,8 @@ var validate = function validate(rule, fieldValue, formValue, format, messages) 
         };
       }
     }
+  } else if (rule.max) {
+    result = validateCharacterCount(format, rule, fieldValue);
   }
   return result;
 };
