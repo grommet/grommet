@@ -15,7 +15,6 @@ export const ReadOnly = () => (
       <DateInput
         value="02/11/2024"
         aria-label="read only copy"
-        readOnly
         readOnlyCopy
         format="mm/dd/yyyy"
       />

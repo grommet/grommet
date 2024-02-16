@@ -70,7 +70,7 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       plain,
-      readOnly,
+      readOnly: readOnlyProp,
       readOnlyCopy,
       reverse: reverseProp = false,
       value: valueArg,
@@ -89,6 +89,7 @@ const DateInput = forwardRef(
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
+    const readOnly = readOnlyProp || readOnlyCopy;
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
@@ -274,7 +275,7 @@ Use the icon prop instead.`,
       if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
     };
 
-    const calendarButton = readOnlyCopy ? (
+    const DateInputButton = readOnlyCopy ? (
       <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
         <Button
           onClick={onClickCopy}
@@ -315,10 +316,11 @@ Use the icon prop instead.`,
             border={!plain}
             round={theme.dateInput.container.round}
             direction="row"
+            // readOnly prop shouldn't get passed to the dom here
             readOnlyProp={readOnly}
             fill
           >
-            {reverse && (!readOnly || readOnlyCopy) && calendarButton}
+            {reverse && (!readOnly || readOnlyCopy) && DateInputButton}
             <MaskedInput
               readOnly={readOnly}
               ref={ref}
@@ -371,7 +373,7 @@ Use the icon prop instead.`,
                 if (onFocus) onFocus(event);
               }}
             />
-            {!reverse && (!readOnly || readOnlyCopy) && calendarButton}
+            {!reverse && (!readOnly || readOnlyCopy) && DateInputButton}
           </StyledDateInputContainer>
         </Keyboard>
       </FormContext.Provider>

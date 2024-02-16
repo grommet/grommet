@@ -94,7 +94,7 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
-      readOnly,
+      readOnly: readOnlyProp,
       readOnlyCopy,
       reverse,
       suggestions,
@@ -112,6 +112,7 @@ const TextInput = forwardRef(
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
     const suggestionsRef = useRef();
+    const readOnly = readOnlyProp || readOnlyCopy;
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
     const [value, setValue] = formContext.useFormInput({
