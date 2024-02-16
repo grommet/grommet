@@ -12,10 +12,11 @@ export const Steps = () => (
     </Box>
     <Box fill="horizontal">
       <Text>custom steps</Text>
-      <Pagination numberItems={237} stepSelector={[10, 20, 30]} summary />
+      <Text>if we use bigger numbers not enough space</Text>
+      <Pagination numberItems={237} stepSelector={[10, 20, 30, 1000]} summary />
     </Box>
     <Box fill="horizontal">
-      <Text> stepSelector</Text>
+      <Text> stepSelector as boolean</Text>
       <Pagination numberItems={237} stepSelector />
     </Box>
   </Box>
