@@ -2309,6 +2309,13 @@ exports[`Components loads 1`] = `
           },
           "controls": {
             "align": "center",
+            "container": {
+              "border": "top",
+              "pad": {
+                "horizontal": "small",
+                "vertical": "xsmall",
+              },
+            },
             "direction": "row",
             "gap": "xxsmall",
             "margin": "none",
@@ -4298,6 +4305,13 @@ exports[`Components loads 1`] = `
           },
           "controls": {
             "align": "center",
+            "container": {
+              "border": "top",
+              "pad": {
+                "horizontal": "small",
+                "vertical": "xsmall",
+              },
+            },
             "direction": "row",
             "gap": "xxsmall",
             "margin": "none",

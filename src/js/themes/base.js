@@ -1533,6 +1533,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'xxsmall',
         margin: 'none',
         pad: 'none',
+        container: {
+          border: 'top',
+          pad: { vertical: 'xsmall', horizontal: 'small' },
+        },
       },
       icons: {
         // color: undefined,

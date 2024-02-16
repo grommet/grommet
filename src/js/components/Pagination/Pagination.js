@@ -22,12 +22,6 @@ const getPageIndices = (begin, end) => {
   return indices;
 };
 
-const ParentBox = ({ children }) => (
-  <Box align="center" direction="row-responsive" gap="small">
-    {children}
-  </Box>
-);
-
 const Pagination = forwardRef(
   (
     {
@@ -58,14 +52,6 @@ const Pagination = forwardRef(
     const [activePage, setActivePage] = useState(
       Math.min(page, totalPages) || 1,
     );
-
-    // if type of stepSelector is boolean use default values otherwise use
-    // what user passed in
-    // maybe add more options for more than 500, 1000
-    let stepSelectorOptions;
-    if (typeof stepSelector !== 'boolean') {
-      stepSelectorOptions = stepSelector;
-    } else stepSelectorOptions = [10, 25, 50, 100];
 
     useEffect(() => {
       setActivePage(page);
@@ -217,9 +203,12 @@ const Pagination = forwardRef(
       ...navProps[control],
     }));
 
-    let content = (
+    const paginationControls = (
       <StyledPaginationContainer
         flex={false}
+        // TO DO this is no longer the "outer container" when
+        // summary/stepSelector is used. is that okay?
+        // should it be?
         {...theme.pagination.container}
         {...rest}
       >
@@ -241,43 +230,56 @@ const Pagination = forwardRef(
       </StyledPaginationContainer>
     );
 
-    if (stepSelector && !summary) {
-      content = (
-        <ParentBox justify="end">
-          <PaginationStep
-            options={stepSelectorOptions}
-            step={step}
-            onChange={({ value }) => setStep(value)}
-          />
-          {content}
-        </ParentBox>
-      );
-    }
+    // for backwards compatibility
+    if (!summary && !stepSelector) return paginationControls;
 
-    if (summary && !stepSelector) {
-      content = (
-        <ParentBox>
+    return (
+      <Box
+        direction="row"
+        align="center"
+        justify="between"
+        style={{ columnGap: '12px', rowGap: '6px' }}
+        wrap
+        // TODO controls in theme is already used as well as
+        // container what would we call this?
+        {...theme.pagination?.controls?.container}
+        // TO DO how would someone add rest to this entire container?
+      >
+        {/*  LEAVE FOR DEMO PURPOSES 
+          <StyledPaginationContainer
+          // TO DO, we should likely expose ability to theme this container
+          // and I'm wondering if theme.pagination.container should apply here
+          // when summary/stepSelector are present?
+          border="top" // theme?
+          pad={{ vertical: 'xsmall', horizontal: 'small' }} // theme?
+          direction="row"
+          align="center"
+          justify="between"
+          style={{ columnGap: '12px', rowGap: '6px' }}
+          wrap
+          flex={false}
+          {...theme.pagination.container}
+          {...rest}
+        > */}
+        {summary ? (
           <PaginationSummary page={page} step={step} numberItems={total} />
-          {content}
-        </ParentBox>
-      );
-    }
-
-    if (summary && stepSelector) {
-      content = (
-        <ParentBox>
-          <PaginationSummary page={page} step={step} numberItems={total} />
-          <PaginationStep
-            options={stepSelectorOptions}
-            step={step}
-            onChange={({ value }) => setStep(value)}
-          />
-          {content}
-        </ParentBox>
-      );
-    }
-
-    return content;
+        ) : undefined}
+        {stepSelector ? (
+          <Box
+            flex={!summary ? 'grow' : undefined}
+            align={!summary ? 'end' : undefined}
+          >
+            <PaginationStep
+              options={Array.isArray(stepSelector) ? stepSelector : undefined}
+              step={step}
+              onChange={({ value }) => setStep(value)}
+            />
+          </Box>
+        ) : undefined}
+        {paginationControls}
+        {/* </StyledPaginationContainer> */}
+      </Box>
+    );
   },
 );
 
