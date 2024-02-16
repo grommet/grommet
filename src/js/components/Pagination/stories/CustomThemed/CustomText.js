@@ -2,8 +2,6 @@ import React from 'react';
 
 import { Box, Grommet, Pagination, Text } from 'grommet';
 
-// Type annotations can only be used in TypeScript files.
-// Remove ': ThemeType' if you are not using Typescript.
 const customTheme = {
   pagination: {
     container: {

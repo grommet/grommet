@@ -240,16 +240,15 @@ const Pagination = forwardRef(
         justify="between"
         style={{ columnGap: '12px', rowGap: '6px' }}
         wrap
-        // TODO controls in theme is already used as well as
-        // container what would we call this?
+        // theme.pagination.container should apply here
+        // when summary/stepSelector are present?
+        // TODO pagination.controls in theme is already used as well as
+        // well as pagination.container what would we call this?
         {...theme.pagination?.controls?.container}
         // TO DO how would someone add rest to this entire container?
       >
         {/*  LEAVE FOR DEMO PURPOSES 
           <StyledPaginationContainer
-          // TO DO, we should likely expose ability to theme this container
-          // and I'm wondering if theme.pagination.container should apply here
-          // when summary/stepSelector are present?
           border="top" // theme?
           pad={{ vertical: 'xsmall', horizontal: 'small' }} // theme?
           direction="row"
