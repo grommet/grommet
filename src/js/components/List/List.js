@@ -309,7 +309,10 @@ const List = React.forwardRef(
       <Container {...containterProps}>
         <Keyboard
           onEnter={onSelectOption}
-          onSpace={onSelectOption}
+          onSpace={(event) => {
+            event.preventDefault();
+            onSelectOption(event);
+          }}
           onUp={
             (onClickItem || onOrder) && active
               ? () => {
