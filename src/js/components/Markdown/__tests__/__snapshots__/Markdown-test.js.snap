@@ -49,7 +49,7 @@ exports[`Markdown renders 1`] = `
   max-width: 432px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -72,6 +72,10 @@ exports[`Markdown renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
@@ -79,15 +83,7 @@ exports[`Markdown renders 1`] = `
   text-decoration: underline;
 }
 
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -100,7 +96,7 @@ exports[`Markdown renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -112,7 +108,7 @@ exports[`Markdown renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -190,11 +186,7 @@ exports[`Markdown renders 1`] = `
         class="c6"
         href="#"
       >
-        <span
-          class="c7"
-        >
-          a link
-        </span>
+        a link
       </a>
     </p>
     <blockquote>
@@ -215,7 +207,7 @@ exports[`Markdown renders 1`] = `
       />
     </p>
     <table
-      class="c8"
+      class="c7"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4"
@@ -224,28 +216,28 @@ exports[`Markdown renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c9"
+            class="c8"
           >
             <div
-              class="c10"
+              class="c9"
             >
               Markdown
             </div>
           </td>
           <td
-            class="c9"
+            class="c8"
           >
             <div
-              class="c10"
+              class="c9"
             >
               Less
             </div>
           </td>
           <td
-            class="c9"
+            class="c8"
           >
             <div
-              class="c10"
+              class="c9"
             >
               Pretty
             </div>
@@ -259,21 +251,21 @@ exports[`Markdown renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c11"
+            class="c10"
           >
             <em>
               Still
             </em>
           </td>
           <td
-            class="c11"
+            class="c10"
           >
             <code>
               renders
             </code>
           </td>
           <td
-            class="c11"
+            class="c10"
           >
             <strong>
               nicely
@@ -284,17 +276,17 @@ exports[`Markdown renders 1`] = `
           class="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            class="c11"
+            class="c10"
           >
             1
           </td>
           <td
-            class="c11"
+            class="c10"
           >
             2
           </td>
           <td
-            class="c11"
+            class="c10"
           >
             3
           </td>
@@ -387,6 +379,10 @@ exports[`wrapper 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c8:hover {
@@ -394,15 +390,7 @@ exports[`wrapper 1`] = `
   text-decoration: underline;
 }
 
-.c9 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -415,7 +403,7 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -427,7 +415,7 @@ exports[`wrapper 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c9 {
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
@@ -529,11 +517,7 @@ exports[`wrapper 1`] = `
           class="c8"
           href="#"
         >
-          <span
-            class="c9"
-          >
-            a link
-          </span>
+          a link
         </a>
       </p>
       <div
@@ -563,7 +547,7 @@ exports[`wrapper 1`] = `
         class="c3"
       />
       <table
-        class="c10"
+        class="c9"
       >
         <thead
           class="StyledTable__StyledTableHeader-sc-1m3u5g-4"
@@ -572,7 +556,7 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c11"
+              class="c10"
             >
               <div
                 class="c1"
@@ -581,7 +565,7 @@ exports[`wrapper 1`] = `
               </div>
             </td>
             <td
-              class="c11"
+              class="c10"
             >
               <div
                 class="c1"
@@ -590,7 +574,7 @@ exports[`wrapper 1`] = `
               </div>
             </td>
             <td
-              class="c11"
+              class="c10"
             >
               <div
                 class="c1"
@@ -607,21 +591,21 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c12"
+              class="c11"
             >
               <em>
                 Still
               </em>
             </td>
             <td
-              class="c12"
+              class="c11"
             >
               <code>
                 renders
               </code>
             </td>
             <td
-              class="c12"
+              class="c11"
             >
               <strong>
                 nicely
@@ -632,17 +616,17 @@ exports[`wrapper 1`] = `
             class="StyledTable__StyledTableRow-sc-1m3u5g-2"
           >
             <td
-              class="c12"
+              class="c11"
             >
               1
             </td>
             <td
-              class="c12"
+              class="c11"
             >
               2
             </td>
             <td
-              class="c12"
+              class="c11"
             >
               3
             </td>

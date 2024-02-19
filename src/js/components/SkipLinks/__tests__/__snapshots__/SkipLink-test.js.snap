@@ -10,19 +10,15 @@ exports[`SkipLink basic 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c0 {
@@ -63,11 +59,7 @@ exports[`SkipLink basic 1`] = `
       class="c1 c2"
       id="main"
       tabindex="-1"
-    >
-      <span
-        class="c3"
-      />
-    </a>
+    />
     Main Content
     <input
       type="text"
@@ -80,11 +72,7 @@ exports[`SkipLink basic 1`] = `
       class="c1 c2"
       id="footer"
       tabindex="-1"
-    >
-      <span
-        class="c3"
-      />
-    </a>
+    />
     <input
       type="text"
       value="footer"
@@ -100,14 +88,10 @@ exports[`SkipLink basic 2`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 ktWFMi SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
+      class="StyledAnchor-sc-1rp7lwl-0 kErQhs SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
       id="main"
       tabindex="-1"
-    >
-      <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
-      />
-    </a>
+    />
     Main Content
     <input
       type="text"
@@ -117,14 +101,10 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 ktWFMi SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
+      class="StyledAnchor-sc-1rp7lwl-0 kErQhs SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
       id="footer"
       tabindex="-1"
-    >
-      <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
-      />
-    </a>
+    />
     <input
       type="text"
       value="footer"
@@ -140,14 +120,10 @@ exports[`SkipLink basic 3`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 ktWFMi SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
+      class="StyledAnchor-sc-1rp7lwl-0 kErQhs SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
       id="main"
       tabindex="-1"
-    >
-      <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
-      />
-    </a>
+    />
     Main Content
     <input
       type="text"
@@ -157,14 +133,10 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 ktWFMi SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
+      class="StyledAnchor-sc-1rp7lwl-0 kErQhs SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
       id="footer"
       tabindex="-1"
-    >
-      <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
-      />
-    </a>
+    />
     <input
       type="text"
       value="footer"
@@ -183,19 +155,15 @@ exports[`SkipLink should allow for single skip link 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c0 {
@@ -232,11 +200,7 @@ exports[`SkipLink should allow for single skip link 1`] = `
       class="c1 c2"
       id="main"
       tabindex="-1"
-    >
-      <span
-        class="c3"
-      />
-    </a>
+    />
     Main Content
     <input
       type="text"
@@ -259,14 +223,10 @@ exports[`SkipLink should allow for single skip link 2`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 ktWFMi SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
+      class="StyledAnchor-sc-1rp7lwl-0 kErQhs SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
       id="main"
       tabindex="-1"
-    >
-      <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
-      />
-    </a>
+    />
     Main Content
     <input
       type="text"
@@ -289,14 +249,10 @@ exports[`SkipLink should allow for single skip link 3`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 ktWFMi SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
+      class="StyledAnchor-sc-1rp7lwl-0 kErQhs SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 itnbsD"
       id="main"
       tabindex="-1"
-    >
-      <span
-        class="StyledAnchor__InlineBox-sc-1rp7lwl-1 gyVWgF"
-      />
-    </a>
+    />
     Main Content
     <input
       type="text"

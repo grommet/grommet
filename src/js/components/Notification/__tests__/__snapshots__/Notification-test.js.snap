@@ -558,19 +558,15 @@ exports[`Notification multi actions 1`] = `
   text-decoration: none;
   cursor: pointer;
   margin-right: 6px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c9:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c11 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c0 {
@@ -668,22 +664,14 @@ exports[`Notification multi actions 1`] = `
               class="c9 c10"
               href="/some-link"
             >
-              <span
-                class="c11"
-              >
-                Renew Subscription
-              </span>
+              Renew Subscription
             </a>
              
             <a
               class="c9 c10"
               href="/link"
             >
-              <span
-                class="c11"
-              >
-                View More
-              </span>
+              View More
             </a>
              
           </p>

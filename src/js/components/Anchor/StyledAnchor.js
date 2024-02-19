@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 import { focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
-import { Box } from '../Box';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -80,14 +79,10 @@ const StyledAnchor = styled.a.withConfig({
   ${(props) => props.disabled && disabledStyle}
   ${(props) => props.focus && focusStyle()}
   ${(props) => props.theme.anchor.extend}
+  display: inline-flex;
 `;
 
 StyledAnchor.defaultProps = {};
 Object.setPrototypeOf(StyledAnchor.defaultProps, defaultProps);
 
-const InlineBox = styled(Box)`
-  display: inline-flex;
-  vertical-align: bottom;
-`;
-
-export { StyledAnchor, InlineBox };
+export { StyledAnchor };

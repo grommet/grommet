@@ -3592,8 +3592,8 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: NaNxsmall;
-  height: NaNxsmall;
+  width: NaNpx;
+  height: NaNpx;
   fill: #666666;
   stroke: #666666;
 }

@@ -73,19 +73,15 @@ exports[`FileInput accept 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -204,11 +200,7 @@ exports[`FileInput accept 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -290,19 +282,15 @@ exports[`FileInput background 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -420,11 +408,7 @@ exports[`FileInput background 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -504,19 +488,15 @@ exports[`FileInput basic 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -634,11 +614,7 @@ exports[`FileInput basic 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -718,19 +694,15 @@ exports[`FileInput border 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -848,11 +820,7 @@ exports[`FileInput border 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -932,19 +900,15 @@ exports[`FileInput custom theme input font size 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1061,11 +1025,7 @@ exports[`FileInput custom theme input font size 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -1145,19 +1105,15 @@ exports[`FileInput disabled 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1278,11 +1234,7 @@ exports[`FileInput disabled 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -1363,19 +1315,15 @@ exports[`FileInput margin 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1499,11 +1447,7 @@ exports[`FileInput margin 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -1583,19 +1527,15 @@ exports[`FileInput maxSize 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1713,11 +1653,7 @@ exports[`FileInput maxSize 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -1797,19 +1733,15 @@ exports[`FileInput messages 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -1927,11 +1859,7 @@ exports[`FileInput messages 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          test browse
-        </span>
+        test browse
       </a>
     </div>
   </div>
@@ -2011,19 +1939,15 @@ exports[`FileInput multiple 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -2142,11 +2066,7 @@ exports[`FileInput multiple 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -2226,19 +2146,15 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -2357,11 +2273,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -2441,19 +2353,15 @@ exports[`FileInput multiple max 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -2572,11 +2480,7 @@ exports[`FileInput multiple max 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>
@@ -2657,19 +2561,15 @@ exports[`FileInput pad 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-.c7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
 }
 
 .c5 {
@@ -2793,11 +2693,7 @@ exports[`FileInput pad 1`] = `
         class="c6"
         tabindex="-1"
       >
-        <span
-          class="c7"
-        >
-          browse
-        </span>
+        browse
       </a>
     </div>
   </div>

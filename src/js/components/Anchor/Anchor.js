@@ -14,7 +14,7 @@ import { findButtonParent, normalizeColor, useSizedIcon } from '../../utils';
 
 import { Box } from '../Box';
 
-import { StyledAnchor, InlineBox } from './StyledAnchor';
+import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { TextContext } from '../Text/TextContext';
@@ -119,9 +119,7 @@ const Anchor = forwardRef(
             {second}
           </Box>
         ) : (
-          <InlineBox as="span" responsive={false}>
-            {first || second || children}
-          </InlineBox>
+          first || second || children
         )}
       </StyledAnchor>
     );

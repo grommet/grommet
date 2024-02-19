@@ -58,7 +58,7 @@ exports[`PageHeader basic 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -73,7 +73,7 @@ exports[`PageHeader basic 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -88,7 +88,7 @@ exports[`PageHeader basic 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -116,6 +116,10 @@ exports[`PageHeader basic 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -123,12 +127,326 @@ exports[`PageHeader basic 1`] = `
   text-decoration: underline;
 }
 
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c10:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: none;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  grid-template-areas: "parent parent" "title actions" "subtitle actions";
+  grid-template-columns: minmax(192px,1fr) auto;
+  grid-gap: 6px 48px;
+  grid-template-rows: auto auto auto;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-top: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: none;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <a
+            class="c4"
+          >
+            Parent Page
+          </a>
+        </div>
+        <div
+          class="c5"
+        >
+          <h1
+            class="c6"
+          >
+            Grommet
+          </h1>
+        </div>
+        <div
+          class="c7"
+        >
+          <p
+            class="c8"
+          >
+            Grommet helps you build responsive and accessible 
+          mobile-first projects for the web with an easy to use component 
+          library.
+          </p>
+        </div>
+        <div
+          class="c9"
+        >
+          <button
+            class="c10"
+            type="button"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PageHeader custom theme 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: parent;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: title;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: subtitle;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: actions;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  vertical-align: bottom;
+}
+
+.c4:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c11 {
@@ -203,7 +521,7 @@ exports[`PageHeader basic 1`] = `
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 50px;
   line-height: 56px;
@@ -220,339 +538,9 @@ exports[`PageHeader basic 1`] = `
   grid-template-columns: minmax(192px,1fr) auto;
   grid-gap: 6px 48px;
   grid-template-rows: auto auto auto;
-}
-
-.c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding-top: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding-bottom: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: none;
-  }
-}
-
-<div
-    class="c0"
-  >
-    <header
-      class="c1"
-    >
-      <div
-        class="c2"
-      >
-        <div
-          class="c3"
-        >
-          <a
-            class="c4"
-          >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
-          </a>
-        </div>
-        <div
-          class="c6"
-        >
-          <h1
-            class="c7"
-          >
-            Grommet
-          </h1>
-        </div>
-        <div
-          class="c8"
-        >
-          <p
-            class="c9"
-          >
-            Grommet helps you build responsive and accessible 
-          mobile-first projects for the web with an easy to use component 
-          library.
-          </p>
-        </div>
-        <div
-          class="c10"
-        >
-          <button
-            class="c11"
-            type="button"
-          >
-            Get Started
-          </button>
-        </div>
-      </div>
-    </header>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`PageHeader custom theme 1`] = `
-<DocumentFragment>
-  .c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding-top: 48px;
-  padding-bottom: 24px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  grid-area: parent;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  grid-area: title;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  grid-area: subtitle;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  grid-area: actions;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
-  box-sizing: border-box;
-  font-size: inherit;
-  line-height: inherit;
-  color: #7D4CDB;
-  font-weight: 600;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.c4:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c12:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c7 {
-  margin: 0px;
-  font-size: 50px;
-  line-height: 56px;
-  max-width: none;
-  font-weight: 600;
-  overflow-wrap: break-word;
-}
-
-.c2 {
-  display: grid;
-  box-sizing: border-box;
-  width: 100%;
-  grid-template-areas: "parent parent" "title actions" "subtitle actions";
-  grid-template-columns: minmax(192px,1fr) auto;
-  grid-gap: 6px 48px;
-  grid-template-rows: auto auto auto;
-}
-
-.c9 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -572,13 +560,13 @@ exports[`PageHeader custom theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 34px;
     line-height: 40px;
     max-width: none;
@@ -600,39 +588,35 @@ exports[`PageHeader custom theme 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Settings
-            </span>
+            Settings
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h1
-            class="c7"
+            class="c6"
           >
             Permissions
           </h1>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             View and assign permissions.
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <div
-            class="c11"
+            class="c10"
           >
             <button
-              class="c12"
+              class="c11"
               type="button"
             >
               Edit
@@ -703,7 +687,7 @@ exports[`PageHeader level - 1 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -718,7 +702,7 @@ exports[`PageHeader level - 1 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -733,7 +717,7 @@ exports[`PageHeader level - 1 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -761,6 +745,10 @@ exports[`PageHeader level - 1 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -768,15 +756,7 @@ exports[`PageHeader level - 1 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -804,51 +784,51 @@ exports[`PageHeader level - 1 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 50px;
   line-height: 56px;
@@ -867,7 +847,7 @@ exports[`PageHeader level - 1 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -887,13 +867,13 @@ exports[`PageHeader level - 1 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 34px;
     line-height: 40px;
     max-width: none;
@@ -915,27 +895,23 @@ exports[`PageHeader level - 1 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h1
-            class="c7"
+            class="c6"
           >
             Grommet
           </h1>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -943,10 +919,10 @@ exports[`PageHeader level - 1 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -1016,7 +992,7 @@ exports[`PageHeader level - 1 2`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1031,7 +1007,7 @@ exports[`PageHeader level - 1 2`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1046,7 +1022,7 @@ exports[`PageHeader level - 1 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1074,6 +1050,10 @@ exports[`PageHeader level - 1 2`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -1081,15 +1061,7 @@ exports[`PageHeader level - 1 2`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1117,51 +1089,51 @@ exports[`PageHeader level - 1 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 50px;
   line-height: 56px;
@@ -1180,7 +1152,7 @@ exports[`PageHeader level - 1 2`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1200,13 +1172,13 @@ exports[`PageHeader level - 1 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 34px;
     line-height: 40px;
     max-width: none;
@@ -1228,27 +1200,23 @@ exports[`PageHeader level - 1 2`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h1
-            class="c7"
+            class="c6"
           >
             Grommet
           </h1>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -1256,10 +1224,10 @@ exports[`PageHeader level - 1 2`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -1329,7 +1297,7 @@ exports[`PageHeader level - 2 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1344,7 +1312,7 @@ exports[`PageHeader level - 2 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1359,7 +1327,7 @@ exports[`PageHeader level - 2 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1387,6 +1355,10 @@ exports[`PageHeader level - 2 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -1394,15 +1366,7 @@ exports[`PageHeader level - 2 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1430,51 +1394,51 @@ exports[`PageHeader level - 2 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 34px;
   line-height: 40px;
@@ -1493,7 +1457,7 @@ exports[`PageHeader level - 2 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1513,13 +1477,13 @@ exports[`PageHeader level - 2 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 26px;
     line-height: 32px;
     max-width: none;
@@ -1541,27 +1505,23 @@ exports[`PageHeader level - 2 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h2
-            class="c7"
+            class="c6"
           >
             Grommet
           </h2>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -1569,10 +1529,10 @@ exports[`PageHeader level - 2 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -1642,7 +1602,7 @@ exports[`PageHeader level - 2 2`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1657,7 +1617,7 @@ exports[`PageHeader level - 2 2`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1672,7 +1632,7 @@ exports[`PageHeader level - 2 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1700,6 +1660,10 @@ exports[`PageHeader level - 2 2`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -1707,15 +1671,7 @@ exports[`PageHeader level - 2 2`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1743,51 +1699,51 @@ exports[`PageHeader level - 2 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 34px;
   line-height: 40px;
@@ -1806,7 +1762,7 @@ exports[`PageHeader level - 2 2`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1826,13 +1782,13 @@ exports[`PageHeader level - 2 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 26px;
     line-height: 32px;
     max-width: none;
@@ -1854,27 +1810,23 @@ exports[`PageHeader level - 2 2`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h2
-            class="c7"
+            class="c6"
           >
             Grommet
           </h2>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -1882,10 +1834,10 @@ exports[`PageHeader level - 2 2`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -1955,7 +1907,7 @@ exports[`PageHeader level - 3 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1970,7 +1922,7 @@ exports[`PageHeader level - 3 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1985,7 +1937,7 @@ exports[`PageHeader level - 3 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2013,6 +1965,10 @@ exports[`PageHeader level - 3 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -2020,15 +1976,7 @@ exports[`PageHeader level - 3 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2056,51 +2004,51 @@ exports[`PageHeader level - 3 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -2119,7 +2067,7 @@ exports[`PageHeader level - 3 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2139,13 +2087,13 @@ exports[`PageHeader level - 3 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 18px;
     line-height: 24px;
     max-width: none;
@@ -2167,27 +2115,23 @@ exports[`PageHeader level - 3 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h3
-            class="c7"
+            class="c6"
           >
             Grommet
           </h3>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -2195,10 +2139,10 @@ exports[`PageHeader level - 3 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -2268,7 +2212,7 @@ exports[`PageHeader level - 3 2`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2283,7 +2227,7 @@ exports[`PageHeader level - 3 2`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2298,7 +2242,7 @@ exports[`PageHeader level - 3 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2326,6 +2270,10 @@ exports[`PageHeader level - 3 2`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -2333,15 +2281,7 @@ exports[`PageHeader level - 3 2`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2369,51 +2309,51 @@ exports[`PageHeader level - 3 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 26px;
   line-height: 32px;
@@ -2432,7 +2372,7 @@ exports[`PageHeader level - 3 2`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2452,13 +2392,13 @@ exports[`PageHeader level - 3 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 18px;
     line-height: 24px;
     max-width: none;
@@ -2480,27 +2420,23 @@ exports[`PageHeader level - 3 2`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h3
-            class="c7"
+            class="c6"
           >
             Grommet
           </h3>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -2508,10 +2444,10 @@ exports[`PageHeader level - 3 2`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -2581,7 +2517,7 @@ exports[`PageHeader level - 4 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2596,7 +2532,7 @@ exports[`PageHeader level - 4 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2611,7 +2547,7 @@ exports[`PageHeader level - 4 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2639,6 +2575,10 @@ exports[`PageHeader level - 4 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -2646,15 +2586,7 @@ exports[`PageHeader level - 4 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2682,51 +2614,51 @@ exports[`PageHeader level - 4 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2745,7 +2677,7 @@ exports[`PageHeader level - 4 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2765,13 +2697,13 @@ exports[`PageHeader level - 4 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 16px;
     line-height: 22px;
     max-width: none;
@@ -2793,27 +2725,23 @@ exports[`PageHeader level - 4 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h4
-            class="c7"
+            class="c6"
           >
             Grommet
           </h4>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -2821,10 +2749,10 @@ exports[`PageHeader level - 4 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -2894,7 +2822,7 @@ exports[`PageHeader level - 4 2`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2909,7 +2837,7 @@ exports[`PageHeader level - 4 2`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2924,7 +2852,7 @@ exports[`PageHeader level - 4 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2952,6 +2880,10 @@ exports[`PageHeader level - 4 2`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -2959,15 +2891,7 @@ exports[`PageHeader level - 4 2`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2995,51 +2919,51 @@ exports[`PageHeader level - 4 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3058,7 +2982,7 @@ exports[`PageHeader level - 4 2`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3078,13 +3002,13 @@ exports[`PageHeader level - 4 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 16px;
     line-height: 22px;
     max-width: none;
@@ -3106,27 +3030,23 @@ exports[`PageHeader level - 4 2`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h4
-            class="c7"
+            class="c6"
           >
             Grommet
           </h4>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -3134,10 +3054,10 @@ exports[`PageHeader level - 4 2`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -3207,7 +3127,7 @@ exports[`PageHeader level - 5 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3222,7 +3142,7 @@ exports[`PageHeader level - 5 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3237,7 +3157,7 @@ exports[`PageHeader level - 5 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3265,6 +3185,10 @@ exports[`PageHeader level - 5 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -3272,15 +3196,7 @@ exports[`PageHeader level - 5 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3308,51 +3224,51 @@ exports[`PageHeader level - 5 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 16px;
   line-height: 22px;
@@ -3371,7 +3287,7 @@ exports[`PageHeader level - 5 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3391,13 +3307,13 @@ exports[`PageHeader level - 5 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 14px;
     line-height: 20px;
     max-width: none;
@@ -3419,27 +3335,23 @@ exports[`PageHeader level - 5 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h5
-            class="c7"
+            class="c6"
           >
             Grommet
           </h5>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -3447,10 +3359,10 @@ exports[`PageHeader level - 5 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -3520,7 +3432,7 @@ exports[`PageHeader level - 5 2`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3535,7 +3447,7 @@ exports[`PageHeader level - 5 2`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3550,7 +3462,7 @@ exports[`PageHeader level - 5 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3578,6 +3490,10 @@ exports[`PageHeader level - 5 2`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -3585,15 +3501,7 @@ exports[`PageHeader level - 5 2`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3621,51 +3529,51 @@ exports[`PageHeader level - 5 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 16px;
   line-height: 22px;
@@ -3684,7 +3592,7 @@ exports[`PageHeader level - 5 2`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3704,13 +3612,13 @@ exports[`PageHeader level - 5 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 14px;
     line-height: 20px;
     max-width: none;
@@ -3732,27 +3640,23 @@ exports[`PageHeader level - 5 2`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h5
-            class="c7"
+            class="c6"
           >
             Grommet
           </h5>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -3760,10 +3664,10 @@ exports[`PageHeader level - 5 2`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -3833,7 +3737,7 @@ exports[`PageHeader level - 6 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3848,7 +3752,7 @@ exports[`PageHeader level - 6 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3863,7 +3767,7 @@ exports[`PageHeader level - 6 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3891,6 +3795,10 @@ exports[`PageHeader level - 6 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -3898,15 +3806,7 @@ exports[`PageHeader level - 6 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3934,51 +3834,51 @@ exports[`PageHeader level - 6 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 14px;
   line-height: 20px;
@@ -3997,7 +3897,7 @@ exports[`PageHeader level - 6 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -4017,13 +3917,13 @@ exports[`PageHeader level - 6 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 14px;
     line-height: 20px;
     max-width: none;
@@ -4045,27 +3945,23 @@ exports[`PageHeader level - 6 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h6
-            class="c7"
+            class="c6"
           >
             Grommet
           </h6>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -4073,10 +3969,10 @@ exports[`PageHeader level - 6 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -4146,7 +4042,7 @@ exports[`PageHeader level - 6 2`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4161,7 +4057,7 @@ exports[`PageHeader level - 6 2`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4176,7 +4072,7 @@ exports[`PageHeader level - 6 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4204,6 +4100,10 @@ exports[`PageHeader level - 6 2`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -4211,15 +4111,7 @@ exports[`PageHeader level - 6 2`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4247,51 +4139,51 @@ exports[`PageHeader level - 6 2`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 14px;
   line-height: 20px;
@@ -4310,7 +4202,7 @@ exports[`PageHeader level - 6 2`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -4330,13 +4222,13 @@ exports[`PageHeader level - 6 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 14px;
     line-height: 20px;
     max-width: none;
@@ -4358,27 +4250,23 @@ exports[`PageHeader level - 6 2`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h6
-            class="c7"
+            class="c6"
           >
             Grommet
           </h6>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -4386,10 +4274,10 @@ exports[`PageHeader level - 6 2`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -4459,7 +4347,7 @@ exports[`PageHeader size - large 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4474,7 +4362,7 @@ exports[`PageHeader size - large 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4489,7 +4377,7 @@ exports[`PageHeader size - large 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4517,6 +4405,10 @@ exports[`PageHeader size - large 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -4524,15 +4416,7 @@ exports[`PageHeader size - large 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4560,51 +4444,51 @@ exports[`PageHeader size - large 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 82px;
   line-height: 88px;
@@ -4623,7 +4507,7 @@ exports[`PageHeader size - large 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 22px;
   line-height: 28px;
@@ -4643,13 +4527,13 @@ exports[`PageHeader size - large 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 50px;
     line-height: 56px;
     max-width: none;
@@ -4671,27 +4555,23 @@ exports[`PageHeader size - large 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h1
-            class="c7"
+            class="c6"
           >
             Grommet
           </h1>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -4699,10 +4579,10 @@ exports[`PageHeader size - large 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -4772,7 +4652,7 @@ exports[`PageHeader size - medium 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4787,7 +4667,7 @@ exports[`PageHeader size - medium 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4802,7 +4682,7 @@ exports[`PageHeader size - medium 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4830,6 +4710,10 @@ exports[`PageHeader size - medium 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -4837,15 +4721,7 @@ exports[`PageHeader size - medium 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4873,51 +4749,51 @@ exports[`PageHeader size - medium 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 50px;
   line-height: 56px;
@@ -4936,7 +4812,7 @@ exports[`PageHeader size - medium 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -4956,13 +4832,13 @@ exports[`PageHeader size - medium 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 34px;
     line-height: 40px;
     max-width: none;
@@ -4984,27 +4860,23 @@ exports[`PageHeader size - medium 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h1
-            class="c7"
+            class="c6"
           >
             Grommet
           </h1>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -5012,10 +4884,10 @@ exports[`PageHeader size - medium 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
@@ -5085,7 +4957,7 @@ exports[`PageHeader size - small 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5100,7 +4972,7 @@ exports[`PageHeader size - small 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5115,7 +4987,7 @@ exports[`PageHeader size - small 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5143,6 +5015,10 @@ exports[`PageHeader size - small 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .c4:hover {
@@ -5150,15 +5026,7 @@ exports[`PageHeader size - small 1`] = `
   text-decoration: underline;
 }
 
-.c5 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: bottom;
-}
-
-.c11 {
+.c10 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5186,51 +5054,51 @@ exports[`PageHeader size - small 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c11:hover {
+.c10:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c11:focus {
+.c10:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus > circle,
-.c11:focus > ellipse,
-.c11:focus > line,
-.c11:focus > path,
-.c11:focus > polygon,
-.c11:focus > polyline,
-.c11:focus > rect {
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus::-moz-focus-inner {
+.c10:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c10:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) > circle,
-.c11:focus:not(:focus-visible) > ellipse,
-.c11:focus:not(:focus-visible) > line,
-.c11:focus:not(:focus-visible) > path,
-.c11:focus:not(:focus-visible) > polygon,
-.c11:focus:not(:focus-visible) > polyline,
-.c11:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c7 {
+.c6 {
   margin: 0px;
   font-size: 34px;
   line-height: 40px;
@@ -5249,7 +5117,7 @@ exports[`PageHeader size - small 1`] = `
   grid-template-rows: auto auto auto;
 }
 
-.c9 {
+.c8 {
   margin: 0px;
   font-size: 14px;
   line-height: 20px;
@@ -5269,13 +5137,13 @@ exports[`PageHeader size - small 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 26px;
     line-height: 32px;
     max-width: none;
@@ -5297,27 +5165,23 @@ exports[`PageHeader size - small 1`] = `
           <a
             class="c4"
           >
-            <span
-              class="c5"
-            >
-              Parent Page
-            </span>
+            Parent Page
           </a>
         </div>
         <div
-          class="c6"
+          class="c5"
         >
           <h1
-            class="c7"
+            class="c6"
           >
             Grommet
           </h1>
         </div>
         <div
-          class="c8"
+          class="c7"
         >
           <p
-            class="c9"
+            class="c8"
           >
             Grommet helps you build responsive and accessible 
             mobile-first projects for the web with an easy to use component 
@@ -5325,10 +5189,10 @@ exports[`PageHeader size - small 1`] = `
           </p>
         </div>
         <div
-          class="c10"
+          class="c9"
         >
           <button
-            class="c11"
+            class="c10"
             type="button"
           >
             Get Started
