@@ -45,6 +45,10 @@ const StyledList = styled.ul`
     props.itemFocus &&
     focusStyle({ forceOutline: true, skipSvgChildren: true })}}
   ${(props) => props.theme.list && props.theme.list.extend}}
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
 `;
 
 const StyledItem = styled(Box)`
@@ -337,7 +341,6 @@ const List = React.forwardRef(
               setLastActive(active);
               updateActive(undefined);
             }}
-            onMouseDown={(event) => event.preventDefault()}
             {...ariaProps}
             {...rest}
           >
