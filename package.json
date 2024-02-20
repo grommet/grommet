@@ -23,7 +23,6 @@
     "type": "git",
     "url": "https://github.com/grommet/grommet.git"
   },
-  "engine-strict": true,
   "engines": {
     "node": ">= 16"
   },
