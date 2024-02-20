@@ -297,25 +297,27 @@ const List = React.forwardRef(
                 }
               : undefined
           }
-          onUp={
-            (onClickItem || onOrder) && active
-              ? () => {
-                  const min = onOrder ? 1 : 0;
-                  updateActive(Math.max(active - 1, min));
-                }
-              : undefined
-          }
-          onDown={
-            (onClickItem || onOrder) && orderableData && orderableData.length
-              ? () => {
-                  const min = onOrder ? 1 : 0;
-                  const max = onOrder
-                    ? orderableData.length * 2 - 2
-                    : data.length - 1;
-                  updateActive(active >= min ? Math.min(active + 1, max) : min);
-                }
-              : undefined
-          }
+          onUp={(event) => {
+            event.preventDefault();
+            if ((onClickItem || onOrder) && active) {
+              const min = onOrder ? 1 : 0;
+              updateActive(Math.max(active - 1, min));
+            }
+          }}
+          onDown={(event) => {
+            event.preventDefault();
+            if (
+              (onClickItem || onOrder) &&
+              orderableData &&
+              orderableData.length
+            ) {
+              const min = onOrder ? 1 : 0;
+              const max = onOrder
+                ? orderableData.length * 2 - 2
+                : data.length - 1;
+              updateActive(active >= min ? Math.min(active + 1, max) : min);
+            }
+          }}
           onKeyDown={onKeyDown}
         >
           <StyledList
