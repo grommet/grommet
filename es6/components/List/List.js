@@ -1,7 +1,7 @@
 var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
+import React, { Fragment, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -224,21 +224,17 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     }
     ariaProps['aria-activedescendant'] = activeId;
   }
-  return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(Keyboard, {
-    onEnter: (onClickItem || onOrder) && active >= 0 ? function (event) {
+  var onSelectOption = useCallback(function (event) {
+    if ((onClickItem || onOrder) && active >= 0) {
       if (onOrder) {
         var index = Math.trunc(active / 2);
         // Call onOrder with the re-ordered data.
         // Update the active control index so that the
         // active control will stay on the same item
         // even though it moved up or down.
-        if (active % 2) {
-          onOrder(reorder(orderableData, pinnedInfo, index, index + 1));
-          updateActive(Math.min(active + 2, orderableData.length * 2 - 2));
-        } else {
-          onOrder(reorder(orderableData, pinnedInfo, index, index - 1));
-          updateActive(Math.max(active - 2, 1));
-        }
+        var newIndex = active % 2 ? index + 1 : index - 1;
+        onOrder(reorder(orderableData, pinnedInfo, index, newIndex));
+        updateActive(active % 2 ? Math.min(active + 2, orderableData.length * 2 - 2) : Math.max(active - 2, 1));
       } else if (disabledItems != null && disabledItems.includes(getValue(data[active], active, itemKey))) {
         event.preventDefault();
       } else if (onClickItem) {
@@ -255,7 +251,14 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           index: active
         });
       }
-    } : undefined,
+    }
+  }, [active, onOrder, orderableData, pinnedInfo, disabledItems, data, itemKey, onClickItem, updateActive]);
+  return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(Keyboard, {
+    onEnter: onSelectOption,
+    onSpace: function onSpace(event) {
+      event.preventDefault();
+      onSelectOption(event);
+    },
     onUp: (onClickItem || onOrder) && active ? function () {
       var min = onOrder ? 1 : 0;
       updateActive(Math.max(active - 1, min));

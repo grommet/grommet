@@ -230,21 +230,17 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     }
     ariaProps['aria-activedescendant'] = activeId;
   }
-  return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
-    onEnter: (onClickItem || onOrder) && active >= 0 ? function (event) {
+  var onSelectOption = (0, _react.useCallback)(function (event) {
+    if ((onClickItem || onOrder) && active >= 0) {
       if (onOrder) {
         var index = Math.trunc(active / 2);
         // Call onOrder with the re-ordered data.
         // Update the active control index so that the
         // active control will stay on the same item
         // even though it moved up or down.
-        if (active % 2) {
-          onOrder(reorder(orderableData, pinnedInfo, index, index + 1));
-          updateActive(Math.min(active + 2, orderableData.length * 2 - 2));
-        } else {
-          onOrder(reorder(orderableData, pinnedInfo, index, index - 1));
-          updateActive(Math.max(active - 2, 1));
-        }
+        var newIndex = active % 2 ? index + 1 : index - 1;
+        onOrder(reorder(orderableData, pinnedInfo, index, newIndex));
+        updateActive(active % 2 ? Math.min(active + 2, orderableData.length * 2 - 2) : Math.max(active - 2, 1));
       } else if (disabledItems != null && disabledItems.includes(getValue(data[active], active, itemKey))) {
         event.preventDefault();
       } else if (onClickItem) {
@@ -261,7 +257,14 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
           index: active
         });
       }
-    } : undefined,
+    }
+  }, [active, onOrder, orderableData, pinnedInfo, disabledItems, data, itemKey, onClickItem, updateActive]);
+  return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+    onEnter: onSelectOption,
+    onSpace: function onSpace(event) {
+      event.preventDefault();
+      onSelectOption(event);
+    },
     onUp: (onClickItem || onOrder) && active ? function () {
       var min = onOrder ? 1 : 0;
       updateActive(Math.max(active - 1, min));
