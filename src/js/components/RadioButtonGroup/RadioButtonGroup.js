@@ -15,11 +15,12 @@ const RadioButtonGroup = forwardRef(
       defaultValue,
       disabled,
       focusIndicator = true,
+      gap,
       name,
       onChange,
       options: optionsProp,
+      trapFocus = false,
       value: valueProp,
-      gap,
       ...rest
     },
     ref,
@@ -83,7 +84,12 @@ const RadioButtonGroup = forwardRef(
       // Chrome behaves differently in that focus is given to radio buttons
       // when the user selects one, unlike Safari and Firefox.
       setTimeout(() => {
-        setFocus(true);
+        // In case the focus needs to be trapped inside the input instead of the
+        // Box wrapper
+        if (trapFocus) {
+          // console.log('optionRefs.current[0]', optionRefs.current[0]);
+          setFocus(optionRefs.current[0]);
+        } else setFocus(true);
       }, 1);
     };
 
@@ -92,7 +98,7 @@ const RadioButtonGroup = forwardRef(
       if (onChange) {
         event.persist(); // extract from React synthetic event pool
         // event.target.value gives value as a string which needs to be
-        // manually typecasted according to the type of original option value.
+        // manually typecasting according to the type of original option value.
         // return the original option value attached with the event.
         const adjustedEvent = event;
         adjustedEvent.value = optionValue;
@@ -140,7 +146,7 @@ const RadioButtonGroup = forwardRef(
                 optionValue === value ||
                 (value === undefined && !index) ||
                 // when nothing has been selected, show focus
-                // on the first radiobutton
+                // on the first radio-button
                 (value === '' && index === 0);
 
               if (optionRest.checked) {
@@ -165,7 +171,7 @@ const RadioButtonGroup = forwardRef(
                   // so that the FormField has focus style. However, we still
                   // need to visually indicate when a RadioButton is active.
                   // In RadioButton, if focus = true but focusIndicator = false,
-                  // we will apply the hover treament.
+                  // we will apply the hover treatment.
                   focusIndicator={focusIndicator}
                   id={id}
                   value={optionValue}
