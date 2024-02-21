@@ -265,15 +265,21 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       event.preventDefault();
       onSelectOption(event);
     },
-    onUp: (onClickItem || onOrder) && active ? function () {
-      var min = onOrder ? 1 : 0;
-      updateActive(Math.max(active - 1, min));
-    } : undefined,
-    onDown: (onClickItem || onOrder) && orderableData && orderableData.length ? function () {
-      var min = onOrder ? 1 : 0;
-      var max = onOrder ? orderableData.length * 2 - 2 : data.length - 1;
-      updateActive(active >= min ? Math.min(active + 1, max) : min);
-    } : undefined,
+    onUp: function onUp(event) {
+      event.preventDefault();
+      if ((onClickItem || onOrder) && active) {
+        var min = onOrder ? 1 : 0;
+        updateActive(Math.max(active - 1, min));
+      }
+    },
+    onDown: function onDown(event) {
+      event.preventDefault();
+      if ((onClickItem || onOrder) && orderableData && orderableData.length) {
+        var min = onOrder ? 1 : 0;
+        var max = onOrder ? orderableData.length * 2 - 2 : data.length - 1;
+        updateActive(active >= min ? Math.min(active + 1, max) : min);
+      }
+    },
     onKeyDown: onKeyDown
   }, /*#__PURE__*/_react["default"].createElement(StyledList, _extends({
     "aria-label": ariaLabel || a11yTitle,
