@@ -24247,6 +24247,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   align-self: flex-end;
   margin: 48px;
   background: red;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -24255,6 +24256,10 @@ exports[`DataTable should apply pagination styling 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c13 {
@@ -24726,6 +24731,26 @@ exports[`DataTable should apply pagination styling 1`] = `
 @media only screen and (max-width:768px) {
   .c12 {
     margin: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -27490,6 +27515,7 @@ exports[`DataTable should paginate 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -27498,6 +27524,10 @@ exports[`DataTable should paginate 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c13 {
@@ -27964,6 +27994,26 @@ exports[`DataTable should paginate 1`] = `
   max-width: 100%;
   height: 36px;
   min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -29831,6 +29881,7 @@ exports[`DataTable should pin and paginate 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -29839,6 +29890,10 @@ exports[`DataTable should pin and paginate 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c14 {
@@ -30314,6 +30369,26 @@ exports[`DataTable should pin and paginate 1`] = `
   max-width: 100%;
   height: 36px;
   min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -32181,6 +32256,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -32189,6 +32265,10 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c13 {
@@ -32655,6 +32735,26 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   max-width: 100%;
   height: 36px;
   min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -33476,6 +33576,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -33484,6 +33585,10 @@ exports[`DataTable should render new data when page changes 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c13 {
@@ -33950,6 +34055,26 @@ exports[`DataTable should render new data when page changes 1`] = `
   max-width: 100%;
   height: 36px;
   min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -35783,6 +35908,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -35849,6 +35986,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -35951,6 +36100,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -36017,6 +36178,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -36119,6 +36292,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -36185,6 +36370,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -36287,6 +36484,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -36353,6 +36562,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -36455,6 +36676,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -36521,6 +36754,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -36623,6 +36868,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -36689,6 +36946,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -36791,6 +37060,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -36857,6 +37138,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -36959,6 +37252,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -37025,6 +37330,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -37127,6 +37444,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -37193,6 +37522,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -37295,6 +37636,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -37361,6 +37714,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -37463,6 +37828,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -37529,6 +37906,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -37631,6 +38020,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -37697,6 +38098,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -37799,6 +38212,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -37865,6 +38290,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -37967,6 +38404,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -38033,6 +38482,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -38135,6 +38596,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -38201,6 +38674,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -38303,6 +38788,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -38369,6 +38866,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -38471,6 +38980,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -38537,6 +39058,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -38639,6 +39172,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -38705,6 +39250,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -38807,6 +39364,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -38873,6 +39442,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -38975,6 +39556,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -39041,6 +39634,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -39143,6 +39748,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -39209,6 +39826,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -39311,6 +39940,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -39377,6 +40018,18 @@ exports[`DataTable should render new data when page changes 2`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -39479,6 +40132,18 @@ exports[`DataTable should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <tr
             class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
@@ -39517,7 +40182,7 @@ exports[`DataTable should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jerLXD"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 ljtiDv Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 bZVlA Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -39750,6 +40415,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -39758,6 +40424,10 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c13 {
@@ -40224,6 +40894,26 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   max-width: 100%;
   height: 36px;
   min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -42091,6 +42781,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -42099,6 +42790,10 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c13 {
@@ -42565,6 +43260,26 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   max-width: 100%;
   height: 36px;
   min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 @media only screen and (max-width:768px) {

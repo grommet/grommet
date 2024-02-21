@@ -86,6 +86,10 @@
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
   },
+  "pagination": {
+    "stepOptions": "Items per page",
+    "summary": "Showing {firstValue}-{secondValue} of {total}"
+  },
   "rangeSelector": {
     "lower": "Lower Bounds",
     "upper": "Upper Bounds"

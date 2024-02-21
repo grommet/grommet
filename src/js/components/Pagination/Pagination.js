@@ -32,10 +32,11 @@ const Pagination = forwardRef(
       // number of page controls in the middle
       numberMiddlePages: numberMiddlePagesProp = 3,
       onChange,
+      messages,
       page: pageProp,
       size,
       step: stepProp,
-      stepSelector,
+      stepOptions,
       summary,
       ...rest
     },
@@ -206,9 +207,6 @@ const Pagination = forwardRef(
     const paginationControls = (
       <StyledPaginationContainer
         flex={false}
-        // TO DO this is no longer the "outer container" when
-        // summary/stepSelector is used. is that okay?
-        // should it be?
         {...theme.pagination.container}
         {...rest}
       >
@@ -231,53 +229,56 @@ const Pagination = forwardRef(
     );
 
     // for backwards compatibility
-    if (!summary && !stepSelector) return paginationControls;
+    if (!summary && !stepOptions) return paginationControls;
 
     return (
-      <Box
+      <StyledPaginationContainer
         direction="row"
         align="center"
         justify="between"
         style={{ columnGap: '12px', rowGap: '6px' }}
         wrap
-        // theme.pagination.container should apply here
-        // when summary/stepSelector are present?
-        // TODO pagination.controls in theme is already used as well as
-        // well as pagination.container what would we call this?
-        {...theme.pagination?.controls?.container}
-        // TO DO how would someone add rest to this entire container?
+        flex={false}
+        {...theme.pagination.container}
+        {...rest}
       >
-        {/*  LEAVE FOR DEMO PURPOSES 
-          <StyledPaginationContainer
-          border="top" // theme?
-          pad={{ vertical: 'xsmall', horizontal: 'small' }} // theme?
-          direction="row"
-          align="center"
-          justify="between"
-          style={{ columnGap: '12px', rowGap: '6px' }}
-          wrap
-          flex={false}
-          {...theme.pagination.container}
-          {...rest}
-        > */}
         {summary ? (
-          <PaginationSummary page={page} step={step} numberItems={total} />
+          <PaginationSummary
+            messages={messages}
+            page={page}
+            step={step}
+            numberItems={total}
+          />
         ) : undefined}
-        {stepSelector ? (
+        {stepOptions ? (
           <Box
             flex={!summary ? 'grow' : undefined}
             align={!summary ? 'end' : undefined}
           >
             <PaginationStep
-              options={Array.isArray(stepSelector) ? stepSelector : undefined}
+              messages={messages}
+              options={Array.isArray(stepOptions) ? stepOptions : undefined}
               step={step}
               onChange={({ value }) => setStep(value)}
             />
           </Box>
         ) : undefined}
-        {paginationControls}
-        {/* </StyledPaginationContainer> */}
-      </Box>
+        <Nav
+          a11yTitle={ariaLabel || a11yTitle || 'Pagination Navigation'}
+          ref={ref}
+        >
+          <Box as="ul" {...theme.pagination.controls}>
+            {controls.map((control, index) => (
+              /* Using index as key (as opposed to a unique id) seems to
+               * help React prioritize rendering the updated controls as
+               * desired. Whereas, using a unique id resulted in rendering
+               * the active control with an undesired lag. */
+              // eslint-disable-next-line react/no-array-index-key
+              <PageControl key={index} size={size} {...control} />
+            ))}
+          </Box>
+        </Nav>
+      </StyledPaginationContainer>
     );
   },
 );

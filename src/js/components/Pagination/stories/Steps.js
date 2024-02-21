@@ -8,16 +8,16 @@ export const Steps = () => (
   <Box align="start" pad="small" gap="xlarge">
     <Box fill="horizontal">
       <Text>summary and stepSelector</Text>
-      <Pagination numberItems={237} stepSelector summary />
+      <Pagination numberItems={237} stepOptions summary />
     </Box>
     <Box fill="horizontal">
       <Text>custom steps</Text>
       <Text>if we use bigger numbers not enough space</Text>
-      <Pagination numberItems={237} stepSelector={[10, 20, 30, 1000]} summary />
+      <Pagination numberItems={237} stepOptions={[10, 20, 30, 1000]} summary />
     </Box>
     <Box fill="horizontal">
-      <Text> stepSelector as boolean</Text>
-      <Pagination numberItems={237} stepSelector />
+      <Text> stepOptions as boolean</Text>
+      <Pagination numberItems={237} stepOptions />
     </Box>
   </Box>
   // </Grommet>

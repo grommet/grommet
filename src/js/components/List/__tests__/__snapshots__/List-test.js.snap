@@ -4328,6 +4328,7 @@ exports[`List events should apply pagination styling 1`] = `
   align-self: flex-end;
   margin: 48px;
   background: red;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4336,6 +4337,10 @@ exports[`List events should apply pagination styling 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -4802,6 +4807,26 @@ exports[`List events should apply pagination styling 1`] = `
 @media only screen and (max-width:768px) {
   .c7 {
     margin: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -5487,6 +5512,7 @@ exports[`List events should paginate 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5495,6 +5521,10 @@ exports[`List events should paginate 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -5955,6 +5985,26 @@ exports[`List events should paginate 1`] = `
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -6489,6 +6539,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6497,6 +6548,10 @@ exports[`List events should render correct num items per page (step) 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -6957,6 +7012,26 @@ exports[`List events should render correct num items per page (step) 1`] = `
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -7381,6 +7456,7 @@ exports[`List events should render new data when page changes 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7389,6 +7465,10 @@ exports[`List events should render new data when page changes 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -7849,6 +7929,26 @@ exports[`List events should render new data when page changes 1`] = `
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -8322,6 +8422,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -8383,6 +8495,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -8480,6 +8604,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -8541,6 +8677,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -8638,6 +8786,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -8699,6 +8859,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -8796,6 +8968,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -8857,6 +9041,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -8954,6 +9150,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -9015,6 +9223,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -9112,6 +9332,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -9173,6 +9405,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -9270,6 +9514,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -9331,6 +9587,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -9428,6 +9696,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -9489,6 +9769,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -9586,6 +9878,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -9647,6 +9951,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -9744,6 +10060,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -9805,6 +10133,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -9902,6 +10242,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -9963,6 +10315,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10060,6 +10424,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -10121,6 +10497,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10218,6 +10606,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -10279,6 +10679,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10376,6 +10788,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -10437,6 +10861,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10534,6 +10970,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -10595,6 +11043,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10692,6 +11152,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -10753,6 +11225,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -10850,6 +11334,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -10911,6 +11407,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -11008,6 +11516,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -11069,6 +11589,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -11166,6 +11698,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -11227,6 +11771,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -11324,6 +11880,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -11385,6 +11953,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -11482,6 +12062,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -11543,6 +12135,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -11640,6 +12244,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -11701,6 +12317,18 @@ exports[`List events should render new data when page changes 2`] = `
     padding-top: 6px;
     padding-bottom: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media only screen and (max-width:768px) {
@@ -11798,6 +12426,18 @@ exports[`List events should render new data when page changes 2`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 <li
         class="c0 c1"
       >
@@ -11808,7 +12448,7 @@ exports[`List events should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jerLXD"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 ljtiDv Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 bZVlA Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -12050,6 +12690,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -12058,6 +12699,10 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -12518,6 +13163,26 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -13052,6 +13717,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -13060,6 +13726,10 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
@@ -13520,6 +14190,26 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
