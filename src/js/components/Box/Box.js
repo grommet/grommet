@@ -221,7 +221,7 @@ const Box = forwardRef(
         fillProp={fill}
         focus={focus}
         gap={
-          (boxOptions?.cssGap || cssGap) &&
+          (boxOptions?.cssGap || cssGap || typeof gap === 'object') &&
           gap &&
           gap !== 'none' &&
           border !== 'between' &&

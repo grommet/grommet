@@ -206,6 +206,23 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
+  if (typeof gap === 'object') {
+    if (gap.row !== undefined && gap.column !== undefined) {
+      styles.push(
+        `gap: ${theme.global.edgeSize[gap.row] || gap.row} ${
+          theme.global.edgeSize[gap.column] || gap.column
+        };`,
+      );
+    }
+    if (gap.row !== undefined && gap.column === undefined) {
+      styles.push(`row-gap: ${theme.global.edgeSize[gap.row] || gap.row};`);
+    }
+    if (gap.row === undefined && gap.column !== undefined) {
+      styles.push(
+        `column-gap: ${theme.global.edgeSize[gap.column] || gap.column};`,
+      );
+    }
+  }
   if (directionProp === 'column' || directionProp === 'column-reverse') {
     styles.push(`row-gap: ${metric};`);
     if (responsiveMetric) {
