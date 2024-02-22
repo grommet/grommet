@@ -1919,7 +1919,7 @@ exports[`Data onView 1`] = `
 `;
 
 exports[`Data pagination 1`] = `
-.c15 {
+.c14 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1930,25 +1930,25 @@ exports[`Data pagination 1`] = `
   stroke: #000000;
 }
 
-.c15 g {
+.c14 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill='none'] {
+.c14 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*='#'],
-.c15 *[STROKE*='#'] {
+.c14 *[stroke*='#'],
+.c14 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*='#'],
-.c15 *[FILL*='#'] {
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*='#'],
+.c14 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2022,28 +2022,6 @@ exports[`Data pagination 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2057,7 +2035,7 @@ exports[`Data pagination 1`] = `
   padding: 0px;
 }
 
-.c16 {
+.c15 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2073,7 +2051,7 @@ exports[`Data pagination 1`] = `
   font-weight: bold;
 }
 
-.c13 {
+.c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2105,7 +2083,7 @@ exports[`Data pagination 1`] = `
   flex: 1 0 auto;
 }
 
-.c13 > svg {
+.c12 > svg {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2116,51 +2094,51 @@ exports[`Data pagination 1`] = `
   vertical-align: middle;
 }
 
-.c13:hover {
+.c12:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c13:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus > circle,
-.c13:focus > ellipse,
-.c13:focus > line,
-.c13:focus > path,
-.c13:focus > polygon,
-.c13:focus > polyline,
-.c13:focus > rect {
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus::-moz-focus-inner {
+.c12:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c13:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) > circle,
-.c13:focus:not(:focus-visible) > ellipse,
-.c13:focus:not(:focus-visible) > line,
-.c13:focus:not(:focus-visible) > path,
-.c13:focus:not(:focus-visible) > polygon,
-.c13:focus:not(:focus-visible) > polyline,
-.c13:focus:not(:focus-visible) > rect {
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible)::-moz-focus-inner {
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2192,47 +2170,47 @@ exports[`Data pagination 1`] = `
   flex: 1 0 auto;
 }
 
-.c17:hover {
+.c16:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2281,16 +2259,16 @@ exports[`Data pagination 1`] = `
   outline: none;
 }
 
-.c14 {
+.c13 {
   font-size: 18px;
   line-height: 0;
 }
 
-.c14 > svg {
+.c13 > svg {
   margin: 0 auto;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2310,38 +2288,18 @@ exports[`Data pagination 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c15 {
     width: 2px;
   }
 }
@@ -2414,26 +2372,26 @@ exports[`Data pagination 1`] = `
       </tbody>
     </table>
     <div
-      class="c10 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
         class="c1"
       >
         <ul
-          class="c11"
+          class="c10"
         >
           <li
-            class="c12"
+            class="c11"
           >
             <button
               aria-label="Go to previous page"
-              class="c13 c14"
+              class="c12 c13"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c15"
+                class="c14"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2446,33 +2404,33 @@ exports[`Data pagination 1`] = `
             </button>
           </li>
           <div
-            class="c16"
+            class="c15"
           />
           <li
-            class="c12"
+            class="c11"
           >
             <button
               aria-label="Go to page 1"
-              class="c17 c14"
+              class="c16 c13"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c16"
+            class="c15"
           />
           <li
-            class="c12"
+            class="c11"
           >
             <button
               aria-label="Go to next page"
-              class="c13 c14"
+              class="c12 c13"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c15"
+                class="c14"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2492,7 +2450,7 @@ exports[`Data pagination 1`] = `
 `;
 
 exports[`Data pagination step 1`] = `
-.c15 {
+.c14 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2503,25 +2461,25 @@ exports[`Data pagination step 1`] = `
   stroke: #000000;
 }
 
-.c15 g {
+.c14 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill='none'] {
+.c14 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*='#'],
-.c15 *[STROKE*='#'] {
+.c14 *[stroke*='#'],
+.c14 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*='#'],
-.c15 *[FILL*='#'] {
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*='#'],
+.c14 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2595,28 +2553,6 @@ exports[`Data pagination step 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2630,7 +2566,7 @@ exports[`Data pagination step 1`] = `
   padding: 0px;
 }
 
-.c16 {
+.c15 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2646,7 +2582,7 @@ exports[`Data pagination step 1`] = `
   font-weight: bold;
 }
 
-.c13 {
+.c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2678,7 +2614,7 @@ exports[`Data pagination step 1`] = `
   flex: 1 0 auto;
 }
 
-.c13 > svg {
+.c12 > svg {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2689,51 +2625,51 @@ exports[`Data pagination step 1`] = `
   vertical-align: middle;
 }
 
-.c13:hover {
+.c12:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c13:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus > circle,
-.c13:focus > ellipse,
-.c13:focus > line,
-.c13:focus > path,
-.c13:focus > polygon,
-.c13:focus > polyline,
-.c13:focus > rect {
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus::-moz-focus-inner {
+.c12:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c13:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) > circle,
-.c13:focus:not(:focus-visible) > ellipse,
-.c13:focus:not(:focus-visible) > line,
-.c13:focus:not(:focus-visible) > path,
-.c13:focus:not(:focus-visible) > polygon,
-.c13:focus:not(:focus-visible) > polyline,
-.c13:focus:not(:focus-visible) > rect {
+.c12:focus:not(:focus-visible) > circle,
+.c12:focus:not(:focus-visible) > ellipse,
+.c12:focus:not(:focus-visible) > line,
+.c12:focus:not(:focus-visible) > path,
+.c12:focus:not(:focus-visible) > polygon,
+.c12:focus:not(:focus-visible) > polyline,
+.c12:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible)::-moz-focus-inner {
+.c12:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2765,47 +2701,47 @@ exports[`Data pagination step 1`] = `
   flex: 1 0 auto;
 }
 
-.c17:hover {
+.c16:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c17:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible) > circle,
-.c17:focus:not(:focus-visible) > ellipse,
-.c17:focus:not(:focus-visible) > line,
-.c17:focus:not(:focus-visible) > path,
-.c17:focus:not(:focus-visible) > polygon,
-.c17:focus:not(:focus-visible) > polyline,
-.c17:focus:not(:focus-visible) > rect {
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c17:focus:not(:focus-visible)::-moz-focus-inner {
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -2854,16 +2790,16 @@ exports[`Data pagination step 1`] = `
   outline: none;
 }
 
-.c14 {
+.c13 {
   font-size: 18px;
   line-height: 0;
 }
 
-.c14 > svg {
+.c13 > svg {
   margin: 0 auto;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2883,38 +2819,18 @@ exports[`Data pagination step 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-top: 3px;
-    padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c15 {
     width: 2px;
   }
 }
@@ -2987,26 +2903,26 @@ exports[`Data pagination step 1`] = `
       </tbody>
     </table>
     <div
-      class="c10 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
         class="c1"
       >
         <ul
-          class="c11"
+          class="c10"
         >
           <li
-            class="c12"
+            class="c11"
           >
             <button
               aria-label="Go to previous page"
-              class="c13 c14"
+              class="c12 c13"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c15"
+                class="c14"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -3019,33 +2935,33 @@ exports[`Data pagination step 1`] = `
             </button>
           </li>
           <div
-            class="c16"
+            class="c15"
           />
           <li
-            class="c12"
+            class="c11"
           >
             <button
               aria-label="Go to page 1"
-              class="c17 c14"
+              class="c16 c13"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c16"
+            class="c15"
           />
           <li
-            class="c12"
+            class="c11"
           >
             <button
               aria-label="Go to next page"
-              class="c13 c14"
+              class="c12 c13"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c15"
+                class="c14"
                 viewBox="0 0 24 24"
               >
                 <path

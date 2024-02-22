@@ -1524,8 +1524,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       container: {
-        border: 'top',
-        pad: { vertical: 'xsmall', horizontal: 'small' },
         // any box props,
         // extend: undefined,
       },

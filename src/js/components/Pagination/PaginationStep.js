@@ -7,7 +7,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 export const PaginationStep = ({
   messages,
   onChange,
-  options = [0, 10, 25, 50, 100], // TO DO revisit reasonable defaults
+  options = [10, 25, 50, 100],
   step,
   ...rest
 }) => {
