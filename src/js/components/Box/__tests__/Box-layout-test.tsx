@@ -243,7 +243,7 @@ describe('Box', () => {
       </Grommet>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('margin', () => {
