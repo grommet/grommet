@@ -1596,7 +1596,7 @@ describe('Form uncontrolled', () => {
     );
   });
 
-  test.only('should validate when submit is fired directly on input', () => {
+  test('should validate when submit is fired directly on input', () => {
     render(
       <Grommet>
         <Form>
