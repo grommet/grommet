@@ -2307,7 +2307,6 @@ exports[`Components loads 1`] = `
               },
             },
           },
-          "container": {},
           "controls": {
             "align": "center",
             "direction": "row",
@@ -4297,7 +4296,6 @@ exports[`Components loads 1`] = `
               },
             },
           },
-          "container": {},
           "controls": {
             "align": "center",
             "direction": "row",

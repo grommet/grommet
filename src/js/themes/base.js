@@ -1523,10 +1523,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      container: {
-        // any box props,
-        // extend: undefined,
-      },
+      // container: {
+      //   // any box props,
+      //   extend: undefined,
+      // },
       controls: {
         align: 'center',
         direction: 'row',
