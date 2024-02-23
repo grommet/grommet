@@ -213,11 +213,9 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
           theme.global.edgeSize[gap.column] || gap.column
         };`,
       );
-    }
-    if (gap.row !== undefined && gap.column === undefined) {
+    } else if (gap.row !== undefined) {
       styles.push(`row-gap: ${theme.global.edgeSize[gap.row] || gap.row};`);
-    }
-    if (gap.row === undefined && gap.column !== undefined) {
+    } else if (gap.column !== undefined) {
       styles.push(
         `column-gap: ${theme.global.edgeSize[gap.column] || gap.column};`,
       );

@@ -3236,7 +3236,8 @@ exports[`Box responsive 1`] = `
 `;
 
 exports[`Box row and column gap 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3304,35 +3305,36 @@ exports[`Box row and column gap 1`] = `
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
+    class="c0"
   >
     <div
-      class="c2"
-    />
-    <div
-      class="c3"
-    />
-    <div
-      class="c2"
-    />
-  </div>
-  <span
-    class="c2"
-  >
-    <span>
-      first
-    </span>
+      class="c1"
+    >
+      <div
+        class="c2"
+      />
+      <div
+        class="c3"
+      />
+      <div
+        class="c2"
+      />
+    </div>
     <span
-      class="c4"
-    />
-    <span>
-      second
+      class="c2"
+    >
+      <span>
+        first
+      </span>
+      <span
+        class="c4"
+      />
+      <span>
+        second
+      </span>
     </span>
-  </span>
-</div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Box width 1`] = `
