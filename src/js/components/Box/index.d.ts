@@ -38,7 +38,7 @@ export interface BoxProps {
   flex?: 'grow' | 'shrink' | boolean | { grow?: number; shrink?: number };
   fill?: FillType;
   focusIndicator?: boolean;
-  gap?: GapType | object;
+  gap?: GapType | { row?: string; gap?: string };
   height?: HeightType;
   hoverIndicator?:
     | { background?: BackgroundType; elevation?: ElevationType }
