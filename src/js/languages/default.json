@@ -88,7 +88,7 @@
   },
   "pagination": {
     "stepOptions": "Items per page",
-    "summary": "Showing {firstValue}-{secondValue} of {total}"
+    "summary": "Showing {start}-{end} of {total}"
   },
   "rangeSelector": {
     "lower": "Lower Bounds",
