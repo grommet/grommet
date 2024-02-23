@@ -230,7 +230,7 @@ describe('Box', () => {
   });
 
   test('row and column gap', () => {
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <Box gap={{ row: 'xlarge', column: '30px' }} direction="row">
           <Box />
