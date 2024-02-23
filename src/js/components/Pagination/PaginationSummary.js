@@ -12,8 +12,8 @@ export const PaginationSummary = ({ messages, numberItems, page, step }) => {
           id: 'pagination.summary',
           messages,
           values: {
-            firstValue: `${(page - 1) * step + 1}`,
-            secondValue: `${Math.min(page * step, numberItems)}`,
+            start: `${(page - 1) * step + 1}`,
+            end: `${Math.min(page * step, numberItems)}`,
             total: numberItems,
           },
         })}
