@@ -3285,21 +3285,11 @@ exports[`Box row and column gap 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: [object Object];
-}
-
-.c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
   height: 12px;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c3 {
     height: 6px;
   }
 }
@@ -3314,9 +3304,6 @@ exports[`Box row and column gap 1`] = `
         class="c2"
       />
       <div
-        class="c3"
-      />
-      <div
         class="c2"
       />
     </div>
@@ -3327,7 +3314,7 @@ exports[`Box row and column gap 1`] = `
         first
       </span>
       <span
-        class="c4"
+        class="c3"
       />
       <span>
         second

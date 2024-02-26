@@ -213,12 +213,25 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
           theme.global.edgeSize[gap.column] || gap.column
         };`,
       );
+      if (responsiveMetric) {
+        styles.push(breakpointStyle(breakpoint, `gap: ${responsiveMetric};`));
+      }
     } else if (gap.row !== undefined) {
       styles.push(`row-gap: ${theme.global.edgeSize[gap.row] || gap.row};`);
+      if (responsiveMetric) {
+        styles.push(
+          breakpointStyle(breakpoint, `row-gap: ${responsiveMetric};`),
+        );
+      }
     } else if (gap.column !== undefined) {
       styles.push(
         `column-gap: ${theme.global.edgeSize[gap.column] || gap.column};`,
       );
+      if (responsiveMetric) {
+        styles.push(
+          breakpointStyle(breakpoint, `column-gap: ${responsiveMetric};`),
+        );
+      }
     }
   }
   if (directionProp === 'column' || directionProp === 'column-reverse') {

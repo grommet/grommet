@@ -113,7 +113,7 @@ const Box = forwardRef(
     if (
       gap &&
       gap !== 'none' &&
-      (!(boxOptions?.cssGap || cssGap) ||
+      (!(boxOptions?.cssGap || cssGap || typeof gap === 'object') ||
         // need this approach to show border between
         border === 'between' ||
         border?.side === 'between' ||
