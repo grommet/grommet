@@ -654,7 +654,7 @@ var Form = exports.Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
       // bubbles up to the "outer" form even though in the DOM the portal
       // doesn't render as child of the "outer" form.
       // https://legacy.reactjs.org/docs/portals.html#event-bubbling-through-portals
-      if (formRef.current && event.target === formRef.current) {
+      if (formRef.current && (event.target === formRef.current || event.target.form === formRef.current)) {
         setPendingValidation(undefined);
         // adding validateOn: "submit" prop to the undefined validateOn
         // fields as we want to trigger "submit" validation once form
