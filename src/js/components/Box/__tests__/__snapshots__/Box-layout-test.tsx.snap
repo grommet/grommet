@@ -1162,6 +1162,8 @@ exports[`Box css gap 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   row-gap: 12px;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
 }
 
 @media only screen and (max-width:768px) {
@@ -3260,8 +3262,6 @@ exports[`Box row and column gap 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   gap: 96px 30px;
-  -webkit-column-gap: [object Object];
-  column-gap: [object Object];
 }
 
 .c2 {

@@ -206,6 +206,12 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
+  if (directionProp === 'column' || directionProp === 'column-reverse') {
+    styles.push(`row-gap: ${metric};`);
+    if (responsiveMetric) {
+      styles.push(breakpointStyle(breakpoint, `row-gap: ${responsiveMetric};`));
+    }
+  }
   if (typeof gap === 'object') {
     if (gap.row !== undefined && gap.column !== undefined) {
       styles.push(
@@ -232,12 +238,6 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
           breakpointStyle(breakpoint, `column-gap: ${responsiveMetric};`),
         );
       }
-    }
-  }
-  if (directionProp === 'column' || directionProp === 'column-reverse') {
-    styles.push(`row-gap: ${metric};`);
-    if (responsiveMetric) {
-      styles.push(breakpointStyle(breakpoint, `row-gap: ${responsiveMetric};`));
     }
   } else {
     styles.push(`column-gap: ${metric};`);
