@@ -14,7 +14,7 @@ export const PaginationStep = ({
   const { format: formatMessage } = useContext(MessageContext);
   return (
     <Box direction="row" align="center" gap="xsmall" {...rest}>
-      <Text> {formatMessage({ id: 'pagination.stepOptions', messages })}</Text>
+      <Text> {formatMessage({ id: 'pagination.stepLabel', messages })}</Text>
       <Box width="xsmall">
         <Select options={options} value={step} onChange={onChange} />
       </Box>

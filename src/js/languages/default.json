@@ -87,7 +87,7 @@
     "closeMenu": "Close Menu"
   },
   "pagination": {
-    "stepOptions": "Items per page",
+    "stepLabel": "Items per page",
     "summary": "Showing {start}-{end} of {total}"
   },
   "rangeSelector": {
