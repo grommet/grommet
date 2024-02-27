@@ -399,4 +399,34 @@ describe('Pagination', () => {
     expect(getByLabelText('pagination-test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should apply a select component with default values for stepOptions', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} stepOptions />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply a select component with custom values for stepOptions', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Pagination
+          numberItems={NUM_ITEMS}
+          stepOptions={[10, 20, 30, 40, 50]}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply a text component with summary', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} summary />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
