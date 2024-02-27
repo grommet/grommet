@@ -9,7 +9,6 @@ export const ReadOnly = () => (
       <Form>
         <FormField>
           <TextInput
-            readOnly
             readOnlyCopy
             value="Read only with copy button"
             aria-label="read only"
