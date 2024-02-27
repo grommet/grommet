@@ -1069,6 +1069,7 @@ exports[`SelectMultiple disabled option 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2176,6 +2177,14 @@ exports[`SelectMultiple limit 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -2187,10 +2196,11 @@ exports[`SelectMultiple limit 1`] = `
 <button
   aria-expanded="true"
   aria-haspopup="listbox"
-  aria-label="Open drop. 0 selected"
+  aria-label="Open drop. 2 selected"
   class="c0 c1"
+  data-g-tabindex="0"
   id="test-select__drop"
-  tabindex="0"
+  tabindex="-1"
   type="button"
 >
   <div
@@ -2205,11 +2215,12 @@ exports[`SelectMultiple limit 1`] = `
         <input
           autocomplete="off"
           class="c5 c6"
+          data-g-tabindex="-1"
           id="test-select__drop__input"
           readonly=""
           tabindex="-1"
           type="text"
-          value=""
+          value="2 selected"
         />
       </div>
     </div>
@@ -3560,6 +3571,7 @@ exports[`SelectMultiple should display custom messages 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -3892,6 +3904,7 @@ exports[`SelectMultiple should display custom messages 2`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4224,6 +4237,7 @@ exports[`SelectMultiple should display custom messages 3`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -5039,6 +5053,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
   width: 100%;
@@ -5608,6 +5623,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
   width: 100%;
@@ -5858,6 +5874,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
