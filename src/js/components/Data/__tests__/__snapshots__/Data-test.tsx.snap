@@ -609,7 +609,7 @@ exports[`Data controlled search 2`] = `
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 gCBMAZ"
+              class="StyledTextInput-sc-1x30a0s-0 ZwfZu"
               id="data--search"
               name="_search"
               type="search"
@@ -6070,7 +6070,7 @@ exports[`Data uncontrolled search 2`] = `
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 gCBMAZ"
+              class="StyledTextInput-sc-1x30a0s-0 ZwfZu"
               id="data--search"
               name="_search"
               type="search"

@@ -9,7 +9,6 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { Copy as CopyIcon } from 'grommet-icons/icons/Copy';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -18,7 +17,6 @@ import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
-import { Tip } from '../Tip';
 import { AnnounceContext } from '../../contexts';
 import {
   isNodeAfterScroll,
@@ -37,6 +35,7 @@ import {
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
+import { CopyButton } from './CopyButton';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -469,27 +468,24 @@ const TextInput = forwardRef(
 
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
 
-    const CopyButton = (
-      <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
-        <Button
-          onClick={onClickCopy}
-          plain
-          icon={<CopyIcon />}
-          margin={reverse ? { left: 'small' } : { right: 'small' }}
-          onBlur={onBlurCopy}
-          onMouseOut={onBlurCopy}
-          aria-label={`${readOnlyCopyPrompt} ${value}`}
-        />
-      </Tip>
+    const ReadOnlyCopyButton = (
+      <CopyButton
+        onBlurCopy={onBlurCopy}
+        onClickCopy={onClickCopy}
+        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        tip={tip}
+        value={value}
+      />
     );
 
     return (
       <StyledTextInputContainer
+        readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
       >
-        {reverse && readOnlyCopy === true && CopyButton}
+        {reverse && readOnlyCopy === true && ReadOnlyCopyButton}
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
@@ -571,7 +567,7 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-        {!reverse && readOnlyCopy && CopyButton}
+        {!reverse && readOnlyCopy && ReadOnlyCopyButton}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );

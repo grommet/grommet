@@ -9,7 +9,6 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
-import { Copy as CopyIcon } from 'grommet-icons/icons/Copy';
 import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -21,7 +20,6 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { Tip } from '../Tip';
 import { useForwardedRef, setHoursWithOffset } from '../../utils';
 import { readOnlyStyle } from '../../utils/readOnly';
 import {
@@ -34,6 +32,7 @@ import {
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
+import { CopyButton } from '../TextInput/CopyButton';
 
 const StyledDateInputContainer = styled(Box)`
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}};
@@ -276,17 +275,13 @@ Use the icon prop instead.`,
     };
 
     const DateInputButton = readOnlyCopy ? (
-      <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
-        <Button
-          onClick={onClickCopy}
-          plain
-          icon={<CopyIcon />}
-          margin={reverse ? { left: 'small' } : { right: 'small' }}
-          onBlur={onBlurCopy}
-          onMouseOut={onBlurCopy}
-          aria-label={`${readOnlyCopyPrompt} ${textValue}`}
-        />
-      </Tip>
+      <CopyButton
+        onBlurCopy={onBlurCopy}
+        onClickCopy={onClickCopy}
+        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        tip={tip}
+        value={value}
+      />
     ) : (
       <Button
         onClick={open ? closeCalendar : openCalendar}

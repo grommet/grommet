@@ -188,6 +188,7 @@ exports[`DataTableGroupBy renders 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }

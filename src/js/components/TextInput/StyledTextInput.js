@@ -25,12 +25,12 @@ const getPlainStyle = (plain) => {
 
 const StyledTextInput = styled.input`
   ${inputStyle}
-  ${(props) => props.readOnlyCopy && `border: none;`};
   ${(props) =>
-    props.readOnly &&
-    !props.readOnlyCopy &&
-    !props.plain &&
-    readOnlyStyle(props.theme)}
+    props.readOnlyCopy
+      ? `padding-${props.reverse ? 'left' : 'right'}: 0px;`
+      : ''}
+  // readOnly border is handled by StyledTextInputContainer
+  ${(props) => props.readOnly && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}
   ${(props) => props.icon && inputPadForIcon}
   ${(props) =>
@@ -50,7 +50,7 @@ const StyledTextInputContainer = styled.div`
   position: relative;
   width: 100%;
 
-  ${(props) => props.readOnlyCopy && !props.plain && controlBorderStyle};
+  ${(props) => props.readOnlyProp && !props.plain && controlBorderStyle};
 
   ${(props) =>
     props.readOnlyCopy &&
@@ -60,7 +60,7 @@ const StyledTextInputContainer = styled.div`
     display: flex;
   `};
 
-  ${(props) => props.readOnlyCopy && !props.plain && readOnlyStyle(props.theme)}
+  ${(props) => props.readOnlyProp && !props.plain && readOnlyStyle(props.theme)}
 
   ${(props) =>
     props.theme.textInput &&

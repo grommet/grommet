@@ -1,18 +1,22 @@
 import { css } from 'styled-components';
+import { backgroundStyle } from './background';
+import { normalizeColor } from './colors';
 
 export const readOnlyStyle = (theme) => {
   const styles = [];
-  if (theme.global.input.readOnly?.border?.color)
+
+  if (theme?.global.input.readOnly?.border?.color)
     styles.push(
       css`
-        border-color: ${theme.global.input.readOnly.border.color};
+        border-color: ${normalizeColor(
+          theme.global.input.readOnly.border.color,
+          theme,
+        )};
       `,
     );
-  if (theme.global.input.readOnly?.background)
+  if (theme?.global.input.readOnly?.background)
     styles.push(
-      css`
-        background: ${theme.global.input.readOnly.background};
-      `,
+      backgroundStyle(theme.global.input.readOnly?.background, theme),
     );
   return styles;
 };
