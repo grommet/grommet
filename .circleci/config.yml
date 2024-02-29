@@ -194,6 +194,8 @@ workflows:
             tags:
               only: /.*/
       - release:
+          context:
+            - grommet
           requires:
             - jest
             - chromatic
@@ -214,6 +216,8 @@ workflows:
               only:
                 - styled-components-beta
       - publish:
+          context:
+            - grommet
           requires:
             - jest
             - chromatic
