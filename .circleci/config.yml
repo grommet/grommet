@@ -140,14 +140,6 @@ jobs:
       - run:
           name: Publish package
           command: cd dist && npm publish
-  test-workflow:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/grommet-ci
-      - run:
-          name: Check for token
-          command: echo $TEST_SECRET
 workflows:
   build_test:
     jobs:
@@ -201,18 +193,6 @@ workflows:
           filters:
             tags:
               only: /.*/
-      - test-workflow:
-          context:
-            - grommet
-          requires:
-            - jest
-            - chromatic
-            - lint
-            - build
-          filters:
-            branches:
-              only:
-                - master
       - release:
           requires:
             - jest
