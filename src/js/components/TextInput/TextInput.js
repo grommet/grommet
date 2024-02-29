@@ -485,7 +485,7 @@ const TextInput = forwardRef(
         plain={plain}
         border={!plain}
       >
-        {reverse && readOnlyCopy === true && ReadOnlyCopyButton}
+        {reverse && readOnlyCopy && ReadOnlyCopyButton}
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
