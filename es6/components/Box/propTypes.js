@@ -34,7 +34,10 @@ if (process.env.NODE_ENV !== 'production') {
     })]),
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]),
     focusIndicator: PropTypes.bool,
-    gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
+    gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string, PropTypes.shape({
+      row: PropTypes.string,
+      column: PropTypes.string
+    })]),
     height: heightPropType,
     hoverIndicator: hoverIndicatorPropType,
     justify: PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']),

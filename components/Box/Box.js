@@ -97,7 +97,7 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     console.warn('Box must have a gap to use border between');
   }
   var contents = children;
-  if (gap && gap !== 'none' && (!(boxOptions != null && boxOptions.cssGap || cssGap) ||
+  if (gap && gap !== 'none' && (!(boxOptions != null && boxOptions.cssGap || cssGap || typeof gap === 'object') ||
   // need this approach to show border between
   border === 'between' || (border == null ? void 0 : border.side) === 'between' || Array.isArray(border) && border.find(function (b) {
     return b.side === 'between';
@@ -191,7 +191,7 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     elevationProp: elevation,
     fillProp: fill,
     focus: focus,
-    gap: ((boxOptions == null ? void 0 : boxOptions.cssGap) || cssGap) && gap && gap !== 'none' && border !== 'between' && (border == null ? void 0 : border.side) !== 'between' && (!Array.isArray(border) || !border.find(function (b) {
+    gap: ((boxOptions == null ? void 0 : boxOptions.cssGap) || cssGap || typeof gap === 'object') && gap && gap !== 'none' && border !== 'between' && (border == null ? void 0 : border.side) !== 'between' && (!Array.isArray(border) || !border.find(function (b) {
       return b.side === 'between';
     })) && gap,
     kindProp: kind,
