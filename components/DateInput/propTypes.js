@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
     id: _propTypes["default"].string,
     inline: _propTypes["default"].bool,
     reverse: _propTypes["default"].bool,
+    readOnlyCopy: _propTypes["default"].bool,
     inputProps: _propTypes["default"].shape({}),
     name: _propTypes["default"].string,
     onChange: _propTypes["default"].func,

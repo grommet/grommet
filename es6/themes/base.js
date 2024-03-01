@@ -314,9 +314,15 @@ export var generate = function generate(baseSpacing, scale) {
           // size: undefined,
           // height: undefined,
           weight: 600
-        }
+        },
         // deprecate in v3
         // weight: undefined,
+        readOnly: {
+          // background: undefined,
+          // border: {
+          //  color: undefined,
+          // },
+        }
       },
       opacity: {
         strong: 0.8,

@@ -182,6 +182,7 @@ exports[`SelectMultiple children 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -480,6 +481,7 @@ exports[`SelectMultiple defaultValue 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -781,6 +783,7 @@ exports[`SelectMultiple disabled 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -1066,6 +1069,7 @@ exports[`SelectMultiple disabled option 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -1428,6 +1432,7 @@ exports[`SelectMultiple empty options 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -1792,6 +1797,7 @@ exports[`SelectMultiple keyboard interactions 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2107,6 +2113,7 @@ exports[`SelectMultiple limit 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2484,6 +2491,7 @@ exports[`SelectMultiple null value 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2783,6 +2791,7 @@ exports[`SelectMultiple placeholder 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -3068,6 +3077,7 @@ exports[`SelectMultiple select all and clear 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -3280,11 +3290,11 @@ exports[`SelectMultiple select all and clear 3`] = `
       class="StyledBox-sc-13pk1d4-0 djHtJk"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           data-g-tabindex="-1"
           id="test-select__drop__input"
           readonly=""
@@ -3561,6 +3571,7 @@ exports[`SelectMultiple should display custom messages 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -3893,6 +3904,7 @@ exports[`SelectMultiple should display custom messages 2`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4225,6 +4237,7 @@ exports[`SelectMultiple should display custom messages 3`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4556,6 +4569,7 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -5039,6 +5053,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
   width: 100%;
@@ -5608,6 +5623,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
   width: 100%;
@@ -5858,6 +5874,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -6322,6 +6339,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
   width: 100%;
@@ -6895,6 +6913,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
   width: 100%;

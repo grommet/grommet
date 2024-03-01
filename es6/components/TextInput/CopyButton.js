@@ -1,0 +1,48 @@
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
+import { Copy } from 'grommet-icons/icons/Copy';
+import { Button } from '../Button';
+import { Tip } from '../Tip';
+import { edgeStyle } from '../../utils/styles';
+
+// to overcome `plain` styling due to (icon && !label) condition
+// in buttons without theme.button.default, apply the padding here
+var StyledButton = styled(Button).withConfig({
+  displayName: "CopyButton__StyledButton",
+  componentId: "sc-1bp1m18-0"
+})(["border-radius:", ";", ""], function (props) {
+  return props.theme.global.control.border.radius;
+}, function (props) {
+  return !props.theme.button["default"] ? edgeStyle('padding', props.pad, false, undefined, props.theme) : '';
+});
+export var CopyButton = function CopyButton(_ref) {
+  var _theme$global$input$p, _theme$global$input$p2, _theme$global$input$p3;
+  var onClickCopy = _ref.onClickCopy,
+    onBlurCopy = _ref.onBlurCopy,
+    readOnlyCopyPrompt = _ref.readOnlyCopyPrompt,
+    tip = _ref.tip,
+    value = _ref.value;
+  var theme = useContext(ThemeContext);
+  return /*#__PURE__*/React.createElement(Tip, {
+    dropProps: {
+      align: {
+        bottom: 'top'
+      }
+    },
+    content: tip
+  }, /*#__PURE__*/React.createElement(StyledButton, {
+    onClick: onClickCopy,
+    icon: /*#__PURE__*/React.createElement(Copy, null)
+    // only apply horizontal padding since button will
+    // fill height of input
+    ,
+    pad: {
+      horizontal: (_theme$global$input$p = theme.global.input.padding) == null ? void 0 : _theme$global$input$p.horizontal,
+      left: (_theme$global$input$p2 = theme.global.input.padding) == null ? void 0 : _theme$global$input$p2.left,
+      right: (_theme$global$input$p3 = theme.global.input.padding) == null ? void 0 : _theme$global$input$p3.right
+    },
+    onBlur: onBlurCopy,
+    onMouseOut: onBlurCopy,
+    "aria-label": readOnlyCopyPrompt + " " + value
+  }));
+};

@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value", "width"];
+var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "value", "width"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
@@ -15,6 +15,7 @@ import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle, useForwardedRef, useS
 import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledSuggestions } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
+import { CopyButton } from './CopyButton';
 var renderLabel = function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
     return suggestion.label || suggestion.value;
@@ -66,7 +67,8 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onSuggestionsOpen = _ref.onSuggestionsOpen,
     placeholder = _ref.placeholder,
     plain = _ref.plain,
-    readOnly = _ref.readOnly,
+    readOnlyProp = _ref.readOnly,
+    readOnlyCopy = _ref.readOnlyCopy,
     reverse = _ref.reverse,
     suggestions = _ref.suggestions,
     textAlign = _ref.textAlign,
@@ -81,6 +83,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var inputRef = useForwardedRef(ref);
   var dropRef = useRef();
   var suggestionsRef = useRef();
+  var readOnly = readOnlyProp || readOnlyCopy;
   // if this is a readOnly property, don't set a name with the form context
   // this allows Select to control the form context for the name.
   var _formContext$useFormI = formContext.useFormInput({
@@ -104,6 +107,25 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState3 = useState(),
     suggestionsAtClose = _useState3[0],
     setSuggestionsAtClose = _useState3[1];
+  var readOnlyCopyValidation = format({
+    id: 'input.readOnlyCopy.validation',
+    messages: messages
+  });
+  var readOnlyCopyPrompt = format({
+    id: 'input.readOnlyCopy.prompt',
+    messages: messages
+  });
+  var _useState4 = useState(readOnlyCopyPrompt),
+    tip = _useState4[0],
+    setTip = _useState4[1];
+  var onClickCopy = function onClickCopy() {
+    global.navigator.clipboard.writeText(value);
+    announce(readOnlyCopyValidation, 'assertive');
+    setTip(readOnlyCopyValidation);
+  };
+  var onBlurCopy = function onBlurCopy() {
+    if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+  };
   var openDrop = useCallback(function () {
     setShowDrop(true);
     announce(format({
@@ -160,15 +182,15 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   // activeSuggestionIndex unifies mouse and keyboard interaction of
   // the suggestions
-  var _useState4 = useState(resetSuggestionIndex),
-    activeSuggestionIndex = _useState4[0],
-    setActiveSuggestionIndex = _useState4[1];
+  var _useState5 = useState(resetSuggestionIndex),
+    activeSuggestionIndex = _useState5[0],
+    setActiveSuggestionIndex = _useState5[1];
 
   // Only update active suggestion index when the mouse actually moves,
   // not when suggestions are moving under the mouse.
-  var _useState5 = useState(),
-    mouseMovedSinceLastKey = _useState5[0],
-    setMouseMovedSinceLastKey = _useState5[1];
+  var _useState6 = useState(),
+    mouseMovedSinceLastKey = _useState6[0],
+    setMouseMovedSinceLastKey = _useState6[1];
 
   // set activeSuggestionIndex when value changes
   useEffect(function () {
@@ -346,9 +368,20 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // primarily for tests.
 
   var textInputIcon = useSizedIcon(icon, rest.size, theme);
+  var ReadOnlyCopyButton = /*#__PURE__*/React.createElement(CopyButton, {
+    onBlurCopy: onBlurCopy,
+    onClickCopy: onClickCopy,
+    readOnlyCopyPrompt: readOnlyCopyPrompt,
+    tip: tip,
+    value: value
+  });
   return /*#__PURE__*/React.createElement(StyledTextInputContainer, {
-    plain: plain
-  }, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, null, placeholder), textInputIcon && /*#__PURE__*/React.createElement(StyledIcon, {
+    readOnlyProp: readOnly // readOnlyProp to avoid passing to DOM
+    ,
+    readOnlyCopy: readOnlyCopy,
+    plain: plain,
+    border: !plain
+  }, reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, null, placeholder), textInputIcon && !readOnly && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
   }, textInputIcon), /*#__PURE__*/React.createElement(Keyboard, _extends({
@@ -361,7 +394,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     autoComplete: "off",
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
-    icon: icon,
+    icon: !readOnly && icon,
     reverse: reverse,
     focus: focus,
     focusIndicator: focusIndicator,
@@ -371,6 +404,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value),
     readOnly: readOnly,
+    readOnlyCopy: readOnlyCopy,
     onFocus: function onFocus(event) {
       // Don't do anything if we are acting like we already have
       // focus. This can happen when this input loses focus temporarily
@@ -409,7 +443,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setActiveSuggestionIndex(resetSuggestionIndex);
       if (onChange) onChange(event);
     }
-  }))), drop);
+  }))), !reverse && readOnlyCopy && ReadOnlyCopyButton, !readOnly && drop);
 });
 TextInput.displayName = 'TextInput';
 TextInput.propTypes = TextInputPropTypes;
