@@ -20,6 +20,7 @@ const defaultValidationResults = {
   errors: {},
   infos: {},
 };
+const defaultThreshold = 0.5;
 
 const stringToArray = (string) => {
   const match = string?.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
@@ -81,9 +82,38 @@ const setFieldValue = (name, componentValue, prevValue) => {
   return nextValue;
 };
 
+const validateCharacterCount = (format, rule, value) => {
+  const { max, threshold } = rule;
+
+  const getMessage = () => {
+    const charactersRemaining = (plural) => ({
+      id: `formField.maxCharacters.remaining.${plural ? 'plural' : 'singular'}`,
+      values: { number: max - value.length },
+    });
+
+    const charactersOverLimit = (plural) => ({
+      id: `formField.maxCharacters.overLimit.${plural ? 'plural' : 'singular'}`,
+      values: { number: value.length - max },
+    });
+
+    if (max - value.length >= 0) {
+      return format(charactersRemaining(max - value.length > 1));
+    }
+    return format(charactersOverLimit(value.length - max > 1));
+  };
+
+  return value.length / max > (threshold ?? defaultThreshold)
+    ? {
+        status: max - value.length >= 0 ? 'info' : 'error',
+        message: getMessage(),
+      }
+    : undefined;
+};
+
 // Apply validation rule to field value and send correct messaging.
 const validate = (rule, fieldValue, formValue, format, messages) => {
   let result;
+
   if (typeof rule === 'function') {
     result = rule(fieldValue, formValue);
   } else if (rule.regexp) {
@@ -93,7 +123,10 @@ const validate = (rule, fieldValue, formValue, format, messages) => {
         result = { message: result, status: rule.status };
       }
     }
+  } else if (rule.max) {
+    result = validateCharacterCount(format, rule, fieldValue);
   }
+
   return result;
 };
 
@@ -681,7 +714,11 @@ const Form = forwardRef(
           // bubbles up to the "outer" form even though in the DOM the portal
           // doesn't render as child of the "outer" form.
           // https://legacy.reactjs.org/docs/portals.html#event-bubbling-through-portals
-          if (formRef.current && event.target === formRef.current) {
+          if (
+            formRef.current &&
+            (event.target === formRef.current ||
+              event.target.form === formRef.current)
+          ) {
             setPendingValidation(undefined);
             // adding validateOn: "submit" prop to the undefined validateOn
             // fields as we want to trigger "submit" validation once form

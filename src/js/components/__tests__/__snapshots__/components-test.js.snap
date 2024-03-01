@@ -1806,6 +1806,9 @@ exports[`Components loads 1`] = `
               },
             },
           },
+          "primaryKey": {
+            "weight": "bold",
+          },
         },
         "maskedInput": {},
         "menu": {
@@ -3794,6 +3797,9 @@ exports[`Components loads 1`] = `
                 "size": "medium",
               },
             },
+          },
+          "primaryKey": {
+            "weight": "bold",
           },
         },
         "maskedInput": {},
