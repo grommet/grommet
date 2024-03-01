@@ -3,6 +3,10 @@
 exports[`Grommet ThemeContext theme 1`] = `
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #000;
@@ -10,10 +14,6 @@ exports[`Grommet ThemeContext theme 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -208,6 +208,10 @@ exports[`Grommet custom theme 1`] = `
 
 .c2 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -215,10 +219,6 @@ exports[`Grommet custom theme 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c2:hover {
@@ -228,6 +228,10 @@ exports[`Grommet custom theme 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #cc6633;
@@ -235,10 +239,6 @@ exports[`Grommet custom theme 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c6:hover {
@@ -248,6 +248,10 @@ exports[`Grommet custom theme 1`] = `
 
 .c9 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #6FFFB0;
@@ -255,10 +259,6 @@ exports[`Grommet custom theme 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c9:hover {

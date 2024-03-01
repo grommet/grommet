@@ -550,6 +550,10 @@ exports[`Notification multi actions 1`] = `
 
 .c9 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -558,10 +562,6 @@ exports[`Notification multi actions 1`] = `
   text-decoration: none;
   cursor: pointer;
   margin-right: 6px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c9:hover {

@@ -13,6 +13,10 @@ exports[`Anchor blur renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -20,10 +24,6 @@ exports[`Anchor blur renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -56,6 +56,10 @@ exports[`Anchor disabled renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -67,10 +71,6 @@ exports[`Anchor disabled renders 1`] = `
   cursor: default;
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 <div>
@@ -98,6 +98,10 @@ exports[`Anchor focus renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -107,10 +111,6 @@ exports[`Anchor focus renders 1`] = `
   cursor: pointer;
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -226,6 +226,10 @@ exports[`Anchor gap renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -233,10 +237,6 @@ exports[`Anchor gap renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -373,6 +373,10 @@ exports[`Anchor icon label renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -380,10 +384,6 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -427,6 +427,10 @@ exports[`Anchor is clickable 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -434,10 +438,6 @@ exports[`Anchor is clickable 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -669,6 +669,10 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 12px;
   line-height: 18px;
   color: #7D4CDB;
@@ -676,10 +680,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -689,6 +689,10 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c5 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 14px;
   line-height: 20px;
   color: #7D4CDB;
@@ -696,10 +700,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c5:hover {
@@ -709,6 +709,10 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c7 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -716,10 +720,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c7:hover {
@@ -729,6 +729,10 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c9 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 22px;
   line-height: 28px;
   color: #7D4CDB;
@@ -736,10 +740,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c9:hover {
@@ -749,6 +749,10 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c11 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 26px;
   line-height: 32px;
   color: #7D4CDB;
@@ -756,10 +760,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c11:hover {
@@ -907,6 +907,10 @@ exports[`Anchor renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -914,10 +918,6 @@ exports[`Anchor renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -949,6 +949,10 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -956,10 +960,6 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -1113,6 +1113,10 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c2 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 12px;
   line-height: 18px;
   color: #000000;
@@ -1120,10 +1124,6 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c2:hover {
@@ -1133,6 +1133,10 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 14px;
   line-height: 20px;
   color: #000000;
@@ -1140,10 +1144,6 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c4:hover {
@@ -1153,6 +1153,10 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 18px;
   line-height: 24px;
   color: #000000;
@@ -1160,10 +1164,6 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c6:hover {
@@ -1173,6 +1173,10 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c8 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 22px;
   line-height: 28px;
   color: #7D4CDB;
@@ -1180,10 +1184,6 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c8:hover {
@@ -1193,6 +1193,10 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c10 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 26px;
   line-height: 32px;
   color: #7D4CDB;
@@ -1200,10 +1204,6 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c10:hover {
@@ -1213,6 +1213,10 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c12 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 34px;
   line-height: 40px;
   color: #7D4CDB;
@@ -1220,10 +1224,6 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c12:hover {
@@ -1233,6 +1233,10 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c15 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #000000;
@@ -1240,10 +1244,6 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c15:hover {
@@ -1253,6 +1253,10 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c16 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #000000;
@@ -1260,10 +1264,6 @@ exports[`Anchor renders size specific theming 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c16:hover {
@@ -1511,6 +1511,10 @@ exports[`Anchor renders tag 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1518,10 +1522,6 @@ exports[`Anchor renders tag 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -1556,6 +1556,10 @@ exports[`Anchor renders with children 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1563,10 +1567,6 @@ exports[`Anchor renders with children 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -1627,6 +1627,10 @@ exports[`Anchor reverse icon label renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1634,10 +1638,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -1681,6 +1681,10 @@ exports[`Anchor should have no accessibility violations 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1688,10 +1692,6 @@ exports[`Anchor should have no accessibility violations 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -1740,6 +1740,10 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
 
 .c2 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1747,10 +1751,6 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c2:hover {
@@ -1782,6 +1782,10 @@ exports[`Anchor size renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 12px;
   line-height: 18px;
   color: #7D4CDB;
@@ -1789,10 +1793,6 @@ exports[`Anchor size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -1802,6 +1802,10 @@ exports[`Anchor size renders 1`] = `
 
 .c2 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 14px;
   line-height: 20px;
   color: #7D4CDB;
@@ -1809,10 +1813,6 @@ exports[`Anchor size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c2:hover {
@@ -1822,6 +1822,10 @@ exports[`Anchor size renders 1`] = `
 
 .c3 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
@@ -1829,10 +1833,6 @@ exports[`Anchor size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c3:hover {
@@ -1842,6 +1842,10 @@ exports[`Anchor size renders 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 22px;
   line-height: 28px;
   color: #7D4CDB;
@@ -1849,10 +1853,6 @@ exports[`Anchor size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c4:hover {
@@ -1862,6 +1862,10 @@ exports[`Anchor size renders 1`] = `
 
 .c5 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 26px;
   line-height: 32px;
   color: #7D4CDB;
@@ -1869,10 +1873,6 @@ exports[`Anchor size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c5:hover {
@@ -1882,6 +1882,10 @@ exports[`Anchor size renders 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 34px;
   line-height: 40px;
   color: #7D4CDB;
@@ -1889,10 +1893,6 @@ exports[`Anchor size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c6:hover {
@@ -1902,6 +1902,10 @@ exports[`Anchor size renders 1`] = `
 
 .c7 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 10px;
   line-height: normal;
   color: #7D4CDB;
@@ -1909,10 +1913,6 @@ exports[`Anchor size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c7:hover {
@@ -1962,6 +1962,10 @@ exports[`Anchor warns about invalid icon render 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1970,10 +1974,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   text-decoration: none;
   cursor: pointer;
   padding: 12px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -2008,6 +2008,10 @@ exports[`Anchor warns about invalid label render 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2015,10 +2019,6 @@ exports[`Anchor warns about invalid label render 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -2051,6 +2051,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2058,10 +2062,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c1:hover {
@@ -2071,6 +2071,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c2 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2078,10 +2082,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c2:hover {
@@ -2091,6 +2091,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c3 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2098,10 +2102,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c3:hover {
@@ -2111,6 +2111,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2118,10 +2122,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c4:hover {
@@ -2131,6 +2131,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c5 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2138,10 +2142,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c5:hover {
@@ -2151,6 +2151,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2158,10 +2162,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c6:hover {
@@ -2171,6 +2171,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c7 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2178,10 +2182,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c7:hover {
@@ -2191,6 +2191,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c8 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2198,10 +2202,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c8:hover {
@@ -2211,6 +2211,10 @@ exports[`Anchor weight renders 1`] = `
 
 .c9 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2218,10 +2222,6 @@ exports[`Anchor weight renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .c9:hover {
