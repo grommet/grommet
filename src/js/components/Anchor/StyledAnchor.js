@@ -33,6 +33,7 @@ const StyledAnchor = styled.a.withConfig({
     ) && defaultValidatorFn(prop),
 })`
   box-sizing: border-box;
+  display: inline-flex;
   ${(props) => sizeStyle(props)}
   color: ${(props) =>
     normalizeColor(
@@ -79,7 +80,6 @@ const StyledAnchor = styled.a.withConfig({
   ${(props) => props.disabled && disabledStyle}
   ${(props) => props.focus && focusStyle()}
   ${(props) => props.theme.anchor.extend}
-  display: inline-flex;
 `;
 
 StyledAnchor.defaultProps = {};
