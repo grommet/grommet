@@ -50,7 +50,6 @@ if (process.env.NODE_ENV !== 'production') {
           }),
         }),
         dataForm: PropTypes.shape({
-          reset: PropTypes.string,
           submit: PropTypes.string,
         }),
         dataSearch: PropTypes.shape({
@@ -67,7 +66,11 @@ if (process.env.NODE_ENV !== 'production') {
         dataSummary: PropTypes.shape({
           filtered: PropTypes.string,
           filteredSingle: PropTypes.string,
+          items: PropTypes.string,
+          itemsSingle: PropTypes.string,
+          selected: PropTypes.string,
           total: PropTypes.string,
+          totalSingle: PropTypes.string,
         }),
         dataTableColumns: PropTypes.shape({
           open: PropTypes.string,
@@ -99,6 +102,18 @@ if (process.env.NODE_ENV !== 'production') {
         form: PropTypes.shape({
           invalid: PropTypes.string,
           required: PropTypes.string,
+        }),
+        formField: PropTypes.shape({
+          maxCharacters: PropTypes.shape({
+            remaining: PropTypes.shape({
+              singular: PropTypes.string,
+              plural: PropTypes.string,
+            }),
+            overLimit: PropTypes.shape({
+              singular: PropTypes.string,
+              plural: PropTypes.string,
+            }),
+          }),
         }),
         menu: PropTypes.shape({
           openMenu: PropTypes.string,

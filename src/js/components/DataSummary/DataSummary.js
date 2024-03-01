@@ -10,6 +10,7 @@ export const DataSummary = ({ messages, ...rest }) => {
   const {
     filteredTotal,
     messages: dataMessages,
+    selected,
     total,
   } = useContext(DataContext);
 
@@ -37,6 +38,22 @@ export const DataSummary = ({ messages, ...rest }) => {
           items,
         },
       })}
+      {selected > 0 ? (
+        <>
+          {/* separator with margin to ensure | is not confused 
+          as a 1 in the selected count */}
+          <Text margin={{ horizontal: 'small' }}>|</Text>
+          <Text>
+            {format({
+              id: 'dataSummary.selected',
+              messages: messages || dataMessages?.dataSummary,
+              values: {
+                selected,
+              },
+            })}
+          </Text>
+        </>
+      ) : undefined}
     </Text>
   );
 };

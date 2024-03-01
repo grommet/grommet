@@ -47,6 +47,7 @@
     "filteredSingle": "{filteredTotal} result of {total} {items}",
     "items": "items",
     "itemsSingle": "item",
+    "selected": "{selected} selected",
     "total": "{total} {items}",
     "totalSingle": "{total} {items}"
   },
@@ -80,6 +81,18 @@
   "form": {
     "invalid": "invalid",
     "required": "required"
+  },
+  "formField": {
+    "maxCharacters": {
+      "remaining": {
+        "singular": "{number} character left",
+        "plural": "{number} characters left"
+      },
+      "overLimit": {
+        "singular": "{number} character over limit",
+        "plural": "{number} characters over limit"
+      }
+    }
   },
   "menu": {
     "openMenu": "Open Menu",

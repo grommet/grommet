@@ -51,7 +51,6 @@ export interface GrommetProps {
         };
       };
       dataForm?: {
-        reset?: string;
         submit?: string;
       };
       dataSearch?: {
@@ -68,7 +67,11 @@ export interface GrommetProps {
       dataSummary?: {
         filtered?: string;
         filteredSingle?: string;
+        items?: string;
+        itemsSingle?: string;
+        selected?: string;
         total?: string;
+        totalSingle?: string;
       };
       dataTableColumns?: {
         open?: string;
@@ -100,6 +103,18 @@ export interface GrommetProps {
       form?: {
         invalid?: string;
         required?: string;
+      };
+      formField?: {
+        maxCharacters?: {
+          remaining?: {
+            singular?: string;
+            plural?: string;
+          };
+          overLimit?: {
+            singular?: string;
+            plural: string;
+          };
+        };
       };
       menu?: {
         openMenu?: string;
