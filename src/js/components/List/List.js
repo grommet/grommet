@@ -1,4 +1,11 @@
-import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
+import React, {
+  Fragment,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
@@ -249,73 +256,84 @@ const List = React.forwardRef(
       ariaProps['aria-activedescendant'] = activeId;
     }
 
+    const onSelectOption = useCallback(
+      (event) => {
+        if ((onClickItem || onOrder) && active >= 0) {
+          if (onOrder) {
+            const index = Math.trunc(active / 2);
+            // Call onOrder with the re-ordered data.
+            // Update the active control index so that the
+            // active control will stay on the same item
+            // even though it moved up or down.
+            const newIndex = active % 2 ? index + 1 : index - 1;
+            onOrder(reorder(orderableData, pinnedInfo, index, newIndex));
+            updateActive(
+              active % 2
+                ? Math.min(active + 2, orderableData.length * 2 - 2)
+                : Math.max(active - 2, 1),
+            );
+          } else if (
+            disabledItems?.includes(getValue(data[active], active, itemKey))
+          ) {
+            event.preventDefault();
+          } else if (onClickItem) {
+            event.persist();
+            const adjustedEvent = event;
+            adjustedEvent.item = data[active];
+            adjustedEvent.index = active;
+            onClickItem(adjustedEvent);
+            sendAnalytics({
+              type: 'listItemClick',
+              element: listRef.current,
+              event: adjustedEvent,
+              item: data[active],
+              index: active,
+            });
+          }
+        }
+      },
+      [
+        active,
+        onOrder,
+        orderableData,
+        pinnedInfo,
+        disabledItems,
+        data,
+        itemKey,
+        onClickItem,
+        updateActive,
+      ],
+    );
+
     return (
       <Container {...containterProps}>
         <Keyboard
-          onEnter={
-            (onClickItem || onOrder) && active >= 0
-              ? (event) => {
-                  if (onOrder) {
-                    const index = Math.trunc(active / 2);
-                    // Call onOrder with the re-ordered data.
-                    // Update the active control index so that the
-                    // active control will stay on the same item
-                    // even though it moved up or down.
-                    if (active % 2) {
-                      onOrder(
-                        reorder(orderableData, pinnedInfo, index, index + 1),
-                      );
-                      updateActive(
-                        Math.min(active + 2, orderableData.length * 2 - 2),
-                      );
-                    } else {
-                      onOrder(
-                        reorder(orderableData, pinnedInfo, index, index - 1),
-                      );
-                      updateActive(Math.max(active - 2, 1));
-                    }
-                  } else if (
-                    disabledItems?.includes(
-                      getValue(data[active], active, itemKey),
-                    )
-                  ) {
-                    event.preventDefault();
-                  } else if (onClickItem) {
-                    event.persist();
-                    const adjustedEvent = event;
-                    adjustedEvent.item = data[active];
-                    adjustedEvent.index = active;
-                    onClickItem(adjustedEvent);
-                    sendAnalytics({
-                      type: 'listItemClick',
-                      element: listRef.current,
-                      event: adjustedEvent,
-                      item: data[active],
-                      index: active,
-                    });
-                  }
-                }
-              : undefined
-          }
-          onUp={
-            (onClickItem || onOrder) && active
-              ? () => {
-                  const min = onOrder ? 1 : 0;
-                  updateActive(Math.max(active - 1, min));
-                }
-              : undefined
-          }
-          onDown={
-            (onClickItem || onOrder) && orderableData && orderableData.length
-              ? () => {
-                  const min = onOrder ? 1 : 0;
-                  const max = onOrder
-                    ? orderableData.length * 2 - 2
-                    : data.length - 1;
-                  updateActive(active >= min ? Math.min(active + 1, max) : min);
-                }
-              : undefined
-          }
+          onEnter={onSelectOption}
+          onSpace={(event) => {
+            event.preventDefault();
+            onSelectOption(event);
+          }}
+          onUp={(event) => {
+            event.preventDefault();
+            if ((onClickItem || onOrder) && active) {
+              const min = onOrder ? 1 : 0;
+              updateActive(Math.max(active - 1, min));
+            }
+          }}
+          onDown={(event) => {
+            event.preventDefault();
+            if (
+              (onClickItem || onOrder) &&
+              orderableData &&
+              orderableData.length
+            ) {
+              const min = onOrder ? 1 : 0;
+              const max = onOrder
+                ? orderableData.length * 2 - 2
+                : data.length - 1;
+              updateActive(active >= min ? Math.min(active + 1, max) : min);
+            }
+          }}
           onKeyDown={onKeyDown}
         >
           <StyledList
