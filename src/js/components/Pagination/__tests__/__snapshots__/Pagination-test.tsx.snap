@@ -694,6 +694,7 @@ exports[`Pagination should apply a select component with custom values for stepO
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  gap: 6px 12px;
 }
 
 .c2 {
@@ -1749,6 +1750,7 @@ exports[`Pagination should apply a select component with default values for step
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  gap: 6px 12px;
 }
 
 .c2 {
@@ -2770,6 +2772,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  gap: 6px 12px;
 }
 
 .c2 {

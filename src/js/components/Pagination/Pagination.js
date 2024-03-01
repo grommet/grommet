@@ -239,6 +239,7 @@ const Pagination = forwardRef(
         direction="row"
         align="center"
         justify="between"
+        gap={{ column: 'small', row: 'xsmall' }}
         wrap
         flex={false}
         {...theme.pagination.container}
