@@ -347,6 +347,7 @@ exports[`Components loads 1`] = `
       "inputProps": [Function],
       "name": [Function],
       "onChange": [Function],
+      "readOnlyCopy": [Function],
       "reverse": [Function],
       "size": [Function],
       "value": [Function],
@@ -1564,6 +1565,7 @@ exports[`Components loads 1`] = `
               "horizontal": "11px",
               "vertical": "11px",
             },
+            "readOnly": {},
           },
           "opacity": {
             "medium": 0.4,
@@ -3556,6 +3558,7 @@ exports[`Components loads 1`] = `
               "horizontal": "11px",
               "vertical": "11px",
             },
+            "readOnly": {},
           },
           "opacity": {
             "medium": 0.4,
@@ -5011,6 +5014,7 @@ exports[`Components loads 1`] = `
       "onSuggestionsOpen": [Function],
       "placeholder": [Function],
       "plain": [Function],
+      "readOnlyCopy": [Function],
       "reverse": [Function],
       "size": [Function],
       "suggestions": [Function],
