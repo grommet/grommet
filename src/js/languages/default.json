@@ -100,7 +100,8 @@
   },
   "pagination": {
     "stepLabel": "Items per page",
-    "summary": "Showing {start}-{end} of {total}"
+    "summary": "Showing {start}-{end} of {total}",
+    "summarynoItems": "{total} items"
   },
   "rangeSelector": {
     "lower": "Lower Bounds",

@@ -8,15 +8,23 @@ export const PaginationSummary = ({ messages, numberItems, page, step }) => {
   return (
     <Box flex="grow">
       <Text>
-        {formatMessage({
-          id: 'pagination.summary',
-          messages,
-          values: {
-            start: `${(page - 1) * step + 1}`,
-            end: `${Math.min(page * step, numberItems)}`,
-            total: numberItems,
-          },
-        })}
+        {numberItems > 0
+          ? formatMessage({
+              id: 'pagination.summary',
+              messages,
+              values: {
+                start: `${(page - 1) * step + 1}`,
+                end: `${Math.min(page * step, numberItems)}`,
+                total: numberItems,
+              },
+            })
+          : formatMessage({
+              id: 'pagination.summary',
+              messages,
+              values: {
+                total: numberItems`pagination.summary.noItems`,
+              },
+            })}
       </Text>
     </Box>
   );
