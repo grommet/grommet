@@ -83,10 +83,7 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
     direction: "row",
     align: "center",
     gap: gap || theme.anchor.gap,
-    responsive: false,
-    style: {
-      display: 'inline-flex'
-    }
+    responsive: false
   }, first, second) : first || second || children);
 });
 Anchor.displayName = 'Anchor';
