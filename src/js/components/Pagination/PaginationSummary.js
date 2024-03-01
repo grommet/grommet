@@ -19,11 +19,8 @@ export const PaginationSummary = ({ messages, numberItems, page, step }) => {
               },
             })
           : formatMessage({
-              id: 'pagination.summary',
+              id: 'pagination.summaryNoItems',
               messages,
-              values: {
-                total: numberItems`pagination.summary.noItems`,
-              },
             })}
       </Text>
     </Box>

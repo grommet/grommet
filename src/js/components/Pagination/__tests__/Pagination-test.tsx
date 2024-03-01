@@ -429,4 +429,13 @@ describe('Pagination', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should have no items', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Pagination numberItems={0} summary />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
