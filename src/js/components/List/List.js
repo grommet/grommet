@@ -43,14 +43,6 @@ const StyledList = styled.ul`
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
 
-  // during the interim state when a user is holding down a click,
-  // the individual list item has focus in the DOM until the click
-  // completes and focus is placed back on the list container.
-  // for visual consistency, we want to keep the focus indicator on the
-  // list container the whole time.
-  ${(props) =>
-    props.itemFocus &&
-    focusStyle({ forceOutline: true, skipSvgChildren: true })}}
   ${(props) => props.theme.list && props.theme.list.extend}}
 
   &:focus:not(:focus-visible) {
