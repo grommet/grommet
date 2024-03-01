@@ -2388,7 +2388,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 2px solid #6FFFB0;
 }
 
 .c1:focus {
@@ -4200,7 +4199,7 @@ exports[`List events Enter key 2`] = `
 >
   <ul
     aria-activedescendant="1"
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -4284,7 +4283,6 @@ exports[`List events focus and blur 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 2px solid #6FFFB0;
 }
 
 .c1:focus {
@@ -4391,7 +4389,7 @@ exports[`List events focus and blur 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -4596,7 +4594,7 @@ exports[`List events mouse events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -8783,7 +8781,7 @@ exports[`List events should render new data when page changes 2`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
-      class="List__StyledList-sc-130gdqg-0 gihhYd"
+      class="List__StyledList-sc-130gdqg-0 dbvdEK"
       role="list"
     >
       .c0 {
@@ -15654,7 +15652,7 @@ exports[`List onClickItem 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -16164,7 +16162,7 @@ exports[`List onOrder Keyboard move down 2`] = `
 >
   <ul
     aria-activedescendant="alphaMoveDown"
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -16318,7 +16316,7 @@ exports[`List onOrder Keyboard move down 3`] = `
 >
   <ul
     aria-activedescendant="alphaMoveUp"
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -16954,7 +16952,7 @@ exports[`List onOrder Keyboard move up 2`] = `
 >
   <ul
     aria-activedescendant="betaMoveUp"
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -17108,7 +17106,7 @@ exports[`List onOrder Keyboard move up 3`] = `
 >
   <ul
     aria-activedescendant="betaMoveDown"
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -17743,7 +17741,7 @@ exports[`List onOrder Mouse move down 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 oGJnO"
+    class="List__StyledList-sc-130gdqg-0 jFacA-d"
     role="listbox"
     tabindex="0"
   >
@@ -19822,7 +19820,6 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 2px solid #6FFFB0;
 }
 
 .c1:focus {
