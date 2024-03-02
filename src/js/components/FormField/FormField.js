@@ -3,6 +3,7 @@ import React, {
   cloneElement,
   forwardRef,
   useContext,
+  useMemo,
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
@@ -211,6 +212,24 @@ const FormField = forwardRef(
 
     const portalContext = useContext(PortalContext);
 
+    const readOnlyField = useMemo(() => {
+      let readOnly = false;
+      if (children) {
+        Children.map(children, (child) => {
+          if (
+            (child.props?.readOnly === true ||
+              child.props?.readOnlyCopy === true) &&
+            child.type &&
+            ('TextInput'.indexOf(child.type.displayName) !== -1 ||
+              'DateInput'.indexOf(child.type.displayName) !== -1)
+          ) {
+            readOnly = true;
+          }
+        });
+      }
+      return readOnly;
+    }, [children]);
+
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
     // already set.
@@ -274,7 +293,9 @@ const FormField = forwardRef(
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
-      if (error && formFieldTheme.error) {
+      if (readOnlyField) {
+        themeContentProps.background = theme.global.input.readOnly?.background;
+      } else if (error && formFieldTheme.error) {
         themeContentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
         themeContentProps.background = formFieldTheme.disabled.background;
@@ -320,6 +341,8 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
+    } else if (readOnlyField && theme.global.input?.readOnly?.border?.color) {
+      borderColor = theme.global.input?.readOnly?.border?.color;
     } else if (
       // backward compatibility check
       (error && themeBorder && themeBorder.error.color) ||
