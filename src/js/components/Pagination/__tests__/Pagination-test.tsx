@@ -414,7 +414,7 @@ describe('Pagination', () => {
     await user.click(screen.getByRole('button', { name: /Open Drop/i }));
     // click on first option
     await user.click(screen.getByRole('option', { name: /50/i }));
-    // expect input value to be 10
+    // expect input value to be 50
     expect(screen.getByRole('textbox')).toHaveValue('50');
   });
 
