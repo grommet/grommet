@@ -2,9 +2,11 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import 'jest-styled-components';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
-import { render } from '@testing-library/react';
-import { fireEvent } from '@testing-library/dom';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Pagination } from '..';
@@ -400,17 +402,26 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should apply a select component with default values for stepOptions', () => {
-    const { asFragment } = render(
+  test('should apply a select component with default values for stepOptions', async () => {
+    window.scrollTo = jest.fn();
+    const user = userEvent.setup();
+    render(
       <Grommet>
         <Pagination numberItems={NUM_ITEMS} stepOptions />
       </Grommet>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    // open stepOptions
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // click on first option
+    await user.click(screen.getByRole('option', { name: /50/i }));
+    // expect input value to be 10
+    expect(screen.getByRole('textbox')).toHaveValue('50');
   });
 
-  test('should apply a select component with custom values for stepOptions', () => {
-    const { asFragment } = render(
+  test('should apply a select component with custom values for stepOptions', async () => {
+    window.scrollTo = jest.fn();
+    const user = userEvent.setup();
+    render(
       <Grommet>
         <Pagination
           numberItems={NUM_ITEMS}
@@ -418,7 +429,12 @@ describe('Pagination', () => {
         />
       </Grommet>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    // open stepOptions
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // click on first option
+    await user.click(screen.getByRole('option', { name: /10/i }));
+    // expect input value to be 10
+    expect(screen.getByRole('textbox')).toHaveValue('10');
   });
 
   test('should apply a text component with summary', () => {
