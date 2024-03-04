@@ -1816,6 +1816,10 @@ exports[`DataFilters layer 2`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
 
 }
