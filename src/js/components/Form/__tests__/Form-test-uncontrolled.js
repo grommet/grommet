@@ -1595,4 +1595,34 @@ describe('Form uncontrolled', () => {
       }),
     );
   });
+
+  test('should validate when submit is fired directly on input', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="My field"
+            name="my-field"
+            htmlFor="my-field"
+            validate={{
+              regexp: /^some-value/,
+              message: 'Invalid email address',
+              status: 'error',
+            }}
+          >
+            <TextInput
+              name="my-field"
+              id="my-field"
+              placeholder="placeholder text"
+            />
+          </FormField>
+          <Button label="Submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const element = screen.getByPlaceholderText('placeholder text');
+    fireEvent.submit(element);
+    expect(screen.getByText('Invalid email address')).toBeTruthy();
+  });
 });

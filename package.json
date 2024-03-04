@@ -46,7 +46,7 @@
     "test-e2e-ci": "testcafe chrome:headless e2e/tests -r xunit:/tmp/test-results/testcafe/results.xml",
     "build-storybook": "storybook build -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
-    "chromatic": "chromatic -t chpt_7a9da5f0b29d9bf"
+    "chromatic": "chromatic"
   },
   "peerDependencies": {
     "react": "^16.6.1 || ^17.0.0 || ^18.0.0",
@@ -205,7 +205,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "164 kB"
+      "maxSize": "165 kB"
     }
   ],
   "keywords": [

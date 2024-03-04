@@ -153,6 +153,7 @@ if (process.env.NODE_ENV !== 'production') {
         'xlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({ row: PropTypes.string, column: PropTypes.string }),
     ]),
     height: heightPropType,
     hoverIndicator: hoverIndicatorPropType,
