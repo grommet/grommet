@@ -21,7 +21,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var HiddenAnchor = _styledComponents["default"].a.withConfig({
   displayName: "LayerContainer__HiddenAnchor",
   componentId: "sc-1srj14c-0"
-})(["width:0;height:0;overflow:hidden;position:absolute;"]);
+})(["width:0;height:0;overflow:hidden;position:absolute;&:focus{outline:none;}"]);
 var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var background = _ref.background,
     children = _ref.children,
