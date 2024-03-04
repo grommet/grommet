@@ -245,14 +245,14 @@ const Pagination = forwardRef(
         {...theme.pagination.container}
         {...rest}
       >
-        {summary ? (
+        {summary && (
           <PaginationSummary
             messages={messages}
             page={page}
             step={step}
             numberItems={total}
           />
-        ) : undefined}
+        )}
         {stepOptions ? (
           <Box
             flex={!summary ? 'grow' : undefined}
