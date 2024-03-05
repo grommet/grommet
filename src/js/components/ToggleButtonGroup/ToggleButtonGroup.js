@@ -5,14 +5,13 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 
 const ToggleButtonGroup = ({ options, value, onChange, type, ...rest }) => {
+  // this sshould be in theme eventtuually which should we expose in base theme?
   const toggleButtonGroupProps = {
     direction: 'row',
     margin: 'none',
     gap: 'none',
     border: true,
     round: 'xsmall',
-    // why is it growing past content
-    style: { width: 'fit-content' },
   };
   const contextValue = useMemo(() => ({ inToggleButtonGroup: true }), []);
 
