@@ -23,7 +23,7 @@ var emptyData = [];
 var StyledList = _styledComponents["default"].ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " &:focus{", "}", "}", "}"], function (props) {
+})(["list-style:none;", " padding:0;", " &:focus{", "}", "}&:focus:not(:focus-visible){", "}"], function (props) {
   return !props.margin && 'margin: 0;';
 }, _utils.genericStyles, function (props) {
   return props.tabIndex >= 0 && (0, _utils.focusStyle)({
@@ -31,13 +31,8 @@ var StyledList = _styledComponents["default"].ul.withConfig({
     skipSvgChildren: true
   });
 }, function (props) {
-  return props.itemFocus && (0, _utils.focusStyle)({
-    forceOutline: true,
-    skipSvgChildren: true
-  });
-}, function (props) {
   return props.theme.list && props.theme.list.extend;
-});
+}, (0, _utils.unfocusStyle)());
 var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
