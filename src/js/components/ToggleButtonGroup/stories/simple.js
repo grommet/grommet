@@ -14,7 +14,7 @@ const optionsObjects = [
   {
     label: (
       <Box direction="row">
-        Bold <Bold />
+        <Bold /> Bold
       </Box>
     ),
     value: 'bold',
@@ -22,7 +22,7 @@ const optionsObjects = [
   {
     label: (
       <Box direction="row">
-        Italic <Italic />
+        <Italic /> Italic
       </Box>
     ),
     value: 'italic',
@@ -30,7 +30,7 @@ const optionsObjects = [
   {
     label: (
       <Box direction="row">
-        Underline <Underline />
+        <Underline /> Underline
       </Box>
     ),
     value: 'underline',
