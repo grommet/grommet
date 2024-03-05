@@ -5034,6 +5034,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "ToggleButtonGroup": [Function],
   "Toolbar": [Function],
   "Video": {
     "$$typeof": Symbol(react.forward_ref),

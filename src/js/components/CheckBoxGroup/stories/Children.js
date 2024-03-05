@@ -5,12 +5,9 @@ import { Ascend, Descend } from 'grommet-icons';
 
 const optionsObjects = [
   {
-    label: 'asc',
-    disabled: true,
     value: 'asc',
   },
   {
-    label: 'desc',
     value: 'desc',
   },
 ];

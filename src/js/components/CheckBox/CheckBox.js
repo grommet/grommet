@@ -5,6 +5,8 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
+// eslint-disable-next-line max-len
+import { ToggleButtonGroupContext } from '../ToggleButtonGroup/ToggleButtonGroupContext';
 import { CheckBoxPropTypes } from './propTypes';
 
 import {
@@ -59,6 +61,7 @@ const CheckBox = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
+    const { inToggleButtonGroup } = useContext(ToggleButtonGroupContext);
 
     const [checked, setChecked] = formContext.useFormInput({
       name,
@@ -170,7 +173,11 @@ const CheckBox = forwardRef(
         as={Box}
         align="center"
         justify="center"
-        margin={label && { [side]: theme.checkBox.gap || 'small' }}
+        margin={
+          !inToggleButtonGroup
+            ? label && { [side]: theme.checkBox.gap || 'small' }
+            : undefined
+        }
         {...themeableProps}
       >
         <StyledCheckBoxInput
@@ -209,6 +216,8 @@ const CheckBox = forwardRef(
     const first = reverse ? normalizedLabel : checkBoxNode;
     const second = reverse ? checkBoxNode : normalizedLabel;
 
+    // we dont want normalizedLabel
+
     return (
       <StyledCheckBoxContainer
         fillProp={fill}
@@ -225,7 +234,7 @@ const CheckBox = forwardRef(
         {...themeableProps}
       >
         {first}
-        {second}
+        {!inToggleButtonGroup ? second : undefined}
       </StyledCheckBoxContainer>
     );
   },
