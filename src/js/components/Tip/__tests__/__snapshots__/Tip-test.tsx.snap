@@ -580,12 +580,6 @@ exports[`Tip themed 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    margin: 21px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c2 {
     margin: 3px;
   }
