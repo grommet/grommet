@@ -217,6 +217,7 @@ export const DataFilter = ({
           <SelectMultiple
             aria-label={ariaLabel}
             id={id}
+            dropHeight="medium"
             name={property}
             showSelectedInline
             options={searchedOptions}
