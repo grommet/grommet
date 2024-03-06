@@ -68,7 +68,7 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
     }
     var themeBackground = nextTheme.global.colors.background;
     nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
-    if (themeMode === 'auto' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (themeMode === 'auto' && typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       nextTheme.dark = true;
     }
     var color = normalizeColor(background || themeBackground, nextTheme);
