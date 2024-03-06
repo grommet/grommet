@@ -64,7 +64,7 @@
     "react/sort-comp": 0,
     "react/state-in-constructor": 0,
     "react/static-property-placement": 0,
-    "react-hooks/exhaustive-deps": 1,
+    "react-hooks/exhaustive-deps": 2,
     "react-hooks/rules-of-hooks": 2,
     "semi": [2, "always"]
   },
