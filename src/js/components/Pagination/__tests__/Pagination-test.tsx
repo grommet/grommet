@@ -415,7 +415,10 @@ describe('Pagination', () => {
     // click on first option
     await user.click(screen.getByRole('option', { name: /50/i }));
     // expect input value to be 50
-    expect(screen.getByRole('textbox')).toHaveValue('50');
+    const updatedSelectButton = screen.getByRole('button', {
+      name: 'Open Drop; Selected: 50',
+    });
+    expect(updatedSelectButton).toBeTruthy();
   });
 
   test('should apply a select component with custom values for stepOptions', async () => {
@@ -434,7 +437,10 @@ describe('Pagination', () => {
     // click on first option
     await user.click(screen.getByRole('option', { name: /10/i }));
     // expect input value to be 10
-    expect(screen.getByRole('textbox')).toHaveValue('10');
+    const updatedSelectButton = screen.getByRole('button', {
+      name: 'Open Drop; Selected: 10',
+    });
+    expect(updatedSelectButton).toBeTruthy();
   });
 
   test('should apply a text component with summary', () => {
