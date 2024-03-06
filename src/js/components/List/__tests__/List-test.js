@@ -581,7 +581,7 @@ describe('List onOrder', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test.only('Keyboard move up', () => {
+  test('Keyboard move up', () => {
     const { container, getByText } = render(<App />);
 
     expect(container.firstChild).toMatchSnapshot();
