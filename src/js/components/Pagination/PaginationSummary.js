@@ -3,10 +3,16 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { MessageContext } from '../../contexts/MessageContext';
 
-export const PaginationSummary = ({ messages, numberItems, page, step }) => {
+export const PaginationSummary = ({
+  messages,
+  numberItems,
+  page,
+  step,
+  ...rest
+}) => {
   const { format: formatMessage } = useContext(MessageContext);
   return (
-    <Box flex="grow">
+    <Box {...rest}>
       <Text>
         {numberItems > 0
           ? formatMessage({
