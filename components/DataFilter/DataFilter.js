@@ -191,6 +191,7 @@ var DataFilter = exports.DataFilter = function DataFilter(_ref) {
         content = /*#__PURE__*/_react["default"].createElement(_SelectMultiple.SelectMultiple, {
           "aria-label": ariaLabel,
           id: id,
+          dropHeight: "medium",
           name: property,
           showSelectedInline: true,
           options: searchedOptions,
