@@ -17,18 +17,16 @@ export const PaginationStep = ({
   return (
     <Box direction="row" align="center" gap="xsmall" {...rest}>
       <Text> {formatMessage({ id: 'pagination.stepLabel', messages })}</Text>
-      <Box width="xsmall">
-        <Select
-          options={options}
-          value={step}
-          valueLabel={
-            <Box {...theme.global.input} pad={theme.global.input.padding}>
-              <Text {...theme.global.input.font}>{step}</Text>
-            </Box>
-          }
-          onChange={onChange}
-        />
-      </Box>
+      <Select
+        options={options}
+        value={step}
+        valueLabel={
+          <Box {...theme.global.input} pad={theme.global.input.padding}>
+            <Text {...theme.global.input.font}>{step}</Text>
+          </Box>
+        }
+        onChange={onChange}
+      />
     </Box>
   );
 };

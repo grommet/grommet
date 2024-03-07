@@ -238,35 +238,38 @@ const Pagination = forwardRef(
       <StyledPaginationContainer
         direction="row"
         align="center"
-        justify="between"
-        gap={{ column: 'small', row: 'xsmall' }}
+        gap={{ column: 'medium', row: 'xsmall' }}
         wrap
         flex={false}
         {...theme.pagination.container}
         {...rest}
       >
-        {summary && (
-          <PaginationSummary
-            messages={messages}
-            page={page}
-            step={step}
-            numberItems={total}
-          />
-        )}
-        {stepOptions && (
-          <Box
-            flex={!summary ? 'grow' : undefined}
-            align={!summary ? 'end' : undefined}
-          >
+        <Box flex="grow">
+          {summary && (
+            <PaginationSummary
+              messages={messages}
+              page={page}
+              step={step}
+              numberItems={total}
+            />
+          )}
+        </Box>
+        <Box
+          align="center"
+          direction="row"
+          gap={{ column: 'small', row: 'small' }}
+          wrap
+        >
+          {stepOptions && (
             <PaginationStep
               messages={messages}
               options={Array.isArray(stepOptions) ? stepOptions : undefined}
               step={step}
               onChange={({ value }) => setStep(value)}
             />
-          </Box>
-        )}
-        {paginationControls}
+          )}
+          {paginationControls}
+        </Box>
       </StyledPaginationContainer>
     );
   },
