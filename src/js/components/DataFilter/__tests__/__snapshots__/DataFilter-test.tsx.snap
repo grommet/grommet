@@ -4599,7 +4599,7 @@ exports[`DataFilter select multiple options search 2`] = `
 }
 
 .c3 {
-  max-height: inherit;
+  max-height: 384px;
 }
 
 .c15 {
