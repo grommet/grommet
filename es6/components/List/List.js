@@ -1,7 +1,7 @@
 var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { Fragment, useCallback, useContext, useMemo, useRef, useState } from 'react';
+import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -219,7 +219,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     }
     ariaProps['aria-activedescendant'] = activeId;
   }
-  var onSelectOption = useCallback(function (event) {
+  var onSelectOption = function onSelectOption(event) {
     if ((onClickItem || onOrder) && active >= 0) {
       if (onOrder) {
         var index = Math.trunc(active / 2);
@@ -247,7 +247,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         });
       }
     }
-  }, [active, onOrder, orderableData, pinnedInfo, disabledItems, data, itemKey, onClickItem, updateActive]);
+  };
   return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onSelectOption,
     onSpace: function onSpace(event) {

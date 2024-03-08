@@ -225,7 +225,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     }
     ariaProps['aria-activedescendant'] = activeId;
   }
-  var onSelectOption = (0, _react.useCallback)(function (event) {
+  var onSelectOption = function onSelectOption(event) {
     if ((onClickItem || onOrder) && active >= 0) {
       if (onOrder) {
         var index = Math.trunc(active / 2);
@@ -253,7 +253,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
         });
       }
     }
-  }, [active, onOrder, orderableData, pinnedInfo, disabledItems, data, itemKey, onClickItem, updateActive]);
+  };
   return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: onSelectOption,
     onSpace: function onSpace(event) {
