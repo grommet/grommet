@@ -656,7 +656,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 6px 24px;
+  gap: 12px 6px;
 }
 
 .c2 {
@@ -709,7 +709,7 @@ exports[`Pagination should apply a text component with summary 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 12px 12px;
+  gap: 12px 6px;
 }
 
 .c6 {
@@ -10890,7 +10890,7 @@ exports[`Pagination should have no items 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 6px 24px;
+  gap: 12px 6px;
 }
 
 .c2 {
@@ -10943,7 +10943,7 @@ exports[`Pagination should have no items 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 12px 12px;
+  gap: 12px 6px;
 }
 
 .c6 {
