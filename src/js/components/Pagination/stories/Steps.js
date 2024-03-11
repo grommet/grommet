@@ -7,7 +7,7 @@ export const Steps = () => (
   // <Grommet theme={...}>
   <Box align="start" pad="small" gap="xlarge">
     <Box fill="horizontal">
-      <Text>summary and stepSelector</Text>
+      <Text>summary and stepOptions</Text>
       <Pagination numberItems={237} stepOptions summary />
     </Box>
     <Box fill="horizontal">
