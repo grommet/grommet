@@ -11,7 +11,7 @@ export const Steps = () => (
       <Pagination numberItems={237} stepOptions />
     </Box>
     <Box fill="horizontal">
-      <Text>Pagination with stepOptions</Text>
+      <Text>Pagination with stepOptions and summary</Text>
       <Pagination numberItems={237} stepOptions summary />
     </Box>
     <Box fill="horizontal">

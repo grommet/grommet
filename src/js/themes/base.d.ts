@@ -438,6 +438,12 @@ export interface ThemeType {
         size?: string;
         weight?: number | string;
       };
+      readOnly?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+      };
       weight?: number | string;
     };
     opacity?: {
