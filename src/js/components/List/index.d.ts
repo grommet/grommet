@@ -43,7 +43,7 @@ export interface ListProps<ListItemType> {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
-  children?: (...args: any[]) => any;
+  children?: (...args: ListItemType[]) => any;
   data?: ListItemType[];
   disabled?: string[];
   gridArea?: GridAreaType;
@@ -76,7 +76,7 @@ export interface ListExtendedProps<ListItemType>
     ulProps {}
 
 declare const List: <ListItemType = string | {}>(
-  p: React.PropsWithChildren<ListExtendedProps<ListItemType>>,
+  p: ListExtendedProps<ListItemType>,
 ) => React.ReactElement<ListExtendedProps<ListItemType>>;
 
 export { List };
