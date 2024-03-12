@@ -2,9 +2,11 @@ import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import 'jest-styled-components';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
-import { render } from '@testing-library/react';
-import { fireEvent } from '@testing-library/dom';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Pagination } from '..';
@@ -398,5 +400,64 @@ describe('Pagination', () => {
     expect(getByLabelText('pagination-test')).toBeTruthy();
     expect(getByLabelText('pagination-test-2')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply a select component with default values for stepOptions', async () => {
+    window.scrollTo = jest.fn();
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} stepOptions />
+      </Grommet>,
+    );
+    // open stepOptions
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // click on first option
+    await user.click(screen.getByRole('option', { name: /50/i }));
+    // expect input value to be 50
+    const updatedSelectButton = screen.getByRole('button', {
+      name: 'Open Drop; Selected: 50',
+    });
+    expect(updatedSelectButton).toBeTruthy();
+  });
+
+  test('should apply a select component with custom values for stepOptions', async () => {
+    window.scrollTo = jest.fn();
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Pagination
+          numberItems={NUM_ITEMS}
+          stepOptions={[10, 20, 30, 40, 50]}
+        />
+      </Grommet>,
+    );
+    // open stepOptions
+    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // click on first option
+    await user.click(screen.getByRole('option', { name: /10/i }));
+    // expect input value to be 10
+    const updatedSelectButton = screen.getByRole('button', {
+      name: 'Open Drop; Selected: 10',
+    });
+    expect(updatedSelectButton).toBeTruthy();
+  });
+
+  test('should apply a text component with summary', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} summary />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should have no items', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Pagination numberItems={0} summary />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

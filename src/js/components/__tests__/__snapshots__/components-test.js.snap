@@ -741,6 +741,8 @@ exports[`Components loads 1`] = `
       "page": [Function],
       "size": [Function],
       "step": [Function],
+      "stepOptions": [Function],
+      "summary": [Function],
     },
     "render": [Function],
   },
