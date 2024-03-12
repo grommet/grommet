@@ -43,7 +43,7 @@ export interface ListProps<ListItemType> {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
-  children?: (...args: ListItemType[]) => any;
+  children?: (...args: ListItemType[], index: number, state: Record<string, any>) => any;
   data?: ListItemType[];
   disabled?: string[];
   gridArea?: GridAreaType;
