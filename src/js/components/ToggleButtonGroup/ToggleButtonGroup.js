@@ -4,8 +4,14 @@ import { Box } from '../Box';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 
-const ToggleButtonGroup = ({ options, value, onChange, type, ...rest }) => {
-  // this sshould be in theme eventtuually which should we expose in base theme?
+const ToggleButtonGroup = ({
+  options,
+  value,
+  onChange,
+  exclusive,
+  ...rest
+}) => {
+  // this sshould be in theme eventually which should we expose in base theme?
   const toggleButtonGroupProps = {
     direction: 'row',
     margin: 'none',
@@ -14,30 +20,39 @@ const ToggleButtonGroup = ({ options, value, onChange, type, ...rest }) => {
     round: 'xsmall',
   };
   const contextValue = useMemo(() => ({ inToggleButtonGroup: true }), []);
+  const flatOptions = options.map((option) =>
+    typeof option === 'object' ? option.label : option,
+  );
 
   let content;
 
-  if (type === 'single') {
+  if (exclusive) {
     content = (
-      <RadioButtonGroup
-        name="radio"
-        options={options}
-        value={value}
-        onChange={onChange}
-        {...toggleButtonGroupProps}
-        {...rest}
-      >
-        {(option, { checked }) => (
-          <Box
-            background={checked ? 'active-background' : undefined}
-            // take off border on last option
-            border={{ side: 'right' }}
-            pad="xsmall"
-          >
-            {option.label || option}
-          </Box>
-        )}
-      </RadioButtonGroup>
+      <ToggleButtonGroupContext.Provider value={contextValue}>
+        <RadioButtonGroup
+          name="radio"
+          options={options}
+          value={value}
+          onChange={onChange}
+          {...toggleButtonGroupProps}
+          {...rest}
+        >
+          {(option, { checked }) => (
+            <Box
+              background={checked ? 'active-background' : undefined}
+              border={
+                flatOptions.indexOf(option.label || option) <
+                flatOptions.length - 1
+                  ? { side: 'right', color: 'border' }
+                  : undefined
+              }
+              pad="xsmall"
+            >
+              {option.label || option}
+            </Box>
+          )}
+        </RadioButtonGroup>
+      </ToggleButtonGroupContext.Provider>
     );
   } else {
     content = (
@@ -55,8 +70,12 @@ const ToggleButtonGroup = ({ options, value, onChange, type, ...rest }) => {
             <Box
               // move this to theme?
               background={checked ? 'active-background' : undefined}
-              // take off border on last option
-              border={{ side: 'right' }}
+              border={
+                flatOptions.indexOf(option.label || option) <
+                flatOptions.length - 1
+                  ? { side: 'right', color: 'border' }
+                  : undefined
+              }
               pad="xsmall"
             >
               {option.label || option.value}

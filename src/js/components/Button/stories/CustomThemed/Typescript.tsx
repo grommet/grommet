@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ThemeType } from 'grommet/themes';
-import { Box, Button, Grommet } from 'grommet';
+import { Box, Button, Tag, Grommet } from 'grommet';
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' if you are not using Typescript.
@@ -51,27 +51,16 @@ const customTheme: ThemeType = {
 
 export const TSCustom = () => (
   <>
-    <Grommet theme={customTheme}>
-      <Box align="center" pad="large">
-        <Button label="custom theme" onClick={() => {}} primary />
+    <Grommet>
+      <Box pad="large" gap="medium" align="start">
+        <Tag name="name" value="value" />
+        <Tag value="value" />
+        <Tag
+          name="name that is much longer and may need to wrap"
+          value="value"
+        />
       </Box>
     </Grommet>
-    <Grommet theme={customTheme}>
-      <Box align="center" pad="large">
-        <Button label="custom theme disabled" disabled primary />
-      </Box>
-    </Grommet>
-    <Box align="center" pad="large">
-      <Button as="span" label="Custom as=span" />
-    </Box>
-    <Box align="center" pad="large">
-      <Button
-        rel="noopener"
-        target="_blank"
-        href="https://v2.grommet.io/button"
-        label="Link to Button docs"
-      />
-    </Box>
   </>
 );
 TSCustom.storyName = 'TS-Custom';

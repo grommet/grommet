@@ -18,6 +18,8 @@ import {
   StyledCheckBoxToggle,
   StyledCheckBoxKnob,
 } from './StyledCheckBox';
+// eslint-disable-next-line max-len
+import { StyledToggleButtonGroupContainer } from '../ToggleButtonGroup/StyledToggleButtonGroup';
 
 import { normalizeColor } from '../../utils';
 
@@ -168,47 +170,60 @@ const CheckBox = forwardRef(
     );
 
     const side = !reverse !== !theme.dir ? 'left' : 'right';
-    const checkBoxNode = (
-      <StyledCheckBox
-        as={Box}
-        align="center"
-        justify="center"
-        margin={
-          !inToggleButtonGroup
-            ? label && { [side]: theme.checkBox.gap || 'small' }
-            : undefined
-        }
+    const checkBoxInput = (
+      <StyledCheckBoxInput
+        aria-label={ariaLabel || a11yTitle}
+        {...rest}
+        ref={ref}
+        type="checkbox"
+        {...removeUndefined({
+          id,
+          name,
+          checked,
+          disabled,
+        })}
         {...themeableProps}
-      >
-        <StyledCheckBoxInput
-          aria-label={ariaLabel || a11yTitle}
-          {...rest}
-          ref={ref}
-          type="checkbox"
-          {...removeUndefined({
-            id,
-            name,
-            checked,
-            disabled,
-          })}
-          {...themeableProps}
-          onFocus={(event) => {
-            setFocus(true);
-            if (onFocus) onFocus(event);
-          }}
-          onBlur={(event) => {
-            setFocus(false);
-            if (onBlur) onBlur(event);
-          }}
-          onChange={(event) => {
-            setChecked(event.target.checked);
-            if (onChange) onChange(event);
-          }}
-        />
-        {children ? children({ checked, indeterminate }) : visual}
-        {hidden}
-      </StyledCheckBox>
+        onFocus={(event) => {
+          setFocus(true);
+          if (onFocus) onFocus(event);
+        }}
+        onBlur={(event) => {
+          setFocus(false);
+          if (onBlur) onBlur(event);
+        }}
+        onChange={(event) => {
+          setChecked(event.target.checked);
+          if (onChange) onChange(event);
+        }}
+      />
     );
+    let checkBoxNode;
+    if (inToggleButtonGroup) {
+      checkBoxNode = (
+        <Box as={Box} align="center" justify="center">
+          {checkBoxInput}
+          {children({ checked, indeterminate })}
+          {hidden}
+        </Box>
+      );
+    } else
+      checkBoxNode = (
+        <StyledCheckBox
+          as={Box}
+          align="center"
+          justify="center"
+          margin={
+            !inToggleButtonGroup
+              ? label && { [side]: theme.checkBox.gap || 'small' }
+              : undefined
+          }
+          {...themeableProps}
+        >
+          {checkBoxInput}
+          {children ? children({ checked, indeterminate }) : visual}
+          {hidden}
+        </StyledCheckBox>
+      );
 
     const normalizedLabel =
       typeof label === 'string' ? <span>{label}</span> : label;
@@ -216,27 +231,48 @@ const CheckBox = forwardRef(
     const first = reverse ? normalizedLabel : checkBoxNode;
     const second = reverse ? checkBoxNode : normalizedLabel;
 
-    // we dont want normalizedLabel
+    let content;
+    if (inToggleButtonGroup) {
+      content = (
+        <StyledToggleButtonGroupContainer
+          fillProp={fill}
+          reverse={reverse}
+          {...removeUndefined({ htmlFor: id, disabled })}
+          checked={checked}
+          labelProp={label}
+          onClick={stopLabelClick}
+          pad={pad}
+          onMouseEnter={(event) => onMouseEnter?.(event)}
+          onMouseOver={(event) => onMouseOver?.(event)}
+          onMouseLeave={(event) => onMouseLeave?.(event)}
+          onMouseOut={(event) => onMouseOut?.(event)}
+          {...themeableProps}
+        >
+          {first}
+        </StyledToggleButtonGroupContainer>
+      );
+    } else
+      content = (
+        <StyledCheckBoxContainer
+          fillProp={fill}
+          reverse={reverse}
+          {...removeUndefined({ htmlFor: id, disabled })}
+          checked={checked}
+          labelProp={label}
+          onClick={stopLabelClick}
+          pad={pad}
+          onMouseEnter={(event) => onMouseEnter?.(event)}
+          onMouseOver={(event) => onMouseOver?.(event)}
+          onMouseLeave={(event) => onMouseLeave?.(event)}
+          onMouseOut={(event) => onMouseOut?.(event)}
+          {...themeableProps}
+        >
+          {first}
+          {second}
+        </StyledCheckBoxContainer>
+      );
 
-    return (
-      <StyledCheckBoxContainer
-        fillProp={fill}
-        reverse={reverse}
-        {...removeUndefined({ htmlFor: id, disabled })}
-        checked={checked}
-        labelProp={label}
-        onClick={stopLabelClick}
-        pad={pad}
-        onMouseEnter={(event) => onMouseEnter?.(event)}
-        onMouseOver={(event) => onMouseOver?.(event)}
-        onMouseLeave={(event) => onMouseLeave?.(event)}
-        onMouseOut={(event) => onMouseOut?.(event)}
-        {...themeableProps}
-      >
-        {first}
-        {!inToggleButtonGroup ? second : undefined}
-      </StyledCheckBoxContainer>
-    );
+    return content;
   },
 );
 

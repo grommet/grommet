@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Box, ToggleButtonGroup, Select, Heading } from 'grommet';
+import { Box, ToggleButtonGroup, Heading } from 'grommet';
 import {
   List,
   MapLocation,
@@ -13,7 +13,7 @@ import {
 const optionsObjects = [
   {
     label: (
-      <Box direction="row">
+      <Box align="center" direction="row">
         <Bold /> Bold
       </Box>
     ),
@@ -21,7 +21,7 @@ const optionsObjects = [
   },
   {
     label: (
-      <Box direction="row">
+      <Box align="center" direction="row">
         <Italic /> Italic
       </Box>
     ),
@@ -29,7 +29,7 @@ const optionsObjects = [
   },
   {
     label: (
-      <Box direction="row">
+      <Box align="center" direction="row">
         <Underline /> Underline
       </Box>
     ),
@@ -52,34 +52,26 @@ const optionsIcons = [
   },
 ];
 
-export const Simple = () => {
-  const [value, setValue] = useState('single');
-  return (
-    <Box gap="large" pad="large">
-      <Heading margin="none" level={3}>
-        Default type is single which is RadioButtonGroup under the hood
-      </Heading>
-      <Box width="small">
-        <Select
-          id="select"
-          name="select"
-          placeholder="Select"
-          value={value}
-          options={['single', 'multiple']}
-          onChange={({ option }) => setValue(option)}
-        />
-      </Box>
-      <Box direction="row" gap="medium">
-        <ToggleButtonGroup
-          type={value}
-          options={['button1', 'button2', 'button3']}
-        />
-        <ToggleButtonGroup type={value} options={optionsIcons} />
-        <ToggleButtonGroup type={value} options={optionsObjects} />
-      </Box>
+export const Simple = () => (
+  <Box gap="large" pad="large">
+    <Heading margin="none" level={3}>
+      Default type is Multiple
+    </Heading>
+    <Box direction="row" gap="medium">
+      <ToggleButtonGroup options={['button1', 'button2', 'button3']} />
+      <ToggleButtonGroup options={optionsIcons} />
+      <ToggleButtonGroup options={optionsObjects} />
     </Box>
-  );
-};
+    <Box direction="row" gap="medium">
+      <ToggleButtonGroup
+        exclusive
+        options={['button1', 'button2', 'button3']}
+      />
+      <ToggleButtonGroup exclusive options={optionsIcons} />
+      <ToggleButtonGroup exclusive options={optionsObjects} />
+    </Box>
+  </Box>
+);
 
 export default {
   title: 'Input/ToggleButtonGroup/Simple',

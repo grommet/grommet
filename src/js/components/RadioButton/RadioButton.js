@@ -4,6 +4,8 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
+// eslint-disable-next-line max-len
+import { ToggleButtonGroupContext } from '../ToggleButtonGroup/ToggleButtonGroupContext';
 
 import {
   StyledRadioButton,
@@ -13,6 +15,8 @@ import {
   StyledRadioButtonLabel,
   StyledRadioButtonBox,
 } from './StyledRadioButton';
+// eslint-disable-next-line max-len
+import { StyledToggleButtonGroupContainer } from '../ToggleButtonGroup/StyledToggleButtonGroup';
 import { RadioButtonPropTypes } from './propTypes';
 
 const RadioButton = forwardRef(
@@ -33,6 +37,7 @@ const RadioButton = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { inToggleButtonGroup } = useContext(ToggleButtonGroupContext);
     const [hover, setHover] = useState();
     const normalizedLabel =
       typeof label === 'string' ? (
@@ -59,6 +64,61 @@ const RadioButton = forwardRef(
       }
     }
 
+    const RadioButtonInput = (
+      <>
+        <StyledRadioButtonInput
+          aria-label={a11yTitle}
+          {...rest}
+          ref={ref}
+          type="radio"
+          {...removeUndefined({
+            id,
+            name,
+            checked,
+            disabled,
+            onChange,
+          })}
+        />
+        {children ? (
+          children({ checked, focus: focus && focusIndicator, hover })
+        ) : (
+          <StyledRadioButtonBox
+            focus={focus && focusIndicator}
+            as={Box}
+            align="center"
+            justify="center"
+            width={theme.radioButton.size}
+            height={theme.radioButton.size}
+            border={{
+              size: theme.radioButton.border.width,
+              color: borderColor,
+            }}
+            backgroundColor={backgroundColor}
+            round={theme.radioButton.check.radius}
+          >
+            {checked &&
+              (Icon ? (
+                <Icon theme={theme} as={StyledRadioButtonIcon} />
+              ) : (
+                <StyledRadioButtonIcon
+                  viewBox="0 0 24 24"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <circle cx={12} cy={12} r={6} />
+                </StyledRadioButtonIcon>
+              ))}
+          </StyledRadioButtonBox>
+        )}
+      </>
+    );
+
+    if (inToggleButtonGroup) {
+      return (
+        <StyledToggleButtonGroupContainer>
+          <Box flex={false}>{RadioButtonInput}</Box>
+        </StyledToggleButtonGroupContainer>
+      );
+    }
     return (
       <StyledRadioButtonContainer
         {...removeUndefined({ htmlFor: id, disabled })}
@@ -81,49 +141,7 @@ const RadioButton = forwardRef(
             label ? { right: theme.radioButton.gap || 'small' } : undefined
           }
         >
-          <StyledRadioButtonInput
-            aria-label={a11yTitle}
-            {...rest}
-            ref={ref}
-            type="radio"
-            {...removeUndefined({
-              id,
-              name,
-              checked,
-              disabled,
-              onChange,
-            })}
-          />
-          {children ? (
-            children({ checked, focus: focus && focusIndicator, hover })
-          ) : (
-            <StyledRadioButtonBox
-              focus={focus && focusIndicator}
-              as={Box}
-              align="center"
-              justify="center"
-              width={theme.radioButton.size}
-              height={theme.radioButton.size}
-              border={{
-                size: theme.radioButton.border.width,
-                color: borderColor,
-              }}
-              backgroundColor={backgroundColor}
-              round={theme.radioButton.check.radius}
-            >
-              {checked &&
-                (Icon ? (
-                  <Icon theme={theme} as={StyledRadioButtonIcon} />
-                ) : (
-                  <StyledRadioButtonIcon
-                    viewBox="0 0 24 24"
-                    preserveAspectRatio="xMidYMid meet"
-                  >
-                    <circle cx={12} cy={12} r={6} />
-                  </StyledRadioButtonIcon>
-                ))}
-            </StyledRadioButtonBox>
-          )}
+          {RadioButtonInput}
         </StyledRadioButton>
         {normalizedLabel}
       </StyledRadioButtonContainer>

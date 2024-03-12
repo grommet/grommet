@@ -2716,6 +2716,13 @@ exports[`Components loads 1`] = `
             "margin": "none",
           },
         },
+        "toggleButtonGroup": {
+          "hover": {
+            "border": {
+              "color": "border",
+            },
+          },
+        },
         "video": {
           "captions": {
             "background": "rgba(0, 0, 0, 0.7)",
@@ -4707,6 +4714,13 @@ exports[`Components loads 1`] = `
             "background": "none",
             "elevation": "none",
             "margin": "none",
+          },
+        },
+        "toggleButtonGroup": {
+          "hover": {
+            "border": {
+              "color": "border",
+            },
           },
         },
         "video": {
