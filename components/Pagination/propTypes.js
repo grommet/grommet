@@ -15,7 +15,9 @@ if (process.env.NODE_ENV !== 'production') {
     onChange: _propTypes["default"].func,
     page: _propTypes["default"].number,
     size: _propTypes["default"].oneOf(['small', 'medium', 'large']),
-    step: _propTypes["default"].number
+    step: _propTypes["default"].number,
+    stepOptions: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number, _propTypes["default"].bool, _propTypes["default"].element, _propTypes["default"].object]))]),
+    summary: _propTypes["default"].bool
   });
 }
 var PaginationPropTypes = exports.PaginationPropTypes = PropType;

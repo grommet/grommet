@@ -554,6 +554,776 @@ exports[`Pagination should allow user to control page via state with page +
 </div>
 `;
 
+exports[`Pagination should apply a text component with summary 1`] = `
+<DocumentFragment>
+  .c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c17 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c17 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c17 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c17 *[stroke*='#'],
+.c17 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*='#'],
+.c17 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 12px 6px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 12px 6px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c12 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 0;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c13:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c14:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) > circle,
+.c14:focus:not(:focus-visible) > ellipse,
+.c14:focus:not(:focus-visible) > line,
+.c14:focus:not(:focus-visible) > path,
+.c14:focus:not(:focus-visible) > polygon,
+.c14:focus:not(:focus-visible) > polyline,
+.c14:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 0;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c16 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c16:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible) > circle,
+.c16:focus:not(:focus-visible) > ellipse,
+.c16:focus:not(:focus-visible) > line,
+.c16:focus:not(:focus-visible) > path,
+.c16:focus:not(:focus-visible) > polygon,
+.c16:focus:not(:focus-visible) > polyline,
+.c16:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c10 > svg {
+  margin: 0 auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c15 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    width: 2px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <span
+            class="c4"
+          >
+            Showing 1-10 of 237
+          </span>
+        </div>
+      </div>
+      <div
+        class="c5"
+      >
+        <nav
+          aria-label="Pagination Navigation"
+          class="c6"
+        >
+          <ul
+            class="c7"
+          >
+            <li
+              class="c8"
+            >
+              <button
+                aria-disabled="true"
+                aria-label="Go to previous page"
+                class="c9 c10"
+                disabled=""
+                type="button"
+              >
+                <svg
+                  aria-label="Previous"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17 2 7 12l10 10"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <button
+                aria-current="page"
+                aria-label="Go to page 1"
+                class="c13 c10"
+                type="button"
+              >
+                1
+              </button>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <button
+                aria-label="Go to page 2"
+                class="c14 c10"
+                type="button"
+              >
+                2
+              </button>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <button
+                aria-label="Go to page 3"
+                class="c14 c10"
+                type="button"
+              >
+                3
+              </button>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <button
+                aria-label="Go to page 4"
+                class="c14 c10"
+                type="button"
+              >
+                4
+              </button>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <button
+                aria-label="Go to page 5"
+                class="c14 c10"
+                type="button"
+              >
+                5
+              </button>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <span
+                class="c4 c15"
+              >
+                …
+              </span>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <button
+                aria-label="Go to page 24"
+                class="c14 c10"
+                type="button"
+              >
+                24
+              </button>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <button
+                aria-label="Go to next page"
+                class="c16 c10"
+                type="button"
+              >
+                <svg
+                  aria-label="Next"
+                  class="c17"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m7 2 10 10L7 22"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Pagination should apply a11yTitle and aria-label 1`] = `
 .c6 {
   display: inline-block;
@@ -10050,6 +10820,398 @@ exports[`Pagination should display the correct last page based on items length
     </nav>
   </div>
 </div>
+`;
+
+exports[`Pagination should have no items 1`] = `
+<DocumentFragment>
+  .c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 12px 6px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 12px 6px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c12 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 0;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c9 > svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c9:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible) > circle,
+.c9:focus:not(:focus-visible) > ellipse,
+.c9:focus:not(:focus-visible) > line,
+.c9:focus:not(:focus-visible) > path,
+.c9:focus:not(:focus-visible) > polygon,
+.c9:focus:not(:focus-visible) > polyline,
+.c9:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c9:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c10 > svg {
+  margin: 0 auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    width: 2px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <span
+            class="c4"
+          >
+            0 items
+          </span>
+        </div>
+      </div>
+      <div
+        class="c5"
+      >
+        <nav
+          aria-label="Pagination Navigation"
+          class="c6"
+        >
+          <ul
+            class="c7"
+          >
+            <li
+              class="c8"
+            >
+              <button
+                aria-disabled="true"
+                aria-label="Go to previous page"
+                class="c9 c10"
+                disabled=""
+                type="button"
+              >
+                <svg
+                  aria-label="Previous"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17 2 7 12l10 10"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </li>
+            <div
+              class="c12"
+            />
+            <li
+              class="c8"
+            >
+              <button
+                aria-label="Go to next page"
+                class="c9 c10"
+                disabled=""
+                type="button"
+              >
+                <svg
+                  aria-label="Next"
+                  class="c11"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m7 2 10 10L7 22"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Pagination should render correct numberEdgePages 1`] = `

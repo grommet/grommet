@@ -104,6 +104,11 @@
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
   },
+  "pagination": {
+    "stepLabel": "Items per page",
+    "summary": "Showing {start}-{end} of {total}",
+    "summaryNoItems": "0 items"
+  },
   "rangeSelector": {
     "lower": "Lower Bounds",
     "upper": "Upper Bounds"
