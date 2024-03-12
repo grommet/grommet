@@ -67,6 +67,10 @@ exports[`Layer animation fadeIn 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -224,6 +228,10 @@ exports[`Layer animation false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -387,6 +395,10 @@ exports[`Layer animation slide 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -548,6 +560,10 @@ exports[`Layer animation true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -707,6 +723,10 @@ exports[`Layer custom margin 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -871,6 +891,10 @@ exports[`Layer custom theme 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -1027,6 +1051,10 @@ exports[`Layer dark context 1`] = `
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -1147,6 +1175,10 @@ exports[`Layer focus on layer 1`] = `
   position: absolute;
 }
 
+.c1:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -1239,6 +1271,10 @@ exports[`Layer hidden 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     position: relative;
@@ -1321,7 +1357,7 @@ exports[`Layer hidden 3`] = `
   >
     <a
       aria-hidden="true"
-      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 IjFXP"
+      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 bCWUGW"
       tabindex="-1"
     />
     This is a layer
@@ -1432,6 +1468,10 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -1584,6 +1624,10 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     position: relative;
@@ -1705,6 +1749,10 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -1869,6 +1917,10 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -2105,6 +2157,7 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2206,6 +2259,10 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -2481,6 +2538,10 @@ exports[`Layer margin large 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -2640,6 +2701,10 @@ exports[`Layer margin medium 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -2803,6 +2868,10 @@ exports[`Layer margin none 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -2962,6 +3031,10 @@ exports[`Layer margin small 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -3125,6 +3198,10 @@ exports[`Layer margin xsmall 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -3281,6 +3358,10 @@ exports[`Layer non-modal 1`] = `
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -3401,6 +3482,10 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
   position: absolute;
 }
 
+.c1:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -3502,6 +3587,10 @@ exports[`Layer plain 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -3665,6 +3754,10 @@ exports[`Layer position: bottom - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -3825,6 +3918,10 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -3990,6 +4087,10 @@ exports[`Layer position: bottom - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -4150,6 +4251,10 @@ exports[`Layer position: bottom - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -4313,6 +4418,10 @@ exports[`Layer position: bottom-left - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -4473,6 +4582,10 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -4638,6 +4751,10 @@ exports[`Layer position: bottom-left - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -4798,6 +4915,10 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -4961,6 +5082,10 @@ exports[`Layer position: bottom-right - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -5121,6 +5246,10 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -5286,6 +5415,10 @@ exports[`Layer position: bottom-right - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -5448,6 +5581,10 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -5607,6 +5744,10 @@ exports[`Layer position: center - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -5771,6 +5912,10 @@ exports[`Layer position: center - full: horizontal 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -5929,6 +6074,10 @@ exports[`Layer position: center - full: true 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -6093,6 +6242,10 @@ exports[`Layer position: center - full: vertical 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -6252,6 +6405,10 @@ exports[`Layer position: end - full: false 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -6414,6 +6571,10 @@ exports[`Layer position: end - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -6579,6 +6740,10 @@ exports[`Layer position: end - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -6739,6 +6904,10 @@ exports[`Layer position: end - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -6902,6 +7071,10 @@ exports[`Layer position: left - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -7062,6 +7235,10 @@ exports[`Layer position: left - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -7227,6 +7404,10 @@ exports[`Layer position: left - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -7387,6 +7568,10 @@ exports[`Layer position: left - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -7550,6 +7735,10 @@ exports[`Layer position: right - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -7710,6 +7899,10 @@ exports[`Layer position: right - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -7875,6 +8068,10 @@ exports[`Layer position: right - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -8035,6 +8232,10 @@ exports[`Layer position: right - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -8198,6 +8399,10 @@ exports[`Layer position: start - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -8358,6 +8563,10 @@ exports[`Layer position: start - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -8523,6 +8732,10 @@ exports[`Layer position: start - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -8683,6 +8896,10 @@ exports[`Layer position: start - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -8846,6 +9063,10 @@ exports[`Layer position: top - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -9006,6 +9227,10 @@ exports[`Layer position: top - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -9171,6 +9396,10 @@ exports[`Layer position: top - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -9331,6 +9560,10 @@ exports[`Layer position: top - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -9494,6 +9727,10 @@ exports[`Layer position: top-left - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -9654,6 +9891,10 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -9819,6 +10060,10 @@ exports[`Layer position: top-left - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -9979,6 +10224,10 @@ exports[`Layer position: top-left - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -10142,6 +10391,10 @@ exports[`Layer position: top-right - full: false 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -10302,6 +10555,10 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -10467,6 +10724,10 @@ exports[`Layer position: top-right - full: true 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -10627,6 +10888,10 @@ exports[`Layer position: top-right - full: vertical 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -10790,6 +11055,10 @@ exports[`Layer should apply background 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -10947,6 +11216,10 @@ exports[`Layer should only place id on StyledLayer when singleId === true 1`] = 
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -11111,6 +11384,10 @@ exports[`Layer should render correct border radius for position: bottom -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -11273,6 +11550,10 @@ exports[`Layer should render correct border radius for position: bottom -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -11440,6 +11721,10 @@ exports[`Layer should render correct border radius for position: bottom -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -11602,6 +11887,10 @@ exports[`Layer should render correct border radius for position: bottom -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -11767,6 +12056,10 @@ exports[`Layer should render correct border radius for position: bottom-left -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -11929,6 +12222,10 @@ exports[`Layer should render correct border radius for position: bottom-left -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -12096,6 +12393,10 @@ exports[`Layer should render correct border radius for position: bottom-left -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -12258,6 +12559,10 @@ exports[`Layer should render correct border radius for position: bottom-left -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -12423,6 +12728,10 @@ exports[`Layer should render correct border radius for position: bottom-right -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -12585,6 +12894,10 @@ exports[`Layer should render correct border radius for position: bottom-right -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -12752,6 +13065,10 @@ exports[`Layer should render correct border radius for position: bottom-right -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -12916,6 +13233,10 @@ exports[`Layer should render correct border radius for position: bottom-right -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -13077,6 +13398,10 @@ exports[`Layer should render correct border radius for position: center -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -13243,6 +13568,10 @@ exports[`Layer should render correct border radius for position: center -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -13403,6 +13732,10 @@ exports[`Layer should render correct border radius for position: center -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -13567,6 +13900,10 @@ exports[`Layer should render correct border radius for position: center -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -13733,6 +14070,10 @@ exports[`Layer should render correct border radius for position: end -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -13895,6 +14236,10 @@ exports[`Layer should render correct border radius for position: end -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -14062,6 +14407,10 @@ exports[`Layer should render correct border radius for position: end -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -14224,6 +14573,10 @@ exports[`Layer should render correct border radius for position: end -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -14389,6 +14742,10 @@ exports[`Layer should render correct border radius for position: left -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -14551,6 +14908,10 @@ exports[`Layer should render correct border radius for position: left -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -14718,6 +15079,10 @@ exports[`Layer should render correct border radius for position: left -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -14880,6 +15245,10 @@ exports[`Layer should render correct border radius for position: left -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -15045,6 +15414,10 @@ exports[`Layer should render correct border radius for position: right -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -15207,6 +15580,10 @@ exports[`Layer should render correct border radius for position: right -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -15374,6 +15751,10 @@ exports[`Layer should render correct border radius for position: right -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -15536,6 +15917,10 @@ exports[`Layer should render correct border radius for position: right -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -15702,6 +16087,10 @@ exports[`Layer should render correct border radius for position: start -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -15864,6 +16253,10 @@ exports[`Layer should render correct border radius for position: start -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -16029,6 +16422,10 @@ exports[`Layer should render correct border radius for position: start -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -16195,6 +16592,10 @@ exports[`Layer should render correct border radius for position: start -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -16356,6 +16757,10 @@ exports[`Layer should render correct border radius for position: top -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -16522,6 +16927,10 @@ exports[`Layer should render correct border radius for position: top -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -16685,6 +17094,10 @@ exports[`Layer should render correct border radius for position: top -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -16851,6 +17264,10 @@ exports[`Layer should render correct border radius for position: top -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -17012,6 +17429,10 @@ exports[`Layer should render correct border radius for position: top-left -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -17176,6 +17597,10 @@ exports[`Layer should render correct border radius for position: top-left -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -17343,6 +17768,10 @@ exports[`Layer should render correct border radius for position: top-left -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -17505,6 +17934,10 @@ exports[`Layer should render correct border radius for position: top-left -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -17670,6 +18103,10 @@ exports[`Layer should render correct border radius for position: top-right -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -17832,6 +18269,10 @@ exports[`Layer should render correct border radius for position: top-right -
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c3:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -17999,6 +18440,10 @@ exports[`Layer should render correct border radius for position: top-right -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -18163,6 +18608,10 @@ exports[`Layer should render correct border radius for position: top-right -
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: fixed;
@@ -18325,6 +18774,10 @@ exports[`Layer target 1`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     position: relative;
@@ -18452,6 +18905,10 @@ exports[`Layer target not modal 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {

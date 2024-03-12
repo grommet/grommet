@@ -94,6 +94,12 @@
       }
     }
   },
+  "input": {
+    "readOnlyCopy": {
+      "prompt": "Copy to clipboard",
+      "validation": "Copied"
+    }
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"

@@ -168,6 +168,7 @@ exports[`Select 0 value 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -1739,6 +1740,7 @@ exports[`Select Search timeout 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2134,6 +2136,7 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2534,6 +2537,7 @@ exports[`Select basic 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2802,6 +2806,7 @@ exports[`Select complex options and children 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2919,11 +2924,11 @@ exports[`Select complex options and children 2`] = `
       class="StyledBox-sc-13pk1d4-0 djHtJk"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3359,6 +3364,7 @@ exports[`Select dark 1`] = `
   margin: 0;
   border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -3643,6 +3649,7 @@ exports[`Select default value 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4317,6 +4324,7 @@ exports[`Select default value object options 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4601,6 +4609,7 @@ exports[`Select disabled 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4720,11 +4729,11 @@ exports[`Select disabled 2`] = `
       class="StyledBox-sc-13pk1d4-0 djHtJk"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4922,6 +4931,7 @@ exports[`Select disabled key 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -5903,6 +5913,7 @@ exports[`Select keyboard navigation timeout 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -6693,6 +6704,7 @@ exports[`Select modifies select control style on open 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -6978,6 +6990,7 @@ exports[`Select null value 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -7248,6 +7261,7 @@ exports[`Select onChange with valueKey object 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -7787,6 +7801,7 @@ exports[`Select onChange with valueKey object 4`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -8082,6 +8097,7 @@ exports[`Select onChange with valueKey string 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -8620,6 +8636,7 @@ exports[`Select onChange with valueKey string 4`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -9400,6 +9417,7 @@ exports[`Select onChange without labelKey 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -9939,6 +9957,7 @@ exports[`Select onChange without labelKey 4`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -10234,6 +10253,7 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -10772,6 +10792,7 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -11067,6 +11088,7 @@ exports[`Select onChange without valueKey 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -11605,6 +11627,7 @@ exports[`Select onChange without valueKey 4`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -11900,6 +11923,7 @@ exports[`Select prop: onClose 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -12180,6 +12204,7 @@ exports[`Select prop: onClose 2`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -12465,6 +12490,7 @@ exports[`Select prop: onOpen 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -12582,11 +12608,11 @@ exports[`Select prop: onOpen 2`] = `
       class="StyledBox-sc-13pk1d4-0 djHtJk"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -13089,6 +13115,7 @@ exports[`Select renders custom icon 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -13356,6 +13383,7 @@ exports[`Select renders custom up and down icons 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -13487,11 +13515,11 @@ exports[`Select renders custom up and down icons 2`] = `
         class="StyledBox-sc-13pk1d4-0 djHtJk"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+            class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -13739,6 +13767,7 @@ exports[`Select renders default icon 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -14104,6 +14133,7 @@ exports[`Select renders styled select options backwards compatible with legacy
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -14389,6 +14419,7 @@ exports[`Select renders styled select options combining select.options.box &&
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -14672,6 +14703,7 @@ exports[`Select renders styled select options using select.options.container 1`]
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -14902,6 +14934,7 @@ exports[`Select renders without icon 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -15145,6 +15178,7 @@ exports[`Select search 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -15656,7 +15690,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 hAWwGI"
   type="search"
   value=""
 />
@@ -15665,7 +15699,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 hAWwGI"
   type="search"
   value="o"
 />
@@ -15838,6 +15872,7 @@ exports[`Select search and select 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -16304,7 +16339,7 @@ exports[`Select search and select 3`] = `
 exports[`Select search and select 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 hAWwGI"
   type="search"
   value=""
 />
@@ -16313,7 +16348,7 @@ exports[`Select search and select 4`] = `
 exports[`Select search and select 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 kDHgZT"
+  class="StyledTextInput-sc-1x30a0s-0 hAWwGI"
   type="search"
   value="t"
 />
@@ -16486,6 +16521,7 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -16754,6 +16790,7 @@ exports[`Select select an option 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -17232,6 +17269,7 @@ exports[`Select select an option with enter 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -17500,6 +17538,7 @@ exports[`Select select an option with keypress 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -17768,6 +17807,7 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -18036,6 +18076,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -18170,11 +18211,11 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         class="StyledBox-sc-13pk1d4-0 djHtJk"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dAhNeU"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kdbOVS StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+            class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -18373,6 +18414,7 @@ exports[`Select selected 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -18655,6 +18697,7 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -18981,6 +19024,7 @@ exports[`Select should not have accessibility violations 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -19263,6 +19307,7 @@ exports[`Select size 1`] = `
   line-height: 28px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
