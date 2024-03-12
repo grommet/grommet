@@ -600,11 +600,11 @@ describe('List onOrder', () => {
     // beta's up arrow control should be active
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.keyDown(getByText('alpha'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
     });
-    expect(onOrder).toHaveBeenCalled();
+    expect(onOrder).toHaveBeenCalledWith([{ a: 'beta' }, { a: 'alpha' }]);
     expect(container.firstChild).toMatchSnapshot();
   });
 });
