@@ -7,16 +7,16 @@ export const Steps = () => (
   // <Grommet theme={...}>
   <Box align="start" pad="small" gap="xlarge">
     <Box fill="horizontal">
-      <Text>summary and stepSelector</Text>
+      <Text>Pagination with stepOptions</Text>
+      <Pagination numberItems={237} stepOptions />
+    </Box>
+    <Box fill="horizontal">
+      <Text>Pagination with stepOptions</Text>
       <Pagination numberItems={237} stepOptions summary />
     </Box>
     <Box fill="horizontal">
-      <Text>stepOptions with custom steps</Text>
+      <Text>Pagination with custom step sizes</Text>
       <Pagination numberItems={237} stepOptions={[10, 20, 30, 1000]} summary />
-    </Box>
-    <Box fill="horizontal">
-      <Text> stepOptions as boolean</Text>
-      <Pagination numberItems={237} stepOptions />
     </Box>
   </Box>
   // </Grommet>
