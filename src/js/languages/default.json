@@ -29,7 +29,6 @@
     }
   },
   "dataForm": {
-    "reset": "Undo changes",
     "submit": "Apply filters"
   },
   "dataSearch": {
@@ -44,9 +43,13 @@
     "open": "Open sort"
   },
   "dataSummary": {
-    "filtered": "{filteredTotal} results of {total} items",
-    "filteredSingle": "{filteredTotal} result of {total} items",
-    "total": "{total} items"
+    "filtered": "{filteredTotal} results of {total} {items}",
+    "filteredSingle": "{filteredTotal} result of {total} {items}",
+    "items": "items",
+    "itemsSingle": "item",
+    "selected": "{selected} selected",
+    "total": "{total} {items}",
+    "totalSingle": "{total} {items}"
   },
   "dataTableColumns": {
     "open": "Open column selector",
@@ -79,9 +82,32 @@
     "invalid": "invalid",
     "required": "required"
   },
+  "formField": {
+    "maxCharacters": {
+      "remaining": {
+        "singular": "{number} character left",
+        "plural": "{number} characters left"
+      },
+      "overLimit": {
+        "singular": "{number} character over limit",
+        "plural": "{number} characters over limit"
+      }
+    }
+  },
+  "input": {
+    "readOnlyCopy": {
+      "prompt": "Copy to clipboard",
+      "validation": "Copied"
+    }
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
+  },
+  "pagination": {
+    "stepLabel": "Items per page",
+    "summary": "Showing {start}-{end} of {total}",
+    "summaryNoItems": "0 items"
   },
   "rangeSelector": {
     "lower": "Lower Bounds",
@@ -90,6 +116,22 @@
   "select": {
     "multiple": "multiple",
     "selected": "; Selected: {currentSelectedValue}"
+  },
+  "selectMultiple": {
+    "clearAll": "Clear All",
+    "clearAllA11y": "{selected} options selected. Clear all?",
+    "open": "Open drop",
+    "optionNotSelected": "{optionLabel} not selected",
+    "optionSelected": "{optionLabel} selected",
+    "search": "Search to filter options",
+    "selectAll": "Select All",
+    "selectAllA11y": "Select all {total} options",
+    "selectDrop": "Select dropdown",
+    "selected": "{selected} selected",
+    "selectedOfTotal": "{selected} selected of {total}",
+    "selectedOptions": "Selected options",
+    "showMore": "+ {remaining} more",
+    "summarizedValue": "{selected} selected"
   },
   "skipLinks": {
     "skipTo": "Skip To:"

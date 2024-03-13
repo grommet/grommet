@@ -60,7 +60,7 @@ const StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig)`
   display: flex;
   flex-direction: row;
   align-items: ${(props) =>
-    typeof props.label === 'string'
+    typeof props.labelProp === 'string'
       ? props.theme.checkBox.label.align
       : undefined};
   user-select: none;

@@ -35,6 +35,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSuggestionsClose: PropTypes.func,
     placeholder: PropTypes.node,
     plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['full'])]),
+    readOnlyCopy: PropTypes.bool,
     reverse: PropTypes.bool,
     size: PropTypes.oneOfType([
       PropTypes.oneOf([

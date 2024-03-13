@@ -38,6 +38,7 @@ exports[`FileInput accept 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -215,6 +216,7 @@ exports[`FileInput background 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -389,6 +391,7 @@ exports[`FileInput basic 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -563,6 +566,7 @@ exports[`FileInput border 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -737,6 +741,7 @@ exports[`FileInput custom theme input font size 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -910,6 +915,7 @@ exports[`FileInput disabled 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1088,6 +1094,7 @@ exports[`FileInput margin 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1268,6 +1275,7 @@ exports[`FileInput maxSize 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1442,6 +1450,7 @@ exports[`FileInput messages 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1616,6 +1625,7 @@ exports[`FileInput multiple 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1791,6 +1801,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1966,6 +1977,7 @@ exports[`FileInput multiple max 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2142,6 +2154,7 @@ exports[`FileInput pad 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;

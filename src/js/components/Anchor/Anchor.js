@@ -114,7 +114,6 @@ const Anchor = forwardRef(
             align="center"
             gap={gap || theme.anchor.gap}
             responsive={false}
-            style={{ display: 'inline-flex' }}
           >
             {first}
             {second}

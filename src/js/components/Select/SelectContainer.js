@@ -115,7 +115,7 @@ const SelectContainer = forwardRef(
     );
 
     const [activeIndex, setActiveIndex] = useState(
-      usingKeyboard && !shouldShowClearButton('top') ? 0 : -1,
+      usingKeyboard && !shouldShowClearButton('top') && !onSearch ? 0 : -1,
     );
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
     const searchRef = useRef();
@@ -136,7 +136,7 @@ const SelectContainer = forwardRef(
         const clearButton = clearRef.current;
         if (onSearch) {
           const searchInput = searchRef.current;
-          if (searchInput && searchInput.focus) {
+          if (searchInput && searchInput.focus && !activeRef.current) {
             setFocusWithoutScroll(searchInput);
           }
         } else if (

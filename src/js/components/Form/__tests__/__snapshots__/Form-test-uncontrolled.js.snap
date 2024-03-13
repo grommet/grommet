@@ -283,7 +283,6 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
       >
         <label
           class="c3"
-          label="test"
         >
           <div
             class="c4 c5"
@@ -571,6 +570,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -1094,7 +1094,6 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       >
         <label
           class="c6"
-          label="toggle"
         >
           <div
             class="c7 c8"
@@ -1136,11 +1135,11 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
         class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
+            class="StyledTextInput-sc-1x30a0s-0 hEdkFo"
             name="name"
             placeholder="test name"
           />
@@ -1155,7 +1154,6 @@ exports[`Form uncontrolled dynamicly removed fields should be removed from form 
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 djYUNh"
-          label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
@@ -1471,7 +1469,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       >
         <label
           class="c6"
-          label="toggle"
         >
           <div
             class="c7 c8"
@@ -1514,11 +1511,11 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
+            class="StyledTextInput-sc-1x30a0s-0 hEdkFo"
             name="name"
             placeholder="test name"
           />
@@ -1533,7 +1530,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 djYUNh"
-          label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
@@ -1742,11 +1738,11 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
         class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
+            class="StyledTextInput-sc-1x30a0s-0 hEdkFo"
             name="name"
             placeholder="test name"
           />
@@ -1761,7 +1757,6 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bFKiSL"
-          label="toggle"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
@@ -2574,6 +2569,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2778,7 +2774,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
         <label
           class="c13"
           for="test-checkbox"
-          label="test-checkbox"
         >
           <div
             class="c14 c15"
@@ -2965,11 +2960,11 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               class="StyledBox-sc-13pk1d4-0 pvKre"
             >
               <div
-                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+                class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 caEEsY StyledSelect__SelectTextInput-sc-znp66n-4 jPYOxt"
+                  class="StyledTextInput-sc-1x30a0s-0 fDKxWT StyledSelect__SelectTextInput-sc-znp66n-4 jPYOxt"
                   id="test-select__input"
                   name="test-select"
                   placeholder="test select"
@@ -3016,7 +3011,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 djYUNh"
           for="test-checkbox"
-          label="test-checkbox"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 kgDPDh StyledCheckBox-sc-1dbk5ju-6 kvMkah"
@@ -3352,11 +3346,11 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
+            class="StyledTextInput-sc-1x30a0s-0 hEdkFo"
             name="test"
             placeholder="test input"
           />
@@ -3385,11 +3379,11 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
+            class="StyledTextInput-sc-1x30a0s-0 hEdkFo"
             name="test"
             placeholder="test input"
           />
@@ -3610,11 +3604,11 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
         class="StyledBox-sc-13pk1d4-0 dtvauj FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
+            class="StyledTextInput-sc-1x30a0s-0 hEdkFo"
             name="test"
             placeholder="test input"
           />
@@ -3862,11 +3856,11 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
         class="StyledBox-sc-13pk1d4-0 dtvauj FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
+            class="StyledTextInput-sc-1x30a0s-0 hEdkFo"
             name="test"
             placeholder="test input"
           />
@@ -4114,11 +4108,11 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
         class="StyledBox-sc-13pk1d4-0 dAFlUr FormField__FormFieldContentBox-sc-m9hood-1"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY"
+            class="StyledTextInput-sc-1x30a0s-0 hEdkFo"
             name="test"
             placeholder="test input"
           />

@@ -29,6 +29,9 @@ const HiddenAnchor = styled.a.withConfig(styledComponentsConfig)`
   height: 0;
   overflow: hidden;
   position: absolute;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const LayerContainer = forwardRef(

@@ -1,34 +1,33 @@
 import React from 'react';
-
 import {
+  Box,
   Data,
   DataSummary,
   DataTable,
-  Grid,
-  Notification,
+  DataSearch,
   Paragraph,
+  Toolbar,
 } from 'grommet';
 
-import { DataSearch } from '../DataSearch';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 export const Responsive = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
-    <Notification
-      status="info"
-      message="Data is in 'beta'. The API surface is subject to change."
-    />
+  <Box pad="large">
     <Paragraph color="text-weak">
-      Note: Results are filtered as you type, checking all fields.
+      Note: Results are filtered as you type, checking all fields. When
+      responsive=true on DataSearch, the search control will collapse at small
+      breakpoints. Reduce the width of your screen to see this behavior.
     </Paragraph>
-    <Data data={DATA} updateOn="change">
-      <DataSearch responsive />
+    <Data data={DATA}>
+      <Toolbar>
+        <DataSearch responsive />
+      </Toolbar>
       <DataSummary />
       <DataTable columns={columns} />
     </Data>
-  </Grid>
+  </Box>
   // </Grommet>
 );
 

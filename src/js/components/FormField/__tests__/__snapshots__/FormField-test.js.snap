@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormField abut 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -29,6 +19,16 @@ exports[`FormField abut 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -57,16 +57,6 @@ exports[`FormField abut 1`] = `
 `;
 
 exports[`FormField abut with margin 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -85,6 +75,16 @@ exports[`FormField abut with margin 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -113,16 +113,6 @@ exports[`FormField abut with margin 1`] = `
 `;
 
 exports[`FormField checkbox pad is defined in formfield 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -232,6 +222,16 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   line-height: 24px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -279,7 +279,6 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
       >
         <label
           class="c4"
-          label="checkbox with pad"
         >
           <div
             class="c5 c6"
@@ -300,7 +299,6 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
     </div>
     <label
       class="c9"
-      label="checkbox without pad"
     >
       <div
         class="c5 c6"
@@ -322,16 +320,6 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
 `;
 
 exports[`FormField contentProps 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -409,6 +397,16 @@ exports[`FormField contentProps 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -475,16 +473,6 @@ exports[`FormField custom error and info icon and container 1`] = `
 .c8 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 .c1 {
@@ -616,6 +604,16 @@ exports[`FormField custom error and info icon and container 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -710,16 +708,6 @@ exports[`FormField custom error and info icon and container 1`] = `
 `;
 
 exports[`FormField custom formfield 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -738,6 +726,16 @@ exports[`FormField custom formfield 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c2 {
@@ -770,16 +768,6 @@ exports[`FormField custom formfield 1`] = `
 `;
 
 exports[`FormField custom input margin 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -860,6 +848,16 @@ exports[`FormField custom input margin 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -909,16 +907,6 @@ exports[`FormField custom input margin 1`] = `
 `;
 
 exports[`FormField custom label 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -996,6 +984,16 @@ exports[`FormField custom label 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -1038,16 +1036,6 @@ exports[`FormField custom label 1`] = `
 `;
 
 exports[`FormField default 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1117,6 +1105,16 @@ exports[`FormField default 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -1159,16 +1157,6 @@ exports[`FormField default 1`] = `
 `;
 
 exports[`FormField disabled 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1242,6 +1230,16 @@ exports[`FormField disabled 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -1288,16 +1286,6 @@ exports[`FormField disabled 1`] = `
 `;
 
 exports[`FormField disabled with custom label 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1379,6 +1367,16 @@ exports[`FormField disabled with custom label 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -1422,16 +1420,6 @@ exports[`FormField disabled with custom label 1`] = `
 `;
 
 exports[`FormField empty margin 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1450,6 +1438,16 @@ exports[`FormField empty margin 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1478,16 +1476,6 @@ exports[`FormField empty margin 1`] = `
 `;
 
 exports[`FormField error 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1516,6 +1504,16 @@ exports[`FormField error 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #FF4040;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1549,16 +1547,6 @@ exports[`FormField error 1`] = `
 `;
 
 exports[`FormField help 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1584,6 +1572,16 @@ exports[`FormField help 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #777777;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1617,16 +1615,6 @@ exports[`FormField help 1`] = `
 `;
 
 exports[`FormField htmlFor 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1645,6 +1633,16 @@ exports[`FormField htmlFor 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1673,16 +1671,6 @@ exports[`FormField htmlFor 1`] = `
 `;
 
 exports[`FormField info 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1711,6 +1699,16 @@ exports[`FormField info 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #666666;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1744,16 +1742,6 @@ exports[`FormField info 1`] = `
 `;
 
 exports[`FormField label 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1781,6 +1769,16 @@ exports[`FormField label 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1814,16 +1812,6 @@ exports[`FormField label 1`] = `
 `;
 
 exports[`FormField margin 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1842,6 +1830,16 @@ exports[`FormField margin 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1869,7 +1867,85 @@ exports[`FormField margin 1`] = `
 </div>
 `;
 
-exports[`FormField pad 1`] = `
+exports[`FormField max and threshold validation 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1880,6 +1956,52 @@ exports[`FormField pad 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+        for="issue-description"
+      >
+        label
+      </label>
+      <div
+        class="c3 FormField__FormFieldContentBox-sc-m9hood-1"
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5"
+            id="issue-description"
+            name="issue-description"
+            placeholder="placeholder"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`FormField pad 1`] = `
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -1899,6 +2021,16 @@ exports[`FormField pad 1`] = `
   min-height: 0;
   flex-direction: column;
   padding: 12px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1933,16 +2065,6 @@ exports[`FormField pad 1`] = `
 `;
 
 exports[`FormField pad with border undefined 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -2021,6 +2143,16 @@ exports[`FormField pad with border undefined 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -2063,16 +2195,6 @@ exports[`FormField pad with border undefined 1`] = `
 `;
 
 exports[`FormField required 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -2142,6 +2264,16 @@ exports[`FormField required 1`] = `
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -2187,16 +2319,6 @@ exports[`FormField required 1`] = `
 `;
 
 exports[`FormField should have no accessibility violations 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -2215,6 +2337,16 @@ exports[`FormField should have no accessibility violations 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2243,16 +2375,6 @@ exports[`FormField should have no accessibility violations 1`] = `
 `;
 
 exports[`FormField should not render asterisk when required.indicator === false 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -2331,6 +2453,16 @@ exports[`FormField should not render asterisk when required.indicator === false 
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -2373,16 +2505,6 @@ exports[`FormField should not render asterisk when required.indicator === false 
 `;
 
 exports[`FormField should render asterisk when requiredIndicator === true 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -2483,6 +2605,16 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   border: 0;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
@@ -2569,16 +2701,6 @@ exports[`FormField should render custom indicator when requiredIndicator is
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -2655,6 +2777,16 @@ exports[`FormField should render custom indicator when requiredIndicator is
 .c5 {
   position: relative;
   width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width: 768px) {

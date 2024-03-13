@@ -137,6 +137,7 @@ exports[`Select Controlled deselect an option 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -389,6 +390,7 @@ exports[`Select Controlled multiple 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -640,6 +642,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -1153,6 +1156,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -1622,6 +1626,7 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2092,6 +2097,7 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2709,6 +2715,7 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -2974,6 +2981,7 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -3590,6 +3598,7 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -3856,6 +3865,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4469,6 +4479,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4734,6 +4745,7 @@ exports[`Select Controlled multiple values 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -4868,11 +4880,11 @@ exports[`Select Controlled multiple values 2`] = `
         class="StyledBox-sc-13pk1d4-0 pvKre"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kAwXjp"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cgAlHp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 caEEsY StyledSelect__SelectTextInput-sc-znp66n-4 jPYOxt"
+            class="StyledTextInput-sc-1x30a0s-0 fDKxWT StyledSelect__SelectTextInput-sc-znp66n-4 jPYOxt"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -5260,6 +5272,7 @@ exports[`Select Controlled multiple with empty results 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -5729,6 +5742,7 @@ exports[`Select Controlled select another option 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -5981,6 +5995,7 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }

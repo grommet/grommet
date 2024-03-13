@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  controlBorderStyle,
   disabledStyle,
   getInputPadBySide,
   inputStyle,
@@ -12,6 +13,7 @@ import {
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { inputPadForIcon } from '../../utils/styles';
+import { readOnlyStyle } from '../../utils/readOnly';
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
@@ -24,6 +26,12 @@ const getPlainStyle = (plain) => {
 
 const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
+  ${(props) =>
+    props.readOnlyCopy
+      ? `padding-${props.reverse ? 'left' : 'right'}: 0px;`
+      : ''}
+  // readOnly border is handled by StyledTextInputContainer
+  ${(props) => props.readOnly && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}
   ${(props) => props.icon && inputPadForIcon}
   ${(props) =>
@@ -42,6 +50,18 @@ Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
 const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   width: 100%;
+
+  ${(props) => props.readOnlyProp && !props.plain && controlBorderStyle};
+
+  ${(props) =>
+    props.readOnlyCopy &&
+    `
+    box-sizing: border-box;
+    flex-direction: row;
+    display: flex;
+  `};
+
+  ${(props) => props.readOnlyProp && !props.plain && readOnlyStyle(props.theme)}
 
   ${(props) =>
     props.theme.textInput &&

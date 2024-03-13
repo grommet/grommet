@@ -70,6 +70,7 @@ exports[`PageHeader basic 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -336,6 +337,7 @@ exports[`PageHeader custom theme 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -594,6 +596,7 @@ exports[`PageHeader level - 1 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -850,6 +853,7 @@ exports[`PageHeader level - 1 2`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1106,6 +1110,7 @@ exports[`PageHeader level - 2 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1362,6 +1367,7 @@ exports[`PageHeader level - 2 2`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1618,6 +1624,7 @@ exports[`PageHeader level - 3 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -1874,6 +1881,7 @@ exports[`PageHeader level - 3 2`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2130,6 +2138,7 @@ exports[`PageHeader level - 4 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2386,6 +2395,7 @@ exports[`PageHeader level - 4 2`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2642,6 +2652,7 @@ exports[`PageHeader level - 5 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -2898,6 +2909,7 @@ exports[`PageHeader level - 5 2`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -3154,6 +3166,7 @@ exports[`PageHeader level - 6 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -3410,6 +3423,7 @@ exports[`PageHeader level - 6 2`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -3666,6 +3680,7 @@ exports[`PageHeader size - large 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -3922,6 +3937,7 @@ exports[`PageHeader size - medium 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -4178,6 +4194,7 @@ exports[`PageHeader size - small 1`] = `
 
 .c4 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;

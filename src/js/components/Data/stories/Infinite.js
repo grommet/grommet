@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { Box, DataTable, Data, Grid, Notification, Text, Tip } from 'grommet';
+import { Box, DataTable, Data, Text } from 'grommet';
 
-import { StatusCritical } from 'grommet-icons';
+import { StatusCriticalSmall, StatusGoodSmall } from 'grommet-icons';
 
 const buildQuery = (view) => {
   const query = {};
@@ -82,52 +82,34 @@ const columns = [
   {
     property: 'rocket.name',
     header: 'Rocket',
-    size: 'xsmall',
-    sortable: false,
   },
   {
     property: 'success',
     header: 'Success',
-    size: 'xsmall',
-    align: 'center',
-    sortable: false,
-    render: (datum) => {
-      if (datum.success === false) {
-        const content = (
-          <Box width={{ max: 'medium' }}>
-            {datum.failures?.map(({ reason }) => (
-              <Text key={reason}>{reason}</Text>
-            ))}
-          </Box>
-        );
-        return (
-          <Tip
-            plain
-            content={content}
-            dropProps={{
-              round: 'medium',
-              pad: 'small',
-              background: 'background-back',
-            }}
-          >
-            <Box>
-              <StatusCritical color="red" />
-            </Box>
-          </Tip>
-        );
-      }
-      return undefined;
-    },
+    render: (datum) => (
+      <Box align="center" direction="row" gap="xsmall">
+        {datum.success ? (
+          <StatusGoodSmall color="status-ok" />
+        ) : (
+          <StatusCriticalSmall color="status-critical" />
+        )}
+        <Text>{datum.success ? 'Successful' : 'Failed'}</Text>
+      </Box>
+    ),
   },
 ];
 
 const STEP = 10;
-
 export const Table = () => {
   const [data, setData] = useState();
   const [rockets, setRockets] = useState();
-  const [view, setView] = useState({ search: '' });
-  const [sort, setSort] = useState({ property: 'name', direction: 'asc' });
+  const [view, setView] = useState({
+    search: '',
+    sort: {
+      property: 'name',
+      direction: 'asc',
+    },
+  });
   const [limit, setLimit] = useState(STEP);
 
   const search = view.search || '';
@@ -140,10 +122,10 @@ export const Table = () => {
     fetchLaunches({
       search,
       limit,
-      sort,
+      sort: view.sort,
       properties: view.properties,
     }).then((d) => setData(d));
-  }, [search, limit, sort, view.properties]);
+  }, [search, limit, view.sort, view.properties]);
 
   const numberItems = data?.totalDocs || 0;
 
@@ -155,17 +137,7 @@ export const Table = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Grid
-      flex={false}
-      pad="large"
-      columns={[['small', 'large']]}
-      justifyContent="center"
-      gap="large"
-    >
-      <Notification
-        status="info"
-        message="Data is in 'beta'. The API surface is subject to change."
-      />
+    <Box pad="large">
       <Box>
         <Data
           properties={{
@@ -179,19 +151,19 @@ export const Table = () => {
           toolbar
         >
           <DataTable
+            alignSelf="start"
             columns={columns}
-            sort={{ ...sort, external: true }}
-            onSort={(opts) => setSort(opts)}
             step={STEP}
             onMore={() => {
               if (limit < numberItems) {
                 setLimit(limit + STEP);
               }
             }}
+            sortable
           />
         </Data>
       </Box>
-    </Grid>
+    </Box>
     // </Grommet>
   );
 };

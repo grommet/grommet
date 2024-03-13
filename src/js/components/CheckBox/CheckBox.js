@@ -212,7 +212,7 @@ const CheckBox = forwardRef(
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}
-        label={label}
+        labelProp={label}
         onClick={stopLabelClick}
         pad={pad}
         onMouseEnter={(event) => onMouseEnter?.(event)}

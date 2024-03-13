@@ -296,6 +296,34 @@ describe('List', () => {
     expect(onOrder).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('renders custom theme for primaryKey', () => {
+    const theme = {
+      list: {
+        primaryKey: {
+          color: 'brand',
+          weight: 500,
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey="a"
+        />
+      </Grommet>,
+    );
+
+    const primaryKey = screen.getByText('one');
+    const styles = window.getComputedStyle(primaryKey);
+    expect(styles.fontWeight).toBe('500');
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 describe('List events', () => {
@@ -572,11 +600,11 @@ describe('List onOrder', () => {
     // beta's up arrow control should be active
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.keyDown(getByText('alpha'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
     });
-    expect(onOrder).toHaveBeenCalled();
+    expect(onOrder).toHaveBeenCalledWith([{ a: 'beta' }, { a: 'alpha' }]);
     expect(container.firstChild).toMatchSnapshot();
   });
 });

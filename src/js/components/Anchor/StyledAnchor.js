@@ -31,6 +31,7 @@ const sizeStyle = (props) => {
 
 const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
   box-sizing: border-box;
+  display: inline-flex;
   ${(props) => sizeStyle(props)}
   color: ${(props) =>
     normalizeColor(

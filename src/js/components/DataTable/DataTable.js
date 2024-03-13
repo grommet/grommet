@@ -96,6 +96,7 @@ const DataTable = ({
     data: contextData,
     properties,
     onView,
+    setSelected: setSelectedDataContext,
   } = useContext(DataContext);
   const data = dataProp || contextData || emptyData;
 
@@ -186,6 +187,11 @@ const DataTable = ({
     () => setSelected(select || (onSelect && []) || undefined),
     [onSelect, select],
   );
+  useEffect(() => {
+    if (select && setSelectedDataContext) {
+      setSelectedDataContext(select.length);
+    }
+  }, [select, setSelectedDataContext]);
 
   const [rowExpand, setRowExpand] = useState([]);
 
@@ -419,7 +425,10 @@ const DataTable = ({
   const bodyContent = groups ? (
     <GroupedBody
       ref={bodyRef}
-      cellProps={cellProps.body}
+      cellProps={{
+        body: cellProps.body,
+        groupHeader: { ...cellProps.body, ...cellProps.groupHeader },
+      }}
       columns={columns}
       disabled={disabled}
       groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
@@ -449,6 +458,8 @@ const DataTable = ({
         onSelect
           ? (nextSelected, row) => {
               setSelected(nextSelected);
+              if (setSelectedDataContext)
+                setSelectedDataContext(nextSelected.length);
               if (onSelect) onSelect(nextSelected, row);
             }
           : undefined
@@ -492,6 +503,8 @@ const DataTable = ({
         onSelect
           ? (nextSelected, row) => {
               setSelected(nextSelected);
+              if (setSelectedDataContext)
+                setSelectedDataContext(nextSelected.length);
               if (onSelect) onSelect(nextSelected, row);
             }
           : undefined
@@ -547,6 +560,8 @@ const DataTable = ({
               onSelect
                 ? (nextSelected) => {
                     setSelected(nextSelected);
+                    if (setSelectedDataContext)
+                      setSelectedDataContext(nextSelected.length);
                     if (onSelect) onSelect(nextSelected);
                   }
                 : undefined

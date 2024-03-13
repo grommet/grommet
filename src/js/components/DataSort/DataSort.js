@@ -1,10 +1,11 @@
 import React, { useContext, useMemo, useState } from 'react';
 import { Descend } from 'grommet-icons/icons/Descend';
+import { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
@@ -22,7 +23,10 @@ const Content = ({ options: optionsArg }) => {
   const options = useMemo(
     () =>
       optionsArg ||
-      (properties && Object.keys(properties).sort()) ||
+      (properties &&
+        Object.keys(properties)
+          .sort()
+          .filter((property) => !(properties?.[property]?.sort === false))) ||
       (data.length > 0 && Object.keys(data[0]).sort()) ||
       data,
     [data, optionsArg, properties],
@@ -78,24 +82,33 @@ const Content = ({ options: optionsArg }) => {
 
 export const DataSort = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
+  const theme = useContext(ThemeContext);
   const [showContent, setShowContent] = useState();
 
   let content = <Content options={options} />;
 
-  if (noForm) content = <DataForm footer={false}>{content}</DataForm>;
+  if (!inDataForm)
+    content = (
+      <DataForm footer={false} updateOn="change">
+        {content}
+      </DataForm>
+    );
 
   if (!drop) return content;
+
+  const tip = format({
+    id: 'dataSort.open',
+    messages: messages?.dataSort,
+  });
 
   const control = (
     <DropButton
       id={`${dataId}--sort-control`}
-      aria-label={format({
-        id: 'dataSort.open',
-        messages: messages?.dataSort,
-      })}
-      kind="toolbar"
+      aria-label={tip}
+      tip={tip}
+      kind={theme.data.button?.kind}
       icon={<Descend />}
       dropProps={dropProps}
       dropContent={<Box pad="small">{content}</Box>}

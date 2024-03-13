@@ -1186,6 +1186,39 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('should apply custom theme for groupHeader', () => {
+    const theme = {
+      dataTable: {
+        groupHeader: {
+          background: 'tomato',
+          border: {
+            side: 'top',
+            size: 'medium',
+          },
+          pad: 'medium',
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { header: 'Group', property: 'group' },
+            { header: 'Value', primary: true, property: 'value' },
+          ]}
+          data={[
+            { group: 1, value: 1 },
+            { group: 1, value: 2 },
+            { group: 2, value: 3 },
+            { group: 2, value: 4 },
+          ]}
+          groupBy="group"
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('units', () => {
     const { container } = render(
       <Grommet>
