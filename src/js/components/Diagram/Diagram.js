@@ -1,4 +1,5 @@
 import React, {
+  Fragment,
   forwardRef,
   useCallback,
   useContext,
@@ -66,6 +67,19 @@ const findTarget = (target) => {
   return target;
 };
 
+const openArrow = (color, id, orient = 'auto') => (
+  <marker
+    id={id}
+    markerWidth="7"
+    markerHeight="9"
+    refX="2"
+    refY="6"
+    orient={orient}
+  >
+    <path d="M1,4 L3,6 L1,8" stroke={color} fill="none" />
+  </marker>
+);
+
 const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -117,7 +131,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   const placeConnections = useCallback(() => {
     const containerRect = svgRef.current.getBoundingClientRect();
     const updatedConnectionPoints = connections.map(
-      ({ anchor, fromTarget, toTarget }) => {
+      ({ anchor, fromTarget, toTarget, endpoint }) => {
         let points;
         const fromElement = findTarget(fromTarget);
         const toElement = findTarget(toTarget);
@@ -145,16 +159,55 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             toPoint[0] += toRect.width / 2;
             if (fromRect.top < toRect.top) {
               fromPoint[1] += fromRect.height;
+
+              // Here, we are +10 or -10 the length of the line based
+              // on the anchor - vertical or horizontal, so that it
+              // doesn't touch the start or end of the main digram closely.
+              if (typeof endpoint === 'object' && endpoint?.from) {
+                fromPoint[1] += 10;
+              } else if (typeof endpoint === 'object' && endpoint?.to) {
+                toPoint[1] -= 10;
+              } else if (typeof endpoint === 'string') {
+                fromPoint[1] += 10;
+                toPoint[1] -= 10;
+              }
             } else {
               toPoint[1] += toRect.height;
+
+              if (typeof endpoint === 'object' && endpoint?.from) {
+                fromPoint[1] -= 10;
+              } else if (typeof endpoint === 'object' && endpoint?.to) {
+                toPoint[1] += 10;
+              } else if (typeof endpoint === 'string') {
+                fromPoint[1] -= 10;
+                toPoint[1] += 10;
+              }
             }
           } else if (anchor === 'horizontal') {
             fromPoint[1] += fromRect.height / 2;
             toPoint[1] += toRect.height / 2;
             if (fromRect.left < toRect.left) {
               fromPoint[0] += fromRect.width;
+
+              if (typeof endpoint === 'object' && endpoint?.from) {
+                fromPoint[0] += 10;
+              } else if (typeof endpoint === 'object' && endpoint?.to) {
+                toPoint[0] -= 10;
+              } else if (typeof endpoint === 'string') {
+                fromPoint[0] += 10;
+                toPoint[0] -= 10;
+              }
             } else {
               toPoint[0] += toRect.width;
+
+              if (typeof endpoint === 'object' && endpoint?.from) {
+                fromPoint[0] -= 10;
+              } else if (typeof endpoint === 'object' && endpoint?.to) {
+                toPoint[0] += 10;
+              } else if (typeof endpoint === 'string') {
+                fromPoint[0] -= 10;
+                toPoint[0] += 10;
+              }
             }
           } else {
             // center
@@ -179,7 +232,18 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
   }, [connectionPoints, placeConnections]);
 
   let paths;
+  const markerElements = [];
   if (connectionPoints) {
+    // addedMarkerElmentIds - To track the marker elements are added
+    // with their id's based on open and closed arrows and their
+    // color. For eg:
+    // There can be a open arrow with blue color -
+    // __grommet__openArrowStart__blue__${fromTarget}
+    // And there can be a closed arrow with pink color -
+    // __grommet__openArrowEnd__pink__${toTarget}
+    // So, instead of creating multiple arrows of the same color, we
+    // will be leveraging one arrow based on open, close and it's color.
+    const addedMarkerElmentIds = {};
     paths = connections.map(
       (
         {
@@ -190,6 +254,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
           round,
           thickness,
           type,
+          endpoint,
           ...connectionRest
         },
         index,
@@ -222,6 +287,89 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
             colorName = colors[index % colors.length];
           }
 
+          if (typeof endpoint === 'object' && endpoint?.from === 'arrow') {
+            // eslint-disable-next-line max-len
+            cleanedRest.markerStart = `url("#__grommet__openArrowStart__${colorName}__${connectionRest.fromTarget}")`;
+
+            if (
+              !addedMarkerElmentIds[
+                /* eslint-disable max-len */
+                `__grommet__openArrowStart__${colorName}__${connectionRest.fromTarget}`
+              ]
+            ) {
+              addedMarkerElmentIds[
+                /* eslint-disable max-len */
+                `__grommet__openArrowStart__${colorName}__${connectionRest.fromTarget}`
+              ] = true;
+              markerElements.push(
+                openArrow(
+                  normalizeColor(colorName, theme),
+                  `__grommet__openArrowStart__${colorName}__${connectionRest.fromTarget}`,
+                  'auto-start-reverse',
+                ),
+              );
+            }
+          } else if (typeof endpoint === 'object' && endpoint?.to === 'arrow') {
+            // eslint-disable-next-line max-len
+            cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${colorName}__${connectionRest.toTarget}")`;
+
+            if (
+              !addedMarkerElmentIds[
+                /* eslint-disable max-len */
+                `__grommet__openArrowEnd__${colorName}__${connectionRest.toTarget}`
+              ]
+            ) {
+              addedMarkerElmentIds[
+                /* eslint-disable max-len */
+                `__grommet__openArrowEnd__${colorName}__${connectionRest.toTarget}`
+              ] = true;
+              markerElements.push(
+                openArrow(
+                  normalizeColor(colorName, theme),
+                  `__grommet__openArrowEnd__${colorName}__${connectionRest.toTarget}`,
+                ),
+              );
+            }
+          } else if (typeof endpoint === 'string' && endpoint === 'arrow') {
+            // eslint-disable-next-line max-len
+            cleanedRest.markerStart = `url("#__grommet__openArrowStart__${colorName}__${connectionRest.fromTarget}")`;
+            // eslint-disable-next-line max-len
+            cleanedRest.markerEnd = `url("#__grommet__openArrowEnd__${colorName}__${connectionRest.toTarget}")`;
+
+            if (
+              !addedMarkerElmentIds[
+                /* eslint-disable max-len */
+                `__grommet__openArrowStart__${colorName}__${connectionRest.fromTarget}`
+              ] &&
+              !addedMarkerElmentIds[
+                /* eslint-disable max-len */
+                `__grommet__openArrowEnd__${colorName}__${connectionRest.toTarget}`
+              ]
+            ) {
+              addedMarkerElmentIds[
+                /* eslint-disable max-len */
+                `__grommet__openArrowStart__${colorName}__${connectionRest.fromTarget}`
+              ] = true;
+              addedMarkerElmentIds[
+                /* eslint-disable max-len */
+                `__grommet__openArrowEnd__${colorName}__${connectionRest.toTarget}`
+              ] = true;
+              markerElements.push(
+                <>
+                  {openArrow(
+                    normalizeColor(colorName, theme),
+                    `__grommet__openArrowStart__${colorName}__${connectionRest.fromTarget}`,
+                    'auto-start-reverse',
+                  )}
+                  {openArrow(
+                    normalizeColor(colorName, theme),
+                    `__grommet__openArrowEnd__${colorName}__${connectionRest.toTarget}`,
+                  )}
+                </>,
+              );
+            }
+          }
+
           path = (
             <path
               // eslint-disable-next-line react/no-array-index-key
@@ -251,6 +399,11 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
       connections={paths}
       {...rest}
     >
+      {markerElements.length > 0 &&
+        markerElements.map((marker, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <Fragment key={index}>{marker}</Fragment>
+        ))}
       <g>{paths}</g>
     </StyledDiagram>
   );

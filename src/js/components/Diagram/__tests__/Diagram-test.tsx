@@ -104,4 +104,34 @@ describe('Diagram', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('endpoint - arrow', () => {
+    const { container } = render(
+      <Context>
+        <Diagram
+          connections={[
+            {
+              fromTarget: '1',
+              toTarget: '2',
+              endpoint: 'arrow',
+              anchor: 'center',
+            },
+            {
+              fromTarget: '1',
+              toTarget: '2',
+              endpoint: { from: 'arrow' },
+              anchor: 'horizontal',
+            },
+            {
+              fromTarget: '1',
+              toTarget: '2',
+              endpoint: { to: 'arrow' },
+              anchor: 'vertical',
+            },
+          ]}
+        />
+      </Context>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

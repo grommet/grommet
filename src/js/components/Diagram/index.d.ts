@@ -21,6 +21,7 @@ export interface DiagramProps {
     anchor?: DiagramConnectionAnchor;
     animation?: DiagramAnimationType;
     color?: ColorType;
+    endpoint?: 'arrow' | { from?: 'arrow'; to?: 'arrow' };
     fromTarget: string | object;
     label?: string;
     offset?: 'xsmall' | 'small' | 'medium' | 'large' | string;
