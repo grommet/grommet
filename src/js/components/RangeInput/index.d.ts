@@ -16,11 +16,15 @@ export interface RangeInputProps {
   step?: number;
   color?: ColorType | ColorInterface[];
   value?: number | string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface RangeInputExtendedProps
   extends RangeInputProps,
-    Omit<JSX.IntrinsicElements['input'], 'color' | 'step' | 'value'> {}
+    Omit<
+      JSX.IntrinsicElements['input'],
+      'color' | 'step' | 'value' | 'onChange'
+    > {}
 
 declare const RangeInput: React.FC<RangeInputExtendedProps>;
 
