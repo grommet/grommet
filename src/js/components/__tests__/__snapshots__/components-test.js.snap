@@ -286,6 +286,43 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "DataClearFilters": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "a11yTitle": [Function],
+      "active": [Function],
+      "alignSelf": [Function],
+      "as": [Function],
+      "badge": [Function],
+      "busy": [Function],
+      "children": [Function],
+      "color": [Function],
+      "disabled": [Function],
+      "fill": [Function],
+      "focusIndicator": [Function],
+      "gap": [Function],
+      "gridArea": [Function],
+      "hoverIndicator": [Function],
+      "href": [Function],
+      "icon": [Function],
+      "justify": [Function],
+      "label": [Function],
+      "margin": [Function],
+      "messages": [Function],
+      "onClick": [Function],
+      "pad": [Function],
+      "plain": [Function],
+      "primary": [Function],
+      "reverse": [Function],
+      "secondary": [Function],
+      "size": [Function],
+      "success": [Function],
+      "target": [Function],
+      "tip": [Function],
+      "type": [Function],
+    },
+    "render": [Function],
+  },
   "DataFilter": [Function],
   "DataFilters": [Function],
   "DataForm": [Function],
@@ -310,6 +347,7 @@ exports[`Components loads 1`] = `
       "inputProps": [Function],
       "name": [Function],
       "onChange": [Function],
+      "readOnlyCopy": [Function],
       "reverse": [Function],
       "size": [Function],
       "value": [Function],
@@ -412,12 +450,10 @@ exports[`Components loads 1`] = `
     "_currentRenderer": null,
     "_currentRenderer2": null,
     "_currentValue": {
-      "noForm": true,
       "useFormField": [Function],
       "useFormInput": [Function],
     },
     "_currentValue2": {
-      "noForm": true,
       "useFormField": [Function],
       "useFormInput": [Function],
     },
@@ -705,6 +741,8 @@ exports[`Components loads 1`] = `
       "page": [Function],
       "size": [Function],
       "step": [Function],
+      "stepOptions": [Function],
+      "summary": [Function],
     },
     "render": [Function],
   },
@@ -1130,6 +1168,7 @@ exports[`Components loads 1`] = `
           "baseline": 500,
           "minSpeed": 200,
         },
+        "data": {},
         "dataTable": {
           "container": {
             "gap": "xsmall",
@@ -1140,20 +1179,7 @@ exports[`Components loads 1`] = `
               "size": "xsmall",
             },
           },
-          "groupHeader": {
-            "background": {
-              "dark": "dark-2",
-              "light": "light-2",
-            },
-            "border": {
-              "side": "bottom",
-              "size": "xsmall",
-            },
-            "pad": {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
+          "groupHeader": {},
           "header": {
             "gap": "small",
             "units": {
@@ -1541,6 +1567,7 @@ exports[`Components loads 1`] = `
               "horizontal": "11px",
               "vertical": "11px",
             },
+            "readOnly": {},
           },
           "opacity": {
             "medium": 0.4,
@@ -1780,6 +1807,9 @@ exports[`Components loads 1`] = `
                 "size": "medium",
               },
             },
+          },
+          "primaryKey": {
+            "weight": "bold",
           },
         },
         "maskedInput": {},
@@ -3131,6 +3161,7 @@ exports[`Components loads 1`] = `
           "baseline": 500,
           "minSpeed": 200,
         },
+        "data": {},
         "dataTable": {
           "container": {
             "gap": "xsmall",
@@ -3141,20 +3172,7 @@ exports[`Components loads 1`] = `
               "size": "xsmall",
             },
           },
-          "groupHeader": {
-            "background": {
-              "dark": "dark-2",
-              "light": "light-2",
-            },
-            "border": {
-              "side": "bottom",
-              "size": "xsmall",
-            },
-            "pad": {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
+          "groupHeader": {},
           "header": {
             "gap": "small",
             "units": {
@@ -3542,6 +3560,7 @@ exports[`Components loads 1`] = `
               "horizontal": "11px",
               "vertical": "11px",
             },
+            "readOnly": {},
           },
           "opacity": {
             "medium": 0.4,
@@ -3781,6 +3800,9 @@ exports[`Components loads 1`] = `
                 "size": "medium",
               },
             },
+          },
+          "primaryKey": {
+            "weight": "bold",
           },
         },
         "maskedInput": {},
@@ -4925,11 +4947,6 @@ exports[`Components loads 1`] = `
   "Tag": {
     "$$typeof": Symbol(react.forward_ref),
     "prototype": {
-      "a11yTitle": [Function],
-      "alignSelf": [Function],
-      "as": [Function],
-      "gridArea": [Function],
-      "margin": [Function],
       "name": [Function],
       "onClick": [Function],
       "onRemove": [Function],
@@ -4999,6 +5016,7 @@ exports[`Components loads 1`] = `
       "onSuggestionsOpen": [Function],
       "placeholder": [Function],
       "plain": [Function],
+      "readOnlyCopy": [Function],
       "reverse": [Function],
       "size": [Function],
       "suggestions": [Function],

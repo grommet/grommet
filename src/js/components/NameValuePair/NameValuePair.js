@@ -4,6 +4,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
+import { isSmall } from '../../utils/responsive';
 
 const NameValuePair = ({ children, name: nameProp }) => {
   const { nameProps, pairProps, valueProps } = useContext(NameValueListContext);
@@ -12,14 +13,12 @@ const NameValuePair = ({ children, name: nameProp }) => {
   const direction = pairProps?.direction;
 
   const column =
-    direction === 'column' ||
-    direction === 'column-reverse' ||
-    size === 'small';
+    direction === 'column' || direction === 'column-reverse' || isSmall(size);
 
   const Container = column ? Box : Fragment;
 
-  const nameAlign = size !== 'small' ? nameProps?.align : undefined;
-  const valueAlign = size !== 'small' ? valueProps?.align : undefined;
+  const nameAlign = !isSmall(size) ? nameProps?.align : undefined;
+  const valueAlign = !isSmall(size) ? valueProps?.align : undefined;
   // using margin to act as gap
   // <dl> elements must only directly contain
   // properly-ordered <dt> and <dd> groups

@@ -438,6 +438,12 @@ export interface ThemeType {
         size?: string;
         weight?: number | string;
       };
+      readOnly?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+      };
       weight?: number | string;
     };
     opacity?: {
@@ -699,6 +705,11 @@ export interface ThemeType {
   collapsible?: {
     minSpeed?: number;
     baseline?: number;
+  };
+  data?: {
+    button?: {
+      kind?: string;
+    };
   };
   dateInput?: {
     container?: {
@@ -1071,6 +1082,7 @@ export interface ThemeType {
       pad?: PadType;
       extend?: ExtendType;
     };
+    primaryKey?: TextProps;
     icons?: {
       down?: React.ReactNode | Icon;
       up?: React.ReactNode | Icon;
@@ -1410,6 +1422,7 @@ export interface ThemeType {
       color?: ColorType;
       extend?: ExtendType;
     };
+    wheel?: boolean;
     extend?: ExtendType;
   };
   rangeSelector?: {

@@ -60,6 +60,7 @@ exports[`Markdown renders 1`] = `
 
 .c6 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -352,6 +353,7 @@ exports[`wrapper 1`] = `
 
 .c8 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;

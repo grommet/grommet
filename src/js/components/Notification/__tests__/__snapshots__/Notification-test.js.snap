@@ -472,6 +472,7 @@ exports[`Notification multi actions 1`] = `
 
 .c9 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -742,6 +743,10 @@ exports[`Notification position bottom 1`] = `
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 .c9 {
   margin: 0px;
   font-size: 18px;
@@ -1007,6 +1012,10 @@ exports[`Notification position bottom-left 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c9 {
@@ -1276,6 +1285,10 @@ exports[`Notification position bottom-right 1`] = `
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 .c9 {
   margin: 0px;
   font-size: 18px;
@@ -1541,6 +1554,10 @@ exports[`Notification position center 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c9 {
@@ -1810,6 +1827,10 @@ exports[`Notification position end 1`] = `
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 .c9 {
   margin: 0px;
   font-size: 18px;
@@ -2075,6 +2096,10 @@ exports[`Notification position left 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c9 {
@@ -2344,6 +2369,10 @@ exports[`Notification position right 1`] = `
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 .c9 {
   margin: 0px;
   font-size: 18px;
@@ -2609,6 +2638,10 @@ exports[`Notification position start 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c9 {
@@ -2878,6 +2911,10 @@ exports[`Notification position top 1`] = `
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 .c9 {
   margin: 0px;
   font-size: 18px;
@@ -3145,6 +3182,10 @@ exports[`Notification position top-left 1`] = `
   position: absolute;
 }
 
+.c2:focus {
+  outline: none;
+}
+
 .c9 {
   margin: 0px;
   font-size: 18px;
@@ -3410,6 +3451,10 @@ exports[`Notification position top-right 1`] = `
   height: 0;
   overflow: hidden;
   position: absolute;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c9 {

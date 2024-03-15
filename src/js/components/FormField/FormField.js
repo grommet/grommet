@@ -3,8 +3,8 @@ import React, {
   cloneElement,
   forwardRef,
   useContext,
+  useMemo,
   useState,
-  useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -15,6 +15,7 @@ import {
   withinDropPortal,
   PortalContext,
 } from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -156,19 +157,6 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
-const useDebounce = () => {
-  const [func, setFunc] = useState();
-  const theme = useContext(ThemeContext) || defaultProps.theme;
-
-  useEffect(() => {
-    let timer;
-    if (func) timer = setTimeout(() => func(), theme.global.debounceDelay);
-    return () => clearTimeout(timer);
-  }, [func, theme.global.debounceDelay]);
-
-  return setFunc;
-};
-
 const FormField = forwardRef(
   (
     {
@@ -198,6 +186,7 @@ const FormField = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
+
     const {
       error,
       info,
@@ -222,6 +211,24 @@ const FormField = forwardRef(
     const debounce = useDebounce();
 
     const portalContext = useContext(PortalContext);
+
+    const readOnlyField = useMemo(() => {
+      let readOnly = false;
+      if (children) {
+        Children.map(children, (child) => {
+          if (
+            (child.props?.readOnly === true ||
+              child.props?.readOnlyCopy === true) &&
+            child.type &&
+            ('TextInput'.indexOf(child.type.displayName) !== -1 ||
+              'DateInput'.indexOf(child.type.displayName) !== -1)
+          ) {
+            readOnly = true;
+          }
+        });
+      }
+      return readOnly;
+    }, [children]);
 
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
@@ -286,7 +293,9 @@ const FormField = forwardRef(
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
-      if (error && formFieldTheme.error) {
+      if (readOnlyField) {
+        themeContentProps.background = theme.global.input.readOnly?.background;
+      } else if (error && formFieldTheme.error) {
         themeContentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
         themeContentProps.background = formFieldTheme.disabled.background;
@@ -332,6 +341,8 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
+    } else if (readOnlyField && theme.global.input?.readOnly?.border?.color) {
+      borderColor = theme.global.input?.readOnly?.border?.color;
     } else if (
       // backward compatibility check
       (error && themeBorder && themeBorder.error.color) ||

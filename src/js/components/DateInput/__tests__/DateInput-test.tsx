@@ -1168,4 +1168,41 @@ describe('DateInput', () => {
 
     expect(input).toHaveValue('');
   });
+
+  test('read only', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DateInput
+          format="mm/dd/yyyy"
+          value="01/01/2024"
+          readOnly
+          aria-readonly
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only copy', async () => {
+    const user = userEvent.setup();
+
+    const { asFragment } = render(
+      <Grommet>
+        <DateInput
+          format="mm/dd/yyyy"
+          value="01/01/2024"
+          readOnly
+          readOnlyCopy
+          aria-readonly
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button'));
+
+    const clipboardText = await navigator.clipboard.readText();
+    expect(clipboardText).toBe('01/01/2024');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

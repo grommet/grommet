@@ -1943,7 +1943,6 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 2px solid #6FFFB0;
 }
 
 .c1:focus {
@@ -3472,7 +3471,7 @@ exports[`List events Enter key 2`] = `
 >
   <ul
     aria-activedescendant="1"
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -3542,7 +3541,6 @@ exports[`List events focus and blur 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 2px solid #6FFFB0;
 }
 
 .c1:focus {
@@ -3629,7 +3627,7 @@ exports[`List events focus and blur 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -3800,7 +3798,7 @@ exports[`List events mouse events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -7476,7 +7474,7 @@ exports[`List events should render new data when page changes 2`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE List__StyledContainer-sc-130gdqg-2 iWMcSH"
   >
     <ul
-      class="List__StyledList-sc-130gdqg-0 gWrQqh"
+      class="List__StyledList-sc-130gdqg-0 zXjuQ"
       role="list"
     >
       .c0 {
@@ -13573,7 +13571,7 @@ exports[`List onClickItem 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -14017,7 +14015,7 @@ exports[`List onOrder Keyboard move down 2`] = `
 >
   <ul
     aria-activedescendant="alphaMoveDown"
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -14171,7 +14169,7 @@ exports[`List onOrder Keyboard move down 3`] = `
 >
   <ul
     aria-activedescendant="alphaMoveUp"
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -14741,7 +14739,7 @@ exports[`List onOrder Keyboard move up 2`] = `
 >
   <ul
     aria-activedescendant="betaMoveUp"
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -14895,7 +14893,7 @@ exports[`List onOrder Keyboard move up 3`] = `
 >
   <ul
     aria-activedescendant="betaMoveDown"
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -15464,7 +15462,7 @@ exports[`List onOrder Mouse move down 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ewCAy"
+    class="List__StyledList-sc-130gdqg-0 dCalSn"
     role="listbox"
     tabindex="0"
   >
@@ -17235,7 +17233,6 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 2px solid #6FFFB0;
 }
 
 .c1:focus {
@@ -18785,6 +18782,137 @@ exports[`List renders a11yTitle and aria-label 1`] = `
     </ul>
   </div>
 </div>
+`;
+
+exports[`List renders custom theme for primaryKey 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+  font-weight: 500;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <ul
+      class="c1"
+      role="list"
+    >
+      <li
+        class="c2 c3"
+      >
+        <span
+          class="c4"
+        >
+          one
+        </span>
+      </li>
+      <li
+        class="c5 c3"
+      >
+        <span
+          class="c4"
+        >
+          two
+        </span>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`List secondaryKey 1`] = `

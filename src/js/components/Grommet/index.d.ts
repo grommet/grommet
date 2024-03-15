@@ -51,7 +51,6 @@ export interface GrommetProps {
         };
       };
       dataForm?: {
-        reset?: string;
         submit?: string;
       };
       dataSearch?: {
@@ -68,7 +67,11 @@ export interface GrommetProps {
       dataSummary?: {
         filtered?: string;
         filteredSingle?: string;
+        items?: string;
+        itemsSingle?: string;
+        selected?: string;
         total?: string;
+        totalSingle?: string;
       };
       dataTableColumns?: {
         open?: string;
@@ -101,6 +104,18 @@ export interface GrommetProps {
         invalid?: string;
         required?: string;
       };
+      formField?: {
+        maxCharacters?: {
+          remaining?: {
+            singular?: string;
+            plural?: string;
+          };
+          overLimit?: {
+            singular?: string;
+            plural: string;
+          };
+        };
+      };
       menu?: {
         openMenu?: string;
         closeMenu?: string;
@@ -112,6 +127,22 @@ export interface GrommetProps {
       select?: {
         multiple?: string;
         selected?: string;
+      };
+      selectMultiple?: {
+        clearAll?: string;
+        clearAllA11y?: string;
+        open?: string;
+        optionNotSelected?: string;
+        optionSelected?: string;
+        search?: string;
+        selectAll?: string;
+        selectAllA11y?: string;
+        selectDrop?: string;
+        selected?: string;
+        selectedOfTotal?: string;
+        selectedOptions?: string;
+        showMore?: string;
+        summarizedValue?: string;
       };
       skipLinks?: {
         skipTo?: string;

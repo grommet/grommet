@@ -1,18 +1,11 @@
 import React from 'react';
-
-import { Box, Data, DataTable, Notification } from 'grommet';
-
-import { DataView } from '../DataView';
-import { DATA } from '../../DataTable/stories/data';
+import { Box, Data, DataTable, DataView } from 'grommet';
+import { DATA, columns } from '../../DataTable/stories/data';
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box align="center" justify="start" pad="large" gap="medium">
-    <Notification
-      status="info"
-      message="Data is in 'beta'. The API surface is subject to change."
-    />
     <Data
       data={DATA}
       views={[
@@ -21,7 +14,7 @@ export const Simple = () => (
       ]}
     >
       <DataView />
-      <DataTable />
+      <DataTable columns={columns} />
     </Data>
   </Box>
   // </Grommet>

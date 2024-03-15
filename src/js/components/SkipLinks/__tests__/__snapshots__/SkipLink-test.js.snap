@@ -3,6 +3,7 @@
 exports[`SkipLink basic 1`] = `
 .c1 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -82,7 +83,7 @@ exports[`SkipLink basic 2`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 hMjDiU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
+      class="StyledAnchor-sc-1rp7lwl-0 gMWnoU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
       id="main"
       tabindex="-1"
     />
@@ -95,7 +96,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 hMjDiU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
+      class="StyledAnchor-sc-1rp7lwl-0 gMWnoU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
       id="footer"
       tabindex="-1"
     />
@@ -114,7 +115,7 @@ exports[`SkipLink basic 3`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 hMjDiU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
+      class="StyledAnchor-sc-1rp7lwl-0 gMWnoU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
       id="main"
       tabindex="-1"
     />
@@ -127,7 +128,7 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 hMjDiU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
+      class="StyledAnchor-sc-1rp7lwl-0 gMWnoU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
       id="footer"
       tabindex="-1"
     />
@@ -142,6 +143,7 @@ exports[`SkipLink basic 3`] = `
 exports[`SkipLink should allow for single skip link 1`] = `
 .c1 {
   box-sizing: border-box;
+  display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
@@ -211,7 +213,7 @@ exports[`SkipLink should allow for single skip link 2`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 hMjDiU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
+      class="StyledAnchor-sc-1rp7lwl-0 gMWnoU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
       id="main"
       tabindex="-1"
     />
@@ -237,7 +239,7 @@ exports[`SkipLink should allow for single skip link 3`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 hMjDiU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
+      class="StyledAnchor-sc-1rp7lwl-0 gMWnoU SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 kstcwt"
       id="main"
       tabindex="-1"
     />

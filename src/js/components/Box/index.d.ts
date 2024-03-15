@@ -38,7 +38,7 @@ export interface BoxProps {
   flex?: 'grow' | 'shrink' | boolean | { grow?: number; shrink?: number };
   fill?: FillType;
   focusIndicator?: boolean;
-  gap?: GapType;
+  gap?: GapType | { row?: GapType; column?: GapType };
   height?: HeightType;
   hoverIndicator?:
     | { background?: BackgroundType; elevation?: ElevationType }
@@ -52,7 +52,6 @@ export interface BoxProps {
     | 'evenly'
     | 'start'
     | 'stretch';
-  onClick?: (event: React.MouseEvent) => void;
   overflow?:
     | 'auto'
     | 'hidden'
