@@ -209,6 +209,8 @@ workflows:
               only:
                 - master
       - release-styled-components-beta-stable:
+          context:
+            - grommet
           requires:
             - jest
             - lint
