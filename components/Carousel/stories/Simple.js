@@ -33,7 +33,6 @@ var Simple = exports.Simple = function Simple() {
     // </Grommet>
   );
 };
-
 Simple.parameters = {
   chromatic: {
     disable: true

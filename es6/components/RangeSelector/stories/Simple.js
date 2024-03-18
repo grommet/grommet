@@ -22,7 +22,6 @@ export var Simple = function Simple() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Input/RangeSelector/Simple'
 };

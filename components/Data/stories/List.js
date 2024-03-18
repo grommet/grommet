@@ -12,16 +12,10 @@ var Example = exports.Example = function Example() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Grid, {
-      flex: false,
+    _react["default"].createElement(_grommet.Box, {
       pad: "large",
-      columns: [['small', 'medium']],
-      justifyContent: "center",
-      gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_Data.Data, {
+      width: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_Data.Data, {
       data: _data.DATA
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, null, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, {
       drop: true
@@ -34,7 +28,6 @@ var Example = exports.Example = function Example() {
     // </Grommet>
   );
 };
-
 Example.storyName = 'List';
 Example.args = {
   full: true

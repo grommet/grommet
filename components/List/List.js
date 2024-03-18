@@ -23,7 +23,7 @@ var emptyData = [];
 var StyledList = _styledComponents["default"].ul.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " &:focus{", "}", "}", "}"], function (props) {
+})(["list-style:none;", " padding:0;", " &:focus{", "}", "}&:focus:not(:focus-visible){", "}"], function (props) {
   return !props.margin && 'margin: 0;';
 }, _utils.genericStyles, function (props) {
   return props.tabIndex >= 0 && (0, _utils.focusStyle)({
@@ -31,13 +31,8 @@ var StyledList = _styledComponents["default"].ul.withConfig(_utils.styledCompone
     skipSvgChildren: true
   });
 }, function (props) {
-  return props.itemFocus && (0, _utils.focusStyle)({
-    forceOutline: true,
-    skipSvgChildren: true
-  });
-}, function (props) {
   return props.theme.list && props.theme.list.extend;
-});
+}, (0, _utils.unfocusStyle)());
 var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
@@ -106,7 +101,6 @@ var getItemId = function getItemId(item, index, itemKey, primaryKey) {
   if (itemKey) return getValue(item, index, itemKey);
   return (_getValue = getValue(item, index)) != null ? _getValue : index; // do our best w/o *key properties
 };
-
 var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
@@ -231,21 +225,17 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     }
     ariaProps['aria-activedescendant'] = activeId;
   }
-  return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
-    onEnter: (onClickItem || onOrder) && active >= 0 ? function (event) {
+  var onSelectOption = function onSelectOption(event) {
+    if ((onClickItem || onOrder) && active >= 0) {
       if (onOrder) {
         var index = Math.trunc(active / 2);
         // Call onOrder with the re-ordered data.
         // Update the active control index so that the
         // active control will stay on the same item
         // even though it moved up or down.
-        if (active % 2) {
-          onOrder(reorder(orderableData, pinnedInfo, index, index + 1));
-          updateActive(Math.min(active + 2, orderableData.length * 2 - 2));
-        } else {
-          onOrder(reorder(orderableData, pinnedInfo, index, index - 1));
-          updateActive(Math.max(active - 2, 1));
-        }
+        var newIndex = active % 2 ? index + 1 : index - 1;
+        onOrder(reorder(orderableData, pinnedInfo, index, newIndex));
+        updateActive(active % 2 ? Math.min(active + 2, orderableData.length * 2 - 2) : Math.max(active - 2, 1));
       } else if (disabledItems != null && disabledItems.includes(getValue(data[active], active, itemKey))) {
         event.preventDefault();
       } else if (onClickItem) {
@@ -262,16 +252,29 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
           index: active
         });
       }
-    } : undefined,
-    onUp: (onClickItem || onOrder) && active ? function () {
-      var min = onOrder ? 1 : 0;
-      updateActive(Math.max(active - 1, min));
-    } : undefined,
-    onDown: (onClickItem || onOrder) && orderableData && orderableData.length ? function () {
-      var min = onOrder ? 1 : 0;
-      var max = onOrder ? orderableData.length * 2 - 2 : data.length - 1;
-      updateActive(active >= min ? Math.min(active + 1, max) : min);
-    } : undefined,
+    }
+  };
+  return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+    onEnter: onSelectOption,
+    onSpace: function onSpace(event) {
+      event.preventDefault();
+      onSelectOption(event);
+    },
+    onUp: function onUp(event) {
+      event.preventDefault();
+      if ((onClickItem || onOrder) && active) {
+        var min = onOrder ? 1 : 0;
+        updateActive(Math.max(active - 1, min));
+      }
+    },
+    onDown: function onDown(event) {
+      event.preventDefault();
+      if ((onClickItem || onOrder) && orderableData && orderableData.length) {
+        var min = onOrder ? 1 : 0;
+        var max = onOrder ? orderableData.length * 2 - 2 : data.length - 1;
+        updateActive(active >= min ? Math.min(active + 1, max) : min);
+      }
+    },
     onKeyDown: onKeyDown
   }, /*#__PURE__*/_react["default"].createElement(StyledList, _extends({
     "aria-label": ariaLabel || a11yTitle,
@@ -312,10 +315,9 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       } : undefined);
     } else if (primaryKey) {
       var primary = getValue(item, index, primaryKey);
-      content = typeof primary === 'string' || typeof primary === 'number' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, {
-        key: "p",
-        weight: "bold"
-      }, primary) : primary;
+      content = typeof primary === 'string' || typeof primary === 'number' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
+        key: "p"
+      }, theme.list.primaryKey), primary) : primary;
       if (secondaryKey) {
         var secondary = getValue(item, index, secondaryKey);
         content = [content, typeof secondary === 'string' || typeof secondary === 'number' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, {

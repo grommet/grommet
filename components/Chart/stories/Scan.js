@@ -149,7 +149,6 @@ var ScanChart = function ScanChart() {
     // </Grommet>
   );
 };
-
 var Scan = exports.Scan = function Scan() {
   return /*#__PURE__*/_react["default"].createElement(ScanChart, null);
 };

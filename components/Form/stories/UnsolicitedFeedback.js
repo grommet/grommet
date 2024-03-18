@@ -132,7 +132,6 @@ var UnSolicitedFeedback = exports.UnSolicitedFeedback = function UnSolicitedFeed
     // </Grommet>
   );
 };
-
 UnSolicitedFeedback.storyName = 'UnSolicited feedback';
 UnSolicitedFeedback.parameters = {
   chromatic: {

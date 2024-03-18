@@ -38,7 +38,6 @@ var VerticalAlign = exports.VerticalAlign = function VerticalAlign() {
     // </Grommet>
   );
 };
-
 VerticalAlign.storyName = 'Vertical Align';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Vertical Align'

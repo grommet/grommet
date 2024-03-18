@@ -43,7 +43,6 @@ var InlineDrop = function InlineDrop() {
     // </Grommet>
   );
 };
-
 var Inline = exports.Inline = function Inline() {
   return /*#__PURE__*/_react["default"].createElement(InlineDrop, null);
 };

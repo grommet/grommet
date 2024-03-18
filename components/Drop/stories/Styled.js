@@ -58,7 +58,6 @@ var StyledDrop = function StyledDrop() {
     // </Grommet>
   );
 };
-
 var Styled = exports.Styled = function Styled() {
   return /*#__PURE__*/_react["default"].createElement(StyledDrop, null);
 };

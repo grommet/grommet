@@ -27,7 +27,6 @@ export var PairProps = function PairProps() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/NameValueList/Pair Props'
 };

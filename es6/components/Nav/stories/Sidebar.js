@@ -49,7 +49,6 @@ var SidebarNav = function SidebarNav() {
     // </Grommet>
   );
 };
-
 export var Sidebar = function Sidebar() {
   return /*#__PURE__*/React.createElement(SidebarNav, null);
 };

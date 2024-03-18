@@ -121,6 +121,12 @@ Object.keys(_DataChart).forEach(function (key) {
   if (key in exports && exports[key] === _DataChart[key]) return;
   exports[key] = _DataChart[key];
 });
+var _DataClearFilters = require("./DataClearFilters");
+Object.keys(_DataClearFilters).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _DataClearFilters[key]) return;
+  exports[key] = _DataClearFilters[key];
+});
 var _DataFilter = require("./DataFilter");
 Object.keys(_DataFilter).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

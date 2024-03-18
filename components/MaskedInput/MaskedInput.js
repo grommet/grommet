@@ -205,11 +205,9 @@ var MaskedInput = exports.MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(func
         if (maskIndex === undefined && valueParts.length < mask.length) {
           maskIndex = valueParts.length; // first unused one
         }
-
         if (maskIndex && mask[maskIndex].fixed) {
           maskIndex -= 1; // fixed mask parts are never "active"
         }
-
         if (maskIndex !== activeMaskIndex) {
           setActiveMaskIndex(maskIndex);
           setActiveOptionIndex(-1);

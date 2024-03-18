@@ -32,7 +32,6 @@ var GridInfiniteScroll = exports.GridInfiniteScroll = function GridInfiniteScrol
     // </Grommet>
   );
 };
-
 GridInfiniteScroll.storyName = 'Grid';
 var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Grid'

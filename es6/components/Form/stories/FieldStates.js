@@ -68,7 +68,6 @@ export var FieldStates = function FieldStates() {
     // </Grommet>
   );
 };
-
 FieldStates.storyName = 'Field states';
 export default {
   title: 'Input/Form/Field states'

@@ -36,6 +36,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSuggestionsClose: _propTypes["default"].func,
     placeholder: _propTypes["default"].node,
     plain: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['full'])]),
+    readOnlyCopy: _propTypes["default"].bool,
     reverse: _propTypes["default"].bool,
     size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), _propTypes["default"].string]),
     suggestions: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].shape({

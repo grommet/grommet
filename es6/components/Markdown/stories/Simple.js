@@ -16,7 +16,6 @@ export var Simple = function Simple() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Type/Markdown/Simple'
 };

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RangeSelector = void 0;
+exports.valueToStepPrecision = exports.getDecimalCount = exports.RangeSelector = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
@@ -12,6 +12,7 @@ var _Text = require("../Text");
 var _utils = require("../../utils");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
+var _DataFormContext = require("../../contexts/DataFormContext");
 var _excluded = ["color", "defaultValues", "direction", "invert", "label", "max", "messages", "min", "name", "onChange", "opacity", "round", "size", "step", "values"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -21,6 +22,32 @@ var Container = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "sc-siof5p-0"
 })(["user-select:none;"]);
+var getDecimalCount = exports.getDecimalCount = function getDecimalCount(number) {
+  if (Number.isInteger(number)) {
+    return 0;
+  }
+  // handle small numbers (0.00000001) which javascript
+  // will turn into `e-`
+  if (Math.abs(number) < 1) {
+    var parts = number.toExponential().split('e-');
+    var _decimalPart = parts[0].split('.')[1] || '';
+    return _decimalPart.length + parseInt(parts[1], 10);
+  }
+  var decimalPart = number.toString().split('.')[1] || '';
+  return decimalPart.length;
+};
+
+// avoid floating point issues like 0.15 + 0.3 = 0.44999999999999996
+// and turn into 0.15 + 0.3 = 0.45
+var valueToStepPrecision = exports.valueToStepPrecision = function valueToStepPrecision(value, step, min) {
+  var nearestTrueStep = Math.round((value - min) / step) * step + min;
+  return Number(nearestTrueStep.toFixed(getDecimalCount(step)));
+};
+
+// ensure values are within min/max
+var clamp = function clamp(value, min, max) {
+  return Math.min(Math.max(min, value), max);
+};
 var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var color = _ref.color,
     _ref$defaultValues = _ref.defaultValues,
@@ -64,18 +91,44 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
   var labelWidthRef = (0, _react.useRef)(0);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
-      // ensure values are within min/max
       value: valuesProp == null ? void 0 : valuesProp.map(function (n) {
-        return Math.min(max, Math.max(min, n));
+        return clamp(n, min, max);
       }),
       initialValue: defaultValues
     }),
     values = _formContext$useFormI[0],
     setValues = _formContext$useFormI[1];
+
+  // for DataFilters to know when RangeSelector is set to its min/max
+  var _useContext2 = (0, _react.useContext)(_DataFormContext.DataFormContext),
+    pendingReset = _useContext2.pendingReset;
+  var updatePendingReset = (0, _react.useCallback)(function (nextMin, nextMax) {
+    var _pendingReset$current;
+    if (nextMin === min && nextMax === max) {
+      pendingReset == null || pendingReset.current.add(name);
+    } else if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(name)) {
+      pendingReset == null || pendingReset.current["delete"](name);
+    }
+  }, [max, min, name, pendingReset]);
   var change = (0, _react.useCallback)(function (nextValues) {
-    setValues(nextValues);
-    if (onChange) onChange(nextValues);
-  }, [onChange, setValues]);
+    var nextMin = nextValues[0],
+      nextMax = nextValues[1];
+    // only adjust value to step precision if it's not the min/max
+    if (nextMin !== min && nextMin !== max) nextMin = valueToStepPrecision(nextValues[0], step, min);
+    if (nextMax !== min && nextMax !== max) nextMax = valueToStepPrecision(nextValues[1], step, min);
+
+    // ensure values are within min/max
+    nextMin = clamp(nextMin, min, max);
+    nextMax = clamp(nextMax, min, max);
+
+    // make sure this is only called if both of the values
+    // are actually distinct from the previous values
+    if (nextMin !== values[0] || nextMax !== values[1]) {
+      updatePendingReset(nextMin, nextMax);
+      setValues([nextMin, nextMax]);
+      if (onChange) onChange([nextMin, nextMax]);
+    }
+  }, [onChange, setValues, step, max, min, values, updatePendingReset]);
   var valueForMouseCoord = (0, _react.useCallback)(function (event) {
     var rect = containerRef.current.getBoundingClientRect();
     var value;
@@ -216,12 +269,14 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
     onTouchStart: function onTouchStart() {
       return setChanging('lower');
     },
-    onDecrease: lower - step >= min ? function () {
+    onDecrease: function onDecrease() {
       return change([lower - step, upper]);
-    } : undefined,
+    },
     onIncrease: lower + step <= upper ? function () {
       return change([lower + step, upper]);
-    } : undefined
+    } : function () {
+      return change([upper, upper]);
+    }
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     style: {
       flex: upper - lower + 1 + " 0 0",
@@ -263,10 +318,12 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
     },
     onDecrease: upper - step >= lower ? function () {
       return change([lower, upper - step]);
-    } : undefined,
-    onIncrease: upper + step <= max ? function () {
+    } : function () {
+      return change([lower, lower]);
+    },
+    onIncrease: function onIncrease() {
       return change([lower, upper + step]);
-    } : undefined
+    }
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     style: {
       flex: max - upper + " 0 0"

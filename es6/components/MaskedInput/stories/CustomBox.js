@@ -51,7 +51,6 @@ export var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
     // </Grommet>
   );
 };
-
 CustomBoxMaskedInput.storyName = 'Custom box';
 CustomBoxMaskedInput.parameters = {
   chromatic: {

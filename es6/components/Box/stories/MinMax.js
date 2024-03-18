@@ -210,7 +210,6 @@ export var MinMaxSizesBox = function MinMaxSizesBox() {
     // </Grommet>
   );
 };
-
 MinMaxSizesBox.storyName = 'Min and max sizes';
 export default {
   title: 'Layout/Box/Min and max sizes'

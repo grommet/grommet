@@ -36,7 +36,6 @@ var MultipleContent = exports.MultipleContent = function MultipleContent() {
     // </Grommet>
   );
 };
-
 MultipleContent.storyName = 'Multiple content';
 var _default = exports["default"] = {
   title: 'Layout/Page/Multiple content'

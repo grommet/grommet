@@ -61,7 +61,6 @@ export var RoundBox = function RoundBox() {
     // </Grommet>
   );
 };
-
 RoundBox.storyName = 'Round';
 export default {
   title: 'Layout/Box/Round'

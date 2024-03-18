@@ -52,7 +52,6 @@ export var All = function All() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Type/Heading/All'
 };

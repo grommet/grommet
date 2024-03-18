@@ -183,7 +183,6 @@ var WindowChart = function WindowChart(_ref) {
     // </Grommet>
   );
 };
-
 export var Window = function Window() {
   return /*#__PURE__*/React.createElement(WindowChart, {
     data: generateData(1000, 100),

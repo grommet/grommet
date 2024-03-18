@@ -24,7 +24,6 @@ export var Simple = function Simple(props) {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Utilities/InfiniteScroll/Simple'
 };

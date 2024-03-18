@@ -18,6 +18,7 @@ export * from './Clock';
 export * from './Collapsible';
 export * from './Data';
 export * from './DataChart';
+export * from './DataClearFilters';
 export * from './DataFilter';
 export * from './DataFilters';
 export * from './DataSearch';

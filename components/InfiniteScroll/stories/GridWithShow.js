@@ -33,7 +33,6 @@ var GridWithShow = exports.GridWithShow = function GridWithShow() {
     // </Grommet>
   );
 };
-
 GridWithShow.storyName = 'Grid with show item 77';
 var _default = exports["default"] = {
   title: 'Utilities/InfiniteScroll/Grid with show item 77'

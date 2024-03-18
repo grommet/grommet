@@ -75,7 +75,7 @@ var Grommet = exports.Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (pr
     }
     var themeBackground = nextTheme.global.colors.background;
     nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
-    if (themeMode === 'auto' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (themeMode === 'auto' && typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       nextTheme.dark = true;
     }
     var color = (0, _utils.normalizeColor)(background || themeBackground, nextTheme);

@@ -147,7 +147,6 @@ var FieldBorderPosition = exports.FieldBorderPosition = function FieldBorderPosi
     // </Grommet>
   );
 };
-
 FieldBorderPosition.storyName = 'Field border position';
 var _default = exports["default"] = {
   title: 'Input/Form/Custom Themed/Field border position'

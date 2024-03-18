@@ -1,31 +1,22 @@
-var _excluded = ["children", "footer", "onDone", "onTouched", "pad", "updateOn"];
+var _excluded = ["children", "footer", "onDone", "pad", "updateOn"];
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useMemo, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Footer } from '../Footer';
 import { Form } from '../Form';
 import { DataContext } from '../../contexts/DataContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { MessageContext } from '../../contexts/MessageContext';
-var HideableButton = styled(Button).withConfig({
-  displayName: "DataForm__HideableButton",
-  componentId: "sc-v64e1r-0"
-})(["", ""], function (props) {
-  return props.disabled && "\n  opacity: 0;";
-});
+import { useDebounce } from '../../utils/use-debounce';
 var MaxForm = styled(Form).withConfig({
   displayName: "DataForm__MaxForm",
-  componentId: "sc-v64e1r-1"
+  componentId: "sc-v64e1r-0"
 })(["max-width:100%;", ""], function (props) {
   return props.fill && 'max-height: 100%;';
 });
-var hideButtonProps = {
-  'aria-hidden': true,
-  disabled: true,
-  tabIndex: -1
-};
 
 // We convert the view structure to something more flat to work better
 // with the Form inputs. These keys are how we flatten the Form value object
@@ -58,7 +49,7 @@ var flatten = function flatten(formValue, options) {
     // call the function again
     // ignore _range situations
     if (typeof result[i] === 'object' && !Array.isArray(result[i]) && (options != null && options.full || !result[i][formRangeKey])) {
-      var temp = flatten(result[i]);
+      var temp = flatten(result[i], options);
       Object.keys(temp).forEach(function (j) {
         // Store temp in result
         // ignore empty arrays
@@ -150,10 +141,23 @@ var formValueToView = function formValueToView(value, views) {
 
 // remove any empty arrays of property values by deleting the key for
 // that property in the view properties
-var clearEmpty = function clearEmpty(formValue) {
+var clearEmpty = function clearEmpty(formValue, pendingReset) {
   var value = formValue;
   Object.keys(value).forEach(function (k) {
     if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+    // special case for when range selector returns to its min/max
+    // flat format with full: true needed to match filter name structure
+    // { a: b: { _range: [0, 100] } } ==> a.b._range: [0, 100]
+    if (typeof value[k] === 'object' && !Array.isArray(value[k])) {
+      var _pendingReset$current;
+      var filterName = k + "." + Object.keys(flatten(value[k], {
+        full: true
+      }))[0];
+      if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(filterName)) {
+        delete value[k];
+        pendingReset.current["delete"](filterName);
+      }
+    }
   });
   return value;
 };
@@ -164,21 +168,10 @@ var resetPage = function resetPage(nextFormValue, prevFormValue) {
     // eslint-disable-next-line no-param-reassign
     nextFormValue[formPageKey] = 1;
 };
-var transformTouched = function transformTouched(touched, value) {
-  var result = {};
-  Object.keys(touched).forEach(function (key) {
-    // special case _range fields
-    var parts = key.split('.');
-    if (parts[1] === formRangeKey) result[key] = value[parts[0]];else result[key] = flatten(value, {
-      full: true
-    })[key];
-  });
-  return result;
-};
 
 // function shared by onSubmit and onChange to coordinate view
 // name changes
-var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
+var normalizeValue = function normalizeValue(nextValue, prevValue, views, pendingReset) {
   if (nextValue[formViewNameKey] && nextValue[formViewNameKey] !== prevValue[formViewNameKey]) {
     // view name changed, reset view contents from named view
     return viewToFormValue(views.find(function (v) {
@@ -188,16 +181,18 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
   // something else changed
 
   // clear empty properties
-  var result = clearEmpty(nextValue);
+  var result = clearEmpty(nextValue, pendingReset);
 
-  // if we have a view and something related to it changed, clear the view
+  // if we have a view and something changed, clear the view
   if (result[formViewNameKey]) {
     var view = views.find(function (v) {
       return v.name === result[formViewNameKey];
     });
     var viewValue = viewToFormValue(view);
-    clearEmpty(viewValue);
-    if (Object.keys(viewValue).some(function (k) {
+    clearEmpty(viewValue, pendingReset);
+    if (Object.keys(viewValue).length !== Object.keys(result).length) {
+      delete result[formViewNameKey];
+    } else if (Object.keys(viewValue).some(function (k) {
       return (
         // allow mismatch between empty and set strings
         viewValue[k] && result[k] && JSON.stringify(result[k]) !== JSON.stringify(viewValue[k])
@@ -208,55 +203,64 @@ var normalizeValue = function normalizeValue(nextValue, prevValue, views) {
   }
   return result;
 };
+
+// 300ms was chosen empirically as a reasonable default
+var DEBOUNCE_TIMEOUT = 300;
 export var DataForm = function DataForm(_ref) {
   var children = _ref.children,
     footer = _ref.footer,
     onDone = _ref.onDone,
-    onTouched = _ref.onTouched,
     pad = _ref.pad,
-    updateOnProp = _ref.updateOn,
+    _ref$updateOn = _ref.updateOn,
+    updateOn = _ref$updateOn === void 0 ? 'submit' : _ref$updateOn,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
     messages = _useContext.messages,
     onView = _useContext.onView,
-    updateOnData = _useContext.updateOn,
     view = _useContext.view,
     views = _useContext.views;
-  var updateOn = updateOnProp != null ? updateOnProp : updateOnData;
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
   var _useState = useState(viewToFormValue(view)),
     formValue = _useState[0],
     setFormValue = _useState[1];
-  var _useState2 = useState(),
-    changed = _useState2[0],
-    setChanged = _useState2[1];
+  // special case for range selectors which always have a value.
+  // when value returns to its min/max, remove it from view
+  // like other properties
+  var pendingReset = useRef(new Set());
+  var contextValue = useMemo(function () {
+    return {
+      inDataForm: true,
+      pendingReset: pendingReset
+    };
+  }, []);
+  var debounce = useDebounce(DEBOUNCE_TIMEOUT);
   var onSubmit = useCallback(function (_ref2) {
-    var value = _ref2.value,
-      touched = _ref2.touched;
-    var nextValue = normalizeValue(value, formValue, views);
+    var value = _ref2.value;
+    var nextValue = normalizeValue(value, formValue, views, pendingReset);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
-    setChanged(false);
-    if (onTouched) onTouched(transformTouched(touched, nextValue));
     onView(formValueToView(nextValue, views));
     if (onDone) onDone();
-  }, [formValue, onDone, onTouched, onView, views]);
+  }, [formValue, onDone, onView, views]);
   var onChange = useCallback(function (value, _ref3) {
     var touched = _ref3.touched;
-    var nextValue = normalizeValue(value, formValue, views);
+    var nextValue = normalizeValue(value, formValue, views, pendingReset);
     resetPage(nextValue, formValue);
     setFormValue(nextValue);
-    setChanged(true);
     if (updateOn === 'change') {
-      if (onTouched) onTouched(transformTouched(touched, nextValue));
-      onView(formValueToView(nextValue, views));
+      // debounce search
+      if (touched[formSearchKey]) {
+        debounce(function () {
+          return function () {
+            return onView(formValueToView(nextValue, views));
+          };
+        });
+      } else {
+        onView(formValueToView(nextValue, views));
+      }
     }
-  }, [formValue, onTouched, onView, updateOn, views]);
-  var onReset = useCallback(function () {
-    setFormValue(viewToFormValue(view));
-    setChanged(false);
-  }, [view]);
+  }, [debounce, formValue, onView, updateOn, views]);
   useEffect(function () {
     return setFormValue(viewToFormValue(view));
   }, [view]);
@@ -276,7 +280,7 @@ export var DataForm = function DataForm(_ref) {
     }, content)), footer !== false && updateOn === 'submit' && /*#__PURE__*/React.createElement(Footer, {
       flex: false,
       margin: {
-        top: 'small'
+        top: 'medium'
       },
       pad: {
         horizontal: pad,
@@ -290,18 +294,13 @@ export var DataForm = function DataForm(_ref) {
       }),
       type: "submit",
       primary: true
-    }), /*#__PURE__*/React.createElement(HideableButton, _extends({
-      label: format({
-        id: 'dataForm.reset',
-        messages: messages == null ? void 0 : messages.dataForm
-      }),
-      type: "reset",
-      onClick: onReset
-    }, !changed ? hideButtonProps : {}))));
+    })));
   }
   return /*#__PURE__*/React.createElement(MaxForm, _extends({}, rest, {
     value: formValue,
     onSubmit: updateOn === 'submit' ? onSubmit : undefined,
     onChange: onChange
-  }), content);
+  }), /*#__PURE__*/React.createElement(DataFormContext.Provider, {
+    value: contextValue
+  }, content));
 };

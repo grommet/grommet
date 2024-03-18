@@ -63,7 +63,6 @@ var MultipleActions = exports.MultipleActions = function MultipleActions() {
     // </Grommet>
   );
 };
-
 MultipleActions.storyName = 'Multiple Actions';
 var _default = exports["default"] = {
   title: 'Layout/PageHeader/Multiple Actions'

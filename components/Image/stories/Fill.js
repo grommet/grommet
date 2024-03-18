@@ -22,7 +22,8 @@ var Fill = exports.Fill = function Fill() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
       fit: "cover",
       fill: true,
-      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      alt: "fill image"
     }))))
     // </Grommet>
   );

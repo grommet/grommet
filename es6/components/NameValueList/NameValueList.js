@@ -6,6 +6,7 @@ import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from './NameValueListContext';
+import { isSmall } from '../../utils/responsive';
 var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$nameValueList$;
   var align = _ref.align,
@@ -27,12 +28,12 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var columns;
   var valueWidth = (valueProps == null ? void 0 : valueProps.width) || theme.nameValueList.value.width;
   var nameWidth = (nameProps == null ? void 0 : nameProps.width) || theme.nameValueList.name.width;
-  if (size === 'small' || layout === 'grid') columns = {
+  if (isSmall(size) || layout === 'grid') columns = {
     count: 'fit',
     size: !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth
   };else if (layout === 'column' && pairProps.direction === 'row') columns = [nameWidth, !Array.isArray(valueWidth) ? ['auto', valueWidth] : valueWidth];else columns = [valueWidth];
   var gap = theme.nameValueList.gap;
-  if ((pairProps.direction === 'column' || size === 'small') && (_theme$nameValueList$ = theme.nameValueList.pair) != null && (_theme$nameValueList$ = _theme$nameValueList$.column) != null && _theme$nameValueList$.gap) {
+  if ((pairProps.direction === 'column' || isSmall(size)) && (_theme$nameValueList$ = theme.nameValueList.pair) != null && (_theme$nameValueList$ = _theme$nameValueList$.column) != null && _theme$nameValueList$.gap) {
     gap = theme.nameValueList.pair.column.gap;
   }
   var listContextValue = useMemo(function () {

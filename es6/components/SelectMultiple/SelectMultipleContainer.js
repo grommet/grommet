@@ -14,6 +14,7 @@ import { SelectionSummary } from './SelectionSummary';
 import { StyledContainer, OptionsContainer, SelectOption } from '../Select/StyledSelect';
 import { applyKey, getOptionLabel, getOptionValue, useDisabled, getOptionIndex, arrayIncludes } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
+import { MessageContext } from '../../contexts/MessageContext';
 var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _optionsRef$current;
   var allOptions = _ref.allOptions,
@@ -29,6 +30,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     id = _ref.id,
     labelKey = _ref.labelKey,
     limit = _ref.limit,
+    messages = _ref.messages,
     onChange = _ref.onChange,
     onClose = _ref.onClose,
     onKeyDown = _ref.onKeyDown,
@@ -53,6 +55,8 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState2 = useState(usingKeyboard),
     keyboardNavigation = _useState2[0],
     setKeyboardNavigation = _useState2[1];
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var searchRef = useRef();
   var optionsRef = useRef();
   var _useState3 = useState(disabledProp),
@@ -249,6 +253,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     isSelected: isSelected,
     labelKey: labelKey,
     limit: limit,
+    messages: messages,
     onChange: onChange,
     onMore: onMore,
     options: options,
@@ -289,7 +294,10 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: ref,
     id: id ? id + "__select-drop" : undefined,
     dropHeight: dropHeight,
-    a11yTitle: "Select dropdown"
+    a11yTitle: format({
+      id: 'selectMultiple.selectDrop',
+      messages: messages
+    })
   }, summaryContent, onSearch && /*#__PURE__*/React.createElement(Box, {
     pad: !customSearchInput ? 'xsmall' : undefined,
     flex: false
@@ -298,7 +306,10 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onNextOption(event);
     }
   }, /*#__PURE__*/React.createElement(SelectTextInput, {
-    a11yTitle: "Search to filter options.",
+    a11yTitle: format({
+      id: 'selectMultiple.search',
+      messages: messages
+    }),
     focusIndicator: !customSearchInput,
     size: "small",
     ref: searchRef,
@@ -382,7 +393,13 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
     // if we have a child, turn on plain, and hoverIndicator
     return /*#__PURE__*/React.createElement(SelectOption, {
-      a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected"
+      a11yTitle: format({
+        id: optionSelected ? 'selectMultiple.optionSelected' : 'selectMultiple.optionNotSelected',
+        messages: messages,
+        values: {
+          optionLabel: optionLabel
+        }
+      })
       // eslint-disable-next-line react/no-array-index-key
       ,
       key: index

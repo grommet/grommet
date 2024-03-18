@@ -245,7 +245,6 @@ export var SpaceX = function SpaceX() {
     // </Grommet>
   );
 };
-
 SpaceX.storyName = 'SpaceX Grouped';
 SpaceX.parameters = {
   chromatic: {

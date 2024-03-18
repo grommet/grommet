@@ -64,7 +64,6 @@ var DSTCalendar = exports.DSTCalendar = function DSTCalendar() {
     // </Grommet>
   );
 };
-
 DSTCalendar.storyName = 'Daylight savings time';
 var _default = exports["default"] = {
   title: "Visualizations/Calendar/Daylight savings time"

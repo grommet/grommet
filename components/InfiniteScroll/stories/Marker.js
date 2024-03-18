@@ -29,7 +29,6 @@ var Example = function Example(props) {
     // </Grommet>
   );
 };
-
 var Marker = exports.Marker = function Marker() {
   return /*#__PURE__*/_react["default"].createElement(Example, {
     renderMarker: function renderMarker(marker) {

@@ -98,7 +98,6 @@ export var BackgroundBox = function BackgroundBox() {
     // </Grommet>
   );
 };
-
 BackgroundBox.storyName = 'Background';
 export default {
   title: 'Layout/Box/Background'

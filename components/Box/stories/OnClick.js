@@ -36,7 +36,6 @@ var OnClickBox = exports.OnClickBox = function OnClickBox() {
     // </Grommet>
   );
 };
-
 OnClickBox.storyName = 'onClick';
 var _default = exports["default"] = {
   title: 'Layout/Box/onClick'

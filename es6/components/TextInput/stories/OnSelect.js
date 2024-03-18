@@ -40,7 +40,6 @@ export var OnSelect = function OnSelect() {
     // </Grommet>
   );
 };
-
 OnSelect.storyName = 'onSelect and onSuggestionSelect';
 OnSelect.parameters = {
   chromatic: {

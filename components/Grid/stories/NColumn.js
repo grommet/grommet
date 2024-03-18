@@ -32,7 +32,6 @@ var NColumnGrid = exports.NColumnGrid = function NColumnGrid() {
     // </Grommet>
   );
 };
-
 NColumnGrid.storyName = 'N-column layout';
 NColumnGrid.args = {
   full: true

@@ -24,7 +24,6 @@ export var Replace = function Replace() {
     // </Grommet>
   );
 };
-
 Replace.parameters = {
   chromatic: {
     disable: true

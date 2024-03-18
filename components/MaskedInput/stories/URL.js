@@ -35,7 +35,6 @@ var UrlMaskedInput = exports.UrlMaskedInput = function UrlMaskedInput() {
     // </Grommet>
   );
 };
-
 UrlMaskedInput.storyName = 'URL';
 UrlMaskedInput.parameters = {
   chromatic: {

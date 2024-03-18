@@ -22,7 +22,6 @@ var GradientColorBox = exports.GradientColorBox = function GradientColorBox() {
     // </Grommet>
   );
 };
-
 GradientColorBox.storyName = 'Gradient';
 var _default = exports["default"] = {
   title: 'Layout/Box/Gradient'

@@ -97,7 +97,6 @@ var DateRange = exports.DateRange = function DateRange() {
     // </Grommet>
   );
 };
-
 DateRange.storyName = 'Date range';
 DateRange.args = {
   full: true

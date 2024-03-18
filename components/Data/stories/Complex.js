@@ -114,10 +114,7 @@ var Complex = exports.Complex = function Complex() {
       columns: [['small', 'large']],
       justifyContent: "center",
       gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_Data.Data, {
+    }, /*#__PURE__*/_react["default"].createElement(_Data.Data, {
       data: data,
       properties: properties
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Toolbar, null, /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, {
@@ -131,7 +128,6 @@ var Complex = exports.Complex = function Complex() {
     // </Grommet>
   );
 };
-
 Complex.args = {
   full: true
 };

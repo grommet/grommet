@@ -17,7 +17,6 @@ export var ReverseBar = function ReverseBar() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Meter/ReverseBar'
 };

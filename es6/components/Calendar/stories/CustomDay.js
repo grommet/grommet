@@ -83,7 +83,6 @@ export var CustomDayCalendar = function CustomDayCalendar() {
     // </Grommet>
   );
 };
-
 CustomDayCalendar.storyName = 'Custom day';
 export default {
   title: "Visualizations/Calendar/Custom day"

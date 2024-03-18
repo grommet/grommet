@@ -59,7 +59,6 @@ var Filtered = exports.Filtered = function Filtered() {
     // </Grommet>
   );
 };
-
 Filtered.parameters = {
   chromatic: {
     disable: true

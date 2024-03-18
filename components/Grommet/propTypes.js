@@ -58,7 +58,6 @@ if (process.env.NODE_ENV !== 'production') {
           })
         }),
         dataForm: _propTypes["default"].shape({
-          reset: _propTypes["default"].string,
           submit: _propTypes["default"].string
         }),
         dataSearch: _propTypes["default"].shape({
@@ -75,7 +74,11 @@ if (process.env.NODE_ENV !== 'production') {
         dataSummary: _propTypes["default"].shape({
           filtered: _propTypes["default"].string,
           filteredSingle: _propTypes["default"].string,
-          total: _propTypes["default"].string
+          items: _propTypes["default"].string,
+          itemsSingle: _propTypes["default"].string,
+          selected: _propTypes["default"].string,
+          total: _propTypes["default"].string,
+          totalSingle: _propTypes["default"].string
         }),
         dataTableColumns: _propTypes["default"].shape({
           open: _propTypes["default"].string,
@@ -108,6 +111,18 @@ if (process.env.NODE_ENV !== 'production') {
           invalid: _propTypes["default"].string,
           required: _propTypes["default"].string
         }),
+        formField: _propTypes["default"].shape({
+          maxCharacters: _propTypes["default"].shape({
+            remaining: _propTypes["default"].shape({
+              singular: _propTypes["default"].string,
+              plural: _propTypes["default"].string
+            }),
+            overLimit: _propTypes["default"].shape({
+              singular: _propTypes["default"].string,
+              plural: _propTypes["default"].string
+            })
+          })
+        }),
         menu: _propTypes["default"].shape({
           openMenu: _propTypes["default"].string,
           closeMenu: _propTypes["default"].string
@@ -119,6 +134,22 @@ if (process.env.NODE_ENV !== 'production') {
         select: _propTypes["default"].shape({
           multiple: _propTypes["default"].string,
           selected: _propTypes["default"].string
+        }),
+        selectMultiple: _propTypes["default"].shape({
+          clearAll: _propTypes["default"].string,
+          clearAllA11y: _propTypes["default"].string,
+          open: _propTypes["default"].string,
+          optionSelected: _propTypes["default"].string,
+          optionNotSelected: _propTypes["default"].string,
+          search: _propTypes["default"].string,
+          selectAll: _propTypes["default"].string,
+          selectAllA11y: _propTypes["default"].string,
+          selected: _propTypes["default"].string,
+          selectedOfTotal: _propTypes["default"].string,
+          selectDrop: _propTypes["default"].string,
+          selectedOptions: _propTypes["default"].string,
+          showMore: _propTypes["default"].string,
+          summarizedValue: _propTypes["default"].string
         }),
         skipLinks: _propTypes["default"].shape({
           skipTo: _propTypes["default"].string

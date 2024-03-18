@@ -34,7 +34,6 @@ var SimpleDrop = function SimpleDrop() {
     // </Grommet>
   );
 };
-
 export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleDrop, null);
 };

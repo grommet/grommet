@@ -1,4 +1,4 @@
-var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
+var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "messages", "page", "size", "step", "stepOptions", "summary"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
@@ -8,6 +8,8 @@ import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageControl } from './PageControl';
+import { PaginationStep } from './PaginationStep';
+import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
 var StyledPaginationContainer = styled(Box).withConfig({
   displayName: "Pagination__StyledPaginationContainer",
@@ -32,24 +34,29 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$numberMiddlePage = _ref.numberMiddlePages,
     numberMiddlePagesProp = _ref$numberMiddlePage === void 0 ? 3 : _ref$numberMiddlePage,
     onChange = _ref.onChange,
+    messages = _ref.messages,
     pageProp = _ref.page,
     size = _ref.size,
     stepProp = _ref.step,
+    stepOptions = _ref.stepOptions,
+    summary = _ref.summary,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var _useContext = useContext(DataContext),
     onView = _useContext.onView,
     filteredTotal = _useContext.filteredTotal,
     view = _useContext.view;
-  var step = stepProp || (view == null ? void 0 : view.step) || 10;
+  var _useState = useState(stepProp || (view == null ? void 0 : view.step) || 10),
+    step = _useState[0],
+    setStep = _useState[1];
   var total = (_ref2 = numberItems != null ? numberItems : filteredTotal) != null ? _ref2 : 0;
   var page = pageProp || (view == null ? void 0 : view.page) || 1;
 
   /* Calculate total number pages */
   var totalPages = Math.ceil(total / step);
-  var _useState = useState(Math.min(page, totalPages) || 1),
-    activePage = _useState[0],
-    setActivePage = _useState[1];
+  var _useState2 = useState(Math.min(page, totalPages) || 1),
+    activePage = _useState2[0],
+    setActivePage = _useState2[1];
   useEffect(function () {
     setActivePage(page);
     var pageEvent = new Event('pagechange');
@@ -164,9 +171,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
       separator: control === 'more-prev' || control === 'more-next'
     }, navProps[control]);
   });
-  return /*#__PURE__*/React.createElement(StyledPaginationContainer, _extends({
-    flex: false
-  }, theme.pagination.container, rest), /*#__PURE__*/React.createElement(Nav, {
+  var paginationControls = /*#__PURE__*/React.createElement(Nav, {
     a11yTitle: ariaLabel || a11yTitle || 'Pagination Navigation',
     ref: ref
   }, /*#__PURE__*/React.createElement(Box, _extends({
@@ -184,7 +189,45 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
         size: size
       }, control))
     );
-  }))));
+  })));
+
+  // for backwards compatibility
+  if (!summary && !stepOptions) return /*#__PURE__*/React.createElement(StyledPaginationContainer, _extends({
+    flex: false
+  }, theme.pagination.container, rest), paginationControls);
+  return /*#__PURE__*/React.createElement(StyledPaginationContainer, _extends({
+    direction: "row",
+    align: "center",
+    gap: {
+      column: 'xsmall',
+      row: 'small'
+    },
+    wrap: true,
+    flex: false
+  }, theme.pagination.container, rest), /*#__PURE__*/React.createElement(Box, {
+    flex: "grow"
+  }, summary && /*#__PURE__*/React.createElement(PaginationSummary, {
+    messages: messages,
+    page: page,
+    step: step,
+    numberItems: total
+  })), /*#__PURE__*/React.createElement(Box, {
+    align: "center",
+    direction: "row",
+    gap: {
+      column: 'xsmall',
+      row: 'small'
+    },
+    wrap: true
+  }, stepOptions && /*#__PURE__*/React.createElement(PaginationStep, {
+    messages: messages,
+    options: Array.isArray(stepOptions) ? stepOptions : undefined,
+    step: step,
+    onChange: function onChange(_ref3) {
+      var value = _ref3.value;
+      return setStep(value);
+    }
+  }), paginationControls));
 });
 Pagination.displayName = 'Pagination';
 Pagination.propTypes = PaginationPropTypes;

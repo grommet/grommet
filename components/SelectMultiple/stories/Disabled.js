@@ -61,7 +61,6 @@ var Disabled = exports.Disabled = function Disabled() {
     // </Grommet>
   );
 };
-
 Disabled.parameters = {
   chromatic: {
     disable: true

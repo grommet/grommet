@@ -129,7 +129,6 @@ var FieldWithComponentProp = exports.FieldWithComponentProp = function FieldWith
     // </Grommet>
   );
 };
-
 FieldWithComponentProp.storyName = 'Field with component prop';
 FieldWithComponentProp.args = {
   full: true

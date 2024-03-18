@@ -24,7 +24,6 @@ var customEdge = (0, _utils.deepMerge)(_themes.grommet, {
     }
   }
 });
-
 var CustomEdgeControl = exports.CustomEdgeControl = function CustomEdgeControl(_ref) {
   var _ref$direction = _ref.direction,
     direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,

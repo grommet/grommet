@@ -148,7 +148,6 @@ export var WithTags = function WithTags() {
     // </Grommet>
   );
 };
-
 WithTags.storyName = 'With tags';
 export default {
   title: 'Input/TextInput/With tags'

@@ -68,7 +68,6 @@ var NotificationLayer = exports.NotificationLayer = function NotificationLayer()
     // </Grommet>
   );
 };
-
 NotificationLayer.storyName = 'Notification';
 NotificationLayer.parameters = {
   chromatic: {

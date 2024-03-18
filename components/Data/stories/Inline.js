@@ -37,9 +37,7 @@ var columns = [{
 var Filters = function Filters(_ref) {
   var search = _ref.search,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  return /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, rest, search && /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, {
-    property: "sub.name"
-  }), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.DataFilters, rest, search && /*#__PURE__*/_react["default"].createElement(_grommet.DataSearch, null), /*#__PURE__*/_react["default"].createElement(_grommet.DataFilter, {
     property: "size"
   }), /*#__PURE__*/_react["default"].createElement(_grommet.DataTableGroupBy, {
     options: ['size']
@@ -59,7 +57,8 @@ var Inline = exports.Inline = function Inline() {
     }));
   } else {
     sidebar = /*#__PURE__*/_react["default"].createElement(Filters, {
-      search: true
+      search: true,
+      updateOn: "change"
     });
   }
   return (
@@ -78,17 +77,8 @@ var Inline = exports.Inline = function Inline() {
           label: 'Date'
         }
       },
-      data: DATA,
-      updateOn: sidebar ? 'change' : undefined
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      pad: {
-        top: 'medium'
-      },
-      align: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    })), /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
+      data: DATA
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
       columns: sidebar ? ['auto', ['small', 'large']] : 'auto',
       gap: "large",
       pad: "large",
@@ -106,7 +96,6 @@ var Inline = exports.Inline = function Inline() {
     // </Grommet>
   );
 };
-
 Inline.args = {
   full: true
 };

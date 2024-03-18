@@ -85,7 +85,6 @@ var ResizableDataTable = exports.ResizableDataTable = function ResizableDataTabl
     // </Grommet>
   );
 };
-
 ResizableDataTable.storyName = 'Resizable columns';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Resizable columns'

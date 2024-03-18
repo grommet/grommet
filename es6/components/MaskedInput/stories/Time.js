@@ -48,7 +48,6 @@ export var Time = function Time() {
     // </Grommet>
   );
 };
-
 Time.args = {
   full: true
 };

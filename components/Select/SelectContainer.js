@@ -84,7 +84,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     return clear && hasValue && showAtPosition;
   }, [clear, multiple, value]);
   var isDisabled = (0, _utils2.useDisabled)(disabled, disabledKey, options, valueKey || labelKey);
-  var _useState = (0, _react.useState)(usingKeyboard && !shouldShowClearButton('top') ? 0 : -1),
+  var _useState = (0, _react.useState)(usingKeyboard && !shouldShowClearButton('top') && !onSearch ? 0 : -1),
     activeIndex = _useState[0],
     setActiveIndex = _useState[1];
   var _useState2 = (0, _react.useState)(usingKeyboard),
@@ -109,7 +109,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
       var clearButton = clearRef.current;
       if (onSearch) {
         var searchInput = searchRef.current;
-        if (searchInput && searchInput.focus) {
+        if (searchInput && searchInput.focus && !activeRef.current) {
           (0, _utils.setFocusWithoutScroll)(searchInput);
         }
       } else if (clear && clearButton && clearButton.focus && clear.position !== 'bottom') {

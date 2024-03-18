@@ -44,7 +44,6 @@ var SelectMultipleLimited = exports.SelectMultipleLimited = function SelectMulti
     // </Grommet>
   );
 };
-
 SelectMultipleLimited.parameters = {
   chromatic: {
     disable: true

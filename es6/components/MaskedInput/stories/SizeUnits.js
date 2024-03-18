@@ -37,7 +37,6 @@ export var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
     // </Grommet>
   );
 };
-
 SizeUnitsMaskedInput.storyName = 'Size + units';
 SizeUnitsMaskedInput.parameters = {
   chromatic: {

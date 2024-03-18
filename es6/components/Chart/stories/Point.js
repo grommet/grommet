@@ -32,7 +32,6 @@ export var Point = function Point() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Chart/Point'
 };

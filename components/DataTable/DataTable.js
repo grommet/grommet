@@ -89,7 +89,8 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     view = _useContext.view,
     contextData = _useContext.data,
     properties = _useContext.properties,
-    onView = _useContext.onView;
+    onView = _useContext.onView,
+    setSelectedDataContext = _useContext.setSelected;
   var data = dataProp || contextData || emptyData;
   var columns = (0, _react.useMemo)(function () {
     var result = [];
@@ -183,6 +184,11 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
   (0, _react.useEffect)(function () {
     return setSelected(select || onSelect && [] || undefined);
   }, [onSelect, select]);
+  (0, _react.useEffect)(function () {
+    if (select && setSelectedDataContext) {
+      setSelectedDataContext(select.length);
+    }
+  }, [select, setSelectedDataContext]);
   var _useState8 = (0, _react.useState)([]),
     rowExpand = _useState8[0],
     setRowExpand = _useState8[1];
@@ -422,7 +428,10 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
   }
   var bodyContent = groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
     ref: bodyRef,
-    cellProps: cellProps.body,
+    cellProps: {
+      body: cellProps.body,
+      groupHeader: _extends({}, cellProps.body, cellProps.groupHeader)
+    },
     columns: columns,
     disabled: disabled,
     groupBy: typeof groupBy === 'string' ? {
@@ -450,6 +459,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     } : onMore,
     onSelect: onSelect ? function (nextSelected, row) {
       setSelected(nextSelected);
+      if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
       if (onSelect) onSelect(nextSelected, row);
     } : undefined,
     onToggle: onToggleGroup,
@@ -483,6 +493,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     onClickRow: onClickRow,
     onSelect: onSelect ? function (nextSelected, row) {
       setSelected(nextSelected);
+      if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
       if (onSelect) onSelect(nextSelected, row);
     } : undefined,
     pinnedCellProps: cellProps.pinned,
@@ -524,6 +535,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     onResize: resizeable ? onResize : undefined,
     onSelect: onSelect ? function (nextSelected) {
       setSelected(nextSelected);
+      if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
       if (onSelect) onSelect(nextSelected);
     } : undefined,
     onSort: sortable || sortProp || onSortProp ? onSort : undefined,

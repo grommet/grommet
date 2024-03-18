@@ -53,7 +53,6 @@ export var StackedLines = function StackedLines() {
     // </Grommet>
   );
 };
-
 StackedLines.storyName = 'Stacked lines';
 export default {
   title: 'Visualizations/DataChart/Stacked lines'

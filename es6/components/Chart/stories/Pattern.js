@@ -28,7 +28,6 @@ export var Pattern = function Pattern() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Chart/Pattern'
 };

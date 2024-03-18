@@ -102,7 +102,6 @@ var TargetLayer = exports.TargetLayer = function TargetLayer() {
     // </Grommet>
   );
 };
-
 TargetLayer.storyName = 'Target';
 TargetLayer.args = {
   full: true

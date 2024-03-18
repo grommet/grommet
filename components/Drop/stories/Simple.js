@@ -40,7 +40,6 @@ var SimpleDrop = function SimpleDrop() {
     // </Grommet>
   );
 };
-
 var Simple = exports.Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleDrop, null);
 };

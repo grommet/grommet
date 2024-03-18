@@ -34,7 +34,6 @@ var Help = exports.Help = function Help() {
     // </Grommet>
   );
 };
-
 Help.parameters = {
   chromatic: {
     disable: true

@@ -8,7 +8,8 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     drop: _propTypes["default"].bool,
-    responsive: _propTypes["default"].bool
+    responsive: _propTypes["default"].bool,
+    updateOn: _propTypes["default"].oneOf(['change', 'submit'])
   };
 }
 var DataSearchPropTypes = exports.DataSearchPropTypes = PropType;

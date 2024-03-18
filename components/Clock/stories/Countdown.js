@@ -22,7 +22,6 @@ var Countdown = exports.Countdown = function Countdown() {
     // </Grommet>
   );
 };
-
 Countdown.parameters = {
   chromatic: {
     disable: true

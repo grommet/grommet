@@ -75,7 +75,6 @@ var TrapFocus = exports.TrapFocus = function TrapFocus() {
     // </Grommet>
   );
 };
-
 TrapFocus.parameters = {
   chromatic: {
     disable: true

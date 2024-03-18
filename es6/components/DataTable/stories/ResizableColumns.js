@@ -80,7 +80,6 @@ export var ResizableDataTable = function ResizableDataTable() {
     // </Grommet>
   );
 };
-
 ResizableDataTable.storyName = 'Resizable columns';
 export default {
   title: 'Visualizations/DataTable/Resizable columns'

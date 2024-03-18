@@ -44,7 +44,6 @@ var FullLayer = exports.FullLayer = function FullLayer() {
     // </Grommet>
   );
 };
-
 FullLayer.storyName = 'Full';
 FullLayer.parameters = {
   chromatic: {

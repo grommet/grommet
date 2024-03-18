@@ -291,7 +291,6 @@ export var OnUpdateDataTable = function OnUpdateDataTable() {
     // </Grommet>
   );
 };
-
 OnUpdateDataTable.storyName = 'OnUpdate';
 export default {
   title: 'Visualizations/DataTable/OnUpdate'

@@ -18,7 +18,6 @@ if (process.env.NODE_ENV !== 'production') {
       restrictToOptions: PropTypes.bool,
       regexp: PropTypes.shape({}) // RegExp
     })),
-
     reverse: PropTypes.bool,
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), PropTypes.string]),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']),

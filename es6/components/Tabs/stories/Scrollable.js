@@ -33,7 +33,6 @@ var ScrollableTabs = function ScrollableTabs() {
     // </Grommet>
   );
 };
-
 export var Scrollable = function Scrollable() {
   return /*#__PURE__*/React.createElement(ScrollableTabs, null);
 };

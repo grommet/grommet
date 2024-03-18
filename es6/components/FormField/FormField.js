@@ -3,10 +3,11 @@ var _excluded = ["error", "info", "message", "type"],
   _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { Children, cloneElement, forwardRef, useContext, useState, useEffect } from 'react';
+import React, { Children, cloneElement, forwardRef, useContext, useMemo, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { containsFocus, shouldKeepFocus, withinDropPortal, PortalContext } from '../../utils';
+import { useDebounce } from '../../utils/use-debounce';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
 import { useForwardedRef } from '../../utils/refs';
@@ -117,23 +118,8 @@ var Input = function Input(_ref2) {
     "aria-invalid": invalid || undefined
   }, rest, extraProps));
 };
-var useDebounce = function useDebounce() {
-  var _useState = useState(),
-    func = _useState[0],
-    setFunc = _useState[1];
-  var theme = useContext(ThemeContext) || defaultProps.theme;
-  useEffect(function () {
-    var timer;
-    if (func) timer = setTimeout(function () {
-      return func();
-    }, theme.global.debounceDelay);
-    return function () {
-      return clearTimeout(timer);
-    };
-  }, [func, theme.global.debounceDelay]);
-  return setFunc;
-};
 var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
+  var _theme$global$input;
   var children = _ref3.children,
     className = _ref3.className,
     component = _ref3.component,
@@ -172,14 +158,26 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     contextOnBlur = _formContext$useFormF.onBlur,
     contextOnChange = _formContext$useFormF.onChange;
   var formKind = formContext.kind;
-  var _useState2 = useState(),
-    focus = _useState2[0],
-    setFocus = _useState2[1];
+  var _useState = useState(),
+    focus = _useState[0],
+    setFocus = _useState[1];
   var formFieldRef = useForwardedRef(ref);
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border;
   var debounce = useDebounce();
   var portalContext = useContext(PortalContext);
+  var readOnlyField = useMemo(function () {
+    var readOnly = false;
+    if (children) {
+      Children.map(children, function (child) {
+        var _child$props, _child$props2;
+        if ((((_child$props = child.props) == null ? void 0 : _child$props.readOnly) === true || ((_child$props2 = child.props) == null ? void 0 : _child$props2.readOnlyCopy) === true) && child.type && ('TextInput'.indexOf(child.type.displayName) !== -1 || 'DateInput'.indexOf(child.type.displayName) !== -1)) {
+          readOnly = true;
+        }
+      });
+    }
+    return readOnly;
+  }, [children]);
 
   // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
@@ -217,7 +215,10 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     themeContentProps.pad = undefined;
   }
   if (themeBorder && themeBorder.position === 'inner') {
-    if (error && formFieldTheme.error) {
+    if (readOnlyField) {
+      var _theme$global$input$r;
+      themeContentProps.background = (_theme$global$input$r = theme.global.input.readOnly) == null ? void 0 : _theme$global$input$r.background;
+    } else if (error && formFieldTheme.error) {
       themeContentProps.background = formFieldTheme.error.background;
     } else if (disabled && formFieldTheme.disabled) {
       themeContentProps.background = formFieldTheme.disabled.background;
@@ -239,6 +240,9 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var borderColor;
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
     borderColor = formFieldTheme.disabled.border.color;
+  } else if (readOnlyField && (_theme$global$input = theme.global.input) != null && (_theme$global$input = _theme$global$input.readOnly) != null && (_theme$global$input = _theme$global$input.border) != null && _theme$global$input.color) {
+    var _theme$global$input2;
+    borderColor = (_theme$global$input2 = theme.global.input) == null || (_theme$global$input2 = _theme$global$input2.readOnly) == null || (_theme$global$input2 = _theme$global$input2.border) == null ? void 0 : _theme$global$input2.color;
   } else if (
   // backward compatibility check
   error && themeBorder && themeBorder.error.color || error && formFieldTheme.error && formFieldTheme.error.border) {

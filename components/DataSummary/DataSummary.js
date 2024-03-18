@@ -20,11 +20,18 @@ var DataSummary = exports.DataSummary = function DataSummary(_ref) {
   var _useContext2 = (0, _react.useContext)(_DataContext.DataContext),
     filteredTotal = _useContext2.filteredTotal,
     dataMessages = _useContext2.messages,
+    selected = _useContext2.selected,
     total = _useContext2.total;
   var messageId;
   if (total !== filteredTotal) {
     if (filteredTotal === 1) messageId = 'dataSummary.filteredSingle';else messageId = 'dataSummary.filtered';
-  } else messageId = 'dataSummary.total';
+  } else if (total === 1) messageId = 'dataSummary.totalSingle';else messageId = 'dataSummary.total';
+
+  // helps account for cases like 0 results of 1 item
+  var items = format({
+    id: total === 1 ? 'dataSummary.itemsSingle' : 'dataSummary.items',
+    messages: messages || (dataMessages == null ? void 0 : dataMessages.dataSummary)
+  });
   return /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
     margin: {
       vertical: 'xsmall'
@@ -34,8 +41,19 @@ var DataSummary = exports.DataSummary = function DataSummary(_ref) {
     messages: messages || (dataMessages == null ? void 0 : dataMessages.dataSummary),
     values: {
       filteredTotal: filteredTotal,
-      total: total
+      total: total,
+      items: items
     }
-  }));
+  }), selected > 0 ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+    margin: {
+      horizontal: 'small'
+    }
+  }, "|"), /*#__PURE__*/_react["default"].createElement(_Text.Text, null, format({
+    id: 'dataSummary.selected',
+    messages: messages || (dataMessages == null ? void 0 : dataMessages.dataSummary),
+    values: {
+      selected: selected
+    }
+  }))) : undefined);
 };
 DataSummary.propTypes = _propTypes.DataSummaryPropTypes;

@@ -39,7 +39,6 @@ export var Autoplay = function Autoplay() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Media/Carousel/Autoplay'
 };

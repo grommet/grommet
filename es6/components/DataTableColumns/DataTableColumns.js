@@ -5,9 +5,11 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormContext } from '../Form/FormContext';
 import { DropButton } from '../DropButton';
 import { List } from '../List';
@@ -35,9 +37,9 @@ var tabsProps = {
 // options can either be an array of property names or an array of objects.
 // The form value always uses an array of property names.
 var optionsToValue = function optionsToValue(options) {
-  return options.map(function (o) {
+  return (options == null ? void 0 : options.map(function (o) {
     return typeof o === 'object' && o.property || o;
-  }) || [];
+  })) || [];
 };
 var optionProperty = function optionProperty(option) {
   return typeof option === 'object' ? option.property : option;
@@ -68,7 +70,8 @@ var alignOrder = function alignOrder(value, prevValue, options) {
 // from the DataForm rendered inside DataTableColumns.
 var Content = function Content(_ref) {
   var drop = _ref.drop,
-    options = _ref.options,
+    _ref$options = _ref.options,
+    options = _ref$options === void 0 ? [] : _ref$options,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(DataContext),
     dataId = _useContext.id,
@@ -174,16 +177,18 @@ var Content = function Content(_ref) {
   })))));
 };
 export var DataTableColumns = function DataTableColumns(_ref5) {
+  var _theme$data$button;
   var drop = _ref5.drop,
     options = _ref5.options,
     rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
   var _useContext4 = useContext(DataContext),
     dataId = _useContext4.id,
     messages = _useContext4.messages;
-  var _useContext5 = useContext(FormContext),
-    noForm = _useContext5.noForm;
+  var _useContext5 = useContext(DataFormContext),
+    inDataForm = _useContext5.inDataForm;
   var _useContext6 = useContext(MessageContext),
     format = _useContext6.format;
+  var theme = useContext(ThemeContext);
   var _useState3 = useState(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];
@@ -195,7 +200,7 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
     drop: drop,
     options: options
   });
-  if (noForm) content = /*#__PURE__*/React.createElement(DataForm, {
+  if (!inDataForm) content = /*#__PURE__*/React.createElement(DataForm, {
     footer: false,
     updateOn: "change"
   }, content);
@@ -206,7 +211,7 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
       id: 'dataTableColumns.open',
       messages: messages == null ? void 0 : messages.dataTableColumns
     }),
-    kind: "toolbar",
+    kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
     icon: /*#__PURE__*/React.createElement(Splits, null),
     tip: tip,
     dropProps: dropProps,

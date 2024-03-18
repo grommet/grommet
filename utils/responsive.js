@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.getDeviceBreakpoint = exports.getBreakpointStyle = exports.getBreakpoint = void 0;
+exports.isSmall = exports.getDeviceBreakpoint = exports.getBreakpointStyle = exports.getBreakpoint = void 0;
 var getBreakpoint = exports.getBreakpoint = function getBreakpoint(viewportWidth, theme) {
   var sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(function (a, b) {
     var first = theme.global.breakpoints[a];
@@ -31,4 +31,10 @@ var getBreakpointStyle = exports.getBreakpointStyle = function getBreakpointStyl
   if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
   if (!breakpoint.size) breakpoint.size = theme.global.size;
   return breakpoint;
+};
+
+// for checks that look for a small screen size, flag for xsmall
+// as well since we use xsmall in the hpe theme
+var isSmall = exports.isSmall = function isSmall(size) {
+  return ['xsmall', 'small'].includes(size);
 };

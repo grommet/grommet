@@ -57,7 +57,6 @@ export var Responsive = function Responsive() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Layout/Header/Responsive'
 };

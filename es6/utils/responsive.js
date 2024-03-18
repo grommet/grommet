@@ -28,3 +28,9 @@ export var getBreakpointStyle = function getBreakpointStyle(theme, breakpointSiz
   if (!breakpoint.size) breakpoint.size = theme.global.size;
   return breakpoint;
 };
+
+// for checks that look for a small screen size, flag for xsmall
+// as well since we use xsmall in the hpe theme
+export var isSmall = function isSmall(size) {
+  return ['xsmall', 'small'].includes(size);
+};

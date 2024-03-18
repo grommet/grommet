@@ -22,7 +22,6 @@ var SundayFirstDayCalendar = exports.SundayFirstDayCalendar = function SundayFir
     // </Grommet>
   );
 };
-
 SundayFirstDayCalendar.storyName = '1st on Sunday';
 var _default = exports["default"] = {
   title: "Visualizations/Calendar/1st on Sunday"

@@ -54,7 +54,6 @@ export var Filtered = function Filtered() {
     // </Grommet>
   );
 };
-
 Filtered.parameters = {
   chromatic: {
     disable: true

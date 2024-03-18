@@ -42,7 +42,6 @@ var SizeUnitsMaskedInput = exports.SizeUnitsMaskedInput = function SizeUnitsMask
     // </Grommet>
   );
 };
-
 SizeUnitsMaskedInput.storyName = 'Size + units';
 SizeUnitsMaskedInput.parameters = {
   chromatic: {

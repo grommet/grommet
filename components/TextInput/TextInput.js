@@ -16,7 +16,8 @@ var _utils = require("../../utils");
 var _StyledTextInput = require("./StyledTextInput");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value", "width"];
+var _CopyButton = require("./CopyButton");
+var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "value", "width"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -72,7 +73,8 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     onSuggestionsOpen = _ref.onSuggestionsOpen,
     placeholder = _ref.placeholder,
     plain = _ref.plain,
-    readOnly = _ref.readOnly,
+    readOnlyProp = _ref.readOnly,
+    readOnlyCopy = _ref.readOnlyCopy,
     reverse = _ref.reverse,
     suggestions = _ref.suggestions,
     textAlign = _ref.textAlign,
@@ -87,6 +89,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
   var inputRef = (0, _utils.useForwardedRef)(ref);
   var dropRef = (0, _react.useRef)();
   var suggestionsRef = (0, _react.useRef)();
+  var readOnly = readOnlyProp || readOnlyCopy;
   // if this is a readOnly property, don't set a name with the form context
   // this allows Select to control the form context for the name.
   var _formContext$useFormI = formContext.useFormInput({
@@ -110,6 +113,25 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
   var _useState3 = (0, _react.useState)(),
     suggestionsAtClose = _useState3[0],
     setSuggestionsAtClose = _useState3[1];
+  var readOnlyCopyValidation = format({
+    id: 'input.readOnlyCopy.validation',
+    messages: messages
+  });
+  var readOnlyCopyPrompt = format({
+    id: 'input.readOnlyCopy.prompt',
+    messages: messages
+  });
+  var _useState4 = (0, _react.useState)(readOnlyCopyPrompt),
+    tip = _useState4[0],
+    setTip = _useState4[1];
+  var onClickCopy = function onClickCopy() {
+    global.navigator.clipboard.writeText(value);
+    announce(readOnlyCopyValidation, 'assertive');
+    setTip(readOnlyCopyValidation);
+  };
+  var onBlurCopy = function onBlurCopy() {
+    if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+  };
   var openDrop = (0, _react.useCallback)(function () {
     setShowDrop(true);
     announce(format({
@@ -166,15 +188,15 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
 
   // activeSuggestionIndex unifies mouse and keyboard interaction of
   // the suggestions
-  var _useState4 = (0, _react.useState)(resetSuggestionIndex),
-    activeSuggestionIndex = _useState4[0],
-    setActiveSuggestionIndex = _useState4[1];
+  var _useState5 = (0, _react.useState)(resetSuggestionIndex),
+    activeSuggestionIndex = _useState5[0],
+    setActiveSuggestionIndex = _useState5[1];
 
   // Only update active suggestion index when the mouse actually moves,
   // not when suggestions are moving under the mouse.
-  var _useState5 = (0, _react.useState)(),
-    mouseMovedSinceLastKey = _useState5[0],
-    setMouseMovedSinceLastKey = _useState5[1];
+  var _useState6 = (0, _react.useState)(),
+    mouseMovedSinceLastKey = _useState6[0],
+    setMouseMovedSinceLastKey = _useState6[1];
 
   // set activeSuggestionIndex when value changes
   (0, _react.useEffect)(function () {
@@ -352,9 +374,20 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
   // primarily for tests.
 
   var textInputIcon = (0, _utils.useSizedIcon)(icon, rest.size, theme);
+  var ReadOnlyCopyButton = /*#__PURE__*/_react["default"].createElement(_CopyButton.CopyButton, {
+    onBlurCopy: onBlurCopy,
+    onClickCopy: onClickCopy,
+    readOnlyCopyPrompt: readOnlyCopyPrompt,
+    tip: tip,
+    value: value
+  });
   return /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInputContainer, {
-    plain: plain
-  }, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder), textInputIcon && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
+    readOnlyProp: readOnly // readOnlyProp to avoid passing to DOM
+    ,
+    readOnlyCopy: readOnlyCopy,
+    plain: plain,
+    border: !plain
+  }, reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder), textInputIcon && !readOnly && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
     reverse: reverse,
     theme: theme
   }, textInputIcon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, _extends({
@@ -367,7 +400,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     autoComplete: "off",
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
-    icon: icon,
+    icon: !readOnly && icon,
     reverse: reverse,
     focus: focus,
     focusIndicator: focusIndicator,
@@ -377,6 +410,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value),
     readOnly: readOnly,
+    readOnlyCopy: readOnlyCopy,
     onFocus: function onFocus(event) {
       // Don't do anything if we are acting like we already have
       // focus. This can happen when this input loses focus temporarily
@@ -415,7 +449,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
       setActiveSuggestionIndex(resetSuggestionIndex);
       if (onChange) onChange(event);
     }
-  }))), drop);
+  }))), !reverse && readOnlyCopy && ReadOnlyCopyButton, !readOnly && drop);
 });
 TextInput.displayName = 'TextInput';
 TextInput.propTypes = _propTypes.TextInputPropTypes;

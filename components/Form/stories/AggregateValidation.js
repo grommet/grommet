@@ -78,7 +78,6 @@ var AggregateValidation = exports.AggregateValidation = function AggregateValida
     // </Grommet>
   );
 };
-
 AggregateValidation.storyName = 'Aggregate validation';
 AggregateValidation.args = {
   full: true

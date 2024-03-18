@@ -87,7 +87,6 @@ var LazyLoadingOptions = exports.LazyLoadingOptions = function LazyLoadingOption
     // </Grommet>
   );
 };
-
 LazyLoadingOptions.storyName = 'Lazy loading options';
 LazyLoadingOptions.parameters = {
   chromatic: {

@@ -378,7 +378,6 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         setAnimating(false);
       }, 400 // Empirically determined.
       );
-
       return function () {
         return clearTimeout(timer);
       };

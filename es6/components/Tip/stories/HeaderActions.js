@@ -97,7 +97,6 @@ export var HeaderActions = function HeaderActions() {
     // </Grommet>
   );
 };
-
 HeaderActions.args = {
   full: true
 };

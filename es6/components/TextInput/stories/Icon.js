@@ -25,7 +25,6 @@ export var Icon = function Icon() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Input/TextInput/Icon'
 };

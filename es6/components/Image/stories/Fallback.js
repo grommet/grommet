@@ -13,7 +13,6 @@ export var Fallback = function Fallback() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Media/Image/Fallback'
 };

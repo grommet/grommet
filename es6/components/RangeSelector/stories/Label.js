@@ -49,7 +49,6 @@ export var Label = function Label() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Input/RangeSelector/Label'
 };

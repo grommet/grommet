@@ -64,7 +64,6 @@ export var Sitemap = function Sitemap() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Layout/Footer/Sitemap'
 };

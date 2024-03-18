@@ -132,7 +132,6 @@ export var Animated = function Animated() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Diagram/Animated'
 };

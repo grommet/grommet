@@ -50,7 +50,6 @@ var Phone = exports.Phone = function Phone() {
     // </Grommet>
   );
 };
-
 Phone.args = {
   full: true
 };

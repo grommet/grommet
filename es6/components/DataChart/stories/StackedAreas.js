@@ -57,7 +57,6 @@ export var StackedAreas = function StackedAreas() {
     // </Grommet>
   );
 };
-
 StackedAreas.storyName = 'Stacked areas';
 export default {
   title: 'Visualizations/DataChart/Stacked areas'

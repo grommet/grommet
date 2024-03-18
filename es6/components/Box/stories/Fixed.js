@@ -46,7 +46,6 @@ export var FixedSizesBox = function FixedSizesBox() {
     // </Grommet>
   );
 };
-
 FixedSizesBox.storyName = 'Fixed sizes';
 export default {
   title: "Layout/Box/Fixed sizes"

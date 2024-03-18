@@ -78,7 +78,6 @@ export var Search = function Search() {
     // </Grommet>
   );
 };
-
 Search.parameters = {
   chromatic: {
     disable: true

@@ -89,10 +89,7 @@ var Anchor = exports.Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     direction: "row",
     align: "center",
     gap: gap || theme.anchor.gap,
-    responsive: false,
-    style: {
-      display: 'inline-flex'
-    }
+    responsive: false
   }, first, second) : first || second || children);
 });
 Anchor.displayName = 'Anchor';

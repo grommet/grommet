@@ -61,7 +61,6 @@ export var Legend = function Legend() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Legend'
 };

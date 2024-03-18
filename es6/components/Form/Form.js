@@ -13,6 +13,7 @@ var defaultValidationResults = {
   errors: {},
   infos: {}
 };
+var defaultThreshold = 0.5;
 var stringToArray = function stringToArray(string) {
   var match = string == null ? void 0 : string.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
   if (match) {
@@ -72,6 +73,36 @@ var setFieldValue = function setFieldValue(name, componentValue, prevValue) {
   }
   return nextValue;
 };
+var validateCharacterCount = function validateCharacterCount(format, rule, value) {
+  var max = rule.max,
+    threshold = rule.threshold;
+  var getMessage = function getMessage() {
+    var charactersRemaining = function charactersRemaining(plural) {
+      return {
+        id: "formField.maxCharacters.remaining." + (plural ? 'plural' : 'singular'),
+        values: {
+          number: max - value.length
+        }
+      };
+    };
+    var charactersOverLimit = function charactersOverLimit(plural) {
+      return {
+        id: "formField.maxCharacters.overLimit." + (plural ? 'plural' : 'singular'),
+        values: {
+          number: value.length - max
+        }
+      };
+    };
+    if (max - value.length >= 0) {
+      return format(charactersRemaining(max - value.length > 1));
+    }
+    return format(charactersOverLimit(value.length - max > 1));
+  };
+  return value.length / max > (threshold != null ? threshold : defaultThreshold) ? {
+    status: max - value.length >= 0 ? 'info' : 'error',
+    message: getMessage()
+  } : undefined;
+};
 
 // Apply validation rule to field value and send correct messaging.
 var validate = function validate(rule, fieldValue, formValue, format, messages) {
@@ -91,6 +122,8 @@ var validate = function validate(rule, fieldValue, formValue, format, messages) 
         };
       }
     }
+  } else if (rule.max) {
+    result = validateCharacterCount(format, rule, fieldValue);
   }
   return result;
 };
@@ -419,9 +452,9 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       useEffect(function () {
         if (name &&
         // we have somewhere to put this
-        componentValue !== undefined &&
+        componentValue !== undefined && (
         // input driving
-        componentValue !== formValue // don't already have it
+        Array.isArray(componentValue) && Array.isArray(formValue) ? componentValue.toString() !== formValue.toString() : componentValue !== formValue) // don't already have it
         ) {
           setValueState(function (prevValue) {
             return setFieldValue(name, componentValue, prevValue);
@@ -608,48 +641,58 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       // if the validation fails. And, we assume a javascript action handler
       // otherwise.
       event.preventDefault();
-      setPendingValidation(undefined);
-      // adding validateOn: "submit" prop to the undefined validateOn fields
-      // as we want to trigger "submit" validation once form is submitted
-      var newValidationRulesRef = Object.keys(validationRulesRef.current).reduce(function (acc, key) {
-        acc[key] = validationRulesRef.current[key];
-        if (!acc[key].validateOn) {
-          acc[key] = _extends({}, validationRulesRef.current[key], {
-            validateOn: 'submit'
-          });
-        }
-        return acc;
-      }, {});
-      var _validateForm2 = validateForm(Object.entries(newValidationRulesRef), value, format, messages, true),
-        nextErrors = _validateForm2[0],
-        nextInfos = _validateForm2[1];
-      setValidationResults(function () {
-        var nextValidationResults = {
-          errors: nextErrors,
-          infos: nextInfos,
-          // Show form's validity when clicking on Submit
-          valid: buildValid(nextErrors)
-        };
-        if (onValidate) onValidate(nextValidationResults);
-        validationResultsRef.current = nextValidationResults;
-        updateAnalytics();
-        return nextValidationResults;
-      });
-      if (Object.keys(nextErrors).length === 0 && _onSubmit) {
-        event.persist(); // extract from React's synthetic event pool
-        var adjustedEvent = event;
-        adjustedEvent.value = value;
-        adjustedEvent.touched = touched;
-        _onSubmit(adjustedEvent);
-        sendAnalytics({
-          type: 'formSubmit',
-          element: formRef.current,
-          data: adjustedEvent,
-          errors: analyticsRef.current.errors,
-          elapsed: new Date().getTime() - analyticsRef.current.start.getTime()
+      // Prevent any "outer" forms from performing `onSubmit`.
+      // Nesting forms is not recommended in HTML. However, with React
+      // portals, if the portal (such as Grommet's Layer) contains a form
+      // and is nested within another form in the React tree, the event
+      // bubbles up to the "outer" form even though in the DOM the portal
+      // doesn't render as child of the "outer" form.
+      // https://legacy.reactjs.org/docs/portals.html#event-bubbling-through-portals
+      if (formRef.current && (event.target === formRef.current || event.target.form === formRef.current)) {
+        setPendingValidation(undefined);
+        // adding validateOn: "submit" prop to the undefined validateOn
+        // fields as we want to trigger "submit" validation once form
+        // is submitted
+        var newValidationRulesRef = Object.keys(validationRulesRef.current).reduce(function (acc, key) {
+          acc[key] = validationRulesRef.current[key];
+          if (!acc[key].validateOn) {
+            acc[key] = _extends({}, validationRulesRef.current[key], {
+              validateOn: 'submit'
+            });
+          }
+          return acc;
+        }, {});
+        var _validateForm2 = validateForm(Object.entries(newValidationRulesRef), value, format, messages, true),
+          nextErrors = _validateForm2[0],
+          nextInfos = _validateForm2[1];
+        setValidationResults(function () {
+          var nextValidationResults = {
+            errors: nextErrors,
+            infos: nextInfos,
+            // Show form's validity when clicking on Submit
+            valid: buildValid(nextErrors)
+          };
+          if (onValidate) onValidate(nextValidationResults);
+          validationResultsRef.current = nextValidationResults;
+          updateAnalytics();
+          return nextValidationResults;
         });
-        analyticsRef.current.errors = {};
-        analyticsRef.current.submitted = true;
+        if (Object.keys(nextErrors).length === 0 && _onSubmit) {
+          event.persist(); // extract from React's synthetic event pool
+          var adjustedEvent = event;
+          adjustedEvent.value = value;
+          adjustedEvent.touched = touched;
+          _onSubmit(adjustedEvent);
+          sendAnalytics({
+            type: 'formSubmit',
+            element: formRef.current,
+            data: adjustedEvent,
+            errors: analyticsRef.current.errors,
+            elapsed: new Date().getTime() - analyticsRef.current.start.getTime()
+          });
+          analyticsRef.current.errors = {};
+          analyticsRef.current.submitted = true;
+        }
       }
     }
   }), /*#__PURE__*/React.createElement(FormContext.Provider, {

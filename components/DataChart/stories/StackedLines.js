@@ -58,7 +58,6 @@ var StackedLines = exports.StackedLines = function StackedLines() {
     // </Grommet>
   );
 };
-
 StackedLines.storyName = 'Stacked lines';
 var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Stacked lines'

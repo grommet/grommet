@@ -31,7 +31,6 @@ export var Example = function Example() {
     // </Grommet>
   );
 };
-
 Example.storyName = 'Responsive cards';
 export default {
   title: 'Layout/Grid/Responsive cards'

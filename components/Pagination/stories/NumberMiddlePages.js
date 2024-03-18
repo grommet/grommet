@@ -25,7 +25,6 @@ var NumberMiddlePages = exports.NumberMiddlePages = function NumberMiddlePages()
     // </Grommet>
   );
 };
-
 NumberMiddlePages.storyName = 'Number middle pages';
 var _default = exports["default"] = {
   title: 'Controls/Pagination/Number middle pages'

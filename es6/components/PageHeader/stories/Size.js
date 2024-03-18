@@ -38,7 +38,6 @@ export var Size = function Size() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Layout/PageHeader/Size'
 };

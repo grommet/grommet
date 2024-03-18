@@ -34,7 +34,6 @@ var GlobalHeaderFooter = exports.GlobalHeaderFooter = function GlobalHeaderFoote
     // </Grommet>
   );
 };
-
 GlobalHeaderFooter.storyName = 'Global Header and Footer';
 var _default = exports["default"] = {
   title: 'Layout/Page/Global Header and Footer'

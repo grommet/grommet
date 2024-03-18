@@ -9,8 +9,10 @@ var _DataContext = require("../../contexts/DataContext");
 var _Box = require("../Box");
 var _Nav = require("../Nav");
 var _PageControl = require("./PageControl");
+var _PaginationStep = require("./PaginationStep");
+var _PaginationSummary = require("./PaginationSummary");
 var _propTypes = require("./propTypes");
-var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "page", "size", "step"];
+var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "messages", "page", "size", "step", "stepOptions", "summary"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -38,24 +40,29 @@ var Pagination = exports.Pagination = /*#__PURE__*/(0, _react.forwardRef)(functi
     _ref$numberMiddlePage = _ref.numberMiddlePages,
     numberMiddlePagesProp = _ref$numberMiddlePage === void 0 ? 3 : _ref$numberMiddlePage,
     onChange = _ref.onChange,
+    messages = _ref.messages,
     pageProp = _ref.page,
     size = _ref.size,
     stepProp = _ref.step,
+    stepOptions = _ref.stepOptions,
+    summary = _ref.summary,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     onView = _useContext.onView,
     filteredTotal = _useContext.filteredTotal,
     view = _useContext.view;
-  var step = stepProp || (view == null ? void 0 : view.step) || 10;
+  var _useState = (0, _react.useState)(stepProp || (view == null ? void 0 : view.step) || 10),
+    step = _useState[0],
+    setStep = _useState[1];
   var total = (_ref2 = numberItems != null ? numberItems : filteredTotal) != null ? _ref2 : 0;
   var page = pageProp || (view == null ? void 0 : view.page) || 1;
 
   /* Calculate total number pages */
   var totalPages = Math.ceil(total / step);
-  var _useState = (0, _react.useState)(Math.min(page, totalPages) || 1),
-    activePage = _useState[0],
-    setActivePage = _useState[1];
+  var _useState2 = (0, _react.useState)(Math.min(page, totalPages) || 1),
+    activePage = _useState2[0],
+    setActivePage = _useState2[1];
   (0, _react.useEffect)(function () {
     setActivePage(page);
     var pageEvent = new Event('pagechange');
@@ -170,9 +177,7 @@ var Pagination = exports.Pagination = /*#__PURE__*/(0, _react.forwardRef)(functi
       separator: control === 'more-prev' || control === 'more-next'
     }, navProps[control]);
   });
-  return /*#__PURE__*/_react["default"].createElement(StyledPaginationContainer, _extends({
-    flex: false
-  }, theme.pagination.container, rest), /*#__PURE__*/_react["default"].createElement(_Nav.Nav, {
+  var paginationControls = /*#__PURE__*/_react["default"].createElement(_Nav.Nav, {
     a11yTitle: ariaLabel || a11yTitle || 'Pagination Navigation',
     ref: ref
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
@@ -190,7 +195,45 @@ var Pagination = exports.Pagination = /*#__PURE__*/(0, _react.forwardRef)(functi
         size: size
       }, control))
     );
-  }))));
+  })));
+
+  // for backwards compatibility
+  if (!summary && !stepOptions) return /*#__PURE__*/_react["default"].createElement(StyledPaginationContainer, _extends({
+    flex: false
+  }, theme.pagination.container, rest), paginationControls);
+  return /*#__PURE__*/_react["default"].createElement(StyledPaginationContainer, _extends({
+    direction: "row",
+    align: "center",
+    gap: {
+      column: 'xsmall',
+      row: 'small'
+    },
+    wrap: true,
+    flex: false
+  }, theme.pagination.container, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    flex: "grow"
+  }, summary && /*#__PURE__*/_react["default"].createElement(_PaginationSummary.PaginationSummary, {
+    messages: messages,
+    page: page,
+    step: step,
+    numberItems: total
+  })), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    align: "center",
+    direction: "row",
+    gap: {
+      column: 'xsmall',
+      row: 'small'
+    },
+    wrap: true
+  }, stepOptions && /*#__PURE__*/_react["default"].createElement(_PaginationStep.PaginationStep, {
+    messages: messages,
+    options: Array.isArray(stepOptions) ? stepOptions : undefined,
+    step: step,
+    onChange: function onChange(_ref3) {
+      var value = _ref3.value;
+      return setStep(value);
+    }
+  }), paginationControls));
 });
 Pagination.displayName = 'Pagination';
 Pagination.propTypes = _propTypes.PaginationPropTypes;

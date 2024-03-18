@@ -3,11 +3,12 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React, { useContext, useMemo, useState } from 'react';
 import { Descend } from 'grommet-icons/icons/Descend';
+import { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { DataForm } from '../Data/DataForm';
 import { DropButton } from '../DropButton';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
@@ -29,7 +30,10 @@ var Content = function Content(_ref) {
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
   var options = useMemo(function () {
-    return optionsArg || properties && Object.keys(properties).sort() || data.length > 0 && Object.keys(data[0]).sort() || data;
+    return optionsArg || properties && Object.keys(properties).sort().filter(function (property) {
+      var _properties$property;
+      return !((properties == null || (_properties$property = properties[property]) == null ? void 0 : _properties$property.sort) === false);
+    }) || data.length > 0 && Object.keys(data[0]).sort() || data;
   }, [data, optionsArg, properties]);
   var directionOptions = [{
     label: format({
@@ -71,33 +75,38 @@ var Content = function Content(_ref) {
   }))];
 };
 export var DataSort = function DataSort(_ref2) {
+  var _theme$data$button;
   var drop = _ref2.drop,
     options = _ref2.options,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
   var _useContext3 = useContext(DataContext),
     dataId = _useContext3.id,
     messages = _useContext3.messages;
-  var _useContext4 = useContext(FormContext),
-    noForm = _useContext4.noForm;
+  var _useContext4 = useContext(DataFormContext),
+    inDataForm = _useContext4.inDataForm;
   var _useContext5 = useContext(MessageContext),
     format = _useContext5.format;
+  var theme = useContext(ThemeContext);
   var _useState = useState(),
     showContent = _useState[0],
     setShowContent = _useState[1];
   var content = /*#__PURE__*/React.createElement(Content, {
     options: options
   });
-  if (noForm) content = /*#__PURE__*/React.createElement(DataForm, {
-    footer: false
+  if (!inDataForm) content = /*#__PURE__*/React.createElement(DataForm, {
+    footer: false,
+    updateOn: "change"
   }, content);
   if (!drop) return content;
+  var tip = format({
+    id: 'dataSort.open',
+    messages: messages == null ? void 0 : messages.dataSort
+  });
   var control = /*#__PURE__*/React.createElement(DropButton, _extends({
     id: dataId + "--sort-control",
-    "aria-label": format({
-      id: 'dataSort.open',
-      messages: messages == null ? void 0 : messages.dataSort
-    }),
-    kind: "toolbar",
+    "aria-label": tip,
+    tip: tip,
+    kind: (_theme$data$button = theme.data.button) == null ? void 0 : _theme$data$button.kind,
     icon: /*#__PURE__*/React.createElement(Descend, null),
     dropProps: dropProps,
     dropContent: /*#__PURE__*/React.createElement(Box, {

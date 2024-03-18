@@ -42,7 +42,6 @@ var PlainDrop = function PlainDrop() {
     // </Grommet>
   );
 };
-
 var Plain = exports.Plain = function Plain() {
   return /*#__PURE__*/_react["default"].createElement(PlainDrop, null);
 };

@@ -67,13 +67,6 @@ var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwar
     });
     return result;
   }, [options, value]);
-  (0, _react.useEffect)(function () {
-    // if tab comes back to RadioButtonGroup when there still is no selection,
-    // we want focus to be on the first RadioButton
-    if (focus && !valueIndex) {
-      optionRefs.current[0].focus();
-    }
-  }, [focus, valueIndex]);
   var onNext = function onNext() {
     if (valueIndex !== undefined && valueIndex < options.length - 1) {
       var nextIndex = valueIndex + 1;

@@ -89,7 +89,6 @@ export var Everything = function Everything() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Everything'
 };

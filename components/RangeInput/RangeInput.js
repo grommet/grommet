@@ -3,6 +3,8 @@
 exports.__esModule = true;
 exports.RangeInput = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _styledComponents = require("styled-components");
+var _defaultProps = require("../../default-props");
 var _FormContext = require("../Form/FormContext");
 var _StyledRangeInput = require("./StyledRangeInput");
 var _propTypes = require("./propTypes");
@@ -13,6 +15,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var RangeInput = exports.RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _theme$rangeInput;
   var a11yTitle = _ref.a11yTitle,
     color = _ref.color,
     focusProp = _ref.focus,
@@ -30,10 +33,12 @@ var RangeInput = exports.RangeInput = /*#__PURE__*/(0, _react.forwardRef)(functi
     _ref$max = _ref.max,
     max = _ref$max === void 0 ? 100 : _ref$max,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _useState = (0, _react.useState)(focusProp),
     focus = _useState[0],
     setFocus = _useState[1];
+  var scrollEnabled = (theme == null || (_theme$rangeInput = theme.rangeInput) == null ? void 0 : _theme$rangeInput.wheel) !== false;
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
       value: valueProp
@@ -50,17 +55,19 @@ var RangeInput = exports.RangeInput = /*#__PURE__*/(0, _react.forwardRef)(functi
   (0, _react.useEffect)(function () {
     var x = scroll.x,
       y = scroll.y;
-    if (x !== null && y !== null) {
-      var handleScrollTo = function handleScrollTo() {
-        return window.scrollTo(x, y);
-      };
+    var handleScrollTo = function handleScrollTo() {
+      return window.scrollTo(x, y);
+    };
+    if (x !== null && y !== null && scrollEnabled) {
       window.addEventListener('scroll', handleScrollTo);
-      return function () {
-        return window.removeEventListener('scroll', handleScrollTo);
-      };
     }
-    return undefined;
-  }, [scroll]);
+    // there is no need to remove this event listener if scroll is disabled
+    // but we need to remove it if scroll is enabled and user switches to
+    // a theme with scroll disabled
+    return function () {
+      window.removeEventListener('scroll', handleScrollTo);
+    };
+  }, [scroll, scrollEnabled]);
   var setRangeInputValue = (0, _react.useCallback)(function (nextValue) {
     if (nextValue > max || nextValue < min) return;
     // Calling set value function directly on input because React library
@@ -120,9 +127,9 @@ var RangeInput = exports.RangeInput = /*#__PURE__*/(0, _react.forwardRef)(functi
       setValue(event.target.value);
       if (_onChange) _onChange(event);
     },
-    onMouseOver: handleMouseOver,
-    onMouseOut: handleMouseOut,
-    onWheel: handleOnWheel,
+    onMouseOver: scrollEnabled ? handleMouseOver : undefined,
+    onMouseOut: scrollEnabled ? handleMouseOut : undefined,
+    onWheel: scrollEnabled ? handleOnWheel : undefined,
     step: step,
     type: "range",
     min: min,

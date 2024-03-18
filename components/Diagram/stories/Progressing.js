@@ -102,7 +102,6 @@ var Progressing = exports.Progressing = function Progressing() {
     // </Grommet>
   );
 };
-
 Progressing.parameters = {
   chromatic: {
     disable: true

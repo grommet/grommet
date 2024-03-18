@@ -18,7 +18,6 @@ export var Fill = function Fill() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Calendar/Fill'
 };

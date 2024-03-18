@@ -37,7 +37,6 @@ export var Dash = function Dash() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Chart/Dash'
 };

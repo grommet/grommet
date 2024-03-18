@@ -23,7 +23,6 @@ export var PlainLayer = function PlainLayer() {
     // </Grommet>
   );
 };
-
 PlainLayer.storyName = 'Plain';
 PlainLayer.args = {
   full: true

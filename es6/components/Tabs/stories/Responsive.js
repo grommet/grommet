@@ -134,7 +134,6 @@ var ResponsiveTabs = function ResponsiveTabs() {
     // </Grommet>
   );
 };
-
 export var Responsive = function Responsive() {
   return /*#__PURE__*/React.createElement(ResponsiveTabs, null);
 };

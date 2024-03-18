@@ -29,7 +29,6 @@ var Analog = exports.Analog = function Analog() {
     // </Grommet>
   );
 };
-
 Analog.parameters = {
   chromatic: {
     disable: true

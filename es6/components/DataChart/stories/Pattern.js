@@ -31,7 +31,6 @@ export var Pattern = function Pattern() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataChart/Pattern'
 };

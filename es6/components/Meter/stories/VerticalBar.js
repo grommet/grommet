@@ -17,7 +17,6 @@ export var VerticalBar = function VerticalBar() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Meter/Vertical Bar'
 };

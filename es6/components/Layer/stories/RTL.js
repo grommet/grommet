@@ -31,7 +31,6 @@ export var RTLLayer = function RTLLayer() {
     // </Grommet>
   );
 };
-
 RTLLayer.storyName = 'RTL';
 RTLLayer.args = {
   dir: 'rtl'

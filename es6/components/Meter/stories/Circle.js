@@ -32,7 +32,6 @@ export var Circle = function Circle() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Meter/Circle'
 };

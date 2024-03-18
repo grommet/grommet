@@ -77,7 +77,6 @@ var IPv4RangeMaskedInput = exports.IPv4RangeMaskedInput = function IPv4RangeMask
     // </Grommet>
   );
 };
-
 IPv4RangeMaskedInput.storyName = 'IPv4 range';
 IPv4RangeMaskedInput.args = {
   full: true

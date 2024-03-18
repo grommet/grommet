@@ -38,7 +38,6 @@ var customTheme = {
     }
   }
 };
-
 var NotificationAlert = function NotificationAlert() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     alignSelf: "center"

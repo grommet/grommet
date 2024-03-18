@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Notification } from 'grommet';
+import { Grid } from 'grommet';
 import { Cards } from '../Cards';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 export var Simple = function Simple() {
@@ -8,10 +8,7 @@ export var Simple = function Simple() {
     columns: [['medium', 'large']],
     justifyContent: "center",
     gap: "large"
-  }, /*#__PURE__*/React.createElement(Notification, {
-    status: "info",
-    message: "Cards is in 'beta'. The API surface is subject to change."
-  }), /*#__PURE__*/React.createElement(Cards, {
+  }, /*#__PURE__*/React.createElement(Cards, {
     a11yTitle: "Locations",
     data: locations
   }));

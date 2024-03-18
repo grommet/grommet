@@ -106,7 +106,6 @@ export var Labels = function Labels() {
     // </Grommet>
   );
 };
-
 Labels.args = {
   full: true
 };

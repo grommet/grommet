@@ -29,7 +29,6 @@ var TunableDataTable = exports.TunableDataTable = function TunableDataTable() {
     // </Grommet>
   );
 };
-
 TunableDataTable.storyName = 'Tunable';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Tunable'

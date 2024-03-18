@@ -14,7 +14,6 @@ export var Fill = function Fill() {
     // </Grommet>
   );
 };
-
 Fill.args = {
   full: true
 };

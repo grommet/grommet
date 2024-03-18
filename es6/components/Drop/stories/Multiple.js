@@ -80,7 +80,6 @@ var MultipleDrop = function MultipleDrop() {
     // </Grommet>
   );
 };
-
 export var Multiple = function Multiple() {
   return /*#__PURE__*/React.createElement(MultipleDrop, null);
 };

@@ -216,12 +216,8 @@ var SpaceX = exports.SpaceX = function SpaceX() {
       flex: false,
       pad: "large",
       columns: [['small', 'large']],
-      justifyContent: "center",
-      gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
+      justifyContent: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       properties: {
         rocket: {
           label: 'Rocket',
@@ -242,11 +238,15 @@ var SpaceX = exports.SpaceX = function SpaceX() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: columns,
       sortable: true
-    }), result.filteredTotal > view.step && /*#__PURE__*/_react["default"].createElement(_grommet.Footer, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Showing ", pageBounds[0], "-", pageBounds[1], " of", ' ', result.filteredTotal), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, null)))))
+    }), result.filteredTotal > view.step && /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
+      border: "top",
+      pad: {
+        vertical: 'xsmall'
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Showing ", pageBounds[0], "-", pageBounds[1], " of ", result.filteredTotal), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, null))))
     // </Grommet>
   );
 };
-
 SpaceX.storyName = 'SpaceX';
 SpaceX.args = {
   full: true

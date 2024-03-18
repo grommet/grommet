@@ -71,7 +71,6 @@ var ProgressiveDrop = function ProgressiveDrop() {
     // </Grommet>
   );
 };
-
 export var Progressive = function Progressive() {
   return /*#__PURE__*/React.createElement(ProgressiveDrop, null);
 };

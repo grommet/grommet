@@ -52,7 +52,6 @@ export var StyledDataTable = function StyledDataTable() {
     // </Grommet>
   );
 };
-
 StyledDataTable.storyName = 'Styled';
 export default {
   title: 'Visualizations/DataTable/Styled'

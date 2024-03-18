@@ -258,7 +258,7 @@ var normalizeRowProp = exports.normalizeRowProp = function normalizeRowProp(name
   if (rowProp && rowProp[name]) return rowProp[name];
   return prop;
 };
-var tableContextNames = ['header', 'body', 'footer'];
+var tableContextNames = ['header', 'body', 'footer', 'groupHeader'];
 var cellPropertyNames = ['background', 'border', 'pad'];
 
 // Convert property specific cell props to context specific cell props.

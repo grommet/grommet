@@ -199,11 +199,9 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         if (maskIndex === undefined && valueParts.length < mask.length) {
           maskIndex = valueParts.length; // first unused one
         }
-
         if (maskIndex && mask[maskIndex].fixed) {
           maskIndex -= 1; // fixed mask parts are never "active"
         }
-
         if (maskIndex !== activeMaskIndex) {
           setActiveMaskIndex(maskIndex);
           setActiveOptionIndex(-1);

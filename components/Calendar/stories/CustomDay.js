@@ -89,7 +89,6 @@ var CustomDayCalendar = exports.CustomDayCalendar = function CustomDayCalendar()
     // </Grommet>
   );
 };
-
 CustomDayCalendar.storyName = 'Custom day';
 var _default = exports["default"] = {
   title: "Visualizations/Calendar/Custom day"

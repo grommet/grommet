@@ -293,7 +293,6 @@ var OnUpdateDataTable = exports.OnUpdateDataTable = function OnUpdateDataTable()
     // </Grommet>
   );
 };
-
 OnUpdateDataTable.storyName = 'OnUpdate';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/OnUpdate'

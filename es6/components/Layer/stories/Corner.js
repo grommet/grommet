@@ -38,7 +38,6 @@ export var CornerLayer = function CornerLayer() {
     // </Grommet>
   );
 };
-
 CornerLayer.storyName = 'Corner';
 CornerLayer.parameters = {
   chromatic: {

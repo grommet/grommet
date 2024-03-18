@@ -15,7 +15,7 @@ import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 var HiddenAnchor = styled.a.withConfig(styledComponentsConfig).withConfig({
   displayName: "LayerContainer__HiddenAnchor",
   componentId: "sc-1srj14c-0"
-})(["width:0;height:0;overflow:hidden;position:absolute;"]);
+})(["width:0;height:0;overflow:hidden;position:absolute;&:focus{outline:none;}"]);
 var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var background = _ref.background,
     children = _ref.children,

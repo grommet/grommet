@@ -17,7 +17,8 @@ export var filter = function filter(data, view, properties) {
   if (searchExp && properties) {
     // if we know where we want to search, look there
     searchProperties = Object.keys(properties).filter(function (k) {
-      return properties[k].search;
+      var _properties$k;
+      return !(((_properties$k = properties[k]) == null ? void 0 : _properties$k.search) === false);
     });
     // if none specified, look in all defined properties
     if (searchProperties.length === 0) searchProperties = Object.keys(properties);
@@ -44,7 +45,7 @@ export var filter = function filter(data, view, properties) {
         var value = datumValue(datum, property);
 
         // range case
-        if (typeof (filterValue == null ? void 0 : filterValue.min) === 'number' || typeof (filterValue == null ? void 0 : filterValue.max) === 'number') return typeof value !== 'number' || value <= filterValue.min || value >= filterValue.max;
+        if (typeof (filterValue == null ? void 0 : filterValue.min) === 'number' || typeof (filterValue == null ? void 0 : filterValue.max) === 'number') return typeof value !== 'number' || value < filterValue.min || value > filterValue.max;
 
         // options case
         if (Array.isArray(filterValue)) {

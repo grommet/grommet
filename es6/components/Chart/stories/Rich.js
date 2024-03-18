@@ -129,7 +129,6 @@ export var Rich = function Rich() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Chart/Rich'
 };

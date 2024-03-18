@@ -104,7 +104,6 @@ var Labels = exports.Labels = function Labels() {
     // </Grommet>
   );
 };
-
 Labels.args = {
   full: true
 };

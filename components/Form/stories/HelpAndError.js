@@ -46,7 +46,6 @@ var HelpAndError = exports.HelpAndError = function HelpAndError() {
     // </Grommet>
   );
 };
-
 HelpAndError.storyName = 'Help and error';
 var _default = exports["default"] = {
   title: 'Input/Form/Help and error'

@@ -24,7 +24,6 @@ var Sticky = exports.Sticky = function Sticky() {
       touched = _ref.touched;
   } // Your submission logic here
   ;
-
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -117,7 +116,6 @@ var Sticky = exports.Sticky = function Sticky() {
     // </Grommet>
   );
 };
-
 Sticky.storyName = 'Sticky';
 var _default = exports["default"] = {
   title: 'Layout/Header/Sticky'

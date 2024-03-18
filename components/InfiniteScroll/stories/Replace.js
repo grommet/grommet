@@ -29,7 +29,6 @@ var Replace = exports.Replace = function Replace() {
     // </Grommet>
   );
 };
-
 Replace.parameters = {
   chromatic: {
     disable: true

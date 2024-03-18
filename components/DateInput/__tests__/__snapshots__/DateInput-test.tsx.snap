@@ -768,7 +768,7 @@ exports[`DateInput controlled format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -1634,7 +1634,7 @@ exports[`DateInput controlled format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lbzGqi"
+      class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -3004,7 +3004,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -4375,7 +4375,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -5435,7 +5435,7 @@ exports[`DateInput custom theme 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
     >
       <div
         class="c2"
@@ -5796,7 +5796,7 @@ exports[`DateInput dropProps should pass props to Drop
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -6029,7 +6029,7 @@ exports[`DateInput focus 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -6264,7 +6264,7 @@ exports[`DateInput format 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -6501,7 +6501,7 @@ exports[`DateInput format disabled 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -6983,7 +6983,7 @@ exports[`DateInput format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -8068,7 +8068,7 @@ exports[`DateInput handle focus in FormField 1`] = `
           class="c2 c3"
         >
           <div
-            class="c4"
+            class="c4 "
           >
             <div
               class="c5"
@@ -8318,7 +8318,7 @@ exports[`DateInput handle focus in FormField 2`] = `
           class="c2 "
         >
           <div
-            class="c3"
+            class="c3 "
           >
             <div
               class="c4"
@@ -9791,7 +9791,7 @@ exports[`DateInput input props reverse as false 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -10026,7 +10026,7 @@ exports[`DateInput input props reverse as false with icon 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -10265,7 +10265,7 @@ exports[`DateInput input props reverse as true 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <button
       class="c2"
@@ -10500,7 +10500,7 @@ exports[`DateInput input props reverse as true with icon 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <button
       class="c2"
@@ -10936,7 +10936,7 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
     >
       <div
         class="c2"
@@ -10967,7 +10967,7 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
       </button>
     </div>
     <div
-      class="c1"
+      class="c1 "
     >
       <div
         class="c2"
@@ -10998,7 +10998,7 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
       </button>
     </div>
     <div
-      class="c1"
+      class="c1 "
     >
       <div
         class="c2"
@@ -11359,7 +11359,7 @@ exports[`DateInput range format 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -11849,7 +11849,7 @@ exports[`DateInput range format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -13819,6 +13819,402 @@ exports[`DateInput range inline 1`] = `
 </div>
 `;
 
+exports[`DateInput read only 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c3::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c3:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c3 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c3::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3:-moz-placeholder,
+.c3::-moz-placeholder {
+  opacity: 1;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-radius: 2px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2"
+      >
+        <input
+          aria-readonly="true"
+          autocomplete="off"
+          class="c3"
+          placeholder="mm/dd/yyyy"
+          readonly=""
+          value="01/01/2024"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DateInput read only copy 1`] = `
+<DocumentFragment>
+  .c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) >circle,
+.c4:focus:not(:focus-visible) >ellipse,
+.c4:focus:not(:focus-visible) >line,
+.c4:focus:not(:focus-visible) >path,
+.c4:focus:not(:focus-visible) >polygon,
+.c4:focus:not(:focus-visible) >polyline,
+.c4:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c3::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c3:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c3 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c3::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3:-moz-placeholder,
+.c3::-moz-placeholder {
+  opacity: 1;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+}
+
+.c5 {
+  border-radius: 4px;
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-radius: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2"
+      >
+        <input
+          aria-readonly="true"
+          autocomplete="off"
+          class="c3"
+          placeholder="mm/dd/yyyy"
+          readonly=""
+          value="01/01/2024"
+        />
+      </div>
+      <button
+        aria-label="Copy to clipboard 01/01/2024"
+        class="c4 c5"
+        type="button"
+      >
+        <svg
+          aria-label="Copy"
+          class="c6"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 15h8-8zm0-4h10H9zm0-4h4-4zm7-6v6h6M6 5H2v18h16v-4m4 0H6V1h11l5 5v13z"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`DateInput renders size 1`] = `
 HTMLCollection [
   .c2 {
@@ -14381,7 +14777,7 @@ exports[`DateInput reverse calendar icon 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <button
       class="c2"
@@ -14616,7 +15012,7 @@ exports[`DateInput select format 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 "
   >
     <div
       class="c2"
@@ -14656,7 +15052,7 @@ exports[`DateInput select format 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 lbzGqi"
+    class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -16392,7 +16788,7 @@ exports[`DateInput select format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -17252,7 +17648,7 @@ exports[`DateInput select format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lbzGqi"
+      class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -18551,7 +18947,7 @@ exports[`DateInput select format inline 3`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -19927,7 +20323,7 @@ exports[`DateInput select format inline 4`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -21235,7 +21631,7 @@ exports[`DateInput select format inline range 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -22095,7 +22491,7 @@ exports[`DateInput select format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lbzGqi"
+      class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -23403,7 +23799,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -24779,7 +25175,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -25833,7 +26229,7 @@ exports[`DateInput select format no timezone 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
     >
       <div
         class="c2"
@@ -26070,7 +26466,7 @@ exports[`DateInput select format no timezone 2`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="c1 "
     >
       <div
         class="c2"
@@ -30025,7 +30421,7 @@ exports[`DateInput type format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -30885,7 +31281,7 @@ exports[`DateInput type format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lbzGqi"
+      class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -32183,7 +32579,7 @@ exports[`DateInput type format inline partial 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -33482,7 +33878,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -34790,7 +35186,7 @@ exports[`DateInput type format inline range 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -35650,7 +36046,7 @@ exports[`DateInput type format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lbzGqi"
+      class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -36957,7 +37353,7 @@ exports[`DateInput type format inline range partial 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -37817,7 +38213,7 @@ exports[`DateInput type format inline range partial 2`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lbzGqi"
+      class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -38677,7 +39073,7 @@ exports[`DateInput type format inline range partial 3`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lbzGqi"
+      class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -39985,7 +40381,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -41285,7 +41681,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -42585,7 +42981,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -43894,7 +44290,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -45203,7 +45599,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -46502,7 +46898,7 @@ exports[`DateInput type format inline short 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 "
     >
       <div
         class="c3"
@@ -47362,7 +47758,7 @@ exports[`DateInput type format inline short 2`] = `
     class="StyledBox-sc-13pk1d4-0 faWFoE"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lbzGqi"
+      class="StyledBox-sc-13pk1d4-0 lbzGqi DateInput__StyledDateInputContainer-sc-1jfta23-0 knWdSc"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 fEQuSX"
@@ -48661,7 +49057,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -49961,7 +50357,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -51261,7 +51657,7 @@ exports[`DateInput type format inline without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"
@@ -52561,7 +52957,7 @@ exports[`DateInput type format inline without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2"
+        class="c2 "
       >
         <div
           class="c3"

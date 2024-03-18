@@ -54,7 +54,6 @@ var CustomHeaderCalendar = exports.CustomHeaderCalendar = function CustomHeaderC
     // </Grommet>
   );
 };
-
 CustomHeaderCalendar.storyName = 'Header';
 var _default = exports["default"] = {
   title: 'Visualizations/Calendar/Header'

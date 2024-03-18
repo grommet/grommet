@@ -48,7 +48,6 @@ export var IPv4MaskedInput = function IPv4MaskedInput() {
     // </Grommet>
   );
 };
-
 IPv4MaskedInput.storyName = 'IPv4 address';
 IPv4MaskedInput.parameters = {
   chromatic: {

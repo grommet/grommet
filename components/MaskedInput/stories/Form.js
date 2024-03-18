@@ -50,7 +50,6 @@ var MaskedInputForm = exports.MaskedInputForm = function MaskedInputForm() {
     // </Grommet>
   );
 };
-
 MaskedInputForm.storyName = 'Form';
 var _default = exports["default"] = {
   title: 'Input/MaskedInput/Form'

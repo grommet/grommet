@@ -63,7 +63,6 @@ var InfiniteScrollInTable = exports.InfiniteScrollInTable = function InfiniteScr
     // </Grommet>
   );
 };
-
 InfiniteScrollInTable.storyName = 'InfiniteScroll';
 InfiniteScrollInTable.parameters = {
   chromatic: {

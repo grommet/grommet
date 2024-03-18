@@ -45,7 +45,6 @@ export var Phone = function Phone() {
     // </Grommet>
   );
 };
-
 Phone.args = {
   full: true
 };

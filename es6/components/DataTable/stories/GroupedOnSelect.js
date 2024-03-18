@@ -28,7 +28,6 @@ export var GroupedOnSelectDataTable = function GroupedOnSelectDataTable() {
     // </Grommet>
   );
 };
-
 GroupedOnSelectDataTable.storyName = 'Grouped and onSelect';
 export default {
   title: 'Visualizations/DataTable/Grouped and onSelect'

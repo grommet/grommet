@@ -21,7 +21,6 @@ export var Uncontrolled = function Uncontrolled() {
     // </Grommet>
   );
 };
-
 Uncontrolled.parameters = {
   chromatic: {
     disable: true

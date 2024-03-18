@@ -6,6 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
+var _useDebounce = require("../../utils/use-debounce");
 var _styles = require("../../utils/styles");
 var _mixins = require("../../utils/mixins");
 var _refs = require("../../utils/refs");
@@ -123,23 +124,8 @@ var Input = function Input(_ref2) {
     "aria-invalid": invalid || undefined
   }, rest, extraProps));
 };
-var useDebounce = function useDebounce() {
-  var _useState = (0, _react.useState)(),
-    func = _useState[0],
-    setFunc = _useState[1];
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-  (0, _react.useEffect)(function () {
-    var timer;
-    if (func) timer = setTimeout(function () {
-      return func();
-    }, theme.global.debounceDelay);
-    return function () {
-      return clearTimeout(timer);
-    };
-  }, [func, theme.global.debounceDelay]);
-  return setFunc;
-};
 var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
+  var _theme$global$input;
   var children = _ref3.children,
     className = _ref3.className,
     component = _ref3.component,
@@ -178,14 +164,26 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     contextOnBlur = _formContext$useFormF.onBlur,
     contextOnChange = _formContext$useFormF.onChange;
   var formKind = formContext.kind;
-  var _useState2 = (0, _react.useState)(),
-    focus = _useState2[0],
-    setFocus = _useState2[1];
+  var _useState = (0, _react.useState)(),
+    focus = _useState[0],
+    setFocus = _useState[1];
   var formFieldRef = (0, _refs.useForwardedRef)(ref);
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border;
-  var debounce = useDebounce();
+  var debounce = (0, _useDebounce.useDebounce)();
   var portalContext = (0, _react.useContext)(_utils.PortalContext);
+  var readOnlyField = (0, _react.useMemo)(function () {
+    var readOnly = false;
+    if (children) {
+      _react.Children.map(children, function (child) {
+        var _child$props, _child$props2;
+        if ((((_child$props = child.props) == null ? void 0 : _child$props.readOnly) === true || ((_child$props2 = child.props) == null ? void 0 : _child$props2.readOnlyCopy) === true) && child.type && ('TextInput'.indexOf(child.type.displayName) !== -1 || 'DateInput'.indexOf(child.type.displayName) !== -1)) {
+          readOnly = true;
+        }
+      });
+    }
+    return readOnly;
+  }, [children]);
 
   // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
@@ -223,7 +221,10 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     themeContentProps.pad = undefined;
   }
   if (themeBorder && themeBorder.position === 'inner') {
-    if (error && formFieldTheme.error) {
+    if (readOnlyField) {
+      var _theme$global$input$r;
+      themeContentProps.background = (_theme$global$input$r = theme.global.input.readOnly) == null ? void 0 : _theme$global$input$r.background;
+    } else if (error && formFieldTheme.error) {
       themeContentProps.background = formFieldTheme.error.background;
     } else if (disabled && formFieldTheme.disabled) {
       themeContentProps.background = formFieldTheme.disabled.background;
@@ -245,6 +246,9 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   var borderColor;
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
     borderColor = formFieldTheme.disabled.border.color;
+  } else if (readOnlyField && (_theme$global$input = theme.global.input) != null && (_theme$global$input = _theme$global$input.readOnly) != null && (_theme$global$input = _theme$global$input.border) != null && _theme$global$input.color) {
+    var _theme$global$input2;
+    borderColor = (_theme$global$input2 = theme.global.input) == null || (_theme$global$input2 = _theme$global$input2.readOnly) == null || (_theme$global$input2 = _theme$global$input2.border) == null ? void 0 : _theme$global$input2.color;
   } else if (
   // backward compatibility check
   error && themeBorder && themeBorder.error.color || error && formFieldTheme.error && formFieldTheme.error.border) {

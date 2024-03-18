@@ -36,7 +36,6 @@ var ControlledGroupedDataTable = exports.ControlledGroupedDataTable = function C
     // </Grommet>
   );
 };
-
 ControlledGroupedDataTable.storyName = 'Controlled grouped';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Controlled grouped'

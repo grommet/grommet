@@ -21,7 +21,6 @@ export var GroupedDataTable = function GroupedDataTable() {
     // </Grommet>
   );
 };
-
 GroupedDataTable.storyName = 'Grouped';
 export default {
   title: 'Visualizations/DataTable/Grouped'

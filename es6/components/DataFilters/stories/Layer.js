@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Data, DataFilter, Notification } from 'grommet';
-import { DataFilters } from '../DataFilters';
+import { Box, Data, DataFilter, DataFilters } from 'grommet';
 import { DATA } from '../../DataTable/stories/data';
 export var Layer = function Layer() {
   return (
@@ -12,10 +11,7 @@ export var Layer = function Layer() {
       justify: "start",
       pad: "large",
       gap: "medium"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Data, {
+    }, /*#__PURE__*/React.createElement(Data, {
       data: DATA
     }, /*#__PURE__*/React.createElement(DataFilters, {
       layer: true
@@ -31,7 +27,6 @@ export var Layer = function Layer() {
     // </Grommet>
   );
 };
-
 Layer.args = {
   full: true
 };

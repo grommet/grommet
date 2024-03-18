@@ -12,9 +12,28 @@ if (process.env.NODE_ENV !== 'production') {
     defaultValue: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].object, _propTypes["default"].number])),
     help: _propTypes["default"].node,
     limit: _propTypes["default"].number,
-    value: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].object, _propTypes["default"].number])),
+    messages: _propTypes["default"].shape({
+      clearAll: _propTypes["default"].string,
+      clearAllA11y: _propTypes["default"].string,
+      // "multiple" kept for backwards compatibility,
+      // but summarizedValue should be used instead
+      multiple: _propTypes["default"].string,
+      open: _propTypes["default"].string,
+      optionNotSelected: _propTypes["default"].string,
+      optionSelected: _propTypes["default"].string,
+      search: _propTypes["default"].string,
+      selectAll: _propTypes["default"].string,
+      selectAllA11y: _propTypes["default"].string,
+      selectDrop: _propTypes["default"].string,
+      selected: _propTypes["default"].string,
+      selectedOfTotal: _propTypes["default"].string,
+      selectedOptions: _propTypes["default"].string,
+      showMore: _propTypes["default"].string,
+      summarizedValue: _propTypes["default"].string
+    }),
     showSelectedInline: _propTypes["default"].bool,
-    sortSelectedOnClose: _propTypes["default"].bool
+    sortSelectedOnClose: _propTypes["default"].bool,
+    value: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].object, _propTypes["default"].number]))
   });
 }
 var SelectMultiplePropTypes = exports.SelectMultiplePropTypes = PropType;

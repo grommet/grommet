@@ -34,7 +34,6 @@ export var Labelled = function Labelled() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Meter/Labelled'
 };

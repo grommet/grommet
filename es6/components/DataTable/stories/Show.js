@@ -294,7 +294,6 @@ export var Show = function Show() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataTable/Show'
 };

@@ -45,7 +45,6 @@ var TestDrop = function TestDrop() {
     // </Grommet>
   );
 };
-
 var SVGChild = exports.SVGChild = function SVGChild() {
   return /*#__PURE__*/_react["default"].createElement(TestDrop, null);
 };

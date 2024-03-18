@@ -59,7 +59,6 @@ var FourDimensionDataChart = exports.FourDimensionDataChart = function FourDimen
     // </Grommet>
   );
 };
-
 FourDimensionDataChart.storyName = 'Four dimensions';
 var _default = exports["default"] = {
   title: 'Visualizations/DataChart/Four dimensions'

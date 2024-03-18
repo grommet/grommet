@@ -74,7 +74,6 @@ export var ManyOptions = function ManyOptions() {
     // </Grommet>
   );
 };
-
 ManyOptions.storyName = 'Many options';
 ManyOptions.parameters = {
   chromatic: {

@@ -354,7 +354,6 @@ var MultiplePins = exports.MultiplePins = function MultiplePins() {
     // </Grommet>
   );
 };
-
 MultiplePins.storyName = 'Multiple pins';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Multiple pins'

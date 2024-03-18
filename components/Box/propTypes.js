@@ -39,7 +39,10 @@ if (process.env.NODE_ENV !== 'production') {
     })]),
     fill: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['horizontal', 'vertical']), _propTypes["default"].bool]),
     focusIndicator: _propTypes["default"].bool,
-    gap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
+    gap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string, _propTypes["default"].shape({
+      row: _propTypes["default"].string,
+      column: _propTypes["default"].string
+    })]),
     height: _generalPropTypes.heightPropType,
     hoverIndicator: _generalPropTypes.hoverIndicatorPropType,
     justify: _propTypes["default"].oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']),

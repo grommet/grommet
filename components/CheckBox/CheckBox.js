@@ -177,7 +177,7 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
     disabled: disabled
   }), {
     checked: checked,
-    label: label,
+    labelProp: label,
     onClick: stopLabelClick,
     pad: pad,
     onMouseEnter: function onMouseEnter(event) {

@@ -45,7 +45,6 @@ export var ValueLabel = function ValueLabel() {
     // </Grommet>
   );
 };
-
 ValueLabel.args = {
   full: true
 };

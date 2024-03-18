@@ -119,7 +119,6 @@ var Nested = exports.Nested = function Nested() {
     // </Grommet>
   );
 };
-
 Nested.parameters = {
   chromatic: {
     disable: true

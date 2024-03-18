@@ -113,7 +113,6 @@ export var FormLayer = function FormLayer() {
     // </Grommet>
   );
 };
-
 FormLayer.storyName = 'Form';
 FormLayer.parameters = {
   chromatic: {

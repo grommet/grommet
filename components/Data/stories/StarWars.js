@@ -87,17 +87,10 @@ var StarWars = exports.StarWars = function StarWars() {
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    _react["default"].createElement(_grommet.Grid, {
-      flex: false,
-      pad: "large",
-      columns: [['small', 'large']],
-      justifyContent: "center",
-      gap: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      skeleton: !result.data
+    _react["default"].createElement(_grommet.Box, {
+      skeleton: !result.data,
+      width: "large",
+      pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Data, {
       data: result.data,
       total: total,
@@ -108,11 +101,11 @@ var StarWars = exports.StarWars = function StarWars() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
       primaryKey: "name",
       secondaryKey: "starship_class"
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, null))))
+    }), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, null)))
+
     // </Grommet>
   );
 };
-
 StarWars.parameters = {
   chromatic: {
     disable: true

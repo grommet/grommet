@@ -64,7 +64,6 @@ export var Offset = function Offset() {
     // </Grommet>
   );
 };
-
 Offset.storyName = 'Offset';
 Offset.args = {
   full: true

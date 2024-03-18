@@ -65,7 +65,6 @@ export var Social = function Social() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Layout/Footer/Social'
 };

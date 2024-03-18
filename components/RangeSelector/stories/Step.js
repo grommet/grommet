@@ -53,7 +53,6 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
     // </Grommet>
   );
 };
-
 var Step = exports.Step = function Step() {
   return /*#__PURE__*/_react["default"].createElement(SimpleRangeSelector, {
     step: 2

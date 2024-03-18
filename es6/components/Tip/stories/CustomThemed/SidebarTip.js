@@ -37,7 +37,6 @@ var customTheme = {
     }
   }
 };
-
 var NotificationAlert = function NotificationAlert() {
   return /*#__PURE__*/React.createElement(Box, {
     alignSelf: "center"

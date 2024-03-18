@@ -13,7 +13,7 @@ var sizeStyle = function sizeStyle(props) {
 var StyledAnchor = styled.a.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledAnchor",
   componentId: "sc-1rp7lwl-0"
-})(["box-sizing:border-box;", " color:", ";", " text-decoration:", ";cursor:pointer;", " ", " ", " ", " ", " ", ""], function (props) {
+})(["box-sizing:border-box;display:inline-flex;", " color:", ";", " text-decoration:", ";cursor:pointer;", " ", " ", " ", " ", " ", ""], function (props) {
   return sizeStyle(props);
 }, function (props) {
   var _props$theme$anchor;

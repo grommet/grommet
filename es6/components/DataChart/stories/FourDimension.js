@@ -54,7 +54,6 @@ export var FourDimensionDataChart = function FourDimensionDataChart() {
     // </Grommet>
   );
 };
-
 FourDimensionDataChart.storyName = 'Four dimensions';
 export default {
   title: 'Visualizations/DataChart/Four dimensions'

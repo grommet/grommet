@@ -215,7 +215,6 @@ var MinMaxSizesBox = exports.MinMaxSizesBox = function MinMaxSizesBox() {
     // </Grommet>
   );
 };
-
 MinMaxSizesBox.storyName = 'Min and max sizes';
 var _default = exports["default"] = {
   title: 'Layout/Box/Min and max sizes'

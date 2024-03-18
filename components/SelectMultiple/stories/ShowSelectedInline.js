@@ -52,7 +52,6 @@ var ShowSelectedInline = exports.ShowSelectedInline = function ShowSelectedInlin
     // </Grommet>
   );
 };
-
 ShowSelectedInline.storyName = 'showSelectedInline';
 ShowSelectedInline.parameters = {
   chromatic: {

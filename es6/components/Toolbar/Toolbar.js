@@ -5,6 +5,7 @@ import React, { useContext } from 'react';
 import { Box } from '../Box';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { ToolbarPropTypes } from './propTypes';
+import { isSmall } from '../../utils/responsive';
 var defaultLayoutProps = {
   direction: 'row',
   align: 'start',
@@ -20,7 +21,7 @@ export var Toolbar = function Toolbar(_ref) {
   var children = _ref.children,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var size = useContext(ResponsiveContext);
-  var layoutProps = size === 'small' || size === 'xsmall' ? smallLayoutProps : defaultLayoutProps;
+  var layoutProps = isSmall(size) ? smallLayoutProps : defaultLayoutProps;
   return /*#__PURE__*/React.createElement(Box, _extends({
     flex: false,
     cssGap: true

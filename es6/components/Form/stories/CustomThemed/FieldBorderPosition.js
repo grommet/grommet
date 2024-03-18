@@ -141,7 +141,6 @@ export var FieldBorderPosition = function FieldBorderPosition() {
     // </Grommet>
   );
 };
-
 FieldBorderPosition.storyName = 'Field border position';
 export default {
   title: 'Input/Form/Custom Themed/Field border position'

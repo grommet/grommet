@@ -30,7 +30,6 @@ export var Grouped = function Grouped() {
     // </Grommet>
   );
 };
-
 Grouped.parameters = {
   chromatic: {
     disable: true

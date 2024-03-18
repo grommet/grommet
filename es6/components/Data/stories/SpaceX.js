@@ -2,7 +2,7 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 import React, { useEffect, useMemo, useState } from 'react';
-import { Box, DataTable, Data, Footer, Grid, Notification, Pagination, Text, Tip } from 'grommet';
+import { Box, DataTable, Data, Footer, Grid, Pagination, Text, Tip } from 'grommet';
 import { StatusCritical } from "grommet-icons/es6/icons/StatusCritical";
 var buildQuery = function buildQuery(view) {
   var query = {};
@@ -210,12 +210,8 @@ export var SpaceX = function SpaceX() {
       flex: false,
       pad: "large",
       columns: [['small', 'large']],
-      justifyContent: "center",
-      gap: "large"
-    }, /*#__PURE__*/React.createElement(Notification, {
-      status: "info",
-      message: "Data is in 'beta'. The API surface is subject to change."
-    }), /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Data, {
+      justifyContent: "center"
+    }, /*#__PURE__*/React.createElement(Data, {
       properties: {
         rocket: {
           label: 'Rocket',
@@ -236,11 +232,15 @@ export var SpaceX = function SpaceX() {
     }, /*#__PURE__*/React.createElement(DataTable, {
       columns: columns,
       sortable: true
-    }), result.filteredTotal > view.step && /*#__PURE__*/React.createElement(Footer, null, /*#__PURE__*/React.createElement(Text, null, "Showing ", pageBounds[0], "-", pageBounds[1], " of", ' ', result.filteredTotal), /*#__PURE__*/React.createElement(Pagination, null)))))
+    }), result.filteredTotal > view.step && /*#__PURE__*/React.createElement(Footer, {
+      border: "top",
+      pad: {
+        vertical: 'xsmall'
+      }
+    }, /*#__PURE__*/React.createElement(Text, null, "Showing ", pageBounds[0], "-", pageBounds[1], " of ", result.filteredTotal), /*#__PURE__*/React.createElement(Pagination, null))))
     // </Grommet>
   );
 };
-
 SpaceX.storyName = 'SpaceX';
 SpaceX.args = {
   full: true

@@ -68,7 +68,6 @@ export var MultipleTypes = function MultipleTypes() {
     // </Grommet>
   );
 };
-
 MultipleTypes.storyName = 'Multiple types';
 export default {
   title: 'Visualizations/DataChart/Multiple types'

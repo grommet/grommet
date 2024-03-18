@@ -156,7 +156,6 @@ var ControlVariations = exports.ControlVariations = function ControlVariations()
     // </Grommet>
   );
 };
-
 ControlVariations.storyName = 'Control variations';
 var _default = exports["default"] = {
   title: 'Media/Carousel/Control variations'

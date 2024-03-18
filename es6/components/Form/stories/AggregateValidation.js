@@ -74,7 +74,6 @@ export var AggregateValidation = function AggregateValidation() {
     // </Grommet>
   );
 };
-
 AggregateValidation.storyName = 'Aggregate validation';
 AggregateValidation.args = {
   full: true

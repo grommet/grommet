@@ -88,7 +88,6 @@ var BorderGrid = exports.BorderGrid = function BorderGrid() {
     // </Grommet>
   );
 };
-
 BorderGrid.storyName = 'Border';
 var _default = exports["default"] = {
   title: 'Layout/Grid/Border'

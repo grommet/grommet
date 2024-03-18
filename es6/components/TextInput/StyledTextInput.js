@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
-import { disabledStyle, getInputPadBySide, inputStyle, parseMetricToNum, plainInputStyle, textAlignStyle, widthStyle, styledComponentsConfig } from '../../utils';
+import { controlBorderStyle, disabledStyle, getInputPadBySide, inputStyle, parseMetricToNum, plainInputStyle, textAlignStyle, widthStyle, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { inputPadForIcon } from '../../utils/styles';
+import { readOnlyStyle } from '../../utils/readOnly';
 var getPlainStyle = function getPlainStyle(plain) {
   if (plain === 'full') {
     return css(["", " padding:0;"], plainInputStyle);
@@ -11,7 +12,11 @@ var getPlainStyle = function getPlainStyle(plain) {
 var StyledTextInput = styled.input.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " ", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
+  return props.readOnlyCopy ? "padding-" + (props.reverse ? 'left' : 'right') + ": 0px;" : '';
+}, function (props) {
+  return props.readOnly && "border: none;";
+}, function (props) {
   return getPlainStyle(props.plain);
 }, function (props) {
   return props.icon && inputPadForIcon;
@@ -29,7 +34,13 @@ Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
 var StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledTextInputContainer",
   componentId: "sc-1x30a0s-1"
-})(["position:relative;width:100%;", ";"], function (props) {
+})(["position:relative;width:100%;", ";", ";", " ", ";"], function (props) {
+  return props.readOnlyProp && !props.plain && controlBorderStyle;
+}, function (props) {
+  return props.readOnlyCopy && "\n    box-sizing: border-box;\n    flex-direction: row;\n    display: flex;\n  ";
+}, function (props) {
+  return props.readOnlyProp && !props.plain && readOnlyStyle(props.theme);
+}, function (props) {
   return props.theme.textInput && props.theme.textInput.container && props.theme.textInput.container.extend;
 });
 StyledTextInputContainer.defaultProps = {};

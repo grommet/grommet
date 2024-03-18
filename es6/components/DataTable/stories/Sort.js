@@ -100,7 +100,6 @@ export var Sort = function Sort() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/DataTable/Sort'
 };

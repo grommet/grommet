@@ -40,7 +40,6 @@ export var Simple = function Simple(props) {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Controls/Accordion/Simple'
 };

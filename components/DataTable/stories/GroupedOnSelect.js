@@ -32,7 +32,6 @@ var GroupedOnSelectDataTable = exports.GroupedOnSelectDataTable = function Group
     // </Grommet>
   );
 };
-
 GroupedOnSelectDataTable.storyName = 'Grouped and onSelect';
 var _default = exports["default"] = {
   title: 'Visualizations/DataTable/Grouped and onSelect'

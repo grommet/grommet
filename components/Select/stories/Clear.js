@@ -65,7 +65,6 @@ var Clear = exports.Clear = function Clear() {
     // </Grommet>
   );
 };
-
 Clear.parameters = {
   chromatic: {
     disable: true

@@ -122,7 +122,6 @@ export var Controlled = function Controlled() {
     // </Grommet>
   );
 };
-
 Controlled.args = {
   full: true
 };

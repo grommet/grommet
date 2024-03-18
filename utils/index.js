@@ -79,6 +79,12 @@ Object.keys(_PortalContext).forEach(function (key) {
   if (key in exports && exports[key] === _PortalContext[key]) return;
   exports[key] = _PortalContext[key];
 });
+var _readOnly = require("./readOnly");
+Object.keys(_readOnly).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _readOnly[key]) return;
+  exports[key] = _readOnly[key];
+});
 var _refs = require("./refs");
 Object.keys(_refs).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

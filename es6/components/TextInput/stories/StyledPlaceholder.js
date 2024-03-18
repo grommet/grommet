@@ -13,7 +13,6 @@ export var StyledPlaceholder = function StyledPlaceholder() {
     // </Grommet>
   );
 };
-
 StyledPlaceholder.storyName = 'Styled placeholder';
 export default {
   title: 'Input/TextInput/Styled placeholder'

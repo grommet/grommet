@@ -71,7 +71,6 @@ export var PageNotification = function PageNotification() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Layout/Page/Page Notification'
 };

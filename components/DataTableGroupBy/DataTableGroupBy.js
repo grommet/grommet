@@ -5,7 +5,7 @@ exports.DataTableGroupBy = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _DataForm = require("../Data/DataForm");
 var _DataContext = require("../../contexts/DataContext");
-var _FormContext = require("../Form/FormContext");
+var _DataFormContext = require("../../contexts/DataFormContext");
 var _FormField = require("../FormField");
 var _Select = require("../Select");
 var _MessageContext = require("../../contexts/MessageContext");
@@ -24,20 +24,20 @@ var DataTableGroupBy = exports.DataTableGroupBy = function DataTableGroupBy(_ref
     messages = _useContext.messages,
     view = _useContext.view,
     addToolbarKey = _useContext.addToolbarKey;
-  var _useContext2 = (0, _react.useContext)(_FormContext.FormContext),
-    noForm = _useContext2.noForm;
+  var _useContext2 = (0, _react.useContext)(_DataFormContext.DataFormContext),
+    inDataForm = _useContext2.inDataForm;
   var _useContext3 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext3.format;
   var id = idProp || dataId + "--groupby";
   (0, _react.useEffect)(function () {
-    if (noForm) addToolbarKey('_groupBy');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_groupBy');
+  }, [addToolbarKey, inDataForm]);
   if (!options) return null;
   var content = /*#__PURE__*/_react["default"].createElement(_Select.Select, _extends({
     id: id,
     name: "_groupBy",
     showSelectedInline: true,
-    placeholder: noForm ? 'Group by' : undefined,
+    placeholder: !inDataForm ? 'Group by' : undefined,
     options: options,
     labelKey: "label",
     clear: view != null && view.groupBy ? {
@@ -49,7 +49,7 @@ var DataTableGroupBy = exports.DataTableGroupBy = function DataTableGroupBy(_ref
     } : undefined,
     value: view == null ? void 0 : view.groupBy
   }, rest));
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = /*#__PURE__*/_react["default"].createElement(_DataForm.DataForm, {
       footer: false,

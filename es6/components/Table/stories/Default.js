@@ -36,7 +36,6 @@ export var Default = function Default() {
     // </Grommet>
   );
 };
-
 export default {
   title: 'Visualizations/Table/Default'
 };

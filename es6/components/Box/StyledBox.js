@@ -127,7 +127,24 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
   var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
-  if (directionProp === 'column' || directionProp === 'column-reverse') {
+  if (typeof gap === 'object') {
+    if (gap.row !== undefined && gap.column !== undefined) {
+      styles.push("gap: " + (theme.global.edgeSize[gap.row] || gap.row) + " " + (theme.global.edgeSize[gap.column] || gap.column) + ";");
+      if (responsiveMetric) {
+        styles.push(breakpointStyle(breakpoint, "gap: " + responsiveMetric + ";"));
+      }
+    } else if (gap.row !== undefined) {
+      styles.push("row-gap: " + (theme.global.edgeSize[gap.row] || gap.row) + ";");
+      if (responsiveMetric) {
+        styles.push(breakpointStyle(breakpoint, "row-gap: " + responsiveMetric + ";"));
+      }
+    } else if (gap.column !== undefined) {
+      styles.push("column-gap: " + (theme.global.edgeSize[gap.column] || gap.column) + ";");
+      if (responsiveMetric) {
+        styles.push(breakpointStyle(breakpoint, "column-gap: " + responsiveMetric + ";"));
+      }
+    }
+  } else if (directionProp === 'column' || directionProp === 'column-reverse') {
     styles.push("row-gap: " + metric + ";");
     if (responsiveMetric) {
       styles.push(breakpointStyle(breakpoint, "row-gap: " + responsiveMetric + ";"));

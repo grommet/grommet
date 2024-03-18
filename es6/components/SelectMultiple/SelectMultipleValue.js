@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
 import { SelectOption } from '../Select/StyledSelect';
 import { applyKey, getOptionLabel, useDisabled, arrayIncludes, getOptionIndex } from '../Select/utils';
+import { MessageContext } from '../../contexts/MessageContext';
 var SelectMultipleValue = function SelectMultipleValue(_ref) {
   var allOptions = _ref.allOptions,
     children = _ref.children,
@@ -11,6 +12,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     disabledKey = _ref.disabledKey,
     dropButtonRef = _ref.dropButtonRef,
     labelKey = _ref.labelKey,
+    messages = _ref.messages,
     onRequestOpen = _ref.onRequestOpen,
     onSelectChange = _ref.onSelectChange,
     theme = _ref.theme,
@@ -19,6 +21,8 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
   var _useState = useState(false),
     showA11yDiv = _useState[0],
     setShowA11yDiv = _useState[1];
+  var _useContext = useContext(MessageContext),
+    format = _useContext.format;
   var isDisabled = useDisabled(disabled, disabledKey, allOptions, valueKey || labelKey);
   var visibleValue = useCallback(function (i) {
     var optionValue = valueKey && valueKey.reduce ? applyKey(i, valueKey) : i;
@@ -38,7 +42,13 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
       }
       return /*#__PURE__*/React.createElement(SelectOption, {
         role: "option",
-        a11yTitle: optionSelected ? optionLabel + " selected" : optionLabel + " not selected",
+        a11yTitle: format({
+          id: optionSelected ? 'selectMultiple.optionSelected' : 'selectMultiple.optionNotSelected',
+          messages: messages,
+          values: {
+            optionLabel: optionLabel
+          }
+        }),
         "aria-setsize": value.length,
         "aria-posinset": valueIndex + 1,
         "aria-selected": optionSelected,
@@ -94,7 +104,7 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
       }));
     }
     return undefined;
-  }, [valueKey, allOptions, children, dropButtonRef, isDisabled, labelKey, onSelectChange, value, theme.selectMultiple.maxInline]);
+  }, [allOptions, children, dropButtonRef, format, isDisabled, labelKey, messages, onSelectChange, theme.selectMultiple.maxInline, value, valueKey]);
 
   // After announcing set showA11yDiv to undefined so it won't
   // be read out again
@@ -109,7 +119,10 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
     width: "100%",
     role: "listbox",
     "aria-multiselectable": true,
-    a11yTitle: "Selected Options"
+    a11yTitle: format({
+      id: 'selectMultiple.selectedOptions',
+      messages: messages
+    })
   }, value && allOptions.filter(function (i) {
     return arrayIncludes(value, valueKey && valueKey.reduce ? applyKey(i, valueKey) : i, valueKey || labelKey);
   })
@@ -134,7 +147,13 @@ var SelectMultipleValue = function SelectMultipleValue(_ref) {
   }, /*#__PURE__*/React.createElement(Button, {
     onClick: onRequestOpen,
     size: "small",
-    label: "+ " + (value.length - theme.selectMultiple.maxInline) + " more"
+    label: format({
+      id: 'selectMultiple.showMore',
+      messages: messages,
+      values: {
+        remaining: value.length - theme.selectMultiple.maxInline
+      }
+    })
   })));
 };
 export { SelectMultipleValue };

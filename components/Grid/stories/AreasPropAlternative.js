@@ -31,7 +31,6 @@ var GridAreasAlternative = exports.GridAreasAlternative = function GridAreasAlte
     // </Grommet>
   );
 };
-
 GridAreasAlternative.args = {
   full: true
 };
