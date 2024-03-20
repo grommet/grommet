@@ -37,14 +37,15 @@ var CopyButton = exports.CopyButton = function CopyButton(_ref) {
     content: tip
   }, /*#__PURE__*/_react["default"].createElement(StyledButton, {
     onClick: onClickCopy,
-    icon: /*#__PURE__*/_react["default"].createElement(_Copy.Copy, null)
-    // only apply horizontal padding since button will
-    // fill height of input
-    ,
+    icon: /*#__PURE__*/_react["default"].createElement(_Copy.Copy, null),
     pad: {
       horizontal: (_theme$global$input$p = theme.global.input.padding) == null ? void 0 : _theme$global$input$p.horizontal,
       left: (_theme$global$input$p2 = theme.global.input.padding) == null ? void 0 : _theme$global$input$p2.left,
-      right: (_theme$global$input$p3 = theme.global.input.padding) == null ? void 0 : _theme$global$input$p3.right
+      right: (_theme$global$input$p3 = theme.global.input.padding) == null ? void 0 : _theme$global$input$p3.right,
+      // only apply horizontal padding since button will
+      // fill height of input
+      top: '0',
+      bottom: '0'
     },
     onBlur: onBlurCopy,
     onMouseOut: onBlurCopy,
