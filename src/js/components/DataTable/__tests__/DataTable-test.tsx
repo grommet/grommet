@@ -565,6 +565,65 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('rowDetails controlled', () => {
+    function TestComponent() {
+      const [openRow, setOpenRow] = React.useState<number | undefined>();
+      return (
+        <Grommet>
+          <DataTable
+            columns={[
+              { property: 'a', header: 'A' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1.1 },
+              { a: 'two', b: 1.2 },
+              { a: 'three', b: 2.1 },
+              { a: 'four', b: 2.2 },
+            ]}
+            rowDetails={{
+              render: (row) => <Box>{`Open ${row.b}`}</Box>,
+              expandable: (row) => row.b !== 1.2,
+              expanded: (row) => row.b === openRow,
+              onClickExpand: (row) => {
+                if (openRow === row.b) {
+                  setOpenRow(undefined);
+                } else {
+                  setOpenRow(row.b);
+                }
+              },
+            }}
+            primaryKey="b"
+          />
+        </Grommet>
+      );
+    }
+
+    // Second row is not expandable, therefore no expand button. That means
+    // that expandButton with index 1 is the expand button for row 3;
+    const { container, getAllByLabelText } = render(<TestComponent />);
+    const expandButton = getAllByLabelText('expand');
+    expect(container.querySelectorAll('td').item(4).textContent).toBe('two');
+    expect(container.querySelectorAll('td').item(6).textContent).toBe('three');
+    expect(container.querySelectorAll('td').item(7).textContent).toBe('');
+    expect(container.querySelectorAll('td').item(8).textContent).toBe('four');
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(expandButton[1], {});
+    expect(container.querySelectorAll('td').item(4).textContent).toBe('two');
+    expect(container.querySelectorAll('td').item(6).textContent).toBe('three');
+    expect(container.querySelectorAll('td').item(7).textContent).toBe(
+      'Open 2.1',
+    );
+    expect(container.querySelectorAll('td').item(9).textContent).toBe('four');
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(expandButton[1], {});
+    expect(container.querySelectorAll('td').item(4).textContent).toBe('two');
+    expect(container.querySelectorAll('td').item(6).textContent).toBe('three');
+    expect(container.querySelectorAll('td').item(7).textContent).toBe('');
+    expect(container.querySelectorAll('td').item(8).textContent).toBe('four');
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('groupBy', () => {
     const { container, getByText } = render(
       <Grommet>

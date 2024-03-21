@@ -53,7 +53,7 @@ const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
   return content;
 };
 
-const ExpanderCell = ({ background, border, context, ...rest }) => (
+const ExpanderCell = ({ background, border, context, disabled, ...rest }) => (
   <TableCell
     background={background}
     border={border}
@@ -61,7 +61,7 @@ const ExpanderCell = ({ background, border, context, ...rest }) => (
     plain="noPad"
     verticalAlign={context === 'groupEnd' ? 'bottom' : 'top'}
   >
-    <ExpanderControl context={context} {...rest} />
+    {!disabled && <ExpanderControl context={context} {...rest} />}
   </TableCell>
 );
 
