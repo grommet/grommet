@@ -16,7 +16,7 @@ export const PaginationStep = ({
   const theme = useContext(ThemeContext);
   return (
     <Box direction="row" align="center" gap="xsmall" {...rest}>
-      <Text> {formatMessage({ id: 'pagination.stepLabel', messages })}</Text>
+      <Text>{formatMessage({ id: 'pagination.stepLabel', messages })}</Text>
       <Select
         options={options}
         value={step}

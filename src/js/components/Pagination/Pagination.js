@@ -248,7 +248,7 @@ const Pagination = forwardRef(
           {summary && (
             <PaginationSummary
               messages={messages}
-              page={page}
+              page={activePage}
               step={step}
               numberItems={total}
             />

@@ -13,7 +13,7 @@ import { Pagination } from '..';
 
 const NUM_ITEMS = 237;
 const STEP = 10;
-const data = [];
+const data: string[] = [];
 for (let i = 0; i < 95; i += 1) {
   data.push(`entry-${i}`);
 }
@@ -173,7 +173,7 @@ describe('Pagination', () => {
     fireEvent.click(nextPageButton);
 
     // step is 10 by default, so startIndex/endIndex are based on that
-    expect(onChange).toBeCalledWith(
+    expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({ page: 2, startIndex: 10, endIndex: 20 }),
     );
 
@@ -193,7 +193,7 @@ describe('Pagination', () => {
 
     // mouse click
     fireEvent.click(nextPageButton);
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
 
     // keyboard enter
@@ -202,7 +202,7 @@ describe('Pagination', () => {
       keyCode: 13,
       which: 13,
     });
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -219,7 +219,7 @@ describe('Pagination', () => {
 
     // mouse click
     fireEvent.click(previousPageButton);
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
 
     // keyboard enter
@@ -228,7 +228,7 @@ describe('Pagination', () => {
       keyCode: 13,
       which: 13,
     });
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -450,6 +450,16 @@ describe('Pagination', () => {
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should update summary when page changes', () => {
+    render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} summary />
+      </Grommet>,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Go to page 2' }));
+    expect(screen.getByText(`Showing 11-20 of ${NUM_ITEMS}`)).toBeTruthy();
   });
 
   test('should have no items', () => {
