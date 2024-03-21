@@ -27,7 +27,7 @@ var PaginationStep = exports.PaginationStep = function PaginationStep(_ref) {
     direction: "row",
     align: "center",
     gap: "xsmall"
-  }, rest), /*#__PURE__*/_react["default"].createElement(_Text.Text, null, " ", formatMessage({
+  }, rest), /*#__PURE__*/_react["default"].createElement(_Text.Text, null, formatMessage({
     id: 'pagination.stepLabel',
     messages: messages
   })), /*#__PURE__*/_react["default"].createElement(_Select.Select, {

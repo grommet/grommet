@@ -204,10 +204,6 @@ var SpaceX = exports.SpaceX = function SpaceX() {
       });
     });
   }, [view]);
-  var pageBounds = (0, _react.useMemo)(function () {
-    if (result != null && result.page) return [(result.page - 1) * view.step + 1, Math.min(result.page * view.step, result.filteredTotal)];
-    return [];
-  }, [result, view]);
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -238,12 +234,13 @@ var SpaceX = exports.SpaceX = function SpaceX() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       columns: columns,
       sortable: true
-    }), result.filteredTotal > view.step && /*#__PURE__*/_react["default"].createElement(_grommet.Footer, {
+    }), result.filteredTotal > view.step && /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, {
+      summary: true,
       border: "top",
       pad: {
         vertical: 'xsmall'
       }
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Showing ", pageBounds[0], "-", pageBounds[1], " of ", result.filteredTotal), /*#__PURE__*/_react["default"].createElement(_grommet.Pagination, null))))
+    })))
     // </Grommet>
   );
 };

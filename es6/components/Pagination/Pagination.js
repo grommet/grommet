@@ -208,7 +208,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     flex: "grow"
   }, summary && /*#__PURE__*/React.createElement(PaginationSummary, {
     messages: messages,
-    page: page,
+    page: activePage,
     step: step,
     numberItems: total
   })), /*#__PURE__*/React.createElement(Box, {

@@ -214,7 +214,7 @@ var Pagination = exports.Pagination = /*#__PURE__*/(0, _react.forwardRef)(functi
     flex: "grow"
   }, summary && /*#__PURE__*/_react["default"].createElement(_PaginationSummary.PaginationSummary, {
     messages: messages,
-    page: page,
+    page: activePage,
     step: step,
     numberItems: total
   })), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
