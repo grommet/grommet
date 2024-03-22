@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Box, Heading, ToggleButtonGroup } from 'grommet';
 import {
   List,
   MapLocation,
   Table,
-  Bold,
-  Italic,
-  Underline,
 } from 'grommet-icons';
 
 
@@ -29,8 +26,6 @@ const optionsIcons = [
 export const newStory = () => {
   const [multipleSelectedColors, setMultipleSelectedColors] = useState(['Red']);
   const [selectedOption, setSelectedOption] = useState('');
-
-  console.log(selectedOption);
 
   const handleToggle = (option) => {
     setSelectedOption(option);
