@@ -16,14 +16,10 @@ const StyledButton = styled(Button)`
 `;
 
 // default
-// make sure defaultValue html native behavior works? if it does work maybe not having defaultOption
+// make sure defaultValue html native behavior works?
+// if it does work maybe not having defaultOption
 
-const ToggleButtonGroup = ({
-  options,
-  onChange,
-  multiple,
-  ...rest
-}) => {
+const ToggleButtonGroup = ({ options, onChange, multiple, ...rest }) => {
   const [selectedOption, setSelectedOption] = useState([]);
 
   const handleToggle = (option) => {
@@ -57,28 +53,29 @@ const ToggleButtonGroup = ({
         style={{ width: 'fit-content' }}
       >
         {options.map((option, index) => (
-            <Box
-              key={index}
-              role="group"
-              // should have color in theme
-              border={
-                flatOptions.indexOf(option.label || option) <
-                flatOptions.length - 1
-                  ? { side: 'right', color: 'border' }
-                  : undefined
-              }
-              {...rest}
-            >
-              <StyledButton
-                role="radio"
-                onClick={() => handleToggle(option)}
-                icon={option.label}
-                label={option.label ? undefined : option}
-                pad="small"
-                onChange={onChange}
-              />
-            </Box>
-          ))}
+          <Box
+            key={option.value || option || index}
+            role="group"
+            // should have color in theme
+            border={
+              flatOptions.indexOf(option.label || option) <
+              flatOptions.length - 1
+                ? { side: 'right', color: 'border' }
+                : undefined
+            }
+            {...rest}
+          >
+            <StyledButton
+              role="radio"
+              key={option || option.label}
+              onClick={() => handleToggle(option)}
+              icon={option.label}
+              label={option.label ? undefined : option}
+              pad="small"
+              onChange={onChange}
+            />
+          </Box>
+        ))}
       </Box>
     </Keyboard>
   );

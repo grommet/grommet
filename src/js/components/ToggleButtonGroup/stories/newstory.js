@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Heading, ToggleButtonGroup } from 'grommet';
-import {
-  List,
-  MapLocation,
-  Table,
-} from 'grommet-icons';
-
+import { List, MapLocation, Table } from 'grommet-icons';
 
 const optionsIcons = [
   {
@@ -22,8 +17,7 @@ const optionsIcons = [
   },
 ];
 
-
-export const newStory = () => {
+export const NewStory = () => {
   const [multipleSelectedColors, setMultipleSelectedColors] = useState(['Red']);
   const [selectedOption, setSelectedOption] = useState('');
 
@@ -53,9 +47,7 @@ export const newStory = () => {
           defaultValue="Option 3"
         />
       </Box>
-      <ToggleButtonGroup
-          options={optionsIcons}
-        />
+      <ToggleButtonGroup options={optionsIcons} />
     </Box>
   );
 };
