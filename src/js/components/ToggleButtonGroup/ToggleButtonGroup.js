@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useContext, useEffect, useState, useRef } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
@@ -19,21 +19,52 @@ const StyledButton = styled(Button)`
 // make sure defaultValue html native behavior works?
 // if it does work maybe not having defaultOption
 
-const ToggleButtonGroup = ({ options, onChange, multiple, ...rest }) => {
-  const [selectedOption, setSelectedOption] = useState([]);
+const ToggleButtonGroup = ({
+  focusIndicator = true,
+  multiple,
+  options,
+  onChange,
+  value: valueProp,
+  ...rest
+}) => {
+  const [value, setValue] = useState([]);
+  const [valueIndex, setValueIndex] = useState(0);
+  const theme = useContext(ThemeContext);
+
+  const buttonRefs = useRef([]);
+
+  useEffect(() => {
+    if (buttonRefs.current && buttonRefs.current[valueIndex]) {
+      buttonRefs.current[valueIndex].focus();
+    }
+  }, [valueIndex]);
+
+  const onNext = () => {
+    if (valueIndex !== undefined && valueIndex < options.length - 1) {
+      const nextIndex = valueIndex + 1;
+      setValueIndex(nextIndex);
+    }
+  };
+
+  const onPrevious = () => {
+    if (valueIndex > 0) {
+      const nextIndex = valueIndex - 1;
+      setValueIndex(nextIndex);
+    }
+  };
 
   const handleToggle = (option) => {
     if (!multiple) {
-      setSelectedOption([option]);
+      setValue([option]);
       if (onChange) {
         onChange([option]);
       }
     } else {
-      const newSelectedOptions = selectedOption.includes(option)
-        ? selectedOption.filter((item) => item !== option)
-        : [...selectedOption, option];
+      const newSelectedOptions = value.includes(option)
+        ? value.filter((item) => item !== option)
+        : [...value, option];
 
-      setSelectedOption(newSelectedOptions);
+      setValue(newSelectedOptions);
       if (onChange) {
         onChange(newSelectedOptions);
       }
@@ -45,34 +76,44 @@ const ToggleButtonGroup = ({ options, onChange, multiple, ...rest }) => {
   );
 
   return (
-    <Keyboard target="document">
+    <Keyboard
+      onUp={onPrevious}
+      onDown={onNext}
+      onLeft={onPrevious}
+      onRight={onNext}
+    >
       <Box
-        round="xsmall"
         direction="row"
+        alignSelf="start"
         border
-        style={{ width: 'fit-content' }}
+        {...theme.toggleButtonGroup.container}
+        {...rest}
       >
         {options.map((option, index) => (
           <Box
             key={option.value || option || index}
             role="group"
-            // should have color in theme
+            focusIndicator={focusIndicator}
             border={
               flatOptions.indexOf(option.label || option) <
               flatOptions.length - 1
-                ? { side: 'right', color: 'border' }
+                ? { side: 'right', color: theme.toggleButtonGroup.border.color }
                 : undefined
             }
-            {...rest}
           >
             <StyledButton
               role="radio"
+              pad="small"
               key={option || option.label}
               onClick={() => handleToggle(option)}
-              icon={option.label}
+              tabIndex={index === valueIndex ? '0' : '-1'}
+              icon={option.label ? option.label : undefined}
               label={option.label ? undefined : option}
-              pad="small"
               onChange={onChange}
+              value={valueProp}
+              ref={(r) => {
+                buttonRefs.current[index] = r;
+              }}
             />
           </Box>
         ))}

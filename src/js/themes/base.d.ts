@@ -1717,6 +1717,12 @@ export interface ThemeType {
     content?: BoxProps;
     drop?: DropProps;
   };
+  toogleButtonGroup?: {
+    container?: BoxProps;
+    border?: {
+      color?: ColorType;
+    };
+  };
   video?: {
     captions?: {
       background?: BackgroundType;
