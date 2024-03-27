@@ -1,40 +1,29 @@
 import React, { useState } from 'react';
-import { Box, Heading, ToggleButtonGroup } from 'grommet';
-import { List, MapLocation, Table } from 'grommet-icons';
-
-const optionsIcons = [
-  {
-    label: <List />,
-    value: 'list',
-  },
-  {
-    label: <Table />,
-    value: 'table',
-  },
-  {
-    label: <MapLocation />,
-    value: 'map',
-  },
-];
+import { Box, ToggleButtonGroup } from 'grommet';
 
 export const Simple = () => {
-  const [selectedIcon, setSelectedIcon] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedChoice, setSelectedChoice] = useState('');
 
-  console.log(selectedIcon);
-
-  const handleToggleIcons = (option) => {
-    setSelectedIcon(option.value);
+  const handleToggleOption = (option) => {
+    setSelectedOption(option);
   };
 
   return (
     <Box gap="large" pad="large">
-      <Box>
-        <Heading>Selected icon: {selectedIcon}</Heading>
-      </Box>
       <ToggleButtonGroup
-        onChange={handleToggleIcons}
-        options={optionsIcons}
-        value={selectedIcon}
+        options={[
+          { label: 'Choice 1', value: 'c1' },
+          { label: 'Choice 2', value: 'c2' },
+          { label: 'Choice 3', value: 'c3' },
+        ]}
+        value={selectedChoice}
+        onChange={(value) => setSelectedChoice(value)}
+      />
+      <ToggleButtonGroup
+        onChange={handleToggleOption}
+        options={['Option 1', 'Option 2', 'Option 3']}
+        value={selectedOption}
       />
     </Box>
   );

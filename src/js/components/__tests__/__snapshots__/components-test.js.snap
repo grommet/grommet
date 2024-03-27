@@ -2720,6 +2720,20 @@ exports[`Components loads 1`] = `
           "border": {
             "color": "border",
           },
+          "button": {
+            "active": {
+              "background": {
+                "color": "active-background",
+              },
+            },
+            "color": "text-strong",
+            "hover": {
+              "background": {
+                "color": "background-contrast",
+              },
+              "color": undefined,
+            },
+          },
           "container": {
             "round": "xsmall",
           },
@@ -4720,6 +4734,20 @@ exports[`Components loads 1`] = `
         "toggleButtonGroup": {
           "border": {
             "color": "border",
+          },
+          "button": {
+            "active": {
+              "background": {
+                "color": "active-background",
+              },
+            },
+            "color": "text-strong",
+            "hover": {
+              "background": {
+                "color": "background-contrast",
+              },
+              "color": undefined,
+            },
           },
           "container": {
             "round": "xsmall",

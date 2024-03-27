@@ -15,10 +15,6 @@ const StyledButton = styled(Button)`
       : ''}
 `;
 
-// default
-// make sure defaultValue html native behavior works?
-// if it does work maybe not having defaultOption
-
 const ToggleButtonGroup = ({
   focusIndicator = true,
   multiple,
@@ -89,34 +85,53 @@ const ToggleButtonGroup = ({
         {...theme.toggleButtonGroup.container}
         {...rest}
       >
-        {options.map((option, index) => (
-          <Box
-            key={option.value || option || index}
-            role="group"
-            focusIndicator={focusIndicator}
-            border={
-              flatOptions.indexOf(option.label || option) <
-              flatOptions.length - 1
-                ? { side: 'right', color: theme.toggleButtonGroup.border.color }
-                : undefined
-            }
-          >
-            <StyledButton
-              role="radio"
-              pad="small"
-              key={option || option.label}
-              onClick={() => handleToggle(option)}
-              tabIndex={index === valueIndex ? '0' : '-1'}
-              icon={option.label ? option.label : undefined}
-              label={option.label ? undefined : option}
-              onChange={onChange}
-              value={valueProp}
-              ref={(r) => {
-                buttonRefs.current[index] = r;
-              }}
-            />
-          </Box>
-        ))}
+        {options.map((option, index) => {
+          const id = typeof option === 'object' ? option.id : null;
+          let label;
+          if (typeof option === 'object') {
+            label = option.label;
+            console.log(option.label);
+          } else label = option;
+          const optionValue =
+            typeof option === 'object' ? option.value : option;
+          const icon = typeof option === 'object' ? option.icon : null;
+
+          // need to fix border when icons are used giving -1
+          console.log(optionValue, flatOptions.indexOf(optionValue));
+
+          return (
+            <Box
+              key={id || optionValue || index}
+              role="group"
+              focusIndicator={focusIndicator}
+              border={
+                flatOptions.indexOf(label || optionValue) <
+                flatOptions.length - 1
+                  ? {
+                      side: 'right',
+                      color: theme.toggleButtonGroup.border.color,
+                    }
+                  : undefined
+              }
+            >
+              <StyledButton
+                role="radio"
+                pad="small"
+                kind={theme.toggleButtonGroup.button}
+                tabIndex={index === valueIndex ? '0' : '-1'}
+                icon={icon}
+                label={label}
+                onChange={onChange}
+                onClick={() => handleToggle(optionValue)}
+                active={!!valueProp.includes(optionValue)}
+                value={optionValue}
+                ref={(r) => {
+                  buttonRefs.current[index] = r;
+                }}
+              />
+            </Box>
+          );
+        })}
       </Box>
     </Keyboard>
   );
