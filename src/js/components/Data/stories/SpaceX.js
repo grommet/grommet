@@ -1,15 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import {
-  Box,
-  DataTable,
-  Data,
-  Footer,
-  Grid,
-  Pagination,
-  Text,
-  Tip,
-} from 'grommet';
+import { Box, DataTable, Data, Grid, Pagination, Text, Tip } from 'grommet';
 
 import { StatusCritical } from 'grommet-icons';
 
@@ -165,15 +156,6 @@ export const SpaceX = () => {
     });
   }, [view]);
 
-  const pageBounds = useMemo(() => {
-    if (result?.page)
-      return [
-        (result.page - 1) * view.step + 1,
-        Math.min(result.page * view.step, result.filteredTotal),
-      ];
-    return [];
-  }, [result, view]);
-
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
@@ -198,12 +180,7 @@ export const SpaceX = () => {
       >
         <DataTable columns={columns} sortable />
         {result.filteredTotal > view.step && (
-          <Footer border="top" pad={{ vertical: 'xsmall' }}>
-            <Text>
-              Showing {pageBounds[0]}-{pageBounds[1]} of {result.filteredTotal}
-            </Text>
-            <Pagination />
-          </Footer>
+          <Pagination summary border="top" pad={{ vertical: 'xsmall' }} />
         )}
       </Data>
     </Grid>
