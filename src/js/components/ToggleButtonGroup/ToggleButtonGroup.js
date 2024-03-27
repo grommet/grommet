@@ -68,7 +68,7 @@ const ToggleButtonGroup = ({
   };
 
   const flatOptions = options.map((option) =>
-    typeof option === 'object' ? option.label : option,
+    typeof option === 'object' ? option.label || option.icon : option,
   );
 
   return (
@@ -96,16 +96,13 @@ const ToggleButtonGroup = ({
             typeof option === 'object' ? option.value : option;
           const icon = typeof option === 'object' ? option.icon : null;
 
-          // need to fix border when icons are used giving -1
-          console.log(optionValue, flatOptions.indexOf(optionValue));
-
           return (
             <Box
               key={id || optionValue || index}
               role="group"
               focusIndicator={focusIndicator}
               border={
-                flatOptions.indexOf(label || optionValue) <
+                flatOptions.indexOf(icon || label || optionValue) <
                 flatOptions.length - 1
                   ? {
                       side: 'right',
