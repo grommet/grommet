@@ -144,7 +144,9 @@ var makeNodeFocusable = exports.makeNodeFocusable = function makeNodeFocusable(n
     });
   }
 };
-var autoFocusingTags = /(a|area|input|select|textarea|button|iframe)$/;
+
+// Using ^ and $ to match the whole tagName, and not e.g. <meta> and <data>.
+var autoFocusingTags = /^(a|area|input|select|textarea|button|iframe)$/;
 var makeNodeUnfocusable = exports.makeNodeUnfocusable = function makeNodeUnfocusable(node) {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
