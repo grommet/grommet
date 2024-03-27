@@ -1839,6 +1839,7 @@ export var generate = function generate(baseSpacing, scale) {
         dark: ['background', 'background-front'],
         light: ['background', 'background-back']
       }
+      // extend: undefined,
     },
     skipLinks: {
       position: 'top',
