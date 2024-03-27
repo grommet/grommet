@@ -5,6 +5,7 @@ import {
   genericStyles,
   kindPartStyles,
   parseMetricToNum,
+  styledComponentsConfig,
 } from '../../utils';
 
 import { defaultProps } from '../../default-props';
@@ -23,7 +24,7 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledCalendar = styled.div`
+const StyledCalendar = styled.div.withConfig(styledComponentsConfig)`
   ${genericStyles}
   ${(props) => sizeStyle(props)}
   ${(props) => props.theme.calendar && props.theme.calendar.extend}
@@ -41,7 +42,7 @@ const weeksContainerSizeStyle = (props) => {
 
   `;
 };
-const StyledWeeksContainer = styled.div`
+const StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig)`
   overflow: hidden;
   ${(props) => weeksContainerSizeStyle(props)}
   ${(props) => props.focus && !props.plain && focusStyle()};
@@ -79,7 +80,7 @@ const weeksSizeStyle = () => css`
   flex-direction: column;
   height: 100%;
 `;
-const StyledWeeks = styled.div`
+const StyledWeeks = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   ${(props) => props.fillContainer && weeksSizeStyle()}
   ${(props) => props.slide && slideStyle(props)};
@@ -88,7 +89,7 @@ const StyledWeeks = styled.div`
 StyledWeeks.defaultProps = {};
 Object.setPrototypeOf(StyledWeeks.defaultProps, defaultProps);
 
-const StyledWeek = styled.div`
+const StyledWeek = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   justify-content: space-between;
   ${(props) => props.fillContainer && 'flex: 1;'}
@@ -99,7 +100,7 @@ Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
 
 // The width of 14.3% is derived from dividing 100/7. We want the
 // widths of 7 days to equally fill 100% of the row.
-const StyledDayContainer = styled.div`
+const StyledDayContainer = styled.div.withConfig(styledComponentsConfig)`
   flex: 0 1 auto;
   ${(props) => props.fillContainer && 'width: 14.3%;'}
 `;
@@ -116,7 +117,7 @@ const daySizeStyle = (props) => {
   `;
 };
 
-const StyledDay = styled.div`
+const StyledDay = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   justify-content: center;
   align-items: center;

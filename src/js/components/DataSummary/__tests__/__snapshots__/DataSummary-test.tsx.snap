@@ -2,78 +2,46 @@
 
 exports[`DataSummary renders 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-top: 24px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -89,7 +57,6 @@ exports[`DataSummary renders 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -104,11 +71,8 @@ exports[`DataSummary renders 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -121,18 +85,18 @@ exports[`DataSummary renders 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -141,18 +105,18 @@ exports[`DataSummary renders 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -170,7 +134,7 @@ exports[`DataSummary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     margin-top: 12px;
   }
@@ -221,78 +185,46 @@ exports[`DataSummary renders 1`] = `
 exports[`DataSummary renders filtered message correctly when 0 results but only 1 item 1`] = `
 <DocumentFragment>
   .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-top: 24px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -308,7 +240,6 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -323,11 +254,8 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -340,18 +268,18 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -360,18 +288,18 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -389,7 +317,7 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     margin-top: 12px;
   }
@@ -441,78 +369,46 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
 exports[`DataSummary renders total message correctly when only 1 item 1`] = `
 <DocumentFragment>
   .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
   flex: 1 1;
   overflow: auto;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-top: 24px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -528,7 +424,6 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -543,11 +438,8 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -560,18 +452,18 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -580,18 +472,18 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -609,7 +501,7 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     margin-top: 12px;
   }

@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import styled from 'styled-components';
-
 import 'jest-styled-components';
+
+import { styledComponentsConfig } from '../utils/styles';
 
 import { grommet, defaultProps, extendDefaultTheme, Box, Grommet } from '..';
 
-const CustomBox = styled.div`
+const CustomBox = styled.div.withConfig(styledComponentsConfig)`
   background: ${(props) => props.theme.global.colors.brand};
 `;
 CustomBox.defaultProps = {};

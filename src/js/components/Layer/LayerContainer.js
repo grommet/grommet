@@ -19,11 +19,12 @@ import {
   backgroundIsDark,
   findVisibleParent,
   PortalContext,
+  styledComponentsConfig,
 } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
-const HiddenAnchor = styled.a`
+const HiddenAnchor = styled.a.withConfig(styledComponentsConfig)`
   width: 0;
   height: 0;
   overflow: hidden;

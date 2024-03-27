@@ -1106,7 +1106,9 @@ describe('DateInput', () => {
 
   test('icon', () => {
     const { container } = render(
-      <DateInput icon={<CalendarIcon color="red" />} name="item" />,
+      <Grommet>
+        <DateInput icon={<CalendarIcon color="red" />} name="item" />,
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -1150,10 +1152,12 @@ describe('DateInput', () => {
     render(
       // onReset e.stopPropagation() is testing to ensure
       // the event won't be lost if caller adds custom reset
-      <Form onReset={(e) => e.stopPropagation()}>
-        <DateInput format="mm/dd/yyyy" name="date" />
-        <Button label="Reset" type="reset" />
-      </Form>,
+      <Grommet>
+        <Form onReset={(e) => e.stopPropagation()}>
+          <DateInput format="mm/dd/yyyy" name="date" />
+          <Button label="Reset" type="reset" />
+        </Form>
+      </Grommet>,
     );
     const input = screen.getByRole('textbox');
     await user.type(input, '09/09/2022');

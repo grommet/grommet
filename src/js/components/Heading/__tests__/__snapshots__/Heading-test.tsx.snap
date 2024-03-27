@@ -19,7 +19,7 @@ exports[`Heading accepts ref 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -56,7 +56,7 @@ exports[`Heading color renders 1`] = `
   color: #7D4CDB;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -92,7 +92,7 @@ exports[`Heading fill renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -152,7 +152,7 @@ exports[`Heading level renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -160,7 +160,7 @@ exports[`Heading level renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 26px;
     line-height: 32px;
@@ -168,7 +168,7 @@ exports[`Heading level renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     font-size: 18px;
     line-height: 24px;
@@ -176,7 +176,7 @@ exports[`Heading level renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     font-size: 16px;
     line-height: 22px;
@@ -297,13 +297,13 @@ exports[`Heading margin renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -311,13 +311,13 @@ exports[`Heading margin renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     margin: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 34px;
     line-height: 40px;
@@ -325,13 +325,13 @@ exports[`Heading margin renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     margin: 24px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     font-size: 34px;
     line-height: 40px;
@@ -339,13 +339,13 @@ exports[`Heading margin renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     font-size: 34px;
     line-height: 40px;
@@ -353,13 +353,13 @@ exports[`Heading margin renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     font-size: 34px;
     line-height: 40px;
@@ -367,13 +367,13 @@ exports[`Heading margin renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     margin-top: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     font-size: 34px;
     line-height: 40px;
@@ -381,13 +381,13 @@ exports[`Heading margin renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     margin-bottom: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     font-size: 34px;
     line-height: 40px;
@@ -395,13 +395,13 @@ exports[`Heading margin renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     margin-top: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     font-size: 34px;
     line-height: 40px;
@@ -458,7 +458,7 @@ exports[`Heading renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -582,7 +582,7 @@ exports[`Heading size renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 26px;
     line-height: 32px;
@@ -590,7 +590,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 34px;
     line-height: 40px;
@@ -598,7 +598,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     font-size: 50px;
     line-height: 56px;
@@ -606,7 +606,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     font-size: 66px;
     line-height: 72px;
@@ -614,7 +614,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     font-size: 22px;
     line-height: 28px;
@@ -622,7 +622,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     font-size: 42px;
     line-height: 48px;
@@ -630,7 +630,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     font-size: 18px;
     line-height: 24px;
@@ -638,7 +638,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     font-size: 18px;
     line-height: 24px;
@@ -646,7 +646,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     font-size: 18px;
     line-height: 24px;
@@ -654,7 +654,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     font-size: 18px;
     line-height: 24px;
@@ -662,7 +662,7 @@ exports[`Heading size renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     font-size: 16px;
     line-height: 22px;
@@ -774,7 +774,7 @@ exports[`Heading textAlign renders 1`] = `
   text-align: justify;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -782,7 +782,7 @@ exports[`Heading textAlign renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 34px;
     line-height: 40px;
@@ -790,7 +790,7 @@ exports[`Heading textAlign renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     font-size: 34px;
     line-height: 40px;
@@ -798,7 +798,7 @@ exports[`Heading textAlign renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     font-size: 34px;
     line-height: 40px;
@@ -854,7 +854,7 @@ exports[`Heading truncate renders 1`] = `
   text-overflow: ellipsis;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -862,7 +862,7 @@ exports[`Heading truncate renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 34px;
     line-height: 40px;
@@ -933,7 +933,7 @@ exports[`Theme based font family renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -941,7 +941,7 @@ exports[`Theme based font family renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 26px;
     line-height: 32px;
@@ -949,7 +949,7 @@ exports[`Theme based font family renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     font-size: 18px;
     line-height: 24px;
@@ -957,7 +957,7 @@ exports[`Theme based font family renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     font-size: 16px;
     line-height: 22px;
@@ -1026,7 +1026,7 @@ exports[`Theme based font weight renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -1034,7 +1034,7 @@ exports[`Theme based font weight renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 26px;
     line-height: 32px;
@@ -1042,7 +1042,7 @@ exports[`Theme based font weight renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     font-size: 18px;
     line-height: 24px;
@@ -1050,7 +1050,7 @@ exports[`Theme based font weight renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     font-size: 16px;
     line-height: 22px;
@@ -1123,7 +1123,7 @@ exports[`Theme color renders 1`] = `
   color: #000000;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -1131,7 +1131,7 @@ exports[`Theme color renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 26px;
     line-height: 32px;
@@ -1139,7 +1139,7 @@ exports[`Theme color renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     font-size: 18px;
     line-height: 24px;
@@ -1147,7 +1147,7 @@ exports[`Theme color renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     font-size: 16px;
     line-height: 22px;
@@ -1200,7 +1200,7 @@ exports[`responsive renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -1264,7 +1264,7 @@ exports[`weight renders 1`] = `
   overflow-wrap: break-word;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -1272,7 +1272,7 @@ exports[`weight renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     font-size: 34px;
     line-height: 40px;
@@ -1280,7 +1280,7 @@ exports[`weight renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     font-size: 34px;
     line-height: 40px;
@@ -1288,7 +1288,7 @@ exports[`weight renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     font-size: 34px;
     line-height: 40px;

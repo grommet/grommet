@@ -45,7 +45,9 @@ describe('Select', () => {
 
   test('basic', () => {
     const { container } = render(
-      <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
+      <Grommet>
+        <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />
+      </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -92,12 +94,14 @@ describe('Select', () => {
     jest.useFakeTimers();
     const onClose = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select
-        placeholder="test select"
-        id="test-select"
-        options={['one', 'two']}
-        onClose={onClose}
-      />,
+      <Grommet>
+        <Select
+          placeholder="test select"
+          id="test-select"
+          options={['one', 'two']}
+          onClose={onClose}
+        />
+      </Grommet>,
     );
 
     fireEvent.click(getByPlaceholderText('test select'));
@@ -115,12 +119,14 @@ describe('Select', () => {
   [0, null].forEach((value) =>
     test(`${value} value`, () => {
       const { asFragment } = render(
-        <Select
-          id="test-select"
-          placeholder="test select"
-          options={[0, 1]}
-          value={value}
-        />,
+        <Grommet>
+          <Select
+            id="test-select"
+            placeholder="test select"
+            options={[0, 1]}
+            value={value}
+          />
+        </Grommet>,
       );
 
       expect(asFragment()).toMatchSnapshot();
@@ -131,13 +137,15 @@ describe('Select', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two']}
-        onSearch={onSearch}
-        value="two"
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          onSearch={onSearch}
+          value="two"
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -163,16 +171,18 @@ describe('Select', () => {
     const Test = () => {
       const [options, setOptions] = React.useState(['one', 'two']);
       return (
-        <Select
-          id="test-select"
-          placeholder="test select"
-          options={options}
-          onChange={onChange}
-          onSearch={(arg) => {
-            onSearch(arg);
-            setOptions(['two']);
-          }}
-        />
+        <Grommet>
+          <Select
+            id="test-select"
+            placeholder="test select"
+            options={options}
+            onChange={onChange}
+            onSearch={(arg) => {
+              onSearch(arg);
+              setOptions(['two']);
+            }}
+          />
+        </Grommet>
       );
     };
     const { getByPlaceholderText, getByText, container } = render(<Test />);
@@ -197,15 +207,17 @@ describe('Select', () => {
   test('select an option with complex options', () => {
     const onChange = jest.fn();
     const { getByText, container } = render(
-      <Select
-        id="test-select"
-        plain
-        value={<span>one</span>}
-        options={[{ test: 'one' }, { test: 'two' }]}
-        onChange={onChange}
-      >
-        {(option) => <span>{option.test}</span>}
-      </Select>,
+      <Grommet>
+        <Select
+          id="test-select"
+          plain
+          value={<span>one</span>}
+          options={[{ test: 'one' }, { test: 'two' }]}
+          onChange={onChange}
+        >
+          {(option) => <span>{option.test}</span>}
+        </Select>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -223,14 +235,16 @@ describe('Select', () => {
 
   test('size', () => {
     const { container } = render(
-      <Select
-        id="test-select"
-        size="large"
-        options={['one', 'two']}
-        selected={[]}
-        value={[]}
-        onChange={() => {}}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          size="large"
+          options={['one', 'two']}
+          selected={[]}
+          value={[]}
+          onChange={() => {}}
+        />
+      </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -239,16 +253,18 @@ describe('Select', () => {
   ['small', 'medium', 'large'].forEach((dropHeight) => {
     test(`${dropHeight} drop container height`, () => {
       const { getByPlaceholderText } = render(
-        <Select
-          id="test-select"
-          size="large"
-          options={['one', 'two']}
-          selected={[]}
-          value={[]}
-          onChange={() => {}}
-          dropHeight={dropHeight}
-          placeholder="test select"
-        />,
+        <Grommet>
+          <Select
+            id="test-select"
+            size="large"
+            options={['one', 'two']}
+            selected={[]}
+            value={[]}
+            onChange={() => {}}
+            dropHeight={dropHeight}
+            placeholder="test select"
+          />
+        </Grommet>,
       );
       fireEvent.click(getByPlaceholderText('test select'));
       expect(document.activeElement).toMatchSnapshot();
@@ -528,13 +544,15 @@ describe('Select', () => {
 
   test('complex options and children', () => {
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={[{ test: 'one' }, { test: 'two' }]}
-      >
-        {(option) => <span>{option.test}</span>}
-      </Select>,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[{ test: 'one' }, { test: 'two' }]}
+        >
+          {(option) => <span>{option.test}</span>}
+        </Select>
+      </Grommet>,
     );
     // before opening
     expect(container.firstChild).toMatchSnapshot();
@@ -550,12 +568,14 @@ describe('Select', () => {
   test('select an option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two']}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     const select = getByPlaceholderText('test select');
     expect(container.firstChild).toMatchSnapshot();
@@ -575,12 +595,14 @@ describe('Select', () => {
   test('select an option with enter', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two']}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -608,12 +630,14 @@ describe('Select', () => {
   test('select an option with keypress', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two', 'three']}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two', 'three']}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -641,14 +665,16 @@ describe('Select', () => {
       { id: 3, name: 'three' },
     ];
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={options}
-        labelKey="name"
-        valueKey="id"
-        onChange={onChange}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={options}
+          labelKey="name"
+          valueKey="id"
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -675,12 +701,14 @@ describe('Select', () => {
   test('select on multiple keydown always picks first enabled option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two', 'three']}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two', 'three']}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -711,12 +739,14 @@ describe('Select', () => {
 
   test('disabled', () => {
     const { getByPlaceholderText, container } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        disabled
-        options={['one', 'two']}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          disabled
+          options={['one', 'two']}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
@@ -730,13 +760,15 @@ describe('Select', () => {
 
   test('empty results search', () => {
     const { getByPlaceholderText } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={[]}
-        onSearch={() => {}}
-        emptySearchMessage="no results"
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[]}
+          onSearch={() => {}}
+          emptySearchMessage="no results"
+        />
+      </Grommet>,
     );
     fireEvent.click(getByPlaceholderText('test select'));
     // advance timers so that the select drop can open
@@ -750,12 +782,14 @@ describe('Select', () => {
 
   test('open default state', () => {
     render(
-      <Select
-        open
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two']}
-      />,
+      <Grommet>
+        <Select
+          open
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+        />
+      </Grommet>,
     );
 
     expect(document.getElementById('test-select__drop')).not.toBeNull();
@@ -763,7 +797,9 @@ describe('Select', () => {
 
   test('renders without icon', () => {
     const { container } = render(
-      <Select id="test-select" options={['one', 'two']} icon={false} />,
+      <Grommet>
+        <Select id="test-select" options={['one', 'two']} icon={false} />
+      </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -771,7 +807,9 @@ describe('Select', () => {
 
   test('renders custom icon', () => {
     const { container } = render(
-      <Select id="test-select" options={['one', 'two']} icon={CaretDown} />,
+      <Grommet>
+        <Select id="test-select" options={['one', 'two']} icon={CaretDown} />
+      </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -779,7 +817,9 @@ describe('Select', () => {
 
   test('renders default icon', () => {
     const { container } = render(
-      <Select id="test-select" options={['one', 'two']} icon />,
+      <Grommet>
+        <Select id="test-select" options={['one', 'two']} icon />
+      </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -1057,12 +1097,14 @@ describe('Select', () => {
   test('select an option then select a different option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two']}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     const select = getByPlaceholderText('test select');
     fireEvent.click(getByPlaceholderText('test select'));
@@ -1089,13 +1131,15 @@ describe('Select', () => {
 
   test('keyboard navigation with disabled option', () => {
     const { getByPlaceholderText } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two', 'three', 'four']}
-        disabled={[1]}
-        open
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two', 'three', 'four']}
+          disabled={[1]}
+          open
+        />
+      </Grommet>,
     );
     const select = getByPlaceholderText('test select');
     // should skip over disabled option

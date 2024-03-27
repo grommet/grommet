@@ -324,7 +324,6 @@ const Tabs = forwardRef(
     return (
       <StyledTabs
         ref={ref}
-        as={Box}
         flex={flex}
         responsive={responsive}
         {...rest}
@@ -358,7 +357,6 @@ const Tabs = forwardRef(
           )}
           <StyledTabsHeader
             ref={headerRef}
-            as={Box}
             direction="row"
             justify={overflow ? 'start' : justify}
             flex={!!overflow}

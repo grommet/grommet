@@ -29,7 +29,7 @@ const ContainerBox = styled(Box)`
   }
 
   /* remove the browser default focus outline */
-  :focus {
+  &:focus {
     outline: none;
   }
 

@@ -909,12 +909,14 @@ describe('Form uncontrolled', () => {
   test('uncontrolled without name', () => {
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText } = render(
-      <Form onSubmit={onSubmit}>
-        <FormField>
-          <TextInput a11yTitle="test" placeholder="test input" />
-        </FormField>
-        <Button type="submit" primary label="Submit" />
-      </Form>,
+      <Grommet>
+        <Form onSubmit={onSubmit}>
+          <FormField>
+            <TextInput a11yTitle="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
     );
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'v' },

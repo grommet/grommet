@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-
+import isPropValid from '@emotion/is-prop-valid';
 import {
   activeStyle,
   disabledStyle,
@@ -251,10 +251,7 @@ const plainStyle = (props) => css`
 `;
 
 const StyledButtonKind = styled.button.withConfig({
-  // don't let kind attribute leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['kind'].includes(prop) && defaultValidatorFn(prop),
+  shouldForwardProp: (prop) => isPropValid(prop) && !['kind'].includes(prop),
 })`
   display: inline-block;
   box-sizing: border-box;
