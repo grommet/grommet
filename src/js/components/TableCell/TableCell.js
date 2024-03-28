@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-} from 'react';
+import React, { forwardRef, useContext, useMemo, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
@@ -56,45 +50,6 @@ const TableCell = forwardRef(
       }
     }, [cellRef, onWidth]);
 
-    // if window resizes, recalculate cell height so that content
-    // will continue to fill the height if the dimensions of the cell
-    // have changed
-    useEffect(() => {
-      const updateHeight = () => {
-        if (plain === 'noPad') {
-          const cell = cellRef.current;
-          const container = containerRef.current;
-          if (cell && container) {
-            container.style.height = '';
-            const cellRect = cell.getBoundingClientRect();
-
-            // height must match cell height otherwise table will apply some
-            // margin around the cell content
-            container.style.height = `${Math.max(
-              cellRect.height -
-                (border || theme.table[tableContext].border
-                  ? theme.global.borderSize.xsmall.replace('px', '')
-                  : 0),
-              0,
-            )}px`;
-          }
-        }
-      };
-
-      window.addEventListener('resize', updateHeight);
-      updateHeight();
-      return () => {
-        window.removeEventListener('resize', updateHeight);
-      };
-    }, [
-      border,
-      cellRef,
-      plain,
-      tableContext,
-      theme.global.borderSize,
-      theme.table,
-    ]);
-
     let tableContextTheme;
     if (tableContext === 'header') {
       tableContextTheme = theme.table && theme.table.header;
@@ -126,12 +81,13 @@ const TableCell = forwardRef(
 
     let content = children;
     if (plain === 'noPad' && children) {
-      // a Box with explicitly set height is necessary
+      // a Box with explicitly set height 100% is necessary
       // for the child contents to be able to fill the
-      // TableCell
+      // TableCell and to provide vertical alignment
       content = (
         <Box
           ref={containerRef}
+          style={{ height: '100%' }}
           justify={
             verticalAlign ? verticalAlignToJustify[verticalAlign] : 'center'
           }
