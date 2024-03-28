@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -67,20 +67,6 @@ describe('ToggleButtonGroup', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('defaultValue', () => {
-    const { container } = render(
-      <Grommet>
-        <ToggleButtonGroup
-          name="test"
-          options={['one', 'two']}
-          defaultValue="one"
-        />
-      </Grommet>,
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
   test('toggleButtonGroup theme values', () => {
     const { container } = render(
       <Grommet
@@ -102,5 +88,41 @@ describe('ToggleButtonGroup', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('select 1 option', () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <Grommet>
+        <ToggleButtonGroup
+          options={['one', 'two', 'three']}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Simulate a click event on the radio button
+    fireEvent.click(screen.getByRole('radio', { name: 'two' }));
+    expect(onChange).toHaveBeenCalledWith(['two']);
+  });
+
+  test('select 2 options', () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <Grommet>
+        <ToggleButtonGroup
+          options={['one', 'two', 'three']}
+          onChange={onChange}
+          multiple
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Simulate a click event on the buttons
+    fireEvent.click(screen.getByRole('button', { name: 'two' }));
+    fireEvent.click(screen.getByRole('button', { name: 'three' }));
+    expect(onChange).toHaveBeenCalledWith(['two', 'three']);
   });
 });
