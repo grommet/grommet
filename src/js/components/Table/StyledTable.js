@@ -45,6 +45,7 @@ const StyledTableCell = styled.td`
   font-weight: inherit;
   text-align: inherit;
 
+  height: 100%;
   ${(props) => props.size && sizeStyle}
   ${(props) => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
   ${(props) => props.align && `text-align: ${props.align};`}
@@ -74,7 +75,9 @@ const StyledTableDataCaption = styled.caption`
 StyledTableDataCaption.defaultProps = {};
 Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
 
-const StyledTableRow = styled.tr``;
+const StyledTableRow = styled.tr`
+  height: 100%;
+`;
 
 StyledTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledTableRow.defaultProps, defaultProps);
@@ -98,6 +101,7 @@ const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+  height: 100%;
   ${genericStyles} ${(props) => props.theme.table && props.theme.table.extend};
 `;
 
