@@ -10,6 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
         PropTypes.shape({
           disabled: PropTypes.bool,
           label: PropTypes.string,
+          pinOrder: PropTypes.bool,
           property: PropTypes.string,
         }),
       ),
