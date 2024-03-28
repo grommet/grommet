@@ -4,6 +4,7 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     multiple: PropTypes.bool,
+    name: PropTypes.string,
     onChange: PropTypes.func,
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),

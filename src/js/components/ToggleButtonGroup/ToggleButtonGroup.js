@@ -18,6 +18,7 @@ const StyledButton = styled(Button)`
 const ToggleButtonGroup = ({
   focusIndicator = true,
   multiple,
+  name,
   options,
   onChange,
   value: valueProp,
@@ -90,11 +91,17 @@ const ToggleButtonGroup = ({
           let label;
           if (typeof option === 'object') {
             label = option.label;
-            console.log(option.label);
           } else label = option;
           const optionValue =
             typeof option === 'object' ? option.value : option;
           const icon = typeof option === 'object' ? option.icon : null;
+
+          let isActive;
+          if (valueProp === undefined) {
+            isActive = !!value.includes(optionValue);
+          } else if (valueProp !== undefined)
+            isActive = !!valueProp.includes(optionValue);
+          else isActive = false;
 
           return (
             <Box
@@ -114,13 +121,15 @@ const ToggleButtonGroup = ({
               <StyledButton
                 role="radio"
                 pad="small"
+                aria-checked={isActive}
                 kind={theme.toggleButtonGroup.button}
                 tabIndex={index === valueIndex ? '0' : '-1'}
+                name={name}
                 icon={icon}
                 label={label}
                 onChange={onChange}
                 onClick={() => handleToggle(optionValue)}
-                active={!!valueProp.includes(optionValue)}
+                active={isActive}
                 value={optionValue}
                 ref={(r) => {
                   buttonRefs.current[index] = r;
