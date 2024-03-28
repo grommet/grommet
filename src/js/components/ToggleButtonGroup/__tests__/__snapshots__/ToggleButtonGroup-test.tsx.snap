@@ -158,10 +158,10 @@ exports[`ToggleButtonGroup defaultValue 1`] = `
   >
     <div
       class="c1"
+      role="group"
     >
       <div
         class="c2"
-        role="group"
       >
         <button
           aria-checked="false"
@@ -170,14 +170,12 @@ exports[`ToggleButtonGroup defaultValue 1`] = `
           role="radio"
           tabindex="0"
           type="button"
-          value="one"
         >
           one
         </button>
       </div>
       <div
         class="c5"
-        role="group"
       >
         <button
           aria-checked="false"
@@ -186,7 +184,6 @@ exports[`ToggleButtonGroup defaultValue 1`] = `
           role="radio"
           tabindex="-1"
           type="button"
-          value="two"
         >
           two
         </button>
@@ -399,10 +396,10 @@ exports[`ToggleButtonGroup icon with values 1`] = `
   >
     <div
       class="c1"
+      role="group"
     >
       <div
         class="c2"
-        role="group"
       >
         <button
           aria-checked="false"
@@ -411,7 +408,6 @@ exports[`ToggleButtonGroup icon with values 1`] = `
           role="radio"
           tabindex="0"
           type="button"
-          value="one"
         >
           <svg
             aria-label="Add"
@@ -429,7 +425,6 @@ exports[`ToggleButtonGroup icon with values 1`] = `
       </div>
       <div
         class="c6"
-        role="group"
       >
         <button
           aria-checked="false"
@@ -438,7 +433,6 @@ exports[`ToggleButtonGroup icon with values 1`] = `
           role="radio"
           tabindex="-1"
           type="button"
-          value="two"
         >
           <svg
             aria-label="Add"
@@ -616,10 +610,10 @@ exports[`ToggleButtonGroup object options 1`] = `
 >
   <div
     class="c1"
+    role="group"
   >
     <div
       class="c2"
-      role="group"
     >
       <button
         aria-checked="false"
@@ -628,14 +622,12 @@ exports[`ToggleButtonGroup object options 1`] = `
         role="radio"
         tabindex="0"
         type="button"
-        value="one"
       >
         One
       </button>
     </div>
     <div
       class="c5"
-      role="group"
     >
       <button
         aria-checked="false"
@@ -644,7 +636,6 @@ exports[`ToggleButtonGroup object options 1`] = `
         role="radio"
         tabindex="-1"
         type="button"
-        value="two"
       >
         Two
       </button>
@@ -810,10 +801,10 @@ exports[`ToggleButtonGroup should have no accessibility violations 1`] = `
 >
   <div
     class="c1"
+    role="group"
   >
     <div
       class="c2"
-      role="group"
     >
       <button
         aria-checked="false"
@@ -822,14 +813,12 @@ exports[`ToggleButtonGroup should have no accessibility violations 1`] = `
         role="radio"
         tabindex="0"
         type="button"
-        value="Option 1"
       >
         Option 1
       </button>
     </div>
     <div
       class="c2"
-      role="group"
     >
       <button
         aria-checked="false"
@@ -838,14 +827,12 @@ exports[`ToggleButtonGroup should have no accessibility violations 1`] = `
         role="radio"
         tabindex="-1"
         type="button"
-        value="Option 2"
       >
         Option 2
       </button>
     </div>
     <div
       class="c5"
-      role="group"
     >
       <button
         aria-checked="false"
@@ -854,7 +841,6 @@ exports[`ToggleButtonGroup should have no accessibility violations 1`] = `
         role="radio"
         tabindex="-1"
         type="button"
-        value="Option 3"
       >
         Option 3
       </button>
@@ -1093,10 +1079,10 @@ exports[`ToggleButtonGroup string options 1`] = `
 >
   <div
     class="c1"
+    role="group"
   >
     <div
       class="c2"
-      role="group"
     >
       <button
         aria-checked="true"
@@ -1105,14 +1091,12 @@ exports[`ToggleButtonGroup string options 1`] = `
         role="radio"
         tabindex="0"
         type="button"
-        value="one"
       >
         one
       </button>
     </div>
     <div
       class="c5"
-      role="group"
     >
       <button
         aria-checked="false"
@@ -1121,7 +1105,6 @@ exports[`ToggleButtonGroup string options 1`] = `
         role="radio"
         tabindex="-1"
         type="button"
-        value="two"
       >
         two
       </button>
@@ -1287,10 +1270,10 @@ exports[`ToggleButtonGroup toggleButtonGroup theme values 1`] = `
 >
   <div
     class="c1"
+    role="group"
   >
     <div
       class="c2"
-      role="group"
     >
       <button
         aria-checked="false"
@@ -1299,14 +1282,12 @@ exports[`ToggleButtonGroup toggleButtonGroup theme values 1`] = `
         role="radio"
         tabindex="0"
         type="button"
-        value="one"
       >
         one
       </button>
     </div>
     <div
       class="c5"
-      role="group"
     >
       <button
         aria-checked="false"
@@ -1315,7 +1296,6 @@ exports[`ToggleButtonGroup toggleButtonGroup theme values 1`] = `
         role="radio"
         tabindex="-1"
         type="button"
-        value="two"
       >
         two
       </button>

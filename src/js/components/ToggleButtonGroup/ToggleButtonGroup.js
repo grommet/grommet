@@ -16,16 +16,15 @@ const StyledButton = styled(Button)`
 `;
 
 const ToggleButtonGroup = ({
-  focusIndicator = true,
   multiple,
-  name,
+  name: nameProp,
   options,
   onChange,
   value: valueProp,
   ...rest
 }) => {
-  const [value, setValue] = useState([]);
-  const [valueIndex, setValueIndex] = useState(0);
+  const [value, setValue] = useState(valueProp || []);
+  const [valueIndex, setValueIndex] = useState(null);
   const theme = useContext(ThemeContext);
 
   const buttonRefs = useRef([]);
@@ -83,6 +82,7 @@ const ToggleButtonGroup = ({
         direction="row"
         alignSelf="start"
         border
+        role="group"
         {...theme.toggleButtonGroup.container}
         {...rest}
       >
@@ -105,9 +105,6 @@ const ToggleButtonGroup = ({
 
           return (
             <Box
-              key={id || optionValue || index}
-              role="group"
-              focusIndicator={focusIndicator}
               border={
                 flatOptions.indexOf(icon || label || optionValue) <
                 flatOptions.length - 1
@@ -117,23 +114,27 @@ const ToggleButtonGroup = ({
                     }
                   : undefined
               }
+              key={id || optionValue || index}
             >
               <StyledButton
-                role="radio"
-                pad="small"
+                active={isActive}
                 aria-checked={isActive}
-                kind={theme.toggleButtonGroup.button}
-                tabIndex={index === valueIndex ? '0' : '-1'}
-                name={name}
                 icon={icon}
+                kind={theme.toggleButtonGroup.button}
                 label={label}
+                name={nameProp}
                 onChange={onChange}
                 onClick={() => handleToggle(optionValue)}
-                active={isActive}
-                value={optionValue}
+                pad="small"
                 ref={(r) => {
                   buttonRefs.current[index] = r;
                 }}
+                role={!multiple ? 'radio' : undefined}
+                tabIndex={
+                  index === valueIndex || (valueIndex === null && index === 0)
+                    ? '0'
+                    : '-1'
+                }
               />
             </Box>
           );

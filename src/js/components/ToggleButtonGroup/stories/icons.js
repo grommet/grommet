@@ -18,14 +18,14 @@ const optionsIcons = [
 ];
 
 export const Icons = () => {
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState('list');
 
   const handleToggleIcons = (option) => {
     setSelectedValue(option);
   };
 
   return (
-    <Box fill align="center" alignSelf="start" pad="large">
+    <Box pad="large">
       <ToggleButtonGroup
         options={optionsIcons}
         onChange={handleToggleIcons}
