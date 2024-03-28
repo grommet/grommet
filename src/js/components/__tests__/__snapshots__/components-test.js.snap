@@ -2718,6 +2718,28 @@ exports[`Components loads 1`] = `
             "margin": "none",
           },
         },
+        "toggleButtonGroup": {
+          "border": {
+            "color": "border",
+          },
+          "button": {
+            "active": {
+              "background": {
+                "color": "active-background",
+              },
+            },
+            "color": "text-strong",
+            "hover": {
+              "background": {
+                "color": "background-contrast",
+              },
+              "color": undefined,
+            },
+          },
+          "container": {
+            "round": "xsmall",
+          },
+        },
         "video": {
           "captions": {
             "background": "rgba(0, 0, 0, 0.7)",
@@ -4711,6 +4733,28 @@ exports[`Components loads 1`] = `
             "margin": "none",
           },
         },
+        "toggleButtonGroup": {
+          "border": {
+            "color": "border",
+          },
+          "button": {
+            "active": {
+              "background": {
+                "color": "active-background",
+              },
+            },
+            "color": "text-strong",
+            "hover": {
+              "background": {
+                "color": "background-contrast",
+              },
+              "color": undefined,
+            },
+          },
+          "container": {
+            "round": "xsmall",
+          },
+        },
         "video": {
           "captions": {
             "background": "rgba(0, 0, 0, 0.7)",
@@ -5036,6 +5080,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "ToggleButtonGroup": [Function],
   "Toolbar": [Function],
   "Video": {
     "$$typeof": Symbol(react.forward_ref),

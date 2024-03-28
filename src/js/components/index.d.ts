@@ -88,6 +88,7 @@ export * from './TextArea';
 export * from './TextInput';
 export * from './ThumbsRating';
 export * from './Tip';
+export * from './ToggleButtonGroup';
 export * from './Toolbar';
 export * from './Video';
 export * from './WorldMap';

@@ -1935,6 +1935,28 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: 'none',
       },
     },
+    toggleButtonGroup: {
+      button: {
+        active: {
+          background: {
+            color: 'active-background',
+          },
+        },
+        color: 'text-strong',
+        hover: {
+          background: {
+            color: 'background-contrast',
+          },
+          color: undefined,
+        },
+      },
+      container: {
+        round: 'xsmall',
+      },
+      border: {
+        color: 'border',
+      },
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',
