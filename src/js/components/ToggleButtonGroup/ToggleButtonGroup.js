@@ -3,21 +3,31 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { edgeStyle } from '../../utils/styles';
+import { edgeStyle, normalizeColor } from '../../utils';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
 const StyledButton = styled(Button)`
-  border-radius: ${(props) => props.theme.global.control.border.radius};
   ${(props) =>
     !props.theme.button.default
       ? edgeStyle('padding', props.pad, false, undefined, props.theme)
       : ''}
+  border-radius: ${(props) => props.theme.global.control.border.radius};
+  border: none;
+  color: ${(props) =>
+    normalizeColor(props.theme.toggleButtonGroup.button.color, props.theme)};
+  &:hover {
+    box-shadow: none;
+    background: ${(props) =>
+      normalizeColor(
+        props.theme.global.colors['background-contrast'],
+        props.theme,
+      )};
+  }
 `;
 
 const ToggleButtonGroup = ({
   multiple,
-  name: nameProp,
   options,
   onChange,
   value: valueProp,
@@ -80,8 +90,6 @@ const ToggleButtonGroup = ({
     >
       <Box
         direction="row"
-        alignSelf="start"
-        border
         role="group"
         {...theme.toggleButtonGroup.container}
         {...rest}
@@ -110,7 +118,7 @@ const ToggleButtonGroup = ({
                 flatOptions.length - 1
                   ? {
                       side: 'right',
-                      color: theme.toggleButtonGroup.border.color,
+                      color: theme.toggleButtonGroup.divider.color,
                     }
                   : undefined
               }
@@ -120,10 +128,7 @@ const ToggleButtonGroup = ({
                 active={isActive}
                 aria-checked={isActive}
                 icon={icon}
-                kind={theme.toggleButtonGroup.button}
                 label={label}
-                name={nameProp}
-                onChange={onChange}
                 onClick={() => handleToggle(optionValue)}
                 pad="small"
                 ref={(r) => {

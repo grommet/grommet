@@ -13,10 +13,7 @@ describe('ToggleButtonGroup', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <ToggleButtonGroup
-          name="test"
-          options={['Option 1', 'Option 2', 'Option 3']}
-        />
+        <ToggleButtonGroup options={['Option 1', 'Option 2', 'Option 3']} />
       </Grommet>,
     );
     const results = await axe(container);
@@ -27,7 +24,7 @@ describe('ToggleButtonGroup', () => {
   test('string options', () => {
     const { container } = render(
       <Grommet>
-        <ToggleButtonGroup name="test" options={['one', 'two']} value="one" />
+        <ToggleButtonGroup options={['one', 'two']} value="one" />
       </Grommet>,
     );
 
@@ -38,7 +35,6 @@ describe('ToggleButtonGroup', () => {
     const { container } = render(
       <Grommet>
         <ToggleButtonGroup
-          name="test"
           options={[
             { id: 'onE', label: 'One', value: 'one' },
             { id: 'twO', label: 'Two', value: 'two' },
@@ -54,7 +50,6 @@ describe('ToggleButtonGroup', () => {
     const { container } = render(
       <Grommet>
         <ToggleButtonGroup
-          name="test"
           options={[
             { icon: <Add />, value: 'one' },
             { icon: <Add />, value: 'two' },
@@ -84,7 +79,7 @@ describe('ToggleButtonGroup', () => {
           },
         }}
       >
-        <ToggleButtonGroup name="test" options={['one', 'two']} />
+        <ToggleButtonGroup options={['one', 'two']} />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();

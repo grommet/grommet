@@ -2717,25 +2717,16 @@ exports[`Components loads 1`] = `
           },
         },
         "toggleButtonGroup": {
-          "border": {
-            "color": "border",
-          },
           "button": {
-            "active": {
-              "background": {
-                "color": "active-background",
-              },
-            },
             "color": "text-strong",
-            "hover": {
-              "background": {
-                "color": "background-contrast",
-              },
-              "color": undefined,
-            },
           },
           "container": {
+            "alignSelf": "start",
+            "border": true,
             "round": "xsmall",
+          },
+          "divider": {
+            "color": "border",
           },
         },
         "video": {
@@ -4732,25 +4723,16 @@ exports[`Components loads 1`] = `
           },
         },
         "toggleButtonGroup": {
-          "border": {
-            "color": "border",
-          },
           "button": {
-            "active": {
-              "background": {
-                "color": "active-background",
-              },
-            },
             "color": "text-strong",
-            "hover": {
-              "background": {
-                "color": "background-contrast",
-              },
-              "color": undefined,
-            },
           },
           "container": {
+            "alignSelf": "start",
+            "border": true,
             "round": "xsmall",
+          },
+          "divider": {
+            "color": "border",
           },
         },
         "video": {

@@ -1936,23 +1936,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     toggleButtonGroup: {
       button: {
-        active: {
-          background: {
-            color: 'active-background',
-          },
-        },
         color: 'text-strong',
-        hover: {
-          background: {
-            color: 'background-contrast',
-          },
-          color: undefined,
-        },
       },
       container: {
         round: 'xsmall',
+        alignSelf: 'start',
+        border: true,
       },
-      border: {
+      divider: {
         color: 'border',
       },
     },
