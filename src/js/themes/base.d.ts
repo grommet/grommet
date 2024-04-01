@@ -1470,7 +1470,7 @@ export interface ThemeType {
   selectMultiple?: {
     maxInline?: number;
   };
-  skeleton?: BoxProps & { colors?: SkeletonColorsType };
+  skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
     position?: LayerPositionType;
     container?: BoxProps;
