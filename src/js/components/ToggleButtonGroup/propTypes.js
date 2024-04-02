@@ -9,7 +9,6 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.arrayOf(
         PropTypes.shape({
-          id: PropTypes.string,
           label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
           value: PropTypes.oneOfType([PropTypes.string]),
         }),
