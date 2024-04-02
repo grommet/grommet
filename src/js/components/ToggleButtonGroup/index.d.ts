@@ -3,20 +3,18 @@ import { BoxProps } from '../Box/index';
 
 export interface ToggleButtonGroupProps {
   multiple?: boolean;
+  // may need to change onChange TODO
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   options: (
     | string
-    | number
-    | boolean
     | {
-        disabled?: boolean;
-        icon?: React.ReactNode;
+        icon?: React.ReactNode | JSX.Element;
         id?: string;
         label?: string | React.ReactNode;
-        value: string | number | boolean;
+        value: string;
       }
   )[];
-  value?: string | number | object;
+  value?: string | [];
 }
 
 export interface ToggleButtonGroupExtendedProps

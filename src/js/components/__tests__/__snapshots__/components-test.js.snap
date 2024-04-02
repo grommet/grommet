@@ -2721,7 +2721,6 @@ exports[`Components loads 1`] = `
             "color": "text-strong",
           },
           "container": {
-            "alignSelf": "start",
             "border": true,
             "round": "xsmall",
           },
@@ -4727,7 +4726,6 @@ exports[`Components loads 1`] = `
             "color": "text-strong",
           },
           "container": {
-            "alignSelf": "start",
             "border": true,
             "round": "xsmall",
           },

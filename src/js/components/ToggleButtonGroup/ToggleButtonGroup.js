@@ -1,21 +1,18 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useCallback, useContext, useState, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { edgeStyle, normalizeColor } from '../../utils';
+import { roundStyle } from '../../utils/styles';
+import { normalizeColor } from '../../utils';
+import { ToggleButtonGroupPropTypes } from './propTypes';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
 const StyledButton = styled(Button)`
-  ${(props) =>
-    !props.theme.button.default
-      ? edgeStyle('padding', props.pad, false, undefined, props.theme)
-      : ''}
+  ${(props) => roundStyle(props.round, true, props.theme)};
   border-radius: ${(props) => props.theme.global.control.border.radius};
   border: none;
-  color: ${(props) =>
-    normalizeColor(props.theme.toggleButtonGroup.button.color, props.theme)};
   &:hover {
     box-shadow: none;
     background: ${(props) =>
@@ -23,63 +20,101 @@ const StyledButton = styled(Button)`
         props.theme.global.colors['background-contrast'],
         props.theme,
       )};
+    color: ${(props) =>
+      normalizeColor(props.theme.toggleButtonGroup.button.color, props.theme)};
   }
 `;
 
+const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
+  const [uncontrolledProp, setUncontrolledProp] = useState(defaultProp);
+  const controlled = prop !== undefined;
+  const value = controlled ? prop : uncontrolledProp;
+  const handleChange = useCallback(onChange, [onChange]);
+
+  const setValue = useCallback(
+    (nextValue) => {
+      // only update internal value in uncontrolled cases
+      if (!controlled) {
+        setUncontrolledProp(nextValue);
+      }
+      handleChange(nextValue);
+    },
+    [controlled, setUncontrolledProp, handleChange],
+  );
+
+  return [value, setValue];
+};
+
 const ToggleButtonGroup = ({
+  defaultValue,
   multiple,
   options,
   onChange,
   value: valueProp,
   ...rest
 }) => {
-  const [value, setValue] = useState(valueProp || []);
-  const [valueIndex, setValueIndex] = useState(null);
+  const [value = multiple ? [] : '', setValue] = useControlled({
+    prop: valueProp,
+    defaultProp: defaultValue,
+    onChange,
+  });
   const theme = useContext(ThemeContext);
-
+  const ref = useRef();
   const buttonRefs = useRef([]);
 
-  useEffect(() => {
-    if (buttonRefs.current && buttonRefs.current[valueIndex]) {
-      buttonRefs.current[valueIndex].focus();
-    }
-  }, [valueIndex]);
+  const values = options.map((option) =>
+    typeof option === 'object' ? option.value : option,
+  );
 
-  const onNext = () => {
-    if (valueIndex !== undefined && valueIndex < options.length - 1) {
-      const nextIndex = valueIndex + 1;
-      setValueIndex(nextIndex);
+  const getFocusableIndex = useCallback(() => {
+    let defaultIndex = 0;
+    if (value.length) {
+      // set earliest button that's part of value to active
+      // assume that value might not be ordered the same as options
+      defaultIndex = values.indexOf(
+        values.find((option) => value.includes(option)),
+      );
     }
+    return defaultIndex;
+  }, [value, values]);
+
+  const [focusableIndex, setFocusableIndex] = useState(() =>
+    getFocusableIndex(),
+  );
+
+  const onNext = (e) => {
+    // prevent page scroll
+    e.preventDefault();
+    const nextIndex =
+      focusableIndex + 1 <= options.length - 1 ? focusableIndex + 1 : 0;
+    setFocusableIndex(nextIndex);
+    buttonRefs.current[nextIndex].focus();
   };
 
-  const onPrevious = () => {
-    if (valueIndex > 0) {
-      const nextIndex = valueIndex - 1;
-      setValueIndex(nextIndex);
-    }
+  const onPrevious = (e) => {
+    // prevent page scroll
+    e.preventDefault();
+    const nextIndex =
+      focusableIndex - 1 >= 0 ? focusableIndex - 1 : options.length - 1;
+    setFocusableIndex(nextIndex);
+    buttonRefs.current[nextIndex].focus();
   };
 
-  const handleToggle = (option) => {
-    if (!multiple) {
-      setValue([option]);
-      if (onChange) {
-        onChange([option]);
+  const handleToggle = (option, active) => {
+    let nextValue;
+    if (multiple) {
+      if (Array.isArray(value)) {
+        nextValue = active
+          ? value.filter((item) => item !== option)
+          : [...value, option];
+      } else {
+        nextValue = active ? [] : [option];
       }
     } else {
-      const newSelectedOptions = value.includes(option)
-        ? value.filter((item) => item !== option)
-        : [...value, option];
-
-      setValue(newSelectedOptions);
-      if (onChange) {
-        onChange(newSelectedOptions);
-      }
+      nextValue = active ? '' : option;
     }
+    setValue(nextValue);
   };
-
-  const flatOptions = options.map((option) =>
-    typeof option === 'object' ? option.label || option.icon : option,
-  );
 
   return (
     <Keyboard
@@ -89,57 +124,68 @@ const ToggleButtonGroup = ({
       onRight={onNext}
     >
       <Box
+        ref={ref}
         direction="row"
+        alignSelf="start"
         role="group"
+        onBlur={(e) => {
+          if (!ref?.current.contains(e.relatedTarget)) {
+            setFocusableIndex(getFocusableIndex());
+          }
+        }}
         {...theme.toggleButtonGroup.container}
         {...rest}
       >
         {options.map((option, index) => {
-          const id = typeof option === 'object' ? option.id : null;
           let label;
+          let icon;
+          let optionValue;
           if (typeof option === 'object') {
+            icon = option.icon;
             label = option.label;
-          } else label = option;
-          const optionValue =
-            typeof option === 'object' ? option.value : option;
-          const icon = typeof option === 'object' ? option.icon : null;
-
-          let isActive;
-          if (valueProp === undefined) {
-            isActive = !!value.includes(optionValue);
-          } else if (valueProp !== undefined)
-            isActive = !!valueProp.includes(optionValue);
-          else isActive = false;
-
+            optionValue = option.value;
+          } else {
+            label = option;
+            optionValue = option;
+          }
+          const active = Array.isArray(value)
+            ? !!value.includes(optionValue)
+            : value === optionValue;
+          let round = 0;
+          // round corners of first and last buttons to match container
+          if (
+            typeof theme.toggleButtonGroup.container.round === 'string' &&
+            (index === 0 || index === options.length - 1)
+          ) {
+            round = {
+              corner: index === 0 ? 'left' : 'right',
+              size: theme.toggleButtonGroup.container.round,
+            };
+          }
           return (
             <Box
               border={
-                flatOptions.indexOf(icon || label || optionValue) <
-                flatOptions.length - 1
+                index < options.length - 1
                   ? {
                       side: 'right',
                       color: theme.toggleButtonGroup.divider.color,
                     }
                   : undefined
               }
-              key={id || optionValue || index}
+              key={optionValue || index}
             >
               <StyledButton
-                active={isActive}
-                aria-checked={isActive}
+                active={active}
+                aria-checked={active}
                 icon={icon}
                 label={label}
-                onClick={() => handleToggle(optionValue)}
-                pad="small"
+                onClick={() => handleToggle(optionValue, active)}
                 ref={(r) => {
                   buttonRefs.current[index] = r;
                 }}
                 role={!multiple ? 'radio' : undefined}
-                tabIndex={
-                  index === valueIndex || (valueIndex === null && index === 0)
-                    ? '0'
-                    : '-1'
-                }
+                round={round}
+                tabIndex={index === focusableIndex ? '0' : '-1'}
               />
             </Box>
           );
@@ -150,6 +196,6 @@ const ToggleButtonGroup = ({
 };
 
 ToggleButtonGroup.displayName = 'ToggleButtonGroup';
-// ToggleButtonGroup.propTypes = ToggleButtonGroupPropTypes;
+ToggleButtonGroup.propTypes = ToggleButtonGroupPropTypes;
 
 export { ToggleButtonGroup };

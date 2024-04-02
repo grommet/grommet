@@ -1940,7 +1940,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       container: {
         round: 'xsmall',
-        alignSelf: 'start',
         border: true,
       },
       divider: {

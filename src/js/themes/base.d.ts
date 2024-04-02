@@ -1718,9 +1718,11 @@ export interface ThemeType {
     drop?: DropProps;
   };
   toggleButtonGroup?: {
-    button?: ButtonType | string;
+    button?: {
+      color?: ColorType;
+    };
     container?: BoxProps;
-    border?: {
+    divider?: {
       color?: ColorType;
     };
   };

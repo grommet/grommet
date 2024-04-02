@@ -7,21 +7,18 @@ if (process.env.NODE_ENV !== 'production') {
     onChange: PropTypes.func,
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
-      PropTypes.arrayOf(PropTypes.number),
-      PropTypes.arrayOf(PropTypes.bool),
       PropTypes.arrayOf(
         PropTypes.shape({
-          disabled: PropTypes.bool,
           id: PropTypes.string,
           label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-          value: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number,
-            PropTypes.bool,
-          ]).isRequired,
+          value: PropTypes.oneOfType([PropTypes.string]),
         }),
       ),
     ]).isRequired,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
   };
 }
 export const ToggleButtonGroupPropTypes = PropType;
