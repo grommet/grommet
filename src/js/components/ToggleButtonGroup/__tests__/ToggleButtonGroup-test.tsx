@@ -247,7 +247,7 @@ describe('ToggleButtonGroup', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('string options with multiple prop', () => {
+  test('should render string options with multiple prop', () => {
     const { container } = render(
       <Grommet>
         <ToggleButtonGroup multiple options={['one', 'two']} />
