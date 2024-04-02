@@ -263,7 +263,7 @@ describe('ToggleButtonGroup', () => {
         <ToggleButtonGroup
           multiple
           options={[
-            { id: 'onE', label: 'One', value: 'one' },
+            {  label: 'One', value: 'one' },
             { id: 'twO', label: 'Two', value: 'two' },
           ]}
         />
