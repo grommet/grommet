@@ -38,4 +38,5 @@ export const StyledSkeleton = styled.div`
     )}
   ${(props) =>
     props.round && roundStyle(props.round, props.responsive, props.theme)}
+  ${(props) => props.theme?.skeleton?.extend}
 `;

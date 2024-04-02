@@ -1816,6 +1816,10 @@ exports[`DataFilters layer 2`] = `
   position: absolute;
 }
 
+.c3:focus {
+  outline: none;
+}
+
 @media only screen and (max-width:768px) {
 
 }
@@ -3889,6 +3893,26 @@ exports[`DataFilters should display all filter options regardless of result set 
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) > circle,
+.c17:focus:not(:focus-visible) > ellipse,
+.c17:focus:not(:focus-visible) > line,
+.c17:focus:not(:focus-visible) > path,
+.c17:focus:not(:focus-visible) > polygon,
+.c17:focus:not(:focus-visible) > polyline,
+.c17:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
 }
 
 .c19:focus {

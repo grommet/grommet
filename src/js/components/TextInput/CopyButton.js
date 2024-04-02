@@ -29,12 +29,14 @@ export const CopyButton = ({
       <StyledButton
         onClick={onClickCopy}
         icon={<Copy />}
-        // only apply horizontal padding since button will
-        // fill height of input
         pad={{
           horizontal: theme.global.input.padding?.horizontal,
           left: theme.global.input.padding?.left,
           right: theme.global.input.padding?.right,
+          // only apply horizontal padding since button will
+          // fill height of input
+          top: '0',
+          bottom: '0',
         }}
         onBlur={onBlurCopy}
         onMouseOut={onBlurCopy}

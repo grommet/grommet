@@ -1725,6 +1725,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         dark: ['background', 'background-front'],
         light: ['background', 'background-back'],
       },
+      // extend: undefined,
     },
     skipLinks: {
       position: 'top',
