@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToggleButtonGroup Should call onChange in uncontrolled scenarios 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -199,57 +200,59 @@ exports[`ToggleButtonGroup Should call onChange in uncontrolled scenarios 1`] = 
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        role="radio"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c2"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c5"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          role="radio"
+          tabindex="0"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c2"
       >
-        two
-      </button>
-    </div>
-    <div
-      class="c6"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c7"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c5"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
+      <div
+        class="c6"
       >
-        three
-      </button>
+        <button
+          aria-checked="false"
+          class="c3 c7"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          three
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup Should call onChange in uncontrolled scenarios with multiple prop 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -447,54 +450,56 @@ exports[`ToggleButtonGroup Should call onChange in uncontrolled scenarios with m
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c2"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c5"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          tabindex="0"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c2"
       >
-        two
-      </button>
-    </div>
-    <div
-      class="c6"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c7"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c5"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
+      <div
+        class="c6"
       >
-        three
-      </button>
+        <button
+          aria-checked="false"
+          class="c3 c7"
+          tabindex="-1"
+          type="button"
+        >
+          three
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup Should put tab focus on active button when value 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -759,57 +764,59 @@ exports[`ToggleButtonGroup Should put tab focus on active button when value 1`] 
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        role="radio"
-        tabindex="-1"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c2"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c5"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c2"
       >
-        two
-      </button>
-    </div>
-    <div
-      class="c6"
-    >
-      <button
-        aria-checked="true"
-        class="c7 c8"
-        role="radio"
-        tabindex="0"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c5"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
+      <div
+        class="c6"
       >
-        three
-      </button>
+        <button
+          aria-checked="true"
+          class="c7 c8"
+          role="radio"
+          tabindex="0"
+          type="button"
+        >
+          three
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup Should put tab focus on active button when value with multiple prop 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -853,7 +860,7 @@ exports[`ToggleButtonGroup Should put tab focus on active button when value with
   flex-direction: column;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -936,7 +943,7 @@ exports[`ToggleButtonGroup Should put tab focus on active button when value with
   border: 0;
 }
 
-.c7 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -963,43 +970,114 @@ exports[`ToggleButtonGroup Should put tab focus on active button when value with
   transition-timing-function: ease-in-out;
 }
 
-.c7:focus {
+.c8:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c8:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1016,26 +1094,26 @@ exports[`ToggleButtonGroup Should put tab focus on active button when value with
   color: #000000;
 }
 
-.c5 {
+.c6 {
   border-radius: 0;
   border-radius: 4px;
   border: none;
 }
 
-.c5:hover {
+.c6:hover {
   box-shadow: none;
   background: #33333310;
   color: #000000;
 }
 
-.c8 {
+.c9 {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   border-radius: 4px;
   border: none;
 }
 
-.c8:hover {
+.c9:hover {
   box-shadow: none;
   background: #33333310;
   color: #000000;
@@ -1067,61 +1145,63 @@ exports[`ToggleButtonGroup Should put tab focus on active button when value with
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        tabindex="-1"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c2"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c5"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          tabindex="-1"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c2"
       >
-        two
-      </button>
-    </div>
-    <div
-      class="c6"
-    >
-      <button
-        aria-checked="true"
-        class="c7 c8"
-        tabindex="0"
-        type="button"
+        <button
+          aria-checked="true"
+          class="c5 c6"
+          tabindex="0"
+          type="button"
+        >
+          two
+        </button>
+      </div>
+      <div
+        class="c7"
       >
-        three
-      </button>
+        <button
+          aria-checked="true"
+          class="c8 c9"
+          tabindex="-1"
+          type="button"
+        >
+          three
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup Should put tab focus on first button when no value 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1384,57 +1464,59 @@ exports[`ToggleButtonGroup Should put tab focus on first button when no value 1`
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        role="radio"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c2"
-    >
-      <button
-        aria-checked="false"
-        class="c5 c6"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          role="radio"
+          tabindex="0"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c2"
       >
-        two
-      </button>
-    </div>
-    <div
-      class="c7"
-    >
-      <button
-        aria-checked="false"
-        class="c5 c8"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c5 c6"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
+      <div
+        class="c7"
       >
-        three
-      </button>
+        <button
+          aria-checked="false"
+          class="c5 c8"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          three
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup Should put tab focus on first button when no value with multiple prop 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1697,54 +1779,56 @@ exports[`ToggleButtonGroup Should put tab focus on first button when no value wi
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c2"
-    >
-      <button
-        aria-checked="false"
-        class="c5 c6"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          tabindex="0"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c2"
       >
-        two
-      </button>
-    </div>
-    <div
-      class="c7"
-    >
-      <button
-        aria-checked="false"
-        class="c5 c8"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c5 c6"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
+      <div
+        class="c7"
       >
-        three
-      </button>
+        <button
+          aria-checked="false"
+          class="c5 c8"
+          tabindex="-1"
+          type="button"
+        >
+          three
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup Should render when options is array of objects with multiple prop 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1930,42 +2014,44 @@ exports[`ToggleButtonGroup Should render when options is array of objects with m
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        One
-      </button>
-    </div>
-    <div
-      class="c5"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c6"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          tabindex="0"
+          type="button"
+        >
+          One
+        </button>
+      </div>
+      <div
+        class="c5"
       >
-        Two
-      </button>
+        <button
+          aria-checked="false"
+          class="c3 c6"
+          tabindex="-1"
+          type="button"
+        >
+          Two
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup icon with values 1`] = `
-.c5 {
+<DocumentFragment>
+  .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2237,8 +2323,7 @@ exports[`ToggleButtonGroup icon with values 1`] = `
   }
 }
 
-<div>
-  <div
+<div
     class="c0"
   >
     <div
@@ -2280,12 +2365,12 @@ exports[`ToggleButtonGroup icon with values 1`] = `
           type="button"
         >
           <svg
-            aria-label="Add"
+            aria-label="Subtract"
             class="c5"
             viewBox="0 0 24 24"
           >
             <path
-              d="M12 22V2M2 12h20"
+              d="M2 12h20"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -2295,11 +2380,12 @@ exports[`ToggleButtonGroup icon with values 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup object options 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2485,44 +2571,46 @@ exports[`ToggleButtonGroup object options 1`] = `
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        role="radio"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        One
-      </button>
-    </div>
-    <div
-      class="c5"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c6"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          role="radio"
+          tabindex="0"
+          type="button"
+        >
+          One
+        </button>
+      </div>
+      <div
+        class="c5"
       >
-        Two
-      </button>
+        <button
+          aria-checked="false"
+          class="c3 c6"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          Two
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup should have no accessibility violations 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2720,57 +2808,59 @@ exports[`ToggleButtonGroup should have no accessibility violations 1`] = `
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        role="radio"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        Option 1
-      </button>
-    </div>
-    <div
-      class="c2"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c5"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          role="radio"
+          tabindex="0"
+          type="button"
+        >
+          Option 1
+        </button>
+      </div>
+      <div
+        class="c2"
       >
-        Option 2
-      </button>
-    </div>
-    <div
-      class="c6"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c7"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c5"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          Option 2
+        </button>
+      </div>
+      <div
+        class="c6"
       >
-        Option 3
-      </button>
+        <button
+          aria-checked="false"
+          class="c3 c7"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          Option 3
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup string options 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2956,44 +3046,46 @@ exports[`ToggleButtonGroup string options 1`] = `
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        role="radio"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c5"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c6"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          role="radio"
+          tabindex="0"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c5"
       >
-        two
-      </button>
+        <button
+          aria-checked="false"
+          class="c3 c6"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup string options with multiple prop 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3179,42 +3271,44 @@ exports[`ToggleButtonGroup string options with multiple prop 1`] = `
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c5"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c6"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          tabindex="0"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c5"
       >
-        two
-      </button>
+        <button
+          aria-checked="false"
+          class="c3 c6"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ToggleButtonGroup toggleButtonGroup theme values 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3400,38 +3494,39 @@ exports[`ToggleButtonGroup toggleButtonGroup theme values 1`] = `
 }
 
 <div
-  class="c0"
->
-  <div
-    class="c1"
-    role="group"
+    class="c0"
   >
     <div
-      class="c2"
+      class="c1"
+      role="group"
     >
-      <button
-        aria-checked="false"
-        class="c3 c4"
-        role="radio"
-        tabindex="0"
-        type="button"
+      <div
+        class="c2"
       >
-        one
-      </button>
-    </div>
-    <div
-      class="c5"
-    >
-      <button
-        aria-checked="false"
-        class="c3 c6"
-        role="radio"
-        tabindex="-1"
-        type="button"
+        <button
+          aria-checked="false"
+          class="c3 c4"
+          role="radio"
+          tabindex="0"
+          type="button"
+        >
+          one
+        </button>
+      </div>
+      <div
+        class="c5"
       >
-        two
-      </button>
+        <button
+          aria-checked="false"
+          class="c3 c6"
+          role="radio"
+          tabindex="-1"
+          type="button"
+        >
+          two
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

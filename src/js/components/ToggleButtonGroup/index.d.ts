@@ -3,6 +3,7 @@ import { BoxProps } from '../Box/index';
 
 export interface ToggleButtonGroupProps {
   multiple?: boolean;
+  defaultValue?: string | string[];
   // may need to change onChange TODO
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   options: (
@@ -20,7 +21,10 @@ export interface ToggleButtonGroupProps {
 export interface ToggleButtonGroupExtendedProps
   extends ToggleButtonGroupProps,
     BoxProps,
-    Omit<JSX.IntrinsicElements['div'], 'children' | 'onClick' | 'onChange'> {}
+    Omit<
+      JSX.IntrinsicElements['div'],
+      'children' | 'onClick' | 'onChange' | 'defaultValue'
+    > {}
 
 declare const ToggleButtonGroup: React.FC<ToggleButtonGroupExtendedProps>;
 

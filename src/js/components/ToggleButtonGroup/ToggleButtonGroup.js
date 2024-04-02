@@ -9,6 +9,7 @@ import { ToggleButtonGroupPropTypes } from './propTypes';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
+// get pad from theme then minus border
 const StyledButton = styled(Button)`
   ${(props) => roundStyle(props.round, true, props.theme)};
   border-radius: ${(props) => props.theme.global.control.border.radius};

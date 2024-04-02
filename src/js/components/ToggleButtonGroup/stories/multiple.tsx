@@ -8,5 +8,5 @@ export const Multiple = () => (
 );
 
 export default {
-  title: 'Input/ToggleButtonGroup/Multiple',
+  title: 'Controls/ToggleButtonGroup/Multiple',
 };

@@ -9,33 +9,33 @@ import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
-import { Add } from 'grommet-icons';
+import { Add, Subtract } from 'grommet-icons';
 import { ToggleButtonGroup } from '..';
 
 describe('ToggleButtonGroup', () => {
   test('should have no accessibility violations', async () => {
-    const { container } = render(
+    const { container, asFragment } = render(
       <Grommet>
         <ToggleButtonGroup options={['Option 1', 'Option 2', 'Option 3']} />
       </Grommet>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('string options', () => {
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup options={['one', 'two']} />
       </Grommet>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('object options', () => {
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup
           options={[
@@ -45,8 +45,7 @@ describe('ToggleButtonGroup', () => {
         />
       </Grommet>,
     );
-
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Should render defaultValue as active when options is array of strings', () => {
@@ -88,7 +87,7 @@ describe('ToggleButtonGroup', () => {
   test('Should put tab focus on first button when no value', async () => {
     const user = userEvent.setup();
 
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup options={['one', 'two', 'three']} />
       </Grommet>,
@@ -112,13 +111,13 @@ describe('ToggleButtonGroup', () => {
         modifier: ':focus',
       },
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Should put tab focus on active button when value', async () => {
     const user = userEvent.setup();
 
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup
           options={['one', 'two', 'three']}
@@ -145,10 +144,10 @@ describe('ToggleButtonGroup', () => {
         modifier: ':focus',
       },
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Should allow caller to clear all values in controlled scenarios', () => {
+  test('should allow caller to enforce a value in controlled scenarios', () => {
     render(
       <Grommet>
         <ToggleButtonGroup options={['one', 'two', 'three']} />
@@ -172,7 +171,7 @@ describe('ToggleButtonGroup', () => {
 
   test('Should call onChange in uncontrolled scenarios', () => {
     const onChange = jest.fn();
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup
           options={['one', 'two', 'three']}
@@ -180,7 +179,7 @@ describe('ToggleButtonGroup', () => {
         />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
     // Simulate a click event on the radio button
     fireEvent.click(screen.getByRole('radio', { name: 'two' }));
@@ -232,50 +231,56 @@ describe('ToggleButtonGroup', () => {
   });
 
   test('icon with values', () => {
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup
           options={[
             { icon: <Add />, value: 'one' },
-            { icon: <Add />, value: 'two' },
+            { icon: <Subtract />, value: 'two' },
           ]}
           defaultValue="one"
         />
       </Grommet>,
     );
 
-    expect(container).toMatchSnapshot();
+    const activeToggleButton = screen.getByRole('radio', {
+      name: /add/i,
+    });
+
+    // Assert that the aria-checked attribute of the active toggle button is true
+    expect(activeToggleButton).toHaveAttribute('aria-checked', 'true');
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('should render string options with multiple prop', () => {
-    const { container } = render(
+  test('string options with multiple prop', () => {
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup multiple options={['one', 'two']} />
       </Grommet>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Should render when options is array of objects with multiple prop', () => {
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup
           multiple
           options={[
-            {  label: 'One', value: 'one' },
-            { id: 'twO', label: 'Two', value: 'two' },
+            { label: 'One', value: 'one' },
+            { label: 'Two', value: 'two' },
           ]}
         />
       </Grommet>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Should call onChange in uncontrolled scenarios with multiple prop', () => {
     const onChange = jest.fn();
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup
           options={['one', 'two', 'three']}
@@ -284,7 +289,7 @@ describe('ToggleButtonGroup', () => {
         />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
     // Simulate a click event on the buttons
     fireEvent.click(screen.getByRole('button', { name: 'two' }));
@@ -302,7 +307,7 @@ describe('ToggleButtonGroup', () => {
             { label: 'Choice 3', value: 'c3' },
           ]}
           multiple
-          defaultValue="c2"
+          defaultValue={['c2', 'c3']}
         />
       </Grommet>,
     );
@@ -318,7 +323,7 @@ describe('ToggleButtonGroup', () => {
   test('Should put tab focus on first button when no value with multiple prop', async () => {
     const user = userEvent.setup();
 
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup multiple options={['one', 'two', 'three']} />
       </Grommet>,
@@ -342,24 +347,24 @@ describe('ToggleButtonGroup', () => {
         modifier: ':focus',
       },
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Should put tab focus on active button when value with multiple prop', async () => {
     const user = userEvent.setup();
 
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet>
         <ToggleButtonGroup
           options={['one', 'two', 'three']}
-          defaultValue="three"
+          defaultValue={['two', 'three']}
           multiple
         />
       </Grommet>,
     );
 
     const focusToggleButton = screen.getByRole('button', {
-      name: /three/i,
+      name: /two/i,
     });
 
     expect(focusToggleButton).not.toHaveFocus();
@@ -376,7 +381,7 @@ describe('ToggleButtonGroup', () => {
         modifier: ':focus',
       },
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Should allow caller to clear all values in controlled scenarios with multiple prop', () => {
@@ -466,7 +471,7 @@ describe('ToggleButtonGroup', () => {
   });
 
   test('toggleButtonGroup theme values', () => {
-    const { container } = render(
+    const { asFragment } = render(
       <Grommet
         theme={{
           toggleButtonGroup: {
@@ -485,6 +490,6 @@ describe('ToggleButtonGroup', () => {
         <ToggleButtonGroup options={['one', 'two']} />
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

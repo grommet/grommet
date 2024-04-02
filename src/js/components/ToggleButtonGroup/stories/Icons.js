@@ -24,5 +24,5 @@ export const UncontrolledIcons = () => (
 );
 
 export default {
-  title: 'Input/ToggleButtonGroup/UncontrolledIcons',
+  title: 'Controls/ToggleButtonGroup/UncontrolledIcons',
 };

@@ -3,6 +3,7 @@ import { Box, ToggleButtonGroup } from 'grommet';
 
 export const Simple = () => (
   <Box gap="large" pad="large">
+    <ToggleButtonGroup options={['Option 1', 'Option 2', 'Option 3']} />
     <ToggleButtonGroup
       options={[
         { label: 'Choice 1', value: 'c1' },
@@ -10,10 +11,9 @@ export const Simple = () => (
         { label: 'Choice 3', value: 'c3' },
       ]}
     />
-    <ToggleButtonGroup options={['Option 1', 'Option 2', 'Option 3']} />
   </Box>
 );
 
 export default {
-  title: 'Input/ToggleButtonGroup/Simple',
+  title: 'Controls/ToggleButtonGroup/Simple',
 };

@@ -3,7 +3,7 @@ import { Box, ToggleButtonGroup, Text } from 'grommet';
 
 export const ControlledGroup = () => {
   const [singleControlled, setSingleControlled] = useState('c2');
-  const [multipleControlled, setMultipleControlled] = useState();
+  const [multipleControlled, setMultipleControlled] = useState([]);
 
   return (
     <Box direction="row" gap="xlarge" overflow="auto">
@@ -40,5 +40,5 @@ export const ControlledGroup = () => {
 };
 
 export default {
-  title: 'Input/ToggleButtonGroup/ControlledGroup',
+  title: 'Controls/ToggleButtonGroup/ControlledGroup',
 };
