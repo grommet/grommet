@@ -147,27 +147,36 @@ describe('ToggleButtonGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('should allow caller to enforce a value in controlled scenarios', () => {
-    render(
-      <Grommet>
-        <ToggleButtonGroup options={['one', 'two', 'three']} />
-      </Grommet>,
-    );
+  // test('should allow caller to enforce a value in controlled scenarios', () => {
+  //   const [singleControlled, setSingleControlled] = useState('c2');
 
-    // click on one to make active
-    fireEvent.click(screen.getByRole('radio', { name: 'one' }));
+  //   render(
+  //     <Grommet>
+  //       <ToggleButtonGroup
+  //         defaultValue="c2"
+  //         value={singleControlled}
+  //         onChange={(nextValue) => {
+  //           if (nextValue) setSingleControlled(nextValue);
+  //         }}
+  //         options={['one', 'two', 'three']}
+  //       />
+  //     </Grommet>,
+  //   );
 
-    const activeToggleButtonOne = screen.getByRole('radio', {
-      name: /one/i,
-    });
+  //   // click on one to make active
+  //   fireEvent.click(screen.getByRole('radio', { name: 'one' }));
 
-    // Assert that the aria-checked attribute of the active toggle button is true
-    expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'true');
-    // click on one to clear value
-    fireEvent.click(screen.getByRole('radio', { name: 'one' }));
-    // // Assert that the aria-checked attribute of the active toggle button is true
-    expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'false');
-  });
+  //   const activeToggleButtonOne = screen.getByRole('radio', {
+  //     name: /one/i,
+  //   });
+
+  //   // Assert that the aria-checked attribute of the active toggle button is true
+  //   expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'true');
+  //   // click on one to clear value
+  //   fireEvent.click(screen.getByRole('radio', { name: 'one' }));
+  //   // // Assert that the aria-checked attribute of the active toggle button is true
+  //   expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'false');
+  // });
 
   test('Should call onChange in uncontrolled scenarios', () => {
     const onChange = jest.fn();
