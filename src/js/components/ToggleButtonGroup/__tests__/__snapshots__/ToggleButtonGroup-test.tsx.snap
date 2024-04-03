@@ -138,12 +138,6 @@ exports[`ToggleButtonGroup Should call onChange in uncontrolled scenarios 1`] = 
   border: none;
 }
 
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
@@ -349,12 +343,6 @@ exports[`ToggleButtonGroup Should call onChange in uncontrolled scenarios with m
   padding-bottom: 6px;
   border-radius: 4px;
   border: none;
-}
-
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -626,12 +614,6 @@ exports[`ToggleButtonGroup Should put tab focus on active button when value 1`] 
   padding-bottom: 6px;
   border-radius: 4px;
   border: none;
-}
-
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -979,12 +961,6 @@ exports[`ToggleButtonGroup Should put tab focus on active button when value with
   border: none;
 }
 
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
@@ -1252,12 +1228,6 @@ exports[`ToggleButtonGroup Should put tab focus on first button when no value 1`
   padding-bottom: 6px;
   border-radius: 4px;
   border: none;
-}
-
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -1532,12 +1502,6 @@ exports[`ToggleButtonGroup Should put tab focus on first button when no value wi
   border: none;
 }
 
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
@@ -1740,12 +1704,6 @@ exports[`ToggleButtonGroup Should render when options is array of objects with m
   padding-bottom: 6px;
   border-radius: 4px;
   border: none;
-}
-
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -2027,12 +1985,6 @@ exports[`ToggleButtonGroup icon with values 1`] = `
   border: none;
 }
 
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
@@ -2249,12 +2201,6 @@ exports[`ToggleButtonGroup object options 1`] = `
   border: none;
 }
 
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
@@ -2447,12 +2393,6 @@ exports[`ToggleButtonGroup should have no accessibility violations 1`] = `
   padding-bottom: 6px;
   border-radius: 4px;
   border: none;
-}
-
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -2662,12 +2602,6 @@ exports[`ToggleButtonGroup string options 1`] = `
   border: none;
 }
 
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
@@ -2862,12 +2796,6 @@ exports[`ToggleButtonGroup string options with multiple prop 1`] = `
   border: none;
 }
 
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
   .c1 {
     border: solid 1px rgba(0,0,0,0.33);
@@ -3058,12 +2986,6 @@ exports[`ToggleButtonGroup toggleButtonGroup theme values 1`] = `
   padding-bottom: 6px;
   border-radius: 4px;
   border: none;
-}
-
-.c4:hover {
-  box-shadow: none;
-  background: #33333310;
-  color: #555555;
 }
 
 @media only screen and (max-width:768px) {

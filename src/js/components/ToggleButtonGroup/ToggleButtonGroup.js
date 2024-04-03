@@ -3,7 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { normalizeColor, edgeStyle } from '../../utils';
+import { edgeStyle } from '../../utils';
 import { ToggleButtonGroupPropTypes } from './propTypes';
 
 const StyledButton = styled(Button)`
@@ -17,16 +17,6 @@ const StyledButton = styled(Button)`
     )}
   border-radius: ${(props) => props.theme.global.control.border.radius};
   border: none;
-  &:hover {
-    box-shadow: none;
-    background: ${(props) =>
-      normalizeColor(
-        props.theme.global.colors['background-contrast'],
-        props.theme,
-      )};
-    color: ${(props) =>
-      normalizeColor(props.theme.toggleButtonGroup.button.color, props.theme)};
-  }
 `;
 
 const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
