@@ -1938,6 +1938,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     toggleButtonGroup: {
       button: {
         color: 'text-strong',
+        pad: {
+          horizontal: 'medium',
+          vertical: 'xsmall',
+        },
       },
       container: {
         round: 'xsmall',

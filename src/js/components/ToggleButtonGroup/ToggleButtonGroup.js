@@ -3,15 +3,18 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { roundStyle } from '../../utils/styles';
-import { normalizeColor } from '../../utils';
+import { normalizeColor, edgeStyle } from '../../utils';
 import { ToggleButtonGroupPropTypes } from './propTypes';
 
-// to overcome `plain` styling due to (icon && !label) condition
-// in buttons without theme.button.default, apply the padding here
-// get pad from theme then minus border
 const StyledButton = styled(Button)`
-  ${(props) => roundStyle(props.round, true, props.theme)};
+  ${(props) =>
+    edgeStyle(
+      'padding',
+      props.theme.toggleButtonGroup.button.pad,
+      false,
+      undefined,
+      props.theme,
+    )}
   border-radius: ${(props) => props.theme.global.control.border.radius};
   border: none;
   &:hover {

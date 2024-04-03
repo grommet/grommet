@@ -2721,6 +2721,10 @@ exports[`Components loads 1`] = `
         "toggleButtonGroup": {
           "button": {
             "color": "text-strong",
+            "pad": {
+              "horizontal": "medium",
+              "vertical": "xsmall",
+            },
           },
           "container": {
             "border": true,
@@ -4726,6 +4730,10 @@ exports[`Components loads 1`] = `
         "toggleButtonGroup": {
           "button": {
             "color": "text-strong",
+            "pad": {
+              "horizontal": "medium",
+              "vertical": "xsmall",
+            },
           },
           "container": {
             "border": true,

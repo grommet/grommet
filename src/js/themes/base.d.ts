@@ -1720,6 +1720,7 @@ export interface ThemeType {
   toggleButtonGroup?: {
     button?: {
       color?: ColorType;
+      pad?: PadType;
     };
     container?: BoxProps;
     divider?: {

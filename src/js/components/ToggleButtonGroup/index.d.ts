@@ -21,10 +21,7 @@ export interface ToggleButtonGroupProps {
 export interface ToggleButtonGroupExtendedProps
   extends ToggleButtonGroupProps,
     BoxProps,
-    Omit<
-      JSX.IntrinsicElements['div'],
-      'children' | 'onClick' | 'onChange' | 'defaultValue'
-    > {}
+    Omit<JSX.IntrinsicElements['div'], keyof ToggleButtonGroupProps> {}
 
 declare const ToggleButtonGroup: React.FC<ToggleButtonGroupExtendedProps>;
 
