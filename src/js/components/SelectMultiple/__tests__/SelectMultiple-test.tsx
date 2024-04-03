@@ -353,10 +353,8 @@ describe('SelectMultiple', () => {
 
     // open drop
     fireEvent.click(screen.getByRole('button', { name: /Select/ }));
-
     const search = screen.getByRole('searchbox', { name: /Search/ });
     const selectAll = screen.getByRole('button', { name: /Select all/ });
-
     // search
     fireEvent.change(search, { target: { value: 'p' } });
     // select all
