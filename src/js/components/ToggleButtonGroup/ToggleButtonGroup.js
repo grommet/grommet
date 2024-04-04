@@ -3,10 +3,12 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { edgeStyle } from '../../utils';
+import { edgeStyle, roundStyle } from '../../utils';
 import { ToggleButtonGroupPropTypes } from './propTypes';
 
 const StyledButton = styled(Button)`
+  border-radius: ${(props) => props.theme.global.control.border.radius};
+  ${(props) => roundStyle(props.round, true, props.theme)};
   ${(props) =>
     edgeStyle(
       'padding',
@@ -15,7 +17,6 @@ const StyledButton = styled(Button)`
       undefined,
       props.theme,
     )}
-  border-radius: ${(props) => props.theme.global.control.border.radius};
   border: none;
 `;
 
@@ -146,16 +147,22 @@ const ToggleButtonGroup = ({
             ? !!value.includes(optionValue)
             : value === optionValue;
           let round = 0;
+
           // round corners of first and last buttons to match container
-          if (
-            typeof theme.toggleButtonGroup.container.round === 'string' &&
-            (index === 0 || index === options.length - 1)
-          ) {
-            round = {
-              corner: index === 0 ? 'left' : 'right',
-              size: theme.toggleButtonGroup.container.round,
-            };
+          if (typeof theme.toggleButtonGroup.container.round === 'string') {
+            if (index === 0) {
+              round = {
+                corner: 'right',
+                size: 'none',
+              };
+            } else if (index === options.length - 1) {
+              round = {
+                corner: 'left',
+                size: 'none',
+              };
+            }
           }
+
           return (
             <Box
               border={
