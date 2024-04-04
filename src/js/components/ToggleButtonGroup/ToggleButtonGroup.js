@@ -133,7 +133,7 @@ const ToggleButtonGroup = ({
             : value === optionValue;
           let round = 0;
 
-          // round corners of first and last buttons to match container
+          // remove round corners of first and last buttons to match container
           if (typeof theme.toggleButtonGroup.container.round === 'string') {
             if (index === 0) {
               round = {
