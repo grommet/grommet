@@ -50,7 +50,6 @@ const Pagination = forwardRef(
       defaultProp: view ? view.step : 10,
       onChange,
     });
-    // const [step, setStep] = useState(stepProp || view?.step || 10);
     const total = numberItems ?? filteredTotal ?? 0;
     const page = pageProp || view?.page || 1;
 
