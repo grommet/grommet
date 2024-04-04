@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { roundStyle, edgeStyle } from '../../utils';
 
 export const StyledButton = styled(Button)`
-  border-radius: ${(props) => props.theme.global.control.border.radius};
+  border-radius: 0;
   ${(props) => roundStyle(props.round, true, props.theme)};
   ${(props) =>
     edgeStyle(
