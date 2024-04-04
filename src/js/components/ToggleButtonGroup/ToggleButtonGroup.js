@@ -132,20 +132,15 @@ const ToggleButtonGroup = ({
             ? !!value.includes(optionValue)
             : value === optionValue;
           let round = 0;
-
-          // remove round corners of first and last buttons to match container
-          if (typeof theme.toggleButtonGroup.container.round === 'string') {
-            if (index === 0) {
-              round = {
-                corner: 'right',
-                size: 'none',
-              };
-            } else if (index === options.length - 1) {
-              round = {
-                corner: 'left',
-                size: 'none',
-              };
-            }
+          // round corners of first and last buttons to match container
+          if (
+            typeof theme.toggleButtonGroup.container.round === 'string' &&
+            (index === 0 || index === options.length - 1)
+          ) {
+            round = {
+              corner: index === 0 ? 'left' : 'right',
+              size: theme.toggleButtonGroup.container.round,
+            };
           }
 
           return (
