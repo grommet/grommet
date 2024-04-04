@@ -48,6 +48,11 @@ const Pagination = forwardRef(
     const total = numberItems ?? filteredTotal ?? 0;
     const page = pageProp || view?.page || 1;
 
+    // watch for changes to stepProp
+    useEffect(() => {
+      if (stepProp) setStep(stepProp);
+    }, [stepProp]);
+
     /* Calculate total number pages */
     const totalPages = Math.ceil(total / step);
     const [activePage, setActivePage] = useState(
