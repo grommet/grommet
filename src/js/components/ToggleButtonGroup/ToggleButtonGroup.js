@@ -1,24 +1,9 @@
 import React, { useCallback, useContext, useState, useRef } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { edgeStyle, roundStyle } from '../../utils';
 import { ToggleButtonGroupPropTypes } from './propTypes';
-
-const StyledButton = styled(Button)`
-  border-radius: ${(props) => props.theme.global.control.border.radius};
-  ${(props) => roundStyle(props.round, true, props.theme)};
-  ${(props) =>
-    edgeStyle(
-      'padding',
-      props.theme.toggleButtonGroup.button.pad,
-      false,
-      undefined,
-      props.theme,
-    )}
-  border: none;
-`;
+import { StyledButton } from './StyledToggleButtonGroup';
 
 const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
   const [uncontrolledProp, setUncontrolledProp] = useState(defaultProp);
