@@ -116,6 +116,8 @@ into while contributing could include:
   forget to update corresponding `index.d.ts` files.
 - For code syntax alignment in your pull request, use [prettier].
 - Pull requests with code should include tests that validate the changes.
+- All commits should be signed. Add the `-s` flag to your commit command. For more
+  details take a look at the [DCO app](https://probot.github.io/apps/dco/).
 
 We review issues and pull requests on a weekly basis (sometimes more
 frequently). If you feel we missed yours don’t hesitate to ping us on
