@@ -11,10 +11,19 @@ import {
 import { columns, DATA } from '../../DataTable/stories/data';
 
 // simplify option label for name property
-const options = columns.map(({ header, property }) => ({
-  property,
-  label: property === 'name' ? 'Name' : header,
-}));
+// const options = columns.map() => ({
+//   property,
+//   label: property === 'name' ? 'Name' : header,
+//   property: 'id'
+// }));
+
+const OPTIONS = [
+  { label: 'Name', property: 'name', pinOrder: true },
+  { label: 'Location', property: 'location' },
+  { label: 'Date', property: 'date', pinOrder: true },
+  { label: 'Percent', property: 'percent' },
+  { label: 'Paid', property: 'paid' },
+];
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -23,7 +32,7 @@ export const Simple = () => (
     <Data data={DATA}>
       <Toolbar>
         <DataSearch />
-        <DataTableColumns drop options={options} />
+        <DataTableColumns drop options={OPTIONS} />
       </Toolbar>
       <DataSummary />
       <DataTable columns={columns} primaryKey="name" />
