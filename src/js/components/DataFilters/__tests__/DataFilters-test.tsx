@@ -106,7 +106,6 @@ describe('DataFilters', () => {
   });
 
   test('should display all filter options regardless of result set', async () => {
-    const user = userEvent.setup();
     const filters = ['a', 'blue', 'b', 'red'];
     const { asFragment } = render(
       <Grommet>
@@ -137,14 +136,14 @@ describe('DataFilters', () => {
     // expect all results to be present
     expect(results).toHaveTextContent('a');
     expect(results).toHaveTextContent('b');
-    await user.click(screen.getByRole('checkbox', { name: 'a' }));
-    await user.click(applyFiltersButton);
+    fireEvent.click(screen.getByRole('checkbox', { name: 'a' }));
+    fireEvent.click(applyFiltersButton);
 
     // expect only 'a' to be present
     expect(results).toHaveTextContent('a');
     expect(results).not.toHaveTextContent('b');
-    await user.click(screen.getByRole('checkbox', { name: 'red' }));
-    await user.click(applyFiltersButton);
+    fireEvent.click(screen.getByRole('checkbox', { name: 'red' }));
+    fireEvent.click(applyFiltersButton);
 
     // expect no results to be present
     expect(results).not.toHaveTextContent('a');
