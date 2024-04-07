@@ -105,7 +105,7 @@ describe('DataFilters', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should display all filter options regardless of result set', async () => {
+  test('should display all filter options regardless of result set', () => {
     const filters = ['a', 'blue', 'b', 'red'];
     const { asFragment } = render(
       <Grommet>
