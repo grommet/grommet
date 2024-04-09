@@ -183,9 +183,7 @@ export const OnSelect = () => {
           columns={columns}
           sortable
           select={select}
-          onSelect={(selected, datum) => {
-            setSelect(selected);
-          }}
+          onSelect={setSelect}
         />
         <Pagination
           summary
