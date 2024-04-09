@@ -47,7 +47,7 @@ const Pagination = forwardRef(
     const { onView, filteredTotal, view } = useContext(DataContext);
     const [step, setStep] = useControlled({
       prop: stepProp,
-      defaultProp: view ? view.step : 10,
+      defaultProp: view?.step || 10,
       onChange,
     });
     const total = numberItems ?? filteredTotal ?? 0;
