@@ -222,7 +222,7 @@ const DataTable = ({
       }
       const nextPinnedOffset = {};
 
-      if (columnWidths !== []) {
+      if (columnWidths.length !== 0) {
         pinnedProperties.forEach((property, index) => {
           const columnIndex =
             property === '_grommetDataTableSelect'
