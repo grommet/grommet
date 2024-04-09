@@ -422,6 +422,13 @@ const DataTable = ({
     );
   }
 
+  const handleSelect = (nextSelected, row) => {
+    setSelected(nextSelected);
+    if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
+    if (row) onSelect(nextSelected, row);
+    else onSelect(nextSelected);
+  };
+
   const bodyContent = groups ? (
     <GroupedBody
       ref={bodyRef}
@@ -454,16 +461,7 @@ const DataTable = ({
             }
           : onMore
       }
-      onSelect={
-        onSelect
-          ? (nextSelected, row) => {
-              setSelected(nextSelected);
-              if (setSelectedDataContext)
-                setSelectedDataContext(nextSelected.length);
-              if (onSelect) onSelect(nextSelected, row);
-            }
-          : undefined
-      }
+      onSelect={onSelect ? handleSelect : undefined}
       onToggle={onToggleGroup}
       onUpdate={onUpdate}
       replace={replace}
@@ -499,16 +497,7 @@ const DataTable = ({
       }
       replace={replace}
       onClickRow={onClickRow}
-      onSelect={
-        onSelect
-          ? (nextSelected, row) => {
-              setSelected(nextSelected);
-              if (setSelectedDataContext)
-                setSelectedDataContext(nextSelected.length);
-              if (onSelect) onSelect(nextSelected, row);
-            }
-          : undefined
-      }
+      onSelect={onSelect ? handleSelect : undefined}
       pinnedCellProps={cellProps.pinned}
       pinnedOffset={pinnedOffset}
       primaryProperty={primaryProperty}
@@ -556,16 +545,7 @@ const DataTable = ({
             onFiltering={onFiltering}
             onFilter={onFilter}
             onResize={resizeable ? onResize : undefined}
-            onSelect={
-              onSelect
-                ? (nextSelected) => {
-                    setSelected(nextSelected);
-                    if (setSelectedDataContext)
-                      setSelectedDataContext(nextSelected.length);
-                    if (onSelect) onSelect(nextSelected);
-                  }
-                : undefined
-            }
+            onSelect={onSelect ? handleSelect : undefined}
             onSort={sortable || sortProp || onSortProp ? onSort : undefined}
             onToggle={onToggleGroups}
             onWidths={onHeaderWidths}
