@@ -157,6 +157,8 @@ export const OnSelect = () => {
     });
   }, [view]);
 
+  const disabled = ['Amos-17'];
+
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
@@ -184,6 +186,7 @@ export const OnSelect = () => {
           sortable
           select={select}
           onSelect={setSelect}
+          disabled={disabled}
         />
         <Pagination
           summary

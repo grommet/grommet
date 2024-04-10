@@ -148,6 +148,7 @@ const Header = forwardRef(
     },
     ref,
   ) => {
+    const selectAllPages = true;
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [layoutProps, textProps] = separateThemeProps(theme);
     const { total: contextTotal } = useContext(DataContext);
@@ -186,30 +187,37 @@ const Header = forwardRef(
       const primaryValues =
         data.map((datum) => datumValue(datum, primaryProperty)) || [];
 
-      // if all primary values are already selected, remove them from selected
-      // otherwise add them
+      // enabled includes what can be changed
+      const enabled =
+        (disabled && primaryValues.filter((v) => !disabled.includes(v))) ||
+        primaryValues;
+      // enabledSelected includes what can be changed and is currently selected
+      const enabledSelected =
+        (selected && enabled.filter((v) => selected.includes(v))) ||
+        primaryValues;
 
+      // if all enabled are already selected, remove them from selected;
+      // otherwise add them.
       if (
-        selected.filter((s) => primaryValues.includes(s)).length === data.length
+        selected.filter((s) => enabledSelected.includes(s)).length ===
+        enabled.length
       ) {
-        primaryValues.forEach((p) => {
+        enabledSelected.forEach((p) => {
           const index = nextSelected.indexOf(p);
           if (index >= 0) {
             nextSelected.splice(index, 1);
           }
         });
       } else {
-        primaryValues.forEach((p) => {
+        enabled.forEach((p) => {
           if (!nextSelected.includes(p)) {
             nextSelected.push(p);
           }
         });
       }
 
-      console.log('nextSelected', nextSelected);
-
       onSelect(nextSelected);
-    }, [data, primaryProperty, onSelect, selected]);
+    }, [data, disabled, onSelect, primaryProperty, selected]);
 
     // eslint-disable-next-line no-unused-vars
     const onChangeSelectionOld = useCallback(() => {
