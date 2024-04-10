@@ -177,7 +177,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     if (children) {
       _react.Children.map(children, function (child) {
         var _child$props, _child$props2;
-        if ((((_child$props = child.props) == null ? void 0 : _child$props.readOnly) === true || ((_child$props2 = child.props) == null ? void 0 : _child$props2.readOnlyCopy) === true) && child.type && ('TextInput'.indexOf(child.type.displayName) !== -1 || 'DateInput'.indexOf(child.type.displayName) !== -1)) {
+        if (((child == null || (_child$props = child.props) == null ? void 0 : _child$props.readOnly) === true || (child == null || (_child$props2 = child.props) == null ? void 0 : _child$props2.readOnlyCopy) === true) && child.type && ('TextInput'.indexOf(child.type.displayName) !== -1 || 'DateInput'.indexOf(child.type.displayName) !== -1)) {
           readOnly = true;
         }
       });
