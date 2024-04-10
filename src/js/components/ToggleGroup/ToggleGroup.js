@@ -11,8 +11,6 @@ const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
   const value = controlled ? prop : uncontrolledProp;
   const handleChange = useCallback(onChange, [onChange]);
 
-  // one is always selected
-
   const setValue = useCallback(
     (nextValue) => {
       // only update internal value in uncontrolled cases
@@ -82,20 +80,16 @@ const ToggleGroup = ({
     buttonRefs.current[nextIndex].focus();
   };
 
-  const handleToggle = (option, active) => {
-    let nextValue;
-    if (multiple) {
-      if (Array.isArray(value)) {
-        nextValue = active
-          ? value.filter((item) => item !== option)
-          : [...value, option];
-      } else {
-        nextValue = active ? [] : [option];
-      }
+  const handleToggle = (option) => {
+    if (!multiple) {
+      setValue(option);
     } else {
-      nextValue = active ? '' : option;
+      const newSelectedOptions = value.includes(option)
+        ? value.filter((item) => item !== option)
+        : [...value, option];
+
+      setValue(newSelectedOptions);
     }
-    setValue(nextValue);
   };
 
   return (
