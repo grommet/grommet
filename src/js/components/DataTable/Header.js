@@ -7,6 +7,7 @@ import React, {
   useState,
 } from 'react';
 import styled, { css, ThemeContext } from 'styled-components';
+import { DataContext } from '../../contexts/DataContext';
 
 import { defaultProps } from '../../default-props';
 
@@ -149,6 +150,7 @@ const Header = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [layoutProps, textProps] = separateThemeProps(theme);
+    const { total: contextTotal } = useContext(DataContext);
 
     const [cellWidths, setCellWidths] = useState([]);
 
@@ -178,6 +180,39 @@ const Header = forwardRef(
     const totalSelected = (selected?.length || 0) + totalSelectedGroups;
 
     const onChangeSelection = useCallback(() => {
+      const nextSelected = [...selected];
+
+      // get primary values for current data view
+      const primaryValues =
+        data.map((datum) => datumValue(datum, primaryProperty)) || [];
+
+      // if all primary values are already selected, remove them from selected
+      // otherwise add them
+
+      if (
+        selected.filter((s) => primaryValues.includes(s)).length === data.length
+      ) {
+        primaryValues.forEach((p) => {
+          const index = nextSelected.indexOf(p);
+          if (index >= 0) {
+            nextSelected.splice(index, 1);
+          }
+        });
+      } else {
+        primaryValues.forEach((p) => {
+          if (!nextSelected.includes(p)) {
+            nextSelected.push(p);
+          }
+        });
+      }
+
+      console.log('nextSelected', nextSelected);
+
+      onSelect(nextSelected);
+    }, [data, primaryProperty, onSelect, selected]);
+
+    // eslint-disable-next-line no-unused-vars
+    const onChangeSelectionOld = useCallback(() => {
       let nextSelected;
       const nextGroupSelected = {};
 
@@ -261,17 +296,22 @@ const Header = forwardRef(
                       ? 'unselect all'
                       : 'select all'
                   }
+                  // should the logic for these states live here or
+                  // in a state variable?
                   checked={
                     groupBy?.select
                       ? groupBy.select[''] === 'all'
                       : totalSelected > 0 &&
                         data.length > 0 &&
-                        totalSelected === data.length
+                        // totalSelected === data.length
+                        totalSelected === (contextTotal || data.length)
                   }
                   indeterminate={
                     groupBy?.select
                       ? groupBy.select[''] === 'some'
-                      : totalSelected > 0 && totalSelected < data.length
+                      : totalSelected > 0 &&
+                        // totalSelected < data.length
+                        totalSelected < (contextTotal || data.length)
                   }
                   onChange={onChangeSelection}
                   pad={cellProps.pad}
