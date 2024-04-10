@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { BoxProps } from '../Box/index';
 
-export interface ToggleButtonGroupProps {
+export interface ToggleGroupProps {
   multiple?: boolean;
   defaultValue?: string | string[];
   // may need to change onChange TODO
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  options: (
+  options?: (
     | string
     | {
         icon?: React.ReactNode | JSX.Element;
@@ -18,11 +18,11 @@ export interface ToggleButtonGroupProps {
   value?: string | [];
 }
 
-export interface ToggleButtonGroupExtendedProps
-  extends ToggleButtonGroupProps,
+export interface ToggleGroupExtendedProps
+  extends ToggleGroupProps,
     BoxProps,
-    Omit<JSX.IntrinsicElements['div'], keyof ToggleButtonGroupProps> {}
+    Omit<JSX.IntrinsicElements['div'], keyof ToggleGroupProps> {}
 
-declare const ToggleButtonGroup: React.FC<ToggleButtonGroupExtendedProps>;
+declare const ToggleGroup: React.FC<ToggleGroupExtendedProps>;
 
-export { ToggleButtonGroup };
+export { ToggleGroup };

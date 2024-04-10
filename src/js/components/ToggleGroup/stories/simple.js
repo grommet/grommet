@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, ToggleButtonGroup } from 'grommet';
+import { Box, ToggleGroup } from 'grommet';
 
 export const Simple = () => (
   <Box gap="large" pad="large">
-    <ToggleButtonGroup options={['Option 1', 'Option 2', 'Option 3']} />
-    <ToggleButtonGroup
+    <ToggleGroup options={['Option 1', 'Option 2', 'Option 3']} />
+    <ToggleGroup
       options={[
         { label: 'Choice 1', value: 'c1' },
         { label: 'Choice 2', value: 'c2' },
@@ -15,5 +15,5 @@ export const Simple = () => (
 );
 
 export default {
-  title: 'Controls/ToggleButtonGroup/Simple',
+  title: 'Controls/ToggleGroup/Simple',
 };

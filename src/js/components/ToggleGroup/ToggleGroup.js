@@ -2,14 +2,16 @@ import React, { useCallback, useContext, useState, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
-import { ToggleButtonGroupPropTypes } from './propTypes';
-import { StyledButton } from './StyledToggleButtonGroup';
+import { ToggleGroupPropTypes } from './propTypes';
+import { StyledButton } from './StyledToggleGroup';
 
 const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
   const [uncontrolledProp, setUncontrolledProp] = useState(defaultProp);
   const controlled = prop !== undefined;
   const value = controlled ? prop : uncontrolledProp;
   const handleChange = useCallback(onChange, [onChange]);
+
+  // one is always selected
 
   const setValue = useCallback(
     (nextValue) => {
@@ -25,7 +27,7 @@ const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
   return [value, setValue];
 };
 
-const ToggleButtonGroup = ({
+const ToggleGroup = ({
   defaultValue,
   multiple,
   options,
@@ -107,13 +109,13 @@ const ToggleButtonGroup = ({
         ref={ref}
         direction="row"
         alignSelf="start"
-        role="group"
+        role={multiple ? 'group' : 'radiogroup'}
         onBlur={(e) => {
           if (!ref?.current.contains(e.relatedTarget)) {
             setFocusableIndex(getFocusableIndex());
           }
         }}
-        {...theme.toggleButtonGroup.container}
+        {...theme.toggleGroup.container}
         {...rest}
       >
         {options.map((option, index) => {
@@ -134,12 +136,12 @@ const ToggleButtonGroup = ({
           let round = 0;
           // round corners of first and last buttons to match container
           if (
-            typeof theme.toggleButtonGroup.container.round === 'string' &&
+            typeof theme.toggleGroup.container.round === 'string' &&
             (index === 0 || index === options.length - 1)
           ) {
             round = {
               corner: index === 0 ? 'left' : 'right',
-              size: theme.toggleButtonGroup.container.round,
+              size: theme.toggleGroup.container.round,
             };
           }
 
@@ -149,7 +151,7 @@ const ToggleButtonGroup = ({
                 index < options.length - 1
                   ? {
                       side: 'right',
-                      color: theme.toggleButtonGroup.divider.color,
+                      color: theme.toggleGroup.divider.color,
                     }
                   : undefined
               }
@@ -157,7 +159,8 @@ const ToggleButtonGroup = ({
             >
               <StyledButton
                 active={active}
-                aria-checked={active}
+                aria-pressed={multiple && active}
+                aria-checked={!multiple && active}
                 icon={icon}
                 label={label}
                 onClick={() => handleToggle(optionValue, active)}
@@ -176,7 +179,7 @@ const ToggleButtonGroup = ({
   );
 };
 
-ToggleButtonGroup.displayName = 'ToggleButtonGroup';
-ToggleButtonGroup.propTypes = ToggleButtonGroupPropTypes;
+ToggleGroup.displayName = 'ToggleGroup';
+ToggleGroup.propTypes = ToggleGroupPropTypes;
 
-export { ToggleButtonGroup };
+export { ToggleGroup };

@@ -10,13 +10,13 @@ import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
 import { Add, Subtract } from 'grommet-icons';
-import { ToggleButtonGroup } from '..';
+import { ToggleGroup } from '..';
 
-describe('ToggleButtonGroup', () => {
+describe('ToggleGroup', () => {
   test('should have no accessibility violations', async () => {
     const { container, asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup options={['Option 1', 'Option 2', 'Option 3']} />
+        <ToggleGroup options={['Option 1', 'Option 2', 'Option 3']} />
       </Grommet>,
     );
     const results = await axe(container);
@@ -27,7 +27,7 @@ describe('ToggleButtonGroup', () => {
   test('string options', () => {
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup options={['one', 'two']} />
+        <ToggleGroup options={['one', 'two']} />
       </Grommet>,
     );
 
@@ -37,7 +37,7 @@ describe('ToggleButtonGroup', () => {
   test('object options', () => {
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup
+        <ToggleGroup
           options={[
             { label: 'One', value: 'one' },
             { id: 'twO', label: 'Two', value: 'two' },
@@ -51,7 +51,7 @@ describe('ToggleButtonGroup', () => {
   test('Should render defaultValue as active when options is array of strings', () => {
     render(
       <Grommet>
-        <ToggleButtonGroup options={['one', 'two']} defaultValue="one" />
+        <ToggleGroup options={['one', 'two']} defaultValue="one" />
       </Grommet>,
     );
 
@@ -65,7 +65,7 @@ describe('ToggleButtonGroup', () => {
   test('Should render defaultValue as active when options is array of objects', () => {
     render(
       <Grommet>
-        <ToggleButtonGroup
+        <ToggleGroup
           options={[
             { label: 'Choice 1', value: 'c1' },
             { label: 'Choice 2', value: 'c2' },
@@ -89,7 +89,7 @@ describe('ToggleButtonGroup', () => {
 
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup options={['one', 'two', 'three']} />
+        <ToggleGroup options={['one', 'two', 'three']} />
       </Grommet>,
     );
 
@@ -119,10 +119,7 @@ describe('ToggleButtonGroup', () => {
 
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup
-          options={['one', 'two', 'three']}
-          defaultValue="three"
-        />
+        <ToggleGroup options={['one', 'two', 'three']} defaultValue="three" />
       </Grommet>,
     );
 
@@ -152,7 +149,7 @@ describe('ToggleButtonGroup', () => {
 
   //   render(
   //     <Grommet>
-  //       <ToggleButtonGroup
+  //       <ToggleGroup
   //         defaultValue="c2"
   //         value={singleControlled}
   //         onChange={(nextValue) => {
@@ -182,10 +179,7 @@ describe('ToggleButtonGroup', () => {
     const onChange = jest.fn();
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup
-          options={['one', 'two', 'three']}
-          onChange={onChange}
-        />
+        <ToggleGroup options={['one', 'two', 'three']} onChange={onChange} />
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -199,7 +193,7 @@ describe('ToggleButtonGroup', () => {
     const user = userEvent.setup();
     render(
       <Grommet>
-        <ToggleButtonGroup options={['one', 'two', 'three']} />
+        <ToggleGroup options={['one', 'two', 'three']} />
       </Grommet>,
     );
 
@@ -221,7 +215,7 @@ describe('ToggleButtonGroup', () => {
     const user = userEvent.setup();
     render(
       <Grommet>
-        <ToggleButtonGroup options={['one', 'two', 'three']} />
+        <ToggleGroup options={['one', 'two', 'three']} />
       </Grommet>,
     );
 
@@ -242,7 +236,7 @@ describe('ToggleButtonGroup', () => {
   test('icon with values', () => {
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup
+        <ToggleGroup
           options={[
             { icon: <Add />, value: 'one' },
             { icon: <Subtract />, value: 'two' },
@@ -264,7 +258,7 @@ describe('ToggleButtonGroup', () => {
   test('string options with multiple prop', () => {
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup multiple options={['one', 'two']} />
+        <ToggleGroup multiple options={['one', 'two']} />
       </Grommet>,
     );
 
@@ -274,7 +268,7 @@ describe('ToggleButtonGroup', () => {
   test('Should render when options is array of objects with multiple prop', () => {
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup
+        <ToggleGroup
           multiple
           options={[
             { label: 'One', value: 'one' },
@@ -291,7 +285,7 @@ describe('ToggleButtonGroup', () => {
     const onChange = jest.fn();
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup
+        <ToggleGroup
           options={['one', 'two', 'three']}
           onChange={onChange}
           multiple
@@ -309,7 +303,7 @@ describe('ToggleButtonGroup', () => {
   test('Should render defaultValue as active with multiple prop', () => {
     render(
       <Grommet>
-        <ToggleButtonGroup
+        <ToggleGroup
           options={[
             { label: 'Choice 1', value: 'c1' },
             { label: 'Choice 2', value: 'c2' },
@@ -326,7 +320,7 @@ describe('ToggleButtonGroup', () => {
     // Assert that the active toggle button exists
     expect(activeToggleButton).toBeInTheDocument();
     // Assert that the aria-checked attribute of the active toggle button is true
-    expect(activeToggleButton).toHaveAttribute('aria-checked', 'true');
+    expect(activeToggleButton).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('Should put tab focus on first button when no value with multiple prop', async () => {
@@ -334,7 +328,7 @@ describe('ToggleButtonGroup', () => {
 
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup multiple options={['one', 'two', 'three']} />
+        <ToggleGroup multiple options={['one', 'two', 'three']} />
       </Grommet>,
     );
 
@@ -364,7 +358,7 @@ describe('ToggleButtonGroup', () => {
 
     const { asFragment } = render(
       <Grommet>
-        <ToggleButtonGroup
+        <ToggleGroup
           options={['one', 'two', 'three']}
           defaultValue={['two', 'three']}
           multiple
@@ -396,7 +390,7 @@ describe('ToggleButtonGroup', () => {
   test('Should allow caller to clear all values in controlled scenarios with multiple prop', () => {
     render(
       <Grommet>
-        <ToggleButtonGroup multiple options={['one', 'two', 'three']} />
+        <ToggleGroup multiple options={['one', 'two', 'three']} />
       </Grommet>,
     );
 
@@ -416,24 +410,24 @@ describe('ToggleButtonGroup', () => {
     });
 
     // Assert that the aria-checked attribute of the active toggle button is true
-    expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'true');
-    expect(activeToggleButtonTwo).toHaveAttribute('aria-checked', 'true');
-    expect(activeToggleButtonThree).toHaveAttribute('aria-checked', 'true');
+    expect(activeToggleButtonOne).toHaveAttribute('aria-pressed', 'true');
+    expect(activeToggleButtonTwo).toHaveAttribute('aria-pressed', 'true');
+    expect(activeToggleButtonThree).toHaveAttribute('aria-pressed', 'true');
     // click on one to clear value
     fireEvent.click(screen.getByRole('button', { name: 'one' }));
     fireEvent.click(screen.getByRole('button', { name: 'two' }));
     fireEvent.click(screen.getByRole('button', { name: 'three' }));
     // // Assert that the aria-checked attribute of the active toggle button is true
-    expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'false');
-    expect(activeToggleButtonTwo).toHaveAttribute('aria-checked', 'false');
-    expect(activeToggleButtonThree).toHaveAttribute('aria-checked', 'false');
+    expect(activeToggleButtonOne).toHaveAttribute('aria-pressed', 'false');
+    expect(activeToggleButtonTwo).toHaveAttribute('aria-pressed', 'false');
+    expect(activeToggleButtonThree).toHaveAttribute('aria-pressed', 'false');
   });
 
   test('Should move to next button when right/down arrow key is pressed and loop with multiple prop', async () => {
     const user = userEvent.setup();
     render(
       <Grommet>
-        <ToggleButtonGroup multiple options={['one', 'two', 'three']} />
+        <ToggleGroup multiple options={['one', 'two', 'three']} />
       </Grommet>,
     );
 
@@ -448,14 +442,14 @@ describe('ToggleButtonGroup', () => {
     await user.type(toggleButtonOne, '{arrowDown}');
     await user.type(toggleButtonTwo, '{arrowRight}');
     await user.type(toggleButtonTwo, '{enter}');
-    expect(toggleButtonTwo).toHaveAttribute('aria-checked', 'true');
+    expect(toggleButtonTwo).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('Should move to previous button left/up arrow key is pressed and loop with multiple prop', async () => {
     const user = userEvent.setup();
     render(
       <Grommet>
-        <ToggleButtonGroup multiple options={['one', 'two', 'three']} />
+        <ToggleGroup multiple options={['one', 'two', 'three']} />
       </Grommet>,
     );
 
@@ -475,15 +469,15 @@ describe('ToggleButtonGroup', () => {
     await user.type(toggleButtonTwo, '{enter}');
     await user.type(toggleButtonThree, '{arrowLeft}');
     await user.type(toggleButtonThree, '{enter}');
-    expect(toggleButtonTwo).toHaveAttribute('aria-checked', 'true');
-    expect(toggleButtonThree).toHaveAttribute('aria-checked', 'true');
+    expect(toggleButtonTwo).toHaveAttribute('aria-pressed', 'true');
+    expect(toggleButtonThree).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('toggleButtonGroup theme values', () => {
     const { asFragment } = render(
       <Grommet
         theme={{
-          toggleButtonGroup: {
+          toggleGroup: {
             button: {
               color: 'text-weak',
             },
@@ -496,7 +490,7 @@ describe('ToggleButtonGroup', () => {
           },
         }}
       >
-        <ToggleButtonGroup options={['one', 'two']} />
+        <ToggleGroup options={['one', 'two']} />
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();

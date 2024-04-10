@@ -1935,7 +1935,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: 'none',
       },
     },
-    toggleButtonGroup: {
+    toggleGroup: {
       button: {
         color: 'text-strong',
         pad: {

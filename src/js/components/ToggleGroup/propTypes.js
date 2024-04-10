@@ -19,11 +19,11 @@ if (process.env.NODE_ENV !== 'production') {
           value: PropTypes.oneOfType([PropTypes.string]),
         }),
       ),
-    ]).isRequired,
+    ]),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
     ]),
   };
 }
-export const ToggleButtonGroupPropTypes = PropType;
+export const ToggleGroupPropTypes = PropType;

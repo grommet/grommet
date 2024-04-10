@@ -2718,7 +2718,7 @@ exports[`Components loads 1`] = `
             "margin": "none",
           },
         },
-        "toggleButtonGroup": {
+        "toggleGroup": {
           "button": {
             "color": "text-strong",
             "pad": {
@@ -4727,7 +4727,7 @@ exports[`Components loads 1`] = `
             "margin": "none",
           },
         },
-        "toggleButtonGroup": {
+        "toggleGroup": {
           "button": {
             "color": "text-strong",
             "pad": {
@@ -5068,7 +5068,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
-  "ToggleButtonGroup": [Function],
+  "ToggleGroup": [Function],
   "Toolbar": [Function],
   "Video": {
     "$$typeof": Symbol(react.forward_ref),

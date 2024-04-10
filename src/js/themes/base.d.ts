@@ -1717,7 +1717,7 @@ export interface ThemeType {
     content?: BoxProps;
     drop?: DropProps;
   };
-  toggleButtonGroup?: {
+  toggleGroup?: {
     button?: {
       color?: ColorType;
       pad?: PadType;

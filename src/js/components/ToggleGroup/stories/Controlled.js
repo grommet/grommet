@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, ToggleButtonGroup, Text } from 'grommet';
+import { Box, ToggleGroup, Text } from 'grommet';
 
 export const ControlledGroup = () => {
   const [singleControlled, setSingleControlled] = useState('c2');
@@ -9,7 +9,7 @@ export const ControlledGroup = () => {
     <Box direction="row" gap="xlarge" overflow="auto">
       <Box gap="large" pad="large">
         <Text>An option always has to be checked</Text>
-        <ToggleButtonGroup
+        <ToggleGroup
           options={[
             { label: 'Choice 1', value: 'c1' },
             { label: 'Choice 2', value: 'c2' },
@@ -21,7 +21,7 @@ export const ControlledGroup = () => {
             if (nextValue) setSingleControlled(nextValue);
           }}
         />
-        <ToggleButtonGroup
+        <ToggleGroup
           options={[
             { label: 'Choice 1', value: 'c1' },
             { label: 'Choice 2', value: 'c2' },
@@ -40,5 +40,5 @@ export const ControlledGroup = () => {
 };
 
 export default {
-  title: 'Controls/ToggleButtonGroup/ControlledGroup',
+  title: 'Controls/ToggleGroup/ControlledGroup',
 };

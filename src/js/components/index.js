@@ -90,7 +90,7 @@ export * from './TextArea';
 export * from './TextInput';
 export * from './Tip';
 export * from './Toolbar';
-export * from './ToggleButtonGroup';
+export * from './ToggleGroup';
 export * from './ThumbsRating';
 export * from './Video';
 export * from './WorldMap';

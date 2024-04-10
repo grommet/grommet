@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, ToggleButtonGroup } from 'grommet';
+import { Box, ToggleGroup } from 'grommet';
 import { List, MapLocation, Table } from 'grommet-icons';
 
 const optionsIcons = [
@@ -19,10 +19,10 @@ const optionsIcons = [
 
 export const UncontrolledIcons = () => (
   <Box pad="large">
-    <ToggleButtonGroup options={optionsIcons} />
+    <ToggleGroup options={optionsIcons} />
   </Box>
 );
 
 export default {
-  title: 'Controls/ToggleButtonGroup/UncontrolledIcons',
+  title: 'Controls/ToggleGroup/UncontrolledIcons',
 };
