@@ -157,7 +157,7 @@ export const OnSelect = () => {
     });
   }, [view]);
 
-  const disabled = ['Amos-17', 'CRS-21', 'CRS-22', 'CRS-23'];
+  const disabled = ['Amos-17', 'CRS-21', 'CRS-22'];
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
