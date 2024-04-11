@@ -706,6 +706,12 @@ exports[`Skeleton with styling props 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+@media only screen and (max-width:768px) {
+  .c1 {
+    border-radius: 6px;
+  }
+}
+
 <div
     class="c0"
   >
