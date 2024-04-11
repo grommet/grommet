@@ -21,7 +21,7 @@ var StyledSkeleton = exports.StyledSkeleton = _styledComponents["default"].div.w
 }, function (props) {
   return props.pad && (0, _utils.edgeStyle)('padding', props.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
-  return props.round && (0, _utils.roundStyle)(props.round, props.responsive, props.theme);
+  return props.round && (0, _utils.roundStyle)(props.round, true, props.theme);
 }, function (props) {
   var _props$theme;
   return (_props$theme = props.theme) == null || (_props$theme = _props$theme.skeleton) == null ? void 0 : _props$theme.extend;

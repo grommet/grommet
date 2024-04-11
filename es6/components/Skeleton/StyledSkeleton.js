@@ -17,7 +17,7 @@ export var StyledSkeleton = styled.div.withConfig({
 }, function (props) {
   return props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 }, function (props) {
-  return props.round && roundStyle(props.round, props.responsive, props.theme);
+  return props.round && roundStyle(props.round, true, props.theme);
 }, function (props) {
   var _props$theme;
   return (_props$theme = props.theme) == null || (_props$theme = _props$theme.skeleton) == null ? void 0 : _props$theme.extend;

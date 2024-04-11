@@ -362,7 +362,7 @@ var roundStyle = exports.roundStyle = function roundStyle(data, responsive, them
   } else {
     var _size2 = data === true ? 'medium' : data;
     styles.push((0, _styledComponents.css)(["border-radius:", ";"], ROUND_MAP[_size2] || theme.global.edgeSize[_size2] || _size2));
-    var _responsiveSize = breakpoint && breakpoint.edgeSize[_size2];
+    var _responsiveSize = responsive && breakpoint && breakpoint.edgeSize[_size2];
     if (_responsiveSize) {
       styles.push((0, _mixins.breakpointStyle)(breakpoint, "\n        border-radius: " + _responsiveSize + ";\n      "));
     }
