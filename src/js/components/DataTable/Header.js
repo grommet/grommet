@@ -197,10 +197,7 @@ const Header = forwardRef(
 
       // if all enabled are already selected, remove them from selected;
       // otherwise add them.
-      if (
-        selected.filter((s) => enabledSelected.includes(s)).length ===
-        enabled.length
-      ) {
+      if (enabledSelected.length === enabled.length) {
         enabledSelected.forEach((p) => {
           const index = nextSelected.indexOf(p);
           if (index >= 0) {
@@ -254,21 +251,17 @@ const Header = forwardRef(
                       ? 'unselect all'
                       : 'select all'
                   }
-                  // should the logic for these states live here or
-                  // in a state variable?
                   checked={
                     groupBy?.select
                       ? groupBy.select[''] === 'all'
                       : totalSelected > 0 &&
                         data.length > 0 &&
-                        // totalSelected === data.length
                         totalSelected === (contextTotal || data.length)
                   }
                   indeterminate={
                     groupBy?.select
                       ? groupBy.select[''] === 'some'
                       : totalSelected > 0 &&
-                        // totalSelected < data.length
                         totalSelected < (contextTotal || data.length)
                   }
                   onChange={onChangeSelection}
