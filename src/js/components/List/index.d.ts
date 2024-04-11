@@ -43,7 +43,11 @@ export interface ListProps<ListItemType> {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
-  children?: (...args: any[]) => any;
+  children?: (
+    item: ListItemType,
+    index: number,
+    state?: { active: boolean },
+  ) => any;
   data?: ListItemType[];
   disabled?: string[];
   gridArea?: GridAreaType;
@@ -54,9 +58,9 @@ export interface ListProps<ListItemType> {
   };
   margin?: MarginType;
   onActive?: (index: number) => void;
-  onClickItem?:
-    | ((event: React.MouseEvent) => void)
-    | ((event: { item?: ListItemType; index?: number }) => void);
+  onClickItem?: (
+    event: React.MouseEvent & { item: ListItemType; index: number },
+  ) => void;
   onMore?: () => void;
   onOrder?: (orderedData: ListItemType[]) => void;
   pad?: PadType;
@@ -76,7 +80,7 @@ export interface ListExtendedProps<ListItemType>
     ulProps {}
 
 declare const List: <ListItemType = string | {}>(
-  p: React.PropsWithChildren<ListExtendedProps<ListItemType>>,
+  p: ListExtendedProps<ListItemType>,
 ) => React.ReactElement<ListExtendedProps<ListItemType>>;
 
 export { List };
