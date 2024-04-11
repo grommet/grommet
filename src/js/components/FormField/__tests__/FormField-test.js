@@ -13,6 +13,7 @@ import { Form } from '../../Form';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { TextArea } from '../../TextArea';
+import { Text } from '../../Text';
 
 const CustomFormField = styled(FormField)`
   font-size: 40px;
@@ -571,5 +572,17 @@ describe('FormField', () => {
       </Grommet>,
     );
     expect(mockFocus).toHaveBeenCalledTimes(1);
+  });
+
+  test('Field with null as child', () => {
+    const { container } = render(
+      <Grommet>
+        <FormField label="Label">
+          <TextInput />
+          {false && <Text>foobar</Text>}
+        </FormField>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
