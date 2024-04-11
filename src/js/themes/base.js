@@ -1937,6 +1937,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     toggleGroup: {
       button: {
+        // iconOnly: {
+        //   pad: undefined,
+        // },
         color: 'text-strong',
         pad: {
           horizontal: 'medium',

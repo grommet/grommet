@@ -8,7 +8,9 @@ export const StyledButton = styled(Button)`
   ${(props) =>
     edgeStyle(
       'padding',
-      props.theme.toggleGroup.button.pad,
+      props.icon !== undefined && props.theme.toggleGroup.iconOnly?.pad
+        ? props.theme.toggleGroup.iconOnly?.pad
+        : props.theme.toggleGroup.button.pad,
       false,
       undefined,
       props.theme,
