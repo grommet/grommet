@@ -83,6 +83,10 @@ exports[`ToggleGroup Should call onChange in uncontrolled scenarios 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -327,6 +331,10 @@ exports[`ToggleGroup Should call onChange in uncontrolled scenarios with multipl
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -571,6 +579,10 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -642,6 +654,10 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c7:focus {
@@ -882,6 +898,10 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -953,6 +973,10 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8:hover {
@@ -1024,6 +1048,10 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c5:focus {
@@ -1264,6 +1292,10 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c5:hover {
@@ -1333,6 +1365,10 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:focus {
@@ -1573,6 +1609,10 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c5:hover {
@@ -1642,6 +1682,10 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:focus {
@@ -1882,6 +1926,10 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -2133,7 +2181,6 @@ exports[`ToggleGroup icon with values 1`] = `
   background-color: rgba(221,221,221,0.4);
   color: #000000;
   line-height: 0;
-  padding: 12px;
 }
 
 .c3:focus {
@@ -2193,7 +2240,6 @@ exports[`ToggleGroup icon with values 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c7:focus {
@@ -2240,10 +2286,7 @@ exports[`ToggleGroup icon with values 1`] = `
   border-radius: 0;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 12px;
   border: none;
 }
 
@@ -2251,10 +2294,7 @@ exports[`ToggleGroup icon with values 1`] = `
   border-radius: 0;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 12px;
   border: none;
 }
 
@@ -2433,6 +2473,10 @@ exports[`ToggleGroup object options 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -2654,6 +2698,10 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -2898,6 +2946,10 @@ exports[`ToggleGroup string options 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -3119,6 +3171,10 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {
@@ -3340,6 +3396,10 @@ exports[`ToggleGroup toggleButtonGroup theme values 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c3:hover {

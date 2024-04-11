@@ -17,7 +17,7 @@ const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
       if (!controlled) {
         setUncontrolledProp(nextValue);
       }
-      handleChange(nextValue);
+      handleChange({ value: nextValue });
     },
     [controlled, setUncontrolledProp, handleChange],
   );
@@ -139,6 +139,11 @@ const ToggleGroup = ({
             };
           }
 
+          const iconOnly = icon && !label;
+          let pad = theme.toggleGroup.button.pad;
+          if (iconOnly && theme.toggleGroup.button?.iconOnly?.pad)
+            pad = theme.toggleGroup.button.iconOnly.pad;
+
           return (
             <Box
               border={
@@ -164,6 +169,7 @@ const ToggleGroup = ({
                 role={!multiple ? 'radio' : undefined}
                 round={round}
                 tabIndex={index === focusableIndex ? '0' : '-1'}
+                pad={pad}
               />
             </Box>
           );

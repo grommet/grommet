@@ -186,7 +186,7 @@ describe('ToggleGroup', () => {
 
     // Simulate a click event on the radio button
     fireEvent.click(screen.getByRole('radio', { name: 'two' }));
-    expect(onChange).toHaveBeenCalledWith('two');
+    expect(onChange).toHaveBeenCalledWith({ value: 'two' });
   });
 
   test('Should move to next button when right/down arrow key is pressed and loop', async () => {
@@ -297,7 +297,7 @@ describe('ToggleGroup', () => {
     // Simulate a click event on the buttons
     fireEvent.click(screen.getByRole('button', { name: 'two' }));
     fireEvent.click(screen.getByRole('button', { name: 'three' }));
-    expect(onChange).toHaveBeenCalledWith(['two', 'three']);
+    expect(onChange).toHaveBeenCalledWith({ value: ['two', 'three'] });
   });
 
   test('Should render defaultValue as active with multiple prop', () => {
@@ -479,6 +479,12 @@ describe('ToggleGroup', () => {
         theme={{
           toggleGroup: {
             button: {
+              iconOnly: {
+                pad: {
+                  horizontal: 'medium',
+                  vertical: 'large',
+                },
+              },
               color: 'text-weak',
             },
             container: {

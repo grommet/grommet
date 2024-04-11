@@ -1721,6 +1721,9 @@ export interface ThemeType {
     button?: {
       color?: ColorType;
       pad?: PadType;
+      iconOnly?: {
+        pad?: PadType;
+      };
     };
     container?: BoxProps;
     divider?: {

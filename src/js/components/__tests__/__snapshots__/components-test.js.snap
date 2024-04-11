@@ -2721,6 +2721,12 @@ exports[`Components loads 1`] = `
         "toggleGroup": {
           "button": {
             "color": "text-strong",
+            "iconOnly": {
+              "pad": {
+                "horizontal": "small",
+                "vertical": "small",
+              },
+            },
             "pad": {
               "horizontal": "medium",
               "vertical": "xsmall",
@@ -4730,6 +4736,12 @@ exports[`Components loads 1`] = `
         "toggleGroup": {
           "button": {
             "color": "text-strong",
+            "iconOnly": {
+              "pad": {
+                "horizontal": "small",
+                "vertical": "small",
+              },
+            },
             "pad": {
               "horizontal": "medium",
               "vertical": "xsmall",
