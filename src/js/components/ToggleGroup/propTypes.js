@@ -15,14 +15,11 @@ if (process.env.NODE_ENV !== 'production') {
         PropTypes.shape({
           icon: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
           label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-          value: PropTypes.oneOfType([PropTypes.string]),
+          value: PropTypes.string,
         }),
       ),
     ]),
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
+    value: PropTypes.oneOfType([PropTypes.string]),
   };
 }
 export const ToggleGroupPropTypes = PropType;
