@@ -15,7 +15,7 @@ export interface ToggleGroupProps {
         value: string;
       }
   )[];
-  value?: string | [];
+  value?: string | string[];
 }
 
 export interface ToggleGroupExtendedProps
