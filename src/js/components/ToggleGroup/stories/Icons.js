@@ -9,7 +9,7 @@ const optionsIcons = [
   },
   {
     icon: <Table a11yTitle="Map view" />,
-    value: 'Table',
+    value: 'table',
   },
   {
     icon: <MapLocation a11yTitle="Map view" />,
