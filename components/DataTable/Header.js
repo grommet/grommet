@@ -4,6 +4,7 @@ exports.__esModule = true;
 exports.Header = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _DataContext = require("../../contexts/DataContext");
 var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
 var _Button = require("../Button");
@@ -129,6 +130,8 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var _separateThemeProps2 = separateThemeProps(theme),
     layoutProps = _separateThemeProps2[0],
     textProps = _separateThemeProps2[1];
+  var _useContext = (0, _react.useContext)(_DataContext.DataContext),
+    contextTotal = _useContext.total;
   var _useState = (0, _react.useState)([]),
     cellWidths = _useState[0],
     setCellWidths = _useState[1];
@@ -149,15 +152,14 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   }, 0) : 0;
   var totalSelected = ((selected == null ? void 0 : selected.length) || 0) + totalSelectedGroups;
   var onChangeSelection = (0, _react.useCallback)(function () {
-    var nextSelected;
+    var nextSelected = [].concat(selected);
     var nextGroupSelected = {};
 
-    // Since some rows might be disabled but already selected, we need to
-    // note which rows are enabled when determining how aggregate selection
-    // works.
+    // get primary values for current data view
     var primaryValues = data.map(function (datum) {
       return (0, _buildState.datumValue)(datum, primaryProperty);
     }) || [];
+
     // enabled includes what can be changed
     var enabled = disabled && primaryValues.filter(function (v) {
       return !disabled.includes(v);
@@ -167,19 +169,24 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       return selected.includes(v);
     }) || primaryValues;
     var allSelected = groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : enabledSelected.length === enabled.length;
+
+    // if all enabled are already selected, remove them from selected,
+    // otherwise add them.
     if (allSelected) {
-      // if any are disabled and selected, leave those, otherwise clear
-      nextSelected = disabled ? primaryValues.filter(function (v) {
-        return disabled.includes(v) && selected.includes(v);
-      }) : [];
+      enabledSelected.forEach(function (p) {
+        var index = nextSelected.indexOf(p);
+        if (index >= 0) {
+          nextSelected.splice(index, 1);
+        }
+      });
       nextGroupSelected[''] = 'none';
     } else {
       var _groupBy$expandable;
-      // if some or none are selected, select all enabled plus all disabled
-      // that are already selected
-      nextSelected = disabled ? primaryValues.filter(function (v) {
-        return !disabled.includes(v) || selected.includes(v);
-      }) : primaryValues;
+      enabled.forEach(function (p) {
+        if (!nextSelected.includes(p)) {
+          nextSelected.push(p);
+        }
+      });
       nextGroupSelected[''] = 'all';
       groupBy == null || (_groupBy$expandable = groupBy.expandable) == null || _groupBy$expandable.forEach(function (key) {
         nextGroupSelected[key] = 'all';
@@ -213,8 +220,8 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     verticalAlign: verticalAlign
   }, onSelect && allowSelectAll && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
     a11yTitle: totalSelected === data.length ? 'unselect all' : 'select all',
-    checked: groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected > 0 && data.length > 0 && totalSelected === data.length,
-    indeterminate: groupBy != null && groupBy.select ? groupBy.select[''] === 'some' : totalSelected > 0 && totalSelected < data.length,
+    checked: groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected > 0 && data.length > 0 && totalSelected === (contextTotal || data.length),
+    indeterminate: groupBy != null && groupBy.select ? groupBy.select[''] === 'some' : totalSelected > 0 && totalSelected < (contextTotal || data.length),
     onChange: onChangeSelection,
     pad: cellProps.pad
   })), rowDetails && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {

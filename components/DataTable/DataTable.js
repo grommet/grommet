@@ -229,7 +229,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
       pinnedProperties = ['_grommetDataTableSelect'].concat(pinnedProperties);
     }
     var nextPinnedOffset = {};
-    if (columnWidths !== []) {
+    if (columnWidths.length !== 0) {
       pinnedProperties.forEach(function (property, index) {
         var columnIndex = property === '_grommetDataTableSelect' ? 0 : columns.findIndex(function (column) {
           return column.property === property;
@@ -426,6 +426,11 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
       fill: "vertical"
     }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, placeholder));
   }
+  var handleSelect = function handleSelect(nextSelected, row) {
+    setSelected(nextSelected);
+    if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
+    if (row) onSelect(nextSelected, row);else onSelect(nextSelected);
+  };
   var bodyContent = groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
     ref: bodyRef,
     cellProps: {
@@ -457,11 +462,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
         });
       }
     } : onMore,
-    onSelect: onSelect ? function (nextSelected, row) {
-      setSelected(nextSelected);
-      if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
-      if (onSelect) onSelect(nextSelected, row);
-    } : undefined,
+    onSelect: onSelect ? handleSelect : undefined,
     onToggle: onToggleGroup,
     onUpdate: onUpdate,
     replace: replace,
@@ -491,11 +492,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     } : onMore,
     replace: replace,
     onClickRow: onClickRow,
-    onSelect: onSelect ? function (nextSelected, row) {
-      setSelected(nextSelected);
-      if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
-      if (onSelect) onSelect(nextSelected, row);
-    } : undefined,
+    onSelect: onSelect ? handleSelect : undefined,
     pinnedCellProps: cellProps.pinned,
     pinnedOffset: pinnedOffset,
     primaryProperty: primaryProperty,
@@ -533,11 +530,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     onFiltering: onFiltering,
     onFilter: onFilter,
     onResize: resizeable ? onResize : undefined,
-    onSelect: onSelect ? function (nextSelected) {
-      setSelected(nextSelected);
-      if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
-      if (onSelect) onSelect(nextSelected);
-    } : undefined,
+    onSelect: onSelect ? handleSelect : undefined,
     onSort: sortable || sortProp || onSortProp ? onSort : undefined,
     onToggle: onToggleGroups,
     onWidths: onHeaderWidths,
