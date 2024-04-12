@@ -16,9 +16,6 @@ const options = columns.map(({ header, property }) => ({
   label: property === 'name' ? 'Name' : header,
 }));
 
-options[0].pinned = true;
-options[2].pinned = true;
-
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
