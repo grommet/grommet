@@ -181,6 +181,7 @@ const Header = forwardRef(
 
     const onChangeSelection = useCallback(() => {
       const nextSelected = [...selected];
+      const nextGroupSelected = {};
 
       // get primary values for current data view
       const primaryValues =
@@ -195,25 +196,36 @@ const Header = forwardRef(
         (selected && enabled.filter((v) => selected.includes(v))) ||
         primaryValues;
 
-      // if all enabled are already selected, remove them from selected;
+      const allSelected = groupBy?.select
+        ? groupBy.select[''] === 'all'
+        : enabledSelected.length === enabled.length;
+
+      // if all enabled are already selected, remove them from selected,
       // otherwise add them.
-      if (enabledSelected.length === enabled.length) {
+      if (allSelected) {
         enabledSelected.forEach((p) => {
           const index = nextSelected.indexOf(p);
           if (index >= 0) {
             nextSelected.splice(index, 1);
           }
         });
+        nextGroupSelected[''] = 'none';
       } else {
         enabled.forEach((p) => {
           if (!nextSelected.includes(p)) {
             nextSelected.push(p);
           }
         });
+        nextGroupSelected[''] = 'all';
+        groupBy?.expandable?.forEach((key) => {
+          nextGroupSelected[key] = 'all';
+        });
       }
 
-      onSelect(nextSelected);
-    }, [data, disabled, onSelect, primaryProperty, selected]);
+      if (groupBy?.onSelect) {
+        groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
+      } else onSelect(nextSelected);
+    }, [data, disabled, groupBy, onSelect, primaryProperty, selected]);
 
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
