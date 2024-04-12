@@ -140,9 +140,10 @@ const ToggleGroup = ({
           }
 
           const iconOnly = icon && !label;
-          let pad = theme.toggleGroup.button.pad;
-          if (iconOnly && theme.toggleGroup.button?.iconOnly?.pad)
+          let pad;
+          if (iconOnly && theme.toggleGroup.button?.iconOnly?.pad) {
             pad = theme.toggleGroup.button.iconOnly.pad;
+          } else pad = theme.toggleGroup.button.pad;
 
           return (
             <Box
