@@ -217,8 +217,8 @@ const FormField = forwardRef(
       if (children) {
         Children.map(children, (child) => {
           if (
-            (child.props?.readOnly === true ||
-              child.props?.readOnlyCopy === true) &&
+            (child?.props?.readOnly === true ||
+              child?.props?.readOnlyCopy === true) &&
             child.type &&
             ('TextInput'.indexOf(child.type.displayName) !== -1 ||
               'DateInput'.indexOf(child.type.displayName) !== -1)
