@@ -8,12 +8,12 @@ import { render, fireEvent, screen, within } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
-import { List } from '..';
+import { List, ListExtendedProps } from '..';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { Button } from '../../Button';
 
-const data = [];
+const data: string[] = [];
 for (let i = 0; i < 95; i += 1) {
   data.push(`entry-${i}`);
 }
@@ -327,9 +327,9 @@ describe('List', () => {
 });
 
 describe('List events', () => {
-  let onActive;
-  let onClickItem;
-  let App;
+  let onActive: ListExtendedProps<{ a: string }>['onActive'];
+  let onClickItem: ListExtendedProps<{ a: string }>['onClickItem'];
+  let App: React.FC;
 
   beforeEach(() => {
     onActive = jest.fn();
@@ -454,7 +454,7 @@ describe('List events', () => {
   test('should apply pagination styling', () => {
     const { container } = render(
       <Grommet>
-        <List data={data} paginate={{ background: 'red', margin: 'large' }} />
+        <List data={data} paginate={{ margin: 'large' }} />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -483,7 +483,7 @@ describe('List events', () => {
 
     const activePage = container.querySelector(
       `[aria-current="page"]`,
-    ).innerHTML;
+    )?.innerHTML;
 
     expect(activePage).toEqual(`${desiredPage}`);
     expect(container.firstChild).toMatchSnapshot();
@@ -528,8 +528,8 @@ describe('List events', () => {
 });
 
 describe('List onOrder', () => {
-  let onOrder;
-  let App;
+  let onOrder: Required<ListExtendedProps<{ a: string }>>['onOrder'];
+  let App: React.FC;
 
   beforeEach(() => {
     onOrder = jest.fn();
@@ -552,9 +552,13 @@ describe('List onOrder', () => {
 
   test('Mouse move down', () => {
     const { container } = render(<App />);
+    const $element = container.querySelector('#alphaMoveDown');
+
+    if (!$element)
+      throw new Error('Cannot find element with id "alphaMoveDown"');
 
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(container.querySelector('#alphaMoveDown'));
+    fireEvent.click($element);
     expect(onOrder).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -610,8 +614,8 @@ describe('List onOrder', () => {
 });
 
 describe('List onOrder with action', () => {
-  let onOrder;
-  let App;
+  let onOrder: Required<ListExtendedProps<{ a: string }>>['onOrder'];
+  let App: React.FC;
 
   beforeEach(() => {
     onOrder = jest.fn();
@@ -627,7 +631,7 @@ describe('List onOrder with action', () => {
               onOrder(newData);
             }}
             // eslint-disable-next-line react/no-unstable-nested-components
-            action={(item, index) => (
+            action={(_, index) => (
               <Button key={`action${index}`} label="Action" />
             )}
           />
