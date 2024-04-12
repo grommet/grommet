@@ -14,7 +14,7 @@ import { columns, DATA } from '../../DataTable/stories/data';
 const options = columns.map(({ header, property }, i) => ({
   property,
   label: property === 'name' ? 'Name' : header,
-  pinned: i === 0 || i === 2,
+  pinned: i === 0 || i === 1,
 }));
 
 export const Pinned = () => (
