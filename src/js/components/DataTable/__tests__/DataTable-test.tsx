@@ -1834,4 +1834,93 @@ describe('DataTable', () => {
     fireEvent.click(headerCheckBox);
     expect(screen.getByText('11 selected')).toBeTruthy();
   });
+
+  test('onUpdate groupBy.onSelect', () => {
+    const onGroupSelect = jest.fn();
+    const App = () => {
+      const [groupSelected] = React.useState<{
+        [key: string]: 'all' | 'some' | 'none';
+      }>({ '': 'some', 'Fort Collins': 'some' });
+
+      const groupBy = React.useMemo(() => {
+        return {
+          property: 'location',
+          select: groupSelected,
+          onSelect: onGroupSelect,
+        };
+      }, [groupSelected]);
+
+      return (
+        <DataTable
+          primaryKey="id"
+          columns={[
+            {
+              property: 'id',
+              header: 'ID',
+            },
+            {
+              property: 'b',
+              header: 'B',
+            },
+            {
+              property: 'location',
+              header: 'Location',
+            },
+          ]}
+          data={[
+            {
+              id: 0,
+              b: 'zero',
+              location: 'Fort Collins',
+            },
+            {
+              id: 1,
+              b: 'one',
+              location: 'Fort Collins',
+            },
+            {
+              id: 2,
+              b: 'two',
+              location: 'San Francisco',
+            },
+            {
+              id: 3,
+              b: 'three',
+              location: 'San Francisco',
+            },
+            {
+              id: 4,
+              b: 'four',
+              location: 'Boise',
+            },
+            {
+              id: 5,
+              b: 'five',
+              location: 'Los Angeles',
+            },
+          ]}
+          step={10}
+          groupBy={groupBy}
+          onSelect={() => {}}
+          onUpdate={() => {}}
+        />
+      );
+    };
+
+    const { asFragment } = render(<App />);
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(
+      screen.getByRole('checkbox', { name: 'select San Francisco' }),
+    );
+    expect(onGroupSelect).toHaveBeenCalledWith(
+      [2, 3],
+      { location: 'San Francisco' },
+      { '': 'some', 'Fort Collins': 'some' },
+    );
+    fireEvent.click(screen.getByRole('checkbox', { name: 'select all' }));
+    expect(onGroupSelect).toHaveBeenCalledWith([0, 1, 2, 3, 4, 5], undefined, {
+      '': 'all',
+    });
+  });
 });
