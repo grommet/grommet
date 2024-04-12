@@ -24651,6 +24651,33 @@ exports[`DataTable should apply pagination styling 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -24694,33 +24721,6 @@ exports[`DataTable should apply pagination styling 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -27894,6 +27894,33 @@ exports[`DataTable should paginate 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -27937,33 +27964,6 @@ exports[`DataTable should paginate 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -30235,6 +30235,33 @@ exports[`DataTable should pin and paginate 1`] = `
   border: 0;
 }
 
+.c18 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c18 > svg {
+  margin: 0 auto;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -30287,33 +30314,6 @@ exports[`DataTable should pin and paginate 1`] = `
   position: sticky;
   top: 0;
   z-index: 1;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c18 > svg {
-  margin: 0 auto;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -32585,6 +32585,33 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -32628,33 +32655,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -33880,6 +33880,33 @@ exports[`DataTable should render new data when page changes 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -33923,33 +33950,6 @@ exports[`DataTable should render new data when page changes 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -40154,6 +40154,33 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -40197,33 +40224,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -42495,6 +42495,33 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -42538,33 +42565,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
