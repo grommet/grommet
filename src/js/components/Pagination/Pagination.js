@@ -222,6 +222,11 @@ const Pagination = forwardRef(
       </Nav>
     );
 
+    // Synchronise internal step state with prop
+    useEffect(() => {
+      if (stepProp) setStep(stepProp);
+    }, [stepProp]);
+
     // for backwards compatibility
     if (!summary && !stepOptions)
       return (
