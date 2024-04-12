@@ -12,6 +12,7 @@ var _PageControl = require("./PageControl");
 var _PaginationStep = require("./PaginationStep");
 var _PaginationSummary = require("./PaginationSummary");
 var _propTypes = require("./propTypes");
+var _useControlled2 = require("../../utils/useControlled");
 var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "numberMiddlePages", "onChange", "messages", "page", "size", "step", "stepOptions", "summary"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -52,17 +53,21 @@ var Pagination = exports.Pagination = /*#__PURE__*/(0, _react.forwardRef)(functi
     onView = _useContext.onView,
     filteredTotal = _useContext.filteredTotal,
     view = _useContext.view;
-  var _useState = (0, _react.useState)(stepProp || (view == null ? void 0 : view.step) || 10),
-    step = _useState[0],
-    setStep = _useState[1];
+  var _useControlled = (0, _useControlled2.useControlled)({
+      prop: stepProp,
+      defaultProp: (view == null ? void 0 : view.step) || 10,
+      onChange: onChange
+    }),
+    step = _useControlled[0],
+    setStep = _useControlled[1];
   var total = (_ref2 = numberItems != null ? numberItems : filteredTotal) != null ? _ref2 : 0;
   var page = pageProp || (view == null ? void 0 : view.page) || 1;
 
   /* Calculate total number pages */
   var totalPages = Math.ceil(total / step);
-  var _useState2 = (0, _react.useState)(Math.min(page, totalPages) || 1),
-    activePage = _useState2[0],
-    setActivePage = _useState2[1];
+  var _useState = (0, _react.useState)(Math.min(page, totalPages) || 1),
+    activePage = _useState[0],
+    setActivePage = _useState[1];
   (0, _react.useEffect)(function () {
     setActivePage(page);
     var pageEvent = new Event('pagechange');

@@ -11,6 +11,7 @@ import { PageControl } from './PageControl';
 import { PaginationStep } from './PaginationStep';
 import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
+import { useControlled } from '../../utils/useControlled';
 var StyledPaginationContainer = styled(Box).withConfig({
   displayName: "Pagination__StyledPaginationContainer",
   componentId: "sc-rnlw6m-0"
@@ -46,17 +47,21 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onView = _useContext.onView,
     filteredTotal = _useContext.filteredTotal,
     view = _useContext.view;
-  var _useState = useState(stepProp || (view == null ? void 0 : view.step) || 10),
-    step = _useState[0],
-    setStep = _useState[1];
+  var _useControlled = useControlled({
+      prop: stepProp,
+      defaultProp: (view == null ? void 0 : view.step) || 10,
+      onChange: onChange
+    }),
+    step = _useControlled[0],
+    setStep = _useControlled[1];
   var total = (_ref2 = numberItems != null ? numberItems : filteredTotal) != null ? _ref2 : 0;
   var page = pageProp || (view == null ? void 0 : view.page) || 1;
 
   /* Calculate total number pages */
   var totalPages = Math.ceil(total / step);
-  var _useState2 = useState(Math.min(page, totalPages) || 1),
-    activePage = _useState2[0],
-    setActivePage = _useState2[1];
+  var _useState = useState(Math.min(page, totalPages) || 1),
+    activePage = _useState[0],
+    setActivePage = _useState[1];
   useEffect(function () {
     setActivePage(page);
     var pageEvent = new Event('pagechange');
