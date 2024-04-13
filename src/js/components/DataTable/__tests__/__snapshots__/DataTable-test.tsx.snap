@@ -15621,6 +15621,946 @@ exports[`DataTable onSort external 2`] = `
 </div>
 `;
 
+exports[`DataTable onUpdate groupBy.onSelect 1`] = `
+<DocumentFragment>
+  .c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0,0,0,0.33);
+  stroke: rgba(0,0,0,0.33);
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c17 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c4:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus > circle,
+.c4:focus > ellipse,
+.c4:focus > line,
+.c4:focus > path,
+.c4:focus > polygon,
+.c4:focus > polyline,
+.c4:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) > circle,
+.c4:focus:not(:focus-visible) > ellipse,
+.c4:focus:not(:focus-visible) > line,
+.c4:focus:not(:focus-visible) > path,
+.c4:focus:not(:focus-visible) > polygon,
+.c4:focus:not(:focus-visible) > polyline,
+.c4:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c14 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.c9:hover input:not([disabled]) + div,
+.c9:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c12 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c12:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c11 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+}
+
+.c15 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c19 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+}
+
+.c20 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 1px;
+  overflow: hidden;
+  text-align: start;
+}
+
+.c21 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c1 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c18:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+<table
+    class="c0 c1"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c2"
+        >
+          <div
+            class="c3"
+            style="height: 0px;"
+          >
+            <button
+              aria-label="expand"
+              class="c4"
+              type="button"
+            >
+              <div
+                class="c5"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <th
+          class="c7 "
+          scope="col"
+        >
+          <div
+            class="c8"
+            style="height: 0px;"
+          >
+            <label
+              class="c9"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  aria-label="select all"
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                >
+                  <svg
+                    class="c14"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,12 L18,12"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </th>
+        <th
+          class="c15 "
+          scope="col"
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c17"
+            >
+              ID
+            </span>
+          </div>
+        </th>
+        <th
+          class="c15 "
+          scope="col"
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c17"
+            >
+              B
+            </span>
+          </div>
+        </th>
+        <th
+          class="c15 "
+          scope="col"
+        >
+          <div
+            class="c16"
+          >
+            <span
+              class="c17"
+            >
+              Location
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c18"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c19"
+        >
+          <div
+            class="c3"
+            style="height: 0px;"
+          >
+            <button
+              aria-label="expand"
+              class="c4"
+              type="button"
+            >
+              <div
+                class="c5"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <td
+          class="c20"
+        >
+          <div
+            class="c8"
+            style="height: 0px;"
+          >
+            <label
+              class="c9"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  aria-label="select Fort Collins"
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                >
+                  <svg
+                    class="c14"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,12 L18,12"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c21 "
+        >
+          <div
+            class="c22"
+          />
+        </td>
+        <td
+          class="c21 "
+        >
+          <div
+            class="c22"
+          />
+        </td>
+        <th
+          class="c21 "
+          scope="row"
+        >
+          <div
+            class="c22"
+          >
+            <span
+              class="c17"
+            >
+              Fort Collins
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c19"
+        >
+          <div
+            class="c3"
+            style="height: 0px;"
+          >
+            <button
+              aria-label="expand"
+              class="c4"
+              type="button"
+            >
+              <div
+                class="c5"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <td
+          class="c20"
+        >
+          <div
+            class="c8"
+            style="height: 0px;"
+          >
+            <label
+              class="c9"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  aria-label="select San Francisco"
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c21 "
+        >
+          <div
+            class="c22"
+          />
+        </td>
+        <td
+          class="c21 "
+        >
+          <div
+            class="c22"
+          />
+        </td>
+        <th
+          class="c21 "
+          scope="row"
+        >
+          <div
+            class="c22"
+          >
+            <span
+              class="c17"
+            >
+              San Francisco
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c19"
+        >
+          <div
+            class="c3"
+            style="height: 0px;"
+          >
+            <button
+              aria-label="expand"
+              class="c4"
+              type="button"
+            >
+              <div
+                class="c5"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <td
+          class="c20"
+        >
+          <div
+            class="c8"
+            style="height: 0px;"
+          >
+            <label
+              class="c9"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  aria-label="select Boise"
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c21 "
+        >
+          <div
+            class="c22"
+          />
+        </td>
+        <td
+          class="c21 "
+        >
+          <div
+            class="c22"
+          />
+        </td>
+        <th
+          class="c21 "
+          scope="row"
+        >
+          <div
+            class="c22"
+          >
+            <span
+              class="c17"
+            >
+              Boise
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c19"
+        >
+          <div
+            class="c3"
+            style="height: 0px;"
+          >
+            <button
+              aria-label="expand"
+              class="c4"
+              type="button"
+            >
+              <div
+                class="c5"
+              >
+                <svg
+                  aria-label="FormDown"
+                  class="c6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 9-6 6-6-6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </td>
+        <td
+          class="c20"
+        >
+          <div
+            class="c8"
+            style="height: 0px;"
+          >
+            <label
+              class="c9"
+            >
+              <div
+                class="c10 c11"
+              >
+                <input
+                  aria-label="select Los Angeles"
+                  class="c12"
+                  type="checkbox"
+                />
+                <div
+                  class="c13 "
+                />
+              </div>
+            </label>
+          </div>
+        </td>
+        <td
+          class="c21 "
+        >
+          <div
+            class="c22"
+          />
+        </td>
+        <td
+          class="c21 "
+        >
+          <div
+            class="c22"
+          />
+        </td>
+        <th
+          class="c21 "
+          scope="row"
+        >
+          <div
+            class="c22"
+          >
+            <span
+              class="c17"
+            >
+              Los Angeles
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2"
+      >
+        <td
+          class="c21"
+        >
+          <div
+            class="c23"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
 exports[`DataTable pad 1`] = `
 .c0 {
   font-size: 18px;
@@ -24651,6 +25591,33 @@ exports[`DataTable should apply pagination styling 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -24694,33 +25661,6 @@ exports[`DataTable should apply pagination styling 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -27894,6 +28834,33 @@ exports[`DataTable should paginate 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -27937,33 +28904,6 @@ exports[`DataTable should paginate 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -30235,6 +31175,33 @@ exports[`DataTable should pin and paginate 1`] = `
   border: 0;
 }
 
+.c18 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c18 > svg {
+  margin: 0 auto;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -30287,33 +31254,6 @@ exports[`DataTable should pin and paginate 1`] = `
   position: sticky;
   top: 0;
   z-index: 1;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c18 > svg {
-  margin: 0 auto;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -32585,6 +33525,33 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -32628,33 +33595,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -33880,6 +34820,33 @@ exports[`DataTable should render new data when page changes 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -33923,33 +34890,6 @@ exports[`DataTable should render new data when page changes 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -40154,6 +41094,33 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -40197,33 +41164,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
@@ -42495,6 +43435,33 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   border: 0;
 }
 
+.c17 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c17 > svg {
+  margin: 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
 .c5 {
   margin: 0;
   padding: 0;
@@ -42538,33 +43505,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 
 .c8:focus:not(:focus-visible) {
   outline: none;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 0;
-}
-
-.c17 > svg {
-  margin: 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-  height: 36px;
-  min-width: 36px;
 }
 
 @media only screen and (max-width:768px) {
