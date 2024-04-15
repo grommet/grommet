@@ -64,6 +64,16 @@ const Content = ({ drop, options = [], ...rest }) => {
     [options],
   );
 
+  const pinned = useMemo(
+    () =>
+      objectOptions
+        ? options
+            .filter((option) => option.pinned && option.label)
+            .map((option) => option.label)
+        : [],
+    [options, objectOptions],
+  );
+
   // 'value' is an array of property names
   const [value, setValue] = useFormInput({
     name: formColumnsKey,
@@ -139,6 +149,7 @@ const Content = ({ drop, options = [], ...rest }) => {
               onOrder={(nextData) => setValue(optionsToValue(nextData))}
               pad="none"
               primaryKey={(objectOptions && 'label') || undefined}
+              pinned={pinned}
             />
           </Box>
         </Tab>
