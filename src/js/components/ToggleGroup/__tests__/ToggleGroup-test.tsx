@@ -144,49 +144,58 @@ describe('ToggleGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  // test('should allow caller to enforce a value in controlled scenarios', () => {
-  //   const [singleControlled, setSingleControlled] = useState('c2');
+  test('should allow caller to clear a value in controlled scenarios', () => {
+    const App = () => {
+      const [singleControlled, setSingleControlled] = React.useState<
+        string | string[] | undefined
+      >('c2');
 
-  //   render(
-  //     <Grommet>
-  //       <ToggleGroup
-  //         defaultValue="c2"
-  //         value={singleControlled}
-  //         onChange={(nextValue) => {
-  //           if (nextValue) setSingleControlled(nextValue);
-  //         }}
-  //         options={['one', 'two', 'three']}
-  //       />
-  //     </Grommet>,
-  //   );
+      return (
+        <Grommet>
+          <ToggleGroup
+            defaultValue="c2"
+            value={singleControlled}
+            onToggle={({ value }) => {
+              if (value === singleControlled) setSingleControlled('');
+              else setSingleControlled(value);
+            }}
+            options={['one', 'two', 'three']}
+          />
+        </Grommet>
+      );
+    };
 
-  //   // click on one to make active
-  //   fireEvent.click(screen.getByRole('radio', { name: 'one' }));
+    render(<App />);
 
-  //   const activeToggleButtonOne = screen.getByRole('radio', {
-  //     name: /one/i,
-  //   });
+    // click on one to make active
+    fireEvent.click(screen.getByRole('radio', { name: 'one' }));
 
-  //   // Assert that the aria-checked attribute of the active toggle button is true
-  //   expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'true');
-  //   // click on one to clear value
-  //   fireEvent.click(screen.getByRole('radio', { name: 'one' }));
-  //   // // Assert that the aria-checked attribute of the active toggle button is true
-  //   expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'false');
-  // });
+    const activeToggleButtonOne = screen.getByRole('radio', {
+      name: /one/i,
+    });
 
-  test('Should call onChange in uncontrolled scenarios', () => {
-    const onChange = jest.fn();
+    // Assert that the aria-checked attribute of the active toggle button is true
+    expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'true');
+    // click on one to clear value
+    fireEvent.click(screen.getByRole('radio', { name: 'one' }));
+    // // Assert that the aria-checked attribute of the active toggle button is true
+    expect(activeToggleButtonOne).toHaveAttribute('aria-checked', 'false');
+  });
+
+  test('Should call onToggle in uncontrolled scenarios', () => {
+    const onToggle = jest.fn();
     const { asFragment } = render(
       <Grommet>
-        <ToggleGroup options={['one', 'two', 'three']} onChange={onChange} />
+        <ToggleGroup options={['one', 'two', 'three']} onToggle={onToggle} />
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
 
     // Simulate a click event on the radio button
     fireEvent.click(screen.getByRole('radio', { name: 'two' }));
-    expect(onChange).toHaveBeenCalledWith({ value: 'two' });
+    expect(onToggle).toHaveBeenCalledWith(
+      expect.objectContaining({ value: 'two' }),
+    );
   });
 
   test('Should move to next button when right/down arrow key is pressed and loop', async () => {
@@ -281,13 +290,13 @@ describe('ToggleGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Should call onChange in uncontrolled scenarios with multiple prop', () => {
-    const onChange = jest.fn();
+  test('Should call onToggle in uncontrolled scenarios with multiple prop', () => {
+    const onToggle = jest.fn();
     const { asFragment } = render(
       <Grommet>
         <ToggleGroup
           options={['one', 'two', 'three']}
-          onChange={onChange}
+          onToggle={onToggle}
           multiple
         />
       </Grommet>,
@@ -297,7 +306,9 @@ describe('ToggleGroup', () => {
     // Simulate a click event on the buttons
     fireEvent.click(screen.getByRole('button', { name: 'two' }));
     fireEvent.click(screen.getByRole('button', { name: 'three' }));
-    expect(onChange).toHaveBeenCalledWith({ value: ['two', 'three'] });
+    expect(onToggle).toHaveBeenCalledWith(
+      expect.objectContaining({ value: ['two', 'three'] }),
+    );
   });
 
   test('Should render defaultValue as active with multiple prop', () => {
@@ -473,7 +484,7 @@ describe('ToggleGroup', () => {
     expect(toggleButtonThree).toHaveAttribute('aria-pressed', 'true');
   });
 
-  test('toggleButtonGroup theme values', () => {
+  test('custom theme', () => {
     const { asFragment } = render(
       <Grommet
         theme={{

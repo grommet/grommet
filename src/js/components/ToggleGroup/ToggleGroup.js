@@ -12,12 +12,12 @@ const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
   const handleChange = useCallback(onChange, [onChange]);
 
   const setValue = useCallback(
-    (nextValue) => {
+    (event) => {
       // only update internal value in uncontrolled cases
       if (!controlled) {
-        setUncontrolledProp(nextValue);
+        setUncontrolledProp(event.value);
       }
-      handleChange({ value: nextValue });
+      handleChange(event);
     },
     [controlled, setUncontrolledProp, handleChange],
   );
@@ -29,14 +29,14 @@ const ToggleGroup = ({
   defaultValue,
   multiple,
   options,
-  onChange,
+  onToggle,
   value: valueProp,
   ...rest
 }) => {
   const [value = multiple ? [] : '', setValue] = useControlled({
     prop: valueProp,
     defaultProp: defaultValue,
-    onChange,
+    onChange: onToggle,
   });
   const theme = useContext(ThemeContext);
   const ref = useRef();
@@ -80,16 +80,18 @@ const ToggleGroup = ({
     buttonRefs.current[nextIndex].focus();
   };
 
-  const handleToggle = (option) => {
+  const handleToggle = (event, option) => {
+    const adjustedEvent = event;
+    let nextValue;
     if (!multiple) {
-      setValue(option);
+      nextValue = option;
     } else {
-      const newSelectedOptions = value.includes(option)
+      nextValue = value.includes(option)
         ? value.filter((item) => item !== option)
         : [...value, option];
-
-      setValue(newSelectedOptions);
     }
+    adjustedEvent.value = nextValue;
+    setValue(adjustedEvent);
   };
 
   return (
@@ -110,6 +112,8 @@ const ToggleGroup = ({
           }
         }}
         {...theme.toggleGroup.container}
+        // match button rounding
+        responsive={false}
         {...rest}
       >
         {options.map((option, index) => {
@@ -163,7 +167,7 @@ const ToggleGroup = ({
                 aria-checked={!multiple && active}
                 icon={icon}
                 label={label}
-                onClick={() => handleToggle(optionValue, active)}
+                onClick={(event) => handleToggle(event, optionValue)}
                 ref={(r) => {
                   buttonRefs.current[index] = r;
                 }}

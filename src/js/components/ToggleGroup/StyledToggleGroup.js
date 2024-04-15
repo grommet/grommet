@@ -4,7 +4,7 @@ import { roundStyle, edgeStyle } from '../../utils';
 
 export const StyledButton = styled(Button)`
   border-radius: 0;
-  ${(props) => roundStyle(props.round, true, props.theme)};
+  ${(props) => roundStyle(props.round, false, props.theme)};
   ${(props) => edgeStyle('padding', props.pad, false, undefined, props.theme)}
   border: none;
 `;

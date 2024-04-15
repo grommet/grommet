@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.arrayOf(PropTypes.string),
     ]),
     multiple: PropTypes.bool,
-    onChange: PropTypes.func,
+    onToggle: PropTypes.func,
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.arrayOf(
@@ -19,7 +19,10 @@ if (process.env.NODE_ENV !== 'production') {
         }),
       ),
     ]),
-    value: PropTypes.oneOfType([PropTypes.string]),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
   };
 }
 export const ToggleGroupPropTypes = PropType;

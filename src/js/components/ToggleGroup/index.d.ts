@@ -4,8 +4,7 @@ import { BoxProps } from '../Box/index';
 export interface ToggleGroupProps {
   multiple?: boolean;
   defaultValue?: string | string[];
-  // may need to change onChange TODO
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onToggle?: (event: React.MouseEvent & { value?: string | string[] }) => void;
   options?: (
     | string
     | {

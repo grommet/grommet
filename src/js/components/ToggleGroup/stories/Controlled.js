@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, ToggleGroup, Text } from 'grommet';
 
 export const ControlledGroup = () => {
-  const [multipleControlled, setMultipleControlled] = useState([]);
+  const [multipleControlled, setMultipleControlled] = useState(['c2']);
 
   return (
     <Box direction="row" gap="xlarge" overflow="auto">
@@ -14,10 +14,9 @@ export const ControlledGroup = () => {
             { label: 'Choice 2', value: 'c2' },
             { label: 'Choice 3', value: 'c3' },
           ]}
-          defaultValue="c2"
           value={multipleControlled}
-          onChange={(nextValue) => {
-            if (nextValue.length) setMultipleControlled(nextValue);
+          onToggle={(e) => {
+            if (e.value.length) setMultipleControlled(e.value);
           }}
           multiple
         />
