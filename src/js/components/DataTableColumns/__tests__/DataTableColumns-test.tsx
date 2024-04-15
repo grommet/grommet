@@ -124,7 +124,7 @@ describe('DataTableColumns', () => {
     );
   });
 
-  test('pinned', async () => {
+  test('pinned', () => {
     jest.useFakeTimers();
     const onView = jest.fn();
 
