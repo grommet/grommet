@@ -101,6 +101,13 @@ var Content = function Content(_ref) {
   var objectOptions = (0, _react.useMemo)(function () {
     return options && options.length && typeof options[0] === 'object';
   }, [options]);
+  var pinned = (0, _react.useMemo)(function () {
+    return objectOptions ? options.filter(function (option) {
+      return option.pinned && option.label;
+    }).map(function (option) {
+      return option.label;
+    }) : [];
+  }, [options, objectOptions]);
 
   // 'value' is an array of property names
   var _useFormInput = useFormInput({
@@ -179,7 +186,8 @@ var Content = function Content(_ref) {
       return setValue(optionsToValue(nextData));
     },
     pad: "none",
-    primaryKey: objectOptions && 'label' || undefined
+    primaryKey: objectOptions && 'label' || undefined,
+    pinned: pinned
   })))));
 };
 var DataTableColumns = exports.DataTableColumns = function DataTableColumns(_ref5) {

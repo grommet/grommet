@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
     options: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.arrayOf(PropTypes.shape({
       disabled: PropTypes.bool,
       label: PropTypes.string,
+      pinned: PropTypes.bool,
       property: PropTypes.string
     }))]).isRequired
   };
