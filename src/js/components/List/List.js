@@ -1,7 +1,9 @@
 import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
+import { Lock } from 'grommet-icons/icons/Lock';
 import styled, { ThemeContext } from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
+import { DataTableColumnContext } from '../../contexts/DataTableColumnContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -149,6 +151,7 @@ const List = React.forwardRef(
   ) => {
     const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
+    const { inDataColumn } = useContext(DataTableColumnContext);
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 
@@ -349,6 +352,20 @@ const List = React.forwardRef(
                 let content;
                 let boxProps = {};
 
+                const key = getValue(item, index, itemKey) || index;
+
+                let isPinned;
+                if (pinned.length > 0) {
+                  if (typeof item === 'object' && !itemKey) {
+                    console.error(
+                      // eslint-disable-next-line max-len
+                      `Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.`,
+                    );
+                  }
+                  isPinned = pinned?.includes(key);
+                }
+                const pinTextColor = theme.list.item.pinned.text.color;
+
                 if (children) {
                   content = children(
                     item,
@@ -360,7 +377,11 @@ const List = React.forwardRef(
                   content =
                     typeof primary === 'string' ||
                     typeof primary === 'number' ? (
-                      <Text key="p" {...theme.list.primaryKey}>
+                      <Text
+                        color={inDataColumn && isPinned ? pinTextColor : null}
+                        key="p"
+                        {...theme.list.primaryKey}
+                      >
                         {primary}
                       </Text>
                     ) : (
@@ -392,8 +413,6 @@ const List = React.forwardRef(
                   content = item;
                 }
 
-                const key = getValue(item, index, itemKey) || index;
-
                 const orderableIndex = orderableData.findIndex(
                   (ordItem, ordIndex) =>
                     getValue(ordItem, ordIndex, itemKey) === key,
@@ -408,17 +427,6 @@ const List = React.forwardRef(
                     );
                   }
                   isDisabled = disabledItems?.includes(key);
-                }
-
-                let isPinned;
-                if (pinned.length > 0) {
-                  if (typeof item === 'object' && !itemKey) {
-                    console.error(
-                      // eslint-disable-next-line max-len
-                      `Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.`,
-                    );
-                  }
-                  isPinned = pinned?.includes(key);
                 }
 
                 if (action) {
@@ -443,7 +451,7 @@ const List = React.forwardRef(
                 } else if (Array.isArray(adjustedBackground)) {
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
-                } else if (isPinned) {
+                } else if (isPinned && !inDataColumn) {
                   adjustedBackground = theme.list.item.pinned.background;
                 }
 
@@ -640,9 +648,11 @@ const List = React.forwardRef(
                 let displayPinned;
                 if (isPinned) {
                   // Pinned icon and settings
-                  const Pin = theme.list.icons.pin;
+                  // If pinned is passed in dataTableColumns use Lock icon.
+                  const Icon = inDataColumn ? Lock : theme.list.icons.pin;
                   const pinSize = theme.list.item.pinned.icon.size;
                   const pinPad = theme.list.item.pinned.icon.pad;
+                  const iconColor = inDataColumn ? pinTextColor : null;
 
                   boxProps = {
                     direction: 'row',
@@ -657,7 +667,7 @@ const List = React.forwardRef(
                       justify="end"
                       pad={pinPad}
                     >
-                      <Pin size={pinSize} />
+                      <Icon size={pinSize} color={iconColor} />
                     </Box>
                   );
                   content = <Box flex>{content}</Box>;
@@ -682,7 +692,13 @@ const List = React.forwardRef(
                     {...orderProps}
                     {...itemAriaProps}
                   >
-                    {onOrder && <Text>{index + 1}</Text>}
+                    {onOrder && (
+                      <Text
+                        color={isPinned && inDataColumn ? pinTextColor : null}
+                      >
+                        {index + 1}
+                      </Text>
+                    )}
                     {content}
                     {displayPinned}
                     {orderControls}
