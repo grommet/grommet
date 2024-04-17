@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
 import { Box, ToggleGroup, Text } from 'grommet';
 
-export const ControlledGroup = () => {
-  const [multipleControlled, setMultipleControlled] = useState(['c2']);
+export const Controlled = () => {
+  const [value, setValue] = useState(['Option 2']);
 
   return (
     <Box direction="row" gap="xlarge" overflow="auto">
       <Box gap="large" pad="large">
-        <Text>An option always has to be checked</Text>
+        <Text>In multiple selection mode, enforce at least one selection.</Text>
         <ToggleGroup
-          options={[
-            { label: 'Choice 1', value: 'c1' },
-            { label: 'Choice 2', value: 'c2' },
-            { label: 'Choice 3', value: 'c3' },
-          ]}
-          value={multipleControlled}
+          options={['Option 1', 'Option 2', 'Option 3']}
+          value={value}
           onToggle={(e) => {
-            if (e.value.length) setMultipleControlled(e.value);
+            if (e.value.length) setValue(e.value);
           }}
           multiple
         />
@@ -26,5 +22,5 @@ export const ControlledGroup = () => {
 };
 
 export default {
-  title: 'Controls/ToggleGroup/ControlledGroup',
+  title: 'Controls/ToggleGroup/Controlled',
 };
