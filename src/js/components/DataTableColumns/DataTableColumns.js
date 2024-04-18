@@ -6,7 +6,6 @@ import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
 import { DataFormContext } from '../../contexts/DataFormContext';
-import { DataTableColumnsContext } from '../../contexts/DataTableColumnsContext';
 import { FormContext } from '../Form/FormContext';
 import { DropButton } from '../DropButton';
 import { List } from '../List';
@@ -16,6 +15,8 @@ import { TextInput } from '../TextInput';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataTableColumnsPropTypes } from './propTypes';
+// eslint-disable-next-line max-len
+import { DataTableColumnsContext } from '../../contexts/DataTableColumnsContext';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },

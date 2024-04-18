@@ -302,14 +302,6 @@ exports[`DataTableColumns pinned 1`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -1470,6 +1462,273 @@ exports[`DataTableColumns renders 1`] = `
     </table>
   </div>
 </div>
+`;
+
+exports[`DataTableColumns renders lock icon with custom theme for pinned 1`] = `
+.c1 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c1 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c1 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c1 *[stroke*='#'],
+.c1 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c1 *[fill-rule],
+.c1 *[FILL-RULE],
+.c1 *[fill*='#'],
+.c1 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) > circle,
+.c0:focus:not(:focus-visible) > ellipse,
+.c0:focus:not(:focus-visible) > line,
+.c0:focus:not(:focus-visible) > path,
+.c0:focus:not(:focus-visible) > polygon,
+.c0:focus:not(:focus-visible) > polyline,
+.c0:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<button
+  aria-label="Open column selector"
+  class="c0"
+  data-g-tabindex="none"
+  id="test-data--columns-control"
+  tabindex="-1"
+  type="button"
+>
+  <svg
+    aria-label="Splits"
+    class="c1"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
+      fill="none"
+      stroke="#000"
+      stroke-width="2"
+    />
+  </svg>
+</button>
+`;
+
+exports[`DataTableColumns renders lock icon with custom theme for pinned 2`] = `
+"@media only screen and (max-width: 768px) {
+  .kYOLuO {
+    margin-top: 12px;
+  }
+}
+.hZNOgI {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+.hZNOgI:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6fffb0;
+}
+.hZNOgI:focus > circle,
+.hZNOgI:focus > ellipse,
+.hZNOgI:focus > line,
+.hZNOgI:focus > path,
+.hZNOgI:focus > polygon,
+.hZNOgI:focus > polyline,
+.hZNOgI:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6fffb0;
+}
+.hZNOgI:focus::-moz-focus-inner {
+  border: 0;
+}
+.hZNOgI:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.hZNOgI:focus:not(:focus-visible) > circle,
+.hZNOgI:focus:not(:focus-visible) > ellipse,
+.hZNOgI:focus:not(:focus-visible) > line,
+.hZNOgI:focus:not(:focus-visible) > path,
+.hZNOgI:focus:not(:focus-visible) > polygon,
+.hZNOgI:focus:not(:focus-visible) > polyline,
+.hZNOgI:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+.hZNOgI:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}"
 `;
 
 exports[`DataTableColumns search 1`] = `

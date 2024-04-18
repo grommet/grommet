@@ -203,4 +203,63 @@ describe('DataTableColumns', () => {
       }),
     );
   });
+  test('renders lock icon with custom theme for pinned', () => {
+    jest.useFakeTimers();
+    const theme = {
+      list: {
+        item: {
+          pinned: {
+            icon: {
+              size: 'small',
+              pad: '4px',
+            },
+          },
+        },
+      },
+    };
+
+    const { getByRole } = render(
+      <Grommet theme={theme}>
+        <Data id="test-data" data={data}>
+          <DataTableColumns
+            drop
+            options={[
+              { property: 'name', label: 'Name', pinned: true },
+              { property: 'size', label: 'Size', pinned: true },
+              { property: 'percent', label: 'Percent' },
+            ]}
+          />
+        </Data>
+      </Grommet>,
+    );
+
+    // Trigger the action that opens the drop
+    fireEvent.click(getByRole('button', { name: 'Open column selector' }));
+
+    // Expect the order columns tab to be visible
+    const orderColumnsButton = getByRole('tab', { name: 'Order columns' });
+    expect(orderColumnsButton).toBeTruthy();
+
+    // Trigger the action that opens the drop
+    fireEvent.click(orderColumnsButton);
+
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+
+    // Find the element by its role
+    const list = screen.getByRole('listbox');
+    const listItems = within(list).getAllByRole('listitem');
+
+    // Assert that the element is truthy
+    expect(listItems).toBeTruthy();
+
+    const nonDragElement = listItems[0];
+    expect(nonDragElement).toHaveAttribute('draggable', 'false');
+
+    const dragElement = listItems[2];
+    expect(dragElement).toHaveAttribute('draggable', 'true');
+
+    // Take a snapshot of the drop
+    expectPortal('test-data--columns-control').toMatchSnapshot();
+  });
 });

@@ -14940,6 +14940,7 @@ exports[`List itemKey function 1`] = `
       </li>
       <li
         class="c11 c12"
+        draggable="false"
       >
         <span
           class="c4"
@@ -19231,6 +19232,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
       </li>
       <li
         class="c11 c12"
+        draggable="false"
       >
         <span
           class="c4"
@@ -19332,6 +19334,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
       </li>
       <li
         class="c11 c12"
+        draggable="false"
       >
         <span
           class="c4"
@@ -20007,6 +20010,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
       </li>
       <li
         class="c11 c12"
+        draggable="false"
       >
         <span
           class="c4"
@@ -20108,6 +20112,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
       </li>
       <li
         class="c11 c12"
+        draggable="false"
       >
         <span
           class="c4"
@@ -20499,6 +20504,7 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
       </li>
       <li
         class="c4 c3"
+        draggable="false"
       >
         <div
           class="c5"
@@ -20532,6 +20538,7 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
       </li>
       <li
         class="c4 c3"
+        draggable="false"
       >
         <div
           class="c5"
@@ -20882,6 +20889,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
       </li>
       <li
         class="c6 c3"
+        draggable="false"
       >
         <div
           class="c7"
@@ -20931,6 +20939,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
       </li>
       <li
         class="c6 c3"
+        draggable="false"
       >
         <div
           class="c7"
@@ -21269,6 +21278,7 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
       </li>
       <li
         class="c4 c3"
+        draggable="false"
       >
         <div
           class="c5"
@@ -21302,6 +21312,7 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
       </li>
       <li
         class="c4 c3"
+        draggable="false"
       >
         <div
           class="c5"

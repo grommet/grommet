@@ -3,6 +3,7 @@ import { Lock } from 'grommet-icons/icons/Lock';
 import styled, { ThemeContext } from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
+// eslint-disable-next-line max-len
 import { DataTableColumnsContext } from '../../contexts/DataTableColumnsContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -654,6 +655,10 @@ const List = React.forwardRef(
                   const pinSize = theme.list.item.pinned.icon.size;
                   const pinPad = theme.list.item.pinned.icon.pad;
                   const iconColor = inDataTableColumns ? pinTextColor : null;
+
+                  orderProps = {
+                    draggable: false,
+                  };
 
                   boxProps = {
                     direction: 'row',
