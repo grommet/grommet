@@ -444,6 +444,46 @@ describe('Pagination', () => {
     expect(updatedSelectButton).toBeTruthy();
   });
 
+  test('should respect stepOptions and controlled step', async () => {
+    window.scrollTo = jest.fn();
+    const user = userEvent.setup();
+    const App = () => {
+      const [step, setStep] = useState(10);
+      return (
+        <Grommet>
+          <Select
+            a11yTitle="Controlled select"
+            options={[10, 25, 50, 100]}
+            onChange={({ option }) => setStep(option)}
+          />
+          <Pagination numberItems={NUM_ITEMS} step={step} stepOptions />
+        </Grommet>
+      );
+    };
+    render(<App />);
+    await user.click(
+      screen.getByRole('button', { name: /Controlled select/i }),
+    );
+    await user.click(screen.getByRole('option', { name: '50' }));
+    // stepOptions should have updated
+    const updatedSelectButton = screen.getByRole('button', {
+      name: 'Open Drop; Selected: 50',
+    });
+    expect(updatedSelectButton).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Go to page 5' })).toBeTruthy();
+    // there should only be 5 pages based on step = 50 and NUM_ITEMS
+    expect(
+      screen.queryByRole('button', { name: 'Go to page 6' }),
+    ).not.toBeInTheDocument();
+    await user.click(updatedSelectButton);
+    await user.click(screen.getByRole('option', { name: '25' }));
+    expect(screen.getByRole('button', { name: 'Go to page 10' })).toBeTruthy();
+    // there should only be 10 pages based on step = 25 and NUM_ITEMS
+    expect(
+      screen.queryByRole('button', { name: 'Go to page 11' }),
+    ).not.toBeInTheDocument();
+  });
+
   test('should apply a text component with summary', () => {
     const { asFragment } = render(
       <Grommet>
