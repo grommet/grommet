@@ -6,7 +6,7 @@ import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
 import { DataFormContext } from '../../contexts/DataFormContext';
-import { DataTableColumnContext } from '../../contexts/DataTableColumnContext';
+import { DataTableColumnsContext } from '../../contexts/DataTableColumnsContext';
 import { FormContext } from '../Form/FormContext';
 import { DropButton } from '../DropButton';
 import { List } from '../List';
@@ -165,7 +165,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext);
   const [showContent, setShowContent] = useState();
-  const contextValue = useMemo(() => ({ inDataColumn: true }), []);
+  const contextValue = useMemo(() => ({ inDataTableColumns: true }), []);
 
   const tip = format({
     id: 'dataTableColumns.tip',
@@ -173,9 +173,9 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   });
 
   let content = (
-    <DataTableColumnContext.Provider value={contextValue}>
+    <DataTableColumnsContext.Provider value={contextValue}>
       <Content drop={drop} options={options} />
-    </DataTableColumnContext.Provider>
+    </DataTableColumnsContext.Provider>
   );
   if (!inDataForm)
     content = (

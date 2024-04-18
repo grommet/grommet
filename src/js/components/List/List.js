@@ -3,7 +3,7 @@ import { Lock } from 'grommet-icons/icons/Lock';
 import styled, { ThemeContext } from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
-import { DataTableColumnContext } from '../../contexts/DataTableColumnContext';
+import { DataTableColumnsContext } from '../../contexts/DataTableColumnsContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -151,7 +151,7 @@ const List = React.forwardRef(
   ) => {
     const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
-    const { inDataColumn } = useContext(DataTableColumnContext);
+    const { inDataTableColumns } = useContext(DataTableColumnsContext);
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 
@@ -364,7 +364,8 @@ const List = React.forwardRef(
                   }
                   isPinned = pinned?.includes(key);
                 }
-                const pinTextColor = theme.list.item.pinned.text.color;
+                const pinTextColor =
+                  inDataTableColumns && isPinned ? 'text-weak' : undefined;
 
                 if (children) {
                   content = children(
@@ -378,7 +379,7 @@ const List = React.forwardRef(
                     typeof primary === 'string' ||
                     typeof primary === 'number' ? (
                       <Text
-                        color={inDataColumn && isPinned ? pinTextColor : null}
+                        color={pinTextColor}
                         key="p"
                         {...theme.list.primaryKey}
                       >
@@ -451,7 +452,7 @@ const List = React.forwardRef(
                 } else if (Array.isArray(adjustedBackground)) {
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
-                } else if (isPinned && !inDataColumn) {
+                } else if (isPinned && !inDataTableColumns) {
                   adjustedBackground = theme.list.item.pinned.background;
                 }
 
@@ -649,10 +650,10 @@ const List = React.forwardRef(
                 if (isPinned) {
                   // Pinned icon and settings
                   // If pinned is passed in dataTableColumns use Lock icon.
-                  const Icon = inDataColumn ? Lock : theme.list.icons.pin;
+                  const Icon = inDataTableColumns ? Lock : theme.list.icons.pin;
                   const pinSize = theme.list.item.pinned.icon.size;
                   const pinPad = theme.list.item.pinned.icon.pad;
-                  const iconColor = inDataColumn ? pinTextColor : null;
+                  const iconColor = inDataTableColumns ? pinTextColor : null;
 
                   boxProps = {
                     direction: 'row',
@@ -692,13 +693,7 @@ const List = React.forwardRef(
                     {...orderProps}
                     {...itemAriaProps}
                   >
-                    {onOrder && (
-                      <Text
-                        color={isPinned && inDataColumn ? pinTextColor : null}
-                      >
-                        {index + 1}
-                      </Text>
-                    )}
+                    {onOrder && <Text color={pinTextColor}>{index + 1}</Text>}
                     {content}
                     {displayPinned}
                     {orderControls}

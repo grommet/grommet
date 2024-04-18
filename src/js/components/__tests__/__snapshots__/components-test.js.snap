@@ -1806,9 +1806,6 @@ exports[`Components loads 1`] = `
                 "pad": "small",
                 "size": "medium",
               },
-              "text": {
-                "color": "text-weak",
-              },
             },
           },
           "primaryKey": {
@@ -3801,9 +3798,6 @@ exports[`Components loads 1`] = `
               "icon": {
                 "pad": "small",
                 "size": "medium",
-              },
-              "text": {
-                "color": "text-weak",
               },
             },
           },

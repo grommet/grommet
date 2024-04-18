@@ -1085,9 +1085,6 @@ export interface ThemeType {
           size?: string;
           pad?: PadType;
         };
-        text?: {
-          color?: ColorType;
-        };
       };
       pad?: PadType;
       extend?: ExtendType;

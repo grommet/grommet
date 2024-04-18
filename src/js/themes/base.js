@@ -1113,9 +1113,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             size: 'medium',
             pad: 'small',
           },
-          text: {
-            color: 'text-weak',
-          },
         },
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
