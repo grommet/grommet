@@ -103,9 +103,9 @@ const ToggleGroup = ({
     >
       <Box
         ref={ref}
-        direction="row"
         alignSelf="start"
-        role={multiple ? 'group' : 'radiogroup'}
+        direction="row"
+        flex={false}
         onBlur={(e) => {
           if (!ref?.current.contains(e.relatedTarget)) {
             setFocusableIndex(getFocusableIndex());
@@ -114,6 +114,7 @@ const ToggleGroup = ({
         {...theme.toggleGroup.container}
         // match button rounding
         responsive={false}
+        role={multiple ? 'group' : 'radiogroup'}
         {...rest}
       >
         {options.map((option, index) => {

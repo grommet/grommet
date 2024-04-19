@@ -28,6 +28,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -252,6 +255,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -476,6 +482,9 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -767,6 +776,9 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -1129,6 +1141,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -1418,6 +1433,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -1707,6 +1725,9 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -1906,6 +1927,9 @@ exports[`ToggleGroup custom theme 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 3px;
 }
 
@@ -2139,6 +2163,9 @@ exports[`ToggleGroup icon with values 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -2413,6 +2440,9 @@ exports[`ToggleGroup object options 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -2612,6 +2642,9 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -2836,6 +2869,9 @@ exports[`ToggleGroup string options 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
@@ -3035,6 +3071,9 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: 6px;
 }
 
