@@ -1719,7 +1719,6 @@ export interface ThemeType {
   };
   toggleGroup?: {
     button?: {
-      color?: ColorType;
       pad?: PadType;
       iconOnly?: {
         pad?: PadType;

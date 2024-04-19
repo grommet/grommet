@@ -143,12 +143,6 @@ const ToggleGroup = ({
             };
           }
 
-          const iconOnly = icon && !label;
-          let pad;
-          if (iconOnly && theme.toggleGroup.button?.iconOnly?.pad) {
-            pad = theme.toggleGroup.button.iconOnly.pad;
-          } else pad = theme.toggleGroup.button.pad;
-
           return (
             <Box
               border={
@@ -174,7 +168,6 @@ const ToggleGroup = ({
                 role={!multiple ? 'radio' : undefined}
                 round={round}
                 tabIndex={index === focusableIndex ? '0' : '-1'}
-                pad={pad}
               />
             </Box>
           );
