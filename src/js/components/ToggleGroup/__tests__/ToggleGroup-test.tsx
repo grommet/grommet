@@ -40,7 +40,7 @@ describe('ToggleGroup', () => {
         <ToggleGroup
           options={[
             { label: 'One', value: 'one' },
-            { id: 'twO', label: 'Two', value: 'two' },
+            { label: 'Two', value: 'two' },
           ]}
         />
       </Grommet>,
@@ -496,7 +496,6 @@ describe('ToggleGroup', () => {
                   vertical: 'large',
                 },
               },
-              color: 'text-weak',
             },
             container: {
               round: 'xxsmall',
