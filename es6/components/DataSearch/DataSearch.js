@@ -76,6 +76,11 @@ export var DataSearch = function DataSearch(_ref) {
       delete nextView.view;
       delete nextView.name;
     }
+
+    // If page is set, reset it to 1
+    if (nextView.page) {
+      nextView.page = 1;
+    }
     onView(nextView);
   };
   var onChange = function onChange(e) {

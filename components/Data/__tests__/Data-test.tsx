@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
 
@@ -495,5 +496,133 @@ describe('Data', () => {
     });
 
     expect(filterButton).toBeTruthy();
+  });
+
+  test('uncontrolled, when paginated, search should return to page 1', () => {
+    const properties = {
+      name: { label: 'Name' },
+    };
+    const view = {
+      step: 2,
+      page: 1,
+      search: '',
+    };
+    const columns = [
+      { property: 'name', header: 'Name', size: 'small', primary: true },
+    ];
+
+    jest.useFakeTimers();
+    const { getByRole, getByText, container } = render(
+      <Grommet>
+        <Data data={data} properties={properties} view={view} toolbar>
+          <DataTable columns={columns} />
+          <Pagination />
+        </Data>
+      </Grommet>,
+    );
+
+    const page1Button = getByRole('button', { name: 'Go to page 1' });
+    const page2Button = getByRole('button', { name: 'Go to page 2' });
+    const searchBox = getByRole('searchbox');
+
+    fireEvent.click(page2Button);
+    expect(getByText('cc')).toBeTruthy();
+    expect(page1Button).not.toHaveAttribute('aria-current', 'page');
+    expect(page2Button).toHaveAttribute('aria-current', 'page');
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(searchBox, {
+      target: { value: 'a' },
+    });
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expect(getByText('aa')).toBeTruthy();
+    expect(page1Button).toHaveAttribute('aria-current', 'page');
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.change(searchBox, {
+      target: { value: '' },
+    });
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expect(getByText('bb')).toBeTruthy();
+    expect(page1Button).toHaveAttribute('aria-current', 'page');
+    expect(page2Button).not.toHaveAttribute('aria-current', 'page');
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled, when paginated, search should call onView with page 1', () => {
+    const properties = {
+      name: { label: 'Name' },
+    };
+    const view = {
+      step: 2,
+      page: 1,
+      search: '',
+    };
+    const columns = [
+      { property: 'name', header: 'Name', size: 'small', primary: true },
+    ];
+
+    jest.useFakeTimers();
+    const onView = jest.fn();
+    const { getByRole } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={properties}
+          view={view}
+          toolbar
+          onView={onView}
+        >
+          <DataTable columns={columns} />
+          <Pagination />
+        </Data>
+      </Grommet>,
+    );
+
+    const page1Button = getByRole('button', { name: 'Go to page 1' });
+    const page2Button = getByRole('button', { name: 'Go to page 2' });
+    const searchBox = getByRole('searchbox');
+
+    fireEvent.click(page2Button);
+    expect(page1Button).not.toHaveAttribute('aria-current', 'page');
+    expect(page2Button).toHaveAttribute('aria-current', 'page');
+    expect(onView).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        page: 2,
+      }),
+    );
+
+    fireEvent.change(searchBox, {
+      target: { value: 'a' },
+    });
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expect(onView).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        search: 'a',
+        page: 1,
+      }),
+    );
+
+    fireEvent.change(searchBox, {
+      target: { value: '' },
+    });
+    act(() => {
+      jest.advanceTimersByTime(DEBOUNCE_TIMEOUT);
+    });
+    expect(onView).toHaveBeenNthCalledWith(
+      3,
+      expect.objectContaining({
+        search: '',
+        page: 1,
+      }),
+    );
   });
 });
