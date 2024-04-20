@@ -654,7 +654,9 @@ const List = React.forwardRef(
                   const Icon = inDataTableColumns ? Lock : theme.list.icons.pin;
                   const pinSize = theme.list.item.pinned.icon.size;
                   const pinPad = theme.list.item.pinned.icon.pad;
-                  const iconColor = inDataTableColumns ? pinTextColor : undefined;
+                  const iconColor = inDataTableColumns
+                    ? pinTextColor
+                    : undefined;
 
                   orderProps = {
                     draggable: false,
