@@ -42,7 +42,7 @@ const ToggleGroup = ({
   const ref = useRef();
   const buttonRefs = useRef([]);
 
-  const values = options.map((option) =>
+  const values = options?.map((option) =>
     typeof option === 'object' ? option.value : option,
   );
 
@@ -117,7 +117,7 @@ const ToggleGroup = ({
         role={multiple ? 'group' : 'radiogroup'}
         {...rest}
       >
-        {options.map((option, index) => {
+        {options?.map((option, index) => {
           let label;
           let icon;
           let optionValue;
