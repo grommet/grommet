@@ -8,7 +8,6 @@ import { PageControl } from './PageControl';
 import { PaginationStep } from './PaginationStep';
 import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
-import { useControlled } from '../../utils/useControlled';
 
 const StyledPaginationContainer = styled(Box)`
   ${(props) =>
@@ -45,11 +44,7 @@ const Pagination = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const { onView, filteredTotal, view } = useContext(DataContext);
-    const [step, setStep] = useControlled({
-      prop: stepProp,
-      defaultProp: view?.step || 10,
-      onChange,
-    });
+    const [step, setStep] = useState(stepProp || view?.step || 10);
     const total = numberItems ?? filteredTotal ?? 0;
     const page = pageProp || view?.page || 1;
 
@@ -58,6 +53,10 @@ const Pagination = forwardRef(
     const [activePage, setActivePage] = useState(
       Math.min(page, totalPages) || 1,
     );
+
+    useEffect(() => {
+      if (stepProp) setStep(stepProp);
+    }, [stepProp]);
 
     useEffect(() => {
       setActivePage(page);
