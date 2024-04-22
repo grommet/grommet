@@ -254,7 +254,7 @@ describe('DataTableColumns', () => {
     expect(listItems).toBeTruthy();
 
     const nonDragElement = listItems[0];
-    expect(nonDragElement).toHaveAttribute('draggable', 'false');
+    expect(nonDragElement).not.toHaveAttribute('draggable', 'true');
 
     const dragElement = listItems[2];
     expect(dragElement).toHaveAttribute('draggable', 'true');

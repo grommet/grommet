@@ -658,10 +658,6 @@ const List = React.forwardRef(
                     ? pinTextColor
                     : undefined;
 
-                  orderProps = {
-                    draggable: false,
-                  };
-
                   boxProps = {
                     direction: 'row',
                     align:
