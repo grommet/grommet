@@ -553,6 +553,12 @@ Object.keys(_Toolbar).forEach(function (key) {
   if (key in exports && exports[key] === _Toolbar[key]) return;
   exports[key] = _Toolbar[key];
 });
+var _ToggleGroup = require("./ToggleGroup");
+Object.keys(_ToggleGroup).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _ToggleGroup[key]) return;
+  exports[key] = _ToggleGroup[key];
+});
 var _ThumbsRating = require("./ThumbsRating");
 Object.keys(_ThumbsRating).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

@@ -1717,6 +1717,18 @@ export interface ThemeType {
     content?: BoxProps;
     drop?: DropProps;
   };
+  toggleGroup?: {
+    button?: {
+      pad?: PadType;
+      iconOnly?: {
+        pad?: PadType;
+      };
+    };
+    container?: BoxProps;
+    divider?: {
+      color?: ColorType;
+    };
+  };
   video?: {
     captions?: {
       background?: BackgroundType;

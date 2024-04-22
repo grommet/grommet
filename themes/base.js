@@ -2099,6 +2099,24 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         margin: 'none'
       }
     },
+    toggleGroup: {
+      button: {
+        // iconOnly: {
+        //   pad: undefined,
+        // },
+        pad: {
+          horizontal: '11px',
+          vertical: '11px'
+        }
+      },
+      container: {
+        round: 'xsmall',
+        border: true
+      },
+      divider: {
+        color: 'border'
+      }
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)'
