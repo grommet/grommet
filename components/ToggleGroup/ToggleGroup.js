@@ -51,7 +51,7 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
   var ref = (0, _react.useRef)();
   var buttonRefs = (0, _react.useRef)([]);
-  var values = options.map(function (option) {
+  var values = options == null ? void 0 : options.map(function (option) {
     return typeof option === 'object' ? option.value : option;
   });
   var getFocusableIndex = (0, _react.useCallback)(function () {
@@ -116,7 +116,7 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
     // match button rounding
     responsive: false,
     role: multiple ? 'group' : 'radiogroup'
-  }, rest), options.map(function (option, index) {
+  }, rest), options == null ? void 0 : options.map(function (option, index) {
     var label;
     var icon;
     var optionValue;

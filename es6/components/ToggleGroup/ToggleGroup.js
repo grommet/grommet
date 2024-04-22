@@ -45,7 +45,7 @@ var ToggleGroup = function ToggleGroup(_ref2) {
   var theme = useContext(ThemeContext);
   var ref = useRef();
   var buttonRefs = useRef([]);
-  var values = options.map(function (option) {
+  var values = options == null ? void 0 : options.map(function (option) {
     return typeof option === 'object' ? option.value : option;
   });
   var getFocusableIndex = useCallback(function () {
@@ -110,7 +110,7 @@ var ToggleGroup = function ToggleGroup(_ref2) {
     // match button rounding
     responsive: false,
     role: multiple ? 'group' : 'radiogroup'
-  }, rest), options.map(function (option, index) {
+  }, rest), options == null ? void 0 : options.map(function (option, index) {
     var label;
     var icon;
     var optionValue;
