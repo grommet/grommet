@@ -2718,6 +2718,21 @@ exports[`Components loads 1`] = `
             "margin": "none",
           },
         },
+        "toggleGroup": {
+          "button": {
+            "pad": {
+              "horizontal": "11px",
+              "vertical": "11px",
+            },
+          },
+          "container": {
+            "border": true,
+            "round": "xsmall",
+          },
+          "divider": {
+            "color": "border",
+          },
+        },
         "video": {
           "captions": {
             "background": "rgba(0, 0, 0, 0.7)",
@@ -4711,6 +4726,21 @@ exports[`Components loads 1`] = `
             "margin": "none",
           },
         },
+        "toggleGroup": {
+          "button": {
+            "pad": {
+              "horizontal": "11px",
+              "vertical": "11px",
+            },
+          },
+          "container": {
+            "border": true,
+            "round": "xsmall",
+          },
+          "divider": {
+            "color": "border",
+          },
+        },
         "video": {
           "captions": {
             "background": "rgba(0, 0, 0, 0.7)",
@@ -5036,6 +5066,7 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "ToggleGroup": [Function],
   "Toolbar": [Function],
   "Video": {
     "$$typeof": Symbol(react.forward_ref),
