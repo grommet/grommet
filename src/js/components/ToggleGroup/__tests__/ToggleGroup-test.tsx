@@ -24,6 +24,16 @@ describe('ToggleGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('renders without props', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <ToggleGroup />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('string options', () => {
     const { asFragment } = render(
       <Grommet>
