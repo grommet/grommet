@@ -66,7 +66,6 @@ describe('DataTableColumns', () => {
     // Take a snapshot of the tab panel
     expect(secondTabPanel).toMatchSnapshot();
 
-    // click on button then snap shot
   });
 
   test('remove column', () => {
