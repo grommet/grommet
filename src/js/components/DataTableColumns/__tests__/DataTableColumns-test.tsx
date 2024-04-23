@@ -57,15 +57,12 @@ describe('DataTableColumns', () => {
     // Click on the "Order columns" tab
     fireEvent.click(screen.getByRole('tab', { name: 'Order columns' }));
 
-    act(() => jest.advanceTimersByTime(200));
-
     // Find the tab panel element using its role and aria-label
     const secondTabPanel = screen.getByRole('tabpanel', {
       name: 'Order columns Tab Contents',
     });
     // Take a snapshot of the tab panel
     expect(secondTabPanel).toMatchSnapshot();
-
   });
 
   test('remove column', () => {
@@ -196,8 +193,6 @@ describe('DataTableColumns', () => {
     act(() => jest.advanceTimersByTime(200));
 
     fireEvent.click(screen.getByRole('tab', { name: 'Order columns' }));
-
-    act(() => jest.advanceTimersByTime(200));
 
     // snap order tab
     const tabPanel = screen.getByRole('tabpanel', {
