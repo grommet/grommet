@@ -16,6 +16,7 @@ const data = [
 ];
 
 describe('DataTableColumns', () => {
+  jest.useFakeTimers();
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
 
@@ -38,6 +39,34 @@ describe('DataTableColumns', () => {
 
     expect(getByRole('button', { name: 'Open column selector' })).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Open column selector' }),
+    );
+
+    window.scrollTo = jest.fn();
+
+    // advance timers so drop can open
+    act(() => jest.advanceTimersByTime(200));
+    // Take a snapshot of the tab panel
+    const firstTabPanel = screen.getByRole('tabpanel', {
+      name: 'Select columns Tab Contents',
+    });
+    expect(firstTabPanel).toMatchSnapshot();
+
+    // Click on the "Order columns" tab
+    fireEvent.click(screen.getByRole('tab', { name: 'Order columns' }));
+
+    act(() => jest.advanceTimersByTime(200));
+
+    // Find the tab panel element using its role and aria-label
+    const secondTabPanel = screen.getByRole('tabpanel', {
+      name: 'Order columns Tab Contents',
+    });
+    // Take a snapshot of the tab panel
+    expect(secondTabPanel).toMatchSnapshot();
+
+    // click on button then snap shot
   });
 
   test('remove column', () => {
@@ -69,7 +98,10 @@ describe('DataTableColumns', () => {
     act(() => jest.advanceTimersByTime(200));
 
     // snapshot on drop
-    expectPortal('test-data--columns-control').toMatchSnapshot();
+    const tabPanel = screen.getByRole('tabpanel', {
+      name: 'Select columns Tab Contents',
+    });
+    expect(tabPanel).toMatchSnapshot();
 
     fireEvent.click(getByText('name'));
     expect(onView).toBeCalledWith(
@@ -110,7 +142,10 @@ describe('DataTableColumns', () => {
     act(() => jest.advanceTimersByTime(200));
 
     // snapshot on drop
-    expectPortal('test-data--columns-control').toMatchSnapshot();
+    const tabPanel = screen.getByRole('tabpanel', {
+      name: 'Select columns Tab Contents',
+    });
+    expect(tabPanel).toMatchSnapshot();
 
     // add content to search
     fireEvent.change(getByPlaceholderText('Search'), {
@@ -152,7 +187,7 @@ describe('DataTableColumns', () => {
       </Grommet>
     );
 
-    const { asFragment } = render(<App />);
+    render(<App />);
 
     fireEvent.click(
       screen.getByRole('button', { name: 'Open column selector' }),
@@ -163,8 +198,14 @@ describe('DataTableColumns', () => {
 
     fireEvent.click(screen.getByRole('tab', { name: 'Order columns' }));
 
+    act(() => jest.advanceTimersByTime(200));
+
     // snap order tab
-    expect(asFragment()).toMatchSnapshot();
+    const tabPanel = screen.getByRole('tabpanel', {
+      name: 'Order columns Tab Contents',
+    });
+    // Take a snapshot of the tab panel
+    expect(tabPanel).toMatchSnapshot();
 
     const bottomMoveUp = screen.getByRole('button', {
       name: '2 Percent move up',
