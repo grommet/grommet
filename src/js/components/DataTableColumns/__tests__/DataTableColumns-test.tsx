@@ -21,7 +21,7 @@ describe('DataTableColumns', () => {
   beforeEach(createPortal);
 
   test('renders', () => {
-    const { container, getByRole } = render(
+    const { asFragment, getByRole } = render(
       <Grommet>
         <Data id="test-data" data={data}>
           <DataFilters>
@@ -38,7 +38,7 @@ describe('DataTableColumns', () => {
     );
 
     expect(getByRole('button', { name: 'Open column selector' })).toBeTruthy();
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
     fireEvent.click(
       screen.getByRole('button', { name: 'Open column selector' }),
@@ -72,7 +72,7 @@ describe('DataTableColumns', () => {
   test('remove column', () => {
     jest.useFakeTimers();
     const onView = jest.fn();
-    const { container, getByRole, getByText } = render(
+    const { asFragment, getByRole, getByText } = render(
       <Grommet>
         <Data id="test-data" data={data} onView={onView}>
           <DataFilters updateOn="change">
@@ -90,7 +90,7 @@ describe('DataTableColumns', () => {
     );
     expect(getByRole('button', { name: 'Open column selector' })).toBeTruthy();
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
     fireEvent.click(getByRole('button', { name: 'Open column selector' }));
 
