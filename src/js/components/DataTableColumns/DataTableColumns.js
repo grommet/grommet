@@ -75,7 +75,7 @@ const Content = ({ drop, options = [], ...rest }) => {
       ? {
           background: 'none',
           color: 'text-weak',
-          icon: Lock,
+          icon: <Lock />,
           items,
         }
       : undefined;

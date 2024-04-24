@@ -23,7 +23,7 @@ const pinnedLocations = [
 ];
 
 const pinnedObject = {
-  icon: User,
+  icon: <User />,
   background: { color: 'purple', opacity: 'weak' },
   color: 'blue',
   items: ['Los Angelos', 'Fort Collins', 'Palo Alto', 'Pheonix', 'Trenton'],
