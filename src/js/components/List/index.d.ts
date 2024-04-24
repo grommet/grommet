@@ -74,7 +74,7 @@ export interface ListProps<ListItemType> {
         items?: (string | number)[];
         background?: BackgroundType;
         color?: ColorType;
-        icon?: JSX.Element | React.ReactNode;
+        icon?: JSX.Element;
       };
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);
   secondaryKey?: string | ((item: ListItemType) => React.ReactElement);
