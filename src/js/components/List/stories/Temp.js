@@ -49,6 +49,7 @@ const objectData = [
 
 export const Temp = () => {
   const [ordered, setOrder] = useState(locations);
+  const [objectOrdered, setObjectOrdered] = useState(objectData);
   return (
     <>
       <Box pad="large" direction="row" gap="medium">
@@ -76,11 +77,12 @@ export const Temp = () => {
           pinned as array
           <List
             aria-label="pinned list"
-            data={objectData}
-            onOrder={setOrder}
+            data={objectOrdered}
+            onOrder={setObjectOrdered}
             pinned={pinnedLocations}
             primaryKey="location"
             secondaryKey="state"
+            itemKey="location"
           />
         </Box>
       </Box>
@@ -90,11 +92,12 @@ export const Temp = () => {
           pinned as object
           <List
             aria-label="pinned list"
-            data={objectData}
-            onOrder={setOrder}
+            data={objectOrdered}
+            onOrder={setObjectOrdered}
             pinned={pinnedObject}
             primaryKey="location"
             secondaryKey="state"
+            itemKey="location"
           />
         </Box>
         <Box gap="small">
@@ -102,11 +105,12 @@ export const Temp = () => {
           pinned as object with color defined on icon
           <List
             aria-label="pinned list"
-            data={objectData}
-            onOrder={setOrder}
+            data={objectOrdered}
+            onOrder={setObjectOrdered}
             pinned={pinnedObjectCustomColor}
             primaryKey="location"
             secondaryKey="state"
+            itemKey="location"
           />
         </Box>
         <Box gap="small">
@@ -114,8 +118,8 @@ export const Temp = () => {
           pinned as object with color defined on icon
           <List
             aria-label="pinned list"
-            data={objectData}
-            onOrder={setOrder}
+            data={objectOrdered}
+            onOrder={setObjectOrdered}
             pinned={pinnedObjectCustomColor}
             primaryKey={(item) => (
               <Text key={item.location} color="red">
