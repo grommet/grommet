@@ -35,7 +35,7 @@ export const Pinned = () => {
           items: pinnedLocations,
           background: 'pink',
           color: 'white',
-          icon: Lock,
+          icon: <Lock color="green" />,
         }}
       />
     </Box>

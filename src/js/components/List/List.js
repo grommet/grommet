@@ -1,4 +1,11 @@
-import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
+import React, {
+  Fragment,
+  cloneElement,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
@@ -16,6 +23,7 @@ import {
   unfocusStyle,
   useForwardedRef,
   usePagination,
+  useSizedIcon,
 } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
@@ -372,7 +380,9 @@ const List = React.forwardRef(
                   isPinned = pinned.includes(key);
                 }
 
-                const pinTextColor = pinned.color || undefined;
+                const pinTextColor = isPinned
+                  ? pinned.color || undefined
+                  : undefined;
 
                 if (children) {
                   content = children(
@@ -382,7 +392,6 @@ const List = React.forwardRef(
                   );
                 } else if (primaryKey) {
                   const primary = getValue(item, index, primaryKey);
-                  console.log('primary key');
                   content =
                     typeof primary === 'string' ||
                     typeof primary === 'number' ? (
@@ -398,12 +407,11 @@ const List = React.forwardRef(
                     );
                   if (secondaryKey) {
                     const secondary = getValue(item, index, secondaryKey);
-                    console.log('second key');
                     content = [
                       content,
                       typeof secondary === 'string' ||
                       typeof secondary === 'number' ? (
-                        <Text key="s">
+                        <Text color={pinTextColor} key="s">
                           {getValue(item, index, secondaryKey)}
                         </Text>
                       ) : (
@@ -418,10 +426,21 @@ const List = React.forwardRef(
                     };
                   }
                 } else if (typeof item === 'object') {
-                  content = item[Object.keys(item)[0]];
+                  content =
+                    pinTextColor &&
+                    typeof item[Object.keys(item)[0]] === 'string' ? (
+                      <Text color={pinTextColor}>
+                        item[Object.keys(item)[0]]
+                      </Text>
+                    ) : (
+                      item[Object.keys(item)[0]]
+                    );
                 } else {
-                  console.log('here');
-                  content = item;
+                  content = pinTextColor ? (
+                    <Text color={pinTextColor}>{item}</Text>
+                  ) : (
+                    item
+                  );
                 }
 
                 const orderableIndex = orderableData.findIndex(
@@ -661,9 +680,27 @@ const List = React.forwardRef(
                 let displayPinned;
                 if (isPinned) {
                   // Pinned icon and settings
-                  const Pin = pinned.icon || theme.list.icons.pin;
                   const pinSize = theme.list.item.pinned.icon.size;
                   const pinPad = theme.list.item.pinned.icon.pad;
+
+                  const icon = pinned.icon || theme.list.icons.pin;
+                  let newIcon;
+                  if (React.isValidElement(icon)) {
+                    if (!icon.props?.color) {
+                      newIcon = cloneElement(icon, {
+                        color: pinned.color,
+                      });
+                    } else {
+                      newIcon = icon;
+                    }
+                  } else {
+                    const NewIconComponent = icon;
+                    newIcon = cloneElement(<NewIconComponent />, {
+                      color: pinned.color,
+                    });
+                  }
+
+                  const pinIcon = useSizedIcon(newIcon, pinSize, theme);
 
                   boxProps = {
                     direction: 'row',
@@ -678,7 +715,7 @@ const List = React.forwardRef(
                       justify="end"
                       pad={pinPad}
                     >
-                      <Pin size={pinSize} />
+                      {pinIcon}
                     </Box>
                   );
                   content = <Box flex>{content}</Box>;
