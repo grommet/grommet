@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import { Box, List } from 'grommet';
-import { Lock } from 'grommet-icons';
 
 const locations = [
   'Los Angelos',
@@ -30,13 +29,7 @@ export const Pinned = () => {
         aria-label="pinned list"
         data={ordered}
         onOrder={setOrder}
-        // pinned={pinnedLocations}
-        pinned={{
-          items: pinnedLocations,
-          background: 'pink',
-          color: 'white',
-          icon: <Lock color="green" />,
-        }}
+        pinned={pinnedLocations}
       />
     </Box>
   );
