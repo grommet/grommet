@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Box, List, Text } from 'grommet';
-import { User } from 'grommet-icons';
+import { Lock } from 'grommet-icons';
 
 const locations = [
   'Los Angelos',
@@ -14,22 +14,22 @@ const locations = [
   'Trenton',
 ];
 
-const pinnedLocations = [
-  'Los Angelos',
-  'Fort Collins',
-  'Palo Alto',
-  'Pheonix',
-  'Trenton',
-];
+// const pinnedLocations = [
+//   'Los Angelos',
+//   'Fort Collins',
+//   'Palo Alto',
+//   'Pheonix',
+//   'Trenton',
+// ];
 
-const pinnedObject = {
-  icon: <User />,
-  background: { color: 'purple', opacity: 'weak' },
-  color: 'blue',
-  items: ['Los Angelos', 'Fort Collins', 'Palo Alto', 'Pheonix', 'Trenton'],
-};
+// const pinnedObject = {
+//   icon: <Lock />,
+//   background: { color: 'purple', opacity: 'weak' },
+//   color: 'blue',
+//   items: ['Los Angelos', 'Fort Collins', 'Palo Alto', 'Pheonix', 'Trenton'],
+// };
 const pinnedObjectCustomColor = {
-  icon: <User color="green" />,
+  icon: <Lock color="green" />,
   background: { color: 'purple', opacity: 'weak' },
   color: 'blue',
   items: ['Los Angelos', 'Fort Collins', 'Palo Alto', 'Pheonix', 'Trenton'],
@@ -46,6 +46,29 @@ const objectData = [
   { location: 'Trenton', state: 'New Jersey' },
 ];
 
+// const locations = [
+//   'Boise',
+//   'Fort Collins',
+//   'Los Gatos',
+//   'Palo Alto',
+//   'San Francisco',
+// ];
+const typeObjects = [
+  { city: 'Boise', state: 'Idaho' },
+  { city: 'Fort Collins', state: 'Colorado' },
+  { city: 'Los Gatos', state: 'California' },
+  { city: 'Palo Alto', state: 'California' },
+  { city: 'San Francisco', state: 'California' },
+];
+const pinnedLocations = ['Fort Collins', 'Palo Alto'];
+
+const pinnedObject = {
+  color: 'blue',
+  background: 'green',
+  icon: <Lock />,
+  items: pinnedLocations,
+};
+
 export const Temp = () => {
   const [ordered, setOrder] = useState(locations);
   return (
@@ -54,11 +77,17 @@ export const Temp = () => {
         <Box gap="small">
           data as array of strings, pinned as array of strings matching data
           <List
+            data={typeObjects}
+            pinned={pinnedObject}
+            onOrder={() => {}}
+            itemKey="city"
+          />
+          {/* <List
             aria-label="pinned list"
             data={ordered}
             onOrder={setOrder}
             pinned={pinnedLocations}
-          />
+          /> */}
         </Box>
         <Box gap="small">
           data as array of strings, pinned as object with pinned.items array
