@@ -79,7 +79,7 @@ if (process.env.NODE_ENV !== 'production') {
         ),
         background: PropTypes.string,
         color: PropTypes.string,
-        icon: PropTypes.elementType,
+        icon: PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
       }),
     ]),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),

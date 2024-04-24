@@ -23,7 +23,6 @@ import {
   unfocusStyle,
   useForwardedRef,
   usePagination,
-  useSizedIcon,
 } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
@@ -689,6 +688,7 @@ const List = React.forwardRef(
                     if (!icon.props?.color) {
                       newIcon = cloneElement(icon, {
                         color: pinned.color,
+                        size: pinSize,
                       });
                     } else {
                       newIcon = icon;
@@ -697,10 +697,9 @@ const List = React.forwardRef(
                     const NewIconComponent = icon;
                     newIcon = cloneElement(<NewIconComponent />, {
                       color: pinned.color,
+                      size: pinSize,
                     });
                   }
-
-                  const pinIcon = useSizedIcon(newIcon, pinSize, theme);
 
                   boxProps = {
                     direction: 'row',
@@ -715,7 +714,7 @@ const List = React.forwardRef(
                       justify="end"
                       pad={pinPad}
                     >
-                      {pinIcon}
+                      {newIcon}
                     </Box>
                   );
                   content = <Box flex>{content}</Box>;
