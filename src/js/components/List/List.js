@@ -23,7 +23,6 @@ import {
   unfocusStyle,
   useForwardedRef,
   usePagination,
-  useSizedIcon,
 } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
@@ -199,9 +198,7 @@ const List = React.forwardRef(
         const key = getValue(item, index, itemKey);
         const isPinned = Array.isArray(pinned)
           ? pinned.includes(key)
-          : typeof pinned === 'object' &&
-            pinned.items &&
-            pinned.items.includes(key);
+          : typeof pinned === 'object' && pinned?.items?.includes(key);
 
         if (isPinned) {
           pinnedData.push(item);
@@ -364,25 +361,23 @@ const List = React.forwardRef(
                 let boxProps = {};
 
                 const key = getValue(item, index, itemKey) || index;
-
                 let isPinned;
-                if (pinned.items && pinned.items.length > 0) {
+                if (
+                  (Array.isArray(pinned) && pinned.length > 0) ||
+                  (Array.isArray(pinned?.items) && pinned?.items?.length > 0)
+                ) {
                   if (typeof item === 'object' && !itemKey) {
                     console.error(
                       // eslint-disable-next-line max-len
                       `Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.`,
                     );
                   }
-                  isPinned = pinned.items.some(
-                    (pinnedItem) => pinnedItem === key,
-                  );
-                } else {
-                  isPinned = pinned.includes(key);
+                  isPinned = Array.isArray(pinned)
+                    ? pinned?.includes(key)
+                    : pinned.items.some((pinnedItem) => pinnedItem === key);
                 }
 
-                const pinTextColor = isPinned
-                  ? pinned.color || undefined
-                  : undefined;
+                const pinnedColor = isPinned ? pinned.color : undefined;
 
                 if (children) {
                   content = children(
@@ -396,7 +391,7 @@ const List = React.forwardRef(
                     typeof primary === 'string' ||
                     typeof primary === 'number' ? (
                       <Text
-                        color={pinTextColor}
+                        color={pinnedColor}
                         key="p"
                         {...theme.list.primaryKey}
                       >
@@ -411,7 +406,7 @@ const List = React.forwardRef(
                       content,
                       typeof secondary === 'string' ||
                       typeof secondary === 'number' ? (
-                        <Text color={pinTextColor} key="s">
+                        <Text color={pinnedColor} key="s">
                           {getValue(item, index, secondaryKey)}
                         </Text>
                       ) : (
@@ -426,18 +421,20 @@ const List = React.forwardRef(
                     };
                   }
                 } else if (typeof item === 'object') {
+                  const value = item[Object.keys(item)[0]];
                   content =
-                    pinTextColor &&
-                    typeof item[Object.keys(item)[0]] === 'string' ? (
-                      <Text color={pinTextColor}>
-                        item[Object.keys(item)[0]]
-                      </Text>
+                    // for backwards compatibility, only wrap in Text if
+                    // pinned.color is defined
+                    pinnedColor && typeof value === 'string' ? (
+                      <Text color={pinnedColor}>{value}</Text>
                     ) : (
-                      item[Object.keys(item)[0]]
+                      value
                     );
                 } else {
-                  content = pinTextColor ? (
-                    <Text color={pinTextColor}>{item}</Text>
+                  // for backwards compatibility, only wrap in Text if
+                  // pinned.color is defined
+                  content = pinnedColor ? (
+                    <Text color={pinnedColor}>{item}</Text>
                   ) : (
                     item
                   );
@@ -481,10 +478,9 @@ const List = React.forwardRef(
                 } else if (Array.isArray(adjustedBackground)) {
                   adjustedBackground =
                     adjustedBackground[index % adjustedBackground.length];
-                } else if (isPinned && pinned.background) {
-                  adjustedBackground = pinned.background;
                 } else if (isPinned) {
-                  adjustedBackground = theme.list.item.pinned.background;
+                  adjustedBackground =
+                    pinned?.background || theme.list.item.pinned.background;
                 }
 
                 let adjustedBorder =
@@ -679,28 +675,17 @@ const List = React.forwardRef(
 
                 let displayPinned;
                 if (isPinned) {
-                  // Pinned icon and settings
                   const pinSize = theme.list.item.pinned.icon.size;
                   const pinPad = theme.list.item.pinned.icon.pad;
-
-                  const icon = pinned.icon || theme.list.icons.pin;
-                  let newIcon;
-                  if (React.isValidElement(icon)) {
-                    if (!icon.props?.color) {
-                      newIcon = cloneElement(icon, {
-                        color: pinned.color,
-                      });
-                    } else {
-                      newIcon = icon;
-                    }
-                  } else {
-                    const NewIconComponent = icon;
-                    newIcon = cloneElement(<NewIconComponent />, {
-                      color: pinned.color,
-                    });
-                  }
-
-                  const pinIcon = useSizedIcon(newIcon, pinSize, theme);
+                  const Icon = pinned?.icon || theme.list.icons.pin;
+                  let pinIcon = React.isValidElement(Icon) ? Icon : <Icon />;
+                  pinIcon = cloneElement(pinIcon, {
+                    // icon color prop should win over pinned.color
+                    ...(!pinIcon.props?.color && pinnedColor
+                      ? { color: pinnedColor }
+                      : {}),
+                    size: pinSize,
+                  });
 
                   boxProps = {
                     direction: 'row',
@@ -740,7 +725,7 @@ const List = React.forwardRef(
                     {...orderProps}
                     {...itemAriaProps}
                   >
-                    {onOrder && <Text color={pinTextColor}>{index + 1}</Text>}
+                    {onOrder && <Text color={pinnedColor}>{index + 1}</Text>}
                     {content}
                     {displayPinned}
                     {orderControls}

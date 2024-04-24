@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
-import { genericProps, padPropType } from '../../utils/general-prop-types';
+import {
+  backgroundDoc,
+  genericProps,
+  padPropType,
+} from '../../utils/general-prop-types';
 import { BoxPropTypes } from '../Box/propTypes';
 
 const sizes = [
@@ -77,9 +81,9 @@ if (process.env.NODE_ENV !== 'production') {
         items: PropTypes.arrayOf(
           PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         ),
-        background: PropTypes.string,
+        background: backgroundDoc,
         color: PropTypes.string,
-        icon: PropTypes.elementType,
+        icon: PropTypes.element,
       }),
     ]),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),

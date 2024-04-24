@@ -73,10 +73,10 @@ const Content = ({ drop, options = [], ...rest }) => {
       : [];
     return items?.length
       ? {
+          background: 'none',
           color: 'text-weak',
           icon: Lock,
           items,
-          background: 'none',
         }
       : undefined;
   }, [options, objectOptions]);
