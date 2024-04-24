@@ -2,6 +2,8 @@ import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
+  BackgroundType,
+  ColorType,
   GridAreaType,
   MarginType,
   PadType,
@@ -65,7 +67,15 @@ export interface ListProps<ListItemType> {
   onOrder?: (orderedData: ListItemType[]) => void;
   pad?: PadType;
   paginate?: boolean | PaginationType;
-  pinned?: (string | number)[];
+  pinned?:
+    | boolean
+    | (string | number)[]
+    | {
+        items?: (string | number)[];
+        background?: BackgroundType;
+        color?: ColorType;
+        icon?: JSX.Element | React.ReactNode;
+      };
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);
   secondaryKey?: string | ((item: ListItemType) => React.ReactElement);
   show?: number | { page?: number };
