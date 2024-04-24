@@ -1,6 +1,6 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import PropTypes from 'prop-types';
-import { genericProps, padPropType } from '../../utils/general-prop-types';
+import { backgroundDoc, genericProps, padPropType } from '../../utils/general-prop-types';
 import { BoxPropTypes } from '../Box/propTypes';
 var sizes = ['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right', 'start', 'end'];
@@ -35,7 +35,12 @@ if (process.env.NODE_ENV !== 'production') {
     onOrder: PropTypes.func,
     pad: PropTypes.oneOfType([padPropType]),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
-    pinned: PropTypes.arrayOf(PropTypes.string),
+    pinned: PropTypes.oneOfType([PropTypes.bool, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])), PropTypes.shape({
+      items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+      background: backgroundDoc,
+      color: PropTypes.string,
+      icon: PropTypes.element
+    })]),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     secondaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     show: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({

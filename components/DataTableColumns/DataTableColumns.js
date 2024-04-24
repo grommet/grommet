@@ -5,6 +5,7 @@ exports.DataTableColumns = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Search = require("grommet-icons/icons/Search");
 var _Splits = require("grommet-icons/icons/Splits");
+var _Lock = require("grommet-icons/icons/Lock");
 var _styledComponents = require("styled-components");
 var _Box = require("../Box");
 var _CheckBoxGroup = require("../CheckBoxGroup");
@@ -102,13 +103,18 @@ var Content = function Content(_ref) {
     return options && options.length && typeof options[0] === 'object';
   }, [options]);
   var pinned = (0, _react.useMemo)(function () {
-    return objectOptions ? options.filter(function (option) {
+    var items = objectOptions ? options.filter(function (option) {
       return option.pinned && option.label;
     }).map(function (option) {
       return option.label;
     }) : [];
+    return items != null && items.length ? {
+      background: 'none',
+      color: 'text-weak',
+      icon: /*#__PURE__*/_react["default"].createElement(_Lock.Lock, null),
+      items: items
+    } : undefined;
   }, [options, objectOptions]);
-
   // 'value' is an array of property names
   var _useFormInput = useFormInput({
       name: _Data.formColumnsKey,

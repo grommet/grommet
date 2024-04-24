@@ -1,7 +1,7 @@
 var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { Fragment, useContext, useMemo, useRef, useState } from 'react';
+import React, { Fragment, cloneElement, useContext, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -174,8 +174,10 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         indexes: pinnedIndexes
       }];
       currentData.forEach(function (item, index) {
+        var _pinned$items;
         var key = getValue(item, index, itemKey);
-        if (pinned.includes(key)) {
+        var isPinned = Array.isArray(pinned) ? pinned.includes(key) : typeof pinned === 'object' && (pinned == null || (_pinned$items = pinned.items) == null ? void 0 : _pinned$items.includes(key));
+        if (isPinned) {
           pinnedData.push(item);
           pinnedIndexes.push(index);
         } else {
@@ -301,8 +303,21 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       }, marker);
     }
   }, function (item, index) {
+    var _pinned$items2;
     var content;
     var boxProps = {};
+    var key = getValue(item, index, itemKey) || index;
+    var isPinned;
+    if (Array.isArray(pinned) && pinned.length > 0 || Array.isArray(pinned == null ? void 0 : pinned.items) && (pinned == null || (_pinned$items2 = pinned.items) == null ? void 0 : _pinned$items2.length) > 0) {
+      if (typeof item === 'object' && !itemKey) {
+        console.error( // eslint-disable-next-line max-len
+        "Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.");
+      }
+      isPinned = Array.isArray(pinned) ? pinned == null ? void 0 : pinned.includes(key) : pinned.items.some(function (pinnedItem) {
+        return pinnedItem === key;
+      });
+    }
+    var pinnedColor = isPinned ? pinned.color : undefined;
     if (children) {
       content = children(item, index, onClickItem ? {
         active: active === index
@@ -310,11 +325,13 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     } else if (primaryKey) {
       var primary = getValue(item, index, primaryKey);
       content = typeof primary === 'string' || typeof primary === 'number' ? /*#__PURE__*/React.createElement(Text, _extends({
+        color: pinnedColor,
         key: "p"
       }, theme.list.primaryKey), primary) : primary;
       if (secondaryKey) {
         var secondary = getValue(item, index, secondaryKey);
         content = [content, typeof secondary === 'string' || typeof secondary === 'number' ? /*#__PURE__*/React.createElement(Text, {
+          color: pinnedColor,
           key: "s"
         }, getValue(item, index, secondaryKey)) : secondary];
         boxProps = {
@@ -325,11 +342,20 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         };
       }
     } else if (typeof item === 'object') {
-      content = item[Object.keys(item)[0]];
+      var value = item[Object.keys(item)[0]];
+      content =
+      // for backwards compatibility, only wrap in Text if
+      // pinned.color is defined
+      pinnedColor && typeof value === 'string' ? /*#__PURE__*/React.createElement(Text, {
+        color: pinnedColor
+      }, value) : value;
     } else {
-      content = item;
+      // for backwards compatibility, only wrap in Text if
+      // pinned.color is defined
+      content = pinnedColor ? /*#__PURE__*/React.createElement(Text, {
+        color: pinnedColor
+      }, item) : item;
     }
-    var key = getValue(item, index, itemKey) || index;
     var orderableIndex = orderableData.findIndex(function (ordItem, ordIndex) {
       return getValue(ordItem, ordIndex, itemKey) === key;
     });
@@ -340,14 +366,6 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         "Warning: Missing prop itemKey. Prop disabled requires itemKey to be specified when data is of type 'object'.");
       }
       isDisabled = disabledItems == null ? void 0 : disabledItems.includes(key);
-    }
-    var isPinned;
-    if (pinned.length > 0) {
-      if (typeof item === 'object' && !itemKey) {
-        console.error( // eslint-disable-next-line max-len
-        "Warning: Missing prop itemKey. Prop pin requires itemKey to be specified when data is of type 'object'.");
-      }
-      isPinned = pinned == null ? void 0 : pinned.includes(key);
     }
     if (action) {
       content = [/*#__PURE__*/React.createElement(Box, {
@@ -367,7 +385,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     } else if (Array.isArray(adjustedBackground)) {
       adjustedBackground = adjustedBackground[index % adjustedBackground.length];
     } else if (isPinned) {
-      adjustedBackground = theme.list.item.pinned.background;
+      adjustedBackground = (pinned == null ? void 0 : pinned.background) || theme.list.item.pinned.background;
     }
     var adjustedBorder = border !== undefined ? border : theme.list.item.border;
     if (adjustedBorder === 'horizontal' && index) {
@@ -541,10 +559,16 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     }
     var displayPinned;
     if (isPinned) {
-      // Pinned icon and settings
-      var Pin = theme.list.icons.pin;
+      var _pinIcon$props;
       var pinSize = theme.list.item.pinned.icon.size;
       var pinPad = theme.list.item.pinned.icon.pad;
+      var Icon = (pinned == null ? void 0 : pinned.icon) || theme.list.icons.pin;
+      var pinIcon = /*#__PURE__*/React.isValidElement(Icon) ? Icon : /*#__PURE__*/React.createElement(Icon, null);
+      pinIcon = /*#__PURE__*/cloneElement(pinIcon, _extends({}, !((_pinIcon$props = pinIcon.props) != null && _pinIcon$props.color) && pinnedColor ? {
+        color: pinnedColor
+      } : {}, {
+        size: pinSize
+      }));
       boxProps = {
         direction: 'row',
         align: defaultItemProps && defaultItemProps.align || 'center',
@@ -555,9 +579,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         align: "center",
         justify: "end",
         pad: pinPad
-      }, /*#__PURE__*/React.createElement(Pin, {
-        size: pinSize
-      }));
+      }, pinIcon);
       content = /*#__PURE__*/React.createElement(Box, {
         flex: true
       }, content);
@@ -573,7 +595,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       isDisabled: isDisabled,
       flex: false,
       pad: pad || theme.list.item.pad
-    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), onOrder && /*#__PURE__*/React.createElement(Text, null, index + 1), content, displayPinned, orderControls);
+    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), onOrder && /*#__PURE__*/React.createElement(Text, {
+      color: pinnedColor
+    }, index + 1), content, displayPinned, orderControls);
   }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({
     alignSelf: "end"
   }, paginationProps)) : null);

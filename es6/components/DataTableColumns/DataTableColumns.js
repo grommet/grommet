@@ -5,6 +5,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
+import { Lock } from 'grommet-icons/icons/Lock';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
@@ -96,13 +97,18 @@ var Content = function Content(_ref) {
     return options && options.length && typeof options[0] === 'object';
   }, [options]);
   var pinned = useMemo(function () {
-    return objectOptions ? options.filter(function (option) {
+    var items = objectOptions ? options.filter(function (option) {
       return option.pinned && option.label;
     }).map(function (option) {
       return option.label;
     }) : [];
+    return items != null && items.length ? {
+      background: 'none',
+      color: 'text-weak',
+      icon: /*#__PURE__*/React.createElement(Lock, null),
+      items: items
+    } : undefined;
   }, [options, objectOptions]);
-
   // 'value' is an array of property names
   var _useFormInput = useFormInput({
       name: formColumnsKey,

@@ -35,6 +35,40 @@ exports[`DataTableColumns pinned 1`] = `
   stroke: none;
 }
 
+.c18 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #555555;
+  stroke: #555555;
+}
+
+.c18 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c18 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c18 *[stroke*='#'],
+.c18 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*='#'],
+.c18 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -124,8 +158,7 @@ exports[`DataTableColumns pinned 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #33333310;
-  color: #444444;
+  background: none;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -138,7 +171,7 @@ exports[`DataTableColumns pinned 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -161,7 +194,7 @@ exports[`DataTableColumns pinned 1`] = `
   padding: 12px;
 }
 
-.c16 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -202,6 +235,19 @@ exports[`DataTableColumns pinned 1`] = `
 .c8 {
   font-size: 18px;
   line-height: 24px;
+  font-weight: bold;
+}
+
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
+}
+
+.c16 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #555555;
   font-weight: bold;
 }
 
@@ -418,19 +464,19 @@ exports[`DataTableColumns pinned 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c17 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c19 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c19 {
     padding: 0px;
   }
 }
@@ -542,7 +588,7 @@ exports[`DataTableColumns pinned 1`] = `
         class="c13 c14"
       >
         <span
-          class="c5"
+          class="c15"
         >
           2
         </span>
@@ -553,7 +599,7 @@ exports[`DataTableColumns pinned 1`] = `
           class="c7"
         >
           <span
-            class="c8"
+            class="c16"
           >
             Size
           </span>
@@ -562,15 +608,15 @@ exports[`DataTableColumns pinned 1`] = `
           class="c6"
         />
         <div
-          class="c15"
+          class="c17"
         >
           <svg
-            aria-label="FormPin"
-            class="c11"
+            aria-label="Lock"
+            class="c18"
             viewBox="0 0 24 24"
           >
             <path
-              d="m4 19 4.455-4.454M12.273 5 18 10.727m-4.454-4.454L9.727 10.09s-2.545-.636-4.454 1.273l6.363 6.363c1.91-1.909 1.273-4.454 1.273-4.454l3.818-3.818-3.181-3.182Z"
+              d="M19 23V11H5v12h14zm-7-8v4m5-8V7c0-3 0-6-5-6S7 4 7 7v4"
               fill="none"
               stroke="#000"
               stroke-width="2"
@@ -579,7 +625,7 @@ exports[`DataTableColumns pinned 1`] = `
         </div>
       </li>
       <li
-        class="c16 c4"
+        class="c19 c4"
         draggable="true"
       >
         <span
