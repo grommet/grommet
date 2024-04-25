@@ -1079,6 +1079,13 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
+      pinned?: {
+        background?: BackgroundType;
+        icon?: {
+          size?: string;
+          pad?: PadType;
+        };
+      };
       pad?: PadType;
       extend?: ExtendType;
     };
