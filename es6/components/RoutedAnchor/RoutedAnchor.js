@@ -7,10 +7,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Anchor } from '../Anchor';
 var RoutedAnchor = /*#__PURE__*/function (_Component) {
-  _inheritsLoose(RoutedAnchor, _Component);
   function RoutedAnchor() {
     return _Component.apply(this, arguments) || this;
   }
+  _inheritsLoose(RoutedAnchor, _Component);
   var _proto = RoutedAnchor.prototype;
   _proto.render = function render() {
     var _this = this;

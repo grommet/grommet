@@ -7,7 +7,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '../Button';
 var RoutedButton = /*#__PURE__*/function (_Component) {
-  _inheritsLoose(RoutedButton, _Component);
   function RoutedButton() {
     var _this;
     for (var _len = arguments.length, _args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -41,6 +40,7 @@ var RoutedButton = /*#__PURE__*/function (_Component) {
     };
     return _this;
   }
+  _inheritsLoose(RoutedButton, _Component);
   var _proto = RoutedButton.prototype;
   _proto.render = function render() {
     var _this$props2 = this.props,
