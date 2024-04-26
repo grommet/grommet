@@ -29,7 +29,7 @@ export const Pinned = () => {
         aria-label="pinned list"
         data={ordered}
         onOrder={setOrder}
-        pinned={pinnedLocations}
+        // pinned={pinnedLocations}
       />
     </Box>
   );
