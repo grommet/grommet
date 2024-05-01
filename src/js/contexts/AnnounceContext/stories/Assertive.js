@@ -7,7 +7,7 @@ const Announcer = ({
   announce,
   message = 'Here is a simple announcement. This will soon disappear',
   mode = 'polite',
-  role = 'log'
+  role = 'log',
 }) => {
   React.useEffect(() => {
     const timeout = 3000;
@@ -28,12 +28,12 @@ Announcer.propTypes = {
   role: PropTypes.string,
 };
 
-const AnnounceContextComponent = props => (
+const AnnounceContextComponent = (props) => (
   <Grommet theme={grommet} full>
     <Box justify="center" align="center" background="brand" fill>
       <Heading>Welcome to announcement section</Heading>
       <AnnounceContext.Consumer>
-        {announce => <Announcer announce={announce} {...props} />}
+        {(announce) => <Announcer announce={announce} {...props} />}
       </AnnounceContext.Consumer>
     </Box>
   </Grommet>
