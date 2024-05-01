@@ -356,9 +356,7 @@ exports[`Components loads 1`] = `
   },
   "Diagram": {
     "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": {
-      "connections": [],
-    },
+    "defaultProps": {},
     "propTypes": {
       "animation": [Function],
       "connections": [Function],
@@ -532,10 +530,7 @@ exports[`Components loads 1`] = `
   },
   "Heading": {
     "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": {
-      "level": 1,
-      "responsive": true,
-    },
+    "defaultProps": {},
     "propTypes": {
       "a11yTitle": [Function],
       "alignSelf": [Function],
@@ -649,11 +644,6 @@ exports[`Components loads 1`] = `
   },
   "Menu": {
     "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": {
-      "items": [],
-      "justifyContent": "start",
-      "messages": undefined,
-    },
     "propTypes": {
       "a11yTitle": [Function],
       "alignSelf": [Function],
@@ -4987,9 +4977,6 @@ exports[`Components loads 1`] = `
   },
   "Text": {
     "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": {
-      "level": 1,
-    },
     "propTypes": {
       "a11yTitle": [Function],
       "alignSelf": [Function],

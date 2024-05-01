@@ -697,6 +697,11 @@ exports[`Menu close by clicking outside 3`] = `
   .ftCvDe {
     padding: 6px;
   }
+}
+@media only screen and (max-width: 768px) {
+  .EuOQj {
+    width: 6px;
+  }
 }"
 `;
 
@@ -3666,6 +3671,11 @@ exports[`Menu open and close on click 4`] = `
   .ftCvDe {
     padding: 6px;
   }
+}
+@media only screen and (max-width: 768px) {
+  .EuOQj {
+    width: 6px;
+  }
 }"
 `;
 
@@ -4410,6 +4420,11 @@ exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
   .ftCvDe {
     padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .EuOQj {
+    width: 6px;
   }
 }"
 `;
@@ -5670,6 +5685,11 @@ exports[`Menu should group items 2`] = `
   .ftCvDe {
     padding: 6px;
   }
+}
+@media only screen and (max-width: 768px) {
+  .EuOQj {
+    width: 6px;
+  }
 }"
 `;
 
@@ -6587,6 +6607,11 @@ exports[`Menu with dropAlign bottom renders 3`] = `
   .ftCvDe {
     padding: 6px;
   }
+}
+@media only screen and (max-width: 768px) {
+  .EuOQj {
+    width: 6px;
+  }
 }"
 `;
 
@@ -7139,6 +7164,11 @@ exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
   .ftCvDe {
     padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .EuOQj {
+    width: 6px;
   }
 }"
 `;
