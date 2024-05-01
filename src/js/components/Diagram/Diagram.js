@@ -66,7 +66,9 @@ const findTarget = (target) => {
   return target;
 };
 
-const Diagram = forwardRef(({ connections, ...rest }, ref) => {
+const defaultConnectionsValue = [];
+
+const Diagram = forwardRef(({ connections = defaultConnectionsValue, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [connectionPoints, setConnectionPoints] = useState();
@@ -257,7 +259,7 @@ const Diagram = forwardRef(({ connections, ...rest }, ref) => {
 });
 
 Diagram.displayName = 'Diagram';
-Diagram.defaultProps = { connections: [] };
+Diagram.defaultProps = {};
 Diagram.propTypes = DiagramPropTypes;
 
 export { Diagram };

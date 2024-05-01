@@ -9,7 +9,7 @@ import { strokeProps, defaultColor } from './utils';
 
 const Bar = forwardRef((props, ref) => {
   const {
-    background,
+    background = 'light-1',
     max,
     round,
     size,
@@ -123,10 +123,6 @@ const Bar = forwardRef((props, ref) => {
 });
 
 Bar.displayName = 'Bar';
-
-Bar.defaultProps = {
-  background: 'light-1',
-};
 
 Object.setPrototypeOf(Bar.defaultProps, defaultProps);
 

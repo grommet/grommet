@@ -57,9 +57,9 @@ const Notification = ({
   onClose,
   id,
   global,
-  status,
+  status = 'unknown',
   title,
-  toast,
+  toast = false,
   icon,
   time,
   ...rest
@@ -184,7 +184,7 @@ const Notification = ({
       id={toast ? undefined : id}
       {...rest}
     >
-      {/* separate from onClose button to allow "onClick" in the future and 
+      {/* separate from onClose button to allow "onClick" in the future and
         avoid nested interactive elements */}
       <Box direction="row" pad={textPad} flex>
         <Box {...theme.notification.iconContainer}>
@@ -241,10 +241,7 @@ const Notification = ({
   return content;
 };
 
-Notification.defaultProps = {
-  status: 'unknown',
-  toast: false,
-};
+Notification.defaultProps = {};
 
 Object.setPrototypeOf(Notification.defaultProps, defaultProps);
 Notification.displayName = 'Notification';

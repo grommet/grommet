@@ -23,11 +23,11 @@ import { CarouselPropTypes } from './propTypes';
 
 const Carousel = ({
   activeChild,
-  initialChild,
+  initialChild = 0,
   onChild,
   play,
   children,
-  controls,
+  controls = true,
   height,
   fill,
   width,
@@ -303,10 +303,7 @@ const Carousel = ({
   );
 };
 
-Carousel.defaultProps = {
-  initialChild: 0,
-  controls: true,
-};
+Carousel.defaultProps = {};
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 

@@ -57,6 +57,8 @@ To make a selection:
 - Space is pressed.
 */
 
+const defaultMenuItemsValue = [];
+
 const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
@@ -67,9 +69,9 @@ const Menu = forwardRef((props, ref) => {
     dropBackground,
     dropProps,
     dropTarget,
-    justifyContent,
+    justifyContent = 'start',
     icon,
-    items,
+    items = defaultMenuItemsValue,
     label,
     messages,
     onKeyDown,
@@ -462,12 +464,6 @@ const Menu = forwardRef((props, ref) => {
     </Keyboard>
   );
 });
-
-Menu.defaultProps = {
-  items: [],
-  messages: undefined,
-  justifyContent: 'start',
-};
 
 Menu.displayName = 'Menu';
 Menu.propTypes = MenuPropTypes;

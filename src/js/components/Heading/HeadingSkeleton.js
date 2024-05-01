@@ -2,7 +2,7 @@ import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Skeleton } from '../Skeleton';
 
-const HeadingSkeleton = forwardRef(({ as, level, size }, ref) => {
+const HeadingSkeleton = forwardRef(({ as, level = 1, size }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const levelStyle = theme.heading.level[level];
@@ -14,8 +14,5 @@ const HeadingSkeleton = forwardRef(({ as, level, size }, ref) => {
 });
 
 HeadingSkeleton.displayName = 'HeadingSkeleton';
-HeadingSkeleton.defaultProps = {
-  level: 1,
-};
 
 export { HeadingSkeleton };

@@ -5,7 +5,7 @@ import { PageContext } from './PageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { PagePropTypes } from './propTypes';
 
-const Page = ({ kind, ...rest }) => {
+const Page = ({ kind = 'wide', ...rest }) => {
   const size = useContext(ResponsiveContext);
   const theme = useContext(ThemeContext);
 
@@ -27,8 +27,5 @@ const Page = ({ kind, ...rest }) => {
 
 Page.displayName = 'Page';
 Page.propTypes = PagePropTypes;
-Page.defaultProps = {
-  kind: 'wide',
-};
 
 export { Page };
