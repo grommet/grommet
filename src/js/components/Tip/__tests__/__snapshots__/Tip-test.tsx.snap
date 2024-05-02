@@ -219,10 +219,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="sc-fsQiph jfgpGU"
 >
   <button
-    class="StyledButton-sc-323bzc-0 dvoKHE"
+    class="sc-gLDzan jBIJOQ"
     type="button"
   >
     Test Events
@@ -528,7 +528,7 @@ exports[`Tip themed 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 8px 16px rgba(255,255,255,0.40);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
 }
 
 .c2 {
@@ -539,8 +539,8 @@ exports[`Tip themed 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   margin: 6px;
-  background-color: #FFFFFF18;
-  color: #f8f8f8;
+  background-color: #33333310;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -551,7 +551,7 @@ exports[`Tip themed 1`] = `
   padding-top: 6px;
   padding-bottom: 6px;
   border-radius: 12px;
-  box-shadow: 0px 4px 4px rgba(255,255,255,0.40);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c1 {

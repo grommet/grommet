@@ -186,7 +186,7 @@ exports[`Video Configure Menu Button 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -726,7 +726,7 @@ exports[`Video End event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -1254,7 +1254,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -1598,14 +1598,14 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="sc-eFqGBh jXJAau"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 dJOlyN"
+    class="sc-YtoFE iWoAku"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 jzTXbQ"
+      class="sc-dlUsjx MjNtW"
     >
       <source
         src="small.mp4"
@@ -1614,13 +1614,13 @@ exports[`Video Play and Pause event handlers 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 hJnTAx"
+      class="sc-imaUOB jyMZdw"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gTjiHd"
+        class="sc-beqWaB ilzGXI"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bumPYc"
+          class="sc-gLDzan bGbgTU"
           type="button"
         >
           .c0 {
@@ -1679,20 +1679,20 @@ exports[`Video Play and Pause event handlers 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 wXGiU"
+          class="sc-beqWaB dtzSrB"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cliJaU"
+            class="sc-beqWaB itNDgx"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 bkMvqh"
+              class="sc-hLseeU huHdfp"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 gLEcPM"
+                class="sc-eDDNvR gEakUE"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
+                  class="sc-bqWVmG edRnqI"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1708,11 +1708,11 @@ exports[`Video Play and Pause event handlers 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 kukkTH"
+                class="sc-eDDNvR blMgvL"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 kzfBmj"
+                  class="sc-vjKnw gQJyoq"
                   role="button"
                   tabindex="0"
                 />
@@ -1720,10 +1720,10 @@ exports[`Video Play and Pause event handlers 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 TDUwo"
+            class="sc-beqWaB cWbfPd"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iqSVxz"
+              class="sc-jTrPJq khyeOF"
             >
               NaN:NaN
             </span>
@@ -1733,14 +1733,14 @@ exports[`Video Play and Pause event handlers 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 dkczdG"
+          class="sc-gLDzan cETGdO"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ftCvDe"
+            class="sc-beqWaB gHLwPf"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 lhOBjf"
+              class="sc-jTrPJq dGhpxN"
             />
             <svg
               aria-label="Actions"
@@ -1948,7 +1948,7 @@ exports[`Video autoPlay renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -2999,7 +2999,7 @@ exports[`Video controls over renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -3527,7 +3527,7 @@ exports[`Video duration event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -4055,7 +4055,7 @@ exports[`Video fit  cover renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -4588,7 +4588,7 @@ exports[`Video fit contain renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -5121,7 +5121,7 @@ exports[`Video loop renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -5650,7 +5650,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -5994,14 +5994,14 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 exports[`Video mouse events handlers of controls 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="sc-eFqGBh jXJAau"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 dJOlyN"
+    class="sc-YtoFE iWoAku"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 jzTXbQ"
+      class="sc-dlUsjx MjNtW"
     >
       <source
         src="small.mp4"
@@ -6010,13 +6010,13 @@ exports[`Video mouse events handlers of controls 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jVzbJt"
+      class="sc-imaUOB dbPgWY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gTjiHd"
+        class="sc-beqWaB ilzGXI"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bumPYc"
+          class="sc-gLDzan bGbgTU"
           type="button"
         >
           <svg
@@ -6033,20 +6033,20 @@ exports[`Video mouse events handlers of controls 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 wXGiU"
+          class="sc-beqWaB dtzSrB"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cliJaU"
+            class="sc-beqWaB itNDgx"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 bkMvqh"
+              class="sc-hLseeU huHdfp"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 gLEcPM"
+                class="sc-eDDNvR gEakUE"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
+                  class="sc-bqWVmG edRnqI"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -6062,11 +6062,11 @@ exports[`Video mouse events handlers of controls 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 kukkTH"
+                class="sc-eDDNvR blMgvL"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 kzfBmj"
+                  class="sc-vjKnw gQJyoq"
                   role="button"
                   tabindex="0"
                 />
@@ -6074,10 +6074,10 @@ exports[`Video mouse events handlers of controls 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 TDUwo"
+            class="sc-beqWaB cWbfPd"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iqSVxz"
+              class="sc-jTrPJq khyeOF"
             >
               NaN:NaN
             </span>
@@ -6087,14 +6087,14 @@ exports[`Video mouse events handlers of controls 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 dkczdG"
+          class="sc-gLDzan cETGdO"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ftCvDe"
+            class="sc-beqWaB gHLwPf"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 lhOBjf"
+              class="sc-jTrPJq dGhpxN"
             />
             <svg
               aria-label="Actions"
@@ -6118,14 +6118,14 @@ exports[`Video mouse events handlers of controls 2`] = `
 
 exports[`Video mouse events handlers of controls 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="sc-eFqGBh jXJAau"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 dJOlyN"
+    class="sc-YtoFE iWoAku"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 jzTXbQ"
+      class="sc-dlUsjx MjNtW"
     >
       <source
         src="small.mp4"
@@ -6134,13 +6134,13 @@ exports[`Video mouse events handlers of controls 3`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jVzbJt"
+      class="sc-imaUOB dbPgWY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gTjiHd"
+        class="sc-beqWaB ilzGXI"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bumPYc"
+          class="sc-gLDzan bGbgTU"
           type="button"
         >
           <svg
@@ -6157,20 +6157,20 @@ exports[`Video mouse events handlers of controls 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 wXGiU"
+          class="sc-beqWaB dtzSrB"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cliJaU"
+            class="sc-beqWaB itNDgx"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 bkMvqh"
+              class="sc-hLseeU huHdfp"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 gLEcPM"
+                class="sc-eDDNvR gEakUE"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
+                  class="sc-bqWVmG edRnqI"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -6186,11 +6186,11 @@ exports[`Video mouse events handlers of controls 3`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 kukkTH"
+                class="sc-eDDNvR blMgvL"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 kzfBmj"
+                  class="sc-vjKnw gQJyoq"
                   role="button"
                   tabindex="0"
                 />
@@ -6198,10 +6198,10 @@ exports[`Video mouse events handlers of controls 3`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 TDUwo"
+            class="sc-beqWaB cWbfPd"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iqSVxz"
+              class="sc-jTrPJq khyeOF"
             >
               NaN:NaN
             </span>
@@ -6211,14 +6211,14 @@ exports[`Video mouse events handlers of controls 3`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 dkczdG"
+          class="sc-gLDzan cETGdO"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ftCvDe"
+            class="sc-beqWaB gHLwPf"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 lhOBjf"
+              class="sc-jTrPJq dGhpxN"
             />
             <svg
               aria-label="Actions"
@@ -6426,7 +6426,7 @@ exports[`Video mute renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -6954,7 +6954,7 @@ exports[`Video renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -7482,7 +7482,7 @@ exports[`Video renders with theme 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -8010,7 +8010,7 @@ exports[`Video scrubber 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {
@@ -8354,14 +8354,14 @@ exports[`Video scrubber 1`] = `
 
 exports[`Video scrubber 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="sc-eFqGBh jXJAau"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-sc-w4v8h9-1 dJOlyN"
+    class="sc-YtoFE iWoAku"
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 jzTXbQ"
+      class="sc-dlUsjx MjNtW"
     >
       <source
         src="small.mp4"
@@ -8370,13 +8370,13 @@ exports[`Video scrubber 2`] = `
       <track />
     </video>
     <div
-      class="StyledVideo__StyledVideoControls-sc-w4v8h9-2 jVzbJt"
+      class="sc-imaUOB dbPgWY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gTjiHd"
+        class="sc-beqWaB ilzGXI"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bumPYc"
+          class="sc-gLDzan bGbgTU"
           type="button"
         >
           <svg
@@ -8393,20 +8393,20 @@ exports[`Video scrubber 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 wXGiU"
+          class="sc-beqWaB dtzSrB"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cliJaU"
+            class="sc-beqWaB itNDgx"
           >
             <div
-              class="StyledStack-sc-ajspsk-0 bkMvqh"
+              class="sc-hLseeU huHdfp"
             >
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 gLEcPM"
+                class="sc-eDDNvR gEakUE"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-sc-nsxarx-0 dCsXJA"
+                  class="sc-bqWVmG edRnqI"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -8422,11 +8422,11 @@ exports[`Video scrubber 2`] = `
                 </svg>
               </div>
               <div
-                class="StyledStack__StyledStackLayer-sc-ajspsk-1 kukkTH"
+                class="sc-eDDNvR blMgvL"
               >
                 <div
                   aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-sc-w4v8h9-3 kzfBmj"
+                  class="sc-vjKnw gQJyoq"
                   role="button"
                   tabindex="0"
                 />
@@ -8434,10 +8434,10 @@ exports[`Video scrubber 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 TDUwo"
+            class="sc-beqWaB cWbfPd"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iqSVxz"
+              class="sc-jTrPJq khyeOF"
             >
               NaN:NaN
             </span>
@@ -8447,14 +8447,14 @@ exports[`Video scrubber 2`] = `
           aria-expanded="false"
           aria-haspopup="menu"
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 dkczdG"
+          class="sc-gLDzan cETGdO"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 ftCvDe"
+            class="sc-beqWaB gHLwPf"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 lhOBjf"
+              class="sc-jTrPJq dGhpxN"
             />
             <svg
               aria-label="Actions"
@@ -8662,7 +8662,7 @@ exports[`Video timeUpdate event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c5:focus {

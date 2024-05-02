@@ -408,7 +408,7 @@ exports[`DataFilter !inDataForm 1`] = `
       >
         <div
           aria-label="name"
-          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
+          class="c4 "
           id="data-name"
           role="group"
         >
@@ -479,7 +479,7 @@ exports[`DataFilter !inDataForm 1`] = `
       >
         <div
           aria-label="enabled"
-          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
+          class="c4 "
           id="data-enabled"
           role="group"
         >
@@ -904,7 +904,7 @@ exports[`DataFilter children 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -1329,10 +1329,10 @@ exports[`DataFilter options 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-name"
                   role="group"
                 >
@@ -1409,10 +1409,10 @@ exports[`DataFilter options 1`] = `
                 Enabled
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-enabled"
                   role="group"
                 >
@@ -1468,10 +1468,10 @@ exports[`DataFilter options 1`] = `
                 Type
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-type.name"
                   role="group"
                 >
@@ -1976,7 +1976,7 @@ exports[`DataFilter range Data 1`] = `
                 Rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -2511,7 +2511,7 @@ exports[`DataFilter range prop 1`] = `
                 rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c8"
@@ -3184,10 +3184,10 @@ exports[`DataFilter renders 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-name"
                   role="group"
                 >
@@ -3264,10 +3264,10 @@ exports[`DataFilter renders 1`] = `
                 enabled
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-enabled"
                   role="group"
                 >
@@ -3323,7 +3323,7 @@ exports[`DataFilter renders 1`] = `
                 rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c15"
@@ -5154,47 +5154,47 @@ exports[`DataFilter select multiple options search 2`] = `
 
 exports[`DataFilter select multiple options search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jstWSP {
+  .eFImsq {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .gLVRCN {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .gLVRCN {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .vOYHH {
+  .kPJDbq {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gPKPHc {
+  .eAfHFR {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .dmBBcR {
+  .dRCBFM {
     border-radius: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iPXDvR {
+  .eEephc {
     border-radius: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kYOLuO {
+  .gaEYZn {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .biJsVL {
+  .iUCGQM {
     height: 6px;
   }
 }"

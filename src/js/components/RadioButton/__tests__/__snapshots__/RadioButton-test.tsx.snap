@@ -1374,7 +1374,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
         class="c4 "
       >
         <svg
-          as=".StyledRadioButton__StyledRadioButtonIcon-sc-g1f6ld-3"
+          as="[object Object]"
           data-testid="custom-radioButton-icon"
           theme="[object Object]"
         />

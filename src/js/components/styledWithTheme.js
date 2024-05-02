@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import { defaultProps } from '../default-props';
 
-const styledWithTheme =
-  (BaseComponent) =>
-  (styleTemplate, ...variables) => {
-    const StyledBaseComponent = styled(BaseComponent)(
+const getResultingComponentFunction = (StyledBaseComponent) =>
+forwardRef(
+  (props, ref) => <StyledBaseComponent
+    ref={ref}
+    {...defaultProps}
+    {...props}
+  />,
+);
+
+const styledWithTheme = (BaseComponent) => {
+  const styledBaseComponentTagFunction = styled(BaseComponent);
+  const resultingFunction = (styleTemplate, ...variables) => {
+    const StyledBaseComponent = styledBaseComponentTagFunction(
       styleTemplate,
       ...variables,
     );
-    return (props) => <StyledBaseComponent {...defaultProps} {...props} />;
+    if (BaseComponent.displayName) {
+      StyledBaseComponent.displayName = BaseComponent.displayName;
+    }
+    return getResultingComponentFunction(StyledBaseComponent);
   };
+  Object.setPrototypeOf(resultingFunction, styledBaseComponentTagFunction);
+  return resultingFunction;
+};
 
 Object.setPrototypeOf(styledWithTheme, styled);
 
 Object.entries(styled).forEach(([tag, componentFunction]) => {
   const resultingMethod = (styleTemplate, ...variables) => {
     const StyledBaseComponent = componentFunction(styleTemplate, ...variables);
-    return (props) => <StyledBaseComponent {...defaultProps} {...props} />;
+    return getResultingComponentFunction(StyledBaseComponent);
   };
   Object.setPrototypeOf(resultingMethod, componentFunction);
   styledWithTheme[tag] = resultingMethod;

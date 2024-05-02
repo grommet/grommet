@@ -1885,7 +1885,7 @@ exports[`RadioButtonGroup should have no accessibility violations 1`] = `
           />
         </div>
         <span
-          class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+          class=""
         >
           option1
         </span>

@@ -434,10 +434,10 @@ exports[`DataFilters clear 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-name"
                   role="group"
                 >
@@ -689,7 +689,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButton-sc-323bzc-0 hZNOgI"
+  class="sc-gLDzan hUdtUk"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"
@@ -712,37 +712,37 @@ exports[`DataFilters drop 2`] = `
 
 exports[`DataFilters drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jstWSP {
+  .eFImsq {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .gLVRCN {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .gLVRCN {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .vOYHH {
+  .kPJDbq {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gPKPHc {
+  .eAfHFR {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .kYOLuO {
+  .gaEYZn {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .biJsVL {
+  .iUCGQM {
     height: 6px;
   }
 }"
@@ -2031,10 +2031,10 @@ exports[`DataFilters layer 2`] = `
                   name
                 </label>
                 <div
-                  class="c16 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c16 "
                 >
                   <div
-                    class="c17 StyledCheckBoxGroup-sc-2nhc5d-0"
+                    class="c17 "
                     id="test-data-name"
                     role="group"
                   >
@@ -2101,37 +2101,37 @@ exports[`DataFilters layer 2`] = `
 
 exports[`DataFilters layer 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jstWSP {
+  .eFImsq {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .gLVRCN {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .gLVRCN {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .vOYHH {
+  .kPJDbq {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gPKPHc {
+  .eAfHFR {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .kYOLuO {
+  .gaEYZn {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .biJsVL {
+  .iUCGQM {
     height: 6px;
   }
 }"
@@ -2531,10 +2531,10 @@ exports[`DataFilters properties array 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-name"
                   role="group"
                 >
@@ -2992,10 +2992,10 @@ exports[`DataFilters properties object 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-name"
                   role="group"
                 >
@@ -3453,10 +3453,10 @@ exports[`DataFilters renders 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-name"
                   role="group"
                 >
@@ -4031,10 +4031,10 @@ exports[`DataFilters should display all filter options regardless of result set 
                   name
                 </label>
                 <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c7 "
                 >
                   <div
-                    class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                    class="c8 "
                     id="data-name"
                     role="group"
                   >
@@ -4090,10 +4090,10 @@ exports[`DataFilters should display all filter options regardless of result set 
                   color
                 </label>
                 <div
-                  class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c7 "
                 >
                   <div
-                    class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                    class="c8 "
                     id="data-color"
                     role="group"
                   >
@@ -5116,10 +5116,10 @@ exports[`DataFilters sub objects 1`] = `
                 City
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 "
                   id="data-location.city"
                   role="group"
                 >
@@ -5187,7 +5187,7 @@ exports[`DataFilters sub objects 1`] = `
                 Latitude
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <div
                   class="c17"
@@ -5281,10 +5281,10 @@ exports[`DataFilters sub objects 1`] = `
       class="c29 c30"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class=""
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class=""
         >
           <th
             class="c31 "
@@ -5317,10 +5317,10 @@ exports[`DataFilters sub objects 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c34"
+        class="c34"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class=""
         >
           <th
             class="c35 "
