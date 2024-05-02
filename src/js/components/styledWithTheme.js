@@ -3,6 +3,8 @@ import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../default-props';
 
+// TODO fix display names (?)
+
 const getResultingComponentFunction = (StyledBaseComponent) =>
 forwardRef(
   (props, ref) => {
