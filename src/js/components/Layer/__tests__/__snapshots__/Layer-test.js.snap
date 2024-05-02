@@ -850,6 +850,8 @@ exports[`Layer custom theme 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;

@@ -1,15 +1,18 @@
-import React, { forwardRef } from 'react';
-import styled from 'styled-components';
+import React, { forwardRef, useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../default-props';
 
 const getResultingComponentFunction = (StyledBaseComponent) =>
 forwardRef(
-  (props, ref) => <StyledBaseComponent
-    ref={ref}
-    {...defaultProps}
-    {...props}
-  />,
+  (props, ref) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    return <StyledBaseComponent
+      ref={ref}
+      theme={theme}
+      {...props}
+    />;
+  },
 );
 
 const styledWithTheme = (BaseComponent) => {

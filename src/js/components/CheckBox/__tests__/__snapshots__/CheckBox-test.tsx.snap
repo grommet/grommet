@@ -428,6 +428,10 @@ exports[`CheckBox custom theme 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   cursor: pointer;
 }
 

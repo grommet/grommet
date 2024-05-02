@@ -3699,6 +3699,11 @@ exports[`DataTable custom theme 1`] = `
   padding: 6px 12px;
 }
 
+.c8:hover {
+  background-color: rgba(242,242,242,1);
+  color: #444444;
+}
+
 @media only screen and (max-width:768px) {
   .c17 {
     border-inline-end: solid 1px red;
@@ -3942,7 +3947,7 @@ exports[`DataTable custom theme 2`] = `
               class="sc-gueYoa eQPrwr"
             >
               <button
-                class="sc-iAEyYk dUgJhw sc-gUrTyy RHGEn"
+                class="sc-iAEyYk dUgJhw sc-gUrTyy eSnyTJ"
                 type="button"
               >
                 <div
@@ -18092,6 +18097,36 @@ exports[`DataTable pin + background context 1`] = `
   padding-bottom: 6px;
 }
 
+.c20 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  border-bottom: solid 1px rgba(255,255,255,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c21 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  border-top: solid 1px rgba(255,255,255,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
@@ -18448,7 +18483,7 @@ exports[`DataTable pin + background context 1`] = `
           class=""
         >
           <th
-            class="c4 c5"
+            class="c20 c5"
             scope="col"
           >
             <div
@@ -18462,7 +18497,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </th>
           <th
-            class="c4 c8"
+            class="c20 c8"
             scope="col"
           >
             <div
@@ -18550,7 +18585,7 @@ exports[`DataTable pin + background context 1`] = `
           class=""
         >
           <td
-            class="c15 c16"
+            class="c21 c16"
           >
             <div
               class="c12"
@@ -18563,7 +18598,7 @@ exports[`DataTable pin + background context 1`] = `
             </div>
           </td>
           <td
-            class="c15 c17"
+            class="c21 c17"
           >
             <div
               class="c12"

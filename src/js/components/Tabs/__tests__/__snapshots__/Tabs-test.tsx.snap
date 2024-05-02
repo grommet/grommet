@@ -2946,6 +2946,10 @@ exports[`Tabs should allow to extend tab styles 1`] = `
 
 .c5 {
   white-space: nowrap;
+  color: red;
+  padding: 20px;
+  box-shadow: rgba(0,0,0,0.25) 0px 54px 55px,rgba(0,0,0,0.12) 0px -12px 30px,rgba(0,0,0,0.12) 0px 4px 6px,rgba(0,0,0,0.17) 0px 12px 13px,rgba(0,0,0,0.09) 0px -3px 5px;
+  margin: 30px;
 }
 
 .c7 {
@@ -2954,6 +2958,10 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
+  color: red;
+  padding: 20px;
+  box-shadow: rgba(0,0,0,0.25) 0px 54px 55px,rgba(0,0,0,0.12) 0px -12px 30px,rgba(0,0,0,0.12) 0px 4px 6px,rgba(0,0,0,0.17) 0px 12px 13px,rgba(0,0,0,0.09) 0px -3px 5px;
+  margin: 30px;
 }
 
 .c7:hover {
@@ -3306,6 +3314,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
+  color: blue;
 }
 
 .c12 {
@@ -3683,6 +3692,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
+  color: blue;
 }
 
 .c12 {

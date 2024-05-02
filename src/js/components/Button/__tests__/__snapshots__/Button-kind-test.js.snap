@@ -1635,8 +1635,8 @@ exports[`Button kind button with transparent background 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  background-color: background;
-  color: #f8f8f8;
+  background-color: rgba(28,28,28,1);
+  color: #FFFFFF;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1961,8 +1961,11 @@ exports[`Button kind button with transparent background 1`] = `
 }
 
 .c0 {
+  font-family: 'Metric',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
+  background-color: #FFFFFF;
+  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

@@ -2799,7 +2799,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
 `;
 
 exports[`Pagination should apply custom theme 1`] = `
-.c6 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2810,30 +2810,30 @@ exports[`Pagination should apply custom theme 1`] = `
   stroke: #666666;
 }
 
-.c6 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c6 *:not([stroke])[fill='none'] {
+.c7 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c13 {
+.c14 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2844,25 +2844,25 @@ exports[`Pagination should apply custom theme 1`] = `
   stroke: #000000;
 }
 
-.c13 g {
+.c14 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c13 *:not([stroke])[fill='none'] {
+.c14 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
+.c14 *[stroke*='#'],
+.c14 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c13 *[fill-rule],
-.c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*='#'],
+.c14 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2894,7 +2894,7 @@ exports[`Pagination should apply custom theme 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2914,7 +2914,7 @@ exports[`Pagination should apply custom theme 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2924,12 +2924,12 @@ exports[`Pagination should apply custom theme 1`] = `
   width: 3px;
 }
 
-.c10 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2962,7 +2962,7 @@ exports[`Pagination should apply custom theme 1`] = `
   flex: 1 0 auto;
 }
 
-.c4 > svg {
+.c5 > svg {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2973,47 +2973,47 @@ exports[`Pagination should apply custom theme 1`] = `
   vertical-align: middle;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c4:focus:not(:focus-visible) {
+.c5:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible) > circle,
-.c4:focus:not(:focus-visible) > ellipse,
-.c4:focus:not(:focus-visible) > line,
-.c4:focus:not(:focus-visible) > path,
-.c4:focus:not(:focus-visible) > polygon,
-.c4:focus:not(:focus-visible) > polyline,
-.c4:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) > circle,
+.c5:focus:not(:focus-visible) > ellipse,
+.c5:focus:not(:focus-visible) > line,
+.c5:focus:not(:focus-visible) > path,
+.c5:focus:not(:focus-visible) > polygon,
+.c5:focus:not(:focus-visible) > polyline,
+.c5:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c4:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c8 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3033,82 +3033,6 @@ exports[`Pagination should apply custom theme 1`] = `
   line-height: 24px;
   background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c8:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c9 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 4px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -3168,7 +3092,83 @@ exports[`Pagination should apply custom theme 1`] = `
   border: 0;
 }
 
-.c12 {
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c10:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) > circle,
+.c10:focus:not(:focus-visible) > ellipse,
+.c10:focus:not(:focus-visible) > line,
+.c10:focus:not(:focus-visible) > path,
+.c10:focus:not(:focus-visible) > polygon,
+.c10:focus:not(:focus-visible) > polyline,
+.c10:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3200,7 +3200,7 @@ exports[`Pagination should apply custom theme 1`] = `
   flex: 1 0 auto;
 }
 
-.c12 > svg {
+.c13 > svg {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3211,60 +3211,60 @@ exports[`Pagination should apply custom theme 1`] = `
   vertical-align: middle;
 }
 
-.c12:hover {
+.c13:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c12:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
-.c5 {
+.c6 {
   font-size: 18px;
   line-height: 0;
 }
 
-.c5 > svg {
+.c6 > svg {
   margin: 0 auto;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3282,26 +3282,30 @@ exports[`Pagination should apply custom theme 1`] = `
   min-width: 36px;
 }
 
-.c11 {
+.c12 {
   font-weight: bold;
   font-size: 18px;
   line-height: 0;
 }
 
+.c2 {
+  background: red;
+}
+
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     width: 2px;
   }
 }
@@ -3310,28 +3314,28 @@ exports[`Pagination should apply custom theme 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 c2"
   >
     <nav
       aria-label="Pagination Navigation"
       class="c1"
     >
       <ul
-        class="c2"
+        class="c3"
       >
         <li
-          class="c3"
+          class="c4"
         >
           <button
             aria-disabled="true"
             aria-label="Go to previous page"
-            class="c4 c5"
+            class="c5 c6"
             disabled=""
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="c6"
+              class="c7"
               viewBox="0 0 24 24"
             >
               <path
@@ -3344,116 +3348,116 @@ exports[`Pagination should apply custom theme 1`] = `
           </button>
         </li>
         <div
-          class="c7"
+          class="c8"
         />
         <li
-          class="c3"
+          class="c4"
         >
           <button
             aria-current="page"
             aria-label="Go to page 1"
-            class="c8 c5"
+            class="c9 c6"
             type="button"
           >
             1
           </button>
         </li>
         <div
-          class="c7"
+          class="c8"
         />
         <li
-          class="c3"
+          class="c4"
         >
           <button
             aria-label="Go to page 2"
-            class="c9 c5"
+            class="c10 c6"
             type="button"
           >
             2
           </button>
         </li>
         <div
-          class="c7"
+          class="c8"
         />
         <li
-          class="c3"
+          class="c4"
         >
           <button
             aria-label="Go to page 3"
-            class="c9 c5"
+            class="c10 c6"
             type="button"
           >
             3
           </button>
         </li>
         <div
-          class="c7"
+          class="c8"
         />
         <li
-          class="c3"
+          class="c4"
         >
           <button
             aria-label="Go to page 4"
-            class="c9 c5"
+            class="c10 c6"
             type="button"
           >
             4
           </button>
         </li>
         <div
-          class="c7"
+          class="c8"
         />
         <li
-          class="c3"
+          class="c4"
         >
           <button
             aria-label="Go to page 5"
-            class="c9 c5"
+            class="c10 c6"
             type="button"
           >
             5
           </button>
         </li>
         <div
-          class="c7"
+          class="c8"
         />
         <li
-          class="c3"
+          class="c4"
         >
           <span
-            class="c10 c11"
+            class="c11 c12"
           >
             …
           </span>
         </li>
         <div
-          class="c7"
+          class="c8"
         />
         <li
-          class="c3"
+          class="c4"
         >
           <button
             aria-label="Go to page 24"
-            class="c9 c5"
+            class="c10 c6"
             type="button"
           >
             24
           </button>
         </li>
         <div
-          class="c7"
+          class="c8"
         />
         <li
-          class="c3"
+          class="c4"
         >
           <button
             aria-label="Go to next page"
-            class="c12 c5"
+            class="c13 c6"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c13"
+              class="c14"
               viewBox="0 0 24 24"
             >
               <path
