@@ -1,7 +1,6 @@
 import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
@@ -166,8 +165,5 @@ const Circle = forwardRef((props, ref) => {
 });
 
 Circle.displayName = 'Circle';
-
-Circle.defaultProps = {};
-Object.setPrototypeOf(Circle.defaultProps, defaultProps);
 
 export { Circle };

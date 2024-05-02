@@ -75,7 +75,6 @@ const SkipLinks = ({ children, id, messages }) => {
   );
 };
 
-SkipLinks.defaultProps = {};
 SkipLinks.propTypes = SkipLinksPropTypes;
 
 export { SkipLinks };

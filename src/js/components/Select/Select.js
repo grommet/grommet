@@ -31,9 +31,6 @@ import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
 
-StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
-
 const defaultDropAlign = { top: 'bottom', left: 'left' };
 
 const Select = forwardRef(
@@ -401,8 +398,6 @@ const Select = forwardRef(
     );
   },
 );
-
-Select.defaultProps = { ...defaultProps };
 
 Select.displayName = 'Select';
 Select.propTypes = SelectPropTypes;

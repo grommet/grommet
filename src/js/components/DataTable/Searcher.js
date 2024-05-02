@@ -69,7 +69,4 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
 
 Searcher.displayName = 'Searcher';
 
-Searcher.defaultProps = {};
-Object.setPrototypeOf(Searcher.defaultProps, defaultProps);
-
 export { Searcher };

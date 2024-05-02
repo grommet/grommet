@@ -227,9 +227,6 @@ const Tab = forwardRef(
 );
 
 Tab.displayName = 'Tab';
-Tab.defaultProps = {};
-Object.setPrototypeOf(Tab.defaultProps, defaultProps);
-
 Tab.propTypes = TabPropTypes;
 
 export { Tab };

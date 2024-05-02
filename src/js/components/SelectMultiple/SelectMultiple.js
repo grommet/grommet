@@ -8,9 +8,10 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
@@ -37,14 +38,11 @@ import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
 
-const StyledSelectBox = styled(Box)`
+const StyledSelectBox = styledWithTheme(Box)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select.control?.open};
 `;
-
-StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
 const SelectMultiple = forwardRef(
   (
@@ -584,8 +582,6 @@ const SelectMultiple = forwardRef(
     );
   },
 );
-
-SelectMultiple.defaultProps = { ...defaultProps };
 
 SelectMultiple.displayName = 'SelectMultiple';
 SelectMultiple.propTypes = SelectMultiplePropTypes;

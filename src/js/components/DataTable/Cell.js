@@ -84,7 +84,4 @@ const Cell = memo(
 
 Cell.displayName = 'Cell';
 
-Cell.defaultProps = {};
-Object.setPrototypeOf(Cell.defaultProps, defaultProps);
-
 export { Cell };

@@ -6,10 +6,11 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import styled, { css, ThemeContext } from 'styled-components';
+import { css, ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 
 import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -106,12 +107,12 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
   return styles;
 };
 
-const StyledHeaderCellButton = styled(Button)`
+const StyledHeaderCellButton = styledWithTheme(Button)`
   ${(props) => buttonStyle(props)}
 `;
 
 // allow extend to spread onto Box that surrounds column label
-const StyledContentBox = styled(Box)`
+const StyledContentBox = styledWithTheme(Box)`
   ${(props) => props.extend}
 `;
 
@@ -465,8 +466,5 @@ const Header = forwardRef(
 );
 
 Header.displayName = 'Header';
-
-Header.defaultProps = {};
-Object.setPrototypeOf(Header.defaultProps, defaultProps);
 
 export { Header };

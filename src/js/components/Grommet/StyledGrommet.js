@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
 import { baseStyle } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
+
 
 const fullStyle = (full) => {
   if (full === 'min')
@@ -15,7 +16,7 @@ const fullStyle = (full) => {
   `;
 };
 
-const StyledGrommet = styled.div`
+const StyledGrommet = styledWithTheme.div`
   ${(props) => !props.plain && baseStyle}
   ${(props) => props.full && fullStyle(props.full)}
   ${(props) => props.theme.global.font.face}
@@ -27,8 +28,5 @@ const StyledGrommet = styled.div`
       .map((k) => `--${k}: ${props.theme.global.colors[k]};`)
       .join('\n')}
 `;
-
-StyledGrommet.defaultProps = {};
-Object.setPrototypeOf(StyledGrommet.defaultProps, defaultProps);
 
 export { StyledGrommet };

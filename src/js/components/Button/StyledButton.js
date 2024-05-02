@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
 import {
   activeStyle,
@@ -11,7 +11,7 @@ import {
   getHoverIndicatorStyle,
   normalizeColor,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 const radiusStyle = (props) => {
   // border.radius shouldn't impact an only-icon rendering.
@@ -184,7 +184,7 @@ const disabledButtonStyle = (props) => css`
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
-const StyledButton = styled.button`
+const StyledButton = styledWithTheme.button`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -257,8 +257,5 @@ const StyledButton = styled.button`
     cursor: default;
   `}
 `;
-
-StyledButton.defaultProps = {};
-Object.setPrototypeOf(StyledButton.defaultProps, defaultProps);
 
 export { StyledButton };

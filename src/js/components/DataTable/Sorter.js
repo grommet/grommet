@@ -54,7 +54,4 @@ const Sorter = ({
 
 Sorter.displayName = 'Sorter';
 
-Sorter.defaultProps = {};
-Object.setPrototypeOf(Sorter.defaultProps, defaultProps);
-
 export { Sorter };

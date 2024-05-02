@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
 import {
   setFocusWithoutScroll,
@@ -15,6 +15,7 @@ import {
 } from '../../utils';
 
 import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -32,7 +33,7 @@ import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
 
 // ensure ClearButton receives visual indication of keyboard
-const StyledButton = styled(Button)`
+const StyledButton = styledWithTheme(Button)`
   &:focus {
     ${(props) => getHoverIndicatorStyle('background', props.theme)}
   }

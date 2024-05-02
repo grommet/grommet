@@ -611,8 +611,6 @@ const Video = forwardRef(
   },
 );
 
-Video.defaultProps = {};
-
 Video.displayName = 'Video';
 Video.propTypes = VideoPropTypes;
 

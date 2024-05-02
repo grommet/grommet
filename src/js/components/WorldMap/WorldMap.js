@@ -2,7 +2,6 @@ import React, { forwardRef } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { Drop } from '../Drop';
-import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
 import { StyledWorldMap } from './StyledWorldMap';
@@ -724,8 +723,6 @@ const WorldMap = forwardRef(
 
 WorldMap.displayName = 'WorldMap';
 
-WorldMap.defaultProps = {};
-Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
 WorldMap.propTypes = WorldMapPropTypes;
 
 export { WorldMap };

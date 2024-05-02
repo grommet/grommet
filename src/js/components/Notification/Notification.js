@@ -241,9 +241,6 @@ const Notification = ({
   return content;
 };
 
-Notification.defaultProps = {};
-
-Object.setPrototypeOf(Notification.defaultProps, defaultProps);
 Notification.displayName = 'Notification';
 
 Notification.propTypes = NotificationType;

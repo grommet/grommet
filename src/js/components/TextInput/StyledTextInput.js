@@ -10,7 +10,7 @@ import {
   textAlignStyle,
   widthStyle,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 import { inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
 
@@ -23,7 +23,7 @@ const getPlainStyle = (plain) => {
   return plain && plainInputStyle;
 };
 
-const StyledTextInput = styled.input`
+const StyledTextInput = styledWithTheme.input`
   ${inputStyle}
   ${(props) =>
     props.readOnlyCopy
@@ -43,10 +43,7 @@ const StyledTextInput = styled.input`
   ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 
-StyledTextInput.defaultProps = {};
-Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
-
-const StyledTextInputContainer = styled.div`
+const StyledTextInputContainer = styledWithTheme.div`
   position: relative;
   width: 100%;
 
@@ -68,10 +65,7 @@ const StyledTextInputContainer = styled.div`
     props.theme.textInput.container.extend};
 `;
 
-StyledTextInputContainer.defaultProps = {};
-Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
-
-const StyledPlaceholder = styled.div`
+const StyledPlaceholder = styledWithTheme.div`
   position: absolute;
   left: ${(props) =>
     parseMetricToNum(getInputPadBySide(props, 'left')) -
@@ -88,9 +82,6 @@ const StyledPlaceholder = styled.div`
     props.theme.textInput.placeholder.extend};
 `;
 
-StyledPlaceholder.defaultProps = {};
-Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
-
 const StyledIcon = styled.div`
   position: absolute;
   display: flex;
@@ -104,7 +95,7 @@ const StyledIcon = styled.div`
       : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
-const StyledSuggestions = styled.ol`
+const StyledSuggestions = styledWithTheme.ol`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;
@@ -116,9 +107,6 @@ const StyledSuggestions = styled.ol`
     props.theme.textInput.suggestions &&
     props.theme.textInput.suggestions.extend};
 `;
-
-StyledSuggestions.defaultProps = {};
-Object.setPrototypeOf(StyledSuggestions.defaultProps, defaultProps);
 
 export {
   StyledTextInput,

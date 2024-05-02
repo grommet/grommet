@@ -79,7 +79,6 @@ const Heading = forwardRef(
 );
 
 Heading.displayName = 'Heading';
-Heading.defaultProps = {};
 Heading.propTypes = HeadingPropTypes;
 
 export { Heading };

@@ -7,9 +7,10 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -54,7 +55,7 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
-const ContainerBox = styled(Box)`
+const ContainerBox = styledWithTheme(Box)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)

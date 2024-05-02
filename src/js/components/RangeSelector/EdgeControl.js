@@ -1,8 +1,6 @@
 import React, { forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
-
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
@@ -106,8 +104,5 @@ const EdgeControl = forwardRef(
 );
 
 EdgeControl.displayName = 'EdgeControl';
-
-EdgeControl.defaultProps = {};
-Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
 
 export { EdgeControl };

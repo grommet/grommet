@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import { css, keyframes } from 'styled-components';
 
 import {
   baseStyle,
@@ -6,7 +6,7 @@ import {
   breakpointStyle,
   parseMetricToNum,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -30,7 +30,7 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-const StyledLayer = styled.div`
+const StyledLayer = styledWithTheme.div`
   ${baseStyle}
   background: transparent;
   position: relative;
@@ -58,10 +58,7 @@ const StyledLayer = styled.div`
   ${(props) => props.theme.layer && props.theme.layer.extend};
 `;
 
-StyledLayer.defaultProps = {};
-Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
-
-const StyledOverlay = styled.div`
+const StyledOverlay = styledWithTheme.div`
   position: absolute;
   ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -771,7 +768,7 @@ const elevationStyle = css`
     ]};
 `;
 
-const StyledContainer = styled.div.withConfig({
+const StyledContainer = styledWithTheme.div.withConfig({
   // don't let elevation leak to DOM
   // https://styled-components.com/docs/api#shouldforwardprop
   shouldForwardProp: (prop, defaultValidatorFn) =>
@@ -806,8 +803,5 @@ const StyledContainer = styled.div.withConfig({
   ${(props) =>
     props.theme.layer.container && props.theme.layer.container.extend};
 `;
-
-StyledContainer.defaultProps = {};
-Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 
 export { animationDuration, StyledLayer, StyledOverlay, StyledContainer };

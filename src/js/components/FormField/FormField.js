@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 import {
   containsFocus,
@@ -57,16 +58,16 @@ const isGrommetInput = (comp) =>
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
-const FormFieldBox = styled(Box)`
+const FormFieldBox = styledWithTheme(Box)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
   ${(props) => props.theme.formField && props.theme.formField.extend}
 `;
 
-const FormFieldContentBox = styled(Box)`
+const FormFieldContentBox = styledWithTheme(Box)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
 `;
 
-const StyledMessageContainer = styled(Box)`
+const StyledMessageContainer = styledWithTheme(Box)`
   ${(props) =>
     props.messageType &&
     props.theme.formField[props.messageType].container &&

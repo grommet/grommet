@@ -7,9 +7,10 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -20,7 +21,7 @@ import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
 
-const ContainerBox = styled(Box)`
+const ContainerBox = styledWithTheme(Box)`
   max-height: inherit;
 
   /* IE11 hack to get drop contents to not overflow */

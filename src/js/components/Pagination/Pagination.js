@@ -1,6 +1,7 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
@@ -9,7 +10,7 @@ import { PaginationStep } from './PaginationStep';
 import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
 
-const StyledPaginationContainer = styled(Box)`
+const StyledPaginationContainer = styledWithTheme(Box)`
   ${(props) =>
     props.theme.pagination.container && props.theme.pagination.container.extend}
 `;

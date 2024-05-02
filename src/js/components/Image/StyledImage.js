@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
 import { fillStyle, genericStyles } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -14,7 +14,7 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
-const StyledImage = styled.img`
+const StyledImage = styledWithTheme.img`
   ${genericStyles}
   ${props => props.fit && fitStyle}
   ${props => props.fillProp && fillStyle(props.fillProp)}
@@ -28,8 +28,5 @@ const StyledImage = styled.img`
     };
   `}
     `;
-
-StyledImage.defaultProps = {};
-Object.setPrototypeOf(StyledImage.defaultProps, defaultProps);
 
 export { StyledImage };

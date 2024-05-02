@@ -114,7 +114,4 @@ const Resizer = ({ onResize, property }) => {
 
 Resizer.displayName = 'Resizer';
 
-Resizer.defaultProps = {};
-Object.setPrototypeOf(Resizer.defaultProps, defaultProps);
-
 export { Resizer };

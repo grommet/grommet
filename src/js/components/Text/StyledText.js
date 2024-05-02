@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
 import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { styledWithTheme } from '../styledWithTheme';
 
 const sizeStyle = props => {
   const size = props.size || 'medium';
@@ -41,7 +41,7 @@ const fontFamily = css`
   font-family: ${props => props.theme.text.font.family};
 `;
 
-const StyledText = styled('span').withConfig({
+const StyledText = styledWithTheme('span').withConfig({
   shouldForwardProp: (prop, defaultValidatorFn) =>
     defaultValidatorFn(prop) && prop !== 'size',
 })`
@@ -57,8 +57,5 @@ const StyledText = styled('span').withConfig({
 
   ${props => props.theme.text && props.theme.text.extend}
 `;
-
-StyledText.defaultProps = {};
-Object.setPrototypeOf(StyledText.defaultProps, defaultProps);
 
 export { StyledText };

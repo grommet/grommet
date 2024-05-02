@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
+import { styledWithTheme } from '../styledWithTheme';
 import {
   getHoverIndicatorStyle,
   selectedStyle,
@@ -10,7 +11,7 @@ import {
   sizeStyle,
 } from '../../utils';
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styledWithTheme.div`
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
@@ -37,7 +38,7 @@ export const HiddenInput = styled.input`
   display: none;
 `;
 
-export const SelectOption = styled(Button)`
+export const SelectOption = styledWithTheme(Button)`
   ${(props) => props.selected && props.textComponent && selectedStyle}
   // applies theme.global.hover.background to the active
   // option for mouse and keyboard interactions
@@ -68,7 +69,7 @@ export const SelectTextInput = styled(TextInput)`
   cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
-export const StyledSelectDropButton = styled(DropButton)`
+export const StyledSelectDropButton = styledWithTheme(DropButton)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select?.control?.open};

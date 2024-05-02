@@ -67,7 +67,4 @@ const ExpanderCell = ({ background, border, context, ...rest }) => (
 
 ExpanderCell.displayName = 'ExpanderCell';
 
-ExpanderCell.defaultProps = {};
-Object.setPrototypeOf(ExpanderCell.defaultProps, defaultProps);
-
 export { ExpanderCell };

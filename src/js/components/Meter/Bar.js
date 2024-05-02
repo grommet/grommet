@@ -124,8 +124,4 @@ const Bar = forwardRef((props, ref) => {
 
 Bar.displayName = 'Bar';
 
-Bar.defaultProps = {};
-
-Object.setPrototypeOf(Bar.defaultProps, defaultProps);
-
 export { Bar };

@@ -303,8 +303,6 @@ const Carousel = ({
   );
 };
 
-Carousel.defaultProps = {};
-Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 
 Carousel.propTypes = CarouselPropTypes;

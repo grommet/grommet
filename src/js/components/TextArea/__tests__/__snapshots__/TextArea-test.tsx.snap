@@ -1086,7 +1086,7 @@ exports[`TextArea custom theme input font size 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: inherit;
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
