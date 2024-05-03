@@ -9,8 +9,6 @@ import React, {
 } from 'react';
 
 import { normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
-import { ThemeContext } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import { Box } from '../Box';
@@ -20,6 +18,7 @@ import { Keyboard } from '../Keyboard';
 import { StyledCarouselContainer, StyledControl } from './StyledCarousel';
 import { CarouselChild } from './CarouselChild';
 import { CarouselPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Carousel = ({
   activeChild,
@@ -36,7 +35,7 @@ const Carousel = ({
   wrap,
   ...rest
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const { format } = useContext(MessageContext);
   const timerRef = useRef();
 

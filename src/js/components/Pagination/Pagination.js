@@ -1,6 +1,4 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { styledWithTheme } from '../styledWithTheme';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -9,6 +7,7 @@ import { PageControl } from './PageControl';
 import { PaginationStep } from './PaginationStep';
 import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const StyledPaginationContainer = styledWithTheme(Box)`
   ${(props) =>
@@ -43,7 +42,7 @@ const Pagination = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const { onView, filteredTotal, view } = useContext(DataContext);
     const [step, setStep] = useState(stepProp || view?.step || 10);
     const total = numberItems ?? filteredTotal ?? 0;

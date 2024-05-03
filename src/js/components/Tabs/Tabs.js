@@ -9,10 +9,7 @@ import React, {
 } from 'react';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { Next } from 'grommet-icons/icons/Next';
-import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -23,6 +20,7 @@ import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tabs = forwardRef(
   (
@@ -37,7 +35,7 @@ const Tabs = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const { format } = useContext(MessageContext);
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);

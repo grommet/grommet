@@ -6,11 +6,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { setFocusWithoutScroll } from '../../utils';
-
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -35,6 +32,7 @@ import {
 } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const SelectMultipleContainer = forwardRef(
   (
@@ -69,7 +67,7 @@ const SelectMultipleContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
     const { format } = useContext(MessageContext);

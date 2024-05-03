@@ -1,12 +1,10 @@
 import React, {
   forwardRef,
   useCallback,
-  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import {
   setFocusWithoutScroll,
@@ -14,7 +12,6 @@ import {
   containsFocus,
 } from '../../utils';
 
-import { defaultProps } from '../../default-props';
 import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
@@ -31,6 +28,7 @@ import {
 } from './StyledSelect';
 import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // ensure ClearButton receives visual indication of keyboard
 const StyledButton = styledWithTheme(Button)`
@@ -94,7 +92,7 @@ const SelectContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const shouldShowClearButton = useCallback(
       (position) => {
         const hasValue = Boolean(multiple && value ? value.length : value);

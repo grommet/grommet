@@ -7,9 +7,8 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
-import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
@@ -33,6 +32,7 @@ import {
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
 import { CopyButton } from '../TextInput/CopyButton';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const StyledDateInputContainer = styled(Box)`
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}};
@@ -78,7 +78,7 @@ const DateInput = forwardRef(
     },
     refArg,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =

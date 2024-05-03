@@ -8,9 +8,7 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
@@ -37,6 +35,7 @@ import {
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const StyledSelectBox = styledWithTheme(Box)`
   ${(props) => !props.plainSelect && controlBorderStyle};
@@ -95,7 +94,7 @@ const SelectMultiple = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);

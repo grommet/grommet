@@ -1,17 +1,15 @@
 import React, {
   forwardRef,
   useCallback,
-  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledDiagram } from './StyledDiagram';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const computeMidPoint = (fromPoint, toPoint) => [
   fromPoint[0] > toPoint[0]
@@ -69,7 +67,7 @@ const defaultConnectionsValue = [];
 
 const Diagram = forwardRef(
   ({ connections = defaultConnectionsValue, ...rest }, ref) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
     const [connectionPoints, setConnectionPoints] = useState();
     const svgRef = useForwardedRef(ref);

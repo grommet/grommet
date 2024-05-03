@@ -6,10 +6,9 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { css, ThemeContext } from 'styled-components';
+import { css } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 
-import { defaultProps } from '../../default-props';
 import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
@@ -29,6 +28,7 @@ import {
 import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -149,7 +149,7 @@ const Header = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [layoutProps, textProps] = separateThemeProps(theme);
     const { total: contextTotal } = useContext(DataContext);
 

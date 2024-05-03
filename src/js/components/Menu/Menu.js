@@ -7,9 +7,7 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
 import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
@@ -20,6 +18,7 @@ import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const ContainerBox = styledWithTheme(Box)`
   max-height: inherit;
@@ -81,7 +80,7 @@ const Menu = forwardRef((props, ref) => {
     size,
     ...rest
   } = props;
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through

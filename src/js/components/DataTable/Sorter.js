@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
+import React from 'react';
+import styled from 'styled-components';
 
 import { Button } from '../Button';
 import { Box } from '../Box';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const SorterButton = styled(Button)`
   flex-shrink: 1;
@@ -20,7 +19,7 @@ const Sorter = ({
   sort,
   themeProps,
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   let icon;
   if (sort && sort.property === property) {
     const Icon =

@@ -8,7 +8,6 @@ import React, {
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
@@ -17,6 +16,7 @@ import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Box = forwardRef(
   (
@@ -47,7 +47,7 @@ const Box = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     // boxOptions was created to preserve backwards compatibility but
     // should not be supported in v3
     const { box: boxOptions } = useContext(OptionsContext);

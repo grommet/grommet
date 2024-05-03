@@ -6,8 +6,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 import { styledWithTheme } from '../styledWithTheme';
 
 import {
@@ -28,6 +27,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const grommetInputNames = [
   'CheckBox',
@@ -92,7 +92,7 @@ const ScreenReaderOnly = styled(Text)`
 `;
 
 const Message = ({ error, info, message, type, ...rest }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
 
   if (message) {
     let icon;
@@ -185,7 +185,7 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const formContext = useContext(FormContext);
 
     const {

@@ -8,10 +8,8 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { useKeyboard } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
@@ -30,6 +28,7 @@ import {
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
 
@@ -83,7 +82,7 @@ const Select = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
