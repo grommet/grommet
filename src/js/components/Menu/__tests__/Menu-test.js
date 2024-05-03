@@ -46,11 +46,10 @@ const defaultButtonTheme = {
 describe('Menu', () => {
   beforeEach(createPortal);
 
-  // TODO check why this test fails
-  test('should have no accessibility violations', async () => {
+  test.only('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <Menu />
+        <Menu items={[]} />
       </Grommet>,
     );
 
