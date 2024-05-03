@@ -531,7 +531,6 @@ describe('Pagination', () => {
     );
   };
 
-  // TODO check why is this test failing on timeout
   test('should update page range based on step prop dynamically changing', async () => {
     render(<TestComponent />);
     // Open select
