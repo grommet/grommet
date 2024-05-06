@@ -2,20 +2,22 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import { useThemeValue } from '../utils/useThemeValue';
-
-// TODO fix display names (?)
+import { defaultProps } from '../default-props';
 
 const getResultingComponentFunction = (StyledBaseComponent) =>
-forwardRef(
-  (props, ref) => {
-    const theme = useThemeValue();
-    return <StyledBaseComponent
-      ref={ref}
-      theme={theme}
-      {...props}
-    />;
-  },
-);
+  forwardRef(
+    (props, ref) => {
+      const theme = useThemeValue();
+      return <StyledBaseComponent
+        ref={ref}
+        {...defaultProps}
+        {...(theme && {
+          theme,
+        })}
+        {...props}
+      />;
+    },
+  );
 
 const styledWithTheme = (BaseComponent) => {
   const styledBaseComponentTagFunction = styled(BaseComponent);
@@ -24,9 +26,6 @@ const styledWithTheme = (BaseComponent) => {
       styleTemplate,
       ...variables,
     );
-    if (BaseComponent.displayName) {
-      StyledBaseComponent.displayName = BaseComponent.displayName;
-    }
     return getResultingComponentFunction(StyledBaseComponent);
   };
   Object.setPrototypeOf(resultingFunction, styledBaseComponentTagFunction);
