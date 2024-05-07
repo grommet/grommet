@@ -23,6 +23,35 @@ import {
 } from 'grommet-icons';
 import { SelectorIndicator } from '../../SelectorIndicator';
 
+// template to put into DS site
+const SelectorContainer = ({ children, icon }) => {
+  return (
+    <Selector>
+      {({ selected }) => {
+        return (
+          <Box
+            border={{
+              color: selected ? 'brand' : 'border',
+            }}
+            overflow="hidden"
+            round="xsmall"
+            fill
+            pad="small"
+          >
+            <Box gap="xsmall">
+              <Box direction="row" justify="between">
+                {icon}
+                <SelectorIndicator />
+              </Box>
+              {children}
+            </Box>
+          </Box>
+        );
+      }}
+    </Selector>
+  );
+};
+
 const InboxFilters = () => (
   <SelectorGroup multiple>
     <Grid
@@ -32,66 +61,18 @@ const InboxFilters = () => (
       }}
       gap="small"
     >
-      <Selector>
-        <Box
-          border={{
-            color: 'border',
-          }}
-          overflow="hidden"
-          round="xsmall"
-          fill
-          pad="small"
-        >
-          <Box gap="xsmall">
-            <Box direction="row" justify="between">
-              <StatusCriticalSmall color="status-critical" />
-              <SelectorIndicator />
-            </Box>
-            <Text size="small">Critical</Text>
-            <Text size="large">18</Text>
-          </Box>
-        </Box>
-      </Selector>
-      <Selector>
-        <Box
-          border={{
-            color: 'border',
-          }}
-          overflow="hidden"
-          round="xsmall"
-          fill
-          pad="small"
-        >
-          <Box gap="xsmall">
-            <Box direction="row" justify="between">
-              <CircleAlert />
-              <SelectorIndicator />
-            </Box>
-            <Text size="small">Action needed</Text>
-            <Text size="large">9</Text>
-          </Box>
-        </Box>
-      </Selector>
-      <Selector>
-        <Box
-          border={{
-            color: 'border',
-          }}
-          overflow="hidden"
-          round="xsmall"
-          fill
-          pad="small"
-        >
-          <Box gap="xsmall">
-            <Box direction="row" justify="between">
-              <StatusWarningSmall color="status-warning" />
-              <SelectorIndicator />
-            </Box>
-            <Text size="small">Warning</Text>
-            <Text size="large">9</Text>
-          </Box>
-        </Box>
-      </Selector>
+      <SelectorContainer icon={<StatusCriticalSmall color="status-critical" />}>
+        <Text size="small">Critical</Text>
+        <Text size="large">18</Text>
+      </SelectorContainer>
+      <SelectorContainer icon={<CircleAlert />}>
+        <Text size="small">Action needed</Text>
+        <Text size="large">9</Text>
+      </SelectorContainer>
+      <SelectorContainer icon={<StatusWarningSmall color="status-warning" />}>
+        <Text size="small">Warning</Text>
+        <Text size="large">9</Text>
+      </SelectorContainer>
     </Grid>
   </SelectorGroup>
 );

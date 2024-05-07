@@ -9,6 +9,32 @@ import {
   SelectorIndicator,
 } from 'grommet';
 
+// template to put into DS site
+const SelectorContainer = ({ children, title }) => {
+  return (
+    <Selector>
+      {({ selected }) => {
+        return (
+          <Box
+            border={{
+              color: selected ? 'brand' : 'border',
+            }}
+            overflow="hidden"
+            round="xsmall"
+            fill
+          >
+            <Box pad="small" direction="row" justify="between">
+              <Text weight={500}>{title}</Text>
+              <SelectorIndicator />
+            </Box>
+            {children}
+          </Box>
+        );
+      }}
+    </Selector>
+  );
+};
+
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
@@ -23,65 +49,21 @@ export const Simple = () => (
         gap="small"
         role="group"
       >
-        <Selector>
-          {({ selected }) => (
-            <Box
-              // TODO use selected to change color of border
-              border={{
-                color: selected ? 'brand' : 'border',
-              }}
-              overflow="hidden"
-              round="xsmall"
-              fill
-            >
-              <Box pad="small" direction="row" justify="between">
-                <Text weight={500}>Require service assignments</Text>
-                <SelectorIndicator />
-              </Box>
-              <Box cssGap pad="small" flex>
-                <Text size="large">24</Text>
-              </Box>
-            </Box>
-          )}
-        </Selector>
-        <Selector>
-          <Box
-            // TODO use selected to change color of border
-            border={{
-              color: 'border',
-            }}
-            overflow="hidden"
-            round="xsmall"
-            fill
-          >
-            <Box pad="small" direction="row" justify="between">
-              <Text weight={500}>Expired subscriptions</Text>
-              <SelectorIndicator />
-            </Box>
-            <Box cssGap pad="small" flex>
-              <Text size="large">18</Text>
-            </Box>
+        <SelectorContainer title="Require service assignments">
+          <Box pad="small" flex>
+            <Text size="large">24</Text>
           </Box>
-        </Selector>
-        <Selector>
-          <Box
-            // TODO use selected to change color of border
-            border={{
-              color: 'border',
-            }}
-            overflow="hidden"
-            round="xsmall"
-            fill
-          >
-            <Box pad="small" direction="row" justify="between">
-              <Text weight={500}>Needs attention</Text>
-              <SelectorIndicator />
-            </Box>
-            <Box cssGap pad="small" flex>
-              <Text size="large">9</Text>
-            </Box>
+        </SelectorContainer>
+        <SelectorContainer title="Expired subscriptions">
+          <Box cssGap pad="small" flex>
+            <Text size="large">18</Text>
           </Box>
-        </Selector>
+        </SelectorContainer>
+        <SelectorContainer title="Needs attention">
+          <Box pad="small" flex>
+            <Text size="large">9</Text>
+          </Box>
+        </SelectorContainer>
       </Grid>
     </SelectorGroup>
     <SelectorGroup multiple>
@@ -93,63 +75,21 @@ export const Simple = () => (
         gap="small"
         role="group"
       >
-        <Selector>
-          <Box
-            // TODO use selected to change color of border
-            border={{
-              color: 'border',
-            }}
-            overflow="hidden"
-            round="xsmall"
-            fill
-          >
-            <Box pad="small" direction="row" justify="between">
-              <Text weight={500}>Require service assignments</Text>
-              <SelectorIndicator />
-            </Box>
-            <Box cssGap pad="small" flex>
-              <Text size="large">24</Text>
-            </Box>
+        <SelectorContainer title="Require service assignments">
+          <Box pad="small" flex>
+            <Text size="large">24</Text>
           </Box>
-        </Selector>
-        <Selector>
-          <Box
-            // TODO use selected to change color of border
-            border={{
-              color: 'border',
-            }}
-            overflow="hidden"
-            round="xsmall"
-            fill
-          >
-            <Box pad="small" direction="row" justify="between">
-              <Text weight={500}>Expired subscriptions</Text>
-              <SelectorIndicator />
-            </Box>
-            <Box cssGap pad="small" flex>
-              <Text size="large">18</Text>
-            </Box>
+        </SelectorContainer>
+        <SelectorContainer title="Expired subscriptions">
+          <Box pad="small" flex>
+            <Text size="large">18</Text>
           </Box>
-        </Selector>
-        <Selector>
-          <Box
-            // TODO use selected to change color of border
-            border={{
-              color: 'border',
-            }}
-            overflow="hidden"
-            round="xsmall"
-            fill
-          >
-            <Box pad="small" direction="row" justify="between">
-              <Text weight={500}>Needs attention</Text>
-              <SelectorIndicator />
-            </Box>
-            <Box cssGap pad="small" flex>
-              <Text size="large">9</Text>
-            </Box>
+        </SelectorContainer>
+        <SelectorContainer title="Needs attention">
+          <Box pad="small" flex>
+            <Text size="large">9</Text>
           </Box>
-        </Selector>
+        </SelectorContainer>
       </Grid>
     </SelectorGroup>
   </Box>

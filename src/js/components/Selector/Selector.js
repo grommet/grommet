@@ -10,13 +10,9 @@ const Selector = forwardRef(({ children }, ref) => {
     setSelected(!selected);
   };
 
-  const renderChildren =
-    typeof children === 'function' ? children : () => children;
-
   return (
-    // TO DO use aria-pressed
-    <Button ref={ref} onClick={handleClick}>
-      {renderChildren(selected)}
+    <Button aria-pressed={selected} ref={ref} onClick={handleClick}>
+      {typeof children === 'function' ? children({ selected }) : children}
     </Button>
   );
 });
