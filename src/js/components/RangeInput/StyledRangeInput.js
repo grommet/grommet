@@ -8,7 +8,7 @@ import {
   parseMetricToNum,
   getRGBA,
 } from '../../utils';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
 const getBoundOpacity = (props, bound) =>
@@ -207,7 +207,7 @@ const firefoxMicrosoftThumbStyle = css`
 `;
 
 /* eslint-disable max-len */
-const StyledRangeInput = styled.input.attrs(getDefaultProps)`
+const StyledRangeInput = styled.input.attrs(ehnancePropsWithDefault)`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;

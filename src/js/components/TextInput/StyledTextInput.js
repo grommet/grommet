@@ -12,7 +12,7 @@ import {
 } from '../../utils';
 import { inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
@@ -23,7 +23,7 @@ const getPlainStyle = (plain) => {
   return plain && plainInputStyle;
 };
 
-const StyledTextInput = styled.input.attrs(getDefaultProps)`
+const StyledTextInput = styled.input.attrs(ehnancePropsWithDefault)`
   ${inputStyle}
   ${(props) =>
     props.readOnlyCopy
@@ -43,7 +43,7 @@ const StyledTextInput = styled.input.attrs(getDefaultProps)`
   ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 
-const StyledTextInputContainer = styled.div.attrs(getDefaultProps)`
+const StyledTextInputContainer = styled.div.attrs(ehnancePropsWithDefault)`
   position: relative;
   width: 100%;
 
@@ -65,7 +65,7 @@ const StyledTextInputContainer = styled.div.attrs(getDefaultProps)`
     props.theme.textInput.container.extend};
 `;
 
-const StyledPlaceholder = styled.div.attrs(getDefaultProps)`
+const StyledPlaceholder = styled.div.attrs(ehnancePropsWithDefault)`
   position: absolute;
   left: ${(props) =>
     parseMetricToNum(getInputPadBySide(props, 'left')) -
@@ -95,7 +95,7 @@ const StyledIcon = styled.div`
       : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
-const StyledSuggestions = styled.ol.attrs(getDefaultProps)`
+const StyledSuggestions = styled.ol.attrs(ehnancePropsWithDefault)`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;

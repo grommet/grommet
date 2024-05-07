@@ -10,7 +10,7 @@ import {
   kindPartStyles,
   parseMetricToNum,
 } from '../../utils';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 
 const radiusStyle = (props) => {
   const size = props.sizeProp;
@@ -250,7 +250,7 @@ const plainStyle = (props) => css`
   ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
-const StyledButtonKind = styled.button.attrs(getDefaultProps).withConfig({
+const StyledButtonKind = styled.button.attrs(ehnancePropsWithDefault).withConfig({
   // don't let kind attribute leak to DOM
   // https://styled-components.com/docs/api#shouldforwardprop
   shouldForwardProp: (prop, defaultValidatorFn) =>

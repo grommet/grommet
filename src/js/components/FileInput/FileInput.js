@@ -22,7 +22,7 @@ import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 import { formatBytes } from './utils/formatBytes';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
@@ -30,7 +30,7 @@ import { getDefaultProps } from '../../default-props';
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
 
-const ContentsBox = styled(Box).attrs(getDefaultProps)`
+const ContentsBox = styled(Box).attrs(ehnancePropsWithDefault)`
   cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
@@ -49,14 +49,14 @@ const ContentsBox = styled(Box).attrs(getDefaultProps)`
   ${(props) => !props.focus && unfocusStyle()};
 `;
 
-const Label = styled(Text).attrs(getDefaultProps)`
+const Label = styled(Text).attrs(ehnancePropsWithDefault)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.label &&
     props.theme.fileInput.label.extend};
 `;
 
-const Message = styled(Text).attrs(getDefaultProps)`
+const Message = styled(Text).attrs(ehnancePropsWithDefault)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.message &&

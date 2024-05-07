@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { disabledStyle, inputStyle } from '../../utils';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 
 const plainStyle = css`
   outline: none;
@@ -23,7 +23,7 @@ const resizeStyle = (resize) => {
   return 'resize: none;';
 };
 
-const StyledTextArea = styled.textarea.attrs(getDefaultProps)`
+const StyledTextArea = styled.textarea.attrs(ehnancePropsWithDefault)`
   ${inputStyle}
   ${(props) => props.resize !== undefined && resizeStyle(props.resize)}
   ${(props) => props.fillArg && 'height: 100%;'}

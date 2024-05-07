@@ -6,7 +6,7 @@ import {
   breakpointStyle,
   parseMetricToNum,
 } from '../../utils';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -30,7 +30,7 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-const StyledLayer = styled.div.attrs(getDefaultProps)`
+const StyledLayer = styled.div.attrs(ehnancePropsWithDefault)`
   ${baseStyle}
   background: transparent;
   position: relative;
@@ -58,7 +58,7 @@ const StyledLayer = styled.div.attrs(getDefaultProps)`
   ${(props) => props.theme.layer && props.theme.layer.extend};
 `;
 
-const StyledOverlay = styled.div.attrs(getDefaultProps)`
+const StyledOverlay = styled.div.attrs(ehnancePropsWithDefault)`
   position: absolute;
   ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -768,7 +768,7 @@ const elevationStyle = css`
     ]};
 `;
 
-const StyledContainer = styled.div.attrs(getDefaultProps).withConfig({
+const StyledContainer = styled.div.attrs(ehnancePropsWithDefault).withConfig({
   // don't let elevation leak to DOM
   // https://styled-components.com/docs/api#shouldforwardprop
   shouldForwardProp: (prop, defaultValidatorFn) =>

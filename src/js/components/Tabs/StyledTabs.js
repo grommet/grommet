@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles } from '../../utils';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 
-const StyledTabsHeader = styled.div.attrs(getDefaultProps)`
+const StyledTabsHeader = styled.div.attrs(ehnancePropsWithDefault)`
   ${props => props.theme.tabs.header.extend};
 `;
 
@@ -19,12 +19,12 @@ const flexStyle = css`
     `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
 `;
 
-const StyledTabPanel = styled.div.attrs(getDefaultProps)`
+const StyledTabPanel = styled.div.attrs(ehnancePropsWithDefault)`
   min-height: 0;
   ${props => props.flex && flexStyle} ${props => props.theme.tabs.panel.extend};
 `;
 
-const StyledTabs = styled.div.attrs(getDefaultProps)`
+const StyledTabs = styled.div.attrs(ehnancePropsWithDefault)`
   ${genericStyles} ${props => props.theme.tabs.extend};
 `;
 

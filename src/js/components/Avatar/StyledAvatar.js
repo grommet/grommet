@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 
-const StyledAvatarText = styled(Text).attrs(getDefaultProps)`
+const StyledAvatarText = styled(Text).attrs(ehnancePropsWithDefault)`
   ${props =>
     props.theme.avatar &&
     props.theme.avatar.text &&
@@ -12,7 +12,7 @@ const StyledAvatarText = styled(Text).attrs(getDefaultProps)`
   ${props => props.theme.avatar.text && props.theme.avatar.text.extend}
 `;
 
-const StyledAvatar = styled(Box).attrs(getDefaultProps)`
+const StyledAvatar = styled(Box).attrs(ehnancePropsWithDefault)`
   ${props => props.theme.avatar && props.theme.avatar.extend}
 `;
 

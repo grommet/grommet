@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 
 import { focusStyle, normalizeColor } from '../../utils';
-import { getDefaultProps } from '../../default-props';
+import { ehnancePropsWithDefault } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.5;
   cursor: default;
 `;
 
-const StyledRadioButtonContainer = styled.label.attrs(getDefaultProps)`
+const StyledRadioButtonContainer = styled.label.attrs(ehnancePropsWithDefault)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -57,7 +57,7 @@ const StyledRadioButtonContainer = styled.label.attrs(getDefaultProps)`
   ${(props) => props.theme.radioButton.container.extend};
 `;
 
-const StyledRadioButtonInput = styled.input.attrs(getDefaultProps)`
+const StyledRadioButtonInput = styled.input.attrs(ehnancePropsWithDefault)`
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -66,7 +66,7 @@ const StyledRadioButtonInput = styled.input.attrs(getDefaultProps)`
   ${(props) => !props.disabled && 'cursor: pointer;'};
 `;
 
-const StyledRadioButtonLabel = styled.span.attrs(getDefaultProps)`
+const StyledRadioButtonLabel = styled.span.attrs(ehnancePropsWithDefault)`
   ${(props) =>
     props.theme.radioButton.font.weight &&
     css`
@@ -74,7 +74,7 @@ const StyledRadioButtonLabel = styled.span.attrs(getDefaultProps)`
     `}
 `;
 
-const StyledRadioButtonIcon = styled.svg.attrs(getDefaultProps)`
+const StyledRadioButtonIcon = styled.svg.attrs(ehnancePropsWithDefault)`
   box-sizing: border-box;
   width: ${(props) =>
     props.theme.radioButton.icon.size || props.theme.radioButton.size};
@@ -88,13 +88,13 @@ const StyledRadioButtonIcon = styled.svg.attrs(getDefaultProps)`
   ${(props) => props.theme.radioButton.icon.extend};
 `;
 
-const StyledRadioButtonBox = styled.div.attrs(getDefaultProps)`
+const StyledRadioButtonBox = styled.div.attrs(ehnancePropsWithDefault)`
   background-color: ${(props) => props.backgroundColor};
   ${(props) => props.focus && focusStyle()};
   ${(props) => props.theme.radioButton.check.extend};
 `;
 
-const StyledRadioButton = styled.div.attrs(getDefaultProps)`
+const StyledRadioButton = styled.div.attrs(ehnancePropsWithDefault)`
   ${(props) => props.theme.radioButton && props.theme.radioButton.extend};
 `;
 
