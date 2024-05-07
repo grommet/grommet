@@ -213,7 +213,7 @@ const areasStyle = (props) => {
 };
 
 const StyledGrid = styled.div.attrs((props) => ({
-  ...getDefaultProps(),
+  ...getDefaultProps(props),
   'aria-label': props.a11yTitleProp,
 }))`
   display: grid;

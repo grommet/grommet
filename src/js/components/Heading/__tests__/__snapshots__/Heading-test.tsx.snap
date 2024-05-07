@@ -898,6 +898,7 @@ exports[`Theme based font family renders 1`] = `
 }
 
 .c1 {
+  font-family: Arial;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
@@ -906,6 +907,7 @@ exports[`Theme based font family renders 1`] = `
 }
 
 .c2 {
+  font-family: Roboto;
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
@@ -914,6 +916,7 @@ exports[`Theme based font family renders 1`] = `
 }
 
 .c3 {
+  font-family: Ubuntu;
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
@@ -922,6 +925,7 @@ exports[`Theme based font family renders 1`] = `
 }
 
 .c4 {
+  font-family: Fira Sans;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -994,7 +998,7 @@ exports[`Theme based font weight renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
-  font-weight: 600;
+  font-weight: 700;
   overflow-wrap: break-word;
 }
 
@@ -1002,7 +1006,7 @@ exports[`Theme based font weight renders 1`] = `
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
 }
 
@@ -1010,7 +1014,7 @@ exports[`Theme based font weight renders 1`] = `
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
-  font-weight: 600;
+  font-weight: 200;
   overflow-wrap: break-word;
 }
 
@@ -1089,6 +1093,7 @@ exports[`Theme color renders 1`] = `
   max-width: 1200px;
   font-weight: 600;
   overflow-wrap: break-word;
+  color: #000000;
 }
 
 .c2 {
@@ -1097,6 +1102,7 @@ exports[`Theme color renders 1`] = `
   max-width: 816px;
   font-weight: 600;
   overflow-wrap: break-word;
+  color: #000000;
 }
 
 .c3 {
@@ -1105,6 +1111,7 @@ exports[`Theme color renders 1`] = `
   max-width: 624px;
   font-weight: 600;
   overflow-wrap: break-word;
+  color: #000000;
 }
 
 .c4 {
@@ -1113,6 +1120,7 @@ exports[`Theme color renders 1`] = `
   max-width: 432px;
   font-weight: 600;
   overflow-wrap: break-word;
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {

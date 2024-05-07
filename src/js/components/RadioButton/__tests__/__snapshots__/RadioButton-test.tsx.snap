@@ -1220,6 +1220,10 @@ exports[`RadioButton label themed 1`] = `
   cursor: pointer;
 }
 
+.c5 {
+  font-weight: 500;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     margin-right: 6px;
@@ -1251,7 +1255,7 @@ exports[`RadioButton label themed 1`] = `
       />
     </div>
     <span
-      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
+      class="c5"
     >
       test
     </span>

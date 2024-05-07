@@ -1432,7 +1432,7 @@ exports[`TextInput custom theme input font size 1`] = `
 
 .c2 {
   box-sizing: border-box;
-  font-size: inherit;
+  font-size: 16px;
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
@@ -2361,7 +2361,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   line-height: 20px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-left: 48px;
+  padding-left: 36px;
 }
 
 .c4:focus {
@@ -2491,7 +2491,7 @@ exports[`TextInput matches icon size to size prop when theme.icon.matchSize is t
   line-height: 28px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  padding-left: 48px;
+  padding-left: 72px;
 }
 
 .c8:focus {

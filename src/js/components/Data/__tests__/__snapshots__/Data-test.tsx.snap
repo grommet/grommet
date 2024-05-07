@@ -9689,7 +9689,7 @@ exports[`Data view property range 1`] = `
 .c15 {
   font-size: 14px;
   line-height: 20px;
-  color: #000000;
+  color: #FFFFFF;
   font-weight: normal;
 }
 

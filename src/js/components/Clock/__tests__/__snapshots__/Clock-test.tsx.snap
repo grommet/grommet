@@ -2192,8 +2192,8 @@ exports[`Clock type digital custom size 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 18px;
-  line-height: 1.375;
+  font-size: 30px;
+  line-height: 1.234;
 }
 
 .c1 {

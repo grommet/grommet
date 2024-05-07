@@ -186,7 +186,7 @@ exports[`Video Configure Menu Button 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -726,7 +726,7 @@ exports[`Video End event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -1254,7 +1254,7 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -1620,7 +1620,7 @@ exports[`Video Play and Pause event handlers 2`] = `
         class="StyledBox-sc-13pk1d4-0 gTjiHd"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ckELTg"
+          class="StyledButton-sc-323bzc-0 bumPYc"
           type="button"
         >
           .c0 {
@@ -1948,7 +1948,7 @@ exports[`Video autoPlay renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -2999,7 +2999,7 @@ exports[`Video controls over renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -3527,7 +3527,7 @@ exports[`Video duration event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -4055,7 +4055,7 @@ exports[`Video fit  cover renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -4588,7 +4588,7 @@ exports[`Video fit contain renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -5121,7 +5121,7 @@ exports[`Video loop renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -5650,7 +5650,7 @@ exports[`Video mouse events handlers of controls 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -6016,7 +6016,7 @@ exports[`Video mouse events handlers of controls 2`] = `
         class="StyledBox-sc-13pk1d4-0 gTjiHd"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ckELTg"
+          class="StyledButton-sc-323bzc-0 bumPYc"
           type="button"
         >
           <svg
@@ -6140,7 +6140,7 @@ exports[`Video mouse events handlers of controls 3`] = `
         class="StyledBox-sc-13pk1d4-0 gTjiHd"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ckELTg"
+          class="StyledButton-sc-323bzc-0 bumPYc"
           type="button"
         >
           <svg
@@ -6426,7 +6426,7 @@ exports[`Video mute renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -6954,7 +6954,7 @@ exports[`Video renders 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -7482,7 +7482,7 @@ exports[`Video renders with theme 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -8010,7 +8010,7 @@ exports[`Video scrubber 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {
@@ -8376,7 +8376,7 @@ exports[`Video scrubber 2`] = `
         class="StyledBox-sc-13pk1d4-0 gTjiHd"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ckELTg"
+          class="StyledButton-sc-323bzc-0 bumPYc"
           type="button"
         >
           <svg
@@ -8662,7 +8662,7 @@ exports[`Video timeUpdate event handler 1`] = `
 
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .c5:focus {

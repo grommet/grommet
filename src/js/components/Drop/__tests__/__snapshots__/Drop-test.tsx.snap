@@ -1054,12 +1054,13 @@ exports[`Drop elevation 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 10px;
   position: fixed;
-  z-index: 20;
+  z-index: 15;
   outline: none;
-  background-color: #FFFFFF;
+  background-color: #33333310;
   color: #444444;
+  margin: 6px;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -1095,30 +1096,7 @@ exports[`Drop elevation 1`] = `
 `;
 
 exports[`Drop elevation 2`] = `
-".jWOvQG {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2048,6 +2026,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-left: 12px;
   opacity: 0;
   -webkit-transform-origin: bottom left;
   -ms-transform-origin: bottom left;
@@ -2145,6 +2124,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-left: -12px;
   opacity: 0;
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
@@ -2242,6 +2222,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-bottom: 12px;
   opacity: 0;
   -webkit-transform-origin: bottom left;
   -ms-transform-origin: bottom left;
@@ -2339,6 +2320,8 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-bottom: 12px;
+  margin-left: 12px;
   opacity: 0;
   -webkit-transform-origin: bottom left;
   -ms-transform-origin: bottom left;
@@ -2436,6 +2419,8 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-bottom: 12px;
+  margin-left: -12px;
   opacity: 0;
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
@@ -2533,6 +2518,8 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-bottom: 12px;
+  margin-left: -12px;
   opacity: 0;
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
@@ -2630,6 +2617,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-bottom: 12px;
   opacity: 0;
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
@@ -2727,6 +2715,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-top: 12px;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -2778,29 +2767,6 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.jWOvQG {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
     display: -webkit-box;
@@ -2847,6 +2813,8 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-top: 12px;
+  margin-left: 12px;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -2898,29 +2866,6 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.jWOvQG {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
     display: -webkit-box;
@@ -2967,6 +2912,8 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-top: 12px;
+  margin-left: -12px;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
@@ -3064,6 +3011,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-top: 12px;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
@@ -3161,6 +3109,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-top: 12px;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -3212,29 +3161,6 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.jWOvQG {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
     display: -webkit-box;
@@ -3281,6 +3207,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-left: 12px;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -3332,29 +3259,6 @@ exports[`Drop should render correct margin depending on value of align:
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.jWOvQG {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
     display: -webkit-box;
@@ -3401,6 +3305,7 @@ exports[`Drop should render correct margin depending on value of align:
   outline: none;
   background-color: #FFFFFF;
   color: #444444;
+  margin-left: -12px;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
@@ -3609,12 +3514,13 @@ exports[`Drop theme elevation renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
+  border-radius: 10px;
   position: fixed;
-  z-index: 20;
+  z-index: 15;
   outline: none;
-  background-color: #FFFFFF;
+  background-color: #33333310;
   color: #444444;
+  margin: 6px;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -3650,30 +3556,7 @@ exports[`Drop theme elevation renders 1`] = `
 `;
 
 exports[`Drop theme elevation renders 2`] = `
-".jWOvQG {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;

@@ -850,6 +850,8 @@ exports[`Layer custom theme 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   background-color: rgba(0,0,0,0.5);
   color: #f8f8f8;
   pointer-events: all;
@@ -870,6 +872,7 @@ exports[`Layer custom theme 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 20;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
@@ -1023,8 +1026,8 @@ exports[`Layer dark context 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #000000;
+  color: #f8f8f8;
   outline: none;
   pointer-events: all;
   z-index: 20;
@@ -11364,7 +11367,7 @@ exports[`Layer should render correct border radius for position: bottom -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 48px 48px 0 0;
   bottom: 0px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
@@ -12036,7 +12039,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 48px 0 0;
   bottom: 0px;
   left: 0px;
   -webkit-transform: translateY(0);
@@ -12708,7 +12711,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 48px 0 0 0;
   bottom: 0px;
   right: 0px;
   -webkit-transform: translateY(0);
@@ -13380,7 +13383,7 @@ exports[`Layer should render correct border radius for position: center -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 48px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
@@ -14049,7 +14052,8 @@ exports[`Layer should render correct border radius for position: end -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-start-start-radius: 48px;
+  border-end-start-radius: 48px;
   inset-inline-end: 0px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
@@ -14721,7 +14725,7 @@ exports[`Layer should render correct border radius for position: left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 48px 48px 0;
   left: 0px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
@@ -15393,7 +15397,7 @@ exports[`Layer should render correct border radius for position: right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 48px 0 0 48px;
   right: 0px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
@@ -16065,7 +16069,8 @@ exports[`Layer should render correct border radius for position: start -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-end-end-radius: 48px;
+  border-start-end-radius: 48px;
   inset-inline-start: 0px;
   top: 50%;
   -webkit-transform: translate(0,-50%);
@@ -16737,7 +16742,7 @@ exports[`Layer should render correct border radius for position: top -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 0 48px 48px;
   top: 0px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
@@ -17409,7 +17414,7 @@ exports[`Layer should render correct border radius for position: top-left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 0 48px 0;
   top: 0px;
   left: 0px;
   -webkit-transform: translateY(0);
@@ -18081,7 +18086,7 @@ exports[`Layer should render correct border radius for position: top-right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0 0 0 48px;
   top: 0px;
   right: 0px;
   -webkit-transform: translateY(0);

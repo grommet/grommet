@@ -2320,15 +2320,15 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 }
 
 .c1 {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  background-color: lightgreen;
+  color: #7D4CDB;
   display: block;
   width: 100%;
 }
 
 .c1:focus {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
+  background-color: lightgreen;
+  color: #7D4CDB;
 }
 
 @media only screen and (max-width:768px) {
@@ -3362,7 +3362,7 @@ exports[`Select dark 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
   border: none;
   outline: none;
@@ -3405,7 +3405,7 @@ exports[`Select dark 1`] = `
 }
 
 .c3 {
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(255,255,255,0.33);
   border-radius: 4px;
 }
 
@@ -6747,6 +6747,7 @@ exports[`Select modifies select control style on open 1`] = `
 .c2 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
+  background: purple;
 }
 
 .c0 {
