@@ -1079,6 +1079,13 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
+      pinned?: {
+        background?: BackgroundType;
+        icon?: {
+          size?: string;
+          pad?: PadType;
+        };
+      };
       pad?: PadType;
       extend?: ExtendType;
     };
@@ -1470,7 +1477,7 @@ export interface ThemeType {
   selectMultiple?: {
     maxInline?: number;
   };
-  skeleton?: BoxProps & { colors?: SkeletonColorsType };
+  skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
     position?: LayerPositionType;
     container?: BoxProps;
@@ -1716,6 +1723,18 @@ export interface ThemeType {
   tip?: {
     content?: BoxProps;
     drop?: DropProps;
+  };
+  toggleGroup?: {
+    button?: {
+      pad?: PadType;
+      iconOnly?: {
+        pad?: PadType;
+      };
+    };
+    container?: BoxProps;
+    divider?: {
+      color?: ColorType;
+    };
   };
   video?: {
     captions?: {

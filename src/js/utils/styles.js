@@ -768,7 +768,8 @@ export const roundStyle = (data, responsive, theme) => {
     styles.push(css`
       border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
     `);
-    const responsiveSize = breakpoint && breakpoint.edgeSize[size];
+    const responsiveSize =
+      responsive && breakpoint && breakpoint.edgeSize[size];
     if (responsiveSize) {
       styles.push(
         breakpointStyle(

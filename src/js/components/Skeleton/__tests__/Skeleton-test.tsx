@@ -111,6 +111,7 @@ describe('Skeleton', () => {
               light: ['#a2a8a8', '#adb9ba'],
             },
             round: 'xsmall',
+            extend: 'border: 1px solid blue;',
           },
         }}
       >

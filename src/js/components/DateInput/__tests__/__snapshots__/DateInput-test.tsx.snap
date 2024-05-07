@@ -14136,6 +14136,8 @@ exports[`DateInput read only copy 1`] = `
   border-radius: 4px;
   padding-left: 11px;
   padding-right: 11px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 @media only screen and (max-width: 768px) {

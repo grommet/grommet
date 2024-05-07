@@ -1,6 +1,7 @@
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
+import { Lock } from 'grommet-icons/icons/Lock';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
@@ -64,6 +65,21 @@ const Content = ({ drop, options = [], ...rest }) => {
     [options],
   );
 
+  const pinned = useMemo(() => {
+    const items = objectOptions
+      ? options
+          .filter((option) => option.pinned && option.label)
+          .map((option) => option.label)
+      : [];
+    return items?.length
+      ? {
+          background: 'none',
+          color: 'text-weak',
+          icon: <Lock />,
+          items,
+        }
+      : undefined;
+  }, [options, objectOptions]);
   // 'value' is an array of property names
   const [value, setValue] = useFormInput({
     name: formColumnsKey,
@@ -139,6 +155,7 @@ const Content = ({ drop, options = [], ...rest }) => {
               onOrder={(nextData) => setValue(optionsToValue(nextData))}
               pad="none"
               primaryKey={(objectOptions && 'label') || undefined}
+              pinned={pinned}
             />
           </Box>
         </Tab>

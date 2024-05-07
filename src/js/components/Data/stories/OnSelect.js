@@ -103,16 +103,15 @@ const columns = [
         );
         return (
           <Tip
-            plain
             content={content}
             dropProps={{
-              round: 'medium',
               pad: 'small',
-              background: 'background-back',
+              background: 'background',
             }}
           >
-            <Box>
+            <Box direction="row" align="center" gap="xsmall">
               <StatusCritical color="red" />
+              <Text>Failed</Text>
             </Box>
           </Tip>
         );
@@ -128,12 +127,14 @@ const defaultView = {
   step: 10,
 };
 
-export const SpaceX = () => {
+export const OnSelect = () => {
   const [total, setTotal] = useState(0);
   const [result, setResult] = useState({ data: [] });
   const [rockets, setRockets] = useState([]);
   const [view, setView] = useState(defaultView);
+  const [select, setSelect] = useState([]);
 
+  // Fetch all rockets on first render for use in the filter
   useEffect(() => {
     fetchRockets().then((response) =>
       setRockets(
@@ -178,22 +179,30 @@ export const SpaceX = () => {
         onView={setView}
         toolbar
       >
-        <DataTable columns={columns} sortable />
-        {result.filteredTotal > view.step && (
-          <Pagination summary border="top" pad={{ vertical: 'xsmall' }} />
-        )}
+        <DataTable
+          columns={columns}
+          sortable
+          select={select}
+          onSelect={setSelect}
+        />
+        <Pagination
+          summary
+          stepOptions
+          border="top"
+          pad={{ vertical: 'xsmall', left: 'small' }}
+        />
       </Data>
     </Grid>
     // </Grommet>
   );
 };
 
-SpaceX.storyName = 'SpaceX';
+OnSelect.storyName = 'OnSelect';
 
-SpaceX.args = {
+OnSelect.args = {
   full: true,
 };
 
 export default {
-  title: 'Data/Data/SpaceX',
+  title: 'Data/Data/OnSelect',
 };
