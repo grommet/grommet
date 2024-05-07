@@ -38,7 +38,7 @@ const Anchor = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();;
+    const theme = useThemeValue();
     const [focus, setFocus] = useState();
     const { size } = useContext(TextContext);
     const sendAnalytics = useAnalytics();
