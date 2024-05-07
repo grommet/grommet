@@ -98,7 +98,8 @@ const StyledDataTableBody = styled(TableBody).attrs(ehnancePropsWithDefault)`
   }
 `;
 
-const StyledDataTableHeader = styled(TableHeader).attrs(ehnancePropsWithDefault)`
+const StyledDataTableHeader = styled(TableHeader)
+.attrs(ehnancePropsWithDefault)`
   ${(props) =>
     props.size &&
     `
@@ -109,7 +110,8 @@ const StyledDataTableHeader = styled(TableHeader).attrs(ehnancePropsWithDefault)
   `}
 `;
 
-const StyledDataTableFooter = styled(TableFooter).attrs(ehnancePropsWithDefault)`
+const StyledDataTableFooter = styled(TableFooter)
+.attrs(ehnancePropsWithDefault)`
   ${(props) =>
     props.size &&
     `

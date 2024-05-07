@@ -69,7 +69,8 @@ export const SelectTextInput = styled(TextInput)`
   cursor: ${(props) => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
-export const StyledSelectDropButton = styled(DropButton).attrs(ehnancePropsWithDefault)`
+export const StyledSelectDropButton = styled(DropButton)
+.attrs(ehnancePropsWithDefault)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select?.control?.open};
