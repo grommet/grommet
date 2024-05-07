@@ -922,7 +922,7 @@ exports[`FileInput custom theme input font size 1`] = `
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: inherit;
   font-family: inherit;
   border: none;
   -webkit-appearance: none;

@@ -47,7 +47,7 @@ exports[`Button kind badge should align to button container if specified in them
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -235,10 +235,6 @@ exports[`Button kind badge should apply background 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgba(0,0,0,0.33);
-  padding: 2px 20px;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -400,10 +396,6 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgba(0,0,0,0.33);
-  padding: 2px 20px;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -546,7 +538,7 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -566,10 +558,6 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgba(0,0,0,0.33);
-  padding: 2px 20px;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -718,7 +706,7 @@ exports[`Button kind badge should display number content 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -738,10 +726,6 @@ exports[`Button kind badge should display number content 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgba(0,0,0,0.33);
-  padding: 2px 20px;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -923,10 +907,6 @@ exports[`Button kind badge should render custom element 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgba(0,0,0,0.33);
-  padding: 2px 20px;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1257,10 +1237,6 @@ exports[`Button kind border on default button 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: green;
-  padding: 2px 20px;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1383,8 +1359,6 @@ exports[`Button kind button icon colors 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 0;
-  background-color: #000;
-  border-color: #666666;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1635,8 +1609,8 @@ exports[`Button kind button with transparent background 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  background-color: rgba(28,28,28,1);
-  color: #FFFFFF;
+  background-color: background;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1686,12 +1660,10 @@ exports[`Button kind button with transparent background 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 2em;
-  padding: 6px 18px;
+  border-radius: 18px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: #FFFFFF0F;
-  color: #FFFFFF;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1699,13 +1671,11 @@ exports[`Button kind button with transparent background 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  font-size: 19px;
-  line-height: 24px;
 }
 
 .c2:focus {
   outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c2:focus > circle,
@@ -1716,7 +1686,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c2:focus > polyline,
 .c2:focus > rect {
   outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c2:focus::-moz-focus-inner {
@@ -1754,18 +1724,15 @@ exports[`Button kind button with transparent background 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: #FFFFFF0F;
-  color: #FFFFFF;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   border: none;
-  border-radius: 2em;
-  padding: 6px 18px;
+  border-radius: 18px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: #FFFFFF0F;
-  color: #FFFFFF;
-  background-color: rgba(255,255,255,0.058823529411764705);
-  color: #FFFFFF;
-  color: #FFFFFF;
+  background-color: #33333310;
+  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1773,13 +1740,11 @@ exports[`Button kind button with transparent background 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  font-size: 19px;
-  line-height: 24px;
 }
 
 .c4:focus {
   outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c4:focus > circle,
@@ -1790,7 +1755,7 @@ exports[`Button kind button with transparent background 1`] = `
 .c4:focus > polyline,
 .c4:focus > rect {
   outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c4:focus::-moz-focus-inner {
@@ -1817,155 +1782,9 @@ exports[`Button kind button with transparent background 1`] = `
   border: 0;
 }
 
-.c6 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 2em;
-  padding: 6px 18px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #0000000A;
-  color: #333333;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  font-size: 19px;
-  line-height: 24px;
-}
-
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
-}
-
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
-}
-
-.c6:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) > circle,
-.c6:focus:not(:focus-visible) > ellipse,
-.c6:focus:not(:focus-visible) > line,
-.c6:focus:not(:focus-visible) > path,
-.c6:focus:not(:focus-visible) > polygon,
-.c6:focus:not(:focus-visible) > polyline,
-.c6:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  background-color: #0000000A;
-  color: #555555;
-  border: none;
-  border-radius: 2em;
-  padding: 6px 18px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #0000000A;
-  color: #333333;
-  background-color: rgba(0,0,0,0.0392156862745098);
-  color: #333333;
-  color: #333333;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  font-size: 19px;
-  line-height: 24px;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
-}
-
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #00E8CF;
-}
-
-.c7:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c0 {
-  font-family: 'Metric',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
-  background-color: #FFFFFF;
-  color: #555555;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2017,7 +1836,7 @@ exports[`Button kind button with transparent background 1`] = `
       class="c5"
     >
       <button
-        class="c6"
+        class="c2"
         type="button"
       >
         Test button
@@ -2026,7 +1845,7 @@ exports[`Button kind button with transparent background 1`] = `
         class="c3"
       />
       <button
-        class="c7"
+        class="c4"
         type="button"
       >
         Active Test button
@@ -2049,13 +1868,10 @@ exports[`Button kind default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 4px;
-  padding: 4px 10px;
+  border-radius: 18px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  padding: 6px 12px;
-  color: #444444;
-  font-weight: 700;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -2063,10 +1879,6 @@ exports[`Button kind default button 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c1:focus {
@@ -2223,10 +2035,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="sc-eFqGBh jXJAau"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="sc-iAEyYk kCEgDA"
+    class="StyledButtonKind-sc-1vhfpnt-0 jVGQvr"
     disabled=""
     type="button"
   >
@@ -2252,7 +2064,6 @@ exports[`Button kind extend on default button 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: green;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -2579,8 +2390,6 @@ exports[`Button kind font on button default 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  line-height: 20px;
-  font-weight: 700;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -2843,8 +2652,6 @@ exports[`Button kind hover secondary with color and background 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: skyblue;
-  color: #FFFFFF;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -2852,11 +2659,6 @@ exports[`Button kind hover secondary with color and background 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  background-color: orange;
-  color: green;
 }
 
 .c1:focus {
@@ -2923,10 +2725,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="sc-eFqGBh jXJAau"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="sc-iAEyYk dijKtz"
+    class="StyledButtonKind-sc-1vhfpnt-0 hXBXTb"
     type="button"
   >
     Button
@@ -3029,10 +2831,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="sc-eFqGBh jXJAau"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="sc-iAEyYk cHqnGo"
+    class="StyledButtonKind-sc-1vhfpnt-0 hDjQBz"
     type="button"
   >
     Button
@@ -3089,7 +2891,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   text-transform: none;
   border: none;
   border-radius: 18px;
-  padding: 5px 5px;
+  padding: 4px 20px;
   font-size: 14px;
   line-height: 0;
   text-align: center;
@@ -3165,7 +2967,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   text-transform: none;
   border: none;
   border-radius: 18px;
-  padding: 5px 12px;
+  padding: 4px 20px;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
@@ -3230,7 +3032,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   text-transform: none;
   border: none;
   border-radius: 18px;
-  padding: 8px 12px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 0;
   text-align: center;
@@ -3306,7 +3108,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   text-transform: none;
   border: none;
   border-radius: 18px;
-  padding: 8px 18px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
   text-align: center;
@@ -3371,7 +3173,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   text-transform: none;
   border: none;
   border-radius: 24px;
-  padding: 18px 18px;
+  padding: 8px 32px;
   font-size: 22px;
   line-height: 0;
   text-align: center;
@@ -3447,7 +3249,7 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
   text-transform: none;
   border: none;
   border-radius: 24px;
-  padding: 18px 24px;
+  padding: 8px 32px;
   font-size: 22px;
   line-height: 28px;
   text-align: center;
@@ -4394,8 +4196,6 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: #000;
-  color: #f8f8f8;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -4499,14 +4299,14 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="sc-eFqGBh jXJAau"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <button
-    class="sc-iAEyYk dPZREL"
+    class="StyledButtonKind-sc-1vhfpnt-0 hOGpqB"
     type="button"
   >
     <div
-      class="sc-beqWaB fxSOXf"
+      class="StyledBox-sc-13pk1d4-0 dGYhTK"
     >
       <svg
         aria-label="Add"
@@ -4521,7 +4321,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="sc-gueYoa iwdtDu"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPClIF"
       />
       label
     </div>
@@ -4546,7 +4346,6 @@ exports[`Button kind no border on default button 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border: none;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -4635,8 +4434,6 @@ exports[`Button kind no padding on default button 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  padding: 0px;
-  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -4725,7 +4522,6 @@ exports[`Button kind opacity on default button 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  opacity: 0.4;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -4814,9 +4610,6 @@ exports[`Button kind padding on default button 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  padding: 6px 12px;
-  background-color: green;
-  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5109,13 +4902,10 @@ exports[`Button kind primary button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 4px;
-  padding: 4px 10px;
+  border-radius: 18px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  padding: 6px 12px;
-  background-color: green;
-  color: #000000;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5177,22 +4967,13 @@ exports[`Button kind primary button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 4px;
-  padding: 4px 10px;
+  border-radius: 18px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  padding: 6px 12px;
-  background-color: green;
-  color: #000000;
-  background-color: transparent;
-  color: #555555;
-  opacity: 1;
-  padding: 4px 10px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #555555;
+  opacity: 0.3;
   text-align: center;
-  opacity: 1;
+  opacity: 0.3;
   cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5387,15 +5168,10 @@ exports[`Button kind secondary button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 4px;
-  padding: 4px 10px;
+  border-radius: 18px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  padding: 4px 10px;
-  color: #444444;
-  border-style: solid;
-  border-width: 2px;
-  border-color: green;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5403,12 +5179,6 @@ exports[`Button kind secondary button 1`] = `
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  padding: 3px 9px;
-  border-style: solid;
-  border-width: 3px;
 }
 
 .c1:focus {
@@ -5521,7 +5291,6 @@ exports[`Button kind should apply kind direction 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  font-size: 12px;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5626,8 +5395,8 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
+  border-radius: 18px;
+  padding: 4px 20px;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
@@ -5691,8 +5460,8 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
+  border-radius: 18px;
+  padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
   text-align: center;
@@ -5756,8 +5525,8 @@ exports[`Button kind should apply styling according to theme size definitions 1`
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 6px;
-  padding: 6px 16px;
+  border-radius: 24px;
+  padding: 8px 32px;
   font-size: 22px;
   line-height: 28px;
   text-align: center;
@@ -6232,8 +6001,8 @@ exports[`Button kind size of default button 1`] = `
   overflow: visible;
   text-transform: none;
   border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
+  border-radius: 18px;
+  padding: 4px 20px;
   font-size: 14px;
   line-height: 20px;
   text-align: center;

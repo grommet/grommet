@@ -117,7 +117,7 @@ exports[`Sidebar all 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 StyledAvatar-sc-1suyamb-1"
       role="figure"
     >
       <img
@@ -138,7 +138,7 @@ exports[`Sidebar all 1`] = `
       class="c4"
     />
     <div
-      class="c2 "
+      class="c2 StyledAvatar-sc-1suyamb-1"
     >
       <span
         class="c6 "
@@ -244,7 +244,7 @@ exports[`Sidebar children 1`] = `
       class="c2"
     >
       <div
-        class="c3 "
+        class="c3 StyledAvatar-sc-1suyamb-1"
         role="figure"
       >
         <img
@@ -372,7 +372,7 @@ exports[`Sidebar footer 1`] = `
       class="c3"
     />
     <div
-      class="c4 "
+      class="c4 StyledAvatar-sc-1suyamb-1"
       role="figure"
     >
       <img
@@ -492,7 +492,7 @@ exports[`Sidebar header 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 StyledAvatar-sc-1suyamb-1"
       role="figure"
     >
       <img

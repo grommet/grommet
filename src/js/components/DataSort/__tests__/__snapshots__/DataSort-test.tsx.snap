@@ -155,7 +155,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="sc-gLDzan hUdtUk"
+  class="StyledButton-sc-323bzc-0 hZNOgI"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
@@ -178,48 +178,48 @@ exports[`DataSort drop 2`] = `
 
 exports[`DataSort drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .eFImsq {
+  .jstWSP {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .Ufaxk {
+  .bnAVOh {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .bCQVFI {
+  .gnAxhJ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gLVRCN {
+  .gkHEjs {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gLVRCN {
+  .gkHEjs {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kigFDT {
+  .iuoTxe {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eOGJSV {
+  .bKYcZs {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gaEYZn {
+  .kYOLuO {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iUCGQM {
+  .biJsVL {
     height: 6px;
   }
 }"
@@ -817,7 +817,7 @@ exports[`DataSort renders 1`] = `
                 Sort by
               </label>
               <div
-                class="c7 "
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <button
                   aria-expanded="false"
@@ -879,7 +879,7 @@ exports[`DataSort renders 1`] = `
                 Sort direction
               </label>
               <div
-                class="c16 "
+                class="c16 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c17"
@@ -904,7 +904,7 @@ exports[`DataSort renders 1`] = `
                       />
                     </div>
                     <span
-                      class=""
+                      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
                     >
                       Ascending
                     </span>
@@ -930,7 +930,7 @@ exports[`DataSort renders 1`] = `
                       />
                     </div>
                     <span
-                      class=""
+                      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
                     >
                       Descending
                     </span>
@@ -1402,7 +1402,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort by
         </label>
         <div
-          class="c5 "
+          class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <button
             aria-expanded="false"
@@ -1464,7 +1464,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort direction
         </label>
         <div
-          class="c14 "
+          class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="c15"
@@ -1489,7 +1489,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                 />
               </div>
               <span
-                class=""
+                class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
               >
                 Ascending
               </span>
@@ -1515,7 +1515,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                 />
               </div>
               <span
-                class=""
+                class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
               >
                 Descending
               </span>

@@ -816,7 +816,7 @@ exports[`RangeInput track themed 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,1);
+  background: rgba(0,0,0,0.2);
 }
 
 .c1::-webkit-slider-thumb {
@@ -840,7 +840,7 @@ exports[`RangeInput track themed 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,1);
+  background: rgba(0,0,0,0.2);
 }
 
 .c1::-moz-range-thumb {
@@ -885,18 +885,18 @@ exports[`RangeInput track themed 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,1);
+  background: rgba(0,0,0,0.2);
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(125,76,219,1);
+  background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(125,76,219,1);
+  background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
@@ -961,7 +961,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,0.3);
+  background: rgba(0,0,0,0.2);
 }
 
 .c1::-webkit-slider-thumb {
@@ -985,7 +985,7 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,0.3);
+  background: rgba(0,0,0,0.2);
 }
 
 .c1::-moz-range-thumb {
@@ -1030,18 +1030,18 @@ exports[`RangeInput track themed with color and opacity 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 4px;
-  background: rgba(125,76,219,0.3);
+  background: rgba(0,0,0,0.2);
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
-  background: rgba(125,76,219,0.3);
+  background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
-  background: rgba(125,76,219,0.3);
+  background: rgba(0,0,0,0.2);
   border-color: transparent;
 }
 

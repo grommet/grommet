@@ -758,7 +758,7 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 
@@ -930,7 +930,7 @@ exports[`Button badge should display number content 1`] = `
 .c6 {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   font-weight: normal;
 }
 

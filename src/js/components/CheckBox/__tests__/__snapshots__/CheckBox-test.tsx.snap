@@ -314,24 +314,24 @@ exports[`CheckBox controlled 1`] = `
 
 exports[`CheckBox controlled 2`] = `
 <div
-  class="sc-beqWaB ePBzUb"
+  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <label
-    class="sc-eDDNvR fuPXtt"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
   >
     <div
-      class="sc-gueYoa fCVwxk sc-qRumB kOGCKW"
+      class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
     >
       <input
         checked=""
-        class="sc-jTrPJq lbEfvE"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
         type="checkbox"
       />
       <div
-        class="sc-gueYoa ZMcUn sc-gLDzan jBLWRN"
+        class="StyledBox-sc-13pk1d4-0 fRMvyw StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
       >
         <svg
-          class="sc-hLseeU cULchQ"
+          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 cAKqJx"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -428,10 +428,6 @@ exports[`CheckBox custom theme 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
   cursor: pointer;
 }
 

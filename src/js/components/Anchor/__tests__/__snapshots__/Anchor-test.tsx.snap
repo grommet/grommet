@@ -991,7 +991,7 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
 
 exports[`Anchor renders size specific theming 1`] = `
 <DocumentFragment>
-  .c18 {
+  .c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1002,30 +1002,30 @@ exports[`Anchor renders size specific theming 1`] = `
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill='none'] {
+.c17 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*='#'],
-.c18 *[STROKE*='#'] {
+.c17 *[stroke*='#'],
+.c17 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*='#'],
-.c18 *[FILL*='#'] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*='#'],
+.c17 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c20 {
+.c19 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1036,25 +1036,25 @@ exports[`Anchor renders size specific theming 1`] = `
   stroke: #7D4CDB;
 }
 
-.c20 g {
+.c19 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c20 *:not([stroke])[fill='none'] {
+.c19 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c20 *[stroke*='#'],
-.c20 *[STROKE*='#'] {
+.c19 *[stroke*='#'],
+.c19 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c20 *[fill-rule],
-.c20 *[FILL-RULE],
-.c20 *[fill*='#'],
-.c20 *[FILL*='#'] {
+.c19 *[fill-rule],
+.c19 *[FILL-RULE],
+.c19 *[fill*='#'],
+.c19 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1083,7 +1083,7 @@ exports[`Anchor renders size specific theming 1`] = `
   flex-direction: column;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1101,7 +1101,7 @@ exports[`Anchor renders size specific theming 1`] = `
   flex-direction: row;
 }
 
-.c19 {
+.c18 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1119,10 +1119,10 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 12px;
   line-height: 18px;
-  color: #000000;
-  font-weight: 700;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -1139,10 +1139,10 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 14px;
   line-height: 20px;
-  color: #000000;
-  font-weight: 700;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -1159,10 +1159,10 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  font-weight: 700;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -1180,7 +1180,7 @@ exports[`Anchor renders size specific theming 1`] = `
   font-size: 22px;
   line-height: 28px;
   color: #7D4CDB;
-  font-weight: 500;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1200,7 +1200,7 @@ exports[`Anchor renders size specific theming 1`] = `
   font-size: 26px;
   line-height: 32px;
   color: #7D4CDB;
-  font-weight: 500;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1220,7 +1220,7 @@ exports[`Anchor renders size specific theming 1`] = `
   font-size: 34px;
   line-height: 40px;
   color: #7D4CDB;
-  font-weight: 500;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -1239,34 +1239,14 @@ exports[`Anchor renders size specific theming 1`] = `
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
-  color: #000000;
-  font-weight: 700;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.c15:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c16 {
-  box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: inherit;
-  line-height: inherit;
-  color: #000000;
-  font-weight: 700;
+  color: #7D4CDB;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
-.c16:hover {
+.c15:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -1447,14 +1427,14 @@ exports[`Anchor renders size specific theming 1`] = `
       Default anchor with no size prop should receive medium
     </a>
     <a
-      class="c16"
+      class="c15"
     >
       <span
-        class="c17"
+        class="c16"
       >
         <svg
           aria-label="LinkNext"
-          class="c18"
+          class="c17"
           viewBox="0 0 24 24"
         >
           <path
@@ -1465,7 +1445,7 @@ exports[`Anchor renders size specific theming 1`] = `
           />
         </svg>
         <span
-          class="c19"
+          class="c18"
         />
         Anchor with icon
       </span>
@@ -1474,11 +1454,11 @@ exports[`Anchor renders size specific theming 1`] = `
       class="c8"
     >
       <span
-        class="c17"
+        class="c16"
       >
         <svg
           aria-label="LinkNext"
-          class="c20"
+          class="c19"
           viewBox="0 0 24 24"
         >
           <path
@@ -1489,7 +1469,7 @@ exports[`Anchor renders size specific theming 1`] = `
           />
         </svg>
         <span
-          class="c19"
+          class="c18"
         />
         Large anchor with icon should receive color on icon
       </span>

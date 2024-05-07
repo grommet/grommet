@@ -951,10 +951,10 @@ exports[`DataTableColumns remove column 1`] = `
         class="c5 c6"
       >
         <thead
-          class=""
+          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
         >
           <tr
-            class=""
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
             <th
               class="c7 "
@@ -1001,10 +1001,10 @@ exports[`DataTableColumns remove column 1`] = `
           </tr>
         </thead>
         <tbody
-          class="c10"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
         >
           <tr
-            class=""
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
             <th
               class="c11 "
@@ -1042,7 +1042,7 @@ exports[`DataTableColumns remove column 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
             <th
               class="c11 "
@@ -1476,7 +1476,7 @@ exports[`DataTableColumns remove column 2`] = `
     />
     <div
       aria-labelledby="test-data--select-columns-tab"
-      class="c7 "
+      class="c7 StyledCheckBoxGroup-sc-2nhc5d-0"
       id="test-data--select-columns"
       role="group"
     >
@@ -1992,10 +1992,10 @@ exports[`DataTableColumns renders 1`] = `
         class="c9 c10"
       >
         <thead
-          class=""
+          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
         >
           <tr
-            class=""
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
             <th
               class="c11 "
@@ -2028,10 +2028,10 @@ exports[`DataTableColumns renders 1`] = `
           </tr>
         </thead>
         <tbody
-          class="c14"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
         >
           <tr
-            class=""
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
             <th
               class="c15 "
@@ -2062,7 +2062,7 @@ exports[`DataTableColumns renders 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
           >
             <th
               class="c15 "
@@ -2493,7 +2493,7 @@ exports[`DataTableColumns renders 2`] = `
     />
     <div
       aria-labelledby="test-data--select-columns-tab"
-      class="c7 "
+      class="c7 StyledCheckBoxGroup-sc-2nhc5d-0"
       id="test-data--select-columns"
       role="group"
     >
@@ -2568,11 +2568,11 @@ exports[`DataTableColumns renders 2`] = `
 exports[`DataTableColumns renders 3`] = `
 <div
   aria-label="Order columns Tab Contents"
-  class="sc-ejdXBC inVerf"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 llnZPb"
   role="tabpanel"
 >
   <div
-    class="sc-beqWaB jdSoEa"
+    class="StyledBox-sc-13pk1d4-0 btDoOz"
   >
     .c8 {
   display: inline-block;
@@ -3328,10 +3328,10 @@ exports[`DataTableColumns search 1`] = `
       class="c5 c6"
     >
       <thead
-        class=""
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class=""
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
             class="c7 "
@@ -3364,10 +3364,10 @@ exports[`DataTableColumns search 1`] = `
         </tr>
       </thead>
       <tbody
-        class="c10"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c10"
       >
         <tr
-          class=""
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
             class="c11 "
@@ -3398,7 +3398,7 @@ exports[`DataTableColumns search 1`] = `
           </td>
         </tr>
         <tr
-          class=""
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
         >
           <th
             class="c11 "
@@ -3824,7 +3824,7 @@ exports[`DataTableColumns search 2`] = `
     />
     <div
       aria-labelledby="test-data--select-columns-tab"
-      class="c7 "
+      class="c7 StyledCheckBoxGroup-sc-2nhc5d-0"
       id="test-data--select-columns"
       role="group"
     >
@@ -3899,7 +3899,7 @@ exports[`DataTableColumns search 2`] = `
 exports[`DataTableColumns search 3`] = `
 <button
   aria-label="Open column selector"
-  class="sc-gLDzan hUdtUk"
+  class="StyledButton-sc-323bzc-0 hZNOgI"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -3922,118 +3922,118 @@ exports[`DataTableColumns search 3`] = `
 
 exports[`DataTableColumns search 4`] = `
 "@media only screen and (max-width: 768px) {
-  .gaEYZn {
+  .kYOLuO {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fUycqy {
+  .iihVfL {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bWtBbt {
+  .zolhA {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bWtBbt {
+  .zolhA {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bWtBbt {
+  .zolhA {
     border-bottom: solid 2px #000000;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bWtBbt {
+  .zolhA {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bYAKDt {
+  .cYmfUo {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bYAKDt {
+  .cYmfUo {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bYAKDt {
+  .cYmfUo {
     border-bottom: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bYAKDt {
+  .cYmfUo {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .eWMNrd {
+  .kPFFvY {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kPJDbq {
+  .vOYHH {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gupfEF {
+  .fRMvyw {
     border: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .jdSoEa {
+  .btDoOz {
     padding-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hmblXn {
+  .fdorKq {
     border-top: solid 1px rgba(0, 0, 0, 0.33);
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .hmblXn {
+  .fdorKq {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hqFlTh {
+  .fPWQdE {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .hqFlTh {
+  .fPWQdE {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hQfRiU {
+  .jerLXD {
     height: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iUCGQM {
+  .biJsVL {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cYwbNI {
+  .ejkSNv {
     width: 12px;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .dykDFm {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4044,7 +4044,7 @@ exports[`DataTableColumns search 4`] = `
     align-items: stretch;
   }
 }
-.hUdtUk {
+.hZNOgI {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4063,38 +4063,38 @@ exports[`DataTableColumns search 4`] = `
   line-height: 0;
   padding: 12px;
 }
-.hUdtUk:focus {
+.hZNOgI:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.hUdtUk:focus > circle,
-.hUdtUk:focus > ellipse,
-.hUdtUk:focus > line,
-.hUdtUk:focus > path,
-.hUdtUk:focus > polygon,
-.hUdtUk:focus > polyline,
-.hUdtUk:focus > rect {
+.hZNOgI:focus > circle,
+.hZNOgI:focus > ellipse,
+.hZNOgI:focus > line,
+.hZNOgI:focus > path,
+.hZNOgI:focus > polygon,
+.hZNOgI:focus > polyline,
+.hZNOgI:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.hUdtUk:focus::-moz-focus-inner {
+.hZNOgI:focus::-moz-focus-inner {
   border: 0;
 }
-.hUdtUk:focus:not(:focus-visible) {
+.hZNOgI:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.hUdtUk:focus:not(:focus-visible) > circle,
-.hUdtUk:focus:not(:focus-visible) > ellipse,
-.hUdtUk:focus:not(:focus-visible) > line,
-.hUdtUk:focus:not(:focus-visible) > path,
-.hUdtUk:focus:not(:focus-visible) > polygon,
-.hUdtUk:focus:not(:focus-visible) > polyline,
-.hUdtUk:focus:not(:focus-visible) > rect {
+.hZNOgI:focus:not(:focus-visible) > circle,
+.hZNOgI:focus:not(:focus-visible) > ellipse,
+.hZNOgI:focus:not(:focus-visible) > line,
+.hZNOgI:focus:not(:focus-visible) > path,
+.hZNOgI:focus:not(:focus-visible) > polygon,
+.hZNOgI:focus:not(:focus-visible) > polyline,
+.hZNOgI:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.hUdtUk:focus:not(:focus-visible)::-moz-focus-inner {
+.hZNOgI:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }"
 `;

@@ -1101,7 +1101,7 @@ exports[`RadioButton label 1`] = `
       />
     </div>
     <span
-      class=""
+      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
     >
       test label
     </span>
@@ -1220,10 +1220,6 @@ exports[`RadioButton label themed 1`] = `
   cursor: pointer;
 }
 
-.c5 {
-  font-weight: 500;
-}
-
 @media only screen and (max-width:768px) {
   .c2 {
     margin-right: 6px;
@@ -1255,7 +1251,7 @@ exports[`RadioButton label themed 1`] = `
       />
     </div>
     <span
-      class="c5"
+      class="StyledRadioButton__StyledRadioButtonLabel-sc-g1f6ld-2"
     >
       test
     </span>
@@ -1378,7 +1374,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
         class="c4 "
       >
         <svg
-          as="[object Object]"
+          as=".StyledRadioButton__StyledRadioButtonIcon-sc-g1f6ld-3"
           data-testid="custom-radioButton-icon"
           theme="[object Object]"
         />
