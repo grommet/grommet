@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import {
   backgroundStyle,
   focusStyle,
@@ -7,7 +7,7 @@ import {
   parseMetricToNum,
 } from '../../utils';
 
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const sizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
@@ -23,7 +23,7 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledCalendar = styledWithTheme.div`
+const StyledCalendar = styled.div.attrs(getDefaultProps)`
   ${genericStyles}
   ${(props) => sizeStyle(props)}
   ${(props) => props.theme.calendar && props.theme.calendar.extend}
@@ -38,7 +38,7 @@ const weeksContainerSizeStyle = (props) => {
 
   `;
 };
-const StyledWeeksContainer = styledWithTheme.div`
+const StyledWeeksContainer = styled.div.attrs(getDefaultProps)`
   overflow: hidden;
   ${(props) => weeksContainerSizeStyle(props)}
   ${(props) => props.focus && !props.plain && focusStyle()};
@@ -73,13 +73,13 @@ const weeksSizeStyle = () => css`
   flex-direction: column;
   height: 100%;
 `;
-const StyledWeeks = styledWithTheme.div`
+const StyledWeeks = styled.div.attrs(getDefaultProps)`
   position: relative;
   ${(props) => props.fillContainer && weeksSizeStyle()}
   ${(props) => props.slide && slideStyle(props)};
 `;
 
-const StyledWeek = styledWithTheme.div`
+const StyledWeek = styled.div.attrs(getDefaultProps)`
   display: flex;
   justify-content: space-between;
   ${(props) => props.fillContainer && 'flex: 1;'}
@@ -87,7 +87,7 @@ const StyledWeek = styledWithTheme.div`
 
 // The width of 14.3% is derived from dividing 100/7. We want the
 // widths of 7 days to equally fill 100% of the row.
-const StyledDayContainer = styledWithTheme.div`
+const StyledDayContainer = styled.div.attrs(getDefaultProps)`
   flex: 0 1 auto;
   ${(props) => props.fillContainer && 'width: 14.3%;'}
 `;
@@ -101,7 +101,7 @@ const daySizeStyle = (props) => {
   `;
 };
 
-const StyledDay = styledWithTheme.div`
+const StyledDay = styled.div.attrs(getDefaultProps)`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,30 +1,30 @@
-import { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { normalizeColor, genericStyles } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
-const StyledHour = styledWithTheme.line`
+const StyledHour = styled.line.attrs(getDefaultProps)`
   stroke-width: ${props => props.theme.clock.analog.hour.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledMinute = styledWithTheme.line`
+const StyledMinute = styled.line.attrs(getDefaultProps)`
   stroke-width: ${props => props.theme.clock.analog.minute.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledSecond = styledWithTheme.line`
+const StyledSecond = styled.line.attrs(getDefaultProps)`
   stroke-width: ${props => props.theme.clock.analog.second.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.second.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledAnalog = styledWithTheme.svg`
+const StyledAnalog = styled.svg.attrs(getDefaultProps)`
   width: ${props => props.theme.clock.analog.size[props.size]};
   height: ${props => props.theme.clock.analog.size[props.size]};
 
@@ -42,7 +42,7 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledDigitalDigit = styledWithTheme.div`
+const StyledDigitalDigit = styled.div.attrs(getDefaultProps)`
   position: relative;
   width: 0.8em;
   text-align: center;
@@ -60,7 +60,7 @@ const previousDown = keyframes`
   100% { transform: translateY(100%); }
 `;
 
-const StyledDigitalPrevious = styledWithTheme.div`
+const StyledDigitalPrevious = styled.div.attrs(getDefaultProps)`
   position: absolute;
   top: 0;
   left: 0;
@@ -81,7 +81,7 @@ const nextDown = keyframes`
   100% { transform: translateY(0); }
 `;
 
-const StyledDigitalNext = styledWithTheme.div`
+const StyledDigitalNext = styled.div.attrs(getDefaultProps)`
   position: absolute;
   top: 0;
   left: 0;

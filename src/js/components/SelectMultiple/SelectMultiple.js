@@ -8,8 +8,8 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
+import styled from 'styled-components';
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
@@ -36,8 +36,9 @@ import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { getDefaultProps } from '../../default-props';
 
-const StyledSelectBox = styledWithTheme(Box)`
+const StyledSelectBox = styled(Box).attrs(getDefaultProps)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select.control?.open};

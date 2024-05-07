@@ -1,14 +1,14 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { focusStyle, normalizeColor } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.5;
   cursor: default;
 `;
 
-const StyledRadioButtonContainer = styledWithTheme.label`
+const StyledRadioButtonContainer = styled.label.attrs(getDefaultProps)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -57,7 +57,7 @@ const StyledRadioButtonContainer = styledWithTheme.label`
   ${(props) => props.theme.radioButton.container.extend};
 `;
 
-const StyledRadioButtonInput = styledWithTheme.input`
+const StyledRadioButtonInput = styled.input.attrs(getDefaultProps)`
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -66,7 +66,7 @@ const StyledRadioButtonInput = styledWithTheme.input`
   ${(props) => !props.disabled && 'cursor: pointer;'};
 `;
 
-const StyledRadioButtonLabel = styledWithTheme.span`
+const StyledRadioButtonLabel = styled.span.attrs(getDefaultProps)`
   ${(props) =>
     props.theme.radioButton.font.weight &&
     css`
@@ -74,7 +74,7 @@ const StyledRadioButtonLabel = styledWithTheme.span`
     `}
 `;
 
-const StyledRadioButtonIcon = styledWithTheme.svg`
+const StyledRadioButtonIcon = styled.svg.attrs(getDefaultProps)`
   box-sizing: border-box;
   width: ${(props) =>
     props.theme.radioButton.icon.size || props.theme.radioButton.size};
@@ -88,13 +88,13 @@ const StyledRadioButtonIcon = styledWithTheme.svg`
   ${(props) => props.theme.radioButton.icon.extend};
 `;
 
-const StyledRadioButtonBox = styledWithTheme.div`
+const StyledRadioButtonBox = styled.div.attrs(getDefaultProps)`
   background-color: ${(props) => props.backgroundColor};
   ${(props) => props.focus && focusStyle()};
   ${(props) => props.theme.radioButton.check.extend};
 `;
 
-const StyledRadioButton = styledWithTheme.div`
+const StyledRadioButton = styled.div.attrs(getDefaultProps)`
   ${(props) => props.theme.radioButton && props.theme.radioButton.extend};
 `;
 

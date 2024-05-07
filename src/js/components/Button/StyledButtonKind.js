@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
   activeStyle,
@@ -10,7 +10,7 @@ import {
   kindPartStyles,
   parseMetricToNum,
 } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const radiusStyle = (props) => {
   const size = props.sizeProp;
@@ -250,7 +250,7 @@ const plainStyle = (props) => css`
   ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
-const StyledButtonKind = styledWithTheme.button.withConfig({
+const StyledButtonKind = styled.button.attrs(getDefaultProps).withConfig({
   // don't let kind attribute leak to DOM
   // https://styled-components.com/docs/api#shouldforwardprop
   shouldForwardProp: (prop, defaultValidatorFn) =>

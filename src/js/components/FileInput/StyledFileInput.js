@@ -1,7 +1,8 @@
+import styled from 'styled-components';
 import { inputStyle } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
-const StyledFileInput = styledWithTheme.input`
+const StyledFileInput = styled.input.attrs(getDefaultProps)`
   position: absolute;
   height: 100%;
   width: 100%;

@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -25,13 +25,13 @@ import {
   usePagination,
 } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
-import { styledWithTheme } from '../styledWithTheme';
 
 import { ListPropTypes } from './propTypes';
+import { getDefaultProps } from '../../default-props';
 
 const emptyData = [];
 
-const StyledList = styledWithTheme.ul`
+const StyledList = styled.ul.attrs(getDefaultProps)`
   list-style: none;
   ${(props) => !props.margin && 'margin: 0;'}
   padding: 0;
@@ -51,7 +51,7 @@ const StyledList = styledWithTheme.ul`
   }
 `;
 
-const StyledItem = styledWithTheme(Box)`
+const StyledItem = styled(Box).attrs(getDefaultProps)`
   ${(props) => props.onClick && !props.isDisabled && `cursor: pointer;`}
   ${(props) => props.draggable && !props.isDisabled && `cursor: move;`}
   // during the interim state when a user is holding down a click,
@@ -81,7 +81,7 @@ const StyledItem = styledWithTheme(Box)`
 `;
 
 // when paginated, this wraps the data table and pagination component
-const StyledContainer = styledWithTheme(Box)`
+const StyledContainer = styled(Box).attrs(getDefaultProps)`
   ${(props) =>
     props.theme.list &&
     props.theme.list.container &&

@@ -6,13 +6,12 @@ import React, {
   useState,
 } from 'react';
 
+import styled from 'styled-components';
 import {
   setFocusWithoutScroll,
   getHoverIndicatorStyle,
   containsFocus,
 } from '../../utils';
-
-import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -29,9 +28,10 @@ import {
 import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { getDefaultProps } from '../../default-props';
 
 // ensure ClearButton receives visual indication of keyboard
-const StyledButton = styledWithTheme(Button)`
+const StyledButton = styled(Button).attrs(getDefaultProps)`
   &:focus {
     ${(props) => getHoverIndicatorStyle('background', props.theme)}
   }

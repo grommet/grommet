@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
   disabledStyle,
@@ -8,7 +8,7 @@ import {
   parseMetricToNum,
   getRGBA,
 } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
 const getBoundOpacity = (props, bound) =>
@@ -207,7 +207,7 @@ const firefoxMicrosoftThumbStyle = css`
 `;
 
 /* eslint-disable max-len */
-const StyledRangeInput = styledWithTheme.input`
+const StyledRangeInput = styled.input.attrs(getDefaultProps)`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;

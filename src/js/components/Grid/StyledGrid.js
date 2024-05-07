@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
   alignContentStyle,
   alignStyle,
@@ -8,7 +8,7 @@ import {
   heightStyle,
   widthStyle,
 } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const fillStyle = (fill) => {
   if (!fill) {
@@ -212,7 +212,8 @@ const areasStyle = (props) => {
     .join(' ')};`;
 };
 
-const StyledGrid = styledWithTheme.div.attrs((props) => ({
+const StyledGrid = styled.div.attrs((props) => ({
+  ...getDefaultProps(),
   'aria-label': props.a11yTitleProp,
 }))`
   display: grid;

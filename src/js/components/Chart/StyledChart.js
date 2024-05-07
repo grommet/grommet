@@ -1,7 +1,7 @@
-import { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { genericStyles } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const animateStyle = ({ theme, typeProp }) => {
   let animateBounds;
@@ -21,7 +21,7 @@ const animateStyle = ({ theme, typeProp }) => {
   `;
 };
 
-const StyledChart = styledWithTheme.svg`
+const StyledChart = styled.svg.attrs(getDefaultProps)`
   display: block;
   max-width: 100%;
   overflow: visible;

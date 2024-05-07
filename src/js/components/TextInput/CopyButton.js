@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { Copy } from 'grommet-icons/icons/Copy';
 import { Button } from '../Button';
 import { Tip } from '../Tip';
-import { styledWithTheme } from '../styledWithTheme';
 import { edgeStyle } from '../../utils/styles';
+import { getDefaultProps } from '../../default-props';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
-const StyledButton = styledWithTheme(Button)`
+const StyledButton = styled(Button).attrs(getDefaultProps)`
   border-radius: ${(props) => props.theme.global.control.border.radius};
   ${(props) =>
     !props.theme.button.default

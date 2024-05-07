@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
   backgroundStyle,
@@ -6,7 +6,7 @@ import {
   edgeStyle,
   genericStyles,
 } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const SIZE_MAP = {
   '1/2': '50%',
@@ -39,7 +39,7 @@ const sizeStyle = css`
   overflow: hidden;
 `;
 
-const StyledTableCell = styledWithTheme.td`
+const StyledTableCell = styled.td.attrs(getDefaultProps)`
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -64,19 +64,19 @@ const StyledTableCell = styledWithTheme.td`
   ${(props) => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
-const StyledTableDataCaption = styledWithTheme.caption`
+const StyledTableDataCaption = styled.caption.attrs(getDefaultProps)`
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
 
-const StyledTableRow = styledWithTheme.tr``;
+const StyledTableRow = styled.tr.attrs(getDefaultProps)``;
 
-const StyledTableBody = styledWithTheme.tbody``;
+const StyledTableBody = styled.tbody.attrs(getDefaultProps)``;
 
-const StyledTableHeader = styledWithTheme.thead``;
+const StyledTableHeader = styled.thead.attrs(getDefaultProps)``;
 
-const StyledTableFooter = styledWithTheme.tfoot``;
+const StyledTableFooter = styled.tfoot.attrs(getDefaultProps)``;
 
-const StyledTable = styledWithTheme.table`
+const StyledTable = styled.table.attrs(getDefaultProps)`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;

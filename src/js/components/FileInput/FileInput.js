@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useRef, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -22,7 +22,7 @@ import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 import { formatBytes } from './utils/formatBytes';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
@@ -30,7 +30,7 @@ import { styledWithTheme } from '../styledWithTheme';
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
 
-const ContentsBox = styledWithTheme(Box)`
+const ContentsBox = styled(Box).attrs(getDefaultProps)`
   cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
@@ -49,14 +49,14 @@ const ContentsBox = styledWithTheme(Box)`
   ${(props) => !props.focus && unfocusStyle()};
 `;
 
-const Label = styledWithTheme(Text)`
+const Label = styled(Text).attrs(getDefaultProps)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.label &&
     props.theme.fileInput.label.extend};
 `;
 
-const Message = styledWithTheme(Text)`
+const Message = styled(Text).attrs(getDefaultProps)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.message &&

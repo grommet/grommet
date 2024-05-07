@@ -8,7 +8,6 @@ import {
   genericStyles,
   normalizeColor,
 } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
@@ -16,9 +15,10 @@ import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
+import { getDefaultProps } from '../../default-props';
 
 // border-collapse: separate is needed so pinned header/footer borders work
-const StyledDataTable = styledWithTheme(Table)`
+const StyledDataTable = styled(Table).attrs(getDefaultProps)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
@@ -31,7 +31,7 @@ const StyledDataTable = styledWithTheme(Table)`
 `;
 
 // when paginated, this wraps the data table and pagination component
-const StyledContainer = styledWithTheme(Box)`
+const StyledContainer = styled(Box).attrs(getDefaultProps)`
   ${(props) =>
     props.theme.dataTable &&
     props.theme.dataTable.container &&
@@ -62,7 +62,7 @@ const hoverStyle = css`
     )};
 `;
 
-const StyledDataTableRow = styledWithTheme(TableRow)`
+const StyledDataTableRow = styled(TableRow).attrs(getDefaultProps)`
   ${(props) =>
     props.size &&
     `
@@ -79,7 +79,7 @@ const StyledDataTableRow = styledWithTheme(TableRow)`
 `;
 
 // focus styling other than outline doesn't work on <tbody />
-const StyledDataTableBody = styledWithTheme(TableBody)`
+const StyledDataTableBody = styled(TableBody).attrs(getDefaultProps)`
   ${(props) =>
     props.size &&
     `
@@ -98,7 +98,7 @@ const StyledDataTableBody = styledWithTheme(TableBody)`
   }
 `;
 
-const StyledDataTableHeader = styledWithTheme(TableHeader)`
+const StyledDataTableHeader = styled(TableHeader).attrs(getDefaultProps)`
   ${(props) =>
     props.size &&
     `
@@ -109,7 +109,7 @@ const StyledDataTableHeader = styledWithTheme(TableHeader)`
   `}
 `;
 
-const StyledDataTableFooter = styledWithTheme(TableFooter)`
+const StyledDataTableFooter = styled(TableFooter).attrs(getDefaultProps)`
   ${(props) =>
     props.size &&
     `
@@ -127,7 +127,7 @@ const StyledDataTableFooter = styledWithTheme(TableFooter)`
   `}
 `;
 
-const StyledDataTableCell = styledWithTheme(TableCell)`
+const StyledDataTableCell = styled(TableCell).attrs(getDefaultProps)`
   ${(props) =>
     props.context === 'header' &&
     props.theme.dataTable &&

@@ -6,10 +6,8 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
-
-import { styledWithTheme } from '../styledWithTheme';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -29,6 +27,7 @@ import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { getDefaultProps } from '../../default-props';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -107,12 +106,12 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
   return styles;
 };
 
-const StyledHeaderCellButton = styledWithTheme(Button)`
+const StyledHeaderCellButton = styled(Button).attrs(getDefaultProps)`
   ${(props) => buttonStyle(props)}
 `;
 
 // allow extend to spread onto Box that surrounds column label
-const StyledContentBox = styledWithTheme(Box)`
+const StyledContentBox = styled(Box).attrs(getDefaultProps)`
   ${(props) => props.extend}
 `;
 

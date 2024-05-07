@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
   alignContentStyle,
@@ -22,7 +22,7 @@ import {
 import { roundStyle } from '../../utils/styles';
 
 import { animationBounds, animationObjectStyle } from '../../utils/animation';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const BASIS_MAP = {
   auto: 'auto',
@@ -263,7 +263,7 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
 };
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styledWithTheme.div`
+const StyledBox = styled.div.attrs(getDefaultProps)`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
@@ -442,7 +442,7 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
 
   return styles;
 };
-const StyledBoxGap = styledWithTheme.div`
+const StyledBoxGap = styled.div.attrs(getDefaultProps)`
   flex: 0 0 auto;
   align-self: stretch;
   ${(props) =>

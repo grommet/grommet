@@ -1,7 +1,7 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { genericStyles } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const fillStyle = css`
   ${props =>
@@ -19,7 +19,7 @@ const fillStyle = css`
   display: flex;
 `;
 
-const StyledStack = styledWithTheme.div`
+const StyledStack = styled.div.attrs(getDefaultProps)`
   position: relative;
   ${genericStyles}
   ${props => props.fillContainer && fillStyle}
@@ -76,7 +76,7 @@ const styleMap = {
   `,
 };
 
-const StyledStackLayer = styledWithTheme.div`
+const StyledStackLayer = styled.div.attrs(getDefaultProps)`
   position: ${props => (props.guiding ? 'relative' : 'absolute')};
   ${props => props.guiding && 'display: block;'}
   ${props => !props.guiding && `${styleMap[props.anchor || 'fill']};`}

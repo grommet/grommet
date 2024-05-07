@@ -1,7 +1,7 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { focusStyle, genericStyles, normalizeColor } from '../../utils';
-import { styledWithTheme } from '../styledWithTheme';
+import { getDefaultProps } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -24,7 +24,7 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledAnchor = styledWithTheme.a.withConfig({
+const StyledAnchor = styled.a.attrs(getDefaultProps).withConfig({
   // prevent custom props from bleeding into DOM
   // https://styled-components.com/docs/api#shouldforwardprop
   shouldForwardProp: (prop, defaultValidatorFn) =>

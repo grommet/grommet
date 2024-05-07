@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 
-import { styledWithTheme } from '../styledWithTheme';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
@@ -23,6 +23,7 @@ import {
 } from './StyledMaskedInput';
 import { MaskedInputPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { getDefaultProps } from '../../default-props';
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
@@ -145,7 +146,7 @@ const defaultMask = [
   },
 ];
 
-const ContainerBox = styledWithTheme(Box)`
+const ContainerBox = styled(Box).attrs(getDefaultProps)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
