@@ -250,14 +250,14 @@ exports[`Tabs Custom Tab component 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -267,7 +267,7 @@ exports[`Tabs Custom Tab component 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -284,7 +284,7 @@ exports[`Tabs Custom Tab component 1`] = `
           type="button"
         >
           <div
-            class="c8 c6"
+            class="c8 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c9"
@@ -556,14 +556,14 @@ exports[`Tabs Tab 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -573,7 +573,7 @@ exports[`Tabs Tab 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -590,7 +590,7 @@ exports[`Tabs Tab 1`] = `
           type="button"
         >
           <div
-            class="c8 c6"
+            class="c8 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c9"
@@ -868,14 +868,14 @@ exports[`Tabs alignControls 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -885,7 +885,7 @@ exports[`Tabs alignControls 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -902,7 +902,7 @@ exports[`Tabs alignControls 1`] = `
           type="button"
         >
           <div
-            class="c8 c6"
+            class="c8 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c9"
@@ -1174,14 +1174,14 @@ exports[`Tabs change to second tab 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -1191,7 +1191,7 @@ exports[`Tabs change to second tab 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -1208,7 +1208,7 @@ exports[`Tabs change to second tab 1`] = `
           type="button"
         >
           <div
-            class="c8 c6"
+            class="c8 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c9"
@@ -1235,14 +1235,14 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fHIHJf"
       role="tablist"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
+        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="false"
@@ -1252,7 +1252,7 @@ exports[`Tabs change to second tab 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cYmfUo StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 cYmfUo StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 VAXSu"
@@ -1269,7 +1269,7 @@ exports[`Tabs change to second tab 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 vNlWg"
@@ -1529,14 +1529,14 @@ exports[`Tabs complex title 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -1546,7 +1546,7 @@ exports[`Tabs complex title 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <div>
               Tab 1
@@ -1561,7 +1561,7 @@ exports[`Tabs complex title 1`] = `
           type="button"
         >
           <div
-            class="c7 c6"
+            class="c7 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <div>
               Tab 2
@@ -1773,14 +1773,14 @@ exports[`Tabs no Tab 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -1790,7 +1790,7 @@ exports[`Tabs no Tab 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           />
         </button>
       </div>
@@ -1944,7 +1944,7 @@ exports[`Tabs no Tabs 1`] = `
     type="button"
   >
     <div
-      class="c2 c3"
+      class="c2 c3 StyledTab-sc-1nnwnsb-0 c3"
     />
   </button>
 </div>
@@ -2200,14 +2200,14 @@ exports[`Tabs onClick 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -2217,7 +2217,7 @@ exports[`Tabs onClick 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -2234,7 +2234,7 @@ exports[`Tabs onClick 1`] = `
           type="button"
         >
           <div
-            class="c8 c6"
+            class="c8 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c9"
@@ -2506,14 +2506,14 @@ exports[`Tabs set on hover 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -2523,7 +2523,7 @@ exports[`Tabs set on hover 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -2540,7 +2540,7 @@ exports[`Tabs set on hover 1`] = `
           type="button"
         >
           <div
-            class="c8 c6"
+            class="c8 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c9"
@@ -2567,14 +2567,14 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fHIHJf"
       role="tablist"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
+        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -2584,7 +2584,7 @@ exports[`Tabs set on hover 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 vNlWg"
@@ -2601,7 +2601,7 @@ exports[`Tabs set on hover 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cYmfUo StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 cYmfUo StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 VAXSu"
@@ -2628,14 +2628,14 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fHIHJf"
       role="tablist"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
+        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -2645,7 +2645,7 @@ exports[`Tabs set on hover 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 vNlWg"
@@ -2662,7 +2662,7 @@ exports[`Tabs set on hover 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 cPArfI"
@@ -2689,14 +2689,14 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fHIHJf"
       role="tablist"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
+        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -2706,7 +2706,7 @@ exports[`Tabs set on hover 4`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 vNlWg"
@@ -2723,7 +2723,7 @@ exports[`Tabs set on hover 4`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 cPArfI"
@@ -2750,14 +2750,14 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledTabs-sc-a4fwxl-2 hGiMQb StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 fHIHJf"
       role="tablist"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
+        class="StyledBox-sc-13pk1d4-0 gWnoPQ StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -2767,7 +2767,7 @@ exports[`Tabs set on hover 5`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 zolhA StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 vNlWg"
@@ -2784,7 +2784,7 @@ exports[`Tabs set on hover 5`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cYmfUo StyledTab-sc-1nnwnsb-0 jTRbGi"
+            class="StyledBox-sc-13pk1d4-0 cYmfUo StyledTab-sc-1nnwnsb-0 jTRbGi StyledTab-sc-1nnwnsb-0 jTRbGi"
           >
             <span
               class="StyledText-sc-1sadyjn-0 VAXSu"
@@ -3016,14 +3016,14 @@ exports[`Tabs should allow to extend tab styles 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -3033,7 +3033,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
           type="button"
         >
           <div
-            class="c1 c5"
+            class="c1 c5 StyledTab-sc-1nnwnsb-0 c5"
           >
             Title 1
           </div>
@@ -3046,7 +3046,7 @@ exports[`Tabs should allow to extend tab styles 1`] = `
           type="button"
         >
           <div
-            class="c6 c7"
+            class="c6 c7 StyledTab-sc-1nnwnsb-0 c7"
           >
             <span
               class="c8"
@@ -3387,14 +3387,14 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -3404,7 +3404,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -3422,7 +3422,7 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
           type="button"
         >
           <div
-            class="c9 c10"
+            class="c9 c10 StyledTab-sc-1nnwnsb-0 c10"
             disabled=""
           >
             <span
@@ -3765,14 +3765,14 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -3782,7 +3782,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -3800,7 +3800,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
           type="button"
         >
           <div
-            class="c9 c10"
+            class="c9 c10 StyledTab-sc-1nnwnsb-0 c10"
             disabled=""
           >
             <span
@@ -4077,14 +4077,14 @@ exports[`Tabs should apply theme alignSelf to tab controls 1`] = `
     class="c0"
   >
     <div
-      class="c1 "
+      class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
     >
       <div
         class="c2"
         role="tablist"
       >
         <div
-          class="c3 "
+          class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
         >
           <button
             aria-expanded="true"
@@ -4094,7 +4094,7 @@ exports[`Tabs should apply theme alignSelf to tab controls 1`] = `
             type="button"
           >
             <div
-              class="c5 c6"
+              class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
             >
               <span
                 class="c7"
@@ -4111,7 +4111,7 @@ exports[`Tabs should apply theme alignSelf to tab controls 1`] = `
             type="button"
           >
             <div
-              class="c8 c6"
+              class="c8 c6 StyledTab-sc-1nnwnsb-0 c6"
             >
               <span
                 class="c9"
@@ -4327,14 +4327,14 @@ exports[`Tabs should have no accessibility violations 1`] = `
     class="c0"
   >
     <div
-      class="c1 "
+      class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
     >
       <div
         class="c2"
         role="tablist"
       >
         <div
-          class="c3 "
+          class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
         >
           <button
             aria-expanded="true"
@@ -4345,7 +4345,7 @@ exports[`Tabs should have no accessibility violations 1`] = `
             type="button"
           >
             <div
-              class="c5 c6"
+              class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
             />
           </button>
         </div>
@@ -4494,14 +4494,14 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -4511,7 +4511,7 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
           type="button"
         >
           <div
-            class="c1 c5"
+            class="c1 c5 StyledTab-sc-1nnwnsb-0 c5"
           >
             Title 1
           </div>
@@ -4845,14 +4845,14 @@ exports[`Tabs should style as disabled 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -4862,7 +4862,7 @@ exports[`Tabs should style as disabled 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c7"
@@ -4880,7 +4880,7 @@ exports[`Tabs should style as disabled 1`] = `
           type="button"
         >
           <div
-            class="c9 c10"
+            class="c9 c10 StyledTab-sc-1nnwnsb-0 c10"
             disabled=""
           >
             <span
@@ -5161,24 +5161,24 @@ exports[`Tabs styled component should change tab color when active 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c4 c5"
+          class="c4 c5 sc-beqWaB c5"
           role="tab"
           type="button"
         >
           <div
-            class="c6 c7"
+            class="c6 c7 StyledTab-sc-1nnwnsb-0 c7"
           >
             <span
               class="c8"
@@ -5190,12 +5190,12 @@ exports[`Tabs styled component should change tab color when active 1`] = `
         <button
           aria-expanded="true"
           aria-selected="true"
-          class="c4 c9"
+          class="c4 c9 sc-beqWaB c9"
           role="tab"
           type="button"
         >
           <div
-            class="c10 c7"
+            class="c10 c7 StyledTab-sc-1nnwnsb-0 c7"
           >
             <span
               class="c11"
@@ -5207,12 +5207,12 @@ exports[`Tabs styled component should change tab color when active 1`] = `
         <button
           aria-expanded="false"
           aria-selected="false"
-          class="c4 c5"
+          class="c4 c5 sc-beqWaB c5"
           role="tab"
           type="button"
         >
           <div
-            class="c6 c7"
+            class="c6 c7 StyledTab-sc-1nnwnsb-0 c7"
           >
             <span
               class="c8"
@@ -5514,14 +5514,14 @@ exports[`Tabs with icon + reverse 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 StyledTabs-sc-a4fwxl-2 hGiMQb"
   >
     <div
       class="c2"
       role="tablist"
     >
       <div
-        class="c3 "
+        class="c3 StyledTabs__StyledTabsHeader-sc-a4fwxl-0 kQaubo"
       >
         <button
           aria-expanded="true"
@@ -5531,7 +5531,7 @@ exports[`Tabs with icon + reverse 1`] = `
           type="button"
         >
           <div
-            class="c5 c6"
+            class="c5 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <svg
               color="text"
@@ -5554,7 +5554,7 @@ exports[`Tabs with icon + reverse 1`] = `
           type="button"
         >
           <div
-            class="c9 c6"
+            class="c9 c6 StyledTab-sc-1nnwnsb-0 c6"
           >
             <span
               class="c10"

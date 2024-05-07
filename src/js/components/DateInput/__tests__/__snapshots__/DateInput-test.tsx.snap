@@ -862,7 +862,7 @@ exports[`DateInput controlled format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -1728,7 +1728,7 @@ exports[`DateInput controlled format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -3186,7 +3186,7 @@ exports[`DateInput controlled format inline without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -4645,7 +4645,7 @@ exports[`DateInput controlled format inline without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -5713,7 +5713,7 @@ exports[`DateInput custom theme 1`] = `
     class="c0"
   >
     <div
-      class="c1 "
+      class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c2"
@@ -6085,7 +6085,7 @@ exports[`DateInput dropProps should pass props to Drop
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="c2"
@@ -6326,7 +6326,7 @@ exports[`DateInput focus 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="c2"
@@ -6569,7 +6569,7 @@ exports[`DateInput format 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="c2"
@@ -6814,7 +6814,7 @@ exports[`DateInput format disabled 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="c2"
@@ -7380,7 +7380,7 @@ exports[`DateInput format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -8477,13 +8477,13 @@ exports[`DateInput handle focus in FormField 1`] = `
   >
     <form>
       <div
-        class="c1 "
+        class="c1 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="c2 c3"
+          class="c2 c3 FormField__FormFieldContentBox-sc-m9hood-1 c3"
         >
           <div
-            class="c4 "
+            class="c4 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
           >
             <div
               class="c5"
@@ -8745,13 +8745,13 @@ exports[`DateInput handle focus in FormField 2`] = `
   >
     <form>
       <div
-        class="c1 "
+        class="c1 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <div
-          class="c2 "
+          class="c2 FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
-            class="c3 "
+            class="c3 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
           >
             <div
               class="c4"
@@ -10298,7 +10298,7 @@ exports[`DateInput input props reverse as false 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="c2"
@@ -10541,7 +10541,7 @@ exports[`DateInput input props reverse as false with icon 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="c2"
@@ -10788,7 +10788,7 @@ exports[`DateInput input props reverse as true 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <button
       class="c2"
@@ -11031,7 +11031,7 @@ exports[`DateInput input props reverse as true with icon 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <button
       class="c2"
@@ -11479,7 +11479,7 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
     class="c0"
   >
     <div
-      class="c1 "
+      class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c2"
@@ -11510,7 +11510,7 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
       </button>
     </div>
     <div
-      class="c1 "
+      class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c2"
@@ -11541,7 +11541,7 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
       </button>
     </div>
     <div
-      class="c1 "
+      class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c2"
@@ -11913,7 +11913,7 @@ exports[`DateInput range format 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="c2"
@@ -12496,7 +12496,7 @@ exports[`DateInput range format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -14668,7 +14668,7 @@ exports[`DateInput read only 1`] = `
     class="c0"
   >
     <div
-      class="c1 "
+      class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c2"
@@ -14927,7 +14927,7 @@ exports[`DateInput read only copy 1`] = `
     class="c0"
   >
     <div
-      class="c1 "
+      class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c2"
@@ -14943,7 +14943,7 @@ exports[`DateInput read only copy 1`] = `
       </div>
       <button
         aria-label="Copy to clipboard 01/01/2024"
-        class="c4 c5"
+        class="c4 c5 CopyButton__StyledButton-sc-1bp1m18-0 c5"
         type="button"
       >
         <svg
@@ -15537,7 +15537,7 @@ exports[`DateInput reverse calendar icon 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <button
       class="c2"
@@ -15780,7 +15780,7 @@ exports[`DateInput select format 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="c2"
@@ -15820,7 +15820,7 @@ exports[`DateInput select format 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+    class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
   >
     <div
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -16348,7 +16348,7 @@ exports[`DateInput select format 3`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="item__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -17734,7 +17734,7 @@ exports[`DateInput select format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -18594,7 +18594,7 @@ exports[`DateInput select format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -19977,7 +19977,7 @@ exports[`DateInput select format inline 3`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -21438,7 +21438,7 @@ exports[`DateInput select format inline 4`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -22839,7 +22839,7 @@ exports[`DateInput select format inline range 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -23699,7 +23699,7 @@ exports[`DateInput select format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -25100,7 +25100,7 @@ exports[`DateInput select format inline range without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -26561,7 +26561,7 @@ exports[`DateInput select format inline range without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -27623,7 +27623,7 @@ exports[`DateInput select format no timezone 1`] = `
     class="c0"
   >
     <div
-      class="c1 "
+      class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c2"
@@ -27868,7 +27868,7 @@ exports[`DateInput select format no timezone 2`] = `
     class="c0"
   >
     <div
-      class="c1 "
+      class="c1 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c2"
@@ -28397,7 +28397,7 @@ exports[`DateInput select format no timezone 3`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="item__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -32157,7 +32157,7 @@ exports[`DateInput type format inline 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -33017,7 +33017,7 @@ exports[`DateInput type format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -34399,7 +34399,7 @@ exports[`DateInput type format inline partial 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -35782,7 +35782,7 @@ exports[`DateInput type format inline partial without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -37183,7 +37183,7 @@ exports[`DateInput type format inline range 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -38043,7 +38043,7 @@ exports[`DateInput type format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -39443,7 +39443,7 @@ exports[`DateInput type format inline range partial 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -40303,7 +40303,7 @@ exports[`DateInput type format inline range partial 2`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -41163,7 +41163,7 @@ exports[`DateInput type format inline range partial 3`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -42564,7 +42564,7 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -43948,7 +43948,7 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -45332,7 +45332,7 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -46734,7 +46734,7 @@ exports[`DateInput type format inline range without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -48136,7 +48136,7 @@ exports[`DateInput type format inline range without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -49519,7 +49519,7 @@ exports[`DateInput type format inline short 1`] = `
     class="c1"
   >
     <div
-      class="c2 "
+      class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="c3"
@@ -50379,7 +50379,7 @@ exports[`DateInput type format inline short 2`] = `
     class="StyledBox-sc-13pk1d4-0 kqmDKi"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
+      class="StyledBox-sc-13pk1d4-0 jqLyZQ DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
     >
       <div
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 lSnvO"
@@ -51762,7 +51762,7 @@ exports[`DateInput type format inline short without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -53146,7 +53146,7 @@ exports[`DateInput type format inline short without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -54530,7 +54530,7 @@ exports[`DateInput type format inline without timezone 1`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"
@@ -55914,7 +55914,7 @@ exports[`DateInput type format inline without timezone 2`] = `
       class="c1"
     >
       <div
-        class="c2 "
+        class="c2 DateInput__StyledDateInputContainer-sc-1jfta23-0 hNwxKT"
       >
         <div
           class="c3"

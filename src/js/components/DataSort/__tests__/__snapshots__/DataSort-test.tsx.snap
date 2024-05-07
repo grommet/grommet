@@ -808,7 +808,7 @@ exports[`DataSort renders 1`] = `
             class="c1"
           >
             <div
-              class="c5 "
+              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
             >
               <label
                 class="c6"
@@ -817,13 +817,13 @@ exports[`DataSort renders 1`] = `
                 Sort by
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <button
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-label="Open Drop"
-                  class="c8 "
+                  class="c8 StyledSelect__StyledSelectDropButton-sc-znp66n-5 eUyixX"
                   id="data--sort-property"
                   type="button"
                 >
@@ -838,7 +838,7 @@ exports[`DataSort renders 1`] = `
                       >
                         <input
                           autocomplete="off"
-                          class="c12 c13"
+                          class="c12 c13 StyledSelect__SelectTextInput-sc-znp66n-4 c13"
                           id="data--sort-property__input"
                           name="_sort.property"
                           readonly=""
@@ -870,7 +870,7 @@ exports[`DataSort renders 1`] = `
               </div>
             </div>
             <div
-              class="c5 "
+              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
             >
               <label
                 class="c6"
@@ -879,7 +879,7 @@ exports[`DataSort renders 1`] = `
                 Sort direction
               </label>
               <div
-                class="c16 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c16 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c17"
@@ -890,7 +890,7 @@ exports[`DataSort renders 1`] = `
                     class="c18"
                   >
                     <div
-                      class="c19 "
+                      class="c19 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
                     >
                       <input
                         class="c20"
@@ -900,7 +900,7 @@ exports[`DataSort renders 1`] = `
                         value="asc"
                       />
                       <div
-                        class="c21 "
+                        class="c21 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
                       />
                     </div>
                     <span
@@ -916,7 +916,7 @@ exports[`DataSort renders 1`] = `
                     class="c18"
                   >
                     <div
-                      class="c19 "
+                      class="c19 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
                     >
                       <input
                         class="c20"
@@ -926,7 +926,7 @@ exports[`DataSort renders 1`] = `
                         value="desc"
                       />
                       <div
-                        class="c21 "
+                        class="c21 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
                       />
                     </div>
                     <span
@@ -1393,7 +1393,7 @@ exports[`DataSort sort when data array is empty 1`] = `
       class="c2"
     >
       <div
-        class="c3 "
+        class="c3 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <label
           class="c4"
@@ -1402,13 +1402,13 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort by
         </label>
         <div
-          class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
+          class="c5 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <button
             aria-expanded="false"
             aria-haspopup="listbox"
             aria-label="Open Drop"
-            class="c6 "
+            class="c6 StyledSelect__StyledSelectDropButton-sc-znp66n-5 eUyixX"
             id="test-data--sort-property"
             type="button"
           >
@@ -1423,7 +1423,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                 >
                   <input
                     autocomplete="off"
-                    class="c10 c11"
+                    class="c10 c11 StyledSelect__SelectTextInput-sc-znp66n-4 c11"
                     id="test-data--sort-property__input"
                     name="_sort.property"
                     readonly=""
@@ -1455,7 +1455,7 @@ exports[`DataSort sort when data array is empty 1`] = `
         </div>
       </div>
       <div
-        class="c3 "
+        class="c3 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
       >
         <label
           class="c4"
@@ -1464,7 +1464,7 @@ exports[`DataSort sort when data array is empty 1`] = `
           Sort direction
         </label>
         <div
-          class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
+          class="c14 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
         >
           <div
             class="c15"
@@ -1475,7 +1475,7 @@ exports[`DataSort sort when data array is empty 1`] = `
               class="c16"
             >
               <div
-                class="c17 "
+                class="c17 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
               >
                 <input
                   class="c18"
@@ -1485,7 +1485,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                   value="asc"
                 />
                 <div
-                  class="c19 "
+                  class="c19 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
                 />
               </div>
               <span
@@ -1501,7 +1501,7 @@ exports[`DataSort sort when data array is empty 1`] = `
               class="c16"
             >
               <div
-                class="c17 "
+                class="c17 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
               >
                 <input
                   class="c18"
@@ -1511,7 +1511,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                   value="desc"
                 />
                 <div
-                  class="c19 "
+                  class="c19 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
                 />
               </div>
               <span

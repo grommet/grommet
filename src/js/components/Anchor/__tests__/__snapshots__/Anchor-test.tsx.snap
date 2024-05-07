@@ -1762,7 +1762,7 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2"
+    class="c1 c2 StyledAnchor-sc-1rp7lwl-0 c2"
     href="#"
     tabindex="0"
   />

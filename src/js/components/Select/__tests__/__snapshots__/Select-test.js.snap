@@ -224,7 +224,7 @@ exports[`Select 0 value 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c0 c1"
+    class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
     id="test-select"
     type="button"
   >
@@ -239,7 +239,7 @@ exports[`Select 0 value 1`] = `
         >
           <input
             autocomplete="off"
-            class="c5 c6"
+            class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -578,14 +578,14 @@ exports[`Select Clear option renders - bottom 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -597,7 +597,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="0"
         type="button"
@@ -616,7 +616,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c10"
+        class="c9 c10 StyledSelect__SelectOption-sc-znp66n-3 c10"
         role="option"
         tabindex="-1"
         type="button"
@@ -637,7 +637,7 @@ exports[`Select Clear option renders - bottom 1`] = `
     </div>
     <button
       aria-label="Clear selection. Or, press shift tab to move to select options"
-      class="c12 c13"
+      class="c12 c13 SelectContainer__StyledButton-sc-1wi0ul8-0 c13"
       type="button"
     >
       <div
@@ -856,14 +856,14 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -875,7 +875,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -894,7 +894,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -1111,14 +1111,14 @@ exports[`Select Clear option renders custom label 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -1130,7 +1130,7 @@ exports[`Select Clear option renders custom label 1`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -1149,7 +1149,7 @@ exports[`Select Clear option renders custom label 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -1488,19 +1488,19 @@ exports[`Select Clear option renders- top 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <button
       aria-label="Clear selection. Or, press down arrow to move to select options"
-      class="c4 c5"
+      class="c4 c5 SelectContainer__StyledButton-sc-1wi0ul8-0 c5"
       type="button"
     >
       <div
@@ -1522,7 +1522,7 @@ exports[`Select Clear option renders- top 1`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="c9 c10"
+        class="c9 c10 StyledSelect__SelectOption-sc-znp66n-3 c10"
         role="option"
         tabindex="0"
         type="button"
@@ -1541,7 +1541,7 @@ exports[`Select Clear option renders- top 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c13 c14"
+        class="c13 c14 StyledSelect__SelectOption-sc-znp66n-3 c14"
         role="option"
         tabindex="-1"
         type="button"
@@ -1826,7 +1826,7 @@ exports[`Select Search timeout 1`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     data-g-tabindex="none"
     id="test-select"
     tabindex="-1"
@@ -1843,7 +1843,7 @@ exports[`Select Search timeout 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             data-g-tabindex="-1"
             id="test-select__input"
             placeholder="test select"
@@ -2205,7 +2205,7 @@ exports[`Select applies custom global.hover theme to options 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="applies-custom-hover-style-id"
     type="button"
   >
@@ -2220,7 +2220,7 @@ exports[`Select applies custom global.hover theme to options 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             data-testid="applies-custom-hover-style"
             id="applies-custom-hover-style-id__input"
             placeholder="Select..."
@@ -2353,7 +2353,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   aria-posinset="2"
   aria-selected="false"
   aria-setsize="3"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__SelectOption-sc-znp66n-3 c1"
   role="option"
   tabindex="-1"
   type="button"
@@ -2593,7 +2593,7 @@ exports[`Select basic 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="Select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -2609,7 +2609,7 @@ exports[`Select basic 1`] = `
         <input
           aria-label="Select"
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           readonly=""
           tabindex="-1"
@@ -2862,7 +2862,7 @@ exports[`Select complex options and children 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -2877,7 +2877,7 @@ exports[`Select complex options and children 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2913,7 +2913,7 @@ exports[`Select complex options and children 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
   id="test-select"
   type="button"
 >
@@ -2928,7 +2928,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3113,14 +3113,14 @@ exports[`Select complex options and children 3`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -3132,7 +3132,7 @@ exports[`Select complex options and children 3`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -3145,7 +3145,7 @@ exports[`Select complex options and children 3`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -3436,7 +3436,7 @@ exports[`Select dark 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Select"
-      class="c2 c3"
+      class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
       type="button"
     >
       <div
@@ -3450,7 +3450,7 @@ exports[`Select dark 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               placeholder="Select"
               readonly=""
               tabindex="-1"
@@ -3718,7 +3718,7 @@ exports[`Select default value 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -3733,7 +3733,7 @@ exports[`Select default value 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -4072,19 +4072,19 @@ exports[`Select default value clear 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <button
       aria-label="Clear selection. Or, press down arrow to move to select options"
-      class="c4 c5"
+      class="c4 c5 SelectContainer__StyledButton-sc-1wi0ul8-0 c5"
       type="button"
     >
       <div
@@ -4106,7 +4106,7 @@ exports[`Select default value clear 1`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c10"
+        class="c9 c10 StyledSelect__SelectOption-sc-znp66n-3 c10"
         role="option"
         tabindex="-1"
         type="button"
@@ -4125,7 +4125,7 @@ exports[`Select default value clear 1`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="c13 c14"
+        class="c13 c14 StyledSelect__SelectOption-sc-znp66n-3 c14"
         role="option"
         tabindex="0"
         type="button"
@@ -4393,7 +4393,7 @@ exports[`Select default value object options 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: 2"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -4408,7 +4408,7 @@ exports[`Select default value object options 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -4665,7 +4665,7 @@ exports[`Select disabled 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   disabled=""
   id="test-select"
   type="button"
@@ -4681,7 +4681,7 @@ exports[`Select disabled 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4717,7 +4717,7 @@ exports[`Select disabled 2`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dDqEVs StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 dDqEVs StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
   disabled=""
   id="test-select"
   type="button"
@@ -4733,7 +4733,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY StyledSelect__SelectTextInput-sc-znp66n-4 XZRKY"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5000,7 +5000,7 @@ exports[`Select disabled key 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -5015,7 +5015,7 @@ exports[`Select disabled key 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -5278,14 +5278,14 @@ exports[`Select disabled key 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -5298,7 +5298,7 @@ exports[`Select disabled key 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         disabled=""
         role="option"
         tabindex="-1"
@@ -5318,7 +5318,7 @@ exports[`Select disabled key 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c10"
+        class="c9 c10 StyledSelect__SelectOption-sc-znp66n-3 c10"
         role="option"
         tabindex="-1"
         type="button"
@@ -5581,14 +5581,14 @@ exports[`Select disabled option value 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -5601,7 +5601,7 @@ exports[`Select disabled option value 1`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         disabled=""
         role="option"
         tabindex="-1"
@@ -5621,7 +5621,7 @@ exports[`Select disabled option value 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c10"
+        class="c9 c10 StyledSelect__SelectOption-sc-znp66n-3 c10"
         role="option"
         tabindex="-1"
         type="button"
@@ -5995,7 +5995,7 @@ exports[`Select keyboard navigation timeout 1`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     data-g-tabindex="none"
     id="test-select"
     tabindex="-1"
@@ -6012,7 +6012,7 @@ exports[`Select keyboard navigation timeout 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             data-g-tabindex="-1"
             id="test-select__input"
             placeholder="test select"
@@ -6230,14 +6230,14 @@ exports[`Select large drop container height 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -6249,7 +6249,7 @@ exports[`Select large drop container height 1`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -6268,7 +6268,7 @@ exports[`Select large drop container height 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -6476,14 +6476,14 @@ exports[`Select medium drop container height 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -6495,7 +6495,7 @@ exports[`Select medium drop container height 1`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -6514,7 +6514,7 @@ exports[`Select medium drop container height 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -6774,7 +6774,7 @@ exports[`Select modifies select control style on open 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-open-id"
     type="button"
   >
@@ -6789,7 +6789,7 @@ exports[`Select modifies select control style on open 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             data-testid="test-select-style-open"
             id="test-open-id__input"
             placeholder="Select..."
@@ -7046,7 +7046,7 @@ exports[`Select null value 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c0 c1"
+    class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
     id="test-select"
     type="button"
   >
@@ -7061,7 +7061,7 @@ exports[`Select null value 1`] = `
         >
           <input
             autocomplete="off"
-            class="c5 c6"
+            class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -7330,7 +7330,7 @@ exports[`Select onChange with valueKey object 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -7345,7 +7345,7 @@ exports[`Select onChange with valueKey object 1`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -7563,14 +7563,14 @@ exports[`Select onChange with valueKey object 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -7582,7 +7582,7 @@ exports[`Select onChange with valueKey object 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -7601,7 +7601,7 @@ exports[`Select onChange with valueKey object 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -7882,7 +7882,7 @@ exports[`Select onChange with valueKey object 4`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select; Selected: 1"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -7897,7 +7897,7 @@ exports[`Select onChange with valueKey object 4`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -8166,7 +8166,7 @@ exports[`Select onChange with valueKey string 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -8181,7 +8181,7 @@ exports[`Select onChange with valueKey string 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -8398,14 +8398,14 @@ exports[`Select onChange with valueKey string 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -8417,7 +8417,7 @@ exports[`Select onChange with valueKey string 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -8436,7 +8436,7 @@ exports[`Select onChange with valueKey string 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -8717,7 +8717,7 @@ exports[`Select onChange with valueKey string 4`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select; Selected: [object Object]"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -8732,7 +8732,7 @@ exports[`Select onChange with valueKey string 4`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -8951,7 +8951,7 @@ exports[`Select onChange with valueLabel 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="Open Drop"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -9179,14 +9179,14 @@ exports[`Select onChange with valueLabel 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -9198,7 +9198,7 @@ exports[`Select onChange with valueLabel 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -9217,7 +9217,7 @@ exports[`Select onChange with valueLabel 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -9486,7 +9486,7 @@ exports[`Select onChange without labelKey 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -9501,7 +9501,7 @@ exports[`Select onChange without labelKey 1`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -9719,14 +9719,14 @@ exports[`Select onChange without labelKey 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -9738,7 +9738,7 @@ exports[`Select onChange without labelKey 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -9757,7 +9757,7 @@ exports[`Select onChange without labelKey 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -10038,7 +10038,7 @@ exports[`Select onChange without labelKey 4`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select; Selected: [object Object]"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -10053,7 +10053,7 @@ exports[`Select onChange without labelKey 4`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -10322,7 +10322,7 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -10337,7 +10337,7 @@ exports[`Select onChange without labelKey or valueKey 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -10554,14 +10554,14 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -10573,7 +10573,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -10592,7 +10592,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -10873,7 +10873,7 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select; Selected: [object Object]"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -10888,7 +10888,7 @@ exports[`Select onChange without labelKey or valueKey 4`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -11157,7 +11157,7 @@ exports[`Select onChange without valueKey 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -11172,7 +11172,7 @@ exports[`Select onChange without valueKey 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -11389,14 +11389,14 @@ exports[`Select onChange without valueKey 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -11408,7 +11408,7 @@ exports[`Select onChange without valueKey 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -11427,7 +11427,7 @@ exports[`Select onChange without valueKey 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -11708,7 +11708,7 @@ exports[`Select onChange without valueKey 4`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select; Selected: [object Object]"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -11723,7 +11723,7 @@ exports[`Select onChange without valueKey 4`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -11991,7 +11991,7 @@ exports[`Select prop: onClose 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -12006,7 +12006,7 @@ exports[`Select prop: onClose 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -12275,7 +12275,7 @@ exports[`Select prop: onClose 2`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select"
-      class="c0 c1"
+      class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
       id="test-select"
       type="button"
     >
@@ -12290,7 +12290,7 @@ exports[`Select prop: onClose 2`] = `
           >
             <input
               autocomplete="off"
-              class="c5 c6"
+              class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -12546,7 +12546,7 @@ exports[`Select prop: onOpen 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -12561,7 +12561,7 @@ exports[`Select prop: onOpen 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -12597,7 +12597,7 @@ exports[`Select prop: onOpen 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
   id="test-select"
   type="button"
 >
@@ -12612,7 +12612,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -12828,14 +12828,14 @@ exports[`Select prop: onOpen 3`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -12847,7 +12847,7 @@ exports[`Select prop: onOpen 3`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -12866,7 +12866,7 @@ exports[`Select prop: onOpen 3`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -12908,7 +12908,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+    class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
     role="option"
     tabindex="-1"
     type="button"
@@ -12927,7 +12927,7 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+    class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
     role="option"
     tabindex="-1"
     type="button"
@@ -13171,7 +13171,7 @@ exports[`Select renders custom icon 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="Open Drop"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -13186,7 +13186,7 @@ exports[`Select renders custom icon 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           readonly=""
           tabindex="-1"
@@ -13452,7 +13452,7 @@ exports[`Select renders custom up and down icons 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     type="button"
   >
     <div
@@ -13466,7 +13466,7 @@ exports[`Select renders custom up and down icons 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -13505,7 +13505,7 @@ exports[`Select renders custom up and down icons 2`] = `
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+    class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
     type="button"
   >
     <div
@@ -13519,7 +13519,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+            class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -13823,7 +13823,7 @@ exports[`Select renders default icon 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="Open Drop"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -13838,7 +13838,7 @@ exports[`Select renders default icon 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           readonly=""
           tabindex="-1"
@@ -14202,7 +14202,7 @@ exports[`Select renders styled select options backwards compatible with legacy
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-options-style-id"
     type="button"
   >
@@ -14217,7 +14217,7 @@ exports[`Select renders styled select options backwards compatible with legacy
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             data-testid="test-select-style-options-1"
             id="test-options-style-id__input"
             placeholder="Select..."
@@ -14488,7 +14488,7 @@ exports[`Select renders styled select options combining select.options.box &&
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-options-style-id"
     type="button"
   >
@@ -14503,7 +14503,7 @@ exports[`Select renders styled select options combining select.options.box &&
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             data-testid="test-select-style-options-3"
             id="test-options-style-id__input"
             placeholder="Select..."
@@ -14772,7 +14772,7 @@ exports[`Select renders styled select options using select.options.container 1`]
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-options-style-id"
     type="button"
   >
@@ -14787,7 +14787,7 @@ exports[`Select renders styled select options using select.options.container 1`]
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             data-testid="test-select-style-options-2"
             id="test-options-style-id__input"
             placeholder="Select..."
@@ -14983,7 +14983,7 @@ exports[`Select renders without icon 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="Open Drop"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -14998,7 +14998,7 @@ exports[`Select renders without icon 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           readonly=""
           tabindex="-1"
@@ -15234,7 +15234,7 @@ exports[`Select search 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select; Selected: two"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -15249,7 +15249,7 @@ exports[`Select search 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -15603,14 +15603,14 @@ exports[`Select search 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -15636,7 +15636,7 @@ exports[`Select search 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c8 c9"
+        class="c8 c9 StyledSelect__SelectOption-sc-znp66n-3 c9"
         role="option"
         tabindex="-1"
         type="button"
@@ -15655,7 +15655,7 @@ exports[`Select search 2`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="c12 c13"
+        class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
         role="option"
         tabindex="0"
         type="button"
@@ -15928,7 +15928,7 @@ exports[`Select search and select 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -15943,7 +15943,7 @@ exports[`Select search and select 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -16252,14 +16252,14 @@ exports[`Select search and select 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -16285,7 +16285,7 @@ exports[`Select search and select 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c8 c9"
+        class="c8 c9 StyledSelect__SelectOption-sc-znp66n-3 c9"
         role="option"
         tabindex="-1"
         type="button"
@@ -16304,7 +16304,7 @@ exports[`Select search and select 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c8 c9"
+        class="c8 c9 StyledSelect__SelectOption-sc-znp66n-3 c9"
         role="option"
         tabindex="-1"
         type="button"
@@ -16577,7 +16577,7 @@ exports[`Select select an object with label key specific with keypress 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -16592,7 +16592,7 @@ exports[`Select select an object with label key specific with keypress 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -16846,7 +16846,7 @@ exports[`Select select an option 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -16861,7 +16861,7 @@ exports[`Select select an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -17060,7 +17060,7 @@ exports[`Select select an option with complex options 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="Open Drop; Selected: [object Object]"
-  class="c0 "
+  class="c0 StyledSelect__StyledSelectDropButton-sc-znp66n-5 eUyixX"
   id="test-select"
   type="button"
 >
@@ -17325,7 +17325,7 @@ exports[`Select select an option with enter 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -17340,7 +17340,7 @@ exports[`Select select an option with enter 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -17594,7 +17594,7 @@ exports[`Select select an option with keypress 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -17609,7 +17609,7 @@ exports[`Select select an option with keypress 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -17863,7 +17863,7 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -17878,7 +17878,7 @@ exports[`Select select on multiple keydown always picks first enabled option 1`]
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -18145,7 +18145,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -18160,7 +18160,7 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -18200,7 +18200,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+    class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
     id="test-select"
     type="button"
   >
@@ -18215,7 +18215,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+            class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -18483,7 +18483,7 @@ exports[`Select selected 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -18498,7 +18498,7 @@ exports[`Select selected 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -18766,7 +18766,7 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     type="button"
   >
     <div
@@ -18781,7 +18781,7 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
           <input
             aria-label="test"
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             readonly=""
             tabindex="-1"
             type="text"
@@ -18812,7 +18812,7 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test-select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     type="button"
   >
     <div
@@ -18827,7 +18827,7 @@ exports[`Select should apply a11yTitle or aria-label 1`] = `
           <input
             aria-label="test-select"
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             readonly=""
             tabindex="-1"
             type="text"
@@ -19093,7 +19093,7 @@ exports[`Select should not have accessibility violations 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     type="button"
   >
     <div
@@ -19108,7 +19108,7 @@ exports[`Select should not have accessibility violations 1`] = `
           <input
             aria-label="test"
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             readonly=""
             tabindex="-1"
             type="text"
@@ -19363,7 +19363,7 @@ exports[`Select size 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="Open Drop; Selected: "
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -19378,7 +19378,7 @@ exports[`Select size 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           readonly=""
           tabindex="-1"
@@ -19593,14 +19593,14 @@ exports[`Select small drop container height 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -19612,7 +19612,7 @@ exports[`Select small drop container height 1`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -19631,7 +19631,7 @@ exports[`Select small drop container height 1`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -19843,7 +19843,7 @@ exports[`Select valueLabel with value=0 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Open Drop"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       type="button"
     >
       <div

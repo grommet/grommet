@@ -661,14 +661,14 @@ exports[`Notification multi actions 1`] = `
               message
             </span>
             <a
-              class="c9 c10"
+              class="c9 c10 Notification__NotificationAnchor-sc-1yq09yz-0 c10"
               href="/some-link"
             >
               Renew Subscription
             </a>
              
             <a
-              class="c9 c10"
+              class="c9 c10 Notification__NotificationAnchor-sc-1yq09yz-0 c10"
               href="/link"
             >
               View More

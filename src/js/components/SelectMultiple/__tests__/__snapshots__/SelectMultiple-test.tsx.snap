@@ -254,7 +254,7 @@ exports[`SelectMultiple children 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Open drop. 0 selected"
-      class="c2 c3"
+      class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
       tabindex="0"
       type="button"
     >
@@ -269,7 +269,7 @@ exports[`SelectMultiple children 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               readonly=""
               tabindex="-1"
               type="text"
@@ -553,7 +553,7 @@ exports[`SelectMultiple defaultValue 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Open drop. 1 selected"
-      class="c2 c3"
+      class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
       tabindex="0"
       type="button"
     >
@@ -568,7 +568,7 @@ exports[`SelectMultiple defaultValue 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               readonly=""
               tabindex="-1"
               type="text"
@@ -855,7 +855,7 @@ exports[`SelectMultiple disabled 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="Open drop. 0 selected"
-      class="c2 c3"
+      class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
       disabled=""
       tabindex="0"
       type="button"
@@ -871,7 +871,7 @@ exports[`SelectMultiple disabled 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               readonly=""
               tabindex="-1"
               type="text"
@@ -1183,7 +1183,7 @@ exports[`SelectMultiple keyboard interactions 1`] = `
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="Open drop. 2 selected"
-      class="c2 c3"
+      class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
       tabindex="0"
       type="button"
     >
@@ -1198,7 +1198,7 @@ exports[`SelectMultiple keyboard interactions 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               readonly=""
               tabindex="-1"
               type="text"
@@ -1483,7 +1483,7 @@ exports[`SelectMultiple null value 1`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Open drop. 0 selected"
-        class="c2 c3"
+        class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
         tabindex="0"
         type="button"
       >
@@ -1498,7 +1498,7 @@ exports[`SelectMultiple null value 1`] = `
             >
               <input
                 autocomplete="off"
-                class="c7 c8"
+                class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
                 readonly=""
                 tabindex="-1"
                 type="text"
@@ -1783,7 +1783,7 @@ exports[`SelectMultiple placeholder 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="placeholder text. 0 selected"
-      class="c2 c3"
+      class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
       tabindex="0"
       type="button"
     >
@@ -1798,7 +1798,7 @@ exports[`SelectMultiple placeholder 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               placeholder="placeholder text"
               readonly=""
               tabindex="-1"
@@ -2113,7 +2113,7 @@ exports[`SelectMultiple should display custom messages 1`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Select. 3 selected"
-        class="c2 c3"
+        class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
         data-g-tabindex="0"
         tabindex="-1"
         type="button"
@@ -2129,7 +2129,7 @@ exports[`SelectMultiple should display custom messages 1`] = `
             >
               <input
                 autocomplete="off"
-                class="c7 c8"
+                class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
                 data-g-tabindex="-1"
                 placeholder="Select"
                 readonly=""
@@ -2446,7 +2446,7 @@ exports[`SelectMultiple should display custom messages 2`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Select. 0 selected"
-        class="c2 c3"
+        class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
         data-g-tabindex="0"
         tabindex="-1"
         type="button"
@@ -2462,7 +2462,7 @@ exports[`SelectMultiple should display custom messages 2`] = `
             >
               <input
                 autocomplete="off"
-                class="c7 c8"
+                class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
                 data-g-tabindex="-1"
                 placeholder="Select"
                 readonly=""
@@ -2779,7 +2779,7 @@ exports[`SelectMultiple should display custom messages 3`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Select. 10 selected"
-        class="c2 c3"
+        class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
         data-g-tabindex="0"
         tabindex="-1"
         type="button"
@@ -2795,7 +2795,7 @@ exports[`SelectMultiple should display custom messages 3`] = `
             >
               <input
                 autocomplete="off"
-                class="c7 c8"
+                class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
                 data-g-tabindex="-1"
                 placeholder="Select"
                 readonly=""
@@ -3082,7 +3082,7 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test. 0 selected"
-      class="c2 c3"
+      class="c2 c3 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c3"
       tabindex="0"
       type="button"
     >
@@ -3098,7 +3098,7 @@ exports[`SelectMultiple should not have accessibility violations 1`] = `
             <input
               aria-label="test"
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               readonly=""
               tabindex="-1"
               type="text"
@@ -3606,7 +3606,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2"
+    class="c1 c2 SelectMultiple__StyledSelectBox-sc-18zwyth-0 c2"
   >
     <div
       class="c3"
@@ -3626,7 +3626,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               placeholder="3 selected of 3"
               readonly=""
               tabindex="-1"
@@ -3669,7 +3669,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
           aria-posinset="1"
           aria-selected="true"
           aria-setsize="3"
-          class="c12 c13"
+          class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
           id="selected-0"
           role="option"
           tabindex="0"
@@ -3679,7 +3679,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
             class="c14"
           >
             <div
-              class="c15 c16"
+              class="c15 c16 StyledCheckBox-sc-1dbk5ju-6 c16"
             >
               <input
                 checked=""
@@ -3688,7 +3688,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
                 type="checkbox"
               />
               <div
-                class="c18 "
+                class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
               >
                 <svg
                   class="c19"
@@ -3714,7 +3714,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
           aria-posinset="2"
           aria-selected="true"
           aria-setsize="3"
-          class="c12 c13"
+          class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
           id="selected-1"
           role="option"
           tabindex="0"
@@ -3724,7 +3724,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
             class="c14"
           >
             <div
-              class="c15 c16"
+              class="c15 c16 StyledCheckBox-sc-1dbk5ju-6 c16"
             >
               <input
                 checked=""
@@ -3733,7 +3733,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
                 type="checkbox"
               />
               <div
-                class="c18 "
+                class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
               >
                 <svg
                   class="c19"
@@ -3759,7 +3759,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
           aria-posinset="3"
           aria-selected="true"
           aria-setsize="3"
-          class="c12 c13"
+          class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
           id="selected-2"
           role="option"
           tabindex="0"
@@ -3769,7 +3769,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
             class="c14"
           >
             <div
-              class="c15 c16"
+              class="c15 c16 StyledCheckBox-sc-1dbk5ju-6 c16"
             >
               <input
                 checked=""
@@ -3778,7 +3778,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
                 type="checkbox"
               />
               <div
-                class="c18 "
+                class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
               >
                 <svg
                   class="c19"
@@ -4166,7 +4166,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2"
+    class="c1 c2 SelectMultiple__StyledSelectBox-sc-18zwyth-0 c2"
   >
     <div
       class="c3"
@@ -4186,7 +4186,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               placeholder="3 selected of 3"
               readonly=""
               tabindex="-1"
@@ -4229,7 +4229,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
           aria-posinset="1"
           aria-selected="true"
           aria-setsize="3"
-          class="c12 c13"
+          class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
           id="selected-0"
           role="option"
           tabindex="0"
@@ -4246,7 +4246,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
           aria-posinset="2"
           aria-selected="true"
           aria-setsize="3"
-          class="c12 c13"
+          class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
           id="selected-1"
           role="option"
           tabindex="0"
@@ -4263,7 +4263,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
           aria-posinset="3"
           aria-selected="true"
           aria-setsize="3"
-          class="c12 c13"
+          class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
           id="selected-2"
           role="option"
           tabindex="0"
@@ -4286,7 +4286,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bhFbZt SelectMultiple__StyledSelectBox-sc-18zwyth-0 eNBfPE"
+    class="StyledBox-sc-13pk1d4-0 bhFbZt SelectMultiple__StyledSelectBox-sc-18zwyth-0 eNBfPE SelectMultiple__StyledSelectBox-sc-18zwyth-0 eNBfPE"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 iyIkeR"
@@ -4388,7 +4388,7 @@ exports[`SelectMultiple showSelectionInline with children 2`] = `
           >
             <input
               autocomplete="off"
-              class="c1 c2"
+              class="c1 c2 StyledSelect__SelectTextInput-sc-znp66n-4 c2"
               placeholder="Select"
               readonly=""
               tabindex="-1"
@@ -4869,7 +4869,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2"
+    class="c1 c2 SelectMultiple__StyledSelectBox-sc-18zwyth-0 c2"
   >
     <div
       class="c3"
@@ -4889,7 +4889,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               placeholder="1 selected of 3"
               readonly=""
               tabindex="-1"
@@ -4933,7 +4933,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
           aria-posinset="1"
           aria-selected="true"
           aria-setsize="1"
-          class="c12 c13"
+          class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
           id="selected-one"
           role="option"
           tabindex="0"
@@ -4944,7 +4944,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
             disabled=""
           >
             <div
-              class="c15 c16"
+              class="c15 c16 StyledCheckBox-sc-1dbk5ju-6 c16"
               disabled=""
             >
               <input
@@ -4955,7 +4955,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
                 type="checkbox"
               />
               <div
-                class="c18 "
+                class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
                 disabled=""
               >
                 <svg
@@ -5442,7 +5442,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2"
+    class="c1 c2 SelectMultiple__StyledSelectBox-sc-18zwyth-0 c2"
   >
     <div
       class="c3"
@@ -5462,7 +5462,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
           >
             <input
               autocomplete="off"
-              class="c7 c8"
+              class="c7 c8 StyledSelect__SelectTextInput-sc-znp66n-4 c8"
               placeholder="1 selected of 2"
               readonly=""
               tabindex="-1"
@@ -5505,7 +5505,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
           aria-posinset="1"
           aria-selected="true"
           aria-setsize="1"
-          class="c12 c13"
+          class="c12 c13 StyledSelect__SelectOption-sc-znp66n-3 c13"
           id="selected-one"
           role="option"
           tabindex="0"
@@ -5515,7 +5515,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
             class="c14"
           >
             <div
-              class="c15 c16"
+              class="c15 c16 StyledCheckBox-sc-1dbk5ju-6 c16"
             >
               <input
                 checked=""
@@ -5524,7 +5524,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
                 type="checkbox"
               />
               <div
-                class="c18 "
+                class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
               >
                 <svg
                   class="c19"
@@ -5803,7 +5803,7 @@ exports[`SelectMultiple with portal disabled option 1`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open drop. 2 selected"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select__drop"
   tabindex="0"
   type="button"
@@ -5819,7 +5819,7 @@ exports[`SelectMultiple with portal disabled option 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__drop__input"
           readonly=""
           tabindex="-1"
@@ -6152,7 +6152,7 @@ exports[`SelectMultiple with portal empty options 1`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open drop. 0 selected"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select__drop"
   tabindex="0"
   type="button"
@@ -6168,7 +6168,7 @@ exports[`SelectMultiple with portal empty options 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__drop__input"
           readonly=""
           tabindex="-1"
@@ -6513,7 +6513,7 @@ exports[`SelectMultiple with portal limit 1`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open drop. 2 selected"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select__drop"
   tabindex="0"
   type="button"
@@ -6529,7 +6529,7 @@ exports[`SelectMultiple with portal limit 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__drop__input"
           readonly=""
           tabindex="-1"
@@ -6874,7 +6874,7 @@ exports[`SelectMultiple with portal select all and clear 1`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open drop. 4 selected"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select__drop"
   tabindex="0"
   type="button"
@@ -6890,7 +6890,7 @@ exports[`SelectMultiple with portal select all and clear 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__drop__input"
           readonly=""
           tabindex="-1"
@@ -6988,7 +6988,7 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="Open drop. 0 selected"
-  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
   id="test-select__drop"
   tabindex="0"
   type="button"
@@ -7004,7 +7004,7 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           id="test-select__drop__input"
           readonly=""
           tabindex="-1"

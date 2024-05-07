@@ -471,16 +471,16 @@ exports[`Data controlled search 1`] = `
       4 results of undefined items
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -490,13 +490,13 @@ exports[`Data controlled search 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -511,10 +511,10 @@ exports[`Data controlled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -529,10 +529,10 @@ exports[`Data controlled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -547,10 +547,10 @@ exports[`Data controlled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -648,16 +648,16 @@ exports[`Data controlled search 2`] = `
       4 results of undefined items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA"
+      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA StyledDataTable-sc-xrlyjm-0 fbgpuA"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYqncX StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYqncX StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -667,13 +667,13 @@ exports[`Data controlled search 2`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -688,10 +688,10 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -706,10 +706,10 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -724,10 +724,10 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1223,16 +1223,16 @@ exports[`Data messages 1`] = `
       4 things
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -1240,7 +1240,7 @@ exports[`Data messages 1`] = `
             />
           </th>
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -1250,13 +1250,13 @@ exports[`Data messages 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1270,7 +1270,7 @@ exports[`Data messages 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -1284,10 +1284,10 @@ exports[`Data messages 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1301,7 +1301,7 @@ exports[`Data messages 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -1315,10 +1315,10 @@ exports[`Data messages 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1332,7 +1332,7 @@ exports[`Data messages 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -1340,10 +1340,10 @@ exports[`Data messages 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1357,7 +1357,7 @@ exports[`Data messages 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -1663,16 +1663,16 @@ exports[`Data onView 1`] = `
       </div>
     </form>
     <table
-      class="c7 c8"
+      class="c7 c8 StyledDataTable-sc-xrlyjm-0 c8"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c9 "
+            class="c9 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -1680,7 +1680,7 @@ exports[`Data onView 1`] = `
             />
           </th>
           <th
-            class="c9 "
+            class="c9 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -1688,7 +1688,7 @@ exports[`Data onView 1`] = `
             />
           </th>
           <th
-            class="c9 "
+            class="c9 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -1696,7 +1696,7 @@ exports[`Data onView 1`] = `
             />
           </th>
           <th
-            class="c9 "
+            class="c9 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -1704,7 +1704,7 @@ exports[`Data onView 1`] = `
             />
           </th>
           <th
-            class="c9 "
+            class="c9 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -1714,13 +1714,13 @@ exports[`Data onView 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c11"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1734,14 +1734,14 @@ exports[`Data onView 1`] = `
             </div>
           </th>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
@@ -1754,14 +1754,14 @@ exports[`Data onView 1`] = `
             </div>
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
@@ -1769,10 +1769,10 @@ exports[`Data onView 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1786,14 +1786,14 @@ exports[`Data onView 1`] = `
             </div>
           </th>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
@@ -1806,14 +1806,14 @@ exports[`Data onView 1`] = `
             </div>
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
@@ -1821,10 +1821,10 @@ exports[`Data onView 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1838,28 +1838,28 @@ exports[`Data onView 1`] = `
             </div>
           </th>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
@@ -1867,10 +1867,10 @@ exports[`Data onView 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -1884,28 +1884,28 @@ exports[`Data onView 1`] = `
             </div>
           </th>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
             />
           </td>
           <td
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c13"
@@ -2312,16 +2312,16 @@ exports[`Data pagination 1`] = `
     id="data"
   >
     <table
-      class="c2 c3"
+      class="c2 c3 StyledDataTable-sc-xrlyjm-0 c3"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c4 "
+            class="c4 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -2331,13 +2331,13 @@ exports[`Data pagination 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c6"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -2352,10 +2352,10 @@ exports[`Data pagination 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -2372,7 +2372,7 @@ exports[`Data pagination 1`] = `
       </tbody>
     </table>
     <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -2386,7 +2386,7 @@ exports[`Data pagination 1`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="c12 c13"
+              class="c12 c13 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c13"
               type="button"
             >
               <svg
@@ -2411,7 +2411,7 @@ exports[`Data pagination 1`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="c16 c13"
+              class="c16 c13 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c13"
               type="button"
             >
               1
@@ -2425,7 +2425,7 @@ exports[`Data pagination 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c12 c13"
+              class="c12 c13 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c13"
               type="button"
             >
               <svg
@@ -2843,16 +2843,16 @@ exports[`Data pagination step 1`] = `
     id="data"
   >
     <table
-      class="c2 c3"
+      class="c2 c3 StyledDataTable-sc-xrlyjm-0 c3"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c4 "
+            class="c4 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -2862,13 +2862,13 @@ exports[`Data pagination step 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c6"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -2883,10 +2883,10 @@ exports[`Data pagination step 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -2903,7 +2903,7 @@ exports[`Data pagination step 1`] = `
       </tbody>
     </table>
     <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -2917,7 +2917,7 @@ exports[`Data pagination step 1`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="c12 c13"
+              class="c12 c13 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c13"
               type="button"
             >
               <svg
@@ -2942,7 +2942,7 @@ exports[`Data pagination step 1`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="c16 c13"
+              class="c16 c13 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c13"
               type="button"
             >
               1
@@ -2956,7 +2956,7 @@ exports[`Data pagination step 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c12 c13"
+              class="c12 c13 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c13"
               type="button"
             >
               <svg
@@ -3457,16 +3457,16 @@ exports[`Data properties when property is an array 1`] = `
         4 items
       </span>
       <table
-        class="c12 c13"
+        class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
       >
         <thead
-          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+          class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
         >
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
           >
             <th
-              class="c14 "
+              class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
               scope="col"
             >
               <div
@@ -3480,7 +3480,7 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </th>
             <th
-              class="c14 "
+              class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
               scope="col"
             >
               <div
@@ -3494,7 +3494,7 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </th>
             <th
-              class="c14 "
+              class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
               scope="col"
             >
               <div
@@ -3510,13 +3510,13 @@ exports[`Data properties when property is an array 1`] = `
           </tr>
         </thead>
         <tbody
-          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+          class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c17"
         >
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
           >
             <th
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
               scope="row"
             >
               <div
@@ -3530,7 +3530,7 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </th>
             <td
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             >
               <div
                 class="c4"
@@ -3543,7 +3543,7 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </td>
             <td
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             >
               <div
                 class="c4"
@@ -3557,10 +3557,10 @@ exports[`Data properties when property is an array 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
           >
             <th
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
               scope="row"
             >
               <div
@@ -3574,7 +3574,7 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </th>
             <td
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             >
               <div
                 class="c4"
@@ -3587,7 +3587,7 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </td>
             <td
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             >
               <div
                 class="c4"
@@ -3601,10 +3601,10 @@ exports[`Data properties when property is an array 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
           >
             <th
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
               scope="row"
             >
               <div
@@ -3618,14 +3618,14 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </th>
             <td
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             >
               <div
                 class="c4"
               />
             </td>
             <td
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             >
               <div
                 class="c4"
@@ -3639,10 +3639,10 @@ exports[`Data properties when property is an array 1`] = `
             </td>
           </tr>
           <tr
-            class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+            class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
           >
             <th
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
               scope="row"
             >
               <div
@@ -3656,14 +3656,14 @@ exports[`Data properties when property is an array 1`] = `
               </div>
             </th>
             <td
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             >
               <div
                 class="c4"
               />
             </td>
             <td
-              class="c18 "
+              class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             >
               <div
                 class="c4"
@@ -4393,16 +4393,16 @@ exports[`Data toolbar 1`] = `
       4 items
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -4410,7 +4410,7 @@ exports[`Data toolbar 1`] = `
             />
           </th>
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -4420,13 +4420,13 @@ exports[`Data toolbar 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -4440,7 +4440,7 @@ exports[`Data toolbar 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -4454,10 +4454,10 @@ exports[`Data toolbar 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -4471,7 +4471,7 @@ exports[`Data toolbar 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -4485,10 +4485,10 @@ exports[`Data toolbar 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -4502,7 +4502,7 @@ exports[`Data toolbar 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -4510,10 +4510,10 @@ exports[`Data toolbar 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -4527,7 +4527,7 @@ exports[`Data toolbar 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -4892,16 +4892,16 @@ exports[`Data toolbar filters 1`] = `
       4 items
     </span>
     <table
-      class="c8 c9"
+      class="c8 c9 StyledDataTable-sc-xrlyjm-0 c9"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c10 "
+            class="c10 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -4911,13 +4911,13 @@ exports[`Data toolbar filters 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c12"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c13 "
+            class="c13 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -4932,10 +4932,10 @@ exports[`Data toolbar filters 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c13 "
+            class="c13 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -4950,10 +4950,10 @@ exports[`Data toolbar filters 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c13 "
+            class="c13 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -4968,10 +4968,10 @@ exports[`Data toolbar filters 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c13 "
+            class="c13 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -5362,16 +5362,16 @@ exports[`Data toolbar search 1`] = `
       4 items
     </span>
     <table
-      class="c10 c11"
+      class="c10 c11 StyledDataTable-sc-xrlyjm-0 c11"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c12 "
+            class="c12 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -5381,13 +5381,13 @@ exports[`Data toolbar search 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c14"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c15 "
+            class="c15 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -5402,10 +5402,10 @@ exports[`Data toolbar search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c15 "
+            class="c15 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -5420,10 +5420,10 @@ exports[`Data toolbar search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c15 "
+            class="c15 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -5438,10 +5438,10 @@ exports[`Data toolbar search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c15 "
+            class="c15 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -5932,16 +5932,16 @@ exports[`Data uncontrolled search 1`] = `
       4 items
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -5951,13 +5951,13 @@ exports[`Data uncontrolled search 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -5972,10 +5972,10 @@ exports[`Data uncontrolled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -5990,10 +5990,10 @@ exports[`Data uncontrolled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -6008,10 +6008,10 @@ exports[`Data uncontrolled search 1`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -6109,16 +6109,16 @@ exports[`Data uncontrolled search 2`] = `
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA"
+      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA StyledDataTable-sc-xrlyjm-0 fbgpuA"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYqncX StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYqncX StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -6128,13 +6128,13 @@ exports[`Data uncontrolled search 2`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 eYGrCx StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -7071,16 +7071,16 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
       4 items
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -7096,13 +7096,13 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c17 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c17"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c18 "
+            class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -7117,10 +7117,10 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c18 "
+            class="c18 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -7137,7 +7137,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
       </tbody>
     </table>
     <div
-      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c1 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -7151,7 +7151,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
           >
             <button
               aria-label="Go to previous page"
-              class="c22 c23"
+              class="c22 c23 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c23"
               type="button"
             >
               <svg
@@ -7176,7 +7176,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
           >
             <button
               aria-label="Go to page 1"
-              class="c26 c23"
+              class="c26 c23 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c23"
               type="button"
             >
               1
@@ -7191,7 +7191,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="c27 c23"
+              class="c27 c23 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c23"
               type="button"
             >
               2
@@ -7206,7 +7206,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c28 c23"
+              class="c28 c23 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c23"
               disabled=""
               type="button"
             >
@@ -7309,16 +7309,16 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA"
+      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA StyledDataTable-sc-xrlyjm-0 fbgpuA"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 loqioV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 loqioV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -7334,7 +7334,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
       >
         .c1 {
   display: -webkit-box;
@@ -7400,10 +7400,10 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
 }
 
 <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c0 "
+            class="c0 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -7420,7 +7420,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 fHIHJf Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 fHIHJf Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -7435,7 +7435,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 ispbjs StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 ispbjs StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               disabled=""
               type="button"
             >
@@ -7462,7 +7462,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 hfXAPS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 hfXAPS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               1
@@ -7477,7 +7477,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 ispbjs StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 ispbjs StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               disabled=""
               type="button"
             >
@@ -7642,16 +7642,16 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA"
+      class="StyledTable-sc-1m3u5g-6 gBjnUC StyledDataTable-sc-xrlyjm-0 fbgpuA StyledDataTable-sc-xrlyjm-0 fbgpuA"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 loqioV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 loqioV StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -7667,13 +7667,13 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 jwnbCl"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hptaVT StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 hptaVT StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -7751,10 +7751,10 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
 }
 
 <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c0 "
+            class="c0 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -7771,7 +7771,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 fHIHJf Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 fHIHJf Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -7786,7 +7786,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 ispbjs StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 ispbjs StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               disabled=""
               type="button"
             >
@@ -7813,7 +7813,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 hfXAPS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 hfXAPS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               1
@@ -7827,7 +7827,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           >
             <button
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               2
@@ -8057,7 +8057,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           >
             <button
               aria-label="Go to next page"
-              class="c1 c2"
+              class="c1 c2 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c2"
               type="button"
             >
               <svg
@@ -8208,16 +8208,16 @@ exports[`Data view 1`] = `
     id="data"
   >
     <table
-      class="c2 c3"
+      class="c2 c3 StyledDataTable-sc-xrlyjm-0 c3"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c4 "
+            class="c4 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -8225,7 +8225,7 @@ exports[`Data view 1`] = `
             />
           </th>
           <th
-            class="c4 "
+            class="c4 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -8235,13 +8235,13 @@ exports[`Data view 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c6 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c6"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -8255,7 +8255,7 @@ exports[`Data view 1`] = `
             </div>
           </th>
           <td
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c8"
@@ -8269,10 +8269,10 @@ exports[`Data view 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -8286,7 +8286,7 @@ exports[`Data view 1`] = `
             </div>
           </th>
           <td
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c8"
@@ -8300,10 +8300,10 @@ exports[`Data view 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -8317,7 +8317,7 @@ exports[`Data view 1`] = `
             </div>
           </th>
           <td
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c8"
@@ -8325,10 +8325,10 @@ exports[`Data view 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -8342,7 +8342,7 @@ exports[`Data view 1`] = `
             </div>
           </th>
           <td
-            class="c7 "
+            class="c7 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c8"
@@ -8831,16 +8831,16 @@ exports[`Data view all 1`] = `
       1 result of 4 items
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -8848,7 +8848,7 @@ exports[`Data view all 1`] = `
             />
           </th>
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -8858,13 +8858,13 @@ exports[`Data view all 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -8878,7 +8878,7 @@ exports[`Data view all 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -9373,16 +9373,16 @@ exports[`Data view property option 1`] = `
       1 result of 4 items
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -9390,7 +9390,7 @@ exports[`Data view property option 1`] = `
             />
           </th>
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -9400,13 +9400,13 @@ exports[`Data view property option 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -9420,7 +9420,7 @@ exports[`Data view property option 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -10066,7 +10066,7 @@ exports[`Data view property range 1`] = `
                 style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
               >
                 <div
-                  class="c14 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                  class="c14 Badge__StyledBadgeContainer-sc-1es4ws1-0 Badge__StyledBadgeContainer-sc-1es4ws1-0"
                   style="min-height: 24px; min-width: 24px;"
                 >
                   <span
@@ -10097,16 +10097,16 @@ exports[`Data view property range 1`] = `
       1 result of 4 items
     </span>
     <table
-      class="c19 c20"
+      class="c19 c20 StyledDataTable-sc-xrlyjm-0 c20"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c21 "
+            class="c21 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -10114,7 +10114,7 @@ exports[`Data view property range 1`] = `
             />
           </th>
           <th
-            class="c21 "
+            class="c21 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -10122,7 +10122,7 @@ exports[`Data view property range 1`] = `
             />
           </th>
           <th
-            class="c21 "
+            class="c21 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -10132,13 +10132,13 @@ exports[`Data view property range 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c23"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c23 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c23"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c24 "
+            class="c24 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -10152,7 +10152,7 @@ exports[`Data view property range 1`] = `
             </div>
           </th>
           <td
-            class="c24 "
+            class="c24 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -10165,7 +10165,7 @@ exports[`Data view property range 1`] = `
             </div>
           </td>
           <td
-            class="c24 "
+            class="c24 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -10660,16 +10660,16 @@ exports[`Data view search 1`] = `
       1 result of 4 items
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -10677,7 +10677,7 @@ exports[`Data view search 1`] = `
             />
           </th>
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -10687,13 +10687,13 @@ exports[`Data view search 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -10707,7 +10707,7 @@ exports[`Data view search 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -11202,16 +11202,16 @@ exports[`Data view sort 1`] = `
       4 items
     </span>
     <table
-      class="c12 c13"
+      class="c12 c13 StyledDataTable-sc-xrlyjm-0 c13"
     >
       <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -11219,7 +11219,7 @@ exports[`Data view sort 1`] = `
             />
           </th>
           <th
-            class="c14 "
+            class="c14 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="col"
           >
             <div
@@ -11229,13 +11229,13 @@ exports[`Data view sort 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16 StyledDataTable__StyledDataTableBody-sc-xrlyjm-3 c16"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -11249,7 +11249,7 @@ exports[`Data view sort 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -11263,10 +11263,10 @@ exports[`Data view sort 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -11280,7 +11280,7 @@ exports[`Data view sort 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -11294,10 +11294,10 @@ exports[`Data view sort 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -11311,7 +11311,7 @@ exports[`Data view sort 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"
@@ -11319,10 +11319,10 @@ exports[`Data view sort 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 eymRHp"
         >
           <th
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
             scope="row"
           >
             <div
@@ -11336,7 +11336,7 @@ exports[`Data view sort 1`] = `
             </div>
           </th>
           <td
-            class="c17 "
+            class="c17 StyledDataTable__StyledDataTableCell-sc-xrlyjm-6 htfSia"
           >
             <div
               class="c4"

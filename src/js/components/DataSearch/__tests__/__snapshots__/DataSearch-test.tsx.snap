@@ -720,7 +720,7 @@ exports[`DataSearch renders 1`] = `
             class="c1"
           >
             <div
-              class="c5 "
+              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
             >
               <label
                 class="c6"
@@ -729,7 +729,7 @@ exports[`DataSearch renders 1`] = `
                 Search
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c8"

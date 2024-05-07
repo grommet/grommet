@@ -265,7 +265,7 @@ exports[`Tag onClick 1`] = `
   class="c0"
 >
   <button
-    class="c1 c2"
+    class="c1 c2 StyledTag__StyledTagButton-sc-cb9fl2-0 c2"
     type="button"
   >
     <div
@@ -504,7 +504,7 @@ exports[`Tag onRemove 1`] = `
       </span>
     </div>
     <button
-      class="c5 c6"
+      class="c5 c6 StyledTag__StyledRemoveButton-sc-cb9fl2-1 c6"
       type="button"
     >
       <svg
@@ -714,7 +714,7 @@ exports[`Tag renders custom remove icon 1`] = `
       </span>
     </div>
     <button
-      class="c5 c6"
+      class="c5 c6 StyledTag__StyledRemoveButton-sc-cb9fl2-1 c6"
       type="button"
     >
       <svg

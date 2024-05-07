@@ -457,14 +457,14 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -702,14 +702,14 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -1024,14 +1024,14 @@ exports[`TextInput close suggestion drop 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -1368,14 +1368,14 @@ exports[`TextInput complex suggestions 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -3199,7 +3199,7 @@ exports[`TextInput read only copy 1`] = `
       />
       <button
         aria-label="Copy to clipboard test"
-        class="c3 c4"
+        class="c3 c4 CopyButton__StyledButton-sc-1bp1m18-0 c4"
         type="button"
       >
         <svg
@@ -4672,14 +4672,14 @@ exports[`TextInput select suggestion 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >

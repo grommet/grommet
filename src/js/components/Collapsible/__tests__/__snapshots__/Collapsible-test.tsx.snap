@@ -42,7 +42,7 @@ exports[`Collapsible onClick open default 1`] = `
 >
   <div
     aria-hidden="false"
-    class="c1 c2"
+    class="c1 c2 Collapsible__AnimatedBox-sc-15kniua-0 c2"
     open=""
   >
     <span
@@ -60,7 +60,7 @@ exports[`Collapsible onClick open default 2`] = `
 >
   <div
     aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 kqmDKi Collapsible__AnimatedBox-sc-15kniua-0 cyvPwx"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi Collapsible__AnimatedBox-sc-15kniua-0 cyvPwx Collapsible__AnimatedBox-sc-15kniua-0 cyvPwx"
     style="max-height: 0px;"
   >
     <span
@@ -114,7 +114,7 @@ exports[`Collapsible open 1`] = `
 >
   <div
     aria-hidden="false"
-    class="c1 c2"
+    class="c1 c2 Collapsible__AnimatedBox-sc-15kniua-0 c2"
     open=""
   >
     <span

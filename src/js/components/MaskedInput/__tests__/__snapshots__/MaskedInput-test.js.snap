@@ -1006,14 +1006,14 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="masked-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 MaskedInput__ContainerBox-sc-af8hzu-0 c3"
   >
     <div
       class="c4"
@@ -1636,14 +1636,14 @@ exports[`MaskedInput mask 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="masked-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 MaskedInput__ContainerBox-sc-af8hzu-0 c3"
   >
     <div
       class="c4"
@@ -2463,14 +2463,14 @@ exports[`MaskedInput option via mouse 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="masked-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 MaskedInput__ContainerBox-sc-af8hzu-0 c3"
   >
     <div
       class="c4"

@@ -183,22 +183,22 @@ exports[`List background array 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
     <li
-      class="c5 c3"
+      class="c5 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       three
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       four
     </li>
@@ -345,12 +345,12 @@ exports[`List background string 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -442,12 +442,12 @@ exports[`List border boolean false 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -546,12 +546,12 @@ exports[`List border boolean true 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -652,12 +652,12 @@ exports[`List border object 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -800,12 +800,12 @@ exports[`List border side 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -948,12 +948,12 @@ exports[`List children render 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one - 0
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two - 1
     </li>
@@ -1096,12 +1096,12 @@ exports[`List data objects 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -1244,12 +1244,12 @@ exports[`List data strings 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -1404,12 +1404,12 @@ exports[`List defaultItemProps 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -1764,7 +1764,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
       tabindex="0"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -1831,7 +1831,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
       </li>
       <li
         aria-disabled="true"
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
         draggable="true"
       >
         <span
@@ -1896,7 +1896,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        class="c11 c3"
+        class="c11 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -1962,7 +1962,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
       </li>
       <li
         aria-disabled="true"
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
         draggable="true"
       >
         <span
@@ -2027,7 +2027,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        class="c11 c3"
+        class="c11 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -2493,7 +2493,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
     >
       <li
         aria-disabled="true"
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -2559,7 +2559,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
         draggable="true"
       >
         <span
@@ -2624,7 +2624,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
         draggable="true"
       >
         <span
@@ -2690,7 +2690,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
       </li>
       <li
         aria-disabled="true"
-        class="c11 c3"
+        class="c11 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -2755,7 +2755,7 @@ exports[`List disabled Disabled items should be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
         draggable="true"
       >
         <span
@@ -2974,29 +2974,29 @@ exports[`List disabled Should apply disabled styling to items 1`] = `
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Boise
       </li>
       <li
         aria-disabled="true"
-        class="c4 c5"
+        class="c4 c5 List__StyledItem-sc-130gdqg-1 c5"
       >
         Fort Collins
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Los Gatos
       </li>
       <li
         aria-disabled="true"
-        class="c4 c5"
+        class="c4 c5 List__StyledItem-sc-130gdqg-1 c5"
       >
         Palo Alto
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         San Francisco
       </li>
@@ -3174,7 +3174,7 @@ exports[`List disabled Should apply disabled styling to items when data are chil
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c4"
@@ -3188,7 +3188,7 @@ exports[`List disabled Should apply disabled styling to items when data are chil
       </li>
       <li
         aria-disabled="true"
-        class="c6 c7"
+        class="c6 c7 List__StyledItem-sc-130gdqg-1 c7"
       >
         <div
           class="c4"
@@ -3201,7 +3201,7 @@ exports[`List disabled Should apply disabled styling to items when data are chil
         </div>
       </li>
       <li
-        class="c6 c3"
+        class="c6 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c4"
@@ -3215,7 +3215,7 @@ exports[`List disabled Should apply disabled styling to items when data are chil
       </li>
       <li
         aria-disabled="true"
-        class="c6 c7"
+        class="c6 c7 List__StyledItem-sc-130gdqg-1 c7"
       >
         <div
           class="c4"
@@ -3228,7 +3228,7 @@ exports[`List disabled Should apply disabled styling to items when data are chil
         </div>
       </li>
       <li
-        class="c6 c3"
+        class="c6 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c4"
@@ -3394,29 +3394,29 @@ exports[`List disabled Should apply disabled styling to items when data are obje
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Boise
       </li>
       <li
         aria-disabled="true"
-        class="c4 c5"
+        class="c4 c5 List__StyledItem-sc-130gdqg-1 c5"
       >
         Fort Collins
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Los Gatos
       </li>
       <li
         aria-disabled="true"
-        class="c4 c5"
+        class="c4 c5 List__StyledItem-sc-130gdqg-1 c5"
       >
         Palo Alto
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         San Francisco
       </li>
@@ -3645,14 +3645,14 @@ exports[`List events ArrowDown key 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
@@ -3823,14 +3823,14 @@ exports[`List events ArrowDown key on last element 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
@@ -4013,14 +4013,14 @@ exports[`List events ArrowUp key 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
@@ -4176,14 +4176,14 @@ exports[`List events Enter key 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
@@ -4204,14 +4204,14 @@ exports[`List events Enter key 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb List__StyledItem-sc-130gdqg-1 iTLmDb"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 flmliY List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 flmliY List__StyledItem-sc-130gdqg-1 iTLmDb List__StyledItem-sc-130gdqg-1 iTLmDb"
       role="option"
       tabindex="-1"
     >
@@ -4367,14 +4367,14 @@ exports[`List events focus and blur 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
@@ -4394,14 +4394,14 @@ exports[`List events focus and blur 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb List__StyledItem-sc-130gdqg-1 iTLmDb"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb List__StyledItem-sc-130gdqg-1 iTLmDb"
       role="option"
       tabindex="-1"
     >
@@ -4572,14 +4572,14 @@ exports[`List events mouse events 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
@@ -4599,14 +4599,14 @@ exports[`List events mouse events 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb List__StyledItem-sc-130gdqg-1 iTLmDb"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb List__StyledItem-sc-130gdqg-1 iTLmDb"
       role="option"
       tabindex="-1"
     >
@@ -5290,259 +5290,259 @@ exports[`List events should apply pagination styling 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
       class="c2"
       role="list"
     >
       <li
-        class="c3 c4"
+        class="c3 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-0
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-1
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-2
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-3
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-4
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-5
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-6
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-7
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-8
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-9
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-10
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-11
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-12
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-13
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-14
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-15
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-16
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-17
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-18
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-19
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-20
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-21
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-22
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-23
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-24
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-25
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-26
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-27
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-28
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-29
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-30
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-31
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-32
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-33
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-34
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-35
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-36
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-37
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-38
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-39
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-40
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-41
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-42
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-43
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-44
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-45
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-46
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-47
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-48
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-49
       </li>
@@ -5551,7 +5551,7 @@ exports[`List events should apply pagination styling 1`] = `
       class="c6"
     />
     <div
-      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -5566,7 +5566,7 @@ exports[`List events should apply pagination styling 1`] = `
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c11 c12"
+              class="c11 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               disabled=""
               type="button"
             >
@@ -5593,7 +5593,7 @@ exports[`List events should apply pagination styling 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c15 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               1
@@ -5607,7 +5607,7 @@ exports[`List events should apply pagination styling 1`] = `
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               2
@@ -5621,7 +5621,7 @@ exports[`List events should apply pagination styling 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c17 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               <svg
@@ -5790,24 +5790,24 @@ exports[`List events should not show paginate controls when length of data < ste
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
       class="c2"
       role="list"
     >
       <li
-        class="c3 c4"
+        class="c3 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-1
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-2
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-3
       </li>
@@ -6483,259 +6483,259 @@ exports[`List events should paginate 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
       class="c2"
       role="list"
     >
       <li
-        class="c3 c4"
+        class="c3 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-0
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-1
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-2
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-3
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-4
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-5
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-6
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-7
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-8
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-9
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-10
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-11
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-12
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-13
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-14
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-15
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-16
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-17
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-18
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-19
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-20
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-21
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-22
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-23
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-24
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-25
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-26
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-27
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-28
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-29
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-30
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-31
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-32
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-33
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-34
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-35
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-36
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-37
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-38
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-39
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-40
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-41
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-42
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-43
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-44
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-45
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-46
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-47
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-48
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-49
       </li>
@@ -6744,7 +6744,7 @@ exports[`List events should paginate 1`] = `
       class="c6"
     />
     <div
-      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -6759,7 +6759,7 @@ exports[`List events should paginate 1`] = `
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c11 c12"
+              class="c11 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               disabled=""
               type="button"
             >
@@ -6786,7 +6786,7 @@ exports[`List events should paginate 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c15 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               1
@@ -6800,7 +6800,7 @@ exports[`List events should paginate 1`] = `
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               2
@@ -6814,7 +6814,7 @@ exports[`List events should paginate 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c17 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               <svg
@@ -7505,79 +7505,79 @@ exports[`List events should render correct num items per page (step) 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
       class="c2"
       role="list"
     >
       <li
-        class="c3 c4"
+        class="c3 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-0
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-1
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-2
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-3
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-4
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-5
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-6
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-7
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-8
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-9
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-10
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-11
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-12
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-13
       </li>
@@ -7586,7 +7586,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
       class="c6"
     />
     <div
-      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -7601,7 +7601,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c11 c12"
+              class="c11 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               disabled=""
               type="button"
             >
@@ -7628,7 +7628,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c15 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               1
@@ -7642,7 +7642,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               2
@@ -7656,7 +7656,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 3"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               3
@@ -7670,7 +7670,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 4"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               4
@@ -7684,7 +7684,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 5"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               5
@@ -7698,7 +7698,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 6"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               6
@@ -7712,7 +7712,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 7"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               7
@@ -7726,7 +7726,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c17 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               <svg
@@ -8417,259 +8417,259 @@ exports[`List events should render new data when page changes 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
       class="c2"
       role="list"
     >
       <li
-        class="c3 c4"
+        class="c3 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-0
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-1
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-2
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-3
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-4
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-5
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-6
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-7
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-8
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-9
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-10
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-11
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-12
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-13
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-14
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-15
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-16
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-17
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-18
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-19
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-20
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-21
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-22
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-23
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-24
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-25
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-26
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-27
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-28
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-29
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-30
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-31
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-32
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-33
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-34
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-35
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-36
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-37
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-38
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-39
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-40
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-41
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-42
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-43
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-44
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-45
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-46
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-47
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-48
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-49
       </li>
@@ -8678,7 +8678,7 @@ exports[`List events should render new data when page changes 1`] = `
       class="c6"
     />
     <div
-      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -8693,7 +8693,7 @@ exports[`List events should render new data when page changes 1`] = `
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c11 c12"
+              class="c11 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               disabled=""
               type="button"
             >
@@ -8720,7 +8720,7 @@ exports[`List events should render new data when page changes 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c15 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               1
@@ -8734,7 +8734,7 @@ exports[`List events should render new data when page changes 1`] = `
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               2
@@ -8748,7 +8748,7 @@ exports[`List events should render new data when page changes 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c17 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               <svg
@@ -8777,7 +8777,7 @@ exports[`List events should render new data when page changes 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi List__StyledContainer-sc-130gdqg-2 hvFZIg"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi List__StyledContainer-sc-130gdqg-2 hvFZIg List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
       class="List__StyledList-sc-130gdqg-0 dbvdEK"
@@ -8860,7 +8860,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-50
       </li>
@@ -8939,7 +8939,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-51
       </li>
@@ -9018,7 +9018,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-52
       </li>
@@ -9097,7 +9097,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-53
       </li>
@@ -9176,7 +9176,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-54
       </li>
@@ -9255,7 +9255,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-55
       </li>
@@ -9334,7 +9334,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-56
       </li>
@@ -9413,7 +9413,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-57
       </li>
@@ -9492,7 +9492,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-58
       </li>
@@ -9571,7 +9571,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-59
       </li>
@@ -9650,7 +9650,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-60
       </li>
@@ -9729,7 +9729,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-61
       </li>
@@ -9808,7 +9808,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-62
       </li>
@@ -9887,7 +9887,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-63
       </li>
@@ -9966,7 +9966,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-64
       </li>
@@ -10045,7 +10045,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-65
       </li>
@@ -10124,7 +10124,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-66
       </li>
@@ -10203,7 +10203,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-67
       </li>
@@ -10282,7 +10282,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-68
       </li>
@@ -10361,7 +10361,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-69
       </li>
@@ -10440,7 +10440,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-70
       </li>
@@ -10519,7 +10519,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-71
       </li>
@@ -10598,7 +10598,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-72
       </li>
@@ -10677,7 +10677,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-73
       </li>
@@ -10756,7 +10756,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-74
       </li>
@@ -10835,7 +10835,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-75
       </li>
@@ -10914,7 +10914,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-76
       </li>
@@ -10993,7 +10993,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-77
       </li>
@@ -11072,7 +11072,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-78
       </li>
@@ -11151,7 +11151,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-79
       </li>
@@ -11230,7 +11230,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-80
       </li>
@@ -11309,7 +11309,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-81
       </li>
@@ -11388,7 +11388,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-82
       </li>
@@ -11467,7 +11467,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-83
       </li>
@@ -11546,7 +11546,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-84
       </li>
@@ -11625,7 +11625,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-85
       </li>
@@ -11704,7 +11704,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-86
       </li>
@@ -11783,7 +11783,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-87
       </li>
@@ -11862,7 +11862,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-88
       </li>
@@ -11941,7 +11941,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-89
       </li>
@@ -12020,7 +12020,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-90
       </li>
@@ -12099,7 +12099,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-91
       </li>
@@ -12178,7 +12178,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-92
       </li>
@@ -12257,7 +12257,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-93
       </li>
@@ -12336,7 +12336,7 @@ exports[`List events should render new data when page changes 2`] = `
 }
 
 <li
-        class="c0 c1"
+        class="c0 c1 List__StyledItem-sc-130gdqg-1 c1"
       >
         entry-94
       </li>
@@ -12345,7 +12345,7 @@ exports[`List events should render new data when page changes 2`] = `
       class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jerLXD"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 ljtiDv Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 ljtiDv Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -12359,7 +12359,7 @@ exports[`List events should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 fIKELk StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 fIKELk StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               <svg
@@ -12384,7 +12384,7 @@ exports[`List events should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 gNONfA StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               1
@@ -12399,7 +12399,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 hfXAPS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 hfXAPS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               type="button"
             >
               2
@@ -12414,7 +12414,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 ispbjs StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
+              class="StyledButtonKind-sc-1vhfpnt-0 ispbjs StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gIpmVc"
               disabled=""
               type="button"
             >
@@ -13106,259 +13106,259 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
       class="c2"
       role="list"
     >
       <li
-        class="c3 c4"
+        class="c3 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-0
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-1
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-2
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-3
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-4
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-5
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-6
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-7
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-8
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-9
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-10
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-11
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-12
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-13
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-14
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-15
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-16
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-17
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-18
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-19
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-20
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-21
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-22
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-23
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-24
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-25
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-26
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-27
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-28
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-29
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-30
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-31
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-32
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-33
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-34
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-35
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-36
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-37
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-38
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-39
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-40
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-41
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-42
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-43
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-44
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-45
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-46
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-47
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-48
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-49
       </li>
@@ -13367,7 +13367,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
       class="c6"
     />
     <div
-      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -13382,7 +13382,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c11 c12"
+              class="c11 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               disabled=""
               type="button"
             >
@@ -13409,7 +13409,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c15 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               1
@@ -13423,7 +13423,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           >
             <button
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               2
@@ -13437,7 +13437,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           >
             <button
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c17 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               <svg
@@ -14128,234 +14128,234 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   class="c0"
 >
   <div
-    class="c1 "
+    class="c1 List__StyledContainer-sc-130gdqg-2 hvFZIg"
   >
     <ul
       class="c2"
       role="list"
     >
       <li
-        class="c3 c4"
+        class="c3 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-50
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-51
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-52
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-53
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-54
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-55
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-56
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-57
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-58
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-59
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-60
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-61
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-62
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-63
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-64
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-65
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-66
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-67
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-68
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-69
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-70
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-71
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-72
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-73
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-74
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-75
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-76
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-77
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-78
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-79
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-80
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-81
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-82
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-83
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-84
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-85
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-86
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-87
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-88
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-89
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-90
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-91
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-92
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-93
       </li>
       <li
-        class="c5 c4"
+        class="c5 c4 List__StyledItem-sc-130gdqg-1 c4"
       >
         entry-94
       </li>
@@ -14364,7 +14364,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
       class="c6"
     />
     <div
-      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="c7 Pagination__StyledPaginationContainer-sc-rnlw6m-0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -14378,7 +14378,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="c11 c12"
+              class="c11 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               <svg
@@ -14403,7 +14403,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="c15 c12"
+              class="c15 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               1
@@ -14418,7 +14418,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="c16 c12"
+              class="c16 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               type="button"
             >
               2
@@ -14433,7 +14433,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c17 c12"
+              class="c17 c12 StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 c12"
               disabled=""
               type="button"
             >
@@ -14873,7 +14873,7 @@ exports[`List itemKey function 1`] = `
       tabindex="0"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -14939,7 +14939,7 @@ exports[`List itemKey function 1`] = `
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c4"
@@ -14975,7 +14975,7 @@ exports[`List itemKey function 1`] = `
         </div>
       </li>
       <li
-        class="c14 c3"
+        class="c14 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -15173,12 +15173,12 @@ exports[`List itemProps 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -15322,12 +15322,12 @@ exports[`List margin object 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -15470,12 +15470,12 @@ exports[`List margin string 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -15629,14 +15629,14 @@ exports[`List onClickItem 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       role="option"
       tabindex="-1"
     >
@@ -15656,14 +15656,14 @@ exports[`List onClickItem 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 fwrepC List__StyledItem-sc-130gdqg-1 iTLmDb List__StyledItem-sc-130gdqg-1 iTLmDb"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb"
+      class="StyledBox-sc-13pk1d4-0 icZLCc List__StyledItem-sc-130gdqg-1 iTLmDb List__StyledItem-sc-130gdqg-1 iTLmDb"
       role="option"
       tabindex="-1"
     >
@@ -16012,7 +16012,7 @@ exports[`List onOrder Keyboard move down 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       draggable="true"
     >
       <span
@@ -16082,7 +16082,7 @@ exports[`List onOrder Keyboard move down 1`] = `
       </div>
     </li>
     <li
-      class="c12 c3"
+      class="c12 c3 List__StyledItem-sc-130gdqg-1 c3"
       draggable="true"
     >
       <span
@@ -16166,7 +16166,7 @@ exports[`List onOrder Keyboard move down 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -16236,7 +16236,7 @@ exports[`List onOrder Keyboard move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -16320,7 +16320,7 @@ exports[`List onOrder Keyboard move down 3`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -16390,7 +16390,7 @@ exports[`List onOrder Keyboard move down 3`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -16802,7 +16802,7 @@ exports[`List onOrder Keyboard move up 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       draggable="true"
     >
       <span
@@ -16872,7 +16872,7 @@ exports[`List onOrder Keyboard move up 1`] = `
       </div>
     </li>
     <li
-      class="c12 c3"
+      class="c12 c3 List__StyledItem-sc-130gdqg-1 c3"
       draggable="true"
     >
       <span
@@ -16956,7 +16956,7 @@ exports[`List onOrder Keyboard move up 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -17026,7 +17026,7 @@ exports[`List onOrder Keyboard move up 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -17110,7 +17110,7 @@ exports[`List onOrder Keyboard move up 3`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -17180,7 +17180,7 @@ exports[`List onOrder Keyboard move up 3`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -17592,7 +17592,7 @@ exports[`List onOrder Mouse move down 1`] = `
     tabindex="0"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       draggable="true"
     >
       <span
@@ -17662,7 +17662,7 @@ exports[`List onOrder Mouse move down 1`] = `
       </div>
     </li>
     <li
-      class="c12 c3"
+      class="c12 c3 List__StyledItem-sc-130gdqg-1 c3"
       draggable="true"
     >
       <span
@@ -17745,7 +17745,7 @@ exports[`List onOrder Mouse move down 2`] = `
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 gWuOjG List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -17815,7 +17815,7 @@ exports[`List onOrder Mouse move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx"
+      class="StyledBox-sc-13pk1d4-0 dLmodI List__StyledItem-sc-130gdqg-1 gTpDAx List__StyledItem-sc-130gdqg-1 gTpDAx"
       draggable="true"
     >
       <span
@@ -18323,7 +18323,7 @@ exports[`List onOrder with action Render 1`] = `
       tabindex="0"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -18406,7 +18406,7 @@ exports[`List onOrder with action Render 1`] = `
         </div>
       </li>
       <li
-        class="c14 c3"
+        class="c14 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -18610,12 +18610,12 @@ exports[`List pad object 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -18736,12 +18736,12 @@ exports[`List pad string 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       one
     </li>
     <li
-      class="c4 c3"
+      class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       two
     </li>
@@ -19164,7 +19164,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
       tabindex="0"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -19230,7 +19230,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c4"
@@ -19266,7 +19266,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        class="c14 c3"
+        class="c14 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -19331,7 +19331,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c4"
@@ -19367,7 +19367,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 1`] = `
         </div>
       </li>
       <li
-        class="c14 c3"
+        class="c14 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -19940,7 +19940,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
       tabindex="0"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -20006,7 +20006,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c4"
@@ -20042,7 +20042,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c14 c3"
+        class="c14 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -20107,7 +20107,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c4"
@@ -20143,7 +20143,7 @@ exports[`List pinned Pinned items should not be allowed to be re-ordered 2`] = `
         </div>
       </li>
       <li
-        class="c14 c3"
+        class="c14 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -20493,12 +20493,12 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Boise
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c5"
@@ -20526,12 +20526,12 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
         </div>
       </li>
       <li
-        class="c9 c3"
+        class="c9 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Los Gatos
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c5"
@@ -20559,7 +20559,7 @@ exports[`List pinned Should apply pinned styling to items 1`] = `
         </div>
       </li>
       <li
-        class="c9 c3"
+        class="c9 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         San Francisco
       </li>
@@ -20868,7 +20868,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c4"
@@ -20881,7 +20881,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
         </div>
       </li>
       <li
-        class="c6 c3"
+        class="c6 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c7"
@@ -20917,7 +20917,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
         </div>
       </li>
       <li
-        class="c11 c3"
+        class="c11 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c4"
@@ -20930,7 +20930,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
         </div>
       </li>
       <li
-        class="c6 c3"
+        class="c6 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c7"
@@ -20966,7 +20966,7 @@ exports[`List pinned Should apply pinned styling to items when data are children
         </div>
       </li>
       <li
-        class="c11 c3"
+        class="c11 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c4"
@@ -21263,12 +21263,12 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Boise
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c5"
@@ -21296,12 +21296,12 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
         </div>
       </li>
       <li
-        class="c9 c3"
+        class="c9 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Los Gatos
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c5"
@@ -21329,7 +21329,7 @@ exports[`List pinned Should apply pinned styling to items when data are objects 
         </div>
       </li>
       <li
-        class="c9 c3"
+        class="c9 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         San Francisco
       </li>
@@ -21792,7 +21792,7 @@ exports[`List pinned should apply pinned object styling to items when data are o
       tabindex="0"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -21858,7 +21858,7 @@ exports[`List pinned should apply pinned object styling to items when data are o
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c13"
@@ -21898,7 +21898,7 @@ exports[`List pinned should apply pinned object styling to items when data are o
         </div>
       </li>
       <li
-        class="c16 c3"
+        class="c16 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -21963,7 +21963,7 @@ exports[`List pinned should apply pinned object styling to items when data are o
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c13"
@@ -22003,7 +22003,7 @@ exports[`List pinned should apply pinned object styling to items when data are o
         </div>
       </li>
       <li
-        class="c16 c3"
+        class="c16 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -22527,7 +22527,7 @@ exports[`List pinned should apply pinned object styling to items when data are s
       tabindex="0"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -22593,7 +22593,7 @@ exports[`List pinned should apply pinned object styling to items when data are s
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c13"
@@ -22633,7 +22633,7 @@ exports[`List pinned should apply pinned object styling to items when data are s
         </div>
       </li>
       <li
-        class="c16 c3"
+        class="c16 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -22698,7 +22698,7 @@ exports[`List pinned should apply pinned object styling to items when data are s
         </div>
       </li>
       <li
-        class="c11 c12"
+        class="c11 c12 List__StyledItem-sc-130gdqg-1 c12"
       >
         <span
           class="c13"
@@ -22738,7 +22738,7 @@ exports[`List pinned should apply pinned object styling to items when data are s
         </div>
       </li>
       <li
-        class="c16 c3"
+        class="c16 c3 List__StyledItem-sc-130gdqg-1 c3"
         draggable="true"
       >
         <span
@@ -23127,7 +23127,7 @@ exports[`List pinned should apply pinned.color styling to primaryKey and seconda
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <span
           class="c4"
@@ -23144,7 +23144,7 @@ exports[`List pinned should apply pinned.color styling to primaryKey and seconda
         </span>
       </li>
       <li
-        class="c7 c3"
+        class="c7 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c8"
@@ -23181,7 +23181,7 @@ exports[`List pinned should apply pinned.color styling to primaryKey and seconda
         </div>
       </li>
       <li
-        class="c13 c3"
+        class="c13 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <span
           class="c4"
@@ -23198,7 +23198,7 @@ exports[`List pinned should apply pinned.color styling to primaryKey and seconda
         </span>
       </li>
       <li
-        class="c7 c3"
+        class="c7 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c8"
@@ -23235,7 +23235,7 @@ exports[`List pinned should apply pinned.color styling to primaryKey and seconda
         </div>
       </li>
       <li
-        class="c13 c3"
+        class="c13 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <span
           class="c4"
@@ -23541,12 +23541,12 @@ exports[`List pinned should apply pinned.icon but not pinned.color if icon color
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Boise
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c5"
@@ -23578,12 +23578,12 @@ exports[`List pinned should apply pinned.icon but not pinned.color if icon color
         </div>
       </li>
       <li
-        class="c10 c3"
+        class="c10 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         Los Gatos
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c5"
@@ -23615,7 +23615,7 @@ exports[`List pinned should apply pinned.icon but not pinned.color if icon color
         </div>
       </li>
       <li
-        class="c10 c3"
+        class="c10 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         San Francisco
       </li>
@@ -23931,7 +23931,7 @@ exports[`List pinned should not apply pinned.color to primaryKey and secondaryKe
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <span
           class="c4"
@@ -23948,7 +23948,7 @@ exports[`List pinned should not apply pinned.color to primaryKey and secondaryKe
         </span>
       </li>
       <li
-        class="c7 c3"
+        class="c7 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c8"
@@ -23985,7 +23985,7 @@ exports[`List pinned should not apply pinned.color to primaryKey and secondaryKe
         </div>
       </li>
       <li
-        class="c11 c3"
+        class="c11 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <span
           class="c4"
@@ -24002,7 +24002,7 @@ exports[`List pinned should not apply pinned.color to primaryKey and secondaryKe
         </span>
       </li>
       <li
-        class="c7 c3"
+        class="c7 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <div
           class="c8"
@@ -24039,7 +24039,7 @@ exports[`List pinned should not apply pinned.color to primaryKey and secondaryKe
         </div>
       </li>
       <li
-        class="c11 c3"
+        class="c11 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <span
           class="c4"
@@ -24201,7 +24201,7 @@ exports[`List primaryKey 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       <span
         class="c4"
@@ -24210,7 +24210,7 @@ exports[`List primaryKey 1`] = `
       </span>
     </li>
     <li
-      class="c5 c3"
+      class="c5 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       <span
         class="c4"
@@ -24359,12 +24359,12 @@ exports[`List renders a11yTitle and aria-label 1`] = `
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         alpha
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         beta
       </li>
@@ -24375,12 +24375,12 @@ exports[`List renders a11yTitle and aria-label 1`] = `
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         alpha
       </li>
       <li
-        class="c4 c3"
+        class="c4 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         beta
       </li>
@@ -24532,7 +24532,7 @@ exports[`List renders custom theme for primaryKey 1`] = `
       role="list"
     >
       <li
-        class="c2 c3"
+        class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <span
           class="c4"
@@ -24541,7 +24541,7 @@ exports[`List renders custom theme for primaryKey 1`] = `
         </span>
       </li>
       <li
-        class="c5 c3"
+        class="c5 c3 List__StyledItem-sc-130gdqg-1 c3"
       >
         <span
           class="c4"
@@ -24732,7 +24732,7 @@ exports[`List secondaryKey 1`] = `
     role="list"
   >
     <li
-      class="c2 c3"
+      class="c2 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       <span
         class="c4"
@@ -24749,7 +24749,7 @@ exports[`List secondaryKey 1`] = `
       </span>
     </li>
     <li
-      class="c7 c3"
+      class="c7 c3 List__StyledItem-sc-130gdqg-1 c3"
     >
       <span
         class="c4"

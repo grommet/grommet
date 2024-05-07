@@ -579,7 +579,7 @@ exports[`DataFilters renders 1`] = `
               class="c1"
             >
               <div
-                class="c11 "
+                class="c11 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
               >
                 <label
                   class="c12"
@@ -588,10 +588,10 @@ exports[`DataFilters renders 1`] = `
                   name
                 </label>
                 <div
-                  class="c13 FormField__FormFieldContentBox-sc-m9hood-1"
+                  class="c13 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
                 >
                   <div
-                    class="c3 StyledCheckBoxGroup-sc-2nhc5d-0"
+                    class="c3 StyledCheckBoxGroup-sc-2nhc5d-0 StyledCheckBoxGroup-sc-2nhc5d-0"
                     id="data-name"
                     role="group"
                   >
@@ -599,14 +599,14 @@ exports[`DataFilters renders 1`] = `
                       class="c14"
                     >
                       <div
-                        class="c15 c16"
+                        class="c15 c16 StyledCheckBox-sc-1dbk5ju-6 c16"
                       >
                         <input
                           class="c17"
                           type="checkbox"
                         />
                         <div
-                          class="c18 "
+                          class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
                         />
                       </div>
                       <span>
@@ -620,14 +620,14 @@ exports[`DataFilters renders 1`] = `
                       class="c14"
                     >
                       <div
-                        class="c15 c16"
+                        class="c15 c16 StyledCheckBox-sc-1dbk5ju-6 c16"
                       >
                         <input
                           class="c17"
                           type="checkbox"
                         />
                         <div
-                          class="c18 "
+                          class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
                         />
                       </div>
                       <span>

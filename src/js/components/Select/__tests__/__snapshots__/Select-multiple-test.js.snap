@@ -223,7 +223,7 @@ exports[`Select Controlled deselect an option 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select; Selected: one"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -238,7 +238,7 @@ exports[`Select Controlled deselect an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -492,7 +492,7 @@ exports[`Select Controlled multiple 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="Open Drop; Selected: "
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -507,7 +507,7 @@ exports[`Select Controlled multiple 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           readonly=""
           tabindex="-1"
@@ -773,7 +773,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: 1"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -788,7 +788,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -1050,14 +1050,14 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -1070,7 +1070,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="0"
         type="button"
@@ -1089,7 +1089,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c9 c10"
+        class="c9 c10 StyledSelect__SelectOption-sc-znp66n-3 c10"
         role="option"
         tabindex="-1"
         type="button"
@@ -1357,7 +1357,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -1372,7 +1372,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -1589,14 +1589,14 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -1609,7 +1609,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -1628,7 +1628,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -1896,7 +1896,7 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -1911,7 +1911,7 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -2128,14 +2128,14 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -2148,7 +2148,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -2167,7 +2167,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -2436,7 +2436,7 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -2451,7 +2451,7 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -2669,14 +2669,14 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -2689,7 +2689,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -2708,7 +2708,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -2742,14 +2742,14 @@ exports[`Select Controlled multiple onChange without labelKey 3`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG StyledDrop-sc-16s5rx8-0 jWOvQG"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
     id="test-select__select-drop"
   >
     <div
@@ -2762,7 +2762,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
+        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
         role="option"
         tabindex="0"
         type="button"
@@ -2781,7 +2781,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
         role="option"
         tabindex="-1"
         type="button"
@@ -2815,14 +2815,14 @@ exports[`Select Controlled multiple onChange without labelKey 5`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG StyledDrop-sc-16s5rx8-0 jWOvQG"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
     id="test-select__select-drop"
   >
     <div
@@ -2835,7 +2835,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
+        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
         role="option"
         tabindex="0"
         type="button"
@@ -2854,7 +2854,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
+        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
         role="option"
         tabindex="0"
         type="button"
@@ -3135,7 +3135,7 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="test select; Selected: [object Object],[object Object]"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -3150,7 +3150,7 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -3419,7 +3419,7 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -3434,7 +3434,7 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -3651,14 +3651,14 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -3671,7 +3671,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -3690,7 +3690,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -3724,14 +3724,14 @@ exports[`Select Controlled multiple onChange without valueKey 3`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG StyledDrop-sc-16s5rx8-0 jWOvQG"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
     id="test-select__select-drop"
   >
     <div
@@ -3744,7 +3744,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
+        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
         role="option"
         tabindex="0"
         type="button"
@@ -3763,7 +3763,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
         role="option"
         tabindex="-1"
         type="button"
@@ -3797,14 +3797,14 @@ exports[`Select Controlled multiple onChange without valueKey 5`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG StyledDrop-sc-16s5rx8-0 jWOvQG"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
     id="test-select__select-drop"
   >
     <div
@@ -3817,7 +3817,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
+        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
         role="option"
         tabindex="0"
         type="button"
@@ -3836,7 +3836,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
+        class="StyledButton-sc-323bzc-0 jWHEwE StyledSelect__SelectOption-sc-znp66n-3 dcVweZ StyledSelect__SelectOption-sc-znp66n-3 dcVweZ"
         role="option"
         tabindex="0"
         type="button"
@@ -4117,7 +4117,7 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="test select; Selected: [object Object],[object Object]"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -4132,7 +4132,7 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -4402,7 +4402,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-label="test select"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -4417,7 +4417,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -4635,14 +4635,14 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -4655,7 +4655,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -4674,7 +4674,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -4708,14 +4708,14 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 3`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG StyledDrop-sc-16s5rx8-0 jWOvQG"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
     id="test-select__select-drop"
   >
     <div
@@ -4727,7 +4727,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
         role="option"
         tabindex="-1"
         type="button"
@@ -4745,7 +4745,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
         role="option"
         tabindex="-1"
         type="button"
@@ -4779,14 +4779,14 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 5`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG StyledDrop-sc-16s5rx8-0 jWOvQG"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
+    class="StyledBox-sc-13pk1d4-0 kqmDKi StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu StyledSelect__StyledContainer-sc-znp66n-0 fMIUDu"
     id="test-select__select-drop"
   >
     <div
@@ -4798,7 +4798,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
       <button
         aria-posinset="1"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
         role="option"
         tabindex="-1"
         type="button"
@@ -4816,7 +4816,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
       <button
         aria-posinset="2"
         aria-setsize="2"
-        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
+        class="StyledButton-sc-323bzc-0 uLElv StyledSelect__SelectOption-sc-znp66n-3 erCMZM StyledSelect__SelectOption-sc-znp66n-3 erCMZM"
         role="option"
         tabindex="-1"
         type="button"
@@ -5097,7 +5097,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-label="test select; Selected: [object Object],[object Object]"
-      class="c1 c2"
+      class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
       id="test-select"
       type="button"
     >
@@ -5112,7 +5112,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
           >
             <input
               autocomplete="off"
-              class="c6 c7"
+              class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
               id="test-select__input"
               placeholder="test select"
               readonly=""
@@ -5368,7 +5368,7 @@ exports[`Select Controlled multiple values 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select; Selected: one,two"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -5383,7 +5383,7 @@ exports[`Select Controlled multiple values 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5419,7 +5419,7 @@ exports[`Select Controlled multiple values 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select; Selected: one,two"
-  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
+  class="StyledButton-sc-323bzc-0 dkczdG StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr StyledSelect__StyledSelectDropButton-sc-znp66n-5 eWjlvr"
   id="test-select"
   type="button"
 >
@@ -5434,7 +5434,7 @@ exports[`Select Controlled multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
+          class="StyledTextInput-sc-1x30a0s-0 kgCvti StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM StyledSelect__SelectTextInput-sc-znp66n-4 gbaNVM"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5652,14 +5652,14 @@ exports[`Select Controlled multiple values 3`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -5672,7 +5672,7 @@ exports[`Select Controlled multiple values 3`] = `
         aria-posinset="1"
         aria-selected="true"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="0"
         type="button"
@@ -5691,7 +5691,7 @@ exports[`Select Controlled multiple values 3`] = `
         aria-posinset="2"
         aria-selected="true"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="0"
         type="button"
@@ -5959,7 +5959,7 @@ exports[`Select Controlled multiple with empty results 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: "
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     id="test-select"
     type="button"
   >
@@ -5974,7 +5974,7 @@ exports[`Select Controlled multiple with empty results 1`] = `
         >
           <input
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             id="test-select__input"
             placeholder="test select"
             readonly=""
@@ -6191,14 +6191,14 @@ exports[`Select Controlled multiple with empty results 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
     id="test-select__select-drop"
   >
     <div
@@ -6211,7 +6211,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -6230,7 +6230,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="2"
-        class="c5 c6"
+        class="c5 c6 StyledSelect__SelectOption-sc-znp66n-3 c6"
         role="option"
         tabindex="-1"
         type="button"
@@ -6485,7 +6485,7 @@ exports[`Select Controlled select another option 1`] = `
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-label="test select; Selected: two"
-  class="c0 c1"
+  class="c0 c1 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c1"
   id="test-select"
   type="button"
 >
@@ -6500,7 +6500,7 @@ exports[`Select Controlled select another option 1`] = `
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c5 c6 StyledSelect__SelectTextInput-sc-znp66n-4 c6"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -6767,7 +6767,7 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test"
-    class="c1 c2"
+    class="c1 c2 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c2"
     type="button"
   >
     <div
@@ -6782,7 +6782,7 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
           <input
             aria-label="test"
             autocomplete="off"
-            class="c6 c7"
+            class="c6 c7 StyledSelect__SelectTextInput-sc-znp66n-4 c7"
             readonly=""
             tabindex="-1"
             type="text"

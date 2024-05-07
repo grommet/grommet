@@ -10,9 +10,7 @@ export const extendDefaultTheme = theme => {
 };
 
 export const getDefaultProps = props => {
-  const result = Object.create(defaultProps);
-  if (props.theme) {
-    result.theme = props.theme;
-  }
+  const result = {...props};
+  Object.setPrototypeOf(result, defaultProps);
   return result;
 };

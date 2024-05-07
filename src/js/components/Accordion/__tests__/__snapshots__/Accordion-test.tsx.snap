@@ -300,7 +300,7 @@ exports[`Accordion AccordionPanel 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -348,7 +348,7 @@ exports[`Accordion AccordionPanel 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -652,7 +652,7 @@ exports[`Accordion accordion border 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c9"
+            class="c1 c9 Collapsible__AnimatedBox-sc-15kniua-0 c9"
           />
         </div>
       </div>
@@ -962,7 +962,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -1277,7 +1277,7 @@ exports[`Accordion blur styles 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -2346,7 +2346,7 @@ exports[`Accordion change to second Panel 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -2394,7 +2394,7 @@ exports[`Accordion change to second Panel 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -2785,7 +2785,7 @@ exports[`Accordion change to second Panel 2`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -2835,7 +2835,7 @@ exports[`Accordion change to second Panel 2`] = `
         >
           <div
             aria-hidden="false"
-            class="c1 c13"
+            class="c1 c13 Collapsible__AnimatedBox-sc-15kniua-0 c13"
             open=""
             style="max-height: 0;"
           >
@@ -4049,7 +4049,7 @@ exports[`Accordion complex title 1`] = `
           >
             <div
               aria-hidden="true"
-              class="c2 c9"
+              class="c2 c9 Collapsible__AnimatedBox-sc-15kniua-0 c9"
             />
           </div>
         </div>
@@ -4091,7 +4091,7 @@ exports[`Accordion complex title 1`] = `
           >
             <div
               aria-hidden="true"
-              class="c2 c9"
+              class="c2 c9 Collapsible__AnimatedBox-sc-15kniua-0 c9"
             />
           </div>
         </div>
@@ -4406,7 +4406,7 @@ exports[`Accordion custom accordion 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -4725,7 +4725,7 @@ exports[`Accordion custom accordion 2`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -5041,7 +5041,7 @@ exports[`Accordion focus and hover styles 1`] = `
         >
           <div
             aria-hidden="false"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
             open=""
             style="max-height: 0;"
           >
@@ -7405,7 +7405,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -7453,7 +7453,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
@@ -7714,7 +7714,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c8"
+            class="c1 c8 Collapsible__AnimatedBox-sc-15kniua-0 c8"
           />
         </div>
       </div>
@@ -8029,7 +8029,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
         >
           <div
             aria-hidden="true"
-            class="c1 c10"
+            class="c1 c10 Collapsible__AnimatedBox-sc-15kniua-0 c10"
           />
         </div>
       </div>
