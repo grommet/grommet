@@ -12,8 +12,5 @@ export const extendDefaultTheme = theme => {
 export const getDefaultProps = props => ({
   ...defaultProps,
   ...props,
-  theme: {
-    ...defaultProps.theme,
-    ...props.theme,
-  },
+  theme: deepMerge(defaultProps.theme, props.theme),
 });
