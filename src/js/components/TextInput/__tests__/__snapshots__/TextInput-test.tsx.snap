@@ -2180,14 +2180,14 @@ exports[`TextInput large drop height 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -2817,14 +2817,14 @@ exports[`TextInput medium drop height 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -5649,14 +5649,14 @@ exports[`TextInput small drop height 1`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -5957,14 +5957,14 @@ exports[`TextInput suggestions 2`] = `
 }
 
 <div
-  class="c0 c1"
+  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
     id="listbox__item"
     role="listbox"
   >

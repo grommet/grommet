@@ -9,8 +9,11 @@ export const extendDefaultTheme = theme => {
   defaultProps.theme = deepMerge(base, theme);
 };
 
-export const getDefaultProps = props => {
-  const result = {...props};
-  Object.setPrototypeOf(result, defaultProps);
-  return result;
-};
+export const getDefaultProps = props => ({
+  ...defaultProps,
+  ...props,
+  theme: {
+    ...defaultProps.theme,
+    ...props.theme,
+  },
+});

@@ -937,7 +937,7 @@ exports[`Tag renders default remove icon 1`] = `
       </span>
     </div>
     <button
-      class="c4 c5"
+      class="c4 c5 StyledTag__StyledRemoveButton-sc-cb9fl2-1 c5"
       type="button"
     >
       <svg
