@@ -141,7 +141,7 @@ exports[`StarRating StarRating has default value 1`] = `
         for="1"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -172,7 +172,7 @@ exports[`StarRating StarRating has default value 1`] = `
         for="2"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -203,7 +203,7 @@ exports[`StarRating StarRating has default value 1`] = `
         for="3"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -234,7 +234,7 @@ exports[`StarRating StarRating has default value 1`] = `
         for="4"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -266,7 +266,7 @@ exports[`StarRating StarRating has default value 1`] = `
         for="5"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -437,7 +437,7 @@ exports[`StarRating StarRating is present 1`] = `
         for="1"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -469,7 +469,7 @@ exports[`StarRating StarRating is present 1`] = `
         for="2"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -501,7 +501,7 @@ exports[`StarRating StarRating is present 1`] = `
         for="3"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -533,7 +533,7 @@ exports[`StarRating StarRating is present 1`] = `
         for="4"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -565,7 +565,7 @@ exports[`StarRating StarRating is present 1`] = `
         for="5"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -735,7 +735,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
         for="1"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -767,7 +767,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
         for="2"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -799,7 +799,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
         for="3"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -831,7 +831,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
         for="4"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -863,7 +863,7 @@ exports[`StarRating StarRating should have no accessibility violations 1`] = `
         for="5"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
         >
           <input
             class="c4"
@@ -1145,7 +1145,7 @@ exports[`StarRating value for rating 1`] = `
 >
   <form>
     <div
-      class="c1 FormField__FormFieldBox-sc-m9hood-0 iLyaEy"
+      class="c1 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
     >
       <label
         class="c2"
@@ -1164,7 +1164,7 @@ exports[`StarRating value for rating 1`] = `
             for="1"
           >
             <div
-              class="c6 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+              class="c6 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
             >
               <input
                 class="c7"
@@ -1196,7 +1196,7 @@ exports[`StarRating value for rating 1`] = `
             for="2"
           >
             <div
-              class="c6 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+              class="c6 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
             >
               <input
                 class="c7"
@@ -1228,7 +1228,7 @@ exports[`StarRating value for rating 1`] = `
             for="3"
           >
             <div
-              class="c6 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+              class="c6 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
             >
               <input
                 class="c7"
@@ -1260,7 +1260,7 @@ exports[`StarRating value for rating 1`] = `
             for="4"
           >
             <div
-              class="c6 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+              class="c6 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
             >
               <input
                 class="c7"
@@ -1292,7 +1292,7 @@ exports[`StarRating value for rating 1`] = `
             for="5"
           >
             <div
-              class="c6 StyledRadioButton-sc-g1f6ld-5 dBuIId"
+              class="c6 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
             >
               <input
                 class="c7"

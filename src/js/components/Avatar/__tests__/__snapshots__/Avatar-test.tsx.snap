@@ -885,7 +885,7 @@ exports[`Avatar size 1`] = `
     class="c3 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c11 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+      class="c11 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
     >
       S
     </span>
@@ -894,7 +894,7 @@ exports[`Avatar size 1`] = `
     class="c4 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c12 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+      class="c12 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
     >
       S
     </span>
@@ -903,7 +903,7 @@ exports[`Avatar size 1`] = `
     class="c5 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c13 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+      class="c13 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
     >
       S
     </span>
@@ -912,7 +912,7 @@ exports[`Avatar size 1`] = `
     class="c6 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c14 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+      class="c14 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
     >
       S
     </span>
@@ -921,7 +921,7 @@ exports[`Avatar size 1`] = `
     class="c7 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c15 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+      class="c15 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
     >
       S
     </span>
@@ -930,7 +930,7 @@ exports[`Avatar size 1`] = `
     class="c8 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c16 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+      class="c16 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
     >
       S
     </span>
@@ -939,7 +939,7 @@ exports[`Avatar size 1`] = `
     class="c9 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c17 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+      class="c17 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
     >
       S
     </span>
@@ -948,7 +948,7 @@ exports[`Avatar size 1`] = `
     class="c10 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
   >
     <span
-      class="c18 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+      class="c18 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
     >
       S
     </span>
@@ -1413,7 +1413,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       class="c2 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        class="c3 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+        class="c3 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
       >
         T1
       </span>
@@ -1422,7 +1422,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       class="c4 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        class="c5 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+        class="c5 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
       >
         T2
       </span>
@@ -1431,7 +1431,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       class="c6 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        class="c7 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+        class="c7 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
       >
         T3
       </span>
@@ -1440,7 +1440,7 @@ exports[`Avatar text size changes according to theme 1`] = `
       class="c8 StyledAvatar-sc-1suyamb-1 StyledAvatar-sc-1suyamb-1"
     >
       <span
-        class="c9 StyledAvatar__StyledAvatarText-sc-1suyamb-0 bJISiG"
+        class="c9 StyledAvatar__StyledAvatarText-sc-1suyamb-0 hSfKSP"
       >
         T4
       </span>
