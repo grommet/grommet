@@ -579,7 +579,7 @@ exports[`DataFilters renders 1`] = `
               class="c1"
             >
               <div
-                class="c11 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+                class="c11 FormField__FormFieldBox-sc-m9hood-0 iLyaEy"
               >
                 <label
                   class="c12"
@@ -606,7 +606,7 @@ exports[`DataFilters renders 1`] = `
                           type="checkbox"
                         />
                         <div
-                          class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                          class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gKzRMM"
                         />
                       </div>
                       <span>
@@ -627,7 +627,7 @@ exports[`DataFilters renders 1`] = `
                           type="checkbox"
                         />
                         <div
-                          class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                          class="c18 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gKzRMM"
                         />
                       </div>
                       <span>

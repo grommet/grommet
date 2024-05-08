@@ -103,7 +103,7 @@ exports[`RadioButton background-color check themed 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -111,7 +111,7 @@ exports[`RadioButton background-color check themed 1`] = `
         type="radio"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
   </label>
@@ -225,7 +225,7 @@ exports[`RadioButton background-color themed 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -343,7 +343,7 @@ exports[`RadioButton background-color themed symbolic 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -351,7 +351,7 @@ exports[`RadioButton background-color themed symbolic 1`] = `
         type="radio"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
   </label>
@@ -461,7 +461,7 @@ exports[`RadioButton basic 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -470,7 +470,7 @@ exports[`RadioButton basic 1`] = `
         value="1"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
   </label>
@@ -479,7 +479,7 @@ exports[`RadioButton basic 1`] = `
     for="test id"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -489,7 +489,7 @@ exports[`RadioButton basic 1`] = `
         value="2"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
   </label>
@@ -606,7 +606,7 @@ exports[`RadioButton checked 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         checked=""
@@ -616,7 +616,7 @@ exports[`RadioButton checked 1`] = `
         value="1"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       >
         <svg
           class="c5"
@@ -752,7 +752,7 @@ exports[`RadioButton children 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -769,7 +769,7 @@ exports[`RadioButton children 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         checked=""
@@ -929,7 +929,7 @@ exports[`RadioButton disabled 1`] = `
     disabled=""
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -939,7 +939,7 @@ exports[`RadioButton disabled 1`] = `
         value="1"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
   </label>
@@ -948,7 +948,7 @@ exports[`RadioButton disabled 1`] = `
     disabled=""
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         checked=""
@@ -959,7 +959,7 @@ exports[`RadioButton disabled 1`] = `
         value="2"
       />
       <div
-        class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       >
         <svg
           class="c6"
@@ -1088,7 +1088,7 @@ exports[`RadioButton label 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -1097,7 +1097,7 @@ exports[`RadioButton label 1`] = `
         value="1"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
     <span
@@ -1110,7 +1110,7 @@ exports[`RadioButton label 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -1119,7 +1119,7 @@ exports[`RadioButton label 1`] = `
         value="2"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
     <div>
@@ -1243,7 +1243,7 @@ exports[`RadioButton label themed 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         class="c3"
@@ -1251,7 +1251,7 @@ exports[`RadioButton label themed 1`] = `
         type="radio"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
     <span
@@ -1366,7 +1366,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         checked=""
@@ -1375,7 +1375,7 @@ exports[`RadioButton renders custom circle icon 1`] = `
         type="radio"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       >
         <svg
           as=".StyledRadioButton__StyledRadioButtonIcon-sc-g1f6ld-3"
@@ -1491,7 +1491,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         aria-label="test"
@@ -1500,7 +1500,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
         type="radio"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
   </label>
@@ -1508,7 +1508,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         aria-label="test-2"
@@ -1517,7 +1517,7 @@ exports[`RadioButton should apply a11yTitle or aria-label 1`] = `
         type="radio"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
   </label>
@@ -1627,7 +1627,7 @@ exports[`RadioButton should have no accessibility violations 1`] = `
     class="c1"
   >
     <div
-      class="c2 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+      class="c2 StyledRadioButton-sc-g1f6ld-5 dBuIId"
     >
       <input
         aria-label="test"
@@ -1636,7 +1636,7 @@ exports[`RadioButton should have no accessibility violations 1`] = `
         type="radio"
       />
       <div
-        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+        class="c4 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 cwdTGj"
       />
     </div>
   </label>
