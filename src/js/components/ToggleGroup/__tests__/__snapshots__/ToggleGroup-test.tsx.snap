@@ -188,7 +188,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           role="radio"
           tabindex="0"
           type="button"
@@ -201,7 +201,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c5 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c5"
+          class="c3 c5"
           role="radio"
           tabindex="-1"
           type="button"
@@ -214,7 +214,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c7 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c7"
+          class="c3 c7"
           role="radio"
           tabindex="-1"
           type="button"
@@ -416,7 +416,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           tabindex="0"
           type="button"
         >
@@ -429,7 +429,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c5 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c5"
+          class="c3 c5"
           tabindex="-1"
           type="button"
         >
@@ -442,7 +442,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c7 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c7"
+          class="c3 c7"
           tabindex="-1"
           type="button"
         >
@@ -709,7 +709,7 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -722,7 +722,7 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c5 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c5"
+          class="c3 c5"
           role="radio"
           tabindex="-1"
           type="button"
@@ -735,7 +735,7 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
       >
         <button
           aria-checked="true"
-          class="c7 c8 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c8"
+          class="c7 c8"
           role="radio"
           tabindex="0"
           type="button"
@@ -1075,7 +1075,7 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           tabindex="-1"
           type="button"
         >
@@ -1088,7 +1088,7 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
         <button
           aria-checked="false"
           aria-pressed="true"
-          class="c5 c6 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c6"
+          class="c5 c6"
           tabindex="0"
           type="button"
         >
@@ -1101,7 +1101,7 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
         <button
           aria-checked="false"
           aria-pressed="true"
-          class="c8 c9 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c9"
+          class="c8 c9"
           tabindex="-1"
           type="button"
         >
@@ -1366,7 +1366,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           role="radio"
           tabindex="0"
           type="button"
@@ -1379,7 +1379,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
       >
         <button
           aria-checked="false"
-          class="c5 c6 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c6"
+          class="c5 c6"
           role="radio"
           tabindex="-1"
           type="button"
@@ -1392,7 +1392,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
       >
         <button
           aria-checked="false"
-          class="c5 c8 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c8"
+          class="c5 c8"
           role="radio"
           tabindex="-1"
           type="button"
@@ -1659,7 +1659,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           tabindex="0"
           type="button"
         >
@@ -1672,7 +1672,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c5 c6 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c6"
+          class="c5 c6"
           tabindex="-1"
           type="button"
         >
@@ -1685,7 +1685,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c5 c8 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c8"
+          class="c5 c8"
           tabindex="-1"
           type="button"
         >
@@ -1874,7 +1874,7 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           tabindex="0"
           type="button"
         >
@@ -1887,7 +1887,7 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c6 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c6"
+          class="c3 c6"
           tabindex="-1"
           type="button"
         >
@@ -2075,7 +2075,7 @@ exports[`ToggleGroup custom theme 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           role="radio"
           tabindex="0"
           type="button"
@@ -2088,7 +2088,7 @@ exports[`ToggleGroup custom theme 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c6 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c6"
+          class="c3 c6"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2364,7 +2364,7 @@ exports[`ToggleGroup icon with values 1`] = `
       >
         <button
           aria-checked="true"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           role="radio"
           tabindex="0"
           type="button"
@@ -2388,7 +2388,7 @@ exports[`ToggleGroup icon with values 1`] = `
       >
         <button
           aria-checked="false"
-          class="c7 c8 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c8"
+          class="c7 c8"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2588,7 +2588,7 @@ exports[`ToggleGroup object options 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           role="radio"
           tabindex="0"
           type="button"
@@ -2601,7 +2601,7 @@ exports[`ToggleGroup object options 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c6 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c6"
+          class="c3 c6"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2847,7 +2847,7 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           role="radio"
           tabindex="0"
           type="button"
@@ -2860,7 +2860,7 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c5 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c5"
+          class="c3 c5"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2873,7 +2873,7 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c7 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c7"
+          class="c3 c7"
           role="radio"
           tabindex="-1"
           type="button"
@@ -3062,7 +3062,7 @@ exports[`ToggleGroup string options 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           role="radio"
           tabindex="0"
           type="button"
@@ -3075,7 +3075,7 @@ exports[`ToggleGroup string options 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c6 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c6"
+          class="c3 c6"
           role="radio"
           tabindex="-1"
           type="button"
@@ -3265,7 +3265,7 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c4 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c4"
+          class="c3 c4"
           tabindex="0"
           type="button"
         >
@@ -3278,7 +3278,7 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c6 StyledToggleGroup__StyledButton-sc-13k5sx8-0 c6"
+          class="c3 c6"
           tabindex="-1"
           type="button"
         >

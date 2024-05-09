@@ -418,10 +418,10 @@ exports[`Carousel basic 1`] = `
     class="c0"
   >
     <div
-      class="c1 c2 StyledCarousel__StyledCarouselContainer-sc-c2hjel-0 c2"
+      class="c1 c2"
     >
       <div
-        class="c3 c4 StyledCarousel__StyledControl-sc-c2hjel-2 c4"
+        class="c3 c4"
       >
         <button
           aria-label="Go to slide 0"
@@ -444,7 +444,7 @@ exports[`Carousel basic 1`] = `
         </button>
       </div>
       <div
-        class="c1 c7 StyledCarousel__StyledCarouselChild-sc-c2hjel-1 c7"
+        class="c1 c7"
       >
         <div
           class="c1"
@@ -455,7 +455,7 @@ exports[`Carousel basic 1`] = `
         </div>
       </div>
       <div
-        class="c1 c8 StyledCarousel__StyledCarouselChild-sc-c2hjel-1 c8"
+        class="c1 c8"
       >
         <div
           class="c1"
@@ -466,7 +466,7 @@ exports[`Carousel basic 1`] = `
         </div>
       </div>
       <div
-        class="c9 c10 StyledCarousel__StyledControl-sc-c2hjel-2 c10"
+        class="c9 c10"
       >
         <div
           class="c11"
@@ -514,7 +514,7 @@ exports[`Carousel basic 1`] = `
         </div>
       </div>
       <div
-        class="c3 c15 StyledCarousel__StyledControl-sc-c2hjel-2 c15"
+        class="c3 c15"
       >
         <button
           aria-label="Go to slide 2"
@@ -799,10 +799,10 @@ exports[`Carousel controlled component 1`] = `
     class="c0"
   >
     <div
-      class="c1 c2 StyledCarousel__StyledCarouselContainer-sc-c2hjel-0 c2"
+      class="c1 c2"
     >
       <div
-        class="c3 c4 StyledCarousel__StyledControl-sc-c2hjel-2 c4"
+        class="c3 c4"
       >
         <button
           aria-label="Go to slide 1"
@@ -824,7 +824,7 @@ exports[`Carousel controlled component 1`] = `
         </button>
       </div>
       <div
-        class="c1 c7 StyledCarousel__StyledCarouselChild-sc-c2hjel-1 c7"
+        class="c1 c7"
       >
         <div
           class="c1"
@@ -835,7 +835,7 @@ exports[`Carousel controlled component 1`] = `
         </div>
       </div>
       <div
-        class="c1 c8 StyledCarousel__StyledCarouselChild-sc-c2hjel-1 c8"
+        class="c1 c8"
       >
         <div
           class="c1"
@@ -846,7 +846,7 @@ exports[`Carousel controlled component 1`] = `
         </div>
       </div>
       <div
-        class="c3 c9 StyledCarousel__StyledControl-sc-c2hjel-2 c9"
+        class="c3 c9"
       >
         <button
           aria-label="Go to slide 3"

@@ -115,7 +115,7 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   aria-hidden="false"
 >
   <div
-    class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+    class="c0 c1"
     data-g-portal-id="0"
     style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
     tabindex="-1"
@@ -219,10 +219,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 fYxOkd"
 >
   <button
-    class="StyledButton-sc-323bzc-0 dvoKHE"
+    class="StyledButton-sc-323bzc-0 PnKiR"
     type="button"
   >
     Test Events
@@ -356,7 +356,7 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -442,7 +442,7 @@ exports[`Tip plain 1`] = `
     aria-hidden="false"
   >
     <div
-      class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+      class="c0 c1"
       data-g-portal-id="0"
       style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
       tabindex="-1"
@@ -628,7 +628,7 @@ exports[`Tip themed 1`] = `
   aria-hidden="false"
 >
   <div
-    class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+    class="c0 c1"
     data-g-portal-id="0"
     style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
     tabindex="-1"

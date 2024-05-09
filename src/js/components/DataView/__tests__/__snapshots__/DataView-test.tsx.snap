@@ -264,7 +264,7 @@ exports[`DataView preset view 1`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Select view; Selected: top"
-        class="c3 c4 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c4"
+        class="c3 c4"
         id="data--view"
         type="button"
       >
@@ -279,7 +279,7 @@ exports[`DataView preset view 1`] = `
             >
               <input
                 autocomplete="off"
-                class="c8 c9 StyledSelect__SelectTextInput-sc-znp66n-4 c9"
+                class="c8 c9"
                 id="data--view__input"
                 name="_view"
                 placeholder="Select view"
@@ -578,7 +578,7 @@ exports[`DataView renders 1`] = `
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-label="Select view"
-        class="c3 c4 StyledSelect__StyledSelectDropButton-sc-znp66n-5 c4"
+        class="c3 c4"
         id="data--view"
         type="button"
       >
@@ -593,7 +593,7 @@ exports[`DataView renders 1`] = `
             >
               <input
                 autocomplete="off"
-                class="c8 c9 StyledSelect__SelectTextInput-sc-znp66n-4 c9"
+                class="c8 c9"
                 id="data--view__input"
                 name="_view"
                 placeholder="Select view"

@@ -180,7 +180,7 @@ exports[`FileInput accept 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       accept="image/*"
@@ -192,7 +192,7 @@ exports[`FileInput accept 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -389,7 +389,7 @@ exports[`FileInput background 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -400,7 +400,7 @@ exports[`FileInput background 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -595,7 +595,7 @@ exports[`FileInput basic 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -606,7 +606,7 @@ exports[`FileInput basic 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -801,7 +801,7 @@ exports[`FileInput border 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -812,7 +812,7 @@ exports[`FileInput border 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -1007,7 +1007,7 @@ exports[`FileInput custom theme input font size 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -1017,7 +1017,7 @@ exports[`FileInput custom theme input font size 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -1213,7 +1213,7 @@ exports[`FileInput disabled 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
     disabled=""
   >
     <input
@@ -1226,7 +1226,7 @@ exports[`FileInput disabled 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -1428,7 +1428,7 @@ exports[`FileInput margin 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -1439,7 +1439,7 @@ exports[`FileInput margin 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -1634,7 +1634,7 @@ exports[`FileInput maxSize 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -1645,7 +1645,7 @@ exports[`FileInput maxSize 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -1840,7 +1840,7 @@ exports[`FileInput messages 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -1851,7 +1851,7 @@ exports[`FileInput messages 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>
@@ -2046,7 +2046,7 @@ exports[`FileInput multiple 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -2058,7 +2058,7 @@ exports[`FileInput multiple 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop files here or
       </span>
@@ -2253,7 +2253,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -2265,7 +2265,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop files here or
       </span>
@@ -2460,7 +2460,7 @@ exports[`FileInput multiple max 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -2472,7 +2472,7 @@ exports[`FileInput multiple max 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop files here or
       </span>
@@ -2674,7 +2674,7 @@ exports[`FileInput pad 1`] = `
   class="c0"
 >
   <div
-    class="c1 c2 FileInput__ContentsBox-sc-1jzq7im-0 c2"
+    class="c1 c2"
   >
     <input
       class="c3"
@@ -2685,7 +2685,7 @@ exports[`FileInput pad 1`] = `
       class="c4"
     >
       <span
-        class="c5 FileInput__Message-sc-1jzq7im-2 iZFqsV"
+        class="c5 "
       >
         Drop file here or
       </span>

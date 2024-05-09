@@ -5129,7 +5129,7 @@ exports[`DataChart detail 1`] = `
         class="c9"
       >
         <div
-          class="c10 c11 Detail__DetailControl-sc-huiwg9-0 c11"
+          class="c10 c11"
           tabindex="0"
         >
           <div
@@ -5842,7 +5842,7 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c10 c11 Detail__DetailControl-sc-huiwg9-0 c11"
+          class="c10 c11"
           tabindex="0"
         >
           <div
@@ -5938,7 +5938,7 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c18 c11 Detail__DetailControl-sc-huiwg9-0 c11"
+          class="c18 c11"
           tabindex="0"
         >
           <div
@@ -6034,7 +6034,7 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c20 c11 Detail__DetailControl-sc-huiwg9-0 c11"
+          class="c20 c11"
           tabindex="0"
         >
           <div
@@ -6130,7 +6130,7 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c21 c11 Detail__DetailControl-sc-huiwg9-0 c11"
+          class="c21 c11"
           tabindex="0"
         >
           <div
@@ -6226,7 +6226,7 @@ exports[`DataChart detail pad + thickness 1`] = `
         class="c9"
       >
         <div
-          class="c24 c11 Detail__DetailControl-sc-huiwg9-0 c11"
+          class="c24 c11"
           tabindex="0"
         >
           <div

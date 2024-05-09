@@ -138,7 +138,7 @@ exports[`RadioButtonGroup adding additional props 1`] = `
       for="ONE"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -149,7 +149,7 @@ exports[`RadioButtonGroup adding additional props 1`] = `
           value="1"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         />
       </div>
     </label>
@@ -161,7 +161,7 @@ exports[`RadioButtonGroup adding additional props 1`] = `
       for="TWO"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -172,7 +172,7 @@ exports[`RadioButtonGroup adding additional props 1`] = `
           value="2"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         />
       </div>
     </label>
@@ -364,7 +364,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
       for="true"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           checked=""
@@ -376,7 +376,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
           value="true"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         >
           <svg
             class="c6"
@@ -405,7 +405,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
       for="false"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -416,7 +416,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
           value="false"
         />
         <div
-          class="c8 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c8 "
         />
       </div>
       <span
@@ -558,7 +558,7 @@ exports[`RadioButtonGroup children 1`] = `
       for="one"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           checked=""
@@ -582,7 +582,7 @@ exports[`RadioButtonGroup children 1`] = `
       for="two"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -786,7 +786,7 @@ exports[`RadioButtonGroup defaultValue 1`] = `
         for="one"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+          class="c3 "
         >
           <input
             checked=""
@@ -798,7 +798,7 @@ exports[`RadioButtonGroup defaultValue 1`] = `
             value="one"
           />
           <div
-            class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+            class="c5 "
           >
             <svg
               class="c6"
@@ -827,7 +827,7 @@ exports[`RadioButtonGroup defaultValue 1`] = `
         for="two"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+          class="c3 "
         >
           <input
             class="c4"
@@ -838,7 +838,7 @@ exports[`RadioButtonGroup defaultValue 1`] = `
             value="two"
           />
           <div
-            class="c8 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+            class="c8 "
           />
         </div>
         <span
@@ -1036,7 +1036,7 @@ exports[`RadioButtonGroup number options 1`] = `
       for="1"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           checked=""
@@ -1048,7 +1048,7 @@ exports[`RadioButtonGroup number options 1`] = `
           value="1"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         >
           <svg
             class="c6"
@@ -1077,7 +1077,7 @@ exports[`RadioButtonGroup number options 1`] = `
       for="2"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -1088,7 +1088,7 @@ exports[`RadioButtonGroup number options 1`] = `
           value="2"
         />
         <div
-          class="c8 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c8 "
         />
       </div>
       <span
@@ -1246,7 +1246,7 @@ exports[`RadioButtonGroup object options 1`] = `
       for="onE"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -1257,7 +1257,7 @@ exports[`RadioButtonGroup object options 1`] = `
           value="one"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         />
       </div>
       <span
@@ -1274,7 +1274,7 @@ exports[`RadioButtonGroup object options 1`] = `
       for="twO"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -1285,7 +1285,7 @@ exports[`RadioButtonGroup object options 1`] = `
           value="two"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         />
       </div>
       <span
@@ -1472,7 +1472,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
       disabled=""
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -1483,7 +1483,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           value="one"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         />
       </div>
     </label>
@@ -1494,7 +1494,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
       class="c7"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c8"
@@ -1504,7 +1504,7 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           value="two"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         />
       </div>
     </label>
@@ -1688,7 +1688,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
       class="c2"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -1698,7 +1698,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
           value="one"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         />
       </div>
     </label>
@@ -1709,7 +1709,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
       class="c2"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           checked=""
@@ -1720,7 +1720,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
           value="two"
         />
         <div
-          class="c7 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c7 "
         >
           <svg
             class="c8"
@@ -1870,7 +1870,7 @@ exports[`RadioButtonGroup should have no accessibility violations 1`] = `
         for="option1"
       >
         <div
-          class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+          class="c3 "
         >
           <input
             class="c4"
@@ -1881,7 +1881,7 @@ exports[`RadioButtonGroup should have no accessibility violations 1`] = `
             value="option1"
           />
           <div
-            class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+            class="c5 "
           />
         </div>
         <span
@@ -2079,7 +2079,7 @@ exports[`RadioButtonGroup string options 1`] = `
       for="one"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           checked=""
@@ -2091,7 +2091,7 @@ exports[`RadioButtonGroup string options 1`] = `
           value="one"
         />
         <div
-          class="c5 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c5 "
         >
           <svg
             class="c6"
@@ -2120,7 +2120,7 @@ exports[`RadioButtonGroup string options 1`] = `
       for="two"
     >
       <div
-        class="c3 StyledRadioButton-sc-g1f6ld-5 fjvsCI"
+        class="c3 "
       >
         <input
           class="c4"
@@ -2131,7 +2131,7 @@ exports[`RadioButtonGroup string options 1`] = `
           value="two"
         />
         <div
-          class="c8 StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fqIocy"
+          class="c8 "
         />
       </div>
       <span

@@ -408,7 +408,7 @@ exports[`DataFilter !inDataForm 1`] = `
       >
         <div
           aria-label="name"
-          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0 StyledCheckBoxGroup-sc-2nhc5d-0"
+          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
           id="data-name"
           role="group"
         >
@@ -416,14 +416,14 @@ exports[`DataFilter !inDataForm 1`] = `
             class="c5"
           >
             <div
-              class="c6 c7 StyledCheckBox-sc-1dbk5ju-6 c7"
+              class="c6 c7"
             >
               <input
                 class="c8"
                 type="checkbox"
               />
               <div
-                class="c9 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                class="c9 "
               />
             </div>
             <span>
@@ -437,14 +437,14 @@ exports[`DataFilter !inDataForm 1`] = `
             class="c5"
           >
             <div
-              class="c6 c7 StyledCheckBox-sc-1dbk5ju-6 c7"
+              class="c6 c7"
             >
               <input
                 class="c8"
                 type="checkbox"
               />
               <div
-                class="c9 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                class="c9 "
               />
             </div>
             <span>
@@ -458,14 +458,14 @@ exports[`DataFilter !inDataForm 1`] = `
             class="c5"
           >
             <div
-              class="c6 c7 StyledCheckBox-sc-1dbk5ju-6 c7"
+              class="c6 c7"
             >
               <input
                 class="c8"
                 type="checkbox"
               />
               <div
-                class="c9 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                class="c9 "
               />
             </div>
             <span>
@@ -479,7 +479,7 @@ exports[`DataFilter !inDataForm 1`] = `
       >
         <div
           aria-label="enabled"
-          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0 StyledCheckBoxGroup-sc-2nhc5d-0"
+          class="c4 StyledCheckBoxGroup-sc-2nhc5d-0"
           id="data-enabled"
           role="group"
         >
@@ -487,14 +487,14 @@ exports[`DataFilter !inDataForm 1`] = `
             class="c5"
           >
             <div
-              class="c6 c7 StyledCheckBox-sc-1dbk5ju-6 c7"
+              class="c6 c7"
             >
               <input
                 class="c8"
                 type="checkbox"
               />
               <div
-                class="c9 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                class="c9 "
               />
             </div>
             <span>
@@ -508,14 +508,14 @@ exports[`DataFilter !inDataForm 1`] = `
             class="c5"
           >
             <div
-              class="c6 c7 StyledCheckBox-sc-1dbk5ju-6 c7"
+              class="c6 c7"
             >
               <input
                 class="c8"
                 type="checkbox"
               />
               <div
-                class="c9 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                class="c9 "
               />
             </div>
             <span>
@@ -539,7 +539,7 @@ exports[`DataFilter !inDataForm 1`] = `
             2.1
           </span>
           <div
-            class="c13 c14 RangeSelector__Container-sc-siof5p-0 c14"
+            class="c13 c14"
             tabindex="-1"
           >
             <div
@@ -561,7 +561,7 @@ exports[`DataFilter !inDataForm 1`] = `
                 tabindex="0"
               >
                 <div
-                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
                 />
               </div>
             </div>
@@ -584,7 +584,7 @@ exports[`DataFilter !inDataForm 1`] = `
                 tabindex="0"
               >
                 <div
-                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                  class="c18 EdgeControl__StyledBox-sc-1xo2yt9-0"
                 />
               </div>
             </div>
@@ -895,7 +895,7 @@ exports[`DataFilter children 1`] = `
             class="c1"
           >
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -904,7 +904,7 @@ exports[`DataFilter children 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c8"
@@ -1320,7 +1320,7 @@ exports[`DataFilter options 1`] = `
             class="c1"
           >
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -1329,10 +1329,10 @@ exports[`DataFilter options 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
                 >
@@ -1340,14 +1340,14 @@ exports[`DataFilter options 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1361,14 +1361,14 @@ exports[`DataFilter options 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1382,14 +1382,14 @@ exports[`DataFilter options 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1400,7 +1400,7 @@ exports[`DataFilter options 1`] = `
               </div>
             </div>
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -1409,10 +1409,10 @@ exports[`DataFilter options 1`] = `
                 Enabled
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-enabled"
                   role="group"
                 >
@@ -1420,14 +1420,14 @@ exports[`DataFilter options 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1441,14 +1441,14 @@ exports[`DataFilter options 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1459,7 +1459,7 @@ exports[`DataFilter options 1`] = `
               </div>
             </div>
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -1468,10 +1468,10 @@ exports[`DataFilter options 1`] = `
                 Type
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-type.name"
                   role="group"
                 >
@@ -1479,14 +1479,14 @@ exports[`DataFilter options 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1500,14 +1500,14 @@ exports[`DataFilter options 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -1967,7 +1967,7 @@ exports[`DataFilter range Data 1`] = `
             class="c1"
           >
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -1976,7 +1976,7 @@ exports[`DataFilter range Data 1`] = `
                 Rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c8"
@@ -1989,7 +1989,7 @@ exports[`DataFilter range Data 1`] = `
                     0
                   </span>
                   <div
-                    class="c10 c11 RangeSelector__Container-sc-siof5p-0 c11"
+                    class="c10 c11"
                     tabindex="-1"
                   >
                     <div
@@ -2011,7 +2011,7 @@ exports[`DataFilter range Data 1`] = `
                         tabindex="0"
                       >
                         <div
-                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
@@ -2034,7 +2034,7 @@ exports[`DataFilter range Data 1`] = `
                         tabindex="0"
                       >
                         <div
-                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
@@ -2502,7 +2502,7 @@ exports[`DataFilter range prop 1`] = `
             class="c1"
           >
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -2511,7 +2511,7 @@ exports[`DataFilter range prop 1`] = `
                 rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c8"
@@ -2524,7 +2524,7 @@ exports[`DataFilter range prop 1`] = `
                     0
                   </span>
                   <div
-                    class="c10 c11 RangeSelector__Container-sc-siof5p-0 c11"
+                    class="c10 c11"
                     tabindex="-1"
                   >
                     <div
@@ -2546,7 +2546,7 @@ exports[`DataFilter range prop 1`] = `
                         tabindex="0"
                       >
                         <div
-                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
@@ -2569,7 +2569,7 @@ exports[`DataFilter range prop 1`] = `
                         tabindex="0"
                       >
                         <div
-                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c15 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
@@ -3175,7 +3175,7 @@ exports[`DataFilter renders 1`] = `
             class="c1"
           >
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -3184,10 +3184,10 @@ exports[`DataFilter renders 1`] = `
                 name
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-name"
                   role="group"
                 >
@@ -3195,14 +3195,14 @@ exports[`DataFilter renders 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -3216,14 +3216,14 @@ exports[`DataFilter renders 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -3237,14 +3237,14 @@ exports[`DataFilter renders 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -3255,7 +3255,7 @@ exports[`DataFilter renders 1`] = `
               </div>
             </div>
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -3264,10 +3264,10 @@ exports[`DataFilter renders 1`] = `
                 enabled
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
-                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0 StyledCheckBoxGroup-sc-2nhc5d-0"
+                  class="c8 StyledCheckBoxGroup-sc-2nhc5d-0"
                   id="data-enabled"
                   role="group"
                 >
@@ -3275,14 +3275,14 @@ exports[`DataFilter renders 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -3296,14 +3296,14 @@ exports[`DataFilter renders 1`] = `
                     class="c9"
                   >
                     <div
-                      class="c10 c11 StyledCheckBox-sc-1dbk5ju-6 c11"
+                      class="c10 c11"
                     >
                       <input
                         class="c12"
                         type="checkbox"
                       />
                       <div
-                        class="c13 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+                        class="c13 "
                       />
                     </div>
                     <span>
@@ -3314,7 +3314,7 @@ exports[`DataFilter renders 1`] = `
               </div>
             </div>
             <div
-              class="c5 FormField__FormFieldBox-sc-m9hood-0 geyDmP"
+              class="c5 "
             >
               <label
                 class="c6"
@@ -3323,7 +3323,7 @@ exports[`DataFilter renders 1`] = `
                 rating
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
               >
                 <div
                   class="c15"
@@ -3336,7 +3336,7 @@ exports[`DataFilter renders 1`] = `
                     2.1
                   </span>
                   <div
-                    class="c17 c18 RangeSelector__Container-sc-siof5p-0 c18"
+                    class="c17 c18"
                     tabindex="-1"
                   >
                     <div
@@ -3358,7 +3358,7 @@ exports[`DataFilter renders 1`] = `
                         tabindex="0"
                       >
                         <div
-                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
@@ -3381,7 +3381,7 @@ exports[`DataFilter renders 1`] = `
                         tabindex="0"
                       >
                         <div
-                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0 EdgeControl__StyledBox-sc-1xo2yt9-0"
+                          class="c22 EdgeControl__StyledBox-sc-1xo2yt9-0"
                         />
                       </div>
                     </div>
@@ -3834,7 +3834,7 @@ exports[`DataFilter select multiple options 1`] = `
               style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
             >
               <div
-                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
                 style="min-height: 24px; min-width: 24px;"
               >
                 <span
@@ -4319,75 +4319,6 @@ exports[`DataFilter select multiple options search 2`] = `
   line-height: 20px;
 }
 
-.c8 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c8:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -4482,6 +4413,71 @@ exports[`DataFilter select multiple options search 2`] = `
 }
 
 .c16:focus:not(:focus-visible)::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) > circle,
+.c8:focus:not(:focus-visible) > ellipse,
+.c8:focus:not(:focus-visible) > line,
+.c8:focus:not(:focus-visible) > path,
+.c8:focus:not(:focus-visible) > polygon,
+.c8:focus:not(:focus-visible) > polyline,
+.c8:focus:not(:focus-visible) > rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -4733,7 +4729,7 @@ exports[`DataFilter select multiple options search 2`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="1"
   id="test-data-type.name__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -4741,7 +4737,7 @@ exports[`DataFilter select multiple options search 2`] = `
 >
   <div
     aria-label="Select dropdown"
-    class="c2 c3 StyledSelect__StyledContainer-sc-znp66n-0 c3"
+    class="c2 c3"
     id="test-data-type.name__select-drop"
   >
     <div
@@ -4819,7 +4815,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="1"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option0"
         role="option"
         tabindex="-1"
@@ -4829,7 +4825,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -4837,7 +4833,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -4852,7 +4848,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="2"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option1"
         role="option"
         tabindex="-1"
@@ -4862,7 +4858,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -4870,7 +4866,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -4885,7 +4881,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="3"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option2"
         role="option"
         tabindex="-1"
@@ -4895,7 +4891,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -4903,7 +4899,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -4918,7 +4914,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="4"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option3"
         role="option"
         tabindex="-1"
@@ -4928,7 +4924,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -4936,7 +4932,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -4951,7 +4947,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="5"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option4"
         role="option"
         tabindex="-1"
@@ -4961,7 +4957,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -4969,7 +4965,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -4984,7 +4980,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="6"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option5"
         role="option"
         tabindex="-1"
@@ -4994,7 +4990,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -5002,7 +4998,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -5017,7 +5013,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="7"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option6"
         role="option"
         tabindex="-1"
@@ -5027,7 +5023,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -5035,7 +5031,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -5050,7 +5046,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="8"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option7"
         role="option"
         tabindex="-1"
@@ -5060,7 +5056,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -5068,7 +5064,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -5083,7 +5079,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="9"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option8"
         role="option"
         tabindex="-1"
@@ -5093,7 +5089,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -5101,7 +5097,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -5116,7 +5112,7 @@ exports[`DataFilter select multiple options search 2`] = `
         aria-posinset="10"
         aria-selected="false"
         aria-setsize="10"
-        class="c16 c17 StyledSelect__SelectOption-sc-znp66n-3 c17"
+        class="c16 c17"
         id="option9"
         role="option"
         tabindex="-1"
@@ -5126,7 +5122,7 @@ exports[`DataFilter select multiple options search 2`] = `
           class="c18"
         >
           <div
-            class="c19 c20 StyledCheckBox-sc-1dbk5ju-6 c20"
+            class="c19 c20"
           >
             <input
               class="c21"
@@ -5134,7 +5130,7 @@ exports[`DataFilter select multiple options search 2`] = `
               type="checkbox"
             />
             <div
-              class="c22 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+              class="c22 "
             />
           </div>
           <div
@@ -5154,47 +5150,47 @@ exports[`DataFilter select multiple options search 2`] = `
 
 exports[`DataFilter select multiple options search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jstWSP {
+  .ljTOXS {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .dqcGxt {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .dqcGxt {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .vOYHH {
+  .bkLEEu {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gPKPHc {
+  .eRXbbB {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .dmBBcR {
+  .cwluRE {
     border-radius: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iPXDvR {
+  .czltvY {
     border-radius: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kYOLuO {
+  .VMPGb {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .biJsVL {
+  .jHkhHe {
     height: 6px;
   }
 }"
@@ -5605,7 +5601,7 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
               style="top: 0px; right: 0px; transform: translate(50%, -50%); transform-origin: 100% 0%;"
             >
               <div
-                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0 Badge__StyledBadgeContainer-sc-1es4ws1-0"
+                class="c8 Badge__StyledBadgeContainer-sc-1es4ws1-0"
                 style="min-height: 24px; min-width: 24px;"
               >
                 <span

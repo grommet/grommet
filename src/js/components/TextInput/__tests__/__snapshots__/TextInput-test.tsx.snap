@@ -457,14 +457,14 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -510,16 +510,16 @@ exports[`TextInput calls onSuggestionsClose 3`] = `""`;
 
 exports[`TextInput calls onSuggestionsClose 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 fYxOkd"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 sGmPi"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kfvEQA"
+      class="StyledTextInput-sc-1x30a0s-0 lkNcgd"
       data-testid="test-input"
       id="item"
       name="item"
@@ -702,14 +702,14 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -1024,14 +1024,14 @@ exports[`TextInput close suggestion drop 2`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -1077,16 +1077,16 @@ exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 fYxOkd"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 sGmPi"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kfvEQA"
+      class="StyledTextInput-sc-1x30a0s-0 lkNcgd"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1368,14 +1368,14 @@ exports[`TextInput complex suggestions 2`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -1693,14 +1693,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 fYxOkd"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 sGmPi"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kfvEQA"
+      class="StyledTextInput-sc-1x30a0s-0 lkNcgd"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2180,14 +2180,14 @@ exports[`TextInput large drop height 1`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -2817,14 +2817,14 @@ exports[`TextInput medium drop height 1`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -3199,7 +3199,7 @@ exports[`TextInput read only copy 1`] = `
       />
       <button
         aria-label="Copy to clipboard test"
-        class="c3 c4 CopyButton__StyledButton-sc-1bp1m18-0 c4"
+        class="c3 c4"
         type="button"
       >
         <svg
@@ -4672,14 +4672,14 @@ exports[`TextInput select suggestion 2`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -4725,16 +4725,16 @@ exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 fYxOkd"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 sGmPi"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 ekUvKJ"
+      class="StyledTextInput-sc-1x30a0s-0 efjBdU"
       data-testid="test-input"
       id="item"
       name="item"
@@ -5331,14 +5331,14 @@ exports[`TextInput should only show default placeholder when placeholder is a
 exports[`TextInput should only show default placeholder when placeholder is a
   string 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 fYxOkd"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 vweqL"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 sGmPi"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kfvEQA"
+      class="StyledTextInput-sc-1x30a0s-0 lkNcgd"
       data-testid="placeholder"
       id="placeholder"
       name="placeholder"
@@ -5649,14 +5649,14 @@ exports[`TextInput small drop height 1`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >
@@ -5957,14 +5957,14 @@ exports[`TextInput suggestions 2`] = `
 }
 
 <div
-  class="c0 c1 StyledDrop-sc-16s5rx8-0 c1"
+  class="c0 c1"
   data-g-portal-id="0"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c2 c3 TextInput__ContainerBox-sc-1ai0c08-0 c3"
+    class="c2 c3"
     id="listbox__item"
     role="listbox"
   >

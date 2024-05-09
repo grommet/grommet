@@ -123,7 +123,7 @@ exports[`CheckBox checked renders 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         checked=""
@@ -131,7 +131,7 @@ exports[`CheckBox checked renders 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       >
         <svg
           class="c6"
@@ -283,7 +283,7 @@ exports[`CheckBox controlled 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         checked=""
@@ -291,7 +291,7 @@ exports[`CheckBox controlled 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       >
         <svg
           class="c6"
@@ -314,24 +314,24 @@ exports[`CheckBox controlled 1`] = `
 
 exports[`CheckBox controlled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 fYxOkd"
 >
   <label
-    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 gVeQxx"
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 iSoNdo"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 vOYHH StyledCheckBox-sc-1dbk5ju-6 bjeWAX StyledCheckBox-sc-1dbk5ju-6 bjeWAX"
+      class="StyledBox-sc-13pk1d4-0 bkLEEu StyledCheckBox-sc-1dbk5ju-6 cLdvuG"
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 etniDJ"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 HBXLk"
         type="checkbox"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 fRMvyw StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="StyledBox-sc-13pk1d4-0 ehINaV StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gKzRMM"
       >
         <svg
-          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 cAKqJx"
+          class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 bgxPRE"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -479,14 +479,14 @@ exports[`CheckBox custom theme 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
     <span>
@@ -619,7 +619,7 @@ exports[`CheckBox defaultChecked 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         checked=""
@@ -627,7 +627,7 @@ exports[`CheckBox defaultChecked 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       >
         <svg
           class="c6"
@@ -801,7 +801,7 @@ exports[`CheckBox disabled renders 1`] = `
     disabled=""
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
       disabled=""
     >
       <input
@@ -810,7 +810,7 @@ exports[`CheckBox disabled renders 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
         disabled=""
       />
     </div>
@@ -820,7 +820,7 @@ exports[`CheckBox disabled renders 1`] = `
     disabled=""
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
       disabled=""
     >
       <input
@@ -830,7 +830,7 @@ exports[`CheckBox disabled renders 1`] = `
         type="checkbox"
       />
       <div
-        class="c6 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c6 "
         disabled=""
       >
         <svg
@@ -1033,14 +1033,14 @@ exports[`CheckBox indeterminate renders 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       >
         <svg
           class="c6"
@@ -1059,14 +1059,14 @@ exports[`CheckBox indeterminate renders 1`] = `
     class="c7"
   >
     <div
-      class="c8 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c8 c3"
     >
       <input
         class="c4"
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       >
         <svg
           class="c6"
@@ -1236,14 +1236,14 @@ exports[`CheckBox label renders 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
     <span>
@@ -1254,14 +1254,14 @@ exports[`CheckBox label renders 1`] = `
     class="c6"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
     <div>
@@ -1397,14 +1397,14 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
     <span>
@@ -1529,14 +1529,14 @@ exports[`CheckBox renders 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
   </label>
@@ -1545,7 +1545,7 @@ exports[`CheckBox renders 1`] = `
     for="test id"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
@@ -1554,7 +1554,7 @@ exports[`CheckBox renders 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
   </label>
@@ -1676,7 +1676,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         aria-label="Label"
@@ -1684,7 +1684,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
   </label>
@@ -1692,7 +1692,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         aria-label="Label-2"
@@ -1700,7 +1700,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
   </label>
@@ -1833,7 +1833,7 @@ exports[`CheckBox renders custom checked icon 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         checked=""
@@ -1841,7 +1841,7 @@ exports[`CheckBox renders custom checked icon 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       >
         <svg
           data-testid="custom-checkBox-icon"
@@ -1984,14 +1984,14 @@ exports[`CheckBox reverse renders 1`] = `
       test label
     </span>
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
   </label>
@@ -2157,7 +2157,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
       test label
     </span>
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
@@ -2176,7 +2176,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
     class="c1"
   >
     <div
-      class="c7 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c7 c3"
     >
       <input
         class="c4"
@@ -2312,7 +2312,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         aria-label="test"
@@ -2320,7 +2320,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
         type="checkbox"
       />
       <div
-        class="c5 StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 goelDJ"
+        class="c5 "
       />
     </div>
   </label>
@@ -2492,7 +2492,7 @@ exports[`CheckBox toggle renders 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         class="c4"
@@ -2511,7 +2511,7 @@ exports[`CheckBox toggle renders 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c2 c3"
     >
       <input
         checked=""
@@ -2531,7 +2531,7 @@ exports[`CheckBox toggle renders 1`] = `
     class="c7"
   >
     <div
-      class="c8 c3 StyledCheckBox-sc-1dbk5ju-6 c3"
+      class="c8 c3"
     >
       <input
         class="c4"
