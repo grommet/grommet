@@ -9,9 +9,9 @@ import {
   controlBorderStyle,
   sizeStyle,
 } from '../../utils';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
-export const StyledContainer = styled.div.attrs(ehnancePropsWithDefault)`
+export const StyledContainer = styled.div.attrs(ehnancePropsWithTheme)`
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
@@ -38,7 +38,7 @@ export const HiddenInput = styled.input`
   display: none;
 `;
 
-export const SelectOption = styled(Button).attrs(ehnancePropsWithDefault)`
+export const SelectOption = styled(Button).attrs(ehnancePropsWithTheme)`
   ${(props) => props.selected && props.textComponent && selectedStyle}
   // applies theme.global.hover.background to the active
   // option for mouse and keyboard interactions
@@ -70,7 +70,7 @@ export const SelectTextInput = styled(TextInput)`
 `;
 
 export const StyledSelectDropButton = styled(DropButton)
-.attrs(ehnancePropsWithDefault)`
+.attrs(ehnancePropsWithTheme)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select?.control?.open};

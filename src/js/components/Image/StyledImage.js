@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { fillStyle, genericStyles } from '../../utils';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -14,7 +14,7 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
-const StyledImage = styled.img.attrs(ehnancePropsWithDefault)`
+const StyledImage = styled.img.attrs(ehnancePropsWithTheme)`
   ${genericStyles}
   ${props => props.fit && fitStyle}
   ${props => props.fillProp && fillStyle(props.fillProp)}

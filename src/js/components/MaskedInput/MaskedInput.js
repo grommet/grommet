@@ -23,7 +23,7 @@ import {
 } from './StyledMaskedInput';
 import { MaskedInputPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
@@ -146,7 +146,7 @@ const defaultMask = [
   },
 ];
 
-const ContainerBox = styled(Box).attrs(ehnancePropsWithDefault)`
+const ContainerBox = styled(Box).attrs(ehnancePropsWithTheme)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)

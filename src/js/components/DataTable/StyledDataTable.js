@@ -15,10 +15,10 @@ import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 // border-collapse: separate is needed so pinned header/footer borders work
-const StyledDataTable = styled(Table).attrs(ehnancePropsWithDefault)`
+const StyledDataTable = styled(Table).attrs(ehnancePropsWithTheme)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
@@ -31,7 +31,7 @@ const StyledDataTable = styled(Table).attrs(ehnancePropsWithDefault)`
 `;
 
 // when paginated, this wraps the data table and pagination component
-const StyledContainer = styled(Box).attrs(ehnancePropsWithDefault)`
+const StyledContainer = styled(Box).attrs(ehnancePropsWithTheme)`
   ${(props) =>
     props.theme.dataTable &&
     props.theme.dataTable.container &&
@@ -62,7 +62,7 @@ const hoverStyle = css`
     )};
 `;
 
-const StyledDataTableRow = styled(TableRow).attrs(ehnancePropsWithDefault)`
+const StyledDataTableRow = styled(TableRow).attrs(ehnancePropsWithTheme)`
   ${(props) =>
     props.size &&
     `
@@ -79,7 +79,7 @@ const StyledDataTableRow = styled(TableRow).attrs(ehnancePropsWithDefault)`
 `;
 
 // focus styling other than outline doesn't work on <tbody />
-const StyledDataTableBody = styled(TableBody).attrs(ehnancePropsWithDefault)`
+const StyledDataTableBody = styled(TableBody).attrs(ehnancePropsWithTheme)`
   ${(props) =>
     props.size &&
     `
@@ -99,7 +99,7 @@ const StyledDataTableBody = styled(TableBody).attrs(ehnancePropsWithDefault)`
 `;
 
 const StyledDataTableHeader = styled(TableHeader)
-.attrs(ehnancePropsWithDefault)`
+.attrs(ehnancePropsWithTheme)`
   ${(props) =>
     props.size &&
     `
@@ -111,7 +111,7 @@ const StyledDataTableHeader = styled(TableHeader)
 `;
 
 const StyledDataTableFooter = styled(TableFooter)
-.attrs(ehnancePropsWithDefault)`
+.attrs(ehnancePropsWithTheme)`
   ${(props) =>
     props.size &&
     `
@@ -129,7 +129,7 @@ const StyledDataTableFooter = styled(TableFooter)
   `}
 `;
 
-const StyledDataTableCell = styled(TableCell).attrs(ehnancePropsWithDefault)`
+const StyledDataTableCell = styled(TableCell).attrs(ehnancePropsWithTheme)`
   ${(props) =>
     props.context === 'header' &&
     props.theme.dataTable &&

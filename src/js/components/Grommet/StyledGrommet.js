@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { baseStyle } from '../../utils';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 
 const fullStyle = (full) => {
@@ -16,7 +16,7 @@ const fullStyle = (full) => {
   `;
 };
 
-const StyledGrommet = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledGrommet = styled.div.attrs(ehnancePropsWithTheme)`
   ${(props) => !props.plain && baseStyle}
   ${(props) => props.full && fullStyle(props.full)}
   ${(props) => props.theme.global.font.face}

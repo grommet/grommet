@@ -9,10 +9,10 @@ import {
   extendDefaultTheme,
   Box,
   Grommet,
-  ehnancePropsWithDefault,
+  ehnancePropsWithTheme,
 } from '..';
 
-const CustomBox = styled.div.attrs(ehnancePropsWithDefault)`
+const CustomBox = styled.div.attrs(ehnancePropsWithTheme)`
   background: ${(props) => props.theme.global.colors.brand};
 `;
 test('default theme is used', () => {

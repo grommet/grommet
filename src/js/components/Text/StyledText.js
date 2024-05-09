@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 const sizeStyle = props => {
   const size = props.size || 'medium';
@@ -41,7 +41,7 @@ const fontFamily = css`
   font-family: ${props => props.theme.text.font.family};
 `;
 
-const StyledText = styled('span').attrs(ehnancePropsWithDefault).withConfig({
+const StyledText = styled('span').attrs(ehnancePropsWithTheme).withConfig({
   shouldForwardProp: (prop, defaultValidatorFn) =>
     defaultValidatorFn(prop) && prop !== 'size',
 })`

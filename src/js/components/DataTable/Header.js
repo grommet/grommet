@@ -27,7 +27,7 @@ import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -106,12 +106,12 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
   return styles;
 };
 
-const StyledHeaderCellButton = styled(Button).attrs(ehnancePropsWithDefault)`
+const StyledHeaderCellButton = styled(Button).attrs(ehnancePropsWithTheme)`
   ${(props) => buttonStyle(props)}
 `;
 
 // allow extend to spread onto Box that surrounds column label
-const StyledContentBox = styled(Box).attrs(ehnancePropsWithDefault)`
+const StyledContentBox = styled(Box).attrs(ehnancePropsWithTheme)`
   ${(props) => props.extend}
 `;
 

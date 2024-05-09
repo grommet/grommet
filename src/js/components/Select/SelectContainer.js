@@ -28,10 +28,10 @@ import {
 import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 // ensure ClearButton receives visual indication of keyboard
-const StyledButton = styled(Button).attrs(ehnancePropsWithDefault)`
+const StyledButton = styled(Button).attrs(ehnancePropsWithTheme)`
   &:focus {
     ${(props) => getHoverIndicatorStyle('background', props.theme)}
   }

@@ -1,30 +1,30 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import { normalizeColor, genericStyles } from '../../utils';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
-const StyledHour = styled.line.attrs(ehnancePropsWithDefault)`
+const StyledHour = styled.line.attrs(ehnancePropsWithTheme)`
   stroke-width: ${props => props.theme.clock.analog.hour.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledMinute = styled.line.attrs(ehnancePropsWithDefault)`
+const StyledMinute = styled.line.attrs(ehnancePropsWithTheme)`
   stroke-width: ${props => props.theme.clock.analog.minute.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledSecond = styled.line.attrs(ehnancePropsWithDefault)`
+const StyledSecond = styled.line.attrs(ehnancePropsWithTheme)`
   stroke-width: ${props => props.theme.clock.analog.second.width};
   stroke: ${props =>
     normalizeColor(props.theme.clock.analog.second.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledAnalog = styled.svg.attrs(ehnancePropsWithDefault)`
+const StyledAnalog = styled.svg.attrs(ehnancePropsWithTheme)`
   width: ${props => props.theme.clock.analog.size[props.size]};
   height: ${props => props.theme.clock.analog.size[props.size]};
 
@@ -42,7 +42,7 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledDigitalDigit = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledDigitalDigit = styled.div.attrs(ehnancePropsWithTheme)`
   position: relative;
   width: 0.8em;
   text-align: center;
@@ -60,7 +60,7 @@ const previousDown = keyframes`
   100% { transform: translateY(100%); }
 `;
 
-const StyledDigitalPrevious = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledDigitalPrevious = styled.div.attrs(ehnancePropsWithTheme)`
   position: absolute;
   top: 0;
   left: 0;
@@ -81,7 +81,7 @@ const nextDown = keyframes`
   100% { transform: translateY(0); }
 `;
 
-const StyledDigitalNext = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledDigitalNext = styled.div.attrs(ehnancePropsWithTheme)`
   position: absolute;
   top: 0;
   left: 0;

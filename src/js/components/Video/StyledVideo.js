@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { focusStyle, genericStyles, normalizeColor } from '../../utils';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -15,7 +15,7 @@ const fitStyle = css`
 `;
 
 // z-index is for Safari so controls aren't hidden
-const StyledVideo = styled.video.attrs(ehnancePropsWithDefault)`
+const StyledVideo = styled.video.attrs(ehnancePropsWithTheme)`
   max-width: 100%;
   z-index: 1;
   ${(props) => props.fit && fitStyle} ::cue {
@@ -25,7 +25,7 @@ const StyledVideo = styled.video.attrs(ehnancePropsWithDefault)`
   ${(props) => props.theme.video && props.theme.video.extend};
 `;
 
-const StyledVideoContainer = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledVideoContainer = styled.div.attrs(ehnancePropsWithTheme)`
   flex: 1 1;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ const positionStyle = css`
   z-index: 1;
 `;
 
-const StyledVideoControls = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledVideoControls = styled.div.attrs(ehnancePropsWithTheme)`
   flex: 0 0;
   ${(props) => props.over && positionStyle} opacity: 0;
   transition: opacity 0.3s;
@@ -65,7 +65,7 @@ const headStyle = css`
   }
 `;
 
-const StyledVideoScrubber = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledVideoScrubber = styled.div.attrs(ehnancePropsWithTheme)`
   cursor: pointer;
   width: 100%;
   height: 100%;

@@ -8,7 +8,7 @@ import {
   heightStyle,
   widthStyle,
 } from '../../utils';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 const fillStyle = (fill) => {
   if (!fill) {
@@ -213,7 +213,7 @@ const areasStyle = (props) => {
 };
 
 const StyledGrid = styled.div.attrs((props) => ({
-  ...ehnancePropsWithDefault(props),
+  ...ehnancePropsWithTheme(props),
   'aria-label': props.a11yTitleProp,
 }))`
   display: grid;

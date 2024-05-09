@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { animationObjectStyle } from '../../utils/animation';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 const animationItemStyle = (animationType, theme) => {
   if (typeof animationType === 'string') {
@@ -59,7 +59,7 @@ const connectionStyle = (connection, index, theme) => {
 
 const availableAnimations = [true, 'draw', 'pulse'];
 
-const StyledDiagram = styled.svg.attrs(ehnancePropsWithDefault)`
+const StyledDiagram = styled.svg.attrs(ehnancePropsWithTheme)`
   max-width: 100%;
   width: 100%;
   height: 100%;

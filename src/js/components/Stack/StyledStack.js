@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles } from '../../utils';
-import { ehnancePropsWithDefault } from '../../default-props';
+import { ehnancePropsWithTheme } from '../../default-props';
 
 const fillStyle = css`
   ${props =>
@@ -19,7 +19,7 @@ const fillStyle = css`
   display: flex;
 `;
 
-const StyledStack = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledStack = styled.div.attrs(ehnancePropsWithTheme)`
   position: relative;
   ${genericStyles}
   ${props => props.fillContainer && fillStyle}
@@ -76,7 +76,7 @@ const styleMap = {
   `,
 };
 
-const StyledStackLayer = styled.div.attrs(ehnancePropsWithDefault)`
+const StyledStackLayer = styled.div.attrs(ehnancePropsWithTheme)`
   position: ${props => (props.guiding ? 'relative' : 'absolute')};
   ${props => props.guiding && 'display: block;'}
   ${props => !props.guiding && `${styleMap[props.anchor || 'fill']};`}
