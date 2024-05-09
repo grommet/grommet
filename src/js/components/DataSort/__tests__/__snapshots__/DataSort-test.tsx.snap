@@ -155,7 +155,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="StyledButton-sc-323bzc-0 eetRLV"
+  class="StyledButton-sc-323bzc-0 hZNOgI"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
@@ -163,7 +163,7 @@ exports[`DataSort drop 2`] = `
 >
   <svg
     aria-label="Descend"
-    class="StyledIcon-sc-ofa7kd-0 jhNuel"
+    class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
     viewBox="0 0 24 24"
   >
     <path
@@ -178,48 +178,48 @@ exports[`DataSort drop 2`] = `
 
 exports[`DataSort drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ljTOXS {
+  .jstWSP {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fptPIw {
+  .bnAVOh {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .kpKaew {
+  .gnAxhJ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dqcGxt {
+  .gkHEjs {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .dqcGxt {
+  .gkHEjs {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .drnaP {
+  .iuoTxe {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fipWQV {
+  .bKYcZs {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .VMPGb {
+  .kYOLuO {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .jHkhHe {
+  .biJsVL {
     height: 6px;
   }
 }"

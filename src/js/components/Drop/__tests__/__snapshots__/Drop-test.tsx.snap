@@ -66,7 +66,7 @@ exports[`Drop align left left 1`] = `
 `;
 
 exports[`Drop align left left 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,7 +82,7 @@ exports[`Drop align left left 2`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -161,7 +161,7 @@ exports[`Drop align left right top bottom 1`] = `
 `;
 
 exports[`Drop align left right top bottom 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -176,7 +176,7 @@ exports[`Drop align left right top bottom 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -200,7 +200,7 @@ exports[`Drop align left right top bottom 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -279,7 +279,7 @@ exports[`Drop align right left top top 1`] = `
 `;
 
 exports[`Drop align right left top top 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -295,7 +295,7 @@ exports[`Drop align right left top top 2`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -374,7 +374,7 @@ exports[`Drop align right right 1`] = `
 `;
 
 exports[`Drop align right right 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -390,7 +390,7 @@ exports[`Drop align right right 2`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -469,7 +469,7 @@ exports[`Drop align right right bottom top 1`] = `
 `;
 
 exports[`Drop align right right bottom top 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -485,7 +485,7 @@ exports[`Drop align right right bottom top 2`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -564,7 +564,7 @@ exports[`Drop align right right bottom top 3`] = `
 `;
 
 exports[`Drop align right right bottom top 4`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -580,7 +580,7 @@ exports[`Drop align right right bottom top 4`] = `
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -662,7 +662,7 @@ exports[`Drop background 1`] = `
 
 exports[`Drop background 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -741,7 +741,7 @@ exports[`Drop basic 1`] = `
 `;
 
 exports[`Drop basic 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -756,7 +756,7 @@ exports[`Drop basic 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -780,7 +780,7 @@ exports[`Drop basic 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -859,7 +859,7 @@ exports[`Drop close 1`] = `
 `;
 
 exports[`Drop close 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -874,7 +874,7 @@ exports[`Drop close 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -898,7 +898,7 @@ exports[`Drop close 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -977,7 +977,7 @@ exports[`Drop default elevation renders 1`] = `
 `;
 
 exports[`Drop default elevation renders 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -992,7 +992,7 @@ exports[`Drop default elevation renders 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1016,7 +1016,7 @@ exports[`Drop default elevation renders 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1097,7 +1097,7 @@ exports[`Drop elevation 1`] = `
 
 exports[`Drop elevation 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1176,7 +1176,7 @@ exports[`Drop invalid align 1`] = `
 `;
 
 exports[`Drop invalid align 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1191,7 +1191,7 @@ exports[`Drop invalid align 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1215,7 +1215,7 @@ exports[`Drop invalid align 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1294,7 +1294,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 `;
 
 exports[`Drop invoke onClickOutside 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1309,7 +1309,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1333,7 +1333,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1421,7 +1421,7 @@ exports[`Drop margin 1`] = `
 
 exports[`Drop margin 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1500,7 +1500,7 @@ exports[`Drop no stretch 1`] = `
 `;
 
 exports[`Drop no stretch 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1515,7 +1515,7 @@ exports[`Drop no stretch 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1539,7 +1539,7 @@ exports[`Drop no stretch 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1615,7 +1615,7 @@ exports[`Drop plain 1`] = `
 
 exports[`Drop plain 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1694,7 +1694,7 @@ exports[`Drop resize 1`] = `
 `;
 
 exports[`Drop resize 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1709,7 +1709,7 @@ exports[`Drop resize 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1733,7 +1733,7 @@ exports[`Drop resize 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1813,7 +1813,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 fjaOFj StyledDrop-sc-16s5rx8-0 kjgFLT"
+  class="StyledBox-sc-13pk1d4-0 gDwAlq StyledDrop-sc-16s5rx8-0 jWOvQG"
   data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -1824,7 +1824,7 @@ exports[`Drop restrict focus 2`] = `
 `;
 
 exports[`Drop restrict focus 3`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1839,7 +1839,7 @@ exports[`Drop restrict focus 3`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1863,7 +1863,7 @@ exports[`Drop restrict focus 3`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1952,7 +1952,7 @@ exports[`Drop round 1`] = `
 
 exports[`Drop round 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2063,7 +2063,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"bottom","left":"right"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2079,7 +2079,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2161,7 +2161,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"bottom","right":"left"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2177,7 +2177,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2259,7 +2259,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","left":"left"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2275,7 +2275,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2358,7 +2358,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","left":"right"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2374,7 +2374,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2457,7 +2457,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","right":"left"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2473,7 +2473,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2556,7 +2556,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"bottom":"top","right":"left"} 4`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2572,7 +2572,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2654,7 +2654,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"right":"right","bottom":"top"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2670,7 +2670,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2752,7 +2752,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","left":"left"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2768,7 +2768,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2851,7 +2851,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","left":"right"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2867,7 +2867,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2950,7 +2950,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","right":"left"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2966,7 +2966,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3048,7 +3048,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom","right":"right"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3064,7 +3064,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3146,7 +3146,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"bottom"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3162,7 +3162,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3244,7 +3244,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"top","left":"right"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3260,7 +3260,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3342,7 +3342,7 @@ exports[`Drop should render correct margin depending on value of align:
 
 exports[`Drop should render correct margin depending on value of align: 
     {"top":"top","right":"left"} 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3358,7 +3358,7 @@ exports[`Drop should render correct margin depending on value of align:
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3437,7 +3437,7 @@ exports[`Drop stretch = align 1`] = `
 `;
 
 exports[`Drop stretch = align 2`] = `
-".fjaOFj {
+".gDwAlq {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3452,7 +3452,7 @@ exports[`Drop stretch = align 2`] = `
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.kjgFLT {
+.jWOvQG {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3476,7 +3476,7 @@ exports[`Drop stretch = align 2`] = `
   animation-delay: 0.01s;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3557,7 +3557,7 @@ exports[`Drop theme elevation renders 1`] = `
 
 exports[`Drop theme elevation renders 2`] = `
 "@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .kjgFLT {
+  .jWOvQG {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
