@@ -423,6 +423,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       pad: pad,
       plain: plain || Children.count(children) > 0,
       primary: primary,
+      selected: selected,
       sizeProp: size,
       success: success,
       type: !href ? type : undefined

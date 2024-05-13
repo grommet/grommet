@@ -429,6 +429,7 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       pad: pad,
       plain: plain || _react.Children.count(children) > 0,
       primary: primary,
+      selected: selected,
       sizeProp: size,
       success: success,
       type: !href ? type : undefined
