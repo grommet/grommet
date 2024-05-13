@@ -9043,10 +9043,10 @@ graphlib@^2.1.5:
   dependencies:
     lodash "^4.17.15"
 
-grommet-icons@^4.10.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.11.0.tgz#8cb97d24e84a02c1fb23f84c776ffc46b61ae29d"
-  integrity sha512-ArXf2XyXmpk5JsQ8NudzNz3mbWv+TeZkPiyog2s9yoNAWTlIr3vzNjr97uon/Xm4Uiq2kiHkvO4i2fG1u6EaDg==
+grommet-icons@^4.12.1:
+  version "4.12.1"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.12.1.tgz#780aa7cd59c5586f642f221bdb5c6becd04ad000"
+  integrity sha512-LhOP6BkDAGiSNcUOfsGGRo+AKD6zWOXeNeusY1WYvKplAR6mKCAQfH7Nig2Buc/v5zadKSko2NDtCQqwJaME0Q==
 
 grommet-theme-hpe@^5.4.0:
   version "5.4.0"
