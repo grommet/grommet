@@ -1725,6 +1725,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         dark: ['background', 'background-front'],
         light: ['background', 'background-back'],
       },
+      // extend: undefined,
     },
     skipLinks: {
       position: 'top',
@@ -1932,6 +1933,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         background: 'none',
         elevation: 'none',
         margin: 'none',
+      },
+    },
+    toggleGroup: {
+      button: {
+        // iconOnly: {
+        //   pad: undefined,
+        // },
+        pad: {
+          horizontal: '11px',
+          vertical: '11px',
+        },
+      },
+      container: {
+        round: 'xsmall',
+        border: true,
+      },
+      divider: {
+        color: 'border',
       },
     },
     video: {

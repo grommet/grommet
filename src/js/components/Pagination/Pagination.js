@@ -55,6 +55,10 @@ const Pagination = forwardRef(
     );
 
     useEffect(() => {
+      if (stepProp) setStep(stepProp);
+    }, [stepProp]);
+
+    useEffect(() => {
       setActivePage(page);
       const pageEvent = new Event('pagechange');
       window.dispatchEvent(pageEvent);

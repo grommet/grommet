@@ -36,6 +36,6 @@ export const StyledSkeleton = styled.div`
       props.theme.box.responsiveBreakpoint,
       props.theme,
     )}
-  ${(props) =>
-    props.round && roundStyle(props.round, props.responsive, props.theme)}
+  ${(props) => props.round && roundStyle(props.round, true, props.theme)}
+  ${(props) => props.theme?.skeleton?.extend}
 `;
