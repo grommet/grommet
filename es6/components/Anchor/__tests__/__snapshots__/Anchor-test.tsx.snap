@@ -464,8 +464,8 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: NaNpx;
-  height: NaNpx;
+  width: NaNxsmall;
+  height: NaNxsmall;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
