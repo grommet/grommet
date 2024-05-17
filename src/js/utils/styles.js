@@ -41,17 +41,19 @@ export const edgeStyle = (
   responsiveBreakpoint,
   theme,
 ) => {
-  const breakpoint =
-    responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
+  const breakpoint = getBreakpointStyle(theme, responsiveBreakpoint);
+  const metric = theme.global.edgeSize[data] || data;
+  const responsiveMetric = responsive && breakpoint &&
+    breakpoint.edgeSize[data];
 
   if (typeof data === 'string') {
     return css`
-      ${kind}: ${theme.global.edgeSize[data] || data};
-      ${responsive && breakpoint
+      ${kind}: ${metric};
+      ${responsiveMetric
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}: ${breakpoint.edgeSize[data] || data};
+        ${kind}: ${responsiveMetric};
       `,
           )
         : ''};
