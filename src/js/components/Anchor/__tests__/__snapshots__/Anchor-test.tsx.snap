@@ -998,8 +998,8 @@ exports[`Anchor renders size specific theming 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #FD6FFF;
-  stroke: #FD6FFF;
+  fill: #000000;
+  stroke: #000000;
 }
 
 .c18 g {
@@ -1021,6 +1021,40 @@ exports[`Anchor renders size specific theming 1`] = `
 .c18 *[FILL-RULE],
 .c18 *[fill*='#'],
 .c18 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c20 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c20 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c20 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c20 *[stroke*='#'],
+.c20 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c20 *[fill-rule],
+.c20 *[FILL-RULE],
+.c20 *[fill*='#'],
+.c20 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1444,7 +1478,7 @@ exports[`Anchor renders size specific theming 1`] = `
       >
         <svg
           aria-label="LinkNext"
-          class="c18"
+          class="c20"
           viewBox="0 0 24 24"
         >
           <path
@@ -1458,6 +1492,131 @@ exports[`Anchor renders size specific theming 1`] = `
           class="c19"
         />
         Large anchor with icon should receive color on icon
+      </span>
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Anchor renders specific icon color 1`] = `
+<DocumentFragment>
+  .c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #FD6FFF;
+  stroke: #FD6FFF;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+    class="c0"
+  >
+    <a
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <span
+          class="c4"
+        />
+        Anchor with icon
       </span>
     </a>
   </div>

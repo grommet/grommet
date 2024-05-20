@@ -230,9 +230,6 @@ describe('Anchor', () => {
         color: 'text-strong',
         textDecoration: 'underline',
         fontWeight: 700,
-        icon: {
-          color: 'accent-2',
-        },
         size: {
           large: {
             color: 'brand',
@@ -275,6 +272,24 @@ describe('Anchor', () => {
           icon={<LinkNext />}
           size="large"
         />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders specific icon color', () => {
+    const theme = {
+      anchor: {
+        icon: {
+          color: 'accent-2',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Anchor label="Anchor with icon" icon={<LinkNext />} />
       </Grommet>,
     );
 
