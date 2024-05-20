@@ -1507,8 +1507,210 @@ exports[`Anchor renders specific icon color 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #FD6FFF;
   stroke: #FD6FFF;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+    class="c0"
+  >
+    <a
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <span
+          class="c4"
+        />
+        Color prop on icon
+      </span>
+    </a>
+    <a
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <span
+          class="c4"
+        />
+        Anchor with color prop
+      </span>
+    </a>
+    <a
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <span
+          class="c4"
+        />
+        Anchor using theme
+      </span>
+    </a>
+  </div>
+  .c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c3 g {
@@ -1616,7 +1818,7 @@ exports[`Anchor renders specific icon color 1`] = `
         <span
           class="c4"
         />
-        Anchor with icon
+        Anchor color
       </span>
     </a>
   </div>
