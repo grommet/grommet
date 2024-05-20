@@ -499,6 +499,9 @@ export interface ThemeType {
       extend?: ExtendType<PropsOf<typeof Anchor>>;
       textDecoration?: string;
     };
+    icon?: {
+      color?: ColorType;
+    };
     textDecoration?: string;
     size?: {
       medium?: {

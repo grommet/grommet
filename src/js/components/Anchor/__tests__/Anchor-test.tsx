@@ -230,6 +230,9 @@ describe('Anchor', () => {
         color: 'text-strong',
         textDecoration: 'underline',
         fontWeight: 700,
+        icon: {
+          color: 'accent-2',
+        },
         size: {
           large: {
             color: 'brand',

@@ -998,8 +998,8 @@ exports[`Anchor renders size specific theming 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #FD6FFF;
+  stroke: #FD6FFF;
 }
 
 .c18 g {
@@ -1021,40 +1021,6 @@ exports[`Anchor renders size specific theming 1`] = `
 .c18 *[FILL-RULE],
 .c18 *[fill*='#'],
 .c18 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c20 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c20 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c20 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c20 *[stroke*='#'],
-.c20 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c20 *[fill-rule],
-.c20 *[FILL-RULE],
-.c20 *[fill*='#'],
-.c20 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -1478,7 +1444,7 @@ exports[`Anchor renders size specific theming 1`] = `
       >
         <svg
           aria-label="LinkNext"
-          class="c20"
+          class="c18"
           viewBox="0 0 24 24"
         >
           <path
