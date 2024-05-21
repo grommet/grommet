@@ -13,21 +13,16 @@ exports[`Anchor blur renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -56,20 +51,15 @@ exports[`Anchor disabled renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   opacity: 0.3;
   cursor: default;
-  -webkit-text-decoration: none;
   text-decoration: none;
 }
 
@@ -98,15 +88,11 @@ exports[`Anchor focus renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -114,22 +100,21 @@ exports[`Anchor focus renders 1`] = `
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 > circle,
-.c1 > ellipse,
-.c1 > line,
-.c1 > path,
-.c1 > polygon,
-.c1 > polyline,
-.c1 > rect {
+.c1 >circle,
+.c1 >ellipse,
+.c1 >line,
+.c1 >path,
+.c1 >polygon,
+.c1 >polyline,
+.c1 >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c1 ::-moz-focus-inner {
   border: 0;
 }
 
@@ -157,90 +142,57 @@ exports[`Anchor gap renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 6px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
 
 .c5 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 24px;
 }
 
 .c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 48px;
 }
 
 .c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 5px;
 }
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -344,50 +296,33 @@ exports[`Anchor icon label renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -427,21 +362,16 @@ exports[`Anchor is clickable 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -461,8 +391,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 <DocumentFragment>
   .c3 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: NaNxsmall;
   height: NaNxsmall;
@@ -495,8 +423,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c6 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
   height: 12px;
@@ -529,8 +455,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c8 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -563,8 +487,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c10 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
@@ -597,8 +519,6 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 
 .c12 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 96px;
   height: 96px;
@@ -640,130 +560,93 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 12px;
   line-height: 18px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c5 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 14px;
   line-height: 20px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c5:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c7 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c7:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c9 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 22px;
   line-height: 28px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c9:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c11 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 26px;
   line-height: 32px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c11:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -907,21 +790,16 @@ exports[`Anchor renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -949,21 +827,16 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -993,8 +866,6 @@ exports[`Anchor renders size specific theming 1`] = `
 <DocumentFragment>
   .c18 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1027,8 +898,6 @@ exports[`Anchor renders size specific theming 1`] = `
 
 .c20 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1070,204 +939,147 @@ exports[`Anchor renders size specific theming 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c19 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
 
 .c2 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 12px;
   line-height: 18px;
   color: #000000;
   font-weight: 700;
-  -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .c2:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c4 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 14px;
   line-height: 20px;
   color: #000000;
   font-weight: 700;
-  -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .c4:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c6 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 18px;
   line-height: 24px;
   color: #000000;
   font-weight: 700;
-  -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c8 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 22px;
   line-height: 28px;
   color: #7D4CDB;
   font-weight: 500;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c8:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c10 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 26px;
   line-height: 32px;
   color: #7D4CDB;
   font-weight: 500;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c10:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c12 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 34px;
   line-height: 40px;
   color: #7D4CDB;
   font-weight: 500;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c12:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c15 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #000000;
   font-weight: 700;
-  -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .c15:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c16 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #000000;
   font-weight: 700;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c16:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1511,21 +1323,16 @@ exports[`Anchor renders tag 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1556,21 +1363,16 @@ exports[`Anchor renders with children 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1598,50 +1400,33 @@ exports[`Anchor reverse icon label renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1681,21 +1466,16 @@ exports[`Anchor should have no accessibility violations 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1724,37 +1504,27 @@ exports[`Anchor shows no error for component used in as prop 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
 }
 
 .c2 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c2:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1782,141 +1552,106 @@ exports[`Anchor size renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 12px;
   line-height: 18px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c2 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 14px;
   line-height: 20px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c2:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c3 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c3:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c4 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 22px;
   line-height: 28px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c4:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c5 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 26px;
   line-height: 32px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c5:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c6 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 34px;
   line-height: 40px;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c7 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 10px;
   line-height: normal;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c7:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1962,22 +1697,17 @@ exports[`Anchor warns about invalid icon render 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   padding: 12px;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2008,21 +1738,16 @@ exports[`Anchor warns about invalid label render 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2051,181 +1776,136 @@ exports[`Anchor weight renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: normal;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c1:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c2 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: bold;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c2:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c3 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 500;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c3:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c4 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: lighter;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c4:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c5 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: bolder;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c5:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c6 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c6:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c7 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: initial;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c7:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c8 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: revert;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c8:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c9 {
   box-sizing: border-box;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: unset;
-  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
 }
 
 .c9:hover {
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 

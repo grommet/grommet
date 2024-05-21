@@ -7,6 +7,7 @@ import {
   unfocusStyle,
   genericStyles,
   normalizeColor,
+  styledComponentsConfig,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -181,7 +182,7 @@ const StyledDataTableCell = styled(TableCell)`
 StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
 
-const StyledPlaceholder = styled('caption')`
+const StyledPlaceholder = styled('caption').withConfig(styledComponentsConfig)`
   position: absolute;
   ${(props) => `top: ${props.top || 0}px;`}
   ${(props) => `bottom: ${props.bottom || 0}px;`}

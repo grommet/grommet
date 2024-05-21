@@ -2,32 +2,22 @@
 
 exports[`FormField Field with null as child 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -52,7 +42,7 @@ exports[`FormField Field with null as child 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -70,7 +60,7 @@ exports[`FormField Field with null as child 1`] = `
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -99,15 +89,15 @@ exports[`FormField Field with null as child 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -131,7 +121,6 @@ exports[`FormField Field with null as child 1`] = `
         <input
           autocomplete="off"
           class="c5"
-          value=""
         />
       </div>
     </div>
@@ -141,32 +130,22 @@ exports[`FormField Field with null as child 1`] = `
 
 exports[`FormField abut 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
-  border: solid 12px rgba(0,0,0,0.33);
+  border: solid 12px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -180,15 +159,15 @@ exports[`FormField abut 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 6px rgba(0,0,0,0.33);
+    border: solid 6px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -207,32 +186,22 @@ exports[`FormField abut 1`] = `
 
 exports[`FormField abut with margin 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 24px;
-  border: solid 12px rgba(0,0,0,0.33);
+  border: solid 12px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -246,15 +215,15 @@ exports[`FormField abut with margin 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 6px rgba(0,0,0,0.33);
+    border: solid 6px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -273,103 +242,59 @@ exports[`FormField abut with margin 1`] = `
 
 exports[`FormField checkbox pad is defined in formfield 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-right: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0, 0, 0, 0.15);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   height: 24px;
   width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
@@ -378,35 +303,23 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   cursor: pointer;
 }
 
-.c4:hover input:not([disabled]) + div,
-.c4:hover input:not([disabled]) + span {
+.c4:hover input:not([disabled])+div,
+.c4:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  -webkit-user-select: none;
   width: fit-content;
   cursor: pointer;
 }
 
-.c9:hover input:not([disabled]) + div,
-.c9:hover input:not([disabled]) + span {
+.c9:hover input:not([disabled])+div,
+.c9:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -419,14 +332,12 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   cursor: pointer;
 }
 
-.c7:checked + span > span {
+.c7:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
 .c6 {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
@@ -449,33 +360,33 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -538,31 +449,21 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
 
 exports[`FormField contentProps 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -587,7 +488,7 @@ exports[`FormField contentProps 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -605,7 +506,7 @@ exports[`FormField contentProps 1`] = `
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -634,7 +535,7 @@ exports[`FormField contentProps 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
@@ -661,7 +562,6 @@ exports[`FormField contentProps 1`] = `
           <input
             autocomplete="off"
             class="c5"
-            value=""
           />
         </div>
       </div>
@@ -673,8 +573,6 @@ exports[`FormField contentProps 1`] = `
 exports[`FormField custom error and info icon and container 1`] = `
 .c8 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -706,38 +604,25 @@ exports[`FormField custom error and info icon and container 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -745,39 +630,25 @@ exports[`FormField custom error and info icon and container 1`] = `
   color: #444444;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding-left: 48px;
   padding-right: 48px;
@@ -824,7 +695,7 @@ exports[`FormField custom error and info icon and container 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -842,7 +713,7 @@ exports[`FormField custom error and info icon and container 1`] = `
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -871,13 +742,13 @@ exports[`FormField custom error and info icon and container 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     padding-left: 24px;
     padding-right: 24px;
@@ -906,7 +777,6 @@ exports[`FormField custom error and info icon and container 1`] = `
             aria-invalid="true"
             autocomplete="off"
             class="c5"
-            value=""
           />
         </div>
       </div>
@@ -967,32 +837,22 @@ exports[`FormField custom error and info icon and container 1`] = `
 
 exports[`FormField custom formfield 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1010,15 +870,15 @@ exports[`FormField custom formfield 1`] = `
   font-size: 40px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1037,34 +897,24 @@ exports[`FormField custom formfield 1`] = `
 
 exports[`FormField custom input margin 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-top: 48px;
   margin-bottom: 48px;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1089,7 +939,7 @@ exports[`FormField custom input margin 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1107,7 +957,7 @@ exports[`FormField custom input margin 1`] = `
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1136,22 +986,22 @@ exports[`FormField custom input margin 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     margin-top: 24px;
     margin-bottom: 24px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1176,7 +1026,6 @@ exports[`FormField custom input margin 1`] = `
           <input
             autocomplete="off"
             class="c5"
-            value=""
           />
         </div>
       </div>
@@ -1187,32 +1036,22 @@ exports[`FormField custom input margin 1`] = `
 
 exports[`FormField custom label 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1236,7 +1075,7 @@ exports[`FormField custom label 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1254,7 +1093,7 @@ exports[`FormField custom label 1`] = `
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1283,15 +1122,15 @@ exports[`FormField custom label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1316,7 +1155,6 @@ exports[`FormField custom label 1`] = `
           <input
             autocomplete="off"
             class="c5"
-            value=""
           />
         </div>
       </div>
@@ -1327,32 +1165,22 @@ exports[`FormField custom label 1`] = `
 
 exports[`FormField default 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1368,7 +1196,7 @@ exports[`FormField default 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1386,7 +1214,7 @@ exports[`FormField default 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1415,15 +1243,15 @@ exports[`FormField default 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1449,7 +1277,6 @@ exports[`FormField default 1`] = `
         <input
           autocomplete="off"
           class="c4"
-          value=""
         />
       </div>
     </div>
@@ -1459,34 +1286,24 @@ exports[`FormField default 1`] = `
 
 exports[`FormField disabled 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204,204,204,0.4);
+  background-color: rgba(204, 204, 204, 0.4);
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1502,7 +1319,7 @@ exports[`FormField disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1522,7 +1339,7 @@ exports[`FormField disabled 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1551,15 +1368,15 @@ exports[`FormField disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1588,7 +1405,6 @@ exports[`FormField disabled 1`] = `
             autocomplete="off"
             class="c4"
             disabled=""
-            value=""
           />
         </div>
       </div>
@@ -1599,34 +1415,24 @@ exports[`FormField disabled 1`] = `
 
 exports[`FormField disabled with custom label 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: rgba(204,204,204,0.4);
+  background-color: rgba(204, 204, 204, 0.4);
   color: #444444;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1650,7 +1456,7 @@ exports[`FormField disabled with custom label 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -1670,7 +1476,7 @@ exports[`FormField disabled with custom label 1`] = `
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1699,15 +1505,15 @@ exports[`FormField disabled with custom label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1733,7 +1539,6 @@ exports[`FormField disabled with custom label 1`] = `
             autocomplete="off"
             class="c5"
             disabled=""
-            value=""
           />
         </div>
       </div>
@@ -1744,32 +1549,22 @@ exports[`FormField disabled with custom label 1`] = `
 
 exports[`FormField empty margin 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 0px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1783,15 +1578,15 @@ exports[`FormField empty margin 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1810,32 +1605,22 @@ exports[`FormField empty margin 1`] = `
 
 exports[`FormField error 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   border-bottom: solid 1px #FF4040;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1859,13 +1644,13 @@ exports[`FormField error 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     border-bottom: solid 1px #FF4040;
   }
@@ -1891,32 +1676,22 @@ exports[`FormField error 1`] = `
 
 exports[`FormField help 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1937,15 +1712,15 @@ exports[`FormField help 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1969,32 +1744,22 @@ exports[`FormField help 1`] = `
 
 exports[`FormField htmlFor 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2008,15 +1773,15 @@ exports[`FormField htmlFor 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2035,32 +1800,22 @@ exports[`FormField htmlFor 1`] = `
 
 exports[`FormField info 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2084,15 +1839,15 @@ exports[`FormField info 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2116,32 +1871,22 @@ exports[`FormField info 1`] = `
 
 exports[`FormField label 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2164,15 +1909,15 @@ exports[`FormField label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2196,32 +1941,22 @@ exports[`FormField label 1`] = `
 
 exports[`FormField margin 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 24px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2235,15 +1970,15 @@ exports[`FormField margin 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2262,32 +1997,22 @@ exports[`FormField margin 1`] = `
 
 exports[`FormField max and threshold validation 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2312,7 +2037,7 @@ exports[`FormField max and threshold validation 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2330,7 +2055,7 @@ exports[`FormField max and threshold validation 1`] = `
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2359,15 +2084,15 @@ exports[`FormField max and threshold validation 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2396,7 +2121,6 @@ exports[`FormField max and threshold validation 1`] = `
             id="issue-description"
             name="issue-description"
             placeholder="placeholder"
-            value=""
           />
         </div>
       </div>
@@ -2407,32 +2131,22 @@ exports[`FormField max and threshold validation 1`] = `
 
 exports[`FormField pad 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
 }
@@ -2447,19 +2161,19 @@ exports[`FormField pad 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
@@ -2480,31 +2194,21 @@ exports[`FormField pad 1`] = `
 
 exports[`FormField pad with border undefined 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 48px;
 }
@@ -2530,7 +2234,7 @@ exports[`FormField pad with border undefined 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2548,7 +2252,7 @@ exports[`FormField pad with border undefined 1`] = `
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2577,13 +2281,13 @@ exports[`FormField pad with border undefined 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     padding: 24px;
   }
@@ -2610,7 +2314,6 @@ exports[`FormField pad with border undefined 1`] = `
           <input
             autocomplete="off"
             class="c5"
-            value=""
           />
         </div>
       </div>
@@ -2621,32 +2324,22 @@ exports[`FormField pad with border undefined 1`] = `
 
 exports[`FormField required 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2662,7 +2355,7 @@ exports[`FormField required 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2680,7 +2373,7 @@ exports[`FormField required 1`] = `
   color: #AAAAAA;
 }
 
-.c4::-webkit-search-decoration {
+.c4 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2709,15 +2402,15 @@ exports[`FormField required 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2745,7 +2438,6 @@ exports[`FormField required 1`] = `
           <input
             autocomplete="off"
             class="c4"
-            value=""
           />
         </div>
       </div>
@@ -2756,32 +2448,22 @@ exports[`FormField required 1`] = `
 
 exports[`FormField should have no accessibility violations 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2795,15 +2477,15 @@ exports[`FormField should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2822,32 +2504,22 @@ exports[`FormField should have no accessibility violations 1`] = `
 
 exports[`FormField should not render asterisk when required.indicator === false 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2872,7 +2544,7 @@ exports[`FormField should not render asterisk when required.indicator === false 
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -2890,7 +2562,7 @@ exports[`FormField should not render asterisk when required.indicator === false 
   color: #AAAAAA;
 }
 
-.c5::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2919,15 +2591,15 @@ exports[`FormField should not render asterisk when required.indicator === false 
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2952,7 +2624,6 @@ exports[`FormField should not render asterisk when required.indicator === false 
           <input
             autocomplete="off"
             class="c5"
-            value=""
           />
         </div>
       </div>
@@ -2963,32 +2634,22 @@ exports[`FormField should not render asterisk when required.indicator === false 
 
 exports[`FormField should render asterisk when requiredIndicator === true 1`] = `
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -3018,7 +2679,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3036,7 +2697,7 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   color: #AAAAAA;
 }
 
-.c8::-webkit-search-decoration {
+.c8 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3068,7 +2729,6 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
   border: 0;
 }
@@ -3083,15 +2743,15 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -3127,7 +2787,6 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
           <input
             autocomplete="off"
             class="c8"
-            value=""
           />
         </div>
       </div>
@@ -3140,8 +2799,6 @@ exports[`FormField should render custom indicator when requiredIndicator is
   element 1`] = `
 .c3 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
   height: 12px;
@@ -3173,32 +2830,22 @@ exports[`FormField should render custom indicator when requiredIndicator is
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -3223,7 +2870,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   outline: none;
   border: none;
@@ -3241,7 +2888,7 @@ exports[`FormField should render custom indicator when requiredIndicator is
   color: #AAAAAA;
 }
 
-.c6::-webkit-search-decoration {
+.c6 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3270,15 +2917,15 @@ exports[`FormField should render custom indicator when requiredIndicator is
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -3315,7 +2962,6 @@ exports[`FormField should render custom indicator when requiredIndicator is
           <input
             autocomplete="off"
             class="c6"
-            value=""
           />
         </div>
       </div>

@@ -1,11 +1,15 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { normalizeColor, genericStyles } from '../../utils';
+import {
+  normalizeColor,
+  genericStyles,
+  styledComponentsConfig,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const StyledHour = styled.line`
-  stroke-width: ${props => props.theme.clock.analog.hour.width};
-  stroke: ${props =>
+const StyledHour = styled.line.withConfig(styledComponentsConfig)`
+  stroke-width: ${(props) => props.theme.clock.analog.hour.width};
+  stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
@@ -13,9 +17,9 @@ const StyledHour = styled.line`
 StyledHour.defaultProps = {};
 Object.setPrototypeOf(StyledHour.defaultProps, defaultProps);
 
-const StyledMinute = styled.line`
-  stroke-width: ${props => props.theme.clock.analog.minute.width};
-  stroke: ${props =>
+const StyledMinute = styled.line.withConfig(styledComponentsConfig)`
+  stroke-width: ${(props) => props.theme.clock.analog.minute.width};
+  stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
@@ -23,9 +27,9 @@ const StyledMinute = styled.line`
 StyledMinute.defaultProps = {};
 Object.setPrototypeOf(StyledMinute.defaultProps, defaultProps);
 
-const StyledSecond = styled.line`
-  stroke-width: ${props => props.theme.clock.analog.second.width};
-  stroke: ${props =>
+const StyledSecond = styled.line.withConfig(styledComponentsConfig)`
+  stroke-width: ${(props) => props.theme.clock.analog.second.width};
+  stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.second.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
@@ -33,18 +37,18 @@ const StyledSecond = styled.line`
 StyledSecond.defaultProps = {};
 Object.setPrototypeOf(StyledSecond.defaultProps, defaultProps);
 
-const StyledAnalog = styled.svg`
-  width: ${props => props.theme.clock.analog.size[props.size]};
-  height: ${props => props.theme.clock.analog.size[props.size]};
+const StyledAnalog = styled.svg.withConfig(styledComponentsConfig)`
+  width: ${(props) => props.theme.clock.analog.size[props.size]};
+  height: ${(props) => props.theme.clock.analog.size[props.size]};
 
   ${genericStyles}
-  ${props => props.theme.clock.analog && props.theme.clock.analog.extend};
+  ${(props) => props.theme.clock.analog && props.theme.clock.analog.extend};
 `;
 
 StyledAnalog.defaultProps = {};
 Object.setPrototypeOf(StyledAnalog.defaultProps, defaultProps);
 
-const sizeStyle = props => {
+const sizeStyle = (props) => {
   // size is a combination of the size and height properties
   const size = props.size || 'medium';
   const data = props.theme.clock.digital.text[size] || {};
@@ -54,12 +58,12 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledDigitalDigit = styled.div`
+const StyledDigitalDigit = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  ${props => sizeStyle(props)};
+  ${(props) => sizeStyle(props)};
 `;
 
 StyledDigitalDigit.defaultProps = {};
@@ -75,13 +79,13 @@ const previousDown = keyframes`
   100% { transform: translateY(100%); }
 `;
 
-const StyledDigitalPrevious = styled.div`
+const StyledDigitalPrevious = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   top: 0;
   left: 0;
   width: 0.8em;
   text-align: center;
-  animation: ${props =>
+  animation: ${(props) =>
       props.direction === 'down' ? previousDown : previousUp}
     0.5s forwards;
 `;
@@ -99,13 +103,13 @@ const nextDown = keyframes`
   100% { transform: translateY(0); }
 `;
 
-const StyledDigitalNext = styled.div`
+const StyledDigitalNext = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   top: 0;
   left: 0;
   width: 0.8em;
   text-align: center;
-  animation: ${props => (props.direction === 'down' ? nextDown : nextUp)} 0.5s
+  animation: ${(props) => (props.direction === 'down' ? nextDown : nextUp)} 0.5s
     forwards;
 `;
 

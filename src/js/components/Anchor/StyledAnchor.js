@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, genericStyles, normalizeColor } from '../../utils';
+import {
+  focusStyle,
+  genericStyles,
+  normalizeColor,
+  styledComponentsConfig,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const disabledStyle = `
@@ -24,14 +29,7 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledAnchor = styled.a.withConfig({
-  // prevent custom props from bleeding into DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['as', 'colorProp', 'focus', 'hasIcon', 'hasLabel', 'reverse'].includes(
-      prop,
-    ) && defaultValidatorFn(prop),
-})`
+const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
   box-sizing: border-box;
   display: inline-flex;
   ${(props) => sizeStyle(props)}
