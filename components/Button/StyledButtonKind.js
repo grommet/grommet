@@ -3,8 +3,10 @@
 exports.__esModule = true;
 exports.StyledButtonKind = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var radiusStyle = function radiusStyle(props) {
@@ -171,10 +173,8 @@ var plainStyle = function plainStyle(props) {
   return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", " ", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ", props.hasIcon && !props.hasLabel && "line-height: 0;");
 };
 var StyledButtonKind = exports.StyledButtonKind = _styledComponents["default"].button.withConfig({
-  // don't let kind attribute leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
-    return !['kind'].includes(prop) && defaultValidatorFn(prop);
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return (0, _isPropValid["default"])(prop) && !['kind'].includes(prop);
   }
 }).withConfig({
   displayName: "StyledButtonKind",

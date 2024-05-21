@@ -168,7 +168,7 @@ var areasStyle = function areasStyle(props) {
     return "\"" + r.join(' ') + "\"";
   }).join(' ') + ";";
 };
-var StyledGrid = exports.StyledGrid = _styledComponents["default"].div.attrs(function (props) {
+var StyledGrid = exports.StyledGrid = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(function (props) {
   return {
     'aria-label': props.a11yTitleProp
   };

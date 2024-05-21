@@ -3,6 +3,7 @@
 exports.__esModule = true;
 exports.StyledDrop = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _Box = require("../Box");
 var _styles = require("../../utils/styles");
 var _background = require("../../utils/background");
 var _defaultProps = require("../../default-props");
@@ -36,7 +37,7 @@ var marginStyle = function marginStyle(theme, align, data, responsive, marginPro
   }
   return (0, _styles.edgeStyle)('margin', adjustedMargin, responsive, theme.global.edgeSize.responsiveBreakpoint, theme);
 };
-var StyledDrop = exports.StyledDrop = _styledComponents["default"].div.withConfig({
+var StyledDrop = exports.StyledDrop = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledDrop",
   componentId: "sc-16s5rx8-0"
 })(["", " ", " position:fixed;z-index:", ";outline:none;", " ", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], _styles.baseStyle, function (props) {

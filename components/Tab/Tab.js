@@ -5,7 +5,6 @@ exports.Tab = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = require("styled-components");
 var _defaultProps = require("../../default-props");
-var _Box = require("../Box");
 var _Button = require("../Button");
 var _Text = require("../Text");
 var _TabsContext = require("../Tabs/TabsContext");
@@ -178,7 +177,6 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
       setFocusIndex(-1);
     }
   }), /*#__PURE__*/_react["default"].createElement(_StyledTab.StyledTab, _extends({
-    as: _Box.Box,
     disabled: disabled,
     plain: plain
   }, withIconStyles, tabStyles), first, second));

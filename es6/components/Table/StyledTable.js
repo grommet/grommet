@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { backgroundStyle, borderStyle, edgeStyle, genericStyles } from '../../utils';
+import { backgroundStyle, borderStyle, edgeStyle, genericStyles, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 var SIZE_MAP = {
   '1/2': '50%',
@@ -21,7 +21,7 @@ var sizeStyle = css(["width:", ";max-width:", ";overflow:hidden;"], function (pr
 }, function (props) {
   return props.size !== 'auto' ? SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size : undefined;
 });
-var StyledTableCell = styled.td.withConfig({
+var StyledTableCell = styled.td.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableCell",
   componentId: "sc-1m3u5g-0"
 })(["margin:0;padding:0;font-weight:inherit;text-align:inherit;", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -41,7 +41,7 @@ var StyledTableCell = styled.td.withConfig({
 });
 StyledTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledTableCell.defaultProps, defaultProps);
-var StyledTableDataCaption = styled.caption.withConfig({
+var StyledTableDataCaption = styled.caption.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableDataCaption",
   componentId: "sc-1m3u5g-1"
 })(["margin-bottom:", ";"], function (props) {
@@ -49,31 +49,31 @@ var StyledTableDataCaption = styled.caption.withConfig({
 });
 StyledTableDataCaption.defaultProps = {};
 Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
-var StyledTableRow = styled.tr.withConfig({
+var StyledTableRow = styled.tr.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableRow",
   componentId: "sc-1m3u5g-2"
 })([""]);
 StyledTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledTableRow.defaultProps, defaultProps);
-var StyledTableBody = styled.tbody.withConfig({
+var StyledTableBody = styled.tbody.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableBody",
   componentId: "sc-1m3u5g-3"
 })([""]);
 StyledTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledTableBody.defaultProps, defaultProps);
-var StyledTableHeader = styled.thead.withConfig({
+var StyledTableHeader = styled.thead.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableHeader",
   componentId: "sc-1m3u5g-4"
 })([""]);
 StyledTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledTableHeader.defaultProps, defaultProps);
-var StyledTableFooter = styled.tfoot.withConfig({
+var StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableFooter",
   componentId: "sc-1m3u5g-5"
 })([""]);
 StyledTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledTableFooter.defaultProps, defaultProps);
-var StyledTable = styled.table.withConfig({
+var StyledTable = styled.table.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable",
   componentId: "sc-1m3u5g-6"
 })(["border-spacing:0;border-collapse:collapse;width:inherit;", " ", ";"], genericStyles, function (props) {

@@ -264,7 +264,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   });
   return /*#__PURE__*/React.createElement(StyledTabs, _extends({
     ref: ref,
-    as: Box,
     flex: flex,
     responsive: responsive
   }, rest, {
@@ -292,7 +291,6 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
   }))), /*#__PURE__*/React.createElement(StyledTabsHeader, {
     ref: headerRef,
-    as: Box,
     direction: "row",
     justify: overflow ? 'start' : justify,
     flex: !!overflow,

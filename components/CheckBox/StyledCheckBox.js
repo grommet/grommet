@@ -5,6 +5,7 @@ exports.StyledCheckBoxToggle = exports.StyledCheckBoxKnob = exports.StyledCheckB
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
+var _Box = require("../Box");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 // Note: since `fillStyle` is only used in one place, `justify-content` was
@@ -14,7 +15,7 @@ var fillStyle = function fillStyle() {
   return "\n      width: auto;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n      justify-content: space-between;\n    ";
 };
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
-var hoverStyle = (0, _styledComponents.css)([":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";", "}:hover{background-color:", ";}"], function (props) {
+var hoverStyle = (0, _styledComponents.css)(["&:hover input:not([disabled]) + div,&:hover input:not([disabled]) + span{border-color:", ";", "}&:hover{background-color:", ";}"], function (props) {
   var _props$theme$checkBox;
   return (0, _utils.normalizeColor)((_props$theme$checkBox = props.theme.checkBox.hover) == null || (_props$theme$checkBox = _props$theme$checkBox.border) == null ? void 0 : _props$theme$checkBox.color, props.theme);
 }, function (props) {
@@ -24,7 +25,7 @@ var hoverStyle = (0, _styledComponents.css)([":hover input:not([disabled]) + div
   var _props$theme$checkBox3;
   return (0, _utils.normalizeColor)(!props.disabled && ((_props$theme$checkBox3 = props.theme.checkBox.hover) == null || (_props$theme$checkBox3 = _props$theme$checkBox3.background) == null ? void 0 : _props$theme$checkBox3.color), props.theme);
 });
-var StyledCheckBoxIcon = exports.StyledCheckBoxIcon = _styledComponents["default"].svg.withConfig({
+var StyledCheckBoxIcon = exports.StyledCheckBoxIcon = _styledComponents["default"].svg.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxIcon",
   componentId: "sc-1dbk5ju-0"
 })(["box-sizing:border-box;stroke-width:", ";stroke:", ";width:", ";height:", ";", ";"], function (props) {
@@ -40,10 +41,10 @@ var StyledCheckBoxIcon = exports.StyledCheckBoxIcon = _styledComponents["default
 });
 StyledCheckBoxIcon.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, _defaultProps.defaultProps);
-var StyledCheckBoxContainer = exports.StyledCheckBoxContainer = _styledComponents["default"].label.withConfig({
+var StyledCheckBoxContainer = exports.StyledCheckBoxContainer = _styledComponents["default"].label.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["display:flex;flex-direction:row;align-items:", ";user-select:none;", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:", ";user-select:none;-webkit-user-select:none;", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return typeof props.labelProp === 'string' ? props.theme.checkBox.label.align : undefined;
 }, function (props) {
   return props.fillProp ? fillStyle() : 'width: fit-content;';
@@ -61,10 +62,10 @@ var StyledCheckBoxContainer = exports.StyledCheckBoxContainer = _styledComponent
 });
 StyledCheckBoxContainer.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, _defaultProps.defaultProps);
-var StyledCheckBoxInput = exports.StyledCheckBoxInput = _styledComponents["default"].input.withConfig({
+var StyledCheckBoxInput = exports.StyledCheckBoxInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxInput",
   componentId: "sc-1dbk5ju-2"
-})(["opacity:0;-moz-appearance:none;width:0;height:0;margin:0;", ":checked + span > span{", ":calc( ", " - ", " );background:", ";}"], function (props) {
+})(["opacity:0;-moz-appearance:none;width:0;height:0;margin:0;", " &:checked + span > span{", ":calc( ", " - ", " );background:", ";}"], function (props) {
   return !props.disabled && 'cursor: pointer;';
 }, function (props) {
   return !props.theme.dir ? 'left' : 'right';
@@ -77,7 +78,7 @@ var StyledCheckBoxInput = exports.StyledCheckBoxInput = _styledComponents["defau
 });
 StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, _defaultProps.defaultProps);
-var StyledCheckBoxBox = exports.StyledCheckBoxBox = _styledComponents["default"].div.withConfig({
+var StyledCheckBoxBox = exports.StyledCheckBoxBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxBox",
   componentId: "sc-1dbk5ju-3"
 })(["", ";", ";"], function (props) {
@@ -87,7 +88,7 @@ var StyledCheckBoxBox = exports.StyledCheckBoxBox = _styledComponents["default"]
 });
 StyledCheckBoxBox.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, _defaultProps.defaultProps);
-var StyledCheckBoxToggle = exports.StyledCheckBoxToggle = _styledComponents["default"].span.withConfig({
+var StyledCheckBoxToggle = exports.StyledCheckBoxToggle = _styledComponents["default"].span.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxToggle",
   componentId: "sc-1dbk5ju-4"
 })(["box-sizing:border-box;vertical-align:middle;display:inline-block;width:", ";height:", ";border:", " solid;border-color:", ";border-radius:", ";background-color:", ";", ";", ";"], function (props) {
@@ -109,7 +110,7 @@ var StyledCheckBoxToggle = exports.StyledCheckBoxToggle = _styledComponents["def
 });
 StyledCheckBoxToggle.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, _defaultProps.defaultProps);
-var StyledCheckBoxKnob = exports.StyledCheckBoxKnob = _styledComponents["default"].span.withConfig({
+var StyledCheckBoxKnob = exports.StyledCheckBoxKnob = _styledComponents["default"].span.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxKnob",
   componentId: "sc-1dbk5ju-5"
 })(["box-sizing:border-box;position:relative;display:inherit;top:-", ";", ":-", ";transition:all 0.3s;width:", ";height:", ";background:", ";border-radius:", ";", ";"], function (props) {
@@ -131,7 +132,7 @@ var StyledCheckBoxKnob = exports.StyledCheckBoxKnob = _styledComponents["default
 });
 StyledCheckBoxKnob.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, _defaultProps.defaultProps);
-var StyledCheckBox = exports.StyledCheckBox = _styledComponents["default"].div.withConfig({
+var StyledCheckBox = exports.StyledCheckBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledCheckBox",
   componentId: "sc-1dbk5ju-6"
 })(["flex-shrink:0;"]);

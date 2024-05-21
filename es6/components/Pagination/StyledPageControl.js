@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { styledComponentsConfig } from '../../utils/styles';
 import { Button } from '../Button';
 import { Text } from '../Text';
 var sizeStyle = function sizeStyle(props) {
@@ -22,7 +23,7 @@ export var StyledPaginationButton = styled(Button).withConfig({
 })(["> svg{margin:0 auto;}", ";"], function (props) {
   return sizeStyle(props).content;
 });
-export var StyledContainer = styled.div.withConfig({
+export var StyledContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledPageControl__StyledContainer",
   componentId: "sc-1vlfaez-1"
 })(["display:flex;align-items:center;justify-content:center;max-width:100%;", ";", ";"], function (props) {

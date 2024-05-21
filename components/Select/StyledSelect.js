@@ -3,12 +3,13 @@
 exports.__esModule = true;
 exports.StyledSelectDropButton = exports.StyledContainer = exports.SelectTextInput = exports.SelectOption = exports.OptionsContainer = exports.HiddenInput = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _Box = require("../Box");
 var _Button = require("../Button");
 var _DropButton = require("../DropButton");
 var _TextInput = require("../TextInput");
 var _utils = require("../../utils");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig({
+var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"
 })(["@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";", ";"], function (props) {
@@ -18,11 +19,11 @@ var StyledContainer = exports.StyledContainer = _styledComponents["default"].div
 });
 
 // position relative is so scroll can be managed correctly
-var OptionsContainer = exports.OptionsContainer = _styledComponents["default"].div.withConfig({
+var OptionsContainer = exports.OptionsContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
 })(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
-var HiddenInput = exports.HiddenInput = _styledComponents["default"].input.withConfig({
+var HiddenInput = exports.HiddenInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledSelect__HiddenInput",
   componentId: "sc-znp66n-2"
 })(["display:none;"]);

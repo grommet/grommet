@@ -20,7 +20,7 @@ var fillStyle = function fillStyle(fillProp) {
 };
 
 // undefined fillProp has width for backwards compatibility
-var StyledWorldMap = exports.StyledWorldMap = _styledComponents["default"].svg.withConfig({
+var StyledWorldMap = exports.StyledWorldMap = _styledComponents["default"].svg.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledWorldMap",
   componentId: "sc-had4c3-0"
 })(["", " ", " ", ";"], _utils.genericStyles, function (props) {

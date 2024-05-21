@@ -16,13 +16,7 @@ var sizeStyle = function sizeStyle(props) {
   }
   return (0, _styledComponents.css)(["font-size:inherit;line-height:inherit;"]);
 };
-var StyledAnchor = exports.StyledAnchor = _styledComponents["default"].a.withConfig({
-  // prevent custom props from bleeding into DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
-    return !['as', 'colorProp', 'focus', 'hasIcon', 'hasLabel', 'reverse'].includes(prop) && defaultValidatorFn(prop);
-  }
-}).withConfig({
+var StyledAnchor = exports.StyledAnchor = _styledComponents["default"].a.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledAnchor",
   componentId: "sc-1rp7lwl-0"
 })(["box-sizing:border-box;display:inline-flex;", " color:", ";", " text-decoration:", ";cursor:pointer;", " ", " ", " ", " ", " ", ""], function (props) {

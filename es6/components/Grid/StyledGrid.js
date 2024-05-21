@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { alignContentStyle, alignStyle, borderStyle, edgeStyle, genericStyles, heightStyle, widthStyle } from '../../utils';
+import { alignContentStyle, alignStyle, borderStyle, edgeStyle, genericStyles, heightStyle, widthStyle, styledComponentsConfig } from '../../utils';
 var fillStyle = function fillStyle(fill) {
   if (!fill) {
     return fill;
@@ -162,7 +162,7 @@ var areasStyle = function areasStyle(props) {
     return "\"" + r.join(' ') + "\"";
   }).join(' ') + ";";
 };
-var StyledGrid = styled.div.attrs(function (props) {
+var StyledGrid = styled.div.withConfig(styledComponentsConfig).attrs(function (props) {
   return {
     'aria-label': props.a11yTitleProp
   };

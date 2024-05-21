@@ -11,7 +11,7 @@ var fullStyle = function fullStyle(full) {
   if (full === 'min') return (0, _styledComponents.css)(["min-height:100vh;"]);
   return (0, _styledComponents.css)(["width:100vw;height:100vh;overflow:auto;"]);
 };
-var StyledGrommet = exports.StyledGrommet = _styledComponents["default"].div.withConfig({
+var StyledGrommet = exports.StyledGrommet = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledGrommet",
   componentId: "sc-19lkkz7-0"
 })(["", " ", " ", " ", " ", ""], function (props) {

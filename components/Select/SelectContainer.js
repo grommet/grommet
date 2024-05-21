@@ -270,7 +270,6 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     onKeyDown: onKeyDownOption
   }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledContainer, {
     ref: ref,
-    as: _Box.Box,
     id: id ? id + "__select-drop" : undefined,
     dropHeight: dropHeight
   }, onSearch && /*#__PURE__*/_react["default"].createElement(_Box.Box, {

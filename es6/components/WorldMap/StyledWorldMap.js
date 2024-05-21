@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { genericStyles } from '../../utils';
+import { genericStyles, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 var fillStyle = function fillStyle(fillProp) {
   if (fillProp === 'horizontal') {
@@ -15,7 +15,7 @@ var fillStyle = function fillStyle(fillProp) {
 };
 
 // undefined fillProp has width for backwards compatibility
-var StyledWorldMap = styled.svg.withConfig({
+var StyledWorldMap = styled.svg.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledWorldMap",
   componentId: "sc-had4c3-0"
 })(["", " ", " ", ";"], genericStyles, function (props) {

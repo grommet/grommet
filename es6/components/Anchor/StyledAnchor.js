@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { focusStyle, genericStyles, normalizeColor, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 var disabledStyle = "\n  opacity: 0.3;\n  cursor: default;\n  text-decoration: none;\n";
 var sizeStyle = function sizeStyle(props) {
@@ -10,13 +10,7 @@ var sizeStyle = function sizeStyle(props) {
   }
   return css(["font-size:inherit;line-height:inherit;"]);
 };
-var StyledAnchor = styled.a.withConfig({
-  // prevent custom props from bleeding into DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
-    return !['as', 'colorProp', 'focus', 'hasIcon', 'hasLabel', 'reverse'].includes(prop) && defaultValidatorFn(prop);
-  }
-}).withConfig({
+var StyledAnchor = styled.a.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledAnchor",
   componentId: "sc-1rp7lwl-0"
 })(["box-sizing:border-box;display:inline-flex;", " color:", ";", " text-decoration:", ";cursor:pointer;", " ", " ", " ", " ", " ", ""], function (props) {

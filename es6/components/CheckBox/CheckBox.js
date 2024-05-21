@@ -5,7 +5,6 @@ import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
-import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
 import { CheckBoxPropTypes } from './propTypes';
 import { StyledCheckBox, StyledCheckBoxBox, StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxToggle, StyledCheckBoxKnob } from './StyledCheckBox';
@@ -99,7 +98,6 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     borderColor = normalizeColor(theme.checkBox.color || 'control', theme);
   }
   var visual = toggle ? /*#__PURE__*/React.createElement(StyledCheckBoxToggle, themeableProps, /*#__PURE__*/React.createElement(StyledCheckBoxKnob, themeableProps)) : /*#__PURE__*/React.createElement(StyledCheckBoxBox, _extends({
-    as: Box,
     align: "center",
     justify: "center",
     width: theme.checkBox.size,
@@ -132,7 +130,6 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }))));
   var side = !reverse !== !theme.dir ? 'left' : 'right';
   var checkBoxNode = /*#__PURE__*/React.createElement(StyledCheckBox, _extends({
-    as: Box,
     align: "center",
     justify: "center",
     margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap || 'small', _ref2)

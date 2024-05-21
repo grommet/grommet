@@ -6,7 +6,6 @@ var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = require("styled-components");
 var _object = require("../../utils/object");
 var _defaultProps = require("../../default-props");
-var _Box = require("../Box");
 var _FormContext = require("../Form/FormContext");
 var _propTypes = require("./propTypes");
 var _StyledCheckBox = require("./StyledCheckBox");
@@ -105,7 +104,6 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
     borderColor = (0, _utils.normalizeColor)(theme.checkBox.color || 'control', theme);
   }
   var visual = toggle ? /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxToggle, themeableProps, /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxKnob, themeableProps)) : /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxBox, _extends({
-    as: _Box.Box,
     align: "center",
     justify: "center",
     width: theme.checkBox.size,
@@ -138,7 +136,6 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
   }))));
   var side = !reverse !== !theme.dir ? 'left' : 'right';
   var checkBoxNode = /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBox, _extends({
-    as: _Box.Box,
     align: "center",
     justify: "center",
     margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap || 'small', _ref2)

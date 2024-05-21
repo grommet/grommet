@@ -1,8 +1,9 @@
 var _FLEX_MAP;
 import styled, { css } from 'styled-components';
-import { genericStyles } from '../../utils';
+import { Box } from '../Box';
+import { genericStyles, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
-var StyledTabsHeader = styled.div.withConfig({
+var StyledTabsHeader = styled(Box).withConfig({
   displayName: "StyledTabs__StyledTabsHeader",
   componentId: "sc-a4fwxl-0"
 })(["", ";"], function (props) {
@@ -14,7 +15,7 @@ var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0
 var flexStyle = css(["flex:", ";"], function (props) {
   return "" + FLEX_MAP[props.flex] + (props.flex !== true ? ' auto' : '');
 });
-var StyledTabPanel = styled.div.withConfig({
+var StyledTabPanel = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTabs__StyledTabPanel",
   componentId: "sc-a4fwxl-1"
 })(["min-height:0;", " ", ";"], function (props) {
@@ -24,7 +25,7 @@ var StyledTabPanel = styled.div.withConfig({
 });
 StyledTabPanel.defaultProps = {};
 Object.setPrototypeOf(StyledTabPanel.defaultProps, defaultProps);
-var StyledTabs = styled.div.withConfig({
+var StyledTabs = styled(Box).withConfig({
   displayName: "StyledTabs",
   componentId: "sc-a4fwxl-2"
 })(["", " ", ";"], genericStyles, function (props) {

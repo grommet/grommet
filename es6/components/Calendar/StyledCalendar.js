@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { backgroundStyle, focusStyle, genericStyles, kindPartStyles, parseMetricToNum } from '../../utils';
+import { backgroundStyle, focusStyle, genericStyles, kindPartStyles, parseMetricToNum, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
@@ -8,7 +8,7 @@ var sizeStyle = function sizeStyle(props) {
     return p.fillContainer && 'height: 100%;';
   });
 };
-var StyledCalendar = styled.div.withConfig({
+var StyledCalendar = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar",
   componentId: "sc-1y4xhmp-0"
 })(["", " ", " ", ""], genericStyles, function (props) {
@@ -22,7 +22,7 @@ var weeksContainerSizeStyle = function weeksContainerSizeStyle(props) {
   var height = props.fillContainer ? '100%' : parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6 + "px";
   return "\n    height: " + height + ";\n\n  ";
 };
-var StyledWeeksContainer = styled.div.withConfig({
+var StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledWeeksContainer",
   componentId: "sc-1y4xhmp-1"
 })(["overflow:hidden;", " ", ";"], function (props) {
@@ -50,7 +50,7 @@ var slideStyle = function slideStyle(props) {
 var weeksSizeStyle = function weeksSizeStyle() {
   return css(["display:flex;flex-direction:column;height:100%;"]);
 };
-var StyledWeeks = styled.div.withConfig({
+var StyledWeeks = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledWeeks",
   componentId: "sc-1y4xhmp-2"
 })(["position:relative;", " ", ";"], function (props) {
@@ -60,7 +60,7 @@ var StyledWeeks = styled.div.withConfig({
 });
 StyledWeeks.defaultProps = {};
 Object.setPrototypeOf(StyledWeeks.defaultProps, defaultProps);
-var StyledWeek = styled.div.withConfig({
+var StyledWeek = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledWeek",
   componentId: "sc-1y4xhmp-3"
 })(["display:flex;justify-content:space-between;", ""], function (props) {
@@ -71,7 +71,7 @@ Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
 
 // The width of 14.3% is derived from dividing 100/7. We want the
 // widths of 7 days to equally fill 100% of the row.
-var StyledDayContainer = styled.div.withConfig({
+var StyledDayContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledDayContainer",
   componentId: "sc-1y4xhmp-4"
 })(["flex:0 1 auto;", ""], function (props) {
@@ -83,7 +83,7 @@ var daySizeStyle = function daySizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
   return css(["width:", ";height:", ";"], props.fillContainer ? '100%' : data.daySize, props.fillContainer ? '100%' : data.daySize);
 };
-var StyledDay = styled.div.withConfig({
+var StyledDay = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledDay",
   componentId: "sc-1y4xhmp-5"
 })(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", " ", " ", ""], function (props) {

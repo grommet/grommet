@@ -10,11 +10,11 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Pagination } from '../Pagination';
 import { Text } from '../Text';
-import { focusStyle, genericStyles, normalizeColor, normalizeShow, unfocusStyle, useForwardedRef, usePagination } from '../../utils';
+import { focusStyle, genericStyles, normalizeColor, normalizeShow, unfocusStyle, useForwardedRef, usePagination, styledComponentsConfig } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { ListPropTypes } from './propTypes';
 var emptyData = [];
-var StyledList = styled.ul.withConfig({
+var StyledList = styled.ul.withConfig(styledComponentsConfig).withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
 })(["list-style:none;", " padding:0;", " &:focus{", "}", "}&:focus:not(:focus-visible){", "}"], function (props) {

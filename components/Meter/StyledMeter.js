@@ -12,7 +12,7 @@ var roundStyle = (0, _styledComponents.css)(["border-radius:", ";"], function (p
 });
 
 // overflow: hidden is needed for ie11
-var StyledMeter = exports.StyledMeter = _styledComponents["default"].svg.withConfig({
+var StyledMeter = exports.StyledMeter = _styledComponents["default"].svg.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledMeter",
   componentId: "sc-nsxarx-0"
 })(["max-width:100%;overflow:hidden;", " ", " ", " path{transition:stroke 0.3s,stroke-width 0.3s;}", ";"], function (props) {

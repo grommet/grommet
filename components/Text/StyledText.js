@@ -28,11 +28,7 @@ var wordBreakStyle = (0, _styledComponents.css)(["word-break:", ";"], function (
 var fontFamily = (0, _styledComponents.css)(["font-family:", ";"], function (props) {
   return props.theme.text.font.family;
 });
-var StyledText = exports.StyledText = (0, _styledComponents["default"])('span').withConfig({
-  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
-    return defaultValidatorFn(prop) && prop !== 'size';
-  }
-}).withConfig({
+var StyledText = exports.StyledText = (0, _styledComponents["default"])('span').withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
 })(["", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {

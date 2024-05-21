@@ -298,7 +298,6 @@ var SelectMultipleContainer = exports.SelectMultipleContainer = /*#__PURE__*/(0,
     onEsc: onClose
   }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledContainer, {
     ref: ref,
-    as: _Box.Box,
     id: id ? id + "__select-drop" : undefined,
     dropHeight: dropHeight,
     a11yTitle: format({

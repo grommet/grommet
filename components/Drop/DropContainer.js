@@ -8,7 +8,6 @@ var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
 var _FocusedContainer = require("../FocusedContainer");
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
-var _Box = require("../Box");
 var _Keyboard = require("../Keyboard");
 var _StyledDrop = require("./StyledDrop");
 var _OptionsContext = require("../../contexts/OptionsContext");
@@ -275,7 +274,6 @@ var DropContainer = exports.DropContainer = /*#__PURE__*/(0, _react.forwardRef)(
   var content = /*#__PURE__*/_react["default"].createElement(_StyledDrop.StyledDrop, _extends({
     "aria-label": a11yTitle || ariaLabel,
     ref: dropRef,
-    as: _Box.Box,
     background: background,
     plain: plain,
     elevation: !plain ? elevation || theme.global.drop.elevation || theme.global.drop.shadowSize ||

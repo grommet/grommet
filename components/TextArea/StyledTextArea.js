@@ -20,7 +20,7 @@ var resizeStyle = function resizeStyle(resize) {
   }
   return 'resize: none;';
 };
-var StyledTextArea = exports.StyledTextArea = _styledComponents["default"].textarea.withConfig({
+var StyledTextArea = exports.StyledTextArea = _styledComponents["default"].textarea.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
 })(["", " ", " ", " ", " ", " ", ";max-width:100%;"], _utils.inputStyle, function (props) {

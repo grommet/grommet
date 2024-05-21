@@ -12,7 +12,7 @@ var fillStyle = (0, _styledComponents.css)(["", " ", " flex-grow:1;display:flex;
 }, function (props) {
   return props.fillContainer === true || props.fillContainer === 'vertical' ? 'height: 100%;' : '';
 });
-var StyledStack = exports.StyledStack = _styledComponents["default"].div.withConfig({
+var StyledStack = exports.StyledStack = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledStack",
   componentId: "sc-ajspsk-0"
 })(["position:relative;", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -34,7 +34,7 @@ var styleMap = {
   'top-right': "\n    top: 0;\n    right: 0;\n  ",
   'bottom-right': "\n    bottom: 0;\n    right: 0;\n  "
 };
-var StyledStackLayer = exports.StyledStackLayer = _styledComponents["default"].div.withConfig({
+var StyledStackLayer = exports.StyledStackLayer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledStack__StyledStackLayer",
   componentId: "sc-ajspsk-1"
 })(["position:", ";", " ", " ", " ", ""], function (props) {

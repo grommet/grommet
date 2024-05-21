@@ -170,7 +170,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
 };
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig({
+var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
 })(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -275,7 +275,7 @@ var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, t
   }
   return styles;
 };
-var StyledBoxGap = exports.StyledBoxGap = _styledComponents["default"].div.withConfig({
+var StyledBoxGap = exports.StyledBoxGap = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;align-self:stretch;", ";"], function (props) {

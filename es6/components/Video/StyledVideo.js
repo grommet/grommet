@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { focusStyle, genericStyles, normalizeColor, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 var FIT_MAP = {
   cover: 'cover',
@@ -10,7 +10,7 @@ var fitStyle = css(["flex:1 1;min-height:0;object-fit:", ";"], function (props) 
 });
 
 // z-index is for Safari so controls aren't hidden
-var StyledVideo = styled.video.withConfig({
+var StyledVideo = styled.video.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledVideo",
   componentId: "sc-w4v8h9-0"
 })(["max-width:100%;z-index:1;", "::cue{background:", ";}", ";"], function (props) {
@@ -22,7 +22,7 @@ var StyledVideo = styled.video.withConfig({
 });
 StyledVideo.defaultProps = {};
 Object.setPrototypeOf(StyledVideo.defaultProps, defaultProps);
-var StyledVideoContainer = styled.div.withConfig({
+var StyledVideoContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledVideo__StyledVideoContainer",
   componentId: "sc-w4v8h9-1"
 })(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";&:focus{", "}"], genericStyles, focusStyle());
@@ -31,7 +31,7 @@ Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps);
 
 // z-index is for Safari so controls aren't hidden
 var positionStyle = css(["position:absolute;left:0;right:0;bottom:0;z-index:1;"]);
-var StyledVideoControls = styled.div.withConfig({
+var StyledVideoControls = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledVideo__StyledVideoControls",
   componentId: "sc-w4v8h9-2"
 })(["flex:0 0;", " opacity:0;transition:opacity 0.3s;", ";"], function (props) {
@@ -48,7 +48,7 @@ var headStyle = css(["::after{content:'';height:100%;width:", ";background:", ";
 }, function (props) {
   return props.value + "%";
 });
-var StyledVideoScrubber = styled.div.withConfig({
+var StyledVideoScrubber = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledVideo__StyledVideoScrubber",
   componentId: "sc-w4v8h9-3"
 })(["cursor:pointer;width:100%;height:100%;", ";&:focus{", "}"], function (props) {

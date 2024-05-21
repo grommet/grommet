@@ -3,6 +3,7 @@
 exports.__esModule = true;
 exports.StyledSeparator = exports.StyledPaginationButton = exports.StyledContainer = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styles = require("../../utils/styles");
 var _Button = require("../Button");
 var _Text = require("../Text");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -27,7 +28,7 @@ var StyledPaginationButton = exports.StyledPaginationButton = (0, _styledCompone
 })(["> svg{margin:0 auto;}", ";"], function (props) {
   return sizeStyle(props).content;
 });
-var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig({
+var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
   displayName: "StyledPageControl__StyledContainer",
   componentId: "sc-1vlfaez-1"
 })(["display:flex;align-items:center;justify-content:center;max-width:100%;", ";", ";"], function (props) {

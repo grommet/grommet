@@ -6,6 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _Checkmark = require("grommet-icons/icons/Checkmark");
 var _Box = require("../Box");
+var _styles = require("../../utils/styles");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -40,7 +41,7 @@ var GrowCheckmark = exports.GrowCheckmark = (0, _styledComponents["default"])(_C
   displayName: "BusyAnimation__GrowCheckmark",
   componentId: "sc-feuivs-1"
 })(["position:absolute;align-self:center;animation:", " 0.9s ease-in-out;"], grow);
-var StyledBusyContents = exports.StyledBusyContents = _styledComponents["default"].div.withConfig({
+var StyledBusyContents = exports.StyledBusyContents = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
   displayName: "BusyAnimation__StyledBusyContents",
   componentId: "sc-feuivs-2"
 })(["opacity:", ";}"], function (props) {

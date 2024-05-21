@@ -3,14 +3,16 @@
 exports.__esModule = true;
 exports.animationDuration = exports.StyledOverlay = exports.StyledLayer = exports.StyledContainer = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var hiddenPositionStyle = (0, _styledComponents.css)(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
 var responsiveLayerStyle = "\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
-var StyledLayer = exports.StyledLayer = _styledComponents["default"].div.withConfig({
+var StyledLayer = exports.StyledLayer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledLayer",
   componentId: "sc-rmtehz-0"
 })(["", " background:transparent;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], _utils.baseStyle, function (props) {
@@ -31,7 +33,7 @@ var StyledLayer = exports.StyledLayer = _styledComponents["default"].div.withCon
 });
 StyledLayer.defaultProps = {};
 Object.setPrototypeOf(StyledLayer.defaultProps, _defaultProps.defaultProps);
-var StyledOverlay = exports.StyledOverlay = _styledComponents["default"].div.withConfig({
+var StyledOverlay = exports.StyledOverlay = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "sc-rmtehz-1"
 })(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " ", " pointer-events:all;will-change:transform;"], function (props) {
@@ -446,10 +448,8 @@ var elevationStyle = (0, _styledComponents.css)(["box-shadow:", ";"], function (
   return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.theme.layer.container.elevation];
 });
 var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig({
-  // don't let elevation leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
-    return !['elevation'].includes(prop) && defaultValidatorFn(prop);
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return (0, _isPropValid["default"])(prop) && !['elevation'].includes(prop);
   }
 }).withConfig({
   displayName: "StyledLayer__StyledContainer",

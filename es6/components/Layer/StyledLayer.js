@@ -1,10 +1,11 @@
 import styled, { css, keyframes } from 'styled-components';
-import { baseStyle, backgroundStyle, breakpointStyle, parseMetricToNum } from '../../utils';
+import isPropValid from '@emotion/is-prop-valid';
+import { baseStyle, backgroundStyle, breakpointStyle, parseMetricToNum, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 var hiddenPositionStyle = css(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
 var responsiveLayerStyle = "\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
-var StyledLayer = styled.div.withConfig({
+var StyledLayer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledLayer",
   componentId: "sc-rmtehz-0"
 })(["", " background:transparent;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], baseStyle, function (props) {
@@ -25,7 +26,7 @@ var StyledLayer = styled.div.withConfig({
 });
 StyledLayer.defaultProps = {};
 Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
-var StyledOverlay = styled.div.withConfig({
+var StyledOverlay = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "sc-rmtehz-1"
 })(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " ", " pointer-events:all;will-change:transform;"], function (props) {
@@ -440,10 +441,8 @@ var elevationStyle = css(["box-shadow:", ";"], function (props) {
   return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.theme.layer.container.elevation];
 });
 var StyledContainer = styled.div.withConfig({
-  // don't let elevation leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
-    return !['elevation'].includes(prop) && defaultValidatorFn(prop);
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return isPropValid(prop) && !['elevation'].includes(prop);
   }
 }).withConfig({
   displayName: "StyledLayer__StyledContainer",

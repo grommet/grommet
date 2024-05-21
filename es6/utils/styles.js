@@ -1,8 +1,14 @@
 import { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
+
+// ensure only valid DOM attributes are forwarded onto DOM
+export var styledComponentsConfig = {
+  shouldForwardProp: isPropValid
+};
 export var baseStyle = css(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " ", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
   return props.theme.global.font.family;
 }, function (props) {

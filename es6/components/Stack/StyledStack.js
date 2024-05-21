@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
-import { genericStyles } from '../../utils';
+import { genericStyles, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 var fillStyle = css(["", " ", " flex-grow:1;display:flex;"], function (props) {
   return props.fillContainer === true || props.fillContainer === 'horizontal' ? "\n        width: 100%;\n        max-width: none;\n      " : '';
 }, function (props) {
   return props.fillContainer === true || props.fillContainer === 'vertical' ? 'height: 100%;' : '';
 });
-var StyledStack = styled.div.withConfig({
+var StyledStack = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledStack",
   componentId: "sc-ajspsk-0"
 })(["position:relative;", " ", " ", ""], genericStyles, function (props) {
@@ -28,7 +28,7 @@ var styleMap = {
   'top-right': "\n    top: 0;\n    right: 0;\n  ",
   'bottom-right': "\n    bottom: 0;\n    right: 0;\n  "
 };
-var StyledStackLayer = styled.div.withConfig({
+var StyledStackLayer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledStack__StyledStackLayer",
   componentId: "sc-ajspsk-1"
 })(["position:", ";", " ", " ", " ", ""], function (props) {

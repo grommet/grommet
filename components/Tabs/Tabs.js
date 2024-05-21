@@ -270,7 +270,6 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
   });
   return /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabs, _extends({
     ref: ref,
-    as: _Box.Box,
     flex: flex,
     responsive: responsive
   }, rest, {
@@ -298,7 +297,6 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
   }))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabsHeader, {
     ref: headerRef,
-    as: _Box.Box,
     direction: "row",
     justify: overflow ? 'start' : justify,
     flex: !!overflow,

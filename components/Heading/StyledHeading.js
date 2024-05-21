@@ -41,7 +41,7 @@ var truncateStyle = "\n  white-space: nowrap;\n  overflow: hidden;\n  text-overf
 var colorStyle = (0, _styledComponents.css)(["color:", ";"], function (props) {
   return (0, _utils.normalizeColor)(props.colorProp || props.theme.heading.color, props.theme);
 });
-var StyledHeading = exports.StyledHeading = _styledComponents["default"].h1.withConfig({
+var StyledHeading = exports.StyledHeading = _styledComponents["default"].h1.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledHeading",
   componentId: "sc-1rdh4aw-0"
 })(["", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {

@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
-import { normalizeColor, genericStyles } from '../../utils';
+import { normalizeColor, genericStyles, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
-var StyledHour = styled.line.withConfig({
+var StyledHour = styled.line.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledHour",
   componentId: "sc-y4xw8s-0"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -11,7 +11,7 @@ var StyledHour = styled.line.withConfig({
 });
 StyledHour.defaultProps = {};
 Object.setPrototypeOf(StyledHour.defaultProps, defaultProps);
-var StyledMinute = styled.line.withConfig({
+var StyledMinute = styled.line.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledMinute",
   componentId: "sc-y4xw8s-1"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -21,7 +21,7 @@ var StyledMinute = styled.line.withConfig({
 });
 StyledMinute.defaultProps = {};
 Object.setPrototypeOf(StyledMinute.defaultProps, defaultProps);
-var StyledSecond = styled.line.withConfig({
+var StyledSecond = styled.line.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledSecond",
   componentId: "sc-y4xw8s-2"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -31,7 +31,7 @@ var StyledSecond = styled.line.withConfig({
 });
 StyledSecond.defaultProps = {};
 Object.setPrototypeOf(StyledSecond.defaultProps, defaultProps);
-var StyledAnalog = styled.svg.withConfig({
+var StyledAnalog = styled.svg.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledAnalog",
   componentId: "sc-y4xw8s-3"
 })(["width:", ";height:", ";", " ", ";"], function (props) {
@@ -49,7 +49,7 @@ var sizeStyle = function sizeStyle(props) {
   var data = props.theme.clock.digital.text[size] || {};
   return css(["font-size:", ";line-height:", ";"], data.size || props.theme.clock.digital.text.medium.size, data.height || props.theme.clock.digital.text.medium.height);
 };
-var StyledDigitalDigit = styled.div.withConfig({
+var StyledDigitalDigit = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledDigitalDigit",
   componentId: "sc-y4xw8s-4"
 })(["position:relative;width:0.8em;text-align:center;overflow:hidden;", ";"], function (props) {
@@ -59,7 +59,7 @@ StyledDigitalDigit.defaultProps = {};
 Object.setPrototypeOf(StyledDigitalDigit.defaultProps, defaultProps);
 var previousUp = keyframes(["0%{transform:translateY(0);}100%{transform:translateY(-100%);}"]);
 var previousDown = keyframes(["0%{transform:translateY(0);}100%{transform:translateY(100%);}"]);
-var StyledDigitalPrevious = styled.div.withConfig({
+var StyledDigitalPrevious = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledDigitalPrevious",
   componentId: "sc-y4xw8s-5"
 })(["position:absolute;top:0;left:0;width:0.8em;text-align:center;animation:", " 0.5s forwards;"], function (props) {
@@ -69,7 +69,7 @@ StyledDigitalPrevious.defaultProps = {};
 Object.setPrototypeOf(StyledDigitalPrevious.defaultProps, defaultProps);
 var nextUp = keyframes(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]);
 var nextDown = keyframes(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]);
-var StyledDigitalNext = styled.div.withConfig({
+var StyledDigitalNext = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledDigitalNext",
   componentId: "sc-y4xw8s-6"
 })(["position:absolute;top:0;left:0;width:0.8em;text-align:center;animation:", " 0.5s forwards;"], function (props) {

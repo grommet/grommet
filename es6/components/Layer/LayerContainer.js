@@ -10,9 +10,9 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
-import { backgroundIsDark, findVisibleParent, PortalContext } from '../../utils';
+import { backgroundIsDark, findVisibleParent, PortalContext, styledComponentsConfig } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
-var HiddenAnchor = styled.a.withConfig({
+var HiddenAnchor = styled.a.withConfig(styledComponentsConfig).withConfig({
   displayName: "LayerContainer__HiddenAnchor",
   componentId: "sc-1srj14c-0"
 })(["width:0;height:0;overflow:hidden;position:absolute;&:focus{outline:none;}"]);

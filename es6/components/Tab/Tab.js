@@ -4,7 +4,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { TabsContext } from '../Tabs/TabsContext';
@@ -172,7 +171,6 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setFocusIndex(-1);
     }
   }), /*#__PURE__*/React.createElement(StyledTab, _extends({
-    as: Box,
     disabled: disabled,
     plain: plain
   }, withIconStyles, tabStyles), first, second));

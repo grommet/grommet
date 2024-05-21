@@ -7,7 +7,6 @@ import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { FocusedContainer } from '../FocusedContainer';
 import { backgroundIsDark, findScrollParents, parseMetricToNum, PortalContext, useForwardedRef } from '../../utils';
 import { defaultProps } from '../../default-props';
-import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { StyledDrop } from './StyledDrop';
 import { OptionsContext } from '../../contexts/OptionsContext';
@@ -270,7 +269,6 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var content = /*#__PURE__*/React.createElement(StyledDrop, _extends({
     "aria-label": a11yTitle || ariaLabel,
     ref: dropRef,
-    as: Box,
     background: background,
     plain: plain,
     elevation: !plain ? elevation || theme.global.drop.elevation || theme.global.drop.shadowSize ||

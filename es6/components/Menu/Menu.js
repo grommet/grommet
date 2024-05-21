@@ -16,7 +16,7 @@ import { MenuPropTypes } from './propTypes';
 var ContainerBox = styled(Box).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
-})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}:focus{outline:none;}", ";"], function (props) {
+})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}&:focus{outline:none;}", ";"], function (props) {
   return props.theme.menu.extend;
 });
 

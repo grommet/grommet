@@ -112,7 +112,7 @@ var RangeInput = exports.RangeInput = /*#__PURE__*/(0, _react.forwardRef)(functi
     name: name,
     focus: focus,
     focusIndicator: focusIndicator,
-    value: value
+    value: value || ''
   }, rest, {
     color: color,
     onFocus: function onFocus(event) {

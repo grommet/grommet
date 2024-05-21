@@ -100,7 +100,7 @@ var StyledDataTableCell = exports.StyledDataTableCell = (0, _styledComponents["d
 });
 StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, _defaultProps.defaultProps);
-var StyledPlaceholder = exports.StyledPlaceholder = (0, _styledComponents["default"])('caption').withConfig({
+var StyledPlaceholder = exports.StyledPlaceholder = (0, _styledComponents["default"])('caption').withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledDataTable__StyledPlaceholder",
   componentId: "sc-xrlyjm-7"
 })(["position:absolute;", " ", " left:0;right:0;"], function (props) {

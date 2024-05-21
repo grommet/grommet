@@ -4,7 +4,6 @@ exports.__esModule = true;
 exports.RadioButton = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = require("styled-components");
-var _Box = require("../Box");
 var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
 var _StyledRadioButton = require("./StyledRadioButton");
@@ -62,7 +61,6 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
       return setHover(false);
     }
   }), /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButton, {
-    as: _Box.Box,
     flex: false,
     margin: label ? {
       right: theme.radioButton.gap || 'small'
@@ -84,7 +82,6 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
     hover: hover
   }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonBox, {
     focus: focus && focusIndicator,
-    as: _Box.Box,
     align: "center",
     justify: "center",
     width: theme.radioButton.size,

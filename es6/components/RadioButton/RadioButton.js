@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } } return target; }
 import React, { forwardRef, useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonLabel, StyledRadioButtonBox } from './StyledRadioButton';
@@ -56,7 +55,6 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return setHover(false);
     }
   }), /*#__PURE__*/React.createElement(StyledRadioButton, {
-    as: Box,
     flex: false,
     margin: label ? {
       right: theme.radioButton.gap || 'small'
@@ -78,7 +76,6 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     hover: hover
   }) : /*#__PURE__*/React.createElement(StyledRadioButtonBox, {
     focus: focus && focusIndicator,
-    as: Box,
     align: "center",
     justify: "center",
     width: theme.radioButton.size,

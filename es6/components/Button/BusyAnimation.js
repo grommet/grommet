@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { Box } from '../Box';
+import { styledComponentsConfig } from '../../utils/styles';
 var bounceDelay = keyframes(["0%,80%,100%{transform:scale(0.4);}40%{transform:scale(0.8);}"]);
 var bounceDelayRule = css(["animation:", " 1.4s infinite ease-in-out both;"], bounceDelay);
 var Dot = styled(Box).withConfig({
@@ -33,7 +34,7 @@ export var GrowCheckmark = styled(Checkmark).withConfig({
   displayName: "BusyAnimation__GrowCheckmark",
   componentId: "sc-feuivs-1"
 })(["position:absolute;align-self:center;animation:", " 0.9s ease-in-out;"], grow);
-export var StyledBusyContents = styled.div.withConfig({
+export var StyledBusyContents = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "BusyAnimation__StyledBusyContents",
   componentId: "sc-feuivs-2"
 })(["opacity:", ";}"], function (props) {

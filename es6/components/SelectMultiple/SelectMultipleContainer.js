@@ -292,7 +292,6 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onEsc: onClose
   }, /*#__PURE__*/React.createElement(StyledContainer, {
     ref: ref,
-    as: Box,
     id: id ? id + "__select-drop" : undefined,
     dropHeight: dropHeight,
     a11yTitle: format({

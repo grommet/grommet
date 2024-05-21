@@ -30,7 +30,7 @@ var customTheme = {
         var column = _ref.column,
           sort = _ref.sort,
           sortable = _ref.sortable;
-        return "\n          " + (sortable && sort && sort.property !== column && "\n              :hover {\n                svg {\n                  opacity: 100%;\n                }\n              }\n            ") + "\n         ";
+        return "\n          " + (sortable && sort && sort.property !== column && "\n              &:hover {\n                svg {\n                  opacity: 100%;\n                }\n              }\n            ") + "\n         ";
       }
     },
     icons: {

@@ -1,12 +1,18 @@
 "use strict";
 
 exports.__esModule = true;
-exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.sizeStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.heightStyle = exports.getInputPadBySide = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
+exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.styledComponentsConfig = exports.sizeStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.heightStyle = exports.getInputPadBySide = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
 var _styledComponents = require("styled-components");
+var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _background = require("./background");
 var _colors = require("./colors");
 var _responsive = require("./responsive");
 var _mixins = require("./mixins");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+// ensure only valid DOM attributes are forwarded onto DOM
+var styledComponentsConfig = exports.styledComponentsConfig = {
+  shouldForwardProp: _isPropValid["default"]
+};
 var baseStyle = exports.baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " ", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
   return props.theme.global.font.family;
 }, function (props) {

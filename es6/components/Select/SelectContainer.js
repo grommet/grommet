@@ -265,7 +265,6 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     onKeyDown: onKeyDownOption
   }, /*#__PURE__*/React.createElement(StyledContainer, {
     ref: ref,
-    as: Box,
     id: id ? id + "__select-drop" : undefined,
     dropHeight: dropHeight
   }, onSearch && /*#__PURE__*/React.createElement(Box, {

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
-import { getHoverIndicatorStyle, selectedStyle, controlBorderStyle, sizeStyle } from '../../utils';
-export var StyledContainer = styled.div.withConfig({
+import { getHoverIndicatorStyle, selectedStyle, controlBorderStyle, sizeStyle, styledComponentsConfig } from '../../utils';
+export var StyledContainer = styled(Box).withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"
 })(["@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";", ";"], function (props) {
@@ -13,11 +14,11 @@ export var StyledContainer = styled.div.withConfig({
 });
 
 // position relative is so scroll can be managed correctly
-export var OptionsContainer = styled.div.withConfig({
+export var OptionsContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
 })(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
-export var HiddenInput = styled.input.withConfig({
+export var HiddenInput = styled.input.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledSelect__HiddenInput",
   componentId: "sc-znp66n-2"
 })(["display:none;"]);

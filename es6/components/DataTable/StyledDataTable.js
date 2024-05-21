@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { backgroundStyle, fillStyle, focusStyle, unfocusStyle, genericStyles, normalizeColor } from '../../utils';
+import { backgroundStyle, fillStyle, focusStyle, unfocusStyle, genericStyles, normalizeColor, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
@@ -95,7 +95,7 @@ var StyledDataTableCell = styled(TableCell).withConfig({
 });
 StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
-var StyledPlaceholder = styled('caption').withConfig({
+var StyledPlaceholder = styled('caption').withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledDataTable__StyledPlaceholder",
   componentId: "sc-xrlyjm-7"
 })(["position:absolute;", " ", " left:0;right:0;"], function (props) {

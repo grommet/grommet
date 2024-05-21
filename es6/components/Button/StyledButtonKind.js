@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { activeStyle, disabledStyle, edgeStyle, focusStyle, unfocusStyle, genericStyles, kindPartStyles, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 var radiusStyle = function radiusStyle(props) {
@@ -165,10 +166,8 @@ var plainStyle = function plainStyle(props) {
   return css(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", " ", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ", props.hasIcon && !props.hasLabel && "line-height: 0;");
 };
 var StyledButtonKind = styled.button.withConfig({
-  // don't let kind attribute leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
-    return !['kind'].includes(prop) && defaultValidatorFn(prop);
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return isPropValid(prop) && !['kind'].includes(prop);
   }
 }).withConfig({
   displayName: "StyledButtonKind",
