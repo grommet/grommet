@@ -115,6 +115,7 @@ const ToggleGroup = ({
         // match button rounding
         responsive={false}
         role={multiple ? 'group' : 'radiogroup'}
+        overflow="hidden"
         {...rest}
       >
         {options?.map((option, index) => {
@@ -132,17 +133,6 @@ const ToggleGroup = ({
           const active = Array.isArray(value)
             ? !!value.includes(optionValue)
             : value === optionValue;
-          let round = 0;
-          // round corners of first and last buttons to match container
-          if (
-            typeof theme.toggleGroup.container.round === 'string' &&
-            (index === 0 || index === options.length - 1)
-          ) {
-            round = {
-              corner: index === 0 ? 'left' : 'right',
-              size: theme.toggleGroup.container.round,
-            };
-          }
 
           return (
             <Box
@@ -167,7 +157,6 @@ const ToggleGroup = ({
                   buttonRefs.current[index] = r;
                 }}
                 role={!multiple ? 'radio' : undefined}
-                round={round}
                 tabIndex={index === focusableIndex ? '0' : '-1'}
               />
             </Box>

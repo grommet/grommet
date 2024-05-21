@@ -32,6 +32,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -49,7 +50,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -135,37 +136,10 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c5 {
-  border-radius: 0;
-  border: none;
-  border-radius: 0;
-  padding: 11px;
-}
-
-.c5:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c7 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c7:hover {
   border: none;
   box-shadow: none;
 }
@@ -201,7 +175,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c5"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -210,11 +184,11 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
         </button>
       </div>
       <div
-        class="c6"
+        class="c5"
       >
         <button
           aria-checked="false"
-          class="c3 c7"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -259,6 +233,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -276,7 +251,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -362,37 +337,10 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c5 {
-  border-radius: 0;
-  border: none;
-  border-radius: 0;
-  padding: 11px;
-}
-
-.c5:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c7 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c7:hover {
   border: none;
   box-shadow: none;
 }
@@ -429,7 +377,7 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c5"
+          class="c3 c4"
           tabindex="-1"
           type="button"
         >
@@ -437,12 +385,12 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
         </button>
       </div>
       <div
-        class="c6"
+        class="c5"
       >
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c7"
+          class="c3 c4"
           tabindex="-1"
           type="button"
         >
@@ -486,6 +434,7 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -503,7 +452,7 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -586,7 +535,7 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   border: 0;
 }
 
-.c7 {
+.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -613,80 +562,53 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c7:focus {
+.c6:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c6:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c6:focus:not(:focus-visible) > circle,
+.c6:focus:not(:focus-visible) > ellipse,
+.c6:focus:not(:focus-visible) > line,
+.c6:focus:not(:focus-visible) > path,
+.c6:focus:not(:focus-visible) > polygon,
+.c6:focus:not(:focus-visible) > polyline,
+.c6:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c6:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c5 {
-  border-radius: 0;
-  border: none;
-  border-radius: 0;
-  padding: 11px;
-}
-
-.c5:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c8 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c8:hover {
   border: none;
   box-shadow: none;
 }
@@ -722,7 +644,7 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c5"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -731,11 +653,11 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
         </button>
       </div>
       <div
-        class="c6"
+        class="c5"
       >
         <button
           aria-checked="true"
-          class="c7 c8"
+          class="c6 c4"
           role="radio"
           tabindex="0"
           type="button"
@@ -780,6 +702,7 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -797,7 +720,7 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   flex-direction: column;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -880,7 +803,7 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   border: 0;
 }
 
-.c8 {
+.c7 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -907,47 +830,47 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   transition-timing-function: ease-in-out;
 }
 
-.c8:hover {
+.c7:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c8:focus {
+.c7:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c7:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c8:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible) > circle,
+.c7:focus:not(:focus-visible) > ellipse,
+.c7:focus:not(:focus-visible) > line,
+.c7:focus:not(:focus-visible) > path,
+.c7:focus:not(:focus-visible) > polygon,
+.c7:focus:not(:focus-visible) > polyline,
+.c7:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1021,37 +944,10 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c6 {
-  border-radius: 0;
-  border: none;
-  border-radius: 0;
-  padding: 11px;
-}
-
-.c6:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c9 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c9:hover {
   border: none;
   box-shadow: none;
 }
@@ -1088,7 +984,7 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
         <button
           aria-checked="false"
           aria-pressed="true"
-          class="c5 c6"
+          class="c5 c4"
           tabindex="0"
           type="button"
         >
@@ -1096,12 +992,12 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
         </button>
       </div>
       <div
-        class="c7"
+        class="c6"
       >
         <button
           aria-checked="false"
           aria-pressed="true"
-          class="c8 c9"
+          class="c7 c4"
           tabindex="-1"
           type="button"
         >
@@ -1145,6 +1041,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -1162,7 +1059,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   flex-direction: column;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1313,37 +1210,10 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c6 {
-  border-radius: 0;
-  border: none;
-  border-radius: 0;
-  padding: 11px;
-}
-
-.c6:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c8 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c8:hover {
   border: none;
   box-shadow: none;
 }
@@ -1379,7 +1249,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
       >
         <button
           aria-checked="false"
-          class="c5 c6"
+          class="c5 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -1388,11 +1258,11 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
         </button>
       </div>
       <div
-        class="c7"
+        class="c6"
       >
         <button
           aria-checked="false"
-          class="c5 c8"
+          class="c5 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -1437,6 +1307,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -1454,7 +1325,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   flex-direction: column;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1605,37 +1476,10 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c6 {
-  border-radius: 0;
-  border: none;
-  border-radius: 0;
-  padding: 11px;
-}
-
-.c6:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c8 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c8:hover {
   border: none;
   box-shadow: none;
 }
@@ -1672,7 +1516,7 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c5 c6"
+          class="c5 c4"
           tabindex="-1"
           type="button"
         >
@@ -1680,12 +1524,12 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
         </button>
       </div>
       <div
-        class="c7"
+        class="c6"
       >
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c5 c8"
+          class="c5 c4"
           tabindex="-1"
           type="button"
         >
@@ -1729,6 +1573,7 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -1832,25 +1677,10 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c6 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c6:hover {
   border: none;
   box-shadow: none;
 }
@@ -1887,7 +1717,7 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c6"
+          class="c3 c4"
           tabindex="-1"
           type="button"
         >
@@ -1931,6 +1761,7 @@ exports[`ToggleGroup custom theme 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 3px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -2034,25 +1865,10 @@ exports[`ToggleGroup custom theme 1`] = `
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c6 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  padding: 11px;
-}
-
-.c6:hover {
   border: none;
   box-shadow: none;
 }
@@ -2088,7 +1904,7 @@ exports[`ToggleGroup custom theme 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c6"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2167,6 +1983,7 @@ exports[`ToggleGroup icon with values 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -2323,25 +2140,10 @@ exports[`ToggleGroup icon with values 1`] = `
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c8 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c8:hover {
   border: none;
   box-shadow: none;
 }
@@ -2388,7 +2190,7 @@ exports[`ToggleGroup icon with values 1`] = `
       >
         <button
           aria-checked="false"
-          class="c7 c8"
+          class="c7 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2444,6 +2246,7 @@ exports[`ToggleGroup object options 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -2547,25 +2350,10 @@ exports[`ToggleGroup object options 1`] = `
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c6 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c6:hover {
   border: none;
   box-shadow: none;
 }
@@ -2601,7 +2389,7 @@ exports[`ToggleGroup object options 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c6"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2646,6 +2434,7 @@ exports[`ToggleGroup renders without props 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 <div
@@ -2691,6 +2480,7 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -2708,7 +2498,7 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2794,37 +2584,10 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c5 {
-  border-radius: 0;
-  border: none;
-  border-radius: 0;
-  padding: 11px;
-}
-
-.c5:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c7 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c7:hover {
   border: none;
   box-shadow: none;
 }
@@ -2860,7 +2623,7 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c5"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2869,11 +2632,11 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
         </button>
       </div>
       <div
-        class="c6"
+        class="c5"
       >
         <button
           aria-checked="false"
-          class="c3 c7"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -2918,6 +2681,7 @@ exports[`ToggleGroup string options 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -3021,25 +2785,10 @@ exports[`ToggleGroup string options 1`] = `
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c6 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c6:hover {
   border: none;
   box-shadow: none;
 }
@@ -3075,7 +2824,7 @@ exports[`ToggleGroup string options 1`] = `
       >
         <button
           aria-checked="false"
-          class="c3 c6"
+          class="c3 c4"
           role="radio"
           tabindex="-1"
           type="button"
@@ -3120,6 +2869,7 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .c2 {
@@ -3223,25 +2973,10 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
 .c4 {
   border-radius: 0;
   border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
   padding: 11px;
 }
 
 .c4:hover {
-  border: none;
-  box-shadow: none;
-}
-
-.c6 {
-  border-radius: 0;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  padding: 11px;
-}
-
-.c6:hover {
   border: none;
   box-shadow: none;
 }
@@ -3278,7 +3013,7 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
         <button
           aria-checked="false"
           aria-pressed="false"
-          class="c3 c6"
+          class="c3 c4"
           tabindex="-1"
           type="button"
         >
