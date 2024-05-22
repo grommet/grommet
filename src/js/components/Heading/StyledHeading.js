@@ -5,6 +5,7 @@ import {
   genericStyles,
   normalizeColor,
   textAlignStyle,
+  styledComponentsConfig,
 } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
@@ -81,7 +82,8 @@ const colorStyle = css`
     normalizeColor(props.colorProp || props.theme.heading.color, props.theme)};
 `;
 
-const StyledHeading = styled.h1.attrs(ehnancePropsWithTheme)`
+const StyledHeading = styled.h1.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   ${genericStyles}
   ${(props) => fontFamily(props)}
   ${(props) => sizeStyle(props)}

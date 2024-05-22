@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { Box } from '../Box';
+import { genericStyles, styledComponentsConfig } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
-const StyledTabsHeader = styled.div.attrs(ehnancePropsWithTheme)`
-  ${props => props.theme.tabs.header.extend};
+const StyledTabsHeader = styled(Box).attrs(ehnancePropsWithTheme)`
+  ${(props) => props.theme.tabs.header.extend};
 `;
 
 const FLEX_MAP = {
@@ -15,17 +16,19 @@ const FLEX_MAP = {
 };
 
 const flexStyle = css`
-  flex: ${props =>
+  flex: ${(props) =>
     `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
 `;
 
-const StyledTabPanel = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledTabPanel = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   min-height: 0;
-  ${props => props.flex && flexStyle} ${props => props.theme.tabs.panel.extend};
+  ${(props) => props.flex && flexStyle} ${(props) =>
+    props.theme.tabs.panel.extend};
 `;
 
-const StyledTabs = styled.div.attrs(ehnancePropsWithTheme)`
-  ${genericStyles} ${props => props.theme.tabs.extend};
+const StyledTabs = styled(Box).attrs(ehnancePropsWithTheme)`
+  ${genericStyles} ${(props) => props.theme.tabs.extend};
 `;
 
 export { StyledTabsHeader, StyledTabPanel, StyledTabs };

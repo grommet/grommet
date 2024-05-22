@@ -1,6 +1,5 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 
-import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { TabsContext } from '../Tabs/TabsContext';
@@ -210,7 +209,6 @@ const Tab = forwardRef(
         }}
       >
         <StyledTab
-          as={Box}
           disabled={disabled}
           plain={plain}
           {...withIconStyles}

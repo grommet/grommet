@@ -12,6 +12,7 @@ import {
   normalizeColor,
 } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
+import { styledComponentsConfig } from '../../utils/styles';
 
 const radiusStyle = (props) => {
   // border.radius shouldn't impact an only-icon rendering.
@@ -184,7 +185,8 @@ const disabledButtonStyle = (props) => css`
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
-const StyledButton = styled.button.attrs(ehnancePropsWithTheme)`
+const StyledButton = styled.button.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;

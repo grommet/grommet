@@ -23,6 +23,7 @@ import {
   unfocusStyle,
   useForwardedRef,
   usePagination,
+  styledComponentsConfig,
 } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
@@ -31,7 +32,8 @@ import { ehnancePropsWithTheme } from '../../default-props';
 
 const emptyData = [];
 
-const StyledList = styled.ul.attrs(ehnancePropsWithTheme)`
+const StyledList = styled.ul.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   list-style: none;
   ${(props) => !props.margin && 'margin: 0;'}
   padding: 0;

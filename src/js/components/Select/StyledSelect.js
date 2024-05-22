@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
@@ -8,10 +9,11 @@ import {
   selectedStyle,
   controlBorderStyle,
   sizeStyle,
+  styledComponentsConfig,
 } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
-export const StyledContainer = styled.div.attrs(ehnancePropsWithTheme)`
+export const StyledContainer = styled(Box).attrs(ehnancePropsWithTheme)`
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
@@ -27,14 +29,14 @@ export const StyledContainer = styled.div.attrs(ehnancePropsWithTheme)`
 `;
 
 // position relative is so scroll can be managed correctly
-export const OptionsContainer = styled.div`
+export const OptionsContainer = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
 `;
 
-export const HiddenInput = styled.input`
+export const HiddenInput = styled.input.withConfig(styledComponentsConfig)`
   display: none;
 `;
 

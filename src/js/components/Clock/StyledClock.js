@@ -1,38 +1,46 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { normalizeColor, genericStyles } from '../../utils';
+import {
+  normalizeColor,
+  genericStyles,
+  styledComponentsConfig,
+} from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
-const StyledHour = styled.line.attrs(ehnancePropsWithTheme)`
-  stroke-width: ${props => props.theme.clock.analog.hour.width};
-  stroke: ${props =>
+const StyledHour = styled.line.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
+  stroke-width: ${(props) => props.theme.clock.analog.hour.width};
+  stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledMinute = styled.line.attrs(ehnancePropsWithTheme)`
-  stroke-width: ${props => props.theme.clock.analog.minute.width};
-  stroke: ${props =>
+const StyledMinute = styled.line.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
+  stroke-width: ${(props) => props.theme.clock.analog.minute.width};
+  stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledSecond = styled.line.attrs(ehnancePropsWithTheme)`
-  stroke-width: ${props => props.theme.clock.analog.second.width};
-  stroke: ${props =>
+const StyledSecond = styled.line.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
+  stroke-width: ${(props) => props.theme.clock.analog.second.width};
+  stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.second.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledAnalog = styled.svg.attrs(ehnancePropsWithTheme)`
-  width: ${props => props.theme.clock.analog.size[props.size]};
-  height: ${props => props.theme.clock.analog.size[props.size]};
+const StyledAnalog = styled.svg.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
+  width: ${(props) => props.theme.clock.analog.size[props.size]};
+  height: ${(props) => props.theme.clock.analog.size[props.size]};
 
   ${genericStyles}
-  ${props => props.theme.clock.analog && props.theme.clock.analog.extend};
+  ${(props) => props.theme.clock.analog && props.theme.clock.analog.extend};
 `;
 
-const sizeStyle = props => {
+const sizeStyle = (props) => {
   // size is a combination of the size and height properties
   const size = props.size || 'medium';
   const data = props.theme.clock.digital.text[size] || {};
@@ -42,12 +50,13 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledDigitalDigit = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledDigitalDigit = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   position: relative;
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  ${props => sizeStyle(props)};
+  ${(props) => sizeStyle(props)};
 `;
 
 const previousUp = keyframes`
@@ -60,13 +69,14 @@ const previousDown = keyframes`
   100% { transform: translateY(100%); }
 `;
 
-const StyledDigitalPrevious = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledDigitalPrevious = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   position: absolute;
   top: 0;
   left: 0;
   width: 0.8em;
   text-align: center;
-  animation: ${props =>
+  animation: ${(props) =>
       props.direction === 'down' ? previousDown : previousUp}
     0.5s forwards;
 `;
@@ -81,13 +91,14 @@ const nextDown = keyframes`
   100% { transform: translateY(0); }
 `;
 
-const StyledDigitalNext = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledDigitalNext = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   position: absolute;
   top: 0;
   left: 0;
   width: 0.8em;
   text-align: center;
-  animation: ${props => (props.direction === 'down' ? nextDown : nextUp)} 0.5s
+  animation: ${(props) => (props.direction === 'down' ? nextDown : nextUp)} 0.5s
     forwards;
 `;
 

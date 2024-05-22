@@ -30,7 +30,7 @@ const ContainerBox = styled(Box).attrs(ehnancePropsWithTheme)`
   }
 
   /* remove the browser default focus outline */
-  :focus {
+  &:focus {
     outline: none;
   }
 

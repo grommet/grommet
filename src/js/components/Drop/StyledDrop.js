@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
+import { Box } from '../Box';
 import { baseStyle, edgeStyle, roundStyle } from '../../utils/styles';
 import { backgroundStyle } from '../../utils/background';
 import { ehnancePropsWithTheme } from '../../default-props';
@@ -61,7 +62,7 @@ const marginStyle = (theme, align, data, responsive, marginProp) => {
   );
 };
 
-const StyledDrop = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledDrop = styled(Box).attrs(ehnancePropsWithTheme)`
   ${baseStyle}
 
   ${(props) =>

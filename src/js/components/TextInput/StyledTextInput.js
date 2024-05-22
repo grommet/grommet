@@ -9,6 +9,7 @@ import {
   plainInputStyle,
   textAlignStyle,
   widthStyle,
+  styledComponentsConfig,
 } from '../../utils';
 import { inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
@@ -23,7 +24,8 @@ const getPlainStyle = (plain) => {
   return plain && plainInputStyle;
 };
 
-const StyledTextInput = styled.input.attrs(ehnancePropsWithTheme)`
+const StyledTextInput = styled.input.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   ${inputStyle}
   ${(props) =>
     props.readOnlyCopy
@@ -43,7 +45,8 @@ const StyledTextInput = styled.input.attrs(ehnancePropsWithTheme)`
   ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 
-const StyledTextInputContainer = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   position: relative;
   width: 100%;
 
@@ -65,7 +68,8 @@ const StyledTextInputContainer = styled.div.attrs(ehnancePropsWithTheme)`
     props.theme.textInput.container.extend};
 `;
 
-const StyledPlaceholder = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledPlaceholder = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   position: absolute;
   left: ${(props) =>
     parseMetricToNum(getInputPadBySide(props, 'left')) -
@@ -82,7 +86,7 @@ const StyledPlaceholder = styled.div.attrs(ehnancePropsWithTheme)`
     props.theme.textInput.placeholder.extend};
 `;
 
-const StyledIcon = styled.div`
+const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   display: flex;
   justify: center;
@@ -95,7 +99,8 @@ const StyledIcon = styled.div`
       : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
-const StyledSuggestions = styled.ol.attrs(ehnancePropsWithTheme)`
+const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;

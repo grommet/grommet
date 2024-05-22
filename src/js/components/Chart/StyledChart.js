@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { genericStyles, styledComponentsConfig } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
 const animateStyle = ({ theme, typeProp }) => {
@@ -17,18 +17,19 @@ const animateStyle = ({ theme, typeProp }) => {
     ${theme.global.animation.duration}
     forwards;
     ${(typeProp === 'bar' || typeProp === 'area') &&
-      'transform-origin: center bottom 0;'}
+    'transform-origin: center bottom 0;'}
   `;
 };
 
-const StyledChart = styled.svg.attrs(ehnancePropsWithTheme)`
+const StyledChart = styled.svg.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   display: block;
   max-width: 100%;
   overflow: visible;
 
   ${genericStyles}
-  ${props => props.animate && animateStyle(props)}
-  ${props => props.theme.chart && props.theme.chart.extend};
+  ${(props) => props.animate && animateStyle(props)}
+  ${(props) => props.theme.chart && props.theme.chart.extend};
 `;
 
 export { StyledChart };

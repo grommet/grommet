@@ -5,6 +5,7 @@ import {
   borderStyle,
   edgeStyle,
   genericStyles,
+  styledComponentsConfig,
 } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
@@ -39,7 +40,8 @@ const sizeStyle = css`
   overflow: hidden;
 `;
 
-const StyledTableCell = styled.td.attrs(ehnancePropsWithTheme)`
+const StyledTableCell = styled.td.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -64,19 +66,26 @@ const StyledTableCell = styled.td.attrs(ehnancePropsWithTheme)`
   ${(props) => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
-const StyledTableDataCaption = styled.caption.attrs(ehnancePropsWithTheme)`
+const StyledTableDataCaption = styled.caption.withConfig(
+  styledComponentsConfig,
+).attrs(ehnancePropsWithTheme)`
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
 
-const StyledTableRow = styled.tr.attrs(ehnancePropsWithTheme)``;
+const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)``;
 
-const StyledTableBody = styled.tbody.attrs(ehnancePropsWithTheme)``;
+const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)``;
 
-const StyledTableHeader = styled.thead.attrs(ehnancePropsWithTheme)``;
+const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)``;
 
-const StyledTableFooter = styled.tfoot.attrs(ehnancePropsWithTheme)``;
+const StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)``;
 
-const StyledTable = styled.table.attrs(ehnancePropsWithTheme)`
+const StyledTable = styled.table.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;

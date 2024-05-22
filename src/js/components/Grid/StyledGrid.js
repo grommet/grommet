@@ -7,6 +7,7 @@ import {
   genericStyles,
   heightStyle,
   widthStyle,
+  styledComponentsConfig,
 } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
@@ -212,10 +213,12 @@ const areasStyle = (props) => {
     .join(' ')};`;
 };
 
-const StyledGrid = styled.div.attrs((props) => ({
-  ...ehnancePropsWithTheme(props),
+const StyledGrid = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs((props) => ({
+    ...ehnancePropsWithTheme(props),
   'aria-label': props.a11yTitleProp,
-}))`
+  }))`
   display: grid;
   box-sizing: border-box;
 

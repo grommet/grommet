@@ -1,18 +1,20 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-
+import styled from 'styled-components';
 import 'jest-styled-components';
 
-import styled from 'styled-components';
+import { styledComponentsConfig } from '../utils/styles';
+
 import {
   grommet,
   extendDefaultTheme,
+  ehnancePropsWithTheme,
   Box,
   Grommet,
-  ehnancePropsWithTheme,
 } from '..';
 
-const CustomBox = styled.div.attrs(ehnancePropsWithTheme)`
+const CustomBox = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   background: ${(props) => props.theme.global.colors.brand};
 `;
 test('default theme is used', () => {

@@ -1,7 +1,6 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 
 import { removeUndefined } from '../../utils/object';
-import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
 import { CheckBoxPropTypes } from './propTypes';
 
@@ -120,7 +119,6 @@ const CheckBox = forwardRef(
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
-        as={Box}
         align="center"
         justify="center"
         width={theme.checkBox.size}
@@ -166,7 +164,6 @@ const CheckBox = forwardRef(
     const side = !reverse !== !theme.dir ? 'left' : 'right';
     const checkBoxNode = (
       <StyledCheckBox
-        as={Box}
         align="center"
         justify="center"
         margin={label && { [side]: theme.checkBox.gap || 'small' }}

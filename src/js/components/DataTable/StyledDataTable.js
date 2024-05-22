@@ -7,6 +7,7 @@ import {
   unfocusStyle,
   genericStyles,
   normalizeColor,
+  styledComponentsConfig,
 } from '../../utils';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
@@ -162,7 +163,7 @@ const StyledDataTableCell = styled(TableCell).attrs(ehnancePropsWithTheme)`
       : ''}
 `;
 
-const StyledPlaceholder = styled('caption')`
+const StyledPlaceholder = styled('caption').withConfig(styledComponentsConfig)`
   position: absolute;
   ${(props) => `top: ${props.top || 0}px;`}
   ${(props) => `bottom: ${props.bottom || 0}px;`}

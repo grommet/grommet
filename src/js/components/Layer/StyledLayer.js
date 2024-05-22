@@ -1,10 +1,11 @@
 import styled, { css, keyframes } from 'styled-components';
-
+import isPropValid from '@emotion/is-prop-valid';
 import {
   baseStyle,
   backgroundStyle,
   breakpointStyle,
   parseMetricToNum,
+  styledComponentsConfig,
 } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
@@ -30,7 +31,8 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-const StyledLayer = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledLayer = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   ${baseStyle}
   background: transparent;
   position: relative;
@@ -58,7 +60,8 @@ const StyledLayer = styled.div.attrs(ehnancePropsWithTheme)`
   ${(props) => props.theme.layer && props.theme.layer.extend};
 `;
 
-const StyledOverlay = styled.div.attrs(ehnancePropsWithTheme)`
+const StyledOverlay = styled.div.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   position: absolute;
   ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -769,10 +772,8 @@ const elevationStyle = css`
 `;
 
 const StyledContainer = styled.div.attrs(ehnancePropsWithTheme).withConfig({
-  // don't let elevation leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['elevation'].includes(prop) && defaultValidatorFn(prop),
+  shouldForwardProp: (prop) =>
+    isPropValid(prop) && !['elevation'].includes(prop),
 })`
   ${(props) => (!props.modal ? baseStyle : '')}
   display: flex;

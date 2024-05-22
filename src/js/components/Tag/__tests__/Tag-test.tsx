@@ -111,9 +111,7 @@ describe('Tag', () => {
   });
 
   test('renders default remove icon', () => {
-   const { container } = render(
-        <Tag value="Value" onRemove={jest.fn()} />
-    );
+    const { container } = render(<Tag value="Value" onRemove={jest.fn()} />);
     expect(container).toMatchSnapshot();
     expect(screen.getByLabelText('FormClose')).toBeDefined();
   });

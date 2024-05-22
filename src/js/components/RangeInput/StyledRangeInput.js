@@ -7,6 +7,7 @@ import {
   normalizeColor,
   parseMetricToNum,
   getRGBA,
+  styledComponentsConfig,
 } from '../../utils';
 import { ehnancePropsWithTheme } from '../../default-props';
 
@@ -207,7 +208,8 @@ const firefoxMicrosoftThumbStyle = css`
 `;
 
 /* eslint-disable max-len */
-const StyledRangeInput = styled.input.attrs(ehnancePropsWithTheme)`
+const StyledRangeInput = styled.input.withConfig(styledComponentsConfig)
+.attrs(ehnancePropsWithTheme)`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
