@@ -46,7 +46,7 @@ const defaultButtonTheme = {
 describe('Menu', () => {
   beforeEach(createPortal);
 
-  test.only('should have no accessibility violations', async () => {
+  test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Menu items={[]} />
