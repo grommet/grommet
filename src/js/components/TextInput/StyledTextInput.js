@@ -13,7 +13,7 @@ import {
 } from '../../utils';
 import { inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
@@ -25,7 +25,7 @@ const getPlainStyle = (plain) => {
 };
 
 const StyledTextInput = styled.input.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   ${inputStyle}
   ${(props) =>
     props.readOnlyCopy
@@ -46,7 +46,7 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)
 `;
 
 const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   position: relative;
   width: 100%;
 
@@ -69,7 +69,7 @@ const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)
 `;
 
 const StyledPlaceholder = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   position: absolute;
   left: ${(props) =>
     parseMetricToNum(getInputPadBySide(props, 'left')) -
@@ -100,7 +100,7 @@ const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
 `;
 
 const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;

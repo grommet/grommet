@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const fillStyle = css`
   ${(props) =>
@@ -20,7 +20,7 @@ const fillStyle = css`
 `;
 
 const StyledStack = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   position: relative;
   ${genericStyles}
   ${(props) => props.fillContainer && fillStyle}

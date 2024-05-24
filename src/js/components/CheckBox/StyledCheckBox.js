@@ -6,7 +6,7 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 import { Box } from '../Box';
 
 // Note: since `fillStyle` is only used in one place, `justify-content` was
@@ -42,7 +42,7 @@ const hoverStyle = css`
 `;
 
 const StyledCheckBoxIcon = styled.svg.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   box-sizing: border-box;
   stroke-width: ${(props) => props.theme.checkBox.check.thickness};
   stroke: ${(props) =>
@@ -55,7 +55,7 @@ const StyledCheckBoxIcon = styled.svg.withConfig(styledComponentsConfig)
 `;
 
 const StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   display: flex;
   flex-direction: row;
   align-items: ${(props) =>
@@ -100,7 +100,7 @@ const StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig)
 `;
 
 const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -117,13 +117,13 @@ const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)
   }
 `;
 
-const StyledCheckBoxBox = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledCheckBoxBox = styled(Box).attrs(enhancePropsWithTheme)`
   ${(props) => props.focus && props.focusIndicator && focusStyle()};
   ${(props) => props.theme.checkBox.check.extend};
 `;
 
 const StyledCheckBoxToggle = styled.span.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   box-sizing: border-box;
   vertical-align: middle;
   display: inline-block;
@@ -143,7 +143,7 @@ const StyledCheckBoxToggle = styled.span.withConfig(styledComponentsConfig)
 `;
 
 const StyledCheckBoxKnob = styled.span.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   box-sizing: border-box;
   position: relative;
   display: inherit;

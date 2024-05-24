@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const fillStyle = (fillProp) => {
   if (fillProp === 'horizontal') {
@@ -26,7 +26,7 @@ const fillStyle = (fillProp) => {
 
 // undefined fillProp has width for backwards compatibility
 const StyledWorldMap = styled.svg.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   ${genericStyles}
   ${(props) =>
     props.fillProp !== undefined ? fillStyle(props.fillProp) : 'width: 100%;'}

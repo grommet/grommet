@@ -7,7 +7,7 @@ import {
   genericStyles,
   styledComponentsConfig,
 } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const SIZE_MAP = {
   '1/2': '50%',
@@ -41,7 +41,7 @@ const sizeStyle = css`
 `;
 
 const StyledTableCell = styled.td.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -68,7 +68,7 @@ const StyledTableCell = styled.td.withConfig(styledComponentsConfig)
 
 const StyledTableDataCaption = styled.caption.withConfig(
   styledComponentsConfig,
-).attrs(ehnancePropsWithTheme)`
+).attrs(enhancePropsWithTheme)`
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
 
@@ -81,7 +81,7 @@ const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)``;
 const StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig)``;
 
 const StyledTable = styled.table.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;

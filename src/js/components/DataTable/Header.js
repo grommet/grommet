@@ -27,7 +27,7 @@ import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -106,7 +106,7 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
   return styles;
 };
 
-const StyledHeaderCellButton = styled(Button).attrs(ehnancePropsWithTheme)`
+const StyledHeaderCellButton = styled(Button).attrs(enhancePropsWithTheme)`
   ${(props) => buttonStyle(props)}
 `;
 

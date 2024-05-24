@@ -19,9 +19,9 @@ import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
-const ContainerBox = styled(Box).attrs(ehnancePropsWithTheme)`
+const ContainerBox = styled(Box).attrs(enhancePropsWithTheme)`
   max-height: inherit;
 
   /* IE11 hack to get drop contents to not overflow */

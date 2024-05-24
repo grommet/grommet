@@ -28,12 +28,12 @@ import {
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 import { ListPropTypes } from './propTypes';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const emptyData = [];
 
 const StyledList = styled.ul.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   list-style: none;
   ${(props) => !props.margin && 'margin: 0;'}
   padding: 0;
@@ -53,7 +53,7 @@ const StyledList = styled.ul.withConfig(styledComponentsConfig)
   }
 `;
 
-const StyledItem = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledItem = styled(Box).attrs(enhancePropsWithTheme)`
   ${(props) => props.onClick && !props.isDisabled && `cursor: pointer;`}
   ${(props) => props.draggable && !props.isDisabled && `cursor: move;`}
   // during the interim state when a user is holding down a click,
@@ -83,7 +83,7 @@ const StyledItem = styled(Box).attrs(ehnancePropsWithTheme)`
 `;
 
 // when paginated, this wraps the data table and pagination component
-const StyledContainer = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledContainer = styled(Box).attrs(enhancePropsWithTheme)`
   ${(props) =>
     props.theme.list &&
     props.theme.list.container &&

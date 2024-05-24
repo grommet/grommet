@@ -4,11 +4,11 @@ import { Copy } from 'grommet-icons/icons/Copy';
 import { Button } from '../Button';
 import { Tip } from '../Tip';
 import { edgeStyle } from '../../utils/styles';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
-const StyledButton = styled(Button).attrs(ehnancePropsWithTheme)`
+const StyledButton = styled(Button).attrs(enhancePropsWithTheme)`
   border-radius: ${(props) => props.theme.global.control.border.radius};
   ${(props) =>
     !props.theme.button.default

@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const animateStyle = ({ theme, typeProp }) => {
   let animateBounds;
@@ -22,7 +22,7 @@ const animateStyle = ({ theme, typeProp }) => {
 };
 
 const StyledChart = styled.svg.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   display: block;
   max-width: 100%;
   overflow: visible;

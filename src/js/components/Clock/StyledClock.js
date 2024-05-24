@@ -5,10 +5,10 @@ import {
   genericStyles,
   styledComponentsConfig,
 } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const StyledHour = styled.line.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   stroke-width: ${(props) => props.theme.clock.analog.hour.width};
   stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
@@ -16,7 +16,7 @@ const StyledHour = styled.line.withConfig(styledComponentsConfig)
 `;
 
 const StyledMinute = styled.line.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   stroke-width: ${(props) => props.theme.clock.analog.minute.width};
   stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
@@ -24,7 +24,7 @@ const StyledMinute = styled.line.withConfig(styledComponentsConfig)
 `;
 
 const StyledSecond = styled.line.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   stroke-width: ${(props) => props.theme.clock.analog.second.width};
   stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.second.color, props.theme)};
@@ -32,7 +32,7 @@ const StyledSecond = styled.line.withConfig(styledComponentsConfig)
 `;
 
 const StyledAnalog = styled.svg.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   width: ${(props) => props.theme.clock.analog.size[props.size]};
   height: ${(props) => props.theme.clock.analog.size[props.size]};
 
@@ -51,7 +51,7 @@ const sizeStyle = (props) => {
 };
 
 const StyledDigitalDigit = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   position: relative;
   width: 0.8em;
   text-align: center;

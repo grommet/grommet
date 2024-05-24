@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { baseStyle, styledComponentsConfig } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 
 const fullStyle = (full) => {
@@ -17,7 +17,7 @@ const fullStyle = (full) => {
 };
 
 const StyledGrommet = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   ${(props) => !props.plain && baseStyle}
   ${(props) => props.full && fullStyle(props.full)}
   ${(props) => props.theme.global.font.face}

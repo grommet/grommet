@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { fillStyle, genericStyles, styledComponentsConfig } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -15,7 +15,7 @@ const fitStyle = css`
 `;
 
 const StyledImage = styled.img.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   ${genericStyles}
   ${(props) => props.fit && fitStyle}
   ${(props) => props.fillProp && fillStyle(props.fillProp)}

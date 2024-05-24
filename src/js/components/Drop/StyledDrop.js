@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { Box } from '../Box';
 import { baseStyle, edgeStyle, roundStyle } from '../../utils/styles';
 import { backgroundStyle } from '../../utils/background';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 function getTransformOriginStyle(align) {
   let vertical = 'top';
@@ -62,7 +62,7 @@ const marginStyle = (theme, align, data, responsive, marginProp) => {
   );
 };
 
-const StyledDrop = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledDrop = styled(Box).attrs(enhancePropsWithTheme)`
   ${baseStyle}
 
   ${(props) =>

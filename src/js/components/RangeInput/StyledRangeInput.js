@@ -9,7 +9,7 @@ import {
   getRGBA,
   styledComponentsConfig,
 } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
 const getBoundOpacity = (props, bound) =>
@@ -209,7 +209,7 @@ const firefoxMicrosoftThumbStyle = css`
 
 /* eslint-disable max-len */
 const StyledRangeInput = styled.input.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;

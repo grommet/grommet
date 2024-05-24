@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const roundStyle = css`
   border-radius: ${(props) => props.theme.global.edgeSize[props.round.size]};
@@ -9,7 +9,7 @@ const roundStyle = css`
 
 // overflow: hidden is needed for ie11
 const StyledMeter = styled.svg.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   max-width: 100%;
   overflow: hidden;
 

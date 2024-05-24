@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components';
 
 import { Box } from '../Box';
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
-const StyledTabsHeader = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledTabsHeader = styled(Box).attrs(enhancePropsWithTheme)`
   ${(props) => props.theme.tabs.header.extend};
 `;
 
@@ -21,13 +21,13 @@ const flexStyle = css`
 `;
 
 const StyledTabPanel = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   min-height: 0;
   ${(props) => props.flex && flexStyle} ${(props) =>
     props.theme.tabs.panel.extend};
 `;
 
-const StyledTabs = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledTabs = styled(Box).attrs(enhancePropsWithTheme)`
   ${genericStyles} ${(props) => props.theme.tabs.extend};
 `;
 

@@ -8,13 +8,13 @@ import { styledComponentsConfig } from '../utils/styles';
 import {
   grommet,
   extendDefaultTheme,
-  ehnancePropsWithTheme,
+  enhancePropsWithTheme,
   Box,
   Grommet,
 } from '..';
 
 const CustomBox = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+.attrs(enhancePropsWithTheme)`
   background: ${(props) => props.theme.global.colors.brand};
 `;
 test('default theme is used', () => {

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Box } from '../Box';
-import { ehnancePropsWithTheme } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
-const StyledCheckBoxGroup = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledCheckBoxGroup = styled(Box).attrs(enhancePropsWithTheme)`
   ${props =>
     props.theme.checkBoxGroup &&
     props.theme.checkBoxGroup.container &&
