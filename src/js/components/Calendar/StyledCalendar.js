@@ -7,7 +7,6 @@ import {
   parseMetricToNum,
   styledComponentsConfig,
 } from '../../utils';
-
 import { ehnancePropsWithTheme } from '../../default-props';
 
 const sizeStyle = (props) => {
