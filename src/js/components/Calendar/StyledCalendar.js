@@ -83,8 +83,7 @@ const StyledWeeks = styled.div.withConfig(styledComponentsConfig)
   ${(props) => props.slide && slideStyle(props)};
 `;
 
-const StyledWeek = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+const StyledWeek = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   justify-content: space-between;
   ${(props) => props.fillContainer && 'flex: 1;'}
@@ -92,8 +91,7 @@ const StyledWeek = styled.div.withConfig(styledComponentsConfig)
 
 // The width of 14.3% is derived from dividing 100/7. We want the
 // widths of 7 days to equally fill 100% of the row.
-const StyledDayContainer = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+const StyledDayContainer = styled.div.withConfig(styledComponentsConfig)`
   flex: 0 1 auto;
   ${(props) => props.fillContainer && 'width: 14.3%;'}
 `;
@@ -107,8 +105,7 @@ const daySizeStyle = (props) => {
   `;
 };
 
-const StyledDay = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+const StyledDay = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   justify-content: center;
   align-items: center;

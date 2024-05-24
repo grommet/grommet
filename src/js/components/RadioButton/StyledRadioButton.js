@@ -64,8 +64,7 @@ const StyledRadioButtonContainer = styled.label.withConfig(
   ${(props) => props.theme.radioButton.container.extend};
 `;
 
-const StyledRadioButtonInput = styled.input.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+const StyledRadioButtonInput = styled.input.withConfig(styledComponentsConfig)`
   opacity: 0;
   -moz-appearance: none;
   width: 0;

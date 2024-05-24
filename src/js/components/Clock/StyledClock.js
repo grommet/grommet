@@ -69,8 +69,7 @@ const previousDown = keyframes`
   100% { transform: translateY(100%); }
 `;
 
-const StyledDigitalPrevious = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+const StyledDigitalPrevious = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   top: 0;
   left: 0;
@@ -91,8 +90,7 @@ const nextDown = keyframes`
   100% { transform: translateY(0); }
 `;
 
-const StyledDigitalNext = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+const StyledDigitalNext = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   top: 0;
   left: 0;

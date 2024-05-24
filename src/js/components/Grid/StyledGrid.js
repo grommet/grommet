@@ -217,7 +217,7 @@ const StyledGrid = styled.div
   .withConfig(styledComponentsConfig)
   .attrs((props) => ({
     ...ehnancePropsWithTheme(props),
-  'aria-label': props.a11yTitleProp,
+    'aria-label': props.a11yTitleProp,
   }))`
   display: grid;
   box-sizing: border-box;

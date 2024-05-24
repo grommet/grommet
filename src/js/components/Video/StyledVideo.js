@@ -53,8 +53,7 @@ const positionStyle = css`
   z-index: 1;
 `;
 
-const StyledVideoControls = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+const StyledVideoControls = styled.div.withConfig(styledComponentsConfig)`
   flex: 0 0;
   ${(props) => props.over && positionStyle} opacity: 0;
   transition: opacity 0.3s;

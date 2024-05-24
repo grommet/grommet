@@ -77,8 +77,7 @@ const styleMap = {
   `,
 };
 
-const StyledStackLayer = styled.div.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)`
+const StyledStackLayer = styled.div.withConfig(styledComponentsConfig)`
   position: ${(props) => (props.guiding ? 'relative' : 'absolute')};
   ${(props) => props.guiding && 'display: block;'}
   ${(props) => !props.guiding && `${styleMap[props.anchor || 'fill']};`}

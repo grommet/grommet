@@ -111,7 +111,7 @@ const StyledHeaderCellButton = styled(Button).attrs(ehnancePropsWithTheme)`
 `;
 
 // allow extend to spread onto Box that surrounds column label
-const StyledContentBox = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledContentBox = styled(Box)`
   ${(props) => props.extend}
 `;
 

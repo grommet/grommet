@@ -63,7 +63,7 @@ const hoverStyle = css`
     )};
 `;
 
-const StyledDataTableRow = styled(TableRow).attrs(ehnancePropsWithTheme)`
+const StyledDataTableRow = styled(TableRow)`
   ${(props) =>
     props.size &&
     `
@@ -99,8 +99,7 @@ const StyledDataTableBody = styled(TableBody).attrs(ehnancePropsWithTheme)`
   }
 `;
 
-const StyledDataTableHeader = styled(TableHeader)
-.attrs(ehnancePropsWithTheme)`
+const StyledDataTableHeader = styled(TableHeader)`
   ${(props) =>
     props.size &&
     `
@@ -111,8 +110,7 @@ const StyledDataTableHeader = styled(TableHeader)
   `}
 `;
 
-const StyledDataTableFooter = styled(TableFooter)
-.attrs(ehnancePropsWithTheme)`
+const StyledDataTableFooter = styled(TableFooter)`
   ${(props) =>
     props.size &&
     `

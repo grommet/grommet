@@ -72,17 +72,13 @@ const StyledTableDataCaption = styled.caption.withConfig(
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
 
-const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)``;
+const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)``;
 
-const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)``;
+const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)``;
 
-const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)``;
+const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)``;
 
-const StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig)
-.attrs(ehnancePropsWithTheme)``;
+const StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig)``;
 
 const StyledTable = styled.table.withConfig(styledComponentsConfig)
 .attrs(ehnancePropsWithTheme)`

@@ -159,7 +159,7 @@ const StyledCheckBoxKnob = styled.span.withConfig(styledComponentsConfig)
   ${(props) => props.theme.checkBox.toggle.knob.extend};
 `;
 
-const StyledCheckBox = styled(Box).attrs(ehnancePropsWithTheme)`
+const StyledCheckBox = styled(Box)`
   flex-shrink: 0;
 `;
 
