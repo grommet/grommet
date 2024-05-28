@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { genericStyles, styledComponentsConfig } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const roundStyle = css`
@@ -8,7 +8,7 @@ const roundStyle = css`
 `;
 
 // overflow: hidden is needed for ie11
-const StyledMeter = styled.svg`
+const StyledMeter = styled.svg.withConfig(styledComponentsConfig)`
   max-width: 100%;
   overflow: hidden;
 

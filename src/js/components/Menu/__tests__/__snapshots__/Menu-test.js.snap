@@ -2,34 +2,19 @@
 
 exports[`Menu basic 1`] = `
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -44,7 +29,6 @@ exports[`Menu basic 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -62,18 +46,18 @@ exports[`Menu basic 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -82,18 +66,18 @@ exports[`Menu basic 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -107,13 +91,13 @@ exports[`Menu basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -150,8 +134,6 @@ exports[`Menu basic 1`] = `
 exports[`Menu close by clicking outside 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -183,34 +165,19 @@ exports[`Menu close by clicking outside 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -225,7 +192,6 @@ exports[`Menu close by clicking outside 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -243,18 +209,18 @@ exports[`Menu close by clicking outside 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -263,18 +229,18 @@ exports[`Menu close by clicking outside 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -288,13 +254,13 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -342,8 +308,6 @@ exports[`Menu close by clicking outside 1`] = `
 exports[`Menu close by clicking outside 2`] = `
 .c9 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -375,115 +339,70 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
 }
 
 .c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -503,12 +422,8 @@ exports[`Menu close by clicking outside 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -522,7 +437,6 @@ exports[`Menu close by clicking outside 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -536,7 +450,7 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -545,18 +459,18 @@ exports[`Menu close by clicking outside 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -568,19 +482,19 @@ exports[`Menu close by clicking outside 2`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     width: 6px;
   }
@@ -588,13 +502,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -694,7 +602,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ftCvDe {
+  .cweTzY {
     padding: 6px;
   }
 }"
@@ -703,8 +611,6 @@ exports[`Menu close by clicking outside 3`] = `
 exports[`Menu close on tab 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -736,34 +642,19 @@ exports[`Menu close on tab 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -778,7 +669,6 @@ exports[`Menu close on tab 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -796,18 +686,18 @@ exports[`Menu close on tab 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -816,18 +706,18 @@ exports[`Menu close on tab 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -841,13 +731,13 @@ exports[`Menu close on tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -895,8 +785,6 @@ exports[`Menu close on tab 1`] = `
 exports[`Menu custom a11yTitle or aria-label 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -928,34 +816,19 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -970,7 +843,6 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -988,18 +860,18 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1008,18 +880,18 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1033,13 +905,13 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -1120,8 +992,6 @@ exports[`Menu custom a11yTitle or aria-label 1`] = `
 exports[`Menu custom message 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1153,34 +1023,19 @@ exports[`Menu custom message 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -1195,7 +1050,6 @@ exports[`Menu custom message 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1213,18 +1067,18 @@ exports[`Menu custom message 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1233,18 +1087,18 @@ exports[`Menu custom message 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1258,13 +1112,13 @@ exports[`Menu custom message 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -1311,8 +1165,6 @@ exports[`Menu custom message 1`] = `
 exports[`Menu custom theme icon alignment 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1344,34 +1196,19 @@ exports[`Menu custom theme icon alignment 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -1386,7 +1223,6 @@ exports[`Menu custom theme icon alignment 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1404,18 +1240,18 @@ exports[`Menu custom theme icon alignment 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1424,18 +1260,18 @@ exports[`Menu custom theme icon alignment 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1449,13 +1285,13 @@ exports[`Menu custom theme icon alignment 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -1502,8 +1338,6 @@ exports[`Menu custom theme icon alignment 1`] = `
 exports[`Menu custom theme icon color 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1535,34 +1369,19 @@ exports[`Menu custom theme icon color 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -1577,7 +1396,6 @@ exports[`Menu custom theme icon color 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1595,18 +1413,18 @@ exports[`Menu custom theme icon color 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1615,18 +1433,18 @@ exports[`Menu custom theme icon color 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1640,13 +1458,13 @@ exports[`Menu custom theme icon color 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -1693,8 +1511,6 @@ exports[`Menu custom theme icon color 1`] = `
 exports[`Menu custom theme with default button 1`] = `
 .c4 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1726,33 +1542,18 @@ exports[`Menu custom theme with default button 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -1762,7 +1563,6 @@ exports[`Menu custom theme with default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1776,21 +1576,13 @@ exports[`Menu custom theme with default button 1`] = `
   padding: 6px 12px;
   color: #000000;
   text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c1 > svg {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.c1 >svg {
   display: flex;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
@@ -1800,18 +1592,18 @@ exports[`Menu custom theme with default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1820,18 +1612,18 @@ exports[`Menu custom theme with default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1882,8 +1674,6 @@ exports[`Menu custom theme with default button 1`] = `
 exports[`Menu disabled 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1915,34 +1705,19 @@ exports[`Menu disabled 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -1957,7 +1732,6 @@ exports[`Menu disabled 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1977,18 +1751,18 @@ exports[`Menu disabled 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1997,18 +1771,18 @@ exports[`Menu disabled 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2022,13 +1796,13 @@ exports[`Menu disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -2077,8 +1851,6 @@ exports[`Menu disabled 1`] = `
 exports[`Menu gap between icon and label 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2110,34 +1882,19 @@ exports[`Menu gap between icon and label 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -2152,7 +1909,6 @@ exports[`Menu gap between icon and label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2170,18 +1926,18 @@ exports[`Menu gap between icon and label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2190,18 +1946,18 @@ exports[`Menu gap between icon and label 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2215,23 +1971,23 @@ exports[`Menu gap between icon and label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -2286,8 +2042,6 @@ exports[`Menu gap between icon and label 1`] = `
 exports[`Menu justify content 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2319,145 +2073,78 @@ exports[`Menu justify content 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   padding: 12px;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 12px;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 12px;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
   justify-content: space-around;
   padding: 12px;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -2472,7 +2159,6 @@ exports[`Menu justify content 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2490,18 +2176,18 @@ exports[`Menu justify content 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2510,18 +2196,18 @@ exports[`Menu justify content 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2535,43 +2221,43 @@ exports[`Menu justify content 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -2781,7 +2467,6 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2795,11 +2480,8 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   padding: 6px 12px;
   color: #000000;
   text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2808,18 +2490,18 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2828,18 +2510,18 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2871,8 +2553,6 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
 exports[`Menu navigate through suggestions and select 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2904,34 +2584,19 @@ exports[`Menu navigate through suggestions and select 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -2946,7 +2611,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2964,18 +2628,18 @@ exports[`Menu navigate through suggestions and select 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2984,18 +2648,18 @@ exports[`Menu navigate through suggestions and select 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3009,13 +2673,13 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -3063,8 +2727,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
 exports[`Menu open and close on click 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3096,34 +2758,19 @@ exports[`Menu open and close on click 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -3138,7 +2785,6 @@ exports[`Menu open and close on click 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3156,18 +2802,18 @@ exports[`Menu open and close on click 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3176,18 +2822,18 @@ exports[`Menu open and close on click 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3201,13 +2847,13 @@ exports[`Menu open and close on click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -3254,30 +2900,30 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gIiCYk"
+  class="StyledGrommet-sc-19lkkz7-0 aUhmK"
 >
   <button
     aria-expanded="true"
     aria-haspopup="menu"
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 dkczdG"
+    class="StyledButton-sc-323bzc-0 dBXNXE"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 ftCvDe"
+      class="StyledBox-sc-13pk1d4-0 cweTzY"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 lhOBjf"
+        class="StyledText-sc-1sadyjn-0 ckINcT"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 EuOQj"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gzgMpG"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 jtseoQ"
+        class="StyledIcon-sc-ofa7kd-0 csYGBW"
         viewBox="0 0 24 24"
       >
         <path
@@ -3295,8 +2941,6 @@ exports[`Menu open and close on click 2`] = `
 exports[`Menu open and close on click 3`] = `
 .c9 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3328,115 +2972,70 @@ exports[`Menu open and close on click 3`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
 }
 
 .c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -3456,12 +3055,8 @@ exports[`Menu open and close on click 3`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -3475,7 +3070,6 @@ exports[`Menu open and close on click 3`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3489,7 +3083,7 @@ exports[`Menu open and close on click 3`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -3498,18 +3092,18 @@ exports[`Menu open and close on click 3`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3521,19 +3115,19 @@ exports[`Menu open and close on click 3`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     width: 6px;
   }
@@ -3541,13 +3135,7 @@ exports[`Menu open and close on click 3`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -3663,7 +3251,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .ftCvDe {
+  .cweTzY {
     padding: 6px;
   }
 }"
@@ -3672,8 +3260,6 @@ exports[`Menu open and close on click 4`] = `
 exports[`Menu open on down close on esc 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3705,34 +3291,19 @@ exports[`Menu open on down close on esc 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -3747,7 +3318,6 @@ exports[`Menu open on down close on esc 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3765,18 +3335,18 @@ exports[`Menu open on down close on esc 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3785,18 +3355,18 @@ exports[`Menu open on down close on esc 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3810,13 +3380,13 @@ exports[`Menu open on down close on esc 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -3864,8 +3434,6 @@ exports[`Menu open on down close on esc 1`] = `
 exports[`Menu open on up close on esc 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -3897,34 +3465,19 @@ exports[`Menu open on up close on esc 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -3939,7 +3492,6 @@ exports[`Menu open on up close on esc 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3957,18 +3509,18 @@ exports[`Menu open on up close on esc 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3977,18 +3529,18 @@ exports[`Menu open on up close on esc 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4002,13 +3554,13 @@ exports[`Menu open on up close on esc 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -4056,8 +3608,6 @@ exports[`Menu open on up close on esc 1`] = `
 exports[`Menu open on up close on esc 2`] = `
 .c9 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4089,115 +3639,70 @@ exports[`Menu open on up close on esc 2`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
 }
 
 .c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -4217,12 +3722,8 @@ exports[`Menu open on up close on esc 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -4236,7 +3737,6 @@ exports[`Menu open on up close on esc 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4250,7 +3750,7 @@ exports[`Menu open on up close on esc 2`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -4259,18 +3759,18 @@ exports[`Menu open on up close on esc 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4282,19 +3782,19 @@ exports[`Menu open on up close on esc 2`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     width: 6px;
   }
@@ -4302,13 +3802,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -4408,7 +3902,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ftCvDe {
+  .cweTzY {
     padding: 6px;
   }
 }"
@@ -4417,8 +3911,6 @@ exports[`Menu open on up close on esc 3`] = `
 exports[`Menu reverse icon and label 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4450,34 +3942,19 @@ exports[`Menu reverse icon and label 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -4492,7 +3969,6 @@ exports[`Menu reverse icon and label 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4510,18 +3986,18 @@ exports[`Menu reverse icon and label 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4530,18 +4006,18 @@ exports[`Menu reverse icon and label 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4555,17 +4031,17 @@ exports[`Menu reverse icon and label 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -4622,8 +4098,6 @@ exports[`Menu reverse icon and label 1`] = `
 exports[`Menu select an item 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4655,34 +4129,19 @@ exports[`Menu select an item 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -4697,7 +4156,6 @@ exports[`Menu select an item 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4715,18 +4173,18 @@ exports[`Menu select an item 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4735,18 +4193,18 @@ exports[`Menu select an item 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4760,13 +4218,13 @@ exports[`Menu select an item 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -4814,8 +4272,6 @@ exports[`Menu select an item 1`] = `
 exports[`Menu shift + tab through menu until it closes 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -4847,34 +4303,19 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -4889,7 +4330,6 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -4907,18 +4347,18 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4927,18 +4367,18 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4952,13 +4392,13 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -5006,8 +4446,6 @@ exports[`Menu shift + tab through menu until it closes 1`] = `
 exports[`Menu should apply themed drop props 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -5039,34 +4477,19 @@ exports[`Menu should apply themed drop props 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -5081,7 +4504,6 @@ exports[`Menu should apply themed drop props 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5099,18 +4521,18 @@ exports[`Menu should apply themed drop props 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5119,18 +4541,18 @@ exports[`Menu should apply themed drop props 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5144,17 +4566,17 @@ exports[`Menu should apply themed drop props 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -5209,8 +4631,6 @@ exports[`Menu should apply themed drop props 1`] = `
 exports[`Menu should group items 1`] = `
 .c9 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -5242,162 +4662,102 @@ exports[`Menu should group items 1`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
 .c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 12px;
   padding-right: 12px;
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -5417,12 +4777,8 @@ exports[`Menu should group items 1`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -5436,7 +4792,6 @@ exports[`Menu should group items 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5450,7 +4805,7 @@ exports[`Menu should group items 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -5459,18 +4814,18 @@ exports[`Menu should group items 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5482,39 +4837,39 @@ exports[`Menu should group items 1`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c12 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c13 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c14 {
-    border-top: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     width: 6px;
   }
@@ -5522,13 +4877,7 @@ exports[`Menu should group items 1`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -5667,7 +5016,7 @@ exports[`Menu should group items 1`] = `
 
 exports[`Menu should group items 2`] = `
 "@media only screen and (max-width: 768px) {
-  .ftCvDe {
+  .cweTzY {
     padding: 6px;
   }
 }"
@@ -5676,8 +5025,6 @@ exports[`Menu should group items 2`] = `
 exports[`Menu should have no accessibility violations 1`] = `
 .c4 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -5709,24 +5056,13 @@ exports[`Menu should have no accessibility violations 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
@@ -5741,7 +5077,6 @@ exports[`Menu should have no accessibility violations 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5759,18 +5094,18 @@ exports[`Menu should have no accessibility violations 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5779,18 +5114,18 @@ exports[`Menu should have no accessibility violations 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5804,7 +5139,7 @@ exports[`Menu should have no accessibility violations 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
@@ -5848,8 +5183,6 @@ exports[`Menu should have no accessibility violations 1`] = `
 exports[`Menu tab through menu until it closes 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -5881,34 +5214,19 @@ exports[`Menu tab through menu until it closes 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -5923,7 +5241,6 @@ exports[`Menu tab through menu until it closes 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -5941,18 +5258,18 @@ exports[`Menu tab through menu until it closes 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5961,18 +5278,18 @@ exports[`Menu tab through menu until it closes 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -5986,13 +5303,13 @@ exports[`Menu tab through menu until it closes 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -6040,8 +5357,6 @@ exports[`Menu tab through menu until it closes 1`] = `
 exports[`Menu with dropAlign bottom renders 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -6073,34 +5388,19 @@ exports[`Menu with dropAlign bottom renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -6115,7 +5415,6 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6133,18 +5432,18 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6153,18 +5452,18 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6178,13 +5477,13 @@ exports[`Menu with dropAlign bottom renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -6232,8 +5531,6 @@ exports[`Menu with dropAlign bottom renders 1`] = `
 exports[`Menu with dropAlign bottom renders 2`] = `
 .c11 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -6265,115 +5562,70 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
 }
 
 .c10 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -6393,12 +5645,8 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
   transform-origin: bottom left;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -6412,7 +5660,6 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6426,7 +5673,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 }
 
 .c6:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -6435,18 +5682,18 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) > circle,
-.c6:focus:not(:focus-visible) > ellipse,
-.c6:focus:not(:focus-visible) > line,
-.c6:focus:not(:focus-visible) > path,
-.c6:focus:not(:focus-visible) > polygon,
-.c6:focus:not(:focus-visible) > polyline,
-.c6:focus:not(:focus-visible) > rect {
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible)::-moz-focus-inner {
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6458,19 +5705,19 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     width: 6px;
   }
@@ -6478,13 +5725,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -6584,7 +5825,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ftCvDe {
+  .cweTzY {
     padding: 6px;
   }
 }"
@@ -6593,8 +5834,6 @@ exports[`Menu with dropAlign bottom renders 3`] = `
 exports[`Menu with dropAlign top renders 1`] = `
 .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -6626,34 +5865,19 @@ exports[`Menu with dropAlign top renders 1`] = `
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c4 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -6668,7 +5892,6 @@ exports[`Menu with dropAlign top renders 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6686,18 +5909,18 @@ exports[`Menu with dropAlign top renders 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1:focus::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6706,18 +5929,18 @@ exports[`Menu with dropAlign top renders 1`] = `
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible) > circle,
-.c1:focus:not(:focus-visible) > ellipse,
-.c1:focus:not(:focus-visible) > line,
-.c1:focus:not(:focus-visible) > path,
-.c1:focus:not(:focus-visible) > polygon,
-.c1:focus:not(:focus-visible) > polyline,
-.c1:focus:not(:focus-visible) > rect {
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1:focus:not(:focus-visible)::-moz-focus-inner {
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6731,13 +5954,13 @@ exports[`Menu with dropAlign top renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     width: 6px;
   }
@@ -6785,8 +6008,6 @@ exports[`Menu with dropAlign top renders 1`] = `
 exports[`Menu with dropAlign top renders 2`] = `
 .c9 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -6818,115 +6039,70 @@ exports[`Menu with dropAlign top renders 2`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 12px;
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 12px;
 }
 
 .c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 12px;
 }
@@ -6946,12 +6122,8 @@ exports[`Menu with dropAlign top renders 2`] = `
   background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
   transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
   animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
@@ -6965,7 +6137,6 @@ exports[`Menu with dropAlign top renders 2`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -6979,7 +6150,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
@@ -6988,18 +6159,18 @@ exports[`Menu with dropAlign top renders 2`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -7011,19 +6182,19 @@ exports[`Menu with dropAlign top renders 2`] = `
   outline: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     width: 6px;
   }
@@ -7031,13 +6202,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
   }
 }
@@ -7137,7 +6302,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ftCvDe {
+  .cweTzY {
     padding: 6px;
   }
 }"

@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
+import {
+  genericStyles,
+  normalizeColor,
+  textAlignStyle,
+  styledComponentsConfig,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const colorStyle = css`
@@ -30,7 +35,7 @@ const maxlinesStyle = (props) =>
     overflow: hidden;
   `;
 
-const StyledParagraph = styled.p`
+const StyledParagraph = styled.p.withConfig(styledComponentsConfig)`
   ${genericStyles}
   ${(props) => maxlinesStyle(props)}
   ${(props) => sizeStyle(props)}
