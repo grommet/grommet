@@ -68,7 +68,7 @@ const SelectionSummary = ({
     value?.length === 0 ||
     selectedValuesDisabled() ||
     !value ||
-    selectedInSearch().length === 0
+    (!limit && selectedInSearch().length === 0)
   );
 
   const messageId =
@@ -129,10 +129,10 @@ const SelectionSummary = ({
       height={{ min: 'xxsmall' }}
     >
       <Text size="small">{summaryText}</Text>
-      {(options.length &&
+      {options.length > 0 &&
         (!limit ||
-          !(!value || (value?.length === 0 && selectedValuesDisabled())))) >
-        0 &&
+          !(!value || (value?.length === 0 && selectedValuesDisabled()))) &&
+        (selectedInSearch().length !== 0 || !limit) &&
         (!onMore || (onMore && value?.length !== 0)) && (
           <Button
             a11yTitle={
