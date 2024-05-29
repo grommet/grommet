@@ -21,7 +21,7 @@ const rangeInputTheme = {
 };
 
 export const Bounds = () => {
-  const [value, setValue] = React.useState(3);
+  const [value, setValue] = React.useState(0);
   const [isAddDisabled, setIsAddDisabled] = React.useState();
   const [isSubtractDisabled, setIsSubtractDisabled] = React.useState();
 
@@ -34,17 +34,17 @@ export const Bounds = () => {
           disabled={isSubtractDisabled}
           icon={<Subtract color="neutral-2" />}
           onClick={() => {
-            if (value > 0) {
+            if (value > -5) {
               setIsAddDisabled(false);
-              setValue(value - 1);
+              setValue((prev) => prev - 1);
             } else setIsSubtractDisabled(true);
           }}
         />
         <Box align="center" width="medium">
           <RangeInput
             a11yTitle="Select range value"
-            min={0}
-            max={10}
+            min={-5}
+            max={5}
             step={1}
             value={value}
             onChange={onChange}
@@ -55,9 +55,9 @@ export const Bounds = () => {
           disabled={isAddDisabled}
           icon={<Add color="neutral-2" />}
           onClick={() => {
-            if (value < 10) {
+            if (value < 5) {
               setIsSubtractDisabled(false);
-              setValue(value + 1);
+              setValue((prev) => prev + 1);
             } else setIsAddDisabled(true);
           }}
         />
