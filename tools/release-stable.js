@@ -1,6 +1,6 @@
 import del from 'del';
 import fs from 'fs-extra';
-import git from 'simple-git/promise';
+import git from 'simple-git';
 import path from 'path';
 
 const repoURL = `https://${process.env.GH_TOKEN}@github.com/grommet/grommet.git`;

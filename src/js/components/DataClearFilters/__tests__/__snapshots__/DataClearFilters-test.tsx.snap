@@ -4,8 +4,6 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 <DocumentFragment>
   .c7 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -37,103 +35,58 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 24px;
   column-gap: 24px;
   row-gap: 24px;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -150,7 +103,6 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -170,18 +122,18 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -190,18 +142,18 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -217,7 +169,7 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -227,18 +179,18 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -254,7 +206,7 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   color: #AAAAAA;
 }
 
-.c8::-webkit-search-decoration {
+.c8 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -275,17 +227,9 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 
 .c6 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -301,105 +245,103 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 12px;
     column-gap: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
@@ -487,19 +429,12 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
 exports[`DataClearFilters clears filters when clicked 1`] = `
 <DocumentFragment>
   .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -515,7 +450,6 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -527,11 +461,8 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -544,18 +475,18 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -564,18 +495,18 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -615,19 +546,12 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
 exports[`DataClearFilters renders 1`] = `
 <DocumentFragment>
   .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -636,7 +560,6 @@ exports[`DataClearFilters renders 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -648,11 +571,8 @@ exports[`DataClearFilters renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -665,18 +585,18 @@ exports[`DataClearFilters renders 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -685,18 +605,18 @@ exports[`DataClearFilters renders 1`] = `
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) > circle,
-.c2:focus:not(:focus-visible) > ellipse,
-.c2:focus:not(:focus-visible) > line,
-.c2:focus:not(:focus-visible) > path,
-.c2:focus:not(:focus-visible) > polygon,
-.c2:focus:not(:focus-visible) > polyline,
-.c2:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) >circle,
+.c2:focus:not(:focus-visible) >ellipse,
+.c2:focus:not(:focus-visible) >line,
+.c2:focus:not(:focus-visible) >path,
+.c2:focus:not(:focus-visible) >polygon,
+.c2:focus:not(:focus-visible) >polyline,
+.c2:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -732,8 +652,6 @@ exports[`DataClearFilters renders custom message 1`] = `
 <DocumentFragment>
   .c7 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -765,103 +683,58 @@ exports[`DataClearFilters renders custom message 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 24px;
   column-gap: 24px;
   row-gap: 24px;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-column-gap: 12px;
   column-gap: 12px;
   row-gap: 12px;
 }
@@ -878,7 +751,6 @@ exports[`DataClearFilters renders custom message 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -898,18 +770,18 @@ exports[`DataClearFilters renders custom message 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c10:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -918,18 +790,18 @@ exports[`DataClearFilters renders custom message 1`] = `
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) > circle,
-.c10:focus:not(:focus-visible) > ellipse,
-.c10:focus:not(:focus-visible) > line,
-.c10:focus:not(:focus-visible) > path,
-.c10:focus:not(:focus-visible) > polygon,
-.c10:focus:not(:focus-visible) > polyline,
-.c10:focus:not(:focus-visible) > rect {
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible)::-moz-focus-inner {
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -938,7 +810,6 @@ exports[`DataClearFilters renders custom message 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -950,11 +821,8 @@ exports[`DataClearFilters renders custom message 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -967,18 +835,18 @@ exports[`DataClearFilters renders custom message 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus > circle,
-.c12:focus > ellipse,
-.c12:focus > line,
-.c12:focus > path,
-.c12:focus > polygon,
-.c12:focus > polyline,
-.c12:focus > rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -987,18 +855,18 @@ exports[`DataClearFilters renders custom message 1`] = `
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) > circle,
-.c12:focus:not(:focus-visible) > ellipse,
-.c12:focus:not(:focus-visible) > line,
-.c12:focus:not(:focus-visible) > path,
-.c12:focus:not(:focus-visible) > polygon,
-.c12:focus:not(:focus-visible) > polyline,
-.c12:focus:not(:focus-visible) > rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible)::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1014,7 +882,7 @@ exports[`DataClearFilters renders custom message 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   padding-left: 48px;
 }
@@ -1024,18 +892,18 @@ exports[`DataClearFilters renders custom message 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1051,7 +919,7 @@ exports[`DataClearFilters renders custom message 1`] = `
   color: #AAAAAA;
 }
 
-.c8::-webkit-search-decoration {
+.c8 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1072,17 +940,9 @@ exports[`DataClearFilters renders custom message 1`] = `
 
 .c6 {
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-packjustify: center;
-  -webkit-justify: center;
-  -ms-flex-packjustify: center;
   justify: center;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
   left: 12px;
@@ -1098,24 +958,22 @@ exports[`DataClearFilters renders custom message 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    -webkit-column-gap: 12px;
     column-gap: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    -webkit-column-gap: 6px;
     column-gap: 6px;
   }
 }

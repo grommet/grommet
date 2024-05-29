@@ -9,6 +9,7 @@ import {
   plainInputStyle,
   textAlignStyle,
   widthStyle,
+  styledComponentsConfig,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { inputPadForIcon } from '../../utils/styles';
@@ -23,7 +24,7 @@ const getPlainStyle = (plain) => {
   return plain && plainInputStyle;
 };
 
-const StyledTextInput = styled.input`
+const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
   ${(props) =>
     props.readOnlyCopy
@@ -46,7 +47,7 @@ const StyledTextInput = styled.input`
 StyledTextInput.defaultProps = {};
 Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
 
-const StyledTextInputContainer = styled.div`
+const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   width: 100%;
 
@@ -71,7 +72,7 @@ const StyledTextInputContainer = styled.div`
 StyledTextInputContainer.defaultProps = {};
 Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 
-const StyledPlaceholder = styled.div`
+const StyledPlaceholder = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   left: ${(props) =>
     parseMetricToNum(getInputPadBySide(props, 'left')) -
@@ -91,7 +92,7 @@ const StyledPlaceholder = styled.div`
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
 
-const StyledIcon = styled.div`
+const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   display: flex;
   justify: center;
@@ -104,7 +105,7 @@ const StyledIcon = styled.div`
       : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
-const StyledSuggestions = styled.ol`
+const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;

@@ -13,53 +13,34 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -68,7 +49,6 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -80,11 +60,8 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -97,18 +74,18 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -117,18 +94,18 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -170,9 +147,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -240,53 +217,34 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -295,7 +253,6 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -307,11 +264,8 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -324,18 +278,18 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -344,18 +298,18 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -397,9 +351,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -467,53 +421,34 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -522,7 +457,6 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -534,11 +468,8 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -551,18 +482,18 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -571,18 +502,18 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -591,7 +522,6 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -603,13 +533,10 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -618,18 +545,18 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -638,18 +565,18 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -691,9 +618,9 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -761,53 +688,34 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -816,7 +724,6 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -828,11 +735,8 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -845,18 +749,18 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -865,18 +769,18 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -885,7 +789,6 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -897,13 +800,10 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -916,18 +816,18 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c8:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -936,18 +836,18 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -956,7 +856,6 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -968,13 +867,10 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -983,18 +879,18 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1003,18 +899,18 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1056,9 +952,9 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1126,53 +1022,34 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1181,7 +1058,6 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1193,11 +1069,8 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1210,18 +1083,18 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1230,18 +1103,18 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1250,7 +1123,6 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1262,11 +1134,8 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1275,18 +1144,18 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1295,18 +1164,18 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1348,9 +1217,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1418,53 +1287,34 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1473,7 +1323,6 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1485,11 +1334,8 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1502,18 +1348,18 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c5:focus::-moz-focus-inner {
+.c5:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1522,18 +1368,18 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) > circle,
-.c5:focus:not(:focus-visible) > ellipse,
-.c5:focus:not(:focus-visible) > line,
-.c5:focus:not(:focus-visible) > path,
-.c5:focus:not(:focus-visible) > polygon,
-.c5:focus:not(:focus-visible) > polyline,
-.c5:focus:not(:focus-visible) > rect {
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible)::-moz-focus-inner {
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1542,7 +1388,6 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1554,11 +1399,8 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1567,18 +1409,18 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1587,18 +1429,18 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1640,9 +1482,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1710,53 +1552,34 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1765,7 +1588,6 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1777,11 +1599,8 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1794,18 +1613,18 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1814,18 +1633,18 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1855,9 +1674,9 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -1912,53 +1731,34 @@ exports[`ToggleGroup custom theme 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 3px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   border-right: solid 1px #7D4CDB;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -1967,7 +1767,6 @@ exports[`ToggleGroup custom theme 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1979,11 +1778,8 @@ exports[`ToggleGroup custom theme 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -1996,18 +1792,18 @@ exports[`ToggleGroup custom theme 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2016,18 +1812,18 @@ exports[`ToggleGroup custom theme 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2057,7 +1853,7 @@ exports[`ToggleGroup custom theme 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     border-right: solid 1px #7D4CDB;
   }
@@ -2105,8 +1901,6 @@ exports[`ToggleGroup icon with values 1`] = `
 <DocumentFragment>
   .c5 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2148,53 +1942,34 @@ exports[`ToggleGroup icon with values 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2203,7 +1978,6 @@ exports[`ToggleGroup icon with values 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2214,7 +1988,7 @@ exports[`ToggleGroup icon with values 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
   line-height: 0;
   padding: 12px;
@@ -2225,18 +1999,18 @@ exports[`ToggleGroup icon with values 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2245,18 +2019,18 @@ exports[`ToggleGroup icon with values 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2265,7 +2039,6 @@ exports[`ToggleGroup icon with values 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2285,18 +2058,18 @@ exports[`ToggleGroup icon with values 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus > circle,
-.c7:focus > ellipse,
-.c7:focus > line,
-.c7:focus > path,
-.c7:focus > polygon,
-.c7:focus > polyline,
-.c7:focus > rect {
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus::-moz-focus-inner {
+.c7:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2305,18 +2078,18 @@ exports[`ToggleGroup icon with values 1`] = `
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) > circle,
-.c7:focus:not(:focus-visible) > ellipse,
-.c7:focus:not(:focus-visible) > line,
-.c7:focus:not(:focus-visible) > path,
-.c7:focus:not(:focus-visible) > polygon,
-.c7:focus:not(:focus-visible) > polyline,
-.c7:focus:not(:focus-visible) > rect {
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible)::-moz-focus-inner {
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2346,9 +2119,9 @@ exports[`ToggleGroup icon with values 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2425,53 +2198,34 @@ exports[`ToggleGroup object options 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2480,7 +2234,6 @@ exports[`ToggleGroup object options 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2492,11 +2245,8 @@ exports[`ToggleGroup object options 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2509,18 +2259,18 @@ exports[`ToggleGroup object options 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2529,18 +2279,18 @@ exports[`ToggleGroup object options 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2570,9 +2320,9 @@ exports[`ToggleGroup object options 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2627,23 +2377,14 @@ exports[`ToggleGroup renders without props 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
@@ -2672,53 +2413,34 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2727,7 +2449,6 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2739,11 +2460,8 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2756,18 +2474,18 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2776,18 +2494,18 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2829,9 +2547,9 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -2899,53 +2617,34 @@ exports[`ToggleGroup string options 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -2954,7 +2653,6 @@ exports[`ToggleGroup string options 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -2966,11 +2664,8 @@ exports[`ToggleGroup string options 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -2983,18 +2678,18 @@ exports[`ToggleGroup string options 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3003,18 +2698,18 @@ exports[`ToggleGroup string options 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3044,9 +2739,9 @@ exports[`ToggleGroup string options 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
@@ -3101,53 +2796,34 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 6px;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -3156,7 +2832,6 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3168,11 +2843,8 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
@@ -3185,18 +2857,18 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus > circle,
-.c3:focus > ellipse,
-.c3:focus > line,
-.c3:focus > path,
-.c3:focus > polygon,
-.c3:focus > polyline,
-.c3:focus > rect {
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus::-moz-focus-inner {
+.c3:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3205,18 +2877,18 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) > circle,
-.c3:focus:not(:focus-visible) > ellipse,
-.c3:focus:not(:focus-visible) > line,
-.c3:focus:not(:focus-visible) > path,
-.c3:focus:not(:focus-visible) > polygon,
-.c3:focus:not(:focus-visible) > polyline,
-.c3:focus:not(:focus-visible) > rect {
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible)::-moz-focus-inner {
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3246,9 +2918,9 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
   box-shadow: none;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 

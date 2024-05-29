@@ -116,16 +116,6 @@ jobs:
             git config --global user.name "Grommet Community Bot"
             git config --global user.email "grommet@hpe.com"
             yarn release-stable
-  release-styled-components-beta-stable:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/grommet-ci
-      - run:
-          command: |
-            git config --global user.name "Grommet Community Bot"
-            git config --global user.email "grommet@hpe.com"
-            yarn release-styled-components-beta-stable
   publish:
     <<: *defaults
     steps:
@@ -205,16 +195,6 @@ workflows:
             branches:
               only:
                 - master
-      - release-styled-components-beta-stable:
-          requires:
-            - jest
-            - chromatic
-            - lint
-            - build
-          filters:
-            branches:
-              only:
-                - styled-components-beta
       - publish:
           context:
             - grommet
