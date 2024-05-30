@@ -50,9 +50,9 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [children, icon, label]);
   var coloredIcon = icon;
   if (icon && !icon.props.color) {
-    var _theme$anchor;
+    var _theme$anchor, _theme$anchor2;
     coloredIcon = /*#__PURE__*/cloneElement(icon, {
-      color: normalizeColor(color || ((_theme$anchor = theme.anchor) == null || (_theme$anchor = _theme$anchor.size) == null || (_theme$anchor = _theme$anchor[sizeProp || size]) == null ? void 0 : _theme$anchor.color) || theme.anchor.color, theme)
+      color: normalizeColor(color || ((_theme$anchor = theme.anchor) == null || (_theme$anchor = _theme$anchor.icon) == null ? void 0 : _theme$anchor.color) || ((_theme$anchor2 = theme.anchor) == null || (_theme$anchor2 = _theme$anchor2.size) == null || (_theme$anchor2 = _theme$anchor2[sizeProp || size]) == null ? void 0 : _theme$anchor2.color) || theme.anchor.color, theme)
     });
   }
   var anchorIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);

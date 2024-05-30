@@ -393,8 +393,6 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     anchor: {
-      textDecoration: 'none',
-      fontWeight: 600,
       color: {
         dark: 'accent-1',
         light: 'brand'
@@ -404,7 +402,12 @@ export var generate = function generate(baseSpacing, scale) {
         textDecoration: 'underline'
         // fontWeight: undefined,
         // extend: undefined,
-      }
+      },
+      // icon: {
+      //   color: undefined
+      // },
+      textDecoration: 'none',
+      fontWeight: 600
       // size: {
       //   medium: {
       //     color: undefined,

@@ -56,9 +56,9 @@ var Anchor = exports.Anchor = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   }, [children, icon, label]);
   var coloredIcon = icon;
   if (icon && !icon.props.color) {
-    var _theme$anchor;
+    var _theme$anchor, _theme$anchor2;
     coloredIcon = /*#__PURE__*/(0, _react.cloneElement)(icon, {
-      color: (0, _utils.normalizeColor)(color || ((_theme$anchor = theme.anchor) == null || (_theme$anchor = _theme$anchor.size) == null || (_theme$anchor = _theme$anchor[sizeProp || size]) == null ? void 0 : _theme$anchor.color) || theme.anchor.color, theme)
+      color: (0, _utils.normalizeColor)(color || ((_theme$anchor = theme.anchor) == null || (_theme$anchor = _theme$anchor.icon) == null ? void 0 : _theme$anchor.color) || ((_theme$anchor2 = theme.anchor) == null || (_theme$anchor2 = _theme$anchor2.size) == null || (_theme$anchor2 = _theme$anchor2[sizeProp || size]) == null ? void 0 : _theme$anchor2.color) || theme.anchor.color, theme)
     });
   }
   var anchorIcon = (0, _utils.useSizedIcon)(coloredIcon, sizeProp || size, theme);
