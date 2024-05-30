@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports.DiagramPropTypes = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _generalPropTypes = require("../../utils/general-prop-types");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var animationPropType = _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['pulse', 'draw']), _propTypes["default"].shape({
   type: _propTypes["default"].oneOf(['pulse', 'draw']),
   delay: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),

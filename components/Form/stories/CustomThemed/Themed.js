@@ -8,7 +8,7 @@ var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 var _themes = require("grommet/themes");
 var _utils = require("../../../../utils");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   formField: {
     border: {

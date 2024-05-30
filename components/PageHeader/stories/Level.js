@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.Level = void 0;
 var _grommet = require("grommet");
 var _react = _interopRequireDefault(require("react"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var Level = exports.Level = function Level() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Page, null, /*#__PURE__*/_react["default"].createElement(_grommet.PageContent, null, /*#__PURE__*/_react["default"].createElement(_grommet.PageHeader, {
     title: "Welcome to Your App",

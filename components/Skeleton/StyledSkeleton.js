@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports.StyledSkeleton = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // Styling a div directly rather than just using
 // a Box since Box itself will react to a SkeletonContext
 // and we don't want that here.

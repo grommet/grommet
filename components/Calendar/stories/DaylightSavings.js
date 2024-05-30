@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.DSTCalendar = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).
 var DSTCalendar = exports.DSTCalendar = function DSTCalendar() {

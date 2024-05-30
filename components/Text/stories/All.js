@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.All = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var sizes = ['6xl', '5xl', '4xl', '3xl', '2xl', 'xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
 var All = exports.All = function All() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, sizes.map(function (size) {

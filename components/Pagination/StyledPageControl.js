@@ -6,7 +6,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _styles = require("../../utils/styles");
 var _Button = require("../Button");
 var _Text = require("../Text");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var sizeStyle = function sizeStyle(props) {
   var style = props.theme.pagination.button && props.theme.pagination.button.size && props.theme.pagination.button.size[props.size || 'medium'];
   return style ? {

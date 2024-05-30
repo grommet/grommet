@@ -5,7 +5,7 @@ exports["default"] = exports.ResetDateWithString = exports.ResetDateWithArray = 
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _Button = require("../../Button");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var DATE = '2020-07-02T00:00:00-08:00';
 var DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
 var ResetDateWithString = exports.ResetDateWithString = function ResetDateWithString() {

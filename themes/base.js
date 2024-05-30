@@ -27,7 +27,7 @@ var _VolumeLow = require("grommet-icons/icons/VolumeLow");
 var _base = require("grommet-icons/themes/base");
 var _object = require("../utils/object");
 var _mixins = require("../utils/mixins");
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var brandColor = '#7D4CDB';
 var accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 var neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];

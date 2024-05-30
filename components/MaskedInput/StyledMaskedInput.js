@@ -5,7 +5,7 @@ exports.StyledMaskedInputContainer = exports.StyledMaskedInput = exports.StyledI
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 var _styles = require("../../utils/styles");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var StyledMaskedInput = exports.StyledMaskedInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"

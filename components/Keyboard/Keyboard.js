@@ -5,7 +5,7 @@ exports.Keyboard = void 0;
 var _react = require("react");
 var _propTypes = require("./propTypes");
 var _excluded = ["capture", "target", "children", "onKeyDown"];
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 var KEYS = {
   8: 'onBackspace',
   9: 'onTab',

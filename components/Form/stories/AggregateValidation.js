@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.AggregateValidation = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // This example shows a way to perform validation across multiple fields.
 var AggregateValidation = exports.AggregateValidation = function AggregateValidation() {
   var _React$useState = _react["default"].useState({

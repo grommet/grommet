@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.Multi = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var data = ['//v2.grommet.io/assets/IMG_4210.jpg', '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg', '//v2.grommet.io/assets/IMG_4245.jpg', '//v2.grommet.io/assets/IMG_4210.jpg', 'https://avatars1.githubusercontent.com/u/14203820?s=280&v=4', '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg', '//v2.grommet.io/assets/IMG_4245.jpg', '//v2.grommet.io/assets/IMG_4210.jpg', '//v2.grommet.io/assets/Wilderpeople_Ricky.jpg'];
 var captions = {
   '//v2.grommet.io/assets/IMG_4210.jpg': 'Office workspace with decorations',

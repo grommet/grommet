@@ -5,7 +5,7 @@ exports["default"] = exports.Simple = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _data = require("../../DataTable/stories/data");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // simplify option label for name property
 var options = _data.columns.map(function (_ref) {
   var header = _ref.header,

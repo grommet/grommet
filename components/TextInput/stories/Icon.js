@@ -5,7 +5,7 @@ exports["default"] = exports.Icon = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var Icon = exports.Icon = function Icon() {
   return (
     /*#__PURE__*/

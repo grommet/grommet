@@ -5,8 +5,8 @@ exports["default"] = exports.Simple = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _excluded = ["animate", "multiple"];
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } } return target; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 var Simple = exports.Simple = function Simple(props) {
   var animate = props.animate,
     multiple = props.multiple,

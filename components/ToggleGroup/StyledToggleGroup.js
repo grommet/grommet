@@ -5,7 +5,7 @@ exports.StyledButton = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Button = require("../Button");
 var _utils = require("../../utils");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var adjustPad = function adjustPad(value, theme) {
   // resolve t-shirt size if it exists
   var vertical = typeof value === 'string' ? value : value == null ? void 0 : value.vertical;

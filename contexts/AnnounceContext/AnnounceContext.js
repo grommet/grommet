@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports.AnnounceContext = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = require("./propTypes");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var createAnnouncer = function createAnnouncer() {
   var announcer = document.createElement('div');
   announcer.id = 'grommet-announcer';

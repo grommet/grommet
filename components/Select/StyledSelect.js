@@ -8,7 +8,7 @@ var _Button = require("../Button");
 var _DropButton = require("../DropButton");
 var _TextInput = require("../TextInput");
 var _utils = require("../../utils");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"

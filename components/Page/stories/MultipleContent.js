@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.MultipleContent = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var MultipleContent = exports.MultipleContent = function MultipleContent() {
   return (
     /*#__PURE__*/

@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var FavoriteFilled = (0, _styledComponents["default"])(_grommetIcons.Favorite).withConfig({
   displayName: "ChildrenSpinner__FavoriteFilled",
   componentId: "sc-o9wy2d-0"

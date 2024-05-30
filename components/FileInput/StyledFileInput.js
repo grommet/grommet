@@ -5,7 +5,7 @@ exports.StyledFileInput = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 var _defaultProps = require("../../default-props");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var StyledFileInput = exports.StyledFileInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledFileInput",
   componentId: "sc-rl7ywv-0"

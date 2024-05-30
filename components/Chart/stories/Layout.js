@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.Layout = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var type = 'bar';
 var value = 10;
 var values = Array(14).fill(0).map(function (_, index) {

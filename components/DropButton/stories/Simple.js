@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var DropContent = function DropContent(_ref) {
   var onClose = _ref.onClose;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

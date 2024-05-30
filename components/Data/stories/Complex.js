@@ -5,7 +5,7 @@ exports["default"] = exports.Complex = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _Data = require("../Data");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var data = [{
   id: 1,
   name: 'Alpha',

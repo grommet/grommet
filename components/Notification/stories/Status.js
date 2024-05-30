@@ -6,7 +6,7 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _Box = require("../../Box");
 var _Text = require("../../Text");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var StatusNotification = function StatusNotification() {
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: "large",

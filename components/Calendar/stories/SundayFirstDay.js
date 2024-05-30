@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.SundayFirstDayCalendar = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // When the first day of the month is Sunday, and the request of firstDayOfWeek
 // is Monday, we are verifing we are not missing a week, issue 3253.
 var SundayFirstDayCalendar = exports.SundayFirstDayCalendar = function SundayFirstDayCalendar() {

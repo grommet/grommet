@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.Tip = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
 var Tip = exports.Tip = function Tip() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

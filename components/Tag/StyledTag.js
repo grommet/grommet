@@ -6,7 +6,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
 var _Button = require("../Button");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var StyledTagButton = exports.StyledTagButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledTag__StyledTagButton",
   componentId: "sc-cb9fl2-0"

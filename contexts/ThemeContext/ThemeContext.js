@@ -7,7 +7,7 @@ var _styledComponents = require("styled-components");
 exports.ThemeContext = _styledComponents.ThemeContext;
 var _utils = require("../../utils");
 var _propTypes2 = require("./propTypes");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 _styledComponents.ThemeContext.Extend = function (_ref) {
   var children = _ref.children,
     value = _ref.value;

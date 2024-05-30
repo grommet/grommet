@@ -5,7 +5,7 @@ exports["default"] = exports.AllowSelectAll = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _CheckBox = require("../../CheckBox");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var DATA = [{
   name: 'Alan Josiah Werner Shirleen Foy',
   location: 'Winston Salem',

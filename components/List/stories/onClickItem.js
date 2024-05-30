@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.OnClickItemList = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var data = [];
 for (var i = 0; i < 40; i += 1) {

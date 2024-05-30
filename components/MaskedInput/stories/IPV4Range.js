@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.IPv4RangeMaskedInput = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var IPv4ElementExp = /^[0-1][0-9][0-9]$|^2[0-4][0-9]$|^25[0-5]$|^[0-9][0-9]$|^[0-9]$/;
 var IPv4RangeMaskedInput = exports.IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
   var _React$useState = _react["default"].useState(''),

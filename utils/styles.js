@@ -8,7 +8,7 @@ var _background = require("./background");
 var _colors = require("./colors");
 var _responsive = require("./responsive");
 var _mixins = require("./mixins");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // ensure only valid DOM attributes are forwarded onto DOM
 var styledComponentsConfig = exports.styledComponentsConfig = {
   shouldForwardProp: _isPropValid["default"]

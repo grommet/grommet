@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.TableCellPropTypes = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var BORDER_SHAPE = _propTypes["default"].shape({
   color: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({
     dark: _propTypes["default"].string,

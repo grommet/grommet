@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.LabelledCharts = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var LabelledChart = function LabelledChart(_ref) {
   var color = _ref.color,
     label = _ref.label,

@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports["default"] = exports.SelectPlace = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var SelectPlace = exports.SelectPlace = function SelectPlace() {
   var _React$useState = _react["default"].useState(),
     places = _React$useState[0],
