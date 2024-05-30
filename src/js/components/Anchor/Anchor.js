@@ -70,6 +70,7 @@ const Anchor = forwardRef(
       coloredIcon = cloneElement(icon, {
         color: normalizeColor(
           color ||
+            theme.anchor?.icon?.color ||
             theme.anchor?.size?.[sizeProp || size]?.color ||
             theme.anchor.color,
           theme,

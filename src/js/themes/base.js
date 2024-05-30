@@ -377,8 +377,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     anchor: {
-      textDecoration: 'none',
-      fontWeight: 600,
       color: {
         dark: 'accent-1',
         light: 'brand',
@@ -389,6 +387,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // fontWeight: undefined,
         // extend: undefined,
       },
+      // icon: {
+      //   color: undefined
+      // },
+      textDecoration: 'none',
+      fontWeight: 600,
       // size: {
       //   medium: {
       //     color: undefined,
