@@ -37,6 +37,14 @@ const SelectionSummary = ({
     valueKey || labelKey,
   );
 
+  const selectedInSearch = useCallback(
+    () =>
+      options?.filter((option) =>
+        arrayIncludes(value, option, valueKey || labelKey),
+      ),
+    [options, value, valueKey, labelKey],
+  );
+
   const selectedValuesDisabled = useCallback(() => {
     let disabledSelected = 0;
     if (value) {
@@ -51,24 +59,28 @@ const SelectionSummary = ({
         )
           disabledSelected += 1;
       }
-      if (value.length === disabledSelected) return true;
+      if (
+        value.length === disabledSelected ||
+        selectedInSearch().length === disabledSelected
+      )
+        return true;
     }
     return false;
-  }, [value, allOptions, options, valueKey, labelKey, isDisabled]);
-
-  const selectedInSearch = useCallback(
-    () =>
-      options?.filter((option) =>
-        arrayIncludes(value, option, valueKey || labelKey),
-      ),
-    [options, value, valueKey, labelKey],
-  );
+  }, [
+    value,
+    allOptions,
+    options,
+    valueKey,
+    labelKey,
+    isDisabled,
+    selectedInSearch,
+  ]);
 
   const showSelectAll = !!(
     value?.length === 0 ||
     selectedValuesDisabled() ||
     !value ||
-    (!limit && selectedInSearch().length === 0)
+    selectedInSearch().length === 0
   );
 
   const messageId =
