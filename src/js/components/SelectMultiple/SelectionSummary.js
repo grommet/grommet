@@ -76,12 +76,26 @@ const SelectionSummary = ({
     selectedInSearch,
   ]);
 
+  // show selectAll button when value array is empty
+  // or selected value is not disabled or value is
+  // undefied or Checks if there are no selected values
+  // after filtering based on a search query.
+
   const showSelectAll = !!(
     value?.length === 0 ||
     selectedValuesDisabled() ||
     !value ||
     selectedInSearch().length === 0
   );
+
+  // show clearAll button when no limit or no value or all values are disabled,
+  // if there are selected values in search or if no limit
+  const showClearAll =
+    options.length > 0 &&
+    (!limit ||
+      !(!value || (value?.length === 0 && selectedValuesDisabled()))) &&
+    (selectedInSearch().length !== 0 || !limit) &&
+    (!onMore || (onMore && value?.length !== 0));
 
   const messageId =
     value?.length === 0 ||
@@ -141,40 +155,36 @@ const SelectionSummary = ({
       height={{ min: 'xxsmall' }}
     >
       <Text size="small">{summaryText}</Text>
-      {options.length > 0 &&
-        (!limit ||
-          !(!value || (value?.length === 0 && selectedValuesDisabled()))) &&
-        (selectedInSearch().length !== 0 || !limit) &&
-        (!onMore || (onMore && value?.length !== 0)) && (
-          <Button
-            a11yTitle={
-              showSelectAll
-                ? format({
-                    id: 'selectMultiple.selectAllA11y',
-                    messages,
-                    values: {
-                      total: options.length,
-                    },
-                  })
-                : format({
-                    id: 'selectMultiple.clearAllA11y',
-                    messages,
-                    values: {
-                      selected: value?.length || 0,
-                    },
-                  })
-            }
-            label={format({
-              id: showSelectAll
-                ? 'selectMultiple.selectAll'
-                : 'selectMultiple.clearAll',
-              messages,
-            })}
-            onClick={(event) => summaryButtonClick(event)}
-            onFocus={() => setActiveIndex(-1)}
-            ref={clearRef}
-          />
-        )}
+      {options.length > 0 && showClearAll && (
+        <Button
+          a11yTitle={
+            showSelectAll
+              ? format({
+                  id: 'selectMultiple.selectAllA11y',
+                  messages,
+                  values: {
+                    total: options.length,
+                  },
+                })
+              : format({
+                  id: 'selectMultiple.clearAllA11y',
+                  messages,
+                  values: {
+                    selected: value?.length || 0,
+                  },
+                })
+          }
+          label={format({
+            id: showSelectAll
+              ? 'selectMultiple.selectAll'
+              : 'selectMultiple.clearAll',
+            messages,
+          })}
+          onClick={(event) => summaryButtonClick(event)}
+          onFocus={() => setActiveIndex(-1)}
+          ref={clearRef}
+        />
+      )}
     </Box>
   );
 };
