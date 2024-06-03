@@ -49,7 +49,7 @@ describe('Menu', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <Menu items={[]} />
+        <Menu />
       </Grommet>,
     );
 
