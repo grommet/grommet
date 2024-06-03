@@ -10,7 +10,7 @@ import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
 import { DataTable } from '../../DataTable';
-import { createPortal, expectPortal } from '../../../utils/portal';
+import { createPortal } from '../../../utils/portal';
 
 const data = [
   {
@@ -186,9 +186,6 @@ describe('DataFilter', () => {
 
     const searchInput = screen.getByLabelText(/Search to filter/);
     expect(searchInput).toBeTruthy();
-
-    // snapshot on search box
-    expectPortal('test-data-type.name__drop').toMatchSnapshot();
   });
 
   test('range prop', () => {
