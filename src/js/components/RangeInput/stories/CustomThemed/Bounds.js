@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Box, Button, Grommet, RangeInput } from 'grommet';
 
@@ -25,6 +25,17 @@ export const Bounds = () => {
   const [isAddDisabled, setIsAddDisabled] = React.useState();
   const [isSubtractDisabled, setIsSubtractDisabled] = React.useState();
 
+  useEffect(() => {
+    if (value <= -5) {
+      setIsSubtractDisabled(true);
+    } else if (value >= 5) {
+      setIsAddDisabled(true);
+    } else {
+      setIsSubtractDisabled(false);
+      setIsAddDisabled(false);
+    }
+  }, [value])
+
   const onChange = (event) => setValue(event.target.value);
   return (
     <Grommet theme={rangeInputTheme}>
@@ -33,12 +44,7 @@ export const Bounds = () => {
           plain={false}
           disabled={isSubtractDisabled}
           icon={<Subtract color="neutral-2" />}
-          onClick={() => {
-            if (value > -5) {
-              setIsAddDisabled(false);
-              setValue((prev) => prev - 1);
-            } else setIsSubtractDisabled(true);
-          }}
+          onClick={() => setValue((prev) => prev - 1)}
         />
         <Box align="center" width="medium">
           <RangeInput
@@ -54,12 +60,7 @@ export const Bounds = () => {
           plain={false}
           disabled={isAddDisabled}
           icon={<Add color="neutral-2" />}
-          onClick={() => {
-            if (value < 5) {
-              setIsSubtractDisabled(false);
-              setValue((prev) => prev + 1);
-            } else setIsAddDisabled(true);
-          }}
+          onClick={() => setValue((prev) => prev + 1)}
         />
       </Box>
     </Grommet>
