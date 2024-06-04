@@ -28,7 +28,7 @@ export const Bounds = () => {
   useEffect(() => {
     setIsSubtractDisabled(value <= -5);
     setIsAddDisabled(value >= 5);
-  }, [value])
+  }, [value]);
 
   const onChange = (event) => setValue(event.target.value);
   return (
