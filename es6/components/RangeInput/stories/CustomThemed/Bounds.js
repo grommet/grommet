@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Button, Grommet, RangeInput } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Subtract } from "grommet-icons/es6/icons/Subtract";
@@ -18,7 +18,7 @@ var rangeInputTheme = {
   }
 };
 export var Bounds = function Bounds() {
-  var _React$useState = React.useState(3),
+  var _React$useState = React.useState(0),
     value = _React$useState[0],
     setValue = _React$useState[1];
   var _React$useState2 = React.useState(),
@@ -27,6 +27,10 @@ export var Bounds = function Bounds() {
   var _React$useState3 = React.useState(),
     isSubtractDisabled = _React$useState3[0],
     setIsSubtractDisabled = _React$useState3[1];
+  useEffect(function () {
+    setIsSubtractDisabled(value <= -5);
+    setIsAddDisabled(value >= 5);
+  }, [value]);
   var onChange = function onChange(event) {
     return setValue(event.target.value);
   };
@@ -44,18 +48,17 @@ export var Bounds = function Bounds() {
       color: "neutral-2"
     }),
     onClick: function onClick() {
-      if (value > 0) {
-        setIsAddDisabled(false);
-        setValue(value - 1);
-      } else setIsSubtractDisabled(true);
+      return setValue(function (prev) {
+        return prev - 1;
+      });
     }
   }), /*#__PURE__*/React.createElement(Box, {
     align: "center",
     width: "medium"
   }, /*#__PURE__*/React.createElement(RangeInput, {
     a11yTitle: "Select range value",
-    min: 0,
-    max: 10,
+    min: -5,
+    max: 5,
     step: 1,
     value: value,
     onChange: onChange
@@ -66,10 +69,9 @@ export var Bounds = function Bounds() {
       color: "neutral-2"
     }),
     onClick: function onClick() {
-      if (value < 10) {
-        setIsSubtractDisabled(false);
-        setValue(value + 1);
-      } else setIsAddDisabled(true);
+      return setValue(function (prev) {
+        return prev + 1;
+      });
     }
   })));
 };
