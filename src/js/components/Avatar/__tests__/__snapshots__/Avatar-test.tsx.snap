@@ -170,6 +170,27 @@ exports[`Avatar renders 1`] = `
 </div>
 `;
 
+exports[`Avatar renders outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 48px;
+  width: 48px;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+<div
+  class="c0 StyledAvatar-sc-1suyamb-1"
+/>
+`;
+
 exports[`Avatar round renders 1`] = `
 .c1 {
   display: flex;

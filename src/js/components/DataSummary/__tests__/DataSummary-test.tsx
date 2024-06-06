@@ -43,6 +43,18 @@ describe('DataSummary', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <Data data={data}>
+        <DataFilters>
+          <DataSummary />
+        </DataFilters>
+      </Data>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('renders total message correctly when only 1 item', () => {
     const { asFragment } = render(
       <Grommet>

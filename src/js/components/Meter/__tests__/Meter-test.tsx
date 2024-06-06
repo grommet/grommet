@@ -38,6 +38,12 @@ describe('Meter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic renders outside grommet wrapper', () => {
+    const { container } = render(<Meter values={VALUES} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('many values', () => {
     const { container } = render(
       <Grommet>

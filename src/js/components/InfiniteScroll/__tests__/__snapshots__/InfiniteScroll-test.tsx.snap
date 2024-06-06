@@ -41,6 +41,8 @@ exports[`InfiniteScroll basic 1`] = `
 </div>
 `;
 
+exports[`InfiniteScroll basic renders outside grommet wrapper 1`] = `null`;
+
 exports[`InfiniteScroll renderMarker 1`] = `
 .c1 {
   display: flex;

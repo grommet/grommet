@@ -73,6 +73,15 @@ describe('DataClearFilters', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { asFragment } = render(
+      <Data data={data}>
+        <DataClearFilters />
+      </Data>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('clears filters when clicked', () => {
     const { asFragment } = render(
       <Grommet>
