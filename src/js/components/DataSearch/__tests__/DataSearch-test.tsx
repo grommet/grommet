@@ -28,6 +28,18 @@ describe('DataSearch', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrappers', () => {
+    const { container } = render(
+      <Data data={data}>
+        <DataFilters>
+          <DataSearch />
+        </DataFilters>
+      </Data>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('no Data', () => {
     const { container } = render(
       <Grommet>

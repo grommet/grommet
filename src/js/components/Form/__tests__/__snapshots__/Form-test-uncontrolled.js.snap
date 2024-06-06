@@ -1804,6 +1804,8 @@ exports[`Form uncontrolled empty 1`] = `
 </div>
 `;
 
+exports[`Form uncontrolled empty outside of grommet wrapper 1`] = `<form />`;
+
 exports[`Form uncontrolled errors 1`] = `
 .c0 {
   font-size: 18px;

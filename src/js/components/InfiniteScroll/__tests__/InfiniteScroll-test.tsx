@@ -49,6 +49,11 @@ describe('InfiniteScroll', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic renders outside grommet wrapper', () => {
+    const { container } = render(<InfiniteScroll />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('step', () => {
     const { container } = render(
       <Grommet>

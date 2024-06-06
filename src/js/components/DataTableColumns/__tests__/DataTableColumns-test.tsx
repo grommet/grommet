@@ -20,6 +20,24 @@ describe('DataTableColumns', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
 
+  test('renders outside grommet wrapper', () => {
+    const { asFragment } = render(
+      <Data id="test-data" data={data}>
+        <DataFilters>
+          <DataTableColumns drop options={['name', 'size']} />
+        </DataFilters>
+        <DataTable
+          columns={[
+            { property: 'name', header: 'Name' },
+            { property: 'size', header: 'Size' },
+          ]}
+        />
+      </Data>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('renders', () => {
     const { asFragment, getByRole } = render(
       <Grommet>

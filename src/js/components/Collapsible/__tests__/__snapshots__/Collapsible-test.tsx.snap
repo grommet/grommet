@@ -113,3 +113,37 @@ exports[`Collapsible open 1`] = `
   </div>
 </div>
 `;
+
+exports[`Collapsible open outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 1;
+  overflow: visible;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  aria-hidden="false"
+  class="c0 c1"
+  open=""
+>
+  <span
+    class="c2"
+  >
+    Example
+  </span>
+</div>
+`;
