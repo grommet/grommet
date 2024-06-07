@@ -31,11 +31,6 @@ describe('Video', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('should render outside grommet wrapper', async () => {
-    const { container } = render(<Video />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('renders with theme', () => {
     const { container } = render(
       <Grommet

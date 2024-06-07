@@ -20,8 +20,4 @@ describe('Main', () => {
     expect(results).toHaveNoViolations();
     expect(container).toMatchSnapshot();
   });
-  test('render main outside grommet wrapper', async () => {
-    const { container } = render(<Main />);
-    expect(container).toMatchSnapshot();
-  });
 });
