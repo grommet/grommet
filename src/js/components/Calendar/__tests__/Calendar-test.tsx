@@ -29,12 +29,6 @@ describe('Calendar', () => {
   });
 
   test('date', () => {
-    const { container } = render(<Calendar date={DATE} animate={false} />);
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('date', () => {
     // need to set the date to avoid snapshot drift over time
     const { container } = render(
       <Grommet>

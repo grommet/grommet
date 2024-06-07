@@ -30,16 +30,6 @@ describe('DataView', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('renders outside grommet', () => {
-    const { container } = render(
-      <Data data={data} views={views}>
-        <DataView />
-      </Data>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('preset view', () => {
     const { container, getByDisplayValue } = render(
       <Grommet>

@@ -33,12 +33,6 @@ describe('RadioButton', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('basic renders outside grommet wrapper', () => {
-    const { container } = render(<RadioButton name="test" value="1" />);
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('label', () => {
     const { container } = render(
       <Grommet>

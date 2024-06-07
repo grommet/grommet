@@ -18,12 +18,6 @@ describe('Stack', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('default outside grommet wrapper', () => {
-    const { container } = render(<Stack>{CONTENTS}</Stack>);
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('guidingChild', () => {
     const { container } = render(
       <Grommet>

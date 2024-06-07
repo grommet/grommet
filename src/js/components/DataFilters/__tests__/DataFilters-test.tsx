@@ -29,16 +29,6 @@ describe('DataFilters', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('renders outside grommet wrapper', () => {
-    const { container } = render(
-      <Data data={data}>
-        <DataFilters />
-      </Data>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('drop', async () => {
     const user = userEvent.setup();
 

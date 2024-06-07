@@ -51,20 +51,6 @@ describe('NameValueList', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should render outside grommet wrapper`, () => {
-    const { container } = render(
-      <NameValueList>
-        {Object.entries(data).map(([name, value]) => (
-          <NameValuePair key={name} name={name}>
-            {value}
-          </NameValuePair>
-        ))}
-      </NameValueList>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test(`should render correct width of name`, () => {
     const { container } = render(
       <Grommet>

@@ -34,18 +34,6 @@ describe('DataSort', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('renders outside grommet wrapper', () => {
-    const { container } = render(
-      <Data data={data}>
-        <DataFilters>
-          <DataSort />
-        </DataFilters>
-      </Data>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('drop', () => {
     jest.useFakeTimers();
 

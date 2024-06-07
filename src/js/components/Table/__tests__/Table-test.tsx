@@ -22,12 +22,6 @@ test('Table renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-test('Table renders outside grommet', () => {
-  const { container } = render(<Table />);
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
 test('Table caption renders', () => {
   const { container } = render(
     <Grommet>

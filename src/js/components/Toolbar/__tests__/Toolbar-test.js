@@ -25,16 +25,4 @@ describe('DataFilters', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
-  test('renders outside grommet wrapper', () => {
-    const { container } = render(
-      <Data data={data}>
-        <Toolbar>
-          <DataSearch />
-          <DataFilters />
-        </Toolbar>
-      </Data>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
 });

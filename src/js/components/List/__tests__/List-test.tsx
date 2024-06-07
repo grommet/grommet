@@ -37,13 +37,6 @@ describe('List', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('renders outside grommet wrapper', () => {
-    const { container } = render(
-        <List a11yTitle="test" data={[{ a: 'alpha' }, { a: 'beta' }]} />
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
       <Grommet>

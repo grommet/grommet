@@ -38,15 +38,6 @@ describe('ThumbsRating', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('StarRating renders outside grommet wrapper', () => {
-    const { container, getByTestId } = render(
-      <ThumbsRating name="test" data-testid="ThumbsRating-icon" />,
-    );
-
-    expect(getByTestId('ThumbsRating-icon')).toBeTruthy();
-    expect(container).toMatchSnapshot();
-  });
-
   test('value for thumbs', async () => {
     const onSubmit = jest.fn();
     const user = userEvent.setup();

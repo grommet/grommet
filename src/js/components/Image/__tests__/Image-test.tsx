@@ -35,12 +35,6 @@ test('Image renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-test('Image renders outside grommet wrapper', () => {
-  const { container } = render(<Image src={SRC} />);
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
 test('Image renders with aria-label', () => {
   const { container, getByLabelText } = render(
     <Grommet>

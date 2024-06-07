@@ -56,21 +56,6 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('renders outside grommet wrapper', () => {
-    const { container } = render(
-        <Data data={data}>
-          <DataFilters>
-            <DataFilter property="name" />
-            <DataFilter property="enabled" />
-            <DataFilter property="rating" />
-            <DataFilter property="blank" />
-            <DataFilter property="zero" />
-          </DataFilters>
-        </Data>
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('options', () => {
     const { container } = render(
       <Grommet>

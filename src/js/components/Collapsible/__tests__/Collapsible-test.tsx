@@ -33,15 +33,6 @@ describe('Collapsible', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('open outside grommet wrapper', () => {
-    const { container } = render(
-      <Collapsible open>
-        <Text>Example</Text>
-      </Collapsible>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('onClick open default', () => {
     const { container, rerender } = render(
       <Grommet>

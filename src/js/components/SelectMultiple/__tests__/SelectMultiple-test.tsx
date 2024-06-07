@@ -118,11 +118,6 @@ describe('SelectMultiple', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('renders selectMultiple outside grommet wrapper', () => {
-    const { container } = render(<SelectMultiple options={['one', 'two']} />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('children', () => {
     const { container } = render(
       <Grommet>

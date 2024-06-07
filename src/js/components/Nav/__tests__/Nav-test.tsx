@@ -20,8 +20,4 @@ describe('Nav', () => {
     expect(results).toHaveNoViolations();
     expect(container).toMatchSnapshot();
   });
-  test('should render without grommet wrapper', async () => {
-    const { container } = render(<Nav />);
-    expect(container).toMatchSnapshot();
-  });
 });

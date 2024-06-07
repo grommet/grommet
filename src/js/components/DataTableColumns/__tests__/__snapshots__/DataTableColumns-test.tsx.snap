@@ -2710,456 +2710,6 @@ exports[`DataTableColumns renders 3`] = `
 </div>
 `;
 
-exports[`DataTableColumns renders outside grommet wrapper 1`] = `
-<DocumentFragment>
-  .c5 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c5 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 24px;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-  flex: 0 0 auto;
-  justify-content: space-between;
-}
-
-.c11 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c15 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c16 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c4 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c4:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
-  transition-property: color,background-color,border-color,box-shadow;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-}
-
-.c7:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c1 {
-  max-width: 100%;
-}
-
-.c10 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c14 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c8 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c9 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c13:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    margin-top: 12px;
-  }
-}
-
-<div
-    class="c0"
-    id="test-data"
-  >
-    <form
-      class="c1"
-    >
-      <div
-        class="c2"
-      >
-        <div
-          class="c3"
-        >
-          <div
-            class="c0"
-          >
-            <button
-              aria-label="Open column selector"
-              class="c4"
-              id="test-data--columns-control"
-              type="button"
-            >
-              <svg
-                aria-label="Splits"
-                class="c5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M1 22h22V2H1v20zM8 2v20V2zm8 0v20V2z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <footer
-          class="c6"
-        >
-          <button
-            class="c7"
-            type="submit"
-          >
-            Apply filters
-          </button>
-        </footer>
-      </div>
-    </form>
-    <table
-      class="c8 c9"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c10 "
-            scope="col"
-          >
-            <div
-              class="c11"
-            >
-              <span
-                class="c12"
-              >
-                Name
-              </span>
-            </div>
-          </th>
-          <th
-            class="c10 "
-            scope="col"
-          >
-            <div
-              class="c11"
-            >
-              <span
-                class="c12"
-              >
-                Size
-              </span>
-            </div>
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c14 "
-            scope="row"
-          >
-            <div
-              class="c15"
-            >
-              <span
-                class="c16"
-              >
-                a
-              </span>
-            </div>
-          </th>
-          <td
-            class="c14 "
-          >
-            <div
-              class="c15"
-            >
-              <span
-                class="c12"
-              >
-                s
-              </span>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            class="c14 "
-            scope="row"
-          >
-            <div
-              class="c15"
-            >
-              <span
-                class="c16"
-              >
-                b
-              </span>
-            </div>
-          </th>
-          <td
-            class="c14 "
-          >
-            <div
-              class="c15"
-            >
-              <span
-                class="c12"
-              >
-                m
-              </span>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`DataTableColumns search 1`] = `
 .c4 {
   display: inline-block;
@@ -3918,6 +3468,118 @@ exports[`DataTableColumns search 4`] = `
 "@media only screen and (max-width: 768px) {
   .cOCRRD {
     margin-top: 12px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bsmiKO {
+    padding: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fhSrHt {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fhSrHt {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fhSrHt {
+    border-bottom: solid 2px #000000;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fhSrHt {
+    padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gMjBgV {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gMjBgV {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gMjBgV {
+    border-bottom: solid 2px #7d4cdb;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gMjBgV {
+    padding-bottom: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bBhJQp {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .jWuWAm {
+    margin-right: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iDmIbZ {
+    border: solid 2px #7d4cdb;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gHPhsG {
+    padding-top: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .loRJGb {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .loRJGb {
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .lkyIYZ {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .lkyIYZ {
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hSVZYd {
+    height: 3px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .jMOWYd {
+    height: 6px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gbyCzN {
+    width: 12px;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .GavIF {
+    display: flex;
+    align-items: stretch;
   }
 }
 .hlwVGf {

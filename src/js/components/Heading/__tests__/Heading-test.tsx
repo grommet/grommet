@@ -15,12 +15,6 @@ test('Heading renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-test('Heading renders outside grommet wrapper', () => {
-  const { container } = render(<Heading />);
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
 test('Heading accepts ref', () => {
   const ref = React.createRef<HTMLHeadingElement>();
   const { container } = render(

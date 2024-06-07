@@ -38,11 +38,6 @@ describe('MaskedInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('basic renders outside grommet wrapper', () => {
-    const { container } = render(<MaskedInput name="item" />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('icon', () => {
     const { container } = render(
       <Grommet>

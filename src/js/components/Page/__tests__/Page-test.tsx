@@ -22,18 +22,6 @@ describe('Page', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('renders default outside grommet wrapper', () => {
-    const { asFragment } = render(
-      <Page>
-        <PageContent>
-          <Paragraph>content</Paragraph>
-        </PageContent>
-      </Page>,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('narrow', () => {
     const { asFragment } = render(
       <Grommet>

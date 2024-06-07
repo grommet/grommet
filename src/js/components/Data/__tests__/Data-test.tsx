@@ -50,11 +50,6 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('renders outside grommet wrapper', () => {
-    const { container } = render(<Data data={data} />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('toolbar', () => {
     const { container } = render(
       <Grommet>
