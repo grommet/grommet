@@ -45,9 +45,7 @@ describe('FormField', () => {
   });
 
   test('default outside grommet wrapper', () => {
-    const { container } = render(
-      <FormField />
-    );
+    const { container } = render(<FormField />);
 
     expect(container.firstChild).toMatchSnapshot();
   });
