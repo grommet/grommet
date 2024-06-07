@@ -10,7 +10,7 @@ export const extendDefaultTheme = theme => {
 };
 
 /*
-  Pass `theme` for component which can be loacted outside of theme context.
+  Pass `theme` for component which can be located outside of theme context.
   To be used as argument for `attrs` method from `styled-components`.
  */
 export const enhancePropsWithTheme = props => ({

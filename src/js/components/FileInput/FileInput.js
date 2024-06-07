@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -23,6 +23,7 @@ import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 import { formatBytes } from './utils/formatBytes';
 import { enhancePropsWithTheme } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
@@ -91,7 +92,7 @@ const FileInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useThemeValue();
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [hover, setHover] = React.useState();

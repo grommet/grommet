@@ -86,7 +86,8 @@ const StyledPlaceholder = styled.div.withConfig(styledComponentsConfig)
     props.theme.textInput.placeholder.extend};
 `;
 
-const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
+const StyledIcon = styled.div.withConfig(styledComponentsConfig)
+.attrs(enhancePropsWithTheme)`
   position: absolute;
   display: flex;
   justify: center;

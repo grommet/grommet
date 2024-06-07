@@ -1,13 +1,13 @@
 import React, { useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { PageContext } from './PageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { PagePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Page = ({ kind = 'wide', ...rest }) => {
   const size = useContext(ResponsiveContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
 
   const contentValue = useMemo(
     () => ({

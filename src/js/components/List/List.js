@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -29,6 +29,7 @@ import { useAnalytics } from '../../contexts/AnalyticsContext';
 
 import { ListPropTypes } from './propTypes';
 import { enhancePropsWithTheme } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
@@ -158,7 +159,7 @@ const List = React.forwardRef(
     ref,
   ) => {
     const listRef = useForwardedRef(ref);
-    const theme = useContext(ThemeContext);
+    const theme = useThemeValue();
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 

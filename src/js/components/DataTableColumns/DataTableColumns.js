@@ -2,7 +2,6 @@ import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
 import { Lock } from 'grommet-icons/icons/Lock';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
@@ -16,6 +15,7 @@ import { TextInput } from '../TextInput';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataTableColumnsPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -168,7 +168,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const [showContent, setShowContent] = useState();
 
   const tip = format({

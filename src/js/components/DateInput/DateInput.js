@@ -33,8 +33,9 @@ import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
 import { CopyButton } from '../TextInput/CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { enhancePropsWithTheme } from '../../default-props';
 
-const StyledDateInputContainer = styled(Box)`
+const StyledDateInputContainer = styled(Box).attrs(enhancePropsWithTheme)`
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}};
 `;
 

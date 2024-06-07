@@ -104,7 +104,8 @@ const daySizeStyle = (props) => {
   `;
 };
 
-const StyledDay = styled.div.withConfig(styledComponentsConfig)`
+const StyledDay = styled.div.withConfig(styledComponentsConfig)
+.attrs(enhancePropsWithTheme)`
   display: flex;
   justify-content: center;
   align-items: center;
