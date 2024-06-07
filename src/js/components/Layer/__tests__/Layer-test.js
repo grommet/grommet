@@ -194,7 +194,11 @@ describe('Layer', () => {
   });
 
   test('renders outside grommet wrapper', () => {
-    render(<Layer id="grommet-test">This is layer</Layer>);
+    render(
+        <Layer id="grommet-test">
+          This is layer
+        </Layer>
+    );
     expectPortal('grommet-test').toMatchSnapshot();
   });
 
