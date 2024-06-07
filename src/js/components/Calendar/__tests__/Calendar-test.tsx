@@ -28,7 +28,7 @@ describe('Calendar', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('date', () => {
+  test('render without grommet wrapper', () => {
     const { container } = render(<Calendar date={DATE} animate={false} />);
 
     expect(container.firstChild).toMatchSnapshot();
