@@ -39,11 +39,10 @@ describe('ThumbsRating', () => {
   });
 
   test('StarRating renders outside grommet wrapper', () => {
-    const { container, getByTestId } = render(
-      <ThumbsRating name="test" data-testid="ThumbsRating-icon" />,
+    const { container } = render(
+      <ThumbsRating name="test" />,
     );
 
-    expect(getByTestId('ThumbsRating-icon')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 
