@@ -950,6 +950,71 @@ exports[`NameValueList should render name/value as a column when pairProps = { d
 </div>
 `;
 
+exports[`NameValueList should render outside grommet wrapper 1`] = `
+.c0 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: 192px minmax(auto, 384px);
+  grid-gap: 12px 48px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  font-weight: bold;
+}
+
+.c2 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 0px;
+  }
+}
+
+<dl
+  class="c0"
+>
+  <dt
+    class="c1"
+  >
+    name
+  </dt>
+  <dd
+    class="c2"
+  >
+    entry
+  </dd>
+  <dt
+    class="c1"
+  >
+    location
+  </dt>
+  <dd
+    class="c2"
+  >
+    San Francisco
+  </dd>
+  <dt
+    class="c1"
+  >
+    health
+  </dt>
+  <dd
+    class="c2"
+  >
+    80
+  </dd>
+</dl>
+`;
+
 exports[`NameValueList should render pairs in a grid when layout="grid" 1`] = `
 .c0 {
   font-size: 18px;
