@@ -32,6 +32,16 @@ describe('RangeInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <Grommet>
+        <RangeInput value="50" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('track themed', () => {
     const { container } = render(
       <Grommet theme={{ rangeInput: { track: { color: 'brand' } } }}>

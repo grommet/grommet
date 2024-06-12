@@ -189,6 +189,19 @@ exports[`renders margin 1`] = `
 </div>
 `;
 
+exports[`renders outside grommet wrapper 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<span
+  class="c0"
+>
+  text
+</span>
+`;
+
 exports[`renders size 1`] = `
 .c0 {
   font-size: 18px;

@@ -313,6 +313,8 @@ exports[`Distribution renders 1`] = `
 />
 `;
 
+exports[`Distribution renders outside grommet wrapper 1`] = `null`;
+
 exports[`Distribution undefined value 1`] = `
 .c0 {
   font-size: 18px;
