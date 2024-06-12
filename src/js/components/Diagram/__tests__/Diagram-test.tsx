@@ -18,7 +18,7 @@ const Context = ({ children }: { children: React.ReactNode }) => (
 );
 
 Context.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 describe('Diagram', () => {

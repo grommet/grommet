@@ -5,7 +5,7 @@ import { Button } from '../Button';
 
 class RoutedButton extends Component {
   static contextTypes = {
-    router: PropTypes.shape({}).isRequired,
+    router: PropTypes.shape({}),
   };
 
   static defaultProps = {

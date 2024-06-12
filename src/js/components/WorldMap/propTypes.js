@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
           'Europe',
           'North America',
           'South America',
-        ]).isRequired,
+        ]),
         onClick: PropTypes.func,
         onHover: PropTypes.func,
       }),
@@ -32,7 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
         content: PropTypes.node,
         dropProps: PropTypes.shape({}),
         name: PropTypes.string, // for a11y aria-label
-        location: PropTypes.arrayOf(PropTypes.number).isRequired,
+        location: PropTypes.arrayOf(PropTypes.number),
         onClick: PropTypes.func,
         onHover: PropTypes.func,
       }),

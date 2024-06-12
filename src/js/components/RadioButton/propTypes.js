@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
     disabled: PropTypes.bool,
     id: PropTypes.string,
     label: PropTypes.node,
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     onChange: PropTypes.func,
   };
 }

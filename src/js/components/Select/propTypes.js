@@ -53,7 +53,7 @@ export const genericSelectProps = {
       PropTypes.element,
       PropTypes.object,
     ]),
-  ).isRequired,
+  ),
   open: PropTypes.bool,
   placeholder: PropTypes.oneOfType([
     PropTypes.string,

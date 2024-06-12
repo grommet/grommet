@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
       right: PropTypes.oneOf(['left', 'right']),
       left: PropTypes.oneOf(['left', 'right']),
     }),
-    dropContent: PropTypes.element.isRequired,
+    dropContent: PropTypes.element,
     dropTarget: PropTypes.object,
     dropProps: PropTypes.object,
     onClose: PropTypes.func,

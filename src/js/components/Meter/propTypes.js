@@ -35,10 +35,10 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.shape({
         color: PropTypes.string,
         highlight: PropTypes.bool,
-        label: PropTypes.string.isRequired, // for accessibility
+        label: PropTypes.string, // for accessibility
         onClick: PropTypes.func,
         onHover: PropTypes.func,
-        value: PropTypes.number.isRequired,
+        value: PropTypes.number,
       }),
     ),
   };

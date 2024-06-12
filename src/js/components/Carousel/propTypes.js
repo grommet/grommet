@@ -28,10 +28,10 @@ export const CarouselPropTypes = CarouselPropType;
 let CarouselChildPropType;
 if (process.env.NODE_ENV !== 'production') {
   CarouselChildPropType = {
-    animationDuration: PropTypes.number.isRequired,
+    animationDuration: PropTypes.number,
     fill: PropTypes.bool,
-    index: PropTypes.number.isRequired,
-    activeIndex: PropTypes.number.isRequired,
+    index: PropTypes.number,
+    activeIndex: PropTypes.number,
     priorActiveIndex: PropTypes.number,
     direction: PropTypes.oneOf(['left', 'right']),
   };

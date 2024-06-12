@@ -21,8 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
         animation: animationPropType,
         color: colorPropType,
-        fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-          .isRequired,
+        fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
         label: PropTypes.string, // for accessibility
         offset: PropTypes.oneOfType([
           PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
@@ -39,11 +38,10 @@ if (process.env.NODE_ENV !== 'production') {
           ]),
           PropTypes.string,
         ]),
-        toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-          .isRequired,
+        toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
         type: PropTypes.oneOf(['direct', 'curved', 'rectilinear']),
       }),
-    ).isRequired,
+    ),
   };
 }
 export const DiagramPropTypes = PropType;

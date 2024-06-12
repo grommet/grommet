@@ -5,7 +5,7 @@ import { Anchor } from '../Anchor';
 
 class RoutedAnchor extends Component {
   static contextTypes = {
-    router: PropTypes.shape({}).isRequired,
+    router: PropTypes.shape({}),
   };
 
   static defaultProps = {

@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
     ...genericProps,
     activeIndex: PropTypes.number,
     alignControls: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     flex: PropTypes.oneOfType([
       PropTypes.oneOf(['grow', 'shrink']),
       PropTypes.bool,
