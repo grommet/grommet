@@ -149,6 +149,21 @@ exports[`Box onClick 1`] = `
 </div>
 `;
 
+exports[`Box render outside grommet 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+<div
+  class="c0"
+/>
+`;
+
 exports[`Box renders a11yTitle and aria-label 1`] = `
 .c0 {
   font-size: 18px;

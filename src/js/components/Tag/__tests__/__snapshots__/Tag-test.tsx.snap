@@ -110,6 +110,102 @@ exports[`Tag basic 1`] = `
 </div>
 `;
 
+exports[`Tag basic outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  min-width: min-content;
+  flex: 0 0 auto;
+  border-radius: 48px;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  min-width: min-content;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    border: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+    >
+      <span
+        class="c2"
+      >
+         
+        Name
+      </span>
+      <span
+        class="c2"
+      >
+         : 
+      </span>
+      <span
+        class="c3"
+      >
+        Value
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Tag onClick 1`] = `
 .c3 {
   display: flex;

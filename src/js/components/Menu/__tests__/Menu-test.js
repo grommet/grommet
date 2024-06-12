@@ -73,6 +73,19 @@ describe('Menu', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(
+      <Menu
+        icon={<svg />}
+        label="Test Menu"
+        id="test-menu"
+        items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+      />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('custom message', () => {
     const { container } = render(
       <Grommet>

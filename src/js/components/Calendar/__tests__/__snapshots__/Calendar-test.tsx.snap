@@ -15134,6 +15134,1100 @@ exports[`Calendar reference 1`] = `
 </div>
 `;
 
+exports[`Calendar render without grommet wrapper 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c6:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c12:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: normal;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c8 {
+  overflow: hidden;
+  height: 329.1428571428571px;
+}
+
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c11 {
+  flex: 0 1 auto;
+}
+
+.c13 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  opacity: 0.5;
+}
+
+.c14 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+}
+
+.c15 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <header
+        class="c3"
+      >
+        <h3
+          class="c4"
+        >
+          January 2020
+        </h3>
+      </header>
+      <div
+        class="c5"
+      >
+        <button
+          aria-label="Go to December 2019"
+          class="c6"
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="c7"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="Go to February 2020"
+          class="c6"
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="c7"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="January 2020; Currently selected January 15, 2020;"
+      class="c8"
+      role="grid"
+      tabindex="0"
+    >
+      <div
+        class="c9"
+      >
+        <div
+          class="c10"
+          role="row"
+        >
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sun Dec 29 2019"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                29
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Mon Dec 30 2019"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                30
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Tue Dec 31 2019"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                31
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Wed Jan 01 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                1
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Thu Jan 02 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                2
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Fri Jan 03 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                3
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sat Jan 04 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                4
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c10"
+          role="row"
+        >
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sun Jan 05 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                5
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Mon Jan 06 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                6
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Tue Jan 07 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                7
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Wed Jan 08 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                8
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Thu Jan 09 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                9
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Fri Jan 10 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                10
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sat Jan 11 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                11
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c10"
+          role="row"
+        >
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sun Jan 12 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                12
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Mon Jan 13 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                13
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Tue Jan 14 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                14
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Wed Jan 15 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c15"
+              >
+                15
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Thu Jan 16 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                16
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Fri Jan 17 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                17
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sat Jan 18 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                18
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c10"
+          role="row"
+        >
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sun Jan 19 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                19
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Mon Jan 20 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                20
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Tue Jan 21 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                21
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Wed Jan 22 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                22
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Thu Jan 23 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                23
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Fri Jan 24 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                24
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sat Jan 25 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                25
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c10"
+          role="row"
+        >
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sun Jan 26 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                26
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Mon Jan 27 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                27
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Tue Jan 28 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                28
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Wed Jan 29 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                29
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Thu Jan 30 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                30
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Fri Jan 31 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c14"
+              >
+                31
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sat Feb 01 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                1
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c10"
+          role="row"
+        >
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sun Feb 02 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                2
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Mon Feb 03 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                3
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Tue Feb 04 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                4
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Wed Feb 05 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                5
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Thu Feb 06 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                6
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Fri Feb 07 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                7
+              </div>
+            </button>
+          </div>
+          <div
+            class="c11"
+            role="gridcell"
+          >
+            <button
+              aria-label="Sat Feb 08 2020"
+              class="c12"
+              tabindex="-1"
+              type="button"
+            >
+              <div
+                class="c13"
+              >
+                8
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Calendar select date 1`] = `
 .c8 {
   display: inline-block;

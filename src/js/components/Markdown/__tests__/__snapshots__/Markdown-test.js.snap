@@ -287,6 +287,279 @@ exports[`Markdown renders 1`] = `
 </div>
 `;
 
+exports[`Markdown renders without grommet wrapper 1`] = `
+.c0 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c3 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c5 {
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c5:hover {
+  text-decoration: underline;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
+  }
+}
+
+<div>
+  <h1
+    class="c0"
+    id="h1"
+  >
+    H1
+  </h1>
+  <p
+    class="c1"
+  >
+    Paragraph
+  </p>
+  <h2
+    class="c2"
+    id="h2"
+  >
+    H2
+  </h2>
+  <h3
+    class="c3"
+    id="h3"
+  >
+    H3
+  </h3>
+  <h4
+    class="c4"
+    id="h4"
+  >
+    H4
+  </h4>
+  <p
+    class="c1"
+  >
+    <a
+      class="c5"
+      href="#"
+    >
+      a link
+    </a>
+  </p>
+  <blockquote>
+    <p
+      class="c1"
+    >
+      i carry your heart with me
+    </p>
+  </blockquote>
+  <p
+    class="c1"
+  >
+    <img
+      alt="alt text"
+      class=""
+      src="//v2.grommet.io/assets/IMG_4245.jpg"
+      title="Markdown Image"
+    />
+  </p>
+  <table
+    class="c6"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2"
+      >
+        <td
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            Markdown
+          </div>
+        </td>
+        <td
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            Less
+          </div>
+        </td>
+        <td
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            Pretty
+          </div>
+        </td>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2"
+      >
+        <td
+          class="c9"
+        >
+          <em>
+            Still
+          </em>
+        </td>
+        <td
+          class="c9"
+        >
+          <code>
+            renders
+          </code>
+        </td>
+        <td
+          class="c9"
+        >
+          <strong>
+            nicely
+          </strong>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2"
+      >
+        <td
+          class="c9"
+        >
+          1
+        </td>
+        <td
+          class="c9"
+        >
+          2
+        </td>
+        <td
+          class="c9"
+        >
+          3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`wrapper 1`] = `
 .c0 {
   font-size: 18px;
