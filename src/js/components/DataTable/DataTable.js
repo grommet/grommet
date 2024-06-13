@@ -7,9 +7,6 @@ import React, {
   useState,
   Fragment,
 } from 'react';
-import { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { DataContext } from '../../contexts/DataContext';
@@ -37,6 +34,7 @@ import {
 } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
 import { PlaceholderBody } from './PlaceholderBody';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
@@ -90,7 +88,7 @@ const DataTable = ({
   verticalAlign,
   ...rest
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const {
     view,
     data: contextData,

@@ -9,7 +9,7 @@ import {
   getRGBA,
   styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
 const getBoundOpacity = (props, bound) =>
@@ -208,7 +208,8 @@ const firefoxMicrosoftThumbStyle = css`
 `;
 
 /* eslint-disable max-len */
-const StyledRangeInput = styled.input.withConfig(styledComponentsConfig)`
+const StyledRangeInput = styled.input.withConfig(styledComponentsConfig)
+.attrs(enhancePropsWithTheme)`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -315,8 +316,5 @@ const StyledRangeInput = styled.input.withConfig(styledComponentsConfig)`
   ${(props) => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
 /* eslint-enable max-len */
-
-StyledRangeInput.defaultProps = {};
-Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);
 
 export { StyledRangeInput };

@@ -6,7 +6,7 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -20,7 +20,8 @@ const fitStyle = css`
 `;
 
 // z-index is for Safari so controls aren't hidden
-const StyledVideo = styled.video.withConfig(styledComponentsConfig)`
+const StyledVideo = styled.video.withConfig(styledComponentsConfig)
+.attrs(enhancePropsWithTheme)`
   max-width: 100%;
   z-index: 1;
   ${(props) => props.fit && fitStyle} ::cue {
@@ -30,10 +31,8 @@ const StyledVideo = styled.video.withConfig(styledComponentsConfig)`
   ${(props) => props.theme.video && props.theme.video.extend};
 `;
 
-StyledVideo.defaultProps = {};
-Object.setPrototypeOf(StyledVideo.defaultProps, defaultProps);
-
-const StyledVideoContainer = styled.div.withConfig(styledComponentsConfig)`
+const StyledVideoContainer = styled.div.withConfig(styledComponentsConfig)
+.attrs(enhancePropsWithTheme)`
   flex: 1 1;
   display: flex;
   flex-direction: column;
@@ -44,9 +43,6 @@ const StyledVideoContainer = styled.div.withConfig(styledComponentsConfig)`
     ${focusStyle()}
   }
 `;
-
-StyledVideoContainer.defaultProps = {};
-Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps);
 
 // z-index is for Safari so controls aren't hidden
 const positionStyle = css`
@@ -64,9 +60,6 @@ const StyledVideoControls = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
 `;
 
-StyledVideoControls.defaultProps = {};
-Object.setPrototypeOf(StyledVideoControls.defaultProps, defaultProps);
-
 const headStyle = css`
   ::after {
     content: '';
@@ -79,7 +72,8 @@ const headStyle = css`
   }
 `;
 
-const StyledVideoScrubber = styled.div.withConfig(styledComponentsConfig)`
+const StyledVideoScrubber = styled.div.withConfig(styledComponentsConfig)
+.attrs(enhancePropsWithTheme)`
   cursor: pointer;
   width: 100%;
   height: 100%;
@@ -88,9 +82,6 @@ const StyledVideoScrubber = styled.div.withConfig(styledComponentsConfig)`
     ${focusStyle()}
   }
 `;
-
-StyledVideoScrubber.defaultProps = {};
-Object.setPrototypeOf(StyledVideoScrubber.defaultProps, defaultProps);
 
 export {
   StyledVideo,

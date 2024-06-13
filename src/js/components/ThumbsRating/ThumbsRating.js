@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 import { Like } from 'grommet-icons/icons/Like';
 import { LikeFill } from 'grommet-icons/icons/LikeFill';
 import { Dislike } from 'grommet-icons/icons/Dislike';
 import { DislikeFill } from 'grommet-icons/icons/DislikeFill';
 import { RadioButtonGroup } from '../RadioButtonGroup';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const ThumbsRating = ({ ...rest }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   return (
     <RadioButtonGroup direction="row" options={['like', 'dislike']} {...rest}>
       {(option, { checked }) => {

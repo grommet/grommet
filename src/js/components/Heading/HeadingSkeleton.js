@@ -1,9 +1,9 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 import { Skeleton } from '../Skeleton';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const HeadingSkeleton = forwardRef(({ as, level, size }, ref) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+const HeadingSkeleton = forwardRef(({ as, level = 1, size }, ref) => {
+  const theme = useThemeValue();
 
   const levelStyle = theme.heading.level[level];
   const data = levelStyle?.[size || 'medium'];
@@ -14,8 +14,5 @@ const HeadingSkeleton = forwardRef(({ as, level, size }, ref) => {
 });
 
 HeadingSkeleton.displayName = 'HeadingSkeleton';
-HeadingSkeleton.defaultProps = {
-  level: 1,
-};
 
 export { HeadingSkeleton };

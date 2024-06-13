@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Select } from '../Select';
 import { Text } from '../Text';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 export const PaginationStep = ({
   messages,
@@ -13,7 +13,7 @@ export const PaginationStep = ({
   ...rest
 }) => {
   const { format: formatMessage } = useContext(MessageContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   return (
     <Box direction="row" align="center" gap="xsmall" {...rest}>
       <Text>{formatMessage({ id: 'pagination.stepLabel', messages })}</Text>

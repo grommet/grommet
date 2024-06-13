@@ -6,7 +6,6 @@ import React, {
   useRef,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -23,6 +22,7 @@ import {
 } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const HiddenAnchor = styled.a.withConfig(styledComponentsConfig)`
   width: 0;
@@ -54,7 +54,7 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const size = useContext(ResponsiveContext);
     // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3

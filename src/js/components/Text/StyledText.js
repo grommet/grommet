@@ -6,7 +6,7 @@ import {
   textAlignStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const sizeStyle = (props) => {
   const size = props.size || 'medium';
@@ -46,7 +46,8 @@ const fontFamily = css`
   font-family: ${(props) => props.theme.text.font.family};
 `;
 
-const StyledText = styled('span').withConfig(styledComponentsConfig)`
+const StyledText = styled('span').attrs(enhancePropsWithTheme)
+.withConfig(styledComponentsConfig)`
   ${genericStyles}
   ${(props) => sizeStyle(props)}
   ${(props) => props.textAlign && textAlignStyle}
@@ -59,8 +60,5 @@ const StyledText = styled('span').withConfig(styledComponentsConfig)`
 
   ${(props) => props.theme.text && props.theme.text.extend}
 `;
-
-StyledText.defaultProps = {};
-Object.setPrototypeOf(StyledText.defaultProps, defaultProps);
 
 export { StyledText };
