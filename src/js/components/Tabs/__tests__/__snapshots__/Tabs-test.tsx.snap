@@ -2022,6 +2022,265 @@ exports[`Tabs onClick 1`] = `
 </div>
 `;
 
+exports[`Tabs renders outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  white-space: nowrap;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c5:hover {
+  color: #000000;
+}
+
+.c5:focus {
+  z-index: 1;
+}
+
+.c9 {
+  min-height: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    border-bottom: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0 "
+>
+  <div
+    class="c1"
+    role="tablist"
+  >
+    <div
+      class="c2 "
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4 c5"
+        >
+          <span
+            class="c6"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c7 c5"
+        >
+          <span
+            class="c8"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    aria-label="Tab 1 Tab Contents"
+    class="c9"
+    role="tabpanel"
+  >
+    Tab body 1
+  </div>
+</div>
+`;
+
 exports[`Tabs set on hover 1`] = `
 .c1 {
   display: flex;

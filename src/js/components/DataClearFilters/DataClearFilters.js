@@ -1,12 +1,12 @@
 import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { DataClearFiltersPropTypes } from './propTypes';
 import { Button } from '../Button';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const DataClearFilters = forwardRef(({ onClick, ...rest }, ref) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const { format } = useContext(MessageContext);
   const { clearFilters, messages } = useContext(DataContext);
 

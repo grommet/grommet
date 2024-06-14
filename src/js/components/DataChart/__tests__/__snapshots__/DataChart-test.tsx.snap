@@ -4355,6 +4355,167 @@ exports[`DataChart default 1`] = `
 </div>
 `;
 
+exports[`DataChart default without grommet wrapper 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 96px;
+  overflow: visible;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 1px;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c7 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c0 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-areas: "yAxis charts" ". xAxis";
+  grid-template-columns: auto auto;
+  grid-gap: 12px 12px;
+  grid-template-rows: auto auto;
+}
+
+.c5 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c6 {
+  position: relative;
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-inline-start: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-inline-end: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      0
+    </div>
+    <div
+      class="c2"
+    >
+      1
+    </div>
+  </div>
+  <div
+    class="c3"
+  >
+    <div
+      class="c4"
+    >
+      2
+    </div>
+    <div
+      class="c4"
+    >
+      0
+    </div>
+  </div>
+  <div
+    class="c5"
+  >
+    <div
+      class="c6"
+    >
+      <svg
+        class="c7"
+        height="192"
+        preserveAspectRatio="none"
+        viewBox="0 0 384 192"
+        width="384"
+      >
+        0
+        <g
+          fill="none"
+          stroke="#6FFFB0"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="96"
+        >
+          <g
+            fill="none"
+          >
+            <title />
+            <path
+              d="M 48,192 L 48,96"
+            />
+          </g>
+          <g
+            fill="none"
+          >
+            <title />
+            <path
+              d="M 336,192 L 336,0"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DataChart detail 1`] = `
 .c0 {
   font-size: 18px;

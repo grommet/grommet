@@ -1,5 +1,4 @@
 import React, { Fragment, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -11,6 +10,7 @@ import { Pagination } from '../Pagination';
 import { normalizeShow, usePagination } from '../../utils';
 
 import { CardsPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
@@ -31,7 +31,7 @@ const Cards = React.forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useThemeValue();
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 

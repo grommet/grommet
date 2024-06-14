@@ -36,6 +36,11 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<DataTable />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const { container } = render(
       <Grommet>

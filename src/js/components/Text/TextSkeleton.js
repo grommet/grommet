@@ -1,11 +1,10 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef } from 'react';
 
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { Skeleton } from '../Skeleton';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const TextSkeleton = forwardRef(({ as, size: sizeProp, ...rest }, ref) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const size = sizeProp || 'medium';
   const data = theme.text[size];
   const height = data ? data.size : sizeProp;

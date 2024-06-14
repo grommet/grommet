@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render outside grommet wrapper 1`] = `
+<header
+  class="StyledBox-sc-13pk1d4-0 kRYgEW"
+>
+  Hello, World!
+</header>
+`;
