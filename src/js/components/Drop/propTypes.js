@@ -40,7 +40,7 @@ if (process.env.NODE_ENV !== 'production') {
     restrictFocus: PropTypes.bool,
     round: roundPropType,
     stretch: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['align'])]),
-    target: PropTypes.object,
+    target: PropTypes.object.isRequired,
     trapFocus: PropTypes.bool,
   };
 }

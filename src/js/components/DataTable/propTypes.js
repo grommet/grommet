@@ -86,7 +86,7 @@ if (process.env.NODE_ENV !== 'production') {
         pin: PropTypes.bool,
         plain: PropTypes.bool,
         primary: PropTypes.bool,
-        property: PropTypes.string,
+        property: PropTypes.string.isRequired,
         render: PropTypes.func,
         search: PropTypes.bool,
         sortable: PropTypes.bool,
@@ -168,7 +168,7 @@ if (process.env.NODE_ENV !== 'production') {
     sort: PropTypes.shape({
       direction: PropTypes.oneOf(['asc', 'desc']),
       external: PropTypes.bool,
-      property: PropTypes.string,
+      property: PropTypes.string.isRequired,
     }),
     sortable: PropTypes.bool,
     step: PropTypes.number,

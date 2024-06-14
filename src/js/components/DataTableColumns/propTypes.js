@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    drop: PropTypes.bool,
+    drop: PropTypes.bool.isRequired,
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.arrayOf(
@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
           property: PropTypes.string,
         }),
       ),
-    ]),
+    ]).isRequired,
   };
 }
 export const DataTableColumnsPropTypes = PropType;
