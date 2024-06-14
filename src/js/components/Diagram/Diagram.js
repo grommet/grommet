@@ -9,6 +9,7 @@ import React, {
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledDiagram } from './StyledDiagram';
+import { DiagramPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const computeMidPoint = (fromPoint, toPoint) => [
@@ -258,5 +259,6 @@ const Diagram = forwardRef(
 );
 
 Diagram.displayName = 'Diagram';
+Diagram.propTypes = DiagramPropTypes;
 
 export { Diagram };

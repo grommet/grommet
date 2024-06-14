@@ -21,7 +21,8 @@ if (process.env.NODE_ENV !== 'production') {
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
         animation: animationPropType,
         color: colorPropType,
-        fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+        fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+          .isRequired,
         label: PropTypes.string, // for accessibility
         offset: PropTypes.oneOfType([
           PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
@@ -38,7 +39,8 @@ if (process.env.NODE_ENV !== 'production') {
           ]),
           PropTypes.string,
         ]),
-        toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+        toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+          .isRequired,
         type: PropTypes.oneOf(['direct', 'curved', 'rectilinear']),
       }),
     ),

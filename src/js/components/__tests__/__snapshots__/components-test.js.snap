@@ -356,6 +356,10 @@ exports[`Components loads 1`] = `
   },
   "Diagram": {
     "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "animation": [Function],
+      "connections": [Function],
+    },
     "render": [Function],
   },
   "Distribution": [Function],
