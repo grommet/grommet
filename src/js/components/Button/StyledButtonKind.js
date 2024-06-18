@@ -10,7 +10,7 @@ import {
   kindPartStyles,
   parseMetricToNum,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const radiusStyle = (props) => {
   const size = props.sizeProp;
@@ -250,7 +250,8 @@ const plainStyle = (props) => css`
   ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
-const StyledButtonKind = styled.button.withConfig({
+const StyledButtonKind = styled.button.attrs(enhancePropsWithTheme)
+.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && !['kind'].includes(prop),
 })`
   display: inline-block;
@@ -315,8 +316,5 @@ const StyledButtonKind = styled.button.withConfig({
     cursor: default;
   `}
 `;
-
-StyledButtonKind.defaultProps = {};
-Object.setPrototypeOf(StyledButtonKind.defaultProps, defaultProps);
 
 export { StyledButtonKind };

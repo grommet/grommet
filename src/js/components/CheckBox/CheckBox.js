@@ -1,8 +1,6 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { removeUndefined } from '../../utils/object';
-import { defaultProps } from '../../default-props';
 import { FormContext } from '../Form/FormContext';
 import { CheckBoxPropTypes } from './propTypes';
 
@@ -17,6 +15,7 @@ import {
 } from './StyledCheckBox';
 
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const stopLabelClick = (event) => {
   // prevents clicking on the label trigging the event twice
@@ -56,7 +55,7 @@ const CheckBox = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const formContext = useContext(FormContext);
 
     const [checked, setChecked] = formContext.useFormInput({

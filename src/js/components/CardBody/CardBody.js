@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const CardBody = ({ ...rest }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   return <Box flex {...theme.card.body} {...rest} />;
 };
 

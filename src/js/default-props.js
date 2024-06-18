@@ -8,3 +8,11 @@ export const defaultProps = {
 export const extendDefaultTheme = theme => {
   defaultProps.theme = deepMerge(base, theme);
 };
+
+/*
+  Pass `theme` for component which can be located outside of theme context.
+  To be used as argument for `attrs` method from `styled-components`.
+ */
+export const enhancePropsWithTheme = props => ({
+  theme: deepMerge(defaultProps.theme, props.theme),
+});

@@ -40,6 +40,14 @@ describe('Clock', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('render outside wrapper', () => {
+    const { container } = render(
+      <Clock run={false} type="digital" time={DURATION} />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('hourLimit', () => {
     const { container } = render(
       <Grommet>

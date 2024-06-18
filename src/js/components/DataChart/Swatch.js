@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 import { normalizeColor, parseMetricToNum } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Swatch = ({
   aspect,
@@ -12,7 +12,7 @@ const Swatch = ({
   thickness,
   type,
 }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const dim = parseInt(theme.global.spacing, 10) / 2;
   const half = dim / 2;
   let height = dim;

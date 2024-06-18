@@ -6252,6 +6252,23 @@ exports[`Accordion no AccordionPanel 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Accordion render accordion no grommet wrapper 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+<div
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
 exports[`Accordion should apply level prop to headings 1`] = `
 <DocumentFragment>
   .c8 {

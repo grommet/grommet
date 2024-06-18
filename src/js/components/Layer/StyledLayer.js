@@ -7,7 +7,7 @@ import {
   parseMetricToNum,
   styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { enhancePropsWithTheme } from '../../default-props';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -31,7 +31,8 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-const StyledLayer = styled.div.withConfig(styledComponentsConfig)`
+const StyledLayer = styled.div.withConfig(styledComponentsConfig)
+.attrs(enhancePropsWithTheme)`
   ${baseStyle}
   background: transparent;
   position: relative;
@@ -59,10 +60,8 @@ const StyledLayer = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.theme.layer && props.theme.layer.extend};
 `;
 
-StyledLayer.defaultProps = {};
-Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
-
-const StyledOverlay = styled.div.withConfig(styledComponentsConfig)`
+const StyledOverlay = styled.div.withConfig(styledComponentsConfig)
+.attrs(enhancePropsWithTheme)`
   position: absolute;
   ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -772,7 +771,7 @@ const elevationStyle = css`
     ]};
 `;
 
-const StyledContainer = styled.div.withConfig({
+const StyledContainer = styled.div.attrs(enhancePropsWithTheme).withConfig({
   shouldForwardProp: (prop) =>
     isPropValid(prop) && !['elevation'].includes(prop),
 })`
@@ -805,8 +804,5 @@ const StyledContainer = styled.div.withConfig({
   ${(props) =>
     props.theme.layer.container && props.theme.layer.container.extend};
 `;
-
-StyledContainer.defaultProps = {};
-Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 
 export { animationDuration, StyledLayer, StyledOverlay, StyledContainer };

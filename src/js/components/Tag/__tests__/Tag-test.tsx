@@ -45,6 +45,12 @@ describe('Tag', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(<Tag name="Name" value="Value" />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('onClick', async () => {
     const user = userEvent.setup();
 

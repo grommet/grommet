@@ -9,7 +9,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import {
   backgroundAndTextColors,
   colorIsDark,
@@ -18,7 +18,6 @@ import {
   normalizeBackground,
   normalizeColor,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { ButtonPropTypes } from './propTypes';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
@@ -36,6 +35,7 @@ import {
   GrowCheckmark,
   StyledBusyContents,
 } from './BusyAnimation';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const RelativeBox = styled(Box)`
   position: relative;
@@ -216,7 +216,7 @@ const Button = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
     const announce = useContext(AnnounceContext);

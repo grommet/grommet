@@ -46,6 +46,14 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('should render outside grommet wrapper', () => {
+    const { container } = render(
+      <Pagination numberItems={NUM_ITEMS} page={10} />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('should render correct numberMiddlePages when odd', () => {
     const { container } = render(
       <Grommet>
