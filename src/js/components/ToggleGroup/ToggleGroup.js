@@ -121,9 +121,11 @@ const ToggleGroup = ({
           let label;
           let icon;
           let optionValue;
+          let tip;
           if (typeof option === 'object') {
             icon = option.icon;
             label = option.label;
+            tip = option.tip;
             optionValue = option.value;
           } else {
             label = option;
@@ -162,6 +164,7 @@ const ToggleGroup = ({
                 aria-checked={!multiple && active}
                 icon={icon}
                 label={label}
+                tip={tip}
                 onClick={(event) => handleToggle(event, optionValue)}
                 ref={(r) => {
                   buttonRefs.current[index] = r;
