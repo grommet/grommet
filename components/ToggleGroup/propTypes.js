@@ -13,7 +13,8 @@ if (process.env.NODE_ENV !== 'production') {
     options: _propTypes["default"].oneOfType([_propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].arrayOf(_propTypes["default"].shape({
       icon: _propTypes["default"].oneOfType([_propTypes["default"].element, _propTypes["default"].node]),
       label: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].element]),
-      value: _propTypes["default"].string
+      value: _propTypes["default"].string,
+      tip: _propTypes["default"].string
     }))]),
     value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string)])
   };

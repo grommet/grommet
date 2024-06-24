@@ -8,7 +8,8 @@ if (process.env.NODE_ENV !== 'production') {
     options: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.arrayOf(PropTypes.shape({
       icon: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-      value: PropTypes.string
+      value: PropTypes.string,
+      tip: PropTypes.string
     }))]),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])
   };

@@ -10,6 +10,7 @@ export interface ToggleGroupProps {
     | {
         icon?: React.ReactNode | JSX.Element;
         label?: string | React.ReactNode;
+        tip?: string;
         value: string;
       }
   )[];

@@ -120,9 +120,11 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
     var label;
     var icon;
     var optionValue;
+    var tip;
     if (typeof option === 'object') {
       icon = option.icon;
       label = option.label;
+      tip = option.tip;
       optionValue = option.value;
     } else {
       label = option;
@@ -149,6 +151,7 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
       "aria-checked": !multiple && active,
       icon: icon,
       label: label,
+      tip: tip,
       onClick: function onClick(event) {
         return handleToggle(event, optionValue);
       },
