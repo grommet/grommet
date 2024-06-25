@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet, Tip } from 'grommet';
+import { Box, Button, Tip } from 'grommet';
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
