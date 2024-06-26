@@ -21,6 +21,10 @@ if (process.env.NODE_ENV !== 'production') {
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
         animation: animationPropType,
         color: colorPropType,
+        endpoint: PropTypes.oneOfType([
+          PropTypes.oneOf(['arrow']),
+          PropTypes.object,
+        ]),
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
           .isRequired,
         label: PropTypes.string, // for accessibility
