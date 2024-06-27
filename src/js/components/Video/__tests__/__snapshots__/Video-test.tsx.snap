@@ -1428,7 +1428,7 @@ exports[`Video Play and Pause event handlers 2`] = `
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 gwOSeM"
+      class="StyledVideo-sc-w4v8h9-0 gHFabc"
     >
       <source
         src="small.mp4"
@@ -5346,7 +5346,7 @@ exports[`Video mouse events handlers of controls 2`] = `
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 gwOSeM"
+      class="StyledVideo-sc-w4v8h9-0 gHFabc"
     >
       <source
         src="small.mp4"
@@ -5470,7 +5470,7 @@ exports[`Video mouse events handlers of controls 3`] = `
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 gwOSeM"
+      class="StyledVideo-sc-w4v8h9-0 gHFabc"
     >
       <source
         src="small.mp4"
@@ -7470,7 +7470,7 @@ exports[`Video scrubber 2`] = `
     tabindex="-1"
   >
     <video
-      class="StyledVideo-sc-w4v8h9-0 gwOSeM"
+      class="StyledVideo-sc-w4v8h9-0 gHFabc"
     >
       <source
         src="small.mp4"
