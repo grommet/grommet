@@ -36,7 +36,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 import { CopyButton } from './CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -55,7 +55,7 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
-const ContainerBox = styled(Box).attrs(enhancePropsWithTheme)`
+const ContainerBox = styled(Box).attrs(withTheme)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)

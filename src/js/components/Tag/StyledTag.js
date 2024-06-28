@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { borderStyle, roundStyle } from '../../utils';
 
 import { Button } from '../Button';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
-export const StyledTagButton = styled(Button).attrs(enhancePropsWithTheme)`
+export const StyledTagButton = styled(Button).attrs(withTheme)`
   ${(props) => props.border && borderStyle(props.border, true, props.theme)}
   ${(props) => props.round && roundStyle(props.round, true, props.theme)}
 `;
 
-export const StyledRemoveButton = styled(Button).attrs(enhancePropsWithTheme)`
+export const StyledRemoveButton = styled(Button).attrs(withTheme)`
   ${(props) => props.round && roundStyle(props.round, true, props.theme)}
 `;

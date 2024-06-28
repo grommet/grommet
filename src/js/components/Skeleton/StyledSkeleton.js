@@ -9,13 +9,14 @@ import {
   widthStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 // Styling a div directly rather than just using
 // a Box since Box itself will react to a SkeletonContext
 // and we don't want that here.
-export const StyledSkeleton = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+export const StyledSkeleton = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   display: flex;
   box-sizing: border-box;
 

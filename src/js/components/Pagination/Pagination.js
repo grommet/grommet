@@ -8,9 +8,9 @@ import { PaginationStep } from './PaginationStep';
 import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
-const StyledPaginationContainer = styled(Box).attrs(enhancePropsWithTheme)`
+const StyledPaginationContainer = styled(Box).attrs(withTheme)`
   ${(props) =>
     props.theme.pagination.container && props.theme.pagination.container.extend}
 `;

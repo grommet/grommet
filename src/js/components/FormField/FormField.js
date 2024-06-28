@@ -27,7 +27,7 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const grommetInputNames = [
   'CheckBox',
@@ -58,16 +58,16 @@ const isGrommetInput = (comp) =>
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
-const FormFieldBox = styled(Box).attrs(enhancePropsWithTheme)`
+const FormFieldBox = styled(Box).attrs(withTheme)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
   ${(props) => props.theme.formField && props.theme.formField.extend}
 `;
 
-const FormFieldContentBox = styled(Box).attrs(enhancePropsWithTheme)`
+const FormFieldContentBox = styled(Box).attrs(withTheme)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
 `;
 
-const StyledMessageContainer = styled(Box).attrs(enhancePropsWithTheme)`
+const StyledMessageContainer = styled(Box).attrs(withTheme)`
   ${(props) =>
     props.messageType &&
     props.theme.formField[props.messageType].container &&

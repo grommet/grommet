@@ -6,10 +6,10 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const StyledBadgeContainer = styled(Box).attrs(enhancePropsWithTheme)`
+const StyledBadgeContainer = styled(Box).attrs(withTheme)`
   ${(props) => props.theme.button.badge.container.extend}
 `;
 

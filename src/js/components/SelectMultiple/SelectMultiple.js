@@ -36,9 +36,9 @@ import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
-const StyledSelectBox = styled(Box).attrs(enhancePropsWithTheme)`
+const StyledSelectBox = styled(Box).attrs(withTheme)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select.control?.open};

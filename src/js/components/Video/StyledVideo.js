@@ -6,7 +6,7 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -20,8 +20,9 @@ const fitStyle = css`
 `;
 
 // z-index is for Safari so controls aren't hidden
-const StyledVideo = styled.video.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledVideo = styled.video
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   max-width: 100%;
   z-index: 1;
   ${(props) => props.fit && fitStyle} ::cue {
@@ -31,8 +32,9 @@ const StyledVideo = styled.video.withConfig(styledComponentsConfig)
   ${(props) => props.theme.video && props.theme.video.extend};
 `;
 
-const StyledVideoContainer = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledVideoContainer = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   flex: 1 1;
   display: flex;
   flex-direction: column;
@@ -72,8 +74,9 @@ const headStyle = css`
   }
 `;
 
-const StyledVideoScrubber = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledVideoScrubber = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   cursor: pointer;
   width: 100%;
   height: 100%;

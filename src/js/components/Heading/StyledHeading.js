@@ -7,7 +7,7 @@ import {
   textAlignStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const sizeStyle = (props) => {
   // size is a combination of the level and size properties
@@ -82,8 +82,9 @@ const colorStyle = css`
     normalizeColor(props.colorProp || props.theme.heading.color, props.theme)};
 `;
 
-const StyledHeading = styled.h1.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledHeading = styled.h1
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   ${genericStyles}
   ${(props) => fontFamily(props)}
   ${(props) => sizeStyle(props)}

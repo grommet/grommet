@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { baseStyle, styledComponentsConfig } from '../../utils';
-import { enhancePropsWithTheme } from '../../default-props';
-
+import { withTheme } from '../../default-props';
 
 const fullStyle = (full) => {
   if (full === 'min')
@@ -16,8 +15,9 @@ const fullStyle = (full) => {
   `;
 };
 
-const StyledGrommet = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledGrommet = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   ${(props) => !props.plain && baseStyle}
   ${(props) => props.full && fullStyle(props.full)}
   ${(props) => props.theme.global.font.face}

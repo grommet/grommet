@@ -5,34 +5,38 @@ import {
   genericStyles,
   styledComponentsConfig,
 } from '../../utils';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
-const StyledHour = styled.line.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledHour = styled.line
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   stroke-width: ${(props) => props.theme.clock.analog.hour.width};
   stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledMinute = styled.line.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledMinute = styled.line
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   stroke-width: ${(props) => props.theme.clock.analog.minute.width};
   stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledSecond = styled.line.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledSecond = styled.line
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   stroke-width: ${(props) => props.theme.clock.analog.second.width};
   stroke: ${(props) =>
     normalizeColor(props.theme.clock.analog.second.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
-const StyledAnalog = styled.svg.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledAnalog = styled.svg
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   width: ${(props) => props.theme.clock.analog.size[props.size]};
   height: ${(props) => props.theme.clock.analog.size[props.size]};
 
@@ -50,8 +54,9 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledDigitalDigit = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledDigitalDigit = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   position: relative;
   width: 0.8em;
   text-align: center;

@@ -6,4 +6,4 @@ export namespace defaultProps {
 
 export function extendDefaultTheme(theme: ThemeType): void;
 
-export function enhancePropsWithTheme(props: Record<string, any>): ThemeType;
+export function withTheme(props: Record<string, any>): ThemeType;

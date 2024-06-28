@@ -9,7 +9,7 @@ import {
   getRGBA,
   styledComponentsConfig,
 } from '../../utils';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
 const getBoundOpacity = (props, bound) =>
@@ -208,8 +208,9 @@ const firefoxMicrosoftThumbStyle = css`
 `;
 
 /* eslint-disable max-len */
-const StyledRangeInput = styled.input.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledRangeInput = styled.input
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -244,7 +245,10 @@ const StyledRangeInput = styled.input.withConfig(styledComponentsConfig)
   }
 
   &::-webkit-slider-thumb {
-    margin-top: -${(props) => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
+    margin-top: -${(props) =>
+      (parseMetricToNum(props.theme.global.spacing) -
+        parseMetricToNum(props.theme.rangeInput.track.height || 0)) *
+      0.5}px;
     ${rangeThumbStyle}
     ${(props) =>
       !props.disabled &&

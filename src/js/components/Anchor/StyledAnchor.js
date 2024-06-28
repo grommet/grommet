@@ -6,7 +6,7 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -29,8 +29,9 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledAnchor = styled.a.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledAnchor = styled.a
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   box-sizing: border-box;
   display: inline-flex;
   ${(props) => sizeStyle(props)}

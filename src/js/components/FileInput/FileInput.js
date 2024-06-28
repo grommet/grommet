@@ -22,7 +22,7 @@ import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 import { formatBytes } from './utils/formatBytes';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
@@ -31,7 +31,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
 
-const ContentsBox = styled(Box).attrs(enhancePropsWithTheme)`
+const ContentsBox = styled(Box).attrs(withTheme)`
   cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
@@ -50,14 +50,14 @@ const ContentsBox = styled(Box).attrs(enhancePropsWithTheme)`
   ${(props) => !props.focus && unfocusStyle()};
 `;
 
-const Label = styled(Text).attrs(enhancePropsWithTheme)`
+const Label = styled(Text).attrs(withTheme)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.label &&
     props.theme.fileInput.label.extend};
 `;
 
-const Message = styled(Text).attrs(enhancePropsWithTheme)`
+const Message = styled(Text).attrs(withTheme)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.message &&

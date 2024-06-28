@@ -9,7 +9,7 @@ import {
   widthStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const fillStyle = (fill) => {
   if (!fill) {
@@ -216,7 +216,7 @@ const areasStyle = (props) => {
 const StyledGrid = styled.div
   .withConfig(styledComponentsConfig)
   .attrs((props) => ({
-    ...enhancePropsWithTheme(props),
+    ...withTheme(props),
     'aria-label': props.a11yTitleProp,
   }))`
   display: grid;

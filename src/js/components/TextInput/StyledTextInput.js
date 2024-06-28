@@ -13,7 +13,7 @@ import {
 } from '../../utils';
 import { inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
@@ -24,8 +24,9 @@ const getPlainStyle = (plain) => {
   return plain && plainInputStyle;
 };
 
-const StyledTextInput = styled.input.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledTextInput = styled.input
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   ${inputStyle}
   ${(props) =>
     props.readOnlyCopy
@@ -45,8 +46,9 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)
   ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 
-const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledTextInputContainer = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   position: relative;
   width: 100%;
 
@@ -68,8 +70,9 @@ const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)
     props.theme.textInput.container.extend};
 `;
 
-const StyledPlaceholder = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledPlaceholder = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   position: absolute;
   left: ${(props) =>
     parseMetricToNum(getInputPadBySide(props, 'left')) -
@@ -86,8 +89,9 @@ const StyledPlaceholder = styled.div.withConfig(styledComponentsConfig)
     props.theme.textInput.placeholder.extend};
 `;
 
-const StyledIcon = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledIcon = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   position: absolute;
   display: flex;
   justify: center;
@@ -100,8 +104,9 @@ const StyledIcon = styled.div.withConfig(styledComponentsConfig)
       : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
-const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const StyledSuggestions = styled.ol
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;

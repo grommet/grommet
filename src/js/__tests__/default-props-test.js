@@ -5,16 +5,11 @@ import 'jest-styled-components';
 
 import { styledComponentsConfig } from '../utils/styles';
 
-import {
-  grommet,
-  extendDefaultTheme,
-  enhancePropsWithTheme,
-  Box,
-  Grommet,
-} from '..';
+import { grommet, extendDefaultTheme, withTheme, Box, Grommet } from '..';
 
-const CustomBox = styled.div.withConfig(styledComponentsConfig)
-.attrs(enhancePropsWithTheme)`
+const CustomBox = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   background: ${(props) => props.theme.global.colors.brand};
 `;
 test('default theme is used', () => {

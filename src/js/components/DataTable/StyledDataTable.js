@@ -16,10 +16,10 @@ import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
-import { enhancePropsWithTheme } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 // border-collapse: separate is needed so pinned header/footer borders work
-const StyledDataTable = styled(Table).attrs(enhancePropsWithTheme)`
+const StyledDataTable = styled(Table).attrs(withTheme)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
@@ -32,7 +32,7 @@ const StyledDataTable = styled(Table).attrs(enhancePropsWithTheme)`
 `;
 
 // when paginated, this wraps the data table and pagination component
-const StyledContainer = styled(Box).attrs(enhancePropsWithTheme)`
+const StyledContainer = styled(Box).attrs(withTheme)`
   ${(props) =>
     props.theme.dataTable &&
     props.theme.dataTable.container &&
@@ -80,7 +80,7 @@ const StyledDataTableRow = styled(TableRow)`
 `;
 
 // focus styling other than outline doesn't work on <tbody />
-const StyledDataTableBody = styled(TableBody).attrs(enhancePropsWithTheme)`
+const StyledDataTableBody = styled(TableBody).attrs(withTheme)`
   ${(props) =>
     props.size &&
     `
@@ -128,7 +128,7 @@ const StyledDataTableFooter = styled(TableFooter)`
   `}
 `;
 
-const StyledDataTableCell = styled(TableCell).attrs(enhancePropsWithTheme)`
+const StyledDataTableCell = styled(TableCell).attrs(withTheme)`
   ${(props) =>
     props.context === 'header' &&
     props.theme.dataTable &&
