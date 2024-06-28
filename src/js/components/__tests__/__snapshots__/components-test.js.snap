@@ -5061,6 +5061,7 @@ exports[`Components loads 1`] = `
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
       "content": [Function],
+      "defaultVisible": [Function],
       "dropProps": [Function],
       "plain": [Function],
     },
