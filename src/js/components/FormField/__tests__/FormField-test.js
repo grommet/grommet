@@ -44,6 +44,12 @@ describe('FormField', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('default outside grommet wrapper', () => {
+    const { container } = render(<FormField />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('label', () => {
     const { container } = render(
       <Grommet>

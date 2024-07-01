@@ -7,9 +7,8 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -19,8 +18,10 @@ import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 
-const ContainerBox = styled(Box)`
+const ContainerBox = styled(Box).attrs(withTheme)`
   max-height: inherit;
 
   /* IE11 hack to get drop contents to not overflow */
@@ -57,6 +58,8 @@ To make a selection:
 - Space is pressed.
 */
 
+const defaultItems = [];
+
 const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
@@ -67,9 +70,9 @@ const Menu = forwardRef((props, ref) => {
     dropBackground,
     dropProps,
     dropTarget,
-    justifyContent,
+    justifyContent = 'start',
     icon,
-    items,
+    items = defaultItems,
     label,
     messages,
     onKeyDown,
@@ -78,7 +81,7 @@ const Menu = forwardRef((props, ref) => {
     size,
     ...rest
   } = props;
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through
@@ -462,12 +465,6 @@ const Menu = forwardRef((props, ref) => {
     </Keyboard>
   );
 });
-
-Menu.defaultProps = {
-  items: [],
-  messages: undefined,
-  justifyContent: 'start',
-};
 
 Menu.displayName = 'Menu';
 Menu.propTypes = MenuPropTypes;

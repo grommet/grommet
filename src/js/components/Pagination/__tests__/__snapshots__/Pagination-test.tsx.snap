@@ -11685,6 +11685,490 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 </div>
 `;
 
+exports[`Pagination should render outside grommet wrapper 1`] = `
+.c5 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*='#'],
+.c5 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*='#'],
+.c5 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 3px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 0;
+  color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c3 >svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.c3:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c7:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus >circle,
+.c7:focus >ellipse,
+.c7:focus >line,
+.c7:focus >path,
+.c7:focus >polygon,
+.c7:focus >polyline,
+.c7:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c7:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+  color: #444444;
+  text-align: center;
+  transition-property: color,background-color,border-color,box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+.c10:hover {
+  background-color: rgba(51, 51, 51, 0.06274509803921569);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.c4 >svg {
+  margin: 0 auto;
+}
+
+.c2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 36px;
+  min-width: 36px;
+}
+
+.c9 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    width: 2px;
+  }
+}
+
+<div
+  class="c0 Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+>
+  <nav
+    aria-label="Pagination Navigation"
+    class="c0"
+  >
+    <ul
+      class="c1"
+    >
+      <li
+        class="c2"
+      >
+        <button
+          aria-label="Go to previous page"
+          class="c3 c4"
+          type="button"
+        >
+          <svg
+            aria-label="Previous"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 2 7 12l10 10"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </li>
+      <div
+        class="c6"
+      />
+      <li
+        class="c2"
+      >
+        <button
+          aria-label="Go to page 1"
+          class="c7 c4"
+          type="button"
+        >
+          1
+        </button>
+      </li>
+      <div
+        class="c6"
+      />
+      <li
+        class="c2"
+      >
+        <span
+          class="c8 c9"
+        >
+          …
+        </span>
+      </li>
+      <div
+        class="c6"
+      />
+      <li
+        class="c2"
+      >
+        <button
+          aria-label="Go to page 9"
+          class="c7 c4"
+          type="button"
+        >
+          9
+        </button>
+      </li>
+      <div
+        class="c6"
+      />
+      <li
+        class="c2"
+      >
+        <button
+          aria-current="page"
+          aria-label="Go to page 10"
+          class="c10 c4"
+          type="button"
+        >
+          10
+        </button>
+      </li>
+      <div
+        class="c6"
+      />
+      <li
+        class="c2"
+      >
+        <button
+          aria-label="Go to page 11"
+          class="c7 c4"
+          type="button"
+        >
+          11
+        </button>
+      </li>
+      <div
+        class="c6"
+      />
+      <li
+        class="c2"
+      >
+        <span
+          class="c8 c9"
+        >
+          …
+        </span>
+      </li>
+      <div
+        class="c6"
+      />
+      <li
+        class="c2"
+      >
+        <button
+          aria-label="Go to page 24"
+          class="c7 c4"
+          type="button"
+        >
+          24
+        </button>
+      </li>
+      <div
+        class="c6"
+      />
+      <li
+        class="c2"
+      >
+        <button
+          aria-label="Go to next page"
+          class="c3 c4"
+          type="button"
+        >
+          <svg
+            aria-label="Next"
+            class="c5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m7 2 10 10L7 22"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
 exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 1`] = `
 .c6 {
   display: inline-block;

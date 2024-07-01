@@ -2,20 +2,19 @@ import React, {
   Children,
   cloneElement,
   forwardRef,
-  useContext,
   useEffect,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tip = forwardRef(
   ({ children, content, defaultVisible = false, dropProps, plain }, tipRef) => {
-    const theme = useContext(ThemeContext);
+    const theme = useThemeValue();
     const [over, setOver] = useState(false);
     const [tooltipOver, setTooltipOver] = useState(false);
     const usingKeyboard = useKeyboard();

@@ -24,6 +24,12 @@ describe('Tip', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', async () => {
+    const { container } = render(<Tip content="tooltip content"> Example</Tip>);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`mouseOver and mouseOut events on the Tip's child`, async () => {
     const { getByText } = render(
       <Grommet>

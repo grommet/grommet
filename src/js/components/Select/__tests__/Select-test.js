@@ -53,6 +53,14 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(
+      <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('dark', () => {
     const { container } = render(
       <Grommet>

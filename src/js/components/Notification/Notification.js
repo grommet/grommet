@@ -1,13 +1,11 @@
 import React, {
   useCallback,
-  useContext,
   useEffect,
   useState,
   useMemo,
   Fragment,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -17,6 +15,7 @@ import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
 
 import { NotificationType } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const adaptThemeStyle = (value, theme) => {
   let textStyle = value;
@@ -57,16 +56,16 @@ const Notification = ({
   onClose,
   id,
   global,
-  status,
+  status = 'unknown',
   title,
-  toast,
+  toast = false,
   icon,
   time,
   ...rest
 }) => {
   const autoClose =
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const [visible, setVisible] = useState(true);
 
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);
@@ -184,7 +183,7 @@ const Notification = ({
       id={toast ? undefined : id}
       {...rest}
     >
-      {/* separate from onClose button to allow "onClick" in the future and 
+      {/* separate from onClose button to allow "onClick" in the future and
         avoid nested interactive elements */}
       <Box direction="row" pad={textPad} flex>
         <Box {...theme.notification.iconContainer}>
@@ -241,12 +240,6 @@ const Notification = ({
   return content;
 };
 
-Notification.defaultProps = {
-  status: 'unknown',
-  toast: false,
-};
-
-Object.setPrototypeOf(Notification.defaultProps, defaultProps);
 Notification.displayName = 'Notification';
 
 Notification.propTypes = NotificationType;

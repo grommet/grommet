@@ -11,9 +11,3 @@ export const Sidebar = ({ children, footer, header, ...rest }) => (
 );
 
 Sidebar.propTypes = SidebarPropTypes;
-
-Sidebar.defaultProps = {
-  children: undefined,
-  footer: undefined,
-  header: undefined,
-};

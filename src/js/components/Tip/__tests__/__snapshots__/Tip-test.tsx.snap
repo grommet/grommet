@@ -389,6 +389,12 @@ exports[`Tip plain 1`] = `
 </div>
 `;
 
+exports[`Tip renders outside grommet wrapper 1`] = `
+<span>
+   Example
+</span>
+`;
+
 exports[`Tip should be visible by default 1`] = `
 .c0 {
   display: flex;

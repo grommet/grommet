@@ -1,11 +1,10 @@
-import React, { forwardRef, useContext, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
+import React, { forwardRef, useState } from 'react';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const DIRECTION_PROPS = {
   horizontal: {
@@ -27,7 +26,7 @@ const EdgeControl = forwardRef(
     { color, direction, edge, onDecrease, onIncrease, thickness, ...rest },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const theme = useThemeValue();
     const [focus, setFocus] = useState(false);
     const { cursor, fill } = DIRECTION_PROPS[direction];
     const size = parseMetricToNum(theme.global.spacing) / 2;
@@ -106,8 +105,5 @@ const EdgeControl = forwardRef(
 );
 
 EdgeControl.displayName = 'EdgeControl';
-
-EdgeControl.defaultProps = {};
-Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
 
 export { EdgeControl };

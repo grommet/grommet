@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, { forwardRef, memo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, memo } from 'react';
 
 import { useKeyboard } from '../../utils';
 import { CheckBox } from '../CheckBox';
@@ -13,7 +12,7 @@ import { ExpanderCell } from './ExpanderCell';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue, normalizeRowCellProps } from './buildState';
-import { defaultProps } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Row = memo(
   ({
@@ -188,7 +187,7 @@ const Body = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { styledComponentsConfig } from '../../utils/styles';
 import { Button } from '../Button';
 import { Text } from '../Text';
+import { withTheme } from '../../default-props';
 
 const sizeStyle = (props) => {
   const style =
@@ -25,14 +26,16 @@ const sizeStyle = (props) => {
     : '';
 };
 
-export const StyledPaginationButton = styled(Button)`
+export const StyledPaginationButton = styled(Button).attrs(withTheme)`
   > svg {
     margin: 0 auto;
   }
   ${(props) => sizeStyle(props).content};
 `;
 
-export const StyledContainer = styled.div.withConfig(styledComponentsConfig)`
+export const StyledContainer = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +45,7 @@ export const StyledContainer = styled.div.withConfig(styledComponentsConfig)`
     props.theme.pagination.control && props.theme.pagination.control.extend};
 `;
 
-export const StyledSeparator = styled(Text)`
+export const StyledSeparator = styled(Text).attrs(withTheme)`
   font-weight: bold;
   ${(props) =>
     `font-size: ${
