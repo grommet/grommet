@@ -16,6 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
           icon: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
           label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
           value: PropTypes.string,
+          tip: PropTypes.string,
         }),
       ),
     ]),
