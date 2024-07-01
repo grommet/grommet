@@ -22,7 +22,7 @@ const defaultChildrenPropValue = (value) => (
   </Box>
 );
 
-const defaultValuesPropValue = [];
+const defaultValues = [];
 
 const Distribution = ({
   basis,
@@ -30,7 +30,7 @@ const Distribution = ({
   direction = 'row',
   fill,
   gap = 'xsmall',
-  values = defaultValuesPropValue,
+  values = defaultValues,
   ...rest
 }) => {
   if (values.length === 1) {

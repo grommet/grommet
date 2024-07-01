@@ -64,10 +64,10 @@ const findTarget = (target) => {
   return target;
 };
 
-const defaultConnectionsValue = [];
+const defaultConnections = [];
 
 const Diagram = forwardRef(
-  ({ connections = defaultConnectionsValue, ...rest }, ref) => {
+  ({ connections = defaultConnections, ...rest }, ref) => {
     const theme = useThemeValue();
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
     const [connectionPoints, setConnectionPoints] = useState();

@@ -39,11 +39,9 @@ describe('ThumbsRating', () => {
   });
 
   test('StarRating renders outside grommet wrapper', () => {
-    const { container } = render(
-      <ThumbsRating name="test" />,
-    );
+    const { container } = render(<ThumbsRating name="test" />);
 
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('value for thumbs', async () => {

@@ -21313,24 +21313,22 @@ exports[`List renders outside grommet wrapper 1`] = `
   }
 }
 
-<div>
-  <ul
-    aria-label="test"
-    class="c0"
-    role="list"
+<ul
+  aria-label="test"
+  class="c0"
+  role="list"
+>
+  <li
+    class="c1 c2"
   >
-    <li
-      class="c1 c2"
-    >
-      alpha
-    </li>
-    <li
-      class="c3 c2"
-    >
-      beta
-    </li>
-  </ul>
-</div>
+    alpha
+  </li>
+  <li
+    class="c3 c2"
+  >
+    beta
+  </li>
+</ul>
 `;
 
 exports[`List secondaryKey 1`] = `

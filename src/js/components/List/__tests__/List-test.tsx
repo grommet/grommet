@@ -39,9 +39,9 @@ describe('List', () => {
 
   test('renders outside grommet wrapper', () => {
     const { container } = render(
-        <List a11yTitle="test" data={[{ a: 'alpha' }, { a: 'beta' }]} />
+      <List a11yTitle="test" data={[{ a: 'alpha' }, { a: 'beta' }]} />,
     );
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders a11yTitle and aria-label', () => {

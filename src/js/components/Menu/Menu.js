@@ -58,7 +58,7 @@ To make a selection:
 - Space is pressed.
 */
 
-const defaultMenuItemsValue = [];
+const defaultItems = [];
 
 const Menu = forwardRef((props, ref) => {
   const {
@@ -72,7 +72,7 @@ const Menu = forwardRef((props, ref) => {
     dropTarget,
     justifyContent = 'start',
     icon,
-    items = defaultMenuItemsValue,
+    items = defaultItems,
     label,
     messages,
     onKeyDown,

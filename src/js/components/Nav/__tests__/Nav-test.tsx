@@ -22,6 +22,6 @@ describe('Nav', () => {
   });
   test('should render without grommet wrapper', async () => {
     const { container } = render(<Nav />);
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -22,6 +22,6 @@ describe('Main', () => {
   });
   test('render main outside grommet wrapper', async () => {
     const { container } = render(<Main />);
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

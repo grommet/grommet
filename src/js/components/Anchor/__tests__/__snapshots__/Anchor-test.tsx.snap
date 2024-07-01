@@ -878,11 +878,9 @@ exports[`Anchor renders anchor without grommet wrapper 1`] = `
   text-decoration: underline;
 }
 
-<div>
-  <a
-    class="c0"
-  />
-</div>
+<a
+  class="c0"
+/>
 `;
 
 exports[`Anchor renders size specific theming 1`] = `

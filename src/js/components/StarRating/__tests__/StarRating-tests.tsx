@@ -43,7 +43,7 @@ describe('StarRating', () => {
       <StarRating name="test" data-testid="starRating-icon" />,
     );
 
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('value for rating', async () => {

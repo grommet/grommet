@@ -13,11 +13,9 @@ exports[`Main render main outside grommet wrapper 1`] = `
   overflow: auto;
 }
 
-<div>
-  <main
-    class="c0"
-  />
-</div>
+<main
+  class="c0"
+/>
 `;
 
 exports[`Main should have no accessibility violations 1`] = `

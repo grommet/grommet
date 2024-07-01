@@ -43,9 +43,7 @@ exports[`Nav should render without grommet wrapper 1`] = `
   flex: 0 0 auto;
 }
 
-<div>
-  <nav
-    class="c0"
-  />
-</div>
+<nav
+  class="c0"
+/>
 `;

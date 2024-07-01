@@ -37,7 +37,7 @@ describe('Anchor', () => {
 
   test('renders anchor without grommet wrapper', () => {
     const { container } = render(<Anchor />);
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders with children', () => {
