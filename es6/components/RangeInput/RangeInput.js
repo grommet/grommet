@@ -105,7 +105,7 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     name: name,
     focus: focus,
     focusIndicator: focusIndicator,
-    value: value || ''
+    value: value || value === 0 ? value : ''
   }, rest, {
     color: color,
     onFocus: function onFocus(event) {
