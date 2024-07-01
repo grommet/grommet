@@ -2,8 +2,7 @@ var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace"
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 /* eslint-disable no-underscore-dangle */
-import React, { forwardRef, memo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, memo } from 'react';
 import { useKeyboard } from '../../utils';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -14,7 +13,7 @@ import { ExpanderCell } from './ExpanderCell';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 import { datumValue, normalizeRowCellProps } from './buildState';
-import { defaultProps } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Row = /*#__PURE__*/memo(function (_ref) {
   var cellProps = _ref.cellProps,
     primaryValue = _ref.primaryValue,
@@ -150,7 +149,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     setRowExpand = _ref2.setRowExpand,
     verticalAlign = _ref2.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _React$useState = React.useState(),
     active = _React$useState[0],
     setActive = _React$useState[1];

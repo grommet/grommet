@@ -3,14 +3,13 @@ var _excluded = ["a11yTitle", "bounds", "color", "dash", "direction", "gap", "id
   _excluded3 = ["color", "label", "onHover", "opacity", "thickness", "value"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { useContext, useEffect, useMemo, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
 import { ChartPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var gradientMaskColor = '#ffffff';
 
 // use constants so re-renders don't re-trigger effects
@@ -46,7 +45,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     valuesProp = _ref$values === void 0 ? defaultValues : _ref$values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerRef = useForwardedRef(ref);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var values = useMemo(function () {
     return normalizeValues(valuesProp);
   }, [valuesProp]);

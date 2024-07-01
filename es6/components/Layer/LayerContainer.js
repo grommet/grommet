@@ -3,7 +3,6 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
@@ -12,6 +11,7 @@ import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { backgroundIsDark, findVisibleParent, PortalContext, styledComponentsConfig } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
+import { useThemeValue } from '../../utils/useThemeValue';
 var HiddenAnchor = styled.a.withConfig(styledComponentsConfig).withConfig({
   displayName: "LayerContainer__HiddenAnchor",
   componentId: "sc-1srj14c-0"
@@ -36,7 +36,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     layerTarget = _ref.target,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = useContext(ContainerTargetContext);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var size = useContext(ResponsiveContext);
   // layerOptions was created to preserve backwards compatibility but
   // should not be supported in v3

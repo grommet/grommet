@@ -1,6 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { Fragment, useCallback, useContext, useMemo, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { Fragment, useCallback, useMemo, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
@@ -8,6 +8,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { focusStyle, parseMetricToNum, unfocusStyle } from '../../utils';
 import { Swatch } from './Swatch';
+import { useThemeValue } from '../../utils/useThemeValue';
 var DetailControl = styled(Box).withConfig({
   displayName: "Detail__DetailControl",
   componentId: "sc-huiwg9-0"
@@ -22,7 +23,7 @@ var Detail = function Detail(_ref) {
     seriesStyles = _ref.seriesStyles,
     renderValue = _ref.renderValue,
     thickness = _ref.thickness;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(),
     detailIndex = _useState[0],
     setDetailIndex = _useState[1];

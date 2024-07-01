@@ -28,4 +28,3 @@ export var Toolbar = function Toolbar(_ref) {
   }, layoutProps, rest), children);
 };
 Toolbar.propTypes = ToolbarPropTypes;
-Toolbar.defaultProps = {};

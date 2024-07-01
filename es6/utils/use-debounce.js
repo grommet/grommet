@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../default-props';
+import { useEffect, useState } from 'react';
+import { useThemeValue } from './useThemeValue';
 export var useDebounce = function useDebounce(debounceDelay) {
   var _useState = useState(),
     func = _useState[0],
     setFunc = _useState[1];
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var delay = debounceDelay || theme.global.debounceDelay;
   useEffect(function () {
     var timer;

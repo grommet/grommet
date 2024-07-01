@@ -3,9 +3,8 @@
 exports.__esModule = true;
 exports.SelectMultiple = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
-var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
 var _DropButton = require("../DropButton");
 var _Keyboard = require("../Keyboard");
@@ -17,12 +16,15 @@ var _utils2 = require("../Select/utils");
 var _DefaultSelectTextInput = require("../Select/DefaultSelectTextInput");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
+var _defaultProps = require("../../default-props");
 var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "help", "id", "icon", "labelKey", "limit", "margin", "messages", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "size", "sortSelectedOnClose", "value", "valueKey", "valueLabel", "showSelectedInline", "width"];
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-var StyledSelectBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var StyledSelectBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "SelectMultiple__StyledSelectBox",
   componentId: "sc-18zwyth-0"
 })(["", ";", ";", ";"], function (props) {
@@ -34,8 +36,6 @@ var StyledSelectBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   var _props$theme$select$c;
   return props.open && ((_props$theme$select$c = props.theme.select.control) == null ? void 0 : _props$theme$select$c.open);
 });
-_StyledSelect.StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(_StyledSelect.StyledSelectDropButton.defaultProps, _defaultProps.defaultProps);
 var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
@@ -84,7 +84,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     showSelectedInline = _ref$showSelectedInli === void 0 ? false : _ref$showSelectedInli,
     width = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var inputRef = (0, _react.useRef)();
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
@@ -480,6 +480,5 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
     theme: theme
   }, rest))), displaySelectIcon))));
 });
-SelectMultiple.defaultProps = _extends({}, _defaultProps.defaultProps);
 SelectMultiple.displayName = 'SelectMultiple';
 SelectMultiple.propTypes = _propTypes.SelectMultiplePropTypes;

@@ -2,12 +2,11 @@ var _excluded = ["background", "border", "column", "datum", "pad", "pin", "pinne
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { isValidElement, memo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
 import { datumValue } from './buildState';
 import { TableContext } from '../Table/TableContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Cell = /*#__PURE__*/memo(function (_ref) {
   var background = _ref.background,
     border = _ref.border,
@@ -28,7 +27,7 @@ var Cell = /*#__PURE__*/memo(function (_ref) {
     scope = _ref.scope,
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var value = datumValue(datum, property);
   var context = useContext(TableContext);
   var renderContexts = context === 'body' || context === 'footer' && footer && footer.aggregate;
@@ -61,6 +60,4 @@ var Cell = /*#__PURE__*/memo(function (_ref) {
   }, rest), content);
 });
 Cell.displayName = 'Cell';
-Cell.defaultProps = {};
-Object.setPrototypeOf(Cell.defaultProps, defaultProps);
 export { Cell };

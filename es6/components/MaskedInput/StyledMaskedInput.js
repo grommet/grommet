@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { disabledStyle, getInputPadBySide, inputStyle, plainInputStyle, textAlignStyle, styledComponentsConfig } from '../../utils';
 import { inputPadForIcon } from '../../utils/styles';
-export var StyledMaskedInput = styled.input.withConfig(styledComponentsConfig).withConfig({
+import { withTheme } from '../../default-props';
+export var StyledMaskedInput = styled.input.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"
 })(["", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
@@ -15,13 +16,13 @@ export var StyledMaskedInput = styled.input.withConfig(styledComponentsConfig).w
 }, function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.extend;
 });
-export var StyledMaskedInputContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
+export var StyledMaskedInputContainer = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledMaskedInput__StyledMaskedInputContainer",
   componentId: "sc-99vkfa-1"
 })(["position:relative;width:100%;", ";"], function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.container && props.theme.maskedInput.container.extend;
 });
-export var StyledIcon = styled.div.withConfig(styledComponentsConfig).withConfig({
+export var StyledIcon = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledMaskedInput__StyledIcon",
   componentId: "sc-99vkfa-2"
 })(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {

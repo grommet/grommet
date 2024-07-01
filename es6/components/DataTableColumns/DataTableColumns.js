@@ -6,7 +6,6 @@ import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
 import { Lock } from 'grommet-icons/icons/Lock';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
@@ -20,6 +19,7 @@ import { TextInput } from '../TextInput';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataTableColumnsPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var dropProps = {
   align: {
     top: 'bottom',
@@ -202,7 +202,7 @@ export var DataTableColumns = function DataTableColumns(_ref5) {
     inDataForm = _useContext5.inDataForm;
   var _useContext6 = useContext(MessageContext),
     format = _useContext6.format;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var _useState3 = useState(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];

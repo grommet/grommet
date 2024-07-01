@@ -3,20 +3,19 @@
 exports.__esModule = true;
 exports.SkipLinks = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _Box = require("../Box");
 var _Text = require("../Text");
 var _Layer = require("../Layer");
-var _defaultProps = require("../../default-props");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var SkipLinks = exports.SkipLinks = function SkipLinks(_ref) {
   var children = _ref.children,
     id = _ref.id,
     messages = _ref.messages;
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var _useState = (0, _react.useState)(false),
     showLayer = _useState[0],
     setShowLayer = _useState[1];
@@ -68,5 +67,4 @@ var SkipLinks = exports.SkipLinks = function SkipLinks(_ref) {
     });
   }))));
 };
-SkipLinks.defaultProps = {};
 SkipLinks.propTypes = _propTypes.SkipLinksPropTypes;

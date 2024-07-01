@@ -4,8 +4,7 @@ var _excluded = ["error", "info", "message", "type"],
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { Children, cloneElement, forwardRef, useContext, useMemo, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 import { containsFocus, shouldKeepFocus, withinDropPortal, PortalContext } from '../../utils';
 import { useDebounce } from '../../utils/use-debounce';
 import { focusStyle } from '../../utils/styles';
@@ -19,12 +18,14 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'SelectMultiple', 'TextArea', 'DateInput', 'FileInput', 'RadioButtonGroup', 'RangeInput', 'RangeSelector', 'StarRating', 'ThumbsRating'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'RangeInput', 'RangeSelector'];
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
 };
-var FormFieldBox = styled(Box).withConfig({
+var FormFieldBox = styled(Box).attrs(withTheme).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "sc-m9hood-0"
 })(["", " ", ""], function (props) {
@@ -34,7 +35,7 @@ var FormFieldBox = styled(Box).withConfig({
 }, function (props) {
   return props.theme.formField && props.theme.formField.extend;
 });
-var FormFieldContentBox = styled(Box).withConfig({
+var FormFieldContentBox = styled(Box).attrs(withTheme).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
 })(["", ""], function (props) {
@@ -42,7 +43,7 @@ var FormFieldContentBox = styled(Box).withConfig({
     justBorder: true
   });
 });
-var StyledMessageContainer = styled(Box).withConfig({
+var StyledMessageContainer = styled(Box).attrs(withTheme).withConfig({
   displayName: "FormField__StyledMessageContainer",
   componentId: "sc-m9hood-2"
 })(["", ""], function (props) {
@@ -62,7 +63,7 @@ var Message = function Message(_ref) {
     message = _ref.message,
     type = _ref.type,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   if (message) {
     var icon;
     var containerProps;
@@ -141,7 +142,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     validate = _ref3.validate,
     validateOn = _ref3.validateOn,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var formContext = useContext(FormContext);
   var _formContext$useFormF = formContext.useFormField({
       disabled: disabled,

@@ -5,6 +5,7 @@ exports.StyledButton = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Button = require("../Button");
 var _utils = require("../../utils");
+var _defaultProps = require("../../default-props");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var adjustPad = function adjustPad(value, theme) {
   // resolve t-shirt size if it exists
@@ -20,7 +21,7 @@ var adjustPad = function adjustPad(value, theme) {
     horizontal: horizontal
   };
 };
-var StyledButton = exports.StyledButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
+var StyledButton = exports.StyledButton = (0, _styledComponents["default"])(_Button.Button).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledToggleGroup__StyledButton",
   componentId: "sc-13k5sx8-0"
 })(["border-radius:0;border:none;", ";", " &:hover{border:none;box-shadow:none;}"], function (props) {

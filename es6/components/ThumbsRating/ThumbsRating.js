@@ -1,15 +1,15 @@
 function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 import { Like } from 'grommet-icons/icons/Like';
 import { LikeFill } from 'grommet-icons/icons/LikeFill';
 import { Dislike } from 'grommet-icons/icons/Dislike';
 import { DislikeFill } from 'grommet-icons/icons/DislikeFill';
 import { RadioButtonGroup } from '../RadioButtonGroup';
+import { useThemeValue } from '../../utils/useThemeValue';
 var ThumbsRating = function ThumbsRating(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   return /*#__PURE__*/React.createElement(RadioButtonGroup, _extends({
     direction: "row",
     options: ['like', 'dislike']

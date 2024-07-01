@@ -1,12 +1,11 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { forwardRef } from 'react';
 import { Skeleton } from '../Skeleton';
 import { Box } from '../Box';
+import { useThemeValue } from '../../utils/useThemeValue';
 var ParagraphSkeleton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var fill = _ref.fill,
     sizeProp = _ref.size;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var size = sizeProp || 'medium';
   var data = theme.paragraph[size];
   var height = data ? data.size : size;

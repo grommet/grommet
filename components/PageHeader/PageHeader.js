@@ -3,13 +3,13 @@
 exports.__esModule = true;
 exports.PageHeader = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _Box = require("../Box");
 var _Header = require("../Header");
 var _Heading = require("../Heading");
 var _Grid = require("../Grid");
 var _Paragraph = require("../Paragraph");
 var _ResponsiveContext = require("../../contexts/ResponsiveContext");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["actions", "gridProps", "parent", "responsive", "size", "subtitle", "title", "level"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -32,7 +32,7 @@ var PageHeader = exports.PageHeader = /*#__PURE__*/(0, _react.forwardRef)(functi
     title = _ref2.title,
     level = _ref2.level,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var theme = (0, _useThemeValue.useThemeValue)();
   var breakpoint = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
   var actionsProps = _extends({}, theme.pageHeader.actions);
   var gridProps = theme.pageHeader[breakpoint] || theme.pageHeader.medium;

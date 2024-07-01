@@ -1,16 +1,15 @@
 import React, { Children, cloneElement, useContext, useRef, useState } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Layer } from '../Layer';
-import { defaultProps } from '../../default-props';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SkipLinksPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var SkipLinks = function SkipLinks(_ref) {
   var children = _ref.children,
     id = _ref.id,
     messages = _ref.messages;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(false),
     showLayer = _useState[0],
     setShowLayer = _useState[1];
@@ -62,6 +61,5 @@ var SkipLinks = function SkipLinks(_ref) {
     });
   }))));
 };
-SkipLinks.defaultProps = {};
 SkipLinks.propTypes = SkipLinksPropTypes;
 export { SkipLinks };

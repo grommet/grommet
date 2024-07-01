@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { breakpointStyle, genericStyles, normalizeColor, textAlignStyle, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 var sizeStyle = function sizeStyle(props) {
   // size is a combination of the level and size properties
   var size = props.size || 'medium';
@@ -35,7 +35,7 @@ var truncateStyle = "\n  white-space: nowrap;\n  overflow: hidden;\n  text-overf
 var colorStyle = css(["color:", ";"], function (props) {
   return normalizeColor(props.colorProp || props.theme.heading.color, props.theme);
 });
-var StyledHeading = styled.h1.withConfig(styledComponentsConfig).withConfig({
+var StyledHeading = styled.h1.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledHeading",
   componentId: "sc-1rdh4aw-0"
 })(["", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
@@ -51,6 +51,4 @@ var StyledHeading = styled.h1.withConfig(styledComponentsConfig).withConfig({
 }, function (props) {
   return props.theme.heading && props.theme.heading.extend;
 });
-StyledHeading.defaultProps = {};
-Object.setPrototypeOf(StyledHeading.defaultProps, defaultProps);
 export { StyledHeading };

@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 function _inheritsLoose(t, o) { t.prototype = Object.create(o.prototype), t.prototype.constructor = t, _setPrototypeOf(t, o); }
 function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { RouterContext } from './RouterContext';
 import { Anchor } from '../Anchor';
 var RoutedAnchor = /*#__PURE__*/function (_Component) {
   function RoutedAnchor() {
@@ -25,7 +25,7 @@ var RoutedAnchor = /*#__PURE__*/function (_Component) {
       href: path,
       onClick: function onClick(event) {
         var onClick = _this.props.onClick;
-        var router = _this.context.router;
+        var router = _this.context;
         if (event) {
           var modifierKey = event.ctrlKey || event.metaKey;
 
@@ -49,9 +49,7 @@ var RoutedAnchor = /*#__PURE__*/function (_Component) {
   };
   return RoutedAnchor;
 }(Component);
-RoutedAnchor.contextTypes = {
-  router: PropTypes.shape({}).isRequired
-};
+RoutedAnchor.contextType = RouterContext;
 RoutedAnchor.defaultProps = {
   method: 'push'
 };

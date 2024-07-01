@@ -3,10 +3,8 @@
 exports.__esModule = true;
 exports.getOutputFormat = exports.Calendar = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
-var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _Header = require("../Header");
@@ -17,6 +15,7 @@ var _propTypes = require("./propTypes");
 var _StyledCalendar = require("./StyledCalendar");
 var _utils = require("./utils");
 var _dates = require("../../utils/dates");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -233,7 +232,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     size = _ref3$size === void 0 ? 'medium' : _ref3$size,
     timestampProp = _ref3.timestamp,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;

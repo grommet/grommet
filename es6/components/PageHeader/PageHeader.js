@@ -2,13 +2,13 @@ var _excluded = ["actions", "gridProps", "parent", "responsive", "size", "subtit
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Header } from '../Header';
 import { Heading } from '../Heading';
 import { Grid } from '../Grid';
 import { Paragraph } from '../Paragraph';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var sizeStyle = function sizeStyle(size, feature, theme, breakpoint) {
   var _ref, _theme$pageHeader$siz, _theme$global$breakpo, _theme$global$breakpo2;
   var style = _extends({}, theme.pageHeader[feature], (_ref = size && ((_theme$pageHeader$siz = theme.pageHeader.size[size]) == null ? void 0 : _theme$pageHeader$siz[feature])) != null ? _ref : theme.pageHeader[feature], (!size || size === 'medium') && feature === 'subtitle' && ((_theme$global$breakpo = theme.global.breakpoints[breakpoint]) == null ? void 0 : _theme$global$breakpo.value) <= ((_theme$global$breakpo2 = theme.global.breakpoints.small) == null ? void 0 : _theme$global$breakpo2.value) && {
@@ -26,7 +26,7 @@ var PageHeader = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     title = _ref2.title,
     level = _ref2.level,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var breakpoint = useContext(ResponsiveContext);
   var actionsProps = _extends({}, theme.pageHeader.actions);
   var gridProps = theme.pageHeader[breakpoint] || theme.pageHeader.medium;

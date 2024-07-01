@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { fillStyle, genericStyles, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 var FIT_MAP = {
   cover: 'cover',
   contain: 'contain'
@@ -8,7 +8,7 @@ var FIT_MAP = {
 var fitStyle = css(["flex:1 1;overflow:hidden;object-fit:", ";"], function (props) {
   return FIT_MAP[props.fit];
 });
-var StyledImage = styled.img.withConfig(styledComponentsConfig).withConfig({
+var StyledImage = styled.img.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledImage",
   componentId: "sc-ey4zx9-0"
 })(["", " ", " ", " ", " ", ""], genericStyles, function (props) {
@@ -20,6 +20,4 @@ var StyledImage = styled.img.withConfig(styledComponentsConfig).withConfig({
 }, function (props) {
   return props.opacityProp && "opacity: " + (props.opacityProp === true ? props.theme.global.opacity.medium : props.theme.global.opacity[props.opacityProp] || props.opacityProp) + ";\n  ";
 });
-StyledImage.defaultProps = {};
-Object.setPrototypeOf(StyledImage.defaultProps, defaultProps);
 export { StyledImage };

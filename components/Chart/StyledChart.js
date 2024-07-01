@@ -16,7 +16,7 @@ var animateStyle = function animateStyle(_ref) {
     animateBounds = ['stroke-dashoffset: 200%;', 'stroke-dashoffset: 0%;'];else if (typeProp === 'point') animateBounds = ['opacity: 0;', 'opacity: 1;'];else animateBounds = ['transform: scaleY(0);', 'transform: scaleY(1);'];
   return (0, _styledComponents.css)(["", " animation:", " ", " forwards;", ""], typeProp === 'line' && 'stroke-dasharray: 200%;', (0, _styledComponents.keyframes)(["from{", "}to{", "}"], animateBounds[0], animateBounds[1]), theme.global.animation.duration, (typeProp === 'bar' || typeProp === 'area') && 'transform-origin: center bottom 0;');
 };
-var StyledChart = exports.StyledChart = _styledComponents["default"].svg.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledChart = exports.StyledChart = _styledComponents["default"].svg.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledChart",
   componentId: "sc-1nae0gf-0"
 })(["display:block;max-width:100%;overflow:visible;", " ", " ", ";"], _utils.genericStyles, function (props) {
@@ -24,5 +24,3 @@ var StyledChart = exports.StyledChart = _styledComponents["default"].svg.withCon
 }, function (props) {
   return props.theme.chart && props.theme.chart.extend;
 });
-StyledChart.defaultProps = {};
-Object.setPrototypeOf(StyledChart.defaultProps, _defaultProps.defaultProps);

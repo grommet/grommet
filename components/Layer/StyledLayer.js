@@ -12,7 +12,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 var hiddenPositionStyle = (0, _styledComponents.css)(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n";
 var responsiveLayerStyle = "\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
-var StyledLayer = exports.StyledLayer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledLayer = exports.StyledLayer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledLayer",
   componentId: "sc-rmtehz-0"
 })(["", " background:transparent;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], _utils.baseStyle, function (props) {
@@ -31,9 +31,7 @@ var StyledLayer = exports.StyledLayer = _styledComponents["default"].div.withCon
 }, function (props) {
   return props.theme.layer && props.theme.layer.extend;
 });
-StyledLayer.defaultProps = {};
-Object.setPrototypeOf(StyledLayer.defaultProps, _defaultProps.defaultProps);
-var StyledOverlay = exports.StyledOverlay = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledOverlay = exports.StyledOverlay = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "sc-rmtehz-1"
 })(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " ", " pointer-events:all;will-change:transform;"], function (props) {
@@ -447,7 +445,7 @@ var responsiveContainerStyle = function responsiveContainerStyle(props) {
 var elevationStyle = (0, _styledComponents.css)(["box-shadow:", ";"], function (props) {
   return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.theme.layer.container.elevation];
 });
-var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig({
+var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.attrs(_defaultProps.withTheme).withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
     return (0, _isPropValid["default"])(prop) && !['elevation'].includes(prop);
   }
@@ -475,5 +473,3 @@ var StyledContainer = exports.StyledContainer = _styledComponents["default"].div
 }, function (props) {
   return props.theme.layer.container && props.theme.layer.container.extend;
 });
-StyledContainer.defaultProps = {};
-Object.setPrototypeOf(StyledContainer.defaultProps, _defaultProps.defaultProps);

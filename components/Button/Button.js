@@ -3,9 +3,8 @@
 exports.__esModule = true;
 exports.Button = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
-var _defaultProps = require("../../default-props");
 var _propTypes = require("./propTypes");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
@@ -17,7 +16,9 @@ var _StyledButtonKind = require("./StyledButtonKind");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
 var _Skeleton = require("../Skeleton");
 var _BusyAnimation = require("./BusyAnimation");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["active", "align", "aria-label", "badge", "busy", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "messages", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "pad", "plain", "primary", "reverse", "secondary", "selected", "size", "success", "tip", "type", "a11yTitle", "as"];
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -185,7 +186,7 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     a11yTitle = _ref$a11yTitle === void 0 ? typeof tip === 'string' ? tip : undefined : _ref$a11yTitle,
     as = _ref.as,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var _useState = (0, _react.useState)(),
     focus = _useState[0],
     setFocus = _useState[1];

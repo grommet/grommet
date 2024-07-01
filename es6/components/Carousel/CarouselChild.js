@@ -4,7 +4,8 @@ import { StyledCarouselChild } from './StyledCarousel';
 import { Box } from '../Box';
 var CarouselChild = function CarouselChild(_ref) {
   var animationDuration = _ref.animationDuration,
-    fill = _ref.fill,
+    _ref$fill = _ref.fill,
+    fill = _ref$fill === void 0 ? false : _ref$fill,
     index = _ref.index,
     activeIndex = _ref.activeIndex,
     priorActiveIndex = _ref.priorActiveIndex,
@@ -49,9 +50,4 @@ var CarouselChild = function CarouselChild(_ref) {
   }, children));
 };
 CarouselChild.propTypes = CarouselChildPropTypes;
-CarouselChild.defaultProps = {
-  fill: false,
-  play: undefined,
-  priorActiveIndex: undefined
-};
 export { CarouselChild };

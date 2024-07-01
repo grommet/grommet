@@ -3,8 +3,7 @@ var _excluded = ["a11yTitle", "aria-label", "children", "disabled", "dropAlign",
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { useRef, forwardRef, useCallback, useContext, useMemo, useState, useEffect } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
@@ -13,7 +12,9 @@ import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
-var ContainerBox = styled(Box).withConfig({
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
+var ContainerBox = styled(Box).attrs(withTheme).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
 })(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}&:focus{outline:none;}", ";"], function (props) {
@@ -41,6 +42,7 @@ To make a selection:
 - Space is pressed.
 */
 
+var defaultItems = [];
 var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
     ariaLabel = props['aria-label'],
@@ -50,9 +52,11 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     dropBackground = props.dropBackground,
     dropProps = props.dropProps,
     dropTarget = props.dropTarget,
-    justifyContent = props.justifyContent,
+    _props$justifyContent = props.justifyContent,
+    justifyContent = _props$justifyContent === void 0 ? 'start' : _props$justifyContent,
     icon = props.icon,
-    items = props.items,
+    _props$items = props.items,
+    items = _props$items === void 0 ? defaultItems : _props$items,
     label = props.label,
     messages = props.messages,
     onKeyDown = props.onKeyDown,
@@ -60,7 +64,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     plain = props.plain,
     size = props.size,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
@@ -395,11 +399,6 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     alignControlMirror === 'bottom' && !align.bottom === 'top' || align.bottom === 'bottom') ? controlMirror : undefined))
   }), content));
 });
-Menu.defaultProps = {
-  items: [],
-  messages: undefined,
-  justifyContent: 'start'
-};
 Menu.displayName = 'Menu';
 Menu.propTypes = MenuPropTypes;
 export { Menu };

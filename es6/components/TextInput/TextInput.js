@@ -2,8 +2,7 @@ var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
@@ -16,6 +15,8 @@ import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIco
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 import { CopyButton } from './CopyButton';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 var renderLabel = function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
     return suggestion.label || suggestion.value;
@@ -31,7 +32,7 @@ var stringLabel = function stringLabel(suggestion) {
   }
   return suggestion;
 };
-var ContainerBox = styled(Box).withConfig({
+var ContainerBox = styled(Box).attrs(withTheme).withConfig({
   displayName: "TextInput__ContainerBox",
   componentId: "sc-1ai0c08-0"
 })(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
@@ -75,7 +76,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     valueProp = _ref.value,
     widthProp = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var announce = useContext(AnnounceContext);

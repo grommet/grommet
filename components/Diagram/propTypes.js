@@ -26,7 +26,7 @@ if (process.env.NODE_ENV !== 'production') {
       thickness: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large']), _propTypes["default"].string]),
       toTarget: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].object]).isRequired,
       type: _propTypes["default"].oneOf(['direct', 'curved', 'rectilinear'])
-    })).isRequired
+    }))
   };
 }
 var DiagramPropTypes = exports.DiagramPropTypes = PropType;

@@ -1,10 +1,10 @@
 var _FLEX_MAP;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import styled, { css } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { alignContentStyle, alignStyle, backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getBreakpointStyle, getHoverIndicatorStyle, heightStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, widthStyle } from '../../utils';
 import { roundStyle, styledComponentsConfig } from '../../utils/styles';
 import { animationBounds, animationObjectStyle } from '../../utils/animation';
+import { withTheme } from '../../default-props';
 var BASIS_MAP = {
   auto: 'auto',
   full: '100%',
@@ -164,7 +164,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
 };
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-var StyledBox = styled.div.withConfig(styledComponentsConfig).withConfig({
+var StyledBox = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
 })(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -214,8 +214,6 @@ var StyledBox = styled.div.withConfig(styledComponentsConfig).withConfig({
 }, function (props) {
   return props.kindProp && props.kindProp.extend;
 });
-StyledBox.defaultProps = {};
-Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
   var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
@@ -269,12 +267,10 @@ var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, t
   }
   return styles;
 };
-var StyledBoxGap = styled.div.withConfig(styledComponentsConfig).withConfig({
+var StyledBoxGap = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;align-self:stretch;", ";"], function (props) {
   return props.gap && gapGapStyle(props.directionProp, props.gap, props.responsive, props.border, props.theme);
 });
-StyledBoxGap.defaultProps = {};
-Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);
 export { StyledBox, StyledBoxGap };

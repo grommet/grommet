@@ -6,10 +6,10 @@ import { ThemeContext } from 'styled-components';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { FocusedContainer } from '../FocusedContainer';
 import { backgroundIsDark, findScrollParents, parseMetricToNum, PortalContext, useForwardedRef } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 import { StyledDrop } from './StyledDrop';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -70,7 +70,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     trapFocus = _ref.trapFocus,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = useContext(ContainerTargetContext);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   // dropOptions was created to preserve backwards compatibility
   var _useContext = useContext(OptionsContext),
     dropOptions = _useContext.drop;

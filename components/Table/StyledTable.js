@@ -27,7 +27,7 @@ var sizeStyle = (0, _styledComponents.css)(["width:", ";max-width:", ";overflow:
 }, function (props) {
   return props.size !== 'auto' ? SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size : undefined;
 });
-var StyledTableCell = exports.StyledTableCell = _styledComponents["default"].td.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledTableCell = exports.StyledTableCell = _styledComponents["default"].td.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledTable__StyledTableCell",
   componentId: "sc-1m3u5g-0"
 })(["margin:0;padding:0;font-weight:inherit;text-align:inherit;", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -45,45 +45,31 @@ var StyledTableCell = exports.StyledTableCell = _styledComponents["default"].td.
 }, function (props) {
   return props.tableContextTheme && props.tableContextTheme.extend;
 });
-StyledTableCell.defaultProps = {};
-Object.setPrototypeOf(StyledTableCell.defaultProps, _defaultProps.defaultProps);
-var StyledTableDataCaption = exports.StyledTableDataCaption = _styledComponents["default"].caption.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledTableDataCaption = exports.StyledTableDataCaption = _styledComponents["default"].caption.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledTable__StyledTableDataCaption",
   componentId: "sc-1m3u5g-1"
 })(["margin-bottom:", ";"], function (props) {
   return props.theme.global.edgeSize.xxsmall;
 });
-StyledTableDataCaption.defaultProps = {};
-Object.setPrototypeOf(StyledTableDataCaption.defaultProps, _defaultProps.defaultProps);
 var StyledTableRow = exports.StyledTableRow = _styledComponents["default"].tr.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableRow",
   componentId: "sc-1m3u5g-2"
 })([""]);
-StyledTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledTableRow.defaultProps, _defaultProps.defaultProps);
 var StyledTableBody = exports.StyledTableBody = _styledComponents["default"].tbody.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableBody",
   componentId: "sc-1m3u5g-3"
 })([""]);
-StyledTableBody.defaultProps = {};
-Object.setPrototypeOf(StyledTableBody.defaultProps, _defaultProps.defaultProps);
 var StyledTableHeader = exports.StyledTableHeader = _styledComponents["default"].thead.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableHeader",
   componentId: "sc-1m3u5g-4"
 })([""]);
-StyledTableHeader.defaultProps = {};
-Object.setPrototypeOf(StyledTableHeader.defaultProps, _defaultProps.defaultProps);
 var StyledTableFooter = exports.StyledTableFooter = _styledComponents["default"].tfoot.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableFooter",
   componentId: "sc-1m3u5g-5"
 })([""]);
-StyledTableFooter.defaultProps = {};
-Object.setPrototypeOf(StyledTableFooter.defaultProps, _defaultProps.defaultProps);
-var StyledTable = exports.StyledTable = _styledComponents["default"].table.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledTable = exports.StyledTable = _styledComponents["default"].table.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledTable",
   componentId: "sc-1m3u5g-6"
 })(["border-spacing:0;border-collapse:collapse;width:inherit;", " ", ";"], _utils.genericStyles, function (props) {
   return props.theme.table && props.theme.table.extend;
 });
-StyledTable.defaultProps = {};
-Object.setPrototypeOf(StyledTable.defaultProps, _defaultProps.defaultProps);

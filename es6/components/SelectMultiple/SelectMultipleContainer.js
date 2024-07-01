@@ -1,8 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { ThemeContext } from 'styled-components';
 import { setFocusWithoutScroll } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
@@ -15,6 +13,7 @@ import { StyledContainer, OptionsContainer, SelectOption } from '../Select/Style
 import { applyKey, getOptionLabel, getOptionValue, useDisabled, getOptionIndex, arrayIncludes } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _optionsRef$current;
   var allOptions = _ref.allOptions,
@@ -48,7 +47,7 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     value = _ref$value === void 0 ? [] : _ref$value,
     valueKey = _ref.valueKey,
     showSelectedInline = _ref.showSelectedInline;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(-1),
     activeIndex = _useState[0],
     setActiveIndex = _useState[1];

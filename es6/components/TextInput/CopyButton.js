@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { Copy } from 'grommet-icons/icons/Copy';
 import { Button } from '../Button';
 import { Tip } from '../Tip';
 import { edgeStyle } from '../../utils/styles';
+import { withTheme } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
-var StyledButton = styled(Button).withConfig({
+var StyledButton = styled(Button).attrs(withTheme).withConfig({
   displayName: "CopyButton__StyledButton",
   componentId: "sc-1bp1m18-0"
 })(["border-radius:", ";", ""], function (props) {
@@ -22,7 +24,7 @@ export var CopyButton = function CopyButton(_ref) {
     readOnlyCopyPrompt = _ref.readOnlyCopyPrompt,
     tip = _ref.tip,
     value = _ref.value;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   return /*#__PURE__*/React.createElement(Tip, {
     dropProps: {
       align: {

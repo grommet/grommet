@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { Box, Button, Form, Layer, FormField, Footer, Text, TextArea, Header, Heading, ThumbsRating, ResponsiveContext } from 'grommet';
+import { withTheme } from '../../../default-props';
 
 // create a floating button for story example
 // temp fix until this theme issue is resolved:
 // https://github.com/grommet/grommet-theme-hpe/issues/283
-var PositionedFeedbackButton = styled(Button).withConfig({
+var PositionedFeedbackButton = styled(Button).attrs(withTheme).withConfig({
   displayName: "UnsolicitedFeedback__PositionedFeedbackButton",
   componentId: "sc-5qlys5-0"
 })(["position:fixed;bottom:0px;border-radius:6px;right:0px;z-index:10;color:", ";"], function (props) {

@@ -3,12 +3,11 @@
 exports.__esModule = true;
 exports.WorldMap = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _Drop = require("../Drop");
-var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
 var _StyledWorldMap = require("./StyledWorldMap");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["fill", "color", "continents", "hoverColor", "onSelectPlace", "places"],
   _excluded2 = ["location"],
   _excluded3 = ["color", "onClick", "onHover"],
@@ -205,7 +204,7 @@ var WorldMap = exports.WorldMap = /*#__PURE__*/(0, _react.forwardRef)(function (
     onSelectPlace = _ref5.onSelectPlace,
     placesProp = _ref5.places,
     rest = _objectWithoutPropertiesLoose(_ref5, _excluded);
-  var theme = _react["default"].useContext(_styledComponents.ThemeContext);
+  var theme = (0, _useThemeValue.useThemeValue)();
   var world = _react["default"].useMemo(buildWorld, []);
   var _React$useState = _react["default"].useState({}),
     continents = _React$useState[0],
@@ -390,6 +389,4 @@ var WorldMap = exports.WorldMap = /*#__PURE__*/(0, _react.forwardRef)(function (
   }, continentElements), placeElements, active), placesContent);
 });
 WorldMap.displayName = 'WorldMap';
-WorldMap.defaultProps = {};
-Object.setPrototypeOf(WorldMap.defaultProps, _defaultProps.defaultProps);
 WorldMap.propTypes = _propTypes.WorldMapPropTypes;

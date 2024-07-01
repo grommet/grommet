@@ -1,11 +1,11 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { Fragment, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
 import { isSmall } from '../../utils/responsive';
+import { useThemeValue } from '../../utils/useThemeValue';
 var NameValuePair = function NameValuePair(_ref) {
   var _theme$nameValuePair;
   var children = _ref.children,
@@ -15,7 +15,7 @@ var NameValuePair = function NameValuePair(_ref) {
     pairProps = _useContext.pairProps,
     valueProps = _useContext.valueProps;
   var size = useContext(ResponsiveContext);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var direction = pairProps == null ? void 0 : pairProps.direction;
   var column = direction === 'column' || direction === 'column-reverse' || isSmall(size);
   var Container = column ? Box : Fragment;

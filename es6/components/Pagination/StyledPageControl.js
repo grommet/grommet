@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { styledComponentsConfig } from '../../utils/styles';
 import { Button } from '../Button';
 import { Text } from '../Text';
+import { withTheme } from '../../default-props';
 var sizeStyle = function sizeStyle(props) {
   var style = props.theme.pagination.button && props.theme.pagination.button.size && props.theme.pagination.button.size[props.size || 'medium'];
   return style ? {
@@ -17,13 +18,13 @@ var sizeStyle = function sizeStyle(props) {
     }
   } : '';
 };
-export var StyledPaginationButton = styled(Button).withConfig({
+export var StyledPaginationButton = styled(Button).attrs(withTheme).withConfig({
   displayName: "StyledPageControl__StyledPaginationButton",
   componentId: "sc-1vlfaez-0"
 })(["> svg{margin:0 auto;}", ";"], function (props) {
   return sizeStyle(props).content;
 });
-export var StyledContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
+export var StyledContainer = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledPageControl__StyledContainer",
   componentId: "sc-1vlfaez-1"
 })(["display:flex;align-items:center;justify-content:center;max-width:100%;", ";", ";"], function (props) {
@@ -31,7 +32,7 @@ export var StyledContainer = styled.div.withConfig(styledComponentsConfig).withC
 }, function (props) {
   return props.theme.pagination.control && props.theme.pagination.control.extend;
 });
-export var StyledSeparator = styled(Text).withConfig({
+export var StyledSeparator = styled(Text).attrs(withTheme).withConfig({
   displayName: "StyledPageControl__StyledSeparator",
   componentId: "sc-1vlfaez-2"
 })(["font-weight:bold;", ";", ";"], function (props) {

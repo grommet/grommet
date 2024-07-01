@@ -2,14 +2,14 @@ var _excluded = ["background", "max", "round", "size", "thickness", "direction",
   _excluded2 = ["color", "highlight", "label", "onHover", "value"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { forwardRef } from 'react';
 import { parseMetricToNum } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
-  var background = props.background,
+  var _props$background = props.background,
+    background = _props$background === void 0 ? 'light-1' : _props$background,
     max = props.max,
     round = props.round,
     size = props.size,
@@ -18,7 +18,7 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
     values = props.values,
     reverse = props.reverse,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var length = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   var thickness = parseMetricToNum(theme.global.edgeSize[thicknessProp] || thicknessProp);
   // account for the round cap, if any
@@ -96,8 +96,4 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
   })), paths);
 });
 Bar.displayName = 'Bar';
-Bar.defaultProps = {
-  background: 'light-1'
-};
-Object.setPrototypeOf(Bar.defaultProps, defaultProps);
 export { Bar };

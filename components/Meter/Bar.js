@@ -3,11 +3,10 @@
 exports.__esModule = true;
 exports.Bar = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
-var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
 var _StyledMeter = require("./StyledMeter");
 var _utils2 = require("./utils");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["background", "max", "round", "size", "thickness", "direction", "values", "reverse"],
   _excluded2 = ["color", "highlight", "label", "onHover", "value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -15,7 +14,8 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 var Bar = exports.Bar = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
-  var background = props.background,
+  var _props$background = props.background,
+    background = _props$background === void 0 ? 'light-1' : _props$background,
     max = props.max,
     round = props.round,
     size = props.size,
@@ -24,7 +24,7 @@ var Bar = exports.Bar = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref
     values = props.values,
     reverse = props.reverse,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var length = size === 'full' ? 288 : (0, _utils.parseMetricToNum)(theme.global.size[size] || size);
   var thickness = (0, _utils.parseMetricToNum)(theme.global.edgeSize[thicknessProp] || thicknessProp);
   // account for the round cap, if any
@@ -102,7 +102,3 @@ var Bar = exports.Bar = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref
   })), paths);
 });
 Bar.displayName = 'Bar';
-Bar.defaultProps = {
-  background: 'light-1'
-};
-Object.setPrototypeOf(Bar.defaultProps, _defaultProps.defaultProps);

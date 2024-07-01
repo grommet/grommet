@@ -2,12 +2,11 @@ var _excluded = ["connections"],
   _excluded2 = ["anchor", "animation", "color", "offset", "round", "thickness", "type"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 import { StyledDiagram } from './StyledDiagram';
 import { DiagramPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var computeMidPoint = function computeMidPoint(fromPoint, toPoint) {
   return [fromPoint[0] > toPoint[0] ? toPoint[0] + (fromPoint[0] - toPoint[0]) / 2 : fromPoint[0] + (toPoint[0] - fromPoint[0]) / 2, fromPoint[1] > toPoint[1] ? toPoint[1] + (fromPoint[1] - toPoint[1]) / 2 : fromPoint[1] + (toPoint[1] - fromPoint[1]) / 2];
 };
@@ -44,10 +43,12 @@ var findTarget = function findTarget(target) {
   }
   return target;
 };
+var defaultConnections = [];
 var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var connections = _ref.connections,
+  var _ref$connections = _ref.connections,
+    connections = _ref$connections === void 0 ? defaultConnections : _ref$connections,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState({
       width: 0,
       height: 0
@@ -201,8 +202,5 @@ var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest), /*#__PURE__*/React.createElement("g", null, paths));
 });
 Diagram.displayName = 'Diagram';
-Diagram.defaultProps = {
-  connections: []
-};
 Diagram.propTypes = DiagramPropTypes;
 export { Diagram };

@@ -3,13 +3,12 @@ var _excluded = ["children", "defaultValue", "disabled", "focusIndicator", "name
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useRef, useState } from 'react';
-import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
-import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
 import { RadioButtonGroupPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
     defaultValue = _ref.defaultValue,
@@ -23,7 +22,7 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     gap = _ref.gap,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var formContext = useContext(FormContext);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
 
   // normalize options to always use an object
   var options = optionsProp.map(function (o) {

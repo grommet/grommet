@@ -299,6 +299,44 @@ exports[`Stack default 1`] = `
 </div>
 `;
 
+exports[`Stack default outside grommet wrapper 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c1 {
+  position: relative;
+  display: block;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div>
+      first
+    </div>
+  </div>
+  <div
+    class="c2"
+  >
+    <div>
+      second
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Stack fill 1`] = `
 .c0 {
   font-size: 18px;

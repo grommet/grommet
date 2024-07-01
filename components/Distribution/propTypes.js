@@ -15,7 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
     gap: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string]),
     values: _propTypes["default"].arrayOf(_propTypes["default"].shape({
       value: _propTypes["default"].number
-    })).isRequired
+    }))
   });
 }
 var DistributionPropTypes = exports.DistributionPropTypes = PropType;

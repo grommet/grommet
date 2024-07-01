@@ -2,7 +2,7 @@ var _excluded = ["color", "defaultValues", "direction", "invert", "label", "max"
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { EdgeControl } from './EdgeControl';
@@ -12,6 +12,7 @@ import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
 import { DataFormContext } from '../../contexts/DataFormContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Container = styled(Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "sc-siof5p-0"
@@ -66,7 +67,7 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     step = _ref$step === void 0 ? 1 : _ref$step,
     valuesProp = _ref.values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var formContext = useContext(FormContext);

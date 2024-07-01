@@ -10,9 +10,12 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default":
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var Announcer = function Announcer(_ref) {
   var announce = _ref.announce,
-    message = _ref.message,
-    mode = _ref.mode,
-    role = _ref.role;
+    _ref$message = _ref.message,
+    message = _ref$message === void 0 ? 'Here is a simple announcement. This will soon disappear' : _ref$message,
+    _ref$mode = _ref.mode,
+    mode = _ref$mode === void 0 ? 'polite' : _ref$mode,
+    _ref$role = _ref.role,
+    role = _ref$role === void 0 ? 'log' : _ref$role;
   _react["default"].useEffect(function () {
     var timeout = 3000;
     announce(message, mode, timeout);
@@ -28,11 +31,6 @@ Announcer.propTypes = {
   message: _propTypes["default"].string,
   mode: _propTypes["default"].string,
   role: _propTypes["default"].string
-};
-Announcer.defaultProps = {
-  message: 'Here is a simple announcement. This will soon disappear',
-  mode: 'polite',
-  role: 'log'
 };
 var AnnounceContextComponent = function AnnounceContextComponent(props) {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {

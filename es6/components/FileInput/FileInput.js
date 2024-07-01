@@ -2,10 +2,9 @@ var _excluded = ["a11yTitle", "background", "border", "confirmRemove", "disabled
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
-import { defaultProps } from '../../default-props';
 import { disabledStyle, focusStyle, parseMetricToNum, unfocusStyle, useForwardedRef, useKeyboard } from '../../utils';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
@@ -16,6 +15,8 @@ import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 import { formatBytes } from './utils/formatBytes';
+import { withTheme } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
 // position the <input /> on top with an opacity of zero.
@@ -23,7 +24,7 @@ import { formatBytes } from './utils/formatBytes';
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
 
-var ContentsBox = styled(Box).withConfig({
+var ContentsBox = styled(Box).attrs(withTheme).withConfig({
   displayName: "FileInput__ContentsBox",
   componentId: "sc-1jzq7im-0"
 })(["cursor:pointer;position:relative;", " ", ";", ";", ";", ";", ";"], function (props) {
@@ -39,13 +40,13 @@ var ContentsBox = styled(Box).withConfig({
 }, function (props) {
   return !props.focus && unfocusStyle();
 });
-var Label = styled(Text).withConfig({
+var Label = styled(Text).attrs(withTheme).withConfig({
   displayName: "FileInput__Label",
   componentId: "sc-1jzq7im-1"
 })(["", ";"], function (props) {
   return props.theme.fileInput && props.theme.fileInput.label && props.theme.fileInput.label.extend;
 });
-var Message = styled(Text).withConfig({
+var Message = styled(Text).attrs(withTheme).withConfig({
   displayName: "FileInput__Message",
   componentId: "sc-1jzq7im-2"
 })(["", ";"], function (props) {
@@ -73,7 +74,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     pad = _ref.pad,
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var formContext = useContext(FormContext);
@@ -485,8 +486,6 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }));
 });
-FileInput.defaultProps = {};
-Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 FileInput.displayName = 'FileInput';
 FileInput.propTypes = FileInputPropTypes;
 export { FileInput };

@@ -2,8 +2,6 @@ var _excluded = ["children", "header", "label", "onClick", "onMouseOut", "onMous
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -11,6 +9,7 @@ import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 import { AccordionContext } from '../Accordion/AccordionContext';
 import { AccordionPanelPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
     header = _ref.header,
@@ -21,7 +20,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _onFocus = _ref.onFocus,
     _onBlur = _ref.onBlur,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useContext = useContext(AccordionContext),
     active = _useContext.active,
     animate = _useContext.animate,
@@ -45,7 +44,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
   });
 
   // accordion.hover.color will be deprecated in v3.
-  if (JSON.stringify(theme.accordion.hover.color) !== defaultHoverColor) console.warn("The theme style for accordion.hover.color is deprecated, \n        use accordion.hover.heading.color instead.");
+  if (JSON.stringify(theme.accordion.hover.color) !== defaultHoverColor) console.warn("The theme style for accordion.hover.color is deprecated,\n        use accordion.hover.heading.color instead.");
 
   // accordion.hover.heading.color will trump accordion.hover.color in case
   // the user sets its value to be any other value than the

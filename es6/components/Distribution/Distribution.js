@@ -19,13 +19,24 @@ Value.propTypes = {
   basis: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired
 };
+var defaultChildrenPropValue = function defaultChildrenPropValue(value) {
+  return /*#__PURE__*/React.createElement(Box, {
+    fill: true,
+    border: true
+  }, /*#__PURE__*/React.createElement(Text, null, value.value));
+};
+var defaultValues = [];
 var Distribution = function Distribution(_ref2) {
   var basis = _ref2.basis,
-    children = _ref2.children,
-    direction = _ref2.direction,
+    _ref2$children = _ref2.children,
+    children = _ref2$children === void 0 ? defaultChildrenPropValue : _ref2$children,
+    _ref2$direction = _ref2.direction,
+    direction = _ref2$direction === void 0 ? 'row' : _ref2$direction,
     fill = _ref2.fill,
-    gap = _ref2.gap,
-    values = _ref2.values,
+    _ref2$gap = _ref2.gap,
+    gap = _ref2$gap === void 0 ? 'xsmall' : _ref2$gap,
+    _ref2$values = _ref2.values,
+    values = _ref2$values === void 0 ? defaultValues : _ref2$values,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
   if (values.length === 1) {
     var value = values[0];
@@ -94,18 +105,6 @@ var Distribution = function Distribution(_ref2) {
     }, children));
   }
   return null;
-};
-Distribution.defaultProps = {
-  basis: undefined,
-  children: function children(value) {
-    return /*#__PURE__*/React.createElement(Box, {
-      fill: true,
-      border: true
-    }, /*#__PURE__*/React.createElement(Text, null, value.value));
-  },
-  direction: 'row',
-  gap: 'xsmall',
-  values: []
 };
 Distribution.propTypes = DistributionPropTypes;
 export { Distribution };

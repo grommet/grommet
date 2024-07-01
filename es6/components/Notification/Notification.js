@@ -1,9 +1,8 @@
 var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { useCallback, useContext, useEffect, useState, useMemo, Fragment } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { useCallback, useEffect, useState, useMemo, Fragment } from 'react';
+import styled from 'styled-components';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -11,6 +10,7 @@ import { Layer } from '../Layer';
 import { Paragraph } from '../Paragraph';
 import { Text } from '../Text';
 import { NotificationType } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var adaptThemeStyle = function adaptThemeStyle(value, theme) {
   var textStyle = value;
   var closeButtonStyle = value;
@@ -56,14 +56,16 @@ var Notification = function Notification(_ref) {
     onClose = _ref.onClose,
     id = _ref.id,
     global = _ref.global,
-    status = _ref.status,
+    _ref$status = _ref.status,
+    status = _ref$status === void 0 ? 'unknown' : _ref$status,
     title = _ref.title,
-    toast = _ref.toast,
+    _ref$toast = _ref.toast,
+    toast = _ref$toast === void 0 ? false : _ref$toast,
     icon = _ref.icon,
     time = _ref.time,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(true),
     visible = _useState[0],
     setVisible = _useState[1];
@@ -178,11 +180,6 @@ var Notification = function Notification(_ref) {
   }
   return content;
 };
-Notification.defaultProps = {
-  status: 'unknown',
-  toast: false
-};
-Object.setPrototypeOf(Notification.defaultProps, defaultProps);
 Notification.displayName = 'Notification';
 Notification.propTypes = NotificationType;
 export { Notification };

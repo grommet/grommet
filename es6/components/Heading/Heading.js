@@ -1,4 +1,4 @@
-var _excluded = ["children", "color", "fill", "level", "overflowWrap", "weight"];
+var _excluded = ["children", "color", "fill", "level", "overflowWrap", "responsive", "weight"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useState } from 'react';
@@ -13,8 +13,11 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid sty
   var children = _ref.children,
     color = _ref.color,
     fill = _ref.fill,
-    level = _ref.level,
+    _ref$level = _ref.level,
+    level = _ref$level === void 0 ? 1 : _ref$level,
     overflowWrapProp = _ref.overflowWrap,
+    _ref$responsive = _ref.responsive,
+    responsive = _ref$responsive === void 0 ? true : _ref$responsive,
     weight = _ref.weight,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var headingRef = useForwardedRef(ref);
@@ -42,7 +45,8 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid sty
   if (skeleton) {
     content = /*#__PURE__*/React.createElement(HeadingSkeleton, _extends({
       level: level,
-      fill: fill
+      fill: fill,
+      responsive: responsive
     }, rest));
   }
   return (
@@ -54,6 +58,7 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid sty
       fillProp: fill,
       level: +level,
       overflowWrap: overflowWrap,
+      responsive: responsive,
       weight: weight
     }, rest, {
       ref: headingRef
@@ -61,9 +66,5 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid sty
   );
 });
 Heading.displayName = 'Heading';
-Heading.defaultProps = {
-  level: 1,
-  responsive: true
-};
 Heading.propTypes = HeadingPropTypes;
 export { Heading };

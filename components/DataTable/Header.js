@@ -5,7 +5,6 @@ exports.Header = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _DataContext = require("../../contexts/DataContext");
-var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _CheckBox = require("../CheckBox");
@@ -18,6 +17,8 @@ var _StyledDataTable = require("./StyledDataTable");
 var _buildState = require("./buildState");
 var _styles = require("../../utils/styles");
 var _colors = require("../../utils/colors");
+var _useThemeValue = require("../../utils/useThemeValue");
+var _defaultProps = require("../../default-props");
 var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
   _excluded2 = ["allowSelectAll", "cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
 /* eslint-disable no-underscore-dangle */
@@ -84,7 +85,7 @@ var buttonStyle = function buttonStyle(_ref) {
   }
   return styles;
 };
-var StyledHeaderCellButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
+var StyledHeaderCellButton = (0, _styledComponents["default"])(_Button.Button).attrs(_defaultProps.withTheme).withConfig({
   displayName: "Header__StyledHeaderCellButton",
   componentId: "sc-1baku5q-0"
 })(["", ""], function (props) {
@@ -126,7 +127,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     widths = _ref2.widths,
     verticalAlign = _ref2.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var _separateThemeProps2 = separateThemeProps(theme),
     layoutProps = _separateThemeProps2[0],
     textProps = _separateThemeProps2[1];
@@ -351,5 +352,3 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   })));
 });
 Header.displayName = 'Header';
-Header.defaultProps = {};
-Object.setPrototypeOf(Header.defaultProps, _defaultProps.defaultProps);

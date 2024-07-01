@@ -2,10 +2,8 @@ var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates",
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Header } from '../Header';
@@ -16,6 +14,7 @@ import { CalendarPropTypes } from './propTypes';
 import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, handleOffset, sameDayOrAfter, sameDayOrBefore, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
+import { useThemeValue } from '../../utils/useThemeValue';
 var headingPadMap = {
   small: 'xsmall',
   medium: 'small',
@@ -227,7 +226,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     size = _ref3$size === void 0 ? 'medium' : _ref3$size,
     timestampProp = _ref3.timestamp,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     format = _useContext.format;

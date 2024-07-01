@@ -1,12 +1,12 @@
 var _excluded = ["color", "direction", "edge", "onDecrease", "onIncrease", "thickness"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { forwardRef, useState } from 'react';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 var DIRECTION_PROPS = {
   horizontal: {
     cursor: 'col-resize',
@@ -31,7 +31,7 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onIncrease = _ref.onIncrease,
     thickness = _ref.thickness,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var _useState = useState(false),
     focus = _useState[0],
     setFocus = _useState[1];
@@ -103,6 +103,4 @@ var EdgeControl = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest), node)));
 });
 EdgeControl.displayName = 'EdgeControl';
-EdgeControl.defaultProps = {};
-Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
 export { EdgeControl };

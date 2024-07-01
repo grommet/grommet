@@ -11,7 +11,7 @@ var fullStyle = function fullStyle(full) {
   if (full === 'min') return (0, _styledComponents.css)(["min-height:100vh;"]);
   return (0, _styledComponents.css)(["width:100vw;height:100vh;overflow:auto;"]);
 };
-var StyledGrommet = exports.StyledGrommet = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledGrommet = exports.StyledGrommet = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledGrommet",
   componentId: "sc-19lkkz7-0"
 })(["", " ", " ", " ", " ", ""], function (props) {
@@ -29,5 +29,3 @@ var StyledGrommet = exports.StyledGrommet = _styledComponents["default"].div.wit
     return "--" + k + ": " + props.theme.global.colors[k] + ";";
   }).join('\n');
 });
-StyledGrommet.defaultProps = {};
-Object.setPrototypeOf(StyledGrommet.defaultProps, _defaultProps.defaultProps);

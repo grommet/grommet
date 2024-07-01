@@ -3,7 +3,6 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { useContext, useEffect, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
 import { DropButton } from '../DropButton';
@@ -17,6 +16,7 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
 import { isSmall } from '../../utils/responsive';
 import { useDebounce } from '../../utils/use-debounce';
+import { useThemeValue } from '../../utils/useThemeValue';
 var dropProps = {
   align: {
     top: 'bottom',
@@ -44,7 +44,7 @@ export var DataSearch = function DataSearch(_ref) {
     inDataForm = _useContext2.inDataForm;
   var _useContext3 = useContext(MessageContext),
     format = _useContext3.format;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var size = useContext(ResponsiveContext);
   var skeleton = useSkeleton();
   var debounce = useDebounce(DEBOUNCE_TIMEOUT);

@@ -11,7 +11,7 @@ var _propTypes = require("./propTypes");
 var _Skeleton = require("../Skeleton");
 var _TextSkeleton = require("./TextSkeleton");
 var _TextContext = require("./TextContext");
-var _excluded = ["children", "color", "tag", "as", "tip", "a11yTitle", "truncate", "size", "skeleton"];
+var _excluded = ["children", "color", "tag", "as", "tip", "a11yTitle", "truncate", "size", "skeleton", "level"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -27,6 +27,8 @@ var Text = exports.Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     truncate = _ref.truncate,
     size = _ref.size,
     skeletonProp = _ref.skeleton,
+    _ref$level = _ref.level,
+    level = _ref$level === void 0 ? 1 : _ref$level,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var textRef = (0, _utils.useForwardedRef)(ref);
   var _useState = (0, _react.useState)(false),
@@ -57,6 +59,7 @@ var Text = exports.Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     return /*#__PURE__*/_react["default"].createElement(_TextSkeleton.TextSkeleton, _extends({
       ref: ref,
       as: as,
+      level: level,
       size: size
     }, skeletonProp, rest));
   }
@@ -64,6 +67,7 @@ var Text = exports.Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     as: !as && tag ? tag : as,
     colorProp: color,
     "aria-label": a11yTitle,
+    level: level,
     truncate: truncate,
     size: size
   }, rest, {
@@ -88,7 +92,4 @@ var Text = exports.Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
   return styledTextResult;
 });
 Text.displayName = 'Text';
-Text.defaultProps = {
-  level: 1
-};
 Text.propTypes = _propTypes.TextPropTypes;

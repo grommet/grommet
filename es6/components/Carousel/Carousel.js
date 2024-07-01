@@ -3,8 +3,6 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { Children, useCallback, useContext, useEffect, useMemo, useState, useRef } from 'react';
 import { normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
-import { ThemeContext } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -12,13 +10,16 @@ import { Keyboard } from '../Keyboard';
 import { StyledCarouselContainer, StyledControl } from './StyledCarousel';
 import { CarouselChild } from './CarouselChild';
 import { CarouselPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Carousel = function Carousel(_ref) {
   var activeChild = _ref.activeChild,
-    initialChild = _ref.initialChild,
+    _ref$initialChild = _ref.initialChild,
+    initialChild = _ref$initialChild === void 0 ? 0 : _ref$initialChild,
     onChild = _ref.onChild,
     play = _ref.play,
     children = _ref.children,
-    controls = _ref.controls,
+    _ref$controls = _ref.controls,
+    controls = _ref$controls === void 0 ? true : _ref$controls,
     height = _ref.height,
     fill = _ref.fill,
     width = _ref.width,
@@ -26,7 +27,7 @@ var Carousel = function Carousel(_ref) {
     onBlur = _ref.onBlur,
     wrap = _ref.wrap,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var timerRef = useRef();
@@ -236,11 +237,6 @@ var Carousel = function Carousel(_ref) {
     hoverIndicator: true
   }))));
 };
-Carousel.defaultProps = {
-  initialChild: 0,
-  controls: true
-};
-Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 Carousel.displayName = 'Carousel';
 Carousel.propTypes = CarouselPropTypes;
 export { Carousel };

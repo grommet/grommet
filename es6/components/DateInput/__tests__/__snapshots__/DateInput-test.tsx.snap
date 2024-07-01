@@ -14217,6 +14217,119 @@ exports[`DateInput read only copy 1`] = `
 </DocumentFragment>
 `;
 
+exports[`DateInput render basic outside grommet wrapper 1`] = `
+.c1 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c1 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c1 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c1 *[stroke*='#'],
+.c1 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c1 *[fill-rule],
+.c1 *[FILL-RULE],
+.c1 *[fill*='#'],
+.c1 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+<button
+  aria-label="Open Drop"
+  class="c0"
+  id="item"
+  type="button"
+>
+  <svg
+    aria-label="Calendar"
+    class="c1"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M2 5h20v17H2V5zm16 0V1M6 5V1m-4 9h20"
+      fill="none"
+      stroke="#000"
+      stroke-width="2"
+    />
+  </svg>
+</button>
+`;
+
 exports[`DateInput renders size 1`] = `
 HTMLCollection [
   .c2 {

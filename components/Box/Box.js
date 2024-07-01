@@ -4,7 +4,6 @@ exports.__esModule = true;
 exports.Box = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = require("styled-components");
-var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
 var _Keyboard = require("../Keyboard");
 var _StyledBox = require("./StyledBox");
@@ -12,6 +11,7 @@ var _propTypes = require("./propTypes");
 var _Skeleton = require("../Skeleton");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _OptionsContext = require("../../contexts/OptionsContext");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "background", "border", "children", "cssGap", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex", "skeleton"],
   _excluded2 = ["colors", "size"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -44,7 +44,7 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     tabIndex = _ref.tabIndex,
     skeletonProp = _ref.skeleton,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   // boxOptions was created to preserve backwards compatibility but
   // should not be supported in v3
   var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),

@@ -3,11 +3,11 @@
 exports.__esModule = true;
 exports.CheckBoxGroup = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _CheckBox = require("../CheckBox");
 var _FormContext = require("../Form/FormContext");
 var _StyledCheckBoxGroup = require("./StyledCheckBoxGroup");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["children", "defaultValue", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
   _excluded2 = ["value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -29,7 +29,7 @@ var CheckBoxGroup = exports.CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(
     name = _ref.name,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
 
   // In case option is a string, normalize it to be an object
   var options = optionsProp.map(function (option) {

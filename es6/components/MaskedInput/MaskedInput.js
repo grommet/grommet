@@ -2,8 +2,7 @@ var _excluded = ["a11yTitle", "dropHeight", "dropProps", "focus", "focusIndicato
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
@@ -12,6 +11,8 @@ import { Keyboard } from '../Keyboard';
 import { sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
 import { StyledMaskedInput, StyledMaskedInputContainer, StyledIcon } from './StyledMaskedInput';
 import { MaskedInputPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 var parseValue = function parseValue(mask, value) {
   // break the value up into mask parts
   var valueParts = []; // { part, beginIndex, endIndex }
@@ -112,7 +113,7 @@ var parseValue = function parseValue(mask, value) {
 var defaultMask = [{
   regexp: /[^]*/
 }];
-var ContainerBox = styled(Box).withConfig({
+var ContainerBox = styled(Box).attrs(withTheme).withConfig({
   displayName: "MaskedInput__ContainerBox",
   componentId: "sc-af8hzu-0"
 })(["", ";"], function (props) {
@@ -144,7 +145,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     textAlign = _ref.textAlign,
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var formContext = useContext(FormContext);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,

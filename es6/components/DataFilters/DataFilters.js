@@ -4,7 +4,6 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { Children, useContext, useEffect, useMemo, useState } from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { Close } from 'grommet-icons/icons/Close';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataClearFilters } from '../DataClearFilters';
@@ -17,6 +16,7 @@ import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var dropProps = {
   align: {
     top: 'bottom',
@@ -47,7 +47,7 @@ export var DataFilters = function DataFilters(_ref) {
     view = _useContext.view;
   var _useContext2 = useContext(MessageContext),
     format = _useContext2.format;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var _useState = useState(),
     showContent = _useState[0],
     setShowContent = _useState[1];

@@ -2,7 +2,7 @@ var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "borde
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { Fragment, cloneElement, useContext, useMemo, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -13,8 +13,10 @@ import { Text } from '../Text';
 import { focusStyle, genericStyles, normalizeColor, normalizeShow, unfocusStyle, useForwardedRef, usePagination, styledComponentsConfig } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { ListPropTypes } from './propTypes';
+import { withTheme } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 var emptyData = [];
-var StyledList = styled.ul.withConfig(styledComponentsConfig).withConfig({
+var StyledList = styled.ul.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
 })(["list-style:none;", " padding:0;", " &:focus{", "}", "}&:focus:not(:focus-visible){", "}"], function (props) {
@@ -27,7 +29,7 @@ var StyledList = styled.ul.withConfig(styledComponentsConfig).withConfig({
 }, function (props) {
   return props.theme.list && props.theme.list.extend;
 }, unfocusStyle());
-var StyledItem = styled(Box).withConfig({
+var StyledItem = styled(Box).attrs(withTheme).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
 })(["", " ", " &:focus{", "}", " &:hover{", "}", ""], function (props) {
@@ -57,7 +59,7 @@ var StyledItem = styled(Box).withConfig({
 });
 
 // when paginated, this wraps the data table and pagination component
-var StyledContainer = styled(Box).withConfig({
+var StyledContainer = styled(Box).attrs(withTheme).withConfig({
   displayName: "List__StyledContainer",
   componentId: "sc-130gdqg-2"
 })(["", ";"], function (props) {
@@ -125,7 +127,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var listRef = useForwardedRef(ref);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var _useContext = useContext(DataContext),
     contextData = _useContext.data;
   var data = dataProp || contextData || emptyData;

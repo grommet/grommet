@@ -3,11 +3,10 @@
 exports.__esModule = true;
 exports.Diagram = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
-var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
 var _StyledDiagram = require("./StyledDiagram");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["connections"],
   _excluded2 = ["anchor", "animation", "color", "offset", "round", "thickness", "type"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -50,10 +49,12 @@ var findTarget = function findTarget(target) {
   }
   return target;
 };
+var defaultConnections = [];
 var Diagram = exports.Diagram = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var connections = _ref.connections,
+  var _ref$connections = _ref.connections,
+    connections = _ref$connections === void 0 ? defaultConnections : _ref$connections,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var _useState = (0, _react.useState)({
       width: 0,
       height: 0
@@ -207,7 +208,4 @@ var Diagram = exports.Diagram = /*#__PURE__*/(0, _react.forwardRef)(function (_r
   }, rest), /*#__PURE__*/_react["default"].createElement("g", null, paths));
 });
 Diagram.displayName = 'Diagram';
-Diagram.defaultProps = {
-  connections: []
-};
 Diagram.propTypes = _propTypes.DiagramPropTypes;

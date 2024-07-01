@@ -2,9 +2,8 @@ var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "defaultVal
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, isValidElement, useCallback, useContext, useMemo, useState, useRef, useEffect } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
@@ -16,7 +15,9 @@ import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getIconColor,
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
-var StyledSelectBox = styled(Box).withConfig({
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
+var StyledSelectBox = styled(Box).attrs(withTheme).withConfig({
   displayName: "SelectMultiple__StyledSelectBox",
   componentId: "sc-18zwyth-0"
 })(["", ";", ";", ";"], function (props) {
@@ -28,8 +29,6 @@ var StyledSelectBox = styled(Box).withConfig({
   var _props$theme$select$c;
   return props.open && ((_props$theme$select$c = props.theme.select.control) == null ? void 0 : _props$theme$select$c.open);
 });
-StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
@@ -78,7 +77,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     showSelectedInline = _ref$showSelectedInli === void 0 ? false : _ref$showSelectedInli,
     width = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var inputRef = useRef();
   var formContext = useContext(FormContext);
   var _useContext = useContext(MessageContext),
@@ -474,7 +473,6 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     theme: theme
   }, rest))), displaySelectIcon))));
 });
-SelectMultiple.defaultProps = _extends({}, defaultProps);
 SelectMultiple.displayName = 'SelectMultiple';
 SelectMultiple.propTypes = SelectMultiplePropTypes;
 export { SelectMultiple };

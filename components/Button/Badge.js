@@ -3,15 +3,18 @@
 exports.__esModule = true;
 exports.Badge = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
 var _Box = require("../Box");
 var _Stack = require("../Stack");
 var _Text = require("../Text");
+var _defaultProps = require("../../default-props");
+var _useThemeValue = require("../../utils/useThemeValue");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-var StyledBadgeContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var StyledBadgeContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "Badge__StyledBadgeContainer",
   componentId: "sc-1es4ws1-0"
 })(["", ""], function (props) {
@@ -20,7 +23,7 @@ var StyledBadgeContainer = (0, _styledComponents["default"])(_Box.Box).withConfi
 var Badge = exports.Badge = function Badge(_ref) {
   var children = _ref.children,
     content = _ref.content;
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var theme = (0, _useThemeValue.useThemeValue)();
   var containerRef = (0, _react.useRef)();
   var contentRef = (0, _react.useRef)();
   var stackRef = (0, _react.useRef)();

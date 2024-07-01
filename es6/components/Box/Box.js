@@ -4,7 +4,6 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { Children, forwardRef, useContext, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
@@ -12,6 +11,7 @@ import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     backgroundProp = _ref.background,
@@ -38,7 +38,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tabIndex = _ref.tabIndex,
     skeletonProp = _ref.skeleton,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   // boxOptions was created to preserve backwards compatibility but
   // should not be supported in v3
   var _useContext = useContext(OptionsContext),

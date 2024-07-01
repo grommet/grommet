@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 function _inheritsLoose(t, o) { t.prototype = Object.create(o.prototype), t.prototype.constructor = t, _setPrototypeOf(t, o); }
 function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { RouterContext } from './RouterContext';
 import { Button } from '../Button';
 var RoutedButton = /*#__PURE__*/function (_Component) {
   function RoutedButton() {
@@ -18,7 +18,7 @@ var RoutedButton = /*#__PURE__*/function (_Component) {
         method = _this$props.method,
         onClick = _this$props.onClick,
         path = _this$props.path;
-      var router = _this.context.router;
+      var router = _this.context;
       if (event) {
         var modifierKey = event.ctrlKey || event.metaKey;
 
@@ -60,9 +60,7 @@ var RoutedButton = /*#__PURE__*/function (_Component) {
   };
   return RoutedButton;
 }(Component);
-RoutedButton.contextTypes = {
-  router: PropTypes.shape({}).isRequired
-};
+RoutedButton.contextType = RouterContext;
 RoutedButton.defaultProps = {
   method: 'push'
 };

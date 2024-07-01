@@ -3,10 +3,10 @@
 exports.__esModule = true;
 exports.StyledBoxGap = exports.StyledBox = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
 var _styles = require("../../utils/styles");
 var _animation = require("../../utils/animation");
+var _defaultProps = require("../../default-props");
 var _FLEX_MAP;
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -170,7 +170,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, wrap, theme) {
 };
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
+var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
 })(["display:flex;box-sizing:border-box;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -220,8 +220,6 @@ var StyledBox = exports.StyledBox = _styledComponents["default"].div.withConfig(
 }, function (props) {
   return props.kindProp && props.kindProp.extend;
 });
-StyledBox.defaultProps = {};
-Object.setPrototypeOf(StyledBox.defaultProps, _defaultProps.defaultProps);
 var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
   var breakpoint = (0, _utils.getBreakpointStyle)(theme, theme.box.responsiveBreakpoint);
@@ -275,11 +273,9 @@ var gapGapStyle = function gapGapStyle(directionProp, gap, responsive, border, t
   }
   return styles;
 };
-var StyledBoxGap = exports.StyledBoxGap = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
+var StyledBoxGap = exports.StyledBoxGap = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;align-self:stretch;", ";"], function (props) {
   return props.gap && gapGapStyle(props.directionProp, props.gap, props.responsive, props.border, props.theme);
 });
-StyledBoxGap.defaultProps = {};
-Object.setPrototypeOf(StyledBoxGap.defaultProps, _defaultProps.defaultProps);

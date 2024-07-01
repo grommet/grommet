@@ -1,12 +1,12 @@
 var _excluded = ["defaultValue", "multiple", "options", "onToggle", "value"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { useCallback, useContext, useState, useRef } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useCallback, useState, useRef } from 'react';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
 import { StyledButton } from './StyledToggleGroup';
+import { useThemeValue } from '../../utils/useThemeValue';
 var useControlled = function useControlled(_ref) {
   var prop = _ref.prop,
     defaultProp = _ref.defaultProp,
@@ -42,7 +42,7 @@ var ToggleGroup = function ToggleGroup(_ref2) {
     _useControlled$ = _useControlled[0],
     value = _useControlled$ === void 0 ? multiple ? [] : '' : _useControlled$,
     setValue = _useControlled[1];
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var ref = useRef();
   var buttonRefs = useRef([]);
   var values = options == null ? void 0 : options.map(function (option) {

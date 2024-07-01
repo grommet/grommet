@@ -3,7 +3,6 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { useContext, useMemo, useState } from 'react';
 import { Descend } from 'grommet-icons/icons/Descend';
-import { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { DataForm } from '../Data/DataForm';
@@ -14,6 +13,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataSortPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var dropProps = {
   align: {
     top: 'bottom',
@@ -86,7 +86,7 @@ export var DataSort = function DataSort(_ref2) {
     inDataForm = _useContext4.inDataForm;
   var _useContext5 = useContext(MessageContext),
     format = _useContext5.format;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var _useState = useState(),
     showContent = _useState[0],
     setShowContent = _useState[1];

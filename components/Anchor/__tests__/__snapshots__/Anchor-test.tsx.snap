@@ -862,6 +862,27 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
 </div>
 `;
 
+exports[`Anchor renders anchor without grommet wrapper 1`] = `
+.c0 {
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c0:hover {
+  text-decoration: underline;
+}
+
+<a
+  class="c0"
+/>
+`;
+
 exports[`Anchor renders size specific theming 1`] = `
 <DocumentFragment>
   .c18 {

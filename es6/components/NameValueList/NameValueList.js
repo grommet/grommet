@@ -2,11 +2,11 @@ var _excluded = ["align", "layout", "nameProps", "pairProps", "valueProps"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from './NameValueListContext';
 import { isSmall } from '../../utils/responsive';
+import { useThemeValue } from '../../utils/useThemeValue';
 var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$nameValueList$;
   var align = _ref.align,
@@ -20,7 +20,7 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
     valueProps = _ref.valueProps,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var size = useContext(ResponsiveContext);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
 
   // If layout is grid, valueWidth sets the max width of the column.
   // Grid will 'fit' as many columns of valueWidth per row as container's

@@ -37,7 +37,7 @@ var marginStyle = function marginStyle(theme, align, data, responsive, marginPro
   }
   return (0, _styles.edgeStyle)('margin', adjustedMargin, responsive, theme.global.edgeSize.responsiveBreakpoint, theme);
 };
-var StyledDrop = exports.StyledDrop = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var StyledDrop = exports.StyledDrop = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledDrop",
   componentId: "sc-16s5rx8-0"
 })(["", " ", " position:fixed;z-index:", ";outline:none;", " ", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], _styles.baseStyle, function (props) {
@@ -53,5 +53,3 @@ var StyledDrop = exports.StyledDrop = (0, _styledComponents["default"])(_Box.Box
 }, dropKeyFrames, function (props) {
   return props.theme.global.drop && props.theme.global.drop.extend;
 });
-StyledDrop.defaultProps = {};
-Object.setPrototypeOf(StyledDrop.defaultProps, _defaultProps.defaultProps);

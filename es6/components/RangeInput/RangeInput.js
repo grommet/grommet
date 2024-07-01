@@ -2,12 +2,11 @@ var _excluded = ["a11yTitle", "color", "focus", "focusIndicator", "name", "onCha
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useState, useCallback, useEffect } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 import { RangeInputPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$rangeInput;
   var a11yTitle = _ref.a11yTitle,
@@ -27,7 +26,7 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$max = _ref.max,
     max = _ref$max === void 0 ? 100 : _ref$max,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var formContext = useContext(FormContext);
   var _useState = useState(focusProp),
     focus = _useState[0],

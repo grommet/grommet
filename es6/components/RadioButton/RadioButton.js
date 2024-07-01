@@ -1,12 +1,11 @@
 var _excluded = ["a11yTitle", "checked", "children", "disabled", "focus", "focusIndicator", "id", "label", "name", "onChange"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { forwardRef, useState } from 'react';
 import { normalizeColor, removeUndefined } from '../../utils';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonLabel, StyledRadioButtonBox } from './StyledRadioButton';
 import { RadioButtonPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$radioButton$ba;
   var a11yTitle = _ref.a11yTitle,
@@ -20,7 +19,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     name = _ref.name,
     onChange = _ref.onChange,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(),
     hover = _useState[0],
     setHover = _useState[1];

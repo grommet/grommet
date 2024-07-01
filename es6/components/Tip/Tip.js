@@ -1,16 +1,16 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { Children, cloneElement, forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { Children, cloneElement, forwardRef, useState } from 'react';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   var children = _ref.children,
     content = _ref.content,
     dropProps = _ref.dropProps,
     plain = _ref.plain;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var _useState = useState(false),
     over = _useState[0],
     setOver = _useState[1];

@@ -1,15 +1,15 @@
 var _excluded = ["control", "separator", "size"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 import { StyledContainer, StyledPaginationButton, StyledSeparator } from './StyledPageControl';
+import { useThemeValue } from '../../utils/useThemeValue';
 export var PageControl = function PageControl(_ref) {
   var control = _ref.control,
     separator = _ref.separator,
     sizeProp = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var size = sizeProp || 'medium';
   return /*#__PURE__*/React.createElement(StyledContainer, {
     as: "li",

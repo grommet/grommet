@@ -1,9 +1,9 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
+import { useThemeValue } from '../../utils/useThemeValue';
 var InteractionBox = styled(Box).withConfig({
   displayName: "Resizer__InteractionBox",
   componentId: "sc-8l808w-0"
@@ -13,7 +13,7 @@ var InteractionBox = styled(Box).withConfig({
 var Resizer = function Resizer(_ref) {
   var onResize = _ref.onResize,
     property = _ref.property;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(false),
     active = _useState[0],
     setActive = _useState[1];
@@ -99,6 +99,4 @@ var Resizer = function Resizer(_ref) {
   })));
 };
 Resizer.displayName = 'Resizer';
-Resizer.defaultProps = {};
-Object.setPrototypeOf(Resizer.defaultProps, defaultProps);
 export { Resizer };

@@ -3,7 +3,6 @@
 exports.__esModule = true;
 exports.Footer = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _defaultProps = require("../../default-props");
 var _TableRow = require("../TableRow");
 var _TableCell = require("../TableCell");
 var _Cell = require("./Cell");
@@ -62,5 +61,3 @@ var Footer = exports.Footer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   })));
 });
 Footer.displayName = 'Footer';
-Footer.defaultProps = {};
-Object.setPrototypeOf(Footer.defaultProps, _defaultProps.defaultProps);

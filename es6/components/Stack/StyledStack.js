@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 var fillStyle = css(["", " ", " flex-grow:1;display:flex;"], function (props) {
   return props.fillContainer === true || props.fillContainer === 'horizontal' ? "\n        width: 100%;\n        max-width: none;\n      " : '';
 }, function (props) {
   return props.fillContainer === true || props.fillContainer === 'vertical' ? 'height: 100%;' : '';
 });
-var StyledStack = styled.div.withConfig(styledComponentsConfig).withConfig({
+var StyledStack = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledStack",
   componentId: "sc-ajspsk-0"
 })(["position:relative;", " ", " ", ""], genericStyles, function (props) {
@@ -14,8 +14,6 @@ var StyledStack = styled.div.withConfig(styledComponentsConfig).withConfig({
 }, function (props) {
   return props.theme.stack && props.theme.stack.extend;
 });
-StyledStack.defaultProps = {};
-Object.setPrototypeOf(StyledStack.defaultProps, defaultProps);
 var styleMap = {
   fill: "\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n  ",
   center: "\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  ",
@@ -42,6 +40,4 @@ var StyledStackLayer = styled.div.withConfig(styledComponentsConfig).withConfig(
 }, function (props) {
   return !props.interactive && "pointer-events: none;";
 });
-StyledStackLayer.defaultProps = {};
-Object.setPrototypeOf(StyledStackLayer.defaultProps, defaultProps);
 export { StyledStack, StyledStackLayer };

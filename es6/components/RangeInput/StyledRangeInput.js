@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { disabledStyle, edgeStyle, focusStyle, normalizeColor, parseMetricToNum, getRGBA, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
 var getBoundOpacity = function getBoundOpacity(props, bound) {
@@ -109,7 +109,7 @@ var firefoxMicrosoftThumbStyle = css(["", " margin-top:0px;height:", ";width:", 
 });
 
 /* eslint-disable max-len */
-var StyledRangeInput = styled.input.withConfig(styledComponentsConfig).withConfig({
+var StyledRangeInput = styled.input.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledRangeInput",
   componentId: "sc-15st9ck-0"
 })(["box-sizing:border-box;position:relative;-webkit-appearance:none;border-color:transparent;height:", ";width:100%;padding:0px;cursor:", ";background:transparent;margin:0px;", " &::-moz-focus-inner{border:none;}&::-moz-focus-outer{border:none;}&::-webkit-slider-runnable-track{", "}&::-webkit-slider-thumb{margin-top:-", "px;", " ", " ", "}&::-moz-range-track{", "}&::-moz-range-thumb{", "}&::-ms-thumb{", "}", " &::-ms-track{", " border-color:transparent;color:transparent;}&::-ms-fill-lower{", ";border-color:transparent;}&::-ms-fill-upper{", ";border-color:transparent;}&:focus::-webkit-slider-thumb{", "}&:focus-visible{outline:0;}&:focus{outline:none;}", ""], function (props) {
@@ -137,6 +137,4 @@ var StyledRangeInput = styled.input.withConfig(styledComponentsConfig).withConfi
 });
 /* eslint-enable max-len */
 
-StyledRangeInput.defaultProps = {};
-Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);
 export { StyledRangeInput };

@@ -21230,6 +21230,107 @@ exports[`List renders custom theme for primaryKey 1`] = `
 </DocumentFragment>
 `;
 
+exports[`List renders outside grommet wrapper 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c0 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<ul
+  aria-label="test"
+  class="c0"
+  role="list"
+>
+  <li
+    class="c1 c2"
+  >
+    alpha
+  </li>
+  <li
+    class="c3 c2"
+  >
+    beta
+  </li>
+</ul>
+`;
+
 exports[`List secondaryKey 1`] = `
 .c0 {
   font-size: 18px;

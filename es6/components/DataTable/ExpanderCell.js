@@ -2,14 +2,13 @@ var _excluded = ["context", "expanded", "onToggle", "pad"],
   _excluded2 = ["background", "border", "context"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 import { Blank } from 'grommet-icons/icons/Blank';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // ExpanderControl is separated from ExpanderCell to give TableCell a chance
 // to set the ThemeContext dark context.
@@ -19,7 +18,7 @@ var ExpanderControl = function ExpanderControl(_ref) {
     onToggle = _ref.onToggle,
     pad = _ref.pad,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var content;
   if (onToggle) {
     var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
@@ -65,6 +64,4 @@ var ExpanderCell = function ExpanderCell(_ref2) {
   }, rest)));
 };
 ExpanderCell.displayName = 'ExpanderCell';
-ExpanderCell.defaultProps = {};
-Object.setPrototypeOf(ExpanderCell.defaultProps, defaultProps);
 export { ExpanderCell };

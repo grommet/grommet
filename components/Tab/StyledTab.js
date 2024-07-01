@@ -15,7 +15,7 @@ var tabHoverStyle = (0, _styledComponents.css)(["&:hover{", " ", " ", ";}&:focus
 }, function (props) {
   return props.theme.tab.hover.extend;
 });
-var StyledTab = exports.StyledTab = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var StyledTab = exports.StyledTab = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledTab",
   componentId: "sc-1nnwnsb-0"
 })(["white-space:nowrap;", " ", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -25,5 +25,3 @@ var StyledTab = exports.StyledTab = (0, _styledComponents["default"])(_Box.Box).
 }, function (props) {
   return props.theme.tab.extend;
 });
-StyledTab.defaultProps = {};
-Object.setPrototypeOf(StyledTab.defaultProps, _defaultProps.defaultProps);

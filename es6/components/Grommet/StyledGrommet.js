@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 import { baseStyle, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 var fullStyle = function fullStyle(full) {
   if (full === 'min') return css(["min-height:100vh;"]);
   return css(["width:100vw;height:100vh;overflow:auto;"]);
 };
-var StyledGrommet = styled.div.withConfig(styledComponentsConfig).withConfig({
+var StyledGrommet = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledGrommet",
   componentId: "sc-19lkkz7-0"
 })(["", " ", " ", " ", " ", ""], function (props) {
@@ -23,6 +23,4 @@ var StyledGrommet = styled.div.withConfig(styledComponentsConfig).withConfig({
     return "--" + k + ": " + props.theme.global.colors[k] + ";";
   }).join('\n');
 });
-StyledGrommet.defaultProps = {};
-Object.setPrototypeOf(StyledGrommet.defaultProps, defaultProps);
 export { StyledGrommet };

@@ -75,7 +75,7 @@ var disabledButtonStyle = function disabledButtonStyle(props) {
 };
 
 // Deprecate props.theme.button.disabled.opacity in V3
-var StyledButton = exports.StyledButton = _styledComponents["default"].button.withConfig(_styles.styledComponentsConfig).withConfig({
+var StyledButton = exports.StyledButton = _styledComponents["default"].button.withConfig(_styles.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
 })(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -107,5 +107,3 @@ var StyledButton = exports.StyledButton = _styledComponents["default"].button.wi
 }, function (props) {
   return (props.busy || props.success) && "\n    cursor: default;\n  ";
 });
-StyledButton.defaultProps = {};
-Object.setPrototypeOf(StyledButton.defaultProps, _defaultProps.defaultProps);

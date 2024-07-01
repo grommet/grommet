@@ -2,17 +2,18 @@
 
 exports.__esModule = true;
 exports.CopyButton = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _react = _interopRequireDefault(require("react"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Copy = require("grommet-icons/icons/Copy");
 var _Button = require("../Button");
 var _Tip = require("../Tip");
 var _styles = require("../../utils/styles");
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+var _defaultProps = require("../../default-props");
+var _useThemeValue = require("../../utils/useThemeValue");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
-var StyledButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
+var StyledButton = (0, _styledComponents["default"])(_Button.Button).attrs(_defaultProps.withTheme).withConfig({
   displayName: "CopyButton__StyledButton",
   componentId: "sc-1bp1m18-0"
 })(["border-radius:", ";", ""], function (props) {
@@ -27,7 +28,7 @@ var CopyButton = exports.CopyButton = function CopyButton(_ref) {
     readOnlyCopyPrompt = _ref.readOnlyCopyPrompt,
     tip = _ref.tip,
     value = _ref.value;
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var theme = (0, _useThemeValue.useThemeValue)();
   return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, {
     dropProps: {
       align: {

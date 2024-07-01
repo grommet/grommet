@@ -1,15 +1,15 @@
 var _excluded = ["sticky"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { useContext, useEffect } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useEffect } from 'react';
 import { findScrollParent, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Header = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var _theme$header2;
   var sticky = _ref.sticky,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var headerRef = useForwardedRef(ref);
   useEffect(function () {
     var scrollTop = 0;

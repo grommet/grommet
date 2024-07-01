@@ -3,13 +3,12 @@
 exports.__esModule = true;
 exports.Chart = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
-var _defaultProps = require("../../default-props");
 var _utils = require("../../utils");
 var _StyledChart = require("./StyledChart");
 var _utils2 = require("./utils");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "bounds", "color", "dash", "direction", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"],
   _excluded2 = ["color", "label", "onHover", "opacity", "thickness", "value"],
   _excluded3 = ["color", "label", "onHover", "opacity", "thickness", "value"];
@@ -52,7 +51,7 @@ var Chart = exports.Chart = /*#__PURE__*/_react["default"].forwardRef(function (
     valuesProp = _ref$values === void 0 ? defaultValues : _ref$values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerRef = (0, _utils.useForwardedRef)(ref);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var values = (0, _react.useMemo)(function () {
     return (0, _utils2.normalizeValues)(valuesProp);
   }, [valuesProp]);

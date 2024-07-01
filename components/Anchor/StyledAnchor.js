@@ -16,7 +16,7 @@ var sizeStyle = function sizeStyle(props) {
   }
   return (0, _styledComponents.css)(["font-size:inherit;line-height:inherit;"]);
 };
-var StyledAnchor = exports.StyledAnchor = _styledComponents["default"].a.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledAnchor = exports.StyledAnchor = _styledComponents["default"].a.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledAnchor",
   componentId: "sc-1rp7lwl-0"
 })(["box-sizing:border-box;display:inline-flex;", " color:", ";", " text-decoration:", ";cursor:pointer;", " ", " ", " ", " ", " ", ""], function (props) {
@@ -41,5 +41,3 @@ var StyledAnchor = exports.StyledAnchor = _styledComponents["default"].a.withCon
 }, function (props) {
   return props.theme.anchor.extend;
 });
-StyledAnchor.defaultProps = {};
-Object.setPrototypeOf(StyledAnchor.defaultProps, _defaultProps.defaultProps);

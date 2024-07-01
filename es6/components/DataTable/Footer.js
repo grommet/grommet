@@ -2,7 +2,6 @@ var _excluded = ["cellProps", "columns", "fill", "footerValues", "groups", "onSe
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef } from 'react';
-import { defaultProps } from '../../default-props';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Cell } from './Cell';
@@ -56,6 +55,4 @@ var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   })));
 });
 Footer.displayName = 'Footer';
-Footer.defaultProps = {};
-Object.setPrototypeOf(Footer.defaultProps, defaultProps);
 export { Footer };

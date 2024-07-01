@@ -1,8 +1,9 @@
 var _excluded = ["title"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { useContext } from 'react';
-import { Box, Button, Card, Grommet, Image, Text, ThemeContext } from 'grommet';
+import React from 'react';
+import { Box, Button, Card, Grommet, Image, Text } from 'grommet';
+import { useThemeValue } from '../../../utils/useThemeValue';
 var Item = function Item(_ref) {
   var title = _ref.title,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -62,7 +63,7 @@ var Content = function Content() {
   }));
 };
 export var Individual = function Individual() {
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
   }, /*#__PURE__*/React.createElement(Content, null)), /*#__PURE__*/React.createElement(Grommet, {

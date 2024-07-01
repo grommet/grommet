@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { edgeStyle, focusStyle, normalizeColor, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 import { Box } from '../Box';
 
 // Note: since `fillStyle` is only used in one place, `justify-content` was
@@ -20,7 +20,7 @@ var hoverStyle = css(["&:hover input:not([disabled]) + div,&:hover input:not([di
   var _props$theme$checkBox3;
   return normalizeColor(!props.disabled && ((_props$theme$checkBox3 = props.theme.checkBox.hover) == null || (_props$theme$checkBox3 = _props$theme$checkBox3.background) == null ? void 0 : _props$theme$checkBox3.color), props.theme);
 });
-var StyledCheckBoxIcon = styled.svg.withConfig(styledComponentsConfig).withConfig({
+var StyledCheckBoxIcon = styled.svg.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxIcon",
   componentId: "sc-1dbk5ju-0"
 })(["box-sizing:border-box;stroke-width:", ";stroke:", ";width:", ";height:", ";", ";"], function (props) {
@@ -34,9 +34,7 @@ var StyledCheckBoxIcon = styled.svg.withConfig(styledComponentsConfig).withConfi
 }, function (props) {
   return props.theme.checkBox.icon.extend;
 });
-StyledCheckBoxIcon.defaultProps = {};
-Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
-var StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig).withConfig({
+var StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
 })(["display:flex;flex-direction:row;align-items:", ";user-select:none;-webkit-user-select:none;", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -55,9 +53,7 @@ var StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig).wi
 }, function (props) {
   return props.theme.checkBox.extend;
 });
-StyledCheckBoxContainer.defaultProps = {};
-Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, defaultProps);
-var StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig).withConfig({
+var StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxInput",
   componentId: "sc-1dbk5ju-2"
 })(["opacity:0;-moz-appearance:none;width:0;height:0;margin:0;", " &:checked + span > span{", ":calc( ", " - ", " );background:", ";}"], function (props) {
@@ -71,9 +67,7 @@ var StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig).withCo
 }, function (props) {
   return normalizeColor(props.theme.checkBox.color || 'control', props.theme);
 });
-StyledCheckBoxInput.defaultProps = {};
-Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
-var StyledCheckBoxBox = styled(Box).withConfig({
+var StyledCheckBoxBox = styled(Box).attrs(withTheme).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxBox",
   componentId: "sc-1dbk5ju-3"
 })(["", ";", ";"], function (props) {
@@ -81,9 +75,7 @@ var StyledCheckBoxBox = styled(Box).withConfig({
 }, function (props) {
   return props.theme.checkBox.check.extend;
 });
-StyledCheckBoxBox.defaultProps = {};
-Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, defaultProps);
-var StyledCheckBoxToggle = styled.span.withConfig(styledComponentsConfig).withConfig({
+var StyledCheckBoxToggle = styled.span.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxToggle",
   componentId: "sc-1dbk5ju-4"
 })(["box-sizing:border-box;vertical-align:middle;display:inline-block;width:", ";height:", ";border:", " solid;border-color:", ";border-radius:", ";background-color:", ";", ";", ";"], function (props) {
@@ -103,9 +95,7 @@ var StyledCheckBoxToggle = styled.span.withConfig(styledComponentsConfig).withCo
 }, function (props) {
   return props.theme.checkBox.toggle.extend;
 });
-StyledCheckBoxToggle.defaultProps = {};
-Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, defaultProps);
-var StyledCheckBoxKnob = styled.span.withConfig(styledComponentsConfig).withConfig({
+var StyledCheckBoxKnob = styled.span.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxKnob",
   componentId: "sc-1dbk5ju-5"
 })(["box-sizing:border-box;position:relative;display:inherit;top:-", ";", ":-", ";transition:all 0.3s;width:", ";height:", ";background:", ";border-radius:", ";", ";"], function (props) {
@@ -125,12 +115,8 @@ var StyledCheckBoxKnob = styled.span.withConfig(styledComponentsConfig).withConf
 }, function (props) {
   return props.theme.checkBox.toggle.knob.extend;
 });
-StyledCheckBoxKnob.defaultProps = {};
-Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 var StyledCheckBox = styled(Box).withConfig({
   displayName: "StyledCheckBox",
   componentId: "sc-1dbk5ju-6"
 })(["flex-shrink:0;"]);
-StyledCheckBox.defaultProps = {};
-Object.setPrototypeOf(StyledCheckBox.defaultProps, defaultProps);
 export { StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxBox, StyledCheckBoxToggle, StyledCheckBoxKnob, StyledCheckBox };

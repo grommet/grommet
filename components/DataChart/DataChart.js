@@ -3,7 +3,6 @@
 exports.__esModule = true;
 exports.DataChart = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _Box = require("../Box");
 var _Chart = require("../Chart");
 var _Grid = require("../Grid");
@@ -18,6 +17,7 @@ var _XGuide = require("./XGuide");
 var _YGuide = require("./YGuide");
 var _utils2 = require("./utils");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "direction", "gap", "guide", "legend", "offset", "placeholder", "pad", "series", "size"],
   _excluded2 = ["property"],
   _excluded3 = ["property", "type", "x", "y"],
@@ -61,7 +61,7 @@ var DataChart = exports.DataChart = /*#__PURE__*/(0, _react.forwardRef)(function
     seriesProp = _ref.series,
     size = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
 
   // legend interaction, if any
   var _useState = (0, _react.useState)(),

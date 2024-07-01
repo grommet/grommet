@@ -2,18 +2,16 @@
 
 exports.__esModule = true;
 exports.ExpanderCell = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
+var _react = _interopRequireDefault(require("react"));
 var _Blank = require("grommet-icons/icons/Blank");
-var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _TableCell = require("../TableCell");
 var _utils = require("../../utils");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["context", "expanded", "onToggle", "pad"],
   _excluded2 = ["background", "border", "context"];
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 // ExpanderControl is separated from ExpanderCell to give TableCell a chance
@@ -24,7 +22,7 @@ var ExpanderControl = function ExpanderControl(_ref) {
     onToggle = _ref.onToggle,
     pad = _ref.pad,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var content;
   if (onToggle) {
     var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
@@ -70,5 +68,3 @@ var ExpanderCell = exports.ExpanderCell = function ExpanderCell(_ref2) {
   }, rest)));
 };
 ExpanderCell.displayName = 'ExpanderCell';
-ExpanderCell.defaultProps = {};
-Object.setPrototypeOf(ExpanderCell.defaultProps, _defaultProps.defaultProps);

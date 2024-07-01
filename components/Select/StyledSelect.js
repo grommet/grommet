@@ -8,8 +8,9 @@ var _Button = require("../Button");
 var _DropButton = require("../DropButton");
 var _TextInput = require("../TextInput");
 var _utils = require("../../utils");
+var _defaultProps = require("../../default-props");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"
 })(["@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";", ";"], function (props) {
@@ -27,7 +28,7 @@ var HiddenInput = exports.HiddenInput = _styledComponents["default"].input.withC
   displayName: "StyledSelect__HiddenInput",
   componentId: "sc-znp66n-2"
 })(["display:none;"]);
-var SelectOption = exports.SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig({
+var SelectOption = exports.SelectOption = (0, _styledComponents["default"])(_Button.Button).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledSelect__SelectOption",
   componentId: "sc-znp66n-3"
 })(["", " ", " &:focus{", "}display:block;width:100%;", ";"], function (props) {
@@ -45,7 +46,7 @@ var SelectTextInput = exports.SelectTextInput = (0, _styledComponents["default"]
 })(["cursor:", ";"], function (props) {
   return props.defaultCursor ? 'default' : 'pointer';
 });
-var StyledSelectDropButton = exports.StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropButton).withConfig({
+var StyledSelectDropButton = exports.StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropButton).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledSelect__StyledSelectDropButton",
   componentId: "sc-znp66n-5"
 })(["", ";", ";", ";"], function (props) {

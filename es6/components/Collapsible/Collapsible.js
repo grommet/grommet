@@ -1,10 +1,10 @@
-import React, { forwardRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { defaultProps } from '../../default-props';
 import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 import { CollapsiblePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var AnimatedBox = styled(Box).withConfig({
   displayName: "Collapsible__AnimatedBox",
   componentId: "sc-15kniua-0"
@@ -16,7 +16,7 @@ var Collapsible = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
     direction = _ref.direction,
     openArg = _ref.open;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(openArg),
     open = _useState[0],
     setOpen = _useState[1];

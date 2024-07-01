@@ -60,6 +60,17 @@ describe('Tabs', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <Tabs>
+        <Tab title="Tab 1">Tab body 1</Tab>
+        {undefined}
+        <Tab title="Tab 2">Tab body 2</Tab>
+      </Tabs>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('complex title', () => {
     const { container } = render(
       <Grommet>

@@ -4,8 +4,6 @@ exports.__esModule = true;
 exports.Carousel = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../../utils");
-var _defaultProps = require("../../default-props");
-var _contexts = require("../../contexts");
 var _MessageContext = require("../../contexts/MessageContext");
 var _Box = require("../Box");
 var _Button = require("../Button");
@@ -13,6 +11,7 @@ var _Keyboard = require("../Keyboard");
 var _StyledCarousel = require("./StyledCarousel");
 var _CarouselChild = require("./CarouselChild");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["activeChild", "initialChild", "onChild", "play", "children", "controls", "height", "fill", "width", "onFocus", "onBlur", "wrap"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -20,11 +19,13 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 var Carousel = exports.Carousel = function Carousel(_ref) {
   var activeChild = _ref.activeChild,
-    initialChild = _ref.initialChild,
+    _ref$initialChild = _ref.initialChild,
+    initialChild = _ref$initialChild === void 0 ? 0 : _ref$initialChild,
     onChild = _ref.onChild,
     play = _ref.play,
     children = _ref.children,
-    controls = _ref.controls,
+    _ref$controls = _ref.controls,
+    controls = _ref$controls === void 0 ? true : _ref$controls,
     height = _ref.height,
     fill = _ref.fill,
     width = _ref.width,
@@ -32,7 +33,7 @@ var Carousel = exports.Carousel = function Carousel(_ref) {
     onBlur = _ref.onBlur,
     wrap = _ref.wrap,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_contexts.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var timerRef = (0, _react.useRef)();
@@ -242,10 +243,5 @@ var Carousel = exports.Carousel = function Carousel(_ref) {
     hoverIndicator: true
   }))));
 };
-Carousel.defaultProps = {
-  initialChild: 0,
-  controls: true
-};
-Object.setPrototypeOf(Carousel.defaultProps, _defaultProps.defaultProps);
 Carousel.displayName = 'Carousel';
 Carousel.propTypes = _propTypes.CarouselPropTypes;

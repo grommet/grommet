@@ -4,12 +4,12 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { defaultProps } from '../../default-props';
 import { backgroundIsDark, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 import { TableCellPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 export var verticalAlignToJustify = {
   middle: 'center',
   top: 'start',
@@ -31,7 +31,7 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size = _ref.size,
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var tableContext = useContext(TableContext);
   var cellRef = useForwardedRef(ref);
   var containerRef = useRef();

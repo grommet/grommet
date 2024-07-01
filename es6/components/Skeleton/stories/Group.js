@@ -1,8 +1,9 @@
 function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { useContext } from 'react';
-import { Box, Button, Card, Grommet, Image, Text, ThemeContext } from 'grommet';
+import React from 'react';
+import { Box, Button, Card, Grommet, Image, Text } from 'grommet';
 import { FormAdd } from "grommet-icons/es6/icons/FormAdd";
+import { useThemeValue } from '../../../utils/useThemeValue';
 var Item = function Item(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   return /*#__PURE__*/React.createElement(Card, _extends({
@@ -54,7 +55,7 @@ var Content = function Content() {
   }, /*#__PURE__*/React.createElement(Item, null), /*#__PURE__*/React.createElement(Item, null), /*#__PURE__*/React.createElement(Item, null), /*#__PURE__*/React.createElement(Item, null), /*#__PURE__*/React.createElement(Item, null));
 };
 export var Group = function Group() {
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
   }, /*#__PURE__*/React.createElement(Content, null)), /*#__PURE__*/React.createElement(Grommet, {

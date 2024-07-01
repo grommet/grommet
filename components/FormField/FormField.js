@@ -3,8 +3,7 @@
 exports.__esModule = true;
 exports.FormField = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _defaultProps = require("../../default-props");
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 var _useDebounce = require("../../utils/use-debounce");
 var _styles = require("../../utils/styles");
@@ -18,9 +17,12 @@ var _Text = require("../Text");
 var _TextInput = require("../TextInput");
 var _FormContext = require("../Form/FormContext");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
+var _defaultProps = require("../../default-props");
 var _excluded = ["error", "info", "message", "type"],
   _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
   _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"];
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -30,7 +32,7 @@ var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'Ra
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
 };
-var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "sc-m9hood-0"
 })(["", " ", ""], function (props) {
@@ -40,7 +42,7 @@ var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 }, function (props) {
   return props.theme.formField && props.theme.formField.extend;
 });
-var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
 })(["", ""], function (props) {
@@ -48,7 +50,7 @@ var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig
     justBorder: true
   });
 });
-var StyledMessageContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var StyledMessageContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "FormField__StyledMessageContainer",
   componentId: "sc-m9hood-2"
 })(["", ""], function (props) {
@@ -68,7 +70,7 @@ var Message = function Message(_ref) {
     message = _ref.message,
     type = _ref.type,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   if (message) {
     var icon;
     var containerProps;
@@ -147,7 +149,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     validate = _ref3.validate,
     validateOn = _ref3.validateOn,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _formContext$useFormF = formContext.useFormField({
       disabled: disabled,

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { disabledStyle, inputStyle, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 var plainStyle = css(["outline:none;border:none;width:100%;-webkit-appearance:none;"]);
 var resizeStyle = function resizeStyle(resize) {
   if (resize === 'horizontal') {
@@ -14,7 +14,7 @@ var resizeStyle = function resizeStyle(resize) {
   }
   return 'resize: none;';
 };
-var StyledTextArea = styled.textarea.withConfig(styledComponentsConfig).withConfig({
+var StyledTextArea = styled.textarea.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
 })(["", " ", " ", " ", " ", " ", ";max-width:100%;"], inputStyle, function (props) {
@@ -28,6 +28,4 @@ var StyledTextArea = styled.textarea.withConfig(styledComponentsConfig).withConf
 }, function (props) {
   return props.theme.textArea && props.theme.textArea.extend;
 });
-StyledTextArea.defaultProps = {};
-Object.setPrototypeOf(StyledTextArea.defaultProps, defaultProps);
 export { StyledTextArea };

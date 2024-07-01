@@ -2,12 +2,11 @@ var _excluded = ["background", "max", "round", "size", "thickness", "type", "val
   _excluded2 = ["color", "highlight", "label", "onHover", "value"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { forwardRef } from 'react';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
   var background = props.background,
     max = props.max,
@@ -17,7 +16,7 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     type = props.type,
     values = props.values,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   var strokeWidth = type === 'pie' ? width / 2 : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   var centerX = width / 2;
@@ -139,6 +138,4 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
   }, rest), track, paths, pathCaps);
 });
 Circle.displayName = 'Circle';
-Circle.defaultProps = {};
-Object.setPrototypeOf(Circle.defaultProps, defaultProps);
 export { Circle };

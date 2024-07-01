@@ -1,12 +1,11 @@
 var _excluded = ["a11yTitle", "aria-label", "align", "children", "height", "justify", "round", "size", "src", "width"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { useCallback, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useCallback, useMemo } from 'react';
 import { Image } from '../Image';
-import { defaultProps } from '../../default-props';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
 import { AvatarPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Avatar = function Avatar(_ref) {
   var a11yTitle = _ref.a11yTitle,
     ariaLabel = _ref['aria-label'],
@@ -23,7 +22,7 @@ var Avatar = function Avatar(_ref) {
     src = _ref.src,
     width = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var avatarSize = theme.avatar.size[size] || size;
   var avatarTextSize = theme.avatar.text.size[size] || 'large';
   var avatarProps = useMemo(function () {

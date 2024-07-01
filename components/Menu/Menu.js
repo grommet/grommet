@@ -3,8 +3,7 @@
 exports.__esModule = true;
 exports.Menu = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _defaultProps = require("../../default-props");
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _DropButton = require("../DropButton");
@@ -13,13 +12,16 @@ var _Text = require("../Text");
 var _utils = require("../../utils");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
+var _useThemeValue = require("../../utils/useThemeValue");
+var _defaultProps = require("../../default-props");
 var _excluded = ["a11yTitle", "aria-label", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
   _excluded2 = ["align"];
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var ContainerBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
 })(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}&:focus{outline:none;}", ";"], function (props) {
@@ -47,6 +49,7 @@ To make a selection:
 - Space is pressed.
 */
 
+var defaultItems = [];
 var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var a11yTitle = props.a11yTitle,
     ariaLabel = props['aria-label'],
@@ -56,9 +59,11 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     dropBackground = props.dropBackground,
     dropProps = props.dropProps,
     dropTarget = props.dropTarget,
-    justifyContent = props.justifyContent,
+    _props$justifyContent = props.justifyContent,
+    justifyContent = _props$justifyContent === void 0 ? 'start' : _props$justifyContent,
     icon = props.icon,
-    items = props.items,
+    _props$items = props.items,
+    items = _props$items === void 0 ? defaultItems : _props$items,
     label = props.label,
     messages = props.messages,
     onKeyDown = props.onKeyDown,
@@ -66,7 +71,7 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     plain = props.plain,
     size = props.size,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme);
@@ -401,10 +406,5 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     alignControlMirror === 'bottom' && !align.bottom === 'top' || align.bottom === 'bottom') ? controlMirror : undefined))
   }), content));
 });
-Menu.defaultProps = {
-  items: [],
-  messages: undefined,
-  justifyContent: 'start'
-};
 Menu.displayName = 'Menu';
 Menu.propTypes = _propTypes.MenuPropTypes;

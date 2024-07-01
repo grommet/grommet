@@ -5,9 +5,7 @@ exports.Tabs = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Previous = require("grommet-icons/icons/Previous");
 var _Next = require("grommet-icons/icons/Next");
-var _styledComponents = require("styled-components");
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
-var _defaultProps = require("../../default-props");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _TabsContext = require("./TabsContext");
@@ -17,6 +15,7 @@ var _utils = require("../../utils");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext/AnalyticsContext");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["alignControls", "children", "flex", "justify", "messages", "responsive"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -33,7 +32,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     _ref$responsive = _ref.responsive,
     responsive = _ref$responsive === void 0 ? true : _ref$responsive,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var propsActiveIndex = rest.activeIndex,

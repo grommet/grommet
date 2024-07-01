@@ -3,9 +3,8 @@
 exports.__esModule = true;
 exports.DateInput = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Calendar = require("grommet-icons/icons/Calendar");
-var _defaultProps = require("../../default-props");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _Box = require("../Box");
@@ -22,13 +21,16 @@ var _utils2 = require("./utils");
 var _propTypes = require("./propTypes");
 var _Calendar3 = require("../Calendar/Calendar");
 var _CopyButton = require("../TextInput/CopyButton");
+var _useThemeValue = require("../../utils/useThemeValue");
+var _defaultProps = require("../../default-props");
 var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "icon", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "readOnly", "readOnlyCopy", "reverse", "value", "messages"],
   _excluded2 = ["icon"];
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-var StyledDateInputContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+var StyledDateInputContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
   displayName: "DateInput__StyledDateInputContainer",
   componentId: "sc-1jfta23-0"
 })(["", "};"], function (props) {
@@ -71,7 +73,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
     valueArg = _ref.value,
     messages = _ref.messages,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     formatMessage = _useContext.format;

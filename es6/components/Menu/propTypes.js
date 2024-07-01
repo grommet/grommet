@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
     dropProps: PropTypes.object,
     justifyContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
     icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
-    items: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object))]).isRequired,
+    items: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object))]),
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,

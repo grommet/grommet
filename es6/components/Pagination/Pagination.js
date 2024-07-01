@@ -2,8 +2,7 @@ var _excluded = ["a11yTitle", "aria-label", "numberItems", "numberEdgePages", "n
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
@@ -11,7 +10,9 @@ import { PageControl } from './PageControl';
 import { PaginationStep } from './PaginationStep';
 import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
-var StyledPaginationContainer = styled(Box).withConfig({
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
+var StyledPaginationContainer = styled(Box).attrs(withTheme).withConfig({
   displayName: "Pagination__StyledPaginationContainer",
   componentId: "sc-rnlw6m-0"
 })(["", ""], function (props) {
@@ -41,7 +42,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     stepOptions = _ref.stepOptions,
     summary = _ref.summary,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useContext = useContext(DataContext),
     onView = _useContext.onView,
     filteredTotal = _useContext.filteredTotal,

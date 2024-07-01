@@ -2,7 +2,6 @@ var _excluded = ["as", "children", "data", "margin", "onMore", "pad", "paginate"
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { Fragment, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Card } from '../Card';
@@ -12,6 +11,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Pagination } from '../Pagination';
 import { normalizeShow, usePagination } from '../../utils';
 import { CardsPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var emptyData = [];
 var Cards = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var _ref$as = _ref.as,
@@ -28,7 +28,7 @@ var Cards = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     _ref$step = _ref.step,
     step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var _useContext = useContext(DataContext),
     contextData = _useContext.data;
   var data = dataProp || contextData || emptyData;

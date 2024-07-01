@@ -1,9 +1,9 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React from 'react';
+import styled from 'styled-components';
 import { Button } from '../Button';
 import { Box } from '../Box';
+import { useThemeValue } from '../../utils/useThemeValue';
 var SorterButton = styled(Button).withConfig({
   displayName: "Sorter__SorterButton",
   componentId: "sc-fzr2yb-0"
@@ -16,7 +16,7 @@ var Sorter = function Sorter(_ref) {
     property = _ref.property,
     sort = _ref.sort,
     themeProps = _ref.themeProps;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var icon;
   if (sort && sort.property === property) {
     var Icon = theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
@@ -40,6 +40,4 @@ var Sorter = function Sorter(_ref) {
   return content;
 };
 Sorter.displayName = 'Sorter';
-Sorter.defaultProps = {};
-Object.setPrototypeOf(Sorter.defaultProps, defaultProps);
 export { Sorter };

@@ -2,11 +2,11 @@
 
 exports.__esModule = true;
 exports["default"] = exports.Group = void 0;
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _grommetIcons = require("grommet-icons");
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+var _useThemeValue = require("../../../utils/useThemeValue");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var Item = function Item(_ref) {
@@ -60,7 +60,7 @@ var Content = function Content() {
   }, /*#__PURE__*/_react["default"].createElement(Item, null), /*#__PURE__*/_react["default"].createElement(Item, null), /*#__PURE__*/_react["default"].createElement(Item, null), /*#__PURE__*/_react["default"].createElement(Item, null), /*#__PURE__*/_react["default"].createElement(Item, null));
 };
 var Group = exports.Group = function Group() {
-  var theme = (0, _react.useContext)(_grommet.ThemeContext);
+  var theme = (0, _useThemeValue.useThemeValue)();
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
   }, /*#__PURE__*/_react["default"].createElement(Content, null)), /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {

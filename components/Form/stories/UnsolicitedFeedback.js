@@ -5,13 +5,14 @@ exports["default"] = exports.UnSolicitedFeedback = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _grommet = require("grommet");
+var _defaultProps = require("../../../default-props");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 // create a floating button for story example
 // temp fix until this theme issue is resolved:
 // https://github.com/grommet/grommet-theme-hpe/issues/283
-var PositionedFeedbackButton = (0, _styledComponents["default"])(_grommet.Button).withConfig({
+var PositionedFeedbackButton = (0, _styledComponents["default"])(_grommet.Button).attrs(_defaultProps.withTheme).withConfig({
   displayName: "UnsolicitedFeedback__PositionedFeedbackButton",
   componentId: "sc-5qlys5-0"
 })(["position:fixed;bottom:0px;border-radius:6px;right:0px;z-index:10;color:", ";"], function (props) {

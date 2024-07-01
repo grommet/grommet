@@ -1,11 +1,10 @@
 var _excluded = ["elements", "precision"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo } from 'react';
 import { parseMetricToNum } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { StyledAnalog, StyledHour, StyledMinute, StyledSecond } from './StyledClock';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // this will serve both minutes and hours (360 / 6)
 var ANGLE_UNIT = 6;
@@ -37,7 +36,7 @@ var Analog = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var elements = _ref2.elements,
     precision = _ref2.precision,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useMemo = useMemo(function () {
       return getClockState(elements);
     }, [elements]),

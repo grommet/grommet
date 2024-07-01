@@ -20,7 +20,7 @@ var resizeStyle = function resizeStyle(resize) {
   }
   return 'resize: none;';
 };
-var StyledTextArea = exports.StyledTextArea = _styledComponents["default"].textarea.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledTextArea = exports.StyledTextArea = _styledComponents["default"].textarea.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
 })(["", " ", " ", " ", " ", " ", ";max-width:100%;"], _utils.inputStyle, function (props) {
@@ -34,5 +34,3 @@ var StyledTextArea = exports.StyledTextArea = _styledComponents["default"].texta
 }, function (props) {
   return props.theme.textArea && props.theme.textArea.extend;
 });
-StyledTextArea.defaultProps = {};
-Object.setPrototypeOf(StyledTextArea.defaultProps, _defaultProps.defaultProps);

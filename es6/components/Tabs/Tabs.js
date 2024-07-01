@@ -4,9 +4,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { forwardRef, useCallback, useContext, useState, useEffect, useRef, useMemo } from 'react';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { Next } from 'grommet-icons/icons/Next';
-import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TabsContext } from './TabsContext';
@@ -16,6 +14,7 @@ import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$tabs$header;
   var alignControls = _ref.alignControls,
@@ -27,7 +26,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$responsive = _ref.responsive,
     responsive = _ref$responsive === void 0 ? true : _ref$responsive,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var propsActiveIndex = rest.activeIndex,

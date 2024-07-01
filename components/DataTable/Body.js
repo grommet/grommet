@@ -3,7 +3,6 @@
 exports.__esModule = true;
 exports.Body = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _utils = require("../../utils");
 var _CheckBox = require("../CheckBox");
 var _InfiniteScroll = require("../InfiniteScroll");
@@ -14,7 +13,7 @@ var _ExpanderCell = require("./ExpanderCell");
 var _Cell = require("./Cell");
 var _StyledDataTable = require("./StyledDataTable");
 var _buildState = require("./buildState");
-var _defaultProps = require("../../default-props");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand", "verticalAlign"];
 /* eslint-disable no-underscore-dangle */
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -156,7 +155,7 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
     setRowExpand = _ref2.setRowExpand,
     verticalAlign = _ref2.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+  var theme = (0, _useThemeValue.useThemeValue)();
   var _React$useState = _react["default"].useState(),
     active = _React$useState[0],
     setActive = _React$useState[1];

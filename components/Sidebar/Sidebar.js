@@ -25,8 +25,3 @@ var Sidebar = exports.Sidebar = function Sidebar(_ref) {
   }, children), footer);
 };
 Sidebar.propTypes = _propTypes.SidebarPropTypes;
-Sidebar.defaultProps = {
-  children: undefined,
-  footer: undefined,
-  header: undefined
-};

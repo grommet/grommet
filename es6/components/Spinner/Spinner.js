@@ -4,11 +4,10 @@ var _excluded = ["ref", "size"],
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { isValidElement, forwardRef, useContext, useEffect } from 'react';
-import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
-import { defaultProps } from '../../default-props';
 import { SpinnerPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var BasicSpinner = function BasicSpinner(_ref) {
   var ref = _ref.ref,
     size = _ref.size,
@@ -41,7 +40,7 @@ var Spinner = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     size = _ref2.size,
     message = _ref2.message,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var announce = useContext(AnnounceContext);
   useEffect(function () {
     if (message != null && message.start) announce(message.start);else if (typeof message === 'string') announce(message);

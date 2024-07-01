@@ -3,12 +3,11 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useEffect, useState, useContext, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { DropPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var inline = _ref.inline,
     restrictFocus = _ref.restrictFocus,
@@ -16,7 +15,7 @@ var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$trapFocus = _ref.trapFocus,
     trapFocus = _ref$trapFocus === void 0 ? true : _ref$trapFocus,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(),
     originalFocusedElement = _useState[0],
     setOriginalFocusedElement = _useState[1];

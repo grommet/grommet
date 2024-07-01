@@ -2,11 +2,11 @@ var _excluded = ["messages", "onChange", "options", "step"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Select } from '../Select';
 import { Text } from '../Text';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 export var PaginationStep = function PaginationStep(_ref) {
   var messages = _ref.messages,
     onChange = _ref.onChange,
@@ -16,7 +16,7 @@ export var PaginationStep = function PaginationStep(_ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(MessageContext),
     formatMessage = _useContext.format;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   return /*#__PURE__*/React.createElement(Box, _extends({
     direction: "row",
     align: "center",

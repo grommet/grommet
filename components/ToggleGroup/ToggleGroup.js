@@ -3,11 +3,11 @@
 exports.__esModule = true;
 exports.ToggleGroup = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = require("styled-components");
 var _Box = require("../Box");
 var _Keyboard = require("../Keyboard");
 var _propTypes = require("./propTypes");
 var _StyledToggleGroup = require("./StyledToggleGroup");
+var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["defaultValue", "multiple", "options", "onToggle", "value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -48,7 +48,7 @@ var ToggleGroup = exports.ToggleGroup = function ToggleGroup(_ref2) {
     _useControlled$ = _useControlled[0],
     value = _useControlled$ === void 0 ? multiple ? [] : '' : _useControlled$,
     setValue = _useControlled[1];
-  var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+  var theme = (0, _useThemeValue.useThemeValue)();
   var ref = (0, _react.useRef)();
   var buttonRefs = (0, _react.useRef)([]);
   var values = options == null ? void 0 : options.map(function (option) {

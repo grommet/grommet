@@ -1,14 +1,13 @@
 var _excluded = ["name", "value", "size", "onRemove", "onClick"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 import { FormClose } from 'grommet-icons/icons/FormClose';
-import { defaultProps } from '../../default-props';
 import { TagPropTypes } from './propTypes';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$tag$icons, _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4;
   var name = _ref.name,
@@ -17,7 +16,7 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onRemove = _ref.onRemove,
     onClick = _ref.onClick,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var RemoveIcon = ((_theme$tag$icons = theme.tag.icons) == null ? void 0 : _theme$tag$icons.remove) || FormClose;
   var containerProps = _extends({
     ref: ref,

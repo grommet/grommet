@@ -2,9 +2,7 @@ var _excluded = ["a11yTitle", "aria-label", "alignSelf", "children", "clear", "c
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, isValidElement, useCallback, useContext, useMemo, useState, useRef, useEffect } from 'react';
-import { ThemeContext } from 'styled-components';
 import { useKeyboard } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
@@ -14,8 +12,7 @@ import { applyKey, getNormalizedValue, changeEvent, getSelectIcon, getDisplayLab
 import { DefaultSelectTextInput } from './DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectPropTypes } from './propTypes';
-StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
+import { useThemeValue } from '../../utils/useThemeValue';
 var defaultDropAlign = {
   top: 'bottom',
   left: 'left'
@@ -68,7 +65,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     valueKeyProp = _ref.valueKey,
     valueLabel = _ref.valueLabel,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var inputRef = useRef();
   var formContext = useContext(FormContext);
   var _useContext = useContext(MessageContext),
@@ -344,7 +341,6 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size: size
   })))));
 });
-Select.defaultProps = _extends({}, defaultProps);
 Select.displayName = 'Select';
 Select.propTypes = SelectPropTypes;
 export { Select };

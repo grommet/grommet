@@ -20,8 +20,3 @@ export var Sidebar = function Sidebar(_ref) {
   }, children), footer);
 };
 Sidebar.propTypes = SidebarPropTypes;
-Sidebar.defaultProps = {
-  children: undefined,
-  footer: undefined,
-  header: undefined
-};

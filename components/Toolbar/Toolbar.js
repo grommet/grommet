@@ -34,4 +34,3 @@ var Toolbar = exports.Toolbar = function Toolbar(_ref) {
   }, layoutProps, rest), children);
 };
 Toolbar.propTypes = _propTypes.ToolbarPropTypes;
-Toolbar.defaultProps = {};

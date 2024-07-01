@@ -5,12 +5,11 @@ var _excluded = ["fill", "color", "continents", "hoverColor", "onSelectPlace", "
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Drop } from '../Drop';
-import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledWorldMap } from './StyledWorldMap';
 import { WorldMapPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
 // by FACTOR pixels.
@@ -200,7 +199,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
     onSelectPlace = _ref5.onSelectPlace,
     placesProp = _ref5.places,
     rest = _objectWithoutPropertiesLoose(_ref5, _excluded);
-  var theme = React.useContext(ThemeContext);
+  var theme = useThemeValue();
   var world = React.useMemo(buildWorld, []);
   var _React$useState = React.useState({}),
     continents = _React$useState[0],
@@ -385,7 +384,5 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
   }, continentElements), placeElements, active), placesContent);
 });
 WorldMap.displayName = 'WorldMap';
-WorldMap.defaultProps = {};
-Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
 WorldMap.propTypes = WorldMapPropTypes;
 export { WorldMap };

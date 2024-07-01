@@ -1,4 +1,4 @@
-var _excluded = ["children", "color", "tag", "as", "tip", "a11yTitle", "truncate", "size", "skeleton"];
+var _excluded = ["children", "color", "tag", "as", "tip", "a11yTitle", "truncate", "size", "skeleton", "level"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useMemo, useState } from 'react';
@@ -21,6 +21,8 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
     truncate = _ref.truncate,
     size = _ref.size,
     skeletonProp = _ref.skeleton,
+    _ref$level = _ref.level,
+    level = _ref$level === void 0 ? 1 : _ref$level,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var textRef = useForwardedRef(ref);
   var _useState = useState(false),
@@ -51,6 +53,7 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return /*#__PURE__*/React.createElement(TextSkeleton, _extends({
       ref: ref,
       as: as,
+      level: level,
       size: size
     }, skeletonProp, rest));
   }
@@ -58,6 +61,7 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
     as: !as && tag ? tag : as,
     colorProp: color,
     "aria-label": a11yTitle,
+    level: level,
     truncate: truncate,
     size: size
   }, rest, {
@@ -82,8 +86,5 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return styledTextResult;
 });
 Text.displayName = 'Text';
-Text.defaultProps = {
-  level: 1
-};
 Text.propTypes = TextPropTypes;
 export { Text };

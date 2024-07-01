@@ -1,7 +1,7 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 import { normalizeColor, parseMetricToNum } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Swatch = function Swatch(_ref) {
   var aspect = _ref.aspect,
     color = _ref.color,
@@ -11,7 +11,7 @@ var Swatch = function Swatch(_ref) {
     round = _ref.round,
     thickness = _ref.thickness,
     type = _ref.type;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var dim = parseInt(theme.global.spacing, 10) / 2;
   var half = dim / 2;
   var height = dim;

@@ -2,9 +2,8 @@ var _excluded = ["active", "align", "aria-label", "badge", "busy", "color", "chi
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { cloneElement, Children, forwardRef, useContext, useMemo, useState, useCallback, useEffect } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { backgroundAndTextColors, colorIsDark, findButtonParent, useSizedIcon, normalizeBackground, normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { ButtonPropTypes } from './propTypes';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -16,6 +15,7 @@ import { StyledButtonKind } from './StyledButtonKind';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { Skeleton, useSkeleton } from '../Skeleton';
 import { EllipsisAnimation, GrowCheckmark, StyledBusyContents } from './BusyAnimation';
+import { useThemeValue } from '../../utils/useThemeValue';
 var RelativeBox = styled(Box).withConfig({
   displayName: "Button__RelativeBox",
   componentId: "sc-zuqsuw-0"
@@ -179,7 +179,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     a11yTitle = _ref$a11yTitle === void 0 ? typeof tip === 'string' ? tip : undefined : _ref$a11yTitle,
     as = _ref.as,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(),
     focus = _useState[0],
     setFocus = _useState[1];

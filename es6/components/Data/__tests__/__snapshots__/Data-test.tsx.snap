@@ -3528,6 +3528,23 @@ exports[`Data renders 1`] = `
 </div>
 `;
 
+exports[`Data renders outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+<div
+  class="c0"
+  id="data"
+/>
+`;
+
 exports[`Data toolbar 1`] = `
 .c7 {
   display: inline-block;

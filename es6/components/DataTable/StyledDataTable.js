@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { backgroundStyle, fillStyle, focusStyle, unfocusStyle, genericStyles, normalizeColor, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
@@ -8,9 +7,10 @@ import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
+import { withTheme } from '../../default-props';
 
 // border-collapse: separate is needed so pinned header/footer borders work
-var StyledDataTable = styled(Table).withConfig({
+var StyledDataTable = styled(Table).attrs(withTheme).withConfig({
   displayName: "StyledDataTable",
   componentId: "sc-xrlyjm-0"
 })(["position:relative;border-spacing:0;border-collapse:separate;", " ", " ", ";"], genericStyles, function (props) {
@@ -18,18 +18,14 @@ var StyledDataTable = styled(Table).withConfig({
 }, function (props) {
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
 });
-StyledDataTable.defaultProps = {};
-Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
 
 // when paginated, this wraps the data table and pagination component
-var StyledContainer = styled(Box).withConfig({
+var StyledContainer = styled(Box).attrs(withTheme).withConfig({
   displayName: "StyledDataTable__StyledContainer",
   componentId: "sc-xrlyjm-1"
 })(["", ";"], function (props) {
   return props.theme.dataTable && props.theme.dataTable.container && props.theme.dataTable.container.extend;
 });
-StyledContainer.defaultProps = {};
-Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 var hoverStyle = css(["", " color:", ";"], function (props) {
   return backgroundStyle(normalizeColor(props.theme.table && props.theme.table.row && props.theme.table.row.hover && props.theme.table.row.hover.background || props.theme.global.hover.background, props.theme), props.theme);
 }, function (props) {
@@ -45,11 +41,9 @@ var StyledDataTableRow = styled(TableRow).withConfig({
 }, function (props) {
   return props.active && hoverStyle;
 });
-StyledDataTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
 
 // focus styling other than outline doesn't work on <tbody />
-var StyledDataTableBody = styled(TableBody).withConfig({
+var StyledDataTableBody = styled(TableBody).attrs(withTheme).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "sc-xrlyjm-3"
 })(["", " &:focus{", "}&:focus:not(:focus-visible){", "}"], function (props) {
@@ -61,16 +55,12 @@ var StyledDataTableBody = styled(TableBody).withConfig({
   skipSvgChildren: true,
   forceOutline: true
 }));
-StyledDataTableBody.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableBody.defaultProps, defaultProps);
 var StyledDataTableHeader = styled(TableHeader).withConfig({
   displayName: "StyledDataTable__StyledDataTableHeader",
   componentId: "sc-xrlyjm-4"
 })(["", ""], function (props) {
   return props.size && "\n    height: fit-content;\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 });
-StyledDataTableHeader.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
 var StyledDataTableFooter = styled(TableFooter).withConfig({
   displayName: "StyledDataTable__StyledDataTableFooter",
   componentId: "sc-xrlyjm-5"
@@ -79,9 +69,7 @@ var StyledDataTableFooter = styled(TableFooter).withConfig({
 }, function (props) {
   return props.pin && "\n      /* Safari needs the relative positioning of tfoot specified */\n      position: sticky;\n      bottom: 0;\n      z-index: 1;\n  ";
 });
-StyledDataTableFooter.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
-var StyledDataTableCell = styled(TableCell).withConfig({
+var StyledDataTableCell = styled(TableCell).attrs(withTheme).withConfig({
   displayName: "StyledDataTable__StyledDataTableCell",
   componentId: "sc-xrlyjm-6"
 })(["", ";", " ", ""], function (props) {
@@ -93,8 +81,6 @@ var StyledDataTableCell = styled(TableCell).withConfig({
 }, function (props) {
   return props.pin && props.pin.length > 0 && props.theme.dataTable.pinned && props.theme.dataTable.pinned[props.context] && props.theme.dataTable.pinned[props.context].extend ? props.theme.dataTable.pinned[props.context].extend : '';
 });
-StyledDataTableCell.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
 var StyledPlaceholder = styled('caption').withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledDataTable__StyledPlaceholder",
   componentId: "sc-xrlyjm-7"

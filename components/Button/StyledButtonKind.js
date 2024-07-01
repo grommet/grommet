@@ -172,7 +172,7 @@ var fillStyle = function fillStyle(fillContainer) {
 var plainStyle = function plainStyle(props) {
   return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", " ", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ", props.hasIcon && !props.hasLabel && "line-height: 0;");
 };
-var StyledButtonKind = exports.StyledButtonKind = _styledComponents["default"].button.withConfig({
+var StyledButtonKind = exports.StyledButtonKind = _styledComponents["default"].button.attrs(_defaultProps.withTheme).withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
     return (0, _isPropValid["default"])(prop) && !['kind'].includes(prop);
   }
@@ -206,5 +206,3 @@ var StyledButtonKind = exports.StyledButtonKind = _styledComponents["default"].b
 }, function (props) {
   return (props.busy || props.success) && "\n    cursor: default;\n  ";
 });
-StyledButtonKind.defaultProps = {};
-Object.setPrototypeOf(StyledButtonKind.defaultProps, _defaultProps.defaultProps);

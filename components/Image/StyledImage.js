@@ -14,7 +14,7 @@ var FIT_MAP = {
 var fitStyle = (0, _styledComponents.css)(["flex:1 1;overflow:hidden;object-fit:", ";"], function (props) {
   return FIT_MAP[props.fit];
 });
-var StyledImage = exports.StyledImage = _styledComponents["default"].img.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledImage = exports.StyledImage = _styledComponents["default"].img.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledImage",
   componentId: "sc-ey4zx9-0"
 })(["", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -26,5 +26,3 @@ var StyledImage = exports.StyledImage = _styledComponents["default"].img.withCon
 }, function (props) {
   return props.opacityProp && "opacity: " + (props.opacityProp === true ? props.theme.global.opacity.medium : props.theme.global.opacity[props.opacityProp] || props.opacityProp) + ";\n  ";
 });
-StyledImage.defaultProps = {};
-Object.setPrototypeOf(StyledImage.defaultProps, _defaultProps.defaultProps);

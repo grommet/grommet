@@ -3,9 +3,8 @@ var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dr
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { useRef, forwardRef, useContext, useEffect, useMemo, useState, useCallback } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
-import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
@@ -22,7 +21,9 @@ import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue,
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
 import { CopyButton } from '../TextInput/CopyButton';
-var StyledDateInputContainer = styled(Box).withConfig({
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
+var StyledDateInputContainer = styled(Box).attrs(withTheme).withConfig({
   displayName: "DateInput__StyledDateInputContainer",
   componentId: "sc-1jfta23-0"
 })(["", "};"], function (props) {
@@ -65,7 +66,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     valueArg = _ref.value,
     messages = _ref.messages,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     formatMessage = _useContext.format;

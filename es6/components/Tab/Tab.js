@@ -2,8 +2,6 @@ var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "on
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { TabsContext } from '../Tabs/TabsContext';
@@ -11,6 +9,7 @@ import { normalizeColor, useForwardedRef } from '../../utils';
 import { StyledTab } from './StyledTab';
 import { TabPropTypes } from './propTypes';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var activeProp = _ref.active,
     disabled = _ref.disabled,
@@ -34,7 +33,7 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setActiveContent = _useContext.setActiveContent,
     setActiveTitle = _useContext.setActiveTitle,
     setFocusIndex = _useContext.setFocusIndex;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useState = useState(undefined),
     over = _useState[0],
     setOver = _useState[1];
@@ -176,7 +175,5 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, withIconStyles, tabStyles), first, second));
 });
 Tab.displayName = 'Tab';
-Tab.defaultProps = {};
-Object.setPrototypeOf(Tab.defaultProps, defaultProps);
 Tab.propTypes = TabPropTypes;
 export { Tab };

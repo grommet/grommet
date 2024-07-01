@@ -4,11 +4,12 @@ exports.__esModule = true;
 exports.StyledSkeleton = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
+var _defaultProps = require("../../default-props");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // Styling a div directly rather than just using
 // a Box since Box itself will react to a SkeletonContext
 // and we don't want that here.
-var StyledSkeleton = exports.StyledSkeleton = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledSkeleton = exports.StyledSkeleton = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
   displayName: "StyledSkeleton",
   componentId: "sc-1omqm6u-0"
 })(["display:flex;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {

@@ -28,7 +28,7 @@ var wordBreakStyle = (0, _styledComponents.css)(["word-break:", ";"], function (
 var fontFamily = (0, _styledComponents.css)(["font-family:", ";"], function (props) {
   return props.theme.text.font.family;
 });
-var StyledText = exports.StyledText = (0, _styledComponents["default"])('span').withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledText = exports.StyledText = (0, _styledComponents["default"])('span').attrs(_defaultProps.withTheme).withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
 })(["", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -48,5 +48,3 @@ var StyledText = exports.StyledText = (0, _styledComponents["default"])('span').
 }, function (props) {
   return props.theme.text && props.theme.text.extend;
 });
-StyledText.defaultProps = {};
-Object.setPrototypeOf(StyledText.defaultProps, _defaultProps.defaultProps);

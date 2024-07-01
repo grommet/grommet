@@ -2,8 +2,6 @@ var _excluded = ["allowSelectAll", "background", "border", "columns", "data", "d
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 import React, { useCallback, useContext, useEffect, useMemo, useRef, useState, Fragment } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -18,6 +16,7 @@ import { normalizeShow, usePagination } from '../../utils';
 import { StyledContainer, StyledDataTable, StyledPlaceholder } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
 import { PlaceholderBody } from './PlaceholderBody';
+import { useThemeValue } from '../../utils/useThemeValue';
 var emptyData = [];
 function useGroupState(groups, groupBy) {
   var _useState = useState(function () {
@@ -78,7 +77,7 @@ var DataTable = function DataTable(_ref) {
     step = _ref$step === void 0 ? 50 : _ref$step,
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _useContext = useContext(DataContext),
     view = _useContext.view,
     contextData = _useContext.data,

@@ -211,6 +211,260 @@ exports[`Spinner border renders 1`] = `
 </div>
 `;
 
+exports[`Spinner color renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #33333310;
+  border-top: solid 1px #6FFFB0;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  flex: 0 0 auto;
+  padding: 12px;
+  border-radius: 100%;
+  transform: rotate(0deg);
+  animation: gCPKsF 1s 0s infinite linear;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #33333310;
+  border-top: solid 1px #00873D;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  flex: 0 0 auto;
+  padding: 12px;
+  border-radius: 100%;
+  transform: rotate(0deg);
+  animation: gCPKsF 1s 0s infinite linear;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #33333310;
+  border-top: solid 1px #3D138D;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  flex: 0 0 auto;
+  padding: 12px;
+  border-radius: 100%;
+  transform: rotate(0deg);
+  animation: gCPKsF 1s 0s infinite linear;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #33333310;
+  border-top: solid 1px #00739D;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  flex: 0 0 auto;
+  padding: 12px;
+  border-radius: 100%;
+  transform: rotate(0deg);
+  animation: gCPKsF 1s 0s infinite linear;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #33333310;
+  border-top: solid 1px #A2423D;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  flex: 0 0 auto;
+  padding: 12px;
+  border-radius: 100%;
+  transform: rotate(0deg);
+  animation: gCPKsF 1s 0s infinite linear;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border: solid 1px #33333310;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    border-top: solid 1px #6FFFB0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border: solid 1px #33333310;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px #00873D;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border: solid 1px #33333310;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-top: solid 1px #3D138D;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border: solid 1px #33333310;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border-top: solid 1px #00739D;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border: solid 1px #33333310;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    border-top: solid 1px #A2423D;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c5 {
+    padding: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+  />
+  <div
+    class="c3"
+  />
+  <div
+    class="c4"
+  />
+  <div
+    class="c5"
+  />
+</div>
+`;
+
+exports[`Spinner renders outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #33333310;
+  border-top: solid 1px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  flex: 0 0 auto;
+  padding: 12px;
+  border-radius: 100%;
+  transform: rotate(0deg);
+  animation: gCPKsF 1s 0s infinite linear;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    border: solid 1px #33333310;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    border-top: solid 1px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    padding: 6px;
+  }
+}
+
+<div
+  class="c0"
+/>
+`;
+
 exports[`Spinner round renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -639,218 +893,6 @@ exports[`Spinner size renders 1`] = `
 @media only screen and (max-width: 768px) {
   .c5 {
     border-top: solid 12px #7D4CDB;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    padding: 6px;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  />
-  <div
-    class="c2"
-  />
-  <div
-    class="c3"
-  />
-  <div
-    class="c4"
-  />
-  <div
-    class="c5"
-  />
-</div>
-`;
-
-exports[`Spinner size renders 2`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #6FFFB0;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  flex: 0 0 auto;
-  padding: 12px;
-  border-radius: 100%;
-  transform: rotate(0deg);
-  animation: gCPKsF 1s 0s infinite linear;
-}
-
-.c2 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #00873D;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  flex: 0 0 auto;
-  padding: 12px;
-  border-radius: 100%;
-  transform: rotate(0deg);
-  animation: gCPKsF 1s 0s infinite linear;
-}
-
-.c3 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #3D138D;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  flex: 0 0 auto;
-  padding: 12px;
-  border-radius: 100%;
-  transform: rotate(0deg);
-  animation: gCPKsF 1s 0s infinite linear;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #00739D;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  flex: 0 0 auto;
-  padding: 12px;
-  border-radius: 100%;
-  transform: rotate(0deg);
-  animation: gCPKsF 1s 0s infinite linear;
-}
-
-.c5 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border: solid 1px #33333310;
-  border-top: solid 1px #A2423D;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  flex: 0 0 auto;
-  padding: 12px;
-  border-radius: 100%;
-  transform: rotate(0deg);
-  animation: gCPKsF 1s 0s infinite linear;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border: solid 1px #33333310;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    border-top: solid 1px #6FFFB0;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    border: solid 1px #33333310;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    border-top: solid 1px #00873D;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    border: solid 1px #33333310;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    border-top: solid 1px #3D138D;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c4 {
-    border: solid 1px #33333310;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c4 {
-    border-top: solid 1px #00739D;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c4 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    border: solid 1px #33333310;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    border-top: solid 1px #A2423D;
   }
 }
 

@@ -4,9 +4,8 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
 /* eslint-disable no-underscore-dangle */
 import React, { forwardRef, useCallback, useContext, useEffect, useState } from 'react';
-import styled, { css, ThemeContext } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { CheckBox } from '../CheckBox';
@@ -19,6 +18,8 @@ import { StyledDataTableCell, StyledDataTableHeader, StyledDataTableRow } from '
 import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -79,7 +80,7 @@ var buttonStyle = function buttonStyle(_ref) {
   }
   return styles;
 };
-var StyledHeaderCellButton = styled(Button).withConfig({
+var StyledHeaderCellButton = styled(Button).attrs(withTheme).withConfig({
   displayName: "Header__StyledHeaderCellButton",
   componentId: "sc-1baku5q-0"
 })(["", ""], function (props) {
@@ -121,7 +122,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     widths = _ref2.widths,
     verticalAlign = _ref2.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var _separateThemeProps2 = separateThemeProps(theme),
     layoutProps = _separateThemeProps2[0],
     textProps = _separateThemeProps2[1];
@@ -346,6 +347,4 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   })));
 });
 Header.displayName = 'Header';
-Header.defaultProps = {};
-Object.setPrototypeOf(Header.defaultProps, defaultProps);
 export { Header };

@@ -5,9 +5,12 @@ import { grommet } from 'grommet/themes';
 import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
 var Announcer = function Announcer(_ref) {
   var announce = _ref.announce,
-    message = _ref.message,
-    mode = _ref.mode,
-    role = _ref.role;
+    _ref$message = _ref.message,
+    message = _ref$message === void 0 ? 'Here is a simple announcement. This will soon disappear' : _ref$message,
+    _ref$mode = _ref.mode,
+    mode = _ref$mode === void 0 ? 'polite' : _ref$mode,
+    _ref$role = _ref.role,
+    role = _ref$role === void 0 ? 'log' : _ref$role;
   React.useEffect(function () {
     var timeout = 3000;
     announce(message, mode, timeout);
@@ -23,11 +26,6 @@ Announcer.propTypes = {
   message: PropTypes.string,
   mode: PropTypes.string,
   role: PropTypes.string
-};
-Announcer.defaultProps = {
-  message: 'Here is a simple announcement. This will soon disappear',
-  mode: 'polite',
-  role: 'log'
 };
 var AnnounceContextComponent = function AnnounceContextComponent(props) {
   return /*#__PURE__*/React.createElement(Grommet, {

@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
       thickness: PropTypes.oneOfType([PropTypes.oneOf(['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large']), PropTypes.string]),
       toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
       type: PropTypes.oneOf(['direct', 'curved', 'rectilinear'])
-    })).isRequired
+    }))
   };
 }
 export var DiagramPropTypes = PropType;

@@ -1,11 +1,13 @@
-import React, { useContext, useRef } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { useRef } from 'react';
+import styled from 'styled-components';
 import { parseMetricToNum } from '../../utils';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-var StyledBadgeContainer = styled(Box).withConfig({
+import { withTheme } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
+var StyledBadgeContainer = styled(Box).attrs(withTheme).withConfig({
   displayName: "Badge__StyledBadgeContainer",
   componentId: "sc-1es4ws1-0"
 })(["", ""], function (props) {
@@ -14,7 +16,7 @@ var StyledBadgeContainer = styled(Box).withConfig({
 export var Badge = function Badge(_ref) {
   var children = _ref.children,
     content = _ref.content;
-  var theme = useContext(ThemeContext);
+  var theme = useThemeValue();
   var containerRef = useRef();
   var contentRef = useRef();
   var stackRef = useRef();

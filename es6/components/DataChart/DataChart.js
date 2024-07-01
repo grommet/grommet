@@ -4,8 +4,7 @@ var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "dire
   _excluded4 = ["property"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo, useState } from 'react';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
@@ -20,6 +19,7 @@ import { XGuide } from './XGuide';
 import { YGuide } from './YGuide';
 import { createDateFormat, halfPad, heightYGranularity, largestSize, maximum, minimum, points } from './utils';
 import { DataChartPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var stackedChartType = {
   areas: 'area',
   bars: 'bar',
@@ -55,7 +55,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     seriesProp = _ref.series,
     size = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
 
   // legend interaction, if any
   var _useState = useState(),

@@ -31,3 +31,19 @@ exports[`Nav should have no accessibility violations 1`] = `
   </div>
 </div>
 `;
+
+exports[`Nav should render without grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+<nav
+  class="c0"
+/>
+`;

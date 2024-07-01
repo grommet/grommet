@@ -1,10 +1,9 @@
 var _excluded = ["clear", "onClear", "name", "theme"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { setFocusWithoutScroll, getHoverIndicatorStyle, containsFocus } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -14,9 +13,11 @@ import { TextInput } from '../TextInput';
 import { StyledContainer, OptionsContainer, SelectOption } from './StyledSelect';
 import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 
 // ensure ClearButton receives visual indication of keyboard
-var StyledButton = styled(Button).withConfig({
+var StyledButton = styled(Button).attrs(withTheme).withConfig({
   displayName: "SelectContainer__StyledButton",
   componentId: "sc-1wi0ul8-0"
 })(["&:focus{", "}"], function (props) {
@@ -72,7 +73,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     valueKey = _ref2.valueKey,
     _ref2$replace = _ref2.replace,
     replace = _ref2$replace === void 0 ? true : _ref2$replace;
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useThemeValue();
   var shouldShowClearButton = useCallback(function (position) {
     var hasValue = Boolean(multiple && value ? value.length : value);
     var showAtPosition = position === 'bottom' ? (clear == null ? void 0 : clear.position) === 'bottom' : (clear == null ? void 0 : clear.position) !== 'bottom';
