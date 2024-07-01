@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import {
   alignContentStyle,
   alignStyle,
@@ -10,6 +9,7 @@ import {
   widthStyle,
   styledComponentsConfig,
 } from '../../utils';
+import { withTheme } from '../../default-props';
 
 const fillStyle = (fill) => {
   if (!fill) {
@@ -216,6 +216,7 @@ const areasStyle = (props) => {
 const StyledGrid = styled.div
   .withConfig(styledComponentsConfig)
   .attrs((props) => ({
+    ...withTheme(props),
     'aria-label': props.a11yTitleProp,
   }))`
   display: grid;
@@ -246,8 +247,5 @@ const StyledGrid = styled.div
   ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
   ${(props) => props.theme.grid && props.theme.grid.extend}
 `;
-
-StyledGrid.defaultProps = {};
-Object.setPrototypeOf(StyledGrid.defaultProps, defaultProps);
 
 export { StyledGrid };

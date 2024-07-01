@@ -1,7 +1,4 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 
 import { Button } from '../Button';
 import { Text } from '../Text';
@@ -11,6 +8,7 @@ import { normalizeColor, useForwardedRef } from '../../utils';
 import { StyledTab } from './StyledTab';
 import { TabPropTypes } from './propTypes';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tab = forwardRef(
   (
@@ -41,7 +39,7 @@ const Tab = forwardRef(
       setActiveTitle,
       setFocusIndex,
     } = useContext(TabsContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [over, setOver] = useState(undefined);
     let normalizedTitle = title;
     const tabStyles = {};
@@ -225,9 +223,6 @@ const Tab = forwardRef(
 );
 
 Tab.displayName = 'Tab';
-Tab.defaultProps = {};
-Object.setPrototypeOf(Tab.defaultProps, defaultProps);
-
 Tab.propTypes = TabPropTypes;
 
 export { Tab };

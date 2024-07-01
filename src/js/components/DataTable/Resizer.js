@@ -1,15 +1,14 @@
 import React, {
   useCallback,
-  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const InteractionBox = styled(Box)`
   cursor: col-resize;
@@ -28,7 +27,7 @@ const InteractionBox = styled(Box)`
 `;
 
 const Resizer = ({ onResize, property }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const [active, setActive] = useState(false);
   const [start, setStart] = useState();
   const [width, setWidth] = useState();
@@ -113,8 +112,5 @@ const Resizer = ({ onResize, property }) => {
 };
 
 Resizer.displayName = 'Resizer';
-
-Resizer.defaultProps = {};
-Object.setPrototypeOf(Resizer.defaultProps, defaultProps);
 
 export { Resizer };

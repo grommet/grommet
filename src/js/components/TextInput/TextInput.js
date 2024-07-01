@@ -7,9 +7,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -36,6 +35,8 @@ import {
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 import { CopyButton } from './CopyButton';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -54,7 +55,7 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
-const ContainerBox = styled(Box)`
+const ContainerBox = styled(Box).attrs(withTheme)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
@@ -104,7 +105,7 @@ const TextInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);

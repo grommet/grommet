@@ -1,12 +1,10 @@
 import React, { isValidElement, memo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
 import { datumValue } from './buildState';
 import { TableContext } from '../Table/TableContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Cell = memo(
   ({
@@ -31,7 +29,7 @@ const Cell = memo(
     verticalAlign,
     ...rest
   }) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const value = datumValue(datum, property);
     const context = useContext(TableContext);
     const renderContexts =
@@ -83,8 +81,5 @@ const Cell = memo(
 );
 
 Cell.displayName = 'Cell';
-
-Cell.defaultProps = {};
-Object.setPrototypeOf(Cell.defaultProps, defaultProps);
 
 export { Cell };

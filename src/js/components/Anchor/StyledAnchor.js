@@ -6,7 +6,7 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -29,7 +29,9 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
+const StyledAnchor = styled.a
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   box-sizing: border-box;
   display: inline-flex;
   ${(props) => sizeStyle(props)}
@@ -79,8 +81,5 @@ const StyledAnchor = styled.a.withConfig(styledComponentsConfig)`
   ${(props) => props.focus && focusStyle()}
   ${(props) => props.theme.anchor.extend}
 `;
-
-StyledAnchor.defaultProps = {};
-Object.setPrototypeOf(StyledAnchor.defaultProps, defaultProps);
 
 export { StyledAnchor };

@@ -9,7 +9,6 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
@@ -17,9 +16,10 @@ import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
+import { withTheme } from '../../default-props';
 
 // border-collapse: separate is needed so pinned header/footer borders work
-const StyledDataTable = styled(Table)`
+const StyledDataTable = styled(Table).attrs(withTheme)`
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
@@ -31,19 +31,13 @@ const StyledDataTable = styled(Table)`
     props.theme.dataTable.body.extend};
 `;
 
-StyledDataTable.defaultProps = {};
-Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
-
 // when paginated, this wraps the data table and pagination component
-const StyledContainer = styled(Box)`
+const StyledContainer = styled(Box).attrs(withTheme)`
   ${(props) =>
     props.theme.dataTable &&
     props.theme.dataTable.container &&
     props.theme.dataTable.container.extend};
 `;
-
-StyledContainer.defaultProps = {};
-Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 
 const hoverStyle = css`
   ${(props) =>
@@ -85,11 +79,8 @@ const StyledDataTableRow = styled(TableRow)`
   ${(props) => props.active && hoverStyle}
 `;
 
-StyledDataTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
-
 // focus styling other than outline doesn't work on <tbody />
-const StyledDataTableBody = styled(TableBody)`
+const StyledDataTableBody = styled(TableBody).attrs(withTheme)`
   ${(props) =>
     props.size &&
     `
@@ -108,9 +99,6 @@ const StyledDataTableBody = styled(TableBody)`
   }
 `;
 
-StyledDataTableBody.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableBody.defaultProps, defaultProps);
-
 const StyledDataTableHeader = styled(TableHeader)`
   ${(props) =>
     props.size &&
@@ -121,9 +109,6 @@ const StyledDataTableHeader = styled(TableHeader)`
     table-layout: fixed;
   `}
 `;
-
-StyledDataTableHeader.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
 
 const StyledDataTableFooter = styled(TableFooter)`
   ${(props) =>
@@ -143,10 +128,7 @@ const StyledDataTableFooter = styled(TableFooter)`
   `}
 `;
 
-StyledDataTableFooter.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
-
-const StyledDataTableCell = styled(TableCell)`
+const StyledDataTableCell = styled(TableCell).attrs(withTheme)`
   ${(props) =>
     props.context === 'header' &&
     props.theme.dataTable &&
@@ -178,9 +160,6 @@ const StyledDataTableCell = styled(TableCell)`
       ? props.theme.dataTable.pinned[props.context].extend
       : ''}
 `;
-
-StyledDataTableCell.defaultProps = {};
-Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
 
 const StyledPlaceholder = styled('caption').withConfig(styledComponentsConfig)`
   position: absolute;

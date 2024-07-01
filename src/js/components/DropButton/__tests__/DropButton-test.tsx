@@ -42,6 +42,19 @@ describe('DropButton', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('closed outside grommet wrapper', () => {
+    window.scrollTo = jest.fn();
+
+    const { container } = render(
+      <DropButton
+        label="Dropper"
+        dropContent={<div id="drop-contents">drop contents</div>}
+      />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('opened', () => {
     const { container } = render(
       <Grommet>

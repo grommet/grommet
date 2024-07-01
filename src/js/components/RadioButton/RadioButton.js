@@ -1,7 +1,5 @@
-import React, { forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useState } from 'react';
 
-import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 
 import {
@@ -13,6 +11,7 @@ import {
   StyledRadioButtonBox,
 } from './StyledRadioButton';
 import { RadioButtonPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const RadioButton = forwardRef(
   (
@@ -31,7 +30,7 @@ const RadioButton = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [hover, setHover] = useState();
     const normalizedLabel =
       typeof label === 'string' ? (

@@ -475,6 +475,28 @@ exports[`Heading renders 1`] = `
 </div>
 `;
 
+exports[`Heading renders outside grommet wrapper 1`] = `
+.c0 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<h1
+  class="c0"
+/>
+`;
+
 exports[`Heading size renders 1`] = `
 .c0 {
   font-size: 18px;

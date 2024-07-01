@@ -7,9 +7,6 @@ import React, {
   useState,
 } from 'react';
 
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
-
 import { findButtonParent, normalizeColor, useSizedIcon } from '../../utils';
 
 import { Box } from '../Box';
@@ -18,6 +15,7 @@ import { StyledAnchor } from './StyledAnchor';
 import { AnchorPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { TextContext } from '../Text/TextContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Anchor = forwardRef(
   (
@@ -40,7 +38,7 @@ const Anchor = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [focus, setFocus] = useState();
     const { size } = useContext(TextContext);
     const sendAnalytics = useAnalytics();

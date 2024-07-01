@@ -595,6 +595,23 @@ exports[`Skeleton renders 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Skeleton renders outside grommet wrapper 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EDEDED;
+  color: #444444;
+  height: 24px;
+  width: 100%;
+}
+
+<div
+    class="c0"
+  />
+</DocumentFragment>
+`;
+
 exports[`Skeleton with styling props 1`] = `
 <DocumentFragment>
   .c1 {

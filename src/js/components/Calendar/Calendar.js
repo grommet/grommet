@@ -7,10 +7,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -43,6 +41,7 @@ import {
   withinDates,
 } from './utils';
 import { setHoursWithOffset } from '../../utils/dates';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -272,7 +271,7 @@ const Calendar = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
 

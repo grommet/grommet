@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 
-import { defaultProps } from '../../default-props';
 import { Footer } from '../Footer';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // Needs to have a CardBody or a flex container when Card uses a fixed height.
 const CardFooter = ({ ...rest }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   return <Footer {...theme.card.footer} {...rest} />;
 };
 

@@ -190,6 +190,41 @@ exports[`Meter basic 1`] = `
 </div>
 `;
 
+exports[`Meter basic renders outside grommet wrapper 1`] = `
+.c0 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c0 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<svg
+  class="c0"
+  height="24"
+  preserveAspectRatio="none"
+  viewBox="0 0 384 24"
+  width="384"
+>
+  <path
+    d="M 0,12 L 384,12"
+    fill="none"
+    stroke="#F2F2F2"
+    stroke-linecap="square"
+    stroke-opacity="0.4"
+    stroke-width="24"
+  />
+  <path
+    d="M 0,12 L 76.8,12"
+    fill="none"
+    stroke="#6FFFB0"
+    stroke-linecap="butt"
+    stroke-width="24"
+  />
+</svg>
+`;
+
 exports[`Meter boundary values 1`] = `
 .c0 {
   font-size: 18px;

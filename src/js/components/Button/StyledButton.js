@@ -11,7 +11,7 @@ import {
   getHoverIndicatorStyle,
   normalizeColor,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 import { styledComponentsConfig } from '../../utils/styles';
 
 const radiusStyle = (props) => {
@@ -185,7 +185,9 @@ const disabledButtonStyle = (props) => css`
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
-const StyledButton = styled.button.withConfig(styledComponentsConfig)`
+const StyledButton = styled.button
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -258,8 +260,5 @@ const StyledButton = styled.button.withConfig(styledComponentsConfig)`
     cursor: default;
   `}
 `;
-
-StyledButton.defaultProps = {};
-Object.setPrototypeOf(StyledButton.defaultProps, defaultProps);
 
 export { StyledButton };
