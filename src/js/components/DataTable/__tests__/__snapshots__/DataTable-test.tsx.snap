@@ -18778,6 +18778,43 @@ exports[`DataTable relativeColumnSizes 1`] = `
 </div>
 `;
 
+exports[`DataTable renders outside grommet wrapper 1`] = `
+.c0 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c1 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c2:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+}
+
+<table
+  class="c0 c1"
+>
+  <thead
+    class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+  >
+    <tr
+      class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+    />
+  </thead>
+  <tbody
+    class="StyledTable__StyledTableBody-sc-1m3u5g-3 c2"
+  />
+</table>
+`;
+
 exports[`DataTable replace 1`] = `
 .c0 {
   font-size: 18px;

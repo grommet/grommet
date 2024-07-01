@@ -19,6 +19,12 @@ describe('Sidebar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet', () => {
+    const { container } = render(<Sidebar id="test id" />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('header', () => {
     const { container } = render(
       <Grommet>

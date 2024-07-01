@@ -250,6 +250,13 @@ exports[`Image renders 1`] = `
 </div>
 `;
 
+exports[`Image renders outside grommet wrapper 1`] = `
+<img
+  class=""
+  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
+/>
+`;
+
 exports[`Image renders with aria-label 1`] = `
 .c0 {
   font-size: 18px;

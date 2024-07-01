@@ -4135,6 +4135,178 @@ exports[`Notification should render custom template inside notification 1`] = `
 </div>
 `;
 
+exports[`Notification should render outside grommet wrapper 1`] = `
+<DocumentFragment>
+  .c3 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #CCCCCC;
+  stroke: #CCCCCC;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(204, 204, 204, 0.1);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  border-radius: 6px;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-right: 12px;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c7 {
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-right: 6px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <svg
+          aria-label="Status is unknown"
+          class="c3"
+          viewBox="0 0 12 12"
+        >
+          <rect
+            fill-rule="evenodd"
+            height="10"
+            rx="1"
+            stroke="#000"
+            width="10"
+            x="1"
+            y="1"
+          />
+        </svg>
+      </div>
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          title
+        </span>
+        <p
+          class="c6"
+        >
+          <span
+            class="c7"
+          >
+            message
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Notification should render the default icon if no icon is passed 1`] = `
 <DocumentFragment>
   .c4 {

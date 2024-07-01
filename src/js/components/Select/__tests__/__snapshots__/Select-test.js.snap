@@ -2362,6 +2362,245 @@ exports[`Select basic 1`] = `
 </div>
 `;
 
+exports[`Select basic outside grommet wrapper 1`] = `
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  flex-basis: auto;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  cursor: pointer;
+}
+
+.c1 {
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+<button
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-label="Select"
+  class="c0 c1"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <input
+          aria-label="Select"
+          autocomplete="off"
+          class="c5 c6"
+          id="test-select__input"
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="c7"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="c8"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m18 9-6 6-6-6"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
 exports[`Select complex options and children 1`] = `
 .c9 {
   display: inline-block;

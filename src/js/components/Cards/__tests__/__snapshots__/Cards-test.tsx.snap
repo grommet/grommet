@@ -344,6 +344,33 @@ exports[`Cards empty 1`] = `
 </div>
 `;
 
+exports[`Cards empty no grommet wrapper 1`] = `
+.c0 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: repeat( auto-fill,minmax(min(192px, 100%), 1fr) );
+  grid-gap: 24px 24px;
+  padding: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    padding: 0px;
+  }
+}
+
+<ul
+  class="c0"
+/>
+`;
+
 exports[`Cards margin object 1`] = `
 .c0 {
   font-size: 18px;

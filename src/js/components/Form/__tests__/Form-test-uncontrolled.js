@@ -124,6 +124,12 @@ describe('Form uncontrolled', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('empty outside of grommet wrapper', () => {
+    const { container } = render(<Form />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('with field', () => {
     const { container } = render(
       <Grommet>

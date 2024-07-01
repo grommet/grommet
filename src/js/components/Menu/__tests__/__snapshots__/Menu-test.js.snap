@@ -131,6 +131,123 @@ exports[`Menu basic 1`] = `
 </div>
 `;
 
+exports[`Menu basic outside grommet wrapper 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c3 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus >circle,
+.c0:focus >ellipse,
+.c0:focus >line,
+.c0:focus >path,
+.c0:focus >polygon,
+.c0:focus >polyline,
+.c0:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) >circle,
+.c0:focus:not(:focus-visible) >ellipse,
+.c0:focus:not(:focus-visible) >line,
+.c0:focus:not(:focus-visible) >path,
+.c0:focus:not(:focus-visible) >polygon,
+.c0:focus:not(:focus-visible) >polyline,
+.c0:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c0:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    width: 6px;
+  }
+}
+
+<button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  aria-label="Open Menu"
+  class="c0"
+  id="test-menu"
+  type="button"
+>
+  <div
+    class="c1"
+  >
+    <span
+      class="c2"
+    >
+      Test Menu
+    </span>
+    <div
+      class="c3"
+    />
+    <svg />
+  </div>
+</button>
+`;
+
 exports[`Menu close by clicking outside 1`] = `
 .c5 {
   display: inline-block;

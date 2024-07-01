@@ -50,6 +50,12 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('render without grommet wrapper', () => {
+    const { container } = render(<Button label="Test" onClick={() => {}} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('children function', () => {
     const { container } = render(
       <Grommet>

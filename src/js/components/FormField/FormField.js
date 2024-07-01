@@ -6,8 +6,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import {
   containsFocus,
@@ -27,6 +26,8 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 
 const grommetInputNames = [
   'CheckBox',
@@ -57,16 +58,16 @@ const isGrommetInput = (comp) =>
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
-const FormFieldBox = styled(Box)`
+const FormFieldBox = styled(Box).attrs(withTheme)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
   ${(props) => props.theme.formField && props.theme.formField.extend}
 `;
 
-const FormFieldContentBox = styled(Box)`
+const FormFieldContentBox = styled(Box).attrs(withTheme)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
 `;
 
-const StyledMessageContainer = styled(Box)`
+const StyledMessageContainer = styled(Box).attrs(withTheme)`
   ${(props) =>
     props.messageType &&
     props.theme.formField[props.messageType].container &&
@@ -91,7 +92,7 @@ const ScreenReaderOnly = styled(Text)`
 `;
 
 const Message = ({ error, info, message, type, ...rest }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
 
   if (message) {
     let icon;
@@ -184,7 +185,7 @@ const FormField = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const formContext = useContext(FormContext);
 
     const {
