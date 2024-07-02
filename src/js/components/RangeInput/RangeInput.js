@@ -107,7 +107,7 @@ const RangeInput = forwardRef(
         name={name}
         focus={focus}
         focusIndicator={focusIndicator}
-        value={value || ''}
+        value={value || value === 0 ? value : ''}
         {...rest}
         color={color}
         onFocus={(event) => {
