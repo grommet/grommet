@@ -14,6 +14,8 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 var Tip = exports.Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipRef) {
   var children = _ref.children,
     content = _ref.content,
+    _ref$defaultVisible = _ref.defaultVisible,
+    defaultVisible = _ref$defaultVisible === void 0 ? false : _ref$defaultVisible,
     dropProps = _ref.dropProps,
     plain = _ref.plain;
   var theme = (0, _useThemeValue.useThemeValue)();
@@ -71,6 +73,9 @@ var Tip = exports.Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipR
       }
     }
   });
+  (0, _react.useEffect)(function () {
+    setOver(defaultVisible);
+  }, [defaultVisible]);
   return [clonedChild, (over || tooltipOver) && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
     target: componentRef.current,
     trapFocus: false,

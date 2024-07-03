@@ -1,5 +1,5 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { Children, cloneElement, forwardRef, useState } from 'react';
+import React, { Children, cloneElement, forwardRef, useEffect, useState } from 'react';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef, useKeyboard } from '../../utils';
@@ -8,6 +8,8 @@ import { useThemeValue } from '../../utils/useThemeValue';
 var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   var children = _ref.children,
     content = _ref.content,
+    _ref$defaultVisible = _ref.defaultVisible,
+    defaultVisible = _ref$defaultVisible === void 0 ? false : _ref$defaultVisible,
     dropProps = _ref.dropProps,
     plain = _ref.plain;
   var theme = useThemeValue();
@@ -65,6 +67,9 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
       }
     }
   });
+  useEffect(function () {
+    setOver(defaultVisible);
+  }, [defaultVisible]);
   return [clonedChild, (over || tooltipOver) && /*#__PURE__*/React.createElement(Drop, _extends({
     target: componentRef.current,
     trapFocus: false,

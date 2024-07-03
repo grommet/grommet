@@ -9,7 +9,8 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     content: _propTypes["default"].node,
     dropProps: _propTypes["default"].object,
-    plain: _propTypes["default"].bool
+    plain: _propTypes["default"].bool,
+    defaultVisible: _propTypes["default"].bool
   };
 }
 var TipPropTypes = exports.TipPropTypes = PropType;
