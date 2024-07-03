@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
@@ -6,6 +6,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { Box } from '../../Box';
 import { Button } from '../../Button';
@@ -202,5 +203,36 @@ describe('Tip', () => {
     expect(onFocus).toHaveBeenCalledTimes(1);
     await user.tab();
     expect(onBlur).toHaveBeenCalledTimes(1);
+  });
+
+  test(`child becomes disabled while tip is showing`, async () => {
+    const Test = () => {
+      const [count, setCount] = useState(0);
+      return (
+        <Grommet>
+          <Tip content="tip content">
+            <Button
+              label="Decrease"
+              disabled={!count}
+              onClick={() => setCount(count - 1)}
+            />
+          </Tip>
+          <Button
+            label="Increase"
+            tip={{ content: 'Test', dropProps: { align: { bottom: 'top' } } }}
+            onClick={() => setCount(count + 1)}
+          />
+        </Grommet>
+      );
+    };
+
+    const user = userEvent.setup();
+
+    render(<Test />);
+    await user.click(screen.getByText('Increase'));
+    await user.hover(screen.getByText('Decrease'));
+    expect(screen.getByText('tip content')).toBeInTheDocument();
+    await user.click(screen.getByText('Decrease'));
+    expect(screen.queryByText('tip content')).not.toBeInTheDocument();
   });
 });
