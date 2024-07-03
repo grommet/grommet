@@ -353,6 +353,10 @@ const SelectContainer = forwardRef(
         onUp={onPreviousOption}
         onDown={onNextOption}
         onKeyDown={onKeyDownOption}
+        onTab={(event) => {
+          // swallow tab event when the drop is opened
+          event.preventDefault();
+        }}
       >
         <StyledContainer
           ref={ref}
