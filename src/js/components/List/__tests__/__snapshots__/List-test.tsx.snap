@@ -16130,6 +16130,1880 @@ exports[`List onOrder with action Render 1`] = `
 </DocumentFragment>
 `;
 
+exports[`List onOrder with no-index Keyboard move down 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: move;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    width: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="c8"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="c10"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="c11 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="c10"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="c8"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move down 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+>
+  <ul
+    aria-activedescendant="alphaMoveDown"
+    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="StyledButton-sc-323bzc-0 eAOlEG"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="StyledButton-sc-323bzc-0 bWIOfK"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move down 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+>
+  <ul
+    aria-activedescendant="alphaMoveUp"
+    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="1 beta move up"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 beta move down"
+          class="StyledButton-sc-323bzc-0 bWIOfK"
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="2 alpha move up"
+          class="StyledButton-sc-323bzc-0 eAOlEG"
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 alpha move down"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move up 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: move;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    width: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="c8"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="c10"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="c11 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="c10"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="c8"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move up 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+>
+  <ul
+    aria-activedescendant="betaMoveUp"
+    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="StyledButton-sc-323bzc-0 bWIOfK"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="StyledButton-sc-323bzc-0 eAOlEG"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move up 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+>
+  <ul
+    aria-activedescendant="betaMoveDown"
+    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="1 beta move up"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 beta move down"
+          class="StyledButton-sc-323bzc-0 eAOlEG"
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="2 alpha move up"
+          class="StyledButton-sc-323bzc-0 bWIOfK"
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 alpha move down"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Mouse move down 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: move;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    width: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="c8"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="c10"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="c11 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="c10"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="c8"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Mouse move down 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+>
+  <ul
+    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="1 beta move up"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 beta move down"
+          class="StyledButton-sc-323bzc-0 bWIOfK"
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 lbRijl"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 hoAaQY"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 jypMSx"
+      >
+        <button
+          aria-label="2 alpha move up"
+          class="StyledButton-sc-323bzc-0 bWIOfK"
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 alpha move down"
+          class="StyledButton-sc-323bzc-0 hDxxQc"
+          disabled=""
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`List pad object 1`] = `
 .c0 {
   font-size: 18px;
