@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
-import { defaultProps } from "../default-props";
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../default-props';
 
 /*
   Hook that returns theme value.
