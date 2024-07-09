@@ -16,6 +16,12 @@ describe('Grid', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<Grid />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('a11yTitle and aria-label renders', () => {
     const { container, getByLabelText } = render(
       <Grommet>

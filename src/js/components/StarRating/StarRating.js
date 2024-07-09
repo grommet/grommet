@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Star } from 'grommet-icons/icons/Star';
 import { StarOutline } from 'grommet-icons/icons/StarOutline';
 import { FormContext } from '../Form/FormContext';
 import { RadioButtonGroup } from '../RadioButtonGroup';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const StarRating = ({ name, defaultValue, value: valueProp, ...rest }) => {
   const formContext = useContext(FormContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const [value, setValue] = formContext.useFormInput({
     name,
     value: valueProp,

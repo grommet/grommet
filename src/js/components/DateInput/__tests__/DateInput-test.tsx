@@ -130,6 +130,13 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('render basic outside grommet wrapper', () => {
+    const { container } = render(
+      <DateInput id="item" name="item" value={DATE} />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('format', () => {
     const { container } = render(
       <Grommet>

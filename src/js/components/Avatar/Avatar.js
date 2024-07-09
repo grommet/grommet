@@ -1,10 +1,9 @@
-import React, { useCallback, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useCallback, useMemo } from 'react';
 
 import { Image } from '../Image';
-import { defaultProps } from '../../default-props';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
 import { AvatarPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Avatar = ({
   a11yTitle,
@@ -19,7 +18,7 @@ const Avatar = ({
   width, // for warning check and discarding the value
   ...rest
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const avatarSize = theme.avatar.size[size] || size;
   const avatarTextSize = theme.avatar.text.size[size] || 'large';
 

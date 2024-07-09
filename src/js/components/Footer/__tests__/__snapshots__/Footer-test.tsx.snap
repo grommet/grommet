@@ -31,3 +31,21 @@ exports[`Footer default 1`] = `
   />
 </div>
 `;
+
+exports[`Footer default outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+<footer
+  class="c0"
+/>
+`;

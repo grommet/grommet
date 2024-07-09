@@ -1,6 +1,5 @@
 import React, { useContext, useMemo, useState } from 'react';
 import { Descend } from 'grommet-icons/icons/Descend';
-import { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { DataForm } from '../Data/DataForm';
@@ -11,6 +10,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataSortPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -84,7 +84,7 @@ export const DataSort = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const [showContent, setShowContent] = useState();
 
   let content = <Content options={options} />;

@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { Box, Paragraph, Text, ThemeContext } from 'grommet';
+import { Box, Paragraph, Text } from 'grommet';
 import { Grid } from '../../Grid';
+import { useThemeValue } from '../../../utils/useThemeValue';
 
 export const BackgroundThemed = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const { backgrounds } = theme.global;
 
   return (

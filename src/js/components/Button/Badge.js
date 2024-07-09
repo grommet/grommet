@@ -1,18 +1,20 @@
-import React, { useContext, useRef } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { useRef } from 'react';
+import styled from 'styled-components';
 import { parseMetricToNum } from '../../utils';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
+import { withTheme } from '../../default-props';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const StyledBadgeContainer = styled(Box)`
+const StyledBadgeContainer = styled(Box).attrs(withTheme)`
   ${(props) => props.theme.button.badge.container.extend}
 `;
 
 export const Badge = ({ children, content }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const containerRef = useRef();
   const contentRef = useRef();
   const stackRef = useRef();

@@ -152,6 +152,144 @@ exports[`RangeSelector basic 1`] = `
 </div>
 `;
 
+exports[`RangeSelector basic outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 100%;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-self: stretch;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+}
+
+.c6 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(125, 76, 219, 0.4);
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 100%;
+}
+
+.c1 {
+  user-select: none;
+}
+
+<div
+  class="c0 c1"
+  tabindex="-1"
+>
+  <div
+    class="c2"
+    style="flex: 20 0 0px;"
+  />
+  <div
+    class="c3"
+    style="flex: 0 0 1px;"
+  >
+    <div
+      aria-label="Lower Bounds"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="20"
+      class="c4"
+      role="slider"
+      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+      tabindex="0"
+    >
+      <div
+        class="c5 EdgeControl__StyledBox-sc-1xo2yt9-0"
+      />
+    </div>
+  </div>
+  <div
+    class="c6"
+    style="flex: 11 0 0px; cursor: ew-resize;"
+  />
+  <div
+    class="c3"
+    style="flex: 0 0 1px;"
+  >
+    <div
+      aria-label="Upper Bounds"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="30"
+      class="c4"
+      role="slider"
+      style="cursor: col-resize; outline: none; min-width: 12px; min-height: 12px; z-index: 1;"
+      tabindex="0"
+    >
+      <div
+        class="c5 EdgeControl__StyledBox-sc-1xo2yt9-0"
+      />
+    </div>
+  </div>
+  <div
+    class="c2"
+    style="flex: 70 0 0px;"
+  />
+</div>
+`;
+
 exports[`RangeSelector color 1`] = `
 .c0 {
   font-size: 18px;
