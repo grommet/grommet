@@ -13,7 +13,7 @@ var fitStyle = css(["flex:1 1;min-height:0;object-fit:", ";"], function (props) 
 var StyledVideo = styled.video.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
   displayName: "StyledVideo",
   componentId: "sc-w4v8h9-0"
-})(["max-width:100%;z-index:1;", "::cue{background:", ";}", ";"], function (props) {
+})(["max-width:100%;z-index:1;", " ::cue{background:", ";}", ";"], function (props) {
   return props.fit && fitStyle;
 }, function (props) {
   return props.theme.video.captions.background;
