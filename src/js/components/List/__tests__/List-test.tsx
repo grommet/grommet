@@ -638,7 +638,7 @@ describe('List onOrder with no-index', () => {
               setOrdered(newData);
               onOrder(newData);
             }}
-            hideIndex={true}
+            showIndex={false}
           />
         </Grommet>
       );

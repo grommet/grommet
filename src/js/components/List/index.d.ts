@@ -52,7 +52,7 @@ export interface ListProps<ListItemType> {
   ) => any;
   data?: ListItemType[];
   disabled?: string[];
-  hideIndex?: boolean;
+  showIndex?: boolean;
   gridArea?: GridAreaType;
   defaultItemProps?: BoxTypes;
   itemKey?: string | ((item: ListItemType) => string | number);
