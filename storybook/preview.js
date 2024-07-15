@@ -3,7 +3,14 @@ import Root from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
-import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
+import {
+  Grommet,
+  grommet,
+  hacktoberfest2022,
+  tokens,
+  Box,
+  Text,
+} from '../src/js';
 
 const CUSTOM_THEMED = 'Custom Themed';
 const THEMES = {
@@ -11,6 +18,7 @@ const THEMES = {
   grommet,
   hacktoberfest2022,
   base: {},
+  tokens,
 };
 
 export const decorators = [
@@ -79,7 +87,14 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
+      <Grommet
+        theme={tokens}
+        // theme={THEMES[state]}
+        // themeMode="dark"
+        full={full}
+        dir={dir}
+        options={options}
+      >
         <Story state={THEMES[state]} />
       </Grommet>
     );
@@ -124,6 +139,7 @@ export const globalTypes = {
         { title: 'grommet', value: 'grommet' },
         { title: 'hpe', value: 'hpe' },
         { title: 'hacktoberfest2022', value: 'hacktoberfest2022' },
+        { title: 'tokens', value: 'tokens' },
       ],
     },
   },
