@@ -173,7 +173,6 @@ const buildTheme = () => {
     //   dark: dark.hpe.color.brand,
     //   light: light.hpe.color.brand,
     // },
-    'green!': '#01A982',
     brand: 'green!',
     primary: {
       dark: dark.hpe.color.primary,
@@ -350,7 +349,7 @@ const buildTheme = () => {
     'disabled-text': 'text-weak', // deprecated, use text-weak instead
     'selected-background': 'green!',
     icon: 'text',
-    // Q: these tokens are missing
+    // Q: these tokens are missing (blue - yellow!)
     blue: {
       dark: '#00567A',
       light: '#00C8FF',
