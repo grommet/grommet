@@ -158,10 +158,23 @@ const baseSpacing = 24;
 const buildTheme = () => {
   // const [light, dark] = tokens;
   const colors = {
-    brand: {
-      dark: dark.hpe.color.brand,
-      light: light.hpe.color.brand,
-    },
+    'accent-1': undefined,
+    'accent-2': undefined,
+    'accent-3': undefined,
+    'accent-4': undefined,
+    'neutral-1': undefined,
+    'neutral-2': undefined,
+    'neutral-3': undefined,
+    'neutral-4': undefined,
+    'neutral-5': undefined,
+    'status-error': undefined,
+    // Q: brand color is not defined in the dark and light files
+    // brand: {
+    //   dark: dark.hpe.color.brand,
+    //   light: light.hpe.color.brand,
+    // },
+    'green!': '#01A982',
+    brand: 'green!',
     primary: {
       dark: dark.hpe.color.primary,
       light: light.hpe.color.primary,
@@ -337,6 +350,42 @@ const buildTheme = () => {
     'disabled-text': 'text-weak', // deprecated, use text-weak instead
     'selected-background': 'green!',
     icon: 'text',
+    // Q: these tokens are missing
+    blue: {
+      dark: '#00567A',
+      light: '#00C8FF',
+    },
+    'blue!': '#00739D',
+    green: {
+      dark: '#008567',
+      light: '#17EBA0',
+    },
+    'green!': '#01A982',
+    teal: {
+      dark: '#117B82',
+      light: '#82FFF2',
+    },
+    'teal!': '#00E8CF',
+    purple: {
+      dark: '#6633BC',
+      light: '#F740FF',
+    },
+    'purple!': '#7630EA',
+    red: {
+      dark: '#A2423D',
+      light: '#FC6161',
+    },
+    'red!': '#C54E4B',
+    orange: {
+      dark: '#9B6310',
+      light: '#FFBC44',
+    },
+    'orange!': '#FF8300',
+    yellow: {
+      dark: '#8D741C',
+      light: '#FFEB59',
+    },
+    'yellow!': '#FEC901',
     'graph-0': 'orange!',
     'graph-1': 'blue!',
     'graph-2': 'purple!',
@@ -506,7 +555,7 @@ const buildTheme = () => {
     anchor: {
       color: 'text-strong',
       textDecoration: 'underline', // this will have a token
-      fontWeight: base.hpe.base.fontWeight.medium, // Q: is it okay to use base values? ideal not to use base
+      fontWeight: 500,
       gap: 'xsmall', // Q: should this point to a token? use component specific token other wise fine to leave as t-shirt size
       hover: {
         textDecoration: 'underline',
@@ -514,37 +563,37 @@ const buildTheme = () => {
       size: {
         large: {
           color: 'brand',
-          fontWeight: base.hpe.base.fontWeight.bold,
+          fontWeight: 700,
           textDecoration: 'none',
         },
         xlarge: {
           color: 'brand',
-          fontWeight: base.hpe.base.fontWeight.bold,
+          fontWeight: 700,
           textDecoration: 'none',
         },
         xxlarge: {
           color: 'brand',
-          fontWeight: base.hpe.base.fontWeight.bold,
+          fontWeight: 700,
           textDecoration: 'none',
         },
         '3xl': {
           color: 'brand',
-          fontWeight: base.hpe.base.fontWeight.bold,
+          fontWeight: 700,
           textDecoration: 'none',
         },
         '4xl': {
           color: 'brand',
-          fontWeight: base.hpe.base.fontWeight.bold,
+          fontWeight: 700,
           textDecoration: 'none',
         },
         '5xl': {
           color: 'brand',
-          fontWeight: base.hpe.base.fontWeight.bold,
+          fontWeight: 700,
           textDecoration: 'none',
         },
         '6xl': {
           color: 'brand',
-          fontWeight: base.hpe.base.fontWeight.bold,
+          fontWeight: 700,
           textDecoration: 'none',
         },
       },
