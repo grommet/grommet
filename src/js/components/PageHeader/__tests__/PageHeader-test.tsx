@@ -29,6 +29,21 @@ describe('PageHeader', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('basic renders outside grommet wrapper', () => {
+    const { asFragment } = render(
+      <PageHeader
+        title="Grommet"
+        subtitle={`Grommet helps you build responsive and accessible 
+          mobile-first projects for the web with an easy to use component 
+          library.`}
+        actions={<Button label="Get Started" primary />}
+        parent={<Anchor label="Parent Page" />}
+      />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   sizes.forEach((size?: any) => {
     test(`size - ${size}`, () => {
       const { asFragment } = render(

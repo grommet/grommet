@@ -7,7 +7,7 @@ import {
   genericStyles,
   styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const SIZE_MAP = {
   '1/2': '50%',
@@ -40,7 +40,9 @@ const sizeStyle = css`
   overflow: hidden;
 `;
 
-const StyledTableCell = styled.td.withConfig(styledComponentsConfig)`
+const StyledTableCell = styled.td
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -65,47 +67,28 @@ const StyledTableCell = styled.td.withConfig(styledComponentsConfig)`
   ${(props) => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
-StyledTableCell.defaultProps = {};
-Object.setPrototypeOf(StyledTableCell.defaultProps, defaultProps);
-
-const StyledTableDataCaption = styled.caption.withConfig(
-  styledComponentsConfig,
-)`
+const StyledTableDataCaption = styled.caption
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
 
-StyledTableDataCaption.defaultProps = {};
-Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
-
 const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)``;
-
-StyledTableRow.defaultProps = {};
-Object.setPrototypeOf(StyledTableRow.defaultProps, defaultProps);
 
 const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)``;
 
-StyledTableBody.defaultProps = {};
-Object.setPrototypeOf(StyledTableBody.defaultProps, defaultProps);
-
 const StyledTableHeader = styled.thead.withConfig(styledComponentsConfig)``;
-
-StyledTableHeader.defaultProps = {};
-Object.setPrototypeOf(StyledTableHeader.defaultProps, defaultProps);
 
 const StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig)``;
 
-StyledTableFooter.defaultProps = {};
-Object.setPrototypeOf(StyledTableFooter.defaultProps, defaultProps);
-
-const StyledTable = styled.table.withConfig(styledComponentsConfig)`
+const StyledTable = styled.table
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
   ${genericStyles} ${(props) => props.theme.table && props.theme.table.extend};
 `;
-
-StyledTable.defaultProps = {};
-Object.setPrototypeOf(StyledTable.defaultProps, defaultProps);
 
 export {
   StyledTableCell,

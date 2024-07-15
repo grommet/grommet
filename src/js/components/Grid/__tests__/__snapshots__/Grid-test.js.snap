@@ -1421,6 +1421,17 @@ exports[`Grid renders 1`] = `
 </div>
 `;
 
+exports[`Grid renders outside grommet wrapper 1`] = `
+.c0 {
+  display: grid;
+  box-sizing: border-box;
+}
+
+<div
+  class="c0"
+/>
+`;
+
 exports[`Grid responsive 1`] = `
 .c0 {
   font-size: 18px;

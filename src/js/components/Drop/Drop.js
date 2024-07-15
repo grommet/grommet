@@ -7,12 +7,11 @@ import React, {
 } from 'react';
 import { createPortal } from 'react-dom';
 
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 import { DropPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Drop = forwardRef(
   (
@@ -25,7 +24,7 @@ const Drop = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [originalFocusedElement, setOriginalFocusedElement] = useState();
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();

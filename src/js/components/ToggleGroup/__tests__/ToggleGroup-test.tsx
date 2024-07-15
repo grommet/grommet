@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import userEvent from '@testing-library/user-event';
 
@@ -30,6 +30,12 @@ describe('ToggleGroup', () => {
         <ToggleGroup />
       </Grommet>,
     );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders without grommet wrapper', () => {
+    const { asFragment } = render(<ToggleGroup />);
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -272,6 +278,37 @@ describe('ToggleGroup', () => {
     // Assert that the aria-checked attribute of the active toggle button is true
     expect(activeToggleButton).toHaveAttribute('aria-checked', 'true');
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('icon with tooltip', async () => {
+    const { getByText } = render(
+      <Grommet>
+        <ToggleGroup
+          options={[
+            { icon: <Add />, value: 'one', tip: 'add' },
+            {
+              icon: <Subtract />,
+              value: 'two',
+              tip: 'Subtract',
+            },
+          ]}
+          defaultValue="one"
+        />
+      </Grommet>,
+    );
+
+    const addButton = screen.getByRole('radio', { name: /Add/i });
+    fireEvent.mouseOver(addButton);
+    const tooltip = getByText(/add/i);
+    expect(tooltip).toBeInTheDocument();
+    expect(tooltip).not.toBeNull();
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
+
+    fireEvent.mouseOut(addButton);
+    // Wait for any necessary updates to the DOM
+    await waitFor(() => {
+      expect(screen.queryByText(/add/i)).toBeNull(); // Use queryByText for checking null
+    });
   });
 
   test('string options with multiple prop', () => {

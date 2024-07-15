@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const fillStyle = css`
   ${(props) =>
@@ -19,15 +19,14 @@ const fillStyle = css`
   display: flex;
 `;
 
-const StyledStack = styled.div.withConfig(styledComponentsConfig)`
+const StyledStack = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   position: relative;
   ${genericStyles}
   ${(props) => props.fillContainer && fillStyle}
   ${(props) => props.theme.stack && props.theme.stack.extend}
 `;
-
-StyledStack.defaultProps = {};
-Object.setPrototypeOf(StyledStack.defaultProps, defaultProps);
 
 const styleMap = {
   fill: `
@@ -91,8 +90,5 @@ const StyledStackLayer = styled.div.withConfig(styledComponentsConfig)`
   `}
   ${(props) => !props.interactive && `pointer-events: none;`}
 `;
-
-StyledStackLayer.defaultProps = {};
-Object.setPrototypeOf(StyledStackLayer.defaultProps, defaultProps);
 
 export { StyledStack, StyledStackLayer };

@@ -15,4 +15,9 @@ describe('Footer', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('default outside grommet wrapper', () => {
+    const { container } = render(<Footer />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

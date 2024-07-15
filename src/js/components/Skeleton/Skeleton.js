@@ -1,16 +1,15 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
+import React, { forwardRef } from 'react';
 import { SkeletonPropTypes } from './propTypes';
 import { useSkeleton } from './SkeletonContext';
 import { StyledSkeleton } from './StyledSkeleton';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Skeleton = forwardRef(
   (
     { as, colors: colorsProp, width: widthProp, height: heightProp, ...rest },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
 
     const skeleton = useSkeleton();
     const depth = skeleton?.depth || 0;

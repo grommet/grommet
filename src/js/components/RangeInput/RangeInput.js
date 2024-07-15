@@ -6,13 +6,11 @@ import React, {
   useEffect,
 } from 'react';
 
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
-
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 import { RangeInputPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const RangeInput = forwardRef(
   (
@@ -36,7 +34,7 @@ const RangeInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const formContext = useContext(FormContext);
     const [focus, setFocus] = useState(focusProp);
 
@@ -109,7 +107,7 @@ const RangeInput = forwardRef(
         name={name}
         focus={focus}
         focusIndicator={focusIndicator}
-        value={value || ''}
+        value={value || value === 0 ? value : ''}
         {...rest}
         color={color}
         onFocus={(event) => {

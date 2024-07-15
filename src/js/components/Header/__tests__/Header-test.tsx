@@ -16,4 +16,8 @@ describe('Header', () => {
     expect(ref.current).not.toBe(null);
     expect(ref.current?.nodeName).toBe('HEADER');
   });
+  it('should render outside grommet wrapper', () => {
+    const { container } = render(<Header>Hello, World!</Header>);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

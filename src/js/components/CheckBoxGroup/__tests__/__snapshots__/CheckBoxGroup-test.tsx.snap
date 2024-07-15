@@ -604,6 +604,53 @@ exports[`CheckBoxGroup options renders 1`] = `
 </div>
 `;
 
+exports[`CheckBoxGroup renders without grommet wrapper 1`] = `
+<div
+  class="StyledBox-sc-13pk1d4-0 dxPtNT StyledCheckBoxGroup-sc-2nhc5d-0"
+  role="group"
+>
+  <label
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 czLRXY"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jWuWAm StyledCheckBox-sc-1dbk5ju-6 fwVbWb"
+    >
+      <input
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dzITxe"
+        type="checkbox"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 fveUEp StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 joEFRH"
+      />
+    </div>
+    <span>
+      First
+    </span>
+  </label>
+  <div
+    class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jMOWYd"
+  />
+  <label
+    class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 czLRXY"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jWuWAm StyledCheckBox-sc-1dbk5ju-6 fwVbWb"
+    >
+      <input
+        class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dzITxe"
+        type="checkbox"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 fveUEp StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 joEFRH"
+      />
+    </div>
+    <span>
+      Second
+    </span>
+  </label>
+</div>
+`;
+
 exports[`CheckBoxGroup value renders 1`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 gyimNE"

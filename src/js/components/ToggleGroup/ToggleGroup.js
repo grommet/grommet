@@ -1,9 +1,9 @@
-import React, { useCallback, useContext, useState, useRef } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useCallback, useState, useRef } from 'react';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
 import { StyledButton } from './StyledToggleGroup';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const useControlled = ({ prop, defaultProp, onChange = () => {} }) => {
   const [uncontrolledProp, setUncontrolledProp] = useState(defaultProp);
@@ -38,7 +38,7 @@ const ToggleGroup = ({
     defaultProp: defaultValue,
     onChange: onToggle,
   });
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const ref = useRef();
   const buttonRefs = useRef([]);
 
@@ -121,9 +121,11 @@ const ToggleGroup = ({
           let label;
           let icon;
           let optionValue;
+          let tip;
           if (typeof option === 'object') {
             icon = option.icon;
             label = option.label;
+            tip = option.tip;
             optionValue = option.value;
           } else {
             label = option;
@@ -162,6 +164,7 @@ const ToggleGroup = ({
                 aria-checked={!multiple && active}
                 icon={icon}
                 label={label}
+                tip={tip}
                 onClick={(event) => handleToggle(event, optionValue)}
                 ref={(r) => {
                   buttonRefs.current[index] = r;
