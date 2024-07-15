@@ -1,15 +1,7 @@
+/* eslint-disable max-len, import/no-unresolved */
 import { css } from 'styled-components';
-import {
-  light,
-  dark,
-  components,
-  large,
-  small,
-  base,
-} from 'hpe-design-tokens/esm';
+import { light, dark, components, large, small, base } from 'hpe-design-tokens';
 import { deepFreeze } from '../utils';
-
-/* eslint-disable max-len */
 
 const dimensions = {
   borderSize: {
