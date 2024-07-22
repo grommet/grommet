@@ -606,6 +606,7 @@ exports[`Components loads 1`] = `
       "primaryKey": [Function],
       "secondaryKey": [Function],
       "show": [Function],
+      "showIndex": [Function],
       "step": [Function],
     },
     "render": [Function],
