@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { DataContext } from '../../contexts/DataContext';
 import { DropButton } from '../DropButton';
@@ -14,6 +13,7 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { DataSearchPropTypes } from './propTypes';
 import { isSmall } from '../../utils/responsive';
 import { useDebounce } from '../../utils/use-debounce';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -39,7 +39,7 @@ export const DataSearch = ({
   } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const size = useContext(ResponsiveContext);
   const skeleton = useSkeleton();
   const debounce = useDebounce(DEBOUNCE_TIMEOUT);

@@ -10441,6 +10441,163 @@ exports[`Layer position: top-right - full: vertical 2`] = `
 }"
 `;
 
+exports[`Layer renders outside grommet wrapper 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+  will-change: transform;
+}
+
+.c2 {
+  display: flex;
+  flex-direction: column;
+  min-height: 48px;
+  background-color: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 20;
+  position: absolute;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation: hWAzxx 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="grommet-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    data-g-portal-id="0"
+    id="grommet-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    This is layer
+  </div>
+</div>
+`;
+
+exports[`Layer renders outside grommet wrapper 2`] = `
+".iipuGf {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .iipuGf {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .jZXuvm {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bbBuUg {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
 exports[`Layer should apply background 1`] = `
 .c0 {
   font-size: 18px;

@@ -37,6 +37,13 @@ describe('List', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <List a11yTitle="test" data={[{ a: 'alpha' }, { a: 'beta' }]} />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('renders a11yTitle and aria-label', () => {
     const { container, getByLabelText } = render(
       <Grommet>
@@ -545,6 +552,93 @@ describe('List onOrder', () => {
               setOrdered(newData);
               onOrder(newData);
             }}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  test('Mouse move down', () => {
+    const { container } = render(<App />);
+    const $element = container.querySelector('#alphaMoveDown');
+
+    if (!$element)
+      throw new Error('Cannot find element with id "alphaMoveDown"');
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click($element);
+    expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Keyboard move down', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    // alpha's down arrow control should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Keyboard move up', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    // beta's up arrow control should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
+    });
+    expect(onOrder).toHaveBeenCalledWith([{ a: 'beta' }, { a: 'alpha' }]);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('List onOrder with no-index', () => {
+  let onOrder: Required<ListExtendedProps<{ a: string }>>['onOrder'];
+  let App: React.FC;
+
+  beforeEach(() => {
+    onOrder = jest.fn();
+    App = () => {
+      const [ordered, setOrdered] = useState([{ a: 'alpha' }, { a: 'beta' }]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            primaryKey="a"
+            onOrder={(newData) => {
+              setOrdered(newData);
+              onOrder(newData);
+            }}
+            showIndex={false}
           />
         </Grommet>
       );

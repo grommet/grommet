@@ -1,22 +1,15 @@
 import styled from 'styled-components';
 
-import { defaultProps } from '../../default-props';
-
 import { borderStyle, roundStyle } from '../../utils';
 
 import { Button } from '../Button';
+import { withTheme } from '../../default-props';
 
-export const StyledTagButton = styled(Button)`
+export const StyledTagButton = styled(Button).attrs(withTheme)`
   ${(props) => props.border && borderStyle(props.border, true, props.theme)}
   ${(props) => props.round && roundStyle(props.round, true, props.theme)}
 `;
 
-StyledTagButton.defaultProps = {};
-Object.setPrototypeOf(StyledTagButton.defaultProps, defaultProps);
-
-export const StyledRemoveButton = styled(Button)`
+export const StyledRemoveButton = styled(Button).attrs(withTheme)`
   ${(props) => props.round && roundStyle(props.round, true, props.theme)}
 `;
-
-StyledRemoveButton.defaultProps = {};
-Object.setPrototypeOf(StyledRemoveButton.defaultProps, defaultProps);

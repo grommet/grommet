@@ -123,6 +123,71 @@ exports[`Clock hourLimit 1`] = `
 </div>
 `;
 
+exports[`Clock render outside wrapper 1`] = `
+.c1 {
+  position: relative;
+  width: 0.8em;
+  text-align: center;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1.375;
+}
+
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    1
+  </div>
+  <div
+    class="c1"
+  >
+    8
+  </div>
+  <div
+    class="c1"
+  >
+    :
+  </div>
+  <div
+    class="c1"
+  >
+    2
+  </div>
+  <div
+    class="c1"
+  >
+    3
+  </div>
+  <div
+    class="c1"
+  >
+    :
+  </div>
+  <div
+    class="c1"
+  >
+    3
+  </div>
+  <div
+    class="c1"
+  >
+    4
+  </div>
+</div>
+`;
+
 exports[`Clock run 1`] = `
 .c0 {
   font-size: 18px;

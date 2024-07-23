@@ -1,7 +1,5 @@
 import React, { forwardRef } from 'react';
 
-import { defaultProps } from '../../default-props';
-
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 
@@ -81,8 +79,5 @@ const Footer = forwardRef(
 );
 
 Footer.displayName = 'Footer';
-
-Footer.defaultProps = {};
-Object.setPrototypeOf(Footer.defaultProps, defaultProps);
 
 export { Footer };

@@ -7,9 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { defaultProps } from '../../default-props';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 
 import { Box } from '../Box';
@@ -29,6 +27,7 @@ import {
 } from './StyledVideo';
 import { MessageContext } from '../../contexts/MessageContext';
 import { VideoPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
@@ -68,7 +67,7 @@ const Video = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const [captions, setCaptions] = useState([]);
@@ -610,8 +609,6 @@ const Video = forwardRef(
     );
   },
 );
-
-Video.defaultProps = {};
 
 Video.displayName = 'Video';
 Video.propTypes = VideoPropTypes;

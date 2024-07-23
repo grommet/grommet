@@ -9,11 +9,11 @@ import {
   PortalContext,
   useForwardedRef,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -82,7 +82,7 @@ const DropContainer = forwardRef(
     ref,
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     // dropOptions was created to preserve backwards compatibility
     const { drop: dropOptions } = useContext(OptionsContext);
     const portalContext = useContext(PortalContext);

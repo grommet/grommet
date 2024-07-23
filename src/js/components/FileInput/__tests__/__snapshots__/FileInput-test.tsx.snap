@@ -528,6 +528,167 @@ exports[`FileInput basic 1`] = `
 </div>
 `;
 
+exports[`FileInput basic outside grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: dashed 2px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  justify-content: center;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.c5 {
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  align-self: center;
+  margin: 12px;
+}
+
+.c5:hover {
+  text-decoration: underline;
+}
+
+.c4 {
+  margin: 12px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  font-size: 0;
+  opacity: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c2::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.c1 {
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  box-shadow: none;
+}
+
+.c1 >circle,
+.c1 >ellipse,
+.c1 >line,
+.c1 >path,
+.c1 >polygon,
+.c1 >polyline,
+.c1 >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1 ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    border: dashed 2px rgba(0, 0, 0, 0.33);
+  }
+}
+
+<div
+  class="c0 c1"
+>
+  <input
+    class="c2"
+    name="file"
+    type="file"
+  />
+  <div
+    class="c3"
+  >
+    <span
+      class="c4 "
+    >
+      Drop file here or
+    </span>
+    <a
+      class="c5"
+      tabindex="-1"
+    >
+      browse
+    </a>
+  </div>
+</div>
+`;
+
 exports[`FileInput border 1`] = `
 .c0 {
   font-size: 18px;
