@@ -128,6 +128,7 @@ export const Data = ({
       // longer reflecting the view
       delete nextView.name;
       delete nextView.view;
+      delete nextView.columns;
       setFiltersCleared(true);
       setView(nextView);
       if (onView) onView(nextView);
