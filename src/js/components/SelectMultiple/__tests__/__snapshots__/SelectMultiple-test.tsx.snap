@@ -6514,7 +6514,7 @@ exports[`SelectMultiple with portal select all and clear 3`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 chpnTk StyledSelect__SelectTextInput-sc-znp66n-4 eGvfyO"
+          class="StyledTextInput-sc-1x30a0s-0 cWCiZI StyledSelect__SelectTextInput-sc-znp66n-4 eGvfyO"
           id="test-select__drop__input"
           readonly=""
           tabindex="-1"
