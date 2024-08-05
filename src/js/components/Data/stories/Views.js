@@ -18,6 +18,7 @@ export const Views = () => (
             location: ['San Francisco'],
           },
         },
+        { name: 'Fewer Columns', columns: ['name', 'location'] },
       ]}
       toolbar
     >

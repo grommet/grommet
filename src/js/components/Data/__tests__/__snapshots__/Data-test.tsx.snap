@@ -7666,11 +7666,6 @@ exports[`Data view all 1`] = `
   font-weight: bold;
 }
 
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -7966,6 +7961,445 @@ exports[`Data view all 1`] = `
               class="c15"
             />
           </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c17 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            >
+              <span
+                class="c18"
+              >
+                aa
+              </span>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Data view columns 1`] = `
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+
+.c11 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus >circle,
+.c10:focus >ellipse,
+.c10:focus >line,
+.c10:focus >path,
+.c10:focus >polygon,
+.c10:focus >polyline,
+.c10:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c8:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c8::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c8:-moz-placeholder,
+.c8::-moz-placeholder {
+  opacity: 1;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c17 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c13 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c16:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c16:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    column-gap: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    column-gap: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="data"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-label="Search"
+                class="c7"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m15 15 7 7-7-7zm-5.5 2a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15z"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <input
+              aria-label="Search"
+              autocomplete="off"
+              class="c8"
+              id="data--search"
+              name="_search"
+              type="search"
+            />
+          </div>
+        </div>
+        <div
+          class="c9"
+        >
+          <button
+            aria-label="Open filters"
+            class="c10"
+            id="data--filters-control"
+            type="button"
+          >
+            <svg
+              aria-label="Filter"
+              class="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m3 6 7 7v8h4v-8l7-7V3H3z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <span
+      class="c11"
+    >
+      4 items
+    </span>
+    <table
+      class="c12 c13"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-4"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
           <th
             class="c14 "
             scope="col"
@@ -7992,23 +8426,52 @@ exports[`Data view all 1`] = `
               <span
                 class="c18"
               >
-                aa
+                ZZ
               </span>
             </div>
           </th>
-          <td
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
             class="c17 "
+            scope="row"
           >
             <div
               class="c4"
             >
               <span
-                class="c19"
+                class="c18"
               >
-                ZZ
+                YY
               </span>
             </div>
-          </td>
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c17 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            />
+          </th>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            class="c17 "
+            scope="row"
+          >
+            <div
+              class="c4"
+            />
+          </th>
         </tr>
       </tbody>
     </table>

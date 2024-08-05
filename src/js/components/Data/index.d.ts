@@ -19,9 +19,7 @@ export interface View {
     direction: 'asc' | 'desc';
   };
   step?: number; // page size
-
-  // Future column ordering, requires 'properties' property on Data
-  // columns?: string[];
+  columns?: string[];
 }
 
 export interface DataProps {
