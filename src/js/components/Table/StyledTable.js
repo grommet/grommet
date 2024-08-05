@@ -47,6 +47,7 @@ const StyledTableCell = styled.td
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  height: 100%;
 
   ${(props) => props.size && sizeStyle}
   ${(props) => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
@@ -73,7 +74,9 @@ const StyledTableDataCaption = styled.caption
   margin-bottom: ${(props) => props.theme.global.edgeSize.xxsmall};
 `;
 
-const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)``;
+const StyledTableRow = styled.tr.withConfig(styledComponentsConfig)`
+  height: 100%;
+`;
 
 const StyledTableBody = styled.tbody.withConfig(styledComponentsConfig)``;
 
@@ -87,6 +90,7 @@ const StyledTable = styled.table
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+  height: 100%;
   ${genericStyles} ${(props) => props.theme.table && props.theme.table.extend};
 `;
 
