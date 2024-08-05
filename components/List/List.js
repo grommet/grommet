@@ -16,7 +16,7 @@ var _AnalyticsContext = require("../../contexts/AnalyticsContext");
 var _propTypes = require("./propTypes");
 var _defaultProps = require("../../default-props");
 var _useThemeValue = require("../../utils/useThemeValue");
-var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
+var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "showIndex", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -123,6 +123,8 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     onKeyDown = _ref.onKeyDown,
     onMore = _ref.onMore,
     onOrder = _ref.onOrder,
+    _ref$showIndex = _ref.showIndex,
+    showIndex = _ref$showIndex === void 0 ? true : _ref$showIndex,
     pad = _ref.pad,
     paginate = _ref.paginate,
     _ref$pinned = _ref.pinned,
@@ -604,7 +606,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       isDisabled: isDisabled,
       flex: false,
       pad: pad || theme.list.item.pad
-    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), onOrder && /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), showIndex && onOrder && /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       color: pinnedColor
     }, index + 1), content, displayPinned, orderControls);
   }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
