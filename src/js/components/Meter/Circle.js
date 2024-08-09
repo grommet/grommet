@@ -1,16 +1,15 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
-import { defaultProps } from '../../default-props';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Circle = forwardRef((props, ref) => {
   const { background, max, round, size, thickness, type, values, ...rest } =
     props;
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const strokeWidth =
@@ -166,8 +165,5 @@ const Circle = forwardRef((props, ref) => {
 });
 
 Circle.displayName = 'Circle';
-
-Circle.defaultProps = {};
-Object.setPrototypeOf(Circle.defaultProps, defaultProps);
 
 export { Circle };

@@ -157,7 +157,8 @@ export const makeNodeFocusable = (node) => {
   }
 };
 
-const autoFocusingTags = /(a|area|input|select|textarea|button|iframe)$/;
+// Using ^ and $ to match the whole tagName, and not e.g. <meta> and <data>.
+const autoFocusingTags = /^(a|area|input|select|textarea|button|iframe)$/;
 
 export const makeNodeUnfocusable = (node) => {
   // do not touch aria live containers so that announcements work

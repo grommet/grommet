@@ -1,9 +1,9 @@
 import React, { forwardRef, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Grid } from '../Grid';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from './NameValueListContext';
 import { isSmall } from '../../utils/responsive';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const NameValueList = forwardRef(
   (
@@ -18,7 +18,7 @@ const NameValueList = forwardRef(
     ref,
   ) => {
     const size = useContext(ResponsiveContext);
-    const theme = useContext(ThemeContext);
+    const theme = useThemeValue();
 
     // If layout is grid, valueWidth sets the max width of the column.
     // Grid will 'fit' as many columns of valueWidth per row as container's

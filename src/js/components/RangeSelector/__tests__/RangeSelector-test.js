@@ -32,6 +32,12 @@ describe('RangeSelector', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(<RangeSelector values={[20, 30]} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('color', () => {
     const { container } = render(
       <Grommet>

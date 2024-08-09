@@ -315,6 +315,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         // deprecate in v3
         // weight: undefined,
+        readOnly: {
+          // background: undefined,
+          // border: {
+          //  color: undefined,
+          // },
+        },
       },
       opacity: {
         strong: 0.8,
@@ -371,8 +377,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     anchor: {
-      textDecoration: 'none',
-      fontWeight: 600,
       color: {
         dark: 'accent-1',
         light: 'brand',
@@ -383,6 +387,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // fontWeight: undefined,
         // extend: undefined,
       },
+      // icon: {
+      //   color: undefined
+      // },
+      textDecoration: 'none',
+      fontWeight: 600,
       // size: {
       //   medium: {
       //     color: undefined,
@@ -1111,6 +1120,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
       },
+      primaryKey: {
+        // any text props
+        weight: 'bold',
+      },
       icons: {
         down: FormDown,
         up: FormUp,
@@ -1654,6 +1667,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         // extend: undefined
       },
+      // wheel: undefined
     },
     rangeSelector: {
       background: {
@@ -1714,6 +1728,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         dark: ['background', 'background-front'],
         light: ['background', 'background-back'],
       },
+      // extend: undefined,
     },
     skipLinks: {
       position: 'top',
@@ -1921,6 +1936,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         background: 'none',
         elevation: 'none',
         margin: 'none',
+      },
+    },
+    toggleGroup: {
+      button: {
+        // iconOnly: {
+        //   pad: undefined,
+        // },
+        pad: {
+          horizontal: '11px',
+          vertical: '11px',
+        },
+      },
+      container: {
+        round: 'xsmall',
+        border: true,
+      },
+      divider: {
+        color: 'border',
       },
     },
     video: {

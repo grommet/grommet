@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-
+import isPropValid from '@emotion/is-prop-valid';
 import {
   activeStyle,
   disabledStyle,
@@ -10,7 +10,7 @@ import {
   kindPartStyles,
   parseMetricToNum,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 const radiusStyle = (props) => {
   const size = props.sizeProp;
@@ -250,11 +250,8 @@ const plainStyle = (props) => css`
   ${props.hasIcon && !props.hasLabel && `line-height: 0;`}
 `;
 
-const StyledButtonKind = styled.button.withConfig({
-  // don't let kind attribute leak to DOM
-  // https://styled-components.com/docs/api#shouldforwardprop
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-    !['kind'].includes(prop) && defaultValidatorFn(prop),
+const StyledButtonKind = styled.button.attrs(withTheme).withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && !['kind'].includes(prop),
 })`
   display: inline-block;
   box-sizing: border-box;
@@ -318,8 +315,5 @@ const StyledButtonKind = styled.button.withConfig({
     cursor: default;
   `}
 `;
-
-StyledButtonKind.defaultProps = {};
-Object.setPrototypeOf(StyledButtonKind.defaultProps, defaultProps);
 
 export { StyledButtonKind };

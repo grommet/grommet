@@ -16,6 +16,11 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('render outside grommet', () => {
+    const { container } = render(<Box />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('as string', () => {
     const { container } = render(
       <Grommet>

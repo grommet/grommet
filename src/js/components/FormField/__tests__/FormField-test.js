@@ -1,18 +1,19 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import styled from 'styled-components';
-import 'jest-styled-components';
 import 'jest-axe/extend-expect';
+import 'jest-styled-components';
+import React from 'react';
 import 'regenerator-runtime/runtime';
+import styled from 'styled-components';
 
 import { Alert, New, StatusInfo } from 'grommet-icons';
-import { Grommet } from '../../Grommet';
-import { Form } from '../../Form';
-import { CheckBox } from '../../CheckBox';
 import { FormField } from '..';
+import { CheckBox } from '../../CheckBox';
+import { Form } from '../../Form';
+import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { TextArea } from '../../TextArea';
+import { Text } from '../../Text';
 
 const CustomFormField = styled(FormField)`
   font-size: 40px;
@@ -39,6 +40,12 @@ describe('FormField', () => {
         </FormField>
       </Grommet>,
     );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('default outside grommet wrapper', () => {
+    const { container } = render(<FormField />);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -449,6 +456,118 @@ describe('FormField', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('max and threshold validation', () => {
+    const { container } = render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="label"
+            validate={{ max: 10, threshold: 0.5 }}
+            name="issue-description"
+            htmlFor="issue-description"
+          >
+            <TextInput
+              id="issue-description"
+              name="issue-description"
+              placeholder="placeholder"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('typing something into the input that meets the threshold', () => {
+    render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="label"
+            validate={{ max: 10, threshold: 0.5 }}
+            name="issue-description"
+            htmlFor="issue-description"
+          >
+            <TextInput
+              data-testid="test-input"
+              id="issue-description"
+              name="issue-description"
+              placeholder="placeholder"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.change(screen.getByTestId('test-input'), {
+      target: { value: '12345' },
+    });
+
+    expect(screen.queryByText('characters left', { exact: false })).toBeNull();
+  });
+
+  test('checks that the "X characters left" message appears', async () => {
+    render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="label"
+            validate={{ max: 10, threshold: 0.5 }}
+            name="issue-description"
+            htmlFor="issue-description"
+          >
+            <TextInput
+              data-testid="test-input"
+              id="issue-description"
+              name="issue-description"
+              placeholder="placeholder"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.change(screen.getByTestId('test-input'), {
+      target: { value: '123456' },
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText('4 characters left')).toBeTruthy();
+    });
+  });
+
+  // eslint-disable-next-line max-len
+  test('checks that the "X characters over limit" message appears.', async () => {
+    render(
+      <Grommet>
+        <Form validate="change">
+          <FormField
+            label="label"
+            validate={{ max: 10, threshold: 0.5 }}
+            name="issue-description"
+            htmlFor="issue-description"
+          >
+            <TextInput
+              data-testid="test-input"
+              id="issue-description"
+              name="issue-description"
+              placeholder="placeholder"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.change(screen.getByTestId('test-input'), {
+      target: { value: '1234567890$' },
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText('1 character over limit')).toBeTruthy();
+    });
+  });
+
   test('Field with autoFocus', () => {
     const mockFocus = jest.fn();
     render(
@@ -459,5 +578,17 @@ describe('FormField', () => {
       </Grommet>,
     );
     expect(mockFocus).toHaveBeenCalledTimes(1);
+  });
+
+  test('Field with null as child', () => {
+    const { container } = render(
+      <Grommet>
+        <FormField label="Label">
+          <TextInput />
+          {false && <Text>foobar</Text>}
+        </FormField>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

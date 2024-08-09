@@ -229,6 +229,23 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('row and column gap', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Box gap={{ row: 'xlarge', column: '30px' }} direction="row">
+          <Box />
+          <Box />
+        </Box>
+        <Box as="span" gap="small">
+          <span>first</span>
+          <span>second</span>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('margin', () => {
     const { container } = render(
       <Grommet>

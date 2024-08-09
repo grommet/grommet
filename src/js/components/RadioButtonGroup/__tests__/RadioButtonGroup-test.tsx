@@ -25,6 +25,14 @@ describe('RadioButtonGroup', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <RadioButtonGroup name="test" options={['one', 'two']} value="one" />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('string options', () => {
     const { container } = render(
       <Grommet>

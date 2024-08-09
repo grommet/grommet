@@ -1,8 +1,5 @@
-import React, { forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useState } from 'react';
 
-import { Box } from '../Box';
-import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 
 import {
@@ -14,6 +11,7 @@ import {
   StyledRadioButtonBox,
 } from './StyledRadioButton';
 import { RadioButtonPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const RadioButton = forwardRef(
   (
@@ -32,7 +30,7 @@ const RadioButton = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [hover, setHover] = useState();
     const normalizedLabel =
       typeof label === 'string' ? (
@@ -75,7 +73,6 @@ const RadioButton = forwardRef(
         onMouseLeave={() => setHover(false)}
       >
         <StyledRadioButton
-          as={Box}
           flex={false}
           margin={
             label ? { right: theme.radioButton.gap || 'small' } : undefined
@@ -99,7 +96,6 @@ const RadioButton = forwardRef(
           ) : (
             <StyledRadioButtonBox
               focus={focus && focusIndicator}
-              as={Box}
               align="center"
               justify="center"
               width={theme.radioButton.size}

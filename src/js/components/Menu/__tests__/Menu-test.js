@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -68,6 +68,19 @@ describe('Menu', () => {
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
       </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(
+      <Menu
+        icon={<svg />}
+        label="Test Menu"
+        id="test-menu"
+        items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+      />,
     );
 
     expect(container.firstChild).toMatchSnapshot();

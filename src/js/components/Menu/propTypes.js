@@ -41,7 +41,7 @@ if (process.env.NODE_ENV !== 'production') {
     items: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.object),
       PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object)),
-    ]).isRequired,
+    ]),
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,

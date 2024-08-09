@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useEffect } from 'react';
 import { findScrollParent, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Header = React.forwardRef(({ sticky, ...rest }, ref) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const headerRef = useForwardedRef(ref);
   useEffect(() => {
     let scrollTop = 0;

@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { Drop } from '../Drop';
-import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 
 import { StyledWorldMap } from './StyledWorldMap';
 import { WorldMapPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
 // by FACTOR pixels.
@@ -502,7 +501,7 @@ const WorldMap = forwardRef(
     },
     ref,
   ) => {
-    const theme = React.useContext(ThemeContext);
+    const theme = useThemeValue();
 
     const world = React.useMemo(buildWorld, []);
 
@@ -724,8 +723,6 @@ const WorldMap = forwardRef(
 
 WorldMap.displayName = 'WorldMap';
 
-WorldMap.defaultProps = {};
-Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
 WorldMap.propTypes = WorldMapPropTypes;
 
 export { WorldMap };

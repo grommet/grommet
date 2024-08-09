@@ -1,9 +1,6 @@
 import React from 'react';
-
-import { Box, Data, DataTable } from 'grommet';
-
-import { DataView } from '../DataView';
-import { DATA } from '../../DataTable/stories/data';
+import { Box, Data, DataTable, DataView } from 'grommet';
+import { DATA, columns } from '../../DataTable/stories/data';
 
 export const Simple = () => (
   // Uncomment <Grommet> lines when using outside of storybook
@@ -17,7 +14,7 @@ export const Simple = () => (
       ]}
     >
       <DataView />
-      <DataTable />
+      <DataTable columns={columns} />
     </Data>
   </Box>
   // </Grommet>

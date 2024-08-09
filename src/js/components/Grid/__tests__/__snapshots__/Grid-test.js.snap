@@ -46,117 +46,78 @@ exports[`Grid align renders 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
 }
 
 .c2 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
 .c3 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
   align-items: flex-end;
 }
 
 .c4 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: baseline;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
   align-items: baseline;
 }
 
 .c6 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: normal;
-  -webkit-box-align: normal;
-  -ms-flex-align: normal;
   align-items: normal;
 }
 
 .c7 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: first baseline;
-  -webkit-box-align: first baseline;
-  -ms-flex-align: first baseline;
   align-items: first baseline;
 }
 
 .c8 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: last baseline;
-  -webkit-box-align: last baseline;
-  -ms-flex-align: last baseline;
   align-items: last baseline;
 }
 
 .c9 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: safe center;
-  -webkit-box-align: safe center;
-  -ms-flex-align: safe center;
   align-items: safe center;
 }
 
 .c10 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: unsafe center;
-  -webkit-box-align: unsafe center;
-  -ms-flex-align: unsafe center;
   align-items: unsafe center;
 }
 
 .c11 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: inherit;
-  -webkit-box-align: inherit;
-  -ms-flex-align: inherit;
   align-items: inherit;
 }
 
 .c12 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: initial;
-  -webkit-box-align: initial;
-  -ms-flex-align: initial;
   align-items: initial;
 }
 
 .c13 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-items: unset;
-  -webkit-box-align: unset;
-  -ms-flex-align: unset;
   align-items: unset;
 }
 
@@ -219,128 +180,96 @@ exports[`Grid alignContent renders 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
   align-content: flex-start;
 }
 
 .c2 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
   align-content: center;
 }
 
 .c3 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
   align-content: space-between;
 }
 
 .c4 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: space-around;
-  -ms-flex-line-pack: space-around;
   align-content: space-around;
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: flex-end;
-  -ms-flex-line-pack: end;
   align-content: flex-end;
 }
 
 .c6 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
   align-content: stretch;
 }
 
 .c7 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: baseline;
-  -ms-flex-line-pack: baseline;
   align-content: baseline;
 }
 
 .c8 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: space-evenly;
-  -ms-flex-line-pack: space-evenly;
   align-content: space-evenly;
 }
 
 .c9 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: normal;
-  -ms-flex-line-pack: normal;
   align-content: normal;
 }
 
 .c10 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: first baseline;
-  -ms-flex-line-pack: first baseline;
   align-content: first baseline;
 }
 
 .c11 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: last baseline;
-  -ms-flex-line-pack: last baseline;
   align-content: last baseline;
 }
 
 .c12 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: safe center;
-  -ms-flex-line-pack: safe center;
   align-content: safe center;
 }
 
 .c13 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: unsafe center;
-  -ms-flex-line-pack: unsafe center;
   align-content: unsafe center;
 }
 
 .c14 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: inherit;
-  -ms-flex-line-pack: inherit;
   align-content: inherit;
 }
 
 .c15 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: initial;
-  -ms-flex-line-pack: initial;
   align-content: initial;
 }
 
 .c16 {
   display: grid;
   box-sizing: border-box;
-  -webkit-align-content: unset;
-  -ms-flex-line-pack: unset;
   align-content: unset;
 }
 
@@ -502,45 +431,45 @@ exports[`Grid border 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  border: solid 1px rgba(0,0,0,0.33);
+  border: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c2 {
   display: grid;
   box-sizing: border-box;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c3 {
   display: grid;
   box-sizing: border-box;
-  border-left: solid 1px rgba(0,0,0,0.33);
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-left: solid 1px rgba(0, 0, 0, 0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c4 {
   display: grid;
   box-sizing: border-box;
-  border-top: solid 1px rgba(0,0,0,0.33);
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  border-left: solid 1px rgba(0,0,0,0.33);
+  border-left: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c6 {
   display: grid;
   box-sizing: border-box;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c7 {
   display: grid;
   box-sizing: border-box;
-  border-right: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0, 0, 0, 0.33);
 }
 
 .c8 {
@@ -552,43 +481,43 @@ exports[`Grid border 1`] = `
 .c9 {
   display: grid;
   box-sizing: border-box;
-  border: solid 2px rgba(0,0,0,0.33);
+  border: solid 2px rgba(0, 0, 0, 0.33);
 }
 
 .c10 {
   display: grid;
   box-sizing: border-box;
-  border: solid 4px rgba(0,0,0,0.33);
+  border: solid 4px rgba(0, 0, 0, 0.33);
 }
 
 .c11 {
   display: grid;
   box-sizing: border-box;
-  border: solid 12px rgba(0,0,0,0.33);
+  border: solid 12px rgba(0, 0, 0, 0.33);
 }
 
 .c12 {
   display: grid;
   box-sizing: border-box;
-  border: solid 24px rgba(0,0,0,0.33);
+  border: solid 24px rgba(0, 0, 0, 0.33);
 }
 
 .c13 {
   display: grid;
   box-sizing: border-box;
-  border: dotted 1px rgba(0,0,0,0.33);
+  border: dotted 1px rgba(0, 0, 0, 0.33);
 }
 
 .c14 {
   display: grid;
   box-sizing: border-box;
-  border: double 1px rgba(0,0,0,0.33);
+  border: double 1px rgba(0, 0, 0, 0.33);
 }
 
 .c15 {
   display: grid;
   box-sizing: border-box;
-  border: dashed 1px rgba(0,0,0,0.33);
+  border: dashed 1px rgba(0, 0, 0, 0.33);
 }
 
 .c16 {
@@ -598,105 +527,105 @@ exports[`Grid border 1`] = `
   border-left: dashed 12px #FD6FFF;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
-    border: solid 1px rgba(0,0,0,0.33);
+    border: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
-    border-left: solid 1px rgba(0,0,0,0.33);
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-left: solid 1px rgba(0, 0, 0, 0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
-    border-top: solid 1px rgba(0,0,0,0.33);
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border-left: solid 1px rgba(0,0,0,0.33);
+    border-left: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     border: solid 1px #6FFFB0;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
-    border: solid 2px rgba(0,0,0,0.33);
+    border: solid 2px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
-    border: solid 4px rgba(0,0,0,0.33);
+    border: solid 4px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
-    border: solid 6px rgba(0,0,0,0.33);
+    border: solid 6px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c12 {
-    border: solid 12px rgba(0,0,0,0.33);
+    border: solid 12px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c13 {
-    border: dotted 1px rgba(0,0,0,0.33);
+    border: dotted 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c14 {
-    border: double 1px rgba(0,0,0,0.33);
+    border: double 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c15 {
-    border: dashed 1px rgba(0,0,0,0.33);
+    border: dashed 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c16 {
     border-top: dotted 4px #6FFFB0;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c16 {
     border-left: dashed 6px #FD6FFF;
   }
@@ -794,19 +723,19 @@ exports[`Grid columns renders 1`] = `
 .c4 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: minmax(50%,50%) 25% 75%;
+  grid-template-columns: minmax(50%, 50%) 25% 75%;
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fill,minmax(min(192px,100%),1fr) );
+  grid-template-columns: repeat( auto-fill,minmax(min(192px, 100%), 1fr) );
 }
 
 .c6 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fill,minmax(33.33%,1fr) );
+  grid-template-columns: repeat( auto-fill,minmax(33.33%, 1fr) );
 }
 
 .c7 {
@@ -818,31 +747,31 @@ exports[`Grid columns renders 1`] = `
 .c8 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fit,minmax(min(192px,100%),1fr) );
+  grid-template-columns: repeat( auto-fit,minmax(min(192px, 100%), 1fr) );
 }
 
 .c9 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fill,minmax(min(192px,100%),384px) );
+  grid-template-columns: repeat( auto-fill,minmax(min(192px, 100%), 384px) );
 }
 
 .c10 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fit,minmax(min(192px,100%),50%) );
+  grid-template-columns: repeat( auto-fit,minmax(min(192px, 100%), 50%) );
 }
 
 .c11 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fit,minmax(25%,384px) );
+  grid-template-columns: repeat( auto-fit,minmax(25%, 384px) );
 }
 
 .c12 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fill,minmax(auto,auto) );
+  grid-template-columns: repeat( auto-fill,minmax(auto, auto) );
 }
 
 <div
@@ -1224,54 +1153,36 @@ exports[`Grid justifyContent renders 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
 .c2 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c3 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c4 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
   justify-content: space-around;
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .c6 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: stretch;
-  -webkit-justify-content: stretch;
-  -ms-flex-pack: stretch;
   justify-content: stretch;
 }
 
@@ -1378,69 +1289,69 @@ exports[`Grid pad 1`] = `
   padding-top: 12px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c1 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c2 {
     padding: 12px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     padding: 24px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c6 {
     padding-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
     padding-left: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c8 {
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c9 {
     padding-inline-start: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c10 {
     padding-inline-end: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c11 {
     padding-top: 6px;
   }
@@ -1510,6 +1421,17 @@ exports[`Grid renders 1`] = `
 </div>
 `;
 
+exports[`Grid renders outside grommet wrapper 1`] = `
+.c0 {
+  display: grid;
+  box-sizing: border-box;
+}
+
+<div
+  class="c0"
+/>
+`;
+
 exports[`Grid responsive 1`] = `
 .c0 {
   font-size: 18px;
@@ -1552,7 +1474,7 @@ exports[`Grid rows renders 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  grid-template-rows: minmax(192px,384px) 768px 384px;
+  grid-template-rows: minmax(192px, 384px) 768px 384px;
 }
 
 .c2 {

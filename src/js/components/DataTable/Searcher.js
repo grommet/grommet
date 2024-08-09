@@ -1,9 +1,6 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useEffect, useRef } from 'react';
 
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
-
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -11,9 +8,10 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const inputRef = useRef();
   const needsFocus = filtering === property;
 
@@ -68,8 +66,5 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
 };
 
 Searcher.displayName = 'Searcher';
-
-Searcher.defaultProps = {};
-Object.setPrototypeOf(Searcher.defaultProps, defaultProps);
 
 export { Searcher };

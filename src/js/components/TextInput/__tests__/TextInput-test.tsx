@@ -6,6 +6,7 @@ import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import { Search } from 'grommet-icons';
+import userEvent from '@testing-library/user-event';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -703,6 +704,32 @@ describe('TextInput', () => {
         <TextInput size="large" icon={<Search />} />
       </Grommet>,
     );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TextInput value="test" readOnly aria-readonly />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only copy', async () => {
+    const user = userEvent.setup();
+
+    const { asFragment } = render(
+      <Grommet>
+        <TextInput value="test" readOnly readOnlyCopy aria-readonly />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button'));
+
+    const clipboardText = await navigator.clipboard.readText();
+    expect(clipboardText).toBe('test');
+
     expect(asFragment()).toMatchSnapshot();
   });
 });

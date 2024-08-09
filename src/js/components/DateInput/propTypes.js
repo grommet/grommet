@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
     id: PropTypes.string,
     inline: PropTypes.bool,
     reverse: PropTypes.bool,
+    readOnlyCopy: PropTypes.bool,
     inputProps: PropTypes.shape({}),
     name: PropTypes.string,
     onChange: PropTypes.func,

@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
 import {
   alignContentStyle,
   alignStyle,
@@ -20,9 +19,10 @@ import {
   widthStyle,
 } from '../../utils';
 
-import { roundStyle } from '../../utils/styles';
+import { roundStyle, styledComponentsConfig } from '../../utils/styles';
 
 import { animationBounds, animationObjectStyle } from '../../utils/animation';
+import { withTheme } from '../../default-props';
 
 const BASIS_MAP = {
   auto: 'auto',
@@ -206,7 +206,34 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
-  if (directionProp === 'column' || directionProp === 'column-reverse') {
+  if (typeof gap === 'object') {
+    if (gap.row !== undefined && gap.column !== undefined) {
+      styles.push(
+        `gap: ${theme.global.edgeSize[gap.row] || gap.row} ${
+          theme.global.edgeSize[gap.column] || gap.column
+        };`,
+      );
+      if (responsiveMetric) {
+        styles.push(breakpointStyle(breakpoint, `gap: ${responsiveMetric};`));
+      }
+    } else if (gap.row !== undefined) {
+      styles.push(`row-gap: ${theme.global.edgeSize[gap.row] || gap.row};`);
+      if (responsiveMetric) {
+        styles.push(
+          breakpointStyle(breakpoint, `row-gap: ${responsiveMetric};`),
+        );
+      }
+    } else if (gap.column !== undefined) {
+      styles.push(
+        `column-gap: ${theme.global.edgeSize[gap.column] || gap.column};`,
+      );
+      if (responsiveMetric) {
+        styles.push(
+          breakpointStyle(breakpoint, `column-gap: ${responsiveMetric};`),
+        );
+      }
+    }
+  } else if (directionProp === 'column' || directionProp === 'column-reverse') {
     styles.push(`row-gap: ${metric};`);
     if (responsiveMetric) {
       styles.push(breakpointStyle(breakpoint, `row-gap: ${responsiveMetric};`));
@@ -236,7 +263,9 @@ const gapStyle = (directionProp, gap, responsive, wrap, theme) => {
 };
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div`
+const StyledBox = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   display: flex;
   box-sizing: border-box;
   ${(props) => !props.basis && 'max-width: 100%;'};
@@ -288,9 +317,6 @@ const StyledBox = styled.div`
   ${(props) => props.theme.box && props.theme.box.extend}
   ${(props) => props.kindProp && props.kindProp.extend}
 `;
-
-StyledBox.defaultProps = {};
-Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
 const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
@@ -418,8 +444,9 @@ const gapGapStyle = (directionProp, gap, responsive, border, theme) => {
 
   return styles;
 };
-
-const StyledBoxGap = styled.div`
+const StyledBoxGap = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   flex: 0 0 auto;
   align-self: stretch;
   ${(props) =>
@@ -432,8 +459,5 @@ const StyledBoxGap = styled.div`
       props.theme,
     )};
 `;
-
-StyledBoxGap.defaultProps = {};
-Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);
 
 export { StyledBox, StyledBoxGap };

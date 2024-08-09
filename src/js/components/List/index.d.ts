@@ -2,6 +2,8 @@ import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
+  BackgroundType,
+  ColorType,
   GridAreaType,
   MarginType,
   PadType,
@@ -43,9 +45,14 @@ export interface ListProps<ListItemType> {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
-  children?: (...args: any[]) => any;
+  children?: (
+    item: ListItemType,
+    index: number,
+    state?: { active: boolean },
+  ) => any;
   data?: ListItemType[];
   disabled?: string[];
+  showIndex?: boolean;
   gridArea?: GridAreaType;
   defaultItemProps?: BoxTypes;
   itemKey?: string | ((item: ListItemType) => string | number);
@@ -54,14 +61,22 @@ export interface ListProps<ListItemType> {
   };
   margin?: MarginType;
   onActive?: (index: number) => void;
-  onClickItem?:
-    | ((event: React.MouseEvent) => void)
-    | ((event: { item?: ListItemType; index?: number }) => void);
+  onClickItem?: (
+    event: React.MouseEvent & { item: ListItemType; index: number },
+  ) => void;
   onMore?: () => void;
   onOrder?: (orderedData: ListItemType[]) => void;
   pad?: PadType;
   paginate?: boolean | PaginationType;
-  pinned?: (string | number)[];
+  pinned?:
+    | boolean
+    | (string | number)[]
+    | {
+        items?: (string | number)[];
+        background?: BackgroundType;
+        color?: ColorType;
+        icon?: JSX.Element;
+      };
   primaryKey?: string | ((item: ListItemType) => React.ReactElement);
   secondaryKey?: string | ((item: ListItemType) => React.ReactElement);
   show?: number | { page?: number };
@@ -76,7 +91,7 @@ export interface ListExtendedProps<ListItemType>
     ulProps {}
 
 declare const List: <ListItemType = string | {}>(
-  p: React.PropsWithChildren<ListExtendedProps<ListItemType>>,
+  p: ListExtendedProps<ListItemType>,
 ) => React.ReactElement<ListExtendedProps<ListItemType>>;
 
 export { List };

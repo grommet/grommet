@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
@@ -17,6 +17,7 @@ import { parseMetricToNum } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
 import { DataFormContext } from '../../contexts/DataFormContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Container = styled(Box)`
   user-select: none;
@@ -70,7 +71,7 @@ const RangeSelector = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [changing, setChanging] = useState();

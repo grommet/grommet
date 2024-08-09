@@ -42,6 +42,11 @@ describe('CheckBox', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders without grommet wrapper', () => {
+    const { container } = render(<CheckBox />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('label renders', () => {
     const { container } = render(
       <Grommet>

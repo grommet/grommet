@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo, useState } from 'react';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
@@ -22,6 +21,7 @@ import {
   points,
 } from './utils';
 import { DataChartPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const stackedChartType = {
   areas: 'area',
@@ -57,7 +57,7 @@ const DataChart = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
 
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();

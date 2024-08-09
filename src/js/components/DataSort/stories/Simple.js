@@ -1,8 +1,5 @@
 import React from 'react';
-
-import { Box, Data, DataTable } from 'grommet';
-
-import { DataSort } from '../DataSort';
+import { Box, Data, DataSort, DataTable } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 export const Simple = () => (

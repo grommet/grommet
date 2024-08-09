@@ -6,7 +6,6 @@ import React, {
   useRef,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
@@ -19,15 +18,20 @@ import {
   backgroundIsDark,
   findVisibleParent,
   PortalContext,
+  styledComponentsConfig,
 } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const HiddenAnchor = styled.a`
+const HiddenAnchor = styled.a.withConfig(styledComponentsConfig)`
   width: 0;
   height: 0;
   overflow: hidden;
   position: absolute;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const LayerContainer = forwardRef(
@@ -50,7 +54,7 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const size = useContext(ResponsiveContext);
     // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3
@@ -310,8 +314,9 @@ const LayerContainer = forwardRef(
           // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
           restrictScroll={
-            !layerTarget &&
-            (modal || hitResponsiveBreakpoint) ? true : undefined
+            !layerTarget && (modal || hitResponsiveBreakpoint)
+              ? true
+              : undefined
           }
           trapFocus
         >

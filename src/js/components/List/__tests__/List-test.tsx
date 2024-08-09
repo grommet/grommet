@@ -8,12 +8,13 @@ import { render, fireEvent, screen, within } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
-import { List } from '..';
+import { List, ListExtendedProps } from '..';
 import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { Button } from '../../Button';
+import { Lock } from 'grommet-icons';
 
-const data = [];
+const data: string[] = [];
 for (let i = 0; i < 95; i += 1) {
   data.push(`entry-${i}`);
 }
@@ -34,6 +35,13 @@ describe('List', () => {
     fireEvent.click(getByText('alpha'));
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <List a11yTitle="test" data={[{ a: 'alpha' }, { a: 'beta' }]} />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renders a11yTitle and aria-label', () => {
@@ -296,12 +304,40 @@ describe('List', () => {
     expect(onOrder).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('renders custom theme for primaryKey', () => {
+    const theme = {
+      list: {
+        primaryKey: {
+          color: 'brand',
+          weight: 500,
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey="a"
+        />
+      </Grommet>,
+    );
+
+    const primaryKey = screen.getByText('one');
+    const styles = window.getComputedStyle(primaryKey);
+    expect(styles.fontWeight).toBe('500');
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
 
 describe('List events', () => {
-  let onActive;
-  let onClickItem;
-  let App;
+  let onActive: ListExtendedProps<{ a: string }>['onActive'];
+  let onClickItem: ListExtendedProps<{ a: string }>['onClickItem'];
+  let App: React.FC;
 
   beforeEach(() => {
     onActive = jest.fn();
@@ -426,7 +462,7 @@ describe('List events', () => {
   test('should apply pagination styling', () => {
     const { container } = render(
       <Grommet>
-        <List data={data} paginate={{ background: 'red', margin: 'large' }} />
+        <List data={data} paginate={{ margin: 'large' }} />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -455,7 +491,7 @@ describe('List events', () => {
 
     const activePage = container.querySelector(
       `[aria-current="page"]`,
-    ).innerHTML;
+    )?.innerHTML;
 
     expect(activePage).toEqual(`${desiredPage}`);
     expect(container.firstChild).toMatchSnapshot();
@@ -500,8 +536,8 @@ describe('List events', () => {
 });
 
 describe('List onOrder', () => {
-  let onOrder;
-  let App;
+  let onOrder: Required<ListExtendedProps<{ a: string }>>['onOrder'];
+  let App: React.FC;
 
   beforeEach(() => {
     onOrder = jest.fn();
@@ -524,9 +560,13 @@ describe('List onOrder', () => {
 
   test('Mouse move down', () => {
     const { container } = render(<App />);
+    const $element = container.querySelector('#alphaMoveDown');
+
+    if (!$element)
+      throw new Error('Cannot find element with id "alphaMoveDown"');
 
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(container.querySelector('#alphaMoveDown'));
+    fireEvent.click($element);
     expect(onOrder).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -572,6 +612,66 @@ describe('List onOrder', () => {
     // beta's up arrow control should be active
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.keyDown(getByText('alpha'), {
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
+    });
+    expect(onOrder).toHaveBeenCalledWith([{ a: 'beta' }, { a: 'alpha' }]);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('List onOrder with no-index', () => {
+  let onOrder: Required<ListExtendedProps<{ a: string }>>['onOrder'];
+  let App: React.FC;
+
+  beforeEach(() => {
+    onOrder = jest.fn();
+    App = () => {
+      const [ordered, setOrdered] = useState([{ a: 'alpha' }, { a: 'beta' }]);
+      return (
+        <Grommet>
+          <List
+            data={ordered}
+            primaryKey="a"
+            onOrder={(newData) => {
+              setOrdered(newData);
+              onOrder(newData);
+            }}
+            showIndex={false}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  test('Mouse move down', () => {
+    const { container } = render(<App />);
+    const $element = container.querySelector('#alphaMoveDown');
+
+    if (!$element)
+      throw new Error('Cannot find element with id "alphaMoveDown"');
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click($element);
+    expect(onOrder).toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Keyboard move down', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    // alpha's down arrow control should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByText('alpha'), {
       key: 'Enter',
       keyCode: 13,
       which: 13,
@@ -579,11 +679,38 @@ describe('List onOrder', () => {
     expect(onOrder).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('Keyboard move up', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    // beta's up arrow control should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
+    });
+    expect(onOrder).toHaveBeenCalledWith([{ a: 'beta' }, { a: 'alpha' }]);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
 
 describe('List onOrder with action', () => {
-  let onOrder;
-  let App;
+  let onOrder: Required<ListExtendedProps<{ a: string }>>['onOrder'];
+  let App: React.FC;
 
   beforeEach(() => {
     onOrder = jest.fn();
@@ -599,7 +726,7 @@ describe('List onOrder with action', () => {
               onOrder(newData);
             }}
             // eslint-disable-next-line react/no-unstable-nested-components
-            action={(item, index) => (
+            action={(_, index) => (
               <Button key={`action${index}`} label="Action" />
             )}
           />
@@ -841,7 +968,21 @@ describe('List pinned', () => {
     'Palo Alto',
     'San Francisco',
   ];
+  const typeObjects = [
+    { city: 'Boise', state: 'Idaho' },
+    { city: 'Fort Collins', state: 'Colorado' },
+    { city: 'Los Gatos', state: 'California' },
+    { city: 'Palo Alto', state: 'California' },
+    { city: 'San Francisco', state: 'California' },
+  ];
   const pinnedLocations = ['Fort Collins', 'Palo Alto'];
+
+  const pinnedObject = {
+    color: 'blue',
+    background: 'green',
+    icon: <Lock />,
+    items: pinnedLocations,
+  };
 
   test('Should apply pinned styling to items', () => {
     const App = () => (
@@ -855,14 +996,6 @@ describe('List pinned', () => {
   });
 
   test('Should apply pinned styling to items when data are objects', () => {
-    const typeObjects = [
-      { city: 'Boise', state: 'Idaho' },
-      { city: 'Fort Collins', state: 'Colorado' },
-      { city: 'Los Gatos', state: 'California' },
-      { city: 'Palo Alto', state: 'California' },
-      { city: 'San Francisco', state: 'California' },
-    ];
-
     const App = () => (
       <Grommet>
         <List data={typeObjects} pinned={pinnedLocations} itemKey="city" />
@@ -928,5 +1061,141 @@ describe('List pinned', () => {
     // confirm item at position 2 in the list is unchanged
     expect(listItems[1]).toHaveTextContent('2Fort Collins');
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply pinned object styling to items when data are strings', () => {
+    const onOrder = jest.fn();
+    const App = () => (
+      <Grommet>
+        <List data={locations} pinned={pinnedObject} onOrder={onOrder} />
+      </Grommet>
+    );
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+    const locationStyle = window.getComputedStyle(
+      screen.getByText(pinnedLocations[0]),
+    );
+    const numberStyle = window.getComputedStyle(screen.getByText('2'));
+    const iconStyle = window.getComputedStyle(
+      screen.getAllByLabelText('Lock')[0],
+    );
+    expect(locationStyle.color).toBe(pinnedObject.color);
+    expect(numberStyle.color).toBe(pinnedObject.color);
+    expect(iconStyle.stroke).toBe(pinnedObject.color);
+    expect(iconStyle.fill).toBe(pinnedObject.color);
+  });
+
+  test('should apply pinned object styling to items when data are objects', () => {
+    const onOrder = jest.fn();
+    const App = () => (
+      <Grommet>
+        <List
+          data={typeObjects}
+          pinned={pinnedObject}
+          onOrder={onOrder}
+          itemKey="city"
+        />
+      </Grommet>
+    );
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+    const locationStyle = window.getComputedStyle(
+      screen.getByText(pinnedLocations[0]),
+    );
+    const numberStyle = window.getComputedStyle(screen.getByText('2'));
+    const iconStyle = window.getComputedStyle(
+      screen.getAllByLabelText('Lock')[0],
+    );
+    expect(locationStyle.color).toBe(pinnedObject.color);
+    expect(numberStyle.color).toBe(pinnedObject.color);
+    expect(iconStyle.stroke).toBe(pinnedObject.color);
+    expect(iconStyle.fill).toBe(pinnedObject.color);
+  });
+
+  test('should apply pinned.color styling to primaryKey and secondaryKey when they are strings', () => {
+    const App = () => (
+      <Grommet>
+        <List
+          data={typeObjects}
+          pinned={pinnedObject}
+          primaryKey="city"
+          secondaryKey="state"
+          itemKey="city"
+        />
+      </Grommet>
+    );
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+    const primaryKeyStyle = window.getComputedStyle(
+      screen.getByText('Fort Collins'),
+    );
+    const secondaryKeyStyle = window.getComputedStyle(
+      screen.getByText('Colorado'),
+    );
+
+    expect(primaryKeyStyle.color).toBe(pinnedObject.color);
+    expect(secondaryKeyStyle.color).toBe(pinnedObject.color);
+  });
+
+  test('should not apply pinned.color to primaryKey and secondaryKey when they are custom render functions', () => {
+    const App = () => (
+      <Grommet>
+        <List
+          data={typeObjects}
+          pinned={pinnedObject}
+          primaryKey={(item) => (
+            <Text color="red" key={item.city}>
+              {item.city}
+            </Text>
+          )}
+          secondaryKey={(item) => (
+            <Text color="pink" key={item.state}>
+              {item.state}
+            </Text>
+          )}
+          itemKey="city"
+        />
+      </Grommet>
+    );
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+    const primaryKeyStyle = window.getComputedStyle(
+      screen.getByText('Fort Collins'),
+    );
+    const secondaryKeyStyle = window.getComputedStyle(
+      screen.getByText('Colorado'),
+    );
+
+    expect(primaryKeyStyle.color).toBe('red');
+    expect(secondaryKeyStyle.color).toBe('pink');
+  });
+
+  test('should apply pinned.icon but not pinned.color if icon color prop is specified', () => {
+    const App = () => (
+      <Grommet>
+        <List
+          data={typeObjects}
+          pinned={{ ...pinnedObject, icon: <Lock color="pink" /> }}
+          itemKey="city"
+        />
+      </Grommet>
+    );
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+    const iconStyle = window.getComputedStyle(
+      screen.getAllByLabelText('Lock')[0],
+    );
+    expect(iconStyle.stroke).toBe('pink');
+    expect(iconStyle.fill).toBe('pink');
   });
 });

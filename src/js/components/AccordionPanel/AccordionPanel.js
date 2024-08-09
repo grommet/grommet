@@ -1,6 +1,4 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
 
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
@@ -10,6 +8,7 @@ import { Heading } from '../Heading';
 
 import { AccordionContext } from '../Accordion/AccordionContext';
 import { AccordionPanelPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const AccordionPanel = forwardRef(
   (
@@ -26,7 +25,7 @@ const AccordionPanel = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const { active, animate, level, onPanelChange } =
       useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);
@@ -51,7 +50,7 @@ const AccordionPanel = forwardRef(
     // accordion.hover.color will be deprecated in v3.
     if (JSON.stringify(theme.accordion.hover.color) !== defaultHoverColor)
       console.warn(
-        `The theme style for accordion.hover.color is deprecated, 
+        `The theme style for accordion.hover.color is deprecated,
         use accordion.hover.heading.color instead.`,
       );
 

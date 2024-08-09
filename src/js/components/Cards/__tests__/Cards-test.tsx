@@ -49,6 +49,11 @@ describe('Cards', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('empty no grommet wrapper', () => {
+    const { container } = render(<Cards />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('data strings', () => {
     const { container } = render(
       <Grommet>

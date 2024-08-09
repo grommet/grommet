@@ -1,20 +1,12 @@
 import React from 'react';
 
-import { Grid, DataTable } from 'grommet';
-
-import { Data } from '../Data';
+import { Box, Data, DataTable } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 export const Views = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid
-    flex={false}
-    pad="large"
-    columns={[['small', 'large']]}
-    justifyContent="center"
-    gap="large"
-  >
+  <Box pad="large">
     <Data
       data={DATA}
       views={[
@@ -29,9 +21,9 @@ export const Views = () => (
       ]}
       toolbar
     >
-      <DataTable columns={columns} />
+      <DataTable alignSelf="start" columns={columns} />
     </Data>
-  </Grid>
+  </Box>
   // </Grommet>
 );
 

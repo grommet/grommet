@@ -18,6 +18,8 @@ export interface PaginationProps {
   page?: number;
   size?: 'small' | 'medium' | 'large';
   step?: number;
+  stepOptions?: boolean | (string | boolean | number | JSX.Element | object)[];
+  summary?: boolean;
 }
 
 declare const Pagination: React.FC<PaginationProps>;

@@ -243,6 +243,18 @@ exports[`Paragraph size renders 1`] = `
 </div>
 `;
 
+exports[`Paragraph size renders outside grommet wrapper 1`] = `
+.c0 {
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 336px;
+}
+
+<p
+  class="c0"
+/>
+`;
+
 exports[`Paragraph textAlign renders 1`] = `
 .c0 {
   font-size: 18px;

@@ -5,3 +5,5 @@ export namespace defaultProps {
 }
 
 export function extendDefaultTheme(theme: ThemeType): void;
+
+export function withTheme(props: Record<string, any>): ThemeType;

@@ -1,15 +1,15 @@
 import React, { Fragment, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { NameValueListContext } from '../NameValueList/NameValueListContext';
 import { isSmall } from '../../utils/responsive';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const NameValuePair = ({ children, name: nameProp }) => {
   const { nameProps, pairProps, valueProps } = useContext(NameValueListContext);
   const size = useContext(ResponsiveContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const direction = pairProps?.direction;
 
   const column =

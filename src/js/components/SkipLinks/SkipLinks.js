@@ -5,17 +5,16 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Layer } from '../Layer';
-import { defaultProps } from '../../default-props';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SkipLinksPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const SkipLinks = ({ children, id, messages }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const [showLayer, setShowLayer] = useState(false);
   const { format } = useContext(MessageContext);
   const layerRef = useRef(null);
@@ -75,7 +74,6 @@ const SkipLinks = ({ children, id, messages }) => {
   );
 };
 
-SkipLinks.defaultProps = {};
 SkipLinks.propTypes = SkipLinksPropTypes;
 
 export { SkipLinks };

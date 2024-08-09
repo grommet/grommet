@@ -15,6 +15,11 @@ describe('FileInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(<FileInput name="file" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('multiple', () => {
     const { container } = render(
       <Grommet>

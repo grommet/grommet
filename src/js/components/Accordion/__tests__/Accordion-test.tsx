@@ -42,6 +42,11 @@ describe('Accordion', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('render accordion no grommet wrapper', () => {
+    const { asFragment } = render(<Accordion />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('AccordionPanel', () => {
     const { asFragment } = render(
       <Grommet>

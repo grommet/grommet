@@ -1,23 +1,30 @@
 import React from 'react';
-
-import { Data, DataSummary, DataTable, Grid, Paragraph } from 'grommet';
-
-import { DataSearch } from '../DataSearch';
+import {
+  Box,
+  Data,
+  DataSummary,
+  DataTable,
+  DataSearch,
+  Paragraph,
+  Toolbar,
+} from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 export const UpdateOnSubmit = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Grid pad="large" columns={[['medium', 'large']]} justifyContent="center">
+  <Box pad="large">
     <Paragraph color="text-weak">
       Note: Results are filtered once you hit enter.
     </Paragraph>
     <Data data={DATA}>
-      <DataSearch updateOn="submit" />
+      <Toolbar>
+        <DataSearch updateOn="submit" />
+      </Toolbar>
       <DataSummary />
-      <DataTable columns={columns} />
+      <DataTable alignSelf="start" columns={columns} />
     </Data>
-  </Grid>
+  </Box>
   // </Grommet>
 );
 

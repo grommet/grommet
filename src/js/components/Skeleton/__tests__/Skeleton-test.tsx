@@ -21,6 +21,12 @@ describe('Skeleton', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { asFragment } = render(<Skeleton />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('Box skeleton loading', () => {
     const { asFragment } = render(
       <Grommet>
@@ -111,6 +117,7 @@ describe('Skeleton', () => {
               light: ['#a2a8a8', '#adb9ba'],
             },
             round: 'xsmall',
+            extend: 'border: 1px solid blue;',
           },
         }}
       >

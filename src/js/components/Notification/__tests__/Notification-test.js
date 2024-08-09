@@ -42,6 +42,13 @@ describe('Notification', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('should render outside grommet wrapper', async () => {
+    const { asFragment } = render(
+      <Notification title="title" message="message" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('onClose', async () => {
     const user = userEvent.setup();
 

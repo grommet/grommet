@@ -14,11 +14,12 @@ import {
   ThumbsRating,
   ResponsiveContext,
 } from 'grommet';
+import { withTheme } from '../../../default-props';
 
 // create a floating button for story example
 // temp fix until this theme issue is resolved:
 // https://github.com/grommet/grommet-theme-hpe/issues/283
-const PositionedFeedbackButton = styled(Button)`
+const PositionedFeedbackButton = styled(Button).attrs(withTheme)`
   position: fixed;
   bottom: 0px;
   border-radius: 6px;

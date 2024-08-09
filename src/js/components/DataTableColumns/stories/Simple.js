@@ -1,15 +1,13 @@
 import React from 'react';
-
 import {
   Box,
   Data,
   DataSearch,
   DataSummary,
   DataTable,
+  DataTableColumns,
   Toolbar,
 } from 'grommet';
-
-import { DataTableColumns } from '../DataTableColumns';
 import { columns, DATA } from '../../DataTable/stories/data';
 
 // simplify option label for name property

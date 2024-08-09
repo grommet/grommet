@@ -8,9 +8,8 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
@@ -36,15 +35,14 @@ import {
 import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 
-const StyledSelectBox = styled(Box)`
+const StyledSelectBox = styled(Box).attrs(withTheme)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select.control?.open};
 `;
-
-StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
 const SelectMultiple = forwardRef(
   (
@@ -97,7 +95,7 @@ const SelectMultiple = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
@@ -584,8 +582,6 @@ const SelectMultiple = forwardRef(
     );
   },
 );
-
-SelectMultiple.defaultProps = { ...defaultProps };
 
 SelectMultiple.displayName = 'SelectMultiple';
 SelectMultiple.propTypes = SelectMultiplePropTypes;

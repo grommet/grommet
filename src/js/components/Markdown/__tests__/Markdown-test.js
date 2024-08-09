@@ -41,6 +41,12 @@ test('Markdown renders', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+test('Markdown renders without grommet wrapper', () => {
+  const { container } = render(<Markdown>{CONTENT}</Markdown>);
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 test('wrapper', () => {
   const { container } = render(
     <Grommet>

@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { Box, Button, Card, Grommet, Image, Text, ThemeContext } from 'grommet';
+import { Box, Button, Card, Grommet, Image, Text } from 'grommet';
 import { FormAdd } from 'grommet-icons';
+import { useThemeValue } from '../../../utils/useThemeValue';
 
 const Item = ({ ...rest }) => (
   <Card
@@ -48,7 +49,7 @@ const Content = () => (
 );
 
 export const Group = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   return (
     <>
       <Grommet theme={theme}>

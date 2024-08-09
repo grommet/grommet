@@ -1,11 +1,10 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Card = forwardRef(({ ...rest }, ref) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
 
   return (
     <Box

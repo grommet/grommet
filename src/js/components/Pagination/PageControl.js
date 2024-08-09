@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 
 import {
   StyledContainer,
   StyledPaginationButton,
   StyledSeparator,
 } from './StyledPageControl';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 export const PageControl = ({
   control,
@@ -13,7 +13,7 @@ export const PageControl = ({
   size: sizeProp,
   ...rest
 }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const size = sizeProp || 'medium';
 
   return (

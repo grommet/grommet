@@ -13,8 +13,9 @@ const Heading = forwardRef(
       children,
       color,
       fill,
-      level,
+      level = 1,
       overflowWrap: overflowWrapProp,
+      responsive = true,
       weight,
       ...rest
     },
@@ -48,7 +49,14 @@ const Heading = forwardRef(
 
     let content = children;
     if (skeleton) {
-      content = <HeadingSkeleton level={level} fill={fill} {...rest} />;
+      content = (
+        <HeadingSkeleton
+          level={level}
+          fill={fill}
+          responsive={responsive}
+          {...rest}
+        />
+      );
     }
 
     return (
@@ -59,6 +67,7 @@ const Heading = forwardRef(
         fillProp={fill}
         level={+level}
         overflowWrap={overflowWrap}
+        responsive={responsive}
         weight={weight}
         {...rest}
         ref={headingRef}
@@ -70,10 +79,6 @@ const Heading = forwardRef(
 );
 
 Heading.displayName = 'Heading';
-Heading.defaultProps = {
-  level: 1,
-  responsive: true,
-};
 Heading.propTypes = HeadingPropTypes;
 
 export { Heading };

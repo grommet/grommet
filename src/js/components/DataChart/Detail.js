@@ -1,12 +1,11 @@
 import React, {
   Fragment,
   useCallback,
-  useContext,
   useMemo,
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
@@ -14,6 +13,7 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { focusStyle, parseMetricToNum, unfocusStyle } from '../../utils';
 import { Swatch } from './Swatch';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const DetailControl = styled(Box)`
   &:focus {
@@ -35,7 +35,7 @@ const Detail = ({
   renderValue,
   thickness,
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const [detailIndex, setDetailIndex] = useState();
   const activeIndex = useRef();
   const detailRefs = useMemo(() => [], []);

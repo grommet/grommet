@@ -28,5 +28,3 @@ export const Toolbar = ({ children, ...rest }) => {
 };
 
 Toolbar.propTypes = ToolbarPropTypes;
-
-Toolbar.defaultProps = {};

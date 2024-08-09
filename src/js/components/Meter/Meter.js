@@ -1,10 +1,9 @@
-import React, { forwardRef, useMemo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo } from 'react';
 
-import { defaultProps } from '../../default-props';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 import { MeterPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const deriveMax = (values) => {
   let max = 100;
@@ -33,7 +32,7 @@ const Meter = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
 
     // normalize values to an array of objects
     const values = useMemo(() => {

@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { grommet } from 'grommet/themes';
 import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
 
-const Announcer = ({ announce, message, mode, role }) => {
+const Announcer = ({
+  announce,
+  message = 'Here is a simple announcement. This will soon disappear',
+  mode = 'polite',
+  role = 'log',
+}) => {
   React.useEffect(() => {
     const timeout = 3000;
     announce(message, mode, timeout);
@@ -23,18 +28,12 @@ Announcer.propTypes = {
   role: PropTypes.string,
 };
 
-Announcer.defaultProps = {
-  message: 'Here is a simple announcement. This will soon disappear',
-  mode: 'polite',
-  role: 'log',
-};
-
-const AnnounceContextComponent = props => (
+const AnnounceContextComponent = (props) => (
   <Grommet theme={grommet} full>
     <Box justify="center" align="center" background="brand" fill>
       <Heading>Welcome to announcement section</Heading>
       <AnnounceContext.Consumer>
-        {announce => <Announcer announce={announce} {...props} />}
+        {(announce) => <Announcer announce={announce} {...props} />}
       </AnnounceContext.Consumer>
     </Box>
   </Grommet>

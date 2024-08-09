@@ -1,18 +1,16 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 import { Blank } from 'grommet-icons/icons/Blank';
-
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // ExpanderControl is separated from ExpanderCell to give TableCell a chance
 // to set the ThemeContext dark context.
 const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
 
   let content;
   if (onToggle) {
@@ -66,8 +64,5 @@ const ExpanderCell = ({ background, border, context, ...rest }) => (
 );
 
 ExpanderCell.displayName = 'ExpanderCell';
-
-ExpanderCell.defaultProps = {};
-Object.setPrototypeOf(ExpanderCell.defaultProps, defaultProps);
 
 export { ExpanderCell };

@@ -89,6 +89,7 @@ const Grommet = forwardRef((props, ref) => {
 
     if (
       themeMode === 'auto' &&
+      typeof window !== 'undefined' &&
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {

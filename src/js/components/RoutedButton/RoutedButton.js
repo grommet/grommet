@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { RouterContext } from './RouterContext';
 
 import { Button } from '../Button';
 
 class RoutedButton extends Component {
-  static contextTypes = {
-    router: PropTypes.shape({}).isRequired,
-  };
+  static contextType = RouterContext;
 
   static defaultProps = {
     method: 'push',
@@ -14,7 +12,7 @@ class RoutedButton extends Component {
 
   onClick = (event, ...args) => {
     const { method, onClick, path } = this.props;
-    const { router } = this.context;
+    const router = this.context;
     if (event) {
       const modifierKey = event.ctrlKey || event.metaKey;
 

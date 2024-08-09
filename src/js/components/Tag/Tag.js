@@ -1,18 +1,16 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 import { FormClose } from 'grommet-icons/icons/FormClose';
-
-import { defaultProps } from '../../default-props';
 
 import { TagPropTypes } from './propTypes';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
 import { StyledRemoveButton, StyledTagButton } from './StyledTag';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tag = forwardRef(
   ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
     const containerProps = {

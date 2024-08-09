@@ -50,6 +50,12 @@ describe('Card', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders without Grommet wrapper', () => {
+    const { container } = render(<Card />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('header', () => {
     const { container } = render(
       <Grommet>

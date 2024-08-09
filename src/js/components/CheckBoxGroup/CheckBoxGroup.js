@@ -1,10 +1,10 @@
 import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
 import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 import { CheckBoxGroupPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const CheckBoxGroup = forwardRef(
   (
@@ -25,7 +25,7 @@ const CheckBoxGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
 
     // In case option is a string, normalize it to be an object
     const options = optionsProp.map((option) =>

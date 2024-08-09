@@ -23,9 +23,67 @@ const TestOnSearch = () => {
   );
 };
 
+const defaultOptions = [
+  'Apple',
+  'Orange',
+  'Banana',
+  'Grape',
+  'Melon',
+  'Strawberry',
+  'Kiwi',
+  'Mango',
+  'Raspberry',
+  'Rhubarb',
+];
+
+const TestManyOptions = () => {
+  const [options, setOptions] = useState(defaultOptions);
+  const [valueMultiple, setValueMultiple] = useState([]);
+  return (
+    <Grommet>
+      <SelectMultiple
+        options={options}
+        value={valueMultiple}
+        placeholder="Select"
+        onSearch={(text) => {
+          const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+          const exp = new RegExp(escapedText, 'i');
+          setOptions(defaultOptions.filter((o) => exp.test(o)));
+        }}
+        onClose={() => setOptions(defaultOptions)}
+        onChange={({ value }) => {
+          setValueMultiple(value);
+        }}
+      />
+    </Grommet>
+  );
+};
+
+const TestObj = () => {
+  const [value, setValue] = useState([
+    { value: 'one', label: 'a' },
+    { value: 'two', label: 'b' },
+    { value: 'tree', label: 'c' },
+  ]);
+  return (
+    <Grommet>
+      <SelectMultiple
+        showSelectedInline
+        options={[
+          { value: 'one', label: 'a' },
+          { value: 'two', label: 'b' },
+          { value: 'tree', label: 'c' },
+          { value: 'four', label: 'd' },
+        ]}
+        labelKey="label"
+        value={value}
+        onChange={({ selected }) => setValue(selected)}
+      />
+    </Grommet>
+  );
+};
+
 describe('SelectMultiple', () => {
-  window.scrollTo = jest.fn();
-  beforeEach(createPortal);
   test('should not have accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -60,6 +118,11 @@ describe('SelectMultiple', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders selectMultiple outside grommet wrapper', () => {
+    const { container } = render(<SelectMultiple options={['one', 'two']} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('children', () => {
     const { container } = render(
       <Grommet>
@@ -86,7 +149,7 @@ describe('SelectMultiple', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('disabled', async () => {
+  test('disabled', () => {
     const { container } = render(
       <Grommet>
         <SelectMultiple options={[1, 2]} disabled />
@@ -94,49 +157,6 @@ describe('SelectMultiple', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('disabled option', async () => {
-    window.HTMLElement.prototype.scrollIntoView = jest.fn();
-    const user = userEvent.setup();
-    render(
-      <Grommet>
-        <SelectMultiple
-          id="test-select__drop"
-          options={[0, 1, 2]}
-          disabled={[1]}
-          sortSelectedOnClose
-        />
-      </Grommet>,
-    );
-    // open SelectMultiple
-    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    // try to click all the options
-    await user.click(screen.getByRole('option', { name: /0/i }));
-    await user.click(screen.getByRole('option', { name: /1/i }));
-    await user.click(screen.getByRole('option', { name: /2/i }));
-
-    // only 2 options should be selected (0 and 2)
-    expectPortal('test-select__drop').toMatchSnapshot();
-  });
-
-  test('limit', async () => {
-    window.HTMLElement.prototype.scrollIntoView = jest.fn();
-    const user = userEvent.setup();
-    render(
-      <Grommet>
-        <SelectMultiple id="test-select__drop" options={[0, 1, 2]} limit={2} />
-      </Grommet>,
-    );
-    // open SelectMultiple
-    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    // select 2 options
-    await user.click(screen.getByRole('option', { name: /0/i }));
-    await user.click(screen.getByRole('option', { name: /1/i }));
-    await user.click(screen.getByRole('option', { name: /2/i }));
-
-    // option 2 should be disabled
-    expectPortal('test-select__drop').toMatchSnapshot();
   });
 
   test('showSelectionInline', async () => {
@@ -225,18 +245,17 @@ describe('SelectMultiple', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('keyboard interactions', async () => {
+  test('keyboard interactions', () => {
     // Mock scrollIntoView since JSDOM doesn't do layout.
     // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
-    const user = userEvent.setup();
     const { container } = render(
       <Grommet>
         <SelectMultiple options={['one', 'two', 'three', 'four']} limit={2} />
       </Grommet>,
     );
 
-    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
     const input = screen.getByRole('listbox');
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
@@ -271,30 +290,7 @@ describe('SelectMultiple', () => {
   });
 
   test('test inline click on object', async () => {
-    const TestComp = () => {
-      const [value, setValue] = useState([
-        { value: 'one', label: 'a' },
-        { value: 'two', label: 'b' },
-        { value: 'tree', label: 'c' },
-      ]);
-      return (
-        <Grommet>
-          <SelectMultiple
-            showSelectedInline
-            options={[
-              { value: 'one', label: 'a' },
-              { value: 'two', label: 'b' },
-              { value: 'tree', label: 'c' },
-              { value: 'four', label: 'd' },
-            ]}
-            labelKey="label"
-            value={value}
-            onChange={({ selected }) => setValue(selected)}
-          />
-        </Grommet>
-      );
-    };
-    render(<TestComp />);
+    render(<TestObj />);
     const user = userEvent.setup();
     expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
     expect(screen.getByRole('option', { name: /b selected/ })).toBeVisible();
@@ -328,28 +324,6 @@ describe('SelectMultiple', () => {
     expect(onSearch).toBeCalledWith(expect.stringMatching(/^th/));
   });
 
-  test('select all and clear', async () => {
-    const user = userEvent.setup();
-    render(
-      <Grommet>
-        <SelectMultiple
-          id="test-select__drop"
-          options={['one', 'two', 'three', 'four']}
-          valueKey={{ key: 'value', reduce: true }}
-        />
-      </Grommet>,
-    );
-
-    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-    await user.click(screen.getByRole('button', { name: /Select All/i }));
-
-    expectPortal('test-select__drop').toMatchSnapshot();
-
-    await user.click(screen.getByRole('button', { name: /Clear All/i }));
-
-    expectPortal('test-select__drop').toMatchSnapshot();
-  });
-
   test('null value', () => {
     const { asFragment } = render(
       <Grommet>
@@ -379,49 +353,17 @@ describe('SelectMultiple', () => {
     expect(screen.getByRole('option', { name: /a selected/ })).toBeVisible();
   });
 
-  test('search with select and clear', async () => {
-    const user = userEvent.setup();
-    const defaultOptions = [
-      'Apple',
-      'Orange',
-      'Banana',
-      'Grape',
-      'Melon',
-      'Strawberry',
-      'Kiwi',
-      'Mango',
-      'Raspberry',
-      'Rhubarb',
-    ];
-    const Test = () => {
-      const [options, setOptions] = useState(defaultOptions);
-      const [valueMultiple, setValueMultiple] = useState([]);
-      return (
-        <Grommet>
-          <SelectMultiple
-            options={options}
-            value={valueMultiple}
-            placeholder="Select"
-            onSearch={(text) => {
-              const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-              const exp = new RegExp(escapedText, 'i');
-              setOptions(defaultOptions.filter((o) => exp.test(o)));
-            }}
-            onClose={() => setOptions(defaultOptions)}
-            onChange={({ value }) => {
-              setValueMultiple(value);
-            }}
-          />
-        </Grommet>
-      );
-    };
-    render(<Test />);
+  test('search with select and clear', () => {
+    render(<TestManyOptions />);
+
     // open drop
-    await user.click(screen.getByRole('button', { name: /Select/ }));
+    fireEvent.click(screen.getByRole('button', { name: /Select/ }));
+    const search = screen.getByRole('searchbox', { name: /Search/ });
+    const selectAll = screen.getByRole('button', { name: /Select all/ });
     // search
-    await user.type(screen.getByRole('searchbox', { name: /Search/ }), 'p');
+    fireEvent.change(search, { target: { value: 'p' } });
     // select all
-    await user.click(screen.getByRole('button', { name: /Select all/ }));
+    fireEvent.click(selectAll);
 
     expect(
       screen.queryByRole('option', { name: /Apple selected/ }),
@@ -434,12 +376,9 @@ describe('SelectMultiple', () => {
     ).not.toBeNull();
 
     // search
-    await user.type(
-      screen.getByRole('searchbox', { name: /Search/ }),
-      '{backspace}w',
-    );
+    fireEvent.change(search, { target: { value: 'w' } });
     // select all
-    await user.click(screen.getByRole('button', { name: /Select all/ }));
+    fireEvent.click(selectAll);
     expect(
       screen.queryByRole('option', { name: /Strawberry selected/ }),
     ).not.toBeNull();
@@ -448,37 +387,17 @@ describe('SelectMultiple', () => {
     ).not.toBeNull();
 
     // search
-    await user.type(
-      screen.getByRole('searchbox', { name: /Search/ }),
-      '{backspace}b',
-    );
+    fireEvent.change(search, { target: { value: 'b' } });
     // Clear
-    await user.click(screen.getByRole('button', { name: /Clear all/ }));
+    fireEvent.click(screen.getByRole('button', { name: /Clear all/ }));
     // clear search
-    await user.type(
-      screen.getByRole('searchbox', { name: /Search/ }),
-      '{backspace}',
-    );
+    fireEvent.change(search, { target: { value: '' } });
     expect(
       screen.queryByRole('option', { name: /Grape selected/ }),
     ).not.toBeNull();
     expect(
       screen.queryByRole('option', { name: /Strawberry selected/ }),
     ).toBeNull();
-  });
-
-  test('empty options', async () => {
-    window.HTMLElement.prototype.scrollIntoView = jest.fn();
-    const user = userEvent.setup();
-    render(
-      <Grommet>
-        <SelectMultiple id="test-select__drop" options={[]} />
-      </Grommet>,
-    );
-    // open SelectMultiple
-    await user.click(screen.getByRole('button', { name: /Open Drop/i }));
-
-    expectPortal('test-select__drop').toMatchSnapshot();
   });
 
   test('should display custom messages', async () => {
@@ -553,5 +472,85 @@ describe('SelectMultiple', () => {
     fireEvent.click(screen.getByRole('option', { name: /c not selected/i }));
     // expect option 'c' to be selected
     expect(screen.queryByRole('option', { name: /c selected/ })).not.toBeNull();
+  });
+});
+
+describe('SelectMultiple with portal', () => {
+  window.scrollTo = jest.fn();
+  beforeEach(createPortal);
+
+  test('disabled option', () => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    render(
+      <Grommet>
+        <SelectMultiple
+          id="test-select__drop"
+          options={[0, 1, 2]}
+          disabled={[1]}
+          sortSelectedOnClose
+        />
+      </Grommet>,
+    );
+    // open SelectMultiple
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // try to click all the options
+    fireEvent.click(screen.getByRole('option', { name: /0/i }));
+    fireEvent.click(screen.getByRole('option', { name: /1/i }));
+    fireEvent.click(screen.getByRole('option', { name: /2/i }));
+
+    // only 2 options should be selected (0 and 2)
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('limit', () => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    render(
+      <Grommet>
+        <SelectMultiple id="test-select__drop" options={[0, 1, 2]} limit={2} />
+      </Grommet>,
+    );
+    // open SelectMultiple
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    // select 2 options
+    fireEvent.click(screen.getByRole('option', { name: /0/i }));
+    fireEvent.click(screen.getByRole('option', { name: /1/i }));
+    fireEvent.click(screen.getByRole('option', { name: /2/i }));
+
+    // option 2 should be disabled
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('select all and clear', () => {
+    render(
+      <Grommet>
+        <SelectMultiple
+          id="test-select__drop"
+          options={['one', 'two', 'three', 'four']}
+          valueKey={{ key: 'value', reduce: true }}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Select All/i }));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(screen.getByRole('button', { name: /Clear All/i }));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('empty options', () => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    render(
+      <Grommet>
+        <SelectMultiple id="test-select__drop" options={[]} />
+      </Grommet>,
+    );
+    // open SelectMultiple
+    fireEvent.click(screen.getByRole('button', { name: /Open Drop/i }));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
   });
 });

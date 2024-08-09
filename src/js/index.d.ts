@@ -89,6 +89,7 @@ export * from './components/TextArea';
 export * from './components/TextInput';
 export * from './components/ThumbsRating';
 export * from './components/Tip';
+export * from './components/ToggleGroup';
 export * from './components/Toolbar';
 export * from './components/Video';
 export * from './components/WorldMap';

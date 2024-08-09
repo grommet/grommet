@@ -438,6 +438,12 @@ export interface ThemeType {
         size?: string;
         weight?: number | string;
       };
+      readOnly?: {
+        background?: BackgroundType;
+        border?: {
+          color?: ColorType;
+        };
+      };
       weight?: number | string;
     };
     opacity?: {
@@ -492,6 +498,9 @@ export interface ThemeType {
     hover?: {
       extend?: ExtendType<PropsOf<typeof Anchor>>;
       textDecoration?: string;
+    };
+    icon?: {
+      color?: ColorType;
     };
     textDecoration?: string;
     size?: {
@@ -1073,9 +1082,17 @@ export interface ThemeType {
         color?: ColorType;
         cursor?: string;
       };
+      pinned?: {
+        background?: BackgroundType;
+        icon?: {
+          size?: string;
+          pad?: PadType;
+        };
+      };
       pad?: PadType;
       extend?: ExtendType;
     };
+    primaryKey?: TextProps;
     icons?: {
       down?: React.ReactNode | Icon;
       up?: React.ReactNode | Icon;
@@ -1415,6 +1432,7 @@ export interface ThemeType {
       color?: ColorType;
       extend?: ExtendType;
     };
+    wheel?: boolean;
     extend?: ExtendType;
   };
   rangeSelector?: {
@@ -1462,7 +1480,7 @@ export interface ThemeType {
   selectMultiple?: {
     maxInline?: number;
   };
-  skeleton?: BoxProps & { colors?: SkeletonColorsType };
+  skeleton?: BoxProps & { colors?: SkeletonColorsType; extend?: ExtendType };
   skipLinks?: {
     position?: LayerPositionType;
     container?: BoxProps;
@@ -1708,6 +1726,18 @@ export interface ThemeType {
   tip?: {
     content?: BoxProps;
     drop?: DropProps;
+  };
+  toggleGroup?: {
+    button?: {
+      pad?: PadType;
+      iconOnly?: {
+        pad?: PadType;
+      };
+    };
+    container?: BoxProps;
+    divider?: {
+      color?: ColorType;
+    };
   };
   video?: {
     captions?: {

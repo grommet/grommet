@@ -198,6 +198,15 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('round with responive equal to false', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Box responsive={false} round="large" />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('border', () => {
     const { container } = render(
       <Grommet>

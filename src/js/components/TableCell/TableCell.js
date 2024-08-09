@@ -8,7 +8,6 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
-import { defaultProps } from '../../default-props';
 import { backgroundIsDark, useForwardedRef } from '../../utils';
 
 import { Box } from '../Box';
@@ -16,6 +15,7 @@ import { Box } from '../Box';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 import { TableCellPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 export const verticalAlignToJustify = {
   middle: 'center',
@@ -44,7 +44,7 @@ const TableCell = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const tableContext = useContext(TableContext);
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();

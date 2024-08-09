@@ -124,6 +124,12 @@ describe('Form uncontrolled', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('empty outside of grommet wrapper', () => {
+    const { container } = render(<Form />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('with field', () => {
     const { container } = render(
       <Grommet>
@@ -909,12 +915,14 @@ describe('Form uncontrolled', () => {
   test('uncontrolled without name', () => {
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText } = render(
-      <Form onSubmit={onSubmit}>
-        <FormField>
-          <TextInput a11yTitle="test" placeholder="test input" />
-        </FormField>
-        <Button type="submit" primary label="Submit" />
-      </Form>,
+      <Grommet>
+        <Form onSubmit={onSubmit}>
+          <FormField>
+            <TextInput a11yTitle="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
     );
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'v' },
@@ -1594,5 +1602,35 @@ describe('Form uncontrolled', () => {
         value: { name: 'name', toggle: false },
       }),
     );
+  });
+
+  test('should validate when submit is fired directly on input', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="My field"
+            name="my-field"
+            htmlFor="my-field"
+            validate={{
+              regexp: /^some-value/,
+              message: 'Invalid email address',
+              status: 'error',
+            }}
+          >
+            <TextInput
+              name="my-field"
+              id="my-field"
+              placeholder="placeholder text"
+            />
+          </FormField>
+          <Button label="Submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const element = screen.getByPlaceholderText('placeholder text');
+    fireEvent.submit(element);
+    expect(screen.getByText('Invalid email address')).toBeTruthy();
   });
 });

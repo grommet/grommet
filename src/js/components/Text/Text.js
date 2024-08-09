@@ -25,6 +25,7 @@ const Text = forwardRef(
       truncate,
       size,
       skeleton: skeletonProp,
+      level = 1,
       ...rest
     },
     ref,
@@ -60,6 +61,7 @@ const Text = forwardRef(
         <TextSkeleton
           ref={ref}
           as={as}
+          level={level}
           size={size}
           {...skeletonProp}
           {...rest}
@@ -72,6 +74,7 @@ const Text = forwardRef(
         as={!as && tag ? tag : as}
         colorProp={color}
         aria-label={a11yTitle}
+        level={level}
         truncate={truncate}
         size={size}
         {...rest}
@@ -107,9 +110,6 @@ const Text = forwardRef(
 );
 
 Text.displayName = 'Text';
-Text.defaultProps = {
-  level: 1,
-};
 Text.propTypes = TextPropTypes;
 
 export { Text };
