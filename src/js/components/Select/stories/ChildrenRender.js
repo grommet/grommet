@@ -85,7 +85,7 @@ export const Children = () => {
         selected={selected}
         disabled={[2, 6]}
         onChange={({ selected: nextSelected }) => {
-          setSelected([...nextSelected].sort());
+          setSelected([...nextSelected]);
         }}
       >
         {renderOption}
