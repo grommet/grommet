@@ -190,6 +190,31 @@ describe('Data', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('view columns', () => {
+    const { getByText, queryByText, container } = render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            name: { label: 'Name' },
+            'sub.note': { label: 'Note' },
+          }}
+          view={{
+            columns: ['sub.note'],
+          }}
+          toolbar
+        >
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    expectDataSummary('4 items');
+    expect(queryByText('aa')).toBeFalsy();
+    expect(getByText('ZZ')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('view all', () => {
     const { getByText, container } = render(
       <Grommet>
@@ -203,6 +228,7 @@ describe('Data', () => {
             search: 'a',
             properties: { enabled: [true] },
             sort: { property: 'name', direction: 'desc' },
+            columns: ['name'],
           }}
           toolbar
         >
