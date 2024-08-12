@@ -1,6 +1,6 @@
 var _excluded = ["basis", "children", "direction", "fill", "gap", "values"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../Box';
@@ -26,7 +26,7 @@ var defaultChildrenPropValue = function defaultChildrenPropValue(value) {
   }, /*#__PURE__*/React.createElement(Text, null, value.value));
 };
 var defaultValues = [];
-var Distribution = function Distribution(_ref2) {
+var _Distribution = function Distribution(_ref2) {
   var basis = _ref2.basis,
     _ref2$children = _ref2.children,
     children = _ref2$children === void 0 ? defaultChildrenPropValue : _ref2$children,
@@ -92,12 +92,12 @@ var Distribution = function Distribution(_ref2) {
       overflow: "hidden",
       gap: gap,
       fill: fill
-    }, rest), /*#__PURE__*/React.createElement(Distribution, {
+    }, rest), /*#__PURE__*/React.createElement(_Distribution, {
       values: values.slice(0, subIndex),
       basis: childBasis[0],
       direction: direction === 'row' ? 'column' : 'row',
       gap: gap
-    }, children), /*#__PURE__*/React.createElement(Distribution, {
+    }, children), /*#__PURE__*/React.createElement(_Distribution, {
       values: values.slice(subIndex),
       basis: childBasis[1],
       direction: direction === 'row' ? 'column' : 'row',
@@ -106,5 +106,5 @@ var Distribution = function Distribution(_ref2) {
   }
   return null;
 };
-Distribution.propTypes = DistributionPropTypes;
-export { Distribution };
+_Distribution.propTypes = DistributionPropTypes;
+export { _Distribution as Distribution };

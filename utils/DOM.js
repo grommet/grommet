@@ -171,10 +171,10 @@ var makeNodeUnfocusable = exports.makeNodeUnfocusable = function makeNodeUnfocus
     });
   }
 };
-var findVisibleParent = exports.findVisibleParent = function findVisibleParent(element) {
+var _findVisibleParent = exports.findVisibleParent = function findVisibleParent(element) {
   if (element) {
     // Get the closest ancestor element that is positioned.
-    return element.offsetParent ? element : findVisibleParent(element.parentElement) || element;
+    return element.offsetParent ? element : _findVisibleParent(element.parentElement) || element;
   }
   return undefined;
 };
@@ -200,7 +200,7 @@ var isNodeBeforeScroll = exports.isNodeBeforeScroll = function isNodeBeforeScrol
     targetTop = _ref2.top;
   return top <= targetTop;
 };
-var findButtonParent = exports.findButtonParent = function findButtonParent(element) {
-  if (element && element.nodeName !== 'BUTTON' && element.nodeName !== 'A') return findButtonParent(element.parentElement);
+var _findButtonParent = exports.findButtonParent = function findButtonParent(element) {
+  if (element && element.nodeName !== 'BUTTON' && element.nodeName !== 'A') return _findButtonParent(element.parentElement);
   return element;
 };

@@ -23,14 +23,14 @@ var fontSize = exports.fontSize = function fontSize(size, lineHeight) {
 var breakpointStyle = exports.breakpointStyle = function breakpointStyle(breakpoint, content) {
   return (0, _styledComponents.css)(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + "px)", content);
 };
-var findAllByType = exports.findAllByType = function findAllByType(component, type) {
+var _findAllByType = exports.findAllByType = function findAllByType(component, type) {
   var matches = [];
   if (component.type === type) {
     matches.push(component);
   }
   if (component.children) {
     component.children.forEach(function (child) {
-      matches = matches.concat(findAllByType(child, type));
+      matches = matches.concat(_findAllByType(child, type));
     });
   }
   return matches;

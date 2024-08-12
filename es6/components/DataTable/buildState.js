@@ -16,15 +16,16 @@ export var set = function set(obj, path, value) {
 };
 
 // get the value for the property in the datum object
-export var datumValue = function datumValue(datum, property) {
+var _datumValue = function datumValue(datum, property) {
   if (!property || !datum) return undefined;
   var parts = property.split('.');
   if (parts.length === 1) return datum[property];
   if (!datum[parts[0]]) return undefined;
-  return datumValue(datum[parts[0]], parts.slice(1).join('.'));
+  return _datumValue(datum[parts[0]], parts.slice(1).join('.'));
 };
 
 // get the primary property name
+export { _datumValue as datumValue };
 export var normalizePrimaryProperty = function normalizePrimaryProperty(columns, primaryKey) {
   var result;
   if (typeof primaryKey === 'string' || typeof primaryKey === 'boolean') {
@@ -75,7 +76,7 @@ export var filterAndSortData = function filterAndSortData(data, filters, onSearc
     if (Object.keys(regexps).length > 0) {
       result = data.filter(function (datum) {
         return !Object.keys(regexps).some(function (property) {
-          return !regexps[property].test(datumValue(datum, property));
+          return !regexps[property].test(_datumValue(datum, property));
         });
       });
     }
@@ -88,8 +89,8 @@ export var filterAndSortData = function filterAndSortData(data, filters, onSearc
     var before = sortAsc ? 1 : -1;
     var after = sortAsc ? -1 : 1;
     result.sort(function (d1, d2) {
-      var d1Val = datumValue(d1, property);
-      var d2Val = datumValue(d2, property);
+      var d1Val = _datumValue(d1, property);
+      var d2Val = _datumValue(d2, property);
       if (typeof d1Val === 'string' && typeof d2Val === 'string' || typeof d1Val === 'string' && !d2Val || typeof d2Val === 'string' && !d1Val) {
         var sortResult = (d1Val || '').localeCompare(d2Val || '', undefined, {
           sensitivity: 'base'
@@ -132,12 +133,12 @@ var aggregateColumn = function aggregateColumn(column, data) {
   var value;
   if (column.aggregate === 'avg') {
     value = data.map(function (d) {
-      return datumValue(d, column.property);
+      return _datumValue(d, column.property);
     }).reduce(sumReducer);
     value /= data.length;
   } else {
     value = data.map(function (d) {
-      return datumValue(d, column.property);
+      return _datumValue(d, column.property);
     }).reduce(reducers[column.aggregate], reducersInitValues[column.aggregate]);
   }
   return value;
@@ -162,7 +163,7 @@ export var buildFooterValues = function buildFooterValues(columns, data) {
   columns.forEach(function (column) {
     if (column.footer) {
       if (column.footer.aggregate) {
-        var value = datumValue(aggregateValues, column.property);
+        var value = _datumValue(aggregateValues, column.property);
         result = set(result, column.property, value);
       } else {
         result = set(result, column.property, column.footer);
@@ -181,10 +182,10 @@ export var buildGroups = function buildGroups(columns, data, groupBy, primaryPro
     var groupMap = {};
     data.forEach(function (datum) {
       var _groupBy$expandable;
-      var key = datumValue(datum, primaryProperty);
+      var key = _datumValue(datum, primaryProperty);
       var isGroup = key && ((_groupBy$expandable = groupBy.expandable) == null ? void 0 : _groupBy$expandable.includes(key));
       var groupByProperty = groupBy.property ? groupBy.property : groupBy;
-      var groupValue = isGroup ? key : datumValue(datum, groupByProperty);
+      var groupValue = isGroup ? key : _datumValue(datum, groupByProperty);
       if (!groupMap[groupValue]) {
         var group = {
           data: [],

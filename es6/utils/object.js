@@ -8,7 +8,7 @@ export var deepFreeze = function deepFreeze(obj) {
   });
   return Object.freeze(obj);
 };
-export var deepMerge = function deepMerge(target) {
+var _deepMerge = function deepMerge(target) {
   for (var _len = arguments.length, sources = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     sources[_key - 1] = arguments[_key];
   }
@@ -24,7 +24,7 @@ export var deepMerge = function deepMerge(target) {
           if (!output[key]) {
             output[key] = _extends({}, source[key]);
           } else {
-            output[key] = deepMerge(output[key], source[key]);
+            output[key] = _deepMerge(output[key], source[key]);
           }
         } else {
           output[key] = source[key];
@@ -34,6 +34,7 @@ export var deepMerge = function deepMerge(target) {
   });
   return output;
 };
+export { _deepMerge as deepMerge };
 export var removeUndefined = function removeUndefined(obj) {
   var result = {};
   Object.keys(obj).forEach(function (key) {

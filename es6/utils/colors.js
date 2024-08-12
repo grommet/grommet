@@ -1,7 +1,7 @@
 // Returns the specific color that should be used according to the theme.
 // If 'dark' is supplied, it takes precedence over 'theme.dark'.
 // Can return undefined.
-export var normalizeColor = function normalizeColor(color, theme, dark) {
+var _normalizeColor = function normalizeColor(color, theme, dark) {
   var colorSpec = theme.global && theme.global.colors[color] !== undefined ? theme.global.colors[color] : color;
   // If the color has a light or dark object, use that
   var result = colorSpec;
@@ -14,10 +14,11 @@ export var normalizeColor = function normalizeColor(color, theme, dark) {
   }
   // allow one level of indirection in color names
   if (result && theme.global && theme.global.colors[result] !== undefined) {
-    result = normalizeColor(result, theme, dark);
+    result = _normalizeColor(result, theme, dark);
   }
   return result;
 };
+export { _normalizeColor as normalizeColor };
 var parseHexToRGB = function parseHexToRGB(color) {
   return color.length < 7 // 7 is what's needed for '#RRGGBB'
   ? color.match(/[A-Za-z0-9]{1}/g).map(function (v) {

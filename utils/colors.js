@@ -5,7 +5,7 @@ exports.normalizeColor = exports.getRGBArray = exports.getRGBA = exports.colorIs
 // Returns the specific color that should be used according to the theme.
 // If 'dark' is supplied, it takes precedence over 'theme.dark'.
 // Can return undefined.
-var normalizeColor = exports.normalizeColor = function normalizeColor(color, theme, dark) {
+var _normalizeColor = exports.normalizeColor = function normalizeColor(color, theme, dark) {
   var colorSpec = theme.global && theme.global.colors[color] !== undefined ? theme.global.colors[color] : color;
   // If the color has a light or dark object, use that
   var result = colorSpec;
@@ -18,7 +18,7 @@ var normalizeColor = exports.normalizeColor = function normalizeColor(color, the
   }
   // allow one level of indirection in color names
   if (result && theme.global && theme.global.colors[result] !== undefined) {
-    result = normalizeColor(result, theme, dark);
+    result = _normalizeColor(result, theme, dark);
   }
   return result;
 };

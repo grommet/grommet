@@ -4,24 +4,24 @@ exports.__esModule = true;
 exports.useDisabled = exports.getSelectIcon = exports.getOptionValue = exports.getOptionLabel = exports.getOptionIndex = exports.getNormalizedValue = exports.getIconColor = exports.getDisplayLabelKey = exports.changeEvent = exports.arrayIncludes = exports.applyKey = void 0;
 var _react = require("react");
 var _utils = require("../../utils");
-var applyKey = exports.applyKey = function applyKey(option, key) {
+var _applyKey = exports.applyKey = function applyKey(option, key) {
   if (option === undefined || option === null) return undefined;
-  if (typeof key === 'object') return applyKey(option, key.key);
+  if (typeof key === 'object') return _applyKey(option, key.key);
   if (typeof key === 'function') return key(option);
   if (key !== undefined && typeof option === 'object') return option[key];
   if (typeof option === 'object' && Object.keys(option)) return option[Object.keys(option)[0]];
   return option;
 };
 var getOptionLabel = exports.getOptionLabel = function getOptionLabel(index, options, labelKey) {
-  return applyKey(options[index], labelKey);
+  return _applyKey(options[index], labelKey);
 };
 var getOptionValue = exports.getOptionValue = function getOptionValue(index, options, valueKey) {
-  return applyKey(options[index], valueKey);
+  return _applyKey(options[index], valueKey);
 };
 var getOptionIndex = exports.getOptionIndex = function getOptionIndex(options, i, valueKey) {
   if (options) {
     if (typeof i === 'object') return options.findIndex(function (x) {
-      return applyKey(x, valueKey) === applyKey(i, valueKey);
+      return _applyKey(x, valueKey) === _applyKey(i, valueKey);
     });
     return options.indexOf(i);
   }
@@ -30,7 +30,7 @@ var getOptionIndex = exports.getOptionIndex = function getOptionIndex(options, i
 var arrayIncludes = exports.arrayIncludes = function arrayIncludes(arr, i, valueKey) {
   if (arr) {
     if (typeof i === 'object') return arr.some(function (x) {
-      return applyKey(x, valueKey) === applyKey(i, valueKey);
+      return _applyKey(x, valueKey) === _applyKey(i, valueKey);
     });
     return arr.includes(i);
   }
@@ -41,7 +41,7 @@ var useDisabled = exports.useDisabled = function useDisabled(disabled, disabledK
     var option = options[index];
     var result;
     if (disabledKey) {
-      result = applyKey(option, disabledKey);
+      result = _applyKey(option, disabledKey);
     } else if (Array.isArray(disabled)) {
       if (typeof disabled[0] === 'number') {
         result = disabled.indexOf(index) !== -1;
@@ -55,9 +55,9 @@ var useDisabled = exports.useDisabled = function useDisabled(disabled, disabledK
 };
 var getNormalizedValue = exports.getNormalizedValue = function getNormalizedValue(value, valueKey) {
   if (Array.isArray(value)) return value.map(function (v) {
-    return valueKey && valueKey.reduce ? v : applyKey(v, valueKey);
+    return valueKey && valueKey.reduce ? v : _applyKey(v, valueKey);
   });
-  return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
+  return valueKey && valueKey.reduce ? value : _applyKey(value, valueKey);
 };
 var changeEvent = exports.changeEvent = function changeEvent(inputRef, nextValue) {
   // Calling set value function directly on input because React library
@@ -90,7 +90,7 @@ var getSelectIcon = exports.getSelectIcon = function getSelectIcon(icon, theme, 
 // we should use the labelKey function to display the
 // selected value
 var getDisplayLabelKey = exports.getDisplayLabelKey = function getDisplayLabelKey(labelKey, allOptions, optionIndexesInValue, selectValue) {
-  var optionLabelKey = applyKey(allOptions[optionIndexesInValue[0]], labelKey);
+  var optionLabelKey = _applyKey(allOptions[optionIndexesInValue[0]], labelKey);
   if (!selectValue && optionIndexesInValue.length === 1 && typeof optionLabelKey === 'object') return optionLabelKey;
   return undefined;
 };

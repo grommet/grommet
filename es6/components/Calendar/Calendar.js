@@ -1,5 +1,5 @@
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
@@ -51,7 +51,7 @@ var currentlySelectedString = function currentlySelectedString(value, locale) {
 
 // calendar value may be a single date, multiple dates, a range of dates
 // supplied as ISOstrings.
-var normalizeInput = function normalizeInput(dateValue) {
+var _normalizeInput = function normalizeInput(dateValue) {
   var result;
   if (dateValue instanceof Date) {
     result = dateValue;
@@ -61,12 +61,12 @@ var normalizeInput = function normalizeInput(dateValue) {
     result = setHoursWithOffset(dateValue);
   } else if (Array.isArray(dateValue)) {
     result = dateValue.map(function (d) {
-      return normalizeInput(d);
+      return _normalizeInput(d);
     });
   }
   return result;
 };
-var normalizeOutput = function normalizeOutput(dateValue, outputFormat) {
+var _normalizeOutput = function normalizeOutput(dateValue, outputFormat) {
   var result;
   var normalize = function normalize(value) {
     var normalizedValue = value.toISOString();
@@ -82,7 +82,7 @@ var normalizeOutput = function normalizeOutput(dateValue, outputFormat) {
     result = undefined;
   } else {
     result = dateValue.map(function (d) {
-      return normalizeOutput(d, outputFormat);
+      return _normalizeOutput(d, outputFormat);
     });
   }
   return result;
@@ -138,15 +138,16 @@ var disabledCalendarNextMonthButton = function disabledCalendarNextMonthButton(d
   var firstBound = new Date(bounds[0]);
   return !sameDayOrAfter(firstBound, reference) && !betweenDates(date, bounds);
 };
-export var getOutputFormat = function getOutputFormat(dates) {
+var _getOutputFormat = function getOutputFormat(dates) {
   if (typeof dates === 'string' && (dates == null ? void 0 : dates.indexOf('T')) === -1) {
     return 'no timezone';
   }
   if (Array.isArray(dates)) {
-    return getOutputFormat(dates[0]);
+    return _getOutputFormat(dates[0]);
   }
   return 'date timezone';
 };
+export { _getOutputFormat as getOutputFormat };
 var millisecondsPerYear = 31557600000;
 var CalendarDayButton = function CalendarDayButton(props) {
   return /*#__PURE__*/React.createElement(Button, _extends({
@@ -259,26 +260,26 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   useEffect(function () {
     if (activeDateProp) setActiveDate(activeDateProp);
   }, [activeDateProp]);
-  var _useState3 = useState(normalizeInput(dateProp || datesProp)),
+  var _useState3 = useState(_normalizeInput(dateProp || datesProp)),
     value = _useState3[0],
     setValue = _useState3[1];
   useEffect(function () {
     var val = dateProp || datesProp;
-    setValue(normalizeInput(val));
+    setValue(_normalizeInput(val));
   }, [dateProp, datesProp]);
-  var _useState4 = useState(getReference(normalizeInput(referenceProp), value)),
+  var _useState4 = useState(getReference(_normalizeInput(referenceProp), value)),
     reference = _useState4[0],
     setReference = _useState4[1];
   useEffect(function () {
     if (value) {
-      setReference(getReference(normalizeInput(referenceProp), value));
+      setReference(getReference(_normalizeInput(referenceProp), value));
     }
   }, [referenceProp, value]);
-  var _useState5 = useState(getOutputFormat(dateProp || datesProp)),
+  var _useState5 = useState(_getOutputFormat(dateProp || datesProp)),
     outputFormat = _useState5[0],
     setOutputFormat = _useState5[1];
   useEffect(function () {
-    setOutputFormat(getOutputFormat(dateProp || datesProp));
+    setOutputFormat(_getOutputFormat(dateProp || datesProp));
   }, [dateProp, datesProp]);
 
   // normalize bounds
@@ -482,7 +483,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       nextValue = selectedDate;
     }
     if (onSelect) {
-      nextValue = normalizeOutput(nextValue, outputFormat);
+      nextValue = _normalizeOutput(nextValue, outputFormat);
       onSelect(nextValue);
     }
   }, [handleRange, onSelect, outputFormat, range, value]);
@@ -643,7 +644,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       } else if (selectedState === 1) {
         inRange = true;
       }
-      var dayDisabled = withinDates(day, normalizeInput(disabled)) || bounds && !betweenDates(day, normalizeInput(bounds));
+      var dayDisabled = withinDates(day, _normalizeInput(disabled)) || bounds && !betweenDates(day, _normalizeInput(bounds));
       if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
         firstDayInMonth = dateObject;
       }

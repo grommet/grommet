@@ -1,10 +1,10 @@
 // TODO: share with DataTable, List, Cards, etc.
-var datumValue = function datumValue(datum, property) {
+var _datumValue = function datumValue(datum, property) {
   if (!property) return undefined;
   var parts = property.split('.');
   if (parts.length === 1) return datum[property];
   if (!datum[parts[0]]) return undefined;
-  return datumValue(datum[parts[0]], parts.slice(1).join('.'));
+  return _datumValue(datum[parts[0]], parts.slice(1).join('.'));
 };
 
 // This is where we filter the data internally, when the caller doesn't
@@ -29,7 +29,7 @@ export var filter = function filter(data, view, properties) {
     // check whether it matches any search
     if (searchExp) {
       var searchWith = function searchWith(property) {
-        var value = datumValue(datum, property);
+        var value = _datumValue(datum, property);
         if (value === undefined) return false;
         return searchExp.test(value);
       };
@@ -42,7 +42,7 @@ export var filter = function filter(data, view, properties) {
       matched = !Object.keys(view.properties).some(function (property) {
         // returning true means it doesn't match the filter,
         var filterValue = view.properties[property];
-        var value = datumValue(datum, property);
+        var value = _datumValue(datum, property);
 
         // range case
         if (typeof (filterValue == null ? void 0 : filterValue.min) === 'number' || typeof (filterValue == null ? void 0 : filterValue.max) === 'number') return typeof value !== 'number' || value < filterValue.min || value > filterValue.max;
@@ -79,8 +79,8 @@ export var filter = function filter(data, view, properties) {
     var before = sortDesc ? -1 : 1;
     var after = sortDesc ? 1 : -1;
     filteredData.sort(function (d1, d2) {
-      var d1Val = datumValue(d1, prop);
-      var d2Val = datumValue(d2, prop);
+      var d1Val = _datumValue(d1, prop);
+      var d2Val = _datumValue(d2, prop);
       // sort strings via locale case insensitive
       if (typeof d1Val === 'string' && typeof d2Val === 'string' || typeof d1Val === 'string' && !d2Val || typeof d2Val === 'string' && !d1Val) {
         var sortResult = (d1Val || '').localeCompare(d2Val || '', undefined, {

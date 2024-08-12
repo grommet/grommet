@@ -10,7 +10,7 @@ var _propTypes2 = require("./propTypes");
 var _excluded = ["basis", "children", "direction", "fill", "gap", "values"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 var Value = function Value(_ref) {
   var basis = _ref.basis,
     children = _ref.children;
@@ -31,7 +31,7 @@ var defaultChildrenPropValue = function defaultChildrenPropValue(value) {
   }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, value.value));
 };
 var defaultValues = [];
-var Distribution = exports.Distribution = function Distribution(_ref2) {
+var _Distribution = exports.Distribution = function Distribution(_ref2) {
   var basis = _ref2.basis,
     _ref2$children = _ref2.children,
     children = _ref2$children === void 0 ? defaultChildrenPropValue : _ref2$children,
@@ -97,12 +97,12 @@ var Distribution = exports.Distribution = function Distribution(_ref2) {
       overflow: "hidden",
       gap: gap,
       fill: fill
-    }, rest), /*#__PURE__*/_react["default"].createElement(Distribution, {
+    }, rest), /*#__PURE__*/_react["default"].createElement(_Distribution, {
       values: values.slice(0, subIndex),
       basis: childBasis[0],
       direction: direction === 'row' ? 'column' : 'row',
       gap: gap
-    }, children), /*#__PURE__*/_react["default"].createElement(Distribution, {
+    }, children), /*#__PURE__*/_react["default"].createElement(_Distribution, {
       values: values.slice(subIndex),
       basis: childBasis[1],
       direction: direction === 'row' ? 'column' : 'row',
@@ -111,4 +111,4 @@ var Distribution = exports.Distribution = function Distribution(_ref2) {
   }
   return null;
 };
-Distribution.propTypes = _propTypes2.DistributionPropTypes;
+_Distribution.propTypes = _propTypes2.DistributionPropTypes;

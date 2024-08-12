@@ -19,18 +19,19 @@ export var fontSize = function fontSize(size, lineHeight) {
 export var breakpointStyle = function breakpointStyle(breakpoint, content) {
   return css(["@media only screen ", "{", ";}"], breakpoint.value && "and (max-width: " + breakpoint.value + "px)", content);
 };
-export var findAllByType = function findAllByType(component, type) {
+var _findAllByType = function findAllByType(component, type) {
   var matches = [];
   if (component.type === type) {
     matches.push(component);
   }
   if (component.children) {
     component.children.forEach(function (child) {
-      matches = matches.concat(findAllByType(child, type));
+      matches = matches.concat(_findAllByType(child, type));
     });
   }
   return matches;
 };
+export { _findAllByType as findAllByType };
 export var getAvailableAtBadge = function getAvailableAtBadge(availableAt, componentType) {
   return [{
     url: "https://storybook.grommet.io/?selectedKind=" + componentType + "-" + availableAt + "&full=0&stories=1&panelRight=0",

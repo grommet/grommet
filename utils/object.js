@@ -12,7 +12,7 @@ var deepFreeze = exports.deepFreeze = function deepFreeze(obj) {
   });
   return Object.freeze(obj);
 };
-var deepMerge = exports.deepMerge = function deepMerge(target) {
+var _deepMerge = exports.deepMerge = function deepMerge(target) {
   for (var _len = arguments.length, sources = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     sources[_key - 1] = arguments[_key];
   }
@@ -28,7 +28,7 @@ var deepMerge = exports.deepMerge = function deepMerge(target) {
           if (!output[key]) {
             output[key] = _extends({}, source[key]);
           } else {
-            output[key] = deepMerge(output[key], source[key]);
+            output[key] = _deepMerge(output[key], source[key]);
           }
         } else {
           output[key] = source[key];

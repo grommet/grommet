@@ -19,7 +19,7 @@ var _useThemeValue = require("../../utils/useThemeValue");
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var headingPadMap = {
   small: 'xsmall',
@@ -57,7 +57,7 @@ var currentlySelectedString = function currentlySelectedString(value, locale) {
 
 // calendar value may be a single date, multiple dates, a range of dates
 // supplied as ISOstrings.
-var normalizeInput = function normalizeInput(dateValue) {
+var _normalizeInput = function normalizeInput(dateValue) {
   var result;
   if (dateValue instanceof Date) {
     result = dateValue;
@@ -67,12 +67,12 @@ var normalizeInput = function normalizeInput(dateValue) {
     result = (0, _dates.setHoursWithOffset)(dateValue);
   } else if (Array.isArray(dateValue)) {
     result = dateValue.map(function (d) {
-      return normalizeInput(d);
+      return _normalizeInput(d);
     });
   }
   return result;
 };
-var normalizeOutput = function normalizeOutput(dateValue, outputFormat) {
+var _normalizeOutput = function normalizeOutput(dateValue, outputFormat) {
   var result;
   var normalize = function normalize(value) {
     var normalizedValue = value.toISOString();
@@ -88,7 +88,7 @@ var normalizeOutput = function normalizeOutput(dateValue, outputFormat) {
     result = undefined;
   } else {
     result = dateValue.map(function (d) {
-      return normalizeOutput(d, outputFormat);
+      return _normalizeOutput(d, outputFormat);
     });
   }
   return result;
@@ -144,12 +144,12 @@ var disabledCalendarNextMonthButton = function disabledCalendarNextMonthButton(d
   var firstBound = new Date(bounds[0]);
   return !(0, _utils.sameDayOrAfter)(firstBound, reference) && !(0, _utils.betweenDates)(date, bounds);
 };
-var getOutputFormat = exports.getOutputFormat = function getOutputFormat(dates) {
+var _getOutputFormat = exports.getOutputFormat = function getOutputFormat(dates) {
   if (typeof dates === 'string' && (dates == null ? void 0 : dates.indexOf('T')) === -1) {
     return 'no timezone';
   }
   if (Array.isArray(dates)) {
-    return getOutputFormat(dates[0]);
+    return _getOutputFormat(dates[0]);
   }
   return 'date timezone';
 };
@@ -265,26 +265,26 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
   (0, _react.useEffect)(function () {
     if (activeDateProp) setActiveDate(activeDateProp);
   }, [activeDateProp]);
-  var _useState3 = (0, _react.useState)(normalizeInput(dateProp || datesProp)),
+  var _useState3 = (0, _react.useState)(_normalizeInput(dateProp || datesProp)),
     value = _useState3[0],
     setValue = _useState3[1];
   (0, _react.useEffect)(function () {
     var val = dateProp || datesProp;
-    setValue(normalizeInput(val));
+    setValue(_normalizeInput(val));
   }, [dateProp, datesProp]);
-  var _useState4 = (0, _react.useState)(getReference(normalizeInput(referenceProp), value)),
+  var _useState4 = (0, _react.useState)(getReference(_normalizeInput(referenceProp), value)),
     reference = _useState4[0],
     setReference = _useState4[1];
   (0, _react.useEffect)(function () {
     if (value) {
-      setReference(getReference(normalizeInput(referenceProp), value));
+      setReference(getReference(_normalizeInput(referenceProp), value));
     }
   }, [referenceProp, value]);
-  var _useState5 = (0, _react.useState)(getOutputFormat(dateProp || datesProp)),
+  var _useState5 = (0, _react.useState)(_getOutputFormat(dateProp || datesProp)),
     outputFormat = _useState5[0],
     setOutputFormat = _useState5[1];
   (0, _react.useEffect)(function () {
-    setOutputFormat(getOutputFormat(dateProp || datesProp));
+    setOutputFormat(_getOutputFormat(dateProp || datesProp));
   }, [dateProp, datesProp]);
 
   // normalize bounds
@@ -488,7 +488,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
       nextValue = selectedDate;
     }
     if (onSelect) {
-      nextValue = normalizeOutput(nextValue, outputFormat);
+      nextValue = _normalizeOutput(nextValue, outputFormat);
       onSelect(nextValue);
     }
   }, [handleRange, onSelect, outputFormat, range, value]);
@@ -649,7 +649,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
       } else if (selectedState === 1) {
         inRange = true;
       }
-      var dayDisabled = (0, _utils.withinDates)(day, normalizeInput(disabled)) || bounds && !(0, _utils.betweenDates)(day, normalizeInput(bounds));
+      var dayDisabled = (0, _utils.withinDates)(day, _normalizeInput(disabled)) || bounds && !(0, _utils.betweenDates)(day, _normalizeInput(bounds));
       if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
         firstDayInMonth = dateObject;
       }

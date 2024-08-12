@@ -167,13 +167,14 @@ export var makeNodeUnfocusable = function makeNodeUnfocusable(node) {
     });
   }
 };
-export var findVisibleParent = function findVisibleParent(element) {
+var _findVisibleParent = function findVisibleParent(element) {
   if (element) {
     // Get the closest ancestor element that is positioned.
-    return element.offsetParent ? element : findVisibleParent(element.parentElement) || element;
+    return element.offsetParent ? element : _findVisibleParent(element.parentElement) || element;
   }
   return undefined;
 };
+export { _findVisibleParent as findVisibleParent };
 export var isNodeAfterScroll = function isNodeAfterScroll(node, target) {
   var _node$getBoundingClie = node.getBoundingClientRect(),
     bottom = _node$getBoundingClie.bottom;
@@ -196,7 +197,8 @@ export var isNodeBeforeScroll = function isNodeBeforeScroll(node, target) {
     targetTop = _ref2.top;
   return top <= targetTop;
 };
-export var findButtonParent = function findButtonParent(element) {
-  if (element && element.nodeName !== 'BUTTON' && element.nodeName !== 'A') return findButtonParent(element.parentElement);
+var _findButtonParent = function findButtonParent(element) {
+  if (element && element.nodeName !== 'BUTTON' && element.nodeName !== 'A') return _findButtonParent(element.parentElement);
   return element;
 };
+export { _findButtonParent as findButtonParent };

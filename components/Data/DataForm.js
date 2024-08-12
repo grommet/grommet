@@ -16,7 +16,7 @@ var _excluded = ["children", "footer", "onDone", "pad", "updateOn"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var MaxForm = (0, _styledComponents["default"])(_Form.Form).withConfig({
   displayName: "DataForm__MaxForm",
@@ -48,7 +48,7 @@ var viewFormKeyMap = {
 
 // flatten nested objects.
 // For example: { a: { b: v, c: z } } -> { 'a.b': v, 'a.c': z }
-var flatten = function flatten(formValue, options) {
+var _flatten = function flatten(formValue, options) {
   var result = JSON.parse(JSON.stringify(formValue));
   Object.keys(result).forEach(function (i) {
     // We check the type of the i using
@@ -56,7 +56,7 @@ var flatten = function flatten(formValue, options) {
     // call the function again
     // ignore _range situations
     if (typeof result[i] === 'object' && !Array.isArray(result[i]) && (options != null && options.full || !result[i][formRangeKey])) {
-      var temp = flatten(result[i], options);
+      var temp = _flatten(result[i], options);
       Object.keys(temp).forEach(function (j) {
         // Store temp in result
         // ignore empty arrays
@@ -131,7 +131,7 @@ var formValueToView = function formValueToView(value, views) {
   });
 
   // flatten any nested objects
-  var flatValue = flatten(valueCopy);
+  var flatValue = _flatten(valueCopy);
   result.properties = _extends({}, result.properties || {}, flatValue);
 
   // convert any ranges
@@ -157,7 +157,7 @@ var clearEmpty = function clearEmpty(formValue, pendingReset) {
     // { a: b: { _range: [0, 100] } } ==> a.b._range: [0, 100]
     if (typeof value[k] === 'object' && !Array.isArray(value[k])) {
       var _pendingReset$current;
-      var filterName = k + "." + Object.keys(flatten(value[k], {
+      var filterName = k + "." + Object.keys(_flatten(value[k], {
         full: true
       }))[0];
       if (pendingReset != null && (_pendingReset$current = pendingReset.current) != null && _pendingReset$current.has(filterName)) {

@@ -37,7 +37,7 @@ var normalizeBackgroundColor = function normalizeBackgroundColor(backgroundArg, 
   ((_theme$global$backgro2 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro2[background]) || background, theme, backgroundArg.dark);
   return result;
 };
-var normalizeBackgroundImage = function normalizeBackgroundImage(background, theme) {
+var _normalizeBackgroundImage = function normalizeBackgroundImage(background, theme) {
   var result;
   if (background.image) {
     var _theme$global$backgro3, _theme$global$backgro4;
@@ -45,12 +45,12 @@ var normalizeBackgroundImage = function normalizeBackgroundImage(background, the
   } else {
     var _theme$global$backgro5;
     var normalized = normalizeBackground((_theme$global$backgro5 = theme.global.backgrounds) == null ? void 0 : _theme$global$backgro5[background], theme);
-    result = typeof normalized === 'object' ? normalizeBackgroundImage(normalized, theme) : normalized;
+    result = typeof normalized === 'object' ? _normalizeBackgroundImage(normalized, theme) : normalized;
   }
   return result;
 };
 var rotateBackground = function rotateBackground(background, theme) {
-  var backgroundImage = normalizeBackgroundImage(background, theme);
+  var backgroundImage = _normalizeBackgroundImage(background, theme);
   var result = backgroundImage;
   if (backgroundImage.lastIndexOf('linear-gradient', 0) === 0) {
     var regex = /\d{1,}deg\b,/gm; // Contains rotation specified in degrees. Only targets 'deg' string with a trailing comma. Do not match 'deg' string for hsl, etc..
@@ -154,7 +154,7 @@ var backgroundStyle = exports.backgroundStyle = function backgroundStyle(backgro
   var _backgroundAndTextCol = backgroundAndTextColors(background, textColorArg, theme),
     backgroundColor = _backgroundAndTextCol[0],
     textColor = _backgroundAndTextCol[1];
-  var backgroundImage = background.rotate ? rotateBackground(background, theme) : normalizeBackgroundImage(background, theme);
+  var backgroundImage = background.rotate ? rotateBackground(background, theme) : _normalizeBackgroundImage(background, theme);
   var backgroundClipStyle = '';
   if (background.clip) {
     backgroundClipStyle = background.clip === 'text' ? "-webkit-text-fill-color: transparent; \n           -webkit-background-clip: text; \n           background-clip: text;" : "background-clip: " + background.clip + ";";

@@ -72,7 +72,7 @@ var WRAP_MAP = {
 var wrapStyle = (0, _styledComponents.css)(["flex-wrap:", ";"], function (props) {
   return WRAP_MAP[props.wrapProp];
 });
-var animationItemStyle = function animationItemStyle(item, theme) {
+var _animationItemStyle = function animationItemStyle(item, theme) {
   if (typeof item === 'string') {
     return (0, _animation.animationObjectStyle)({
       type: item
@@ -80,7 +80,7 @@ var animationItemStyle = function animationItemStyle(item, theme) {
   }
   if (Array.isArray(item)) {
     return item.reduce(function (style, a, index) {
-      return (0, _styledComponents.css)(["", "", " ", ""], style, index > 0 ? ',' : '', animationItemStyle(a, theme));
+      return (0, _styledComponents.css)(["", "", " ", ""], style, index > 0 ? ',' : '', _animationItemStyle(a, theme));
     }, '');
   }
   if (typeof item === 'object') {
@@ -120,7 +120,7 @@ var animationInitialStyle = function animationInitialStyle(item) {
   return '';
 };
 var animationStyle = (0, _styledComponents.css)(["", ";"], function (props) {
-  return (0, _styledComponents.css)(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
+  return (0, _styledComponents.css)(["", " animation:", ";"], animationInitialStyle(props.animation), _animationItemStyle(props.animation, props.theme));
 });
 var interactiveStyle = (0, _styledComponents.css)(["cursor:pointer;&:hover{", " ", "}"], function (props) {
   var _props$kindProp;

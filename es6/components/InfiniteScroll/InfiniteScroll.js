@@ -1,3 +1,4 @@
+function _readOnlyError(r) { throw new TypeError('"' + r + '" is read-only'); }
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { findScrollParent, findScrollParents, isNodeAfterScroll, isNodeBeforeScroll } from '../../utils';

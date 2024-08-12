@@ -1,5 +1,5 @@
 var _excluded = ["children", "errors", "infos", "messages", "kind", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"];
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useAnalytics } from '../../contexts';
@@ -28,19 +28,19 @@ var stringToArray = function stringToArray(string) {
   }
   return undefined;
 };
-var getValueAt = function getValueAt(valueObject, pathArg) {
+var _getValueAt = function getValueAt(valueObject, pathArg) {
   if (valueObject === undefined) return undefined;
   var path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
   if (path.length === 1) return valueObject[path];
-  return getValueAt(valueObject[path.shift()], path);
+  return _getValueAt(valueObject[path.shift()], path);
 };
-var setValueAt = function setValueAt(valueObject, pathArg, value) {
+var _setValueAt = function setValueAt(valueObject, pathArg, value) {
   var object = valueObject;
   var path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
   if (path.length === 1) object[path] = value;else {
     var key = path.shift();
     if (!object[key]) object[key] = {};
-    setValueAt(object[key], path, value);
+    _setValueAt(object[key], path, value);
   }
 };
 var getFieldValue = function getFieldValue(name, value) {
@@ -53,7 +53,7 @@ var getFieldValue = function getFieldValue(name, value) {
     var obj = (_value$arrayName = value[arrayName]) == null ? void 0 : _value$arrayName[indexOfArray];
     return arrayObjName ? obj == null ? void 0 : obj[arrayObjName] : obj;
   }
-  return getValueAt(value, name);
+  return _getValueAt(value, name);
 };
 var setFieldValue = function setFieldValue(name, componentValue, prevValue) {
   var nextValue = _extends({}, prevValue);
@@ -69,7 +69,7 @@ var setFieldValue = function setFieldValue(name, componentValue, prevValue) {
       nextValue[arrayName][indexOfArray][arrayObjName] = componentValue;
     } else nextValue[arrayName][indexOfArray] = componentValue;
   } else {
-    setValueAt(nextValue, name, componentValue);
+    _setValueAt(nextValue, name, componentValue);
   }
   return nextValue;
 };

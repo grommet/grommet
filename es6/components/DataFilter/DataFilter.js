@@ -1,6 +1,6 @@
 var _excluded = ["children", "options", "property", "range"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.indexOf(n) >= 0) continue; t[n] = r[n]; } return t; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 import React, { useContext, useMemo, useState } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { DataForm } from '../Data/DataForm';
@@ -16,15 +16,15 @@ import { DataFormContext } from '../../contexts/DataFormContext';
 var maxCheckBoxGroupOptions = 4;
 var minSelectSearchOptions = 10;
 var defaultRangeSteps = 20;
-var getValueAt = function getValueAt(valueObject, pathArg) {
+var _getValueAt = function getValueAt(valueObject, pathArg) {
   if (!pathArg || valueObject === undefined) return undefined;
   var path = Array.isArray(pathArg) ? pathArg : pathArg.split('.');
   if (path.length === 1) return valueObject[path];
-  return getValueAt(valueObject[path.shift()], path);
+  return _getValueAt(valueObject[path.shift()], path);
 };
 var generateOptions = function generateOptions(data, property) {
   return Array.from(new Set(data.map(function (d) {
-    return getValueAt(d, property);
+    return _getValueAt(d, property);
   }))).filter(function (v) {
     return v !== undefined && v !== '';
   })
