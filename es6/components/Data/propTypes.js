@@ -5,7 +5,8 @@ var viewType = PropTypes.shape({
   sort: PropTypes.shape({
     direction: PropTypes.oneOf(['asc', 'desc']),
     property: PropTypes.string
-  })
+  }),
+  columns: PropTypes.arrayOf(PropTypes.string)
 });
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {

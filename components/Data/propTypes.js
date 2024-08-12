@@ -10,7 +10,8 @@ var viewType = _propTypes["default"].shape({
   sort: _propTypes["default"].shape({
     direction: _propTypes["default"].oneOf(['asc', 'desc']),
     property: _propTypes["default"].string
-  })
+  }),
+  columns: _propTypes["default"].arrayOf(_propTypes["default"].string)
 });
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {

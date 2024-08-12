@@ -30,6 +30,9 @@ var Views = exports.Views = function Views() {
           },
           location: ['San Francisco']
         }
+      }, {
+        name: 'Fewer Columns',
+        columns: ['name', 'location']
       }],
       toolbar: true
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {

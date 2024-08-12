@@ -25,6 +25,9 @@ export var Views = function Views() {
           },
           location: ['San Francisco']
         }
+      }, {
+        name: 'Fewer Columns',
+        columns: ['name', 'location']
       }],
       toolbar: true
     }, /*#__PURE__*/React.createElement(DataTable, {
