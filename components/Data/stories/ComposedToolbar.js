@@ -60,7 +60,8 @@ var ComposedToolbar = exports.ComposedToolbar = function ComposedToolbar() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.DataTable, {
       alignSelf: "start",
       columns: _data.columns,
-      sortable: true
+      sortable: true,
+      primaryKey: "name"
     }))))
     // </Grommet>
   );
