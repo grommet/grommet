@@ -7,9 +7,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -35,6 +34,9 @@ import {
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
+import { CopyButton } from './CopyButton';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -53,7 +55,7 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
-const ContainerBox = styled(Box)`
+const ContainerBox = styled(Box).attrs(withTheme)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
@@ -92,7 +94,8 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
-      readOnly,
+      readOnly: readOnlyProp,
+      readOnlyCopy,
       reverse,
       suggestions,
       textAlign,
@@ -102,13 +105,14 @@ const TextInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
     const suggestionsRef = useRef();
+    const readOnly = readOnlyProp || readOnlyCopy;
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
     const [value, setValue] = formContext.useFormInput({
@@ -129,6 +133,27 @@ const TextInput = forwardRef(
     );
 
     const [suggestionsAtClose, setSuggestionsAtClose] = useState();
+
+    const readOnlyCopyValidation = format({
+      id: 'input.readOnlyCopy.validation',
+      messages,
+    });
+    const readOnlyCopyPrompt = format({
+      id: 'input.readOnlyCopy.prompt',
+      messages,
+    });
+
+    const [tip, setTip] = useState(readOnlyCopyPrompt);
+
+    const onClickCopy = () => {
+      global.navigator.clipboard.writeText(value);
+      announce(readOnlyCopyValidation, 'assertive');
+      setTip(readOnlyCopyValidation);
+    };
+
+    const onBlurCopy = () => {
+      if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+    };
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
@@ -444,12 +469,28 @@ const TextInput = forwardRef(
 
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
 
+    const ReadOnlyCopyButton = (
+      <CopyButton
+        onBlurCopy={onBlurCopy}
+        onClickCopy={onClickCopy}
+        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        tip={tip}
+        value={value}
+      />
+    );
+
     return (
-      <StyledTextInputContainer plain={plain}>
+      <StyledTextInputContainer
+        readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
+        readOnlyCopy={readOnlyCopy}
+        plain={plain}
+        border={!plain}
+      >
+        {reverse && readOnlyCopy && ReadOnlyCopyButton}
         {showStyledPlaceholder && (
           <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         )}
-        {textInputIcon && (
+        {textInputIcon && !readOnly && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
@@ -465,7 +506,7 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={icon}
+            icon={!readOnly && icon}
             reverse={reverse}
             focus={focus}
             focusIndicator={focusIndicator}
@@ -477,6 +518,7 @@ const TextInput = forwardRef(
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}
+            readOnlyCopy={readOnlyCopy}
             onFocus={(event) => {
               // Don't do anything if we are acting like we already have
               // focus. This can happen when this input loses focus temporarily
@@ -526,8 +568,8 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-
-        {drop}
+        {!reverse && readOnlyCopy && ReadOnlyCopyButton}
+        {!readOnly && drop}
       </StyledTextInputContainer>
     );
   },

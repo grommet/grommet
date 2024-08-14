@@ -1,28 +1,35 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
+import {
+  focusStyle,
+  normalizeColor,
+  styledComponentsConfig,
+} from '../../utils';
+import { withTheme } from '../../default-props';
+import { Box } from '../Box';
 
 const disabledStyle = `
   opacity: 0.5;
   cursor: default;
 `;
 
-const StyledRadioButtonContainer = styled.label`
+const StyledRadioButtonContainer = styled.label
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   display: flex;
   flex-direction: row;
   align-items: center;
   user-select: none;
   width: fit-content;
   ${(props) => props.disabled && disabledStyle} ${(props) =>
-    !props.disabled && 'cursor: pointer;'}
+  !props.disabled && 'cursor: pointer;'}
 
-  :hover input:not([disabled]) + div,
-  :hover input:not([disabled]) + span {
+  &:hover input:not([disabled]) + div,
+  &:hover input:not([disabled]) + span {
     border-color: ${(props) =>
       normalizeColor(props.theme.radioButton.hover.border.color, props.theme)};
   }
-  :hover {
+  &:hover {
     background-color: ${(props) =>
       normalizeColor(
         !props.disabled &&
@@ -57,10 +64,7 @@ const StyledRadioButtonContainer = styled.label`
   ${(props) => props.theme.radioButton.container.extend};
 `;
 
-StyledRadioButtonContainer.defaultProps = {};
-Object.setPrototypeOf(StyledRadioButtonContainer.defaultProps, defaultProps);
-
-const StyledRadioButtonInput = styled.input`
+const StyledRadioButtonInput = styled.input.withConfig(styledComponentsConfig)`
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -69,10 +73,9 @@ const StyledRadioButtonInput = styled.input`
   ${(props) => !props.disabled && 'cursor: pointer;'};
 `;
 
-StyledRadioButtonInput.defaultProps = {};
-Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, defaultProps);
-
-const StyledRadioButtonLabel = styled.span`
+const StyledRadioButtonLabel = styled.span
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   ${(props) =>
     props.theme.radioButton.font.weight &&
     css`
@@ -80,10 +83,9 @@ const StyledRadioButtonLabel = styled.span`
     `}
 `;
 
-StyledRadioButtonLabel.defaultProps = {};
-Object.setPrototypeOf(StyledRadioButtonLabel.defaultProps, defaultProps);
-
-const StyledRadioButtonIcon = styled.svg`
+const StyledRadioButtonIcon = styled.svg
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   box-sizing: border-box;
   width: ${(props) =>
     props.theme.radioButton.icon.size || props.theme.radioButton.size};
@@ -97,24 +99,15 @@ const StyledRadioButtonIcon = styled.svg`
   ${(props) => props.theme.radioButton.icon.extend};
 `;
 
-StyledRadioButtonIcon.defaultProps = {};
-Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
-
-const StyledRadioButtonBox = styled.div`
+const StyledRadioButtonBox = styled(Box).attrs(withTheme)`
   background-color: ${(props) => props.backgroundColor};
   ${(props) => props.focus && focusStyle()};
   ${(props) => props.theme.radioButton.check.extend};
 `;
 
-StyledRadioButtonBox.defaultProps = {};
-Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, defaultProps);
-
-const StyledRadioButton = styled.div`
+const StyledRadioButton = styled(Box).attrs(withTheme)`
   ${(props) => props.theme.radioButton && props.theme.radioButton.extend};
 `;
-
-StyledRadioButton.defaultProps = {};
-Object.setPrototypeOf(StyledRadioButton.defaultProps, defaultProps);
 
 export {
   StyledRadioButtonContainer,

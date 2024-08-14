@@ -10,6 +10,7 @@ const viewType = PropTypes.shape({
     direction: PropTypes.oneOf(['asc', 'desc']),
     property: PropTypes.string,
   }),
+  columns: PropTypes.arrayOf(PropTypes.string),
 });
 
 let PropType = {};

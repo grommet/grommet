@@ -1,14 +1,12 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
+import { genericStyles, styledComponentsConfig } from '../../utils';
+import { withTheme } from '../../default-props';
 
-const StyledTabsHeader = styled.div`
-  ${props => props.theme.tabs.header.extend};
+const StyledTabsHeader = styled(Box).attrs(withTheme)`
+  ${(props) => props.theme.tabs.header.extend};
 `;
-
-StyledTabsHeader.defaultProps = {};
-Object.setPrototypeOf(StyledTabsHeader.defaultProps, defaultProps);
 
 const FLEX_MAP = {
   [true]: '1 1',
@@ -18,23 +16,20 @@ const FLEX_MAP = {
 };
 
 const flexStyle = css`
-  flex: ${props =>
+  flex: ${(props) =>
     `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
 `;
 
-const StyledTabPanel = styled.div`
+const StyledTabPanel = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   min-height: 0;
-  ${props => props.flex && flexStyle} ${props => props.theme.tabs.panel.extend};
+  ${(props) => props.flex && flexStyle} ${(props) =>
+  props.theme.tabs.panel.extend};
 `;
 
-StyledTabPanel.defaultProps = {};
-Object.setPrototypeOf(StyledTabPanel.defaultProps, defaultProps);
-
-const StyledTabs = styled.div`
-  ${genericStyles} ${props => props.theme.tabs.extend};
+const StyledTabs = styled(Box).attrs(withTheme)`
+  ${genericStyles} ${(props) => props.theme.tabs.extend};
 `;
-
-StyledTabs.defaultProps = {};
-Object.setPrototypeOf(StyledTabs.defaultProps, defaultProps);
 
 export { StyledTabsHeader, StyledTabPanel, StyledTabs };

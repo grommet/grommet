@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import { Search } from 'grommet-icons/icons/Search';
 import { Splits } from 'grommet-icons/icons/Splits';
-import { ThemeContext } from 'styled-components';
+import { Lock } from 'grommet-icons/icons/Lock';
 import { Box } from '../Box';
 import { CheckBoxGroup } from '../CheckBoxGroup';
 import { DataForm, formColumnsKey } from '../Data';
@@ -15,6 +15,7 @@ import { TextInput } from '../TextInput';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataTableColumnsPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const dropProps = {
   align: { top: 'bottom', left: 'left' },
@@ -64,6 +65,21 @@ const Content = ({ drop, options = [], ...rest }) => {
     [options],
   );
 
+  const pinned = useMemo(() => {
+    const items = objectOptions
+      ? options
+          .filter((option) => option.pinned && option.label)
+          .map((option) => option.label)
+      : [];
+    return items?.length
+      ? {
+          background: 'none',
+          color: 'text-weak',
+          icon: <Lock />,
+          items,
+        }
+      : undefined;
+  }, [options, objectOptions]);
   // 'value' is an array of property names
   const [value, setValue] = useFormInput({
     name: formColumnsKey,
@@ -139,6 +155,7 @@ const Content = ({ drop, options = [], ...rest }) => {
               onOrder={(nextData) => setValue(optionsToValue(nextData))}
               pad="none"
               primaryKey={(objectOptions && 'label') || undefined}
+              pinned={pinned}
             />
           </Box>
         </Tab>
@@ -151,7 +168,7 @@ export const DataTableColumns = ({ drop, options, ...rest }) => {
   const { id: dataId, messages } = useContext(DataContext);
   const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const [showContent, setShowContent] = useState();
 
   const tip = format({

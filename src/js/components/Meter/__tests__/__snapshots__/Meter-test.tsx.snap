@@ -17,7 +17,6 @@ exports[`Meter background 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -159,7 +158,6 @@ exports[`Meter basic 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -192,6 +190,41 @@ exports[`Meter basic 1`] = `
 </div>
 `;
 
+exports[`Meter basic renders outside grommet wrapper 1`] = `
+.c0 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c0 path {
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<svg
+  class="c0"
+  height="24"
+  preserveAspectRatio="none"
+  viewBox="0 0 384 24"
+  width="384"
+>
+  <path
+    d="M 0,12 L 384,12"
+    fill="none"
+    stroke="#F2F2F2"
+    stroke-linecap="square"
+    stroke-opacity="0.4"
+    stroke-width="24"
+  />
+  <path
+    d="M 0,12 L 76.8,12"
+    fill="none"
+    stroke="#6FFFB0"
+    stroke-linecap="butt"
+    stroke-width="24"
+  />
+</svg>
+`;
+
 exports[`Meter boundary values 1`] = `
 .c0 {
   font-size: 18px;
@@ -209,7 +242,6 @@ exports[`Meter boundary values 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -267,7 +299,6 @@ exports[`Meter default 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -310,7 +341,6 @@ exports[`Meter large circle values 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -389,7 +419,6 @@ exports[`Meter many values 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -485,13 +514,10 @@ exports[`Meter reverse 1`] = `
 .c1 {
   max-width: 100%;
   overflow: hidden;
-  -webkit-transform: scale(-1,1);
-  -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -538,13 +564,10 @@ exports[`Meter reverse circle 1`] = `
 .c1 {
   max-width: 100%;
   overflow: hidden;
-  -webkit-transform: scale(-1,1);
-  -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -595,7 +618,6 @@ exports[`Meter round 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -605,7 +627,6 @@ exports[`Meter round 1`] = `
 }
 
 .c2 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -712,13 +733,10 @@ exports[`Meter rtl theme 1`] = `
 .c1 {
   max-width: 100%;
   overflow: hidden;
-  -webkit-transform: scale(-1,1);
-  -ms-transform: scale(-1,1);
   transform: scale(-1,1);
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -769,7 +787,6 @@ exports[`Meter single 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -819,7 +836,6 @@ exports[`Meter size 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -1497,7 +1513,6 @@ exports[`Meter thickness 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -1806,7 +1821,6 @@ exports[`Meter type 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 
@@ -1926,7 +1940,6 @@ exports[`Meter vertical 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
 

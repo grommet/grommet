@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { RangeInput } from '..';
+import { ThemeType } from '../../../themes';
 
 describe('RangeInput', () => {
   test('should have no accessibility violations', async () => {
@@ -22,6 +23,16 @@ describe('RangeInput', () => {
   });
 
   test('renders', () => {
+    const { container } = render(
+      <Grommet>
+        <RangeInput value="50" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders outside grommet wrapper', () => {
     const { container } = render(
       <Grommet>
         <RangeInput value="50" />
@@ -137,5 +148,34 @@ describe('RangeInput', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onWheel should call onChange by default', () => {
+    const onChange = jest.fn();
+    const { getByDisplayValue } = render(
+      <Grommet>
+        <RangeInput min={0} max={10} step={1} value={5} onChange={onChange} />
+      </Grommet>,
+    );
+
+    fireEvent.wheel(getByDisplayValue('5'), {
+      target: {
+        value: '10',
+      },
+    });
+    expect(onChange).toBeCalledTimes(1);
+  });
+
+  test('onWheel overrides should not call onChange', () => {
+    const theme: ThemeType = { rangeInput: { wheel: false } };
+    const onChange = jest.fn();
+    const { getByDisplayValue } = render(
+      <Grommet theme={theme}>
+        <RangeInput min={0} max={10} step={1} value={5} onChange={onChange} />
+      </Grommet>,
+    );
+
+    fireEvent.wheel(getByDisplayValue('5'));
+    expect(onChange).not.toBeCalled();
   });
 });

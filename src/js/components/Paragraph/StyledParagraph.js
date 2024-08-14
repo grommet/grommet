@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
-import { defaultProps } from '../../default-props';
+import {
+  genericStyles,
+  normalizeColor,
+  textAlignStyle,
+  styledComponentsConfig,
+} from '../../utils';
+import { withTheme } from '../../default-props';
 
 const colorStyle = css`
   color: ${(props) => normalizeColor(props.colorProp, props.theme)};
@@ -30,7 +35,9 @@ const maxlinesStyle = (props) =>
     overflow: hidden;
   `;
 
-const StyledParagraph = styled.p`
+const StyledParagraph = styled.p
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   ${genericStyles}
   ${(props) => maxlinesStyle(props)}
   ${(props) => sizeStyle(props)}
@@ -43,8 +50,5 @@ const StyledParagraph = styled.p`
 
   ${(props) => props.theme.paragraph && props.theme.paragraph.extend}
 `;
-
-StyledParagraph.defaultProps = {};
-Object.setPrototypeOf(StyledParagraph.defaultProps, defaultProps);
 
 export { StyledParagraph };

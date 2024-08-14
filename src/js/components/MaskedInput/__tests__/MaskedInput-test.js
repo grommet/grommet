@@ -21,31 +21,52 @@ describe('MaskedInput', () => {
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <MaskedInput name="item" a11yTitle="axe-test" />,
+      <Grommet>
+        <MaskedInput name="item" a11yTitle="axe-test" />
+      </Grommet>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   test('basic', () => {
+    const { container } = render(
+      <Grommet>
+        <MaskedInput name="item" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('basic renders outside grommet wrapper', () => {
     const { container } = render(<MaskedInput name="item" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('icon', () => {
-    const { container } = render(<MaskedInput icon={<Search />} name="item" />);
+    const { container } = render(
+      <Grommet>
+        <MaskedInput icon={<Search />} name="item" />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('icon reverse', () => {
     const { container } = render(
-      <MaskedInput icon={<Search />} reverse name="item" />,
+      <Grommet>
+        <MaskedInput icon={<Search />} reverse name="item" />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('disabled', () => {
-    const { container } = render(<MaskedInput disabled name="item" />);
+    const { container } = render(
+      <Grommet>
+        <MaskedInput disabled name="item" />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -53,26 +74,28 @@ describe('MaskedInput', () => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
     const { getByTestId, container } = render(
-      <MaskedInput
-        data-testid="test-input"
-        id="item"
-        name="item"
-        mask={[
-          {
-            length: [1, 2],
-            options: ['aa', 'bb'],
-            regexp: /^[ab][ab]$|^[ab]$/,
-          },
-          { fixed: '!' },
-          {
-            length: 1,
-            regexp: /^[ab]$/,
-          },
-        ]}
-        value="a"
-        onChange={onChange}
-        onFocus={onFocus}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          mask={[
+            {
+              length: [1, 2],
+              options: ['aa', 'bb'],
+              regexp: /^[ab][ab]$|^[ab]$/,
+            },
+            { fixed: '!' },
+            {
+              length: 1,
+              regexp: /^[ab]$/,
+            },
+          ]}
+          value="a"
+          onChange={onChange}
+          onFocus={onFocus}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -88,19 +111,21 @@ describe('MaskedInput', () => {
   test('mask with long fixed', async () => {
     const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
-      <MaskedInput
-        data-testid="test-input"
-        id="item"
-        name="item"
-        mask={[
-          { fixed: 'https://' },
-          {
-            regexp: /^[ab]+$/,
-          },
-        ]}
-        value=""
-        onChange={onChange}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          mask={[
+            { fixed: 'https://' },
+            {
+              regexp: /^[ab]+$/,
+            },
+          ]}
+          value=""
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -127,22 +152,24 @@ describe('MaskedInput', () => {
   test('option via mouse', async () => {
     const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
-      <MaskedInput
-        data-testid="test-input"
-        plain
-        size="large"
-        id="item"
-        name="item"
-        mask={[
-          {
-            length: [1, 2],
-            options: ['aa', 'bb'],
-            regexp: /^[ab][ab]$|^[ab]$/,
-          },
-          { fixed: '!' },
-        ]}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          plain
+          size="large"
+          id="item"
+          name="item"
+          mask={[
+            {
+              length: [1, 2],
+              options: ['aa', 'bb'],
+              regexp: /^[ab][ab]$|^[ab]$/,
+            },
+            { fixed: '!' },
+          ]}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-input'));
@@ -160,20 +187,22 @@ describe('MaskedInput', () => {
   test('option via keyboard', async () => {
     const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
-      <MaskedInput
-        data-testid="test-input"
-        id="item"
-        name="item"
-        mask={[
-          {
-            length: [1, 2],
-            options: ['aa', 'bb'],
-            regexp: /^[ab][ab]$|^[ab]$/,
-          },
-          { fixed: '!' },
-        ]}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          mask={[
+            {
+              length: [1, 2],
+              options: ['aa', 'bb'],
+              regexp: /^[ab][ab]$|^[ab]$/,
+            },
+            { fixed: '!' },
+          ]}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -197,18 +226,20 @@ describe('MaskedInput', () => {
 
     const onChange = jest.fn((event) => event.target.value);
     render(
-      <MaskedInput
-        data-testid="test-input"
-        id="item"
-        name="item"
-        mask={[
-          {
-            options: ['aaa', 'aba', 'abb'],
-            regexp: /\w$/,
-          },
-        ]}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          mask={[
+            {
+              options: ['aaa', 'aba', 'abb'],
+              regexp: /\w$/,
+            },
+          ]}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
 
     await user.type(screen.getByRole('textbox'), 'abbb');
@@ -222,19 +253,21 @@ describe('MaskedInput', () => {
 
     const onChange = jest.fn((event) => event.target.value);
     render(
-      <MaskedInput
-        data-testid="test-input"
-        id="item"
-        name="item"
-        mask={[
-          {
-            restrictToOptions: false,
-            options: ['aaa', 'aba', 'abb'],
-            regexp: /\w$/,
-          },
-        ]}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          mask={[
+            {
+              restrictToOptions: false,
+              options: ['aaa', 'aba', 'abb'],
+              regexp: /\w$/,
+            },
+          ]}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
 
     await user.type(screen.getByRole('textbox'), 'abbb');
@@ -267,19 +300,21 @@ describe('MaskedInput', () => {
   test('next and previous without options', () => {
     const onChange = jest.fn();
     const { getByTestId, container } = render(
-      <MaskedInput
-        data-testid="test-input"
-        id="item"
-        name="item"
-        mask={[
-          {
-            length: [1, 2],
-            regexp: /^[ab][ab]$|^[ab]$/,
-          },
-          { fixed: '!' },
-        ]}
-        onChange={onChange}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          mask={[
+            {
+              length: [1, 2],
+              regexp: /^[ab][ab]$|^[ab]$/,
+            },
+            { fixed: '!' },
+          ]}
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -302,22 +337,24 @@ describe('MaskedInput', () => {
       return { target: { id, value, name } };
     });
     const { getByTestId, container } = render(
-      <MaskedInput
-        data-testid="test-input"
-        plain
-        size="large"
-        id="item"
-        name="item"
-        mask={[
-          {
-            length: [1, 2],
-            options: ['aa', 'bb'],
-            regexp: /^[ab][ab]$|^[ab]$/,
-          },
-          { fixed: '!' },
-        ]}
-        onChange={onChangeMock}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          plain
+          size="large"
+          id="item"
+          name="item"
+          mask={[
+            {
+              length: [1, 2],
+              options: ['aa', 'bb'],
+              regexp: /^[ab][ab]$|^[ab]$/,
+            },
+            { fixed: '!' },
+          ]}
+          onChange={onChangeMock}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -349,21 +386,23 @@ describe('MaskedInput', () => {
       return { target: { id, value, name } };
     });
     const { getByTestId, container } = render(
-      <MaskedInput
-        data-testid="test-input"
-        id="item"
-        name="item"
-        size="medium"
-        mask={[
-          {
-            length: [1, 2],
-            options: ['aa', 'bb'],
-            regexp: /^[ab][ab]$|^[ab]$/,
-          },
-          { fixed: '!' },
-        ]}
-        onChange={onChangeMock}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          size="medium"
+          mask={[
+            {
+              length: [1, 2],
+              options: ['aa', 'bb'],
+              regexp: /^[ab][ab]$|^[ab]$/,
+            },
+            { fixed: '!' },
+          ]}
+          onChange={onChangeMock}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -441,14 +480,16 @@ describe('MaskedInput', () => {
   test('with no mask', async () => {
     const onChange = jest.fn((event) => event.target.value);
     const { getByTestId, container } = render(
-      <MaskedInput
-        data-testid="test-input"
-        plain
-        size="large"
-        id="item"
-        name="item"
-        onChange={onChange}
-      />,
+      <Grommet>
+        <MaskedInput
+          data-testid="test-input"
+          plain
+          size="large"
+          id="item"
+          name="item"
+          onChange={onChange}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.change(getByTestId('test-input'), { target: { value: 'aa' } });

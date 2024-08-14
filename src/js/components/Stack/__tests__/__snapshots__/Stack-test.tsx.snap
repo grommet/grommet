@@ -24,17 +24,13 @@ exports[`Stack anchor 1`] = `
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .c4 {
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
@@ -42,8 +38,6 @@ exports[`Stack anchor 1`] = `
   position: absolute;
   top: 50%;
   left: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -51,8 +45,6 @@ exports[`Stack anchor 1`] = `
   position: absolute;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
@@ -60,8 +52,6 @@ exports[`Stack anchor 1`] = `
   position: absolute;
   top: 50%;
   right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -309,6 +299,44 @@ exports[`Stack default 1`] = `
 </div>
 `;
 
+exports[`Stack default outside grommet wrapper 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c1 {
+  position: relative;
+  display: block;
+}
+
+.c2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div>
+      first
+    </div>
+  </div>
+  <div
+    class="c2"
+  >
+    <div>
+      second
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Stack fill 1`] = `
 .c0 {
   font-size: 18px;
@@ -325,13 +353,7 @@ exports[`Stack fill 1`] = `
   width: 100%;
   max-width: none;
   height: 100%;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -343,26 +365,14 @@ exports[`Stack fill 1`] = `
   position: relative;
   width: 100%;
   max-width: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .c7 {
   position: relative;
   height: 100%;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 

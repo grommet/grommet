@@ -6,10 +6,14 @@ import {
   inputStyle,
   plainInputStyle,
   textAlignStyle,
+  styledComponentsConfig,
 } from '../../utils';
 import { inputPadForIcon } from '../../utils/styles';
+import { withTheme } from '../../default-props';
 
-export const StyledMaskedInput = styled.input`
+export const StyledMaskedInput = styled.input
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   ${inputStyle}
   ${(props) => props.plain && plainInputStyle}
   ${(props) => props.icon && inputPadForIcon}
@@ -23,7 +27,9 @@ export const StyledMaskedInput = styled.input`
   ${(props) => props.theme.maskedInput && props.theme.maskedInput.extend};
 `;
 
-export const StyledMaskedInputContainer = styled.div`
+export const StyledMaskedInputContainer = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   position: relative;
   width: 100%;
 
@@ -33,7 +39,9 @@ export const StyledMaskedInputContainer = styled.div`
     props.theme.maskedInput.container.extend};
 `;
 
-export const StyledIcon = styled.div`
+export const StyledIcon = styled.div
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   position: absolute;
   display: flex;
   justify: center;

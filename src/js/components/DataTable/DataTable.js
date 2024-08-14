@@ -7,9 +7,6 @@ import React, {
   useState,
   Fragment,
 } from 'react';
-import { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { DataContext } from '../../contexts/DataContext';
@@ -37,6 +34,7 @@ import {
 } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
 import { PlaceholderBody } from './PlaceholderBody';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
@@ -90,7 +88,7 @@ const DataTable = ({
   verticalAlign,
   ...rest
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const theme = useThemeValue();
   const {
     view,
     data: contextData,
@@ -222,7 +220,7 @@ const DataTable = ({
       }
       const nextPinnedOffset = {};
 
-      if (columnWidths !== []) {
+      if (columnWidths.length !== 0) {
         pinnedProperties.forEach((property, index) => {
           const columnIndex =
             property === '_grommetDataTableSelect'
@@ -422,6 +420,13 @@ const DataTable = ({
     );
   }
 
+  const handleSelect = (nextSelected, row) => {
+    setSelected(nextSelected);
+    if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
+    if (row) onSelect(nextSelected, row);
+    else onSelect(nextSelected);
+  };
+
   const bodyContent = groups ? (
     <GroupedBody
       ref={bodyRef}
@@ -454,16 +459,7 @@ const DataTable = ({
             }
           : onMore
       }
-      onSelect={
-        onSelect
-          ? (nextSelected, row) => {
-              setSelected(nextSelected);
-              if (setSelectedDataContext)
-                setSelectedDataContext(nextSelected.length);
-              if (onSelect) onSelect(nextSelected, row);
-            }
-          : undefined
-      }
+      onSelect={onSelect ? handleSelect : undefined}
       onToggle={onToggleGroup}
       onUpdate={onUpdate}
       replace={replace}
@@ -499,16 +495,7 @@ const DataTable = ({
       }
       replace={replace}
       onClickRow={onClickRow}
-      onSelect={
-        onSelect
-          ? (nextSelected, row) => {
-              setSelected(nextSelected);
-              if (setSelectedDataContext)
-                setSelectedDataContext(nextSelected.length);
-              if (onSelect) onSelect(nextSelected, row);
-            }
-          : undefined
-      }
+      onSelect={onSelect ? handleSelect : undefined}
       pinnedCellProps={cellProps.pinned}
       pinnedOffset={pinnedOffset}
       primaryProperty={primaryProperty}
@@ -556,16 +543,7 @@ const DataTable = ({
             onFiltering={onFiltering}
             onFilter={onFilter}
             onResize={resizeable ? onResize : undefined}
-            onSelect={
-              onSelect
-                ? (nextSelected) => {
-                    setSelected(nextSelected);
-                    if (setSelectedDataContext)
-                      setSelectedDataContext(nextSelected.length);
-                    if (onSelect) onSelect(nextSelected);
-                  }
-                : undefined
-            }
+            onSelect={onSelect ? handleSelect : undefined}
             onSort={sortable || sortProp || onSortProp ? onSort : undefined}
             onToggle={onToggleGroups}
             onWidths={onHeaderWidths}

@@ -16,6 +16,7 @@ import {
 } from 'grommet';
 
 import { DATA } from '../../DataTable/stories/data';
+import { DataSummary } from '../../DataSummary';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -26,20 +27,13 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
 export const Properties = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box
-    align="center"
-    fill="horizontal"
-    justify="start"
-    pad="xlarge"
-    gap="medium"
-  >
+  <Box pad="large">
     <Data
       data={DATA}
-      updateOn="change"
       properties={{
         location: {
-          sort: false,
           label: 'Location',
+          sort: false,
           options: ['Fort Collins', 'Palo Alto', 'Boise', 'San Francisco'],
         },
         name: {
@@ -47,31 +41,36 @@ export const Properties = () => (
         },
         paid: {
           search: false,
-          filter: false,
+          label: 'Paid',
+        },
+        percent: {
+          search: false,
+          label: 'Percent',
+        },
+        date: {
+          label: 'Date',
         },
       }}
-      fill="horizontal"
     >
-      <Box gap="medium">
-        <Toolbar>
-          <DataSearch />
-          <DataSort drop />
-          <DataFilters drop />
-        </Toolbar>
-        <Cards size="medium">
-          {(item) => (
-            <Card key={item.name} pad="small">
-              <CardBody>
-                <Heading level={2} size="small" margin="none">
-                  {item.name}
-                </Heading>
-                <Text>{amountFormatter.format(item.paid / 100)}</Text>
-              </CardBody>
-              <CardFooter>{item.location}</CardFooter>
-            </Card>
-          )}
-        </Cards>
-      </Box>
+      <Toolbar>
+        <DataSearch />
+        <DataSort drop />
+        <DataFilters layer />
+      </Toolbar>
+      <DataSummary />
+      <Cards size="medium">
+        {(item) => (
+          <Card key={item.name} pad="small">
+            <CardBody>
+              <Heading level={2} margin="none">
+                {item.name}
+              </Heading>
+              <Text>{amountFormatter.format(item.paid / 100)}</Text>
+            </CardBody>
+            <CardFooter>{item.location || '--'}</CardFooter>
+          </Card>
+        )}
+      </Cards>
     </Data>
   </Box>
   // </Grommet>

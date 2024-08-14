@@ -1,12 +1,11 @@
 import React, { forwardRef, useContext, useRef, useState } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
-import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
 import { RadioButtonGroupPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const RadioButtonGroup = forwardRef(
   (
@@ -25,7 +24,7 @@ const RadioButtonGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
 
     // normalize options to always use an object
     const options = optionsProp.map((o) =>

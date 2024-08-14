@@ -1,8 +1,14 @@
 import { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
+
+// ensure only valid DOM attributes are forwarded onto DOM
+export const styledComponentsConfig = {
+  shouldForwardProp: isPropValid,
+};
 
 export const baseStyle = css`
   font-family: ${(props) => props.theme.global.font.family};
@@ -762,7 +768,8 @@ export const roundStyle = (data, responsive, theme) => {
     styles.push(css`
       border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
     `);
-    const responsiveSize = breakpoint && breakpoint.edgeSize[size];
+    const responsiveSize =
+      responsive && breakpoint && breakpoint.edgeSize[size];
     if (responsiveSize) {
       styles.push(
         breakpointStyle(

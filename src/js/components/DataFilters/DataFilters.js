@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 import { Filter } from 'grommet-icons/icons/Filter';
 import { Close } from 'grommet-icons/icons/Close';
-import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DataClearFilters } from '../DataClearFilters';
@@ -20,6 +19,7 @@ import { Layer } from '../Layer';
 import { DataContext } from '../../contexts/DataContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { DataFiltersPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const dropProps = {
   align: { top: 'bottom', right: 'right' },
@@ -50,7 +50,7 @@ export const DataFilters = ({
     view,
   } = useContext(DataContext);
   const { format } = useContext(MessageContext);
-  const theme = useContext(ThemeContext);
+  const theme = useThemeValue();
   const [showContent, setShowContent] = useState();
   // touched is a map of property to its value based on if user interacts
   // with a filter or a view applies of set of filters

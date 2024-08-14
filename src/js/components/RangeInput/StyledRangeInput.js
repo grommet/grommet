@@ -7,8 +7,9 @@ import {
   normalizeColor,
   parseMetricToNum,
   getRGBA,
+  styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
+import { withTheme } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
 const getBoundOpacity = (props, bound) =>
@@ -207,7 +208,9 @@ const firefoxMicrosoftThumbStyle = css`
 `;
 
 /* eslint-disable max-len */
-const StyledRangeInput = styled.input`
+const StyledRangeInput = styled.input
+  .withConfig(styledComponentsConfig)
+  .attrs(withTheme)`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -242,7 +245,10 @@ const StyledRangeInput = styled.input`
   }
 
   &::-webkit-slider-thumb {
-    margin-top: -${(props) => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
+    margin-top: -${(props) =>
+      (parseMetricToNum(props.theme.global.spacing) -
+        parseMetricToNum(props.theme.rangeInput.track.height || 0)) *
+      0.5}px;
     ${rangeThumbStyle}
     ${(props) =>
       !props.disabled &&
@@ -314,8 +320,5 @@ const StyledRangeInput = styled.input`
   ${(props) => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
 /* eslint-enable max-len */
-
-StyledRangeInput.defaultProps = {};
-Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);
 
 export { StyledRangeInput };

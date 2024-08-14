@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'jest-styled-components';
 import { render, fireEvent, screen } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { Button } from '../../Button';
+import { Data } from '../../Data';
+import { Pagination } from '../../Pagination';
 import { Text } from '../../Text';
 import { DataTable, Sections, SortType } from '..';
 import { BackgroundType, BorderType } from '../../../utils';
@@ -12,11 +14,16 @@ import { BackgroundType, BorderType } from '../../../utils';
 interface TestDataItem {
   a: string;
   b: number;
+  c?: string;
 }
 
 const DATA: TestDataItem[] = [];
 for (let i = 0; i < 95; i += 1) {
-  DATA.push({ a: `entry-${i}`, b: i });
+  DATA.push({
+    a: `entry-${i}`,
+    b: i,
+    c: i === 0 || i === 1 || i === 35 || i === 50 ? 'option 1' : 'option 2',
+  });
 }
 
 describe('DataTable', () => {
@@ -26,6 +33,11 @@ describe('DataTable', () => {
         <DataTable />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<DataTable />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1773,5 +1785,147 @@ describe('DataTable', () => {
     );
     fireEvent.click(screen.getByRole('checkbox', { name: 'select Alan' }));
     expect(onSelect).toBeCalledWith(['Alan'], { name: 'Alan', percent: 20 });
+  });
+
+  test('Data + onSelect should display correct selected amount', () => {
+    const App = () => {
+      const [select, setSelect] = useState<(string | number)[]>([]);
+      return (
+        <Grommet>
+          <Data data={DATA} toolbar>
+            <DataTable
+              select={select}
+              onSelect={(select, _) => setSelect(select)}
+            />
+            <Pagination />
+          </Data>
+        </Grommet>
+      );
+    };
+    render(<App />);
+
+    const headerCheckBox = screen.getByLabelText('select all');
+
+    // select all first page
+    fireEvent.click(headerCheckBox);
+    expect(screen.getByText('10 selected')).toBeTruthy();
+
+    // navigate to new page
+    const secondPageButton = screen.getByRole('button', {
+      name: 'Go to page 2',
+    });
+    fireEvent.click(secondPageButton);
+    // select all second page
+    fireEvent.click(headerCheckBox);
+    // should add to previous selection
+    expect(screen.getByText('20 selected')).toBeTruthy();
+
+    // apply filters and select view
+    const filterButton = screen.getByRole('button', { name: 'Open filters' });
+    fireEvent.click(filterButton);
+    fireEvent.click(screen.getByRole('checkbox', { name: 'option 1' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+    fireEvent.click(headerCheckBox);
+    expect(screen.getByText('22 selected')).toBeTruthy();
+
+    // unselect single checkbox
+    fireEvent.click(
+      screen.getByRole('checkbox', { name: 'unselect entry-35' }),
+    );
+    expect(screen.getByText('21 selected')).toBeTruthy();
+
+    // clear view + unselect all from current page
+    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
+    fireEvent.click(headerCheckBox);
+    expect(screen.getByText('11 selected')).toBeTruthy();
+  });
+
+  test('onUpdate groupBy.onSelect', () => {
+    const onGroupSelect = jest.fn();
+    const App = () => {
+      const [groupSelected] = React.useState<{
+        [key: string]: 'all' | 'some' | 'none';
+      }>({ '': 'some', 'Fort Collins': 'some' });
+
+      const groupBy = React.useMemo(() => {
+        return {
+          property: 'location',
+          select: groupSelected,
+          onSelect: onGroupSelect,
+        };
+      }, [groupSelected]);
+
+      return (
+        <DataTable
+          primaryKey="id"
+          columns={[
+            {
+              property: 'id',
+              header: 'ID',
+            },
+            {
+              property: 'b',
+              header: 'B',
+            },
+            {
+              property: 'location',
+              header: 'Location',
+            },
+          ]}
+          data={[
+            {
+              id: 0,
+              b: 'zero',
+              location: 'Fort Collins',
+            },
+            {
+              id: 1,
+              b: 'one',
+              location: 'Fort Collins',
+            },
+            {
+              id: 2,
+              b: 'two',
+              location: 'San Francisco',
+            },
+            {
+              id: 3,
+              b: 'three',
+              location: 'San Francisco',
+            },
+            {
+              id: 4,
+              b: 'four',
+              location: 'Boise',
+            },
+            {
+              id: 5,
+              b: 'five',
+              location: 'Los Angeles',
+            },
+          ]}
+          step={10}
+          groupBy={groupBy}
+          onSelect={() => {}}
+          onUpdate={() => {}}
+        />
+      );
+    };
+
+    const { asFragment } = render(<App />);
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(
+      screen.getByRole('checkbox', { name: 'select San Francisco' }),
+    );
+    expect(onGroupSelect).toHaveBeenCalledWith(
+      [2, 3],
+      { location: 'San Francisco' },
+      { '': 'some', 'Fort Collins': 'some' },
+    );
+    fireEvent.click(screen.getByRole('checkbox', { name: 'select all' }));
+    expect(onGroupSelect).toHaveBeenCalledWith([0, 1, 2, 3, 4, 5], undefined, {
+      '': 'all',
+    });
   });
 });

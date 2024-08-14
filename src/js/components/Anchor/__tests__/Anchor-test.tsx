@@ -35,6 +35,11 @@ describe('Anchor', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('renders anchor without grommet wrapper', () => {
+    const { container } = render(<Anchor />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('renders with children', () => {
     const { container } = render(
       <Grommet>
@@ -273,6 +278,38 @@ describe('Anchor', () => {
           size="large"
         />
       </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders specific icon color', () => {
+    const theme = {
+      anchor: {
+        icon: {
+          color: 'accent-2',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <>
+        <Grommet theme={theme}>
+          <Anchor
+            label="Color prop on icon"
+            icon={<LinkNext color="brand" />}
+          />
+          <Anchor
+            label="Anchor with color prop"
+            color="brand"
+            icon={<LinkNext />}
+          />
+          <Anchor label="Anchor using theme" icon={<LinkNext />} />
+        </Grommet>
+        <Grommet>
+          <Anchor label="Anchor color" icon={<LinkNext />} />
+        </Grommet>
+      </>,
     );
 
     expect(asFragment()).toMatchSnapshot();

@@ -6,9 +6,8 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import styled, { css, ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
+import styled, { css } from 'styled-components';
+import { DataContext } from '../../contexts/DataContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -27,6 +26,8 @@ import {
 import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { withTheme } from '../../default-props';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -105,7 +106,7 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
   return styles;
 };
 
-const StyledHeaderCellButton = styled(Button)`
+const StyledHeaderCellButton = styled(Button).attrs(withTheme)`
   ${(props) => buttonStyle(props)}
 `;
 
@@ -147,8 +148,9 @@ const Header = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const theme = useThemeValue();
     const [layoutProps, textProps] = separateThemeProps(theme);
+    const { total: contextTotal } = useContext(DataContext);
 
     const [cellWidths, setCellWidths] = useState([]);
 
@@ -178,14 +180,13 @@ const Header = forwardRef(
     const totalSelected = (selected?.length || 0) + totalSelectedGroups;
 
     const onChangeSelection = useCallback(() => {
-      let nextSelected;
+      const nextSelected = [...selected];
       const nextGroupSelected = {};
 
-      // Since some rows might be disabled but already selected, we need to
-      // note which rows are enabled when determining how aggregate selection
-      // works.
+      // get primary values for current data view
       const primaryValues =
         data.map((datum) => datumValue(datum, primaryProperty)) || [];
+
       // enabled includes what can be changed
       const enabled =
         (disabled && primaryValues.filter((v) => !disabled.includes(v))) ||
@@ -199,27 +200,28 @@ const Header = forwardRef(
         ? groupBy.select[''] === 'all'
         : enabledSelected.length === enabled.length;
 
+      // if all enabled are already selected, remove them from selected,
+      // otherwise add them.
       if (allSelected) {
-        // if any are disabled and selected, leave those, otherwise clear
-        nextSelected = disabled
-          ? primaryValues.filter(
-              (v) => disabled.includes(v) && selected.includes(v),
-            )
-          : [];
+        enabledSelected.forEach((p) => {
+          const index = nextSelected.indexOf(p);
+          if (index >= 0) {
+            nextSelected.splice(index, 1);
+          }
+        });
         nextGroupSelected[''] = 'none';
       } else {
-        // if some or none are selected, select all enabled plus all disabled
-        // that are already selected
-        nextSelected = disabled
-          ? primaryValues.filter(
-              (v) => !disabled.includes(v) || selected.includes(v),
-            )
-          : primaryValues;
+        enabled.forEach((p) => {
+          if (!nextSelected.includes(p)) {
+            nextSelected.push(p);
+          }
+        });
         nextGroupSelected[''] = 'all';
         groupBy?.expandable?.forEach((key) => {
           nextGroupSelected[key] = 'all';
         });
       }
+
       if (groupBy?.onSelect) {
         groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
       } else onSelect(nextSelected);
@@ -266,12 +268,13 @@ const Header = forwardRef(
                       ? groupBy.select[''] === 'all'
                       : totalSelected > 0 &&
                         data.length > 0 &&
-                        totalSelected === data.length
+                        totalSelected === (contextTotal || data.length)
                   }
                   indeterminate={
                     groupBy?.select
                       ? groupBy.select[''] === 'some'
-                      : totalSelected > 0 && totalSelected < data.length
+                      : totalSelected > 0 &&
+                        totalSelected < (contextTotal || data.length)
                   }
                   onChange={onChangeSelection}
                   pad={cellProps.pad}
@@ -462,8 +465,5 @@ const Header = forwardRef(
 );
 
 Header.displayName = 'Header';
-
-Header.defaultProps = {};
-Object.setPrototypeOf(Header.defaultProps, defaultProps);
 
 export { Header };

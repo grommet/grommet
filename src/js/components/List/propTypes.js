@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
-import { genericProps, padPropType } from '../../utils/general-prop-types';
+import {
+  backgroundDoc,
+  genericProps,
+  padPropType,
+} from '../../utils/general-prop-types';
 import { BoxPropTypes } from '../Box/propTypes';
 
 const sizes = [
@@ -60,6 +64,7 @@ if (process.env.NODE_ENV !== 'production') {
     children: PropTypes.func,
     defaultItemProps: PropTypes.shape(BoxPropTypes),
     disabled: PropTypes.arrayOf(PropTypes.string),
+    showIndex: PropTypes.bool,
     itemKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     itemProps: PropTypes.shape({}),
     onActive: PropTypes.func,
@@ -68,7 +73,20 @@ if (process.env.NODE_ENV !== 'production') {
     onOrder: PropTypes.func,
     pad: PropTypes.oneOfType([padPropType]),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
-    pinned: PropTypes.arrayOf(PropTypes.string),
+    pinned: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      ),
+      PropTypes.shape({
+        items: PropTypes.arrayOf(
+          PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        ),
+        background: backgroundDoc,
+        color: PropTypes.string,
+        icon: PropTypes.element,
+      }),
+    ]),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     secondaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     show: PropTypes.oneOfType([

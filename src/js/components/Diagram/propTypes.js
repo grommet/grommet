@@ -43,7 +43,7 @@ if (process.env.NODE_ENV !== 'production') {
           .isRequired,
         type: PropTypes.oneOf(['direct', 'curved', 'rectilinear']),
       }),
-    ).isRequired,
+    ),
   };
 }
 export const DiagramPropTypes = PropType;

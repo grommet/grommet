@@ -50,6 +50,12 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('render without grommet wrapper', () => {
+    const { container } = render(<Button label="Test" onClick={() => {}} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('children function', () => {
     const { container } = render(
       <Grommet>
@@ -358,7 +364,7 @@ describe('Button', () => {
 
     expect(
       screen.getByRole('button', { name: 'hoverIndicator' }),
-    ).toHaveStyleRule('background-color', 'rgba(221,221,221,0.4)', {
+    ).toHaveStyleRule('background-color', 'rgba(221, 221, 221, 0.4)', {
       modifier: ':hover',
     });
     expect(container.firstChild).toMatchSnapshot();
@@ -375,7 +381,7 @@ describe('Button', () => {
 
     expect(
       screen.getByRole('button', { name: 'hoverIndicator' }),
-    ).toHaveStyleRule('background-color', 'rgba(125,76,219,1)', {
+    ).toHaveStyleRule('background-color', 'rgba(125, 76, 219, 1)', {
       modifier: ':hover',
     });
     expect(container.firstChild).toMatchSnapshot();

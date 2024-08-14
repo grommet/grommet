@@ -130,6 +130,13 @@ describe('DateInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('render basic outside grommet wrapper', () => {
+    const { container } = render(
+      <DateInput id="item" name="item" value={DATE} />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('format', () => {
     const { container } = render(
       <Grommet>
@@ -1106,7 +1113,9 @@ describe('DateInput', () => {
 
   test('icon', () => {
     const { container } = render(
-      <DateInput icon={<CalendarIcon color="red" />} name="item" />,
+      <Grommet>
+        <DateInput icon={<CalendarIcon color="red" />} name="item" />,
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -1150,10 +1159,12 @@ describe('DateInput', () => {
     render(
       // onReset e.stopPropagation() is testing to ensure
       // the event won't be lost if caller adds custom reset
-      <Form onReset={(e) => e.stopPropagation()}>
-        <DateInput format="mm/dd/yyyy" name="date" />
-        <Button label="Reset" type="reset" />
-      </Form>,
+      <Grommet>
+        <Form onReset={(e) => e.stopPropagation()}>
+          <DateInput format="mm/dd/yyyy" name="date" />
+          <Button label="Reset" type="reset" />
+        </Form>
+      </Grommet>,
     );
     const input = screen.getByRole('textbox');
     await user.type(input, '09/09/2022');
@@ -1163,5 +1174,42 @@ describe('DateInput', () => {
     await user.click(screen.getByRole('button', { name: 'Reset' }));
 
     expect(input).toHaveValue('');
+  });
+
+  test('read only', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DateInput
+          format="mm/dd/yyyy"
+          value="01/01/2024"
+          readOnly
+          aria-readonly
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only copy', async () => {
+    const user = userEvent.setup();
+
+    const { asFragment } = render(
+      <Grommet>
+        <DateInput
+          format="mm/dd/yyyy"
+          value="01/01/2024"
+          readOnly
+          readOnlyCopy
+          aria-readonly
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button'));
+
+    const clipboardText = await navigator.clipboard.readText();
+    expect(clipboardText).toBe('01/01/2024');
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

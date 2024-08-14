@@ -82,9 +82,32 @@
     "invalid": "invalid",
     "required": "required"
   },
+  "formField": {
+    "maxCharacters": {
+      "remaining": {
+        "singular": "{number} character left",
+        "plural": "{number} characters left"
+      },
+      "overLimit": {
+        "singular": "{number} character over limit",
+        "plural": "{number} characters over limit"
+      }
+    }
+  },
+  "input": {
+    "readOnlyCopy": {
+      "prompt": "Copy to clipboard",
+      "validation": "Copied"
+    }
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
+  },
+  "pagination": {
+    "stepLabel": "Items per page",
+    "summary": "Showing {start}-{end} of {total}",
+    "summaryNoItems": "0 items"
   },
   "rangeSelector": {
     "lower": "Lower Bounds",
