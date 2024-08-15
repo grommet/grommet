@@ -3467,23 +3467,23 @@ exports[`List events Enter key 1`] = `
 
 exports[`List events Enter key 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
     aria-activedescendant="1"
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iANwIH List__StyledItem-sc-130gdqg-1 eZMPOx"
+      class="StyledBox-sc-13pk1d4-0 zEoos List__StyledItem-sc-130gdqg-1 iisemu"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 iPFmUl List__StyledItem-sc-130gdqg-1 eZMPOx"
+      class="StyledBox-sc-13pk1d4-0 iVgOqa List__StyledItem-sc-130gdqg-1 iisemu"
       role="option"
       tabindex="-1"
     >
@@ -3624,22 +3624,22 @@ exports[`List events focus and blur 1`] = `
 
 exports[`List events focus and blur 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iANwIH List__StyledItem-sc-130gdqg-1 eZMPOx"
+      class="StyledBox-sc-13pk1d4-0 zEoos List__StyledItem-sc-130gdqg-1 iisemu"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hkUQDF List__StyledItem-sc-130gdqg-1 eZMPOx"
+      class="StyledBox-sc-13pk1d4-0 dtHchu List__StyledItem-sc-130gdqg-1 iisemu"
       role="option"
       tabindex="-1"
     >
@@ -3795,22 +3795,22 @@ exports[`List events mouse events 1`] = `
 
 exports[`List events mouse events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iANwIH List__StyledItem-sc-130gdqg-1 eZMPOx"
+      class="StyledBox-sc-13pk1d4-0 zEoos List__StyledItem-sc-130gdqg-1 iisemu"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hkUQDF List__StyledItem-sc-130gdqg-1 eZMPOx"
+      class="StyledBox-sc-13pk1d4-0 dtHchu List__StyledItem-sc-130gdqg-1 iisemu"
       role="option"
       tabindex="-1"
     >
@@ -7467,13 +7467,13 @@ exports[`List events should render new data when page changes 1`] = `
 
 exports[`List events should render new data when page changes 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxPtNT List__StyledContainer-sc-130gdqg-2 ebtwmN"
+    class="StyledBox-sc-13pk1d4-0 kUqiAI List__StyledContainer-sc-130gdqg-2 cqJWMC"
   >
     <ul
-      class="List__StyledList-sc-130gdqg-0 dHMwEl"
+      class="List__StyledList-sc-130gdqg-0 eCJueq"
       role="list"
     >
       .c0 {
@@ -10720,29 +10720,29 @@ exports[`List events should render new data when page changes 2`] = `
       </li>
     </ul>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 hSVZYd"
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gqexlS"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 gCCpYa Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 IzczN Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 jVblXS"
+        class="StyledBox-sc-13pk1d4-0 boQSCd"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 gNgJln"
+          class="StyledBox-sc-13pk1d4-0 gMxoNo"
         >
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 cmoeSi"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 fcLGGg StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gTQDxy"
+              class="StyledButtonKind-sc-1vhfpnt-0 kREiNz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 cIGXsc"
+                class="StyledIcon-sc-ofa7kd-0 gkturf"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -10755,50 +10755,50 @@ exports[`List events should render new data when page changes 2`] = `
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kEhenB"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 cmoeSi"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 jCueGg StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gTQDxy"
+              class="StyledButtonKind-sc-1vhfpnt-0 dvifRz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kEhenB"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 cmoeSi"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 eGPZXe StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gTQDxy"
+              class="StyledButtonKind-sc-1vhfpnt-0 fEywJp StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 kEhenB"
+            class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cZTPkK"
           />
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 cmoeSi"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 TrVEt"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 ugyIw StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gTQDxy"
+              class="StyledButtonKind-sc-1vhfpnt-0 cAPKJb StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bmWDux"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+                class="StyledIcon-sc-ofa7kd-0 esOrIb"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -13567,22 +13567,22 @@ exports[`List onClickItem 1`] = `
 
 exports[`List onClickItem 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 iANwIH List__StyledItem-sc-130gdqg-1 eZMPOx"
+      class="StyledBox-sc-13pk1d4-0 zEoos List__StyledItem-sc-130gdqg-1 iisemu"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hkUQDF List__StyledItem-sc-130gdqg-1 eZMPOx"
+      class="StyledBox-sc-13pk1d4-0 dtHchu List__StyledItem-sc-130gdqg-1 iisemu"
       role="option"
       tabindex="-1"
     >
@@ -14010,44 +14010,44 @@ exports[`List onOrder Keyboard move down 1`] = `
 
 exports[`List onOrder Keyboard move down 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
     aria-activedescendant="alphaMoveDown"
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="1 alpha move up"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="alphaMoveUp"
           tabindex="-1"
@@ -14055,7 +14055,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14068,14 +14068,14 @@ exports[`List onOrder Keyboard move down 2`] = `
         </button>
         <button
           aria-label="1 alpha move down"
-          class="StyledButton-sc-323bzc-0 eAOlEG"
+          class="StyledButton-sc-323bzc-0 dqTraB"
           id="alphaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14089,42 +14089,42 @@ exports[`List onOrder Keyboard move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="2 beta move up"
-          class="StyledButton-sc-323bzc-0 bWIOfK"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
           id="betaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14137,7 +14137,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         </button>
         <button
           aria-label="2 beta move down"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="betaMoveDown"
           tabindex="-1"
@@ -14145,7 +14145,7 @@ exports[`List onOrder Keyboard move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14164,44 +14164,44 @@ exports[`List onOrder Keyboard move down 2`] = `
 
 exports[`List onOrder Keyboard move down 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
     aria-activedescendant="alphaMoveUp"
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -14209,7 +14209,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14222,14 +14222,14 @@ exports[`List onOrder Keyboard move down 3`] = `
         </button>
         <button
           aria-label="1 beta move down"
-          class="StyledButton-sc-323bzc-0 bWIOfK"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
           id="betaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14243,42 +14243,42 @@ exports[`List onOrder Keyboard move down 3`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="2 alpha move up"
-          class="StyledButton-sc-323bzc-0 eAOlEG"
+          class="StyledButton-sc-323bzc-0 dqTraB"
           id="alphaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14291,7 +14291,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -14299,7 +14299,7 @@ exports[`List onOrder Keyboard move down 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14734,44 +14734,44 @@ exports[`List onOrder Keyboard move up 1`] = `
 
 exports[`List onOrder Keyboard move up 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
     aria-activedescendant="betaMoveUp"
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="1 alpha move up"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="alphaMoveUp"
           tabindex="-1"
@@ -14779,7 +14779,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14792,14 +14792,14 @@ exports[`List onOrder Keyboard move up 2`] = `
         </button>
         <button
           aria-label="1 alpha move down"
-          class="StyledButton-sc-323bzc-0 bWIOfK"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
           id="alphaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14813,42 +14813,42 @@ exports[`List onOrder Keyboard move up 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="2 beta move up"
-          class="StyledButton-sc-323bzc-0 eAOlEG"
+          class="StyledButton-sc-323bzc-0 dqTraB"
           id="betaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14861,7 +14861,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         </button>
         <button
           aria-label="2 beta move down"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="betaMoveDown"
           tabindex="-1"
@@ -14869,7 +14869,7 @@ exports[`List onOrder Keyboard move up 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14888,44 +14888,44 @@ exports[`List onOrder Keyboard move up 2`] = `
 
 exports[`List onOrder Keyboard move up 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
     aria-activedescendant="betaMoveDown"
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -14933,7 +14933,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14946,14 +14946,14 @@ exports[`List onOrder Keyboard move up 3`] = `
         </button>
         <button
           aria-label="1 beta move down"
-          class="StyledButton-sc-323bzc-0 eAOlEG"
+          class="StyledButton-sc-323bzc-0 dqTraB"
           id="betaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -14967,42 +14967,42 @@ exports[`List onOrder Keyboard move up 3`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="2 alpha move up"
-          class="StyledButton-sc-323bzc-0 bWIOfK"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
           id="alphaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -15015,7 +15015,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -15023,7 +15023,7 @@ exports[`List onOrder Keyboard move up 3`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -15458,43 +15458,43 @@ exports[`List onOrder Mouse move down 1`] = `
 
 exports[`List onOrder Mouse move down 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gyimNE"
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 kcpQuu"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
     role="listbox"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hvXNGf List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -15502,7 +15502,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -15515,14 +15515,14 @@ exports[`List onOrder Mouse move down 2`] = `
         </button>
         <button
           aria-label="1 beta move down"
-          class="StyledButton-sc-323bzc-0 bWIOfK"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
           id="betaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -15536,42 +15536,42 @@ exports[`List onOrder Mouse move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 epFvLR List__StyledItem-sc-130gdqg-1 brRYmD"
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 dahhea"
+        class="StyledText-sc-1sadyjn-0 dAFYwl"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 lbRijl"
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 hoAaQY"
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 gbyCzN"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jypMSx"
+        class="StyledBox-sc-13pk1d4-0 xmupy"
       >
         <button
           aria-label="2 alpha move up"
-          class="StyledButton-sc-323bzc-0 bWIOfK"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
           id="alphaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -15584,7 +15584,7 @@ exports[`List onOrder Mouse move down 2`] = `
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 hDxxQc"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -15592,7 +15592,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 kKeLlU"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
             viewBox="0 0 24 24"
           >
             <path
@@ -16128,6 +16128,1880 @@ exports[`List onOrder with action Render 1`] = `
     </ul>
   </div>
 </DocumentFragment>
+`;
+
+exports[`List onOrder with no-index Keyboard move down 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: move;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    width: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="c8"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="c10"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="c11 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="c10"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="c8"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move down 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+>
+  <ul
+    aria-activedescendant="alphaMoveDown"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="StyledButton-sc-323bzc-0 dqTraB"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move down 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+>
+  <ul
+    aria-activedescendant="alphaMoveUp"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="1 beta move up"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 beta move down"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="2 alpha move up"
+          class="StyledButton-sc-323bzc-0 dqTraB"
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 alpha move down"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move up 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: move;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    width: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="c8"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="c10"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="c11 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="c10"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="c8"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move up 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+>
+  <ul
+    aria-activedescendant="betaMoveUp"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="StyledButton-sc-323bzc-0 dqTraB"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Keyboard move up 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+>
+  <ul
+    aria-activedescendant="betaMoveDown"
+    class="List__StyledList-sc-130gdqg-0 VNytR"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="1 beta move up"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 beta move down"
+          class="StyledButton-sc-323bzc-0 dqTraB"
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="2 alpha move up"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 alpha move down"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Mouse move down 1`] = `
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-top: solid 1px rgba(0, 0, 0, 0.33);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.c11 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c6 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 24px;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:hover {
+  background-color: rgba(221, 221, 221, 0.4);
+  color: #000000;
+}
+
+.c10:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) >circle,
+.c10:focus:not(:focus-visible) >ellipse,
+.c10:focus:not(:focus-visible) >line,
+.c10:focus:not(:focus-visible) >path,
+.c10:focus:not(:focus-visible) >polygon,
+.c10:focus:not(:focus-visible) >polyline,
+.c10:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: move;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    border-top: solid 1px rgba(0, 0, 0, 0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c6 {
+    width: 12px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="1 alpha move up"
+          class="c8"
+          disabled=""
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 alpha move down"
+          class="c10"
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="c11 c3"
+      draggable="true"
+    >
+      <div
+        class="c4"
+      >
+        <span
+          class="c5"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="c6"
+      />
+      <div
+        class="c7"
+      >
+        <button
+          aria-label="2 beta move up"
+          class="c10"
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 beta move down"
+          class="c8"
+          disabled=""
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c9"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List onOrder with no-index Mouse move down 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 jOTXqz"
+>
+  <ul
+    class="List__StyledList-sc-130gdqg-0 VNytR"
+    role="listbox"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 imtpvc List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          beta
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="1 beta move up"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="betaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="1 beta move down"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
+          id="betaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 jPUQPO List__StyledItem-sc-130gdqg-1 fjHAEw"
+      draggable="true"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 dVHrAe"
+      >
+        <span
+          class="StyledText-sc-1sadyjn-0 ZnZrv"
+        >
+          alpha
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cXfpJS"
+      />
+      <div
+        class="StyledBox-sc-13pk1d4-0 xmupy"
+      >
+        <button
+          aria-label="2 alpha move up"
+          class="StyledButton-sc-323bzc-0 ebuQaR"
+          id="alphaMoveUp"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 15-6-6-6 6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="2 alpha move down"
+          class="StyledButton-sc-323bzc-0 hCxOtD"
+          disabled=""
+          id="alphaMoveDown"
+          tabindex="-1"
+          type="button"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-sc-ofa7kd-0 esOrIb"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m18 9-6 6-6-6"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
 `;
 
 exports[`List pad object 1`] = `

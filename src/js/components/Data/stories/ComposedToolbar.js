@@ -57,7 +57,12 @@ export const ComposedToolbar = () => (
       </Toolbar>
       <DataSummary />
       <Box overflow="auto">
-        <DataTable alignSelf="start" columns={columns} sortable />
+        <DataTable
+          alignSelf="start"
+          columns={columns}
+          sortable
+          primaryKey="name"
+        />
       </Box>
     </Data>
   </Box>

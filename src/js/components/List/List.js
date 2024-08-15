@@ -148,6 +148,7 @@ const List = React.forwardRef(
       onKeyDown,
       onMore,
       onOrder,
+      showIndex = true,
       pad,
       paginate,
       pinned = [],
@@ -730,7 +731,9 @@ const List = React.forwardRef(
                     {...orderProps}
                     {...itemAriaProps}
                   >
-                    {onOrder && <Text color={pinnedColor}>{index + 1}</Text>}
+                    {showIndex && onOrder && (
+                      <Text color={pinnedColor}>{index + 1}</Text>
+                    )}
                     {content}
                     {displayPinned}
                     {orderControls}
