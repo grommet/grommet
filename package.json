@@ -241,5 +241,6 @@
     "gui",
     "graphical user interface",
     "styled-components"
-  ]
+  ],
+  "packageManager": "yarn@4.3.1"
 }
