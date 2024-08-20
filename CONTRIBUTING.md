@@ -100,6 +100,8 @@ started you should:
 1. clone it `git clone https://github.com/<your-username>/grommet.git`
 1. install dependencies using: `yarn install`
 
+Grommet is using yarn v4.
+
 The components code lives in `src/js/components`. A few gotchas you may run
 into while contributing could include:
 
