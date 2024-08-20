@@ -1,10 +1,4 @@
-import React, {
-  Fragment,
-  useCallback,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { Fragment, useCallback, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';

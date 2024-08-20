@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';

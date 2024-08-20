@@ -15,7 +15,7 @@ const ANGLE_UNIT = 6;
 // 360 / 12
 const HOUR_ANGLE_UNIT = 30;
 
-const getClockDimensions = theme => ({
+const getClockDimensions = (theme) => ({
   size: parseMetricToNum(theme.clock.analog.size.medium),
   secondSize: parseMetricToNum(theme.clock.analog.second.size),
   minuteSize: parseMetricToNum(theme.clock.analog.minute.size),
