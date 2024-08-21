@@ -4,7 +4,13 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
+import {
+  cleanup,
+  fireEvent,
+  render,
+  waitFor,
+  screen,
+} from '@testing-library/react';
 
 import { expectPortal } from '../../../utils/portal';
 
@@ -186,6 +192,16 @@ describe('Drop', () => {
       new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
     );
     expect(onClickOutside).toBeCalled();
+  });
+
+  test.only('does not invoke onClickOutside when clicking inside Drop', () => {
+    const onClickOutside = jest.fn();
+    render(<TestInput onClickOutside={onClickOutside} />);
+
+    // Click the target
+    const inputElement = screen.getByLabelText('test');
+    fireEvent.click(inputElement);
+    expect(onClickOutside).not.toHaveBeenCalled();
   });
 
   test('resize', () => {
