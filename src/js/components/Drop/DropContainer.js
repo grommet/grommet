@@ -110,11 +110,14 @@ const DropContainer = forwardRef(
           node = node.parentNode;
         }
         // Check if the click happened within the dropTarget
-        const isDropTargetValid =
-          dropTarget?.current && dropTarget.current.contains(event.target);
+        const clickInsideDropTarget =
+          (dropTarget.current && dropTarget.current.contains(event.target)) ||
+          (dropTarget &&
+            typeof dropTarget.contains === 'function' &&
+            dropTarget.contains(event.target));
 
         if (
-          (!isDropTargetValid && clickedPortalId === null) ||
+          (!clickInsideDropTarget && clickedPortalId === null) ||
           portalContext.indexOf(clickedPortalId) !== -1
         ) {
           onClickOutside(event);
