@@ -194,7 +194,7 @@ describe('Drop', () => {
     expect(onClickOutside).toBeCalled();
   });
 
-  test.only('does not invoke onClickOutside when clicking inside Drop', () => {
+  test.only('does not invoke onClickOutside when clicking the target', () => {
     const onClickOutside = jest.fn();
     render(<TestInput onClickOutside={onClickOutside} />);
 
