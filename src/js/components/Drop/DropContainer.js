@@ -111,7 +111,7 @@ const DropContainer = forwardRef(
         }
         // Check if the click happened within the dropTarget
         const clickInsideDropTarget =
-          (dropTarget.current && dropTarget.current.contains(event.target)) ||
+          (dropTarget?.current && dropTarget.current.contains(event.target)) ||
           (dropTarget &&
             typeof dropTarget.contains === 'function' &&
             dropTarget.contains(event.target));
