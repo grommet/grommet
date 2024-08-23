@@ -109,8 +109,15 @@ const DropContainer = forwardRef(
           if (attr !== null) clickedPortalId = parseInt(attr, 10);
           node = node.parentNode;
         }
+        // Check if the click happened within the dropTarget
+        const clickInsideDropTarget =
+          (dropTarget?.current && dropTarget.current.contains(event.target)) ||
+          (dropTarget &&
+            typeof dropTarget.contains === 'function' &&
+            dropTarget.contains(event.target));
+
         if (
-          clickedPortalId === null ||
+          (!clickInsideDropTarget && clickedPortalId === null) ||
           portalContext.indexOf(clickedPortalId) !== -1
         ) {
           onClickOutside(event);
@@ -126,7 +133,7 @@ const DropContainer = forwardRef(
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
-    }, [onClickOutside, containerTarget, portalContext]);
+    }, [onClickOutside, containerTarget, portalContext, dropTarget]);
 
     useEffect(() => {
       const target = dropTarget?.current || dropTarget;
