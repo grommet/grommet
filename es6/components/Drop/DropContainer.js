@@ -92,7 +92,9 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         if (attr !== null) clickedPortalId = parseInt(attr, 10);
         node = node.parentNode;
       }
-      if (clickedPortalId === null || portalContext.indexOf(clickedPortalId) !== -1) {
+      // Check if the click happened within the dropTarget
+      var clickInsideDropTarget = (dropTarget == null ? void 0 : dropTarget.current) && dropTarget.current.contains(event.target) || dropTarget && typeof dropTarget.contains === 'function' && dropTarget.contains(event.target);
+      if (!clickInsideDropTarget && clickedPortalId === null || portalContext.indexOf(clickedPortalId) !== -1) {
         onClickOutside(event);
       }
     };
@@ -104,7 +106,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         document.removeEventListener('mousedown', onClickDocument);
       }
     };
-  }, [onClickOutside, containerTarget, portalContext]);
+  }, [onClickOutside, containerTarget, portalContext, dropTarget]);
   useEffect(function () {
     var target = (dropTarget == null ? void 0 : dropTarget.current) || dropTarget;
     var notifyAlign = function notifyAlign() {
