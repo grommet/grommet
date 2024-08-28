@@ -92,7 +92,6 @@ const AccordionPanel = forwardRef(
         <Button
           id={uniqueId}
           aria-expanded={active}
-          // aria-label="hello"
           plain={theme.button.default ? true : undefined}
           onClick={onPanelChange}
           hoverIndicator={theme.accordion.hover.background}
