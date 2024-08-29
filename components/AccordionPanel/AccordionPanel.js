@@ -26,6 +26,7 @@ var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef
     _onFocus = _ref.onFocus,
     _onBlur = _ref.onBlur,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var uniqueId = (0, _react.useId)();
   var theme = (0, _useThemeValue.useThemeValue)();
   var _useContext = (0, _react.useContext)(_AccordionContext.AccordionContext),
     active = _useContext.active,
@@ -76,6 +77,7 @@ var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef
     border: panelBorder,
     margin: abutMargin
   }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    id: uniqueId,
     "aria-expanded": active,
     plain: theme.button["default"] ? true : undefined,
     onClick: onPanelChange,
@@ -124,7 +126,8 @@ var AccordionPanel = exports.AccordionPanel = /*#__PURE__*/(0, _react.forwardRef
     color: iconColor
   })))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     role: "region",
-    border: contentBorder
+    border: contentBorder,
+    "aria-labelledby": uniqueId
   }, animate ? /*#__PURE__*/_react["default"].createElement(_Collapsible.Collapsible, {
     open: active
   }, children) : active && children));

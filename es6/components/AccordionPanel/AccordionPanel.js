@@ -1,7 +1,7 @@
 var _excluded = ["children", "header", "label", "onClick", "onMouseOut", "onMouseOver", "onFocus", "onBlur"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
-import React, { forwardRef, useContext, useMemo, useState } from 'react';
+import React, { forwardRef, useContext, useMemo, useState, useId } from 'react';
 import { normalizeColor, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -20,6 +20,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _onFocus = _ref.onFocus,
     _onBlur = _ref.onBlur,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var uniqueId = useId();
   var theme = useThemeValue();
   var _useContext = useContext(AccordionContext),
     active = _useContext.active,
@@ -70,6 +71,7 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
     border: panelBorder,
     margin: abutMargin
   }, /*#__PURE__*/React.createElement(Button, {
+    id: uniqueId,
     "aria-expanded": active,
     plain: theme.button["default"] ? true : undefined,
     onClick: onPanelChange,
@@ -118,7 +120,8 @@ var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
     color: iconColor
   })))), /*#__PURE__*/React.createElement(Box, {
     role: "region",
-    border: contentBorder
+    border: contentBorder,
+    "aria-labelledby": uniqueId
   }, animate ? /*#__PURE__*/React.createElement(Collapsible, {
     open: active
   }, children) : active && children));
