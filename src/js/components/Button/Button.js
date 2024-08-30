@@ -9,7 +9,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import {
   backgroundAndTextColors,
   colorIsDark,
@@ -217,6 +217,7 @@ const Button = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
     const announce = useContext(AnnounceContext);
@@ -521,6 +522,7 @@ const Button = forwardRef(
           sizeProp={size}
           success={success}
           type={!href ? type : undefined}
+          {...(withinThemeContext === undefined ? { theme } : {})}
         >
           {contents}
         </StyledButtonKind>
@@ -567,6 +569,7 @@ const Button = forwardRef(
           sizeProp={size}
           success={success}
           type={!href ? type : undefined}
+          {...(withinThemeContext === undefined ? { theme } : {})}
         >
           {contents}
         </StyledButton>

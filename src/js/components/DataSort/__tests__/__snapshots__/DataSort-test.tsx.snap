@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSort drop 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
 .c3 {
   display: inline-block;
   flex: 0 0 auto;
@@ -31,16 +41,6 @@ exports[`DataSort drop 1`] = `
 .c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
 }
 
 .c2 {
@@ -216,38 +216,6 @@ exports[`DataSort drop 3`] = `
 `;
 
 exports[`DataSort renders 1`] = `
-.c15 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c15 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c15 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c15 *[stroke*='#'],
-.c15 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*='#'],
-.c15 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -395,6 +363,38 @@ exports[`DataSort renders 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
+}
+
+.c15 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c15 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c15 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c15 *[stroke*='#'],
+.c15 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*='#'],
+.c15 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c6 {
@@ -826,38 +826,6 @@ exports[`DataSort renders 1`] = `
 `;
 
 exports[`DataSort sort when data array is empty 1`] = `
-.c13 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c13 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c13 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c13 *[stroke*='#'],
-.c13 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c13 *[fill-rule],
-.c13 *[FILL-RULE],
-.c13 *[fill*='#'],
-.c13 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -971,6 +939,38 @@ exports[`DataSort sort when data array is empty 1`] = `
   flex: 0 0 auto;
   align-self: stretch;
   height: 12px;
+}
+
+.c13 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*='#'],
+.c13 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*='#'],
+.c13 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c4 {

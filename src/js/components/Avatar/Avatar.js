@@ -1,5 +1,6 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 
+import { ThemeContext } from 'styled-components';
 import { Image } from '../Image';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
 import { AvatarPropTypes } from './propTypes';
@@ -19,6 +20,7 @@ const Avatar = ({
   ...rest
 }) => {
   const theme = useThemeValue();
+  const withinThemeContext = useContext(ThemeContext);
   const avatarSize = theme.avatar.size[size] || size;
   const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
@@ -52,7 +54,11 @@ const Avatar = ({
   let content;
   if (typeof children === 'string') {
     content = (
-      <StyledAvatarText alignSelf="center" size={avatarTextSize}>
+      <StyledAvatarText
+        alignSelf="center"
+        size={avatarTextSize}
+        {...(withinThemeContext === undefined ? { theme } : {})}
+      >
         {children}
       </StyledAvatarText>
     );
@@ -66,6 +72,7 @@ const Avatar = ({
         role={typeof src === 'string' ? 'figure' : undefined}
         a11yTitle={a11yTitle || ariaLabel}
         {...avatarProps}
+        {...(withinThemeContext === undefined ? { theme } : {})}
         {...rest}
       >
         {content}
