@@ -1,12 +1,16 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { StyledImage } from './StyledImage';
 import { ImagePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Image = forwardRef(
   (
     { a11yTitle, fallback, onError, onLoad, opacity, fill, src, ...rest },
     ref,
   ) => {
+    const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const [isFallbackInUse, setFallbackInUse] = useState(false);
 
     const handleError = (event) => {
@@ -31,6 +35,7 @@ const Image = forwardRef(
     return (
       <StyledImage
         aria-label={a11yTitle}
+        {...(withinThemeContext === undefined ? { theme } : {})}
         {...rest}
         {...extraProps}
         ref={ref}

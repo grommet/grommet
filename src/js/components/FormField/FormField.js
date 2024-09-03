@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import {
   containsFocus,
@@ -27,7 +27,6 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
 const grommetInputNames = [
   'CheckBox',
@@ -58,16 +57,16 @@ const isGrommetInput = (comp) =>
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
-const FormFieldBox = styled(Box).attrs(withTheme)`
+const FormFieldBox = styled(Box)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
   ${(props) => props.theme.formField && props.theme.formField.extend}
 `;
 
-const FormFieldContentBox = styled(Box).attrs(withTheme)`
+const FormFieldContentBox = styled(Box)`
   ${(props) => props.focus && focusStyle({ justBorder: true })}
 `;
 
-const StyledMessageContainer = styled(Box).attrs(withTheme)`
+const StyledMessageContainer = styled(Box)`
   ${(props) =>
     props.messageType &&
     props.theme.formField[props.messageType].container &&
@@ -91,9 +90,15 @@ const ScreenReaderOnly = styled(Text)`
   border: 0;
 `;
 
-const Message = ({ error, info, message, type, ...rest }) => {
-  const theme = useThemeValue();
-
+const Message = ({
+  error,
+  info,
+  message,
+  type,
+  theme,
+  withinThemeContext,
+  ...rest
+}) => {
   if (message) {
     let icon;
     let containerProps;
@@ -113,6 +118,7 @@ const Message = ({ error, info, message, type, ...rest }) => {
         direction="row"
         messageType={type}
         {...containerProps}
+        {...(withinThemeContext === undefined ? { theme } : {})}
       >
         {icon && <Box flex={false}>{icon}</Box>}
         {messageContent}
@@ -186,6 +192,7 @@ const FormField = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const formContext = useContext(FormContext);
 
     const {
@@ -418,6 +425,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
+          {...(withinThemeContext === undefined ? { theme } : {})}
         >
           {contents}
         </FormFieldContentBox>
@@ -550,6 +558,7 @@ const FormField = forwardRef(
             : undefined
         }
         {...containerRest}
+        {...(withinThemeContext === undefined ? { theme } : {})}
       >
         {(label && component !== CheckBox) || help ? (
           <>
@@ -559,12 +568,29 @@ const FormField = forwardRef(
                 {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
-            <Message message={help} {...formFieldTheme.help} />
+            <Message
+              message={help}
+              {...formFieldTheme.help}
+              theme={theme}
+              withinThemeContext={withinThemeContext}
+            />
           </>
         ) : undefined}
         {contents}
-        <Message type="error" message={error} {...formFieldTheme.error} />
-        <Message type="info" message={info} {...formFieldTheme.info} />
+        <Message
+          type="error"
+          message={error}
+          {...formFieldTheme.error}
+          theme={theme}
+          withinThemeContext={withinThemeContext}
+        />
+        <Message
+          type="info"
+          message={info}
+          {...formFieldTheme.info}
+          theme={theme}
+          withinThemeContext={withinThemeContext}
+        />
       </FormFieldBox>
     );
   },
