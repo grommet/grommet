@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
@@ -8,9 +8,8 @@ import { PaginationStep } from './PaginationStep';
 import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
-const StyledPaginationContainer = styled(Box).attrs(withTheme)`
+const StyledPaginationContainer = styled(Box)`
   ${(props) =>
     props.theme.pagination.container && props.theme.pagination.container.extend}
 `;
@@ -44,6 +43,7 @@ const Pagination = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const { onView, filteredTotal, view } = useContext(DataContext);
     const [step, setStep] = useState(stepProp || view?.step || 10);
     const total = numberItems ?? filteredTotal ?? 0;
@@ -233,6 +233,7 @@ const Pagination = forwardRef(
         <StyledPaginationContainer
           flex={false}
           {...theme.pagination.container}
+          {...(withinThemeContext === undefined ? { theme } : {})}
           {...rest}
         >
           {paginationControls}
@@ -247,6 +248,7 @@ const Pagination = forwardRef(
         wrap
         flex={false}
         {...theme.pagination.container}
+        {...(withinThemeContext === undefined ? { theme } : {})}
         {...rest}
       >
         <Box flex="grow">

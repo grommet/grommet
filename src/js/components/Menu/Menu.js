@@ -8,7 +8,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -19,9 +19,8 @@ import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
-const ContainerBox = styled(Box).attrs(withTheme)`
+const ContainerBox = styled(Box)`
   max-height: inherit;
 
   /* IE11 hack to get drop contents to not overflow */
@@ -82,6 +81,7 @@ const Menu = forwardRef((props, ref) => {
     ...rest
   } = props;
   const theme = useThemeValue();
+  const withinThemeContext = useContext(ThemeContext);
   const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through
@@ -438,6 +438,7 @@ const Menu = forwardRef((props, ref) => {
               ref={dropContainerRef}
               tabIndex={-1}
               background={dropBackground || theme.menu.background}
+              {...(withinThemeContext === undefined ? { theme } : {})}
             >
               {alignControlMirror === 'top' && align.top === 'top'
                 ? controlMirror

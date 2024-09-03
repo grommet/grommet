@@ -7,7 +7,6 @@ import {
   parseMetricToNum,
   styledComponentsConfig,
 } from '../../utils';
-import { withTheme } from '../../default-props';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -31,9 +30,7 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-const StyledLayer = styled.div
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledLayer = styled.div.withConfig(styledComponentsConfig)`
   ${baseStyle}
   background: transparent;
   position: relative;
@@ -61,9 +58,7 @@ const StyledLayer = styled.div
   ${(props) => props.theme.layer && props.theme.layer.extend};
 `;
 
-const StyledOverlay = styled.div
-  .withConfig(styledComponentsConfig)
-  .attrs(withTheme)`
+const StyledOverlay = styled.div.withConfig(styledComponentsConfig)`
   position: absolute;
   ${(props) => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -773,7 +768,7 @@ const elevationStyle = css`
     ]};
 `;
 
-const StyledContainer = styled.div.attrs(withTheme).withConfig({
+const StyledContainer = styled.div.withConfig({
   shouldForwardProp: (prop) =>
     isPropValid(prop) && !['elevation'].includes(prop),
 })`
