@@ -1,4 +1,5 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef, useContext, useMemo } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { Cell } from './Cell';
 import { ExpanderCell } from './ExpanderCell';
@@ -8,6 +9,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { datumValue, normalizeRowCellProps } from './buildState';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 export const GroupedBody = forwardRef(
   (
@@ -35,6 +37,8 @@ export const GroupedBody = forwardRef(
     },
     ref,
   ) => {
+    const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const items = useMemo(() => {
       const nextItems = [];
       groups.forEach((group) => {
@@ -139,7 +143,12 @@ export const GroupedBody = forwardRef(
     ]);
 
     return (
-      <StyledDataTableBody ref={ref} size={size} {...rest}>
+      <StyledDataTableBody
+        ref={ref}
+        size={size}
+        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...rest}
+      >
         <InfiniteScroll
           items={items}
           onMore={onMore}

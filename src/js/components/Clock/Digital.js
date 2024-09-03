@@ -1,4 +1,6 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import { ThemeContext } from 'styled-components';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
 
@@ -8,7 +10,7 @@ import {
   StyledDigitalPrevious,
 } from './StyledClock';
 
-const Digit = ({ number, run, size }) => {
+const Digit = ({ number, run, size, theme, withinThemeContext }) => {
   const [previous, setPrevious] = useState(number);
   const [changing, setChanging] = useState();
 
@@ -27,7 +29,10 @@ const Digit = ({ number, run, size }) => {
   if (changing) {
     const direction = run === 'backward' ? 'down' : 'up';
     return (
-      <StyledDigitalDigit size={size}>
+      <StyledDigitalDigit
+        {...(withinThemeContext === undefined ? { theme } : {})}
+        size={size}
+      >
         <StyledDigitalPrevious direction={direction}>
           {Math.floor(previous)}
         </StyledDigitalPrevious>
@@ -38,20 +43,38 @@ const Digit = ({ number, run, size }) => {
     );
   }
   return (
-    <StyledDigitalDigit size={size}>{Math.floor(number)}</StyledDigitalDigit>
+    <StyledDigitalDigit
+      size={size}
+      {...(withinThemeContext === undefined ? { theme } : {})}
+    >
+      {Math.floor(number)}
+    </StyledDigitalDigit>
   );
 };
 
 const Element = ({ number, run, sep, size }) => {
+  const theme = useThemeValue();
+  const withinThemeContext = useContext(ThemeContext);
   const tens = Math.floor(number / 10);
   const ones = number % 10;
   const result = [
-    <Digit key="tens" run={run} size={size} number={tens} />,
+    <Digit
+      key="tens"
+      run={run}
+      size={size}
+      number={tens}
+      theme={theme}
+      withinThemeContext={withinThemeContext}
+    />,
     <Digit key="ones" run={run} size={size} number={ones} />,
   ];
   if (sep) {
     result.unshift(
-      <StyledDigitalDigit key="sep" size={size}>
+      <StyledDigitalDigit
+        key="sep"
+        size={size}
+        {...(withinThemeContext === undefined ? { theme } : {})}
+      >
         :
       </StyledDigitalDigit>,
     );

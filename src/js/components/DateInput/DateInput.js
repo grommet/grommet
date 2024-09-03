@@ -7,7 +7,7 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -33,9 +33,8 @@ import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
 import { CopyButton } from '../TextInput/CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
-const StyledDateInputContainer = styled(Box).attrs(withTheme)`
+const StyledDateInputContainer = styled(Box)`
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}};
 `;
 
@@ -80,6 +79,7 @@ const DateInput = forwardRef(
     refArg,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
@@ -315,6 +315,7 @@ Use the icon prop instead.`,
             // readOnly prop shouldn't get passed to the dom here
             readOnlyProp={readOnly}
             fill
+            {...(withinThemeContext === undefined ? { theme } : {})}
           >
             {reverse && (!readOnly || readOnlyCopy) && DateInputButton}
             <MaskedInput

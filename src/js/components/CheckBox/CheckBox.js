@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 
+import { ThemeContext } from 'styled-components';
 import { removeUndefined } from '../../utils/object';
 import { FormContext } from '../Form/FormContext';
 import { CheckBoxPropTypes } from './propTypes';
@@ -56,6 +57,7 @@ const CheckBox = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const formContext = useContext(FormContext);
 
     const [checked, setChecked] = formContext.useFormInput({
@@ -114,8 +116,14 @@ const CheckBox = forwardRef(
     }
 
     const visual = toggle ? (
-      <StyledCheckBoxToggle {...themeableProps}>
-        <StyledCheckBoxKnob {...themeableProps} />
+      <StyledCheckBoxToggle
+        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...themeableProps}
+      >
+        <StyledCheckBoxKnob
+          {...(withinThemeContext === undefined ? { theme } : {})}
+          {...themeableProps}
+        />
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
@@ -128,6 +136,7 @@ const CheckBox = forwardRef(
           color: borderColor,
         }}
         round={theme.checkBox.check.radius}
+        {...(withinThemeContext === undefined ? { theme } : {})}
         {...themeableProps}
       >
         {!indeterminate &&
@@ -171,6 +180,7 @@ const CheckBox = forwardRef(
       >
         <StyledCheckBoxInput
           aria-label={ariaLabel || a11yTitle}
+          {...(withinThemeContext === undefined ? { theme } : {})}
           {...rest}
           ref={ref}
           type="checkbox"
@@ -218,6 +228,7 @@ const CheckBox = forwardRef(
         onMouseOver={(event) => onMouseOver?.(event)}
         onMouseLeave={(event) => onMouseLeave?.(event)}
         onMouseOut={(event) => onMouseOut?.(event)}
+        {...(withinThemeContext === undefined ? { theme } : {})}
         {...themeableProps}
       >
         {first}

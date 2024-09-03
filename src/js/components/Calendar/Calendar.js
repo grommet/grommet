@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -208,6 +209,8 @@ const CalendarDay = ({
   isSelected,
   otherMonth,
   buttonProps = {},
+  withinThemeContext,
+  theme,
 }) => (
   <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
     <CalendarDayButton fill={fill} {...buttonProps}>
@@ -218,6 +221,7 @@ const CalendarDay = ({
         isSelected={isSelected}
         sizeProp={size}
         fillContainer={fill}
+        {...(withinThemeContext === undefined ? { theme } : {})}
       >
         {children}
       </StyledDay>
@@ -272,6 +276,7 @@ const Calendar = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
 
@@ -788,6 +793,8 @@ const Calendar = forwardRef(
               otherMonth={day.getMonth() !== reference.getMonth()}
               size={size}
               fill={fill}
+              withinThemeContext={withinThemeContext}
+              theme={theme}
             >
               {day.getDate()}
             </CalendarDay>,
@@ -836,7 +843,13 @@ const Calendar = forwardRef(
     );
 
     return (
-      <StyledCalendar ref={ref} sizeProp={size} fillContainer={fill} {...rest}>
+      <StyledCalendar
+        ref={ref}
+        sizeProp={size}
+        fillContainer={fill}
+        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...rest}
+      >
         <Box fill={fill}>
           {header
             ? header({
@@ -930,8 +943,14 @@ const Calendar = forwardRef(
                 setFocus(false);
                 setActive(undefined);
               }}
+              {...(withinThemeContext === undefined ? { theme } : {})}
             >
-              <StyledWeeks slide={slide} sizeProp={size} fillContainer={fill}>
+              <StyledWeeks
+                slide={slide}
+                sizeProp={size}
+                fillContainer={fill}
+                {...(withinThemeContext === undefined ? { theme } : {})}
+              >
                 {weeks}
               </StyledWeeks>
             </StyledWeeksContainer>
