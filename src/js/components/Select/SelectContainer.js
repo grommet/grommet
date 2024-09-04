@@ -1,12 +1,13 @@
 import React, {
   forwardRef,
   useCallback,
+  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
 
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import {
   setFocusWithoutScroll,
   getHoverIndicatorStyle,
@@ -28,10 +29,9 @@ import {
 import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
 // ensure ClearButton receives visual indication of keyboard
-const StyledButton = styled(Button).attrs(withTheme)`
+const StyledButton = styled(Button)`
   &:focus {
     ${(props) => getHoverIndicatorStyle('background', props.theme)}
   }
@@ -42,6 +42,7 @@ const ClearButton = forwardRef(
     const { label, position } = clear;
     const align = position !== 'bottom' ? 'start' : 'center';
     const buttonLabel = label || `Clear ${name || 'selection'}`;
+    const withinThemeContext = useContext(ThemeContext);
     return (
       <StyledButton
         a11yTitle={`${buttonLabel}. Or, press ${
@@ -51,6 +52,7 @@ const ClearButton = forwardRef(
         ref={ref}
         onClick={onClear}
         focusIndicator={false}
+        {...(withinThemeContext === undefined ? { theme } : {})}
         {...rest}
       >
         <Box {...theme.select.clear.container} align={align}>
@@ -93,6 +95,7 @@ const SelectContainer = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const shouldShowClearButton = useCallback(
       (position) => {
         const hasValue = Boolean(multiple && value ? value.length : value);
@@ -358,6 +361,7 @@ const SelectContainer = forwardRef(
           ref={ref}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
+          {...(withinThemeContext === undefined ? { theme } : {})}
         >
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
@@ -474,6 +478,7 @@ const SelectContainer = forwardRef(
                         !optionDisabled ? selectOption(index) : undefined
                       }
                       textComponent={textComponent}
+                      {...(withinThemeContext === undefined ? { theme } : {})}
                     >
                       {child}
                     </SelectOption>

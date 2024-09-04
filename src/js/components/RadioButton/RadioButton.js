@@ -1,4 +1,5 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { normalizeColor, removeUndefined } from '../../utils';
 
@@ -31,10 +32,15 @@ const RadioButton = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const [hover, setHover] = useState();
     const normalizedLabel =
       typeof label === 'string' ? (
-        <StyledRadioButtonLabel>{label}</StyledRadioButtonLabel>
+        <StyledRadioButtonLabel
+          {...(withinThemeContext === undefined ? { theme } : {})}
+        >
+          {label}
+        </StyledRadioButtonLabel>
       ) : (
         label
       );
@@ -71,12 +77,14 @@ const RadioButton = forwardRef(
         focusIndicator={focusIndicator}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+        {...(withinThemeContext === undefined ? { theme } : {})}
       >
         <StyledRadioButton
           flex={false}
           margin={
             label ? { right: theme.radioButton.gap || 'small' } : undefined
           }
+          {...(withinThemeContext === undefined ? { theme } : {})}
         >
           <StyledRadioButtonInput
             aria-label={a11yTitle}
@@ -106,6 +114,7 @@ const RadioButton = forwardRef(
               }}
               backgroundColor={backgroundColor}
               round={theme.radioButton.check.radius}
+              {...(withinThemeContext === undefined ? { theme } : {})}
             >
               {checked &&
                 (Icon ? (
@@ -114,6 +123,7 @@ const RadioButton = forwardRef(
                   <StyledRadioButtonIcon
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
+                    {...(withinThemeContext === undefined ? { theme } : {})}
                   >
                     <circle cx={12} cy={12} r={6} />
                   </StyledRadioButtonIcon>

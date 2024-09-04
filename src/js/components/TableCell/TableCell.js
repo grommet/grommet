@@ -45,6 +45,7 @@ const TableCell = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const tableContext = useContext(TableContext);
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();
@@ -176,6 +177,7 @@ const TableCell = forwardRef(
           {...(plain === true ? mergedProps : {})}
           {...cellProps}
           className={className}
+          {...(withinThemeContext === undefined ? { theme } : {})}
         >
           {plain || !Object.keys(mergedProps).length ? (
             content

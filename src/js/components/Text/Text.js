@@ -1,4 +1,5 @@
-import React, { forwardRef, useMemo, useState } from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
@@ -9,6 +10,7 @@ import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
 import { TextContext } from './TextContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Text = forwardRef(
   (
@@ -30,6 +32,8 @@ const Text = forwardRef(
     },
     ref,
   ) => {
+    const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
     const textContextValue = useMemo(() => ({ size }), [size]);
@@ -77,6 +81,7 @@ const Text = forwardRef(
         level={level}
         truncate={truncate}
         size={size}
+        {...(withinThemeContext === undefined ? { theme } : {})}
         {...rest}
         ref={textRef}
       >
