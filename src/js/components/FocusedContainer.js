@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext } from '../contexts/RootsContext';
+/* eslint-disable consistent-return */
 
 export const FocusedContainer = ({
   hidden = false,
@@ -52,7 +53,7 @@ export const FocusedContainer = ({
         // Access the last parent <div> in nextRoots
         const lastParentDiv = nextRoots[nextRoots.length - 1];
 
-        if (lastParentDiv && lastParentDiv instanceof Element) {
+        if (lastParentDiv) {
           // Find a specific child <div> inside the last parent <div>
           const childDiv = lastParentDiv.querySelector('div');
 
@@ -92,13 +93,13 @@ export const FocusedContainer = ({
 
             // Automatically focus on the first focusable element
             // should we do this or take out?
-            if (firstElement) {
-              firstElement.focus();
-              console.log(
-                'Automatically focused on the first element:',
-                firstElement,
-              );
-            }
+            // if (firstElement) {
+            //   firstElement.focus();
+            //   console.log(
+            //     'Automatically focused on the first element:',
+            //     firstElement,
+            //   );
+            // }
 
             // Cleanup function to remove the event listener
             return () => {
@@ -111,10 +112,10 @@ export const FocusedContainer = ({
 
     return () => {
       // Restore focusability when component is unmounted or updated
+      clearTimeout(timer);
       if (roots && roots.length > 0) {
         makeNodeFocusable(roots[roots.length - 1]);
       }
-      clearTimeout(timer);
     };
   }, [hidden, nextRoots, trapFocus, roots]);
 
