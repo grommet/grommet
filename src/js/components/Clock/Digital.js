@@ -10,9 +10,11 @@ import {
   StyledDigitalPrevious,
 } from './StyledClock';
 
-const Digit = ({ number, run, size, theme, withinThemeContext }) => {
+const Digit = ({ number, run, size }) => {
   const [previous, setPrevious] = useState(number);
   const [changing, setChanging] = useState();
+  const theme = useThemeValue();
+  const withinThemeContext = useContext(ThemeContext);
 
   useEffect(() => {
     if (number !== previous) {
@@ -58,14 +60,7 @@ const Element = ({ number, run, sep, size }) => {
   const tens = Math.floor(number / 10);
   const ones = number % 10;
   const result = [
-    <Digit
-      key="tens"
-      run={run}
-      size={size}
-      number={tens}
-      theme={theme}
-      withinThemeContext={withinThemeContext}
-    />,
+    <Digit key="tens" run={run} size={size} number={tens} />,
     <Digit key="ones" run={run} size={size} number={ones} />,
   ];
   if (sep) {

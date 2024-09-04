@@ -90,15 +90,9 @@ const ScreenReaderOnly = styled(Text)`
   border: 0;
 `;
 
-const Message = ({
-  error,
-  info,
-  message,
-  type,
-  theme,
-  withinThemeContext,
-  ...rest
-}) => {
+const Message = ({ error, info, message, type, ...rest }) => {
+  const theme = useThemeValue();
+  const withinThemeContext = useContext(ThemeContext);
   if (message) {
     let icon;
     let containerProps;
@@ -568,29 +562,12 @@ const FormField = forwardRef(
                 {showRequiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
-            <Message
-              message={help}
-              {...formFieldTheme.help}
-              theme={theme}
-              withinThemeContext={withinThemeContext}
-            />
+            <Message message={help} {...formFieldTheme.help} />
           </>
         ) : undefined}
         {contents}
-        <Message
-          type="error"
-          message={error}
-          {...formFieldTheme.error}
-          theme={theme}
-          withinThemeContext={withinThemeContext}
-        />
-        <Message
-          type="info"
-          message={info}
-          {...formFieldTheme.info}
-          theme={theme}
-          withinThemeContext={withinThemeContext}
-        />
+        <Message type="error" message={error} {...formFieldTheme.error} />
+        <Message type="info" message={info} {...formFieldTheme.info} />
       </FormFieldBox>
     );
   },
