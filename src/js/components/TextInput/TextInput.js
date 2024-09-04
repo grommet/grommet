@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -36,7 +36,6 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 import { CopyButton } from './CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -55,7 +54,7 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
-const ContainerBox = styled(Box).attrs(withTheme)`
+const ContainerBox = styled(Box)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
@@ -106,6 +105,7 @@ const TextInput = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
@@ -359,8 +359,12 @@ const TextInput = forwardRef(
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
+            {...(withinThemeContext === undefined ? { theme } : {})}
           >
-            <StyledSuggestions ref={suggestionsRef}>
+            <StyledSuggestions
+              ref={suggestionsRef}
+              {...(withinThemeContext === undefined ? { theme } : {})}
+            >
               <InfiniteScroll
                 items={suggestions}
                 step={theme.select.step}
@@ -485,10 +489,15 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
+        {...(withinThemeContext === undefined ? { theme } : {})}
       >
         {reverse && readOnlyCopy && ReadOnlyCopyButton}
         {showStyledPlaceholder && (
-          <StyledPlaceholder>{placeholder}</StyledPlaceholder>
+          <StyledPlaceholder
+            {...(withinThemeContext === undefined ? { theme } : {})}
+          >
+            {placeholder}
+          </StyledPlaceholder>
         )}
         {textInputIcon && !readOnly && (
           <StyledIcon reverse={reverse} theme={theme}>
@@ -512,6 +521,7 @@ const TextInput = forwardRef(
             focusIndicator={focusIndicator}
             textAlign={textAlign}
             widthProp={widthProp}
+            {...(withinThemeContext === undefined ? { theme } : {})}
             {...rest}
             {...extraProps}
             {...comboboxProps}

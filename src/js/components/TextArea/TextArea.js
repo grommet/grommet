@@ -1,10 +1,12 @@
 import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 
 import { StyledTextArea } from './StyledTextArea';
 import { TextAreaPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const TextArea = forwardRef(
   (
@@ -22,6 +24,8 @@ const TextArea = forwardRef(
     },
     ref,
   ) => {
+    const theme = useThemeValue();
+    const withinThemeContext = useContext(ThemeContext);
     const formContext = useContext(FormContext);
     const [value, setValue] = formContext.useFormInput({
       name,
@@ -47,6 +51,7 @@ const TextArea = forwardRef(
           focus={focus}
           value={value}
           focusIndicator={focusIndicator}
+          {...(withinThemeContext === undefined ? { theme } : {})}
           {...rest}
           onFocus={(event) => {
             setFocus(true);

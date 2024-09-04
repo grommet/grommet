@@ -1,15 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Copy } from 'grommet-icons/icons/Copy';
 import { Button } from '../Button';
 import { Tip } from '../Tip';
 import { edgeStyle } from '../../utils/styles';
-import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
-const StyledButton = styled(Button).attrs(withTheme)`
+const StyledButton = styled(Button)`
   border-radius: ${(props) => props.theme.global.control.border.radius};
   ${(props) =>
     !props.theme.button.default
@@ -25,6 +24,7 @@ export const CopyButton = ({
   value,
 }) => {
   const theme = useThemeValue();
+  const withinThemeContext = useContext(ThemeContext);
 
   return (
     <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
@@ -43,6 +43,7 @@ export const CopyButton = ({
         onBlur={onBlurCopy}
         onMouseOut={onBlurCopy}
         aria-label={`${readOnlyCopyPrompt} ${value}`}
+        {...(withinThemeContext === undefined ? { theme } : {})}
       />
     </Tip>
   );
