@@ -59,7 +59,8 @@ export const FocusedContainer = ({
           if (childDiv) {
             // Find all focusable elements within the child <div>
             const focusableElements = childDiv.querySelectorAll(
-              'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+              `button, [href], input, select,
+               textarea, [tabindex]:not([tabindex="-1"])`,
             );
 
             // Get the first and last focusable elements
