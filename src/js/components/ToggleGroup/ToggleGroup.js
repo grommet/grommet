@@ -1,5 +1,4 @@
-import React, { useContext, useCallback, useState, useRef } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useCallback, useState, useRef } from 'react';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { ToggleGroupPropTypes } from './propTypes';
@@ -31,6 +30,7 @@ const ToggleGroup = ({
   multiple,
   options,
   onToggle,
+  theme: themeProp,
   value: valueProp,
   ...rest
 }) => {
@@ -39,8 +39,8 @@ const ToggleGroup = ({
     defaultProp: defaultValue,
     onChange: onToggle,
   });
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const theme = useThemeValue(themeProp);
+
   const ref = useRef();
   const buttonRefs = useRef([]);
 
@@ -174,7 +174,7 @@ const ToggleGroup = ({
                 role={!multiple ? 'radio' : undefined}
                 round={round}
                 tabIndex={index === focusableIndex ? '0' : '-1'}
-                {...(withinThemeContext === undefined ? { theme } : {})}
+                theme={theme}
               />
             </Box>
           );

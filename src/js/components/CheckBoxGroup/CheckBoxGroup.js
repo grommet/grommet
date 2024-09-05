@@ -1,5 +1,4 @@
 import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
@@ -21,13 +20,13 @@ const CheckBoxGroup = forwardRef(
       onChange,
       options: optionsProp,
       name,
+      theme: themeProp,
       ...rest
     },
     ref,
   ) => {
     const formContext = useContext(FormContext);
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
 
     // In case option is a string, normalize it to be an object
     const options = optionsProp.map((option) =>
@@ -78,7 +77,7 @@ const CheckBoxGroup = forwardRef(
             ? theme.checkBoxGroup.container.gap
             : 'small') // consistent with RadioButtonGroup default
         }
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
         {...rest}
       >
         {options.map((option, index) => {

@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
 import { parseMetricToNum } from '../../utils';
 
@@ -15,12 +14,13 @@ const Bar = forwardRef((props, ref) => {
     size,
     thickness: thicknessProp,
     direction,
+    theme: themeProp,
     values,
     reverse,
     ...rest
   } = props;
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const theme = useThemeValue(themeProp);
+
   const length =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const thickness = parseMetricToNum(
@@ -108,7 +108,7 @@ const Bar = forwardRef((props, ref) => {
       width={width}
       height={direction === 'horizontal' ? thickness : length}
       round={round ? { size: thicknessProp } : undefined}
-      {...(withinThemeContext === undefined ? { theme } : {})}
+      theme={theme}
       {...rest}
       reverse={reverse}
     >

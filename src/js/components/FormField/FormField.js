@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 
 import {
   containsFocus,
@@ -90,9 +90,9 @@ const ScreenReaderOnly = styled(Text)`
   border: 0;
 `;
 
-const Message = ({ error, info, message, type, ...rest }) => {
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+const Message = ({ error, info, message, theme: themeProp, type, ...rest }) => {
+  const theme = useThemeValue(themeProp);
+
   if (message) {
     let icon;
     let containerProps;
@@ -112,7 +112,7 @@ const Message = ({ error, info, message, type, ...rest }) => {
         direction="row"
         messageType={type}
         {...containerProps}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
       >
         {icon && <Box flex={false}>{icon}</Box>}
         {messageContent}
@@ -186,7 +186,7 @@ const FormField = forwardRef(
     ref,
   ) => {
     const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+
     const formContext = useContext(FormContext);
 
     const {
@@ -419,7 +419,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
         >
           {contents}
         </FormFieldContentBox>
@@ -552,7 +552,7 @@ const FormField = forwardRef(
             : undefined
         }
         {...containerRest}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
       >
         {(label && component !== CheckBox) || help ? (
           <>

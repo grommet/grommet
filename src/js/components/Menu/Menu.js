@@ -8,7 +8,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -78,10 +78,11 @@ const Menu = forwardRef((props, ref) => {
     open,
     plain,
     size,
+    theme: themeProp,
     ...rest
   } = props;
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const theme = useThemeValue(themeProp);
+
   const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   // need to destructure the align otherwise it will get passed through
@@ -438,7 +439,7 @@ const Menu = forwardRef((props, ref) => {
               ref={dropContainerRef}
               tabIndex={-1}
               background={dropBackground || theme.menu.background}
-              {...(withinThemeContext === undefined ? { theme } : {})}
+              theme={theme}
             >
               {alignControlMirror === 'top' && align.top === 'top'
                 ? controlMirror

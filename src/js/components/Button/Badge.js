@@ -1,5 +1,5 @@
-import React, { useContext, useRef } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { useRef } from 'react';
+import styled from 'styled-components';
 import { parseMetricToNum } from '../../utils';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
@@ -12,9 +12,9 @@ const StyledBadgeContainer = styled(Box)`
   ${(props) => props.theme.button.badge.container.extend}
 `;
 
-export const Badge = ({ children, content }) => {
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+export const Badge = ({ children, content, theme: themeProp }) => {
+  const theme = useThemeValue(themeProp);
+
   const containerRef = useRef();
   const contentRef = useRef();
   const stackRef = useRef();
@@ -146,7 +146,7 @@ export const Badge = ({ children, content }) => {
             ? theme.button.badge.container.pad
             : undefined
         }
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
       >
         {badge}
       </StyledBadgeContainer>

@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo } from 'react';
 
 import { parseMetricToNum } from '../../utils';
 
@@ -36,86 +35,88 @@ const getClockState = ({ hours, minutes, seconds }) => {
   };
 };
 
-const Analog = forwardRef(({ elements, precision, ...rest }, ref) => {
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
-  const { hourAngle, minuteAngle, secondAngle } = useMemo(
-    () => getClockState(elements),
-    [elements],
-  );
-  const { size, secondSize, minuteSize, hourSize } = useMemo(
-    () => getClockDimensions(theme),
-    [theme],
-  );
-  const halfSize = size / 2;
+const Analog = forwardRef(
+  ({ elements, precision, theme: themeProp, ...rest }, ref) => {
+    const theme = useThemeValue(themeProp);
 
-  let secondHand;
-  if (precision === 'seconds') {
-    secondHand = (
-      <StyledSecond
-        x1={halfSize}
-        y1={halfSize}
-        x2={halfSize}
-        y2={secondSize}
-        stroke="#000000"
-        strokeLinecap={theme.clock.analog.second.shape}
-        style={{
-          transform: `rotate(${secondAngle}deg)`,
-          transformOrigin: `${halfSize}px ${halfSize}px`,
-        }}
-        {...(withinThemeContext === undefined ? { theme } : {})}
-      />
+    const { hourAngle, minuteAngle, secondAngle } = useMemo(
+      () => getClockState(elements),
+      [elements],
     );
-  }
-
-  let minuteHand;
-  if (precision === 'seconds' || precision === 'minutes') {
-    minuteHand = (
-      <StyledMinute
-        x1={halfSize}
-        y1={halfSize}
-        x2={halfSize}
-        y2={minuteSize}
-        stroke="#000000"
-        strokeLinecap={theme.clock.analog.minute.shape}
-        style={{
-          transform: `rotate(${minuteAngle}deg)`,
-          transformOrigin: `${halfSize}px ${halfSize}px`,
-        }}
-        {...(withinThemeContext === undefined ? { theme } : {})}
-      />
+    const { size, secondSize, minuteSize, hourSize } = useMemo(
+      () => getClockDimensions(theme),
+      [theme],
     );
-  }
+    const halfSize = size / 2;
 
-  return (
-    <StyledAnalog
-      ref={ref}
-      version="1.1"
-      width={size}
-      height={size}
-      preserveAspectRatio="xMidYMid meet"
-      viewBox={`0 0 ${size} ${size}`}
-      {...(withinThemeContext === undefined ? { theme } : {})}
-      {...rest}
-    >
-      {secondHand}
-      {minuteHand}
-      <StyledHour
-        x1={halfSize}
-        y1={halfSize}
-        x2={halfSize}
-        y2={hourSize}
-        stroke="#000000"
-        strokeLinecap={theme.clock.analog.hour.shape}
-        style={{
-          transform: `rotate(${hourAngle}deg)`,
-          transformOrigin: `${halfSize}px ${halfSize}px`,
-        }}
-        {...(withinThemeContext === undefined ? { theme } : {})}
-      />
-    </StyledAnalog>
-  );
-});
+    let secondHand;
+    if (precision === 'seconds') {
+      secondHand = (
+        <StyledSecond
+          x1={halfSize}
+          y1={halfSize}
+          x2={halfSize}
+          y2={secondSize}
+          stroke="#000000"
+          strokeLinecap={theme.clock.analog.second.shape}
+          style={{
+            transform: `rotate(${secondAngle}deg)`,
+            transformOrigin: `${halfSize}px ${halfSize}px`,
+          }}
+          theme={theme}
+        />
+      );
+    }
+
+    let minuteHand;
+    if (precision === 'seconds' || precision === 'minutes') {
+      minuteHand = (
+        <StyledMinute
+          x1={halfSize}
+          y1={halfSize}
+          x2={halfSize}
+          y2={minuteSize}
+          stroke="#000000"
+          strokeLinecap={theme.clock.analog.minute.shape}
+          style={{
+            transform: `rotate(${minuteAngle}deg)`,
+            transformOrigin: `${halfSize}px ${halfSize}px`,
+          }}
+          theme={theme}
+        />
+      );
+    }
+
+    return (
+      <StyledAnalog
+        ref={ref}
+        version="1.1"
+        width={size}
+        height={size}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox={`0 0 ${size} ${size}`}
+        theme={theme}
+        {...rest}
+      >
+        {secondHand}
+        {minuteHand}
+        <StyledHour
+          x1={halfSize}
+          y1={halfSize}
+          x2={halfSize}
+          y2={hourSize}
+          stroke="#000000"
+          strokeLinecap={theme.clock.analog.hour.shape}
+          style={{
+            transform: `rotate(${hourAngle}deg)`,
+            transformOrigin: `${halfSize}px ${halfSize}px`,
+          }}
+          theme={theme}
+        />
+      </StyledAnalog>
+    );
+  },
+);
 
 Analog.displayName = 'Analog';
 

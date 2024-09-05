@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 
 import { TagPropTypes } from './propTypes';
@@ -10,9 +9,12 @@ import { StyledRemoveButton, StyledTagButton } from './StyledTag';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tag = forwardRef(
-  ({ name, value, size, onRemove, onClick, ...rest }, ref) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+  (
+    { name, value, size, theme: themeProp, onRemove, onClick, ...rest },
+    ref,
+  ) => {
+    const theme = useThemeValue(themeProp);
+
     const RemoveIcon = theme.tag.icons?.remove || FormClose;
 
     const containerProps = {
@@ -66,7 +68,7 @@ const Tag = forwardRef(
             icon={<RemoveIcon {...theme.tag.size?.[size]?.icon} />}
             round={theme.tag.size?.[size]?.round || theme.tag.round}
             {...theme.tag.remove}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            theme={theme}
           />
         )}
       </Box>
@@ -78,7 +80,7 @@ const Tag = forwardRef(
         hoverIndicator
         focusIndicator
         {...containerProps}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
       >
         {contents}
       </StyledTagButton>

@@ -7,7 +7,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 
@@ -64,12 +63,13 @@ const Video = forwardRef(
       onTimeUpdate,
       onVolumeChange,
       skipInterval,
+      theme: themeProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const [captions, setCaptions] = useState([]);
@@ -514,7 +514,7 @@ const Video = forwardRef(
                     onMouseLeave={() => setScrubTime(undefined)}
                     onClick={seek}
                     onFocus={() => setInteracting(true)}
-                    {...(withinThemeContext === undefined ? { theme } : {})}
+                    theme={theme}
                   />
                 </Stack>
               </Box>
@@ -568,10 +568,10 @@ const Video = forwardRef(
           margin={margin}
           style={style}
           tabIndex="-1"
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
         >
           <StyledVideo
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            theme={theme}
             {...rest}
             ref={videoRef}
             onDurationChange={(event) => {

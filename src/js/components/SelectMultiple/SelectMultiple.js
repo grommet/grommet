@@ -8,7 +8,7 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
 
 import { Box } from '../Box';
@@ -85,6 +85,7 @@ const SelectMultiple = forwardRef(
       searchPlaceholder,
       size,
       sortSelectedOnClose = true,
+      theme: themeProp,
       value: valueProp,
       valueKey,
       valueLabel,
@@ -94,8 +95,8 @@ const SelectMultiple = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const inputRef = useRef();
     const formContext = useContext(FormContext);
     const { format } = useContext(MessageContext);
@@ -454,7 +455,7 @@ const SelectMultiple = forwardRef(
             flex={false}
             plainSelect={plain}
             width={width}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            theme={theme}
           >
             <Box width="100%">
               <DropButton

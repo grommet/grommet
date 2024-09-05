@@ -43,12 +43,12 @@ const Box = forwardRef(
       height, // munged to avoid styled-components putting it in the DOM
       tabIndex,
       skeleton: skeletonProp,
+      theme: themeProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
     // boxOptions was created to preserve backwards compatibility but
     // should not be supported in v3
     const { box: boxOptions } = useContext(OptionsContext);
@@ -141,7 +141,7 @@ const Box = forwardRef(
                 directionProp={direction}
                 responsive={responsive}
                 border={styledBoxGapBorder}
-                {...(withinThemeContext === undefined ? { theme } : {})}
+                theme={theme}
               />,
             );
           }
@@ -240,7 +240,7 @@ const Box = forwardRef(
         responsive={responsive}
         tabIndex={adjustedTabIndex}
         {...clickProps}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
         {...rest}
         {...skeletonProps}
       >

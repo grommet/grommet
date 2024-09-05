@@ -7,7 +7,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 
@@ -209,25 +208,27 @@ const CalendarDay = ({
   isSelected,
   otherMonth,
   buttonProps = {},
-  withinThemeContext,
-  theme,
-}) => (
-  <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
-    <CalendarDayButton fill={fill} {...buttonProps}>
-      <StyledDay
-        disabledProp={buttonProps.disabled}
-        inRange={isInRange}
-        otherMonth={otherMonth}
-        isSelected={isSelected}
-        sizeProp={size}
-        fillContainer={fill}
-        {...(withinThemeContext === undefined ? { theme } : {})}
-      >
-        {children}
-      </StyledDay>
-    </CalendarDayButton>
-  </StyledDayContainer>
-);
+  theme: themeProp,
+}) => {
+  const theme = useThemeValue(themeProp);
+  return (
+    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
+      <CalendarDayButton fill={fill} {...buttonProps}>
+        <StyledDay
+          disabledProp={buttonProps.disabled}
+          inRange={isInRange}
+          otherMonth={otherMonth}
+          isSelected={isSelected}
+          sizeProp={size}
+          fillContainer={fill}
+          theme={theme}
+        >
+          {children}
+        </StyledDay>
+      </CalendarDayButton>
+    </StyledDayContainer>
+  );
+};
 
 const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
   if (!buttonProps) {
@@ -271,12 +272,13 @@ const Calendar = forwardRef(
       showAdjacentDays = true,
       size = 'medium',
       timestamp: timestampProp,
+      theme: themeProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const announce = useContext(AnnounceContext);
     const { format } = useContext(MessageContext);
 
@@ -793,8 +795,6 @@ const Calendar = forwardRef(
               otherMonth={day.getMonth() !== reference.getMonth()}
               size={size}
               fill={fill}
-              withinThemeContext={withinThemeContext}
-              theme={theme}
             >
               {day.getDate()}
             </CalendarDay>,
@@ -847,7 +847,7 @@ const Calendar = forwardRef(
         ref={ref}
         sizeProp={size}
         fillContainer={fill}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
         {...rest}
       >
         <Box fill={fill}>
@@ -943,13 +943,13 @@ const Calendar = forwardRef(
                 setFocus(false);
                 setActive(undefined);
               }}
-              {...(withinThemeContext === undefined ? { theme } : {})}
+              theme={theme}
             >
               <StyledWeeks
                 slide={slide}
                 sizeProp={size}
                 fillContainer={fill}
-                {...(withinThemeContext === undefined ? { theme } : {})}
+                theme={theme}
               >
                 {weeks}
               </StyledWeeks>

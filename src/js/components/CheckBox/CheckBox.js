@@ -1,6 +1,5 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { removeUndefined } from '../../utils/object';
 import { FormContext } from '../Form/FormContext';
 import { CheckBoxPropTypes } from './propTypes';
@@ -50,14 +49,15 @@ const CheckBox = forwardRef(
       onMouseOver,
       pad,
       reverse,
+      theme: themeProp,
       toggle,
       indeterminate,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const formContext = useContext(FormContext);
 
     const [checked, setChecked] = formContext.useFormInput({
@@ -116,14 +116,8 @@ const CheckBox = forwardRef(
     }
 
     const visual = toggle ? (
-      <StyledCheckBoxToggle
-        {...(withinThemeContext === undefined ? { theme } : {})}
-        {...themeableProps}
-      >
-        <StyledCheckBoxKnob
-          {...(withinThemeContext === undefined ? { theme } : {})}
-          {...themeableProps}
-        />
+      <StyledCheckBoxToggle theme={theme} {...themeableProps}>
+        <StyledCheckBoxKnob theme={theme} {...themeableProps} />
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
@@ -136,7 +130,7 @@ const CheckBox = forwardRef(
           color: borderColor,
         }}
         round={theme.checkBox.check.radius}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
         {...themeableProps}
       >
         {!indeterminate &&
@@ -180,7 +174,7 @@ const CheckBox = forwardRef(
       >
         <StyledCheckBoxInput
           aria-label={ariaLabel || a11yTitle}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
           {...rest}
           ref={ref}
           type="checkbox"
@@ -228,7 +222,7 @@ const CheckBox = forwardRef(
         onMouseOver={(event) => onMouseOver?.(event)}
         onMouseLeave={(event) => onMouseLeave?.(event)}
         onMouseOut={(event) => onMouseOut?.(event)}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
         {...themeableProps}
       >
         {first}

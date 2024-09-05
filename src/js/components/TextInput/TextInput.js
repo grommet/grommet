@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -98,14 +98,15 @@ const TextInput = forwardRef(
       reverse,
       suggestions,
       textAlign,
+      theme: themeProp,
       value: valueProp,
       width: widthProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
@@ -359,12 +360,9 @@ const TextInput = forwardRef(
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            theme={theme}
           >
-            <StyledSuggestions
-              ref={suggestionsRef}
-              {...(withinThemeContext === undefined ? { theme } : {})}
-            >
+            <StyledSuggestions ref={suggestionsRef} theme={theme}>
               <InfiniteScroll
                 items={suggestions}
                 step={theme.select.step}
@@ -489,15 +487,11 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
       >
         {reverse && readOnlyCopy && ReadOnlyCopyButton}
         {showStyledPlaceholder && (
-          <StyledPlaceholder
-            {...(withinThemeContext === undefined ? { theme } : {})}
-          >
-            {placeholder}
-          </StyledPlaceholder>
+          <StyledPlaceholder theme={theme}>{placeholder}</StyledPlaceholder>
         )}
         {textInputIcon && !readOnly && (
           <StyledIcon reverse={reverse} theme={theme}>
@@ -521,7 +515,7 @@ const TextInput = forwardRef(
             focusIndicator={focusIndicator}
             textAlign={textAlign}
             widthProp={widthProp}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            theme={theme}
             {...rest}
             {...extraProps}
             {...comboboxProps}

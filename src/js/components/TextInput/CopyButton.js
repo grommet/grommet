@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { Copy } from 'grommet-icons/icons/Copy';
 import { Button } from '../Button';
 import { Tip } from '../Tip';
@@ -21,10 +21,10 @@ export const CopyButton = ({
   onBlurCopy,
   readOnlyCopyPrompt,
   tip,
+  theme: themeProp,
   value,
 }) => {
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const theme = useThemeValue(themeProp);
 
   return (
     <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
@@ -43,7 +43,7 @@ export const CopyButton = ({
         onBlur={onBlurCopy}
         onMouseOut={onBlurCopy}
         aria-label={`${readOnlyCopyPrompt} ${value}`}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
       />
     </Tip>
   );

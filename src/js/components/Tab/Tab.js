@@ -1,5 +1,4 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { Button } from '../Button';
 import { Text } from '../Text';
@@ -26,6 +25,7 @@ const Tab = forwardRef(
       onMouseOut,
       reverse,
       onClick,
+      theme: themeProp,
       ...rest
     },
     ref,
@@ -40,8 +40,8 @@ const Tab = forwardRef(
       setActiveTitle,
       setFocusIndex,
     } = useContext(TabsContext);
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const [over, setOver] = useState(undefined);
     let normalizedTitle = title;
     const tabStyles = {};
@@ -215,7 +215,7 @@ const Tab = forwardRef(
           plain={plain}
           {...withIconStyles}
           {...tabStyles}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
         >
           {first}
           {second}

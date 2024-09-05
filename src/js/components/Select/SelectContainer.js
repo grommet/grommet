@@ -1,13 +1,12 @@
 import React, {
   forwardRef,
   useCallback,
-  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import {
   setFocusWithoutScroll,
   getHoverIndicatorStyle,
@@ -42,7 +41,7 @@ const ClearButton = forwardRef(
     const { label, position } = clear;
     const align = position !== 'bottom' ? 'start' : 'center';
     const buttonLabel = label || `Clear ${name || 'selection'}`;
-    const withinThemeContext = useContext(ThemeContext);
+
     return (
       <StyledButton
         a11yTitle={`${buttonLabel}. Or, press ${
@@ -52,7 +51,7 @@ const ClearButton = forwardRef(
         ref={ref}
         onClick={onClear}
         focusIndicator={false}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
         {...rest}
       >
         <Box {...theme.select.clear.container} align={align}>
@@ -91,11 +90,12 @@ const SelectContainer = forwardRef(
       value = '',
       valueKey,
       replace = true,
+      theme: themeProp,
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const shouldShowClearButton = useCallback(
       (position) => {
         const hasValue = Boolean(multiple && value ? value.length : value);
@@ -361,7 +361,7 @@ const SelectContainer = forwardRef(
           ref={ref}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
         >
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
@@ -478,7 +478,7 @@ const SelectContainer = forwardRef(
                         !optionDisabled ? selectOption(index) : undefined
                       }
                       textComponent={textComponent}
-                      {...(withinThemeContext === undefined ? { theme } : {})}
+                      theme={theme}
                     >
                       {child}
                     </SelectOption>

@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
@@ -38,12 +38,13 @@ const Pagination = forwardRef(
       step: stepProp,
       stepOptions,
       summary,
+      theme: themeProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const { onView, filteredTotal, view } = useContext(DataContext);
     const [step, setStep] = useState(stepProp || view?.step || 10);
     const total = numberItems ?? filteredTotal ?? 0;
@@ -233,7 +234,7 @@ const Pagination = forwardRef(
         <StyledPaginationContainer
           flex={false}
           {...theme.pagination.container}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
           {...rest}
         >
           {paginationControls}
@@ -248,7 +249,7 @@ const Pagination = forwardRef(
         wrap
         flex={false}
         {...theme.pagination.container}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
         {...rest}
       >
         <Box flex="grow">

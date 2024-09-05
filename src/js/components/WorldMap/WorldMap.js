@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
 import { Drop } from '../Drop';
 import { normalizeColor, parseMetricToNum } from '../../utils';
@@ -498,12 +497,12 @@ const WorldMap = forwardRef(
       hoverColor,
       onSelectPlace,
       places: placesProp,
+      theme: themeProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
 
     const world = React.useMemo(buildWorld, []);
 
@@ -709,7 +708,7 @@ const WorldMap = forwardRef(
           width={world.width}
           height={world.height}
           {...interactiveProps}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
           {...rest}
         >
           <g ref={containerRef} stroke="none" fill="none" fillRule="evenodd">

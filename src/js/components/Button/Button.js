@@ -9,7 +9,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import {
   backgroundAndTextColors,
   colorIsDark,
@@ -212,12 +212,13 @@ const Button = forwardRef(
       // can't alphabetize a11yTitle before tip is defined
       a11yTitle = typeof tip === 'string' ? tip : undefined,
       as,
+      theme: themeProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
     const announce = useContext(AnnounceContext);
@@ -522,7 +523,7 @@ const Button = forwardRef(
           sizeProp={size}
           success={success}
           type={!href ? type : undefined}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
         >
           {contents}
         </StyledButtonKind>
@@ -569,7 +570,7 @@ const Button = forwardRef(
           sizeProp={size}
           success={success}
           type={!href ? type : undefined}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
         >
           {contents}
         </StyledButton>

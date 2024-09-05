@@ -1,5 +1,4 @@
 import React, { isValidElement, memo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
@@ -27,11 +26,12 @@ const Cell = memo(
     pinnedOffset,
     primaryProperty,
     scope,
+    theme: themeProp,
     verticalAlign,
     ...rest
   }) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const value = datumValue(datum, property);
     const context = useContext(TableContext);
     const renderContexts =
@@ -74,7 +74,7 @@ const Cell = memo(
         pad={pad}
         pin={pin}
         plain={plain ? 'noPad' : undefined}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
         {...rest}
       >
         {content}

@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useState } from 'react';
 
 import { normalizeColor, removeUndefined } from '../../utils';
 
@@ -27,20 +26,17 @@ const RadioButton = forwardRef(
       label,
       name,
       onChange,
+      theme: themeProp,
       ...rest
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const theme = useThemeValue(themeProp);
+
     const [hover, setHover] = useState();
     const normalizedLabel =
       typeof label === 'string' ? (
-        <StyledRadioButtonLabel
-          {...(withinThemeContext === undefined ? { theme } : {})}
-        >
-          {label}
-        </StyledRadioButtonLabel>
+        <StyledRadioButtonLabel theme={theme}>{label}</StyledRadioButtonLabel>
       ) : (
         label
       );
@@ -77,14 +73,14 @@ const RadioButton = forwardRef(
         focusIndicator={focusIndicator}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        theme={theme}
       >
         <StyledRadioButton
           flex={false}
           margin={
             label ? { right: theme.radioButton.gap || 'small' } : undefined
           }
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          theme={theme}
         >
           <StyledRadioButtonInput
             aria-label={a11yTitle}
@@ -114,7 +110,7 @@ const RadioButton = forwardRef(
               }}
               backgroundColor={backgroundColor}
               round={theme.radioButton.check.radius}
-              {...(withinThemeContext === undefined ? { theme } : {})}
+              theme={theme}
             >
               {checked &&
                 (Icon ? (
@@ -123,7 +119,7 @@ const RadioButton = forwardRef(
                   <StyledRadioButtonIcon
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
-                    {...(withinThemeContext === undefined ? { theme } : {})}
+                    theme={theme}
                   >
                     <circle cx={12} cy={12} r={6} />
                   </StyledRadioButtonIcon>
