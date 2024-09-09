@@ -7,7 +7,6 @@ import React, {
   useState,
   Fragment,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { DataContext } from '../../contexts/DataContext';
@@ -89,8 +88,7 @@ const DataTable = ({
   verticalAlign,
   ...rest
 }) => {
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const { theme, passThemeFlag } = useThemeValue();
   const {
     view,
     data: contextData,
@@ -393,7 +391,7 @@ const DataTable = ({
     ? {
         ...theme.dataTable.container,
         fill,
-        ...(withinThemeContext === undefined ? { theme } : {}),
+        ...{ passThemeFlag },
       }
     : undefined;
 
@@ -525,7 +523,7 @@ const DataTable = ({
         <StyledDataTable
           fillProp={!paginate ? fill : undefined}
           {...paginatedDataTableProps}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          {...passThemeFlag}
           {...rest}
         >
           <Header

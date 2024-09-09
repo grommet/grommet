@@ -7,7 +7,7 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -78,8 +78,7 @@ const DateInput = forwardRef(
     },
     refArg,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
@@ -315,7 +314,7 @@ Use the icon prop instead.`,
             // readOnly prop shouldn't get passed to the dom here
             readOnlyProp={readOnly}
             fill
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            {...passThemeFlag}
           >
             {reverse && (!readOnly || readOnlyCopy) && DateInputButton}
             <MaskedInput

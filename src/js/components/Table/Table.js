@@ -1,23 +1,15 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
 import { StyledTable, StyledTableDataCaption } from './StyledTable';
 import { TablePropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const Table = forwardRef(({ caption, children, ...rest }, ref) => {
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const { passThemeFlag } = useThemeValue();
   return (
-    <StyledTable
-      ref={ref}
-      {...(withinThemeContext === undefined ? { theme } : {})}
-      {...rest}
-    >
+    <StyledTable ref={ref} {...passThemeFlag} {...rest}>
       {caption ? (
-        <StyledTableDataCaption
-          {...(withinThemeContext === undefined ? { theme } : {})}
-        >
+        <StyledTableDataCaption {...passThemeFlag}>
           {caption}
         </StyledTableDataCaption>
       ) : null}

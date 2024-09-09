@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, { forwardRef, memo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, memo } from 'react';
 
 import { useKeyboard } from '../../utils';
 import { CheckBox } from '../CheckBox';
@@ -188,8 +187,7 @@ const Body = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const [active, setActive] = React.useState();
     const [lastActive, setLastActive] = React.useState();
 
@@ -259,7 +257,7 @@ const Body = forwardRef(
             setLastActive(active);
             setActive(undefined);
           }}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          {...passThemeFlag}
           {...rest}
         >
           <InfiniteScroll

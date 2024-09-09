@@ -1,12 +1,10 @@
 import React, {
   forwardRef,
   useCallback,
-  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
@@ -70,8 +68,7 @@ const defaultConnections = [];
 
 const Diagram = forwardRef(
   ({ connections = defaultConnections, ...rest }, ref) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
     const [connectionPoints, setConnectionPoints] = useState();
     const svgRef = useForwardedRef(ref);
@@ -253,7 +250,7 @@ const Diagram = forwardRef(
         viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
         preserveAspectRatio="xMinYMin meet"
         connections={paths}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
       >
         <g>{paths}</g>

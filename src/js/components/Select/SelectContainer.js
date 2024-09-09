@@ -1,13 +1,12 @@
 import React, {
   forwardRef,
   useCallback,
-  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import {
   setFocusWithoutScroll,
   getHoverIndicatorStyle,
@@ -42,7 +41,7 @@ const ClearButton = forwardRef(
     const { label, position } = clear;
     const align = position !== 'bottom' ? 'start' : 'center';
     const buttonLabel = label || `Clear ${name || 'selection'}`;
-    const withinThemeContext = useContext(ThemeContext);
+    const { passThemeFlag } = useThemeValue();
     return (
       <StyledButton
         a11yTitle={`${buttonLabel}. Or, press ${
@@ -52,7 +51,7 @@ const ClearButton = forwardRef(
         ref={ref}
         onClick={onClear}
         focusIndicator={false}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
       >
         <Box {...theme.select.clear.container} align={align}>
@@ -94,8 +93,7 @@ const SelectContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const shouldShowClearButton = useCallback(
       (position) => {
         const hasValue = Boolean(multiple && value ? value.length : value);
@@ -361,7 +359,7 @@ const SelectContainer = forwardRef(
           ref={ref}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          {...passThemeFlag}
         >
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
@@ -478,7 +476,7 @@ const SelectContainer = forwardRef(
                         !optionDisabled ? selectOption(index) : undefined
                       }
                       textComponent={textComponent}
-                      {...(withinThemeContext === undefined ? { theme } : {})}
+                      {...passThemeFlag}
                     >
                       {child}
                     </SelectOption>

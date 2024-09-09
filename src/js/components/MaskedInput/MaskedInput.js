@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
@@ -179,8 +179,7 @@ const MaskedInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
 
     const [value, setValue] = formContext.useFormInput({
@@ -371,10 +370,7 @@ const MaskedInput = forwardRef(
     const maskedInputIcon = useSizedIcon(icon, rest.size, theme);
 
     return (
-      <StyledMaskedInputContainer
-        plain={plain}
-        {...(withinThemeContext === undefined ? { theme } : {})}
-      >
+      <StyledMaskedInputContainer plain={plain} {...passThemeFlag}>
         {maskedInputIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
             {maskedInputIcon}
@@ -441,7 +437,7 @@ const MaskedInput = forwardRef(
                 ref={dropRef}
                 overflow="auto"
                 dropHeight={dropHeight}
-                {...(withinThemeContext === undefined ? { theme } : {})}
+                {...passThemeFlag}
               >
                 {mask[activeMaskIndex].options.map((option, index) => {
                   // Determine whether the label is done as a child or

@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
 import { StyledGrid } from './StyledGrid';
 import { GridPropTypes } from './propTypes';
@@ -19,8 +18,7 @@ const Grid = forwardRef((props, ref) => {
     width, // munged to avoid styled-components putting it in the DOM
     ...rest
   } = props;
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const { passThemeFlag } = useThemeValue();
 
   return (
     <StyledGrid
@@ -33,7 +31,7 @@ const Grid = forwardRef((props, ref) => {
       responsive={responsive}
       rowsProp={rows}
       widthProp={width}
-      {...(withinThemeContext === undefined ? { theme } : {})}
+      {...passThemeFlag}
       {...rest}
     />
   );

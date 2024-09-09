@@ -1,6 +1,5 @@
-import React, { useEffect, useMemo, useContext, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
@@ -43,8 +42,7 @@ const Chart = React.forwardRef(
     ref,
   ) => {
     const containerRef = useForwardedRef(ref);
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
 
     const values = useMemo(() => normalizeValues(valuesProp), [valuesProp]);
 
@@ -710,7 +708,7 @@ const Chart = React.forwardRef(
         width={size === 'full' ? '100%' : size.width}
         height={size === 'full' ? '100%' : size.height}
         typeProp={type} // prevent adding to DOM
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
       >
         {defs.length && <defs>{defs}</defs>}

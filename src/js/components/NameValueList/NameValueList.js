@@ -18,7 +18,7 @@ const NameValueList = forwardRef(
     ref,
   ) => {
     const size = useContext(ResponsiveContext);
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
 
     // If layout is grid, valueWidth sets the max width of the column.
     // Grid will 'fit' as many columns of valueWidth per row as container's

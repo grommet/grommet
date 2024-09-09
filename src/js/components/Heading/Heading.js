@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useState } from 'react';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledHeading } from './StyledHeading';
@@ -24,8 +23,7 @@ const Heading = forwardRef(
 
     ref, // munged to avoid styled-components putting it in the DOM
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { passThemeFlag } = useThemeValue();
     const headingRef = useForwardedRef(ref);
     const [overflowWrap, setOverflowWrap] = useState(
       overflowWrapProp || 'break-word',
@@ -73,7 +71,7 @@ const Heading = forwardRef(
         overflowWrap={overflowWrap}
         responsive={responsive}
         weight={weight}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
         ref={headingRef}
       >

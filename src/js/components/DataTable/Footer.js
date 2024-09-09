@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
@@ -27,8 +26,7 @@ const Footer = forwardRef(
     ref,
   ) => {
     const pin = pinProp ? ['bottom'] : [];
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { passThemeFlag } = useThemeValue();
 
     return (
       <StyledDataTableFooter ref={ref} fillProp={fill} pin={pinProp} {...rest}>
@@ -49,7 +47,7 @@ const Footer = forwardRef(
               context="footer"
               pin={pin}
               verticalAlign={verticalAlign}
-              {...(withinThemeContext === undefined ? { theme } : {})}
+              {...passThemeFlag}
             />
           )}
           {columns.map((column) => {

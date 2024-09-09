@@ -7,7 +7,6 @@ import React, {
   useRef,
   useMemo,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { Next } from 'grommet-icons/icons/Next';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -36,8 +35,7 @@ const Tabs = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
@@ -326,7 +324,7 @@ const Tabs = forwardRef(
         ref={ref}
         flex={flex}
         responsive={responsive}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
         background={theme.tabs.background}
       >
@@ -367,7 +365,7 @@ const Tabs = forwardRef(
             gap={theme.tabs.gap}
             pad={overflow ? '2px' : undefined}
             margin={overflow ? '-2px' : undefined}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            {...passThemeFlag}
           >
             {tabs}
           </StyledTabsHeader>
@@ -396,7 +394,7 @@ const Tabs = forwardRef(
           flex={flex}
           aria-label={tabContentTitle}
           role="tabpanel"
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          {...passThemeFlag}
         >
           {activeContent}
         </StyledTabPanel>

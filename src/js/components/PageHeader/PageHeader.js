@@ -37,7 +37,7 @@ const PageHeader = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const breakpoint = useContext(ResponsiveContext);
 
     let actionsProps = { ...theme.pageHeader.actions };

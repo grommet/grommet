@@ -1,5 +1,4 @@
 import React, { isValidElement, memo, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
@@ -30,8 +29,7 @@ const Cell = memo(
     verticalAlign,
     ...rest
   }) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const value = datumValue(datum, property);
     const context = useContext(TableContext);
     const renderContexts =
@@ -74,7 +72,7 @@ const Cell = memo(
         pad={pad}
         pin={pin}
         plain={plain ? 'noPad' : undefined}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
       >
         {content}

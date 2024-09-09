@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 
@@ -10,8 +9,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const Circle = forwardRef((props, ref) => {
   const { background, max, round, size, thickness, type, values, ...rest } =
     props;
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const { theme, passThemeFlag } = useThemeValue();
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const strokeWidth =
@@ -157,7 +155,7 @@ const Circle = forwardRef((props, ref) => {
       viewBox={`0 0 ${width} ${viewBoxHeight}`}
       width={size === 'full' ? '100%' : width}
       height={size === 'full' ? '100%' : viewBoxHeight}
-      {...(withinThemeContext === undefined ? { theme } : {})}
+      {...passThemeFlag}
       {...rest}
     >
       {track}

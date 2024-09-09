@@ -54,8 +54,7 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const size = useContext(ResponsiveContext);
     // layerOptions was created to preserve backwards compatibility but
     // should not be supported in v3
@@ -219,7 +218,7 @@ const LayerContainer = forwardRef(
         full={full}
         margin={margin}
         modal={modal}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
         position={position}
         plain={plain}
@@ -248,14 +247,14 @@ const LayerContainer = forwardRef(
         layerTarget={layerTarget}
         tabIndex="-1"
         dir={theme.dir}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
       >
         {modal && (
           <StyledOverlay
             plain={plain}
             responsive={responsive}
             onMouseDown={onClickOutside}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            {...passThemeFlag}
           />
         )}
         {content}

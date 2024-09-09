@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { findButtonParent, normalizeColor, useSizedIcon } from '../../utils';
 
 import { Box } from '../Box';
@@ -39,8 +38,7 @@ const Anchor = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const [focus, setFocus] = useState();
     const { size } = useContext(TextContext);
     const sendAnalytics = useAnalytics();
@@ -107,7 +105,7 @@ const Anchor = forwardRef(
           if (onBlur) onBlur(event);
         }}
         size={sizeProp || size}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
       >
         {first && second ? (
           <Box

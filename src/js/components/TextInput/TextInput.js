@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -104,8 +104,7 @@ const TextInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
@@ -359,12 +358,9 @@ const TextInput = forwardRef(
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            {...passThemeFlag}
           >
-            <StyledSuggestions
-              ref={suggestionsRef}
-              {...(withinThemeContext === undefined ? { theme } : {})}
-            >
+            <StyledSuggestions ref={suggestionsRef} {...passThemeFlag}>
               <InfiniteScroll
                 items={suggestions}
                 step={theme.select.step}
@@ -489,13 +485,11 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
       >
         {reverse && readOnlyCopy && ReadOnlyCopyButton}
         {showStyledPlaceholder && (
-          <StyledPlaceholder
-            {...(withinThemeContext === undefined ? { theme } : {})}
-          >
+          <StyledPlaceholder {...passThemeFlag}>
             {placeholder}
           </StyledPlaceholder>
         )}
@@ -521,7 +515,7 @@ const TextInput = forwardRef(
             focusIndicator={focusIndicator}
             textAlign={textAlign}
             widthProp={widthProp}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            {...passThemeFlag}
             {...rest}
             {...extraProps}
             {...comboboxProps}

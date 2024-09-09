@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -158,8 +158,7 @@ const List = React.forwardRef(
     ref,
   ) => {
     const listRef = useForwardedRef(ref);
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 
@@ -227,7 +226,7 @@ const List = React.forwardRef(
     const containterProps = paginate
       ? {
           ...theme.list.container,
-          ...(withinThemeContext === undefined ? { theme } : {}),
+          ...{ passThemeFlag },
         }
       : undefined;
     const draggingRef = useRef();
@@ -352,7 +351,7 @@ const List = React.forwardRef(
               updateActive(undefined);
             }}
             {...ariaProps}
-            {...(withinThemeContext === undefined ? { theme } : {})}
+            {...passThemeFlag}
             {...rest}
           >
             <InfiniteScroll
@@ -734,7 +733,7 @@ const List = React.forwardRef(
                     {...clickProps}
                     {...orderProps}
                     {...itemAriaProps}
-                    {...(withinThemeContext === undefined ? { theme } : {})}
+                    {...passThemeFlag}
                   >
                     {showIndex && onOrder && (
                       <Text color={pinnedColor}>{index + 1}</Text>

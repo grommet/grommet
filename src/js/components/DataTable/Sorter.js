@@ -19,7 +19,7 @@ const Sorter = ({
   sort,
   themeProps,
 }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   let icon;
   if (sort && sort.property === property) {
     const Icon =

@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
@@ -13,8 +12,7 @@ import {
 const Digit = ({ number, run, size }) => {
   const [previous, setPrevious] = useState(number);
   const [changing, setChanging] = useState();
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const { passThemeFlag } = useThemeValue();
 
   useEffect(() => {
     if (number !== previous) {
@@ -31,10 +29,7 @@ const Digit = ({ number, run, size }) => {
   if (changing) {
     const direction = run === 'backward' ? 'down' : 'up';
     return (
-      <StyledDigitalDigit
-        {...(withinThemeContext === undefined ? { theme } : {})}
-        size={size}
-      >
+      <StyledDigitalDigit {...passThemeFlag} size={size}>
         <StyledDigitalPrevious direction={direction}>
           {Math.floor(previous)}
         </StyledDigitalPrevious>
@@ -45,18 +40,14 @@ const Digit = ({ number, run, size }) => {
     );
   }
   return (
-    <StyledDigitalDigit
-      size={size}
-      {...(withinThemeContext === undefined ? { theme } : {})}
-    >
+    <StyledDigitalDigit size={size} {...passThemeFlag}>
       {Math.floor(number)}
     </StyledDigitalDigit>
   );
 };
 
 const Element = ({ number, run, sep, size }) => {
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const { passThemeFlag } = useThemeValue();
   const tens = Math.floor(number / 10);
   const ones = number % 10;
   const result = [
@@ -65,11 +56,7 @@ const Element = ({ number, run, sep, size }) => {
   ];
   if (sep) {
     result.unshift(
-      <StyledDigitalDigit
-        key="sep"
-        size={size}
-        {...(withinThemeContext === undefined ? { theme } : {})}
-      >
+      <StyledDigitalDigit key="sep" size={size} {...passThemeFlag}>
         :
       </StyledDigitalDigit>,
     );

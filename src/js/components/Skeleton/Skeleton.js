@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef } from 'react';
 import { SkeletonPropTypes } from './propTypes';
 import { useSkeleton } from './SkeletonContext';
 import { StyledSkeleton } from './StyledSkeleton';
@@ -10,8 +9,7 @@ const Skeleton = forwardRef(
     { as, colors: colorsProp, width: widthProp, height: heightProp, ...rest },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
 
     const skeleton = useSkeleton();
     const depth = skeleton?.depth || 0;
@@ -27,7 +25,7 @@ const Skeleton = forwardRef(
         background={background}
         widthProp={widthProp}
         heightProp={heightProp}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
       />
     );

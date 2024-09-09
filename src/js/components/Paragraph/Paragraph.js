@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo } from 'react';
 
 import { StyledParagraph } from './StyledParagraph';
 import { ParagraphPropTypes } from './propTypes';
@@ -10,8 +9,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const Paragraph = forwardRef(
   ({ children, color, fill, size, ...rest }, ref) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { passThemeFlag } = useThemeValue();
     const skeleton = useSkeleton();
     const textContextValue = useMemo(() => ({ size }), [size]);
 
@@ -28,7 +26,7 @@ const Paragraph = forwardRef(
         colorProp={color}
         fillProp={fill}
         size={size}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
       >
         {children !== undefined ? (

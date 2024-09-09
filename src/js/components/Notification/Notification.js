@@ -65,7 +65,7 @@ const Notification = ({
 }) => {
   const autoClose =
     toast && toast?.autoClose === undefined ? true : toast.autoClose;
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const [visible, setVisible] = useState(true);
 
   const position = useMemo(() => (toast && toast?.position) || 'top', [toast]);

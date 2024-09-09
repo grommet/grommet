@@ -26,7 +26,7 @@ const AccordionPanel = forwardRef(
     ref,
   ) => {
     const uniqueId = useId();
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const { active, animate, level, onPanelChange } =
       useContext(AccordionContext);
     const [hover, setHover] = useState(undefined);

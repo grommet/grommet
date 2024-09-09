@@ -35,7 +35,7 @@ const Carousel = ({
   wrap,
   ...rest
 }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const { format } = useContext(MessageContext);
   const timerRef = useRef();
 

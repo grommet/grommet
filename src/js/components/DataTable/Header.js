@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import styled, { css, ThemeContext } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { DataContext } from '../../contexts/DataContext';
 
 import { Box } from '../Box';
@@ -147,8 +147,7 @@ const Header = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const [layoutProps, textProps] = separateThemeProps(theme);
     const { total: contextTotal } = useContext(DataContext);
 
@@ -255,7 +254,7 @@ const Header = forwardRef(
               pin={selectPin}
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
               verticalAlign={verticalAlign}
-              {...(withinThemeContext === undefined ? { theme } : {})}
+              {...passThemeFlag}
             >
               {onSelect && allowSelectAll && (
                 <CheckBox
@@ -360,7 +359,7 @@ const Header = forwardRef(
                     pad={cellProps.pad}
                     sortable
                     verticalAlign={verticalAlign || columnVerticalAlign}
-                    {...(withinThemeContext === undefined ? { theme } : {})}
+                    {...passThemeFlag}
                   >
                     <Box
                       direction="row"
@@ -454,7 +453,7 @@ const Header = forwardRef(
                       ? { width: widths[property] }
                       : undefined
                   }
-                  {...(withinThemeContext === undefined ? { theme } : {})}
+                  {...passThemeFlag}
                 >
                   {content}
                 </StyledDataTableCell>

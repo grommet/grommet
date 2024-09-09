@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 
 import {
   StyledContainer,
@@ -14,21 +13,13 @@ export const PageControl = ({
   size: sizeProp,
   ...rest
 }) => {
-  const theme = useThemeValue();
-  const withinThemeContext = useContext(ThemeContext);
+  const { theme, passThemeFlag } = useThemeValue();
   const size = sizeProp || 'medium';
 
   return (
-    <StyledContainer
-      as="li"
-      size={size}
-      {...(withinThemeContext === undefined ? { theme } : {})}
-    >
+    <StyledContainer as="li" size={size} {...passThemeFlag}>
       {separator ? (
-        <StyledSeparator
-          size={size}
-          {...(withinThemeContext === undefined ? { theme } : {})}
-        >
+        <StyledSeparator size={size} {...passThemeFlag}>
           &#8230;
         </StyledSeparator>
       ) : (
@@ -38,7 +29,7 @@ export const PageControl = ({
           kind={theme.pagination.button}
           label={control}
           size={size}
-          {...(withinThemeContext === undefined ? { theme } : {})}
+          {...passThemeFlag}
           {...rest}
         />
       )}

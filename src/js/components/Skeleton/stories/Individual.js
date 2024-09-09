@@ -53,7 +53,7 @@ const Content = () => (
 );
 
 export const Individual = () => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   return (
     <>
       <Grommet theme={theme}>

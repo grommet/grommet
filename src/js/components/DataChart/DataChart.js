@@ -57,7 +57,7 @@ const DataChart = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
 
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();

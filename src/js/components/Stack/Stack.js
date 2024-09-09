@@ -1,5 +1,4 @@
-import React, { Children, forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { Children, forwardRef } from 'react';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
 import { StackPropTypes } from './propTypes';
@@ -27,8 +26,7 @@ const Stack = forwardRef(
     { anchor, children, fill, guidingChild, interactiveChild, ...rest },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { passThemeFlag } = useThemeValue();
     const prunedChildren = Children.toArray(children).filter((c) => c);
     const toChildIndex = (child) => {
       let index = child;
@@ -51,12 +49,7 @@ const Stack = forwardRef(
     );
 
     return (
-      <StyledStack
-        ref={ref}
-        fillContainer={fill}
-        {...(withinThemeContext === undefined ? { theme } : {})}
-        {...rest}
-      >
+      <StyledStack ref={ref} fillContainer={fill} {...passThemeFlag} {...rest}>
         {styledChildren}
       </StyledStack>
     );

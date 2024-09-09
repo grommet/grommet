@@ -5,7 +5,6 @@ import React, {
   useCallback,
   useEffect,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
@@ -35,8 +34,7 @@ const RangeInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
-    const withinThemeContext = useContext(ThemeContext);
+    const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
     const [focus, setFocus] = useState(focusProp);
 
@@ -110,7 +108,7 @@ const RangeInput = forwardRef(
         focus={focus}
         focusIndicator={focusIndicator}
         value={value || value === 0 ? value : ''}
-        {...(withinThemeContext === undefined ? { theme } : {})}
+        {...passThemeFlag}
         {...rest}
         color={color}
         onFocus={(event) => {
