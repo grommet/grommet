@@ -14,6 +14,7 @@ import { Keyboard } from '../Keyboard';
 import { StyledDrop } from './StyledDrop';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { getFirstFocusableDescendant } from '../../utils/DOM';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -343,8 +344,24 @@ const DropContainer = forwardRef(
       dropOptions,
     ]);
 
+    // if restrictFocus is true place focus on the drop container
+    // if restrictFocus is firstElement put focus on first
+    // interactive element if none fall back to drop container
     useEffect(() => {
-      if (restrictFocus) {
+      if (restrictFocus === true) {
+        dropRef.current.focus();
+      }
+      if (
+        restrictFocus === 'firstElement' &&
+        getFirstFocusableDescendant(dropRef.current) !== undefined
+      ) {
+        const elementToFocus = getFirstFocusableDescendant(dropRef.current);
+        elementToFocus.focus();
+      }
+      if (
+        restrictFocus === 'firstElement' &&
+        getFirstFocusableDescendant(dropRef.current) === undefined
+      ) {
         dropRef.current.focus();
       }
     }, [dropRef, restrictFocus]);

@@ -37,7 +37,10 @@ if (process.env.NODE_ENV !== 'production') {
     overflow: dropOverflowPropTypes,
     plain: PropTypes.bool,
     responsive: PropTypes.bool,
-    restrictFocus: PropTypes.bool,
+    restrictFocus: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['firstElement']),
+    ]),
     round: roundPropType,
     stretch: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['align'])]),
     target: PropTypes.object.isRequired,
