@@ -7,10 +7,9 @@ import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
-import { withTheme } from '../../default-props';
 
 // border-collapse: separate is needed so pinned header/footer borders work
-var StyledDataTable = styled(Table).attrs(withTheme).withConfig({
+var StyledDataTable = styled(Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "sc-xrlyjm-0"
 })(["position:relative;border-spacing:0;border-collapse:separate;", " ", " ", ";"], genericStyles, function (props) {
@@ -20,7 +19,7 @@ var StyledDataTable = styled(Table).attrs(withTheme).withConfig({
 });
 
 // when paginated, this wraps the data table and pagination component
-var StyledContainer = styled(Box).attrs(withTheme).withConfig({
+var StyledContainer = styled(Box).withConfig({
   displayName: "StyledDataTable__StyledContainer",
   componentId: "sc-xrlyjm-1"
 })(["", ";"], function (props) {
@@ -43,7 +42,7 @@ var StyledDataTableRow = styled(TableRow).withConfig({
 });
 
 // focus styling other than outline doesn't work on <tbody />
-var StyledDataTableBody = styled(TableBody).attrs(withTheme).withConfig({
+var StyledDataTableBody = styled(TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "sc-xrlyjm-3"
 })(["", " &:focus{", "}&:focus:not(:focus-visible){", "}"], function (props) {
@@ -69,7 +68,7 @@ var StyledDataTableFooter = styled(TableFooter).withConfig({
 }, function (props) {
   return props.pin && "\n      /* Safari needs the relative positioning of tfoot specified */\n      position: sticky;\n      bottom: 0;\n      z-index: 1;\n  ";
 });
-var StyledDataTableCell = styled(TableCell).attrs(withTheme).withConfig({
+var StyledDataTableCell = styled(TableCell).withConfig({
   displayName: "StyledDataTable__StyledDataTableCell",
   componentId: "sc-xrlyjm-6"
 })(["", ";", " ", ""], function (props) {

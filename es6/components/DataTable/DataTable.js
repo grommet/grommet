@@ -77,7 +77,9 @@ var DataTable = function DataTable(_ref) {
     step = _ref$step === void 0 ? 50 : _ref$step,
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = useContext(DataContext),
     view = _useContext.view,
     contextData = _useContext.data,
@@ -388,7 +390,7 @@ var DataTable = function DataTable(_ref) {
   var Container = paginate ? StyledContainer : Fragment;
   var containterProps = paginate ? _extends({}, theme.dataTable.container, {
     fill: fill
-  }) : undefined;
+  }, passThemeFlag) : undefined;
 
   // DataTable should overflow if paginating but pagination component
   // should remain in its location
@@ -501,7 +503,7 @@ var DataTable = function DataTable(_ref) {
   });
   return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(OverflowContainer, overflowContainerProps, /*#__PURE__*/React.createElement(StyledDataTable, _extends({
     fillProp: !paginate ? fill : undefined
-  }, paginatedDataTableProps, rest), /*#__PURE__*/React.createElement(Header, {
+  }, paginatedDataTableProps, passThemeFlag, rest), /*#__PURE__*/React.createElement(Header, {
     ref: headerRef,
     allowSelectAll: allowSelectAll,
     cellProps: cellProps.header,

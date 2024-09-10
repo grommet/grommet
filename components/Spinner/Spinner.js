@@ -6,7 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _Box = require("../Box");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["ref", "size"],
   _excluded2 = ["children", "color", "size", "message"],
   _excluded3 = ["size", "color", "border"];
@@ -46,7 +46,8 @@ var Spinner = exports.Spinner = /*#__PURE__*/(0, _react.forwardRef)(function (_r
     size = _ref2.size,
     message = _ref2.message,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
   (0, _react.useEffect)(function () {
     if (message != null && message.start) announce(message.start);else if (typeof message === 'string') announce(message);

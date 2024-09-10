@@ -19,13 +19,12 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'SelectMultiple', 'TextArea', 'DateInput', 'FileInput', 'RadioButtonGroup', 'RangeInput', 'RangeSelector', 'StarRating', 'ThumbsRating'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'RangeInput', 'RangeSelector'];
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
 };
-var FormFieldBox = styled(Box).attrs(withTheme).withConfig({
+var FormFieldBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "sc-m9hood-0"
 })(["", " ", ""], function (props) {
@@ -35,7 +34,7 @@ var FormFieldBox = styled(Box).attrs(withTheme).withConfig({
 }, function (props) {
   return props.theme.formField && props.theme.formField.extend;
 });
-var FormFieldContentBox = styled(Box).attrs(withTheme).withConfig({
+var FormFieldContentBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
 })(["", ""], function (props) {
@@ -43,7 +42,7 @@ var FormFieldContentBox = styled(Box).attrs(withTheme).withConfig({
     justBorder: true
   });
 });
-var StyledMessageContainer = styled(Box).attrs(withTheme).withConfig({
+var StyledMessageContainer = styled(Box).withConfig({
   displayName: "FormField__StyledMessageContainer",
   componentId: "sc-m9hood-2"
 })(["", ""], function (props) {
@@ -63,7 +62,9 @@ var Message = function Message(_ref) {
     message = _ref.message,
     type = _ref.type,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   if (message) {
     var icon;
     var containerProps;
@@ -76,7 +77,7 @@ var Message = function Message(_ref) {
     return icon || containerProps ? /*#__PURE__*/React.createElement(StyledMessageContainer, _extends({
       direction: "row",
       messageType: type
-    }, containerProps), icon && /*#__PURE__*/React.createElement(Box, {
+    }, containerProps, passThemeFlag), icon && /*#__PURE__*/React.createElement(Box, {
       flex: false
     }, icon), messageContent) : messageContent;
   }
@@ -142,7 +143,9 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     validate = _ref3.validate,
     validateOn = _ref3.validateOn,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
-  var theme = useThemeValue();
+  var _useThemeValue2 = useThemeValue(),
+    theme = _useThemeValue2.theme,
+    passThemeFlag = _useThemeValue2.passThemeFlag;
   var formContext = useContext(FormContext);
   var _formContext$useFormF = formContext.useFormField({
       disabled: disabled,
@@ -284,7 +287,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       round: formFieldTheme.round,
       focus: isFileInputComponent ? undefined : focus
     } : {};
-    contents = /*#__PURE__*/React.createElement(FormFieldContentBox, _extends({}, themeContentProps, innerProps, contentProps), contents);
+    contents = /*#__PURE__*/React.createElement(FormFieldContentBox, _extends({}, themeContentProps, innerProps, contentProps, passThemeFlag), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
     if (abut) {
@@ -371,7 +374,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         };
       });
     } : undefined
-  }, containerRest), label && component !== CheckBox || help ? /*#__PURE__*/React.createElement(React.Fragment, null, label && component !== CheckBox && /*#__PURE__*/React.createElement(Text, _extends({
+  }, containerRest, passThemeFlag), label && component !== CheckBox || help ? /*#__PURE__*/React.createElement(React.Fragment, null, label && component !== CheckBox && /*#__PURE__*/React.createElement(Text, _extends({
     as: "label",
     htmlFor: htmlFor
   }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/React.createElement(Message, _extends({

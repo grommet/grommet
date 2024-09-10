@@ -47,7 +47,8 @@ var SelectMultipleContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     value = _ref$value === void 0 ? [] : _ref$value,
     valueKey = _ref.valueKey,
     showSelectedInline = _ref.showSelectedInline;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _useState = useState(-1),
     activeIndex = _useState[0],
     setActiveIndex = _useState[1];

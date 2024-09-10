@@ -22,8 +22,7 @@ import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
 import { CopyButton } from '../TextInput/CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
-var StyledDateInputContainer = styled(Box).attrs(withTheme).withConfig({
+var StyledDateInputContainer = styled(Box).withConfig({
   displayName: "DateInput__StyledDateInputContainer",
   componentId: "sc-1jfta23-0"
 })(["", "};"], function (props) {
@@ -66,7 +65,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     valueArg = _ref.value,
     messages = _ref.messages,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     formatMessage = _useContext.format;
@@ -297,7 +298,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
         if (!readOnly) openCalendar();
       }
     }
-  }, /*#__PURE__*/React.createElement(StyledDateInputContainer, {
+  }, /*#__PURE__*/React.createElement(StyledDateInputContainer, _extends({
     ref: containerRef,
     border: !plain,
     round: theme.dateInput.container.round,
@@ -306,7 +307,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     ,
     readOnlyProp: readOnly,
     fill: true
-  }, reverse && (!readOnly || readOnlyCopy) && DateInputButton, /*#__PURE__*/React.createElement(MaskedInput, _extends({
+  }, passThemeFlag), reverse && (!readOnly || readOnlyCopy) && DateInputButton, /*#__PURE__*/React.createElement(MaskedInput, _extends({
     readOnly: readOnly,
     ref: ref,
     id: id,

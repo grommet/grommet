@@ -65,7 +65,8 @@ var Notification = function Notification(_ref) {
     time = _ref.time,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _useState = useState(true),
     visible = _useState[0],
     setVisible = _useState[1];

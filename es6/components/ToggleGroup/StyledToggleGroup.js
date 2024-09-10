@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../Button';
 import { roundStyle, edgeStyle, parseMetricToNum } from '../../utils';
-import { withTheme } from '../../default-props';
 var adjustPad = function adjustPad(value, theme) {
   // resolve t-shirt size if it exists
   var vertical = typeof value === 'string' ? value : value == null ? void 0 : value.vertical;
@@ -16,7 +15,7 @@ var adjustPad = function adjustPad(value, theme) {
     horizontal: horizontal
   };
 };
-export var StyledButton = styled(Button).attrs(withTheme).withConfig({
+export var StyledButton = styled(Button).withConfig({
   displayName: "StyledToggleGroup__StyledButton",
   componentId: "sc-13k5sx8-0"
 })(["border-radius:0;border:none;", ";", " &:hover{border:none;box-shadow:none;}"], function (props) {

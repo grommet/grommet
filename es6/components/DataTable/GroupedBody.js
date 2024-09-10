@@ -10,6 +10,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { datumValue, normalizeRowCellProps } from './buildState';
+import { useThemeValue } from '../../utils/useThemeValue';
 export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var cellPropsProp = _ref.cellProps,
     columns = _ref.columns,
@@ -31,6 +32,8 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
     step = _ref.step,
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var items = useMemo(function () {
     var nextItems = [];
     groups.forEach(function (group) {
@@ -106,7 +109,7 @@ export var GroupedBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return /*#__PURE__*/React.createElement(StyledDataTableBody, _extends({
     ref: ref,
     size: size
-  }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
+  }, passThemeFlag, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: items,
     onMore: onMore,
     replace: replace,

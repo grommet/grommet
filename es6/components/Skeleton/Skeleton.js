@@ -13,7 +13,9 @@ var Skeleton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     widthProp = _ref.width,
     heightProp = _ref.height,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var skeleton = useSkeleton();
   var depth = (skeleton == null ? void 0 : skeleton.depth) || 0;
   var colors = colorsProp || (theme == null || (_theme$skeleton = theme.skeleton) == null ? void 0 : _theme$skeleton.colors);
@@ -25,7 +27,7 @@ var Skeleton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     background: background,
     widthProp: widthProp,
     heightProp: heightProp
-  }, rest));
+  }, passThemeFlag, rest));
 });
 Skeleton.displayName = 'Skeleton';
 Skeleton.propTypes = SkeletonPropTypes;

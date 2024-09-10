@@ -7,12 +7,15 @@ import { ParagraphPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { ParagraphSkeleton } from './ParagraphSkeleton';
 import { TextContext } from '../Text/TextContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Paragraph = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
     color = _ref.color,
     fill = _ref.fill,
     size = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var skeleton = useSkeleton();
   var textContextValue = useMemo(function () {
     return {
@@ -31,7 +34,7 @@ var Paragraph = /*#__PURE__*/forwardRef(function (_ref, ref) {
     colorProp: color,
     fillProp: fill,
     size: size
-  }, rest), children !== undefined ? /*#__PURE__*/React.createElement(TextContext.Provider, {
+  }, passThemeFlag, rest), children !== undefined ? /*#__PURE__*/React.createElement(TextContext.Provider, {
     value: textContextValue
   }, children) : undefined);
 });

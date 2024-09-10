@@ -48,7 +48,9 @@ var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _ref$connections = _ref.connections,
     connections = _ref$connections === void 0 ? defaultConnections : _ref$connections,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = useState({
       width: 0,
       height: 0
@@ -199,7 +201,7 @@ var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
     viewBox: "0 0 " + dimensions.width + " " + dimensions.height,
     preserveAspectRatio: "xMinYMin meet",
     connections: paths
-  }, rest), /*#__PURE__*/React.createElement("g", null, paths));
+  }, passThemeFlag, rest), /*#__PURE__*/React.createElement("g", null, paths));
 });
 Diagram.displayName = 'Diagram';
 Diagram.propTypes = DiagramPropTypes;

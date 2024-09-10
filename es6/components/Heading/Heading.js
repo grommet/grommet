@@ -8,6 +8,7 @@ import { HeadingPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
 import { useSkeleton } from '../Skeleton';
 import { HeadingSkeleton } from './HeadingSkeleton';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid styled-components putting it in the DOM
 ) {
   var children = _ref.children,
@@ -20,6 +21,8 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid sty
     responsive = _ref$responsive === void 0 ? true : _ref$responsive,
     weight = _ref.weight,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var headingRef = useForwardedRef(ref);
   var _useState = useState(overflowWrapProp || 'break-word'),
     overflowWrap = _useState[0],
@@ -60,7 +63,7 @@ var Heading = /*#__PURE__*/forwardRef(function (_ref, ref // munged to avoid sty
       overflowWrap: overflowWrap,
       responsive: responsive,
       weight: weight
-    }, rest, {
+    }, passThemeFlag, rest, {
       ref: headingRef
     }), content)
   );

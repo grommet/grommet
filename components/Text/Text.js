@@ -11,6 +11,7 @@ var _propTypes = require("./propTypes");
 var _Skeleton = require("../Skeleton");
 var _TextSkeleton = require("./TextSkeleton");
 var _TextContext = require("./TextContext");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["children", "color", "tag", "as", "tip", "a11yTitle", "truncate", "size", "skeleton", "level"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -30,6 +31,8 @@ var Text = exports.Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     _ref$level = _ref.level,
     level = _ref$level === void 0 ? 1 : _ref$level,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var textRef = (0, _utils.useForwardedRef)(ref);
   var _useState = (0, _react.useState)(false),
     textTruncated = _useState[0],
@@ -70,7 +73,7 @@ var Text = exports.Text = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     level: level,
     truncate: truncate,
     size: size
-  }, rest, {
+  }, passThemeFlag, rest, {
     ref: textRef
   }), children !== undefined ? /*#__PURE__*/_react["default"].createElement(_TextContext.TextContext.Provider, {
     value: textContextValue

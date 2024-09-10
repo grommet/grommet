@@ -36,7 +36,9 @@ var Analog = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var elements = _ref2.elements,
     precision = _ref2.precision,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useMemo = useMemo(function () {
       return getClockState(elements);
     }, [elements]),
@@ -53,7 +55,7 @@ var Analog = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var halfSize = size / 2;
   var secondHand;
   if (precision === 'seconds') {
-    secondHand = /*#__PURE__*/React.createElement(StyledSecond, {
+    secondHand = /*#__PURE__*/React.createElement(StyledSecond, _extends({
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -64,11 +66,11 @@ var Analog = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         transform: "rotate(" + secondAngle + "deg)",
         transformOrigin: halfSize + "px " + halfSize + "px"
       }
-    });
+    }, passThemeFlag));
   }
   var minuteHand;
   if (precision === 'seconds' || precision === 'minutes') {
-    minuteHand = /*#__PURE__*/React.createElement(StyledMinute, {
+    minuteHand = /*#__PURE__*/React.createElement(StyledMinute, _extends({
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -79,7 +81,7 @@ var Analog = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         transform: "rotate(" + minuteAngle + "deg)",
         transformOrigin: halfSize + "px " + halfSize + "px"
       }
-    });
+    }, passThemeFlag));
   }
   return /*#__PURE__*/React.createElement(StyledAnalog, _extends({
     ref: ref,
@@ -88,7 +90,7 @@ var Analog = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     height: size,
     preserveAspectRatio: "xMidYMid meet",
     viewBox: "0 0 " + size + " " + size
-  }, rest), secondHand, minuteHand, /*#__PURE__*/React.createElement(StyledHour, {
+  }, passThemeFlag, rest), secondHand, minuteHand, /*#__PURE__*/React.createElement(StyledHour, _extends({
     x1: halfSize,
     y1: halfSize,
     x2: halfSize,
@@ -99,7 +101,7 @@ var Analog = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       transform: "rotate(" + hourAngle + "deg)",
       transformOrigin: halfSize + "px " + halfSize + "px"
     }
-  }));
+  }, passThemeFlag)));
 });
 Analog.displayName = 'Analog';
 export { Analog };

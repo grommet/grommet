@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components';
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var roundStyle = css(["border-radius:", ";"], function (props) {
   return props.theme.global.edgeSize[props.round.size];
 });
 
 // overflow: hidden is needed for ie11
-var StyledMeter = styled.svg.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledMeter = styled.svg.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledMeter",
   componentId: "sc-nsxarx-0"
 })(["max-width:100%;overflow:hidden;", " ", " ", " path{transition:stroke 0.3s,stroke-width 0.3s;}", ";"], function (props) {

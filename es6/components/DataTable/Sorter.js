@@ -16,7 +16,8 @@ var Sorter = function Sorter(_ref) {
     property = _ref.property,
     sort = _ref.sort,
     themeProps = _ref.themeProps;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var icon;
   if (sort && sort.property === property) {
     var Icon = theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];

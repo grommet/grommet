@@ -7,7 +7,8 @@ var HeadingSkeleton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$level = _ref.level,
     level = _ref$level === void 0 ? 1 : _ref$level,
     size = _ref.size;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var levelStyle = theme.heading.level[level];
   var data = levelStyle == null ? void 0 : levelStyle[size || 'medium'];
   var height = data ? data.height : size;

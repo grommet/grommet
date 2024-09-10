@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { genericStyles, normalizeColor, textAlignStyle, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var sizeStyle = function sizeStyle(props) {
   var size = props.size || 'medium';
   var data = props.theme.text[size];
@@ -22,7 +21,7 @@ var wordBreakStyle = css(["word-break:", ";"], function (props) {
 var fontFamily = css(["font-family:", ";"], function (props) {
   return props.theme.text.font.family;
 });
-var StyledText = styled('span').attrs(withTheme).withConfig(styledComponentsConfig).withConfig({
+var StyledText = styled('span').withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
 })(["", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {

@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 import { backgroundStyle, edgeStyle, genericStyles, heightStyle, roundStyle, widthStyle, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 
 // Styling a div directly rather than just using
 // a Box since Box itself will react to a SkeletonContext
 // and we don't want that here.
-export var StyledSkeleton = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+export var StyledSkeleton = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledSkeleton",
   componentId: "sc-1omqm6u-0"
 })(["display:flex;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {

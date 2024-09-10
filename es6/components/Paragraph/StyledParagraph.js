@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { genericStyles, normalizeColor, textAlignStyle, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var colorStyle = css(["color:", ";"], function (props) {
   return normalizeColor(props.colorProp, props.theme);
 });
@@ -15,7 +14,7 @@ var fontFamily = css(["font-family:", ";"], function (props) {
 var maxlinesStyle = function maxlinesStyle(props) {
   return props.maxLines && css(["display:-webkit-box;-webkit-line-clamp:", ";-webkit-box-orient:vertical;overflow:hidden;"], props.maxLines);
 };
-var StyledParagraph = styled.p.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledParagraph = styled.p.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledParagraph",
   componentId: "sc-tbetod-0"
 })(["", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {

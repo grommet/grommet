@@ -12,8 +12,7 @@ var _Text = require("../Text");
 var _utils = require("../../utils");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
-var _defaultProps = require("../../default-props");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "aria-label", "children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "open", "plain", "size"],
   _excluded2 = ["align"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -21,7 +20,7 @@ function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return 
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
-var ContainerBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
 })(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}&:focus{outline:none;}", ";"], function (props) {
@@ -71,7 +70,9 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
     plain = props.plain,
     size = props.size,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme);
@@ -392,11 +393,11 @@ var Menu = exports.Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, r
       onDown: onNextMenuItem,
       onUp: onPreviousMenuItem,
       onEnter: onSelectMenuItem
-    }, /*#__PURE__*/_react["default"].createElement(ContainerBox, {
+    }, /*#__PURE__*/_react["default"].createElement(ContainerBox, _extends({
       ref: dropContainerRef,
       tabIndex: -1,
       background: dropBackground || theme.menu.background
-    }, alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, passThemeFlag), alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       overflow: "auto",
       role: "menu",
       a11yTitle: a11y

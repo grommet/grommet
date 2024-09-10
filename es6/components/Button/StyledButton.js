@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { activeStyle, backgroundStyle, disabledStyle, edgeStyle, focusStyle, unfocusStyle, genericStyles, getHoverIndicatorStyle, normalizeColor } from '../../utils';
-import { withTheme } from '../../default-props';
 import { styledComponentsConfig } from '../../utils/styles';
 var radiusStyle = function radiusStyle(props) {
   // border.radius shouldn't impact an only-icon rendering.
@@ -69,7 +68,7 @@ var disabledButtonStyle = function disabledButtonStyle(props) {
 };
 
 // Deprecate props.theme.button.disabled.opacity in V3
-var StyledButton = styled.button.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledButton = styled.button.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
 })(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}&:focus:not(:focus-visible){", "}", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {

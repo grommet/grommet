@@ -12,7 +12,7 @@ var _InfiniteScroll = require("../InfiniteScroll");
 var _Pagination = require("../Pagination");
 var _utils = require("../../utils");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["as", "children", "data", "margin", "onMore", "pad", "paginate", "show", "size", "step"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -34,7 +34,8 @@ var Cards = exports.Cards = /*#__PURE__*/_react["default"].forwardRef(function (
     _ref$step = _ref.step,
     step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     contextData = _useContext.data;
   var data = dataProp || contextData || emptyData;

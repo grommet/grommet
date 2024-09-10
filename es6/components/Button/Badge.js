@@ -1,3 +1,4 @@
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { parseMetricToNum } from '../../utils';
@@ -5,9 +6,8 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
-var StyledBadgeContainer = styled(Box).attrs(withTheme).withConfig({
+var StyledBadgeContainer = styled(Box).withConfig({
   displayName: "Badge__StyledBadgeContainer",
   componentId: "sc-1es4ws1-0"
 })(["", ""], function (props) {
@@ -16,7 +16,9 @@ var StyledBadgeContainer = styled(Box).attrs(withTheme).withConfig({
 export var Badge = function Badge(_ref) {
   var children = _ref.children,
     content = _ref.content;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var containerRef = useRef();
   var contentRef = useRef();
   var stackRef = useRef();
@@ -104,7 +106,7 @@ export var Badge = function Badge(_ref) {
         ref: contentRef
       }, value > max ? max + "+" : value);
     }
-    badge = /*#__PURE__*/React.createElement(StyledBadgeContainer, {
+    badge = /*#__PURE__*/React.createElement(StyledBadgeContainer, _extends({
       ref: containerRef,
       align: "center",
       background: content.background || theme.button.badge.container.background,
@@ -112,7 +114,7 @@ export var Badge = function Badge(_ref) {
       justify: "center",
       round: true,
       pad: !(typeof value === 'boolean' || typeof content === 'boolean') ? theme.button.badge.container.pad : undefined
-    }, badge);
+    }, passThemeFlag), badge);
     // caller has provided their own JSX and we will just render that
   } else badge = /*#__PURE__*/React.createElement(Box, {
     ref: contentRef

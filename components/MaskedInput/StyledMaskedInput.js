@@ -5,9 +5,8 @@ exports.StyledMaskedInputContainer = exports.StyledMaskedInput = exports.StyledI
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 var _styles = require("../../utils/styles");
-var _defaultProps = require("../../default-props");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-var StyledMaskedInput = exports.StyledMaskedInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledMaskedInput = exports.StyledMaskedInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"
 })(["", " ", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
@@ -21,13 +20,13 @@ var StyledMaskedInput = exports.StyledMaskedInput = _styledComponents["default"]
 }, function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.extend;
 });
-var StyledMaskedInputContainer = exports.StyledMaskedInputContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledMaskedInputContainer = exports.StyledMaskedInputContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledMaskedInput__StyledMaskedInputContainer",
   componentId: "sc-99vkfa-1"
 })(["position:relative;width:100%;", ";"], function (props) {
   return props.theme.maskedInput && props.theme.maskedInput.container && props.theme.maskedInput.container.extend;
 });
-var StyledIcon = exports.StyledIcon = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledIcon = exports.StyledIcon = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledMaskedInput__StyledIcon",
   componentId: "sc-99vkfa-2"
 })(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {

@@ -38,7 +38,9 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tabIndex = _ref.tabIndex,
     skeletonProp = _ref.skeleton,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   // boxOptions was created to preserve backwards compatibility but
   // should not be supported in v3
   var _useContext = useContext(OptionsContext),
@@ -110,14 +112,14 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
         } else {
           contents.push( /*#__PURE__*/React.createElement(StyledBoxGap
           // eslint-disable-next-line react/no-array-index-key
-          , {
+          , _extends({
             key: "gap-" + index,
             as: boxAs === 'span' ? boxAs : 'div',
             gap: gap,
             directionProp: direction,
             responsive: responsive,
             border: styledBoxGapBorder
-          }));
+          }, passThemeFlag)));
         }
       }
       contents.push(child);
@@ -195,7 +197,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
     heightProp: height,
     responsive: responsive,
     tabIndex: adjustedTabIndex
-  }, clickProps, rest, skeletonProps), /*#__PURE__*/React.createElement(ThemeContext.Provider, {
+  }, clickProps, passThemeFlag, rest, skeletonProps), /*#__PURE__*/React.createElement(ThemeContext.Provider, {
     value: nextTheme
   }, contents));
   if (onClick) {

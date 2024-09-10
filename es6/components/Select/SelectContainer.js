@@ -14,10 +14,9 @@ import { StyledContainer, OptionsContainer, SelectOption } from './StyledSelect'
 import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
 // ensure ClearButton receives visual indication of keyboard
-var StyledButton = styled(Button).attrs(withTheme).withConfig({
+var StyledButton = styled(Button).withConfig({
   displayName: "SelectContainer__StyledButton",
   componentId: "sc-1wi0ul8-0"
 })(["&:focus{", "}"], function (props) {
@@ -33,13 +32,15 @@ var ClearButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     position = clear.position;
   var align = position !== 'bottom' ? 'start' : 'center';
   var buttonLabel = label || "Clear " + (name || 'selection');
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/React.createElement(StyledButton, _extends({
     a11yTitle: buttonLabel + ". Or, press " + (position === 'bottom' ? 'shift tab' : 'down arrow') + " to move to select options",
     fill: "horizontal",
     ref: ref,
     onClick: onClear,
     focusIndicator: false
-  }, rest), /*#__PURE__*/React.createElement(Box, _extends({}, theme.select.clear.container, {
+  }, passThemeFlag, rest), /*#__PURE__*/React.createElement(Box, _extends({}, theme.select.clear.container, {
     align: align
   }), /*#__PURE__*/React.createElement(Text, theme.select.clear.text, buttonLabel)));
 });
@@ -73,7 +74,9 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     valueKey = _ref2.valueKey,
     _ref2$replace = _ref2.replace,
     replace = _ref2$replace === void 0 ? true : _ref2$replace;
-  var theme = useThemeValue();
+  var _useThemeValue2 = useThemeValue(),
+    theme = _useThemeValue2.theme,
+    passThemeFlag = _useThemeValue2.passThemeFlag;
   var shouldShowClearButton = useCallback(function (position) {
     var hasValue = Boolean(multiple && value ? value.length : value);
     var showAtPosition = position === 'bottom' ? (clear == null ? void 0 : clear.position) === 'bottom' : (clear == null ? void 0 : clear.position) !== 'bottom';
@@ -264,11 +267,11 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     onUp: onPreviousOption,
     onDown: onNextOption,
     onKeyDown: onKeyDownOption
-  }, /*#__PURE__*/React.createElement(StyledContainer, {
+  }, /*#__PURE__*/React.createElement(StyledContainer, _extends({
     ref: ref,
     id: id ? id + "__select-drop" : undefined,
     dropHeight: dropHeight
-  }, onSearch && /*#__PURE__*/React.createElement(Box, {
+  }, passThemeFlag), onSearch && /*#__PURE__*/React.createElement(Box, {
     pad: !customSearchInput ? 'xsmall' : undefined,
     flex: false
   }, /*#__PURE__*/React.createElement(SelectTextInput, {
@@ -333,7 +336,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     // if we have a child, turn on plain, and hoverIndicator
     return /*#__PURE__*/React.createElement(SelectOption
     // eslint-disable-next-line react/no-array-index-key
-    , {
+    , _extends({
       key: index
       // merge optionRef and activeRef
       ,
@@ -365,7 +368,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       onMouseOver: !optionDisabled ? onActiveOption(index) : undefined,
       onClick: !optionDisabled ? selectOption(index) : undefined,
       textComponent: textComponent
-    }, child);
+    }, passThemeFlag), child);
   })) : /*#__PURE__*/React.createElement(EmptySearchOption, {
     emptySearchMessage: emptySearchMessage,
     selectOptionsStyle: selectOptionsStyle,

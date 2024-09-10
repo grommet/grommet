@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { focusStyle, genericStyles, normalizeColor, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var FIT_MAP = {
   cover: 'cover',
   contain: 'contain'
@@ -10,7 +9,7 @@ var fitStyle = css(["flex:1 1;min-height:0;object-fit:", ";"], function (props) 
 });
 
 // z-index is for Safari so controls aren't hidden
-var StyledVideo = styled.video.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledVideo = styled.video.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledVideo",
   componentId: "sc-w4v8h9-0"
 })(["max-width:100%;z-index:1;", " ::cue{background:", ";}", ";"], function (props) {
@@ -20,7 +19,7 @@ var StyledVideo = styled.video.withConfig(styledComponentsConfig).attrs(withThem
 }, function (props) {
   return props.theme.video && props.theme.video.extend;
 });
-var StyledVideoContainer = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledVideoContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledVideo__StyledVideoContainer",
   componentId: "sc-w4v8h9-1"
 })(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";&:focus{", "}"], genericStyles, focusStyle());
@@ -42,7 +41,7 @@ var headStyle = css(["::after{content:'';height:100%;width:", ";background:", ";
 }, function (props) {
   return props.value + "%";
 });
-var StyledVideoScrubber = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledVideoScrubber = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledVideo__StyledVideoScrubber",
   componentId: "sc-w4v8h9-3"
 })(["cursor:pointer;width:100%;height:100%;", ";&:focus{", "}"], function (props) {

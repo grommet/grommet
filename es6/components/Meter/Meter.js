@@ -35,7 +35,8 @@ var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
     value = _ref.value,
     valuesProp = _ref.values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
 
   // normalize values to an array of objects
   var values = useMemo(function () {

@@ -3,7 +3,8 @@ import { Box, Paragraph, Text } from 'grommet';
 import { Grid } from '../../Grid';
 import { useThemeValue } from '../../../utils/useThemeValue';
 export var BackgroundThemed = function BackgroundThemed() {
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var backgrounds = theme.global.backgrounds;
   return (
     // Uncomment <Grommet> lines when using outside of storybook

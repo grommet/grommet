@@ -9,7 +9,8 @@ var Header = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var _theme$header2;
   var sticky = _ref.sticky,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var headerRef = useForwardedRef(ref);
   useEffect(function () {
     var scrollTop = 0;

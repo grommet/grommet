@@ -15,7 +15,7 @@ var _propTypes = require("./propTypes");
 var _StyledCalendar = require("./StyledCalendar");
 var _utils = require("./utils");
 var _dates = require("../../utils/dates");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue3 = require("../../utils/useThemeValue");
 var _excluded = ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "initialFocus", "fill", "firstDayOfWeek", "header", "locale", "messages", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size", "timestamp"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -169,20 +169,22 @@ var CalendarDay = function CalendarDay(_ref) {
     otherMonth = _ref.otherMonth,
     _ref$buttonProps = _ref.buttonProps,
     buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
+  var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
     role: "gridcell",
     sizeProp: size,
     fillContainer: fill
   }, /*#__PURE__*/_react["default"].createElement(CalendarDayButton, _extends({
     fill: fill
-  }, buttonProps), /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
+  }, buttonProps), /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, _extends({
     disabledProp: buttonProps.disabled,
     inRange: isInRange,
     otherMonth: otherMonth,
     isSelected: isSelected,
     sizeProp: size,
     fillContainer: fill
-  }, children)));
+  }, passThemeFlag), children)));
 };
 var CalendarCustomDay = function CalendarCustomDay(_ref2) {
   var children = _ref2.children,
@@ -232,7 +234,9 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     size = _ref3$size === void 0 ? 'medium' : _ref3$size,
     timestampProp = _ref3.timestamp,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue2 = (0, _useThemeValue3.useThemeValue)(),
+    theme = _useThemeValue2.theme,
+    passThemeFlag = _useThemeValue2.passThemeFlag;
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
@@ -720,7 +724,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
     ref: ref,
     sizeProp: size,
     fillContainer: fill
-  }, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  }, passThemeFlag, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     fill: fill
   }, header ? header({
     date: reference,
@@ -785,7 +789,7 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
         changeReference(active);
       }
     }
-  }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
+  }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, _extends({
     tabIndex: 0,
     role: "grid",
     "aria-label": reference.toLocaleDateString(locale, {
@@ -807,11 +811,11 @@ var Calendar = exports.Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (
       setFocus(false);
       setActive(undefined);
     }
-  }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeks, {
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeks, _extends({
     slide: slide,
     sizeProp: size,
     fillContainer: fill
-  }, weeks)))));
+  }, passThemeFlag), weeks)))));
 });
 Calendar.displayName = 'Calendar';
 Calendar.propTypes = _propTypes.CalendarPropTypes;

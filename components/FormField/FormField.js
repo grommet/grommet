@@ -17,8 +17,7 @@ var _Text = require("../Text");
 var _TextInput = require("../TextInput");
 var _FormContext = require("../Form/FormContext");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
-var _defaultProps = require("../../default-props");
+var _useThemeValue3 = require("../../utils/useThemeValue");
 var _excluded = ["error", "info", "message", "type"],
   _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
   _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"];
@@ -32,7 +31,7 @@ var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButtonGroup', 'Ra
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
 };
-var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "sc-m9hood-0"
 })(["", " ", ""], function (props) {
@@ -42,7 +41,7 @@ var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultPro
 }, function (props) {
   return props.theme.formField && props.theme.formField.extend;
 });
-var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
 })(["", ""], function (props) {
@@ -50,7 +49,7 @@ var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).attrs(_def
     justBorder: true
   });
 });
-var StyledMessageContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var StyledMessageContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__StyledMessageContainer",
   componentId: "sc-m9hood-2"
 })(["", ""], function (props) {
@@ -70,7 +69,9 @@ var Message = function Message(_ref) {
     message = _ref.message,
     type = _ref.type,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   if (message) {
     var icon;
     var containerProps;
@@ -83,7 +84,7 @@ var Message = function Message(_ref) {
     return icon || containerProps ? /*#__PURE__*/_react["default"].createElement(StyledMessageContainer, _extends({
       direction: "row",
       messageType: type
-    }, containerProps), icon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, containerProps, passThemeFlag), icon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       flex: false
     }, icon), messageContent) : messageContent;
   }
@@ -149,7 +150,9 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     validate = _ref3.validate,
     validateOn = _ref3.validateOn,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue2 = (0, _useThemeValue3.useThemeValue)(),
+    theme = _useThemeValue2.theme,
+    passThemeFlag = _useThemeValue2.passThemeFlag;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _formContext$useFormF = formContext.useFormField({
       disabled: disabled,
@@ -291,7 +294,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
       round: formFieldTheme.round,
       focus: isFileInputComponent ? undefined : focus
     } : {};
-    contents = /*#__PURE__*/_react["default"].createElement(FormFieldContentBox, _extends({}, themeContentProps, innerProps, contentProps), contents);
+    contents = /*#__PURE__*/_react["default"].createElement(FormFieldContentBox, _extends({}, themeContentProps, innerProps, contentProps, passThemeFlag), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
     if (abut) {
@@ -378,7 +381,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
         };
       });
     } : undefined
-  }, containerRest), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
+  }, containerRest, passThemeFlag), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
     as: "label",
     htmlFor: htmlFor
   }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/_react["default"].createElement(Message, _extends({

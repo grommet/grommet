@@ -6,7 +6,6 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _styles = require("../../utils/styles");
 var _Button = require("../Button");
 var _Text = require("../Text");
-var _defaultProps = require("../../default-props");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var sizeStyle = function sizeStyle(props) {
   var style = props.theme.pagination.button && props.theme.pagination.button.size && props.theme.pagination.button.size[props.size || 'medium'];
@@ -23,13 +22,13 @@ var sizeStyle = function sizeStyle(props) {
     }
   } : '';
 };
-var StyledPaginationButton = exports.StyledPaginationButton = (0, _styledComponents["default"])(_Button.Button).attrs(_defaultProps.withTheme).withConfig({
+var StyledPaginationButton = exports.StyledPaginationButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledPageControl__StyledPaginationButton",
   componentId: "sc-1vlfaez-0"
 })(["> svg{margin:0 auto;}", ";"], function (props) {
   return sizeStyle(props).content;
 });
-var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledContainer = exports.StyledContainer = _styledComponents["default"].div.withConfig(_styles.styledComponentsConfig).withConfig({
   displayName: "StyledPageControl__StyledContainer",
   componentId: "sc-1vlfaez-1"
 })(["display:flex;align-items:center;justify-content:center;max-width:100%;", ";", ";"], function (props) {
@@ -37,7 +36,7 @@ var StyledContainer = exports.StyledContainer = _styledComponents["default"].div
 }, function (props) {
   return props.theme.pagination.control && props.theme.pagination.control.extend;
 });
-var StyledSeparator = exports.StyledSeparator = (0, _styledComponents["default"])(_Text.Text).attrs(_defaultProps.withTheme).withConfig({
+var StyledSeparator = exports.StyledSeparator = (0, _styledComponents["default"])(_Text.Text).withConfig({
   displayName: "StyledPageControl__StyledSeparator",
   componentId: "sc-1vlfaez-2"
 })(["font-weight:bold;", ";", ";"], function (props) {

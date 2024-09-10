@@ -7,7 +7,8 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // Needs to have a CardBody or a flex container when Card uses a fixed height.
 var CardFooter = function CardFooter(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Footer, _extends({}, theme.card.footer, rest));
 };
 export { CardFooter };

@@ -6,6 +6,7 @@ import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Cell } from './Cell';
 import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var cellProps = _ref.cellProps,
     columns = _ref.columns,
@@ -20,6 +21,8 @@ var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var pin = pinProp ? ['bottom'] : [];
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/React.createElement(StyledDataTableFooter, _extends({
     ref: ref,
     fillProp: fill,
@@ -31,12 +34,12 @@ var Footer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     verticalAlign: "top",
     background: cellProps.background,
     border: cellProps.border
-  }), (selected || onSelect) && /*#__PURE__*/React.createElement(StyledDataTableCell, {
+  }), (selected || onSelect) && /*#__PURE__*/React.createElement(StyledDataTableCell, _extends({
     background: cellProps.background,
     context: "footer",
     pin: pin,
     verticalAlign: verticalAlign
-  }), columns.map(function (column) {
+  }, passThemeFlag)), columns.map(function (column) {
     var cellPin = [].concat(pin);
     if (column.pin) cellPin.push('left');
     return /*#__PURE__*/React.createElement(Cell, {

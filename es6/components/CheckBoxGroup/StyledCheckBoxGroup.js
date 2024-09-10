@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Box } from '../Box';
-import { withTheme } from '../../default-props';
-var StyledCheckBoxGroup = styled(Box).attrs(withTheme).withConfig({
+var StyledCheckBoxGroup = styled(Box).withConfig({
   displayName: "StyledCheckBoxGroup",
   componentId: "sc-2nhc5d-0"
 })(["", ""], function (props) {

@@ -7,7 +7,7 @@ var _CheckBox = require("../CheckBox");
 var _FormContext = require("../Form/FormContext");
 var _StyledCheckBoxGroup = require("./StyledCheckBoxGroup");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["children", "defaultValue", "value", "disabled", "focusIndicator", "gap", "labelKey", "valueKey", "onChange", "options", "name"],
   _excluded2 = ["value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -29,7 +29,9 @@ var CheckBoxGroup = exports.CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(
     name = _ref.name,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
 
   // In case option is a string, normalize it to be an object
   var options = optionsProp.map(function (option) {
@@ -72,7 +74,7 @@ var CheckBoxGroup = exports.CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(
     role: "group"
   }, theme.checkBoxGroup.container, {
     gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
-  }, rest), options.map(function (option, index) {
+  }, passThemeFlag, rest), options.map(function (option, index) {
     var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;
     var valueOption = valueKey ? option[valueKey] : optionValue;

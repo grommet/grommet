@@ -16,7 +16,8 @@ export var PaginationStep = function PaginationStep(_ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(MessageContext),
     formatMessage = _useContext.format;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Box, _extends({
     direction: "row",
     align: "center",

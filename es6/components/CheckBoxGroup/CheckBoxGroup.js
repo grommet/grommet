@@ -23,7 +23,9 @@ var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     name = _ref.name,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var formContext = useContext(FormContext);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
 
   // In case option is a string, normalize it to be an object
   var options = optionsProp.map(function (option) {
@@ -66,7 +68,7 @@ var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     role: "group"
   }, theme.checkBoxGroup.container, {
     gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
-  }, rest), options.map(function (option, index) {
+  }, passThemeFlag, rest), options.map(function (option, index) {
     var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;
     var valueOption = valueKey ? option[valueKey] : optionValue;

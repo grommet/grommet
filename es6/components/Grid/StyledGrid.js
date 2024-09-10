@@ -1,7 +1,5 @@
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import styled, { css } from 'styled-components';
 import { alignContentStyle, alignStyle, borderStyle, edgeStyle, genericStyles, heightStyle, widthStyle, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var fillStyle = function fillStyle(fill) {
   if (!fill) {
     return fill;
@@ -163,11 +161,7 @@ var areasStyle = function areasStyle(props) {
     return "\"" + r.join(' ') + "\"";
   }).join(' ') + ";";
 };
-var StyledGrid = styled.div.withConfig(styledComponentsConfig).attrs(function (props) {
-  return _extends({}, withTheme(props), {
-    'aria-label': props.a11yTitleProp
-  });
-}).withConfig({
+var StyledGrid = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
 })(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {

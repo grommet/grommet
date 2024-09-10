@@ -16,7 +16,7 @@ var _StyledButtonKind = require("./StyledButtonKind");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
 var _Skeleton = require("../Skeleton");
 var _BusyAnimation = require("./BusyAnimation");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["active", "align", "aria-label", "badge", "busy", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "justify", "kind", "label", "messages", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "pad", "plain", "primary", "reverse", "secondary", "selected", "size", "success", "tip", "type", "a11yTitle", "as"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -186,7 +186,9 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     a11yTitle = _ref$a11yTitle === void 0 ? typeof tip === 'string' ? tip : undefined : _ref$a11yTitle,
     as = _ref.as,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = (0, _react.useState)(),
     focus = _useState[0],
     setFocus = _useState[1];
@@ -434,7 +436,7 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       sizeProp: size,
       success: success,
       type: !href ? type : undefined
-    }), contents);
+    }, passThemeFlag), contents);
   } else {
     styledButtonResult = /*#__PURE__*/_react["default"].createElement(_StyledButton.StyledButton, _extends({}, rest, {
       as: domTag,
@@ -471,7 +473,7 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       sizeProp: size,
       success: success,
       type: !href ? type : undefined
-    }), contents);
+    }, passThemeFlag), contents);
   }
   if (tip) {
     if (typeof tip === 'string') {

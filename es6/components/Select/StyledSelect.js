@@ -4,8 +4,7 @@ import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
 import { getHoverIndicatorStyle, selectedStyle, controlBorderStyle, sizeStyle, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
-export var StyledContainer = styled(Box).attrs(withTheme).withConfig({
+export var StyledContainer = styled(Box).withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"
 })(["@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";", ";"], function (props) {
@@ -23,7 +22,7 @@ export var HiddenInput = styled.input.withConfig(styledComponentsConfig).withCon
   displayName: "StyledSelect__HiddenInput",
   componentId: "sc-znp66n-2"
 })(["display:none;"]);
-export var SelectOption = styled(Button).attrs(withTheme).withConfig({
+export var SelectOption = styled(Button).withConfig({
   displayName: "StyledSelect__SelectOption",
   componentId: "sc-znp66n-3"
 })(["", " ", " &:focus{", "}display:block;width:100%;", ";"], function (props) {
@@ -41,7 +40,7 @@ export var SelectTextInput = styled(TextInput).withConfig({
 })(["cursor:", ";"], function (props) {
   return props.defaultCursor ? 'default' : 'pointer';
 });
-export var StyledSelectDropButton = styled(DropButton).attrs(withTheme).withConfig({
+export var StyledSelectDropButton = styled(DropButton).withConfig({
   displayName: "StyledSelect__StyledSelectDropButton",
   componentId: "sc-znp66n-5"
 })(["", ";", ";", ";"], function (props) {

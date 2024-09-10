@@ -4,7 +4,7 @@ exports.__esModule = true;
 exports.PageControl = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _StyledPageControl = require("./StyledPageControl");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["control", "separator", "size"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -14,18 +14,20 @@ var PageControl = exports.PageControl = function PageControl(_ref) {
     separator = _ref.separator,
     sizeProp = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var size = sizeProp || 'medium';
-  return /*#__PURE__*/_react["default"].createElement(_StyledPageControl.StyledContainer, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledPageControl.StyledContainer, _extends({
     as: "li",
     size: size
-  }, separator ? /*#__PURE__*/_react["default"].createElement(_StyledPageControl.StyledSeparator, {
+  }, passThemeFlag), separator ? /*#__PURE__*/_react["default"].createElement(_StyledPageControl.StyledSeparator, _extends({
     size: size
-  }, "\u2026") : /*#__PURE__*/_react["default"].createElement(_StyledPageControl.StyledPaginationButton, _extends({
+  }, passThemeFlag), "\u2026") : /*#__PURE__*/_react["default"].createElement(_StyledPageControl.StyledPaginationButton, _extends({
     a11yTitle: "Go to page " + control,
     fill: true,
     kind: theme.pagination.button,
     label: control,
     size: size
-  }, rest)));
+  }, passThemeFlag, rest)));
 };

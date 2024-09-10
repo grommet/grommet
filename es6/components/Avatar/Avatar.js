@@ -22,7 +22,9 @@ var Avatar = function Avatar(_ref) {
     src = _ref.src,
     width = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var avatarSize = theme.avatar.size[size] || size;
   var avatarTextSize = theme.avatar.text.size[size] || 'large';
   var avatarProps = useMemo(function () {
@@ -43,10 +45,10 @@ var Avatar = function Avatar(_ref) {
   }
   var content;
   if (typeof children === 'string') {
-    content = /*#__PURE__*/React.createElement(StyledAvatarText, {
+    content = /*#__PURE__*/React.createElement(StyledAvatarText, _extends({
       alignSelf: "center",
       size: avatarTextSize
-    }, children);
+    }, passThemeFlag), children);
   } else if (typeof src === 'string') {
     content = /*#__PURE__*/React.createElement(Image, {
       role: "presentation",
@@ -58,7 +60,7 @@ var Avatar = function Avatar(_ref) {
     return /*#__PURE__*/React.createElement(StyledAvatar, _extends({
       role: typeof src === 'string' ? 'figure' : undefined,
       a11yTitle: a11yTitle || ariaLabel
-    }, avatarProps, rest), content);
+    }, avatarProps, passThemeFlag, rest), content);
   }
   return /*#__PURE__*/React.createElement(AvatarChildren, null);
 };

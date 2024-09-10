@@ -63,7 +63,8 @@ var Content = function Content() {
   }));
 };
 export var Individual = function Individual() {
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
   }, /*#__PURE__*/React.createElement(Content, null)), /*#__PURE__*/React.createElement(Grommet, {

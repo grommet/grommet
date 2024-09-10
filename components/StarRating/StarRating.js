@@ -7,7 +7,7 @@ var _Star = require("grommet-icons/icons/Star");
 var _StarOutline = require("grommet-icons/icons/StarOutline");
 var _FormContext = require("../Form/FormContext");
 var _RadioButtonGroup = require("../RadioButtonGroup");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["name", "defaultValue", "value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -19,7 +19,8 @@ var StarRating = exports.StarRating = function StarRating(_ref) {
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
       value: valueProp,

@@ -4,7 +4,8 @@ export var useDebounce = function useDebounce(debounceDelay) {
   var _useState = useState(),
     func = _useState[0],
     setFunc = _useState[1];
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var delay = debounceDelay || theme.global.debounceDelay;
   useEffect(function () {
     var timer;

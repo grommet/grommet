@@ -15,7 +15,8 @@ var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$trapFocus = _ref.trapFocus,
     trapFocus = _ref$trapFocus === void 0 ? true : _ref$trapFocus,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _useState = useState(),
     originalFocusedElement = _useState[0],
     setOriginalFocusedElement = _useState[1];

@@ -6,7 +6,6 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _styles = require("../../utils/styles");
 var _readOnly = require("../../utils/readOnly");
-var _defaultProps = require("../../default-props");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var getPlainStyle = function getPlainStyle(plain) {
@@ -15,7 +14,7 @@ var getPlainStyle = function getPlainStyle(plain) {
   }
   return plain && _utils.plainInputStyle;
 };
-var StyledTextInput = exports.StyledTextInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledTextInput = exports.StyledTextInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
 })(["", " ", " ", " ", " ", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
@@ -35,7 +34,7 @@ var StyledTextInput = exports.StyledTextInput = _styledComponents["default"].inp
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.extend;
 });
-var StyledTextInputContainer = exports.StyledTextInputContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledTextInputContainer = exports.StyledTextInputContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledTextInputContainer",
   componentId: "sc-1x30a0s-1"
 })(["position:relative;width:100%;", ";", ";", " ", ";"], function (props) {
@@ -47,7 +46,7 @@ var StyledTextInputContainer = exports.StyledTextInputContainer = _styledCompone
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.container && props.theme.textInput.container.extend;
 });
-var StyledPlaceholder = exports.StyledPlaceholder = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledPlaceholder = exports.StyledPlaceholder = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
   componentId: "sc-1x30a0s-2"
 })(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;pointer-events:none;", ";"], function (props) {
@@ -55,13 +54,13 @@ var StyledPlaceholder = exports.StyledPlaceholder = _styledComponents["default"]
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.placeholder && props.theme.textInput.placeholder.extend;
 });
-var StyledIcon = exports.StyledIcon = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledIcon = exports.StyledIcon = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledIcon",
   componentId: "sc-1x30a0s-3"
 })(["position:absolute;display:flex;justify:center;top:50%;transform:translateY(-50%);pointer-events:none;", ""], function (props) {
   return props.reverse ? "right: " + (0, _utils.getInputPadBySide)(props, 'right') + ";" : "left: " + (0, _utils.getInputPadBySide)(props, 'left') + ";";
 });
-var StyledSuggestions = exports.StyledSuggestions = _styledComponents["default"].ol.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledSuggestions = exports.StyledSuggestions = _styledComponents["default"].ol.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledSuggestions",
   componentId: "sc-1x30a0s-4"
 })(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;", ";"], function (props) {

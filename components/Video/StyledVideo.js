@@ -4,7 +4,6 @@ exports.__esModule = true;
 exports.StyledVideoScrubber = exports.StyledVideoControls = exports.StyledVideoContainer = exports.StyledVideo = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
-var _defaultProps = require("../../default-props");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var FIT_MAP = {
@@ -16,7 +15,7 @@ var fitStyle = (0, _styledComponents.css)(["flex:1 1;min-height:0;object-fit:", 
 });
 
 // z-index is for Safari so controls aren't hidden
-var StyledVideo = exports.StyledVideo = _styledComponents["default"].video.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledVideo = exports.StyledVideo = _styledComponents["default"].video.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledVideo",
   componentId: "sc-w4v8h9-0"
 })(["max-width:100%;z-index:1;", " ::cue{background:", ";}", ";"], function (props) {
@@ -26,7 +25,7 @@ var StyledVideo = exports.StyledVideo = _styledComponents["default"].video.withC
 }, function (props) {
   return props.theme.video && props.theme.video.extend;
 });
-var StyledVideoContainer = exports.StyledVideoContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledVideoContainer = exports.StyledVideoContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledVideo__StyledVideoContainer",
   componentId: "sc-w4v8h9-1"
 })(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";&:focus{", "}"], _utils.genericStyles, (0, _utils.focusStyle)());
@@ -48,7 +47,7 @@ var headStyle = (0, _styledComponents.css)(["::after{content:'';height:100%;widt
 }, function (props) {
   return props.value + "%";
 });
-var StyledVideoScrubber = exports.StyledVideoScrubber = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledVideoScrubber = exports.StyledVideoScrubber = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledVideo__StyledVideoScrubber",
   componentId: "sc-w4v8h9-3"
 })(["cursor:pointer;width:100%;height:100%;", ";&:focus{", "}"], function (props) {

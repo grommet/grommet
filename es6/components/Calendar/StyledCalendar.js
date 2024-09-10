@@ -1,6 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
 import { backgroundStyle, focusStyle, genericStyles, kindPartStyles, parseMetricToNum, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
   var width = props.fillContainer ? '100%' : props.theme.global.size[props.sizeProp];
@@ -8,7 +7,7 @@ var sizeStyle = function sizeStyle(props) {
     return p.fillContainer && 'height: 100%;';
   });
 };
-var StyledCalendar = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledCalendar = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar",
   componentId: "sc-1y4xhmp-0"
 })(["", " ", " ", ""], genericStyles, function (props) {
@@ -20,7 +19,7 @@ var weeksContainerSizeStyle = function weeksContainerSizeStyle(props) {
   var height = props.fillContainer ? '100%' : parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6 + "px";
   return "\n    height: " + height + ";\n\n  ";
 };
-var StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledWeeksContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledWeeksContainer",
   componentId: "sc-1y4xhmp-1"
 })(["overflow:hidden;", " ", ";"], function (props) {
@@ -46,7 +45,7 @@ var slideStyle = function slideStyle(props) {
 var weeksSizeStyle = function weeksSizeStyle() {
   return css(["display:flex;flex-direction:column;height:100%;"]);
 };
-var StyledWeeks = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledWeeks = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledWeeks",
   componentId: "sc-1y4xhmp-2"
 })(["position:relative;", " ", ";"], function (props) {
@@ -73,7 +72,7 @@ var daySizeStyle = function daySizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
   return css(["width:", ";height:", ";"], props.fillContainer ? '100%' : data.daySize, props.fillContainer ? '100%' : data.daySize);
 };
-var StyledDay = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledDay = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledCalendar__StyledDay",
   componentId: "sc-1y4xhmp-5"
 })(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", " ", " ", ""], function (props) {

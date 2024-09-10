@@ -11,11 +11,10 @@ var _TableBody = require("../TableBody");
 var _TableCell = require("../TableCell");
 var _TableHeader = require("../TableHeader");
 var _TableFooter = require("../TableFooter");
-var _defaultProps = require("../../default-props");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 // border-collapse: separate is needed so pinned header/footer borders work
-var StyledDataTable = exports.StyledDataTable = (0, _styledComponents["default"])(_Table.Table).attrs(_defaultProps.withTheme).withConfig({
+var StyledDataTable = exports.StyledDataTable = (0, _styledComponents["default"])(_Table.Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "sc-xrlyjm-0"
 })(["position:relative;border-spacing:0;border-collapse:separate;", " ", " ", ";"], _utils.genericStyles, function (props) {
@@ -25,7 +24,7 @@ var StyledDataTable = exports.StyledDataTable = (0, _styledComponents["default"]
 });
 
 // when paginated, this wraps the data table and pagination component
-var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledDataTable__StyledContainer",
   componentId: "sc-xrlyjm-1"
 })(["", ";"], function (props) {
@@ -48,7 +47,7 @@ var StyledDataTableRow = exports.StyledDataTableRow = (0, _styledComponents["def
 });
 
 // focus styling other than outline doesn't work on <tbody />
-var StyledDataTableBody = exports.StyledDataTableBody = (0, _styledComponents["default"])(_TableBody.TableBody).attrs(_defaultProps.withTheme).withConfig({
+var StyledDataTableBody = exports.StyledDataTableBody = (0, _styledComponents["default"])(_TableBody.TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "sc-xrlyjm-3"
 })(["", " &:focus{", "}&:focus:not(:focus-visible){", "}"], function (props) {
@@ -74,7 +73,7 @@ var StyledDataTableFooter = exports.StyledDataTableFooter = (0, _styledComponent
 }, function (props) {
   return props.pin && "\n      /* Safari needs the relative positioning of tfoot specified */\n      position: sticky;\n      bottom: 0;\n      z-index: 1;\n  ";
 });
-var StyledDataTableCell = exports.StyledDataTableCell = (0, _styledComponents["default"])(_TableCell.TableCell).attrs(_defaultProps.withTheme).withConfig({
+var StyledDataTableCell = exports.StyledDataTableCell = (0, _styledComponents["default"])(_TableCell.TableCell).withConfig({
   displayName: "StyledDataTable__StyledDataTableCell",
   componentId: "sc-xrlyjm-6"
 })(["", ";", " ", ""], function (props) {

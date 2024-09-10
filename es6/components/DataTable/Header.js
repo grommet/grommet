@@ -19,7 +19,6 @@ import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -80,7 +79,7 @@ var buttonStyle = function buttonStyle(_ref) {
   }
   return styles;
 };
-var StyledHeaderCellButton = styled(Button).attrs(withTheme).withConfig({
+var StyledHeaderCellButton = styled(Button).withConfig({
   displayName: "Header__StyledHeaderCellButton",
   componentId: "sc-1baku5q-0"
 })(["", ""], function (props) {
@@ -122,7 +121,9 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     widths = _ref2.widths,
     verticalAlign = _ref2.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _separateThemeProps2 = separateThemeProps(theme),
     layoutProps = _separateThemeProps2[0],
     textProps = _separateThemeProps2[1];
@@ -204,7 +205,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }).length === 0,
     onToggle: onToggle,
     pad: cellProps.pad
-  }), (selected || onSelect) && /*#__PURE__*/React.createElement(StyledDataTableCell, {
+  }), (selected || onSelect) && /*#__PURE__*/React.createElement(StyledDataTableCell, _extends({
     background: cellProps.background,
     onWidth: updateWidths,
     plain: "noPad",
@@ -214,7 +215,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     pin: selectPin,
     pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
     verticalAlign: verticalAlign
-  }, onSelect && allowSelectAll && /*#__PURE__*/React.createElement(CheckBox, {
+  }, passThemeFlag), onSelect && allowSelectAll && /*#__PURE__*/React.createElement(CheckBox, {
     a11yTitle: totalSelected === data.length ? 'unselect all' : 'select all',
     checked: groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected > 0 && data.length > 0 && totalSelected === (contextTotal || data.length),
     indeterminate: groupBy != null && groupBy.select ? groupBy.select[''] === 'some' : totalSelected > 0 && totalSelected < (contextTotal || data.length),
@@ -267,7 +268,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           Icon = theme.dataTable.icons.sortable;
         }
       }
-      content = /*#__PURE__*/React.createElement(StyledHeaderCellButton, {
+      content = /*#__PURE__*/React.createElement(StyledHeaderCellButton, _extends({
         plain: true,
         column: property,
         fill: "vertical",
@@ -276,7 +277,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         pad: cellProps.pad,
         sortable: true,
         verticalAlign: verticalAlign || columnVerticalAlign
-      }, /*#__PURE__*/React.createElement(Box, {
+      }, passThemeFlag), /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
         gap: "xsmall",
@@ -324,7 +325,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }
     var cellPin = [].concat(pin);
     if (columnPin) cellPin.push('left');
-    return /*#__PURE__*/React.createElement(StyledDataTableCell, {
+    return /*#__PURE__*/React.createElement(StyledDataTableCell, _extends({
       key: property,
       align: align,
       context: "header",
@@ -343,7 +344,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       style: widths && widths[property] ? {
         width: widths[property]
       } : undefined
-    }, content);
+    }, passThemeFlag), content);
   })));
 });
 Header.displayName = 'Header';

@@ -8,7 +8,7 @@ var _utils = require("../../utils");
 var _StyledChart = require("./StyledChart");
 var _utils2 = require("./utils");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "bounds", "color", "dash", "direction", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"],
   _excluded2 = ["color", "label", "onHover", "opacity", "thickness", "value"],
   _excluded3 = ["color", "label", "onHover", "opacity", "thickness", "value"];
@@ -51,7 +51,9 @@ var Chart = exports.Chart = /*#__PURE__*/_react["default"].forwardRef(function (
     valuesProp = _ref$values === void 0 ? defaultValues : _ref$values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerRef = (0, _utils.useForwardedRef)(ref);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var values = (0, _react.useMemo)(function () {
     return (0, _utils2.normalizeValues)(valuesProp);
   }, [valuesProp]);
@@ -573,7 +575,7 @@ var Chart = exports.Chart = /*#__PURE__*/_react["default"].forwardRef(function (
     width: size === 'full' ? '100%' : size.width,
     height: size === 'full' ? '100%' : size.height,
     typeProp: type // prevent adding to DOM
-  }, rest), defs.length && /*#__PURE__*/_react["default"].createElement("defs", null, defs), useGradient ? gradientRect : drawing);
+  }, passThemeFlag, rest), defs.length && /*#__PURE__*/_react["default"].createElement("defs", null, defs), useGradient ? gradientRect : drawing);
 });
 Chart.displayName = 'Chart';
 Chart.propTypes = _propTypes.ChartPropTypes;

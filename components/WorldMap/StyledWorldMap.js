@@ -4,7 +4,6 @@ exports.__esModule = true;
 exports.StyledWorldMap = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
-var _defaultProps = require("../../default-props");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var fillStyle = function fillStyle(fillProp) {
   if (fillProp === 'horizontal') {
@@ -20,7 +19,7 @@ var fillStyle = function fillStyle(fillProp) {
 };
 
 // undefined fillProp has width for backwards compatibility
-var StyledWorldMap = exports.StyledWorldMap = _styledComponents["default"].svg.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledWorldMap = exports.StyledWorldMap = _styledComponents["default"].svg.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledWorldMap",
   componentId: "sc-had4c3-0"
 })(["", " ", " ", ";"], _utils.genericStyles, function (props) {

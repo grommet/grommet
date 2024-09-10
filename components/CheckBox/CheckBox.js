@@ -8,7 +8,7 @@ var _FormContext = require("../Form/FormContext");
 var _propTypes = require("./propTypes");
 var _StyledCheckBox = require("./StyledCheckBox");
 var _utils = require("../../utils");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "aria-label", "checked", "children", "defaultChecked", "disabled", "fill", "focus", "focusIndicator", "id", "label", "name", "onBlur", "onChange", "onFocus", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver", "pad", "reverse", "toggle", "indeterminate"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -49,7 +49,9 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
     toggle = _ref.toggle,
     indeterminate = _ref.indeterminate,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
@@ -102,7 +104,7 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
   if (checked) {
     borderColor = (0, _utils.normalizeColor)(theme.checkBox.color || 'control', theme);
   }
-  var visual = toggle ? /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxToggle, themeableProps, /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxKnob, themeableProps)) : /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxBox, _extends({
+  var visual = toggle ? /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxToggle, _extends({}, passThemeFlag, themeableProps), /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxKnob, _extends({}, passThemeFlag, themeableProps))) : /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxBox, _extends({
     align: "center",
     justify: "center",
     width: theme.checkBox.size,
@@ -112,7 +114,7 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
       color: borderColor
     },
     round: theme.checkBox.check.radius
-  }, themeableProps), !indeterminate && checked && (CheckedIcon ? /*#__PURE__*/_react["default"].createElement(CheckedIcon, {
+  }, passThemeFlag, themeableProps), !indeterminate && checked && (CheckedIcon ? /*#__PURE__*/_react["default"].createElement(CheckedIcon, {
     theme: theme,
     as: _StyledCheckBox.StyledCheckBoxIcon
   }) : /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxIcon, _extends({
@@ -140,7 +142,7 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
     margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap || 'small', _ref2)
   }, themeableProps), /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxInput, _extends({
     "aria-label": ariaLabel || a11yTitle
-  }, rest, {
+  }, passThemeFlag, rest, {
     ref: ref,
     type: "checkbox"
   }, (0, _object.removeUndefined)({
@@ -191,7 +193,7 @@ var CheckBox = exports.CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (
     onMouseOut: function onMouseOut(event) {
       return _onMouseOut == null ? void 0 : _onMouseOut(event);
     }
-  }, themeableProps), first, second);
+  }, passThemeFlag, themeableProps), first, second);
 });
 CheckBox.displayName = 'CheckBox';
 CheckBox.propTypes = _propTypes.CheckBoxPropTypes;

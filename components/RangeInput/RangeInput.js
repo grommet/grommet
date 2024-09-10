@@ -7,7 +7,7 @@ var _FormContext = require("../Form/FormContext");
 var _StyledRangeInput = require("./StyledRangeInput");
 var _propTypes = require("./propTypes");
 var _utils = require("../../utils");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "color", "focus", "focusIndicator", "name", "onChange", "onFocus", "onBlur", "value", "step", "min", "max"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -32,7 +32,9 @@ var RangeInput = exports.RangeInput = /*#__PURE__*/(0, _react.forwardRef)(functi
     _ref$max = _ref.max,
     max = _ref$max === void 0 ? 100 : _ref$max,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _useState = (0, _react.useState)(focusProp),
     focus = _useState[0],
@@ -112,7 +114,7 @@ var RangeInput = exports.RangeInput = /*#__PURE__*/(0, _react.forwardRef)(functi
     focus: focus,
     focusIndicator: focusIndicator,
     value: value || value === 0 ? value : ''
-  }, rest, {
+  }, passThemeFlag, rest, {
     color: color,
     onFocus: function onFocus(event) {
       setFocus(true);

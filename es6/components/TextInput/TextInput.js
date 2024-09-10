@@ -16,7 +16,6 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 import { CopyButton } from './CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 var renderLabel = function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
     return suggestion.label || suggestion.value;
@@ -32,7 +31,7 @@ var stringLabel = function stringLabel(suggestion) {
   }
   return suggestion;
 };
-var ContainerBox = styled(Box).attrs(withTheme).withConfig({
+var ContainerBox = styled(Box).withConfig({
   displayName: "TextInput__ContainerBox",
   componentId: "sc-1ai0c08-0"
 })(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
@@ -76,7 +75,9 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     valueProp = _ref.value,
     widthProp = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var announce = useContext(AnnounceContext);
@@ -275,7 +276,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       target: dropTarget || inputRef.current,
       onClickOutside: clickOutside,
       onEsc: closeDrop
-    }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, {
+    }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, _extends({
       id: id ? "listbox__" + id : undefined,
       role: "listbox",
       overflow: "auto",
@@ -283,9 +284,9 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onMouseMove: function onMouseMove() {
         return setMouseMovedSinceLastKey(true);
       }
-    }, /*#__PURE__*/React.createElement(StyledSuggestions, {
+    }, passThemeFlag), /*#__PURE__*/React.createElement(StyledSuggestions, _extends({
       ref: suggestionsRef
-    }, /*#__PURE__*/React.createElement(InfiniteScroll, {
+    }, passThemeFlag), /*#__PURE__*/React.createElement(InfiniteScroll, {
       items: suggestions,
       step: theme.select.step,
       show: activeSuggestionIndex !== -1 ? activeSuggestionIndex : undefined
@@ -376,13 +377,13 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tip: tip,
     value: value
   });
-  return /*#__PURE__*/React.createElement(StyledTextInputContainer, {
+  return /*#__PURE__*/React.createElement(StyledTextInputContainer, _extends({
     readOnlyProp: readOnly // readOnlyProp to avoid passing to DOM
     ,
     readOnlyCopy: readOnlyCopy,
     plain: plain,
     border: !plain
-  }, reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, null, placeholder), textInputIcon && !readOnly && /*#__PURE__*/React.createElement(StyledIcon, {
+  }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnly && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
   }, textInputIcon), /*#__PURE__*/React.createElement(Keyboard, _extends({
@@ -401,7 +402,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     focusIndicator: focusIndicator,
     textAlign: textAlign,
     widthProp: widthProp
-  }, rest, extraProps, comboboxProps, {
+  }, passThemeFlag, rest, extraProps, comboboxProps, {
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value),
     readOnly: readOnly,

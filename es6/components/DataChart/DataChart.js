@@ -55,7 +55,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     seriesProp = _ref.series,
     size = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
 
   // legend interaction, if any
   var _useState = useState(),

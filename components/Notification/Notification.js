@@ -11,7 +11,7 @@ var _Layer = require("../Layer");
 var _Paragraph = require("../Paragraph");
 var _Text = require("../Text");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["actions", "message", "onClose", "id", "global", "status", "title", "toast", "icon", "time"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -72,7 +72,8 @@ var Notification = exports.Notification = function Notification(_ref) {
     time = _ref.time,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var autoClose = toast && (toast == null ? void 0 : toast.autoClose) === undefined ? true : toast.autoClose;
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var _useState = (0, _react.useState)(true),
     visible = _useState[0],
     setVisible = _useState[1];

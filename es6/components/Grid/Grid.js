@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { forwardRef } from 'react';
 import { StyledGrid } from './StyledGrid';
 import { GridPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
     ariaLabel = props['aria-label'],
@@ -17,9 +18,11 @@ var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
     as = props.as,
     width = props.width,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/React.createElement(StyledGrid, _extends({
     ref: ref,
-    a11yTitleProp: ariaLabel || a11yTitle,
+    "aria-label": ariaLabel || a11yTitle,
     as: !as && tag ? tag : as,
     border: border,
     fillContainer: fill,
@@ -27,7 +30,7 @@ var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
     responsive: responsive,
     rowsProp: rows,
     widthProp: width
-  }, rest));
+  }, passThemeFlag, rest));
 });
 Grid.displayName = 'Grid';
 Grid.propTypes = GridPropTypes;

@@ -6,7 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _Image = require("../Image");
 var _StyledAvatar = require("./StyledAvatar");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "aria-label", "align", "children", "height", "justify", "round", "size", "src", "width"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -28,7 +28,9 @@ var Avatar = exports.Avatar = function Avatar(_ref) {
     src = _ref.src,
     width = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var avatarSize = theme.avatar.size[size] || size;
   var avatarTextSize = theme.avatar.text.size[size] || 'large';
   var avatarProps = (0, _react.useMemo)(function () {
@@ -49,10 +51,10 @@ var Avatar = exports.Avatar = function Avatar(_ref) {
   }
   var content;
   if (typeof children === 'string') {
-    content = /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatarText, {
+    content = /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatarText, _extends({
       alignSelf: "center",
       size: avatarTextSize
-    }, children);
+    }, passThemeFlag), children);
   } else if (typeof src === 'string') {
     content = /*#__PURE__*/_react["default"].createElement(_Image.Image, {
       role: "presentation",
@@ -64,7 +66,7 @@ var Avatar = exports.Avatar = function Avatar(_ref) {
     return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({
       role: typeof src === 'string' ? 'figure' : undefined,
       a11yTitle: a11yTitle || ariaLabel
-    }, avatarProps, rest), content);
+    }, avatarProps, passThemeFlag, rest), content);
   }
   return /*#__PURE__*/_react["default"].createElement(AvatarChildren, null);
 };

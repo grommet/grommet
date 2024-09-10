@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSearch drop 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
 .c3 {
   display: inline-block;
   flex: 0 0 auto;
@@ -31,16 +41,6 @@ exports[`DataSearch drop 1`] = `
 .c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 0 0 auto;
 }
 
 .c2 {
@@ -185,6 +185,15 @@ exports[`DataSearch drop 3`] = `
 `;
 
 exports[`DataSearch no Data 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c4 {
   display: inline-block;
   flex: 0 0 auto;
@@ -215,15 +224,6 @@ exports[`DataSearch no Data 1`] = `
 .c4 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
-}
-
-.c1 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
 }
 
 .c5 {
@@ -353,38 +353,6 @@ exports[`DataSearch no Data 1`] = `
 `;
 
 exports[`DataSearch renders 1`] = `
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c1 {
   display: flex;
   box-sizing: border-box;
@@ -447,6 +415,38 @@ exports[`DataSearch renders 1`] = `
   flex-direction: row;
   flex: 0 0 auto;
   justify-content: space-between;
+}
+
+.c10 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*='#'],
+.c10 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*='#'],
+.c10 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c6 {

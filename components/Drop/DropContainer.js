@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 var _Keyboard = require("../Keyboard");
 var _StyledDrop = require("./StyledDrop");
 var _OptionsContext = require("../../contexts/OptionsContext");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "aria-label", "align", "background", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -75,7 +75,9 @@ var DropContainer = exports.DropContainer = /*#__PURE__*/(0, _react.forwardRef)(
     trapFocus = _ref.trapFocus,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   // dropOptions was created to preserve backwards compatibility
   var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),
     dropOptions = _useContext.drop;
@@ -285,7 +287,7 @@ var DropContainer = exports.DropContainer = /*#__PURE__*/(0, _react.forwardRef)(
     alignProp: align,
     overflow: overflow,
     "data-g-portal-id": portalId
-  }, rest), children);
+  }, passThemeFlag, rest), children);
   var themeContextValue = (0, _react.useMemo)(function () {
     var dark;
     if (background || theme.global.drop.background) {

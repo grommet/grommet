@@ -4,7 +4,6 @@ exports.__esModule = true;
 exports.StyledRangeInput = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
-var _defaultProps = require("../../default-props");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 // opacity of the bound trumps the track opacity
@@ -114,7 +113,7 @@ var firefoxMicrosoftThumbStyle = (0, _styledComponents.css)(["", " margin-top:0p
 });
 
 /* eslint-disable max-len */
-var StyledRangeInput = exports.StyledRangeInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledRangeInput = exports.StyledRangeInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledRangeInput",
   componentId: "sc-15st9ck-0"
 })(["box-sizing:border-box;position:relative;-webkit-appearance:none;border-color:transparent;height:", ";width:100%;padding:0px;cursor:", ";background:transparent;margin:0px;", " &::-moz-focus-inner{border:none;}&::-moz-focus-outer{border:none;}&::-webkit-slider-runnable-track{", "}&::-webkit-slider-thumb{margin-top:-", "px;", " ", " ", "}&::-moz-range-track{", "}&::-moz-range-thumb{", "}&::-ms-thumb{", "}", " &::-ms-track{", " border-color:transparent;color:transparent;}&::-ms-fill-lower{", ";border-color:transparent;}&::-ms-fill-upper{", ";border-color:transparent;}&:focus::-webkit-slider-thumb{", "}&:focus-visible{outline:0;}&:focus{outline:none;}", ""], function (props) {

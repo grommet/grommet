@@ -164,20 +164,22 @@ var CalendarDay = function CalendarDay(_ref) {
     otherMonth = _ref.otherMonth,
     _ref$buttonProps = _ref.buttonProps,
     buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/React.createElement(StyledDayContainer, {
     role: "gridcell",
     sizeProp: size,
     fillContainer: fill
   }, /*#__PURE__*/React.createElement(CalendarDayButton, _extends({
     fill: fill
-  }, buttonProps), /*#__PURE__*/React.createElement(StyledDay, {
+  }, buttonProps), /*#__PURE__*/React.createElement(StyledDay, _extends({
     disabledProp: buttonProps.disabled,
     inRange: isInRange,
     otherMonth: otherMonth,
     isSelected: isSelected,
     sizeProp: size,
     fillContainer: fill
-  }, children)));
+  }, passThemeFlag), children)));
 };
 var CalendarCustomDay = function CalendarCustomDay(_ref2) {
   var children = _ref2.children,
@@ -227,7 +229,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     size = _ref3$size === void 0 ? 'medium' : _ref3$size,
     timestampProp = _ref3.timestamp,
     rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue2 = useThemeValue(),
+    theme = _useThemeValue2.theme,
+    passThemeFlag = _useThemeValue2.passThemeFlag;
   var announce = useContext(AnnounceContext);
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
@@ -715,7 +719,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     ref: ref,
     sizeProp: size,
     fillContainer: fill
-  }, rest), /*#__PURE__*/React.createElement(Box, {
+  }, passThemeFlag, rest), /*#__PURE__*/React.createElement(Box, {
     fill: fill
   }, header ? header({
     date: reference,
@@ -780,7 +784,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         changeReference(active);
       }
     }
-  }, /*#__PURE__*/React.createElement(StyledWeeksContainer, {
+  }, /*#__PURE__*/React.createElement(StyledWeeksContainer, _extends({
     tabIndex: 0,
     role: "grid",
     "aria-label": reference.toLocaleDateString(locale, {
@@ -802,11 +806,11 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       setFocus(false);
       setActive(undefined);
     }
-  }, /*#__PURE__*/React.createElement(StyledWeeks, {
+  }, passThemeFlag), /*#__PURE__*/React.createElement(StyledWeeks, _extends({
     slide: slide,
     sizeProp: size,
     fillContainer: fill
-  }, weeks)))));
+  }, passThemeFlag), weeks)))));
 });
 Calendar.displayName = 'Calendar';
 Calendar.propTypes = CalendarPropTypes;

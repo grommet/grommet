@@ -9,7 +9,8 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { useThemeValue } from '../../utils/useThemeValue';
 var ThumbsRating = function ThumbsRating(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(RadioButtonGroup, _extends({
     direction: "row",
     options: ['like', 'dislike']

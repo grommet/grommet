@@ -6,7 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../../utils");
 var _StyledMeter = require("./StyledMeter");
 var _utils2 = require("./utils");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["background", "max", "round", "size", "thickness", "type", "values"],
   _excluded2 = ["color", "highlight", "label", "onHover", "value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -22,7 +22,9 @@ var Circle = exports.Circle = /*#__PURE__*/(0, _react.forwardRef)(function (prop
     type = props.type,
     values = props.values,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var width = size === 'full' ? 288 : (0, _utils.parseMetricToNum)(theme.global.size[size] || size);
   var strokeWidth = type === 'pie' ? width / 2 : (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness);
   var centerX = width / 2;
@@ -141,6 +143,6 @@ var Circle = exports.Circle = /*#__PURE__*/(0, _react.forwardRef)(function (prop
     viewBox: "0 0 " + width + " " + viewBoxHeight,
     width: size === 'full' ? '100%' : width,
     height: size === 'full' ? '100%' : viewBoxHeight
-  }, rest), track, paths, pathCaps);
+  }, passThemeFlag, rest), track, paths, pathCaps);
 });
 Circle.displayName = 'Circle';

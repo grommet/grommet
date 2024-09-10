@@ -13,7 +13,8 @@ var Searcher = function Searcher(_ref) {
     onFilter = _ref.onFilter,
     onFiltering = _ref.onFiltering,
     property = _ref.property;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var inputRef = useRef();
   var needsFocus = filtering === property;
   useEffect(function () {

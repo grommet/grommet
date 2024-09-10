@@ -16,7 +16,9 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onRemove = _ref.onRemove,
     onClick = _ref.onClick,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var RemoveIcon = ((_theme$tag$icons = theme.tag.icons) == null ? void 0 : _theme$tag$icons.remove) || FormClose;
   var containerProps = _extends({
     ref: ref,
@@ -55,13 +57,13 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     focusIndicator: true,
     icon: /*#__PURE__*/React.createElement(RemoveIcon, (_theme$tag$size3 = theme.tag.size) == null || (_theme$tag$size3 = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3.icon),
     round: ((_theme$tag$size4 = theme.tag.size) == null || (_theme$tag$size4 = _theme$tag$size4[size]) == null ? void 0 : _theme$tag$size4.round) || theme.tag.round
-  }, theme.tag.remove))) : /*#__PURE__*/React.createElement(StyledTagButton, _extends({
+  }, theme.tag.remove, passThemeFlag))) : /*#__PURE__*/React.createElement(StyledTagButton, _extends({
     flex: false,
     plain: true,
     onClick: onClick,
     hoverIndicator: true,
     focusIndicator: true
-  }, containerProps), contents);
+  }, containerProps, passThemeFlag), contents);
 });
 Tag.displayName = 'Tag';
 Tag.prototype = TagPropTypes;

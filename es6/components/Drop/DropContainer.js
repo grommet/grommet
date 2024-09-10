@@ -70,7 +70,9 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     trapFocus = _ref.trapFocus,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = useContext(ContainerTargetContext);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   // dropOptions was created to preserve backwards compatibility
   var _useContext = useContext(OptionsContext),
     dropOptions = _useContext.drop;
@@ -280,7 +282,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     alignProp: align,
     overflow: overflow,
     "data-g-portal-id": portalId
-  }, rest), children);
+  }, passThemeFlag, rest), children);
   var themeContextValue = useMemo(function () {
     var dark;
     if (background || theme.global.drop.background) {

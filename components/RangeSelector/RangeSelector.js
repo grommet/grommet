@@ -13,7 +13,7 @@ var _utils = require("../../utils");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _DataFormContext = require("../../contexts/DataFormContext");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["color", "defaultValues", "direction", "invert", "label", "max", "messages", "min", "name", "onChange", "opacity", "round", "size", "step", "values"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -74,7 +74,8 @@ var RangeSelector = exports.RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(
     step = _ref$step === void 0 ? 1 : _ref$step,
     valuesProp = _ref.values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);

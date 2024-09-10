@@ -13,7 +13,7 @@ var _ExpanderCell = require("./ExpanderCell");
 var _Cell = require("./Cell");
 var _StyledDataTable = require("./StyledDataTable");
 var _buildState = require("./buildState");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["cellProps", "columns", "data", "disabled", "onMore", "replace", "onClickRow", "onSelect", "pinnedOffset", "primaryProperty", "rowProps", "selected", "rowDetails", "show", "size", "step", "rowExpand", "setRowExpand", "verticalAlign"];
 /* eslint-disable no-underscore-dangle */
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -155,7 +155,9 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
     setRowExpand = _ref2.setRowExpand,
     verticalAlign = _ref2.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _React$useState = _react["default"].useState(),
     active = _React$useState[0],
     setActive = _React$useState[1];
@@ -216,7 +218,7 @@ var Body = exports.Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, r
       setLastActive(active);
       setActive(undefined);
     }
-  }, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
+  }, passThemeFlag, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: data,
     onMore: onMore,
     replace: replace,

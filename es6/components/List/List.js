@@ -13,10 +13,9 @@ import { Text } from '../Text';
 import { focusStyle, genericStyles, normalizeColor, normalizeShow, unfocusStyle, useForwardedRef, usePagination, styledComponentsConfig } from '../../utils';
 import { useAnalytics } from '../../contexts/AnalyticsContext';
 import { ListPropTypes } from './propTypes';
-import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 var emptyData = [];
-var StyledList = styled.ul.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledList = styled.ul.withConfig(styledComponentsConfig).withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
 })(["list-style:none;", " padding:0;", " &:focus{", "}", "}&:focus:not(:focus-visible){", "}"], function (props) {
@@ -29,7 +28,7 @@ var StyledList = styled.ul.withConfig(styledComponentsConfig).attrs(withTheme).w
 }, function (props) {
   return props.theme.list && props.theme.list.extend;
 }, unfocusStyle());
-var StyledItem = styled(Box).attrs(withTheme).withConfig({
+var StyledItem = styled(Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
 })(["", " ", " &:focus{", "}", " &:hover{", "}", ""], function (props) {
@@ -59,7 +58,7 @@ var StyledItem = styled(Box).attrs(withTheme).withConfig({
 });
 
 // when paginated, this wraps the data table and pagination component
-var StyledContainer = styled(Box).attrs(withTheme).withConfig({
+var StyledContainer = styled(Box).withConfig({
   displayName: "List__StyledContainer",
   componentId: "sc-130gdqg-2"
 })(["", ";"], function (props) {
@@ -129,7 +128,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var listRef = useForwardedRef(ref);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = useContext(DataContext),
     contextData = _useContext.data;
   var data = dataProp || contextData || emptyData;
@@ -203,7 +204,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     items = _usePagination[0],
     paginationProps = _usePagination[1];
   var Container = paginate ? StyledContainer : Fragment;
-  var containterProps = paginate ? _extends({}, theme.list.container) : undefined;
+  var containterProps = paginate ? _extends({}, theme.list.container, passThemeFlag) : undefined;
   var draggingRef = useRef();
   var sendAnalytics = useAnalytics();
   var ariaProps = {
@@ -295,7 +296,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       setLastActive(active);
       updateActive(undefined);
     }
-  }, ariaProps, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
+  }, ariaProps, passThemeFlag, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: !paginate ? orderingData || data : items,
     onMore: onMore,
     show: !paginate ? showProp : undefined,
@@ -599,7 +600,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       isDisabled: isDisabled,
       flex: false,
       pad: pad || theme.list.item.pad
-    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), showIndex && onOrder && /*#__PURE__*/React.createElement(Text, {
+    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps, passThemeFlag), showIndex && onOrder && /*#__PURE__*/React.createElement(Text, {
       color: pinnedColor
     }, index + 1), content, displayPinned, orderControls);
   }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/React.createElement(Pagination, _extends({

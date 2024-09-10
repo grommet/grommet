@@ -17,7 +17,7 @@ var _XGuide = require("./XGuide");
 var _YGuide = require("./YGuide");
 var _utils2 = require("./utils");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "axis", "bounds", "chart", "data", "detail", "direction", "gap", "guide", "legend", "offset", "placeholder", "pad", "series", "size"],
   _excluded2 = ["property"],
   _excluded3 = ["property", "type", "x", "y"],
@@ -61,7 +61,8 @@ var DataChart = exports.DataChart = /*#__PURE__*/(0, _react.forwardRef)(function
     seriesProp = _ref.series,
     size = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
 
   // legend interaction, if any
   var _useState = (0, _react.useState)(),

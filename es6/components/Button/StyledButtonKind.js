@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { activeStyle, disabledStyle, edgeStyle, focusStyle, unfocusStyle, genericStyles, kindPartStyles, parseMetricToNum } from '../../utils';
-import { withTheme } from '../../default-props';
 var radiusStyle = function radiusStyle(props) {
   var size = props.sizeProp;
   // caller has specified a themeObj to use for styling
@@ -165,7 +164,7 @@ var fillStyle = function fillStyle(fillContainer) {
 var plainStyle = function plainStyle(props) {
   return css(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;", " ", ""], props.icon && "\n    > svg {\n      display: flex;\n      align-self: center;\n      vertical-align: middle;\n    }\n  ", props.hasIcon && !props.hasLabel && "line-height: 0;");
 };
-var StyledButtonKind = styled.button.attrs(withTheme).withConfig({
+var StyledButtonKind = styled.button.withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
     return isPropValid(prop) && !['kind'].includes(prop);
   }

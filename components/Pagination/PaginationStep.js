@@ -7,7 +7,7 @@ var _Box = require("../Box");
 var _Select = require("../Select");
 var _Text = require("../Text");
 var _MessageContext = require("../../contexts/MessageContext");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["messages", "onChange", "options", "step"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -22,7 +22,8 @@ var PaginationStep = exports.PaginationStep = function PaginationStep(_ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     formatMessage = _useContext.format;
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     direction: "row",
     align: "center",

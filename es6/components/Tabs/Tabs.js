@@ -26,7 +26,9 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$responsive = _ref.responsive,
     responsive = _ref$responsive === void 0 ? true : _ref$responsive,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var propsActiveIndex = rest.activeIndex,
@@ -265,7 +267,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: ref,
     flex: flex,
     responsive: responsive
-  }, rest, {
+  }, passThemeFlag, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/React.createElement(Box, _extends({
     alignSelf: alignControls || ((_theme$tabs$header = theme.tabs.header) == null ? void 0 : _theme$tabs$header.alignSelf),
@@ -288,7 +290,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }, /*#__PURE__*/React.createElement(Previous, {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
-  }))), /*#__PURE__*/React.createElement(StyledTabsHeader, {
+  }))), /*#__PURE__*/React.createElement(StyledTabsHeader, _extends({
     ref: headerRef,
     direction: "row",
     justify: overflow ? 'start' : justify,
@@ -299,7 +301,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     gap: theme.tabs.gap,
     pad: overflow ? '2px' : undefined,
     margin: overflow ? '-2px' : undefined
-  }, tabs), overflow && /*#__PURE__*/React.createElement(Button, {
+  }, passThemeFlag), tabs), overflow && /*#__PURE__*/React.createElement(Button, {
     a11yTitle: "Next Tab",
     disabled: disableRightArrow
     // removed from tabIndex, button is redundant for keyboard users
@@ -315,11 +317,11 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }, /*#__PURE__*/React.createElement(Next, {
     color: disableRightArrow ? theme.button.disabled.color : theme.global.colors.text
-  })))), /*#__PURE__*/React.createElement(StyledTabPanel, {
+  })))), /*#__PURE__*/React.createElement(StyledTabPanel, _extends({
     flex: flex,
     "aria-label": tabContentTitle,
     role: "tabpanel"
-  }, activeContent));
+  }, passThemeFlag), activeContent));
 });
 Tabs.displayName = 'Tabs';
 Tabs.propTypes = TabsPropTypes;

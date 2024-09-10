@@ -12,7 +12,8 @@ var Page = function Page(_ref) {
     kind = _ref$kind === void 0 ? 'wide' : _ref$kind,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var size = useContext(ResponsiveContext);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var contentValue = useMemo(function () {
     var _theme$page$kind, _theme$page$kind2;
     return _extends({

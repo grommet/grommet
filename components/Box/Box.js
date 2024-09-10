@@ -11,7 +11,7 @@ var _propTypes = require("./propTypes");
 var _Skeleton = require("../Skeleton");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _OptionsContext = require("../../contexts/OptionsContext");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "background", "border", "children", "cssGap", "direction", "elevation", "fill", "gap", "kind", "onBlur", "onClick", "onFocus", "overflow", "responsive", "tag", "as", "wrap", "width", "height", "tabIndex", "skeleton"],
   _excluded2 = ["colors", "size"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -44,7 +44,9 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     tabIndex = _ref.tabIndex,
     skeletonProp = _ref.skeleton,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   // boxOptions was created to preserve backwards compatibility but
   // should not be supported in v3
   var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),
@@ -116,14 +118,14 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
         } else {
           contents.push( /*#__PURE__*/_react["default"].createElement(_StyledBox.StyledBoxGap
           // eslint-disable-next-line react/no-array-index-key
-          , {
+          , _extends({
             key: "gap-" + index,
             as: boxAs === 'span' ? boxAs : 'div',
             gap: gap,
             directionProp: direction,
             responsive: responsive,
             border: styledBoxGapBorder
-          }));
+          }, passThemeFlag)));
         }
       }
       contents.push(child);
@@ -201,7 +203,7 @@ var Box = exports.Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     heightProp: height,
     responsive: responsive,
     tabIndex: adjustedTabIndex
-  }, clickProps, rest, skeletonProps), /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+  }, clickProps, passThemeFlag, rest, skeletonProps), /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
     value: nextTheme
   }, contents));
   if (onClick) {

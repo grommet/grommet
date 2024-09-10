@@ -67,7 +67,8 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
     step = _ref$step === void 0 ? 1 : _ref$step,
     valuesProp = _ref.values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var formContext = useContext(FormContext);

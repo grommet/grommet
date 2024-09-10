@@ -17,8 +17,7 @@ var _StyledDataTable = require("./StyledDataTable");
 var _buildState = require("./buildState");
 var _styles = require("../../utils/styles");
 var _colors = require("../../utils/colors");
-var _useThemeValue = require("../../utils/useThemeValue");
-var _defaultProps = require("../../default-props");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"],
   _excluded2 = ["allowSelectAll", "cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
 /* eslint-disable no-underscore-dangle */
@@ -85,7 +84,7 @@ var buttonStyle = function buttonStyle(_ref) {
   }
   return styles;
 };
-var StyledHeaderCellButton = (0, _styledComponents["default"])(_Button.Button).attrs(_defaultProps.withTheme).withConfig({
+var StyledHeaderCellButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "Header__StyledHeaderCellButton",
   componentId: "sc-1baku5q-0"
 })(["", ""], function (props) {
@@ -127,7 +126,9 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     widths = _ref2.widths,
     verticalAlign = _ref2.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _separateThemeProps2 = separateThemeProps(theme),
     layoutProps = _separateThemeProps2[0],
     textProps = _separateThemeProps2[1];
@@ -209,7 +210,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     }).length === 0,
     onToggle: onToggle,
     pad: cellProps.pad
-  }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
+  }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, _extends({
     background: cellProps.background,
     onWidth: updateWidths,
     plain: "noPad",
@@ -219,7 +220,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     pin: selectPin,
     pinnedOffset: pinnedOffset == null ? void 0 : pinnedOffset._grommetDataTableSelect,
     verticalAlign: verticalAlign
-  }, onSelect && allowSelectAll && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
+  }, passThemeFlag), onSelect && allowSelectAll && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
     a11yTitle: totalSelected === data.length ? 'unselect all' : 'select all',
     checked: groupBy != null && groupBy.select ? groupBy.select[''] === 'all' : totalSelected > 0 && data.length > 0 && totalSelected === (contextTotal || data.length),
     indeterminate: groupBy != null && groupBy.select ? groupBy.select[''] === 'some' : totalSelected > 0 && totalSelected < (contextTotal || data.length),
@@ -272,7 +273,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
           Icon = theme.dataTable.icons.sortable;
         }
       }
-      content = /*#__PURE__*/_react["default"].createElement(StyledHeaderCellButton, {
+      content = /*#__PURE__*/_react["default"].createElement(StyledHeaderCellButton, _extends({
         plain: true,
         column: property,
         fill: "vertical",
@@ -281,7 +282,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         pad: cellProps.pad,
         sortable: true,
         verticalAlign: verticalAlign || columnVerticalAlign
-      }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         direction: "row",
         align: "center",
         gap: "xsmall",
@@ -329,7 +330,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     }
     var cellPin = [].concat(pin);
     if (columnPin) cellPin.push('left');
-    return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
+    return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, _extends({
       key: property,
       align: align,
       context: "header",
@@ -348,7 +349,7 @@ var Header = exports.Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       style: widths && widths[property] ? {
         width: widths[property]
       } : undefined
-    }, content);
+    }, passThemeFlag), content);
   })));
 });
 Header.displayName = 'Header';

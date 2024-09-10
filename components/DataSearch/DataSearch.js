@@ -17,7 +17,7 @@ var _ResponsiveContext = require("../../contexts/ResponsiveContext");
 var _propTypes = require("./propTypes");
 var _responsive = require("../../utils/responsive");
 var _useDebounce = require("../../utils/use-debounce");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["drop", "id", "responsive", "updateOn"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -50,7 +50,8 @@ var DataSearch = exports.DataSearch = function DataSearch(_ref) {
     inDataForm = _useContext2.inDataForm;
   var _useContext3 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext3.format;
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
   var skeleton = (0, _Skeleton.useSkeleton)();
   var debounce = (0, _useDebounce.useDebounce)(DEBOUNCE_TIMEOUT);

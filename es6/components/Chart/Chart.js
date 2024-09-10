@@ -45,7 +45,9 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     valuesProp = _ref$values === void 0 ? defaultValues : _ref$values,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerRef = useForwardedRef(ref);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var values = useMemo(function () {
     return normalizeValues(valuesProp);
   }, [valuesProp]);
@@ -567,7 +569,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     width: size === 'full' ? '100%' : size.width,
     height: size === 'full' ? '100%' : size.height,
     typeProp: type // prevent adding to DOM
-  }, rest), defs.length && /*#__PURE__*/React.createElement("defs", null, defs), useGradient ? gradientRect : drawing);
+  }, passThemeFlag, rest), defs.length && /*#__PURE__*/React.createElement("defs", null, defs), useGradient ? gradientRect : drawing);
 });
 Chart.displayName = 'Chart';
 Chart.propTypes = ChartPropTypes;

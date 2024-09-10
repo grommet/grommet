@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
 import { focusStyle, normalizeColor, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 import { Box } from '../Box';
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
-var StyledRadioButtonContainer = styled.label.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledRadioButtonContainer = styled.label.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonContainer",
   componentId: "sc-g1f6ld-0"
 })(["display:flex;flex-direction:row;align-items:center;user-select:none;width:fit-content;", " ", " &:hover input:not([disabled]) + div,&:hover input:not([disabled]) + span{border-color:", ";}&:hover{background-color:", ";}", " ", ";"], function (props) {
@@ -25,13 +24,13 @@ var StyledRadioButtonInput = styled.input.withConfig(styledComponentsConfig).wit
 })(["opacity:0;-moz-appearance:none;width:0;height:0;margin:0;", ";"], function (props) {
   return !props.disabled && 'cursor: pointer;';
 });
-var StyledRadioButtonLabel = styled.span.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledRadioButtonLabel = styled.span.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonLabel",
   componentId: "sc-g1f6ld-2"
 })(["", ""], function (props) {
   return props.theme.radioButton.font.weight && css(["font-weight:", ";"], props.theme.radioButton.font.weight);
 });
-var StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonIcon",
   componentId: "sc-g1f6ld-3"
 })(["box-sizing:border-box;width:", ";height:", ";fill:", ";", ";"], function (props) {
@@ -43,7 +42,7 @@ var StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig).attrs(
 }, function (props) {
   return props.theme.radioButton.icon.extend;
 });
-var StyledRadioButtonBox = styled(Box).attrs(withTheme).withConfig({
+var StyledRadioButtonBox = styled(Box).withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonBox",
   componentId: "sc-g1f6ld-4"
 })(["background-color:", ";", ";", ";"], function (props) {
@@ -53,7 +52,7 @@ var StyledRadioButtonBox = styled(Box).attrs(withTheme).withConfig({
 }, function (props) {
   return props.theme.radioButton.check.extend;
 });
-var StyledRadioButton = styled(Box).attrs(withTheme).withConfig({
+var StyledRadioButton = styled(Box).withConfig({
   displayName: "StyledRadioButton",
   componentId: "sc-g1f6ld-5"
 })(["", ";"], function (props) {

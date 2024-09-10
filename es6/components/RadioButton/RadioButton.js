@@ -19,11 +19,13 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     name = _ref.name,
     onChange = _ref.onChange,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = useState(),
     hover = _useState[0],
     setHover = _useState[1];
-  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/React.createElement(StyledRadioButtonLabel, null, label) : label;
+  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/React.createElement(StyledRadioButtonLabel, passThemeFlag, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = normalizeColor(theme.radioButton.border.color, theme);
   var backgroundColor = normalizeColor((_theme$radioButton$ba = theme.radioButton.background) == null ? void 0 : _theme$radioButton$ba.color, theme);
@@ -53,12 +55,12 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseLeave: function onMouseLeave() {
       return setHover(false);
     }
-  }), /*#__PURE__*/React.createElement(StyledRadioButton, {
+  }, passThemeFlag), /*#__PURE__*/React.createElement(StyledRadioButton, _extends({
     flex: false,
     margin: label ? {
       right: theme.radioButton.gap || 'small'
     } : undefined
-  }, /*#__PURE__*/React.createElement(StyledRadioButtonInput, _extends({
+  }, passThemeFlag), /*#__PURE__*/React.createElement(StyledRadioButtonInput, _extends({
     "aria-label": a11yTitle
   }, rest, {
     ref: ref,
@@ -73,7 +75,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     checked: checked,
     focus: focus && focusIndicator,
     hover: hover
-  }) : /*#__PURE__*/React.createElement(StyledRadioButtonBox, {
+  }) : /*#__PURE__*/React.createElement(StyledRadioButtonBox, _extends({
     focus: focus && focusIndicator,
     align: "center",
     justify: "center",
@@ -85,13 +87,13 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     backgroundColor: backgroundColor,
     round: theme.radioButton.check.radius
-  }, checked && (Icon ? /*#__PURE__*/React.createElement(Icon, {
+  }, passThemeFlag), checked && (Icon ? /*#__PURE__*/React.createElement(Icon, {
     theme: theme,
     as: StyledRadioButtonIcon
-  }) : /*#__PURE__*/React.createElement(StyledRadioButtonIcon, {
+  }) : /*#__PURE__*/React.createElement(StyledRadioButtonIcon, _extends({
     viewBox: "0 0 24 24",
     preserveAspectRatio: "xMidYMid meet"
-  }, /*#__PURE__*/React.createElement("circle", {
+  }, passThemeFlag), /*#__PURE__*/React.createElement("circle", {
     cx: 12,
     cy: 12,
     r: 6

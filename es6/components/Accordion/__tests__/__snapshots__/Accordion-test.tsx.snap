@@ -2,39 +2,7 @@
 
 exports[`Accordion AccordionPanel 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -95,6 +63,38 @@ exports[`Accordion AccordionPanel 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -319,39 +319,7 @@ exports[`Accordion AccordionPanel 1`] = `
 
 exports[`Accordion accordion border 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -405,6 +373,38 @@ exports[`Accordion accordion border 1`] = `
   min-width: fit-content;
   padding-left: 12px;
   padding-right: 12px;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -586,39 +586,7 @@ exports[`Accordion accordion border 1`] = `
 
 exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -679,6 +647,38 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -854,39 +854,7 @@ exports[`Accordion backward compatibility of hover.color = undefined 1`] = `
 
 exports[`Accordion blur styles 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -947,6 +915,38 @@ exports[`Accordion blur styles 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -1127,39 +1127,7 @@ exports[`Accordion blur styles 1`] = `
 
 exports[`Accordion change active index 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1220,6 +1188,38 @@ exports[`Accordion change active index 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -1430,39 +1430,7 @@ exports[`Accordion change active index 1`] = `
 
 exports[`Accordion change active index 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1523,6 +1491,38 @@ exports[`Accordion change active index 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c10 {
@@ -1808,39 +1808,7 @@ exports[`Accordion change active index 2`] = `
 
 exports[`Accordion change to second Panel 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -1901,6 +1869,38 @@ exports[`Accordion change to second Panel 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -2125,39 +2125,7 @@ exports[`Accordion change to second Panel 1`] = `
 
 exports[`Accordion change to second Panel 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2218,6 +2186,38 @@ exports[`Accordion change to second Panel 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -2528,39 +2528,7 @@ exports[`Accordion change to second Panel 2`] = `
 
 exports[`Accordion change to second Panel without onActive 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2621,6 +2589,38 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -2829,39 +2829,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 
 exports[`Accordion change to second Panel without onActive 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2922,6 +2890,38 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -3362,39 +3362,7 @@ exports[`Accordion complex header 1`] = `
 
 exports[`Accordion complex title 1`] = `
 <DocumentFragment>
-  .c7 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #6FFFB0;
-  stroke: #6FFFB0;
-}
-
-.c7 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c7 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c7 *[stroke*='#'],
-.c7 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*='#'],
-.c7 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3455,6 +3423,38 @@ exports[`Accordion complex title 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c7 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #6FFFB0;
+  stroke: #6FFFB0;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c4 {
@@ -3648,39 +3648,7 @@ exports[`Accordion complex title 1`] = `
 
 exports[`Accordion custom accordion 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3741,6 +3709,38 @@ exports[`Accordion custom accordion 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -3920,39 +3920,7 @@ exports[`Accordion custom accordion 1`] = `
 
 exports[`Accordion custom accordion 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4013,6 +3981,38 @@ exports[`Accordion custom accordion 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -4197,39 +4197,7 @@ exports[`Accordion custom accordion 2`] = `
 
 exports[`Accordion focus and hover styles 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4290,6 +4258,38 @@ exports[`Accordion focus and hover styles 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -4475,39 +4475,7 @@ exports[`Accordion focus and hover styles 1`] = `
 
 exports[`Accordion multiple panels 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4568,6 +4536,38 @@ exports[`Accordion multiple panels 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -4776,39 +4776,7 @@ exports[`Accordion multiple panels 1`] = `
 
 exports[`Accordion multiple panels 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4869,6 +4837,38 @@ exports[`Accordion multiple panels 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -5154,39 +5154,7 @@ exports[`Accordion multiple panels 2`] = `
 
 exports[`Accordion multiple panels 3`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5247,6 +5215,38 @@ exports[`Accordion multiple panels 3`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c10 {
@@ -5535,39 +5535,7 @@ exports[`Accordion multiple panels 3`] = `
 
 exports[`Accordion multiple panels 4`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5628,6 +5596,38 @@ exports[`Accordion multiple panels 4`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -5914,39 +5914,7 @@ exports[`Accordion multiple panels 4`] = `
 
 exports[`Accordion multiple panels 5`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6007,6 +5975,38 @@ exports[`Accordion multiple panels 5`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c10 {
@@ -6339,39 +6339,7 @@ exports[`Accordion render accordion no grommet wrapper 1`] = `
 
 exports[`Accordion should apply level prop to headings 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6432,6 +6400,38 @@ exports[`Accordion should apply level prop to headings 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -6656,39 +6656,7 @@ exports[`Accordion should apply level prop to headings 1`] = `
 
 exports[`Accordion should have no accessibility violations 1`] = `
 <DocumentFragment>
-  .c6 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*='#'],
-.c6 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*='#'],
-.c6 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6738,6 +6706,38 @@ exports[`Accordion should have no accessibility violations 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c6 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -6880,39 +6880,7 @@ exports[`Accordion should have no accessibility violations 1`] = `
 
 exports[`Accordion theme hover of hover.heading.color 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6973,6 +6941,38 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -7153,39 +7153,7 @@ exports[`Accordion theme hover of hover.heading.color 1`] = `
 
 exports[`Accordion wrapped panel 1`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7246,6 +7214,38 @@ exports[`Accordion wrapped panel 1`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c3 {
@@ -7454,39 +7454,7 @@ exports[`Accordion wrapped panel 1`] = `
 
 exports[`Accordion wrapped panel 2`] = `
 <DocumentFragment>
-  .c8 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c1 {
+  .c1 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -7547,6 +7515,38 @@ exports[`Accordion wrapped panel 2`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.c8 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*='#'],
+.c8 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*='#'],
+.c8 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c10 {

@@ -18,7 +18,9 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
     values = props.values,
     reverse = props.reverse,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var length = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   var thickness = parseMetricToNum(theme.global.edgeSize[thicknessProp] || thicknessProp);
   // account for the round cap, if any
@@ -85,7 +87,7 @@ var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
     round: round ? {
       size: thicknessProp
     } : undefined
-  }, rest, {
+  }, passThemeFlag, rest, {
     reverse: reverse
   }), /*#__PURE__*/React.createElement("path", _extends({
     d: backgroundPath,

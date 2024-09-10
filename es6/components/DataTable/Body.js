@@ -149,7 +149,9 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     setRowExpand = _ref2.setRowExpand,
     verticalAlign = _ref2.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _React$useState = React.useState(),
     active = _React$useState[0],
     setActive = _React$useState[1];
@@ -210,7 +212,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setLastActive(active);
       setActive(undefined);
     }
-  }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
+  }, passThemeFlag, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: data,
     onMore: onMore,
     replace: replace,

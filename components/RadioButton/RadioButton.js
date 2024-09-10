@@ -6,7 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../../utils");
 var _StyledRadioButton = require("./StyledRadioButton");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "checked", "children", "disabled", "focus", "focusIndicator", "id", "label", "name", "onChange"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -25,11 +25,13 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
     name = _ref.name,
     onChange = _ref.onChange,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = (0, _react.useState)(),
     hover = _useState[0],
     setHover = _useState[1];
-  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonLabel, null, label) : label;
+  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonLabel, passThemeFlag, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = (0, _utils.normalizeColor)(theme.radioButton.border.color, theme);
   var backgroundColor = (0, _utils.normalizeColor)((_theme$radioButton$ba = theme.radioButton.background) == null ? void 0 : _theme$radioButton$ba.color, theme);
@@ -59,12 +61,12 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
     onMouseLeave: function onMouseLeave() {
       return setHover(false);
     }
-  }), /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButton, {
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButton, _extends({
     flex: false,
     margin: label ? {
       right: theme.radioButton.gap || 'small'
     } : undefined
-  }, /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({
     "aria-label": a11yTitle
   }, rest, {
     ref: ref,
@@ -79,7 +81,7 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
     checked: checked,
     focus: focus && focusIndicator,
     hover: hover
-  }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonBox, {
+  }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonBox, _extends({
     focus: focus && focusIndicator,
     align: "center",
     justify: "center",
@@ -91,13 +93,13 @@ var RadioButton = exports.RadioButton = /*#__PURE__*/(0, _react.forwardRef)(func
     },
     backgroundColor: backgroundColor,
     round: theme.radioButton.check.radius
-  }, checked && (Icon ? /*#__PURE__*/_react["default"].createElement(Icon, {
+  }, passThemeFlag), checked && (Icon ? /*#__PURE__*/_react["default"].createElement(Icon, {
     theme: theme,
     as: _StyledRadioButton.StyledRadioButtonIcon
-  }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonIcon, {
+  }) : /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonIcon, _extends({
     viewBox: "0 0 24 24",
     preserveAspectRatio: "xMidYMid meet"
-  }, /*#__PURE__*/_react["default"].createElement("circle", {
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement("circle", {
     cx: 12,
     cy: 12,
     r: 6

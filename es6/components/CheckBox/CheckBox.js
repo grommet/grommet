@@ -43,7 +43,9 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     toggle = _ref.toggle,
     indeterminate = _ref.indeterminate,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var formContext = useContext(FormContext);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
@@ -96,7 +98,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if (checked) {
     borderColor = normalizeColor(theme.checkBox.color || 'control', theme);
   }
-  var visual = toggle ? /*#__PURE__*/React.createElement(StyledCheckBoxToggle, themeableProps, /*#__PURE__*/React.createElement(StyledCheckBoxKnob, themeableProps)) : /*#__PURE__*/React.createElement(StyledCheckBoxBox, _extends({
+  var visual = toggle ? /*#__PURE__*/React.createElement(StyledCheckBoxToggle, _extends({}, passThemeFlag, themeableProps), /*#__PURE__*/React.createElement(StyledCheckBoxKnob, _extends({}, passThemeFlag, themeableProps))) : /*#__PURE__*/React.createElement(StyledCheckBoxBox, _extends({
     align: "center",
     justify: "center",
     width: theme.checkBox.size,
@@ -106,7 +108,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
       color: borderColor
     },
     round: theme.checkBox.check.radius
-  }, themeableProps), !indeterminate && checked && (CheckedIcon ? /*#__PURE__*/React.createElement(CheckedIcon, {
+  }, passThemeFlag, themeableProps), !indeterminate && checked && (CheckedIcon ? /*#__PURE__*/React.createElement(CheckedIcon, {
     theme: theme,
     as: StyledCheckBoxIcon
   }) : /*#__PURE__*/React.createElement(StyledCheckBoxIcon, _extends({
@@ -134,7 +136,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     margin: label && (_ref2 = {}, _ref2[side] = theme.checkBox.gap || 'small', _ref2)
   }, themeableProps), /*#__PURE__*/React.createElement(StyledCheckBoxInput, _extends({
     "aria-label": ariaLabel || a11yTitle
-  }, rest, {
+  }, passThemeFlag, rest, {
     ref: ref,
     type: "checkbox"
   }, removeUndefined({
@@ -185,7 +187,7 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseOut: function onMouseOut(event) {
       return _onMouseOut == null ? void 0 : _onMouseOut(event);
     }
-  }, themeableProps), first, second);
+  }, passThemeFlag, themeableProps), first, second);
 });
 CheckBox.displayName = 'CheckBox';
 CheckBox.propTypes = CheckBoxPropTypes;

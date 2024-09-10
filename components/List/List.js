@@ -14,8 +14,7 @@ var _Text = require("../Text");
 var _utils = require("../../utils");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
 var _propTypes = require("./propTypes");
-var _defaultProps = require("../../default-props");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "aria-label", "action", "as", "background", "border", "children", "data", "defaultItemProps", "disabled", "focus", "itemKey", "itemProps", "onActive", "onClickItem", "onKeyDown", "onMore", "onOrder", "showIndex", "pad", "paginate", "pinned", "primaryKey", "secondaryKey", "show", "step"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -23,7 +22,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 var emptyData = [];
-var StyledList = _styledComponents["default"].ul.withConfig(_utils.styledComponentsConfig).attrs(_defaultProps.withTheme).withConfig({
+var StyledList = _styledComponents["default"].ul.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
 })(["list-style:none;", " padding:0;", " &:focus{", "}", "}&:focus:not(:focus-visible){", "}"], function (props) {
@@ -36,7 +35,7 @@ var StyledList = _styledComponents["default"].ul.withConfig(_utils.styledCompone
 }, function (props) {
   return props.theme.list && props.theme.list.extend;
 }, (0, _utils.unfocusStyle)());
-var StyledItem = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
 })(["", " ", " &:focus{", "}", " &:hover{", "}", ""], function (props) {
@@ -66,7 +65,7 @@ var StyledItem = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps
 });
 
 // when paginated, this wraps the data table and pagination component
-var StyledContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "List__StyledContainer",
   componentId: "sc-130gdqg-2"
 })(["", ";"], function (props) {
@@ -136,7 +135,9 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var listRef = (0, _utils.useForwardedRef)(ref);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     contextData = _useContext.data;
   var data = dataProp || contextData || emptyData;
@@ -210,7 +211,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
     items = _usePagination[0],
     paginationProps = _usePagination[1];
   var Container = paginate ? StyledContainer : _react.Fragment;
-  var containterProps = paginate ? _extends({}, theme.list.container) : undefined;
+  var containterProps = paginate ? _extends({}, theme.list.container, passThemeFlag) : undefined;
   var draggingRef = (0, _react.useRef)();
   var sendAnalytics = (0, _AnalyticsContext.useAnalytics)();
   var ariaProps = {
@@ -302,7 +303,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       setLastActive(active);
       updateActive(undefined);
     }
-  }, ariaProps, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
+  }, ariaProps, passThemeFlag, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: !paginate ? orderingData || data : items,
     onMore: onMore,
     show: !paginate ? showProp : undefined,
@@ -606,7 +607,7 @@ var List = exports.List = /*#__PURE__*/_react["default"].forwardRef(function (_r
       isDisabled: isDisabled,
       flex: false,
       pad: pad || theme.list.item.pad
-    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps), showIndex && onOrder && /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+    }, defaultItemProps, boxProps, clickProps, orderProps, itemAriaProps, passThemeFlag), showIndex && onOrder && /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       color: pinnedColor
     }, index + 1), content, displayPinned, orderControls);
   }))), paginate && data.length > step && items && items.length ? /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({

@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { fillStyle, genericStyles, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var FIT_MAP = {
   cover: 'cover',
   contain: 'contain'
@@ -8,7 +7,7 @@ var FIT_MAP = {
 var fitStyle = css(["flex:1 1;overflow:hidden;object-fit:", ";"], function (props) {
   return FIT_MAP[props.fit];
 });
-var StyledImage = styled.img.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledImage = styled.img.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledImage",
   componentId: "sc-ey4zx9-0"
 })(["", " ", " ", " ", " ", ""], genericStyles, function (props) {

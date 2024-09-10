@@ -31,7 +31,9 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
     size = _ref.size,
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var tableContext = useContext(TableContext);
   var cellRef = useForwardedRef(ref);
   var containerRef = useRef();
@@ -139,7 +141,7 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tableContextTheme: tableContextTheme
   }, plain === true ? mergedProps : {}, cellProps, {
     className: className
-  }), plain || !Object.keys(mergedProps).length ? content : /*#__PURE__*/React.createElement(Box, _extends({}, mergedProps, {
+  }, passThemeFlag), plain || !Object.keys(mergedProps).length ? content : /*#__PURE__*/React.createElement(Box, _extends({}, mergedProps, {
     align: align,
     justify: verticalAlignToJustify[verticalAlign]
   }), children)));

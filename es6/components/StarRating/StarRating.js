@@ -13,7 +13,8 @@ var StarRating = function StarRating(_ref) {
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var formContext = useContext(FormContext);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
       value: valueProp,

@@ -14,8 +14,7 @@ var _TextInput = require("../TextInput");
 var _StyledSelect = require("./StyledSelect");
 var _utils2 = require("./utils");
 var _EmptySearchOption = require("./EmptySearchOption");
-var _useThemeValue = require("../../utils/useThemeValue");
-var _defaultProps = require("../../default-props");
+var _useThemeValue3 = require("../../utils/useThemeValue");
 var _excluded = ["clear", "onClear", "name", "theme"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -23,7 +22,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
 // ensure ClearButton receives visual indication of keyboard
-var StyledButton = (0, _styledComponents["default"])(_Button.Button).attrs(_defaultProps.withTheme).withConfig({
+var StyledButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "SelectContainer__StyledButton",
   componentId: "sc-1wi0ul8-0"
 })(["&:focus{", "}"], function (props) {
@@ -39,13 +38,15 @@ var ClearButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     position = clear.position;
   var align = position !== 'bottom' ? 'start' : 'center';
   var buttonLabel = label || "Clear " + (name || 'selection');
+  var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/_react["default"].createElement(StyledButton, _extends({
     a11yTitle: buttonLabel + ". Or, press " + (position === 'bottom' ? 'shift tab' : 'down arrow') + " to move to select options",
     fill: "horizontal",
     ref: ref,
     onClick: onClear,
     focusIndicator: false
-  }, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, theme.select.clear.container, {
+  }, passThemeFlag, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, theme.select.clear.container, {
     align: align
   }), /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.select.clear.text, buttonLabel)));
 });
@@ -79,7 +80,9 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     valueKey = _ref2.valueKey,
     _ref2$replace = _ref2.replace,
     replace = _ref2$replace === void 0 ? true : _ref2$replace;
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue2 = (0, _useThemeValue3.useThemeValue)(),
+    theme = _useThemeValue2.theme,
+    passThemeFlag = _useThemeValue2.passThemeFlag;
   var shouldShowClearButton = (0, _react.useCallback)(function (position) {
     var hasValue = Boolean(multiple && value ? value.length : value);
     var showAtPosition = position === 'bottom' ? (clear == null ? void 0 : clear.position) === 'bottom' : (clear == null ? void 0 : clear.position) !== 'bottom';
@@ -270,11 +273,11 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     onUp: onPreviousOption,
     onDown: onNextOption,
     onKeyDown: onKeyDownOption
-  }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledContainer, {
+  }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledContainer, _extends({
     ref: ref,
     id: id ? id + "__select-drop" : undefined,
     dropHeight: dropHeight
-  }, onSearch && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  }, passThemeFlag), onSearch && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: !customSearchInput ? 'xsmall' : undefined,
     flex: false
   }, /*#__PURE__*/_react["default"].createElement(SelectTextInput, {
@@ -339,7 +342,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     // if we have a child, turn on plain, and hoverIndicator
     return /*#__PURE__*/_react["default"].createElement(_StyledSelect.SelectOption
     // eslint-disable-next-line react/no-array-index-key
-    , {
+    , _extends({
       key: index
       // merge optionRef and activeRef
       ,
@@ -371,7 +374,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
       onMouseOver: !optionDisabled ? onActiveOption(index) : undefined,
       onClick: !optionDisabled ? selectOption(index) : undefined,
       textComponent: textComponent
-    }, child);
+    }, passThemeFlag), child);
   })) : /*#__PURE__*/_react["default"].createElement(_EmptySearchOption.EmptySearchOption, {
     emptySearchMessage: emptySearchMessage,
     selectOptionsStyle: selectOptionsStyle,

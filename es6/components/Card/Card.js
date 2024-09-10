@@ -6,7 +6,8 @@ import { useThemeValue } from '../../utils/useThemeValue';
 var Card = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$card$hover;
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Box, _extends({
     overflow: "hidden",
     kind: _extends({

@@ -48,7 +48,9 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _onVolumeChange = _ref.onVolumeChange,
     skipInterval = _ref.skipInterval,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var announce = useContext(AnnounceContext);
@@ -460,7 +462,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       values: [{
         value: percentagePlayed || 0
       }]
-    }), /*#__PURE__*/React.createElement(StyledVideoScrubber, {
+    }), /*#__PURE__*/React.createElement(StyledVideoScrubber, _extends({
       "aria-label": format({
         id: 'video.scrubber',
         messages: messages
@@ -477,7 +479,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onFocus: function onFocus() {
         return setInteracting(true);
       }
-    }))), /*#__PURE__*/React.createElement(Box, {
+    }, passThemeFlag)))), /*#__PURE__*/React.createElement(Box, {
       pad: {
         horizontal: 'small'
       }
@@ -547,7 +549,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     margin: margin,
     style: style,
     tabIndex: "-1"
-  }), /*#__PURE__*/React.createElement(StyledVideo, _extends({}, rest, {
+  }, passThemeFlag), /*#__PURE__*/React.createElement(StyledVideo, _extends({}, passThemeFlag, rest, {
     ref: videoRef,
     onDurationChange: function onDurationChange(event) {
       var video = videoRef.current;

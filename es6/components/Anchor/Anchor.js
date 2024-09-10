@@ -25,7 +25,9 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
     reverse = _ref.reverse,
     sizeProp = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = useState(),
     focus = _useState[0],
     setFocus = _useState[1];
@@ -77,7 +79,7 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     size: sizeProp || size
-  }), first && second ? /*#__PURE__*/React.createElement(Box, {
+  }, passThemeFlag), first && second ? /*#__PURE__*/React.createElement(Box, {
     as: "span",
     direction: "row",
     align: "center",

@@ -4,6 +4,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { forwardRef, useState } from 'react';
 import { StyledImage } from './StyledImage';
 import { ImagePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     fallback = _ref.fallback,
@@ -13,6 +14,8 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
     fill = _ref.fill,
     src = _ref.src,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = useState(false),
     isFallbackInUse = _useState[0],
     setFallbackInUse = _useState[1];
@@ -34,7 +37,7 @@ var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
   };
   return /*#__PURE__*/React.createElement(StyledImage, _extends({
     "aria-label": a11yTitle
-  }, rest, extraProps, {
+  }, passThemeFlag, rest, extraProps, {
     ref: ref,
     opacityProp: opacity,
     fillProp: fill,

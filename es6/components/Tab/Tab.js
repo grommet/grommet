@@ -33,7 +33,9 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setActiveContent = _useContext.setActiveContent,
     setActiveTitle = _useContext.setActiveTitle,
     setFocusIndex = _useContext.setFocusIndex;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = useState(undefined),
     over = _useState[0],
     setOver = _useState[1];
@@ -172,7 +174,7 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }), /*#__PURE__*/React.createElement(StyledTab, _extends({
     disabled: disabled,
     plain: plain
-  }, withIconStyles, tabStyles), first, second));
+  }, withIconStyles, tabStyles, passThemeFlag), first, second));
 });
 Tab.displayName = 'Tab';
 Tab.propTypes = TabPropTypes;

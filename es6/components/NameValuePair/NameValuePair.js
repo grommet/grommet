@@ -15,7 +15,8 @@ var NameValuePair = function NameValuePair(_ref) {
     pairProps = _useContext.pairProps,
     valueProps = _useContext.valueProps;
   var size = useContext(ResponsiveContext);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var direction = pairProps == null ? void 0 : pairProps.direction;
   var column = direction === 'column' || direction === 'column-reverse' || isSmall(size);
   var Container = column ? Box : Fragment;

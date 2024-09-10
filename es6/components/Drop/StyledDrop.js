@@ -2,7 +2,6 @@ import styled, { keyframes } from 'styled-components';
 import { Box } from '../Box';
 import { baseStyle, edgeStyle, roundStyle } from '../../utils/styles';
 import { backgroundStyle } from '../../utils/background';
-import { withTheme } from '../../default-props';
 function getTransformOriginStyle(align) {
   var vertical = 'top';
   if (align.bottom) {
@@ -31,7 +30,7 @@ var marginStyle = function marginStyle(theme, align, data, responsive, marginPro
   }
   return edgeStyle('margin', adjustedMargin, responsive, theme.global.edgeSize.responsiveBreakpoint, theme);
 };
-var StyledDrop = styled(Box).attrs(withTheme).withConfig({
+var StyledDrop = styled(Box).withConfig({
   displayName: "StyledDrop",
   componentId: "sc-16s5rx8-0"
 })(["", " ", " position:fixed;z-index:", ";outline:none;", " ", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], baseStyle, function (props) {

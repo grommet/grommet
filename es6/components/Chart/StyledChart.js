@@ -1,6 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
 import { genericStyles, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var animateStyle = function animateStyle(_ref) {
   var theme = _ref.theme,
     typeProp = _ref.typeProp;
@@ -10,7 +9,7 @@ var animateStyle = function animateStyle(_ref) {
     animateBounds = ['stroke-dashoffset: 200%;', 'stroke-dashoffset: 0%;'];else if (typeProp === 'point') animateBounds = ['opacity: 0;', 'opacity: 1;'];else animateBounds = ['transform: scaleY(0);', 'transform: scaleY(1);'];
   return css(["", " animation:", " ", " forwards;", ""], typeProp === 'line' && 'stroke-dasharray: 200%;', keyframes(["from{", "}to{", "}"], animateBounds[0], animateBounds[1]), theme.global.animation.duration, (typeProp === 'bar' || typeProp === 'area') && 'transform-origin: center bottom 0;');
 };
-var StyledChart = styled.svg.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledChart = styled.svg.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledChart",
   componentId: "sc-1nae0gf-0"
 })(["display:block;max-width:100%;overflow:visible;", " ", " ", ";"], genericStyles, function (props) {

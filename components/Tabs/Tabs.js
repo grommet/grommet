@@ -15,7 +15,7 @@ var _utils = require("../../utils");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext/AnalyticsContext");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["alignControls", "children", "flex", "justify", "messages", "responsive"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -32,7 +32,9 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     _ref$responsive = _ref.responsive,
     responsive = _ref$responsive === void 0 ? true : _ref$responsive,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var propsActiveIndex = rest.activeIndex,
@@ -271,7 +273,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     ref: ref,
     flex: flex,
     responsive: responsive
-  }, rest, {
+  }, passThemeFlag, rest, {
     background: theme.tabs.background
   }), /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     alignSelf: alignControls || ((_theme$tabs$header = theme.tabs.header) == null ? void 0 : _theme$tabs$header.alignSelf),
@@ -294,7 +296,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     }
   }, /*#__PURE__*/_react["default"].createElement(_Previous.Previous, {
     color: disableLeftArrow ? theme.button.disabled.color : theme.global.colors.text
-  }))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabsHeader, {
+  }))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabsHeader, _extends({
     ref: headerRef,
     direction: "row",
     justify: overflow ? 'start' : justify,
@@ -305,7 +307,7 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     gap: theme.tabs.gap,
     pad: overflow ? '2px' : undefined,
     margin: overflow ? '-2px' : undefined
-  }, tabs), overflow && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+  }, passThemeFlag), tabs), overflow && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     a11yTitle: "Next Tab",
     disabled: disableRightArrow
     // removed from tabIndex, button is redundant for keyboard users
@@ -321,11 +323,11 @@ var Tabs = exports.Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, re
     }
   }, /*#__PURE__*/_react["default"].createElement(_Next.Next, {
     color: disableRightArrow ? theme.button.disabled.color : theme.global.colors.text
-  })))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabPanel, {
+  })))), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabPanel, _extends({
     flex: flex,
     "aria-label": tabContentTitle,
     role: "tabpanel"
-  }, activeContent));
+  }, passThemeFlag), activeContent));
 });
 Tabs.displayName = 'Tabs';
 Tabs.propTypes = _propTypes.TabsPropTypes;

@@ -10,6 +10,7 @@ import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
 import { TextContext } from './TextContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
     color = _ref.color,
@@ -24,6 +25,8 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$level = _ref.level,
     level = _ref$level === void 0 ? 1 : _ref$level,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var textRef = useForwardedRef(ref);
   var _useState = useState(false),
     textTruncated = _useState[0],
@@ -64,7 +67,7 @@ var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
     level: level,
     truncate: truncate,
     size: size
-  }, rest, {
+  }, passThemeFlag, rest, {
     ref: textRef
   }), children !== undefined ? /*#__PURE__*/React.createElement(TextContext.Provider, {
     value: textContextValue

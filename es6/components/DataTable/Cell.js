@@ -27,7 +27,9 @@ var Cell = /*#__PURE__*/memo(function (_ref) {
     scope = _ref.scope,
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var value = datumValue(datum, property);
   var context = useContext(TableContext);
   var renderContexts = context === 'body' || context === 'footer' && footer && footer.aggregate;
@@ -57,7 +59,7 @@ var Cell = /*#__PURE__*/memo(function (_ref) {
     pad: pad,
     pin: pin,
     plain: plain ? 'noPad' : undefined
-  }, rest), content);
+  }, passThemeFlag, rest), content);
 });
 Cell.displayName = 'Cell';
 export { Cell };

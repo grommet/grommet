@@ -1,15 +1,15 @@
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React from 'react';
 import styled from 'styled-components';
 import { Copy } from 'grommet-icons/icons/Copy';
 import { Button } from '../Button';
 import { Tip } from '../Tip';
 import { edgeStyle } from '../../utils/styles';
-import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
-var StyledButton = styled(Button).attrs(withTheme).withConfig({
+var StyledButton = styled(Button).withConfig({
   displayName: "CopyButton__StyledButton",
   componentId: "sc-1bp1m18-0"
 })(["border-radius:", ";", ""], function (props) {
@@ -24,7 +24,9 @@ export var CopyButton = function CopyButton(_ref) {
     readOnlyCopyPrompt = _ref.readOnlyCopyPrompt,
     tip = _ref.tip,
     value = _ref.value;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/React.createElement(Tip, {
     dropProps: {
       align: {
@@ -32,7 +34,7 @@ export var CopyButton = function CopyButton(_ref) {
       }
     },
     content: tip
-  }, /*#__PURE__*/React.createElement(StyledButton, {
+  }, /*#__PURE__*/React.createElement(StyledButton, _extends({
     onClick: onClickCopy,
     icon: /*#__PURE__*/React.createElement(Copy, null),
     pad: {
@@ -47,5 +49,5 @@ export var CopyButton = function CopyButton(_ref) {
     onBlur: onBlurCopy,
     onMouseOut: onBlurCopy,
     "aria-label": readOnlyCopyPrompt + " " + value
-  }));
+  }, passThemeFlag)));
 };

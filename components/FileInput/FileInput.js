@@ -16,8 +16,7 @@ var _Text = require("../Text");
 var _StyledFileInput = require("./StyledFileInput");
 var _propTypes = require("./propTypes");
 var _formatBytes = require("./utils/formatBytes");
-var _defaultProps = require("../../default-props");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "background", "border", "confirmRemove", "disabled", "id", "plain", "renderFile", "maxSize", "messages", "margin", "multiple", "name", "onChange", "pad", "value"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -31,7 +30,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
 
-var ContentsBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var ContentsBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FileInput__ContentsBox",
   componentId: "sc-1jzq7im-0"
 })(["cursor:pointer;position:relative;", " ", ";", ";", ";", ";", ";"], function (props) {
@@ -47,13 +46,13 @@ var ContentsBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProp
 }, function (props) {
   return !props.focus && (0, _utils.unfocusStyle)();
 });
-var Label = (0, _styledComponents["default"])(_Text.Text).attrs(_defaultProps.withTheme).withConfig({
+var Label = (0, _styledComponents["default"])(_Text.Text).withConfig({
   displayName: "FileInput__Label",
   componentId: "sc-1jzq7im-1"
 })(["", ";"], function (props) {
   return props.theme.fileInput && props.theme.fileInput.label && props.theme.fileInput.label.extend;
 });
-var Message = (0, _styledComponents["default"])(_Text.Text).attrs(_defaultProps.withTheme).withConfig({
+var Message = (0, _styledComponents["default"])(_Text.Text).withConfig({
   displayName: "FileInput__Message",
   componentId: "sc-1jzq7im-2"
 })(["", ";"], function (props) {
@@ -81,7 +80,9 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     pad = _ref.pad,
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
@@ -239,7 +240,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     });
     inputRef.current.focus();
   };
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ContentsBox, {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(ContentsBox, _extends({
     theme: theme,
     flex: false,
     disabled: disabled,
@@ -259,7 +260,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     },
     dragOver: dragOver,
     focus: usingKeyboard && focus
-  }, /*#__PURE__*/_react["default"].createElement(_StyledFileInput.StyledFileInput, _extends({
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledFileInput.StyledFileInput, _extends({
     ref: inputRef,
     type: "file",
     id: id,
@@ -269,7 +270,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     disabled: disabled,
     plain: true,
     rightOffset: rightOffset
-  }, rest, {
+  }, passThemeFlag, rest, {
     onDragOver: function onDragOver() {
       return setDragOver(true);
     },
@@ -309,7 +310,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     fill: "horizontal",
     direction: "row",
     justify: "between"
-  }, files.length <= aggregateThreshold && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Message, theme.fileInput.message, message), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+  }, files.length <= aggregateThreshold && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(Message, _extends({}, theme.fileInput.message, passThemeFlag), message), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onSpace: function onSpace(event) {
       event.preventDefault();
       if (controlRef.current === event.target) inputRef.current.click();
@@ -350,7 +351,7 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     justify: "between",
     direction: "row",
     align: "center"
-  }, /*#__PURE__*/_react["default"].createElement(Label, theme.fileInput.label, files.length, ' ', format({
+  }, /*#__PURE__*/_react["default"].createElement(Label, _extends({}, theme.fileInput.label, passThemeFlag), files.length, ' ', format({
     id: 'fileInput.files',
     messages: messages
   })), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -421,10 +422,10 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
       gap: "xsmall",
       align: "center",
       direction: "row"
-    }), (maxSize && file.size > maxSize || max && index >= max) && /*#__PURE__*/_react["default"].createElement(_CircleAlert.CircleAlert, null), /*#__PURE__*/_react["default"].createElement(Label, {
+    }), (maxSize && file.size > maxSize || max && index >= max) && /*#__PURE__*/_react["default"].createElement(_CircleAlert.CircleAlert, null), /*#__PURE__*/_react["default"].createElement(Label, _extends({
       weight: theme.global.input.weight || theme.global.input.font.weight,
       truncate: true
-    }, file.name)), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, passThemeFlag), file.name)), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       flex: false,
       direction: "row",
       align: "center"

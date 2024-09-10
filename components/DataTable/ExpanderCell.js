@@ -8,7 +8,7 @@ var _Box = require("../Box");
 var _Button = require("../Button");
 var _TableCell = require("../TableCell");
 var _utils = require("../../utils");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["context", "expanded", "onToggle", "pad"],
   _excluded2 = ["background", "border", "context"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -22,7 +22,8 @@ var ExpanderControl = function ExpanderControl(_ref) {
     onToggle = _ref.onToggle,
     pad = _ref.pad,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var content;
   if (onToggle) {
     var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];

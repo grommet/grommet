@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
-import { withTheme } from '../../default-props';
-var StyledAvatarText = styled(Text).attrs(withTheme).withConfig({
+var StyledAvatarText = styled(Text).withConfig({
   displayName: "StyledAvatar__StyledAvatarText",
   componentId: "sc-1suyamb-0"
 })(["", " ", ""], function (props) {
@@ -10,7 +9,7 @@ var StyledAvatarText = styled(Text).attrs(withTheme).withConfig({
 }, function (props) {
   return props.theme.avatar.text && props.theme.avatar.text.extend;
 });
-var StyledAvatar = styled(Box).attrs(withTheme).withConfig({
+var StyledAvatar = styled(Box).withConfig({
   displayName: "StyledAvatar",
   componentId: "sc-1suyamb-1"
 })(["", ""], function (props) {

@@ -40,7 +40,8 @@ var Spinner = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     size = _ref2.size,
     message = _ref2.message,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var announce = useContext(AnnounceContext);
   useEffect(function () {
     if (message != null && message.start) announce(message.start);else if (typeof message === 'string') announce(message);

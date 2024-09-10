@@ -4,13 +4,16 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { forwardRef } from 'react';
 import { StyledTable, StyledTableDataCaption } from './StyledTable';
 import { TablePropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var Table = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var caption = _ref.caption,
     children = _ref.children,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/React.createElement(StyledTable, _extends({
     ref: ref
-  }, rest), caption ? /*#__PURE__*/React.createElement(StyledTableDataCaption, null, caption) : null, children);
+  }, passThemeFlag, rest), caption ? /*#__PURE__*/React.createElement(StyledTableDataCaption, passThemeFlag, caption) : null, children);
 });
 Table.propTypes = TablePropTypes;
 export { Table };

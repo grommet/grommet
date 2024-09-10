@@ -17,7 +17,7 @@ var _utils = require("../../utils");
 var _StyledDataTable = require("./StyledDataTable");
 var _propTypes = require("./propTypes");
 var _PlaceholderBody = require("./PlaceholderBody");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["allowSelectAll", "background", "border", "columns", "data", "disabled", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "onUpdate", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "rowDetails", "step", "verticalAlign"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -83,7 +83,9 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
     step = _ref$step === void 0 ? 50 : _ref$step,
     verticalAlign = _ref.verticalAlign,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = (0, _react.useContext)(_DataContext.DataContext),
     view = _useContext.view,
     contextData = _useContext.data,
@@ -394,7 +396,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
   var Container = paginate ? _StyledDataTable.StyledContainer : _react.Fragment;
   var containterProps = paginate ? _extends({}, theme.dataTable.container, {
     fill: fill
-  }) : undefined;
+  }, passThemeFlag) : undefined;
 
   // DataTable should overflow if paginating but pagination component
   // should remain in its location
@@ -507,7 +509,7 @@ var DataTable = exports.DataTable = function DataTable(_ref) {
   });
   return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(OverflowContainer, overflowContainerProps, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, _extends({
     fillProp: !paginate ? fill : undefined
-  }, paginatedDataTableProps, rest), /*#__PURE__*/_react["default"].createElement(_Header.Header, {
+  }, paginatedDataTableProps, passThemeFlag, rest), /*#__PURE__*/_react["default"].createElement(_Header.Header, {
     ref: headerRef,
     allowSelectAll: allowSelectAll,
     cellProps: cellProps.header,

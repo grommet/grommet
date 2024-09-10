@@ -12,7 +12,8 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
     defaultVisible = _ref$defaultVisible === void 0 ? false : _ref$defaultVisible,
     dropProps = _ref.dropProps,
     plain = _ref.plain;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _useState = useState(false),
     over = _useState[0],
     setOver = _useState[1];

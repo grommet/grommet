@@ -1,7 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { normalizeColor, genericStyles, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
-var StyledHour = styled.line.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledHour = styled.line.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledHour",
   componentId: "sc-y4xw8s-0"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -9,7 +8,7 @@ var StyledHour = styled.line.withConfig(styledComponentsConfig).attrs(withTheme)
 }, function (props) {
   return normalizeColor(props.theme.clock.analog.hour.color, props.theme);
 });
-var StyledMinute = styled.line.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledMinute = styled.line.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledMinute",
   componentId: "sc-y4xw8s-1"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -17,7 +16,7 @@ var StyledMinute = styled.line.withConfig(styledComponentsConfig).attrs(withThem
 }, function (props) {
   return normalizeColor(props.theme.clock.analog.minute.color, props.theme);
 });
-var StyledSecond = styled.line.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledSecond = styled.line.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledSecond",
   componentId: "sc-y4xw8s-2"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -25,7 +24,7 @@ var StyledSecond = styled.line.withConfig(styledComponentsConfig).attrs(withThem
 }, function (props) {
   return normalizeColor(props.theme.clock.analog.second.color, props.theme);
 });
-var StyledAnalog = styled.svg.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledAnalog = styled.svg.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledAnalog",
   componentId: "sc-y4xw8s-3"
 })(["width:", ";height:", ";", " ", ";"], function (props) {
@@ -41,7 +40,7 @@ var sizeStyle = function sizeStyle(props) {
   var data = props.theme.clock.digital.text[size] || {};
   return css(["font-size:", ";line-height:", ";"], data.size || props.theme.clock.digital.text.medium.size, data.height || props.theme.clock.digital.text.medium.height);
 };
-var StyledDigitalDigit = styled.div.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledDigitalDigit = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledClock__StyledDigitalDigit",
   componentId: "sc-y4xw8s-4"
 })(["position:relative;width:0.8em;text-align:center;overflow:hidden;", ";"], function (props) {

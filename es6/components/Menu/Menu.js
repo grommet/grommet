@@ -13,8 +13,7 @@ import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
-var ContainerBox = styled(Box).attrs(withTheme).withConfig({
+var ContainerBox = styled(Box).withConfig({
   displayName: "Menu__ContainerBox",
   componentId: "sc-17fcys9-0"
 })(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}&:focus{outline:none;}", ";"], function (props) {
@@ -64,7 +63,9 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     plain = props.plain,
     size = props.size,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
@@ -385,11 +386,11 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
       onDown: onNextMenuItem,
       onUp: onPreviousMenuItem,
       onEnter: onSelectMenuItem
-    }, /*#__PURE__*/React.createElement(ContainerBox, {
+    }, /*#__PURE__*/React.createElement(ContainerBox, _extends({
       ref: dropContainerRef,
       tabIndex: -1,
       background: dropBackground || theme.menu.background
-    }, alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/React.createElement(Box, {
+    }, passThemeFlag), alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/React.createElement(Box, {
       overflow: "auto",
       role: "menu",
       a11yTitle: a11y

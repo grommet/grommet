@@ -22,7 +22,8 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     gap = _ref.gap,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var formContext = useContext(FormContext);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
 
   // normalize options to always use an object
   var options = optionsProp.map(function (o) {

@@ -8,7 +8,7 @@ var _Keyboard = require("../Keyboard");
 var _Box = require("../Box");
 var _RadioButton = require("../RadioButton");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["children", "defaultValue", "disabled", "focusIndicator", "name", "onChange", "options", "value", "gap"],
   _excluded2 = ["disabled", "id", "label", "value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -28,7 +28,8 @@ var RadioButtonGroup = exports.RadioButtonGroup = /*#__PURE__*/(0, _react.forwar
     gap = _ref.gap,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
 
   // normalize options to always use an object
   var options = optionsProp.map(function (o) {

@@ -5,7 +5,8 @@ import { Header } from '../Header';
 import { useThemeValue } from '../../utils/useThemeValue';
 var CardHeader = function CardHeader(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Header, _extends({}, theme.card.header, rest));
 };
 export { CardHeader };

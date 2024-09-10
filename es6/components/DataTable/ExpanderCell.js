@@ -18,7 +18,8 @@ var ExpanderControl = function ExpanderControl(_ref) {
     onToggle = _ref.onToggle,
     pad = _ref.pad,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var content;
   if (onToggle) {
     var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];

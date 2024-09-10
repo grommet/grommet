@@ -19,7 +19,7 @@ var _TextInput = require("../TextInput");
 var _DataContext = require("../../contexts/DataContext");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["drop", "options"],
   _excluded2 = ["drop", "options"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -208,7 +208,8 @@ var DataTableColumns = exports.DataTableColumns = function DataTableColumns(_ref
     inDataForm = _useContext5.inDataForm;
   var _useContext6 = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext6.format;
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var _useState3 = (0, _react.useState)(),
     showContent = _useState3[0],
     setShowContent = _useState3[1];

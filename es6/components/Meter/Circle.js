@@ -16,7 +16,9 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     type = props.type,
     values = props.values,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   var strokeWidth = type === 'pie' ? width / 2 : parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   var centerX = width / 2;
@@ -135,7 +137,7 @@ var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
     viewBox: "0 0 " + width + " " + viewBoxHeight,
     width: size === 'full' ? '100%' : width,
     height: size === 'full' ? '100%' : viewBoxHeight
-  }, rest), track, paths, pathCaps);
+  }, passThemeFlag, rest), track, paths, pathCaps);
 });
 Circle.displayName = 'Circle';
 export { Circle };

@@ -9,18 +9,20 @@ export var PageControl = function PageControl(_ref) {
     separator = _ref.separator,
     sizeProp = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var size = sizeProp || 'medium';
-  return /*#__PURE__*/React.createElement(StyledContainer, {
+  return /*#__PURE__*/React.createElement(StyledContainer, _extends({
     as: "li",
     size: size
-  }, separator ? /*#__PURE__*/React.createElement(StyledSeparator, {
+  }, passThemeFlag), separator ? /*#__PURE__*/React.createElement(StyledSeparator, _extends({
     size: size
-  }, "\u2026") : /*#__PURE__*/React.createElement(StyledPaginationButton, _extends({
+  }, passThemeFlag), "\u2026") : /*#__PURE__*/React.createElement(StyledPaginationButton, _extends({
     a11yTitle: "Go to page " + control,
     fill: true,
     kind: theme.pagination.button,
     label: control,
     size: size
-  }, rest)));
+  }, passThemeFlag, rest)));
 };

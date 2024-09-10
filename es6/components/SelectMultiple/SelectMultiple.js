@@ -16,8 +16,7 @@ import { DefaultSelectTextInput } from '../Select/DefaultSelectTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { SelectMultiplePropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
-var StyledSelectBox = styled(Box).attrs(withTheme).withConfig({
+var StyledSelectBox = styled(Box).withConfig({
   displayName: "SelectMultiple__StyledSelectBox",
   componentId: "sc-18zwyth-0"
 })(["", ";", ";", ";"], function (props) {
@@ -77,7 +76,9 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     showSelectedInline = _ref$showSelectedInli === void 0 ? false : _ref$showSelectedInli,
     width = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var inputRef = useRef();
   var formContext = useContext(FormContext);
   var _useContext = useContext(MessageContext),
@@ -374,7 +375,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return /*#__PURE__*/React.createElement(Keyboard, {
     onDown: onRequestOpen,
     onUp: onRequestOpen
-  }, showSelectedInline ? /*#__PURE__*/React.createElement(StyledSelectBox, {
+  }, showSelectedInline ? /*#__PURE__*/React.createElement(StyledSelectBox, _extends({
     disabled: disabled === true || undefined,
     alignSelf: alignSelf,
     direction: "row",
@@ -384,7 +385,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
     flex: false,
     plainSelect: plain,
     width: width
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, passThemeFlag), /*#__PURE__*/React.createElement(Box, {
     width: "100%"
   }, /*#__PURE__*/React.createElement(DropButton, _extends({
     fill: "horizontal",

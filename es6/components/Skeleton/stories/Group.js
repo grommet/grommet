@@ -55,7 +55,8 @@ var Content = function Content() {
   }, /*#__PURE__*/React.createElement(Item, null), /*#__PURE__*/React.createElement(Item, null), /*#__PURE__*/React.createElement(Item, null), /*#__PURE__*/React.createElement(Item, null), /*#__PURE__*/React.createElement(Item, null));
 };
 export var Group = function Group() {
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
   }, /*#__PURE__*/React.createElement(Content, null)), /*#__PURE__*/React.createElement(Grommet, {

@@ -11,8 +11,7 @@ import { PaginationStep } from './PaginationStep';
 import { PaginationSummary } from './PaginationSummary';
 import { PaginationPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
-var StyledPaginationContainer = styled(Box).attrs(withTheme).withConfig({
+var StyledPaginationContainer = styled(Box).withConfig({
   displayName: "Pagination__StyledPaginationContainer",
   componentId: "sc-rnlw6m-0"
 })(["", ""], function (props) {
@@ -42,7 +41,9 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     stepOptions = _ref.stepOptions,
     summary = _ref.summary,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = useContext(DataContext),
     onView = _useContext.onView,
     filteredTotal = _useContext.filteredTotal,
@@ -198,7 +199,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // for backwards compatibility
   if (!summary && !stepOptions) return /*#__PURE__*/React.createElement(StyledPaginationContainer, _extends({
     flex: false
-  }, theme.pagination.container, rest), paginationControls);
+  }, theme.pagination.container, passThemeFlag, rest), paginationControls);
   return /*#__PURE__*/React.createElement(StyledPaginationContainer, _extends({
     direction: "row",
     align: "center",
@@ -208,7 +209,7 @@ var Pagination = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     wrap: true,
     flex: false
-  }, theme.pagination.container, rest), /*#__PURE__*/React.createElement(Box, {
+  }, theme.pagination.container, passThemeFlag, rest), /*#__PURE__*/React.createElement(Box, {
     flex: "grow"
   }, summary && /*#__PURE__*/React.createElement(PaginationSummary, {
     messages: messages,

@@ -6,7 +6,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../../utils");
 var _StyledMeter = require("./StyledMeter");
 var _utils2 = require("./utils");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["background", "max", "round", "size", "thickness", "direction", "values", "reverse"],
   _excluded2 = ["color", "highlight", "label", "onHover", "value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -24,7 +24,9 @@ var Bar = exports.Bar = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref
     values = props.values,
     reverse = props.reverse,
     rest = _objectWithoutPropertiesLoose(props, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var length = size === 'full' ? 288 : (0, _utils.parseMetricToNum)(theme.global.size[size] || size);
   var thickness = (0, _utils.parseMetricToNum)(theme.global.edgeSize[thicknessProp] || thicknessProp);
   // account for the round cap, if any
@@ -91,7 +93,7 @@ var Bar = exports.Bar = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref
     round: round ? {
       size: thicknessProp
     } : undefined
-  }, rest, {
+  }, passThemeFlag, rest, {
     reverse: reverse
   }), /*#__PURE__*/_react["default"].createElement("path", _extends({
     d: backgroundPath,

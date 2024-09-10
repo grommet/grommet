@@ -28,7 +28,8 @@ var Cards = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     _ref$step = _ref.step,
     step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _useContext = useContext(DataContext),
     contextData = _useContext.data;
   var data = dataProp || contextData || emptyData;

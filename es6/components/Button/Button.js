@@ -179,7 +179,9 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     a11yTitle = _ref$a11yTitle === void 0 ? typeof tip === 'string' ? tip : undefined : _ref$a11yTitle,
     as = _ref.as,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = useState(),
     focus = _useState[0],
     setFocus = _useState[1];
@@ -427,7 +429,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       sizeProp: size,
       success: success,
       type: !href ? type : undefined
-    }), contents);
+    }, passThemeFlag), contents);
   } else {
     styledButtonResult = /*#__PURE__*/React.createElement(StyledButton, _extends({}, rest, {
       as: domTag,
@@ -464,7 +466,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       sizeProp: size,
       success: success,
       type: !href ? type : undefined
-    }), contents);
+    }, passThemeFlag), contents);
   }
   if (tip) {
     if (typeof tip === 'string') {

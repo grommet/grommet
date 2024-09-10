@@ -5,7 +5,8 @@ import { Box } from '../Box';
 import { useThemeValue } from '../../utils/useThemeValue';
 var CardBody = function CardBody(_ref) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   return /*#__PURE__*/React.createElement(Box, _extends({
     flex: true
   }, theme.card.body, rest));

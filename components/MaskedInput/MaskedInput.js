@@ -12,8 +12,7 @@ var _Keyboard = require("../Keyboard");
 var _utils = require("../../utils");
 var _StyledMaskedInput = require("./StyledMaskedInput");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
-var _defaultProps = require("../../default-props");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "dropHeight", "dropProps", "focus", "focusIndicator", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "textAlign", "value"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -120,7 +119,7 @@ var parseValue = function parseValue(mask, value) {
 var defaultMask = [{
   regexp: /[^]*/
 }];
-var ContainerBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "MaskedInput__ContainerBox",
   componentId: "sc-af8hzu-0"
 })(["", ";"], function (props) {
@@ -152,7 +151,9 @@ var MaskedInput = exports.MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(func
     textAlign = _ref.textAlign,
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
@@ -328,9 +329,9 @@ var MaskedInput = exports.MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(func
     }).join('');
   };
   var maskedInputIcon = (0, _utils.useSizedIcon)(icon, rest.size, theme);
-  return /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledMaskedInputContainer, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledMaskedInputContainer, _extends({
     plain: plain
-  }, maskedInputIcon && /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledIcon, {
+  }, passThemeFlag), maskedInputIcon && /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledIcon, {
     reverse: reverse,
     theme: theme
   }, maskedInputIcon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
@@ -386,11 +387,11 @@ var MaskedInput = exports.MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(func
     target: inputRef.current,
     onClickOutside: onHideDrop,
     onEsc: onHideDrop
-  }, dropProps), /*#__PURE__*/_react["default"].createElement(ContainerBox, {
+  }, dropProps), /*#__PURE__*/_react["default"].createElement(ContainerBox, _extends({
     ref: dropRef,
     overflow: "auto",
     dropHeight: dropHeight
-  }, mask[activeMaskIndex].options.map(function (option, index) {
+  }, passThemeFlag), mask[activeMaskIndex].options.map(function (option, index) {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     var child = !theme.button.option ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {

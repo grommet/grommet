@@ -8,7 +8,7 @@ var _propTypes = require("./propTypes");
 var _Box = require("../Box");
 var _Text = require("../Text");
 var _StyledTag = require("./StyledTag");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["name", "value", "size", "onRemove", "onClick"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -22,7 +22,9 @@ var Tag = exports.Tag = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     onRemove = _ref.onRemove,
     onClick = _ref.onClick,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var RemoveIcon = ((_theme$tag$icons = theme.tag.icons) == null ? void 0 : _theme$tag$icons.remove) || _FormClose.FormClose;
   var containerProps = _extends({
     ref: ref,
@@ -61,13 +63,13 @@ var Tag = exports.Tag = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     focusIndicator: true,
     icon: /*#__PURE__*/_react["default"].createElement(RemoveIcon, (_theme$tag$size3 = theme.tag.size) == null || (_theme$tag$size3 = _theme$tag$size3[size]) == null ? void 0 : _theme$tag$size3.icon),
     round: ((_theme$tag$size4 = theme.tag.size) == null || (_theme$tag$size4 = _theme$tag$size4[size]) == null ? void 0 : _theme$tag$size4.round) || theme.tag.round
-  }, theme.tag.remove))) : /*#__PURE__*/_react["default"].createElement(_StyledTag.StyledTagButton, _extends({
+  }, theme.tag.remove, passThemeFlag))) : /*#__PURE__*/_react["default"].createElement(_StyledTag.StyledTagButton, _extends({
     flex: false,
     plain: true,
     onClick: onClick,
     hoverIndicator: true,
     focusIndicator: true
-  }, containerProps), contents);
+  }, containerProps, passThemeFlag), contents);
 });
 Tag.displayName = 'Tag';
 Tag.prototype = _propTypes.TagPropTypes;

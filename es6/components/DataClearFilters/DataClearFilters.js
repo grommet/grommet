@@ -11,7 +11,8 @@ var DataClearFilters = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$data$button;
   var _onClick = _ref.onClick,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var _useContext2 = useContext(DataContext),

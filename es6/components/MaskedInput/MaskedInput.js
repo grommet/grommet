@@ -12,7 +12,6 @@ import { sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
 import { StyledMaskedInput, StyledMaskedInputContainer, StyledIcon } from './StyledMaskedInput';
 import { MaskedInputPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 var parseValue = function parseValue(mask, value) {
   // break the value up into mask parts
   var valueParts = []; // { part, beginIndex, endIndex }
@@ -113,7 +112,7 @@ var parseValue = function parseValue(mask, value) {
 var defaultMask = [{
   regexp: /[^]*/
 }];
-var ContainerBox = styled(Box).attrs(withTheme).withConfig({
+var ContainerBox = styled(Box).withConfig({
   displayName: "MaskedInput__ContainerBox",
   componentId: "sc-af8hzu-0"
 })(["", ";"], function (props) {
@@ -145,7 +144,9 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     textAlign = _ref.textAlign,
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var formContext = useContext(FormContext);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
@@ -321,9 +322,9 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }).join('');
   };
   var maskedInputIcon = useSizedIcon(icon, rest.size, theme);
-  return /*#__PURE__*/React.createElement(StyledMaskedInputContainer, {
+  return /*#__PURE__*/React.createElement(StyledMaskedInputContainer, _extends({
     plain: plain
-  }, maskedInputIcon && /*#__PURE__*/React.createElement(StyledIcon, {
+  }, passThemeFlag), maskedInputIcon && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
   }, maskedInputIcon), /*#__PURE__*/React.createElement(Keyboard, {
@@ -379,11 +380,11 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     target: inputRef.current,
     onClickOutside: onHideDrop,
     onEsc: onHideDrop
-  }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, {
+  }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, _extends({
     ref: dropRef,
     overflow: "auto",
     dropHeight: dropHeight
-  }, mask[activeMaskIndex].options.map(function (option, index) {
+  }, passThemeFlag), mask[activeMaskIndex].options.map(function (option, index) {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     var child = !theme.button.option ? /*#__PURE__*/React.createElement(Box, {

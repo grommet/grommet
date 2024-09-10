@@ -16,8 +16,7 @@ var _StyledTextInput = require("./StyledTextInput");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
 var _CopyButton = require("./CopyButton");
-var _useThemeValue = require("../../utils/useThemeValue");
-var _defaultProps = require("../../default-props");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "value", "width"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -39,7 +38,7 @@ var stringLabel = function stringLabel(suggestion) {
   }
   return suggestion;
 };
-var ContainerBox = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "TextInput__ContainerBox",
   componentId: "sc-1ai0c08-0"
 })(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
@@ -83,7 +82,9 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     valueProp = _ref.value,
     widthProp = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var announce = (0, _react.useContext)(_contexts.AnnounceContext);
@@ -282,7 +283,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
       target: dropTarget || inputRef.current,
       onClickOutside: clickOutside,
       onEsc: closeDrop
-    }, dropProps), /*#__PURE__*/_react["default"].createElement(ContainerBox, {
+    }, dropProps), /*#__PURE__*/_react["default"].createElement(ContainerBox, _extends({
       id: id ? "listbox__" + id : undefined,
       role: "listbox",
       overflow: "auto",
@@ -290,9 +291,9 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
       onMouseMove: function onMouseMove() {
         return setMouseMovedSinceLastKey(true);
       }
-    }, /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledSuggestions, {
+    }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledSuggestions, _extends({
       ref: suggestionsRef
-    }, /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
+    }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
       items: suggestions,
       step: theme.select.step,
       show: activeSuggestionIndex !== -1 ? activeSuggestionIndex : undefined
@@ -383,13 +384,13 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     tip: tip,
     value: value
   });
-  return /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInputContainer, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInputContainer, _extends({
     readOnlyProp: readOnly // readOnlyProp to avoid passing to DOM
     ,
     readOnlyCopy: readOnlyCopy,
     plain: plain,
     border: !plain
-  }, reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder), textInputIcon && !readOnly && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
+  }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnly && /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledIcon, {
     reverse: reverse,
     theme: theme
   }, textInputIcon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, _extends({
@@ -408,7 +409,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     focusIndicator: focusIndicator,
     textAlign: textAlign,
     widthProp: widthProp
-  }, rest, extraProps, comboboxProps, {
+  }, passThemeFlag, rest, extraProps, comboboxProps, {
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value),
     readOnly: readOnly,

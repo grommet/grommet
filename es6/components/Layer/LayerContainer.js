@@ -36,7 +36,9 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     layerTarget = _ref.target,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = useContext(ContainerTargetContext);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var size = useContext(ResponsiveContext);
   // layerOptions was created to preserve backwards compatibility but
   // should not be supported in v3
@@ -181,7 +183,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     full: full,
     margin: margin,
     modal: modal
-  }, rest, {
+  }, passThemeFlag, rest, {
     position: position,
     plain: plain,
     responsive: responsive,
@@ -196,7 +198,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tabIndex: "-1",
     "aria-hidden": "true"
   }), children);
-  content = /*#__PURE__*/React.createElement(StyledLayer, {
+  content = /*#__PURE__*/React.createElement(StyledLayer, _extends({
     ref: layerRef,
     id: id,
     plain: plain,
@@ -205,11 +207,11 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     layerTarget: layerTarget,
     tabIndex: "-1",
     dir: theme.dir
-  }, modal && /*#__PURE__*/React.createElement(StyledOverlay, {
+  }, passThemeFlag), modal && /*#__PURE__*/React.createElement(StyledOverlay, _extends({
     plain: plain,
     responsive: responsive,
     onMouseDown: onClickOutside
-  }), content);
+  }, passThemeFlag)), content);
   if (onEsc) {
     content = /*#__PURE__*/React.createElement(Keyboard, {
       onEsc: onEsc ? function (event) {

@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Box } from '../Box';
 import { genericStyles, normalizeColor } from '../../utils';
-import { withTheme } from '../../default-props';
 var tabHoverStyle = css(["&:hover{", " ", " ", ";}&:focus{z-index:1;}"], function (props) {
   return props.theme.tab.hover.background && css(["background:", ";"], normalizeColor(props.theme.tab.hover.background, props.theme));
 }, function (props) {
@@ -9,7 +8,7 @@ var tabHoverStyle = css(["&:hover{", " ", " ", ";}&:focus{z-index:1;}"], functio
 }, function (props) {
   return props.theme.tab.hover.extend;
 });
-var StyledTab = styled(Box).attrs(withTheme).withConfig({
+var StyledTab = styled(Box).withConfig({
   displayName: "StyledTab",
   componentId: "sc-1nnwnsb-0"
 })(["white-space:nowrap;", " ", " ", " ", ""], genericStyles, function (props) {

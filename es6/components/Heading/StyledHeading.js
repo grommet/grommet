@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { breakpointStyle, genericStyles, normalizeColor, textAlignStyle, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var sizeStyle = function sizeStyle(props) {
   // size is a combination of the level and size properties
   var size = props.size || 'medium';
@@ -35,7 +34,7 @@ var truncateStyle = "\n  white-space: nowrap;\n  overflow: hidden;\n  text-overf
 var colorStyle = css(["color:", ";"], function (props) {
   return normalizeColor(props.colorProp || props.theme.heading.color, props.theme);
 });
-var StyledHeading = styled.h1.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledHeading = styled.h1.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledHeading",
   componentId: "sc-1rdh4aw-0"
 })(["", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {

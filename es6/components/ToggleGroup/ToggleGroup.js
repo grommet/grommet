@@ -42,7 +42,9 @@ var ToggleGroup = function ToggleGroup(_ref2) {
     _useControlled$ = _useControlled[0],
     value = _useControlled$ === void 0 ? multiple ? [] : '' : _useControlled$,
     setValue = _useControlled[1];
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var ref = useRef();
   var buttonRefs = useRef([]);
   var values = options == null ? void 0 : options.map(function (option) {
@@ -139,7 +141,7 @@ var ToggleGroup = function ToggleGroup(_ref2) {
         color: theme.toggleGroup.divider.color
       } : undefined,
       key: optionValue || index
-    }, /*#__PURE__*/React.createElement(StyledButton, {
+    }, /*#__PURE__*/React.createElement(StyledButton, _extends({
       active: active,
       "aria-pressed": multiple && active,
       "aria-checked": !multiple && active,
@@ -155,7 +157,7 @@ var ToggleGroup = function ToggleGroup(_ref2) {
       role: !multiple ? 'radio' : undefined,
       round: round,
       tabIndex: index === focusableIndex ? '0' : '-1'
-    }));
+    }, passThemeFlag)));
   })));
 };
 ToggleGroup.displayName = 'ToggleGroup';

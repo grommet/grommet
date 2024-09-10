@@ -5,10 +5,11 @@ exports["default"] = exports.BackgroundThemed = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _Grid = require("../../Grid");
-var _useThemeValue = require("../../../utils/useThemeValue");
+var _useThemeValue2 = require("../../../utils/useThemeValue");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var BackgroundThemed = exports.BackgroundThemed = function BackgroundThemed() {
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var backgrounds = theme.global.backgrounds;
   return (
     // Uncomment <Grommet> lines when using outside of storybook

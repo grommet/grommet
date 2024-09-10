@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { backgroundStyle, borderStyle, edgeStyle, genericStyles, styledComponentsConfig } from '../../utils';
-import { withTheme } from '../../default-props';
 var SIZE_MAP = {
   '1/2': '50%',
   '1/4': '25%',
@@ -21,7 +20,7 @@ var sizeStyle = css(["width:", ";max-width:", ";overflow:hidden;"], function (pr
 }, function (props) {
   return props.size !== 'auto' ? SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size : undefined;
 });
-var StyledTableCell = styled.td.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledTableCell = styled.td.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableCell",
   componentId: "sc-1m3u5g-0"
 })(["margin:0;padding:0;font-weight:inherit;text-align:inherit;", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -39,7 +38,7 @@ var StyledTableCell = styled.td.withConfig(styledComponentsConfig).attrs(withThe
 }, function (props) {
   return props.tableContextTheme && props.tableContextTheme.extend;
 });
-var StyledTableDataCaption = styled.caption.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledTableDataCaption = styled.caption.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable__StyledTableDataCaption",
   componentId: "sc-1m3u5g-1"
 })(["margin-bottom:", ";"], function (props) {
@@ -61,7 +60,7 @@ var StyledTableFooter = styled.tfoot.withConfig(styledComponentsConfig).withConf
   displayName: "StyledTable__StyledTableFooter",
   componentId: "sc-1m3u5g-5"
 })([""]);
-var StyledTable = styled.table.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledTable = styled.table.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTable",
   componentId: "sc-1m3u5g-6"
 })(["border-spacing:0;border-collapse:collapse;width:inherit;", " ", ";"], genericStyles, function (props) {

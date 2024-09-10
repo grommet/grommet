@@ -7,7 +7,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _Box = require("../Box");
 var _Keyboard = require("../Keyboard");
 var _utils = require("../../utils");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["color", "direction", "edge", "onDecrease", "onIncrease", "thickness"];
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
@@ -38,7 +38,8 @@ var EdgeControl = exports.EdgeControl = /*#__PURE__*/(0, _react.forwardRef)(func
     onIncrease = _ref.onIncrease,
     thickness = _ref.thickness,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var _useState = (0, _react.useState)(false),
     focus = _useState[0],
     setFocus = _useState[1];

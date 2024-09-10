@@ -20,7 +20,8 @@ var NameValueList = /*#__PURE__*/forwardRef(function (_ref, ref) {
     valueProps = _ref.valueProps,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var size = useContext(ResponsiveContext);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
 
   // If layout is grid, valueWidth sets the max width of the column.
   // Grid will 'fit' as many columns of valueWidth per row as container's

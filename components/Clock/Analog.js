@@ -5,7 +5,7 @@ exports.Analog = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../../utils");
 var _StyledClock = require("./StyledClock");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["elements", "precision"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -41,7 +41,9 @@ var Analog = exports.Analog = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var elements = _ref2.elements,
     precision = _ref2.precision,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useMemo = (0, _react.useMemo)(function () {
       return getClockState(elements);
     }, [elements]),
@@ -58,7 +60,7 @@ var Analog = exports.Analog = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var halfSize = size / 2;
   var secondHand;
   if (precision === 'seconds') {
-    secondHand = /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledSecond, {
+    secondHand = /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledSecond, _extends({
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -69,11 +71,11 @@ var Analog = exports.Analog = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         transform: "rotate(" + secondAngle + "deg)",
         transformOrigin: halfSize + "px " + halfSize + "px"
       }
-    });
+    }, passThemeFlag));
   }
   var minuteHand;
   if (precision === 'seconds' || precision === 'minutes') {
-    minuteHand = /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledMinute, {
+    minuteHand = /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledMinute, _extends({
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -84,7 +86,7 @@ var Analog = exports.Analog = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         transform: "rotate(" + minuteAngle + "deg)",
         transformOrigin: halfSize + "px " + halfSize + "px"
       }
-    });
+    }, passThemeFlag));
   }
   return /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledAnalog, _extends({
     ref: ref,
@@ -93,7 +95,7 @@ var Analog = exports.Analog = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     height: size,
     preserveAspectRatio: "xMidYMid meet",
     viewBox: "0 0 " + size + " " + size
-  }, rest), secondHand, minuteHand, /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledHour, {
+  }, passThemeFlag, rest), secondHand, minuteHand, /*#__PURE__*/_react["default"].createElement(_StyledClock.StyledHour, _extends({
     x1: halfSize,
     y1: halfSize,
     x2: halfSize,
@@ -104,6 +106,6 @@ var Analog = exports.Analog = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       transform: "rotate(" + hourAngle + "deg)",
       transformOrigin: halfSize + "px " + halfSize + "px"
     }
-  }));
+  }, passThemeFlag)));
 });
 Analog.displayName = 'Analog';

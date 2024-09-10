@@ -26,7 +26,9 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     _ref$max = _ref.max,
     max = _ref$max === void 0 ? 100 : _ref$max,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var formContext = useContext(FormContext);
   var _useState = useState(focusProp),
     focus = _useState[0],
@@ -106,7 +108,7 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     focus: focus,
     focusIndicator: focusIndicator,
     value: value || value === 0 ? value : ''
-  }, rest, {
+  }, passThemeFlag, rest, {
     color: color,
     onFocus: function onFocus(event) {
       setFocus(true);

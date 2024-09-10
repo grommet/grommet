@@ -4,6 +4,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import React, { Children, forwardRef } from 'react';
 import { StyledStack, StyledStackLayer } from './StyledStack';
 import { StackPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var buildStyledChildren = function buildStyledChildren(_ref) {
   var anchor = _ref.anchor,
     fill = _ref.fill,
@@ -32,6 +33,8 @@ var Stack = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     guidingChild = _ref2.guidingChild,
     interactiveChild = _ref2.interactiveChild,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var prunedChildren = Children.toArray(children).filter(function (c) {
     return c;
   });
@@ -52,7 +55,7 @@ var Stack = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   return /*#__PURE__*/React.createElement(StyledStack, _extends({
     ref: ref,
     fillContainer: fill
-  }, rest), styledChildren);
+  }, passThemeFlag, rest), styledChildren);
 });
 Stack.displayName = 'Stack';
 Stack.propTypes = StackPropTypes;

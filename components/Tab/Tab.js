@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 var _StyledTab = require("./StyledTab");
 var _propTypes = require("./propTypes");
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onBlur", "onFocus", "onMouseOver", "onMouseOut", "reverse", "onClick"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -39,7 +39,9 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     setActiveContent = _useContext.setActiveContent,
     setActiveTitle = _useContext.setActiveTitle,
     setFocusIndex = _useContext.setFocusIndex;
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useState = (0, _react.useState)(undefined),
     over = _useState[0],
     setOver = _useState[1];
@@ -178,7 +180,7 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
   }), /*#__PURE__*/_react["default"].createElement(_StyledTab.StyledTab, _extends({
     disabled: disabled,
     plain: plain
-  }, withIconStyles, tabStyles), first, second));
+  }, withIconStyles, tabStyles, passThemeFlag), first, second));
 });
 Tab.displayName = 'Tab';
 Tab.propTypes = _propTypes.TabPropTypes;

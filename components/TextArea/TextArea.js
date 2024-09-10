@@ -7,6 +7,7 @@ var _FormContext = require("../Form/FormContext");
 var _Keyboard = require("../Keyboard");
 var _StyledTextArea = require("./StyledTextArea");
 var _propTypes = require("./propTypes");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "fill", "focusIndicator", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -24,6 +25,8 @@ var TextArea = exports.TextArea = /*#__PURE__*/(0, _react.forwardRef)(function (
     onKeyDown = _ref.onKeyDown,
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
@@ -50,7 +53,7 @@ var TextArea = exports.TextArea = /*#__PURE__*/(0, _react.forwardRef)(function (
     focus: focus,
     value: value,
     focusIndicator: focusIndicator
-  }, rest, {
+  }, passThemeFlag, rest, {
     onFocus: function onFocus(event) {
       setFocus(true);
       if (_onFocus) _onFocus(event);

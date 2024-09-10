@@ -15,7 +15,6 @@ import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 import { formatBytes } from './utils/formatBytes';
-import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
@@ -24,7 +23,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
 
-var ContentsBox = styled(Box).attrs(withTheme).withConfig({
+var ContentsBox = styled(Box).withConfig({
   displayName: "FileInput__ContentsBox",
   componentId: "sc-1jzq7im-0"
 })(["cursor:pointer;position:relative;", " ", ";", ";", ";", ";", ";"], function (props) {
@@ -40,13 +39,13 @@ var ContentsBox = styled(Box).attrs(withTheme).withConfig({
 }, function (props) {
   return !props.focus && unfocusStyle();
 });
-var Label = styled(Text).attrs(withTheme).withConfig({
+var Label = styled(Text).withConfig({
   displayName: "FileInput__Label",
   componentId: "sc-1jzq7im-1"
 })(["", ";"], function (props) {
   return props.theme.fileInput && props.theme.fileInput.label && props.theme.fileInput.label.extend;
 });
-var Message = styled(Text).attrs(withTheme).withConfig({
+var Message = styled(Text).withConfig({
   displayName: "FileInput__Message",
   componentId: "sc-1jzq7im-2"
 })(["", ";"], function (props) {
@@ -74,7 +73,9 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     pad = _ref.pad,
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var formContext = useContext(FormContext);
@@ -232,7 +233,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
     inputRef.current.focus();
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ContentsBox, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ContentsBox, _extends({
     theme: theme,
     flex: false,
     disabled: disabled,
@@ -252,7 +253,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     dragOver: dragOver,
     focus: usingKeyboard && focus
-  }, /*#__PURE__*/React.createElement(StyledFileInput, _extends({
+  }, passThemeFlag), /*#__PURE__*/React.createElement(StyledFileInput, _extends({
     ref: inputRef,
     type: "file",
     id: id,
@@ -262,7 +263,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     disabled: disabled,
     plain: true,
     rightOffset: rightOffset
-  }, rest, {
+  }, passThemeFlag, rest, {
     onDragOver: function onDragOver() {
       return setDragOver(true);
     },
@@ -302,7 +303,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     fill: "horizontal",
     direction: "row",
     justify: "between"
-  }, files.length <= aggregateThreshold && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Message, theme.fileInput.message, message), /*#__PURE__*/React.createElement(Keyboard, {
+  }, files.length <= aggregateThreshold && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Message, _extends({}, theme.fileInput.message, passThemeFlag), message), /*#__PURE__*/React.createElement(Keyboard, {
     onSpace: function onSpace(event) {
       event.preventDefault();
       if (controlRef.current === event.target) inputRef.current.click();
@@ -343,7 +344,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     justify: "between",
     direction: "row",
     align: "center"
-  }, /*#__PURE__*/React.createElement(Label, theme.fileInput.label, files.length, ' ', format({
+  }, /*#__PURE__*/React.createElement(Label, _extends({}, theme.fileInput.label, passThemeFlag), files.length, ' ', format({
     id: 'fileInput.files',
     messages: messages
   })), /*#__PURE__*/React.createElement(Box, {
@@ -414,10 +415,10 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       gap: "xsmall",
       align: "center",
       direction: "row"
-    }), (maxSize && file.size > maxSize || max && index >= max) && /*#__PURE__*/React.createElement(CircleAlert, null), /*#__PURE__*/React.createElement(Label, {
+    }), (maxSize && file.size > maxSize || max && index >= max) && /*#__PURE__*/React.createElement(CircleAlert, null), /*#__PURE__*/React.createElement(Label, _extends({
       weight: theme.global.input.weight || theme.global.input.font.weight,
       truncate: true
-    }, file.name)), /*#__PURE__*/React.createElement(Box, {
+    }, passThemeFlag), file.name)), /*#__PURE__*/React.createElement(Box, {
       flex: false,
       direction: "row",
       align: "center"

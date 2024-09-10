@@ -5,7 +5,8 @@ import { useThemeValue } from '../../utils/useThemeValue';
 var ParagraphSkeleton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var fill = _ref.fill,
     sizeProp = _ref.size;
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var size = sizeProp || 'medium';
   var data = theme.paragraph[size];
   var height = data ? data.size : size;

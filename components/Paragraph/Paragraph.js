@@ -8,6 +8,7 @@ var _propTypes = require("./propTypes");
 var _Skeleton = require("../Skeleton");
 var _ParagraphSkeleton = require("./ParagraphSkeleton");
 var _TextContext = require("../Text/TextContext");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["children", "color", "fill", "size"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -19,6 +20,8 @@ var Paragraph = exports.Paragraph = /*#__PURE__*/(0, _react.forwardRef)(function
     fill = _ref.fill,
     size = _ref.size,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var skeleton = (0, _Skeleton.useSkeleton)();
   var textContextValue = (0, _react.useMemo)(function () {
     return {
@@ -37,7 +40,7 @@ var Paragraph = exports.Paragraph = /*#__PURE__*/(0, _react.forwardRef)(function
     colorProp: color,
     fillProp: fill,
     size: size
-  }, rest), children !== undefined ? /*#__PURE__*/_react["default"].createElement(_TextContext.TextContext.Provider, {
+  }, passThemeFlag, rest), children !== undefined ? /*#__PURE__*/_react["default"].createElement(_TextContext.TextContext.Provider, {
     value: textContextValue
   }, children) : undefined);
 });

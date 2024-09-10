@@ -9,12 +9,12 @@ var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effe
 var _Box = require("../Box");
 var _Stack = require("../Stack");
 var _Text = require("../Text");
-var _defaultProps = require("../../default-props");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-var StyledBadgeContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_defaultProps.withTheme).withConfig({
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+var StyledBadgeContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Badge__StyledBadgeContainer",
   componentId: "sc-1es4ws1-0"
 })(["", ""], function (props) {
@@ -23,7 +23,9 @@ var StyledBadgeContainer = (0, _styledComponents["default"])(_Box.Box).attrs(_de
 var Badge = exports.Badge = function Badge(_ref) {
   var children = _ref.children,
     content = _ref.content;
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var containerRef = (0, _react.useRef)();
   var contentRef = (0, _react.useRef)();
   var stackRef = (0, _react.useRef)();
@@ -111,7 +113,7 @@ var Badge = exports.Badge = function Badge(_ref) {
         ref: contentRef
       }, value > max ? max + "+" : value);
     }
-    badge = /*#__PURE__*/_react["default"].createElement(StyledBadgeContainer, {
+    badge = /*#__PURE__*/_react["default"].createElement(StyledBadgeContainer, _extends({
       ref: containerRef,
       align: "center",
       background: content.background || theme.button.badge.container.background,
@@ -119,7 +121,7 @@ var Badge = exports.Badge = function Badge(_ref) {
       justify: "center",
       round: true,
       pad: !(typeof value === 'boolean' || typeof content === 'boolean') ? theme.button.badge.container.pad : undefined
-    }, badge);
+    }, passThemeFlag), badge);
     // caller has provided their own JSX and we will just render that
   } else badge = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     ref: contentRef

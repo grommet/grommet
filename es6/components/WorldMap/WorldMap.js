@@ -199,7 +199,9 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
     onSelectPlace = _ref5.onSelectPlace,
     placesProp = _ref5.places,
     rest = _objectWithoutPropertiesLoose(_ref5, _excluded);
-  var theme = useThemeValue();
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var world = React.useMemo(buildWorld, []);
   var _React$useState = React.useState({}),
     continents = _React$useState[0],
@@ -376,7 +378,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref5, ref) {
     fillProp: fill,
     width: world.width,
     height: world.height
-  }, interactiveProps, rest), /*#__PURE__*/React.createElement("g", {
+  }, interactiveProps, passThemeFlag, rest), /*#__PURE__*/React.createElement("g", {
     ref: containerRef,
     stroke: "none",
     fill: "none",

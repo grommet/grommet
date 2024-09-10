@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import { animationObjectStyle } from '../../utils/animation';
 import { styledComponentsConfig } from '../../utils/styles';
-import { withTheme } from '../../default-props';
 var animationItemStyle = function animationItemStyle(animationType, theme) {
   if (typeof animationType === 'string') {
     return animationObjectStyle({
@@ -38,7 +37,7 @@ var connectionStyle = function connectionStyle(connection, index, theme) {
   return css(["path:nth-child(", "){stroke-dasharray:", ";stroke-dashoffset:", ";animation:", ";}"], index + 1, animationType === 'draw' || animationType === true ? 500 : 0, animationType === 'draw' || animationType === true ? 500 : 0, animationItemStyle(connection.props.animation, theme));
 };
 var availableAnimations = [true, 'draw', 'pulse'];
-var StyledDiagram = styled.svg.withConfig(styledComponentsConfig).attrs(withTheme).withConfig({
+var StyledDiagram = styled.svg.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledDiagram",
   componentId: "sc-1vzeu9f-0"
 })(["max-width:100%;width:100%;height:100%;", " ", " ", ""], function (props) {

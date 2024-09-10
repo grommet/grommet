@@ -8,12 +8,12 @@ var _Copy = require("grommet-icons/icons/Copy");
 var _Button = require("../Button");
 var _Tip = require("../Tip");
 var _styles = require("../../utils/styles");
-var _defaultProps = require("../../default-props");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
-var StyledButton = (0, _styledComponents["default"])(_Button.Button).attrs(_defaultProps.withTheme).withConfig({
+var StyledButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "CopyButton__StyledButton",
   componentId: "sc-1bp1m18-0"
 })(["border-radius:", ";", ""], function (props) {
@@ -28,7 +28,9 @@ var CopyButton = exports.CopyButton = function CopyButton(_ref) {
     readOnlyCopyPrompt = _ref.readOnlyCopyPrompt,
     tip = _ref.tip,
     value = _ref.value;
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return /*#__PURE__*/_react["default"].createElement(_Tip.Tip, {
     dropProps: {
       align: {
@@ -36,7 +38,7 @@ var CopyButton = exports.CopyButton = function CopyButton(_ref) {
       }
     },
     content: tip
-  }, /*#__PURE__*/_react["default"].createElement(StyledButton, {
+  }, /*#__PURE__*/_react["default"].createElement(StyledButton, _extends({
     onClick: onClickCopy,
     icon: /*#__PURE__*/_react["default"].createElement(_Copy.Copy, null),
     pad: {
@@ -51,5 +53,5 @@ var CopyButton = exports.CopyButton = function CopyButton(_ref) {
     onBlur: onBlurCopy,
     onMouseOut: onBlurCopy,
     "aria-label": readOnlyCopyPrompt + " " + value
-  }));
+  }, passThemeFlag)));
 };

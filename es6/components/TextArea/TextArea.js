@@ -6,6 +6,7 @@ import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { StyledTextArea } from './StyledTextArea';
 import { TextAreaPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
     fill = _ref.fill,
@@ -18,6 +19,8 @@ var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onKeyDown = _ref.onKeyDown,
     valueProp = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var formContext = useContext(FormContext);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
@@ -44,7 +47,7 @@ var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
     focus: focus,
     value: value,
     focusIndicator: focusIndicator
-  }, rest, {
+  }, passThemeFlag, rest, {
     onFocus: function onFocus(event) {
       setFocus(true);
       if (_onFocus) _onFocus(event);

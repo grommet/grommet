@@ -12,7 +12,7 @@ var _ContainerTargetContext = require("../../contexts/ContainerTargetContext");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
 var _utils = require("../../utils");
 var _StyledLayer = require("./StyledLayer");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["background", "children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -42,7 +42,9 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
     layerTarget = _ref.target,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var size = (0, _react.useContext)(_ResponsiveContext.ResponsiveContext);
   // layerOptions was created to preserve backwards compatibility but
   // should not be supported in v3
@@ -187,7 +189,7 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
     full: full,
     margin: margin,
     modal: modal
-  }, rest, {
+  }, passThemeFlag, rest, {
     position: position,
     plain: plain,
     responsive: responsive,
@@ -202,7 +204,7 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
     tabIndex: "-1",
     "aria-hidden": "true"
   }), children);
-  content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledLayer, {
+  content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledLayer, _extends({
     ref: layerRef,
     id: id,
     plain: plain,
@@ -211,11 +213,11 @@ var LayerContainer = exports.LayerContainer = /*#__PURE__*/(0, _react.forwardRef
     layerTarget: layerTarget,
     tabIndex: "-1",
     dir: theme.dir
-  }, modal && /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledOverlay, {
+  }, passThemeFlag), modal && /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledOverlay, _extends({
     plain: plain,
     responsive: responsive,
     onMouseDown: onClickOutside
-  }), content);
+  }, passThemeFlag)), content);
   if (onEsc) {
     content = /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
       onEsc: onEsc ? function (event) {

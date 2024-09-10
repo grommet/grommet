@@ -16,7 +16,7 @@ var _utils = require("../../utils");
 var _StyledVideo = require("./StyledVideo");
 var _MessageContext = require("../../contexts/MessageContext");
 var _propTypes = require("./propTypes");
-var _useThemeValue = require("../../utils/useThemeValue");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["alignSelf", "autoPlay", "children", "controls", "gridArea", "loop", "margin", "messages", "mute", "onDurationChange", "onEnded", "onPause", "onPlay", "onTimeUpdate", "onVolumeChange", "skipInterval"];
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
@@ -53,7 +53,9 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
     _onVolumeChange = _ref.onVolumeChange,
     skipInterval = _ref.skipInterval,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var theme = (0, _useThemeValue.useThemeValue)();
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
@@ -465,7 +467,7 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
       values: [{
         value: percentagePlayed || 0
       }]
-    }), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoScrubber, {
+    }), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideoScrubber, _extends({
       "aria-label": format({
         id: 'video.scrubber',
         messages: messages
@@ -482,7 +484,7 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
       onFocus: function onFocus() {
         return setInteracting(true);
       }
-    }))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, passThemeFlag)))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       pad: {
         horizontal: 'small'
       }
@@ -552,7 +554,7 @@ var Video = exports.Video = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, 
     margin: margin,
     style: style,
     tabIndex: "-1"
-  }), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledVideo.StyledVideo, _extends({}, passThemeFlag, rest, {
     ref: videoRef,
     onDurationChange: function onDurationChange(event) {
       var video = videoRef.current;

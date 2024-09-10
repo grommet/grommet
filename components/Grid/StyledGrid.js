@@ -4,10 +4,8 @@ exports.__esModule = true;
 exports.StyledGrid = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
-var _defaultProps = require("../../default-props");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var fillStyle = function fillStyle(fill) {
   if (!fill) {
     return fill;
@@ -169,11 +167,7 @@ var areasStyle = function areasStyle(props) {
     return "\"" + r.join(' ') + "\"";
   }).join(' ') + ";";
 };
-var StyledGrid = exports.StyledGrid = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).attrs(function (props) {
-  return _extends({}, (0, _defaultProps.withTheme)(props), {
-    'aria-label': props.a11yTitleProp
-  });
-}).withConfig({
+var StyledGrid = exports.StyledGrid = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
 })(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
