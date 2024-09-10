@@ -391,7 +391,7 @@ const DataTable = ({
     ? {
         ...theme.dataTable.container,
         fill,
-        ...{ passThemeFlag },
+        ...passThemeFlag,
       }
     : undefined;
 

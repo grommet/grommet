@@ -226,7 +226,7 @@ const List = React.forwardRef(
     const containterProps = paginate
       ? {
           ...theme.list.container,
-          ...{ passThemeFlag },
+          ...passThemeFlag,
         }
       : undefined;
     const draggingRef = useRef();
