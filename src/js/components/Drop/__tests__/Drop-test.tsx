@@ -237,7 +237,7 @@ describe('Drop', () => {
     expect(document.activeElement).toMatchSnapshot();
   });
 
-  test.only('restrict focus === firstElement', async () => {
+  test('restrict focus === firstElement', async () => {
     render(<TestInput restrictFocus="firstElement" />);
     await waitFor(() => {
       // Check if the button is present in the document
