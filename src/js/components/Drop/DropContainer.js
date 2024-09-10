@@ -14,7 +14,30 @@ import { Keyboard } from '../Keyboard';
 import { StyledDrop } from './StyledDrop';
 import { OptionsContext } from '../../contexts/OptionsContext';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { getFirstFocusableDescendant } from '../../utils/DOM';
+
+// Check if the element.tagName is an input, select or textarea
+export const isFocusableElements = (element) => {
+  const tagName = element.tagName.toLowerCase();
+  return (
+    tagName === 'input' ||
+    tagName === 'select' ||
+    tagName === 'textarea' ||
+    tagName === 'button' ||
+    (tagName === 'a' && element.hasAttribute('href'))
+  );
+};
+
+// Get the first element that can receive focus
+const getFirstFocusableDescendantElement = (element) => {
+  const children = element.getElementsByTagName('*');
+  for (let i = 0; i < children.length; i += 1) {
+    const child = children[i];
+    if (isFocusableElements(child)) {
+      return child;
+    }
+  }
+  return undefined;
+};
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -353,14 +376,13 @@ const DropContainer = forwardRef(
       }
       if (
         restrictFocus === 'firstElement' &&
-        getFirstFocusableDescendant(dropRef.current) !== undefined
+        getFirstFocusableDescendantElement(dropRef.current) !== undefined
       ) {
-        const elementToFocus = getFirstFocusableDescendant(dropRef.current);
-        elementToFocus.focus();
+        getFirstFocusableDescendantElement(dropRef.current).focus();
       }
       if (
         restrictFocus === 'firstElement' &&
-        getFirstFocusableDescendant(dropRef.current) === undefined
+        getFirstFocusableDescendantElement(dropRef.current) === undefined
       ) {
         dropRef.current.focus();
       }

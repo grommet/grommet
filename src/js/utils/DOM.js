@@ -90,13 +90,7 @@ export const withinDropPortal = (node, portalContext) => {
 // Check if the element.tagName is an input, select or textarea
 export const isFocusable = (element) => {
   const tagName = element.tagName.toLowerCase();
-  return (
-    tagName === 'input' ||
-    tagName === 'select' ||
-    tagName === 'textarea' ||
-    tagName === 'button' ||
-    (tagName === 'a' && element.hasAttribute('href'))
-  );
+  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
 };
 
 // Get the first element that can receive focus

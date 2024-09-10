@@ -8107,7 +8107,7 @@ exports[`DateInput handle focus in FormField 1`] = `
 
 exports[`DateInput handle focus in FormField 2`] = `
 <DocumentFragment>
-  .c8 {
+  .c7 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -8116,25 +8116,25 @@ exports[`DateInput handle focus in FormField 2`] = `
   stroke: #666666;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill='none'] {
+.c7 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*='#'],
-.c8 *[STROKE*='#'] {
+.c7 *[stroke*='#'],
+.c7 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*='#'],
-.c8 *[FILL*='#'] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*='#'],
+.c7 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -8169,7 +8169,7 @@ exports[`DateInput handle focus in FormField 2`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -8181,7 +8181,7 @@ exports[`DateInput handle focus in FormField 2`] = `
   border-radius: 3px;
 }
 
-.c7 {
+.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -8200,47 +8200,47 @@ exports[`DateInput handle focus in FormField 2`] = `
   line-height: 0;
 }
 
-.c7:focus {
+.c6:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
+.c6:focus >circle,
+.c6:focus >ellipse,
+.c6:focus >line,
+.c6:focus >path,
+.c6:focus >polygon,
+.c6:focus >polyline,
+.c6:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c7:focus ::-moz-focus-inner {
+.c6:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c7:focus:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -8258,55 +8258,35 @@ exports[`DateInput handle focus in FormField 2`] = `
   border: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6 ::-webkit-search-decoration {
+.c5 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c5 {
+.c4 {
   position: relative;
   width: 100%;
-}
-
-.c3 {
-  outline: none;
-  border-color: #6FFFB0;
-}
-
-.c3 >circle,
-.c3 >ellipse,
-.c3 >line,
-.c3 >path,
-.c3 >polygon,
-.c3 >polyline,
-.c3 >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3 ::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -8322,7 +8302,7 @@ exports[`DateInput handle focus in FormField 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
+  .c3 {
     border-radius: 2px;
   }
 }
@@ -8335,28 +8315,28 @@ exports[`DateInput handle focus in FormField 2`] = `
         class="c1 "
       >
         <div
-          class="c2 c3"
+          class="c2 "
         >
           <div
-            class="c4 "
+            class="c3 "
           >
             <div
-              class="c5"
+              class="c4"
             >
               <input
                 autocomplete="off"
-                class="c6"
+                class="c5"
                 placeholder="mm/dd/yyyy"
                 value=""
               />
             </div>
             <button
-              class="c7"
+              class="c6"
               type="button"
             >
               <svg
                 aria-label="Calendar"
-                class="c8"
+                class="c7"
                 viewBox="0 0 24 24"
               >
                 <path
