@@ -12,7 +12,7 @@ export interface DropProps extends Omit<BoxProps, 'align'> {
   inline?: boolean;
   onClickOutside?: React.MouseEventHandler<HTMLDocument>;
   onEsc?: KeyboardType;
-  restrictFocus?: boolean | string;
+  restrictFocus?: boolean | 'firstElement';
   stretch?: boolean | 'align';
   target?: object;
   trapFocus?: boolean;
