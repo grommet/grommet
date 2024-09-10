@@ -501,7 +501,7 @@ const WorldMap = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
 
     const world = React.useMemo(buildWorld, []);
 
@@ -707,6 +707,7 @@ const WorldMap = forwardRef(
           width={world.width}
           height={world.height}
           {...interactiveProps}
+          {...passThemeFlag}
           {...rest}
         >
           <g ref={containerRef} stroke="none" fill="none" fillRule="evenodd">

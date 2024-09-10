@@ -67,7 +67,7 @@ const Video = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const [captions, setCaptions] = useState([]);
@@ -512,6 +512,7 @@ const Video = forwardRef(
                     onMouseLeave={() => setScrubTime(undefined)}
                     onClick={seek}
                     onFocus={() => setInteracting(true)}
+                    {...passThemeFlag}
                   />
                 </Stack>
               </Box>
@@ -565,8 +566,10 @@ const Video = forwardRef(
           margin={margin}
           style={style}
           tabIndex="-1"
+          {...passThemeFlag}
         >
           <StyledVideo
+            {...passThemeFlag}
             {...rest}
             ref={videoRef}
             onDurationChange={(event) => {

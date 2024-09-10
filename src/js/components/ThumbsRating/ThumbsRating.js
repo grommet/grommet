@@ -7,7 +7,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const ThumbsRating = ({ ...rest }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   return (
     <RadioButtonGroup direction="row" options={['like', 'dislike']} {...rest}>
       {(option, { checked }) => {

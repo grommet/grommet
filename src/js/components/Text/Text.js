@@ -9,6 +9,7 @@ import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
 import { TextContext } from './TextContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Text = forwardRef(
   (
@@ -30,6 +31,7 @@ const Text = forwardRef(
     },
     ref,
   ) => {
+    const { passThemeFlag } = useThemeValue();
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
     const textContextValue = useMemo(() => ({ size }), [size]);
@@ -77,6 +79,7 @@ const Text = forwardRef(
         level={level}
         truncate={truncate}
         size={size}
+        {...passThemeFlag}
         {...rest}
         ref={textRef}
       >

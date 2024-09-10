@@ -36,7 +36,6 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 import { CopyButton } from './CopyButton';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { withTheme } from '../../default-props';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -55,7 +54,7 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
-const ContainerBox = styled(Box).attrs(withTheme)`
+const ContainerBox = styled(Box)`
   ${(props) =>
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
@@ -105,7 +104,7 @@ const TextInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
@@ -359,8 +358,9 @@ const TextInput = forwardRef(
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
+            {...passThemeFlag}
           >
-            <StyledSuggestions ref={suggestionsRef}>
+            <StyledSuggestions ref={suggestionsRef} {...passThemeFlag}>
               <InfiniteScroll
                 items={suggestions}
                 step={theme.select.step}
@@ -485,10 +485,13 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
+        {...passThemeFlag}
       >
         {reverse && readOnlyCopy && ReadOnlyCopyButton}
         {showStyledPlaceholder && (
-          <StyledPlaceholder>{placeholder}</StyledPlaceholder>
+          <StyledPlaceholder {...passThemeFlag}>
+            {placeholder}
+          </StyledPlaceholder>
         )}
         {textInputIcon && !readOnly && (
           <StyledIcon reverse={reverse} theme={theme}>
@@ -512,6 +515,7 @@ const TextInput = forwardRef(
             focusIndicator={focusIndicator}
             textAlign={textAlign}
             widthProp={widthProp}
+            {...passThemeFlag}
             {...rest}
             {...extraProps}
             {...comboboxProps}

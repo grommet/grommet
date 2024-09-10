@@ -22,7 +22,6 @@ import { Text } from '../Text';
 import { StyledFileInput } from './StyledFileInput';
 import { FileInputPropTypes } from './propTypes';
 import { formatBytes } from './utils/formatBytes';
-import { withTheme } from '../../default-props';
 import { useThemeValue } from '../../utils/useThemeValue';
 // We want the interaction of <input type="file" /> but none of its styling.
 // So, we put what we want to show underneath and
@@ -31,7 +30,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // So, we offset the <input /> from the right by the appropriate width.
 // We don't use Stack because of how we need to control the positioning.
 
-const ContentsBox = styled(Box).attrs(withTheme)`
+const ContentsBox = styled(Box)`
   cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
@@ -50,14 +49,14 @@ const ContentsBox = styled(Box).attrs(withTheme)`
   ${(props) => !props.focus && unfocusStyle()};
 `;
 
-const Label = styled(Text).attrs(withTheme)`
+const Label = styled(Text)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.label &&
     props.theme.fileInput.label.extend};
 `;
 
-const Message = styled(Text).attrs(withTheme)`
+const Message = styled(Text)`
   ${(props) =>
     props.theme.fileInput &&
     props.theme.fileInput.message &&
@@ -92,7 +91,7 @@ const FileInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const [hover, setHover] = React.useState();
@@ -282,6 +281,7 @@ const FileInput = forwardRef(
           onMouseOut={disabled ? undefined : () => setHover(false)}
           dragOver={dragOver}
           focus={usingKeyboard && focus}
+          {...passThemeFlag}
         >
           <StyledFileInput
             ref={inputRef}
@@ -293,6 +293,7 @@ const FileInput = forwardRef(
             disabled={disabled}
             plain
             rightOffset={rightOffset}
+            {...passThemeFlag}
             {...rest}
             onDragOver={() => setDragOver(true)}
             onDragLeave={() => setDragOver(false)}
@@ -328,7 +329,9 @@ const FileInput = forwardRef(
             >
               {files.length <= aggregateThreshold && (
                 <>
-                  <Message {...theme.fileInput.message}>{message}</Message>
+                  <Message {...theme.fileInput.message} {...passThemeFlag}>
+                    {message}
+                  </Message>
                   <Keyboard
                     onSpace={(event) => {
                       event.preventDefault();
@@ -379,7 +382,7 @@ const FileInput = forwardRef(
           )}
           {files.length > aggregateThreshold && (
             <Box justify="between" direction="row" align="center">
-              <Label {...theme.fileInput.label}>
+              <Label {...theme.fileInput.label} {...passThemeFlag}>
                 {files.length}{' '}
                 {format({
                   id: 'fileInput.files',
@@ -475,6 +478,7 @@ const FileInput = forwardRef(
                         theme.global.input.font.weight
                       }
                       truncate
+                      {...passThemeFlag}
                     >
                       {file.name}
                     </Label>

@@ -31,7 +31,7 @@ const Cards = React.forwardRef(
     },
     ref,
   ) => {
-    const theme = useThemeValue();
+    const { theme } = useThemeValue();
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 

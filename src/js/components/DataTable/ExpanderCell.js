@@ -10,7 +10,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 // ExpanderControl is separated from ExpanderCell to give TableCell a chance
 // to set the ThemeContext dark context.
 const ExpanderControl = ({ context, expanded, onToggle, pad, ...rest }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
 
   let content;
   if (onToggle) {

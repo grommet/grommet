@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const ParagraphSkeleton = forwardRef(({ fill, size: sizeProp }, ref) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const size = sizeProp || 'medium';
   const data = theme.paragraph[size];
   const height = data ? data.size : size;

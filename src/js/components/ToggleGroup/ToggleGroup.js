@@ -38,7 +38,7 @@ const ToggleGroup = ({
     defaultProp: defaultValue,
     onChange: onToggle,
   });
-  const theme = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const ref = useRef();
   const buttonRefs = useRef([]);
 
@@ -172,6 +172,7 @@ const ToggleGroup = ({
                 role={!multiple ? 'radio' : undefined}
                 round={round}
                 tabIndex={index === focusableIndex ? '0' : '-1'}
+                {...passThemeFlag}
               />
             </Box>
           );

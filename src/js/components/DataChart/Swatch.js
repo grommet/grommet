@@ -12,7 +12,7 @@ const Swatch = ({
   thickness,
   type,
 }) => {
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const dim = parseInt(theme.global.spacing, 10) / 2;
   const half = dim / 2;
   let height = dim;

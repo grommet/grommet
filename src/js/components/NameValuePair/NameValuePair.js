@@ -9,7 +9,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const NameValuePair = ({ children, name: nameProp }) => {
   const { nameProps, pairProps, valueProps } = useContext(NameValueListContext);
   const size = useContext(ResponsiveContext);
-  const theme = useThemeValue();
+  const { theme } = useThemeValue();
   const direction = pairProps?.direction;
 
   const column =

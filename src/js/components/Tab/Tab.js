@@ -39,7 +39,7 @@ const Tab = forwardRef(
       setActiveTitle,
       setFocusIndex,
     } = useContext(TabsContext);
-    const theme = useThemeValue();
+    const { theme, passThemeFlag } = useThemeValue();
     const [over, setOver] = useState(undefined);
     let normalizedTitle = title;
     const tabStyles = {};
@@ -213,6 +213,7 @@ const Tab = forwardRef(
           plain={plain}
           {...withIconStyles}
           {...tabStyles}
+          {...passThemeFlag}
         >
           {first}
           {second}

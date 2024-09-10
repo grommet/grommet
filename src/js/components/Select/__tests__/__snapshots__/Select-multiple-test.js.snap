@@ -1,38 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select Controlled deselect an option 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -64,6 +32,38 @@ exports[`Select Controlled deselect an option 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -254,38 +254,6 @@ exports[`Select Controlled deselect an option 1`] = `
 `;
 
 exports[`Select Controlled multiple 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -317,6 +285,38 @@ exports[`Select Controlled multiple 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -506,38 +506,6 @@ exports[`Select Controlled multiple 1`] = `
 `;
 
 exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -569,6 +537,38 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -1020,38 +1020,6 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 3`] = `
 `;
 
 exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -1083,6 +1051,38 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -1490,38 +1490,6 @@ exports[`Select Controlled multiple onChange with valueKey reduce 3`] = `
 `;
 
 exports[`Select Controlled multiple onChange with valueKey string 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -1553,6 +1521,38 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -1961,39 +1961,7 @@ exports[`Select Controlled multiple onChange with valueKey string 3`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 1`] = `
 <DocumentFragment>
-  .c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
+  .c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2024,6 +1992,38 @@ exports[`Select Controlled multiple onChange without labelKey 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -2579,39 +2579,7 @@ exports[`Select Controlled multiple onChange without labelKey 7`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 8`] = `
 <DocumentFragment>
-  .c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
+  .c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -2642,6 +2610,38 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -2845,38 +2845,6 @@ exports[`Select Controlled multiple onChange without labelKey 8`] = `
 `;
 
 exports[`Select Controlled multiple onChange without valueKey 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -2908,6 +2876,38 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -3462,39 +3462,7 @@ exports[`Select Controlled multiple onChange without valueKey 7`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 8`] = `
 <DocumentFragment>
-  .c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
+  .c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3525,6 +3493,38 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -3729,39 +3729,7 @@ exports[`Select Controlled multiple onChange without valueKey 8`] = `
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = `
 <DocumentFragment>
-  .c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
+  .c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3792,6 +3760,38 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 1`] = 
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -4343,39 +4343,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 7`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = `
 <DocumentFragment>
-  .c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
+  .c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4406,6 +4374,38 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -4609,38 +4609,6 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 8`] = 
 `;
 
 exports[`Select Controlled multiple values 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -4672,6 +4640,38 @@ exports[`Select Controlled multiple values 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -5136,38 +5136,6 @@ exports[`Select Controlled multiple values 4`] = `
 `;
 
 exports[`Select Controlled multiple with empty results 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -5199,6 +5167,38 @@ exports[`Select Controlled multiple with empty results 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -5606,38 +5606,6 @@ exports[`Select Controlled multiple with empty results 3`] = `
 `;
 
 exports[`Select Controlled select another option 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -5669,6 +5637,38 @@ exports[`Select Controlled select another option 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
@@ -5859,38 +5859,6 @@ exports[`Select Controlled select another option 1`] = `
 `;
 
 exports[`Select Controlled should not have accessibility violations 1`] = `
-.c9 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c3 {
   display: flex;
   box-sizing: border-box;
@@ -5922,6 +5890,38 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   min-height: 0;
   flex-direction: column;
   flex: 0 0 auto;
+}
+
+.c9 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*='#'],
+.c9 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*='#'],
+.c9 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
 }
 
 .c1 {
