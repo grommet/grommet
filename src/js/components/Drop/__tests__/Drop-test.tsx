@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
-import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
 import {
@@ -35,13 +34,11 @@ interface TestInputProps extends DropExtendedProps {
   theme?: ThemeType;
   containerTarget?: HTMLElement;
   message?: string;
-  restrictFocus?: boolean | 'firstElement';
 }
 const TestInput = ({
   theme,
   containerTarget,
   message = 'this is a test',
-  restrictFocus,
   ...rest
 }: TestInputProps) => {
   const [showDrop, setShowDrop] = useState<boolean>(false);
@@ -58,9 +55,6 @@ const TestInput = ({
     drop = (
       <Drop id="drop-node" target={inputRef.current || undefined} {...rest}>
         {message}
-        {restrictFocus === 'firstElement' && (
-          <button aria-label="first-focus">first-focus</button>
-        )}
       </Drop>
     );
   }
@@ -228,21 +222,6 @@ describe('Drop', () => {
 
   test('restrict focus', async () => {
     render(<TestInput restrictFocus />);
-    await waitFor(() => {
-      const firstButton = screen.getByLabelText('first-focus');
-
-      // Ensure the button is in the document and is the active element
-      expect(firstButton).toBeInTheDocument();
-      expect(firstButton).toBeVisible();
-      expect(document.activeElement).toBe(firstButton);
-    });
-
-    expect(document.activeElement).toMatchSnapshot();
-    expect(screen.getByLabelText('first-focus')).toMatchSnapshot();
-  });
-
-  test.only('restrict focus to first interactive element', async () => {
-    render(<TestInput restrictFocus="firstElement" />);
 
     expect(document.activeElement).toMatchSnapshot();
     expectPortal('drop-node').toMatchSnapshot();
