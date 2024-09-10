@@ -208,24 +208,26 @@ const CalendarDay = ({
   isSelected,
   otherMonth,
   buttonProps = {},
-  ...rest
-}) => (
-  <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
-    <CalendarDayButton fill={fill} {...buttonProps}>
-      <StyledDay
-        disabledProp={buttonProps.disabled}
-        inRange={isInRange}
-        otherMonth={otherMonth}
-        isSelected={isSelected}
-        sizeProp={size}
-        fillContainer={fill}
-        {...rest}
-      >
-        {children}
-      </StyledDay>
-    </CalendarDayButton>
-  </StyledDayContainer>
-);
+}) => {
+  const { passThemeFlag } = useThemeValue();
+  return (
+    <StyledDayContainer role="gridcell" sizeProp={size} fillContainer={fill}>
+      <CalendarDayButton fill={fill} {...buttonProps}>
+        <StyledDay
+          disabledProp={buttonProps.disabled}
+          inRange={isInRange}
+          otherMonth={otherMonth}
+          isSelected={isSelected}
+          sizeProp={size}
+          fillContainer={fill}
+          {...passThemeFlag}
+        >
+          {children}
+        </StyledDay>
+      </CalendarDayButton>
+    </StyledDayContainer>
+  );
+};
 
 const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
   if (!buttonProps) {
@@ -790,7 +792,6 @@ const Calendar = forwardRef(
               otherMonth={day.getMonth() !== reference.getMonth()}
               size={size}
               fill={fill}
-              {...passThemeFlag}
             >
               {day.getDate()}
             </CalendarDay>,
