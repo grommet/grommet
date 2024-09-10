@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
 import {
@@ -14,6 +15,7 @@ import {
 
 import { expectPortal } from '../../../utils/portal';
 
+import { Button } from '../../Button';
 import { Grommet } from '../../Grommet';
 import { Drop, DropExtendedProps } from '..';
 import { ThemeType } from '../../../themes';
@@ -34,11 +36,13 @@ interface TestInputProps extends DropExtendedProps {
   theme?: ThemeType;
   containerTarget?: HTMLElement;
   message?: string;
+  restrictFocus?: boolean | 'firstElement';
 }
 const TestInput = ({
   theme,
   containerTarget,
   message = 'this is a test',
+  restrictFocus,
   ...rest
 }: TestInputProps) => {
   const [showDrop, setShowDrop] = useState<boolean>(false);
@@ -55,6 +59,9 @@ const TestInput = ({
     drop = (
       <Drop id="drop-node" target={inputRef.current || undefined} {...rest}>
         {message}
+        {restrictFocus === 'firstElement' && (
+          <Button id="focus-button" label="This is a test button" />
+        )}
       </Drop>
     );
   }
@@ -222,13 +229,24 @@ describe('Drop', () => {
 
   test('restrict focus', async () => {
     render(<TestInput restrictFocus />);
-
     expect(document.activeElement).toMatchSnapshot();
     expectPortal('drop-node').toMatchSnapshot();
 
     await waitFor(() => cleanup());
 
     expect(document.activeElement).toMatchSnapshot();
+  });
+
+  test.only('restrict focus === firstElement', async () => {
+    render(<TestInput restrictFocus="firstElement" />);
+    await waitFor(() => {
+      // Check if the button is present in the document
+      const button = screen.getByText('This is a test button');
+      expect(button).toBeInTheDocument();
+      setTimeout(() => {
+        expect(document.activeElement).toBe(button);
+      }, 300);
+    });
   });
 
   test('default elevation renders', () => {
